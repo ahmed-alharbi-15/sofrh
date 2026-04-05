@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سفرة - الفعاليات</title>
+    <link rel="stylesheet" href="events.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@500;600&display=swap');
+    </style>
+    <script src="events.js" defer></script>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="hamburger" id="menu-btn">☰</div>
+        <div class="auth-buttons">
+            <a href="/auth/login.html" class="login">تسجيل دخول</a>
+            <a href="signup.html" class="signup">إنشاء حساب</a>
+        </div>
+        <ul class="nav-list">
+            <li><a href="/index/index.html">الرئيسية</a></li>
+            <li><a href="/countries/countries.html">الدول</a></li>
+            <li><a href="/events/events.html">الفعاليات</a></li>
+            <li><a href="/recipes/recipes.html">الوصفات</a></li>
+        </ul>
+        <div class="logo">
+            <a href="/index/index.html"><img src="/img/new logo sofrh.jpg" alt="سفرة"></a>
+        </div>
+    </header>
+
+    <!-- SIDE MENU -->
+    <nav class="side-menu" id="side-menu">
+        <span class="close-btn" id="close-btn">✖</span>
+        <ul>
+            <li><a href="/index/index.html">الرئيسية</a></li>
+            <li><a href="/countries/countries.html">الدول</a></li>
+            <li><a href="/events/events.html">الفعاليات</a></li>
+            <li><a href="/recipes/recipes.html">الوصفات</a></li>
+        </ul>
+    </nav>
+
+    <!-- مقدمة -->
+    <section class="events-title">
+        <h1>استكشف أبرز الفعاليات حول العالم، تجارب لا تُنسى تنتظرك في كل زاوية.</h1>
+        <input type="text" id="searchInput" placeholder="ابحث عن فعالية ..." class="search-box">
+        <div class="filter-buttons">
+            <button class="active" data-filter="all">الكل</button>
+            <button data-filter="food&cafe">مطاعم ومقاهي</button>
+            <button data-filter="Beaches&seas">شواطئ وبحار</button>
+            <button data-filter="Safari&mountains">سفاري وجبال</button>
+            <button data-filter="evnents&resorts">فعاليات ومنتجعات</button>
+            <button data-filter="Museums and landmarks">متاحف ومعالم</button>
+            <button data-filter="cultural">مهرجانات ثقافية</button>
+        </div>
+    </section>
+
+    <!-- EVENTS GRID -->
+    <div class="events-grid">
+
+    
+        <div class="event-card" data-region="Safari&mountains" id="sodh">
+            <button class="event-item" onclick="openEventModal(this)"
+                data-title="موسم السودة"
+                data-img="/img/السوده.webp"
+                data-country="🇸🇦 السعودية"
+                data-date="📅 يونيو – سبتمبر (سنوياً)"
+                data-desc="موسم السودة تجربة سنوية فريدة في قلب جبال عسير، على ارتفاع يتجاوز 3000 متر. أجواء باردة وضباب يلف الجبال، وعروض شعبية، ومهرجانات ثقافية تعكس روح المنطقة الأصيلة."
+                data-location="منطقة عسير، السعودية"
+                data-duration="3 – 5 أيام"
+                data-weather="بارد وممطر | 10 – 22°"
+                data-airport="أبها الدولي"
+                data-activities="🚡 التلفريك | 75 – 100 ريال | ⛰️ جبل السودة | مجاني | 🛍️ سوق عسير الشعبي | مجاني | 🍯 مهرجان العسل | مجاني – 30 ريال | 🎭 العروض الشعبية | مجاني | ☕ مزارع القهوة | 20 – 50 ريال | 🏚️ قرية ذي عين الأثرية | مجاني"
+                data-stay="3 – 5 أيام"
+                data-hotel-price="300 – 500 ريال"
+                data-event-fee="مجاني – 200 ريال"
+                data-total="1500 – 4000 ريال">
+                <div class="event-head">
+                    <img src="/img/السوده.webp" alt="موسم السودة">
+                    <div class="event-info">
+                        <span class="event-name">موسم السودة</span>
+                        <div class="event-meta">
+                            <span class="event-tag">🇸🇦 السعودية</span>
+                            <span class="event-tag">📅 يونيو – سبتمبر</span>
+                        </div>
+                    </div>
+                </div>
+                <span class="arrow">التفاصيل ⌄</span>
+            </button>
+        </div>
+
+        <div class="event-card" data-region="evnents&resorts" id="Riyadh sesen">
+    <button class="event-item" onclick="openEventModal(this)"
+        data-title="موسم الرياض "
+        data-img="/img/موسم الرياض.jpg"
+        data-country="السعودية  🇸🇦"
+        data-date="اكتوبر - مارس (سنويا)  📅"
+        data-desc="موسم  الرياض فعالية ترفيهية ضخمة تُقام في العاصمة السعودية، تجمع بين الحفلات العالمية، المهرجانات، المطاعم، والتجارب الترفيهية المتنوعة. من أكبر المواسم الترفيهية في المنطقة."
+        data-location="الرياض - السعودية"
+        data-duration=" المدة ٢ - ٤ ايام"
+        data-weather="معتدل | 15 -28"
+        data-airport="مطار الملك خالد الدولي"
+        data-activities="🎤 حفلات موسيقية | حسب الفعالية | 🎡 مدن ملاهي | 50 – 200 ريال | 🍽️ مهرجانات طعام | مجاني – 50 ريال | 🎭 عروض فنية | مجاني – 100 ريال | 🛍️ أسواق تسوق | مجاني"
+        data-stay=" 2 - 4 ايام "
+        data-hotel-price="400 – 700 ريال"
+        data-event-fee="مجاني – 500 ريال"
+        data-total="1300 – 4800 ريال">
+        <div class="event-head">
+            <img src="/img/موسم الرياض.jpg" alt="موسم الرياض">
+            <div class="event-info">
+                <span class="event-name">موسم الرياض </span>
+                <div class="event-meta">
+                    <span class="event-tag">السعودية  🇸🇦</span>
+                    <span class="event-tag">📅 أكتوبر – مارس</span>
+                </div>
+            </div>
+        </div>
+        <span class="arrow">التفاصيل ⌄</span>
+    </button>
+</div>
+
+<div class="event-card" data-region="Museums and landmarks" id="alala">
+    <button class="event-item" onclick="openEventModal(this)"
+        data-title="زيارة العلا"
+        data-img="/img/العلا.webp"
+        data-country="🇸🇦 السعودية"
+        data-date=" 📅 أكتوبر – أبريل"
+        data-desc="العلا وجهة أثرية وطبيعية فريدة في شمال غرب السعودية، تضم مدائن صالح، الحِجر، والجبال الرملية الخلابة. تجربة تجمع بين التاريخ والطبيعة والفن في مكان واحد."
+        data-location="منطقة المدينة المنورة، السعودية"
+        data-duration="3 - 5 ايام"
+        data-weather="معتدل | 12 - 25"
+        data-airport=" مطار العلا الدولي"
+        data-activities="🏛️ مدائن صالح | 95 ريال | 🌄 جبال الحِجر | مجاني – 50 ريال | 🎨 فعاليات Winter at Tantora | حسب الفعالية | 🐪 جولات صحراوية | 100 – 300 ريال | 📸 دروب الحِجر | 50 – 100 ريال | 🌙 رحلات ليلية | 100 – 200 ريال"
+        data-stay="3 - 5 ايام"
+        data-hotel-price="500 - 900 ريال"
+        data-event-fee="95 – 300 ريال"
+        data-total="2300 – 7000 ريال">
+        <div class="event-head">
+            <img src="/img/العلا.webp" alt="زيارة العلا">
+            <div class="event-info">
+                <span class="event-name">زيارة العلا</span>
+                <div class="event-meta">
+                    <span class="event-tag">🇸🇦 السعودية</span>
+                    <span class="event-tag"> 📅 أكتوبر – أبريل</span>
+                </div>
+            </div>
+        </div>
+        <span class="arrow">التفاصيل ⌄</span>
+    </button>
+</div>
+
+<div class="event-card" data-region="Beaches&seas" id="red sea">
+    <button class="event-item" onclick="openEventModal(this)"
+        data-title="الغوص في البحر الأحمر"
+        data-img="/img/البحر الاحمر.jpg"
+        data-country=" 🇸🇦 السعودية"
+        data-date=" 📅 طوال العام | أفضله أبريل – نوفمبر"
+        data-desc="البحر الأحمر في جدة وجهة مثالية لعشاق الغوص والرياضات البحرية، تضم شعاباً مرجانية نادرة وأسماكاً ملونة وأجواء ساحلية رائعة. من أفضل وجهات الغوص في العالم."
+        data-location="جدة - السعودية"
+        data-duration="2 – 4 أيام"
+        data-weather="دافئ وصافٍ | 24 – 35°"
+        data-airport=" مطار الملك عبدالعزيز الدولي"
+        data-activities="غوص مع مرشد | 200 – 400 ريال | 🚤 رحلات بحرية | 150 – 300 ريال | 🐠 استكشاف الشعاب المرجانية | 100 – 250 ريال | 🏄 رياضات مائية | 100 – 300 ريال | 🌅 كورنيش جدة | مجاني | 🐢 مشاهدة السلاحف | 50 – 150 ريال"
+        data-stay="2 – 4 أيام"
+        data-hotel-price="300 - 500 ريال"
+        data-event-fee="100 – 400 ريال"
+        data-total="1200 – 4000 ريال">
+        <div class="event-head">
+            <img src="/img/البحر الاحمر.jpg" alt="الغوص في البحر الاحمر">
+            <div class="event-info">
+                <span class="event-name">الغوص في البحر الأحمر</span>
+                <div class="event-meta">
+                    <span class="event-tag"> 🇸🇦 السعودية</span>
+                    <span class="event-tag"> 📅 طوال العام</span>
+                </div>
+            </div>
+        </div>
+        <span class="arrow">التفاصيل ⌄</span>
+    </button>
+</div>
+
+<div class="event-card" data-region="Beaches&seas" id="frsan">
+    <button class="event-item" onclick="openEventModal(this)"
+        data-title="رحلة بحرية في جزر فرسان"
+        data-img="/img/فرسان.jpg"
+        data-country="🇸🇦 السعودية"
+        data-date="📅 أكتوبر – مارس (أفضل الأوقات)"
+        data-desc="جزر فرسان محمية طبيعية بحرية في جنوب البحر الأحمر، تضم شعاباً مرجانية نقية، غزلاناً برية، وطيوراً نادرة. وجهة هادئة بعيدة عن الزحام لعشاق الطبيعة والبحر."
+        data-location="جزر فرسان، منطقة جازان"
+        data-duration="3 – 5 أيام"
+        data-weather=" دافئ وصافٍ | 22 – 32°"
+        data-airport="مطار جازان"
+        data-activities=" 🤿 غوص وسنوركل | 150 – 300 ريال | 🚤 جولات بحرية | 200 – 400 ريال | 🦌 مشاهدة الغزلان | مجاني | 🐦 مراقبة الطيور | مجاني | 🏝️ استكشاف الجزر | 100 – 200 ريال | 🎣 صيد السمك | 100 – 250 ريال"
+        data-stay="3 – 5 أيام"
+        data-hotel-price="200 – 400 ريال "
+        data-event-fee="150 – 400 ريال"
+        data-total="1000 – 3400 ريال">
+        <div class="event-head">
+            <img src="/img/فرسان.jpg" alt="رحلة بحرية في جزر فرسان">
+            <div class="event-info">
+                <span class="event-name">رحلة بحرية في جزر فرسان</span>
+                <div class="event-meta">
+                    <span class="event-tag">🇸🇦 السعودية</span>
+                    <span class="event-tag">📅 أكتوبر – مارس</span>
+                </div>
+            </div>
+        </div>
+        <span class="arrow">التفاصيل ⌄</span>
+    </button>
+</div>
+
+<div class="event-card" data-region="Museums and landmarks" id="dene">
+    <button class="event-item" onclick="openEventModal(this)"
+        data-title="زيارة المواقع الدينية"
+        data-img="/img/mkh.jpg"
+        data-country="🇸🇦 السعودية"
+        data-date=" 📅 طوال العام"
+        data-desc="زيارة أقدس البقاع الإسلامية في مكة المكرمة والمدينة المنورة، تجربة روحانية فريدة تجمع بين العبادة والتاريخ الإسلامي العريق."
+        data-location="مكة المكرمة والمدينة المنورة"
+        data-duration="3 – 7 أيام"
+        data-weather=" حار | 25 – 42°"
+        data-airport="مطار الملك عبدالعزيز الدولي"
+        data-activities="المسجد الحرام | مجاني | 🕋 الكعبة المشرفة | مجاني | 🌿 جبل النور | مجاني | ⛰️ جبل ثور | مجاني | 🕌 المسجد النبوي | مجاني | 🌴 البقيع | مجاني"
+        data-stay="3 – 7 أيام"
+        data-hotel-price="300 – 800 ريال "
+        data-event-fee="مجاني"
+        data-total="900 – 5600 ريال">
+        <div class="event-head">
+            <img src="/img/mkh.jpg" alt="زيارة المواقع الدينية">
+            <div class="event-info">
+                <span class="event-name">زيارة المواقع الدينية</span>
+                <div class="event-meta">
+                    <span class="event-tag">🇸🇦 السعودية</span>
+                    <span class="event-tag">📅 طوال العام</span>
+                </div>
+            </div>
+        </div>
+        <span class="arrow">التفاصيل ⌄</span>
+    </button>
+</div>
+
+<div class="event-card" data-region="cultural">
+    <button class="event-item" onclick="openEventModal(this)"
+        data-title="مهرجان أزهار الكرز"
+        data-img="/img/Hanami.jpg"
+        data-country="🇯🇵 اليابان"
+        data-date="📅 مارس – أبريل (سنوياً)"
+        data-desc="هاناميمي أيقونة يابانية شهيرة، حيث تتفتح أزهار الكرز الوردية وتُغطي الحدائق والشوارع بجمال ساحر. يجتمع الناس تحت الأشجار للاحتفال بقدوم الربيع في أجواء لا تُنسى."
+        data-location="طوكيو، كيوتو، أوساكا – اليابان"
+        data-duration="5 – 10 أيام"
+        data-weather=" معتدل وربيعي | 10 – 18°"
+        data-airport=" مطار ناريتا الدولي – طوكيو"
+        data-activities=" 🌸 حدائق الكرز في أوينو | مجاني | 🏯 قلعة هيميجي | 37 ريال | 🎎 احتفالات هاناميمي | مجاني | ⛩️ معابد كيوتو | مجاني – 18 ريال | 🍱 مهرجانات الطعام الياباني | 18 – 74 ريال"
+        data-stay=" 5 – 10 أيام"
+        data-hotel-price="562 – 1500 ريال "
+        data-event-fee="مجاني – 74 ريال"
+        data-total="3500 – 17000 ريال">
+        <div class="event-head">
+            <img src="/img/Hanami.jpg" alt="مهرجان أزهار الكرز">
+            <div class="event-info">
+                <span class="event-name">مهرجان أزهار الكرز</span>
+                <div class="event-meta">
+                    <span class="event-tag">🇯🇵 اليابان</span>
+                    <span class="event-tag">📅 مارس – أبريل</span>
+                </div>
+            </div>
+        </div>
+        <span class="arrow">التفاصيل ⌄</span>
+    </button>
+</div>
+
+<div class="event-card" data-region="">
+    <button class="event-item" onclick="openEventModal(this)"
+        data-title=""
+        data-img=""
+        data-country=""
+        data-date=""
+        data-desc=""
+        data-location=""
+        data-duration=""
+        data-weather=""
+        data-airport=""
+        data-activities=""
+        data-stay=""
+        data-hotel-price=""
+        data-event-fee=""
+        data-total="">
+        <div class="event-head">
+            <img src="" alt="">
+            <div class="event-info">
+                <span class="event-name"></span>
+                <div class="event-meta">
+                    <span class="event-tag"></span>
+                    <span class="event-tag"></span>
+                </div>
+            </div>
+        </div>
+        <span class="arrow">التفاصيل ⌄</span>
+    </button>
+</div>
+
+<div class="event-card" data-region="">
+    <button class="event-item" onclick="openEventModal(this)"
+        data-title=""
+        data-img=""
+        data-country=""
+        data-date=""
+        data-desc=""
+        data-location=""
+        data-duration=""
+        data-weather=""
+        data-airport=""
+        data-activities=""
+        data-stay=""
+        data-hotel-price=""
+        data-event-fee=""
+        data-total="">
+        <div class="event-head">
+            <img src="" alt="">
+            <div class="event-info">
+                <span class="event-name"></span>
+                <div class="event-meta">
+                    <span class="event-tag"></span>
+                    <span class="event-tag"></span>
+                </div>
+            </div>
+        </div>
+        <span class="arrow">التفاصيل ⌄</span>
+    </button>
+</div>
+
+<div class="event-card" data-region="">
+    <button class="event-item" onclick="openEventModal(this)"
+        data-title=""
+        data-img=""
+        data-country=""
+        data-date=""
+        data-desc=""
+        data-location=""
+        data-duration=""
+        data-weather=""
+        data-airport=""
+        data-activities=""
+        data-stay=""
+        data-hotel-price=""
+        data-event-fee=""
+        data-total="">
+        <div class="event-head">
+            <img src="" alt="">
+            <div class="event-info">
+                <span class="event-name"></span>
+                <div class="event-meta">
+                    <span class="event-tag"></span>
+                    <span class="event-tag"></span>
+                </div>
+            </div>
+        </div>
+        <span class="arrow">التفاصيل ⌄</span>
+    </button>
+</div>
+
+<div class="event-card" data-region="">
+    <button class="event-item" onclick="openEventModal(this)"
+        data-title=""
+        data-img=""
+        data-country=""
+        data-date=""
+        data-desc=""
+        data-location=""
+        data-duration=""
+        data-weather=""
+        data-airport=""
+        data-activities=""
+        data-stay=""
+        data-hotel-price=""
+        data-event-fee=""
+        data-total="">
+        <div class="event-head">
+            <img src="" alt="">
+            <div class="event-info">
+                <span class="event-name"></span>
+                <div class="event-meta">
+                    <span class="event-tag"></span>
+                    <span class="event-tag"></span>
+                </div>
+            </div>
+        </div>
+        <span class="arrow">التفاصيل ⌄</span>
+    </button>
+</div>
+
+<div class="event-card" data-region="">
+    <button class="event-item" onclick="openEventModal(this)"
+        data-title=""
+        data-img=""
+        data-country=""
+        data-date=""
+        data-desc=""
+        data-location=""
+        data-duration=""
+        data-weather=""
+        data-airport=""
+        data-activities=""
+        data-stay=""
+        data-hotel-price=""
+        data-event-fee=""
+        data-total="">
+        <div class="event-head">
+            <img src="" alt="">
+            <div class="event-info">
+                <span class="event-name"></span>
+                <div class="event-meta">
+                    <span class="event-tag"></span>
+                    <span class="event-tag"></span>
+                </div>
+            </div>
+        </div>
+        <span class="arrow">التفاصيل ⌄</span>
+    </button>
+</div>
+
+    </div>
+
+    <!-- Modal -->
+    <div id="eventModal" class="modal" onclick="closeEventModal(event)">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeEventModal(event)">×</button>
+
+            <div class="modal-top">
+                <img id="modalEventImg" src="" alt="">
+                <h2 id="modalEventTitle"></h2>
+            </div>
+
+            <div class="modal-body">
+                <div id="modalEventMeta" class="ingredients-tags" style="margin-bottom:14px;"></div>
+                <p id="modalEventDesc" class="event-desc"></p>
+                <h4>📌 تفاصيل الرحلة</h4>
+                <div id="modalEventExtra" class="ingredients-tags"></div>
+                <h4>🎪 الفعاليات المتاحة</h4>
+                <div id="modalActivities" class="activities-grid"></div>
+                <h4>💰 الميزانية التقريبية (للفرد)</h4>
+                <div id="modalBudget" class="budget-items"></div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

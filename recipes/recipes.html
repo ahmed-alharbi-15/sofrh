@@ -1,0 +1,1629 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سفرة</title>
+
+    <!-- ملف الستايل الأساسي -->
+    <link rel="stylesheet" href="recipes.css">
+    
+
+    <!-- خط عربي -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@500;600&display=swap');
+
+    </style>
+    <script src="recipes.js" defer></script>
+
+</head>
+
+
+<body>
+
+    <!--  NAVBAR (ثابت في كل صفحة) -->
+    <header class="navbar"> 
+
+        <div class="hamburger" id="menu-btn">☰</div>
+
+        <div class="auth-buttons">
+            <a href="/auth/login.html" class="login">تسجيل دخول</a>
+            <a href="signup.html" class="signup">إنشاء حساب</a>
+        </div>
+
+        <ul class="nav-list">
+            <li><a href="/index/index.html">الرئيسية</a></li>
+            <li><a href="/countries/countries.html">الدول</a></li>
+            <li><a href="/events/events.html">الفعاليات</a></li>
+            <li><a href="/recipes/recipes.html">الوصفات</a></li>
+        </ul>
+
+        <div class="logo">
+           <a href="/index/index.html"> <img src="/img/new logo sofrh.jpg" alt="سفرة"></a>
+
+        </div>
+
+       
+    </header>
+
+
+    <!--  MENU للجوال -->
+    <nav class="side-menu" id="side-menu">
+        <span class="close-btn" id="close-btn">✖</span>
+
+        <ul>
+            <li><a href="/index/index.html">الرئيسية</a></li>
+            <li><a href="/countries/countries.html">الدول</a></li>
+            <li><a href="/events/events.html">الفعاليات</a></li>
+            <li><a href="/recipes/recipes.html  ">الوصفات</a></li>
+        </ul>
+    </nav>
+
+    <!--مقدمة قسم الوصفات-->
+    <section class="recipes-title">
+        <!--المقدمه -->
+        <h1>عالم مليء بالأفكار اللذيذة، يقدّم لك وصفات سهلة ومتنوعة تناسب جميع الأوقات.</h1>
+        <!-- زر البحث -->
+         <input type="text" id="searchInput" placeholder="ابحث عن وصفة..." class="search-box">
+         <!--فلتر الوصفات-->
+         <div class="filter-buttons">
+            <button class="active" data-filter="all">الكل</button>
+            <button data-filter="main-foods">رئيسية</button>
+            <button data-filter="sweet">حلويات</button>
+            <button data-filter="snak">سناكات</button>
+         </div>
+    </section>
+      <div class="foods-grid">
+
+    <!--  1: حلويات -->
+    <div class="foods-card" data-region="sweet" id="kunafa">
+      <button class="recipes-item"
+        data-title="الكنافة"
+        data-img="/img/Kunafa1.jpg"
+        data-ingredients="كنافة شعر| 500 | غ |سمن مذاب| 250| غ |حشوة جبن |400| غ |حشوة اختيارية قشطة | 200 | غ |سكر |400| غ |ماء |250 |مل |غصير ليمون | 15|مل "
+        data-spices=""
+        data-steps="اغلي السكر + الماء + الليمون 10 دقائق (يكون الشيرة). |اخلط الكنافة بالسمن |في صينية: نصف كنافة ← حشوة ← باقي كنافة. |خبز 180° لمدة 30–35 دقيقة. |"
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+          <img src="/img/Kunafa1.jpg" alt="">
+          <span>الكنافة</span>
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+      </button>
+    </div>
+    <div class="foods-card" data-region="sweet" id="kleja">
+        <button class="recipes-item"
+        data-title="الكليجة"
+        data-img="/img/كليجة.jpg"
+        data-ingredients="دقيق ابيض|500|غ|سكر |100|غ|زبدة او سمن|200|مل|حليب سائل |مل |200 | بيض|2 |حبة |فانيليا |5| مل  |بيكنج باودر |10|غ|معجون التمر |250|غ |قرفة مطحونة |3|غ|هيل مطحون |3|غ  |سمسم |20 | "
+        data-spices=""
+        data-steps="اخلط الزبدة او سمن مع السكر ثم أضف البيض والفانيليا والحليب |أضف الدقيق والبيكنج باودر واعجن حتى تتكوّن عجينة لينة.|شكّل كرات صغيرة واحشِها بالتمر |اضغطها بالشكل اللي تبيه ورتّبها في صينية |اخبز على حرارة 180°م لمدة 15–20 دقيقة حتى تحمر."
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+            <img src="/img/كليجة.jpg" alt="">
+            <span>الكليجة</span>
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+    </button>
+    </div>
+     <div class="foods-card" data-region="sweet" id="areka">
+        <button class="recipes-item"
+        data-title="العريكة"
+        data-img="/img/عريكه.webp"
+        data-ingredients="دقيق بر |500|غ |ماء دافئ|750|مل|تمر منزوع التوة|180|غ|سمن بلدي|30|غ|عسل|40|غ"
+        data-spices=""
+        data-steps="اخلط الدقيق مع الماء حتى يصير خليط شبه سائل.|اطبخه على صاج أو قدر مع التحريك المستمر حتى يتماسك.|اهرسه مع التمر وهو ساخن.|قدّمها مع السمن والعسل، وزيّن بالقشطة والسمسم."
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+            <img src="/img/عريكه.webp" alt="">
+            <span>العريكة</span>
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+    </button>
+    </div>
+     <div class="foods-card" data-region="sweet" id="Dadar Gulung">
+        <button class="recipes-item"
+        data-title="دادار جولونغ (Dadar Gulung)"
+        data-img="/img/Dadar Gulung.webp"
+        data-ingredients="دقيق |100 | غ |بيضة |60 | غ |حليب او ماء |200 | مل |سكرا | 15 | غ |ملح |1 | غ |فانيليا |2 | غ (اختياري) | جوز هند مبشود |150 |غ |سكر نخيل او سكر بني |80 | غ |ماد |30 | مل | ملح | 1| غ | فانيليا |2 | غ (اختياري)"
+        data-steps="قي قدر صغير حط جوز الهند + السكر + الماء + الملح | قلب على نار هادئه 5-7 دقائق  لين يذوب السكر ويتماسك الخليط واتركه يبرد  |الدقيق + البيضة + الحليب + السكر + الملح + الفانيليا | أضف اللون الأخضر والزيت |اخلط لين يصير سائل ناعم (مثل خليط الكريب). |سخّن مقلاة غير لاصقة |صب طبقة رفيعة من العجين |اطبخ 1 دقيقة (بدون قلب). |حط ملعقة من الحشوة بالوسط |لف الجوانب ثم لفها رول."
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+            <img src="/img/Dadar Gulung.webp" alt="" >
+            <span>دادار جولونغ (Dadar Gulung)</span>
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+    </button>
+    </div>
+     <div class="foods-card" data-region="sweet" id="Milk Tart"> 
+        <button class="recipes-item"
+        data-title="ميلك تارت (Milk Tart)"
+        data-img="/img/ميلك تارت (Milk Tart).jpg"
+        data-ingredients="بسكوت  مطحون |200| غ | زبدة |100| غ |حليب | 750 | غ | سكر | 150 | غ | نشا | 60| غ |دقيق | 30 | غ |يض | 2 | حبة | فانيليا| 5 |مل | قرفة "
+        data-spices="|"
+        data-steps="بسكويت + زبدة في القالب. |سخّن الحليب مع السكر. |اخلط النشا + الدقيق + البيض وأضف للحليب حتى يثخن. |أضف الفانيليا، اسكب على القاعدة. |"
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+            <img src="/img/ميلك تارت (Milk Tart).jpg" alt="">
+            <span>ميلك تارت (Milk Tart)</span>
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+    </button>
+    </div>
+     <div class="foods-card" data-region="sweet" id="kakw">
+        <button class="recipes-item"
+        data-title="الشوكولاتة السويسرية"
+        data-img="/img/Switzerland chocolate.jpg"
+        data-ingredients="كاكاو بودرة خام |100| غ |زبدة كاكاو أو زبدة عادية |80| غ |سك بودرة |80| غ |حليب بودرة (اختياري لشوكولاتة بالحليب) |40| غ |فانيليا |3|مل| اختياري لوز او بندق |50| غ"
+        data-spices="|"
+        data-steps="ذوّب الزبدة على حمام مائي (وعاء فوق قدر فيه ماء حار).|أضف الكاكاو + السكر + الحليب البودرة وحرّك حتى يصير ناعم.|أضف الفانيليا واخلط جيدًا.|اسكب الخليط في قالب وأضف المكسرات لو حاب.|أدخله الثلاجة 2–3 ساعات حتى يتماسك.|"
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+            <img src="/img/Switzerland chocolate.jpg" alt="">
+            <span>الشوكولاتة السويسرية</span>
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+    </button>
+    </div>
+     <div class="foods-card" data-region="sweet" id="Vínarterta">
+        <button class="recipes-item"
+        data-title="Vínarterta – كيك القراصيا"
+        data-img="/img/Vínarterta.webp"
+        data-ingredients="دقيق |400| غ |زبدة |200| غ |سكر |150 |غ |بيض | 2| حبتين| حليب |50 | مل |فانيليا |5| مل| الحشوة مربى برقوق |300| غ"
+        data-spices="قرفة |5 |غ|اختياري هيل مطحون |2 |غ"
+        data-steps="اخلط الزبدة والسكر ثم أضف البيض والحليب والفانيليا، بعدها الدقيق والبهارات. |اقسم العجينة لعدة طبقات رفيعة وافردها. |اخبز كل طبقة على 180° لمدة 8–10 دقائق. |ادهن بين كل طبقة مربى البرقوق وكرر حتى تنتهي الطبقات. |اتركها تبرد وتتماسك قبل التقطيع"
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+            <img src="/img/Vínarterta.webp" alt="">
+            <span>Vínarterta – كيك القراصيا</span>
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+    </button>
+    </div>
+     <div class="foods-card" data-region="sweet" id="Pönnukökur">
+        <button class="recipes-item"
+        data-title="Pönnukökur – فطائر آيسلندية"
+        data-img="/img/Pönnukökur.jpg"
+        data-ingredients="دقيق |200| غ |حليب |400| مل |بيض |2 | حبة |سكر |25| غ |زبدة مذابة |30| غ "
+        data-spices="ملح |2| غ |اختياري فانيليا |3| مل "
+        data-steps="اخلط الدقيق + الحليب + البيض + السكر + الزبدة + الملح + الفانيليا حتى يصير خليط سائل.|سخّن مقلاة مدهونة قليلًا بالزبدة.|اسكب طبقة رقيقة واطبخ 1 دقيقة لكل جهة.|لفّ الفطائر وقدّمها مع سكر أو مربى"
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+            <img src="/img/Pönnukökur.jpg" alt="">
+            <span>Pönnukökur – فطائر آيسلندية</span>
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+    </button>
+    </div>
+     <div class="foods-card" data-region="sweet" id="SkyrCheesecake">
+        <button class="recipes-item"
+        data-title="Skyr Cheesecake – تشيزكيك السكِير"
+        data-img="/img/Skyr Cheesecake.webp"
+        data-ingredients="بسكويت مطحون |200| غ |زبدة مذابة |100| غ|زبادي يوناني |400| غ |جبن كريمي |200| غ |سكر |120| غ |بيض | 2 | حبة |فانيليا |5| مل |اختياري عسل |20 | غ "
+        data-spices="|"
+        data-steps="اضافة توت أو فراولة للتزيين |اخلط البسكويت مع الزبدة واضغطه في القالب.|اخلط زبادي اليوناني + الجبن الكريمي + السكر + البيض + الفانيليا حتى يصير ناعم.|اسكب الخليط فوق القاعدة. |اخبز على 170° لمدة 40–45 دقيقة حتى يتماسك. |اتركه يبرد ثم ضعه بالثلاجة ساعتين، وزيّنه بالتوت أو العسل "
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+            <img src="/img/Skyr Cheesecake.webp" alt="">
+            <span>Skyr Cheesecake – تشيزكيك السكِير</span>
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+    </button>
+    </div>
+     <div class="foods-card" data-region="sweet" id="Brigadeiro">
+        <button class="recipes-item"
+        data-title="بريغاديرو (Brigadeiro)"
+        data-img="/img/Brigadeiro.jpg"
+        data-ingredients="حليب مكثف محلى:|400| غ |كاكاو بودرة |30| غ |زبدة|20| غ |رشات شوكولاتة أو جوز هند|50| غ"
+        data-spices="|"
+        data-steps="في قدر على نار هادئة: اخلط الحليب المكثف + الكاكاو + الزبدة.|حرّك باستمرار 10–15 دقيقة حتى يثخن ويصير قوامه مثل العجين.|اتركه يبرد، ثم شكّل كرات صغيرة.|لفّها برشات الشوكولاتة وقدّمها"
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+            <img src="/img/Brigadeiro.jpg" alt="">
+            <span>بريغاديرو (Brigadeiro)</span>
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+    </button>
+    </div>
+     <div class="foods-card" data-region="sweet" id="Churros">
+        <button class="recipes-item"
+        data-title="تشوروز (Churros)"
+        data-img="/img/Churros.avif"
+        data-ingredients="ماء |250| غ |دقيق |150|غ|زبدة | 50| غ | بيض | 2 | حبة| زيت للقلي |500| مل | قرفة |5 | غ | سكر |80| غ "
+        data-spices="|"
+        data-steps="في قدر: اغلي الماء مع الزبدة، ثم أضف الدقيق وحرّك حتى تتكوّن عجينة.| اتركها تبرد قليلًا ثم أضف البيض واخلط جيدًا.| ضع العجينة في كيس حلواني وشكّل أصابع مباشرة في الزيت الحار.|اقلي 3–4 دقائق حتى تذهب وتقرمش.|أخرجها ولفّها في السكر والقرفة وقدّمها ساخنة"
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+            <img src="/img/Churros.avif" alt="">
+            <span>تشوروز (Churros)</span>
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+    </button>
+    </div>
+     <div class="foods-card" data-region="sweet" id="Donuts">
+        <button class="recipes-item"
+        data-title="دونات (Donuts)"
+        data-img="/img/Donuts.webp"
+        data-ingredients="دقيق |300| غ |حليب دافئ |180| مل |خميرة فورية |5| غ |سكر |50| غ|بيض |1| حبة |زبدة |40| غ | زيت للقلي  |400| مل |للتغطية شوكولاتة مذابة |100| غ "
+        data-spices="|"
+        data-steps="اخلط الحليب + الخميرة + السكر، ثم أضف الدقيق والبيض والزبدة واعجن.|اترك العجينة تختمر ساعة.|افردها واقطعها دوائر، واتركها ترتاح 20 دقيقة.|اقليها في زيت متوسط الحرارة 2–3 دقائق لكل جهة حتى تذهب.|لفّها بالسكر أو غطّها بالشوكولاتة وقدّم"
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+            <img src="/img/Donuts.webp" alt="">
+            <span>دونات (Donuts)</span>
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+    </button>
+    </div>
+     <div class="foods-card" data-region="sweet" id="BeaverTails">
+        <button class="recipes-item"
+        data-title="بيفر تايلز (BeaverTails)"
+        data-img="/img/BeaverTails.jpg"
+        data-ingredients="دقيق|350| غ |حليب دافئ |200| مل |خميرة فورية|5 | غ |سكر| 40| غ |زبدة مذابة|30| غ |بيض | 1 | خبة |زيت للقلي|500| مل |"
+        data-spices="|"
+        data-steps="اخلط الحليب + الخميرة + السكر، ثم أضف الدقيق والبيض والزبدة واعجن.|اترك العجينة تختمر ساعة.|افردها وشكّلها طويلة ومسطّحة (مثل ذيل القندس).|اقليها في الزيت 2–3 دقائق لكل جهة حتى تذهب.|لفّها بالسكر والقرفة أو أضف الشوكولاتة وقدّمها ساخنة"
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+            <img src="/img/BeaverTails.jpg" alt="">
+            <span>بيفر تايلز (BeaverTails)</span>
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+    </button>
+    </div>
+     <div class="foods-card" data-region="sweet" id="Nanaimo Bar">
+        <button class="recipes-item"
+        data-title="نانايمو بار (Nanaimo Bar)"
+        data-img="/img/Nanaimo Bar.jpg"
+        data-ingredients="بسكويت مطحون|200| غ |زبدة: 180 غ|180| غ |كاكاو|30| غ |سكر |80| غ |سكر بودرة|150| غ |كاسترد بودرة أو فانيليا|20| غ |حليب|30| مل |شوكولاتة داكنة|150| غ"
+        data-spices="|"
+        data-steps="اخلط البسكويت + 120 غ زبدة + الكاكاو + السكر، واضغط الخليط في القالب ثم برّده 20 دقيقة.|اخلط 60 غ زبدة + سكر بودرة + كاسترد + الحليب حتى يصير كريمي، وافرده فوق الخليط الأول وبرّد مرة ثانية.|ذوّب الشوكولاتة واسكبها فوق الخليط.|ضعه في الثلاجة 2–3 ساعات ثم قطّعه مربعات"
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+            <img src="/img/Nanaimo Bar.jpg" alt="">
+            <span>نانايمو بار (Nanaimo Bar)</span>
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+    </button>
+    </div>
+     <div class="foods-card" data-region="sweet">
+        <button class="recipes-item"
+        data-title=""
+        data-img=""
+        data-ingredients=""
+        data-spices="|"
+        data-steps=""
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+            <img src="" alt="">
+            <span></span>
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+    </button>
+    </div>
+    
+
+
+    <!--  2: رئيسية -->
+    <div class="foods-card" data-region="main-foods" id="kapsa">
+      <button class="recipes-item"
+        data-title="كبسة دجاج"
+        data-img="/img/كبسة.jpg"
+        data-ingredients="دجاج |250|غ|أرز بسمتي|150|غ|بصل|75|غ|طماطم|75|غ|معجون طماطم|15|غ|زيت|40|مل |ماء|350|مل "
+        data-spices="بهارات كبسة|2.5|غ| كركم |1.25|غ|كمون|1.25.|غ|فلفل اسود|0.75|غ|هيل مصحون|1.25|غ|ملح|2.5|غ"
+        data-steps="شوّح البصل بالزيت حتى يذبل.| أضف الدجاج وقلّبه حتى يتحمّر. |أضف الطماطم والمعجون والبهارات. | أضف ماءً يغطي الدجاج واتركه 30 دقيقة.| أخرج الدجاج وأضف الأرز للمرق.| اطبخ حتى ينضج الأرز ثم ضع الدجاج فوقه وقدّم."
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+          <img src="/img/كبسة.jpg" alt="كبسة دجاج">
+          <span>كبسة دجاج</span>
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+      </button>
+    </div>
+
+    <div class="foods-card" data-region="main-foods" id="saleg">
+        <button class="recipes-item"
+        data-title="السليق"
+        data-img="/img/سليق.jpg"
+        data-ingredients="دجاج|250|غ|رز مصري|125|غ|حليب كامل الدسم|180|مل|ماء|250|مل|زبدة|10|غ|بصل|50|غ|ثوم|5|غ"
+        data-spices="ملح|2.25|غ|فلفل اسود|1|غ|هيل محطحون|1|غ|عود قرفة|1|غ"
+        data-steps="يُسلق الدجاج مع البصل والثوم والبهارات حتى ينضج. | يُرفع الدجاج ويُحمّر بالفرن أو السمن (اختياري). |يُضاف الأرز إلى المرق ويُطهى حتى يتفكك.| يُضاف الحليب والزبدة مع التحريك حتى يصبح قوامه كريمي.| يُقدّم السليق ساخنًا مع الدجاج."
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+            <img src="/img/سليق.jpg" alt="">
+            <span>السليق</span>
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+    </button>
+    </div>
+     <div class="foods-card" data-region="main-foods" id="gresh">
+        <button class="recipes-item"
+        data-title="الجريش"
+        data-img="/img/جريش.jpg"
+        data-ingredients="جريش(قمح مجروش)|120|غ|لحم غنم او دجاج|200|غ|بصل|60|غ|ثوم|5|غ|لبن(زبادي)|100|غ|ماء|400|مل|زبدة او سمن|10|غ|"
+        data-spices="ملح|2.5|غ|فلفل اسود|1|غ|كمون|1|غ|خيل مطحون|1|غ|قرفة|1|غ"
+        data-steps="يُسلق اللحم مع البصل والثوم والبهارات حتى ينضج. |يُضاف الجريش والماء ويُترك على نار هادئة مع التحريك 45-60 دقيقة.|يُضاف اللبن ويُهرس أو يُحرّك حتى يصبح ناعمًا.|يُقدّم ساخنًا ويُسكب عليه السمن."
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+            <img src="/img/جريش.jpg" alt="">
+            <span>الجريش</span>
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+    </button>
+    </div>
+         <div class="foods-card" data-region="main-foods" id="mdfon">
+        <button class="recipes-item"
+        data-title="المدفون"
+        data-img="/img/مدفون.jpg"
+        data-ingredients="لحم غنم(مكعبات)|250|غ|رز بسمتي|150|غ|بصل|75|غ|طماطم|75|غ|ثوم|5|مل|زيت|10|غ|ماء|350|مل"
+        data-spices="بهارات مشكلة||2.5|غ|كمون|1|غ|كركم|1|غ|فلفل اسود|1|غ|هيل مطحون |1|غ|ملح |2.5|غ"
+        data-steps="شوّح البصل والثوم بالزيت.|أضف اللحم وقلّبه حتى يتحمّر.|أضف الطماطم والبهارات.|أضف الماء واتركه حتى ينضج اللحم.|أضف الأرز واطبخه حتى يستوي."
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+            <img src="/img/مدفون.jpg" alt="">
+            <span>المدفون</span>
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+    </button>
+    </div>
+         <div class="foods-card" data-region="main-foods" id="soshi">
+        <button class="recipes-item"
+        data-title=" السوشي (Sushi)"
+        data-img="/img/soshe.jpg"
+        data-ingredients="رز سوشي |250|غ|ماء |300|مل |خل الارز |15|مل |سكر |5 |غ|سلمون او تونة |75 |غ |خيار |1|حبة| افوكادو |1|حبة |ملح |2.5 |غ |جبن كريمي |40|غ|"
+        data-spices="|"
+        data-steps="اغسل الأرز جيدًا حتى يصبح الماء شبه صافي. | اطبخه مع الماء على نار متوسطة ثم هادئة حتى ينشف. |اخلط الخل + السكر + الملح وأضفهم للأرز. |قطّع السلمون والخضار شرائح طويلة. |افرد الأرز على النوري، أضف الحشوة ولف بإحكام.| قطّع بسكين مبللة."
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+            <img src="/img/soshe.jpg" alt="">
+            <span>السوشي (Sushi)</span>
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+    </button>
+    </div>
+         <div class="foods-card" data-region="main-foods" id="Ramen">
+        <button class="recipes-item"
+        data-title="الرامن (Ramen)"
+        data-img="/img/رامن.jpg"
+        data-ingredients="ماء |500|مل| مرق دجاج/لحم |250|مل|صويا صوص|15 |مل|زيت سمسم|5| مل |ثوم مفروم|5| غ|زنجبيل مبشور| 3| غ|نودلز رامن|100| غ| دجاج/لحم روبيان| 100|غ| بيض|60|غ | فطر | 40|غ | بصل اخضر |15| غ| ذرة/سبانخ/بوك تشوي |50| غ|"
+        data-spices="|"
+        data-steps=" في قدر على نار متوسطة حط :|الماء و المرقة و صوص الصوياو زيت سمسم وثوم و زنجبيل وخليهم يغلو| بعدها ضيف اللحم/دجاج وخليهم 5 دقائق |كسر البيضة داخل القدر (أو حطها كاملة لو تبغاها مسلوقة) من 3 -4 دقائق|اضف النودلز والفطر والخضار وخليهم 3 دقائق |طفي النار وأضف البصل الاخضر (زبدة او كريمة اختياري)"
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+            <img src="/img/رامن.jpg" alt="">
+            <span>الرامن (Ramen)</span>
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+    </button>
+    </div>
+         <div class="foods-card" data-region="main-foods" id="tempura">
+        <button class="recipes-item"
+        data-title="التيمبورا (Tempura)"
+        data-img="/img/التمبورا.jpg"
+        data-ingredients="دقيق |120| غ| نشا ذرة |30 |غ| بيضة |60 |غ| ماء بارد جدا |200 |غ |ملح |2| غ|حشوة اختياري روبيان |200 |غ |حشوة اختياري خضار مشكله كوسة/جزر/فطر |250 |غ | زيت نباتي |500 | مل   "
+        data-spices="|"
+        data-steps="اخلط البيضة مع الماء البارد. |أضف الدقيق + النشا + الملح. |قلّب تقليب خفيف جداً (مو لازم ناعم، وجود كتل أفضل). | السر: كل ما كان الخليط أبرد وأخف، التيمبورا تطلع مقرمشة أكثر. | نظف الروبيان وشق الظهر شوي. |قطع الخضار شرائح رفيعة. | سخّن الزيت على حرارة 170–180°.| غمّس القطع بالخليط.| اقلي 2–3 دقائق لين يصير اللون ذهبي فاتح. طلعها على ورق مطبخ."
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+            <img src="/img/التمبورا.jpg" alt="">
+            <span>التيمبورا (Tempura)</span>
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+    </button>
+    </div>
+         <div class="foods-card" data-region="main-foods" id="Okonomiyaki">
+        <button class="recipes-item"
+        data-title="الأوكونوميياكي (Okonomiyaki)"
+        data-img="/img/Okonomiyaki.jpg"
+        data-ingredients="دقيق |100 |غ |بيضة |60 |غ |ماء |120| مل |ملح |2 |غ |ملفوف مفروم |150| غ |بصل اخضر |20 |غ| ربيان او دجاج او لحم |80 |غ|زيت |10 |مل |صوص أوكونوميياكي أو باربكيو |30 |مل |مايونيز |20|مل | سمسم أو بونيتو (اختياري): |5 |غ |"
+        data-spices="|"
+        data-steps="في وعاء اخلط الدقيق + البيضة + الماء + الملح لين يصير خليط شبه سائل. |اضف البصل الاخضر و الملفوف و لحم / دجاج /روبيان و اخلطهم | سخّن المقلاة وحط 10 مل زيت وصب الخليط كامل على شكل دائرة | اتركها على نار متوسطة ( 4–5 دقائق،) اقلبها بحذر وخليها ( 3 – 4 دقائق.) | لما تتحمر رش الصوص والمايونيز والسمسم"
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+            <img src="/img/Okonomiyaki.jpg" alt="">
+            <span>الأوكونوميياكي (Okonomiyaki)</span>
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+    </button>
+    </div>
+         <div class="foods-card" data-region="main-foods" id="Takoyaki">
+        <button class="recipes-item"
+        data-title="التاكوياكي (Takoyaki)"
+        data-img="/img/Takoyaki.jpg"
+        data-ingredients="دقيق |100| غ | بيضة| 60 | غ |ماء | 200| مل | ملح |2 | غ |الحشوة اختيارية اخطبوط - روبيان - دجاج - جبنة موزاريلا / شيدر |70| غ| بصل اخضر |20 | غ |زنجبيل مخلل (بني ) |10| مل (اختياري) |زيت |15 | مل |صوص تاكوياكي أو باربكيو |30| مل |مايونيز |20| غ| بونيتو أو سمسم |5| غ" 
+        data-spices="|"
+        data-steps="اخلط في الوعاء الدقيق + البيضة + الماء + الملح لين يصير خليط سائل وخفيف.| سخّن صاج التاكوياكي وادهِنه بالزيت. | صب الخليط في كل فتحة لين يمتلئ.| أضف داخل كل وحدة قطعة أخطبوط -دجاج-روبيان او ضيف الجبن بصل أخضر زنجبيل | بعد دقيقة، لف الكرات بأعواد خشب باستمرار لين تصير كرات ذهبية من كل الجهات (3–4 دقائق). | قدّمها ورش:الصوص و المايونيز و البونيتو"
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+            <img src="/img/Takoyaki.jpg" alt="">
+            <span>التاكوياكي (Takoyaki)</span>   
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+    </button>
+    </div>
+         <div class="foods-card" data-region="main-foods" id="Tonkatsu">
+        <button class="recipes-item"
+        data-title="التونكاتسو (Tonkatsu)"
+        data-img="/img/Tonkatsu.webp"
+        data-ingredients="دجاج |150|غ |دقيق |30||غ |بيضة |60 |غ |بقسماط (بانكو) |50|غ |زيت |500 |غ |ملفوف مبشور |80| غ |صوص تونكاتسو او باركيو |30 |مل |"
+        data-spices="ملح |2| غ |فلفل اسود |1| غ "
+        data-steps="طرّي اللحم او الدجاج بالمطرقة شوي و رش الملح و الفلفل  | غلّف بالترتيب 1- دقيق 2-بيض 3-بقسماط (بانكو) |سخّن الزيت على 170–180°. |اقلي القطعة 3–4 دقائق لكل جهة لين تصير ذهبية ومقرمشة. |طلّعها وخلها ترتاح دقيقة قطّع شرائح وقدّمها فوق الملفوف مع الصوص"
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+            <img src="/img/Tonkatsu.webp" alt="">
+            <span>التونكاتسو (Tonkatsu)</span>
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+    </button>
+    </div>
+         <div class="foods-card" data-region="main-foods" id="Nasi Goreng">
+        <button class="recipes-item"
+        data-title="ناسي جورينج (Nasi Goreng)"
+        data-img="/img/Nasi Goreng.jpg"
+        data-ingredients="أرز أبيض مطبوخ ومبرّد |200| غ (مهم يكون دافي مو حار)|دجاج/روبيان/لحم |100| غ |بصل مفروم |40| غ |ثوم مفروم |5| غ |فلفل حار ( اختياري) |5|غ |جزر |40| غ |صويا صوص غامق |15 | مل |صويا صوص عادي |10 | مل |زيت السمسم |5| مل | بيضة مقلية| 1| حبة  بصل مقلي او خيار حسب الرغبة |زيت |15 | مل "
+        data-spices="|"
+        data-steps="سخّن الزيت في مقلاة كبيرة أضف البصل + الثوم + الفلفل وقلّب دقيقة. |أضف لحم/دجاج وقلّبه لين ينضج. |أضف الأرز وفتّته بيدك أو الملعقة |أضف الصويا وزيت السمسم وقلّب على نار عالية 2–3 دقائق. |طفي النار، ذوق الملح، وقدّم مع البيضة فوق"
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+            <img src="/img/Nasi Goreng.jpg" alt="">
+            <span>ناسي جورينج (Nasi Goreng)</span>
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+    </button>
+    </div>
+         <div class="foods-card" data-region="main-foods" id="Mie Goreng">
+        <button class="recipes-item"
+        data-title="مي جورينج (Mie Goreng)"
+        data-img="/img/(Mie Goreng.jpg"
+        data-ingredients="نودلز بيض أو اندومي بدون بهارات |100| غ | دجاج/روبيان/لحم| 100 | غ | بصل |40 | غ |ثوم |5 | غ |جزر او ملفوف |40 | غ | بصل اخضر | 15 | غ | صويا صوص غامق |5 | مل | صويا صوص عادي | 10 | مل | زيت سميم | 5 | مل |كر |5| غ |شطة (اختياري) | 5 | مل |بيض |1 | حبة | بصل مقلي (اختياري ) | 10 | غ | زيت |15 | مل"
+        data-spices="|"
+        data-steps="اسلق النودلز نص سلقة (حوالي دقيقتين) وصّفها. |في المقلاة سخّن الزيت، أضف البصل + الثوم وقلّب دقيقة. |أضف الدجاج/لحم/روبيان وقلّبه لين ينضج. |أضف الخضار ثم النودلز. | أضف الصوص + السكر + الشطة وقلّب على نار عالية 2–3 دقائق. | طفي النار، رش بصل أخضر، وقدّم مع البيضة والبصل المقلي"
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+            <img src="/img/(Mie Goreng.jpg" alt="">
+            <span>مي جورينج (Mie Goreng)</span>
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+    </button>
+    </div>
+         <div class="foods-card" data-region="main-foods" id="Satay">
+        <button class="recipes-item"
+        data-title="ساتيه (Satay)"
+        data-img="/img/Satay.webp"
+        data-ingredients="دجاج/لحم |150 | غ (مكعبات صغيرة ) |صويا صوص |15| مل |يت سمسم او نباتي |10 | مل |ثوم مفروم |5| غ |سكر بني او عسل |5 | غ |فلفل اسود | 1 | غ |  "
+        data-spices="|"
+        data-sauces="صوص الساتيه ( الفول السوداني ) |زبدة الفول  السوداني 40 غ  |صويا صوص 10 مل |ماء 20 - 30 مل |سكر 5 غ |عصير ليمون او خل 5 مل |شطة (اختياري ) 5 غ  " 
+        data-steps=" اخلط اللحم مع كل مكونات التتبيلة وخلّه يتنقع 30 دقيقة (أكثر = طعم أقوى). | ركّب اللحم في الأسياخ.| شوي على شواية او مقلاة على نار متوسطة 2–3 دقائق لكل جهة لين يتحمّر. |في قدر صغير حط كل المكونات لصوص حرك على نار هادئة،لين يصير قوامه كريمي | اسكب الصوص فوق الساتيه"
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+            <img src="/img/Satay.webp" alt="">
+            <span>ساتيه (Satay)</span>
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+    </button>
+    </div>
+    <div class="foods-card" data-region="main-foods" id="Gado-Gado">
+        <button class="recipes-item"
+        data-title="غادو غادو (Gado-Gado)"
+        data-img="/img/Gado-Gado.jpg"
+        data-ingredients="بطاطس مسلوقة و مقطعة |100 | غ | فاصوليا خضراء مسلوقة |60| غ| جزر مسلوق | 60 | غ |ملفوف او خس | 50 |غ |خيار | 60 | غ | اضافات حسب الرغبه مثل البيض او تمبية مقلي "
+        data-spices=""
+        data-sauces="زبدة فلو السوداني 40  غ  |صويا صوص 10 مل |ماء دافي 30 - 40 مل | عصير ليمون او تمر هندي 10 مل | سكر بني 5 غ | شطة (اختياري ) 5 غ"
+        data-steps="اسلق البطاطس و الفاصوليا و الجزر لين تصير طرية بس متماسكة. | اخلط جميع مكونات الصوص  لين يصير ناعم و كريمي | رتب  الخضار في الطبق و اضف الصوص و التوفو فوقهم |رش البصل المقلي او الفول السوداني مجروش ويقدم دافئ"
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+            <img src="/img/Gado-Gado.jpg" alt="">
+            <span>غادو غادو (Gado-Gado)</span>
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+    </button>
+    </div>
+    <div class="foods-card" data-region="main-foods" id="Rendang">
+        <button class="recipes-item"
+        data-title="ريندانغ (Rendang)"
+        data-img="/img/Rendang.webp"
+        data-ingredients="لحم غنم (مكعبات) |400 | غ |بصل مفروم |80 | غ |ثوم |10 | غ |زنجبيل | 10 | غ |كركم ازج او بودرة |5 | غ| فلفل احمر حار (اختياري ) |10 | غ  |زيت | 15 | مل | سكر بني او سكر نخيل |5 | غ "
+        data-spices="كزبرة مطحونة |5 | غ | كمون | 3 | غ | قرفة |1 | عود |ورق غار او ورق ليمون | 2 | ورقة |ملح |5| غ "
+        data-sauces=""
+        data-steps="سخن الزيت و اضف البصل لين يذبل ثم أضف الثوم + الزنجبيل + الكركم + الفلفل | أضف اللحم وقلّبه لين يتغيّر لونه. | اضف حليب جوز الهند و كل البهارات و ملح و السكر خلّه يغلي، بعدها خفف النار جدًا. | خليه يطبخ 1.5 الى 2 سلعة مع تقليب كل فتره لين الصوص يثقل ولزيت يطلع  اللحم يصير طري جدًا ويتغلف بالبهارات | و قدمة مع رز ابيض او ناسي غورينغ"
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+            <img src="/img/Rendang.webp" alt="">
+            <span>ريندانغ (Rendang)</span>
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+    </button>
+    </div>
+    <div class="foods-card" data-region="main-foods" id="koshry">
+        <button class="recipes-item"
+        data-title="الكشري"
+        data-img="/img/الكشري.avif"
+        data-ingredients="ارز ابيض | 200 | غ |عدس بني | 150 | غ | مكرونة | 150 | غ | حمص مسلوق | 150 |غ | بصل | 300 |غ | زيت للقلي حسب الحاجة"
+        data-spices="كمون | 5 | غ| ملح |5| غ حسب الذوق| فلفل اسود |5| غ حسب الذوق "
+        data-sauces="صلصة طماطم 400  غ | ثوم مفروم 20 غ | خل ابيض  60 مل | زيت  15  مل "
+        data-steps="اقلي البصل لين يقرمش واحتفظ بالزيت. |اسلق العدس 15–20 دقيقة. | اطبخ الأرز بزيت البصل. | اسلق المكرونة. | الصوص: شوّح الثوم بالزيت، أضيف الصلصة + الخل + الكمون 10 دقائق. |التقديم: أرز ثم عدس ثم مكرونة ثم حمص ثم صوص ثم بصل"
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+            <img src="/img/الكشري.avif" alt="">
+            <span>الكشري</span>
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+    </button>
+    </div>
+    <div class="foods-card" data-region="main-foods" id="tamyh">
+        <button class="recipes-item"
+        data-title="الطعمية"
+        data-img="/img/الطعميه.jpg"
+        data-ingredients="فول  ناشف منقوع 24 ساعة |250| غ | بصل |80 | غ |ثوم | 15 | غ| كزبرة خضراء | 50 | غ |بقدونس | 50 | غ |زيا |500| مل "
+        data-spices="كمون | 5| غ |كزبرة ناشفة | 5 | غ | يكنج باودر | 5| غ |ملح +فلفل |3| غ"
+        data-sauces=""
+        data-steps="اطحن كل المكونات حتى خليط ناعم. |شكّل أقراص. |اقلي على 170° حتى تصير ذهبية. |قدّمها مع الفول والطحينة"
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+            <img src="/img/الطعميه.jpg" alt="">
+            <span>الطعمية</span>
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+    </button>
+    </div>
+    <div class="foods-card" data-region="main-foods" id="mhshe">
+        <button class="recipes-item"
+        data-title="المحشي"
+        data-img="/img/المحشي.jpg"
+        data-ingredients="كوسة |500| غ |اذنجان |500| غ |فلفل رومي أو ورق عنب: حسب الرغبة|500| غ | رز مصري مغسول |300|غ | طماطم بشورة | 250| غ |بصل مفروم |100 | غ |بقدونس + شبت + كزبرة |150| غ |ثوم |10 | غ |زيت |50| غ "
+        data-spices="ملح | 8 | غ |فلفل اسود | 2 | غ |كمون |4| غ |بابريكا | 4| غ |كزبرة| 4| غ |مرق الطبخ : مرق او ماء |700 | مل| صلصة طماطم |200 | غ "
+        data-sauces=""
+        data-steps="اخلط كل مكونات الحشوة والبهارات. | احشي الخضار بدون ما تعبيها للنهاية. |رصّها في قدر. |أضف المرق والصلصة. |اطبخ على نار هادئة 45–60 دقيقة حتى ينضج الأرز والخضار."
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+            <img src="/img/المحشي.jpg" alt="">
+            <span>المحشي</span>
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+    </button>
+    </div>
+    <div class="foods-card" data-region="main-foods" id="molkya">
+        <button class="recipes-item"
+        data-title="الملوخية"
+        data-img="/img/mulukhiyah.jpg"
+        data-ingredients="ملوخية خضراء مفرومة أو مجمّدة | 400 | غ |مرق دجاج أو لحم |800| مل |ثوم مفروم| 20| غ |كزبرة ناشفة | 10 | غ |سمن او زيت |30 | مل |دجاج او لحم مطبوخ |300 | غ "
+        data-spices="ملح |5| حسب الرغبة |فلفل اشود |5 | حسب الرغبة"
+        data-sauces=""
+        data-steps="سخّن المرق لدرجة الغليان، |أضف الملوخية وحرّك وخفف النار (لا تغلي بعد الإضافة). | في مقلاة سخّن السمن، أضف الثوم، لما يذهّب أضف الكزبرة وقلّب 10 ثواني. |اسكب التقلية فوق الملوخية وحرّك.|أضف الدجاج أو اللحم لو حاب، واطفِ النار مباشرة. "
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+            <img src="/img/mulukhiyah.jpg" alt="">
+            <span>الملوخية</span>
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+    </button>
+    </div>
+    <div class="foods-card" data-region="main-foods" id="kofta">
+        <button class="recipes-item"
+        data-title="الكفتة"
+        data-img="/img/kofta.jpg"
+        data-ingredients="لحم مفروم |500|غ |صل مبشور و مصفى |150| غ| ثوم مفروم| 10 |غ |بقسماط ناعم |30| غ |زيت |30 | مل "
+        data-spices="ملح |8| غ |فلفل اسود |3 | غ | كمون |4| غ |بابريكا |4| |غ |بهارات الكفتة |5| غ "
+        data-sauces=""
+        data-steps="اخلط كل المكونات جيدًا واعجنها 5 دقائق. |شكّل أصابع على أسياخ أو بدون. |ادهنها بالزيت. |اشوِها على مقلاة أو شواية 3–4 دقائق لكل جهة. |قدّمها مع عيش وسلطة وطماطم"
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+            <img src="/img/kofta.jpg" alt="">
+            <span>الكفتة</span>
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+    </button>
+    </div>
+    <div class="foods-card" data-region="main-foods" id="Bobotie">
+        <button class="recipes-item"
+        data-title="بوبوتي (Bobotie)"
+        data-img="/img/بوبوتي (Bobotie).jpg"
+        data-ingredients="لحم مفروم |400| غ |بصل مفدوم | 150| غ |ثوم |10| غ|خبز ابيض |60| غ | حليب |100| مل |زبيب |30 |غ | خل او عصير ليمون |15| مل |مربى مشمش او سكر |20 |غ | زيت. |20| مل |بيض  2 حبة حليب  |150 | مل مع فلفل اسود و ملح"
+        data-spices="كركم |5| غ |كاري | 5 | غ |كمون |3 | غ| كزبرة ناشفة |3 |غ |ملح|6| غ | ملح | 2 | غ "
+        data-sauces=""
+        data-steps="شوّح البصل بالزيت، أضف الثوم والبهارات. |أضف اللحم واطبخه حتى يتحمّر. |أضف الخبز بالحليب + الزبيب + المربى + الخل. |ضع الخليط في صينية. |اخفق البيض مع الحليب واسكبه فوقه. |خبز 180° لمدة 35–40 دقيقة حتى يتماسك الوجه."
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+            <img src="/img/بوبوتي (Bobotie).jpg" alt="">
+            <span>بوبوتي (Bobotie)</span>
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+    </button>
+    </div>
+    <div class="foods-card" data-region="main-foods" id="Braai">
+        <button class="recipes-item"
+        data-title="براي (Braai)"
+        data-img="/img/براي (Braai).jpg"
+        data-ingredients="ستيك لحم بقري |400| غ |دجاج افخاذ او صدور |400 | غ |زيت زيتون |30| مل |خل التفاح او الليمون |20| غ |ثوم مفروم |10| ع |بابريكا مدخنة |5 | غ |فبفب اسود |3 | غ |ملح |8| غ"
+        data-spices="|"
+        data-sauces=""
+        data-steps="اخلط كل مكونات التتبيلة وادهِن بها اللحم. |اتركه يتتبّل 30–60 دقيقة. |سخّن الشواية (فحم أو غاز). |الستيك: 3–5 دقائق لكل جهة |الدجاج: 6–8 دقائق لكل جهة |اتركه يرتاح 5 دقائق ثم قدّم"
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+            <img src="/img/براي (Braai).jpg" alt="">
+            <span>براي (Braai)</span>
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+    </button>
+    </div>
+     <div class="foods-card" data-region="main-foods" id="Pap">
+        <button class="recipes-item"
+        data-title="باب & تشاكالا (Pap & Chakalaka)"
+        data-img="/img/باب & تشاكالا (Pap & Chakalaka).jpg"
+        data-ingredients="دقيق ذرة |200| غ |ماء |600| مل |ملح |9| غ |زيت |20 | مل |بصل |100 | غ | ثوم |10 | غ |زنجبيل |10 | غ |جزر | 100 | غ |فلفل رومي | 100 | غ |طماطم |200| غ |فاصوليا مطبوخة |200 | غ "
+        data-spices="كاري |5 | غ |بابريكا | 5 | غ |شطة |5 | غ اختياري"
+        data-sauces=""
+        data-steps="Pap: |اغلي الماء مع الملح. |أضف دقيق الذرة تدريجيًا مع التحريك. |خفف النار واطبخ 20 دقيقة حتى يصير سميك وناعم. |Chakalaka : |شوّح البصل بالزيت. | أضف الثوم + الزنجبيل + البهارات. |أضف الخضار + الطماطم + الفاصوليا. |اطبخ 15 دقيقة حتى يتماسك."
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+            <img src="/img/باب & تشاكالا (Pap & Chakalaka).jpg" alt="">
+            <span>باب & تشاكالا (Pap & Chakalaka)</span>
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+    </button>
+    </div>
+     <div class="foods-card" data-region="main-foods" id="Bunny Chow">
+        <button class="recipes-item"
+        data-title="باني تشاو (Bunny Chow)"
+        data-img="/img/باني تشاو (Bunny Chow).webp"
+        data-ingredients="لحم او دجاج |400| غ |بصل مفروم |150| غ |ثوم | 15|غ |زنجبيل |15| غ |طماطم مفرومه او معلبة |300| غ |بطاطس مكعبات |200| غ |زيت |30 |مل |خبز ابيض دائري او رغيف كبير | 2 |حبه"
+        data-spices="كاري بودرة |10 |غ |كركم |5 | غ |كمون |5 | غ | كزبرة نشافة |5 | غ |اختياري فلفل جاد |5 | غ ملح |ملح |8 | غ"
+        data-sauces=""
+        data-steps="شوّح البصل بالزيت، أضف الثوم والزنجبيل والبهارات. |أضف اللحم وقلّبه حتى يتحمّر. |أضف الطماطم + البطاطس + 400 مل ماء. |اطبخ 40–50 دقيقة حتى يصير كاري كثيف.|فرّغ وسط الخبز واملأه بالكاري وقدّم فورًا"
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+            <img src="/img/باني تشاو (Bunny Chow).webp" alt="">
+            <span>باني تشاو (Bunny Chow)</span>
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+    </button>
+    </div>
+     <div class="foods-card" data-region="main-foods" id="sosa">
+        <button class="recipes-item"
+        data-title="سوساتي (Sosatie)"
+        data-img="/img/سوساتي (Sosatie).webp"
+        data-ingredients="لحم او دجاج |400| غ | بصل |80 | غ | مشمش مجفف اختياري | 60| غ | خل| 30| مل  | زيت | 30 | مل "
+        data-spices="كاري |8| غ |كركم | 4 | غ |ملح | 6 | غ |فلفل اسود | 2| غ |اختاري مربى مشمش |40 | غ"
+        data-sauces=""
+        data-steps="اخلط اللحم او الدجاج  مع كل السوائل + البهارات + مربى المشمش، واتركه 4 ساعات.| ركّبه في أسياخ مع البصل والمشمش. |اشوِ 3–4 دقائق لكل جهة حتى يتحمّر"
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+            <img src="/img/سوساتي (Sosatie).webp" alt="" >
+            <span>سوساتي (Sosatie)</span>
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+    </button>
+    </div>
+     <div class="foods-card" data-region="main-foods" id="tagen"> 
+        <button class="recipes-item"
+        data-title="الطاجين"
+        data-img="/img/الطاجين.jpg"
+        data-ingredients="لحم او دجاج |600 | غ| بصل مفروم |200 | غ | ثوم | 10 | غ | زيت زيتون | 40 | مل | بطاطس | 300 | غ | جزر | 200 | غ |كوسة |200 | غ |طماطم  |200 | غ | ماء او مرق | 400 | مل "
+        data-spices="زنجبيل |5| غ | كركم | 5 | غ | كمون |5| غ |بابريكا |5| غ |قرفة | 2 | غ |ملح |8 | غ | فلفل اسود |2 |  "
+        data-sauces=""
+        data-steps="في الطاجين أو قدر: سخّن الزيت، أضف البصل والثوم. |أضف اللحم أو الدجاج + البهارات وقلّب. |أضف الخضار + الماء. |غطِّ واطبخ على نار هادئة 60–90 دقيقة حتى يطرى. | قدّمه ساخن مع خبز مغربي"
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+            <img src="/img/الطاجين.jpg" alt="">
+            <span>الطاجين</span>
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+    </button>
+    </div>
+     <div class="foods-card" data-region="main-foods" id="ksks">
+        <button class="recipes-item"
+        data-title="الكسكس"
+        data-img="/img/الكسكس.webp"
+        data-ingredients="كسكس سميد |300| غ |ماء ساخن | 350| مل |زيت زيتون | 30 | مل |ملح | 5 | غ |لحم او دجاج |500| غ |بصل |200| غ | ثوم |10 | غ |زيت زيتون | 30 | مل |جزر |200| غ |كوسة|200 | غ |قرع او بطاطس |00| غ |حمص  مسلوق | 150| غ | ماء او مرق | 800 | مل "
+        data-spices="كركم |5| غ |نجبيل |5| غ |كمون | 5 | غ |فلفل اسود |3| غ |ملح| 8 | غ"
+        data-sauces=""
+        data-steps="شوّح البصل والثوم بالزيت، أضف اللحم والبهارات. |أضف الماء والخضار والحمص واطبخ 45–60 دقيقة. |الكسكس: اسكب الماء الساخن عليه مع الملح والزيت، غطِّه 10 دقائق ثم فلفله بالشوكة. |قدّم الكسكس وعليه اللحم والخضار والمرق"
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+            <img src="/img/الكسكس.webp" alt="">
+            <span>الكسكس</span>
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+    </button>
+    </div>
+     <div class="foods-card" data-region="main-foods" id="bseta">
+        <button class="recipes-item"
+        data-title="البسطيلة"
+        data-img="/img/البسطيلة.jpg"
+        data-ingredients="دجاج مسلوق و مفتت |600| غ |بصل مفروم |200| غ |بيض | 4 | حبات |لوز محمص و مطحون خشن |150 | غ |ورق فيلو |12| ورقة. |زبدة |150| غ| سكر |40| غ"
+        data-spices="قرفة |5 | غ |زنجبيل |5 | غ |كركم |5| غ |ملح |8 | غ |فلفل | 3| غ "
+        data-sauces=""
+        data-steps="شوّح البصل، أضف الدجاج + البهارات + السكر. |أضف البيض حتى يتماسك، ثم اللوز. |لف الحشوة بورق الفيلو مع الزبدة. |خبز 180° لمدة 30–35 دقيقة. | رش سكر بودرة + قرفة"
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+            <img src="/img/البسطيلة.jpg" alt="">
+            <span>البسطيلة</span>
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+    </button>
+    </div>
+     <div class="foods-card" data-region="main-foods" id="hrere">
+        <button class="recipes-item"
+        data-title="الحريرة"
+        data-img="/img/الحريرة.jpg"
+        data-ingredients="لحم مكعبات | 300| غ |حمص منقوع ومسلوق |150| غ |عدس|100| غ | طماطم مطحون|400| غ |بطل مفروم |150| غ |كرفس + كزبرة + بقدونس |100| غ |زيت زيتون |40 | مل |دقيق | 40 | غ| ماء |200| مل |ماء او مرق |1.2| لتر  "
+        data-spices="زنجبيل |5 | غ | كركم | 5 |غ |فلفل اسود | 3 | غ |قرفة | 2| غ |ملح |8 | غ "
+        data-sauces=""
+        data-steps="شوّح البصل بالزيت، أضف اللحم والبهارات.| أضف الطماطم، الحمص، العدس، الأعشاب، والماء. |اطبخ 45 دقيقة. |أضف خليط الدقيق والماء وحرّك حتى تثخن. |قدّمها ساخنة مع ليمون"
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+            <img src="/img/الحريرة.jpg" alt="">
+            <span>الحريرة</span>
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+    </button>
+    </div>
+     <div class="foods-card" data-region="snak" id="msmn">
+        <button class="recipes-item"
+        data-title="المسمن"
+        data-img="/img/المسمن.jpeg"
+        data-ingredients="دقيق ابيض |250| غ |سميد ناعم|250|غ |ملح |5 | غ| ماء دافئ | 350| مل |زيت نباتي |80| مل | زبدة مذاب |80| غ "
+        data-spices="|"
+        data-sauces=""
+        data-steps="اخلط الدقيق + السميد + الملح + الماء واعجن حتى عجينة ناعمة. |قسّم كرات وادهِنها بالزيت، اتركها ترتاح 15 دقيقة. |افرد كل كرة رقيق، اطوِها مربع. |اطبخ على مقلاة ساخنة حتى تذهّب من الجهتين. |يُقدّم مع عسل أو جبن"
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+            <img src="/img/المسمن.jpeg" alt="">
+            <span>المسمن</span>
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+    </button>
+    </div>
+     <div class="foods-card" data-region="main-foods" id="rfesh">
+        <button class="recipes-item"
+        data-title="الرفيسه"
+        data-img="/img/الرفيسه.jpg"
+        data-ingredients="دجاج كاملة مقطع |1000| غ| بصل فروم |300| غ |ثوم | 15| غ |زيت زيتون |50| مل  |عدس |150| غ |حلبة منقوعة |30 | غ |ماء او مرق |1.2| لتر  "
+        data-spices="راس لحانوت |10| غ |نجبيل | 5 | غ |كركم |5 |غ |فلفل اسود |3| غ |ملح |10| غ "
+        data-sauces=""
+        data-steps="بديل راس الحانوت كمون 5 غ +نجبيل 4 غ + كزبرة ناشفة  4 غ + قرفة 2 غ + كركم 3 غ +فلفل أسود 2 غ واخلطهم |شوّح البصل بالزيت، أضف الدجاج والثوم والبهارات وبديل رأس الحانوت. |أضف الماء، العدس، والحلبة واطبخ 60 دقيقة حتى يثخن المرق. |ضع المسمن في طبق واسكب فوقه الدجاج والمرق"
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+            <img src="/img/الرفيسه.jpg" alt="">
+            <span>الرفيسه</span>
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+    </button>
+    </div>
+     <div class="foods-card" data-region="main-foods". id="Pizza-italy">
+        <button class="recipes-item"
+        data-title="بيتزا نابوليتانا – Neapolitan Pizza"
+        data-img="/img/Neapolitan-Pizza.webp"
+        data-ingredients="دقيق | 500| غ| ماء فاتر|325| مل | خميرة |3|  غ |ملج |10| غ |زيت زيتون |10 | مل |موزاريلا |250| غ "
+        data-spices="|"
+        data-sauces="طماطم مهروسة |300 |غ |ملح | 4| غ |زيت زيتون "
+        data-steps="اعجن الدقيق + الماء + الخميرة + الملح + الزيت، واتركها تختمر 1–2 ساعة. |اخلط الطماطم مع الملح والزيت (بدون طبخ). |افرد العجينة، أضف الصوص ثم الجبن. |اخبز على 250–300° لمدة 7–10 دقائق. |أضف الريحان وقدّم"
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+            <img src="/img/Neapolitan-Pizza.webp" alt="">
+            <span>بيتزا نابوليتانا – Neapolitan Pizza</span>
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+    </button>
+    </div>
+     <div class="foods-card" data-region="main-foods" id="Carbonara">
+        <button class="recipes-item"
+        data-title="باستا كاربونارا – Carbonara"
+        data-img="/img/Carbonara.jpg"
+        data-ingredients="مكرونة سباجيتي |250| غ |لحم مقدد او ديك رومي  مقدد |150| غ |بيض|2 | حبة | صفار البيض |1| حبه | جبن بارميزان مبشور|60 | غ |ثوم |5 | غ اختياري  "
+        data-spices="فلفل اسود |3 | غ |ملح حسب الرغبة |10| لا تكثر "
+        data-sauces=""
+        data-steps="اسلق المكرونة في ماء مملح. |شوّح اللحم المقدد حتى يتحمّر.|اخلط البيض + صفار البيض + الجبن + الفلفل. |أضف المكرونة الساخنة على اللحم، ثم أطفئ النار.|"
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+            <img src="/img/Carbonara.jpg" alt="">
+            <span>باستا كاربونارا – Carbonara</span>
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+    </button>
+    </div>
+     <div class="foods-card" data-region="main-foods" id="Lasagna">
+        <button class="recipes-item"
+        data-title="لزانيا – Lasagna"
+        data-img="/img/Lasagna.jpg"
+        data-ingredients="شرائح لزانيا |250| غ| جبن موزاريلا مبشور |200| غ |لحم مفروم |400| غ | بصل مبشور | 150| غ |ثوم |10| غ |صلصلة طماطم |500| غ |زيت |20| مل "
+        data-spices="ملح|6 | غ | فلفل اسود |3| غ |أوريغانو أو ريحان ناشف |5| غ "
+        data-sauces="حليب 500 مل |دقيق  40 غ |زبدة 40 غ |ملح 3 غ "
+        data-steps="شوّح البصل بالزيت، أضف اللحم ثم الصلصة والبهارات واطبخ 10–15 دقيقة.|البشاميل: ذوّب الزبدة، أضف الدقيق ثم الحليب وحرّك حتى يثخن. |في الصينية: طبقة لازانيا ← لحم ← بشاميل ← جبن، وكرر الطبقات.|اخبز على 180° لمدة 35–40 دقيقة حتى تتحمّر"
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+            <img src="/img/Lasagna.jpg" alt="">
+            <span>لزانيا – Lasagna</span>
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+    </button>
+    </div>
+     <div class="foods-card" data-region="main-foods" id="Risotto">
+        <button class="recipes-item"
+        data-title="ريزوتو – Risotto"
+        data-img="/img/Risotto.jpg "
+        data-ingredients="أرز ريزوتو (Arborio) |250| غ |مرق دجاج أو خضار ساخن|800| مل |بصل مفروم: |100| غ |ثوم |5 | غ |زبدة |40| غ |جبن بارميزان مبشور | 60| غ |زيت زيتون |20| غ"
+        data-spices="ملح |5 | غ |فلفل اسود | 2| غ "
+        data-sauces=""
+        data-steps="شوّح البصل بالزيت، أضف الأرز وقلّب دقيقة |أضف المرق تدريجيًا (كوب كوب) مع التحريك المستمر حتى يمتصه الأرز. |كرر الإضافة لمدة 18–20 دقيقة حتى يصير كريمي وطري. |أضف الزبدة + الجبن وحرّك، ثم الملح والفلفل"
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+            <img src="/img/Risotto.jpg " alt="">
+            <span>ريزوتو – Risotto</span>
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+    </button>
+    </div>
+     <div class="foods-card" data-region="main-foods" id="Penne">
+        <button class="recipes-item"
+        data-title="بيني أريباياتا – Penne Arrabbiata"
+        data-img="/img/Penne Arrabbiata.avif    "
+        data-ingredients="مكرونة بيني |250|غ |صلصة طماطم |400| غ |ثوم |10| غ | زيت زيتون |30| مل "
+        data-spices="شطة مطحونة حسب الرغبة |5| غ | فلفل اسود | 2 |غ |ملح |5| غ "
+        data-sauces=""
+        data-steps="اسلق المكرونة في ماء مملح. | شوّح الثوم بالزيت، أضف الشطة ثم صلصة الطماطم. |أضف الملح والفلفل واطبخ الصوص 10 دقائق. |أضف المكرونة للصوص وقلّب جيدًا. |زيّن ببقدونس أو ريحان وقدّم ساخن"
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+            <img src="/img/Penne Arrabbiata.avif    " alt="">
+            <span>بيني أريباياتا – Penne Arrabbiata</span>
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+    </button>
+    </div>
+     <div class="foods-card" data-region="main-foods" id="Parmigiana">
+        <button class="recipes-item"
+        data-title="دجاج بارميجيانا – Chicken Parmigiana"
+        data-img="/img/Chicken Parmigiana.webp"
+        data-ingredients="صدور دجاج |500 | غ | دقيق |50 | غ |بيض | 2 | حبة |بقسماط |80 | غ |مو مبشور |150|غ |بارميزان مبشور |40| غ |زيت للقلي |300| مل |"
+        data-spices="ملح |6| غ |فلفل اسود |3| غ |أوريغانو أو ريحان ناشف |5| غ"
+        data-sauces="صلصة طماطم 400غ |ثوم 10 غ |زيت زيتون  20  مل"
+        data-steps="تبّل الدجاج بالملح والفلفل، غلّفه: دقيق ← بيض ← بقسماط. |اقليه حتى يذهّب. |الصوص: شوّح الثوم بالزيت، أضف صلصة الطماطم والبهارات واطبخ 10 دقائق. |ضع الدجاج في صينية، أضف الصوص ثم الجبن. |اخبز على 180° لمدة 15–20 دقيقة حتى يذوب الجبن"
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+            <img src="/img/Chicken Parmigiana.webp" alt="">
+            <span>دجاج بارميجيانا – Chicken Parmigiana</span>
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+    </button>
+    </div>
+     <div class="foods-card" data-region="main-foods" id="Fondue">
+        <button class="recipes-item"
+        data-title="الفوندو (Fondue)"
+        data-img="/img/الفوندو (Fondue).jpg"
+        data-ingredients="جبن سويسري أو إمنتال/غرويير مبشور |400| غ |حليب |200| مل |ثوم |5 |غ |دقيق |15| غ |زبدة |20| غ "
+        data-spices="فلفل اسود |2| غ|ملح |1| غ |جوزة الطيب |1 | غ اختياري"
+        data-sauces=""
+        data-steps="ذوّب الزبدة، أضف الثوم ثم الدقيق وحرّك دقيقة. |أضف الحليب تدريجيًا مع التحريك. |أضف الجبن وحرّك حتى يذوب ويصير الصوص ناعم. |أضف الفلفل وجوزة الطيب. |قدّمه ساخن، واغمس قطع الخبز في الجبن"
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+            <img src="/img/الفوندو (Fondue).jpg" alt="">
+            <span>الفوندو (Fondue)</span>
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+    </button>
+    </div>
+     <div class="foods-card" data-region="main-foods" id="Raclette">
+        <button class="recipes-item"
+        data-title="الراكليت (Raclette)"
+        data-img="/img/لراكليت (Raclette).webp"
+        data-ingredients="جبن راكليت أو شيدر/غرويير بديل |400 | غ| بطاطس صغيرة مسلوقة |500| غ |لانشون بقري أو ديك رومي| 200|غ |مخلل خيار أو بصل |100| غ "
+        data-spices="فلفل اسود |2| غ"
+        data-sauces=""
+        data-steps="اسلق البطاطس حتى تطرى. |سخّن الجبن على شواية راكليت أو بالفرن حتى يذوب. |اسكب الجبن الذائب فوق البطاطس. |قدّم معه اللانشون والمخللات ورشة فلفل أسود ورشة ملح"
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+            <img src="/img/لراكليت (Raclette).webp" alt="">
+            <span>الراكليت (Raclette)</span>
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+    </button>
+    </div>
+     <div class="foods-card" data-region="main-foods" id="Rösti">
+        <button class="recipes-item"
+        data-title="روستي (Rösti)"
+        data-img="/img/روستي (Rösti).jpg"
+        data-ingredients="بطاطس |500| غ |زبدة|40| غ|زيت |20|مل "
+        data-spices="ملح |5| غ|فلفل اسود |2| غ "
+        data-sauces=""
+        data-steps="اسلق البطاطس نصف سلقة واتركها تبرد، ثم ابشرها.|سخّن الزبدة مع الزيت في مقلاة.|ضع البطاطس واضغطها على شكل قرص.|اطبخ على نار متوسطة 6–8 دقائق لكل جهة حتى تصير ذهبية ومقرمشة|أضف الملح والفلفل وقدّمها ساخنة"
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+            <img src="/img/روستي (Rösti).jpg" alt="">
+            <span>روستي (Rösti)</span>
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+    </button>
+    </div>
+     <div class="foods-card" data-region="main-foods" id="Bircher Müesli">
+        <button class="recipes-item"
+        data-title="بيرشر موسلي (Bircher Müesli)"
+        data-img="/img/Bircher Müesli.jpg"
+        data-ingredients="شوفان |60| غ |حليب |150| مل |زبتدي |100| غ |تفاح مبشور |150| غ |عسل |15| غ |عصير ليمون |5 |مل |اختياري لوز او جوز |20 | غ |اختياري زبيب او توت |20| غ"
+        data-spices="|"
+        data-sauces=""
+        data-steps="اخلط الشوفان مع الحليب والزبادي.|أضف التفاح المبشور + العسل + الليمون. |اخلطه جيدًا واتركه في الثلاجة 30 دقيقة أو ليلة كاملة. |أضف المكسرات أو الفواكه قبل التقديم"
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+            <img src="/img/Bircher Müesli.jpg" alt="">
+            <span>بيرشر موسلي (Bircher Müesli)</span>
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+    </button>
+    </div>
+     <div class="foods-card" data-region="main-foods" id="Zürcher Geschnetzeltes">
+        <button class="recipes-item"
+        data-title="زوريشر غشنِتسلتِس (Zürcher Geschnetzeltes)"
+        data-img="/img/زوريشر غشنِتسلتِس (Zürcher Geschnetzeltes).jpg"
+        data-ingredients="شرائح لحم عجل رفيعة (أو دجاج بديل) |400| غ |بصل مفروم | 120|غ |فطر مقطع |150| غ |كريمة طبخ |250| مل |زبدة |30| غ |مرق لحم او دجاج |150| مل "
+        data-spices="ملح |6 | غ | فلفل اسود | 3 | غ "
+        data-sauces=""
+        data-steps="حمّر اللحم بالزبدة على نار عالية حتى يتغير لونه ثم أخرجه.|في نفس المقلاة شوّح البصل والفطر.|أعد اللحم، أضف المرق والكريمة.|اتركه يطبخ 10–15 دقيقة حتى يثخن الصوص.|أضف الملح والفلفل وقدّمه ساخن، ويفضّل مع روستي أو رز"
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+            <img src="/img/زوريشر غشنِتسلتِس (Zürcher Geschnetzeltes).jpg" alt="">
+            <span>زوريشر غشنِتسلتِس (Zürcher Geschnetzeltes)</span>
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+    </button>
+    </div>
+     <div class="foods-card" data-region="main-foods" id="Kjötbollur">
+        <button class="recipes-item"
+        data-title="Kjötbollur (كيوت بولور)"
+        data-img="/img/Kjötbollur.png"
+        data-ingredients="لحم مفروم |500| غ |بصل مفروم ناعم |100|غ| بقسماط |50| غ |بيض |1 | حبة |حليب |50 | مل |زبدة او زيت للقلي |30|مل "
+        data-spices="ملح |6 | غ |لفل اسود | 3| غ | اختياري جوزة الطيب |1| غ"
+        data-sauces="مرق لحم 250غ |كريمة طبخ 100 غ |دقيق 10 غ "
+        data-steps="اخلط اللحم مع البصل + البقسماط + البيض + الحليب + البهارات. |شكّل كرات صغيرة.|اقليها بالزبدة أو الزيت على نار متوسطة حتى تتحمّر وتستوي (8–10 دقائق).|الصوص (اختياري): أضف الدقيق للمرق، ثم الكريمة وحرّك حتى يثخن، واسكب فوق الكرات.|تُقدّم عادةً مع بطاطس مهروسة أو مسلوقة"
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+            <img src="/img/Kjötbollur.png" alt="">
+            <span>Kjötbollur (كيوت بولور)</span>
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+    </button>
+    </div>
+     <div class="foods-card" data-region="main-foods" id="Plokkfiskur">
+        <button class="recipes-item"
+        data-title="Plokkfiskur – يخنة السمك والبطاطس"
+        data-img="/img/Plokkfiskur.jpg"
+        data-ingredients="سمك أبيض (فيليه قد أو هلبوت) |400| غ|بطاطس مسلوقة مكعبات |400| غ| بطل مفروم |120| غ| حليب |300| مل |زبدة|40| غ |دقيق |25| غ "
+        data-spices="ملح |5 |غ | فلفل اسود | 2 | غ"
+        data-sauces=""
+        data-steps="اسلق السمك في ماء خفيف 8–10 دقائق ثم فتّته قطعًا.|ذوّب الزبدة، أضف البصل وقلّبه حتى يذبل.|أضف الدقيق ثم الحليب وحرّك حتى يثخن الصوص.|أضف البطاطس والسمك وحرّك بهدوء.|تبّل بالملح والفلفل واتركه 5 دقائق حتى يتماسك.|يُقدَّم ساخنًا مع خبز أسمر أو زبدة"
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+            <img src="/img/Plokkfiskur.jpg" alt="">
+            <span>Plokkfiskur – يخنة السمك والبطاطس</span>
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+    </button>
+    </div>
+     <div class="foods-card" data-region="main-foods" id="SeafoodSoup">
+        <button class="recipes-item"
+        data-title="Seafood Soup – شوربة المأكولات البحرية"
+        data-img="/img/seafood-soup-7-1.jpg"
+        data-ingredients="روبيان مقشر |200| غ | سمك ابيض مكعبات |200| غ |بلح بحر أو حبار (اختياري) |150| غ |بصل مفروم |120| غ |ثوم |10 |غ |بطاطس مكعبات |250 | غ|مرق سمك او ماء |800| مل |كريمة طبخ |200| مل |زبدة او زيت |30| مل "
+        data-spices="ملح |6| غ | فلفل اسود | 3 | غ |اختياري بابريكا |3| غ "
+        data-sauces=""
+        data-steps="شوّح البصل والثوم بالزبدة.|أضف البطاطس والمرق واتركها تطبخ 10–15 دقيقة حتى تطرى. |أضف السمك والروبيان وباقي البحريات واطبخ 5–7 دقائق.|أضف الكريمة والبهارات واتركها تغلي غلوة خفيفة.|قدّمها ساخنة مع خبز"
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+            <img src="/img/seafood-soup-7-1.jpg" alt="">
+            <span>Seafood Soup – شوربة المأكولات البحرية</span>
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+    </button>
+    </div>
+     <div class="foods-card" data-region="main-foods" id="Bandeja">
+        <button class="recipes-item"
+        data-title="باندِيخا بايسا (Bandeja Paisa)"
+        data-img="/img/Bandeja Paisa.jpg"
+        data-ingredients="أرز أبيض مطبوخ| 300| غ |فاصوليا حمراء مطبوخة| 300| غ |لحم مفروم |300| غ |نقانق بقري أو دجاج|200| غ |بيض| 2 | حبة |افكادو مقطع |1 | حبة |موز بلانتين أو موز عادي مقلي |2 |حبة |زيت لقلي |30| مل"
+        data-spices="ملح |6 | غ |فلفل اسود | 3| غ |كمون |3| غ "
+        data-sauces=""
+        data-steps="حمّر اللحم المفروم مع الملح والفلفل والكمون حتى يستوي.|اقلي النقانق والبيض (عيون).|اقلي شرائح الموز حتى تذهب.|سخّن الأرز والفاصوليا.|رتّب كل المكونات في طبق واحد: أرز + فاصوليا + لحم + نقانق + بيض + موز + أفوكادو"
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+            <img src="/img/Bandeja Paisa.jpg" alt="">
+            <span>باندِيخا بايسا (Bandeja Paisa)</span>
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+    </button>
+    </div>
+     <div class="foods-card" data-region="main-foods" id="Arepa">
+        <button class="recipes-item"
+        data-title="ريبا (Arepa)"
+        data-img="/img/Arepa.webp"
+        data-ingredients="دقيق ذرة|250|غ |ماء دافئ| 350|مل |زيت او زبدة | 20| غ "
+        data-spices="ملح | 5 | غ"
+        data-sauces=""
+        data-steps="اخلط الماء + الملح + دقيق الذرة حتى تتكوّن عجينة.|شكّل أقراص دائرية.|اطبخها بمقلاة 5–7 دقائق لكل جهة حتى تتحمّر.|افتحها واحشها جبن أو دجاج"
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+            <img src="/img/Arepa.webp" alt="">
+            <span>ريبا (Arepa)</span>
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+    </button>
+    </div>
+     <div class="foods-card" data-region="main-foods" id="Sancocho">
+        <button class="recipes-item"
+        data-title="سانكوچو (Sancocho)"
+        data-img="/img/Sancocho.webp"
+        data-ingredients="لحم او دجاج |500|غ |بطاطس مكعبات |300| غ |ذرة مقطعة |2| حبة |بصل مفروم |120| غ |ثوم |10| غ |كزبرة خضراء |30| غ |ماء او مزق | 1.2 | لتر"
+        data-spices="ملح | 6 | غ | كمون | 3 |غ | فلفل اسود | 3 | غ"
+        data-sauces=""
+        data-steps="اغلي الدجاج أو اللحم مع الماء والبصل والثوم والبهارات.|أضف البطاطس والذرة واتركها تطبخ 40–50 دقيقة حتى تطرى.|أضف الكزبرة في النهاية واتركها 5 دقائق.|قدّمها كشوربة دافئة وغنية"
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+            <img src="/img/Sancocho.webp" alt="">
+            <span>سانكوچو (Sancocho)</span>
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+    </button>
+    </div>
+     <div class="foods-card" data-region="snak" id="Empanadas">
+        <button class="recipes-item"
+        data-title="إمبانادا (Empanadas)"
+        data-img="/img/Empanadas.webp"
+        data-ingredients="دقيق |400| غ| ماء دافئ |200| مل |زيت |40 | مل | ملح |6 |غ |الحشوة لحم مفروم او دجاج |300| غ |بصل| 120| غ"
+        data-spices="ملح| 5 | غ |اختياري فلفل |2 | غ |كمون |3| غ"
+        data-sauces=""
+        data-steps="اعجن الدقيق + الماء + الزيت + الملح واتركه يرتاح. |اطبخ اللحم مع البصل والبهارات.|افرد العجينة، احشها، واغلقها نصف دائرة.|اقليها 3–5 دقائق أو اخبزها 20 دقيقة"
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+            <img src="/img/Empanadas.webp" alt="">
+            <span>إمبانادا (Empanadas)</span>
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+    </button>
+    </div>
+        <div class="foods-card" data-region="main-foods" id="Patacones">
+        <button class="recipes-item"
+        data-title="باتاكونيس (Patacones)"
+        data-img="/img/Patacones.jpeg"
+        data-ingredients="موز بلانتين أخضر| 3| حبات |زيت للقلي |300| مل"
+        data-spices="ملح |5 |غ"
+        data-sauces=""
+        data-steps="قطّع الموز شرائح سميكة واقله 3 دقائق حتى يلين. |أخرجه واضغط كل قطعة لتصبح مسطّحة.|أعد قليها مرة ثانية 2–3 دقائق حتى تذهب وتقرمش.|رش ملح وقدّمها ساخنة"
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+            <img src="/img/Patacones.jpeg" alt="">
+            <span>باتاكونيس (Patacones)</span>
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+    </button>
+    </div>
+        <div class="foods-card" data-region="main-foods" id="Ajiaco">
+        <button class="recipes-item"
+        data-title="أجيـاكو (Ajiaco)"
+        data-img="/img/Ajiaco.webp"
+        data-ingredients="دجاج مقطع |500| غ | بطاطس مكعبات |500| غ |ذرة مقطع | 2| حبة |بصل مفروم |120| غ | ثوم |10| غ |كزبرة خضراء|30| غ |ماء او مرق دجاج |1.2 | لتر |اختياري كريمة طبخ |100| مل"
+        data-spices="ملح | 6 | غ | فلفل اسود | 3 | غ |كمون |2| غ "
+        data-sauces=""
+        data-steps="اغلي الدجاج مع الماء والبصل والثوم والبهارات.|أضف البطاطس والذرة واتركها تطبخ 40–50 دقيقة حتى تطرى ويثخن المرق.|أضف الكزبرة في النهاية، ويمكن إضافة الكريمة لإعطاء قوام أغنى.|تُقدَّم ساخنة، وغالبًا تؤكل مع أفوكادو أو رز على الجنب"
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+            <img src="/img/Ajiaco.webp" alt="">
+            <span>أجيـاكو (Ajiaco)</span>
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+    </button>
+    </div>
+        <div class="foods-card" data-region="main-foods" id="Feijoada">
+        <button class="recipes-item"
+        data-title="فيجوادا (Feijoada)"
+        data-img="/img/Feijoada.jpg"
+        data-ingredients="لحم او دجاج بقري |400| غ |فاصوليا سوداء منقوعة أو معلبة |400 | غ |بصل مفروم |150| غ |ثوم| 10 | غ |زيت |30| مل | ماء او مرق | 1 | لتر "
+        data-spices="ملح | 6 | غ | فلفل اسود |3 | غ | كمون |2 | غ | ورق غار | 2 | ورقة"
+        data-sauces=""
+        data-steps="شوّح البصل والثوم بالزيت، أضف اللحم وقلّبه حتى يتحمّر.|أضف الفاصوليا + الماء + البهارات وورق الغار.| اتركه يطبخ على نار هادئة 60–90 دقيقة حتى يطرى اللحم ويثخن المرق.| يُقدّم عادةً مع أرز أبيض وشرائح برتقال على الجنب"
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+            <img src="/img/Feijoada.jpg" alt="">
+            <span>فيجوادا (Feijoada)</span>
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+    </button>
+    </div>
+        <div class="foods-card" data-region="main-foods" id="Churrasco">
+        <button class="recipes-item"
+        data-title="تشوراسكو (Churrasco)"
+        data-img="/img/Churrasco.jpg"
+        data-ingredients="لحم ستيك بقري|600| غ|زيت زيتون|20| مل "
+        data-spices="ملح خشن |8| غ |فلفل اسود |3| غ"
+        data-sauces=""
+        data-steps="ادهن اللحم بالزيت ورش الملح والفلفل.|اشوِه 4–6 دقائق لكل جهة.|اتركه دقيقة ثم قطّعه وقدّم"
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+            <img src="/img/Churrasco.jpg" alt="">
+            <span>تشوراسكو (Churrasco)</span>
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+    </button>
+    </div>
+        <div class="foods-card" data-region="snak" id="Pão de Queijo">
+        <button class="recipes-item"
+        data-title="باو دي كيجو (Pão de Queijo)"
+        data-img="/img/Pão de Queijo.jpg"
+        data-ingredients="دقيق تابيوكا |250| غ|حليب |200| مل |زيت |50| مل |بيض |2| حبة |جبن مبشور (موزاريلا او بارميزان)|150| غ"
+        data-spices="ملح |5| غ"
+        data-sauces=""
+        data-steps="سخّن الحليب مع الزيت والملح حتى يدفأ.|أضف دقيق التابيوكا وامزج، ثم أضف البيض والجبن.|شكّل كرات صغيرة.|اخبز على 180° لمدة 20–25 دقيقة حتى تنتفخ وتذهب"
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+            <img src="/img/Pão de Queijo.jpg" alt="">
+            <span>باو دي كيجو (Pão de Queijo)</span>
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+    </button>
+    </div>
+        <div class="foods-card" data-region="main-foods" id="Moqueca">
+        <button class="recipes-item"
+        data-title="موكيكا (Moqueca)"
+        data-img="/img/Moqueca.jpeg"
+        data-ingredients="سمك ابيض فيليه |500| غ |بصل شرائح |150| غ |فلفل رومي شرائح |150| غ |طماطم شرائح |200| غ |ثوم| 10| غ|حليب جوز الهند |400| مل |زيت |30| مل"
+        data-spices="ملح |6| غ |فلفل اسود |3 | غ | كمون | 2 | غ |عصير الليمون|20| مل "
+        data-sauces=""
+        data-steps="تبّل السمك بالملح والفلفل والليمون واتركه 10 دقائق.|في قدر: ضع طبقات بصل + فلفل + طماطم + ثوم.|أضف السمك ثم اسكب حليب جوز الهند والزيت.|اطبخ على نار هادئة 20–25 دقيقة حتى يستوي السمك ويثخن المرق.|يُقدّم مع أرز أبيض"
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+            <img src="/img/Moqueca.jpeg" alt="">
+            <span>موكيكا (Moqueca)</span>
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+    </button>
+    </div>
+        <div class="foods-card" data-region="main-foods" id="Acarajé">
+        <button class="recipes-item"
+        data-title="أكاريجي (Acarajé)"
+        data-img="/img/Acarajé.jpg"
+        data-ingredients="فاصوليا عين سوداء منقوعة ومقشّرة:|300| غ |بصل |120| غ |زيت |400| مل |حشوه روبيان مطبوخ |150| غ"
+        data-spices="ملح |6| غ |اختياري فلفل حار مطحون |3|غ"
+        data-sauces=""
+        data-steps="اطحن الفاصوليا مع البصل والملح حتى يصير خليط ناعم.|شكّل كرات صغيرة واقلِها في الزيت حتى تذهب وتنتفخ.|افتحها من النص واحشها بالروبيان والطماطم.|"
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+            <img src="/img/Acarajé.jpg" alt="">
+            <span>أكاريجي (Acarajé)</span>
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+    </button>
+    </div>
+        <div class="foods-card" data-region="main-foods" id="Ceviche">
+        <button class="recipes-item"
+        data-title="سيفيتشي (Ceviche)"
+        data-img="/img/Ceviche.avif"
+        data-ingredients="سمك أبيض طازج مكعبات|400| غ |بصل أحمر شرائح رفيعة|120| غ|عصير ليمون|120|مل |اختياري فلفل حار مفروم|5|غ|كزبرة خضراء مفرومة|20| غ"
+        data-spices="ملح|5 |غ | فلفل اسود |2| غ"
+        data-sauces=""
+        data-steps="ضع السمك في وعاء وأضف عصير الليمون واتركه 10–15 دقيقة حتى “ينطبخ” بالليمون.|أضف البصل + الكزبرة + الفلفل الحار.|تبّل بالملح والفلفل وقلّب برفق.|قدّمه باردًا، ويفضّل مع أفوكادو أو خبز"
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+            <img src="/img/Ceviche.avif" alt="">
+            <span>سيفيتشي (Ceviche)</span>
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+    </button>
+    </div>
+        <div class="foods-card" data-region="main-foods" id="Lomo Saltado">
+        <button class="recipes-item"
+        data-title="لومو سالتادو (Lomo Saltado)"
+        data-img="/img/Lomo Saltado.jpg"
+        data-ingredients="شرائح لحم بقري رفيعة|500|غ |بطاطس مقلية|300| غ |بصل احمر شرائح |150| غ |طماطم شرائح |200| غ |ثوم مفروم |10| غ|زيت للقلي |30| مل |"
+        data-spices="ملح | 5| غ |فلفل اسود |3| غ"
+        data-sauces="صويا صوص 30 مل |خل 20 مل"
+        data-steps="حمّر اللحم بالزيت على نار عالية حتى يتلوّن.|أضف الثوم ثم البصل والطماطم وقلّب سريعًا.|أضف الصويا صوص + الخل + الملح والفلفل.|أضف البطاطس المقلية وقلّب دقيقة.|قدّمه ساخنًا مع الأرز"
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+            <img src="/img/Lomo Saltado.jpg" alt="">
+            <span>لومو سالتادو (Lomo Saltado)</span>
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+    </button>
+    </div>
+        <div class="foods-card" data-region="main-foods" id="Ají de Gallina">
+        <button class="recipes-item"
+        data-title="أجي دي غايينا (Ají de Gallina)"
+        data-img="/img/Ají de Gallina.jpg"
+        data-ingredients="صدر دجاج مسلوق |400| غ |بصل مفروم | 120| غ|ثوم |10| غ| خبز ابيض منقوع بلحليب |80| غ |جبن مبضور |60| غ |زيت| 30| غ"
+        data-spices="ملح |5| غ | فلفل اسود |2| غ "
+        data-sauces="حليب 150 مل | فلفل أصفر مطحون (أجي): 5 غ أو بابريكا بديل"
+        data-steps="تقطّعه بيدك لقطع صغيرة وطويلة شوي، مو مكعبات ولا مفروم.|شوّح البصل والثوم بالزيت، أضف الفلفل الأصفر.|أضف الدجاج  + الخبز بالحليب وحرّك. |أضف الحليب والجبن واتركه يطبخ 10 دقائق حتى يصير الصوص كريمي.|تبّل بالملح والفلفل.|يُقدَّم مع أرز أبيض وبطاطس مسلوقة"
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+            <img src="/img/Ají de Gallina.jpg" alt="">
+            <span>أجي دي غايينا (Ají de Gallina)</span>
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+    </button>
+    </div>
+        <div class="foods-card" data-region="main-foods" id="Anticuchos">
+        <button class="recipes-item"
+        data-title="أنتيكوتشوس (Anticuchos)"
+        data-img="/img/Anticuchos.jpg"
+        data-ingredients="لحم بقري مكعبات (أو دجاج بديل)||500| غ |ثوم مفروم| 10| غ |زيت |30| مل | خل | 30| مل "
+        data-spices="كمون |4| غ |بابريكا |6 | غ |ملح | 6 | غ| فلفل اسود |3| غ |اختياري شطة |3 | غ"
+        data-sauces=""
+        data-steps="اخلط اللحم مع الثوم + الزيت + الخل + البهارات واتركه يتتبّل 1–2 ساعة.|ركّب اللحم في أسياخ.|اشوِه على نار متوسطة 3–4 دقائق لكل جهة حتى يتحمّر.|يُقدَّم عادةً مع بطاطس أو ذرة"
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+            <img src="/img/Anticuchos.jpg" alt="">
+            <span>أنتيكوتشوس (Anticuchos)</span>
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+    </button>
+    </div>
+        <div class="foods-card" data-region="main-foods" id="Papa a la Huancaína">
+        <button class="recipes-item"
+        data-title="باتاتا لا هوانكاينا (Papa a la Huancaína)"
+        data-img="/img/Papa a la Huancaína.jpg"
+        data-ingredients="بطاطس مسلوقة شرائح |600| غ|بيض مسلوق | 2| حبة |"
+        data-spices="ملح |3 | غ | فلفل اسود | 2 | غ "
+        data-sauces="جبن أبيض أو فيتا 200 غ |حليب 200 مل |بسكوت مالح او خبز 60 غ |فلفل أصفر مطحون (أجي) أو بابريكا 5  غ |زيت نباتي 30 مل "
+        data-steps="اخلط الجبن + الحليب + البسكويت + الزيت + الفلفل الأصفر حتى يصير صوص ناعم وكريمي.|رصّ شرائح البطاطس في طبق.|اسكب الصوص فوقها.|زيّن بالبيض المسلوق والزيتون وقدّم باردًا"
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+            <img src="/img/Papa a la Huancaína.jpg" alt="">
+            <span>باتاتا لا هوانكاينا (Papa a la Huancaína)</span>
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+    </button>
+    </div>
+        <div class="foods-card" data-region="main-foods" id="Chicharrón">
+        <button class="recipes-item"
+        data-title="تشيتشارون (Chicharrón)"
+        data-img="/img/Chicharrón.jpeg"
+        data-ingredients="لحم بقري أو دجاج مكعبات|600| غ |ماء |300|مل |زيت للقلي |200| مل |ثوم مفروم |10|غ "
+        data-spices="ملح |6| غ |فلفل اسود |3| غ |كمون |3|غ "
+        data-sauces=""
+        data-steps="ضع اللحم مع الماء والثوم والبهارات واطبخه على نار متوسطة حتى يتبخر الماء ويطرى اللحم.|أضف الزيت وقلِّ اللحم حتى يصبح ذهبيًا ومقرمشًا.|قدّمه ساخنًا مع ليمون أو خبز أو بطاطس"
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+            <img src="/img/Chicharrón.jpeg" alt="">
+            <span>تشيتشارون (Chicharrón)</span>
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+    </button>
+    </div>
+        <div class="foods-card" data-region="main-foods" id="Tacos">
+        <button class="recipes-item"
+        data-title="تاكو (Tacos)"
+        data-img="/img/Tacos.jpg"
+        data-ingredients="خبز تاكوس صغير (تورتيلا)|10|حبات |لحم مفروم أو دجاج|400| غ|بصل مفروم |120| غ| طماطم مفروم |150| غ |خس مفروم |100| غ |جبن مبشور |100| غ |زيت |20| مل "
+        data-spices="|ملح |5| غ|فلفل اسود |2|غ |كمون |3| غ |بابريكا |3| غ"
+        data-sauces=""
+        data-steps="شوّح البصل بالزيت، أضف اللحم أو الدجاج مع البهارات حتى يستوي.|سخّن خبز التورتيلا قليلًا.|ضع الحشوة داخل الخبز.|أضف الطماطم + الخس + الجبن + الصوص.|يُقدَّم مباشرة وهو ساخن + مع صوصات من اختيارك مثل صوص حار صوص طماطم"
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+            <img src="/img/Tacos.jpg" alt="">
+            <span>تاكو (Tacos)</span>
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+    </button>
+    </div>
+        <div class="foods-card" data-region="main-foods" id="Burrito">
+        <button class="recipes-item"
+        data-title="بوريتو (Burrito)"
+        data-img="/img/Burrito.jpg"
+        data-ingredients="خبز تورتيلا كبير|4| حبات |لحم مفروم او دجاج|400| غ |رز مطبوخ |250| غ |فاصوليا حمراء أو سوداء مطبوخة| 200| غ| جبن مبشور |150| غ |بصل مفروم | 120| غ |زيت |20 | مل "
+        data-spices="ملح |5 | غ | فلفل اسود | 2 | غ | كمون |3 | غ | بابريكا | 3 | غ "
+        data-sauces=""
+        data-steps="شوّح البصل بالزيت، أضف اللحم والبهارات حتى يستوي.|سخّن التورتيلا قليلًا.|ضع في الوسط: أرز + فاصوليا + لحم + جبن + صوص.|لفّ التورتيلا على شكل رول محكم.|يمكن تحميره دقيقة في المقلاة ثم تقديمه"
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+            <img src="/img/Burrito.jpg" alt="">
+            <span>بوريتو (Burrito)</span>
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+    </button>
+    </div>
+        <div class="foods-card" data-region="main-foods" id="Enchiladas">
+        <button class="recipes-item"
+        data-title="إنشيلادا (Enchiladas)"
+        data-img="/img/Enchiladas.jpg"
+        data-ingredients="خبز تورتيلا|6| حبات |جاج مفتّت أو لحم مفروم|400| غ|جبن مبشور|200| غ |بصل مفروم|120| غ|زيت |20| مل "
+        data-spices="ملح |5 | غ |فلفل اسود |2 | غ |كمون |3| غ |بابريكا |3 | غ"
+        data-sauces="صوص طمطم 400غ |ثوم 10 غ"
+        data-steps="شوّح البصل بالزيت، أضف الدجاج أو اللحم مع البهارات حتى يستوي.|اخلط صلصة الطماطم مع الثوم واتركها تغلي 5–10 دقائق.|احشِ التورتيلا باللحم ولفّها، ثم رصّها في صينية.|اسكب الصوص فوقها وأضف الجبن.|اخبز على 180° لمدة 15–20 دقيقة حتى يذوب الجبن"
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+            <img src="/img/Enchiladas.jpg" alt="">
+            <span>إنشيلادا (Enchiladas)</span>
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+    </button>
+    </div>
+        <div class="foods-card" data-region="snak" id="Quesadilla">
+        <button class="recipes-item"
+        data-title="كيساديا (Quesadilla)"
+        data-img="/img/Quesadilla.jpg"
+        data-ingredients="خبز تورتيلا| 4| حبات |جبن مبشور (موزاريلا أو شيدر)| 200| غ |دجاج مطبوخ ومقطع أو لحم|250| غ |بصل شرائح |80|غ|زيت |20| مل "
+        data-spices="ملح |4|غ| فلفل اسود |2 |غ| اختياري بابريكا |3| غ"
+        data-sauces=""
+        data-steps="شوّح البصل مع الدجاج بالزيت والبهارات حتى يسخن.|ضع تورتيلا في مقلاة، أضف جبن + الحشوة + جبن، ثم غطِّها بتورتيلا ثانية.|اطبخ 2–3 دقائق لكل جهة حتى يذوب الجبن ويتحمّر الخبز.|قطّعها مثلثات وقدّمها مع صوص أو سلطة"
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+            <img src="/img/Quesadilla.jpg" alt="">
+            <span>كيساديا (Quesadilla)</span>
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+    </button>
+    </div>
+        <div class="foods-card" data-region="snak" id="Guacamole">
+        <button class="recipes-item"
+        data-title="غواكامولي (Guacamole)"
+        data-img="/img/Guacamole.jpg"
+        data-ingredients="افاكادو |2 | حبة|طماطم مفروم |120| غ |بطل مفروم وناعم |60| غ|عصير ليمون |30| مل |كزبرة خضراء مفرومة |15| غ "
+        data-spices="ملح |4| غ | فلفل اسود |2| غ |فلفل حار مطحون (اختياري) |3| غ"
+        data-sauces=""
+        data-steps="اهرس الأفوكادو بالشوكة حتى يصير ناعم أو خشن حسب الرغبة.|أضف الطماطم + البصل + الكزبرة + الليمون.|تبّل بالملح والفلفل وقلّب برفق.|يُقدَّم فورًا مع رقائق التورتيلا أو مع التاكو او مع الشبسات"
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+            <img src="/img/Guacamole.jpg" alt="">
+            <span>غواكامولي (Guacamole)</span>
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+    </button>
+    </div>
+        <div class="foods-card" data-region="main-foods" id="Burger">
+        <button class="recipes-item"
+        data-title="برغر (Burger)"
+        data-img="/img/Burger.jpg"
+        data-ingredients="لحم بقري مفروم|200| غ |جبن شيدر |1 | حبة |خس| 30| غ |طماطم شرائح |50| غ |بصل شرائح |40| غ |زيا او زبدة |5| غ"
+        data-spices="ملح |3| غ | فلفل اسود | 1| غ"
+        data-sauces="كاتشب 15 غ |مايونيز 15 غ |اختياري  خردل 10 غ | "
+        data-steps="شكّل اللحم قطعة واحدة وتبّلها بالملح والفلفل.|اشوِها 3–4 دقائق لكل جهة، وضع الجبن آخر دقيقة.|حمّر خبز البرغر قليلًا.|ادهن الخبز بالكاتشب والمايونيز.|ركّب: خبز ← صوص ← لحم بالجبن ← خس ← طماطم ← بصل"
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+            <img src="/img/Burger.jpg" alt="">
+            <span>برغر (Burger)</span>
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+    </button>
+    </div>
+        <div class="foods-card" data-region="main-foods" id="Pizza">
+        <button class="recipes-item"
+        data-title="بيتزا (Pizza)"
+        data-img="/img/Pizza.jpg"
+        data-ingredients="دقيق |300| غ| ماء دافئ |180| مل |خميرة فورية |5| غ |زيت |15| مل | صلصة طماطم|150| غ|جبن موزاريلا |200| غ |بيبروني أو دجاج|120| غ"
+        data-spices="أوريغانو| 3| غ |فلفل اسود |1| غ"
+        data-sauces=""
+        data-steps="اعجن الدقيق + الماء + الخميرة + الزيت + الملح، واتركها تختمر ساعة.|افرد العجينة في صينية مدهونة.|أضف الصلصة ثم الجبن ثم الحشوة.|رش الأوريغانو والفلفل.|اخبز على 220° لمدة 12–15 دقيقة حتى تذهب الحواف ويذوب الجبن"
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+            <img src="/img/Pizza.jpg" alt="">
+            <span>بيتزا (Pizza)</span>
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+    </button>
+    </div>
+        <div class="foods-card" data-region="main-foods" id="Steak">
+        <button class="recipes-item"
+        data-title="ستيك (Steak)"
+        data-img="/img/Steak.jpg"
+        data-ingredients="شريحة لحم بقري ستيك|250| غ |زبدة أو زيت|15| غ |قص ثوم|1| حبة غ| روزماري |1| غصن  "
+        data-spices="ملح خشن |4| غ |فلفل اسود |2|غ "
+        data-sauces=""
+        data-steps="اترك الستيك خارج الثلاجة 20 دقيقة.|تبّله بالملح والفلفل.|سخّن مقلاة جدًا وأضف الزيت. |اطبخه من 2–3 دقائق لكل جهة = (Medium Rare) |اطبخه من 4–5 دقائق لكل جهة(Medium) |آخر دقيقة أضف الزبدة + الثوم + الروزماري واسكبها فوقه |اتركه يرتاح 3 دقائق ثم قدّم"
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+            <img src="/img/Steak.jpg" alt="">
+            <span>ستيك (Steak)</span>
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+    </button>
+    </div>
+        <div class="foods-card" data-region="main-foods" id="Hot Dog">
+        <button class="recipes-item"
+        data-title="هوت دوغ (Hot Dog)"
+        data-img="/img/Hot Dog.jpg"
+        data-ingredients="خبز هوت دوغ |1| حبة |نقانق |120| غ|(اختياري بطل شرائح |30|غ )"
+        data-spices="|"
+        data-sauces="كاتشب 15 غ |خردل 10 غ"
+        data-steps="اسلق أو اشوِ النقانق 3–5 دقائق حتى تسخن.|حمّر الخبز قليلًا.|ضع النقانق داخل الخبز.|أضف الصوص والبصل وقدّم ساخن"
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+            <img src="/img/Hot Dog.jpg" alt="">
+            <span>هوت دوغ (Hot Dog)</span>
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+    </button>
+    </div>
+        <div class="foods-card" data-region="main-foods" id="MacCheese">
+        <button class="recipes-item"
+        data-title="ماك أند تشيز (Mac & Cheese)"
+        data-img="/img/Mac & Cheese.webp"
+        data-ingredients="مكرونة قصيرة|150| غ| حليب |250| مل |جبن شيدر مبشور |150| غ |زبدة |20| غ |دقيق |15| غ"
+        data-spices="ملح |3| غ | فلفل اسود | 1| غ "
+        data-sauces=""
+        data-steps="اسلق المكرونة حتى تنضج.|ذوّب الزبدة، أضف الدقيق ثم الحليب وحرّك حتى يثخن.|أضف الجبن وحرّك حتى يذوب.|أضف المكرونة والبهارات وقلّب جيدًا ثم قدّم ساخن"
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+            <img src="/img/Mac & Cheese.webp" alt="">
+            <span>ماك أند تشيز (Mac & Cheese)</span>
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+    </button>
+    </div>
+        <div class="foods-card" data-region="main-foods" id="Poutine">
+        <button class="recipes-item"
+        data-title="بوتين (Poutine)"
+        data-img="/img/Poutine.jpg"
+        data-ingredients="بطاطس مقلية |300| غ |جبن قطع صغيرة (شيدر أو موزاريلا)| 100| غ"
+        data-spices="ملح |3| غ|فلفل اسود|1| غ"
+        data-sauces="مرقة لحم او دجاج 250 مل |دقيق 15 غ| زبدة 15 غ |"
+        data-steps="حضّر البطاطس المقلية وضعها في طبق.|ذوّب الزبدة، أضف الدقيق ثم المرق وحرّك حتى يثخن الصوص.|أضف الملح والفلفل.|ضع الجبن فوق البطاطس، ثم اسكب الصوص الساخن ليذوب الجبن.|يُقدّم فورًا وهو ساخن"
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+            <img src="/img/Poutine.jpg" alt="">
+            <span>بوتين (Poutine)</span>
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+    </button>
+    </div>
+        <div class="foods-card" data-region="main-foods" id="Split Pea Soup">
+        <button class="recipes-item"
+        data-title="Split Pea Soup – شوربة البازلاء"
+        data-img="/img/Split Pea Soup.jpg"
+        data-ingredients="بازلاء صفراء مجففة |250| غ |بصل مفروم |120| غ|جزر مكعبات |120| غ |بطاطس مكعبات |150| غ|لحم بقري مكعبات أو دجاج (اختياري)|200|غ |ماء أو مرق|1.2| لتر |زيت |20| مل"
+        data-spices="ملح |6| غ |فلفل اسود |3| غ | كمون |2| غ "
+        data-sauces=""
+        data-steps="شوّح البصل بالزيت، ثم أضف اللحم وقلّبه حتى يتغير لونه.|أضف البازلاء + الجزر + البطاطس + الماء.|اتركها تطبخ على نار هادئة 45–60 دقيقة حتى تطرى البازلاء ويثخن القوام.|أضف الملح والفلفل والكمون وحرّك.|قدّمها ساخنة مع خبز"
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+            <img src="/img/Split Pea Soup.jpg" alt="">
+            <span>Split Pea Soup – شوربة البازلاء</span>
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+    </button>
+    </div>
+        <div class="foods-card" data-region="main-foods" id="Salmon">
+        <button class="recipes-item"
+        data-title="سمك السلمون (Salmon)"
+        data-img="/img/Salmon.jpg"
+        data-ingredients="فيليه سلمون |250| غ |زيت زيتون |10| مل |عصير ليمون |15| غ| ثوم مفروم |5 | غ "
+        data-spices="ملح |3| غ | فلفل اسود | 2| غ |اختياري بابريكا |2| غ "
+        data-sauces=""
+        data-steps="تبّل السلمون بالملح والفلفل والبابريكا والليمون.|سخّن الزيت في مقلاة، وضع السلمون (الجلد للأسفل).|اطبخه 4–5 دقائق لكل جهة حتى يستوي.|آخر دقيقة أضف الثوم وقلّب الزيت فوق السلمون.|قدّمه ساخن مع ليمون أو رز"
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+            <img src="/img/Salmon.jpg" alt="">
+            <span>سمك السلمون (Salmon)</span>
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+    </button>
+    </div>
+        <div class="foods-card" data-region="main-foods" id="Tourtière">
+        <button class="recipes-item"
+        data-title="تورتيير (Tourtière)"
+        data-img="/img/Tourtière.jpg"
+        data-ingredients="دقيق |250| غ |زبدة |150| غ |ماء بارد |120| مل |ملح |5 | غ |لحم مفروم (بقري أو دجاج)|500| غ |بصل مفروم |150| غ |بطاطس مهروسة|200| غ |ثوم | 10| غ |زيت |20|مل "
+        data-spices="ملح |6| غ |فلفل اسود |3| غ |قرفة | 2|غ |جوزة الطيب |1|غ"
+        data-sauces=""
+        data-steps="اعجن الدقيق + الزبدة + الماء + الملح واتركه يرتاح 20 دقيقة.|شوّح البصل والثوم بالزيت، أضف اللحم والبهارات حتى يستوي.|أضف البطاطس المهروسة وامزج الحشوة.|افرد نصف العجينة في الصينية، ضع الحشوة، ثم غطِّها بالنصف الثاني.|اخبز على 180° لمدة 35–40 دقيقة حتى تذهب وتتحمّر"
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+            <img src="/img/Tourtière.jpg" alt="">
+            <span>تورتيير (Tourtière)</span>
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+    </button>
+    </div>
+        <div class="foods-card" data-region="main-foods">
+        <button class="recipes-item"
+        data-title=""
+        data-img=""
+        data-ingredients=""
+        data-spices="|"
+        data-sauces=""
+        data-steps=""
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+            <img src="" alt="">
+            <span></span>
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+    </button>
+    </div>
+        <div class="foods-card" data-region="main-foods">
+        <button class="recipes-item"
+        data-title=""
+        data-img=""
+        data-ingredients=""
+        data-spices="|"
+        data-sauces=""
+        data-steps=""
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+            <img src="" alt="">
+            <span></span>
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+    </button>
+    </div>
+        <div class="foods-card" data-region="main-foods">
+        <button class="recipes-item"
+        data-title=""
+        data-img=""
+        data-ingredients=""
+        data-spices="|"
+        data-sauces=""
+        data-steps=""
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+            <img src="" alt="">
+            <span></span>
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+    </button>
+    </div>
+        <div class="foods-card" data-region="main-foods">
+        <button class="recipes-item"
+        data-title=""
+        data-img=""
+        data-ingredients=""
+        data-spices="|"
+        data-sauces=""
+        data-steps=""
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+            <img src="" alt="">
+            <span></span>
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+    </button>
+    </div>
+        <div class="foods-card" data-region="main-foods">
+        <button class="recipes-item"
+        data-title=""
+        data-img=""
+        data-ingredients=""
+        data-spices="|"
+        data-sauces=""
+        data-steps=""
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+            <img src="" alt="">
+            <span></span>
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+    </button>
+    </div>
+
+
+    
+  </div>
+
+  <!-- Modal -->
+  <div id="recipeModal" class="modal" onclick="closeModal(event)">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal()">×</button>
+
+      <div class="modal-top">
+        <img id="modalImg" src="" alt="">
+        <h2 id="modalTitle"></h2>
+      </div>
+
+      <div class="modal-body">
+        <!-- خيار الكميه-->
+         <div class="servings-box">
+            <span>الكمية:</span>
+            <button type="button" class="serv-btn active" data-multiplier="1">فرد</button>
+            <button type="button" class="serv-btn" data-multiplier="4">عائلة</button>
+         </div>
+        <h4>المقادير</h4>
+        <div id="modalIngredients" class="ingredients-tags"></div>
+        <h4>البهارات</h4>
+        <div id="modalSpices" class="ingredients-tags"></div>
+        <h4 id="saucesTitle">الصوصات</h4>
+        <div id="modalSauces" class="ingredients-tags"></div>
+        <h4>الطريقة</h4>
+        <ol id="modalSteps" class="steps-list"></ol>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

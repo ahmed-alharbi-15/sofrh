@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سفرة</title>
+
+    <!-- ملف الستايل الأساسي -->
+    <link rel="stylesheet" href="/countries/countries.css">
+    
+    <!-- خط عربي -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@500;600&display=swap');
+
+    </style>
+    <script src="countries.js" defer></script>
+
+</head>
+
+
+<body>
+
+    <!--  NAVBAR (ثابت في كل صفحة) -->
+    <header class="navbar"> 
+        
+        <div class="hamburger" id="menu-btn">☰</div>
+
+
+        <div class="auth-buttons">
+            <a href="/auth/login.html" class="login">تسجيل دخول</a>
+            <a href="signup.html" class="signup">إنشاء حساب</a>
+        </div>
+        
+        <ul class="nav-list">
+            <li><a href="/index/index.html">الرئيسية</a></li>
+            <li><a href="/countries/countries.html">الدول</a></li>
+            <li><a href="/events/events.html">الفعاليات</a></li>
+            <li><a href="/recipes/recipes.html">الوصفات</a></li>
+        </ul>
+
+        <div class="logo">
+           <a href="/index/index.html"><img src="/img/new logo sofrh.jpg" alt="سفرة" ></a> 
+
+        </div>
+
+
+    </header>
+
+
+    <!--  MENU للجوال -->
+    <nav class="side-menu" id="side-menu">
+        <span class="close-btn" id="close-btn">✖</span>
+
+        <ul>
+            <li><a href="/index/index.html">الرئيسية</a></li>
+            <li><a href="/countries/countries.html">الدول</a></li>
+            <li><a href="/events/events.html">الفعاليات</a></li>
+            <li><a href="/recipes/recipes.html  ">الوصفات</a></li>
+        </ul>
+    </nav>
+
+
+    <Section class="countries-title">
+        <!--مقدمة قسم الدول -->
+        <h1>سافر حول العالم من مكانك… تعرّف على ثقافات مختلفة<br> مدن جميلة، وتاريخ كل بلد في لمحة واحدة.</h1>
+        <!-- زر البخث-->
+        <input type="text" id="searchInput" placeholder="ابحث عن دولة ...." class="search-box">
+        <!--فلتر الدول -->
+        <div class="filter-buttons">
+            <button data-filter="all" class="active">الكل</button>
+            <button data-filter="asia">اسيا</button>
+            <button data-filter="europe">اوروبا</button>
+            <button data-filter="africa">افريقيا</button>
+            <button data-filter="south-america">امريكا الجنوبية</button>
+            <button data-filter="north-america">امريكا الشمالية</button>
+        </div>
+
+        <div class="countries-grid">
+            <!--قارة اسيا-->
+            <div class="country-card" data-region="asia">
+                <img src="/img/Riyadh_Skyline.jpg" alt="">
+                <h1 >السعودية</h1>
+                <h2>رحلة تجمع بين التراث والحداثة<br>  في قلب الجزيرة العربية</h2>
+                <a href="country/saudi.html" class="Section-btn" >استكشاف</a>
+            </div>
+            <div class="country-card" data-region="asia">
+                <img src="/img/japan-logo.jpg" alt="">
+                <h1>اليابان</h1>
+                <h2>تنوع مذهل بين طبيعة هادئة <br>ومدن تنبض بالحياة والتطور.</h2>
+                <a href="/countries/country/japan.html" class="Section-btn"id="japan-card">استكشاف</a>
+            </div>
+            <div class="country-card" data-region="asia">
+                <img src="/img/Indonesia_logo.png" alt="">
+                <h1>اندونيسيا</h1>
+                <h2> روح الطبيعة غابات مطيرة<br> براكين نشطة، وشعوب بتراث فريد.</h2>
+                <a href="/countries/country/Indonesia.html" class="Section-btn">استكشاف</a>
+            </div>
+            <!-- قارة افريقيا-->
+            <div class="country-card" data-region="africa">
+                <img src="/img/egypt-logo.jpeg" alt="">
+                <h1>مصر</h1>
+                <h2>أهرامات، نيل، وشعب يحب الحياة<br> تجربة تجمع التاريخ والضيافة في مكان واحد.</h2>
+                <a href="/countries/country/egypt.html" class="Section-btn">استكشاف</a>
+            </div>
+            <div class="country-card" data-region="africa">
+                <img src="/img/south- africa.jpg" alt="">
+                <h1>جنوب افريقيا</h1>
+                <h2>طبيعة ساحرة، ثقافات متعددة، ومدن تجمع المغامرة والاسترخاء في كل زاوية.</h2>
+                <a href="/countries/country/south-africa.html" class="Section-btn">استكشاف</a>
+            </div>
+            <div class="country-card" data-region="africa">
+                <img src="/img/moroco-logo.jpg" alt="">
+                <h1>المغرب</h1>
+                <h2>طبيعة متنوعة، ثقافة غنية، ومدن نابضة تجمع التاريخ، المغامرة، ولمسة استرخاء.</h2>
+                <a href="/countries/country/moroco.html " class="Section-btn">استكشاف</a>
+            </div>
+            <!-- قارة اوروبا-->
+             <div class="country-card" data-region="europe">
+                <img src="/img/italy logo.webp" alt="">
+                <h1>ايطاليا</h1>
+                <h2>ثقافة، موسيقى، وطعام <br>يغير مفهوم الرحلات.</h2>
+                <a href="/countries/country/italy.html" class="Section-btn">استكشاف</a>
+             </div>
+               <div class="country-card"  data-region="europe">
+                <img src="/img/Switzerland logo.jpg" alt="">
+                <h1>سويسرا</h1>
+                <h2>طبيعة ساحرة تجمع بين <br>الجبال والبحيرات في مشهد واحد.</h2>
+                <a href="/countries/country/Switzerland.html" class="Section-btn">استكشاف</a>
+             </div>
+               <div class="country-card"  data-region="europe">
+                <img src="/img/icelanda.jpg" alt="">
+                <h1>ايسلندا</h1>
+                <h2>بلد الطبيعة الخلابة، تشتهر بالشلالات، البراكين، والأنهار الجليدية</h2>
+                <a href="/countries/country/iceland.html"class="Section-btn">استكشاف</a>
+             </div>
+             <!-- قارة امريكا الجنوبية-->
+              <div class="country-card" data-region="south-america">
+                <img src="/img/colomvi logo.jpg" alt="">
+                <h1>كولومبيا</h1>
+                <h2>قهوة تُشرب من المصدر…<br> وأجواء ما تنساها.</h2>
+                <a href="/countries/country/colombia.html" class="Section-btn">استكشاف</a>
+             </div>
+               <div class="country-card" data-region="south-america">
+                <img src="/img/brazil_logo_1_50.jpg" alt="">
+                <h1>البرازيل </h1>
+                <h2>غابات الأمازون… <br>أضخم أسرار الطبيعة على الكوكب.</h2>
+                <a href="/countries/country/brazil.html" class="Section-btn">استكشاف</a>
+             </div>
+               <div class="country-card" data-region="south-america">
+                <img src="/img/Peru log.jpeg" alt="">
+                <h1>بيرو</h1>
+                <h2>بلد الأساطير… تاريخ، روح، <br>وحكايات ما تخلص.</h2>
+                <a href="/countries/country/peru.html"class="Section-btn">استكشاف</a>
+             </div>
+             <!-- قارة امريكا الشمالية-->
+              <div class="country-card" data-region="north-america">
+                <img src="/img/mexico logo.jpg" alt="">
+                <h1>المكسيك</h1>
+                <h2>رحلة مليانة تفاصيل…<br> ما بين المحيط، المدن، والجبال.</h2>
+                <a href="/countries/country/mexico.html"class="Section-btn">استكشاف</a>
+             </div>
+               <div class="country-card" data-region="north-america">
+                <img src="/img/usa lgo.jpg" alt="">
+                <h1> الولايات المتحدة</h1>
+                <h2>ناطحات سحاب، شواطئ، جبال، وصحاري…  كل شيء في مكان واحد.</h2>
+                <a href="/countries/country/usa.html"class="Section-btn">استكشاف</a>
+             </div>
+               <div class="country-card" data-region="north-america">
+                <img src="/img/Canada logo.jpg" alt="">
+                <h1>كندا</h1>
+                <h2>مساحات خضراء لا تنتهي…<br> من جبال الروكي إلى شلالات نياجارا.</h2>
+                <a href="/countries/country/canada.html"class="Section-btn">استكشاف</a>
+             </div>
+             <div class="country-card" data-region="">
+                <img src="" alt="">
+                <h1>soon</h1>
+                <h2></h2>
+                <a href="" class="section-btn"></a>
+             </div>
+        </div>
+    </Section>
+
+</body>
+
+</html>
