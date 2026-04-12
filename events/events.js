@@ -119,3 +119,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const btn = card.querySelector(".event-item");
     if (btn) btn.click();
 });
+document.addEventListener("DOMContentLoaded", () => {
+    const params = new URLSearchParams(window.location.search);
+    const eventId = params.get("event");
+    if (!eventId) return;
+
+    const card = document.getElementById(eventId);
+    if (!card) return;
+
+    card.scrollIntoView({ behavior: "smooth", block: "center" });
+    const btn = card.querySelector(".event-item");
+    if (btn) btn.click();
+});
