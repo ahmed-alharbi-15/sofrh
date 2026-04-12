@@ -8,6 +8,7 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@500;600&display=swap');
     </style>
+    <script src="auth.js"></script>
 </head>
 <body>
     <div class="auth-page">
@@ -16,21 +17,21 @@
                 <img src="/img/logo3.JPG" alt="سفرة">
             </a>
             <h1>تسجيل الدخول</h1>
-            <p class="auth-sub">أهلاً بك مجدداً في سفرة 👋</p>
+            <p class="auth-sub">أهلاً بك مجدداً في سفرة </p>
 
-            <form class="auth-form">
+            <form class="auth-form" id="loginForm">
                 <div class="input-group">
                     <label>البريد الإلكتروني</label>
-                    <input type="email" placeholder="example@email.com">
+                    <input type="email" id="loginEmail" placeholder="example@email.com" required>
                 </div>
                 <div class="input-group">
                     <label>كلمة المرور</label>
-                    <input type="password" placeholder="••••••••">
+                    <input type="password" id="loginPassword" placeholder="••••••••" required>
                 </div>
                 <button type="submit" class="auth-btn">دخول</button>
             </form>
 
-            <p class="auth-switch">ما عندك حساب؟ <a href="/auth/signup.htm">إنشاء حساب</a></p>
+            <p class="auth-switch">ما عندك حساب؟ <a href="/auth/signup.html">إنشاء حساب</a></p>
         </div>
     </div>
 </body>
