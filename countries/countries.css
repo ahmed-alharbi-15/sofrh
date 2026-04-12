@@ -330,7 +330,7 @@ body {
 }
 
 .Section-btn{
-    padding: 12px 2px;
+    padding: 12px 50px;
     border-radius: 30px;
     background-color: var(--brown-dark);
     border: 2px solid var(--cream-light);
