@@ -1,5 +1,3 @@
-// --- جزئية الربط 2: إرسال البيانات للسيرفر (Fetch) ---
-
 // 1. وظيفة إنشاء الحساب
 const signupForm = document.getElementById('signupForm');
 if (signupForm) {
@@ -24,7 +22,7 @@ if (signupForm) {
                     avatar: ""
                 }));
                 alert(data.message);
-                window.location.href = "/index/index.html";
+                window.location.href = "http://localhost:3000/index/index.html";
             } else alert("خطأ: " + data.detail);
         } catch (err) { alert("السيرفر طافي!"); }
     });
@@ -52,13 +50,13 @@ if (loginForm) {
                     avatar: ""
                 }));
                 alert(data.message);
-                window.location.href = "/index/index.html";
+                window.location.href = "http://localhost:3000/index/index.html";
             } else alert("خطأ: " + data.detail);
         } catch (err) { alert("السيرفر طافي!"); }
     });
 }
 
-// 3. التحقق من الجلسة وإظهار/إخفاء الأزرار
+// 3. التحقق من الجلسة
 function checkAuth() {
     const user = JSON.parse(localStorage.getItem("safraUser"));
     const authButtons = document.getElementById("authButtons");
@@ -83,18 +81,18 @@ if (logoutBtn) {
     logoutBtn.addEventListener("click", (e) => {
         e.preventDefault();
         localStorage.removeItem("safraUser");
-        window.location.href = "/index/index.html";
+        window.location.href = "http://localhost:3000/index/index.html";
     });
 }
 
 checkAuth();
 
-// --- جزئية الحفظ (Save) ---
+// 5. حفظ في المفضلة
 function saveItem(type, id, name, img) {
     const user = JSON.parse(localStorage.getItem("safraUser"));
     if (!user) {
         alert("سجل دخولك أولاً!");
-        window.location.href = "/auth/login.html";
+        window.location.href = "http://localhost:3000/auth/login.html";
         return;
     }
 
@@ -112,45 +110,17 @@ function saveItem(type, id, name, img) {
     alert("✅ تمت الإضافة للمفضلة!");
 }
 
-
-// --- جزئية عرض التفاصيل (Modal) ---
-function checkAuth() {
-    const user = JSON.parse(localStorage.getItem("safraUser"));
-    const authButtons = document.getElementById("authButtons");
-    const userMenu = document.getElementById("userMenu");
-    const userName = document.getElementById("userName");
-    const userAvatar = document.getElementById("userAvatar");
-
-    if (user) {
-        if (authButtons) authButtons.style.display = "none";
-        if (userMenu) userMenu.style.display = "flex";
-        if (userName) userName.textContent = user.name;
-        if (userAvatar && user.avatar) userAvatar.src = user.avatar;
-    } else {
-        if (authButtons) authButtons.style.display = "flex";
-        if (userMenu) userMenu.style.display = "none";
-    }
-}
-
-
-// JS للقائمة الجانبية
+// 6. القائمة الجانبية
 const menuBtn = document.getElementById("menu-btn");
 const sideMenu = document.getElementById("side-menu");
 const closeBtn = document.getElementById("close-btn");
 
-// فتح القائمة
-menuBtn.addEventListener("click", () => {
-  sideMenu.style.right = "0px";
-});
-
-// زر الإغلاق
-closeBtn.addEventListener("click", () => {
-  sideMenu.style.right = "-260px";
-});
-
-// إغلاق عند الضغط خارجها
-document.addEventListener("click", (e) => {
-  if (!sideMenu.contains(e.target) && !menuBtn.contains(e.target)) {
-    sideMenu.style.right = "-260px";
-  }
-});
+if (menuBtn && sideMenu && closeBtn) {
+    menuBtn.addEventListener("click", () => { sideMenu.style.right = "0px"; });
+    closeBtn.addEventListener("click", () => { sideMenu.style.right = "-260px"; });
+    document.addEventListener("click", (e) => {
+        if (!sideMenu.contains(e.target) && !menuBtn.contains(e.target)) {
+            sideMenu.style.right = "-260px";
+        }
+    });
+}

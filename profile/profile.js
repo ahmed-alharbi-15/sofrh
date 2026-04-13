@@ -1,15 +1,17 @@
-// JS للقائمة الجانبية
+// القائمة الجانبية
 const menuBtn = document.getElementById("menu-btn");
 const sideMenu = document.getElementById("side-menu");
 const closeBtn = document.getElementById("close-btn");
 
-menuBtn.addEventListener("click", () => { sideMenu.style.right = "0px"; });
-closeBtn.addEventListener("click", () => { sideMenu.style.right = "-260px"; });
-document.addEventListener("click", (e) => {
-    if (!sideMenu.contains(e.target) && !menuBtn.contains(e.target)) {
-        sideMenu.style.right = "-260px";
-    }
-});
+if (menuBtn && sideMenu && closeBtn) {
+    menuBtn.addEventListener("click", () => { sideMenu.style.right = "0px"; });
+    closeBtn.addEventListener("click", () => { sideMenu.style.right = "-260px"; });
+    document.addEventListener("click", (e) => {
+        if (!sideMenu.contains(e.target) && !menuBtn.contains(e.target)) {
+            sideMenu.style.right = "-260px";
+        }
+    });
+}
 
 // التحقق من الجلسة
 function checkAuth() {
@@ -63,22 +65,25 @@ if (!currentUser) {
 }
 
 // تغيير الصورة
-document.getElementById("avatarInput").addEventListener("change", (e) => {
-    const file = e.target.files[0];
-    if (!file) return;
+const avatarInput = document.getElementById("avatarInput");
+if (avatarInput) {
+    avatarInput.addEventListener("change", (e) => {
+        const file = e.target.files[0];
+        if (!file) return;
 
-    const reader = new FileReader();
-    reader.onload = (event) => {
-        const imgSrc = event.target.result;
-        document.getElementById("profileAvatar").src = imgSrc;
-        const user = JSON.parse(localStorage.getItem("safraUser"));
-        user.avatar = imgSrc;
-        localStorage.setItem("safraUser", JSON.stringify(user));
-        const userAvatar = document.getElementById("userAvatar");
-        if (userAvatar) userAvatar.src = imgSrc;
-    };
-    reader.readAsDataURL(file);
-});
+        const reader = new FileReader();
+        reader.onload = (event) => {
+            const imgSrc = event.target.result;
+            document.getElementById("profileAvatar").src = imgSrc;
+            const user = JSON.parse(localStorage.getItem("safraUser"));
+            user.avatar = imgSrc;
+            localStorage.setItem("safraUser", JSON.stringify(user));
+            const userAvatar = document.getElementById("userAvatar");
+            if (userAvatar) userAvatar.src = imgSrc;
+        };
+        reader.readAsDataURL(file);
+    });
+}
 
 // التنقل بين الأقسام
 document.querySelectorAll(".profile-nav a, .profile-mobile-nav a").forEach(link => {
@@ -141,29 +146,6 @@ function removeItem(type, id) {
     renderFavorites();
 }
 
-// دالة الحفظ في المفضلة
-function saveItem(type, id, name, img) {
-    const user = JSON.parse(localStorage.getItem("safraUser"));
-    if (!user) {
-        alert("سجل دخولك أولاً!");
-        window.location.href = "/auth/login.html";
-        return;
-    }
-
-    const saved = JSON.parse(localStorage.getItem("safraFavorites") || "{}");
-    if (!saved[type]) saved[type] = [];
-
-    const exists = saved[type].find(item => item.id === id);
-    if (exists) {
-        alert("موجود بالفعل في المفضلة!");
-        return;
-    }
-
-    saved[type].push({ id, name, img });
-    localStorage.setItem("safraFavorites", JSON.stringify(saved));
-    alert("✅ تمت الإضافة للمفضلة!");
-}
-
 // حفظ المعلومات الشخصية
 const settingsForm = document.getElementById("settingsForm");
 if (settingsForm) {
@@ -201,6 +183,7 @@ if (changePasswordBtn) {
         const currentPassword = document.getElementById("currentPassword").value;
         const newPassword = document.getElementById("newPassword").value;
         const confirmPassword = document.getElementById("confirmPassword").value;
+        const user = JSON.parse(localStorage.getItem("safraUser"));
 
         if (newPassword !== confirmPassword) {
             alert("كلمة المرور الجديدة مو متطابقة!");
@@ -211,7 +194,7 @@ if (changePasswordBtn) {
             const response = await fetch("http://127.0.0.1:8001/change-password", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ currentPassword, newPassword })
+                body: JSON.stringify({ currentPassword, newPassword, email: user.email })
             });
             const data = await response.json();
             if (response.ok) {
