@@ -26,10 +26,19 @@
         
         <div class="hamburger" id="menu-btn">☰</div>
 
-        <div class="auth-buttons">
-            <a href="login.html" class="login">تسجيل دخول</a>
-            <a href="signup.html" class="signup">إنشاء حساب</a>
-        </div>
+        <div class="auth-buttons" id="authButtons">
+    <a href="/auth/login.html" class="login">تسجيل دخول</a>
+    <a href="/auth/signup.html" class="signup">إنشاء حساب</a>
+</div>
+
+<div class="user-menu" id="userMenu">
+    <img id="userAvatar" src="/img/default-avatar.png" alt="المستخدم">
+    <span class="user-name" id="userName"></span>
+    <div class="user-dropdown">
+        <a href="#">الملف الشخصي</a>
+        <a href="#" id="logoutBtn">تسجيل الخروج</a>
+    </div>
+</div>
 
         <ul class="nav-list">
             <li><a href="/index/index.html">الرئيسية</a></li>
@@ -81,6 +90,7 @@
                 <h1 >السعودية</h1>
                 <h2>رحلة تجمع بين التراث والحداثة<br>  في قلب الجزيرة العربية</h2>
                 <a href="country/saudi.html" class="Section-btn" >استكشف</a>
+                <button class="save-btn" onclick="saveItem('country', '', '', '')">➕</button>
             </div>
             <div class="country-card" data-region="asia">
                 <img src="/img/japan-logo.jpg" alt="">

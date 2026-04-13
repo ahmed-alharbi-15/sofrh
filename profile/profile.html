@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سفرة - الملف الشخصي</title>
+    <link rel="stylesheet" href="/countries/countries.css">
+    <link rel="stylesheet" href="/auth/auth.css">
+    <link rel="stylesheet" href="/profile/profile.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@500;600&display=swap');
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="hamburger" id="menu-btn">☰</div>
+        <div class="auth-buttons" id="authButtons">
+            <a href="/auth/login.html" class="login">تسجيل دخول</a>
+            <a href="/auth/signup.html" class="signup">إنشاء حساب</a>
+        </div>
+        <div class="user-menu" id="userMenu">
+            <img id="userAvatar" src="/img/default-avatar.png" alt="المستخدم">
+            <span class="user-name" id="userName"></span>
+            <div class="user-dropdown">
+                <a href="/profile/profile.html">الملف الشخصي</a>
+                <a href="#" id="logoutBtn">تسجيل الخروج</a>
+            </div>
+        </div>
+        <ul class="nav-list">
+            <li><a href="/index/index.html">الرئيسية</a></li>
+            <li><a href="/countries/countries.html">الدول</a></li>
+            <li><a href="/events/events.html">الفعاليات</a></li>
+            <li><a href="/recipes/recipes.html">الوصفات</a></li>
+        </ul>
+        <div class="logo">
+            <a href="/index/index.html"><img src="/img/logo3.JPG" alt="سفرة"></a>
+        </div>
+    </header>
+
+    <!-- SIDE MENU -->
+    <nav class="side-menu" id="side-menu">
+        <span class="close-btn" id="close-btn">✖</span>
+        <ul>
+            <li><a href="/index/index.html">الرئيسية</a></li>
+            <li><a href="/countries/countries.html">الدول</a></li>
+            <li><a href="/events/events.html">الفعاليات</a></li>
+            <li><a href="/recipes/recipes.html">الوصفات</a></li>
+        </ul>
+    </nav>
+
+    <!-- الصفحة الرئيسية -->
+    <div class="profile-page">
+
+        <!-- الشريط الجانبي -->
+        <aside class="profile-sidebar">
+            <div class="profile-avatar-section">
+                <div class="avatar-wrapper">
+                    <img id="profileAvatar" src="/img/default-avatar.png" alt="صورة المستخدم">
+                    <label for="avatarInput" class="avatar-edit">✏️</label>
+                    <input type="file" id="avatarInput" accept="image/*" style="display:none">
+                </div>
+                <h2 id="profileName"></h2>
+                <p id="profileEmail"></p>
+            </div>
+            <ul class="profile-nav">
+                <li><a href="#" class="active" data-section="events">⭐ الفعاليات</a></li>
+                <li><a href="#" data-section="recipes">🍽️ الوصفات</a></li>
+                <li><a href="#" data-section="countries">🌍 الدول</a></li>
+                <li><a href="#" data-section="cities">🏙️ المدن</a></li>
+                <li><a href="#" data-section="settings">⚙️ إعدادات الحساب</a></li>
+            </ul>
+        </aside>
+
+        <!-- المحتوى -->
+        <div class="profile-content">
+
+            <div class="fav-section active" id="section-events">
+                <h2 class="fav-title">⭐ الفعاليات المفضلة</h2>
+                <div class="fav-grid" id="favEvents"></div>
+                <p class="fav-empty" id="emptyEvents" style="display:none">ما أضفت أي فعاليات بعد</p>
+            </div>
+
+            <div class="fav-section" id="section-recipes">
+                <h2 class="fav-title">🍽️ الوصفات المفضلة</h2>
+                <div class="fav-grid" id="favRecipes"></div>
+                <p class="fav-empty" id="emptyRecipes" style="display:none">ما أضفت أي وصفات بعد</p>
+            </div>
+
+            <div class="fav-section" id="section-countries">
+                <h2 class="fav-title">🌍 الدول المفضلة</h2>
+                <div class="fav-grid" id="favCountries"></div>
+                <p class="fav-empty" id="emptyCountries" style="display:none">ما أضفت أي دول بعد</p>
+            </div>
+
+            <div class="fav-section" id="section-cities">
+                <h2 class="fav-title">🏙️ المدن المفضلة</h2>
+                <div class="fav-grid" id="favCities"></div>
+                <p class="fav-empty" id="emptyCity" style="display:none">ما أضفت أي مدن بعد</p>
+            </div>
+
+            <div class="fav-section" id="section-settings">
+                <h2 class="fav-title">⚙️ إعدادات الحساب</h2>
+                <form class="settings-form" id="settingsForm">
+
+                    <div class="settings-group">
+                        <h3>المعلومات الشخصية</h3>
+                        <div class="input-group">
+                            <label>الاسم</label>
+                            <input type="text" id="settingsName" placeholder="اسمك">
+                        </div>
+                        <div class="input-group">
+                            <label>البريد الإلكتروني</label>
+                            <input type="email" id="settingsEmail" placeholder="بريدك الإلكتروني">
+                        </div>
+                        <div class="input-group">
+                            <label>رقم الجوال</label>
+                            <input type="tel" id="settingsPhone" placeholder="رقم جوالك">
+                        </div>
+                        <button type="submit" class="settings-btn">💾 حفظ التغييرات</button>
+                    </div>
+
+                    <div class="settings-group">
+                        <h3>تغيير كلمة المرور</h3>
+                        <div class="input-group">
+                            <label>كلمة المرور الحالية</label>
+                            <input type="password" id="currentPassword" placeholder="••••••••">
+                        </div>
+                        <div class="input-group">
+                            <label>كلمة المرور الجديدة</label>
+                            <input type="password" id="newPassword" placeholder="••••••••">
+                        </div>
+                        <div class="input-group">
+                            <label>تأكيد كلمة المرور الجديدة</label>
+                            <input type="password" id="confirmPassword" placeholder="••••••••">
+                        </div>
+                        <button type="button" class="settings-btn" id="changePasswordBtn">🔒 تغيير كلمة المرور</button>
+                    </div>
+
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="/auth/auth.js"></script>
+    <script src="/profile/profile.js"></script>
+
+</body>
+</html>

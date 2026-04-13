@@ -358,3 +358,19 @@ body {
     .modal-top img { width: 100%; max-width: 420px; height: 220px; }
     .activities-grid { grid-template-columns: 1fr; }
 }
+
+.save-btn {
+    border: none;
+    background: transparent;
+    font-size: 20px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.save-btn:hover {
+    transform: scale(1.2);
+}
+
+.user-menu {
+    display: none;
+}

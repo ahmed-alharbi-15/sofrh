@@ -20,10 +20,19 @@
     <header class="navbar">
       <div class="hamburger" id="menu-btn">☰</div>
 
-      <div class="auth-buttons">
-        <a href="login.html" class="login">تسجيل دخول</a>
-        <a href="signup.html" class="signup">إنشاء حساب</a>
-      </div>
+      <div class="auth-buttons" id="authButtons">
+    <a href="/auth/login.html" class="login">تسجيل دخول</a>
+    <a href="/auth/signup.html" class="signup">إنشاء حساب</a>
+</div>
+
+<div class="user-menu" id="userMenu">
+    <img id="userAvatar" src="/img/default-avatar.png" alt="المستخدم">
+    <span class="user-name" id="userName"></span>
+    <div class="user-dropdown">
+        <a href="#">الملف الشخصي</a>
+        <a href="#" id="logoutBtn">تسجيل الخروج</a>
+    </div>
+</div>
 
       <ul class="nav-list">
         <li><a href="/index/index.html">الرئيسية</a></li>

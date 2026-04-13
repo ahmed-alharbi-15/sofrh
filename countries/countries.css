@@ -744,3 +744,19 @@ body {
         height: 190px;
     }
 }
+
+.save-btn {
+    border: none;
+    background: transparent;
+    font-size: 20px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.save-btn:hover {
+    transform: scale(1.2);
+}
+
+.user-menu {
+    display: none;
+}

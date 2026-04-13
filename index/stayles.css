@@ -325,3 +325,8 @@ body {
     transform: translateY(-3px);
 }
 
+
+
+.user-menu {
+    display: none;
+}
