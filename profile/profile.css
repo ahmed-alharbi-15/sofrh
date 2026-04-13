@@ -246,12 +246,56 @@
     color: #4A2E1F;
 }
 
+/* قائمة الجوال */
+.profile-mobile-nav {
+    display: none;
+}
+
 @media (max-width: 900px) {
-    .profile-sidebar { display: none; }
-    .profile-content { margin-right: 0; padding: 20px; }
-    .fav-grid { grid-template-columns: repeat(2, 1fr); }
+    .profile-sidebar {
+        display: none;
+    }
+
+    .profile-mobile-nav {
+        display: flex;
+        overflow-x: auto;
+        gap: 10px;
+        padding: 12px 16px;
+        background: #F3E8D2;
+        margin-bottom: 20px;
+    }
+
+    .profile-mobile-nav a {
+        white-space: nowrap;
+        padding: 8px 16px;
+        border-radius: 20px;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 600;
+        color: #4A2E1F;
+        background: #fff7ec;
+        border: 1px solid #e0cdb0;
+        transition: .3s;
+    }
+
+    .profile-mobile-nav a.active {
+        background: var(--caramel);
+        color: white;
+        border-color: var(--caramel);
+    }
+
+    .profile-content {
+        margin-right: 0;
+        padding: 20px;
+    }
+
+    .fav-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (max-width: 600px) {
-    .fav-grid { grid-template-columns: 1fr; }
+    .fav-grid {
+        grid-template-columns: 1fr;
+    }
 }

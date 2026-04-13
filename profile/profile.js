@@ -43,24 +43,23 @@ if (logoutBtn) {
 checkAuth();
 
 // عرض بيانات المستخدم
-const user = JSON.parse(localStorage.getItem("safraUser"));
+const currentUser = JSON.parse(localStorage.getItem("safraUser"));
 
-if (!user) {
+if (!currentUser) {
     window.location.href = "/auth/login.html";
 } else {
-    document.getElementById("profileName").textContent = user.name;
-    document.getElementById("profileEmail").textContent = user.email;
-    if (user.avatar) {
-        document.getElementById("profileAvatar").src = user.avatar;
+    document.getElementById("profileName").textContent = currentUser.name;
+    document.getElementById("profileEmail").textContent = currentUser.email;
+    if (currentUser.avatar) {
+        document.getElementById("profileAvatar").src = currentUser.avatar;
     }
 
-    // تحميل بيانات الإعدادات
     if (document.getElementById("settingsName"))
-        document.getElementById("settingsName").value = user.name || "";
+        document.getElementById("settingsName").value = currentUser.name || "";
     if (document.getElementById("settingsEmail"))
-        document.getElementById("settingsEmail").value = user.email || "";
+        document.getElementById("settingsEmail").value = currentUser.email || "";
     if (document.getElementById("settingsPhone"))
-        document.getElementById("settingsPhone").value = user.phone || "";
+        document.getElementById("settingsPhone").value = currentUser.phone || "";
 }
 
 // تغيير الصورة
@@ -82,10 +81,10 @@ document.getElementById("avatarInput").addEventListener("change", (e) => {
 });
 
 // التنقل بين الأقسام
-document.querySelectorAll(".profile-nav a").forEach(link => {
+document.querySelectorAll(".profile-nav a, .profile-mobile-nav a").forEach(link => {
     link.addEventListener("click", (e) => {
         e.preventDefault();
-        document.querySelectorAll(".profile-nav a").forEach(a => a.classList.remove("active"));
+        document.querySelectorAll(".profile-nav a, .profile-mobile-nav a").forEach(a => a.classList.remove("active"));
         document.querySelectorAll(".fav-section").forEach(s => s.classList.remove("active"));
         link.classList.add("active");
         const section = link.getAttribute("data-section");
