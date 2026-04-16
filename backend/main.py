@@ -18,13 +18,9 @@ app.add_middleware(
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
 def get_db_connection():
-    return psycopg2.connect(
-        host="localhost",
-        database="sofrah_web",
-        user="postgres",
-        password="Nafer5543",
-        port="5432"
-    )
+    # الرابط اللي أعطيتني إياه نحطه هنا كمتغير واحد
+    db_url = "postgresql://prostorge:e2g1E1i4ySRy768iEyks7eD25RAhp6Qv@dpg-d7gj4lpkh4rs739a6ff0-a/sofrah_web"
+    return psycopg2.connect(db_url)
 
 # --- النماذج (Models) ---
 class UserCreate(BaseModel):
