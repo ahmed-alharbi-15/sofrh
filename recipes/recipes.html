@@ -450,7 +450,7 @@
         <button
           class="save-btn"
           onclick="
-            saveItem('recipe', 'kushari', 'الكشري – Kushari', '/img/كشري.jpg')
+            saveItem('recipe', 'kushari', 'الكشري – Kushari', '/img/الكشري.jpg')
           "
         >
           🍽️
@@ -477,7 +477,7 @@
         <button
           class="save-btn"
           onclick="
-            saveItem('recipe', 'tameya', 'الطعمية – Tameya', '/img/طعمية.jpg')
+            saveItem('recipe', 'tameya', 'الطعمية – Tameya', '/img/الفول والطعمية.jpeg')
           "
         >
           🍽️
@@ -504,7 +504,7 @@
         <button
           class="save-btn"
           onclick="
-            saveItem('recipe', 'mahshi', 'المحشي – Mahshi', '/img/محشي.jpg')
+            saveItem('recipe', 'mahshi', 'المحشي – Mahshi', '/img/المحشي.jpg')
           "
         >
           🍽️
@@ -528,18 +528,50 @@
       </div>
 
       <div class="foods-card" data-region="main-foods" id="Molokhia">
-    <button class="save-btn" onclick="saveItem('recipe', 'molokhia', 'الملوخية – Molokhia', '/img/ملوخية.jpg')">🍽️</button>
+        <button
+          class="save-btn"
+          onclick="
+            saveItem(
+              'recipe',
+              'molokhia',
+              'الملوخية – Molokhia',
+              '/img/ملوخيه ١.jpg',
+            )
+          "
+        >
+          🍽️
+        </button>
+        <button
+          class="recipes-item"
+          data-title="الملوخية – Molokhia"
+          data-img="/img/ملوخيه ١.jpg"
+          data-ingredients="ملوخية مجففة|20|غ|دجاج|125|غ|مرق دجاج|250|مل|بصل|1|حبة صغيرة|ثوم|3|فص|زيت|15|مل|ملح|2|غ"
+          data-spices="كمون|2|غ|كزبرة مطحونة|2|غ|فلفل أسود|1|غ"
+          data-sauces="أرز أبيض|خبز"
+          data-steps="اسلق الدجاج واحتفظ بالمرق|افرم الثوم وقلّيه في الزيت حتى يذهب|أضف الكمون والكزبرة وحرك سريعاً|أضف المرق واتركه يغلي|أضف الملوخية المجففة وحرك|اطبخ على نار هادئة 10 دقائق|قدّم مع الدجاج والأرز أو الخبز"
+          onclick="openRecipeFromData(this)"
+        >
+          <div class="recipes-head">
+            <img src="/img/ملوخيه ١.jpg" alt="الملوخية" />
+            <span>الملوخية – Molokhia</span>
+          </div>
+          <span class="arrow">الوصفة ⌄</span>
+        </button>
+      </div>
+
+      <div class="foods-card" data-region="main-foods" id="kofta">
+    <button class="save-btn" onclick="saveItem('recipe', 'kofta', 'الكفتة – Kofta', '/img/الكباب والكفتة.jpeg')">🍽️</button>
     <button class="recipes-item"
-        data-title="الملوخية – Molokhia"
-        data-img="/img/ملوخيه ١.jpg"
-        data-ingredients="ملوخية مجففة|20|غ|دجاج|125|غ|مرق دجاج|250|مل|بصل|1|حبة صغيرة|ثوم|3|فص|زيت|15|مل|ملح|2|غ"
-        data-spices="كمون|2|غ|كزبرة مطحونة|2|غ|فلفل أسود|1|غ"
-        data-sauces="أرز أبيض|خبز"
-        data-steps="اسلق الدجاج واحتفظ بالمرق|افرم الثوم وقلّيه في الزيت حتى يذهب|أضف الكمون والكزبرة وحرك سريعاً|أضف المرق واتركه يغلي|أضف الملوخية المجففة وحرك|اطبخ على نار هادئة 10 دقائق|قدّم مع الدجاج والأرز أو الخبز"
+        data-title="الكفتة – Kofta"
+        data-img="/img/الكباب والكفتة.jpeg"
+        data-ingredients="لحم مفروم|125|غ|بصل|1|حبة صغيرة|ثوم|1|فص|بقدونس|10|غ|ملح|2|غ|زيت|10|مل"
+        data-spices="بهارات مشكلة|2|غ|كمون|2|غ|فلفل أسود|1|غ|قرفة|1|غ|فلفل أحمر حار|1|غ"
+        data-sauces="صوص طماطم|طحينة"
+        data-steps="افرم البصل والثوم والبقدونس ناعماً|اخلط اللحم مع البصل والثوم والبقدونس والبهارات والملح|اعجن الخليط جيداً لمدة 5 دقائق|شكّل الكفتة على أسياخ أو كأصابع|اشوِ على الجمر أو في الفرن على 200° لمدة 15 دقيقة|قدّم مع صوص الطماطم والطحينة"
         onclick="openRecipeFromData(this)">
         <div class="recipes-head">
-            <img src="/img/ملوخيه ١.jpg" alt="الملوخية">
-            <span>الملوخية – Molokhia</span>
+            <img src="/img/الكباب والكفتة.jpeg" alt="الكفتة">
+            <span>الكفتة – Kofta</span>
         </div>
         <span class="arrow">الوصفة ⌄</span>
     </button>
