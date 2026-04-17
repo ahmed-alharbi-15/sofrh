@@ -395,3 +395,53 @@ body {
 .user-menu {
     display: none;
 }
+
+@media (max-width: 650px) {
+    .modal-content {
+        border-radius: 12px;
+    }
+
+    .modal-top {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .modal-top img {
+        width: 100%;
+        max-width: 420px;
+        height: 200px;
+    }
+
+    .modal-top h2 {
+        font-size: 20px;
+    }
+
+    .modal-body {
+        padding: 14px 16px 20px;
+    }
+
+    .modal-body h4 {
+        font-size: 15px;
+    }
+
+    .activities-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .budget-row {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 650px) {
+    .modal {
+        padding: 0;
+        align-items: flex-end;
+    }
+
+    .modal-content {
+        max-height: 90vh;
+        overflow-y: auto;
+        border-radius: 20px 20px 0 0;
+    }
+}

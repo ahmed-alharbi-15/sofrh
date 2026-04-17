@@ -477,7 +477,12 @@
         <button
           class="save-btn"
           onclick="
-            saveItem('recipe', 'tameya', 'الطعمية – Tameya', '/img/الفول والطعمية.jpeg')
+            saveItem(
+              'recipe',
+              'tameya',
+              'الطعمية – Tameya',
+              '/img/الفول والطعمية.jpeg',
+            )
           "
         >
           🍽️
@@ -560,18 +565,176 @@
       </div>
 
       <div class="foods-card" data-region="main-foods" id="kofta">
-    <button class="save-btn" onclick="saveItem('recipe', 'kofta', 'الكفتة – Kofta', '/img/الكباب والكفتة.jpeg')">🍽️</button>
+        <button
+          class="save-btn"
+          onclick="
+            saveItem(
+              'recipe',
+              'kofta',
+              'الكفتة – Kofta',
+              '/img/الكباب والكفتة.jpeg',
+            )
+          "
+        >
+          🍽️
+        </button>
+        <button
+          class="recipes-item"
+          data-title="الكفتة – Kofta"
+          data-img="/img/الكباب والكفتة.jpeg"
+          data-ingredients="لحم مفروم|125|غ|بصل|1|حبة صغيرة|ثوم|1|فص|بقدونس|10|غ|ملح|2|غ|زيت|10|مل"
+          data-spices="بهارات مشكلة|2|غ|كمون|2|غ|فلفل أسود|1|غ|قرفة|1|غ|فلفل أحمر حار|1|غ"
+          data-sauces="صوص طماطم|طحينة"
+          data-steps="افرم البصل والثوم والبقدونس ناعماً|اخلط اللحم مع البصل والثوم والبقدونس والبهارات والملح|اعجن الخليط جيداً لمدة 5 دقائق|شكّل الكفتة على أسياخ أو كأصابع|اشوِ على الجمر أو في الفرن على 200° لمدة 15 دقيقة|قدّم مع صوص الطماطم والطحينة"
+          onclick="openRecipeFromData(this)"
+        >
+          <div class="recipes-head">
+            <img src="/img/الكباب والكفتة.jpeg" alt="الكفتة" />
+            <span>الكفتة – Kofta</span>
+          </div>
+          <span class="arrow">الوصفة ⌄</span>
+        </button>
+      </div>
+
+      <div class="foods-card" data-region="main-foods" id="bobotie">
+        <button
+          class="save-btn"
+          onclick="
+            saveItem(
+              'recipe',
+              'bobotie',
+              'بوبوتي – Bobotie',
+              '/img/بوبوتي (Bobotie).jpg',
+            )
+          "
+        >
+          🍽️
+        </button>
+        <button
+          class="recipes-item"
+          data-title="بوبوتي – Bobotie"
+          data-img="/img/بوبوتي (Bobotie).jpg"
+          data-ingredients="لحم مفروم|125|غ|بصل|1|حبة صغيرة|ثوم|1|فص|خبز|20|غ|حليب|50|مل|بيض|1|حبة|مشمش مجفف|20|غ|زيت|10|مل|ملح|2|غ"
+          data-spices="كاري|3|غ|كركم|1|غ|قرفة|1|غ|زنجبيل|1|غ|فلفل أسود|1|غ"
+          data-sauces="أرز أصفر|چاتني مانجا"
+          data-steps="انقع الخبز في الحليب ثم اعصره|قلّي البصل والثوم في الزيت|أضف اللحم المفروم وحمّره|أضف البهارات والملح والمشمش المقطع والخبز المنقوع|اخلط جيداً وضعه في صينية الفرن|اخفق البيض مع الحليب المتبقي وصبّه فوق اللحم|اخبز في الفرن على 180° لمدة 30 دقيقة|قدّم مع الأرز الأصفر وچاتني المانجا"
+          onclick="openRecipeFromData(this)"
+        >
+          <div class="recipes-head">
+            <img src="/img/بوبوتي (Bobotie).jpg" alt="بوبوتي" />
+            <span>بوبوتي – Bobotie</span>
+          </div>
+          <span class="arrow">الوصفة ⌄</span>
+        </button>
+      </div>
+
+      <div class="foods-card" data-region="main-foods" id="braai">
+        <button
+          class="save-btn"
+          onclick="
+            saveItem('recipe', 'braai', 'براي – Braai', '/img/براي (Braai).jpg')
+          "
+        >
+          🍽️
+        </button>
+        <button
+          class="recipes-item"
+          data-title="براي – Braai"
+          data-img="/img/براي (Braai).jpg"
+          data-ingredients="لحم بقر|150|غ|ملح|2|غ|زيت|10|مل|ثوم|1|فص|ليمون|1|حبة صغيرة"
+          data-spices="فلفل أسود|2|غ|بابريكا|2|غ|كمون|1|غ|كزبرة مطحونة|1|غ"
+          data-sauces="صوص براي|سلطة خضراء"
+          data-steps="تبّل اللحم بالملح والبهارات وعصير الليمون والثوم المفروم|اتركه يتتبل 30 دقيقة|سخّن الجمر حتى يصبح أبيض اللون|ادهن اللحم بالزيت|اشوِ اللحم على الجمر 5-7 دقائق من كل جهة|اتركه يرتاح 5 دقائق قبل التقديم|قدّم مع صوص البراي والسلطة"
+          onclick="openRecipeFromData(this)"
+        >
+          <div class="recipes-head">
+            <img src="/img/براي (Braai).jpg" alt="براي" />
+            <span>براي – Braai</span>
+          </div>
+          <span class="arrow">الوصفة ⌄</span>
+        </button>
+      </div>
+
+      <div class="foods-card" data-region="main-foods" id="pap-chakalaka">
+        <button
+          class="save-btn"
+          onclick="
+            saveItem(
+              'recipe',
+              'pap-chakalaka',
+              'باب وشاكالاكا – Pap & Chakalaka',
+              '/img/باب & تشاكالا (Pap & Chakalaka).jpg',
+            )
+          "
+        >
+          🍽️
+        </button>
+        <button
+          class="recipes-item"
+          data-title="باب وشاكالاكا – Pap & Chakalaka"
+          data-img="/img/باب & تشاكالا (Pap & Chakalaka).jpg"
+          data-ingredients="دقيق ذرة|100|غ|ماء|250|مل|ملح|2|غ|بصل|1|حبة صغيرة|طماطم|1|حبة صغيرة|فلفل رومي|50|غ|جزر|50|غ|فاصوليا معلبة|50|غ|زيت|15|مل"
+          data-spices="كاري|2|غ|فلفل أحمر حار|1|غ|كمون|1|غ|فلفل أسود|1|غ"
+          data-sauces=""
+          data-steps="اغلِ الماء مع الملح|أضف دقيق الذرة تدريجياً مع التحريك المستمر|اطبخ على نار هادئة 20 دقيقة مع التحريك|قلّي البصل في الزيت حتى يذهب|أضف الجزر والفلفل الرومي وحرك|أضف الطماطم والبهارات واطبخ 10 دقائق|أضف الفاصوليا وحرك|قدّم الباب مع الشاكالاكا فوقه"
+          onclick="openRecipeFromData(this)"
+        >
+          <div class="recipes-head">
+            <img
+              src="/img/باب & تشاكالا (Pap & Chakalaka).jpg"
+              alt="باب وشاكالاكا"
+            />
+            <span>باب وشاكالاكا – Pap & Chakalaka</span>
+          </div>
+          <span class="arrow">الوصفة ⌄</span>
+        </button>
+      </div>
+
+      <div class="foods-card" data-region="main-foods" id="bunny-chow">
+        <button
+          class="save-btn"
+          onclick="
+            saveItem(
+              'recipe',
+              'bunny-chow',
+              'باني تشاو – Bunny Chow',
+              '/img/باني تشاو (Bunny Chow).webp',
+            )
+          "
+        >
+          🍽️
+        </button>
+        <button
+          class="recipes-item"
+          data-title="باني تشاو – Bunny Chow"
+          data-img="/img/باني تشاو (Bunny Chow).webp"
+          data-ingredients="دجاج|125|غ|بصل|1|حبة صغيرة|ثوم|2|فص|طماطم|1|حبة صغيرة|خبز توست|1|ربع رغيف|زيت|15|مل|ملح|2|غ"
+          data-spices="كاري|3|غ|كركم|1|غ|زنجبيل|1|غ|فلفل أسود|1|غ|كمون|1|غ"
+          data-sauces="چاتني مانجا"
+          data-steps="قلّي البصل والثوم في الزيت حتى يذهب|أضف الدجاج وحمّره من جميع الجهات|أضف البهارات وحرك|أضف الطماطم والماء واطبخ 25 دقيقة|انزع لب الخبز من المنتصف واحتفظ به|احشو الخبز بمرق الدجاج|ضع لب الخبز فوقه|قدّم مع چاتني المانجا"
+          onclick="openRecipeFromData(this)"
+        >
+          <div class="recipes-head">
+            <img src="/img/باني تشاو (Bunny Chow).webp" alt="باني تشاو" />
+            <span>باني تشاو – Bunny Chow</span>
+          </div>
+          <span class="arrow">الوصفة ⌄</span>
+        </button>
+      </div>
+
+      <div class="foods-card" data-region="main-foods" id="sosatie">
+    <button class="save-btn" onclick="saveItem('recipe', 'sosatie', 'سوساتي – Sosatie', '/img/سوساتي (Sosatie).webp')">🍽️</button>
     <button class="recipes-item"
-        data-title="الكفتة – Kofta"
-        data-img="/img/الكباب والكفتة.jpeg"
-        data-ingredients="لحم مفروم|125|غ|بصل|1|حبة صغيرة|ثوم|1|فص|بقدونس|10|غ|ملح|2|غ|زيت|10|مل"
-        data-spices="بهارات مشكلة|2|غ|كمون|2|غ|فلفل أسود|1|غ|قرفة|1|غ|فلفل أحمر حار|1|غ"
-        data-sauces="صوص طماطم|طحينة"
-        data-steps="افرم البصل والثوم والبقدونس ناعماً|اخلط اللحم مع البصل والثوم والبقدونس والبهارات والملح|اعجن الخليط جيداً لمدة 5 دقائق|شكّل الكفتة على أسياخ أو كأصابع|اشوِ على الجمر أو في الفرن على 200° لمدة 15 دقيقة|قدّم مع صوص الطماطم والطحينة"
+        data-title="سوساتي – Sosatie"
+        data-img="/img/سوساتي (Sosatie).webp"
+        data-ingredients="دجاج|150|غ|بصل|1|حبة صغيرة|فلفل رومي|50|غ|مشمش مجفف|20|غ|زيت|10|مل|ملح|2|غ"
+        data-spices="كاري|3|غ|كركم|1|غ|زنجبيل|1|غ|فلفل أسود|1|غ|كمون|1|غ"
+        data-sauces="صوص كاري|چاتني مانجا"
+        data-steps="قطّع الدجاج لقطع متوسطة|اخلط البهارات والزيت والملح وعصير الليمون|تبّل الدجاج بالخليط واتركه ساعتين|نظّم الدجاج والبصل والفلفل والمشمش على الأسياخ بالتناوب|اشوِ على الجمر أو الجريل 5-7 دقائق من كل جهة|قدّم مع صوص الكاري وچاتني المانجا"
         onclick="openRecipeFromData(this)">
         <div class="recipes-head">
-            <img src="/img/الكباب والكفتة.jpeg" alt="الكفتة">
-            <span>الكفتة – Kofta</span>
+            <img src="/img/سوساتي (Sosatie).webp" alt="سوساتي">
+            <span>سوساتي – Sosatie</span>
         </div>
         <span class="arrow">الوصفة ⌄</span>
     </button>
