@@ -723,18 +723,50 @@
       </div>
 
       <div class="foods-card" data-region="main-foods" id="sosatie">
-    <button class="save-btn" onclick="saveItem('recipe', 'sosatie', 'سوساتي – Sosatie', '/img/سوساتي (Sosatie).webp')">🍽️</button>
+        <button
+          class="save-btn"
+          onclick="
+            saveItem(
+              'recipe',
+              'sosatie',
+              'سوساتي – Sosatie',
+              '/img/سوساتي (Sosatie).webp',
+            )
+          "
+        >
+          🍽️
+        </button>
+        <button
+          class="recipes-item"
+          data-title="سوساتي – Sosatie"
+          data-img="/img/سوساتي (Sosatie).webp"
+          data-ingredients="دجاج|150|غ|بصل|1|حبة صغيرة|فلفل رومي|50|غ|مشمش مجفف|20|غ|زيت|10|مل|ملح|2|غ"
+          data-spices="كاري|3|غ|كركم|1|غ|زنجبيل|1|غ|فلفل أسود|1|غ|كمون|1|غ"
+          data-sauces="صوص كاري|چاتني مانجا"
+          data-steps="قطّع الدجاج لقطع متوسطة|اخلط البهارات والزيت والملح وعصير الليمون|تبّل الدجاج بالخليط واتركه ساعتين|نظّم الدجاج والبصل والفلفل والمشمش على الأسياخ بالتناوب|اشوِ على الجمر أو الجريل 5-7 دقائق من كل جهة|قدّم مع صوص الكاري وچاتني المانجا"
+          onclick="openRecipeFromData(this)"
+        >
+          <div class="recipes-head">
+            <img src="/img/سوساتي (Sosatie).webp" alt="سوساتي" />
+            <span>سوساتي – Sosatie</span>
+          </div>
+          <span class="arrow">الوصفة ⌄</span>
+        </button>
+      </div>
+
+      <div class="foods-card" data-region="sweets" id="milk-tart">
+    <button class="save-btn" onclick="saveItem('recipe', 'milk-tart', 'ميلك تارت – Milk Tart', '/img/ميلك تارت (Milk Tart).jpg')">🍽️</button>
     <button class="recipes-item"
-        data-title="سوساتي – Sosatie"
-        data-img="/img/سوساتي (Sosatie).webp"
-        data-ingredients="دجاج|150|غ|بصل|1|حبة صغيرة|فلفل رومي|50|غ|مشمش مجفف|20|غ|زيت|10|مل|ملح|2|غ"
-        data-spices="كاري|3|غ|كركم|1|غ|زنجبيل|1|غ|فلفل أسود|1|غ|كمون|1|غ"
-        data-sauces="صوص كاري|چاتني مانجا"
-        data-steps="قطّع الدجاج لقطع متوسطة|اخلط البهارات والزيت والملح وعصير الليمون|تبّل الدجاج بالخليط واتركه ساعتين|نظّم الدجاج والبصل والفلفل والمشمش على الأسياخ بالتناوب|اشوِ على الجمر أو الجريل 5-7 دقائق من كل جهة|قدّم مع صوص الكاري وچاتني المانجا"
+        data-title="ميلك تارت – Milk Tart"
+        data-img="/img/ميلك تارت (Milk Tart).jpg"
+        data-ingredients="حليب|500|مل|سكر|100|غ|دقيق|40|غ|نشا|30|غ|بيض|2|حبة|زبدة|60|غ|بسكوت مطحون|150|غ|قرفة|5|غ"
+        data-spices="فانيليا|2|غ"
+        data-sauces=""
+        data-steps="اخلط البسكوت المطحون مع الزبدة المذابة|افرده في قالب التارت واضغط جيداً|ضعه في الثلاجة 30 دقيقة|اخلط الدقيق والنشا والسكر في قدر|أضف البيض والحليب تدريجياً مع التحريك|اطبخ على نار متوسطة مع التحريك حتى يتكثف|أضف الزبدة والفانيليا وحرك|صب الخليط فوق القاعدة|رش القرفة فوقه|ضعه في الثلاجة ساعتين قبل التقديم"
         onclick="openRecipeFromData(this)">
         <div class="recipes-head">
-            <img src="/img/سوساتي (Sosatie).webp" alt="سوساتي">
-            <span>سوساتي – Sosatie</span>
+            <img src="/img/ميلك تارت (Milk Tart).jpg" alt="ميلك تارت">
+            <span>ميلك تارت – Milk Tart</span>
         </div>
         <span class="arrow">الوصفة ⌄</span>
     </button>
