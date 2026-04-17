@@ -606,23 +606,20 @@ body {
 
 /* زر المزيد */
 .for-more-btn {
-    display: inline-block;
+    align-self: flex-start;
     background: #4A2E1F;
     color: #fff;
     padding: 10px 22px;
-    border-radius: 25px;
-    font-size: 16px;
+    border-radius: 22px;
     text-decoration: none;
+    font-size: 15px;
     transition: 0.3s ease;
-    text-align: center;
-    margin-top: auto;
 }
 
 .for-more-btn:hover {
     background: #D2A673;
     color: #4A2E1F;
 }
-
 @media (max-width: 1200px){
     .foods-grid{
         grid-template-columns:  repeat(3,1fr);
