@@ -876,20 +876,52 @@
           <span class="arrow">الوصفة ⌄</span>
         </button>
       </div>
-      
+
       <div class="foods-card" data-region="main-foods" id="bastilla">
-    <button class="save-btn" onclick="saveItem('recipe', 'bastilla', 'البسطيلة – Bastilla', '/img/البسطيلة.jpg')">🍽️</button>
+        <button
+          class="save-btn"
+          onclick="
+            saveItem(
+              'recipe',
+              'bastilla',
+              'البسطيلة – Bastilla',
+              '/img/البسطيلة.jpg',
+            )
+          "
+        >
+          🍽️
+        </button>
+        <button
+          class="recipes-item"
+          data-title="البسطيلة – Bastilla"
+          data-img="/img/البسطيلة.jpg"
+          data-ingredients="دجاج|125|غ|بيض|2|حبة|بصل|1|حبة صغيرة|لوز|30|غ|سكر بودرة|15|غ|زبدة|30|غ|عجين ورقة|4|أوراق|ملح|2|غ|زيت|10|مل"
+          data-spices="قرفة|3|غ|زعفران|1|غ|زنجبيل|1|غ|فلفل أسود|1|غ|كزبرة مطحونة|2|غ"
+          data-sauces=""
+          data-steps="اطبخ الدجاج مع البصل والبهارات حتى ينضج|فرّم الدجاج وأضف البيض المخفوق للمرق وحرك حتى يتماسك|قلّي اللوز وافرمه مع السكر والقرفة|افرد أوراق العجين في صينية مدهونة بالزبدة|ضع طبقة دجاج ثم طبقة لوز|غطّيه بأوراق العجين وادهنه بالزبدة|اخبز على 180° لمدة 25 دقيقة|رش السكر البودرة والقرفة فوقه عند التقديم"
+          onclick="openRecipeFromData(this)"
+        >
+          <div class="recipes-head">
+            <img src="/img/البسطيلة.jpg" alt="البسطيلة" />
+            <span>البسطيلة – Bastilla</span>
+          </div>
+          <span class="arrow">الوصفة ⌄</span>
+        </button>
+      </div>
+
+      <div class="foods-card" data-region="main-foods" id="harira">
+    <button class="save-btn" onclick="saveItem('recipe', 'harira', 'الحريرة – Harira', '/img/الحريرة.jpg')">🍽️</button>
     <button class="recipes-item"
-        data-title="البسطيلة – Bastilla"
-        data-img="/img/البسطيلة.jpg"
-        data-ingredients="دجاج|125|غ|بيض|2|حبة|بصل|1|حبة صغيرة|لوز|30|غ|سكر بودرة|15|غ|زبدة|30|غ|عجين ورقة|4|أوراق|ملح|2|غ|زيت|10|مل"
-        data-spices="قرفة|3|غ|زعفران|1|غ|زنجبيل|1|غ|فلفل أسود|1|غ|كزبرة مطحونة|2|غ"
-        data-sauces=""
-        data-steps="اطبخ الدجاج مع البصل والبهارات حتى ينضج|فرّم الدجاج وأضف البيض المخفوق للمرق وحرك حتى يتماسك|قلّي اللوز وافرمه مع السكر والقرفة|افرد أوراق العجين في صينية مدهونة بالزبدة|ضع طبقة دجاج ثم طبقة لوز|غطّيه بأوراق العجين وادهنه بالزبدة|اخبز على 180° لمدة 25 دقيقة|رش السكر البودرة والقرفة فوقه عند التقديم"
+        data-title="الحريرة – Harira"
+        data-img="/img/الحريرة.jpg"
+        data-ingredients="دجاج|100|غ|عدس|40|غ|حمص مسلوق|30|غ|طماطم|1|حبة صغيرة|بصل|1|حبة صغيرة|كرفس|20|غ|معجون طماطم|15|غ|دقيق|15|غ|زيت|10|مل|ملح|2|غ|ماء|400|مل"
+        data-spices="كركم|2|غ|كمون|2|غ|كزبرة مطحونة|2|غ|زنجبيل|1|غ|فلفل أسود|1|غ|قرفة|1|غ"
+        data-sauces="ليمون|تمر"
+        data-steps="قلّي البصل في الزيت حتى يذهب|أضف الدجاج وحمّره|أضف الطماطم ومعجون الطماطم والبهارات|أضف الماء والعدس والحمص واتركه يغلي|أضف الكرفس والملح|اخلط الدقيق مع ماء بارد وأضفه للشوربة مع التحريك|اطبخ على نار هادئة 30 دقيقة|قدّم مع الليمون والتمر"
         onclick="openRecipeFromData(this)">
         <div class="recipes-head">
-            <img src="/img/البسطيلة.jpg" alt="البسطيلة">
-            <span>البسطيلة – Bastilla</span>
+            <img src="/img/الحريرة.jpg" alt="الحريرة">
+            <span>الحريرة – Harira</span>
         </div>
         <span class="arrow">الوصفة ⌄</span>
     </button>
