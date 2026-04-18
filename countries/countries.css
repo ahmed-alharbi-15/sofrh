@@ -327,6 +327,7 @@ body {
     color: var(--brown-dark);
     opacity: .8;
     margin-bottom: 20px;
+    flex-grow: 1;
 }
 
 .Section-btn{
@@ -485,6 +486,16 @@ body {
     line-height: 1.5;
 }
 
+@media (max-width: 950px) {
+    .country-name h1 {
+        font-size: px;
+        margin-top: 10px;
+    }
+    .country-name  p {
+        font-size: 35px;
+    }
+}
+
 @media (max-width: 900px) {
     .country-name h1 {
         font-size: 80px;
@@ -503,7 +514,7 @@ body {
         font-size: 13px;
     }
 }
-@media (max-width: 1200px) {
+@media (max-width: 950px) {
     .cities-grid {
         grid-template-columns: repeat(3, 1fr);
     }
@@ -606,7 +617,7 @@ body {
 
 /* زر المزيد */
 .for-more-btn {
-    align-self: flex-start;
+    display: block;
     background: #4A2E1F;
     color: #fff;
     padding: 10px 22px;
@@ -614,8 +625,12 @@ body {
     text-decoration: none;
     font-size: 15px;
     transition: 0.3s ease;
+    text-align: center;
+    margin-top: auto;
+    width: fit-content;
+    box-sizing: border-box;
+    align-self: flex-start;
 }
-
 .for-more-btn:hover {
     background: #D2A673;
     color: #4A2E1F;

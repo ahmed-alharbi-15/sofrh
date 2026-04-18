@@ -755,18 +755,50 @@
       </div>
 
       <div class="foods-card" data-region="sweets" id="milk-tart">
-    <button class="save-btn" onclick="saveItem('recipe', 'milk-tart', 'ميلك تارت – Milk Tart', '/img/ميلك تارت (Milk Tart).jpg')">🍽️</button>
+        <button
+          class="save-btn"
+          onclick="
+            saveItem(
+              'recipe',
+              'milk-tart',
+              'ميلك تارت – Milk Tart',
+              '/img/ميلك تارت (Milk Tart).jpg',
+            )
+          "
+        >
+          🍽️
+        </button>
+        <button
+          class="recipes-item"
+          data-title="ميلك تارت – Milk Tart"
+          data-img="/img/ميلك تارت (Milk Tart).jpg"
+          data-ingredients="حليب|500|مل|سكر|100|غ|دقيق|40|غ|نشا|30|غ|بيض|2|حبة|زبدة|60|غ|بسكوت مطحون|150|غ|قرفة|5|غ"
+          data-spices="فانيليا|2|غ"
+          data-sauces=""
+          data-steps="اخلط البسكوت المطحون مع الزبدة المذابة|افرده في قالب التارت واضغط جيداً|ضعه في الثلاجة 30 دقيقة|اخلط الدقيق والنشا والسكر في قدر|أضف البيض والحليب تدريجياً مع التحريك|اطبخ على نار متوسطة مع التحريك حتى يتكثف|أضف الزبدة والفانيليا وحرك|صب الخليط فوق القاعدة|رش القرفة فوقه|ضعه في الثلاجة ساعتين قبل التقديم"
+          onclick="openRecipeFromData(this)"
+        >
+          <div class="recipes-head">
+            <img src="/img/ميلك تارت (Milk Tart).jpg" alt="ميلك تارت" />
+            <span>ميلك تارت – Milk Tart</span>
+          </div>
+          <span class="arrow">الوصفة ⌄</span>
+        </button>
+      </div>
+
+      <div class="foods-card" data-region="sweets" id="shebakia">
+    <button class="save-btn" onclick="saveItem('recipe', 'shebakia', 'الشباكية – Shebakia', '/img/الشباكية.jpg')">🍽️</button>
     <button class="recipes-item"
-        data-title="ميلك تارت – Milk Tart"
-        data-img="/img/ميلك تارت (Milk Tart).jpg"
-        data-ingredients="حليب|500|مل|سكر|100|غ|دقيق|40|غ|نشا|30|غ|بيض|2|حبة|زبدة|60|غ|بسكوت مطحون|150|غ|قرفة|5|غ"
-        data-spices="فانيليا|2|غ"
+        data-title="الشباكية – Shebakia"
+        data-img="/img/الشباكية.jpg"
+        data-ingredients="دقيق|500|غ|سمسم|100|غ|زيت للقلي|200|مل|عسل|200|غ|ماء ورد|30|مل|زيت|50|مل|خميرة|7|غ|ماء|150|مل"
+        data-spices="هيل|4|غ|قرفة|3|غ|زعفران|1|غ|يانسون|3|غ"
         data-sauces=""
-        data-steps="اخلط البسكوت المطحون مع الزبدة المذابة|افرده في قالب التارت واضغط جيداً|ضعه في الثلاجة 30 دقيقة|اخلط الدقيق والنشا والسكر في قدر|أضف البيض والحليب تدريجياً مع التحريك|اطبخ على نار متوسطة مع التحريك حتى يتكثف|أضف الزبدة والفانيليا وحرك|صب الخليط فوق القاعدة|رش القرفة فوقه|ضعه في الثلاجة ساعتين قبل التقديم"
+        data-steps="اخلط الدقيق مع البهارات والخميرة والزيت|أضف الماء تدريجياً واعجن حتى تتكون عجينة ناعمة|اتركها ترتاح ساعة|افرد العجينة رقيقة وقطّعها بشكل شبكي|اقلِ في زيت ساخن حتى تصبح ذهبية|سخّن العسل مع ماء الورد|اغمس الشباكية في العسل الساخن|رش السمسم فوقها وقدّم"
         onclick="openRecipeFromData(this)">
         <div class="recipes-head">
-            <img src="/img/ميلك تارت (Milk Tart).jpg" alt="ميلك تارت">
-            <span>ميلك تارت – Milk Tart</span>
+            <img src="/img/الشباكية.jpg" alt="الشباكية">
+            <span>الشباكية – Shebakia</span>
         </div>
         <span class="arrow">الوصفة ⌄</span>
     </button>
