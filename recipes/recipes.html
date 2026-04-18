@@ -787,18 +787,77 @@
       </div>
 
       <div class="foods-card" data-region="sweets" id="shebakia">
-    <button class="save-btn" onclick="saveItem('recipe', 'shebakia', 'الشباكية – Shebakia', '/img/الشباكية.jpg')">🍽️</button>
+        <button
+          class="save-btn"
+          onclick="
+            saveItem(
+              'recipe',
+              'shebakia',
+              'الشباكية – Shebakia',
+              '/img/الشباكية.jpg',
+            )
+          "
+        >
+          🍽️
+        </button>
+        <button
+          class="recipes-item"
+          data-title="الشباكية – Shebakia"
+          data-img="/img/الشباكية.jpg"
+          data-ingredients="دقيق|500|غ|سمسم|100|غ|زيت للقلي|200|مل|عسل|200|غ|ماء ورد|30|مل|زيت|50|مل|خميرة|7|غ|ماء|150|مل"
+          data-spices="هيل|4|غ|قرفة|3|غ|زعفران|1|غ|يانسون|3|غ"
+          data-sauces=""
+          data-steps="اخلط الدقيق مع البهارات والخميرة والزيت|أضف الماء تدريجياً واعجن حتى تتكون عجينة ناعمة|اتركها ترتاح ساعة|افرد العجينة رقيقة وقطّعها بشكل شبكي|اقلِ في زيت ساخن حتى تصبح ذهبية|سخّن العسل مع ماء الورد|اغمس الشباكية في العسل الساخن|رش السمسم فوقها وقدّم"
+          onclick="openRecipeFromData(this)"
+        >
+          <div class="recipes-head">
+            <img src="/img/الشباكية.jpg" alt="الشباكية" />
+            <span>الشباكية – Shebakia</span>
+          </div>
+          <span class="arrow">الوصفة ⌄</span>
+        </button>
+      </div>
+
+      <div class="foods-card" data-region="main-foods" id="tajine">
+        <button
+          class="save-btn"
+          onclick="
+            saveItem('recipe', 'tajine', 'الطاجين – Tajine', '/img/الطاجين.jpg')
+          "
+        >
+          🍽️
+        </button>
+        <button
+          class="recipes-item"
+          data-title="الطاجين – Tajine"
+          data-img="/img/الطاجين.jpg"
+          data-ingredients="دجاج|125|غ|بصل|1|حبة صغيرة|طماطم|1|حبة صغيرة|جزر|50|غ|بطاطس|50|غ|زيتون|20|غ|زيت زيتون|15|مل|ملح|2|غ|ليمون مخلل|1|حبة صغيرة"
+          data-spices="كركم|2|غ|كمون|2|غ|كزبرة مطحونة|2|غ|زنجبيل|1|غ|فلفل أسود|1|غ|قرفة|1|غ"
+          data-sauces=""
+          data-steps="قلّي البصل في زيت الزيتون حتى يذهب|أضف الدجاج وحمّره من جميع الجهات|أضف البهارات والملح وحرك|أضف الطماطم والجزر والبطاطس|أضف كوب ماء واتركه يغلي|ضع الليمون المخلل والزيتون فوقه|اطبخ على نار هادئة 45 دقيقة|قدّم في طاجين الفخار مباشرة"
+          onclick="openRecipeFromData(this)"
+        >
+          <div class="recipes-head">
+            <img src="/img/الطاجين.jpg" alt="الطاجين" />
+            <span>الطاجين – Tajine</span>
+          </div>
+          <span class="arrow">الوصفة ⌄</span>
+        </button>
+      </div>
+
+      <div class="foods-card" data-region="main-foods" id="couscous">
+    <button class="save-btn" onclick="saveItem('recipe', 'couscous', 'الكسكس – Couscous', '/img/الكسكس.webp')">🍽️</button>
     <button class="recipes-item"
-        data-title="الشباكية – Shebakia"
-        data-img="/img/الشباكية.jpg"
-        data-ingredients="دقيق|500|غ|سمسم|100|غ|زيت للقلي|200|مل|عسل|200|غ|ماء ورد|30|مل|زيت|50|مل|خميرة|7|غ|ماء|150|مل"
-        data-spices="هيل|4|غ|قرفة|3|غ|زعفران|1|غ|يانسون|3|غ"
-        data-sauces=""
-        data-steps="اخلط الدقيق مع البهارات والخميرة والزيت|أضف الماء تدريجياً واعجن حتى تتكون عجينة ناعمة|اتركها ترتاح ساعة|افرد العجينة رقيقة وقطّعها بشكل شبكي|اقلِ في زيت ساخن حتى تصبح ذهبية|سخّن العسل مع ماء الورد|اغمس الشباكية في العسل الساخن|رش السمسم فوقها وقدّم"
+        data-title="الكسكس – Couscous"
+        data-img="/img/الكسكس.webp"
+        data-ingredients="كسكس|100|غ|دجاج|125|غ|بصل|1|حبة صغيرة|جزر|50|غ|كوسة|50|غ|حمص مسلوق|30|غ|زيت زيتون|15|مل|ملح|2|غ|ماء|150|مل"
+        data-spices="كركم|2|غ|كمون|2|غ|كزبرة مطحونة|2|غ|زنجبيل|1|غ|فلفل أسود|1|غ|قرفة|1|غ"
+        data-sauces="مرق الخضار"
+        data-steps="اسلق الدجاج مع البهارات واحتفظ بالمرق|قلّي البصل في زيت الزيتون|أضف الجزر والكوسة والحمص|أضف المرق واتركه يغلي 20 دقيقة|ضع الكسكس في وعاء وأضف الماء الساخن والملح|غطّيه 5 دقائق ثم فككه بالشوكة|أضف زيت الزيتون للكسكس وحرك|قدّم الكسكس مع الدجاج والخضار فوقه"
         onclick="openRecipeFromData(this)">
         <div class="recipes-head">
-            <img src="/img/الشباكية.jpg" alt="الشباكية">
-            <span>الشباكية – Shebakia</span>
+            <img src="/img/الكسكس.webp" alt="الكسكس">
+            <span>الكسكس – Couscous</span>
         </div>
         <span class="arrow">الوصفة ⌄</span>
     </button>

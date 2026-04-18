@@ -1,5 +1,5 @@
 /*********************************
-         RESET — تنظيف  التنسيقات الأساسية
+     RESET
 *********************************/
 * {
     margin: 0;
@@ -7,20 +7,12 @@
     box-sizing: border-box;
 }
 
-
-/*********************************
-     BODY — التنسيق العام للصفحة
-*********************************/
 body {
     background-color: #FAF4E6;
     font-family: "Noto Sans Arabic", sans-serif;
-    padding-top: 120px !important;  /* لأن النافبار ثابت */
+    padding-top: 120px;
 }
 
-
-/*********************************
-     COLORS — ألوان ثابتة للموقع
-*********************************/
 :root {
     --brown-dark: #4A2E1F;
     --cream-light: #FAF4E6;
@@ -28,17 +20,6 @@ body {
     --caramel: #D2A673;
 }
 
-/*********************************
-     LOGO — صورة اللوقو
-*********************************/
-.logo img {
-    height: 90px;
-}
-
-
-/*********************************
-     NAVBAR — شريط الموقع الثابت بالأعلى
-*********************************/
 .navbar {
     background-color: var(--brown-dark);
     padding: 0 20px;
@@ -52,10 +33,8 @@ body {
     z-index: 999;
 }
 
+.logo img { height: 90px; }
 
-/*********************************
-     NAV LINKS — روابط الأقسام في الديسكتوب
-*********************************/
 .nav-list {
     display: flex;
     gap: 90px;
@@ -71,8 +50,6 @@ body {
     transition: .3s ease;
 }
 
-
-/*** Hover احترافي على روابط النافبار ***/
 .nav-list a::after {
     content: "";
     position: absolute;
@@ -84,22 +61,10 @@ body {
     transition: width .3s ease;
 }
 
-.nav-list a:hover::after {
-    width: 100%;
-}
+.nav-list a:hover::after { width: 100%; }
+.nav-list a:hover { color: var(--caramel); }
 
-.nav-list a:hover {
-    color: var(--caramel);
-}
-
-
-/*********************************
-     AUTH BUTTONS — تسجيل دخول / إنشاء حساب
-*********************************/
-.auth-buttons {
-    display: flex;
-    gap: 15px;
-}
+.auth-buttons { display: flex; gap: 15px; }
 
 .auth-buttons a {
     text-decoration: none;
@@ -110,37 +75,20 @@ body {
     white-space: nowrap;
 }
 
+.login { background-color: var(--cream-soft); color: var(--brown-dark); }
+.login:hover { transform: translateY(-2px); }
 
-/*** زر تسجيل الدخول ***/
-.login {
-    background-color: var(--cream-soft);
-    color: var(--brown-dark);
-}
-
-.login:hover {
-    background-color: var(--cream-soft);
-    color: var(--brown-dark);
-    transform: translateY(-2px);
-}
-
-
-/*** زر إنشاء حساب ***/
 .signup {
     background: transparent;
     border: 2px solid var(--cream-soft);
     color: var(--cream-soft);
 }
-
 .signup:hover {
     background-color: var(--cream-soft);
     color: var(--brown-dark);
     transform: translateY(-2px);
 }
 
-
-/*********************************
-     HAMBURGER — زر القائمة للجوال
-*********************************/
 .hamburger {
     display: none;
     font-size: 32px;
@@ -149,10 +97,6 @@ body {
     user-select: none;
 }
 
-
-/*********************************
-     SIDE MENU — القائمة الجانبية للجوال
-*********************************/
 .side-menu {
     display: none;
     position: fixed;
@@ -166,13 +110,8 @@ body {
     z-index: 9999;
 }
 
-.side-menu ul {
-    list-style: none;
-}
-
-.side-menu li {
-    margin: 20px 0;
-}
+.side-menu ul { list-style: none; }
+.side-menu li { margin: 20px 0; }
 
 .side-menu a {
     display: block;
@@ -182,21 +121,15 @@ body {
     text-decoration: none;
 }
 
-.side-menu :hover {
+.side-menu a:hover {
     background-color: var(--caramel);
     color: white;
     border-radius: 12px;
 }
 
-
-/*********************************
-     CLOSE BUTTON — زر إغلاق القائمة
-*********************************/
-/* زر اغلاق القائمة الجانبية */
-
 .close-btn {
     position: absolute;
-    top:20px;
+    top: 20px;
     left: 20px;
     font-size: 30px;
     color: #FAF4E6;
@@ -206,32 +139,16 @@ body {
     transition: 0.2s;
 }
 
-.close-btn:hover{
+.close-btn:hover {
     background-color: #D2A673;
     color: #4A2E1F;
 }
 
-
-/*********************************
-     RESPONSIVE — مشاهد الجوال
-*********************************/
 @media (max-width: 900px) {
-
-    /* إخفاء روابط الديسكتوب */
-    .nav-list {
-        display: none;
-    }
-
-    /* إظهار زر القائمة + القائمة الجانبية */
-    .hamburger {
-       display: block;
-    }
-
-    .side-menu {
-        display: block;
-    }
+    .nav-list { display: none; }
+    .hamburger { display: block; }
+    .side-menu { display: block; }
 }
-
 
 /* مقدمة الموقع*/
 .countries-title{
