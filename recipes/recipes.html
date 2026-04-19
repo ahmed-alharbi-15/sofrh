@@ -1485,6 +1485,37 @@
           <span class="arrow">الوصفة ⌄</span>
         </button>
       </div>
+      <div class="foods-card" data-region="sweets" id="ponnukokur">
+        <button
+          class="save-btn"
+          onclick="
+            saveItem(
+              'recipe',
+              'ponnukokur',
+              'بونوكوكور – Pönnukökur',
+              '/img/Pönnukökur.jpg',
+            )
+          "
+        >
+          🍽️
+        </button>
+        <button
+          class="recipes-item"
+          data-title="بونوكوكور – Pönnukökur"
+          data-img="/img/Pönnukökur.jpg"
+          data-ingredients="دقيق|200|غ|حليب|400|مل|بيض|2|حبة|سكر|30|غ|زبدة|20|غ|ملح|1|غ"
+          data-spices="فانيليا|2|غ|قرفة|2|غ"
+          data-sauces="مربى|كريمة مخفوقة"
+          data-steps="اخلط الدقيق والسكر والملح|أضف البيض والحليب والفانيليا وحرك حتى يصبح خليط ناعم|اتركه يرتاح 30 دقيقة|سخّن مقلاة وادهنها بالزبدة|صب ملعقة من الخليط وافرده رقيقاً|اطبخ دقيقة من كل جهة|رش القرفة فوقه|قدّم مع المربى والكريمة المخفوقة"
+          onclick="openRecipeFromData(this)"
+        >
+          <div class="recipes-head">
+            <img src="/img/Pönnukökur.jpg" alt="بونوكوكور" />
+            <span>بونوكوكور – Pönnukökur</span>
+          </div>
+          <span class="arrow">الوصفة ⌄</span>
+        </button>
+      </div>
     </div>
 
     <!-- Modal -->
