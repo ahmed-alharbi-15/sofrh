@@ -1215,6 +1215,38 @@
           <span class="arrow">الوصفة ⌄</span>
         </button>
       </div>
+      <div class="foods-card" data-region="sweets" id="swiss-chocolate">
+        <button
+          class="save-btn"
+          onclick="
+            saveItem(
+              'recipe',
+              'swiss-chocolate',
+              'الشوكولاتة السويسرية – Swiss Chocolate',
+              '/img/Switzerland chocolate.jpg',
+            )
+          "
+        >
+          🍽️
+        </button>
+        <button
+          class="recipes-item"
+          data-title="الشوكولاتة السويسرية – Swiss Chocolate"
+          data-img="/img/Switzerland chocolate.jpg"
+          data-ingredients="شوكولاتة داكنة|200|غ|كريمة|100|مل|زبدة|40|غ|سكر بودرة|40|غ|مسحوق كاكاو|30|غ"
+          data-spices="فانيليا|2|غ"
+          data-sauces=""
+          data-steps="سخّن الكريمة على نار هادئة حتى تغلي|أضف الشوكولاتة المقطعة وحرك حتى تذوب|أضف الزبدة والفانيليا وحرك جيداً|اتركه يبرد في الثلاجة ساعتين|شكّل الخليط كرات صغيرة|دحرجها في مسحوق الكاكاو أو السكر البودرة|قدّم بارداً"
+          onclick="openRecipeFromData(this)"
+        >
+          <div class="recipes-head">
+            <img src="/img/Switzerland chocolate.jpg" alt="الشوكولاتة السويسرية" />
+            <span>الشوكولاتة السويسرية – Swiss Chocolate</span>
+          </div>
+          <span class="arrow">الوصفة ⌄</span>
+        </button>
+      </div>
+      
     </div>
 
     <!-- Modal -->
