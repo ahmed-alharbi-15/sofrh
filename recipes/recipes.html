@@ -1548,18 +1548,49 @@
         </button>
       </div>
       <div class="foods-card" data-region="main-foods" id="bandeja-paisa">
-    <button class="save-btn" onclick="saveItem('recipe', 'bandeja-paisa', 'بانديخا بايسا – Bandeja Paisa', '/img/Bandeja Paisa.jpg')">🍽️</button>
+        <button
+          class="save-btn"
+          onclick="
+            saveItem(
+              'recipe',
+              'bandeja-paisa',
+              'بانديخا بايسا – Bandeja Paisa',
+              '/img/Bandeja Paisa.jpg',
+            )
+          "
+        >
+          🍽️
+        </button>
+        <button
+          class="recipes-item"
+          data-title="بانديخا بايسا – Bandeja Paisa"
+          data-img="/img/Bandeja Paisa.jpg"
+          data-ingredients="لحم مفروم|100|غ|فاصوليا حمراء|50|غ|أرز|80|غ|بيض|1|حبة|موز أخضر|1|حبة صغيرة|طماطم|1|حبة صغيرة|بصل|1|حبة صغيرة|زيت|15|مل|ملح|2|غ"
+          data-spices="كمون|2|غ|ثوم|1|فص|فلفل أسود|1|غ|كركم|1|غ"
+          data-sauces="صوص طماطم"
+          data-steps="اطبخ الفاصوليا مع الثوم والكمون حتى تنضج|اطبخ الأرز بالملح والكركم|قلّي اللحم المفروم مع البصل والطماطم والبهارات|اقلِ الموز الأخضر المقطع حتى يذهب|اقلِ البيض مقلياً|رتّب كل شيء في طبق كبير منفصل|قدّم مع صوص الطماطم"
+          onclick="openRecipeFromData(this)"
+        >
+          <div class="recipes-head">
+            <img src="/img/Bandeja Paisa.jpg" alt="بانديخا بايسا" />
+            <span>بانديخا بايسا – Bandeja Paisa</span>
+          </div>
+          <span class="arrow">الوصفة ⌄</span>
+        </button>
+      </div>
+      <div class="foods-card" data-region="snacks" id="arepa">
+    <button class="save-btn" onclick="saveItem('recipe', 'arepa', 'أريبا – Arepa', '/img/Arepa.webp')">🍽️</button>
     <button class="recipes-item"
-        data-title="بانديخا بايسا – Bandeja Paisa"
-        data-img="/img/Bandeja Paisa.jpg"
-        data-ingredients="لحم مفروم|100|غ|فاصوليا حمراء|50|غ|أرز|80|غ|بيض|1|حبة|موز أخضر|1|حبة صغيرة|طماطم|1|حبة صغيرة|بصل|1|حبة صغيرة|زيت|15|مل|ملح|2|غ"
-        data-spices="كمون|2|غ|ثوم|1|فص|فلفل أسود|1|غ|كركم|1|غ"
-        data-sauces="صوص طماطم"
-        data-steps="اطبخ الفاصوليا مع الثوم والكمون حتى تنضج|اطبخ الأرز بالملح والكركم|قلّي اللحم المفروم مع البصل والطماطم والبهارات|اقلِ الموز الأخضر المقطع حتى يذهب|اقلِ البيض مقلياً|رتّب كل شيء في طبق كبير منفصل|قدّم مع صوص الطماطم"
+        data-title="أريبا – Arepa"
+        data-img="/img/Arepa.webp"
+        data-ingredients="دقيق ذرة أبيض|100|غ|ماء|120|مل|ملح|2|غ|زبدة|10|غ|جبن|30|غ"
+        data-spices=""
+        data-sauces="جبن|زبدة|صوص طماطم"
+        data-steps="اخلط دقيق الذرة مع الملح|أضف الماء الدافئ تدريجياً واعجن حتى تتكون عجينة ناعمة|اتركها ترتاح 5 دقائق|شكّل العجينة كأقراص سميكة|اشوِ على صاج ساخن 5-7 دقائق من كل جهة|احشوها بالجبن أو الزبدة|قدّم مع صوص الطماطم"
         onclick="openRecipeFromData(this)">
         <div class="recipes-head">
-            <img src="/img/Bandeja Paisa.jpg" alt="بانديخا بايسا">
-            <span>بانديخا بايسا – Bandeja Paisa</span>
+            <img src="/img/Arepa.webp" alt="أريبا">
+            <span>أريبا – Arepa</span>
         </div>
         <span class="arrow">الوصفة ⌄</span>
     </button>
