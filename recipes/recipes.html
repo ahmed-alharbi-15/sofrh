@@ -1246,7 +1246,24 @@
           <span class="arrow">الوصفة ⌄</span>
         </button>
       </div>
-      
+
+      <div class="foods-card" data-region="main-foods" id="rosti">
+    <button class="save-btn" onclick="saveItem('recipe', 'rosti', 'روستي – Rösti', '/img/روستي (Rösti).jpg')">🍽️</button>
+    <button class="recipes-item"
+        data-title="روستي – Rösti"
+        data-img="/img/روستي (Rösti).jpg"
+        data-ingredients="بطاطس|200|غ|زبدة|20|غ|ملح|2|غ|بصل|1|حبة صغيرة"
+        data-spices="فلفل أسود|1|غ|إكليل الجبل|1|غ"
+        data-sauces="كريمة حامضة"
+        data-steps="اسلق البطاطس نصف نضج ثم اتركها تبرد|ابشر البطاطس خشن|أضف البصل المفروم والملح والفلفل|سخّن الزبدة في مقلاة على نار متوسطة|أضف البطاطس واضغط عليها بشكل دائري مسطح|اطبخ 8-10 دقائق حتى تذهب من الأسفل|اقلبها واطبخ 8 دقائق من الجهة الثانية|قدّم مع الكريمة الحامضة"
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+            <img src="/img/روستي (Rösti).jpg" alt="روستي">
+            <span>روستي – Rösti</span>
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+    </button>
+</div>
     </div>
 
     <!-- Modal -->
