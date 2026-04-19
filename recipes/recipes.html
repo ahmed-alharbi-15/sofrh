@@ -1636,6 +1636,38 @@
           <span class="arrow">الوصفة ⌄</span>
         </button>
       </div>
+
+      <div class="foods-card" data-region="snacks" id="empanadas">
+        <button
+          class="save-btn"
+          onclick="
+            saveItem(
+              'recipe',
+              'empanadas',
+              'إمبانادا – Empanadas',
+              '/img/Empanadas.webp',
+            )
+          "
+        >
+          🍽️
+        </button>
+        <button
+          class="recipes-item"
+          data-title="إمبانادا – Empanadas"
+          data-img="/img/Empanadas.webp"
+          data-ingredients="دقيق|100|غ|زبدة|30|غ|ماء|50|مل|ملح|1|غ|لحم مفروم|80|غ|بصل|1|حبة صغيرة|طماطم|1|حبة صغيرة|زيت للقلي|150|مل"
+          data-spices="كمون|2|غ|فلفل أسود|1|غ|بابريكا|1|غ|ثوم|1|فص"
+          data-sauces="صوص طماطم حار"
+          data-steps="اخلط الدقيق والملح والزبدة واعجن|أضف الماء تدريجياً حتى تتكون عجينة ناعمة|اتركها ترتاح 30 دقيقة|قلّي البصل والثوم في الزيت|أضف اللحم والبهارات والطماطم واطبخ 15 دقيقة|افرد العجينة وقطّعها دوائر|ضع ملعقة حشو في المنتصف|اطوِ واضغط الأطراف جيداً|اقلِ في زيت ساخن حتى تذهب|قدّم مع صوص الطماطم"
+          onclick="openRecipeFromData(this)"
+        >
+          <div class="recipes-head">
+            <img src="/img/Empanadas.webp" alt="إمبانادا" />
+            <span>إمبانادا – Empanadas</span>
+          </div>
+          <span class="arrow">الوصفة ⌄</span>
+        </button>
+      </div>
     </div>
 
     <!-- Modal -->
