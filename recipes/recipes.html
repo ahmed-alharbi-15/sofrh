@@ -1579,22 +1579,63 @@
         </button>
       </div>
       <div class="foods-card" data-region="snacks" id="arepa">
-    <button class="save-btn" onclick="saveItem('recipe', 'arepa', 'أريبا – Arepa', '/img/Arepa.webp')">🍽️</button>
-    <button class="recipes-item"
-        data-title="أريبا – Arepa"
-        data-img="/img/Arepa.webp"
-        data-ingredients="دقيق ذرة أبيض|100|غ|ماء|120|مل|ملح|2|غ|زبدة|10|غ|جبن|30|غ"
-        data-spices=""
-        data-sauces="جبن|زبدة|صوص طماطم"
-        data-steps="اخلط دقيق الذرة مع الملح|أضف الماء الدافئ تدريجياً واعجن حتى تتكون عجينة ناعمة|اتركها ترتاح 5 دقائق|شكّل العجينة كأقراص سميكة|اشوِ على صاج ساخن 5-7 دقائق من كل جهة|احشوها بالجبن أو الزبدة|قدّم مع صوص الطماطم"
-        onclick="openRecipeFromData(this)">
-        <div class="recipes-head">
-            <img src="/img/Arepa.webp" alt="أريبا">
+        <button
+          class="save-btn"
+          onclick="
+            saveItem('recipe', 'arepa', 'أريبا – Arepa', '/img/Arepa.webp')
+          "
+        >
+          🍽️
+        </button>
+        <button
+          class="recipes-item"
+          data-title="أريبا – Arepa"
+          data-img="/img/Arepa.webp"
+          data-ingredients="دقيق ذرة أبيض|100|غ|ماء|120|مل|ملح|2|غ|زبدة|10|غ|جبن|30|غ"
+          data-spices=""
+          data-sauces="جبن|زبدة|صوص طماطم"
+          data-steps="اخلط دقيق الذرة مع الملح|أضف الماء الدافئ تدريجياً واعجن حتى تتكون عجينة ناعمة|اتركها ترتاح 5 دقائق|شكّل العجينة كأقراص سميكة|اشوِ على صاج ساخن 5-7 دقائق من كل جهة|احشوها بالجبن أو الزبدة|قدّم مع صوص الطماطم"
+          onclick="openRecipeFromData(this)"
+        >
+          <div class="recipes-head">
+            <img src="/img/Arepa.webp" alt="أريبا" />
             <span>أريبا – Arepa</span>
-        </div>
-        <span class="arrow">الوصفة ⌄</span>
-    </button>
-</div>
+          </div>
+          <span class="arrow">الوصفة ⌄</span>
+        </button>
+      </div>
+
+      <div class="foods-card" data-region="main-foods" id="sancocho">
+        <button
+          class="save-btn"
+          onclick="
+            saveItem(
+              'recipe',
+              'sancocho',
+              'سانكوتشو – Sancocho',
+              '/img/Sancocho.webp',
+            )
+          "
+        >
+          🍽️
+        </button>
+        <button
+          class="recipes-item"
+          data-title="سانكوتشو – Sancocho"
+          data-img="/img/Sancocho.webp"
+          data-ingredients="دجاج|125|غ|بطاطس|80|غ|يوكا|80|غ|ذرة|50|غ|بصل|1|حبة صغيرة|طماطم|1|حبة صغيرة|ثوم|2|فص|كزبرة خضراء|10|غ|زيت|10|مل|ملح|2|غ|ماء|400|مل"
+          data-spices="كمون|2|غ|فلفل أسود|1|غ|كركم|1|غ"
+          data-sauces="أرز أبيض|أفوكادو"
+          data-steps="قلّي البصل والثوم والطماطم في الزيت|أضف الدجاج وحمّره|أضف الماء والبهارات واتركه يغلي|أضف الذرة واليوكا واطبخ 20 دقيقة|أضف البطاطس واطبخ 15 دقيقة إضافية|أضف الكزبرة الخضراء والملح|قدّم مع الأرز الأبيض والأفوكادو"
+          onclick="openRecipeFromData(this)"
+        >
+          <div class="recipes-head">
+            <img src="/img/Sancocho.webp" alt="سانكوتشو" />
+            <span>سانكوتشو – Sancocho</span>
+          </div>
+          <span class="arrow">الوصفة ⌄</span>
+        </button>
+      </div>
     </div>
 
     <!-- Modal -->
