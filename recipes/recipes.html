@@ -1028,23 +1028,69 @@
       </div>
 
       <div class="foods-card" data-region="main-foods" id="lasagna">
-    <button class="save-btn" onclick="saveItem('recipe', 'lasagna', 'لازانيا – Lasagna', '/img/Lasagna.jpg')">🍽️</button>
-    <button class="recipes-item"
-        data-title="لازانيا – Lasagna"
-        data-img="/img/Lasagna.jpg"
-        data-ingredients="صفائح لازانيا|4|ورقة|لحم مفروم|125|غ|صوص طماطم|100|غ|بصل|1|حبة صغيرة|ثوم|1|فص|جبن موزاريلا|80|غ|حليب|150|مل|دقيق|15|غ|زبدة|15|غ|ملح|2|غ|زيت|10|مل"
-        data-spices="أوريغانو|2|غ|فلفل أسود|1|غ|جوزة الطيب|1|غ"
-        data-sauces=""
-        data-steps="قلّي البصل والثوم في الزيت|أضف اللحم وحمّره|أضف صوص الطماطم والأوريغانو واطبخ 15 دقيقة|اصنع صوص البيشاميل: اذب الزبدة وأضف الدقيق ثم الحليب مع التحريك حتى يتكثف|أضف جوزة الطيب والملح|رتّب طبقات في صينية: لازانيا ثم لحم ثم بيشاميل ثم جبن|كرر الطبقات وانته بالجبن فوق|اخبز على 180° لمدة 35 دقيقة|اتركها ترتاح 10 دقائق قبل التقديم"
-        onclick="openRecipeFromData(this)">
-        <div class="recipes-head">
-            <img src="/img/Lasagna.jpg" alt="لازانيا">
+        <button
+          class="save-btn"
+          onclick="
+            saveItem(
+              'recipe',
+              'lasagna',
+              'لازانيا – Lasagna',
+              '/img/Lasagna.jpg',
+            )
+          "
+        >
+          🍽️
+        </button>
+        <button
+          class="recipes-item"
+          data-title="لازانيا – Lasagna"
+          data-img="/img/Lasagna.jpg"
+          data-ingredients="صفائح لازانيا|4|ورقة|لحم مفروم|125|غ|صوص طماطم|100|غ|بصل|1|حبة صغيرة|ثوم|1|فص|جبن موزاريلا|80|غ|حليب|150|مل|دقيق|15|غ|زبدة|15|غ|ملح|2|غ|زيت|10|مل"
+          data-spices="أوريغانو|2|غ|فلفل أسود|1|غ|جوزة الطيب|1|غ"
+          data-sauces=""
+          data-steps="قلّي البصل والثوم في الزيت|أضف اللحم وحمّره|أضف صوص الطماطم والأوريغانو واطبخ 15 دقيقة|اصنع صوص البيشاميل: اذب الزبدة وأضف الدقيق ثم الحليب مع التحريك حتى يتكثف|أضف جوزة الطيب والملح|رتّب طبقات في صينية: لازانيا ثم لحم ثم بيشاميل ثم جبن|كرر الطبقات وانته بالجبن فوق|اخبز على 180° لمدة 35 دقيقة|اتركها ترتاح 10 دقائق قبل التقديم"
+          onclick="openRecipeFromData(this)"
+        >
+          <div class="recipes-head">
+            <img src="/img/Lasagna.jpg" alt="لازانيا" />
             <span>لازانيا – Lasagna</span>
-        </div>
-        <span class="arrow">الوصفة ⌄</span>
-    </button>
-</div>
+          </div>
+          <span class="arrow">الوصفة ⌄</span>
+        </button>
+      </div>
 
+      <div class="foods-card" data-region="main-foods" id="risotto">
+        <button
+          class="save-btn"
+          onclick="
+            saveItem(
+              'recipe',
+              'risotto',
+              'ريزوتو – Risotto',
+              '/img/Risotto.jpg',
+            )
+          "
+        >
+          🍽️
+        </button>
+        <button
+          class="recipes-item"
+          data-title="ريزوتو – Risotto"
+          data-img="/img/Risotto.jpg"
+          data-ingredients="أرز أربوريو|100|غ|مرق دجاج|300|مل|بصل|1|حبة صغيرة|ثوم|1|فص|زبدة|20|غ|جبن بارميزان|25|غ|زيت زيتون|10|مل|ملح|2|غ"
+          data-spices="فلفل أبيض|1|غ|زعفران|0.5|غ"
+          data-sauces=""
+          data-steps="سخّن المرق في قدر منفصل|قلّي البصل والثوم في الزيت والزبدة|أضف الأرز وحرك دقيقتين حتى يصبح شفافاً|أضف الزعفران|أضف المرق مغرفة مغرفة مع التحريك المستمر|استمر في إضافة المرق حتى يمتصه الأرز|اطبخ 18-20 دقيقة حتى ينضج الأرز|أضف الزبدة والجبن وحرك|قدّم فوراً"
+          onclick="openRecipeFromData(this)"
+        >
+          <div class="recipes-head">
+            <img src="/img/Risotto.jpg" alt="ريزوتو" />
+            <span>ريزوتو – Risotto</span>
+          </div>
+          <span class="arrow">الوصفة ⌄</span>
+        </button>
+      </div>
+      
     </div>
 
     <!-- Modal -->
