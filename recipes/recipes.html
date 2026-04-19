@@ -1700,6 +1700,32 @@
           <span class="arrow">الوصفة ⌄</span>
         </button>
       </div>
+      <div class="foods-card" data-region="main-foods" id="ajiaco">
+        <button
+          class="save-btn"
+          onclick="
+            saveItem('recipe', 'ajiaco', 'أجياكو – Ajiaco', '/img/Ajiaco.webp')
+          "
+        >
+          🍽️
+        </button>
+        <button
+          class="recipes-item"
+          data-title="أجياكو – Ajiaco"
+          data-img="/img/Ajiaco.webp"
+          data-ingredients="دجاج|125|غ|بطاطس صفراء|80|غ|بطاطس بيضاء|80|غ|ذرة|50|غ|بصل أخضر|20|غ|كزبرة خضراء|10|غ|ملح|2|غ|ماء|400|مل"
+          data-spices="كمون|2|غ|فلفل أسود|1|غ|ثوم|2|فص"
+          data-sauces="كريمة حامضة|أفوكادو|أرز أبيض"
+          data-steps="اسلق الدجاج مع الثوم والكمون واحتفظ بالمرق|فرّم الدجاج وأعده للمرق|أضف البطاطس الصفراء واتركها تذوب في المرق|أضف البطاطس البيضاء والذرة|اطبخ على نار هادئة 30 دقيقة|أضف البصل الأخضر والكزبرة والملح|قدّم مع الكريمة الحامضة والأفوكادو والأرز"
+          onclick="openRecipeFromData(this)"
+        >
+          <div class="recipes-head">
+            <img src="/img/Ajiaco.webp" alt="أجياكو" />
+            <span>أجياكو – Ajiaco</span>
+          </div>
+          <span class="arrow">الوصفة ⌄</span>
+        </button>
+      </div>
     </div>
 
     <!-- Modal -->
