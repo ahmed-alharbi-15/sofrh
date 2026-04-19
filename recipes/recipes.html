@@ -937,18 +937,45 @@
       </div>
 
       <div class="foods-card" data-region="snacks" id="msemen">
-    <button class="save-btn" onclick="saveItem('recipe', 'msemen', 'المسمن – Msemen', '/img/المسمن.jpeg')">🍽️</button>
+        <button
+          class="save-btn"
+          onclick="
+            saveItem('recipe', 'msemen', 'المسمن – Msemen', '/img/المسمن.jpeg')
+          "
+        >
+          🍽️
+        </button>
+        <button
+          class="recipes-item"
+          data-title="المسمن – Msemen"
+          data-img="/img/المسمن.jpeg"
+          data-ingredients="دقيق|100|غ|سميد|30|غ|ماء|80|مل|ملح|2|غ|خميرة|3|غ|سمن|20|غ|زيت|10|مل"
+          data-spices=""
+          data-sauces="عسل|زبدة"
+          data-steps="اخلط الدقيق والسميد والملح والخميرة|أضف الماء تدريجياً واعجن حتى تتكون عجينة ناعمة|اتركها ترتاح 30 دقيقة|قسّم العجينة لكرات صغيرة|افرد كل كرة رقيقة وادهنها بالسمن|طوِ العجينة على نفسها بشكل مربع|افردها مرة ثانية|اشوِ على صاج ساخن من كل جهة حتى تذهب|قدّم مع العسل والزبدة"
+          onclick="openRecipeFromData(this)"
+        >
+          <div class="recipes-head">
+            <img src="/img/المسمن.jpeg" alt="المسمن" />
+            <span>المسمن – Msemen</span>
+          </div>
+          <span class="arrow">الوصفة ⌄</span>
+        </button>
+      </div>
+
+      <div class="foods-card" data-region="main-foods" id="neapolitan-pizza">
+    <button class="save-btn" onclick="saveItem('recipe', 'neapolitan-pizza', 'بيتزا نابوليتانا – Neapolitan Pizza', '/img/Neapolitan-Pizza.webp')">🍽️</button>
     <button class="recipes-item"
-        data-title="المسمن – Msemen"
-        data-img="/img/المسمن.jpeg"
-        data-ingredients="دقيق|100|غ|سميد|30|غ|ماء|80|مل|ملح|2|غ|خميرة|3|غ|سمن|20|غ|زيت|10|مل"
-        data-spices=""
-        data-sauces="عسل|زبدة"
-        data-steps="اخلط الدقيق والسميد والملح والخميرة|أضف الماء تدريجياً واعجن حتى تتكون عجينة ناعمة|اتركها ترتاح 30 دقيقة|قسّم العجينة لكرات صغيرة|افرد كل كرة رقيقة وادهنها بالسمن|طوِ العجينة على نفسها بشكل مربع|افردها مرة ثانية|اشوِ على صاج ساخن من كل جهة حتى تذهب|قدّم مع العسل والزبدة"
+        data-title="بيتزا نابوليتانا – Neapolitan Pizza"
+        data-img="/img/Neapolitan-Pizza.webp"
+        data-ingredients="دقيق|150|غ|ماء|100|مل|خميرة|3|غ|ملح|3|غ|صوص طماطم|50|غ|جبن موزاريلا|80|غ|زيت زيتون|10|مل"
+        data-spices="ثوم|1|فص|أوريغانو|2|غ|فلفل أسود|1|غ"
+        data-sauces="صوص طماطم طازج"
+        data-steps="اخلط الدقيق والملح والخميرة|أضف الماء تدريجياً واعجن 10 دقائق|اتركها ترتاح ساعتين|افرد العجينة دائرة رقيقة|ضع صوص الطماطم فوقها|أضف جبن الموزاريلا|رش الأوريغانو وزيت الزيتون|اخبز في فرن ساخن جداً 250° لمدة 8-10 دقائق|قدّم فوراً"
         onclick="openRecipeFromData(this)">
         <div class="recipes-head">
-            <img src="/img/المسمن.jpeg" alt="المسمن">
-            <span>المسمن – Msemen</span>
+            <img src="/img/Neapolitan-Pizza.webp" alt="بيتزا نابوليتانا">
+            <span>بيتزا نابوليتانا – Neapolitan Pizza</span>
         </div>
         <span class="arrow">الوصفة ⌄</span>
     </button>
