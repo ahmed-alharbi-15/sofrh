@@ -76,7 +76,7 @@
         <button class="active" data-filter="all">الكل</button>
         <button data-filter="main-foods">رئيسية</button>
         <button data-filter="sweets">حلويات</button>
-        <button data-filter="snak">سناكات</button>
+        <button data-filter="snacks">سناكات</button>
       </div>
     </section>
     <div class="foods-grid">
@@ -1122,22 +1122,62 @@
         </button>
       </div>
       <div class="foods-card" data-region="main-foods" id="chicken-parmigiana">
-    <button class="save-btn" onclick="saveItem('recipe', 'chicken-parmigiana', 'دجاج بارميجيانا – Chicken Parmigiana', '/img/Chicken Parmigiana.webp')">🍽️</button>
-    <button class="recipes-item"
-        data-title="دجاج بارميجيانا – Chicken Parmigiana"
-        data-img="/img/Chicken Parmigiana.webp"
-        data-ingredients="دجاج|150|غ|صوص طماطم|80|غ|جبن موزاريلا|60|غ|جبن بارميزان|20|غ|دقيق|30|غ|بيض|1|حبة|بانكو|50|غ|زيت للقلي|150|مل|ملح|2|غ"
-        data-spices="فلفل أسود|1|غ|أوريغانو|2|غ|ثوم بودرة|1|غ"
-        data-sauces="صوص طماطم"
-        data-steps="رقّق الدجاج بالمطرقة حتى يصبح سميكه متساوي|تبّله بالملح والفلفل وثوم البودرة|مرّره في الدقيق ثم البيض ثم البانكو|اقلِ في زيت ساخن 3-4 دقائق من كل جهة|ضعه في صينية فرن|صب صوص الطماطم فوقه|ضع جبن الموزاريلا والبارميزان|اخبز على 180° لمدة 15 دقيقة حتى يذوب الجبن|قدّم مع السباغيتي أو السلطة"
-        onclick="openRecipeFromData(this)">
-        <div class="recipes-head">
-            <img src="/img/Chicken Parmigiana.webp" alt="دجاج بارميجيانا">
+        <button
+          class="save-btn"
+          onclick="
+            saveItem(
+              'recipe',
+              'chicken-parmigiana',
+              'دجاج بارميجيانا – Chicken Parmigiana',
+              '/img/Chicken Parmigiana.webp',
+            )
+          "
+        >
+          🍽️
+        </button>
+        <button
+          class="recipes-item"
+          data-title="دجاج بارميجيانا – Chicken Parmigiana"
+          data-img="/img/Chicken Parmigiana.webp"
+          data-ingredients="دجاج|150|غ|صوص طماطم|80|غ|جبن موزاريلا|60|غ|جبن بارميزان|20|غ|دقيق|30|غ|بيض|1|حبة|بانكو|50|غ|زيت للقلي|150|مل|ملح|2|غ"
+          data-spices="فلفل أسود|1|غ|أوريغانو|2|غ|ثوم بودرة|1|غ"
+          data-sauces="صوص طماطم"
+          data-steps="رقّق الدجاج بالمطرقة حتى يصبح سميكه متساوي|تبّله بالملح والفلفل وثوم البودرة|مرّره في الدقيق ثم البيض ثم البانكو|اقلِ في زيت ساخن 3-4 دقائق من كل جهة|ضعه في صينية فرن|صب صوص الطماطم فوقه|ضع جبن الموزاريلا والبارميزان|اخبز على 180° لمدة 15 دقيقة حتى يذوب الجبن|قدّم مع السباغيتي أو السلطة"
+          onclick="openRecipeFromData(this)"
+        >
+          <div class="recipes-head">
+            <img src="/img/Chicken Parmigiana.webp" alt="دجاج بارميجيانا" />
             <span>دجاج بارميجيانا – Chicken Parmigiana</span>
-        </div>
-        <span class="arrow">الوصفة ⌄</span>
-    </button>
-</div>
+          </div>
+          <span class="arrow">الوصفة ⌄</span>
+        </button>
+      </div>
+      <div class="foods-card" data-region="snacks" id="fondue">
+        <button
+          class="save-btn"
+          onclick="
+            saveItem('recipe', 'fondue', 'فوندو – Fondue', '/img/الفوندو (Fondue).jpg')
+          "
+        >
+          🍽️
+        </button>
+        <button
+          class="recipes-item"
+          data-title="فوندو – Fondue"
+          data-img="/img/الفوندو (Fondue).jpg"
+          data-ingredients="جبن غرويير|100|غ|جبن إيمنتال|100|غ|حليب|100|مل|دقيق|10|غ|ثوم|1|فص|خبز فرنسي|100|غ|ملح|1|غ"
+          data-spices="جوزة الطيب|1|غ|فلفل أبيض|1|غ"
+          data-sauces=""
+          data-steps="ادهن القدر بالثوم المقطوع|أضف الحليب وسخّنه على نار متوسطة|أضف الجبن تدريجياً مع التحريك المستمر|أضف الدقيق مع التحريك حتى يتكثف|أضف جوزة الطيب والفلفل والملح|قدّم في قدر الفوندو الساخن|قطّع الخبز لمكعبات وقدّمه للغمس"
+          onclick="openRecipeFromData(this)"
+        >
+          <div class="recipes-head">
+            <img src="/img/الفوندو (Fondue).jpg" alt="فوندو" />
+            <span>فوندو – Fondue</span>
+          </div>
+          <span class="arrow">الوصفة ⌄</span>
+        </button>
+      </div>
     </div>
 
     <!-- Modal -->
