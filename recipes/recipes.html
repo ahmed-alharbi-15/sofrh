@@ -1156,7 +1156,12 @@
         <button
           class="save-btn"
           onclick="
-            saveItem('recipe', 'fondue', 'فوندو – Fondue', '/img/الفوندو (Fondue).jpg')
+            saveItem(
+              'recipe',
+              'fondue',
+              'فوندو – Fondue',
+              '/img/الفوندو (Fondue).jpg',
+            )
           "
         >
           🍽️
@@ -1174,6 +1179,38 @@
           <div class="recipes-head">
             <img src="/img/الفوندو (Fondue).jpg" alt="فوندو" />
             <span>فوندو – Fondue</span>
+          </div>
+          <span class="arrow">الوصفة ⌄</span>
+        </button>
+      </div>
+
+      <div class="foods-card" data-region="main-foods" id="raclette">
+        <button
+          class="save-btn"
+          onclick="
+            saveItem(
+              'recipe',
+              'raclette',
+              'راكليت – Raclette',
+              '/img/لراكليت (Raclette).webp',
+            )
+          "
+        >
+          🍽️
+        </button>
+        <button
+          class="recipes-item"
+          data-title="راكليت – Raclette"
+          data-img="/img/لراكليت (Raclette).webp"
+          data-ingredients="جبن راكليت|150|غ|بطاطس مسلوقة|150|غ|مخللات|30|غ|بصل مخلل|20|غ|دجاج مدخن|50|غ|ملح|1|غ"
+          data-spices="فلفل أسود|1|غ|فلفل أبيض|1|غ"
+          data-sauces=""
+          data-steps="اسلق البطاطس مع قشرها حتى تنضج|قطّع الجبن لشرائح|ضع الجبن في مقلاة الراكليت أو تحت الشواية|انتظر حتى يذوب الجبن ويفقع|صب الجبن المذاب فوق البطاطس|قدّم مع المخللات والبصل المخلل والدجاج المدخن"
+          onclick="openRecipeFromData(this)"
+        >
+          <div class="recipes-head">
+            <img src="/img/لراكليت (Raclette).webp" alt="راكليت" />
+            <span>راكليت – Raclette</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
         </button>
