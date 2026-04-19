@@ -1240,7 +1240,10 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/Switzerland chocolate.jpg" alt="الشوكولاتة السويسرية" />
+            <img
+              src="/img/Switzerland chocolate.jpg"
+              alt="الشوكولاتة السويسرية"
+            />
             <span>الشوكولاتة السويسرية – Swiss Chocolate</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -1248,22 +1251,68 @@
       </div>
 
       <div class="foods-card" data-region="main-foods" id="rosti">
-    <button class="save-btn" onclick="saveItem('recipe', 'rosti', 'روستي – Rösti', '/img/روستي (Rösti).jpg')">🍽️</button>
-    <button class="recipes-item"
-        data-title="روستي – Rösti"
-        data-img="/img/روستي (Rösti).jpg"
-        data-ingredients="بطاطس|200|غ|زبدة|20|غ|ملح|2|غ|بصل|1|حبة صغيرة"
-        data-spices="فلفل أسود|1|غ|إكليل الجبل|1|غ"
-        data-sauces="كريمة حامضة"
-        data-steps="اسلق البطاطس نصف نضج ثم اتركها تبرد|ابشر البطاطس خشن|أضف البصل المفروم والملح والفلفل|سخّن الزبدة في مقلاة على نار متوسطة|أضف البطاطس واضغط عليها بشكل دائري مسطح|اطبخ 8-10 دقائق حتى تذهب من الأسفل|اقلبها واطبخ 8 دقائق من الجهة الثانية|قدّم مع الكريمة الحامضة"
-        onclick="openRecipeFromData(this)">
-        <div class="recipes-head">
-            <img src="/img/روستي (Rösti).jpg" alt="روستي">
+        <button
+          class="save-btn"
+          onclick="
+            saveItem(
+              'recipe',
+              'rosti',
+              'روستي – Rösti',
+              '/img/روستي (Rösti).jpg',
+            )
+          "
+        >
+          🍽️
+        </button>
+        <button
+          class="recipes-item"
+          data-title="روستي – Rösti"
+          data-img="/img/روستي (Rösti).jpg"
+          data-ingredients="بطاطس|200|غ|زبدة|20|غ|ملح|2|غ|بصل|1|حبة صغيرة"
+          data-spices="فلفل أسود|1|غ|إكليل الجبل|1|غ"
+          data-sauces="كريمة حامضة"
+          data-steps="اسلق البطاطس نصف نضج ثم اتركها تبرد|ابشر البطاطس خشن|أضف البصل المفروم والملح والفلفل|سخّن الزبدة في مقلاة على نار متوسطة|أضف البطاطس واضغط عليها بشكل دائري مسطح|اطبخ 8-10 دقائق حتى تذهب من الأسفل|اقلبها واطبخ 8 دقائق من الجهة الثانية|قدّم مع الكريمة الحامضة"
+          onclick="openRecipeFromData(this)"
+        >
+          <div class="recipes-head">
+            <img src="/img/روستي (Rösti).jpg" alt="روستي" />
             <span>روستي – Rösti</span>
-        </div>
-        <span class="arrow">الوصفة ⌄</span>
-    </button>
-</div>
+          </div>
+          <span class="arrow">الوصفة ⌄</span>
+        </button>
+      </div>
+
+      <div class="foods-card" data-region="snacks" id="bircher-muesli"> 
+        <button
+          class="save-btn"
+          onclick="
+            saveItem(
+              'recipe',
+              'bircher-muesli',
+              'بيرشر موسلي – Bircher Müesli',
+              '/img/بيرشر موسلي (Bircher Müesli).jpg_1622122268',
+            )
+          "
+        >
+          🍽️
+        </button>
+        <button
+          class="recipes-item"
+          data-title="بيرشر موسلي – Bircher Müesli"
+          data-img="/img/بيرشر موسلي (Bircher Müesli).jpg_1622122268"
+          data-ingredients="شوفان|80|غ|حليب|100|مل|لبن|50|غ|تفاح|1|حبة صغيرة|عسل|15|غ|ليمون|1|حبة صغيرة|مكسرات مشكلة|20|غ"
+          data-spices="قرفة|1|غ"
+          data-sauces=""
+          data-steps="انقع الشوفان في الحليب طوال الليل في الثلاجة|في الصباح أضف اللبن وعصير الليمون والعسل|ابشر التفاح وأضفه فوراً للخليط عشان ما يتأكسد|أضف القرفة وحرك جيداً|زيّن بالمكسرات والفواكه|قدّم بارداً"
+          onclick="openRecipeFromData(this)"
+        >
+          <div class="recipes-head">
+            <img src="/img/بيرشر موسلي (Bircher Müesli).jpg_1622122268" alt="بيرشر موسلي" />
+            <span>بيرشر موسلي – Bircher Müesli</span>
+          </div>
+          <span class="arrow">الوصفة ⌄</span>
+        </button>
+      </div>
     </div>
 
     <!-- Modal -->
