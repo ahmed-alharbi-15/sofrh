@@ -996,22 +996,55 @@
       </div>
 
       <div class="foods-card" data-region="main-foods" id="carbonara">
-    <button class="save-btn" onclick="saveItem('recipe', 'carbonara', 'كاربونارا – Carbonara', '/img/Carbonara.jpg')">🍽️</button>
+        <button
+          class="save-btn"
+          onclick="
+            saveItem(
+              'recipe',
+              'carbonara',
+              'كاربونارا – Carbonara',
+              '/img/Carbonara.jpg',
+            )
+          "
+        >
+          🍽️
+        </button>
+        <button
+          class="recipes-item"
+          data-title="كاربونارا – Carbonara"
+          data-img="/img/Carbonara.jpg"
+          data-ingredients="سباغيتي|100|غ|بيض|2|حبة|جبن بيكورينو|30|غ|دجاج مدخن|50|غ|ملح|2|غ|زيت زيتون|10|مل"
+          data-spices="فلفل أسود|3|غ|ثوم|1|فص"
+          data-sauces=""
+          data-steps="اسلق السباغيتي في ماء مملح حتى تنضج|اخفق البيض مع جبن البيكورينو والفلفل الأسود|قلّي الدجاج المدخن مع الثوم في الزيت|أضف السباغيتي المصفاة للمقلاة|أبعد عن النار وأضف خليط البيض والجبن|حرك بسرعة حتى يتكون صوص كريمي|أضف ملعقة من ماء السلق لو احتجت|قدّم فوراً مع فلفل أسود إضافي"
+          onclick="openRecipeFromData(this)"
+        >
+          <div class="recipes-head">
+            <img src="/img/Carbonara.jpg" alt="كاربونارا" />
+            <span>كاربونارا – Carbonara</span>
+          </div>
+          <span class="arrow">الوصفة ⌄</span>
+        </button>
+      </div>
+
+      <div class="foods-card" data-region="main-foods" id="lasagna">
+    <button class="save-btn" onclick="saveItem('recipe', 'lasagna', 'لازانيا – Lasagna', '/img/Lasagna.jpg')">🍽️</button>
     <button class="recipes-item"
-        data-title="كاربونارا – Carbonara"
-        data-img="/img/Carbonara.jpg"
-        data-ingredients="سباغيتي|100|غ|بيض|2|حبة|جبن بيكورينو|30|غ|دجاج مدخن|50|غ|ملح|2|غ|زيت زيتون|10|مل"
-        data-spices="فلفل أسود|3|غ|ثوم|1|فص"
+        data-title="لازانيا – Lasagna"
+        data-img="/img/Lasagna.jpg"
+        data-ingredients="صفائح لازانيا|4|ورقة|لحم مفروم|125|غ|صوص طماطم|100|غ|بصل|1|حبة صغيرة|ثوم|1|فص|جبن موزاريلا|80|غ|حليب|150|مل|دقيق|15|غ|زبدة|15|غ|ملح|2|غ|زيت|10|مل"
+        data-spices="أوريغانو|2|غ|فلفل أسود|1|غ|جوزة الطيب|1|غ"
         data-sauces=""
-        data-steps="اسلق السباغيتي في ماء مملح حتى تنضج|اخفق البيض مع جبن البيكورينو والفلفل الأسود|قلّي الدجاج المدخن مع الثوم في الزيت|أضف السباغيتي المصفاة للمقلاة|أبعد عن النار وأضف خليط البيض والجبن|حرك بسرعة حتى يتكون صوص كريمي|أضف ملعقة من ماء السلق لو احتجت|قدّم فوراً مع فلفل أسود إضافي"
+        data-steps="قلّي البصل والثوم في الزيت|أضف اللحم وحمّره|أضف صوص الطماطم والأوريغانو واطبخ 15 دقيقة|اصنع صوص البيشاميل: اذب الزبدة وأضف الدقيق ثم الحليب مع التحريك حتى يتكثف|أضف جوزة الطيب والملح|رتّب طبقات في صينية: لازانيا ثم لحم ثم بيشاميل ثم جبن|كرر الطبقات وانته بالجبن فوق|اخبز على 180° لمدة 35 دقيقة|اتركها ترتاح 10 دقائق قبل التقديم"
         onclick="openRecipeFromData(this)">
         <div class="recipes-head">
-            <img src="/img/Carbonara.jpg" alt="كاربونارا">
-            <span>كاربونارا – Carbonara</span>
+            <img src="/img/Lasagna.jpg" alt="لازانيا">
+            <span>لازانيا – Lasagna</span>
         </div>
         <span class="arrow">الوصفة ⌄</span>
     </button>
 </div>
+
     </div>
 
     <!-- Modal -->
