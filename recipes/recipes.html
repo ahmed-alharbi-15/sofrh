@@ -1091,18 +1091,49 @@
         </button>
       </div>
       <div class="foods-card" data-region="main-foods" id="penne-arrabbiata">
-    <button class="save-btn" onclick="saveItem('recipe', 'penne-arrabbiata', 'بيني أرابياتا – Penne Arrabbiata', '/img/Penne Arrabbiata.avif    ')">🍽️</button>
+        <button
+          class="save-btn"
+          onclick="
+            saveItem(
+              'recipe',
+              'penne-arrabbiata',
+              'بيني أرابياتا – Penne Arrabbiata',
+              '/img/Penne Arrabbiata.avif    ',
+            )
+          "
+        >
+          🍽️
+        </button>
+        <button
+          class="recipes-item"
+          data-title="بيني أرابياتا – Penne Arrabbiata"
+          data-img="/img/Penne Arrabbiata.avif    "
+          data-ingredients="بيني|100|غ|طماطم معلبة|150|غ|ثوم|2|فص|زيت زيتون|15|مل|ملح|2|غ|بقدونس|10|غ"
+          data-spices="فلفل أحمر حار|2|غ|فلفل أسود|1|غ|أوريغانو|1|غ"
+          data-sauces=""
+          data-steps="اسلق البيني في ماء مملح حتى تنضج|قلّي الثوم والفلفل الحار في زيت الزيتون|أضف الطماطم المعلبة والملح|اطبخ الصوص 15 دقيقة على نار متوسطة|أضف البيني المصفاة للصوص|حرك جيداً وأضف البقدونس المفروم|قدّم فوراً مع جبن بارميزان"
+          onclick="openRecipeFromData(this)"
+        >
+          <div class="recipes-head">
+            <img src="/img/Penne Arrabbiata.avif    " alt="بيني أرابياتا" />
+            <span>بيني أرابياتا – Penne Arrabbiata</span>
+          </div>
+          <span class="arrow">الوصفة ⌄</span>
+        </button>
+      </div>
+      <div class="foods-card" data-region="main-foods" id="chicken-parmigiana">
+    <button class="save-btn" onclick="saveItem('recipe', 'chicken-parmigiana', 'دجاج بارميجيانا – Chicken Parmigiana', '/img/Chicken Parmigiana.webp')">🍽️</button>
     <button class="recipes-item"
-        data-title="بيني أرابياتا – Penne Arrabbiata"
-        data-img="/img/Penne Arrabbiata.avif    "
-        data-ingredients="بيني|100|غ|طماطم معلبة|150|غ|ثوم|2|فص|زيت زيتون|15|مل|ملح|2|غ|بقدونس|10|غ"
-        data-spices="فلفل أحمر حار|2|غ|فلفل أسود|1|غ|أوريغانو|1|غ"
-        data-sauces=""
-        data-steps="اسلق البيني في ماء مملح حتى تنضج|قلّي الثوم والفلفل الحار في زيت الزيتون|أضف الطماطم المعلبة والملح|اطبخ الصوص 15 دقيقة على نار متوسطة|أضف البيني المصفاة للصوص|حرك جيداً وأضف البقدونس المفروم|قدّم فوراً مع جبن بارميزان"
+        data-title="دجاج بارميجيانا – Chicken Parmigiana"
+        data-img="/img/Chicken Parmigiana.webp"
+        data-ingredients="دجاج|150|غ|صوص طماطم|80|غ|جبن موزاريلا|60|غ|جبن بارميزان|20|غ|دقيق|30|غ|بيض|1|حبة|بانكو|50|غ|زيت للقلي|150|مل|ملح|2|غ"
+        data-spices="فلفل أسود|1|غ|أوريغانو|2|غ|ثوم بودرة|1|غ"
+        data-sauces="صوص طماطم"
+        data-steps="رقّق الدجاج بالمطرقة حتى يصبح سميكه متساوي|تبّله بالملح والفلفل وثوم البودرة|مرّره في الدقيق ثم البيض ثم البانكو|اقلِ في زيت ساخن 3-4 دقائق من كل جهة|ضعه في صينية فرن|صب صوص الطماطم فوقه|ضع جبن الموزاريلا والبارميزان|اخبز على 180° لمدة 15 دقيقة حتى يذوب الجبن|قدّم مع السباغيتي أو السلطة"
         onclick="openRecipeFromData(this)">
         <div class="recipes-head">
-            <img src="/img/Penne Arrabbiata.avif    " alt="بيني أرابياتا">
-            <span>بيني أرابياتا – Penne Arrabbiata</span>
+            <img src="/img/Chicken Parmigiana.webp" alt="دجاج بارميجيانا">
+            <span>دجاج بارميجيانا – Chicken Parmigiana</span>
         </div>
         <span class="arrow">الوصفة ⌄</span>
     </button>
