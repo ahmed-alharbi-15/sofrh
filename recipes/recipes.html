@@ -1668,6 +1668,38 @@
           <span class="arrow">الوصفة ⌄</span>
         </button>
       </div>
+
+      <div class="foods-card" data-region="snacks" id="patacones">
+        <button
+          class="save-btn"
+          onclick="
+            saveItem(
+              'recipe',
+              'patacones',
+              'باتاكونيس – Patacones',
+              '/img/Patacones.jpeg',
+            )
+          "
+        >
+          🍽️
+        </button>
+        <button
+          class="recipes-item"
+          data-title="باتاكونيس – Patacones"
+          data-img="/img/Patacones.jpeg"
+          data-ingredients="موز أخضر|2|حبة|زيت للقلي|150|مل|ملح|2|غ"
+          data-spices="ثوم بودرة|1|غ"
+          data-sauces="جواكامولي|صوص طماطم"
+          data-steps="قشّر الموز الأخضر وقطّعه لقطع سميكة|اقلِ في زيت ساخن 3 دقائق حتى يذهب|أخرجه وضعه بين ورقتين زيتيتين|اضغط عليه بقوة حتى يصبح مسطحاً|أعده للزيت واقلِ مرة ثانية حتى يصبح مقرمشاً|رشّ الملح وثوم البودرة|قدّم مع الجواكامولي وصوص الطماطم"
+          onclick="openRecipeFromData(this)"
+        >
+          <div class="recipes-head">
+            <img src="/img/Patacones.jpeg" alt="باتاكونيس" />
+            <span>باتاكونيس – Patacones</span>
+          </div>
+          <span class="arrow">الوصفة ⌄</span>
+        </button>
+      </div>
     </div>
 
     <!-- Modal -->
