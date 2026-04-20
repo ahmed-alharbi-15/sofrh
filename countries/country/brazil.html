@@ -1,211 +1,322 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ar" dir="rtl">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>سفرة</title>
-
-    <!-- ملف الستايل الأساسي -->
-    <link rel="stylesheet" href="/countries/countries.css">
-
-    <!-- خط عربي -->
+    <link rel="stylesheet" href="/countries/countries.css" />
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@500;600&display=swap');
-
+      @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@500;600&display=swap");
     </style>
-     <script src="/countries/countries.js" defer></script>
+    <script src="/countries/countries.js" defer></script>
+  </head>
 
-</head>
-
-
-<body>
-
-    <!--  NAVBAR (ثابت في كل صفحة) -->
-    <header class="navbar"> 
-
-        <div class="hamburger" id="menu-btn">☰</div>
-
-        <div class="auth-buttons" id="authButtons">
-    <a href="/auth/login.html" class="login">تسجيل دخول</a>
-    <a href="/auth/signup.html" class="signup">إنشاء حساب</a>
-</div>
-
-<div class="user-menu" id="userMenu">
-    <img id="userAvatar" src="/img/default-avatar.png" alt="المستخدم">
-    <span class="user-name" id="userName"></span>
-    <div class="user-dropdown">
-        <a href="#">الملف الشخصي</a>
-        <a href="#" id="logoutBtn">تسجيل الخروج</a>
-    </div>
-</div>
-
-        <ul class="nav-list">
-            <li><a href="/index/index.html">الرئيسية</a></li>
-            <li><a href="/countries/countries.html">الدول</a></li>
-            <li><a href="/events/events.html">الفعاليات</a></li>
-            <li><a href="/recipes/recipes.html">الوصفات</a></li>
-        </ul>
-
-        <div class="logo">
-           <a href="/index/index.html"> <img src="/img/logo3.JPG" alt="سفرة"></a>
+  <body>
+    <!-- NAVBAR -->
+    <header class="navbar">
+      <div class="hamburger" id="menu-btn">☰</div>
+      <div class="auth-buttons" id="authButtons">
+        <a href="/auth/login.html" class="login">تسجيل دخول</a>
+        <a href="/auth/signup.html" class="signup">إنشاء حساب</a>
+      </div>
+      <div class="user-menu" id="userMenu">
+        <img id="userAvatar" src="/img/default-avatar.png" alt="المستخدم" />
+        <span class="user-name" id="userName"></span>
+        <div class="user-dropdown">
+          <a href="/profile/profile.html">الملف الشخصي</a>
+          <a href="#" id="logoutBtn">تسجيل الخروج</a>
         </div>
-
-       
+      </div>
+      <ul class="nav-list">
+        <li><a href="/index/index.html">الرئيسية</a></li>
+        <li><a href="/countries/countries.html">الدول</a></li>
+        <li><a href="/events/events.html">الفعاليات</a></li>
+        <li><a href="/recipes/recipes.html">الوصفات</a></li>
+      </ul>
+      <div class="logo">
+        <a href="/index/index.html"><img src="/img/logo3.JPG" alt="سفرة" /></a>
+      </div>
     </header>
 
-
-    <!--  MENU للجوال -->
+    <!-- SIDE MENU -->
     <nav class="side-menu" id="side-menu">
-        <span class="close-btn" id="close-btn">✖</span>
-
-        <ul>
-            <li><a href="/index/index.html">الرئيسية</a></li>
-            <li><a href="/countries/countries.html">الدول</a></li>
-            <li><a href="/events/events.html">الفعاليات</a></li>
-            <li><a href="/recipes/recipes.html  ">الوصفات</a></li>
-        </ul>
+      <span class="close-btn" id="close-btn">✖</span>
+      <ul>
+        <li><a href="/index/index.html">الرئيسية</a></li>
+        <li><a href="/countries/countries.html">الدول</a></li>
+        <li><a href="/events/events.html">الفعاليات</a></li>
+        <li><a href="/recipes/recipes.html">الوصفات</a></li>
+      </ul>
     </nav>
-        <header>
-        <a href="/countries/countries.html" class="back-btn">رجوع</a>
+
+    <header>
+      <a href="/countries/countries.html" class="back-btn">رجوع</a>
     </header>
 
-
-
-
-
-        <!--المدن -->
+    <!-- المدن -->
     <div class="main-cites">
-        <h1>المدن</h1>
+      <h1>المدن</h1>
     </div>
     <section class="cities-grid">
-        <div class="cite">
-            <img src="" alt="" class="cite-img">
-            <span class="name"></span>
-            <div class="info">
+      <div
+        class="cite"
+        data-name="ريو دي جانيرو"
+        data-img="/img/ريو دي جانيرو .jpg"
+        data-desc="مدينة الحياة والألوان، تجمع بين الشواطئ الذهبية والجبال الخضراء وأجواء احتفالية طول السنة."
+        data-historic="🗿 تمثال المسيح الفادي | 🏰 قلعة ساو خوان | ⛪ كاتدرائية ريو | 🌿 حديقة نباتية ريو"
+        data-restaurants="🍖 مطعم Fogo de Chão | 🍤 مطعم Aprazível | 🥩 مطعم Churrascaria Palace"
+        data-cafes="☕ مقهى Confeitaria Colombo | ☕ مقهى Armazém do Café | ☕ مقهى Casa Cultura"
+        data-events="🎪 كرنفال ريو | 🎵 مهرجان Rock in Rio | 🏖️ حفلات شاطئ إيبانيما"
+      >
+        <button
+          class="save-btn"
+          onclick="
+            event.stopPropagation();
+            saveItem('city', 'rio', 'ريو دي جانيرو', '/img/ريو دي جانيرو .jpg');
+          "
+        >
+          🏙️
+        </button>
+        <img
+          src="/img/ريو دي جانيرو .jpg"
+          alt="ريو دي جانيرو"
+          class="cite-img"
+        />
+        <span class="name">ريو دي جانيرو</span>
+        <p class="info">
+          مدينة الحياة – شواطئ وجبال وأجواء احتفالية طول السنة.
+        </p>
+        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+          تفاصيل
+        </button>
+      </div>
+      <div
+        class="cite"
+        data-name="ساو باولو"
+        data-img="/img/ساوباولو.jpg"
+        data-desc="أكبر مدن البرازيل وعاصمتها الاقتصادية، مدينة لا تنام تجمع بين التنوع الثقافي والحياة الليلية الصاخبة والطعام العالمي."
+        data-historic="🏛️ متحف إيبيرابويرا | 🎨 متحف الفن الحديث | ⛪ كاتدرائية سيه | 🏙️ حي ليبرداد الياباني"
+        data-restaurants="🍖 مطعم D.O.M | 🥩 مطعم Fogo de Chão | 🍝 مطعم Fasano"
+        data-cafes="☕ مقهى Suplicy Cafés | ☕ مقهى Santo Grão | ☕ مقهى Café Floresta"
+        data-events="🎪 كرنفال ساو باولو | 🎵 مهرجان Lollapalooza | 🎭 أسبوع الموضة البرازيلي"
+      >
+        <button
+          class="save-btn"
+          onclick="
+            event.stopPropagation();
+            saveItem('city', 'sao-paulo', 'ساو باولو', '/img/ساو باولو.jpg');
+          "
+        >
+          🏙️
+        </button>
+        <img src="/img/ساوباولو.jpg" alt="ساو باولو" class="cite-img" />
+        <span class="name">ساو باولو</span>
+        <p class="info">أكبر مدن البرازيل وعاصمتها الاقتصادية.</p>
+        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+          تفاصيل
+        </button>
+      </div>
 
-            </div>
-        </div>
-        <div class="cite">
-            <img src="" alt="" class="cite-img">
-            <span class="name"></span>
-            <div class="info">
+      <div
+        class="cite"
+        data-name="برازيليا"
+        data-img="/img/brasilia.jpg"
+        data-desc="العاصمة الفيدرالية للبرازيل، مدينة مصممة بشكل طائرة من الجو، تشتهر بمبانيها المعمارية الحداثية الفريدة."
+        data-historic="🏛️ قصر البرلمان | ⛪ كاتدرائية برازيليا | 🏰 قصر الفجر | 🌿 الحديقة النباتية"
+        data-restaurants="🍖 مطعم Universal Diner | 🥩 مطعم Fogo de Chão | 🍝 مطعم Aquavit"
+        data-cafes="☕ مقهى Café com Letras | ☕ مقهى Bom Dia | ☕ مقهى Grão Espresso"
+        data-events="🎪 مهرجان برازيليا السينمائي | 🎵 مهرجان الموسيقى البرازيلية | 🎭 أسبوع الفنون"
+      >
+        <button
+          class="save-btn"
+          onclick="
+            event.stopPropagation();
+            saveItem('city', 'brasilia', 'برازيليا', '/img/برازيليا.jpg');
+          "
+        >
+          🏙️
+        </button>
+        <img src="/img/brasilia.jpg" alt="برازيليا" class="cite-img" />
+        <span class="name">برازيليا</span>
+        <p class="info">العاصمة الفيدرالية ذات المعمار الحداثي الفريد.</p>
+        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+          تفاصيل 
+        </button>
+      </div>
+     <div class="cite"
+    data-name="فورتاليزا"
+    data-img="/img/Fortaleza.jpg"
+    data-desc="مدينة الشواطئ الساحرة في شمال البرازيل، تشتهر بالرمال البيضاء والمياه الفيروزية وثقافة الشعب الدافئة."
+    data-historic="🏰 قلعة فورتاليزا | ⛪ كاتدرائية متروبوليتان | 🎨 متحف الفن سيارا | 🌊 شاطئ إيراسيما"
+    data-restaurants="🦞 مطعم Coco Bambu | 🍤 مطعم Chico do Caranguejo | 🥘 مطعم La Tablita"
+    data-cafes="☕ مقهى Café 1400 | ☕ مقهى Bravo Café | ☕ مقهى Santo Grão"
+    data-events="🎪 كرنفال فورتاليزا | 🎵 مهرجان فوريو | 🏄 بطولة ركوب الأمواج">
+    <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'fortaleza', 'فورتاليزا', '/img/فورتاليزا.jpg')">🏙️</button>
+    <img src="/img/Fortaleza.jpg" alt="فورتاليزا" class="cite-img">
+    <span class="name">فورتاليزا</span>
+    <p class="info">مدينة الشواطئ الساحرة في شمال البرازيل.</p>
+    <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">تفاصيل </button>
+</div>
 
-            </div>
-        </div>
-        <div class="cite">
-            <img src="" alt="" class="cite-img">
-            <span class="name"></span>
-            <div class="info">
+      <div
+        class="cite"
+        data-name=""
+        data-img=""
+        data-desc=""
+        data-historic=""
+        data-restaurants=""
+        data-cafes=""
+      >
+        <button
+          class="save-btn"
+          onclick="
+            event.stopPropagation();
+            saveItem('city', '', '', '');
+          "
+        >
+          🏙️
+        </button>
+        <img src="" alt="" class="cite-img" />
+        <span class="name"></span>
+        <p class="info"></p>
+        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+          تفاصيل
+        </button>
+      </div>
 
-            </div>
-        </div>
-        <div class="cite">
-            <img src="" alt="" class="cite-img">
-            <span class="name"></span>
-            <div class="info">
-
-            </div>
-        </div>
-        <div class="cite">
-            <img src="" alt="" class="cite-img">
-            <span class="name"></span>
-            <div class="info">
-
-            </div>
-        </div>
-        <div class="cite">
-            <img src="" alt="" class="cite-img">
-            <span class="name"></span>
-            <div class="info">
-
-            </div>
-        </div>
+      <div
+        class="cite"
+        data-name=""
+        data-img=""
+        data-desc=""
+        data-historic=""
+        data-restaurants=""
+        data-cafes=""
+      >
+        <button
+          class="save-btn"
+          onclick="
+            event.stopPropagation();
+            saveItem('city', '', '', '');
+          "
+        >
+          🏙️
+        </button>
+        <img src="" alt="" class="cite-img" />
+        <span class="name"></span>
+        <p class="info"></p>
+        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+          تفاصيل
+        </button>
+      </div>
     </section>
-        <!--الاكل-->
-        <div class="main-foods">
-            <h1>الماكولات</h1>
-        </div>
-        <section class="foods-grid">
-            <div class="foods">
-                <img src="" alt="" class="foods-img">
-                <span class="name-foods"></span>
-                <div class="food-info"></div>
-                <a href="" class="for-more-btn"></a>
-            </div>
-              <div class="foods">
-                <img src="" alt="" class="foods-img">
-                <span class="name-foods"></span>
-                <div class="food-info"></div>
-                <a href="" class="for-more-btn"></a>
-            </div>
-              <div class="foods">
-                <img src="" alt="" class="foods-img">
-                <span class="name-foods"></span>
-                <div class="food-info"></div>
-                <a href="" class="for-more-btn"></a>
-            </div>
-              <div class="foods">
-                <img src="" alt="" class="foods-img">
-                <span class="name-foods"></span>
-                <div class="food-info"></div>
-                <a href="" class="for-more-btn"></a>
-            </div>
-              <div class="foods">
-                <img src="" alt="" class="foods-img">
-                <span class="name-foods"></span>
-                <div class="food-info"></div>
-                <a href="" class="for-more-btn"></a>
-            </div>
-              <div class="foods">
-                <img src="" alt="" class="foods-img">
-                <span class="name-foods"></span>
-                <div class="food-info"></div>
-                <a href="" class="for-more-btn"></a>
-            </div>
-        </section>
-        <div class="events-main">
-            <h1>الفعاليات</h1>
-        </div>
-        <section class="events-grid">
-            <div class="event">
-                <img src="" alt="" class="event-img">
-                <span class="name-event"></span>
-                <div class="event-info"></div>
-                <a href="" class="event-btn"></a>
-            </div>
-            <div class="event">
-                <img src="" alt="" class="event-img">
-                <span class="name-event"></span>
-                <div class="event-info"></div>
-                <a href="" class="event-btn"></a>
-            </div>
-            <div class="event">
-                <img src="" alt="" class="event-img">
-                <span class="name-event"></span>
-                <div class="event-info"></div>
-                <a href="" class="event-btn"></a>
-            </div>
-            <div class="event">
-                <img src="" alt="" class="event-img">
-                <span class="name-event"></span>
-                <div class="event-info"></div>
-                <a href="" class="event-btn"></a>
-            </div>
-            <div class="event">
-                <img src="" alt="" class="event-img">
-                <span class="name-event"></span>
-                <div class="event-info"></div>
-                <a href="" class="event-btn"></a>
-            </div>
-            <div class="event">
-                <img src="" alt="" class="event-img">
-                <span class="name-event"></span>
-                <div class="event-info"></div>
-                <a href="" class="event-btn"></a>
-            </div>
-        </section>
-   
-</body>
 
+    <!-- الأكل -->
+    <div class="main-foods">
+      <h1>الماكولات</h1>
+    </div>
+    <section class="foods-grid">
+      <div class="foods">
+        <img src="" alt="" class="foods-img" />
+        <span class="name-foods"></span>
+        <div class="food-info">س</div>
+        <a href="" class="for-more-btn">س</a>
+      </div>
+      <div class="foods">
+        <img src="" alt="" class="foods-img" />
+        <span class="name-foods">س</span>
+        <div class="food-info">س</div>
+        <a href="" class="for-more-btn">س</a>
+      </div>
+      <div class="foods">
+        <img src="" alt="" class="foods-img" />
+        <span class="name-foods">س</span>
+        <div class="food-info">س</div>
+        <a href="" class="for-more-btn">س</a>
+      </div>
+      <div class="foods">
+        <img src="" alt="" class="foods-img" />
+        <span class="name-foods">س</span>
+        <div class="food-info">س</div>
+        <a href="" class="for-more-btn">س</a>
+      </div>
+      <div class="foods">
+        <img src="" alt="" class="foods-img" />
+        <span class="name-foods">س</span>
+        <div class="food-info">س</div>
+        <a href="" class="for-more-btn">س</a>
+      </div>
+      <div class="foods">
+        <img src="" alt="" class="foods-img" />
+        <span class="name-foods">س</span>
+        <div class="food-info">س</div>
+        <a href="" class="for-more-btn">س</a>
+      </div>
+    </section>
+
+    <!-- الفعاليات -->
+    <div class="events-main">
+      <h1>الفعاليات</h1>
+    </div>
+    <section class="events-grid">
+      <div class="event">
+        <img src="" alt="" class="event-img" />
+        <span class="name-event"></span>
+        <div class="event-info"></div>
+        <a href="" class="event-btn">المزيد</a>
+      </div>
+      <div class="event">
+        <img src="" alt="" class="event-img" />
+        <span class="name-event"></span>
+        <div class="event-info"></div>
+        <a href="" class="event-btn">المزيد</a>
+      </div>
+      <div class="event">
+        <img src="" alt="" class="event-img" />
+        <span class="name-event"></span>
+        <div class="event-info"></div>
+        <a href="" class="event-btn">المزيد</a>
+      </div>
+      <div class="event">
+        <img src="" alt="" class="event-img" />
+        <span class="name-event"></span>
+        <div class="event-info"></div>
+        <a href="" class="event-btn">المزيد</a>
+      </div>
+      <div class="event">
+        <img src="" alt="" class="event-img" />
+        <span class="name-event"></span>
+        <div class="event-info"></div>
+        <a href="" class="event-btn">المزيد</a>
+      </div>
+      <div class="event">
+        <img src="" alt="" class="event-img" />
+        <span class="name-event"></span>
+        <div class="event-info"></div>
+        <a href="" class="event-btn">المزيد</a>
+      </div>
+    </section>
+
+    <!-- Modal المدينة -->
+    <div id="cityModal" class="modal" onclick="closeCityModal(event)">
+      <div class="modal-content">
+        <button class="modal-close" onclick="closeCityModal(event)">×</button>
+        <div class="modal-top">
+          <img id="modalCityImg" src="" alt="" />
+          <h2 id="modalCityName"></h2>
+        </div>
+        <div class="modal-body">
+          <p id="modalCityDesc" class="event-desc"></p>
+          <h4>🏛️ أفضل الأماكن التاريخية</h4>
+          <div id="modalCityHistoric" class="ingredients-tags"></div>
+          <h4>🍽️ أفضل المطاعم</h4>
+          <div id="modalCityRestaurants" class="ingredients-tags"></div>
+          <h4>☕ أفضل المقاهي</h4>
+          <div id="modalCityCafes" class="ingredients-tags"></div>
+          <h4>🎉 فعاليات المدينة</h4>
+          <div id="modalCityEvents" class="ingredients-tags"></div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

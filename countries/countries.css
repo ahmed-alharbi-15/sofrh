@@ -715,3 +715,115 @@ body {
     display: none;
 }
 
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.45);
+    z-index: 9999;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.modal-content {
+    max-width: 900px;
+    width: 100%;
+    margin: auto;
+    background: #fffaf2;
+    border-radius: 18px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(0,0,0,.25);
+}
+
+.modal-close {
+    position: absolute;
+    top: 12px; left: 12px;
+    width: 40px; height: 40px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 24px;
+    background: #ffffffcc;
+    color: #4A2E1F;
+    line-height: 1;
+    z-index: 10;
+}
+
+.modal-top {
+    padding: 16px;
+    background: #fff2e6;
+    display: flex;
+    gap: 14px;
+    align-items: center;
+}
+
+.modal-top img {
+    width: 110px;
+    height: 110px;
+    border-radius: 16px;
+    object-fit: cover;
+    flex: 0 0 auto;
+}
+
+.modal-top h2 { margin: 0; color: #4A2E1F; font-size: 26px; }
+
+.modal-body { padding: 18px 22px 26px; color: #2f261f; line-height: 1.9; }
+.modal-body h4 { margin: 14px 0 8px; color: #B07A2A; }
+
+.event-desc {
+    font-size: 15px;
+    color: #3d2b1f;
+    line-height: 2;
+    margin-bottom: 16px;
+    border-right: 3px solid var(--caramel);
+    padding-right: 12px;
+}
+
+.ingredients-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.ingredients-tags span {
+    background: #fff;
+    border: 1px solid rgba(0,0,0,.08);
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 14px;
+    color: #4A2E1F;
+    box-shadow: 0 4px 10px rgba(0,0,0,.05);
+}
+
+@media (max-width: 650px) {
+    .modal-top { flex-direction: column; text-align: center; }
+    .modal-top img { width: 100%; max-width: 420px; height: 220px; }
+}
+
+.cite-btn {
+    display: block;
+    background: #4A2E1F;
+    color: #fff;
+    padding: 10px 22px;
+    border-radius: 22px;
+    text-decoration: none;
+    font-size: 15px;
+    transition: 0.3s ease;
+    text-align: center;
+    margin-top: 10px;
+    width: fit-content;
+    box-sizing: border-box;
+    align-self: flex-start;
+    border: none;
+}
+
+.cite-btn:hover {
+    background-color: var(--caramel);
+    color: white;
+    transform: translateY(-3px);
+}
+
+.cite .info {
+    flex-grow: 1;
+}
