@@ -52,8 +52,16 @@
     <header>
       <a href="/countries/countries.html" class="back-btn">رجوع</a>
     </header>
+    <section>
 
+
+        <div class="country-name">
+            <h1> البرازيل</h1>
+            <p>أرض الغابات الخضراء والحياة المليانة طاقة</p>
+        </div>
+    </section>
     <!-- المدن -->
+
     <div class="main-cites">
       <h1>المدن</h1>
     </div>
@@ -140,71 +148,92 @@
         <span class="name">برازيليا</span>
         <p class="info">العاصمة الفيدرالية ذات المعمار الحداثي الفريد.</p>
         <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
-          تفاصيل 
+          تفاصيل
         </button>
       </div>
-     <div class="cite"
-    data-name="فورتاليزا"
-    data-img="/img/Fortaleza.jpg"
-    data-desc="مدينة الشواطئ الساحرة في شمال البرازيل، تشتهر بالرمال البيضاء والمياه الفيروزية وثقافة الشعب الدافئة."
-    data-historic="🏰 قلعة فورتاليزا | ⛪ كاتدرائية متروبوليتان | 🎨 متحف الفن سيارا | 🌊 شاطئ إيراسيما"
-    data-restaurants="🦞 مطعم Coco Bambu | 🍤 مطعم Chico do Caranguejo | 🥘 مطعم La Tablita"
-    data-cafes="☕ مقهى Café 1400 | ☕ مقهى Bravo Café | ☕ مقهى Santo Grão"
-    data-events="🎪 كرنفال فورتاليزا | 🎵 مهرجان فوريو | 🏄 بطولة ركوب الأمواج">
-    <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'fortaleza', 'فورتاليزا', '/img/فورتاليزا.jpg')">🏙️</button>
-    <img src="/img/Fortaleza.jpg" alt="فورتاليزا" class="cite-img">
-    <span class="name">فورتاليزا</span>
-    <p class="info">مدينة الشواطئ الساحرة في شمال البرازيل.</p>
-    <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">تفاصيل </button>
-</div>
-
       <div
         class="cite"
-        data-name=""
-        data-img=""
-        data-desc=""
-        data-historic=""
-        data-restaurants=""
-        data-cafes=""
+        data-name="فورتاليزا"
+        data-img="/img/Fortaleza.jpg"
+        data-desc="مدينة الشواطئ الساحرة في شمال البرازيل، تشتهر بالرمال البيضاء والمياه الفيروزية وثقافة الشعب الدافئة."
+        data-historic="🏰 قلعة فورتاليزا | ⛪ كاتدرائية متروبوليتان | 🎨 متحف الفن سيارا | 🌊 شاطئ إيراسيما"
+        data-restaurants="🦞 مطعم Coco Bambu | 🍤 مطعم Chico do Caranguejo | 🥘 مطعم La Tablita"
+        data-cafes="☕ مقهى Café 1400 | ☕ مقهى Bravo Café | ☕ مقهى Santo Grão"
+        data-events="🎪 كرنفال فورتاليزا | 🎵 مهرجان فوريو | 🏄 بطولة ركوب الأمواج"
       >
         <button
           class="save-btn"
           onclick="
             event.stopPropagation();
-            saveItem('city', '', '', '');
+            saveItem('city', 'fortaleza', 'فورتاليزا', '/img/فورتاليزا.jpg');
           "
         >
           🏙️
         </button>
-        <img src="" alt="" class="cite-img" />
-        <span class="name"></span>
-        <p class="info"></p>
+        <img src="/img/Fortaleza.jpg" alt="فورتاليزا" class="cite-img" />
+        <span class="name">فورتاليزا</span>
+        <p class="info">مدينة الشواطئ الساحرة في شمال البرازيل.</p>
         <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
           تفاصيل
         </button>
       </div>
-
       <div
         class="cite"
-        data-name=""
-        data-img=""
-        data-desc=""
-        data-historic=""
-        data-restaurants=""
-        data-cafes=""
+        data-name="فلوريانوبوليس"
+        data-img="/img/florianapolis.jpg"
+        data-desc="جزيرة السحر البرازيلية، تجمع بين 42 شاطئاً رائعاً وطبيعة خضراء وأجواء هادئة تجعلها وجهة مثالية للاسترخاء."
+        data-historic="🏰 قلعة سانت كروز | ⛪ كاتدرائية متروبوليتان | 🌉 جسر هيركيليو لوز | 🏛️ متحف الأنثروبولوجيا"
+        data-restaurants="🦞 مطعم Ostradamus | 🍤 مطعم Macarronada Italiana | 🥘 مطعم Box 32"
+        data-cafes="☕ مقهى Café da Ponte | ☕ مقهى Café Cultura | ☕ مقهى Santo Antônio"
+        data-events="🏄 بطولة ركوب الأمواج | 🎵 مهرجان الموسيقى | 🎪 مهرجان المأكولات البحرية"
       >
         <button
           class="save-btn"
           onclick="
             event.stopPropagation();
-            saveItem('city', '', '', '');
+            saveItem(
+              'city',
+              'florianopolis',
+              'فلوريانوبوليس',
+              '/img/فلوريانوبوليس.jpg',
+            );
           "
         >
           🏙️
         </button>
-        <img src="" alt="" class="cite-img" />
-        <span class="name"></span>
-        <p class="info"></p>
+        <img
+          src="/img/florianapolis.jpg"
+          alt="فلوريانوبوليس"
+          class="cite-img"
+        />
+        <span class="name">فلوريانوبوليس</span>
+        <p class="info">جزيرة السحر البرازيلية بـ 42 شاطئاً رائعاً.</p>
+        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+          تفاصيل
+        </button>
+      </div>
+      <div
+        class="cite"
+        data-name="ريسيفي"
+        data-img="/img/ريسيفي.jpg"
+        data-desc="عاصمة الشمال الشرقي البرازيلي، تُعرف بشواطئها الجميلة وجسورها التاريخية وكرنفالها الشهير الذي يُعد من أكبر كرنفالات العالم."
+        data-historic="🏰 قلعة بروم | ⛪ كنيسة سانت أنطونيو | 🌉 جسر ريسيفي القديم | 🏛️ متحف ريسيفي"
+        data-restaurants="🦞 مطعم Bargaço | 🍤 مطعم Chica Pitanga | 🥘 مطعم Leite"
+        data-cafes="☕ مقهى Café Imperial | ☕ مقهى Benção do Café | ☕ مقهى Starbucks Recife"
+        data-events="🎪 كرنفال ريسيفي وأولينا | 🎵 مهرجان فريفو | 🎭 مهرجان الفنون الشعبية"
+      >
+        <button
+          class="save-btn"
+          onclick="
+            event.stopPropagation();
+            saveItem('city', 'recife', 'ريسيفي', '/img/ريسيفي.jpg');
+          "
+        >
+          🏙️
+        </button>
+        <img src="/img/ريسيفي.jpg" alt="ريسيفي" class="cite-img" />
+        <span class="name">ريسيفي</span>
+        <p class="info">عاصمة الشمال الشرقي وموطن أكبر كرنفال في العالم.</p>
         <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
           تفاصيل
         </button>
@@ -217,10 +246,10 @@
     </div>
     <section class="foods-grid">
       <div class="foods">
-        <img src="" alt="" class="foods-img" />
-        <span class="name-foods"></span>
-        <div class="food-info">س</div>
-        <a href="" class="for-more-btn">س</a>
+        <img src="/img/فيجوادا.jpg" alt="فيجوادا" class="foods-img" />
+        <span class="name-foods">فيجوادا – Feijoada</span>
+        <div class="food-info">فاصوليا سوداء مطبوخة مع اللحم والتوابل، بطعم غني ودسم.</div>
+        <a href="/recipes/recipes.html?recipe=feijoada" class="for-more-btn">المزيد</a>
       </div>
       <div class="foods">
         <img src="" alt="" class="foods-img" />

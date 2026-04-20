@@ -1726,6 +1726,37 @@
           <span class="arrow">الوصفة ⌄</span>
         </button>
       </div>
+      <div class="foods-card" data-region="main-foods" id="feijoada">
+        <button
+          class="save-btn"
+          onclick="
+            saveItem(
+              'recipe',
+              'feijoada',
+              'فيجوادا – Feijoada',
+              '/img/فيجوادا.jpg',
+            )
+          "
+        >
+          🍽️
+        </button>
+        <button
+          class="recipes-item"
+          data-title="فيجوادا – Feijoada"
+          data-img="/img/فيجوادا.jpg"
+          data-ingredients="فاصوليا سوداء|100|غ|دجاج مدخن|100|غ|بصل|1|حبة صغيرة|ثوم|2|فص|طماطم|1|حبة صغيرة|زيت|15|مل|ملح|2|غ|ماء|400|مل"
+          data-spices="كمون|2|غ|فلفل أسود|1|غ|ورق غار|1|ورقة|بابريكا|2|غ"
+          data-sauces="أرز أبيض|برتقال مقطع|كيل"
+          data-steps="انقع الفاصوليا السوداء ليلة كاملة|قلّي البصل والثوم في الزيت|أضف الدجاج المدخن وحمّره|أضف الطماطم والبهارات وورق الغار|أضف الفاصوليا والماء واتركه يغلي|اطبخ على نار هادئة ساعة ونصف|أضف الملح وحرك|قدّم مع الأرز الأبيض والبرتقال والكيل"
+          onclick="openRecipeFromData(this)"
+        >
+          <div class="recipes-head">
+            <img src="/img/فيجوادا.jpg" alt="فيجوادا" />
+            <span>فيجوادا – Feijoada</span>
+          </div>
+          <span class="arrow">الوصفة ⌄</span>
+        </button>
+      </div>
     </div>
 
     <!-- Modal -->
