@@ -154,12 +154,33 @@
           تفاصيل
         </button>
       </div>
-      <div class="cite">
-        <img src="/img/هيروشيما.jpg" alt="" class="cite-img" />
-        <span class="name">هيروشيما (Hiroshima)</span>
-        <div class="info">
+      <div
+        class="cite"
+        data-name="هيروشيما – Hiroshima"
+        data-img="/img/هيروشيما.jpg"
+        data-desc="مدينة السلام والأمل، تجمع بين التاريخ المؤثر والطبيعة الجميلة والجزر القريبة، شاهدة على قدرة الإنسان على النهوض والتجدد."
+        data-historic="🕊️ متحف السلام – Peace Memorial Museum | 🏛️ قبة غينباكو – Atomic Bomb Dome | ⛩️ ضريح إيتسوكوشيما – Itsukushima Shrine | 🏯 قلعة هيروشيما – Hiroshima Castle"
+        data-restaurants="🥘 ناغاتايا – Nagataya | 🍳 ميتشان – Micchan Souhonten | 🏢 أوكونوميمورا – Okonomimura | 🍽️ تيتشان – Tecchan | 🦞 هيسان-يا – Hassan-ya"
+        data-cafes="☕ ماريفو كوفي – Marifu Coffee Roaster | ☕ أوبسكورا – Obscura Coffee Roasters | ☕ ألوفت باسيرا – ALOFT Pasera | ☕ كوميدا كوفي – Komeda Coffee | ☕ مقاهي سوجو – Sogo Cafes"
+        data-events="🕊️ حديقة السلام – Peace Memorial Park | ⛩️ جزيرة مياجيما – Miyajima Island | 🍳 أوكونومياكي – Okonomiyaki Experience | 🏯 قلعة هيروشيما – Hiroshima Castle | 🌿 حديقة شوكيين – Shukkeien Garden"
+      >
+        <button
+          class="save-btn"
+          onclick="
+            event.stopPropagation();
+            saveItem('city', 'hiroshima', 'هيروشيما', '/img/هيروشيما.jpg');
+          "
+        >
+          🏙️
+        </button>
+        <img src="/img/هيروشيما.jpg" alt="هيروشيما" class="cite-img" />
+        <span class="name">هيروشيما – Hiroshima</span>
+        <p class="info">
           مدينة السلام، تجمع بين التاريخ المؤثر والطبيعة الجميلة والجزر القريبة.
-        </div>
+        </p>
+        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+          تفاصيل
+        </button>
       </div>
       <div class="cite">
         <img src="/img/سابورو.jpg" alt="" class="cite-img" />
