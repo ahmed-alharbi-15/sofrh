@@ -180,10 +180,40 @@
           تفاصيل
         </button>
       </div>
-      <div class="cite">
-        <img src="/img/bukittinggi_banner.webp" alt="" class="cite-img" />
-        <span class="name">بوكيتينغي (Bukittinggi)</span>
-        <div class="info">مدينة طبيعة ومرتفعات في سومطرة، ووديان وشلالات.</div>
+      <div
+        class="cite"
+        data-name="بوكيتينغي – Lubang Jepang"
+        data-img="/img/bukittinggi_banner.webp"
+        data-desc="جوهرة سومطرة الغربية في إندونيسيا، مدينة المرتفعات الجميلة تحيط بها البراكين والوديان العميقة والشلالات الخلابة والثقافة المينانغكاباو الفريدة."
+        data-historic="🕌 مسجد جام عيه – Jam Gadang Clock Tower | 🏔️ بركان ماراب – Marapi Volcano | 🌿 وادي سيانوك – Sianok Canyon | 🏛️ متحف أدي تياوارمان – Adityawarman Museum"
+        data-restaurants="🌿 لالا باتيو – LALA Patio | 🏰 توريت كافيه – Turret Cafe | 🌊 تاروكو – TARUKO Caferesto | 🍱 سيمبانغ رايا – Simpang Raya | ☕ بيدودال – Bedudal Cafe"
+        data-cafes="☕ تاروكو – TARUKO Caferesto | ☕ بيدودال – Bedudal Cafe | ☕ بيلار كوفي – Pilar Coffee | ☕ ويزكيد – Whizkid Coffee & Roastery | ☕ دي كوك – De Kock Cafe"
+        data-events="🗼 برج جام غادانغ – Jam Gadang Tower | 🌿 وادي سيانوك – Ngarai Sianok | 🏚️ نفق اليابان – Lubang Jepang | 🛍️ باصار أتاس – Pasar Atas Market | 🏞️ بحيرة مانينجاو – Maninjau Lake"
+      >
+        <button
+          class="save-btn"
+          onclick="
+            event.stopPropagation();
+            saveItem(
+              'city',
+              'bukittinggi',
+              'بوكيتينغي',
+              '/img/bukittinggi_banner.webp',
+            );
+          "
+        >
+          🏙️
+        </button>
+        <img
+          src="/img/bukittinggi_banner.webp"
+          alt="بوكيتينغي"
+          class="cite-img"
+        />
+        <span class="name">بوكيتينغي – Bukittinggi</span>
+        <p class="info">مدينة طبيعة ومرتفعات في سومطرة، ووديان وشلالات.</p>
+        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+          تفاصيل
+        </button>
       </div>
       <div class="cite">
         <img src="/img/Puncak.webp" alt="" class="cite-img" />
