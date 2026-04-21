@@ -210,10 +210,33 @@
           تفاصيل
         </button>
       </div>
-      <div class="cite">
-        <img src="/img/ناغويا.jpg" alt="" class="cite-img" />
-        <span class="name">ناغويا (Nagoya)</span>
-        <div class="info">مدينة صناعية حديثة، مشهورة بالقلعة التاريخية</div>
+      <div
+        class="cite"
+        data-name="ناغويا – Nagoya"
+        data-img="/img/ناغويا.jpg"
+        data-desc="المدينة الصناعية الكبرى في قلب اليابان، تجمع بين القلعة التاريخية العريقة والمطبخ المحلي الفريد والتكنولوجيا المتقدمة."
+        data-historic="🏯 قلعة ناغويا – Nagoya Castle | 🏛️ متحف تويوتا – Toyota Museum | ⛩️ ضريح أتسوتا – Atsuta Shrine | 🌿 حديقة هيغاشياما – Higashiyama Park"
+        data-restaurants="🍱 ياباتون – Yabaton | 🐟 أتسوتا هوراي-كن – Atsuta Horaiken | 🍙 تينموسو سينجو – Tenmusu Senju | 🍜 ياماموتو-يا – Yamamoto-ya | 🍗 يوماتشان – Sekai no Yamachan"
+        data-cafes="☕ صانداي فولر – Sunday Fuller Cafe | ☕ بانيل كافيه – Panel Cafe | ☕ تسوبامي – Tsubame Pan & Milk | ☕ كوميدا – Komeda's Coffee | ☕ كاكو – Kaku Cafe"
+        data-events="🏯 قلعة ناغويا – Nagoya Castle | 🚗 متحف تويوتا – Toyota Museum | 🐬 حوض الميناء – Port Aquarium | 🛍️ منطقة أوسو – Osu Shopping District | 🌿 حديقة هيغاشياما – Higashiyama Park"
+      >
+        <button
+          class="save-btn"
+          onclick="
+            event.stopPropagation();
+            saveItem('city', 'nagoya', 'ناغويا', '/img/ناغويا.jpg');
+          "
+        >
+          🏙️
+        </button>
+        <img src="/img/ناغويا.jpg" alt="ناغويا" class="cite-img" />
+        <span class="name">ناغويا – Nagoya</span>
+        <p class="info">
+          مدينة صناعية حديثة مشهورة بقلعتها التاريخية ومطبخها الفريد.
+        </p>
+        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+          تفاصيل
+        </button>
       </div>
     </section>
     <!--الاكل-->
