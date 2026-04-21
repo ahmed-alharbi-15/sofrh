@@ -1881,6 +1881,32 @@
           <span class="arrow">الوصفة ⌄</span>
         </button>
       </div>
+      <div class="foods-card" data-region="sweets" id="pudim">
+        <button
+          class="save-btn"
+          onclick="
+            saveItem('recipe', 'pudim', 'بوديم – Pudim', '/img/بوديم.jpg')
+          "
+        >
+          🍽️
+        </button>
+        <button
+          class="recipes-item"
+          data-title="بوديم – Pudim"
+          data-img="/img/بوديم.jpg"
+          data-ingredients="حليب مكثف|400|غ|حليب|400|مل|بيض|4|حبة|سكر|200|غ|ماء|60|مل"
+          data-spices="فانيليا|2|غ"
+          data-sauces=""
+          data-steps="اصنع الكراميل: اذب السكر مع الماء على نار متوسطة حتى يتحول للون العسلي|صب الكراميل في قالب دائري وافرده على الجوانب|اخلط الحليب المكثف والحليب والبيض والفانيليا في الخلاط|صب الخليط فوق الكراميل|ضع القالب في صينية فيها ماء بان ماري|اخبز على 160° لمدة 50 دقيقة|اتركه يبرد في الثلاجة 4 ساعات|اقلبه على طبق التقديم"
+          onclick="openRecipeFromData(this)"
+        >
+          <div class="recipes-head">
+            <img src="/img/بوديم.jpg" alt="بوديم" />
+            <span>بوديم – Pudim</span>
+          </div>
+          <span class="arrow">الوصفة ⌄</span>
+        </button>
+      </div>
     </div>
 
     <!-- Modal -->
