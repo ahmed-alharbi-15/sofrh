@@ -97,10 +97,31 @@
           تفاصيل
         </button>
       </div>
-      <div class="cite">
-        <img src="/img/باندونغ.jpg" alt="" class="cite-img" />
-        <span class="name">باندونغ (Bandung)</span>
-        <div class="info">مرتفعات وهواء بارد، شلالات وبحيرات فوهات بركانية</div>
+      <div
+        class="cite"
+        data-name="باندونغ – Bandung"
+        data-img="/img/باندونغ.jpg"
+        data-desc="مدينة المرتفعات والهواء البارد في إندونيسيا، تشتهر بالشلالات والبحيرات البركانية الخلابة والمصانع التاريخية والثقافة الفريدة."
+        data-historic="🏛️ متحف جيولوجيا باندونغ – Geological Museum | 🌋 بحيرة كاواه بوتيه – Kawah Putih | 🏰 مبنى باندونغ التاريخي – Gedung Sate | 🌿 حديقة دريمارك – Dusun Bambu"
+        data-restaurants="🌿 كامبونج داون – Kampung Daun | 🥘 الجازيرة – Al Jazeerah Signature | 🚣 سوق ليمبانغ العائم – Floating Market Lembang | 🌙 لايالي لاونج – Layalii Lounge | 🍽️ فود أوبرا – Food Opera"
+        data-cafes="☕ دوسون بامبو – Dusun Bambu | ☕ سودوت باندانغ – Sudut Pandang | ☕ ميركوسوار – Mercusuar Cafe | ☕ أسيب ستروبيري – Asep Strawberry | ☕ كافيه دي باكار – Cafe D'Pakar"
+        data-events="🌋 كاواه بوتيه – Kawah Putih | 🍃 مزارع الشاي – Tea Plantations | ♨️ الينابيع الساخنة – Hot Springs Sari Ater | 🛍️ منافذ البيع – Factory Outlets | 🌿 ماريبايا – Maribaya Nature"
+      >
+        <button
+          class="save-btn"
+          onclick="
+            event.stopPropagation();
+            saveItem('city', 'bandung', 'باندونغ', '/img/باندونغ.jpg');
+          "
+        >
+          🏙️
+        </button>
+        <img src="/img/باندونغ.jpg" alt="باندونغ" class="cite-img" />
+        <span class="name">باندونغ – Bandung</span>
+        <p class="info">مرتفعات وهواء بارد، شلالات وبحيرات فوهات بركانية.</p>
+        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+          تفاصيل
+        </button>
       </div>
       <div class="cite">
         <img src="/img/لومبوك.jpg" alt="" class="cite-img" />
