@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ar" dir="rtl">
   <head>
     <meta charset="UTF-8" />
@@ -21,18 +21,18 @@
       <div class="hamburger" id="menu-btn">☰</div>
 
       <div class="auth-buttons" id="authButtons">
-    <a href="/auth/login.html" class="login">تسجيل دخول</a>
-    <a href="/auth/signup.html" class="signup">إنشاء حساب</a>
-</div>
+        <a href="/auth/login.html" class="login">تسجيل دخول</a>
+        <a href="/auth/signup.html" class="signup">إنشاء حساب</a>
+      </div>
 
-<div class="user-menu" id="userMenu">
-    <img id="userAvatar" src="/img/default-avatar.png" alt="المستخدم">
-    <span class="user-name" id="userName"></span>
-    <div class="user-dropdown">
-        <a href="#">الملف الشخصي</a>
-        <a href="#" id="logoutBtn">تسجيل الخروج</a>
-    </div>
-</div>
+      <div class="user-menu" id="userMenu">
+        <img id="userAvatar" src="/img/default-avatar.png" alt="المستخدم" />
+        <span class="user-name" id="userName"></span>
+        <div class="user-dropdown">
+          <a href="#">الملف الشخصي</a>
+          <a href="#" id="logoutBtn">تسجيل الخروج</a>
+        </div>
+      </div>
 
       <ul class="nav-list">
         <li><a href="/index/index.html">الرئيسية</a></li>
@@ -42,9 +42,7 @@
       </ul>
 
       <div class="logo">
-        <a href="/index/index.html">
-          <img src="/img/logo3.JPG" alt="سفرة"
-        /></a>
+        <a href="/index/index.html"> <img src="/img/logo3.JPG" alt="سفرة" /></a>
       </div>
     </header>
 
@@ -73,10 +71,31 @@
       <h1>المدن</h1>
     </div>
     <section class="cities-grid">
-      <div class="cite">
-        <img src="/img/Ubud.jpg" alt="" class="cite-img" />
-        <span class="name">أوبود (Ubud)</span>
-        <div class="info">طبيعية هادئة وسط الغابات وحقول الأرز</div>
+      <div
+        class="cite"
+        data-name="أوبود – Ubud"
+        data-img="/img/Ubud.jpg"
+        data-desc="عاصمة الفنون والثقافة في بالي، تجمع بين الطبيعة الهادئة وسط الغابات وحقول الأرز الخضراء والمعابد الهندوسية العريقة والفنون التقليدية."
+        data-historic="🏛️ متحف بيما سيتي – Puri Saren Palace | ⛩️ معبد تاناه لوت – Tanah Lot | 🌿 غابة القرود – Sacred Monkey Forest | 🌾 حقول أرز تيغالالانغ – Tegallalang Rice Terraces"
+        data-restaurants="🍱 سان سان وارونغ – Sun Sun Warung | 🌿 هيرب ليبراري – Herb Library | 🍣 أمبار أوبود – Ambar Ubud | 🌺 تامان ديداري – Taman Dedari | 🍽️ ويدجا – Wedja Restaurant"
+        data-cafes="☕ TIS Cafe Ubud | ☕ وياه – WYAH Art & Creative Space | ☕ هيرب ليبراري – Herb Library | ☕ بريد يارد – Bread Yard | ☕ مسيو سبون – Monsieur Spoon"
+        data-events="🐒 غابة القرود – Monkey Forest | 🌾 مدرجات تيغالالانغ – Tegalalang Rice Terrace | 🧘 جلسات اليوغا – Yoga Sessions | 🚣 تجديف نهر أيونج – Ayung River Rafting | 🏛️ قصر أوبود وأسواقه – Ubud Palace & Markets"
+      >
+        <button
+          class="save-btn"
+          onclick="
+            event.stopPropagation();
+            saveItem('city', 'ubud', 'أوبود', '/img/Ubud.jpg');
+          "
+        >
+          🏙️
+        </button>
+        <img src="/img/Ubud.jpg" alt="أوبود" class="cite-img" />
+        <span class="name">أوبود – Ubud</span>
+        <p class="info">طبيعة هادئة وسط الغابات وحقول الأرز.</p>
+        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+          تفاصيل
+        </button>
       </div>
       <div class="cite">
         <img src="/img/باندونغ.jpg" alt="" class="cite-img" />
@@ -94,11 +113,7 @@
         <div class="info">بحر صافي وجزر طبيعية وتجارب بحرية مميزة.</div>
       </div>
       <div class="cite">
-        <img
-          src="/img/bukittinggi_banner.webp"
-          alt=""
-          class="cite-img"
-        />
+        <img src="/img/bukittinggi_banner.webp" alt="" class="cite-img" />
         <span class="name">بوكيتينغي (Bukittinggi)</span>
         <div class="info">مدينة طبيعة ومرتفعات في سومطرة، ووديان وشلالات.</div>
       </div>
@@ -117,17 +132,13 @@
         <img src="/img/Nasi Goreng.jpg" alt="" class="foods-img" />
         <span class="name-foods">ناسي جورينج (Nasi Goreng)</span>
         <div class="food-info">أرز مقلي بنكهة مميزة مع خضار ولحم أو دجاج.</div>
-        <a href="/recipes/recipes.html" class="for-more-btn"
-          >المزيد</a
-        >
+        <a href="/recipes/recipes.html" class="for-more-btn">المزيد</a>
       </div>
       <div class="foods">
         <img src="/img/(Mie Goreng.jpg" alt="" class="foods-img" />
         <span class="name-foods">مي جورينج (Mie Goreng)</span>
         <div class="food-info">نودلز مقلية مع صلصات إندونيسية وخضار.</div>
-        <a href="/recipes/recipes.html" class="for-more-btn"
-          >المزيد</a
-        >
+        <a href="/recipes/recipes.html" class="for-more-btn">المزيد</a>
       </div>
       <div class="foods">
         <img src="/img/Satay.webp" alt="" class="foods-img" />
@@ -135,17 +146,13 @@
         <div class="food-info">
           أسياخ لحم او دجاج مشوية تُقدّم مع صلصة الفول السوداني.
         </div>
-        <a href="/recipes/recipes.html" class="for-more-btn"
-          >المزيد</a
-        >
+        <a href="/recipes/recipes.html" class="for-more-btn">المزيد</a>
       </div>
       <div class="foods">
         <img src="/img/Gado-Gado.jpg" alt="" class="foods-img" />
         <span class="name-foods">غادو غادو (Gado-Gado)</span>
         <div class="food-info">خضار مسلوقة مع صلصة فول سوداني لذيذة.</div>
-        <a href="/recipes/recipes.html" class="for-more-btn"
-          >المزيد</a
-        >
+        <a href="/recipes/recipes.html" class="for-more-btn">المزيد</a>
       </div>
       <div class="foods">
         <img src="/img/Rendang.webp" alt="" class="foods-img" />
@@ -153,21 +160,13 @@
         <div class="food-info">
           لحم مطهو ببطء مع توابل غنية وحليب جوز الهند.
         </div>
-        <a href="/recipes/recipes.html" class="for-more-btn"
-          >المزيد</a
-        >
+        <a href="/recipes/recipes.html" class="for-more-btn">المزيد</a>
       </div>
       <div class="foods">
-        <img
-          src="/img/Dadar Gulung.webp"
-          alt=""
-          class="foods-img"
-        />
+        <img src="/img/Dadar Gulung.webp" alt="" class="foods-img" />
         <span class="name-foods">دادار جولونغ (Dadar Gulung)</span>
         <div class="food-info">كريب أخضر محشو بجوز الهند وسكر النخيل.</div>
-        <a href="/recipes/recipes.html" class="for-more-btn"
-          >المزيد</a
-        >
+        <a href="/recipes/recipes.html" class="for-more-btn">المزيد</a>
       </div>
     </section>
     <div class="events-main">
@@ -180,7 +179,9 @@
         <div class="event-info">
           زيارة شلالات طبيعية وسط الغابات مثل تيغينونغان.
         </div>
-        <a href="/events/events.html?event=Waterfalls" class="event-btn">المزيد</a>
+        <a href="/events/events.html?event=Waterfalls" class="event-btn"
+          >المزيد</a
+        >
       </div>
       <div class="event">
         <img src="/img/شاطئ الوردي.jpg" alt="" class="event-img" />
@@ -189,21 +190,15 @@
         <a href="/events/events.html?event=Beaches" class="event-btn">المزيد</a>
       </div>
       <div class="event">
-        <img
-          src="/img/التجديف في الأنهار.jpg"
-          alt=""
-          class="event-img"
-        />
+        <img src="/img/التجديف في الأنهار.jpg" alt="" class="event-img" />
         <span class="name-event">التجديف في الأنهار – River Rafting</span>
         <div class="event-info">تجربة مغامرة خفيفة وسط الطبيعة.</div>
-        <a href="/events/events.html?event=RiverRafting" class="event-btn">المزيد</a>
+        <a href="/events/events.html?event=RiverRafting" class="event-btn"
+          >المزيد</a
+        >
       </div>
       <div class="event">
-        <img
-          src="/img/SnowBay Waterpark.jpg"
-          alt=""
-          class="event-img"
-        />
+        <img src="/img/SnowBay Waterpark.jpg" alt="" class="event-img" />
         <span class="name-event">سنو باي ووتر بارك – SnowBay</span>
         <div class="event-info">ملاهي مائية كبيرة بألعاب ومنزلقات ممتعة</div>
         <a href="/events/events.html?event=SnowBay" class="event-btn">المزيد</a>
@@ -216,7 +211,9 @@
         />
         <span class="name-event">كاتاماران ريزورت – Katamaran Resort</span>
         <div class="event-info">منتجع شاطئي هادئ مناسب للأزواج.</div>
-        <a href="/events/events.html?event=KatamaranResort" class="event-btn">المزيد</a>
+        <a href="/events/events.html?event=KatamaranResort" class="event-btn"
+          >المزيد</a
+        >
       </div>
       <div class="event">
         <img
@@ -228,10 +225,12 @@
         <div class="event-info">
           منتجع فاخر وسط الغابات وحقول الأرز، مثالي للاسترخاء.
         </div>
-        <a href="/events/events.html?event=FourSeasonsBali" class="event-btn">المزيد</a>
+        <a href="/events/events.html?event=FourSeasonsBali" class="event-btn"
+          >المزيد</a
+        >
       </div>
     </section>
-      <!-- Modal المدينة -->
+    <!-- Modal المدينة -->
     <div id="cityModal" class="modal" onclick="closeCityModal(event)">
       <div class="modal-content">
         <button class="modal-close" onclick="closeCityModal(event)">×</button>
@@ -252,6 +251,5 @@
         </div>
       </div>
     </div>
-
   </body>
 </html>
