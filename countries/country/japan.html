@@ -82,13 +82,20 @@
         <h1>المدن</h1>
     </div>
     <section class="cities-grid">
-        <div class="cite">
-            <img src="/img/طوكيو.jpg" alt="" class="cite-img">
-            <span class="name">طوكيو (Tokyo)</span>
-            <div class="info">
-                تجمع بين التقنية الحديثة والأسواق الشعبية والثقافة اليابانية المعاصرة.
-            </div>
-        </div>
+        <div class="cite"
+    data-name="طوكيو – Tokyo"
+    data-img="/img/طوكيو.jpg"
+    data-desc="عاصمة اليابان ومدينة المتناقضات، تجمع بين المعابد القديمة وناطحات السحاب الحديثة والثقافة الفريدة في مشهد لا يُنسى."
+    data-historic="🏯 قصر الإمبراطور – Imperial Palace | 🏛️ متحف طوكيو الوطني – Tokyo National Museum | 🌆 حي أساكوسا القديم – Asakusa Old District | 🏘️ قرية ياناكا – Yanaka Village | ⛩️ ضريح ميجي – Meiji Shrine"
+    data-restaurants="🍜 ناريتايا – Narita-ya | 🥩 جونباتشي – Gonpachi Nishi-Azabu | 🔥 أكاساكا نيكوبي – Akasaka Nikubei | 🍣 سوشي زانماي – Sushi Zanmai | 🌯 كباب براذرز – Kebab Brothers"
+    data-cafes="☕ كوفي ماميا – Coffee Mameya | ☕ ليفز – Leaves Coffee | ☕ دي لامبر – Café de L'Ambre | ☕ ليتل ناب – Little Nap Coffee Stand | ☕ Ivy Place | 🐻 Anakuma Cafe"
+    data-events="🚶 تقاطع شيبويا – Shibuya Crossing | ⛩️ معبد سينسوجي – Senso-ji Temple | 🎮 أكيهابارا – Akihabara | 🌸 حديقة شينجوكو غيون – Shinjuku Gyoen | 🗼 برج سكاي تري – Tokyo Skytree">
+    <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'tokyo', 'طوكيو', '/img/طوكيو.jpg')">🏙️</button>
+    <img src="/img/طوكيو.jpg" alt="طوكيو" class="cite-img">
+    <span class="name">طوكيو – Tokyo</span>
+    <p class="info">عاصمة اليابان حيث التقاء الماضي والمستقبل في مكان واحد.</p>
+    <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">تفاصيل</button>
+</div>
         <div class="cite">
             <img src="/img/كيوتو.jpg" alt="" class="cite-img">
             <span class="name">كيوتو (Kyoto)</span>
