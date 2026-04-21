@@ -182,12 +182,33 @@
           تفاصيل
         </button>
       </div>
-      <div class="cite">
-        <img src="/img/سابورو.jpg" alt="" class="cite-img" />
-        <span class="name">سابورو (Sapporo)</span>
-        <div class="info">
+      <div
+        class="cite"
+        data-name="سابورو – Sapporo"
+        data-img="/img/سابورو.jpg"
+        data-desc="مدينة الثلج والطبيعة الخلابة في شمال اليابان، تشتهر بمهرجان الثلج السنوي الأسطوري والتزلج والمأكولات الطازجة من البحر."
+        data-historic="🏯 قلعة سابورو – Sapporo Castle | 🏛️ متحف هوكايدو – Hokkaido Museum | 🌿 حديقة أودوري – Odori Park | 🗼 برج التلفزيون – Sapporo TV Tower"
+        data-restaurants="🥩 داروما – Daruma Main Shop | 🍜 رامن يوكوتشو – Ramen Yokocho | 🍣 سوشي زين – Sushi Zen | 🍛 سوب كاري جاروكو – Soup Curry Garaku | 🦀 سوق نيجو – Nijo Market"
+        data-cafes="☕ TNOC The Cafe | ☕ كافيه يوشيمي – Cafe Yoshimi | ☕ روكفور كافيه – Roquefort Cafe | ☕ شيروغانه – Shirogane Coffee | ☕ أونياما بيس – ONIYANMA BASE"
+        data-events="⛄ مهرجان الثلج – Sapporo Snow Festival | 💡 إضاءة سابورو – White Illumination | 🍛 حساء الكاري – Soup Curry Experience | 🏔️ جبل مويوا – Mount Moiwa | 🌿 حديقة أودوري – Odori Park & TV Tower"
+      >
+        <button
+          class="save-btn"
+          onclick="
+            event.stopPropagation();
+            saveItem('city', 'sapporo', 'سابورو', '/img/سابورو.jpg');
+          "
+        >
+          🏙️
+        </button>
+        <img src="/img/سابورو.jpg" alt="سابورو" class="cite-img" />
+        <span class="name">سابورو – Sapporo</span>
+        <p class="info">
           مدينة شمالية معروفة بالثلوج والمهرجانات الشتوية والطبيعة الخلابة.
-        </div>
+        </p>
+        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+          تفاصيل
+        </button>
       </div>
       <div class="cite">
         <img src="/img/ناغويا.jpg" alt="" class="cite-img" />
