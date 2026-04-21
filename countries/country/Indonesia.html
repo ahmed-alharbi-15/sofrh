@@ -123,15 +123,62 @@
           تفاصيل
         </button>
       </div>
-      <div class="cite">
-        <img src="/img/لومبوك.jpg" alt="" class="cite-img" />
-        <span class="name">لومبوك(Lombok)</span>
-        <div class="info">شواطئ طبيعية هادئة، وجبل رينجاني لمحبي المغامرة.</div>
+      <div
+        class="cite"
+        data-name="لومبوك – Lombok"
+        data-img="/img/لومبوك.jpg"
+        data-desc="جزيرة الهدوء والطبيعة البكر في إندونيسيا، تشتهر بشواطئها الفيروزية الساحرة وجبل رينجاني البركاني الشامخ والثقافة الساساك الأصيلة."
+        data-historic="🏔️ جبل رينجاني – Mount Rinjani | 🌊 جزر غيلي – Gili Islands | 🕌 مسجد إسلام ألانغكار – Lombok Grand Mosque | 🏘️ قرية ساساك – Sasak Village"
+        data-restaurants="🌍 إل بازار – El Bazar | 🦞 لاوت بيرو – Laut Biru | 🌿 أشتاري – Ashtari | 🍕 ماما بيتزا – Mama Pizza | 🏖️ تانجونغ آن – Tanjung Aan Cafe"
+        data-cafes="☕ ميلك إسبريسو – Milk Espresso | ☕ كينزا كافيه – Kenza Cafe | ☕ ذا باص – The Bus Bar & Cafe | ☕ بامبو كافيه – Bambu Cafe | ☕ إل بازار – El Bazar Cafe"
+        data-events="🌊 جزر غيلي – Gili Islands | 🏔️ تسلق رينجاني – Mount Rinjani Trekking | 🏖️ الشاطئ الوردي – Pink Beach | 💦 شلالات سيندانج – Sendang Gile Waterfall | 🐒 غابة بوسوك – Pusuk Monkey Forest"
+      >
+        <button
+          class="save-btn"
+          onclick="
+            event.stopPropagation();
+            saveItem('city', 'lombok', 'لومبوك', '/img/لومبوك.jpg');
+          "
+        >
+          🏙️
+        </button>
+        <img src="/img/لومبوك.jpg" alt="لومبوك" class="cite-img" />
+        <span class="name">لومبوك – Lombok</span>
+        <p class="info">شواطئ طبيعية هادئة، وجبل رينجاني لمحبي المغامرة.</p>
+        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+          تفاصيل
+        </button>
       </div>
-      <div class="cite">
-        <img src="/img/لابوان باجو.webp" alt="" class="cite-img" />
-        <span class="name">لابوان باجو(labuan bajo)</span>
-        <div class="info">بحر صافي وجزر طبيعية وتجارب بحرية مميزة.</div>
+      <div
+        class="cite"
+        data-name="لابوان باجو – Labuan Bajo"
+        data-img="/img/لابوان باجو.webp"
+        data-desc="بوابة جزر كومودو الساحرة في غرب فلوريس، تشتهر ببحرها الصافي وجزرها البكر وتجاربها البحرية الاستثنائية وتنانين كومودو الشهيرة."
+        data-historic="🦎 حديقة كومودو – Komodo National Park | 🌊 جزيرة باداو – Padar Island | 🏖️ الشاطئ الوردي – Pink Beach | 🌿 تلة سيلانو – Sylano Hill"
+        data-restaurants="🍱 مطعم Mediterania | 🦞 مطعم Kampung Ujung | 🌊 مطعم La Cucina"
+        data-cafes="☕ مقهى Lokal Roastery | ☕ مقهى Bajo Rooftop | ☕ مقهى Maelo Cafe"
+        data-events="🦎 زيارة تنانين كومودو – Komodo Dragons | 🌊 غوص وسنوركلينج – Diving & Snorkeling | 🏝️ جولة الجزر – Island Hopping"
+      >
+        <button
+          class="save-btn"
+          onclick="
+            event.stopPropagation();
+            saveItem(
+              'city',
+              'labuan-bajo',
+              'لابوان باجو',
+              '/img/لابوان باجو.webp',
+            );
+          "
+        >
+          🏙️
+        </button>
+        <img src="/img/لابوان باجو.webp" alt="لابوان باجو" class="cite-img" />
+        <span class="name">لابوان باجو – Labuan Bajo</span>
+        <p class="info">بحر صافي وجزر طبيعية وتجارب بحرية مميزة.</p>
+        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+          تفاصيل
+        </button>
       </div>
       <div class="cite">
         <img src="/img/bukittinggi_banner.webp" alt="" class="cite-img" />
