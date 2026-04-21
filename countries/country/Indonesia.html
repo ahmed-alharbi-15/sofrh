@@ -215,10 +215,31 @@
           تفاصيل
         </button>
       </div>
-      <div class="cite">
-        <img src="/img/Puncak.webp" alt="" class="cite-img" />
-        <span class="name">بونشاك (Puncak)</span>
-        <div class="info">وجهة جبلية هادئة بطبيعة خضراء</div>
+      <div
+        class="cite"
+        data-name="بونشاك – Puncak"
+        data-img="/img/Puncak.webp"
+        data-desc="وجهة جبلية هادئة قريبة من جاكرتا، تشتهر بمزارع الشاي الخضراء والهواء البارد المنعش والطبيعة الخلابة، مكان مثالي للاسترخاء بعيداً عن ضجيج المدينة."
+        data-historic="🌿 مزارع شاي بونشاك – Puncak Tea Plantations | 🌋 جبل غيدي باناغرانغو – Gede Pangrango | 🌺 حديقة كيبون رايا – Cibodas Botanical Garden | 🏔️ ممر بونشاك – Puncak Pass"
+        data-restaurants="🌿 بومي أكي – Bumi Aki Heritage | 🏔️ ألتيوس – Altius Restaurant | 🍽️ نيكول – Nicole's Kitchen & Lounge | 🌊 ذا ليك هاوس – The Lake House | 🌺 كامننا – Kamannana Restaurant"
+        data-cafes="☕ كمبالي كي آلام – Kembali Ke Alam | ☕ بلاتاران بونشاك – Plataran Puncak | ☕ روف بارك – Roofpark Resto & Cafe | ☕ كلوب هاوس – Clubhuis Pesona Alam | ☕ كامننا – Kamannana Restaurant"
+        data-events="🦁 سفاري بونشاك – Taman Safari | 🍃 مزارع الشاي – Gunung Mas Tea Farm | 🏞️ بحيرة تيلاجا وارن – Telaga Warna Lake | 🪂 طيران شراعي – Paragliding Bukit Gantole | 🌈 حديقة قوس قزح – Rainbow Garden"
+      >
+        <button
+          class="save-btn"
+          onclick="
+            event.stopPropagation();
+            saveItem('city', 'puncak', 'بونشاك', '/img/Puncak.webp');
+          "
+        >
+          🏙️
+        </button>
+        <img src="/img/Puncak.webp" alt="بونشاك" class="cite-img" />
+        <span class="name">بونشاك – Puncak</span>
+        <p class="info">وجهة جبلية هادئة بطبيعة خضراء.</p>
+        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+          تفاصيل
+        </button>
       </div>
     </section>
     <!--الاكل-->
