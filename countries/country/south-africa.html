@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ar" dir="rtl">
   <head>
     <meta charset="UTF-8" />
@@ -21,18 +21,18 @@
       <div class="hamburger" id="menu-btn">☰</div>
 
       <div class="auth-buttons" id="authButtons">
-    <a href="/auth/login.html" class="login">تسجيل دخول</a>
-    <a href="/auth/signup.html" class="signup">إنشاء حساب</a>
-</div>
+        <a href="/auth/login.html" class="login">تسجيل دخول</a>
+        <a href="/auth/signup.html" class="signup">إنشاء حساب</a>
+      </div>
 
-<div class="user-menu" id="userMenu">
-    <img id="userAvatar" src="/img/default-avatar.png" alt="المستخدم">
-    <span class="user-name" id="userName"></span>
-    <div class="user-dropdown">
-        <a href="#">الملف الشخصي</a>
-        <a href="#" id="logoutBtn">تسجيل الخروج</a>
-    </div>
-</div>
+      <div class="user-menu" id="userMenu">
+        <img id="userAvatar" src="/img/default-avatar.png" alt="المستخدم" />
+        <span class="user-name" id="userName"></span>
+        <div class="user-dropdown">
+          <a href="#">الملف الشخصي</a>
+          <a href="#" id="logoutBtn">تسجيل الخروج</a>
+        </div>
+      </div>
 
       <ul class="nav-list">
         <li><a href="/index/index.html">الرئيسية</a></li>
@@ -44,7 +44,8 @@
       <div class="logo">
         <a href="/index/index.html">
           <img src="/img/logo3.JPG" alt="سفرة" />
-        /></a>
+          /></a
+        >
       </div>
     </header>
 
@@ -73,12 +74,34 @@
       <h1>المدن</h1>
     </div>
     <section class="cities-grid">
-      <div class="cite">
-        <img src="/img/كيب تاون.jpg" alt="" class="cite-img" />
-        <span class="name">كيب تاون (Cape Town)</span>
-        <div class="info">
-          مدينة ساحلية جميلة تشتهر بجبل الطاولة والشواطئ الرملية والثقافة الغنية.
-        </div>
+      <div
+        class="cite"
+        data-name="كيب تاون – Cape Town"
+        data-img="/img/كيب تاون.jpg"
+        data-desc="أجمل مدن أفريقيا وعاصمة جنوب أفريقيا التشريعية، تجمع بين جبل الطاولة الشامخ والشواطئ الرملية الساحرة والثقافة الغنية والمطبخ العالمي."
+        data-historic="🏔️ جبل الطاولة – Table Mountain | 🏰 قلعة رأس الرجاء – Castle of Good Hope | 🏘️ حي بو كاب – Bo-Kaap | 🏛️ متحف جنوب أفريقيا – South African Museum"
+        data-restaurants="🍽️ لا كولومب – La Colombe | 🧪 تيست كيتشن – The Test Kitchen | 🌿 جروت كونستانتيا – Groot Constantia | 🌊 زينزيرو – Zenzero | 🦞 مأكولات بحرية – Alaaly Seafood"
+        data-cafes="☕ تروث كوفي – Truth Coffee Roasting | ☕ سيريال كافيه – Cereal Cafe Cape Town | ☕ أوريجن كوفي – Origin Coffee Roasting | ☕ ذا كريمري – The Creamery Cafe | ☕ إسبريسو لاب – Espresso Lab Microroasters"
+        data-events="🏔️ جبل الطاولة – Table Mountain | 🛍️ واجهة فيكتوريا وألبرت – V&A Waterfront | 🌿 حدائق كيرستنبوش – Kirstenbosch Gardens | 🏘️ حي بو كاب – Bo-Kaap | 🚁 سفاري وطيران – Aquila Safari & Helicopter"
+      >
+        <button
+          class="save-btn"
+          onclick="
+            event.stopPropagation();
+            saveItem('city', 'cape-town', 'كيب تاون', '/img/كيب تاون.jpg');
+          "
+        >
+          🏙️
+        </button>
+        <img src="/img/كيب تاون.jpg" alt="كيب تاون" class="cite-img" />
+        <span class="name">كيب تاون – Cape Town</span>
+        <p class="info">
+          مدينة ساحلية جميلة تشتهر بجبل الطاولة والشواطئ الرملية والثقافة
+          الغنية.
+        </p>
+        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+          تفاصيل
+        </button>
       </div>
       <div class="cite">
         <img src="/img/جوهانسبرغ (Johannesburg).jpg" alt="" class="cite-img" />
@@ -127,7 +150,9 @@
         <div class="food-info">
           لحم مفروم متبل مع طبقة بيض مخبوزة – نكهته فريدة.
         </div>
-        <a href="/recipes/recipes.html?recipe=bobotie" class="for-more-btn">المزيد</a>
+        <a href="/recipes/recipes.html?recipe=bobotie" class="for-more-btn"
+          >المزيد</a
+        >
       </div>
       <div class="foods">
         <img src="/img/براي (Braai).jpg" alt="" class="foods-img" />
@@ -135,35 +160,50 @@
         <div class="food-info">
           الشواء الجنوب أفريقي الشهير (لحم، دجاج، نقانق).
         </div>
-        <a href="/recipes/recipes.html?recipe=braai" class="for-more-btn">المزيد</a>
+        <a href="/recipes/recipes.html?recipe=braai" class="for-more-btn"
+          >المزيد</a
+        >
       </div>
       <div class="foods">
-        <img src="/img/باب & تشاكالا (Pap & Chakalaka).jpg" alt="" class="foods-img" />
+        <img
+          src="/img/باب & تشاكالا (Pap & Chakalaka).jpg"
+          alt=""
+          class="foods-img"
+        />
         <span class="name-foods">باب وشاكالاكا – Pap & Chakalaka</span>
         <div class="food-info">
-          أكلة شعبية مكوّنة من عصيدة الذرة مع صلصة خضار حارة، تقدم غالبًا مع المشويات.
+          أكلة شعبية مكوّنة من عصيدة الذرة مع صلصة خضار حارة، تقدم غالبًا مع
+          المشويات.
         </div>
-        <a href="/recipes/recipes.html?recipe=pap-chakalaka" class="for-more-btn">المزيد</a>
+        <a
+          href="/recipes/recipes.html?recipe=pap-chakalaka"
+          class="for-more-btn"
+          >المزيد</a
+        >
       </div>
       <div class="foods">
         <img src="/img/باني تشاو (Bunny Chow).webp" alt="" class="foods-img" />
         <span class="name-foods">باني تشاو – Bunny Chow</span>
-        <div class="food-info">
-          خبز محشو بالكاري، مشهور في ديربان.
-        </div>
-        <a href="/recipes/recipes.html?recipe=bunny-chow" class="for-more-btn">المزيد</a>
+        <div class="food-info">خبز محشو بالكاري، مشهور في ديربان.</div>
+        <a href="/recipes/recipes.html?recipe=bunny-chow" class="for-more-btn"
+          >المزيد</a
+        >
       </div>
       <div class="foods">
         <img src="/img/سوساتي (Sosatie).webp" alt="" class="foods-img" />
         <span class="name-foods">سوساتي – Sosatie</span>
         <div class="food-info">نقانق تقليدية مشوية بطعم قوي.</div>
-        <a href="/recipes/recipes.html?recipe=sosatie" class="for-more-btn">المزيد</a>
+        <a href="/recipes/recipes.html?recipe=sosatie" class="for-more-btn"
+          >المزيد</a
+        >
       </div>
       <div class="foods">
         <img src="/img/ميلك تارت (Milk Tart).jpg" alt="" class="foods-img" />
         <span class="name-foods">ميلك تارت – Milk Tart</span>
         <div class="food-info">حلى تقليدي بالحليب والقرفة.</div>
-        <a href="/recipes/recipes.html?recipe=milk-tart" class="for-more-btn">المزيد</a>
+        <a href="/recipes/recipes.html?recipe=milk-tart" class="for-more-btn"
+          >المزيد</a
+        >
       </div>
     </section>
     <div class="events-main">
@@ -171,55 +211,79 @@
     </div>
     <section class="events-grid">
       <div class="event">
-        <img src="/img/السفاري في حديقة كروغر الوطنية.jpg" alt="" class="event-img" />
+        <img
+          src="/img/السفاري في حديقة كروغر الوطنية.jpg"
+          alt=""
+          class="event-img"
+        />
         <span class="name-event">سفاري كروغر – Kruger National Park</span>
-        <div class="event-info">
-          مشاهدة الأسود والفيلة والزرافات عن قرب
-        </div>
-        <a href="/events/events.html?event=KrugerNationalPark" class="event-btn">المزيد</a>
+        <div class="event-info">مشاهدة الأسود والفيلة والزرافات عن قرب</div>
+        <a href="/events/events.html?event=KrugerNationalPark" class="event-btn"
+          >المزيد</a
+        >
       </div>
       <div class="event">
-        <img src="/img/الصعود إلى جبل الطاولة (Table Mountain).jpg" alt="" class="event-img" />
+        <img
+          src="/img/الصعود إلى جبل الطاولة (Table Mountain).jpg"
+          alt=""
+          class="event-img"
+        />
         <span class="name-event">جبل الطاولة – Table Mountain</span>
-        <div class="event-info">
-          إطلالة بانورامية مذهلة على كيب تاون.
-        </div>
-        <a href="/events/events.html?event=TableMountain" class="event-btn">المزيد</a>
+        <div class="event-info">إطلالة بانورامية مذهلة على كيب تاون.</div>
+        <a href="/events/events.html?event=TableMountain" class="event-btn"
+          >المزيد</a
+        >
       </div>
       <div class="event">
-        <img src="/img/مشاهدة الحيتان في هيرمانوس.jpg" alt="" class="event-img" />
+        <img
+          src="/img/مشاهدة الحيتان في هيرمانوس.jpg"
+          alt=""
+          class="event-img"
+        />
         <span class="name-event">مشاهدة الحيتان – Hermanus Whale Watching</span>
-        <div class="event-info">
-          من أفضل الأماكن عالميًا لمشاهدة الحيتان.
-        </div>
-        <a href="/events/events.html?event=WhaleWatching" class="event-btn">المزيد</a>
+        <div class="event-info">من أفضل الأماكن عالميًا لمشاهدة الحيتان.</div>
+        <a href="/events/events.html?event=WhaleWatching" class="event-btn"
+          >المزيد</a
+        >
       </div>
       <div class="event">
-        <img src="/img/الغوص مع أسماك القرش البيضاء.jpg" alt="" class="event-img" />
+        <img
+          src="/img/الغوص مع أسماك القرش البيضاء.jpg"
+          alt=""
+          class="event-img"
+        />
         <span class="name-event">الغوص مع القرش الأبيض – Shark Diving</span>
-        <div class="event-info">
-          تجربة جريئة ومشهورة عالميًا.
-        </div>
-        <a href="/events/events.html?event=SharkDiving" class="event-btn">المزيد</a>
+        <div class="event-info">تجربة جريئة ومشهورة عالميًا.</div>
+        <a href="/events/events.html?event=SharkDiving" class="event-btn"
+          >المزيد</a
+        >
       </div>
       <div class="event">
-        <img src="/img/جولة مزارع العنب في ستيلينبوش.jpg" alt="" class="event-img" />
+        <img
+          src="/img/جولة مزارع العنب في ستيلينبوش.jpg"
+          alt=""
+          class="event-img"
+        />
         <span class="name-event">مزارع العنب في ستيلينبوش – Stellenbosch</span>
-        <div class="event-info">
-          طبيعة فاخرة وتجربة راقية.
-        </div>
-        <a href="/events/events.html?event=Stellenbosch" class="event-btn">المزيد</a>
+        <div class="event-info">طبيعة فاخرة وتجربة راقية.</div>
+        <a href="/events/events.html?event=Stellenbosch" class="event-btn"
+          >المزيد</a
+        >
       </div>
       <div class="event">
-        <img src="/img/الشواطئ وركوب الأمواج في ديربان.jpeg" alt="" class="event-img" />
+        <img
+          src="/img/الشواطئ وركوب الأمواج في ديربان.jpeg"
+          alt=""
+          class="event-img"
+        />
         <span class="name-event">شواطئ ديربان – Durban Beache</span>
-        <div class="event-info">
-          أجواء ممتعة لمحبي البحر.
-        </div>
-        <a href="/events/events.html?event=DurbanBeaches" class="event-btn">المزيد</a>
+        <div class="event-info">أجواء ممتعة لمحبي البحر.</div>
+        <a href="/events/events.html?event=DurbanBeaches" class="event-btn"
+          >المزيد</a
+        >
       </div>
     </section>
-      <!-- Modal المدينة -->
+    <!-- Modal المدينة -->
     <div id="cityModal" class="modal" onclick="closeCityModal(event)">
       <div class="modal-content">
         <button class="modal-close" onclick="closeCityModal(event)">×</button>
@@ -240,6 +304,5 @@
         </div>
       </div>
     </div>
-
   </body>
 </html>
