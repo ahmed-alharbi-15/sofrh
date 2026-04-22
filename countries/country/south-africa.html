@@ -175,12 +175,42 @@
           مدينة هادئة وأنيقة، مليئة بالحدائق والمعالم التاريخية.
         </div>
       </div>
-      <div class="cite">
-        <img src="/img/بورت إليزابيث (Gqeberha).jpg" alt="" class="cite-img" />
-        <span class="name">بورت إليزابيث (Gqeberha)</span>
-        <div class="info">
+      <div
+        class="cite"
+        data-name="بورت إليزابيث – Gqeberha"
+        data-img="/img/بورت إليزابيث (Gqeberha).jpg"
+        data-desc="مدينة الشواطئ الهادئة وبوابة سفاري الحياة البرية في جنوب أفريقيا، تجمع بين الاسترخاء على الشواطئ الرملية الجميلة وتجارب السفاري المثيرة في المحميات القريبة."
+        data-historic="🏛️ متحف نيلسون مانديلا – Nelson Mandela Museum | 🏖️ شاطئ هومبي – Humewood Beach | 🌿 حديقة الفيلة – Addo Elephant Park | 🏰 قلعة فريدريك – Fort Frederick"
+        data-restaurants="🥩 ذا كوتشمان – The Coachman | 🌊 جينجر – Ginger Restaurant | 🦞 فيش فايندر – Fish Finder | 🍝 جراتيس – Grattis Cafe | 💧 بلو ووترز – Blue Waters Cafe"
+        data-cafes="☕ فوفو تيلو – Vovo Telo | ☕ برويش – Brioche Food and Coffee | ☕ هيريتيج – Heritage Café | ☕ بوكاديلوس – Bocadillos Bakery | ☕ جراس روف – Grass Roof"
+        data-events="🐘 منتزه أدو – Addo Elephant Park | 🏛️ محمية دونكين – Donkin Reserve | 🏖️ شواطئ خليج ألغوا – Algoa Bay Beaches | 🐬 مشاهدة الدلافين – Dolphin & Whale Watching | 🌿 طريق الحدائق – Garden Route"
+      >
+        <button
+          class="save-btn"
+          onclick="
+            event.stopPropagation();
+            saveItem(
+              'city',
+              'port-elizabeth',
+              'بورت إليزابيث',
+              '/img/بورت إليزابيث (Gqeberha).jpg',
+            );
+          "
+        >
+          🏙️
+        </button>
+        <img
+          src="/img/بورت إليزابيث (Gqeberha).jpg"
+          alt="بورت إليزابيث"
+          class="cite-img"
+        />
+        <span class="name">بورت إليزابيث – Gqeberha</span>
+        <p class="info">
           مدينة ساحلية جميلة، مناسبة للاسترخاء ومشاهدة الحياة البرية.
-        </div>
+        </p>
+        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+          تفاصيل
+        </button>
       </div>
       <div class="cite">
         <img src="/img/كنيسنا (Knysna).jpg" alt="" class="cite-img" />
