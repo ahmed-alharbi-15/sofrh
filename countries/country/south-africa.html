@@ -103,12 +103,42 @@
           تفاصيل
         </button>
       </div>
-      <div class="cite">
-        <img src="/img/جوهانسبرغ (Johannesburg).jpg" alt="" class="cite-img" />
-        <span class="name">جوهانسبرغ (Johannesburg)</span>
-        <div class="info">
-          القلب الاقتصادي للبلد، مليئة بالمطاعم، المولات، والحياة العصرية.
-        </div>
+      <div
+        class="cite"
+        data-name="جوهانسبرغ – Johannesburg"
+        data-img="/img/جوهانسبرغ (Johannesburg).jpg"
+        data-desc="القلب الاقتصادي لجنوب أفريقيا ومدينة الذهب، تجمع بين الحياة العصرية الصاخبة والتاريخ العميق لمقاومة الفصل العنصري والثقافة الأفريقية الغنية."
+        data-historic="🏛️ متحف الفصل العنصري – Apartheid Museum | 🏘️ حي سويتو – Soweto Township | 🏰 قلعة برعم – Constitution Hill | 🌿 حديقة جوهانسبرغ – Johannesburg Zoo"
+        data-restaurants="🌆 توب أوف ذا روك – Top of the Rock | 🍛 ساجان – Sajan Restaurant | 🥢 ووك آند تانك – Wok & Tank | 🌿 ليفينغ لوم – Living Room | 🍽️ بيسرو – Bistro 276"
+        data-cafes="☕ سالفايشن – Salvation Cafe | ☕ ذا ويبت – The Whippet Coffee | ☕ هوم أوف ذا بين – Home of the Bean | ☕ نايس أون فورث – Nice on 4th | ☕ هارد روك – Hard Rock Cafe"
+        data-events="🏛️ متحف الفصل العنصري – Apartheid Museum | 🏘️ جولة سويتو – Soweto Tour | 🎭 مونتي كازينو – Montecasino | 🛍️ ماركت أون مين – Market on Main | 🦴 مهد البشرية – Cradle of Humankind"
+      >
+        <button
+          class="save-btn"
+          onclick="
+            event.stopPropagation();
+            saveItem(
+              'city',
+              'johannesburg',
+              'جوهانسبرغ',
+              '/img/جوهانسبرغ (Johannesburg).jpg',
+            );
+          "
+        >
+          🏙️
+        </button>
+        <img
+          src="/img/جوهانسبرغ (Johannesburg).jpg"
+          alt="جوهانسبرغ"
+          class="cite-img"
+        />
+        <span class="name">جوهانسبرغ – Johannesburg</span>
+        <p class="info">
+          القلب الاقتصادي للبلد، مليئة بالمطاعم والمولات والحياة العصرية.
+        </p>
+        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+          تفاصيل
+        </button>
       </div>
       <div class="cite">
         <img src="/img/ديربان (Durban).jpg" alt="" class="cite-img" />
