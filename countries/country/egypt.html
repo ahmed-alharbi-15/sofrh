@@ -130,12 +130,31 @@
           تفاصيل
         </button>
       </div>
-      <div class="cite">
-        <img src="/img/الأقصر.jpg" alt="" class="cite-img" />
-        <span class="name">الأقصر</span>
-        <div class="info">
-          مدينة المعابد والأهرامات التاريخية على ضفاف النيل.
-        </div>
+      <div
+        class="cite"
+        data-name="الأقصر – Luxor"
+        data-img="/img/الأقصر.jpg"
+        data-desc="عاصمة العالم القديم ومتحف مفتوح تحت السماء، تضم أعظم المعابد والمقابر الفرعونية في العالم على ضفاف النيل الخالد."
+        data-historic="🏛️ معبد الكرنك – Karnak Temple | 🏺 وادي الملوك – Valley of the Kings | 🌅 معبد حتشبسوت – Hatshepsut Temple | 🗿 تمثالا ممنون – Colossi of Memnon"
+        data-restaurants="🌊 الصاحبي لين – Al-Sahaby Lane | 🍖 علي بابا – Ali Baba Restaurant | 🍽️ عائشة – Aisha Restaurant | 🥘 أم هاشم – Om Hashim | 🏺 توت عنخ آمون – Tutankhamun Restaurant"
+        data-cafes="☕ واناس آرت – Wannas Art Cafe | ☕ الوايت جاردن – Al White Garden | ☕ مون كافيه – Moon Café | ☕ أبودي بريك – Aboudi Break | ☕ أوسيس كافيه – Oasis Cafe"
+        data-events="🎈 منطاد الشروق – Hot Air Balloon | 🏺 وادي الملوك – Valley of the Kings | 🏛️ معبد الكرنك – Karnak Temple | 🚢 فلوكة نيلية – Nile Felucca | 🌟 عرض الصوت والضوء – Sound & Light Show"
+      >
+        <button
+          class="save-btn"
+          onclick="
+            event.stopPropagation();
+            saveItem('city', 'luxor', 'الأقصر', '/img/الأقصر.jpg');
+          "
+        >
+          🏙️
+        </button>
+        <img src="/img/الأقصر.jpg" alt="الأقصر" class="cite-img" />
+        <span class="name">الأقصر – Luxor</span>
+        <p class="info">مدينة المعابد والأهرامات التاريخية على ضفاف النيل.</p>
+        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+          تفاصيل
+        </button>
       </div>
       <div class="cite">
         <img src="/img/أسوان.jpg" alt="" class="cite-img" />
