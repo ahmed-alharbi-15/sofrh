@@ -168,12 +168,42 @@
           تفاصيل
         </button>
       </div>
-      <div class="cite">
-        <img src="/img/بريتوريا (Pretoria).jpg" alt="" class="cite-img" />
-        <span class="name">بريتوريا (Pretoria)</span>
-        <div class="info">
+      <div
+        class="cite"
+        data-name="بريتوريا – Pretoria"
+        data-img="/img/بريتوريا (Pretoria).jpg"
+        data-desc="العاصمة الإدارية لجنوب أفريقيا ومدينة الجاكاراندا، تشتهر بأشجارها البنفسجية الساحرة في موسم الربيع والمعالم التاريخية والحدائق الأنيقة."
+        data-historic="🏛️ مبنى الاتحاد – Union Buildings | 🗿 نصب فورتريكر – Voortrekker Monument | 🏺 متحف بريتوريا – Pretoria Museum | 🌿 حدائق بريتوريا – National Zoological Gardens"
+        data-restaurants="🍽️ لا بينتولا – La Pentola | 🌿 دي كلوف – De Kloof | 🥩 فورتي جريل – Forti Grill & Bar | 🎵 لي سي – Le Si Casa Toscana | 🌍 إنديجينوس – Indigenous Restaurant"
+        data-cafes="☕ جيك هاوس – Geek House Eatery | ☕ ويست كافيه – West Cafe | ☕ جراوند كوفي – Ground Coffee | ☕ فيدا إي كافيه – Vida e Caffe | ☕ باوباب – Baobab Cafe & Grill"
+        data-events="🏛️ مباني الاتحاد – Union Buildings | 🗿 نصب فورتريكر – Voortrekker Monument | 🌿 الحدائق النباتية – National Botanical Gardens | 🦁 حديقة الحيوان – National Zoo | 🛍️ بروكلين مول – Brooklyn Mall"
+      >
+        <button
+          class="save-btn"
+          onclick="
+            event.stopPropagation();
+            saveItem(
+              'city',
+              'pretoria',
+              'بريتوريا',
+              '/img/بريتوريا (Pretoria).jpg',
+            );
+          "
+        >
+          🏙️
+        </button>
+        <img
+          src="/img/بريتوريا (Pretoria).jpg"
+          alt="بريتوريا"
+          class="cite-img"
+        />
+        <span class="name">بريتوريا – Pretoria</span>
+        <p class="info">
           مدينة هادئة وأنيقة، مليئة بالحدائق والمعالم التاريخية.
-        </div>
+        </p>
+        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+          تفاصيل
+        </button>
       </div>
       <div
         class="cite"
