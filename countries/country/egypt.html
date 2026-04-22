@@ -156,24 +156,89 @@
           تفاصيل
         </button>
       </div>
-      <div class="cite">
-        <img src="/img/أسوان.jpg" alt="" class="cite-img" />
-        <span class="name">أسوان</span>
-        <div class="info">
+      <div
+        class="cite"
+        data-name="أسوان – Aswan"
+        data-img="/img/أسوان.jpg"
+        data-desc="جوهرة النيل الجنوبية، مدينة الهدوء والجمال النوبي الأصيل، تشتهر بجزيرتها الخلابة وسد أسوان العظيم ومعبد أبو سمبل الأسطوري."
+        data-historic="🏛️ معبد أبو سمبل – Abu Simbel Temple | 🏺 معبد فيلة – Philae Temple | 🌊 سد أسوان – Aswan Dam | 🏘️ القرية النوبية – Nubian Village"
+        data-restaurants="🔥 كينج جامايكا – King Jamaica | 🍽️ مازا – Maza Restaurant | 🌊 بانوراما – Panorama Restaurant | 🌿 جذور – Juzoor | 🏘️ بوب مارلي – Bob Marley Restaurant"
+        data-cafes="☕ كافيه العوامة – Al Awama Cafe | ☕ كانكاتو – Kankato | ☕ كيان – Kayan Cafe | ☕ تاي هاوس – Thai House | ☕ كافيار – Caviar Cafe"
+        data-events="🏛️ معبد فيلة – Philae Temple | 🏘️ القرية النوبية – Nubian Village | 🚢 فلوكة الغروب – Sunset Felucca | 🗿 معابد أبو سمبل – Abu Simbel Temples | 🏺 المتحف النوبي – Nubian Museum"
+      >
+        <button
+          class="save-btn"
+          onclick="
+            event.stopPropagation();
+            saveItem('city', 'aswan', 'أسوان', '/img/أسوان.jpg');
+          "
+        >
+          🏙️
+        </button>
+        <img src="/img/أسوان.jpg" alt="أسوان" class="cite-img" />
+        <span class="name">أسوان – Aswan</span>
+        <p class="info">
           مدينة هادئة على النيل، مشهورة بالجزيرة النوبية والطبيعة الخلابة.
-        </div>
+        </p>
+        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+          تفاصيل
+        </button>
       </div>
-      <div class="cite">
-        <img src="/img/شرم الشيخ.jpg" alt="" class="cite-img" />
-        <span class="name">شرم الشيخ</span>
-        <div class="info">منتجع بحري شهير للغوص والأنشطة البحرية</div>
+      <div
+        class="cite"
+        data-name="شرم الشيخ – Sharm El Sheikh"
+        data-img="/img/شرم الشيخ.jpg"
+        data-desc="منتجع بحري شهير للغوص والأنشطة البحرية، يقع على ساحل البحر الأحمر."
+        data-historic="🏖️ الشاطئ – Beach | 🏖️ المنتزه – Resort | 🌊 البحر – Sea"
+        data-restaurants="🍽️ مطعم Blue Marlin | 🌊 مطعم Coral Reef | 🥘 مطعم Sea Breeze"
+        data-cafes="☕ مقهى Sunset Cafe | ☕ مقهى Ocean View | ☕ مقهى Beachfront"
+        data-events="🏄‍♂️ الغوص – Diving | 🚣‍♂️ الجولة البحرية – Boat Tour | 🌅 شروق البحر – Sunrise"
+      >
+        <button
+          class="save-btn"
+          onclick="
+            event.stopPropagation();
+            saveItem('city', 'sharm_el_sheikh', 'شرم الشيخ', '/img/شرم الشيخ.jpg');
+          "
+        >
+          🏙️
+        </button>
+        <img src="/img/شرم الشيخ.jpg" alt="شرم الشيخ" class="cite-img" />
+        <span class="name">شرم الشيخ – Sharm El Sheikh</span>
+        <p class="info">
+          منتجع بحري شهير للغوص والأنشطة البحرية، يقع على ساحل البحر الأحمر.
+        </p>
+        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+          تفاصيل
+        </button>
       </div>
-      <div class="cite">
-        <img src="/img/الغردقة.webp" alt="" class="cite-img" />
-        <span class="name">الغردقة</span>
-        <div class="info">
+      <div
+        class="cite"
+        data-name="الغردقة – Hurghada"
+        data-img="/img/الغردقة.webp"
+        data-desc="مدينة ساحلية على البحر الأحمر للمنتجعات والشواطئ الجميلة."
+        data-historic="🏖️ الشاطئ – Beach | 🏖️ المنتزه – Resort | 🌊 البحر – Sea"
+        data-restaurants="🍽️ مطعم Blue Marlin | 🌊 مطعم Coral Reef | 🥘 مطعم Sea Breeze"
+        data-cafes="☕ مقهى Sunset Cafe | ☕ مقهى Ocean View | ☕ مقهى Beachfront"
+        data-events="🏄‍♂️ الغوص – Diving | 🚣‍♂️ الجولة البحرية – Boat Tour | 🌅 شروق البحر – Sunrise"
+      >
+        <button
+          class="save-btn"
+          onclick="
+            event.stopPropagation();
+            saveItem('city', 'hurghada', 'الغردقة', '/img/الغردقة.webp');
+          "
+        >
+          🏙️
+        </button>
+        <img src="/img/الغردقة.webp" alt="الغردقة" class="cite-img" />
+        <span class="name">الغردقة – Hurghada</span>
+        <p class="info">
           مدينة ساحلية على البحر الأحمر للمنتجعات والشواطئ الجميلة.
-        </div>
+        </p>
+        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+          تفاصيل
+        </button>
       </div>
     </section>
     <!--الاكل-->
