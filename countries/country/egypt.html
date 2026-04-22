@@ -99,12 +99,20 @@
           تفاصيل
         </button>
       </div>
-      <div class="cite">
-        <img src="/img/الإسكندرية .webp" alt="" class="cite-img" />
-        <span class="name">الإسكندرية</span>
-        <div class="info">
-          مدينة ساحلية على البحر الأبيض المتوسط بجو فخم وهادئ.
-        </div>
+      <div class="cite"
+    data-name="الإسكندرية – Alexandria"
+    data-img="/img/الإسكندرية .webp"
+    data-desc="عروس البحر الأبيض المتوسط ومدينة الإسكندر الأكبر، تجمع بين التاريخ العريق والهواء البحري المنعش والثقافة الكوزموبوليتانية الفريدة."
+    data-historic="🏛️ مكتبة الإسكندرية – Bibliotheca Alexandrina | 🏰 قلعة قايتباي – Qaitbay Citadel | 🗿 عمود السواري – Pompey's Pillar | 🏺 المتحف اليوناني الروماني – Greco-Roman Museum"
+    data-restaurants="🦞 سان جيوفاني – San Giovanni | 🇬🇷 سانتوريني – Santorini | 🌊 النادي اليوناني – The Greek Club | 🍽️ بيبلوس – Byblos Restaurant | 🌿 قرية بلبع – Balbaa Village"
+    data-cafes="☕ دليس – Delice | ☕ تريانون – Trianon | ☕ أتينوس – Athenios | ☕ إيليت – Elite | ☕ جليم باي – Gleem Bay"
+    data-events="🏛️ مكتبة الإسكندرية – Bibliotheca Alexandrina | 🏰 قلعة قايتباي – Qaitbay Citadel | 💎 متحف المجوهرات الملكية – Royal Jewelry Museum | 🌉 كوبري ستانلي – Stanley Bridge | 🚶 جولة بحري التاريخية – Bahari Historic Tour">
+    <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'alexandria', 'الإسكندرية', '/img/الإسكندرية .webp')">🏙️</button>
+    <img src="/img/الإسكندرية .webp" alt="الإسكندرية" class="cite-img">
+    <span class="name">الإسكندرية – Alexandria</span>
+    <p class="info">مدينة ساحلية على البحر الأبيض المتوسط بجو فخم وهادئ.</p>
+    <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">تفاصيل</button>
+</div>
       </div>
       <div class="cite">
         <img src="/img/الأقصر.jpg" alt="" class="cite-img" />
