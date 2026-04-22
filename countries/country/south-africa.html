@@ -242,12 +242,31 @@
           تفاصيل
         </button>
       </div>
-      <div class="cite">
-        <img src="/img/كنيسنا (Knysna).jpg" alt="" class="cite-img" />
-        <span class="name">كنيسنا (Knysna)</span>
-        <div class="info">
-          مدينة صغيرة فخمة، تشتهر بالطبيعة الخضراء والبحيرات.
-        </div>
+      <div
+        class="cite"
+        data-name="كنيسنا – Knysna"
+        data-img="/img/كنيسنا (Knysna).jpg"
+        data-desc="جوهرة طريق الحدائق في جنوب أفريقيا، مدينة صغيرة فاخرة تشتهر بالطبيعة الخضراء والبحيرات الزرقاء وغابات الضباب والمحار الشهير."
+        data-historic="🏛️ متحف كنيسنا – Knysna Museum | 🌊 رؤوس كنيسنا – Knysna Heads | 🌿 غابة ضباب كنيسنا – Knysna Forest | 🦘 محمية ميلكوود – Millwood Reserve"
+        data-restaurants="🌊 باترفلاي بلو – Butterfly Blu | 🏗️ ذا درايدوك – The Drydock Food Co | 🦞 34 ساوث – 34 South | 🐟 فريشلاين – Freshline Fisheries | 🍽️ بيمبريز – Pembreys Restaurant"
+        data-cafes="☕ إيل دي باين – Île de Pain | ☕ إيست هيد – East Head Café | ☕ أفريكان بين – African Bean | ☕ آرت كافيه – The Art Café On Queen | ☕ سولت آند بيتال – Salt & Petal"
+        data-events="🌊 مضيق كنيسنا – Knysna Heads | 🌿 محمية فيذريدج – Featherbed Nature Reserve | 🌳 غابات كنيسنا – Knysna Forests | 🚢 جزيرة ثيسن – Thesen Island Marina | 🏖️ شاطئ بوفالو باي – Buffalo Bay Beach"
+      >
+        <button
+          class="save-btn"
+          onclick="
+            event.stopPropagation();
+            saveItem('city', 'knysna', 'كنيسنا', '/img/كنيسنا (Knysna).jpg');
+          "
+        >
+          🏙️
+        </button>
+        <img src="/img/كنيسنا (Knysna).jpg" alt="كنيسنا" class="cite-img" />
+        <span class="name">كنيسنا – Knysna</span>
+        <p class="info">مدينة صغيرة فخمة، تشتهر بالطبيعة الخضراء والبحيرات.</p>
+        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+          تفاصيل
+        </button>
       </div>
     </section>
     <!--الاكل-->
