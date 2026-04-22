@@ -73,10 +73,31 @@
       <h1>المدن</h1>
     </div>
     <section class="cities-grid">
-      <div class="cite">
-        <img src="/img/القاهرة.jpg" alt="" class="cite-img" />
-        <span class="name">القاهرة</span>
-        <div class="info">عاصمة مصر الكبرى، تجمع بين التاريخ والمعاصرة.</div>
+      <div
+        class="cite"
+        data-name="القاهرة – Cairo"
+        data-img="/img/القاهرة.jpg"
+        data-desc="عاصمة مصر الكبرى ومدينة الألف مئذنة، تجمع بين التاريخ الفرعوني العريق والحضارة الإسلامية والحياة المعاصرة في مزيج فريد لا مثيل له."
+        data-historic="🏛️ الأهرامات وأبو الهول – Pyramids & Sphinx | 🏺 المتحف المصري – Egyptian Museum | 🕌 الجامع الأزهر – Al-Azhar Mosque | 🏰 قلعة صلاح الدين – Saladin Citadel"
+        data-restaurants="🍽️ مطعم الخال – Al Khal | 🇹🇷 نيشانتاشي – Nişantaşi | 🌊 سوليس – Solis | 🔥 كبابجي – Kebabgy | 🍜 أبو طارق – Abou Tarek"
+        data-cafes="☕ قهوة الفيشاوي – El Fishawi | ☕ مقهى نجيب محفوظ – Naguib Mahfouz Cafe | ☕ زن كافيه – ZEN Cafe & Lounge | ☕ قهوة جروبي – Groppi | ☕ أوسيس لاونج – Oasis Lounge"
+        data-events="🐪 أهرامات الجيزة – Giza Pyramids | � شارع المعز وخان الخليلي – Al-Muizz Street | 🚢 جولة نيلية – Nile Cruise | 🏛️ متحف الحضارة – National Museum | 🗼 برج القاهرة – Cairo Tower"
+      >
+        <button
+          class="save-btn"
+          onclick="
+            event.stopPropagation();
+            saveItem('city', 'cairo', 'القاهرة', '/img/القاهرة.jpg');
+          "
+        >
+          🏙️
+        </button>
+        <img src="/img/القاهرة.jpg" alt="القاهرة" class="cite-img" />
+        <span class="name">القاهرة – Cairo</span>
+        <p class="info">عاصمة مصر الكبرى، تجمع بين التاريخ والمعاصرة.</p>
+        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+          تفاصيل
+        </button>
       </div>
       <div class="cite">
         <img src="/img/الإسكندرية .webp" alt="" class="cite-img" />
@@ -225,7 +246,7 @@
         >
       </div>
     </section>
-      <!-- Modal المدينة -->
+    <!-- Modal المدينة -->
     <div id="cityModal" class="modal" onclick="closeCityModal(event)">
       <div class="modal-content">
         <button class="modal-close" onclick="closeCityModal(event)">×</button>
@@ -246,6 +267,5 @@
         </div>
       </div>
     </div>
-
   </body>
 </html>
