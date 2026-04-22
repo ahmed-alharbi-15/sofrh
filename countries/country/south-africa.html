@@ -140,12 +140,33 @@
           تفاصيل
         </button>
       </div>
-      <div class="cite">
-        <img src="/img/ديربان (Durban).jpg" alt="" class="cite-img" />
-        <span class="name">ديربان (Durban)</span>
-        <div class="info">
+      <div
+        class="cite"
+        data-name="ديربان – Durban"
+        data-img="/img/ديربان (Durban).jpg"
+        data-desc="مدينة الشواطئ الدافئة والتنوع الثقافي في جنوب أفريقيا، تشتهر بأمواجها الرائعة للتزلج والمطبخ الهندي الأصيل والأجواء الصيفية طول السنة."
+        data-historic="🏛️ متحف ديربان – Durban Museum | 🕌 مسجد جامع ديربان – Juma Mosque | 🏘️ حي أمباسانجي – uMhlanga | 🌊 شواطئ الذهب – Golden Mile Beach"
+        data-restaurants="🌍 دوكا – Dukkah Restaurant | 🏛️ بلو زو – Blue Zoo Restaurant | 🍽️ ميندولا – Mendola | 🦞 مطاعم الشاطئ – Golden Mile Seafood | 🍛 كاري ديربان – Durban Curry & Bunny Chow"
+        data-cafes="☕ بوسطن برو – Boston Brew | ☕ مايفير – Cafe Mayfair | ☕ كولومبو كوفي – Colombo Coffee & Tea | ☕ همبل كوفي – Humble Coffee | ☕ لوف كوفي – Love Coffee"
+        data-events="🐬 عالم أوشاكا – uShaka Marine World | 🏖️ شاطئ جولدن مايل – Golden Mile Beach | 🌿 الحدائق النباتية – Durban Botanic Gardens | 🦕 متحف العلوم – Natural Science Museum | 🍛 الحي الهندي – Indian Quarter Tour"
+      >
+        <button
+          class="save-btn"
+          onclick="
+            event.stopPropagation();
+            saveItem('city', 'durban', 'ديربان', '/img/ديربان (Durban).jpg');
+          "
+        >
+          🏙️
+        </button>
+        <img src="/img/ديربان (Durban).jpg" alt="ديربان" class="cite-img" />
+        <span class="name">ديربان – Durban</span>
+        <p class="info">
           مدينة شاطئية دافئة، مشهورة بالأمواج والأجواء الصيفية طول السنة.
-        </div>
+        </p>
+        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+          تفاصيل
+        </button>
       </div>
       <div class="cite">
         <img src="/img/بريتوريا (Pretoria).jpg" alt="" class="cite-img" />
