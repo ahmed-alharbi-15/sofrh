@@ -126,25 +126,109 @@
           تفاصيل
         </button>
       </div>
-      <div class="cite">
-        <img src="/img/شفشاون.jpg" alt="" class="cite-img" />
-        <span class="name">شفشاون</span>
-        <div class="info">المدينة الزرقاء، شوارع زرقاء ساحرة وجو هادئ.</div>
+      <div
+        class="cite"
+        data-name="شفشاون – Chefchaouen"
+        data-img="/img/شفشاون.jpg"
+        data-desc="اللؤلؤة الزرقاء في جبال الريف المغربية، مدينة ساحرة تشتهر بأزقتها وجدرانها الزرقاء الفريدة والهواء النقي والهدوء المطلق."
+        data-historic="🏰 قصبة شفشاون – Chefchaouen Kasbah | 🕌 ساحة أوطا الحمام – Uta el-Hammam | 🌿 شلالات راس الماء – Ras el-Maa Waterfall | 🏔️ جبال الريف – Rif Mountains"
+        data-restaurants="🌄 تريانا – Triana Restaurant | 🥘 باب العين – Bab El Ain | 🌿 السمسم – Sesame Restaurant | 🍽️ البلازا – Plaza Restaurant | 🎭 أندلسيا – Andalucia Restaurant"
+        data-cafes="☕ البابور – Babour Cafe | ☕ تاتا يامينة – Tata Yamina | ☕ أندلسيا – Andalucia Cafe | ☕ علي بابا – Ali Baba Cafe | ☕ المقهى – Al Mqha Cafe"
+        data-events="📸 الأزقة الزرقاء – Blue Streets Tour | 💦 شلالات أقشور – Akchour Waterfall | 🛍️ الأسواق التقليدية – Traditional Souks | 🕌 ساحة وطاء الحمام – Uta el-Hammam Square | 🌿 حديقة تلاسيمتان – Talassemtane National Park"
+      >
+        <button
+          class="save-btn"
+          onclick="
+            event.stopPropagation();
+            saveItem('city', 'chefchaouen', 'شفشاون', '/img/شفشاون.jpg');
+          "
+        >
+          🏙️
+        </button>
+        <img src="/img/شفشاون.jpg" alt="شفشاون" class="cite-img" />
+        <span class="name">شفشاون – Chefchaouen</span>
+        <p class="info">المدينة الزرقاء، شوارع زرقاء ساحرة وجو هادئ.</p>
+        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+          تفاصيل
+        </button>
       </div>
-      <div class="cite">
-        <img src="/img/دار البيضاء.jpg" alt="" class="cite-img" />
-        <span class="name">دار البيضاء</span>
-        <div class="info">أكبر مدينة حديثة، مسجد الحسن الثاني والكورنيش.</div>
+      <div
+        class="cite"
+        data-name="دار البيضاء – Casablanca"
+        data-img="/img/دار البيضاء.jpg"
+        data-desc="أكبر مدينة في المغرب، تشتهر بمنطقة الترفيه والتسوق والكورنيش."
+        data-historic="🏗️ مجمع البحرين – Bahrain Mall | 🏢 مركز التجارة العالمي – Global Trade Center | 🌊 الكورنيش – Corniche"
+        data-restaurants="🍲 مطعم Le Grand | 🥘 مطعم Al Qasr | 🌿 مطعم Café de Paris"
+        data-cafes="☕ مقهى Café de Paris | ☕ مقهى Le Grand | ☕ مقهى Al Qasr"
+        data-events="🎪 مهرجان الدار البيضاء للسينما – Casablanca International Film Festival | 🎭 مهرجان التمثيل – Theater Festival | 🎨 معرض الفنون الحديثة – Modern Art Exhibition"
+      >
+        <button
+          class="save-btn"
+          onclick="
+            event.stopPropagation();
+            saveItem('city', 'casablanca', 'دار البيضاء', '/img/دار البيضاء.jpg');
+          "
+        >
+          🏙️
+        </button>
+        <img src="/img/دار البيضاء.jpg" alt="دار البيضاء" class="cite-img" />
+        <span class="name">دار البيضاء – Casablanca</span>
+        <p class="info">أكبر مدينة حديثة، مسجد الحسن الثاني والكورنيش.</p>
+        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+          تفاصيل
+        </button>
       </div>
-      <div class="cite">
-        <img src="/img/الصويرة.jpg" alt="" class="cite-img" />
-        <span class="name">الصويرة</span>
-        <div class="info">مدينة ساحلية هادئة، ميناء قديم ورياح قوية.</div>
+      <div
+        class="cite"
+        data-name="الصويرة – Essaouira"
+        data-img="/img/الصويرة.jpg"
+        data-desc="مدينة ساحلية هادئة، ميناء قديم ورياح قوية."
+        data-historic="🏖️ الشاطئ – Beach | 🏛️ المجمع الثقافي – Cultural Complex | 🌊 البحر – Sea"
+        data-restaurants="🍲 مطعم Le Grand | 🥘 مطعم Al Qasr | 🌿 مطعم Café de Paris"
+        data-cafes="☕ مقهى Café de Paris | ☕ مقهى Le Grand | ☕ مقهى Al Qasr"
+        data-events="🏄‍♂️ رياضة الشاطئ – Beach Sports | 🎭 مهرجان التمثيل – Theater Festival | 🎨 معرض الفنون الحديثة – Modern Art Exhibition"
+      >
+        <button
+          class="save-btn"
+          onclick="
+            event.stopPropagation();
+            saveItem('city', 'essaouira', 'الصويرة', '/img/الصويرة.jpg');
+          "
+        >
+          🏙️
+        </button>
+        <img src="/img/الصويرة.jpg" alt="الصويرة" class="cite-img" />
+        <span class="name">الصويرة – Essaouira</span>
+        <p class="info">مدينة ساحلية هادئة، ميناء قديم ورياح قوية.</p>
+        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+          تفاصيل
+        </button>
       </div>
-      <div class="cite">
-        <img src="/img/طنجة.jpg" alt="" class="cite-img" />
-        <span class="name">طنجة</span>
-        <div class="info">مزيج ثقافي، إطلالة على البحر وأسواق حيوية.</div>
+      <div
+        class="cite"
+        data-name="طنجة – Tanger"
+        data-img="/img/طنجة.jpg"
+        data-desc="مدينة تاريخية تشتهر بمنطقة الترفيه والتسوق والكورنيش."
+        data-historic="🏛️ القصر الملكي – Royal Palace | 🏛️ المتحف الوطني – National Museum | 🌊 الكورنيش – Corniche"
+        data-restaurants="🍲 مطعم Le Grand | 🥘 مطعم Al Qasr | 🌿 مطعم Café de Paris"
+        data-cafes="☕ مقهى Café de Paris | ☕ مقهى Le Grand | ☕ مقهى Al Qasr"
+        data-events="🎪 المهرجان الوطني – National Festival | 🎭 مهرجان التمثيل – Theater Festival | 🎨 معرض الفنون الحديثة – Modern Art Exhibition"
+      >
+        <button
+          class="save-btn"
+          onclick="
+            event.stopPropagation();
+            saveItem('city', 'tanger', 'طنجة', '/img/طنجة.jpg');
+          "
+        >
+          🏙️
+        </button>
+        <img src="/img/طنجة.jpg" alt="طنجة" class="cite-img" />
+        <span class="name">طنجة – Tanger</span>
+        <p class="info">مدينة تاريخية تشتهر بمنطقة الترفيه والتسوق والكورنيش.</p>
+        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+          تفاصيل
+        </button>
       </div>
     </section>
     <!--الاكل-->
