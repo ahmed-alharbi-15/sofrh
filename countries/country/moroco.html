@@ -100,10 +100,31 @@
           تفاصيل
         </button>
       </div>
-      <div class="cite">
-        <img src="/img/فاس.jpg" alt="" class="cite-img" />
-        <span class="name">فاس</span>
-        <div class="info">أقدم مدينة قديمة، شوارع ضيقة وصناعات تقليدية.</div>
+      <div
+        class="cite"
+        data-name="فاس – Fes"
+        data-img="/img/فاس.jpg"
+        data-desc="عاصمة المغرب الثقافية وأقدم مدينة إسلامية معمورة في العالم، تشتهر بمدينتها القديمة المتاهة من الأزقة الضيقة والحرف التقليدية ودباغة الجلود الأسطورية."
+        data-historic="🕌 جامعة القرويين – Al-Qarawiyyin University | 🏰 القصر الملكي – Royal Palace | 🏺 دباغة شوارة – Chouara Tannery | 🕌 المدرسة البوعنانية – Bou Inania Madrasa"
+        data-restaurants="🍲 دار الشوا – Dar Chwaa | 🌹 لا فيلا فاس – La Villa Fes | 🔥 الحقوني جريل – Elhaqouni Grill | 🥧 مطاعم البسطيلة – Traditional Bastilla | 🎪 مطاعم النجارين – Nejjarine Square"
+        data-cafes="☕ كافيه كلوك – Cafe Clock Fes | ☕ تراس بانوراميك – Cafe Terrasse Panoramique | ☕ بامبو كيتشن – Bamboo Kitchen | ☕ ميدينا كافيه – Medina Cafe | ☕ باتا كوفي – Batha Coffee Shop"
+        data-events="🏘️ فاس البالي – Fes El-Bali Medina | 🏺 دباغة شوارة – Chouara Tannery | 🕌 المدارس التاريخية – Historic Madrasas | 🛍️ أسواق القيصرية – Kissaria Souks | 🍲 المطبخ الفاسي – Fassi Cuisine Experience"
+      >
+        <button
+          class="save-btn"
+          onclick="
+            event.stopPropagation();
+            saveItem('city', 'fes', 'فاس', '/img/فاس.jpg');
+          "
+        >
+          🏙️
+        </button>
+        <img src="/img/فاس.jpg" alt="فاس" class="cite-img" />
+        <span class="name">فاس – Fes</span>
+        <p class="info">أقدم مدينة قديمة، شوارع ضيقة وصناعات تقليدية.</p>
+        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+          تفاصيل
+        </button>
       </div>
       <div class="cite">
         <img src="/img/شفشاون.jpg" alt="" class="cite-img" />
