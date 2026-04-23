@@ -100,13 +100,34 @@
         </button>
       </div>
 
-      <div class="cite">
+      <div
+        class="cite"
+        data-name="ميلانو – Milan"
+        data-img="/img/milano.jpg"
+        data-desc="عاصمة الموضة والتصميم في العالم، مدينة أنيقة تجمع بين الفن الرفيع والمطبخ الإيطالي الشهي والحياة الليلية الراقية والمعالم التاريخية العريقة."
+        data-historic="⛪ كاتدرائية الدومو – Duomo di Milano | 🏛️ قلعة سفورزيسكو – Sforza Castle | 🎨 اللوحة الأخيرة للعشاء – The Last Supper | 🌿 حدائق سيمبيوني – Sempione Park"
+        data-restaurants="🍕 سوربيلو – Sorbillo Milano | 🍝 تريبا – Trippa | 🌆 ذا دوم – The Dome Milano | 🌟 جلوري بوب – Glory Pop | 🐃 لا بوفالوتا – La Bufalotta"
+        data-cafes="☕ بار لوتشي – Bar Luce | ☕ ستاربكس روستري – Starbucks Reserve Roastery | ☕ ماركيزي – Marchesi 1824 | ☕ تشوكولاتي إيطالياني – Cioccolat Italiani | ☕ بافيه – Pavé"
+        data-events="⛪ كاتدرائية الدومو – Duomo di Milano | 🏰 قلعة سفورزا – Castello Sforzesco | 🎨 العشاء الأخير – The Last Supper | 🛍️ غاليري فيتوريو – Galleria Vittorio Emanuele | 🌊 منطقة نافيلي – Navigli District"
+      >
+        <button
+          class="save-btn"
+          onclick="
+            event.stopPropagation();
+            saveItem('city', 'milan', 'ميلانو', '/img/milano.jpg');
+          "
+        >
+          🏙️
+        </button>
         <img src="/img/milano.jpg" alt="ميلانو" class="cite-img" />
-        <span class="name">ميلانو</span>
-        <div class="info">
-          عاصمة الموضة والتسوّق، مدينة أنيقة مليئة بالأسواق والمطاعم والأجواء
+        <span class="name">ميلانو – Milan</span>
+        <p class="info">
+          عاصمة الموضة والتسوق، مدينة أنيقة مليئة بالأسواق والمطاعم والأجواء
           الراقية.
-        </div>
+        </p>
+        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+          تفاصيل
+        </button>
       </div>
 
       <div class="cite">
