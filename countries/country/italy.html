@@ -160,13 +160,34 @@
         </button>
       </div>
 
-      <div class="cite">
+      <div
+        class="cite"
+        data-name="فلورنسا – Florence"
+        data-img="/img/flornsa.jpg"
+        data-desc="عاصمة عصر النهضة الإيطالية وموطن الفن الرفيع، مدينة مليئة بالمتاحف والمعالم التاريخية والشوارع الجميلة والمطبخ التوسكاني الشهير."
+        data-historic="🏛️ متحف أوفيتسي – Uffizi Gallery | ⛪ كاتدرائية سانتا ماريا – Florence Cathedral | 🌉 جسر فيكيو – Ponte Vecchio | 🏰 قصر بيتي – Pitti Palace"
+        data-restaurants="🍖 تراتوريا زا زا – Trattoria Zà Zà | 🌹 لا جيوسترا – La Giostra | 🍝 كاميلو – Cammillo | 🍕 لا بوسولا – La Bussola | 🥩 دا ميكيلي – Da Michele"
+        data-cafes="☕ كافيه جيلي – Caffè Gilli | ☕ كافيه ريفواري – Caffè Rivoire | ☕ باسكوفسكي – Caffè Paszkowski | ☕ لا ميناجير – La Ménagère | ☕ ديتا أرتيجيانالي – Ditta Artigianale"
+        data-events="⛪ كاتدرائية الدومو – Florence Cathedral | 🏛️ معرض أوفيتسي – Uffizi Gallery | 🌉 جسر بونتي فيكيو – Ponte Vecchio | 🏰 قصر بيتي – Pitti Palace & Boboli Gardens | 🛍️ سان لورينزو – San Lorenzo Market"
+      >
+        <button
+          class="save-btn"
+          onclick="
+            event.stopPropagation();
+            saveItem('city', 'florence', 'فلورنسا', '/img/flornsa.jpg');
+          "
+        >
+          🏙️
+        </button>
         <img src="/img/flornsa.jpg" alt="فلورنسا" class="cite-img" />
-        <span class="name">فلورنسا</span>
-        <div class="info">
+        <span class="name">فلورنسا – Florence</span>
+        <p class="info">
           موطن الفن الإيطالي، مدينة مليئة بالمتاحف والمعالم التاريخية والشوارع
           الجميلة.
-        </div>
+        </p>
+        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+          تفاصيل
+        </button>
       </div>
 
       <div class="cite">
