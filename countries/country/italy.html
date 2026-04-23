@@ -220,13 +220,34 @@
         </button>
       </div>
 
-      <div class="cite">
+      <div
+        class="cite"
+        data-name="بيزا – Pisa"
+        data-img="/img/beza.jpg"
+        data-desc="مدينة هادئة على نهر أرنو تشتهر ببرجها المائل الأسطوري وساحة المعجزات الرائعة، وجهة مثالية للزيارة والاستمتاع بأجوائها التاريخية الهادئة."
+        data-historic="🗼 برج بيزا المائل – Leaning Tower of Pisa | ⛪ كاتدرائية بيزا – Pisa Cathedral | 🏛️ المعمودية – Baptistery | 🌿 ساحة المعجزات – Piazza dei Miracoli"
+        data-restaurants="🍖 إي بورتشي كومودي – I Porci Comodi | 🌿 أوستيريا دي كوليغنا – Osteria di Culegna | 🍕 لا تافيرنا دي بولتشينيلا – La Taverna di Pulcinella | 🦞 إي سانتي – I Santi | 🍝 أنتيكا تراتوريا برونو – Antica Trattoria Da Bruno"
+        data-cafes="☕ كافيه سالزا – Caffè Salza | ☕ فيلتر كوفي لاب – Filter Coffee Lab | ☕ إي بورتشي كومودي – I Porci Comodi | ☕ بار لا بورسا – Bar La Borsa | ☕ أورسو بيانكو – Orso Bianco Gelateria"
+        data-events="🗼 برج بيزا المائل – Leaning Tower of Pisa | ⛪ ساحة المعجزات – Piazza dei Miracoli | 🛍️ شارع بورغو ستريتو – Borgo Stretto | 🌊 نهر أرنو – Arno River Walk | 🏛️ متحف سينوبي – Museo delle Sinopie"
+      >
+        <button
+          class="save-btn"
+          onclick="
+            event.stopPropagation();
+            saveItem('city', 'pisa', 'بيزا', '/img/beza.jpg');
+          "
+        >
+          🏙️
+        </button>
         <img src="/img/beza.jpg" alt="بيزا" class="cite-img" />
-        <span class="name">بيزا</span>
-        <div class="info">
+        <span class="name">بيزا – Pisa</span>
+        <p class="info">
           مدينة هادئة ومشهورة ببرج بيزا المائل، وجهة مثالية للصور والزيارة
           السريعة.
-        </div>
+        </p>
+        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+          تفاصيل
+        </button>
       </div>
     </section>
 
