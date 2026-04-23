@@ -190,13 +190,34 @@
         </button>
       </div>
 
-      <div class="cite">
+      <div
+        class="cite"
+        data-name="نابولي – Naples"
+        data-img="/img/napoli.jpg"
+        data-desc="مدينة ساحلية مليئة بالطاقة والحيوية، موطن البيتزا الأصلية وموقع اليونسكو، تشتهر بمناظرها الخلابة على خليج نابولي وجبل فيزوف البركاني الشامخ."
+        data-historic="🏛️ متحف أركيولوجيكو – National Archaeological Museum | 🏰 قلعة كاستيل نوفو – Castel Nuovo | ⛪ كاتدرائية نابولي – Naples Cathedral | 🌋 بومبي – Pompeii"
+        data-restaurants="🍕 أنتيكا ميكيلي – L'Antica Pizzeria da Michele | 🍕 جينو سوربيلو – Gino Sorbillo | 🌟 لا نوتيتسيا – Pizzeria La Notizia 53 | 🏛️ ستاريتا ماتيرديي – Pizzeria Starita | 🍕 5 كالو – 5 Kalò"
+        data-cafes="☕ جران كافيه جامبرينوس – Gran Caffè Gambrinus | ☕ كافيه مكسيكو – Caffè Mexico | ☕ بار نيلو – Bar Nilo | ☕ اسكاتوركيو – Scaturchio | ☕ كافيه ديل بروفيسور – Caffè del Professore"
+        data-events="🌋 بومبي وفيزوف – Pompeii & Mount Vesuvius | 🍕 ورش البيتزا – Pizza Making Workshop | 🏛️ المتحف الأثري – National Archaeological Museum | 🌊 بوسيلب – Posillipo Seafront | 🎨 جولة مارادونا – Maradona Street Art Tour"
+      >
+        <button
+          class="save-btn"
+          onclick="
+            event.stopPropagation();
+            saveItem('city', 'naples', 'نابولي', '/img/napoli.jpg');
+          "
+        >
+          🏙️
+        </button>
         <img src="/img/napoli.jpg" alt="نابولي" class="cite-img" />
-        <span class="name">نابولي</span>
-        <div class="info">
+        <span class="name">نابولي – Naples</span>
+        <p class="info">
           مدينة ساحلية مليئة بالطاقة، تشتهر بالبيتزا الأصلية والمناظر المطلة على
           البحر.
-        </div>
+        </p>
+        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+          تفاصيل
+        </button>
       </div>
 
       <div class="cite">
