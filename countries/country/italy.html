@@ -130,13 +130,34 @@
         </button>
       </div>
 
-      <div class="cite">
+      <div
+        class="cite"
+        data-name="فينيسيا – Venice"
+        data-img="/img/vinisia.jpg"
+        data-desc="مدينة الماء الساحرة، وجهة رومانسية استثنائية مبنية على 118 جزيرة تربطها 400 جسر، تشتهر بقنواتها وقواربها الأسطورية وفنها وتراثها العريق."
+        data-historic="🏛️ ساحة سان ماركو – St. Mark's Square | ⛪ كنيسة سان ماركو – St. Mark's Basilica | 🏰 قصر الدوج – Doge's Palace | 🌉 جسر الريالتو – Rialto Bridge"
+        data-restaurants="🍝 داي إيفو – Da Ivo | 🌊 كلوب ديل دوجي – Club del Doge | 🦞 أوستيريا تيستييري – Osteria alle Testiere | 🐟 أنتيكي كارامباني – Antiche Carampane | 🌅 ريفييرا – Riviera Restaurant"
+        data-cafes="☕ كافيه فلوريان – Caffè Florian | ☕ جران كافيه لافينيا – Gran Caffè Lavena | ☕ كافيه كوادرى – Gran Caffè Quadri | ☕ كافيه ديل دوجي – Caffè del Doge | ☕ توري ديل كافي – Torrefazione Cannaregio"
+        data-events="🚣 جولة غوندولا – Gondola Ride | 🏰 قصر الدوج – Doge's Palace | 🌈 جزر مورانو وبورانو – Murano & Burano Islands | 🚤 القناة الكبرى – Grand Canal | 🎭 كرنفال البندقية – Venice Carnival"
+      >
+        <button
+          class="save-btn"
+          onclick="
+            event.stopPropagation();
+            saveItem('city', 'venice', 'فينيسيا', '/img/vinisia.jpg');
+          "
+        >
+          🏙️
+        </button>
         <img src="/img/vinisia.jpg" alt="فينيسيا" class="cite-img" />
-        <span class="name">فينيسيا</span>
-        <div class="info">
-          مدينة ساحرة مبنية على الماء، مشهورة بالقوارب والقنوات وجوّها الرومانسي
+        <span class="name">فينيسيا – Venice</span>
+        <p class="info">
+          مدينة ساحرة مبنية على الماء، مشهورة بالقوارب والقنوات وجوها الرومانسي
           الهادئ.
-        </div>
+        </p>
+        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+          تفاصيل
+        </button>
       </div>
 
       <div class="cite">
