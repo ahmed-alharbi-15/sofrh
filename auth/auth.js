@@ -9,7 +9,7 @@ if (signupForm) {
         const password = document.getElementById('password').value;
 
         try {
-            const response = await fetch('http://127.0.0.1:8001/signup', {
+            const response = await fetch('https://sofrh-1.onrender.com/signup', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ username, email, phone, password })
@@ -37,7 +37,7 @@ if (loginForm) {
         const password = document.getElementById('loginPassword').value;
 
         try {
-            const response = await fetch('http://127.0.0.1:8001/login', {
+            const response = await fetch('https://sofrh-1.onrender.com/login', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ email, password })
