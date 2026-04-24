@@ -8,7 +8,7 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@500;600&display=swap');
     </style>
-    <script src="/auth/auth.js"></script>
+    
 </head>
 <body>
     <div class="auth-page">
@@ -28,11 +28,12 @@
                     <label>كلمة المرور</label>
                     <input type="password" id="loginPassword" placeholder="••••••••" required>
                 </div>
-                <button type="submit" class="auth-btn">دخول</button>
+                <button type="button" id="loginBtn" class="auth-btn">دخول</button>
             </form>
 
             <p class="auth-switch">ما عندك حساب؟ <a href="/auth/signup.html">إنشاء حساب</a></p>
         </div>
     </div>
+    <script src="/auth/auth.js"></script>
 </body>
 </html>

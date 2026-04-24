@@ -827,3 +827,40 @@ body {
 .cite .info {
     flex-grow: 1;
 }
+
+.user-menu {
+    display: none;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    position: relative;
+}
+.user-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #FAF4E6;
+    border-radius: 12px;
+    padding: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    min-width: 150px;
+    z-index: 999;
+}
+
+.user-menu:hover .user-dropdown {
+    display: block;
+}
+
+.user-dropdown a {
+    display: block;
+    padding: 8px 12px;
+    color: #4A2E1F;
+    text-decoration: none;
+    font-size: 15px;
+    border-radius: 8px;
+}
+
+.user-dropdown a:hover {
+    background: #F3E8D2;
+}
