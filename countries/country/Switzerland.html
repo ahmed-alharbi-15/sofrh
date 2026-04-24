@@ -154,10 +154,40 @@
           تفاصيل
         </button>
       </div>
-      <div class="cite">
-        <img src="/img/إنترلاكن (Interlaken).webp" alt="" class="cite-img" />
-        <span class="name">إنترلاكن (Interlaken)</span>
-        <div class="info">عاصمة المغامرات بين بحيرتين وجبال الألب.</div>
+      <div
+        class="cite"
+        data-name="إنترلاكن – Interlaken"
+        data-img="/img/إنترلاكن (Interlaken).webp"
+        data-desc="عاصمة المغامرات السويسرية، تقع بين بحيرتي تون وبريينز وسط جبال الألب الشامخة، وجهة مثالية لمحبي الطبيعة والمغامرة والرياضات الجبلية."
+        data-historic="🏔️ جبل يونغفراو – Jungfrau Mountain | 🌊 بحيرة تون – Lake Thun | 🌊 بحيرة بريينز – Lake Brienz | 🏘️ المدينة القديمة – Interlaken Old Town"
+        data-restaurants="🍛 تاج بالاس – Taj Palace | 🍕 نابولي بيتزا – Napoli Pizza | 🏔️ بيز جلوريا – Piz Gloria | 🍔 أسلاني كورنر – Asllani's Corner | 🌿 لا تراس – La Terrasse"
+        data-cafes="☕ شوكولا فونتين – Chocolatier Funten | ☕ ريد كافيه – RED Café | ☕ بيز جلوريا – Piz Gloria | ☕ فيكتوريا يونغفراو – Victoria-Jungfrau Bar | ☕ ستاربكس إنترلاكن – Starbucks Interlaken"
+        data-events="🏔️ هاردر كولم – Harder Kulm | 🚢 جولة البحيرات – Lake Thun & Brienz | 🪂 طيران شراعي – Paragliding | 💦 وادي لوتربرونين – Lauterbrunnen Valley | 🌿 حديقة هوهماته – Höhematte Park"
+      >
+        <button
+          class="save-btn"
+          onclick="
+            event.stopPropagation();
+            saveItem(
+              'city',
+              'interlaken',
+              'إنترلاكن',
+              '/img/إنترلاكن (Interlaken).webp',
+            );
+          "
+        >
+          🏙️
+        </button>
+        <img
+          src="/img/إنترلاكن (Interlaken).webp"
+          alt="إنترلاكن"
+          class="cite-img"
+        />
+        <span class="name">إنترلاكن – Interlaken</span>
+        <p class="info">عاصمة المغامرات بين بحيرتين وجبال الألب.</p>
+        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+          تفاصيل
+        </button>
       </div>
       <div class="cite">
         <img src="/img/بيرن (Bern).avif" alt="" class="cite-img" />
