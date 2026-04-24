@@ -128,10 +128,31 @@
           تفاصيل
         </button>
       </div>
-      <div class="cite">
-        <img src="/img/لوسيرن (Lucerne).jpg" alt="" class="cite-img" />
-        <span class="name">لوسيرن (Lucerne)</span>
-        <div class="info">مدينة رومانسية بجانب البحيرة مع جسر خشبي تاريخي.</div>
+      <div
+        class="cite"
+        data-name="لوسيرن – Lucerne"
+        data-img="/img/لوسيرن (Lucerne).jpg"
+        data-desc="جوهرة سويسرا الرومانسية على ضفاف بحيرة لوسيرن، تشتهر بجسرها الخشبي التاريخي الشهير وإطلالاتها المذهلة على جبال الألب والمياه الزرقاء الصافية."
+        data-historic="🌉 جسر كابيل – Chapel Bridge | 🏰 أسوار موسيغ – Musegg Walls | 🏛️ متحف التاريخ الطبيعي – Natural History Museum | ⛪ كنيسة القديس ليودغار – St. Leodegar Church"
+        data-restaurants="🍽️ بوليرو – Bolero Restaurante | 🍕 جروتينو – Grottino 1313 | 🌿 لا كوتشينا – La Cucina | 🥐 ميل فوي – Mill'Feuille | 🏔️ بوندنر لاند – Restaurant Bündnerland"
+        data-cafes="☕ كافيه تاكوبا – Café Tacuba | ☕ كافيه نورد – Café Nord | ☕ ميليسا كيتشن – Melissa's Kitchen | ☕ ألفريد كافيبار – Alfred Caffebar | ☕ باكيريه باخمان – Bäckerei Café Bachmann"
+        data-events="🌉 جسر الكنيسة – Kapellbrücke | 🚢 بحيرة لوسيرن – Lake Lucerne Cruise | 🏘️ المدينة القديمة – Old Town | 🏔️ جبل بيلاتوس – Mount Pilatus | 🦁 نصب الأسد – Lion Monument"
+      >
+        <button
+          class="save-btn"
+          onclick="
+            event.stopPropagation();
+            saveItem('city', 'lucerne', 'لوسيرن', '/img/لوسيرن (Lucerne).jpg');
+          "
+        >
+          🏙️
+        </button>
+        <img src="/img/لوسيرن (Lucerne).jpg" alt="لوسيرن" class="cite-img" />
+        <span class="name">لوسيرن – Lucerne</span>
+        <p class="info">مدينة رومانسية بجانب البحيرة مع جسر خشبي تاريخي.</p>
+        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+          تفاصيل
+        </button>
       </div>
       <div class="cite">
         <img src="/img/إنترلاكن (Interlaken).webp" alt="" class="cite-img" />
