@@ -100,12 +100,33 @@
           تفاصيل
         </button>
       </div>
-      <div class="cite">
-        <img src="/img/جنيف (Geneva).jpg" alt="" class="cite-img" />
-        <span class="name">جنيف (Geneva)</span>
-        <div class="info">
+      <div
+        class="cite"
+        data-name="جنيف – Geneva"
+        data-img="/img/جنيف (Geneva).jpg"
+        data-desc="مدينة السلام والدبلوماسية الدولية، تقع على ضفاف بحيرة ليمان الساحرة وتحت أنظار جبال الألب، تشتهر بالساعات الفاخرة والشوكولاتة الرائعة والمنظمات الدولية."
+        data-historic="⛲ نافورة جيت دو ، – Jet d'Eau | 🏛️ متحف الصليب الأحمر – Red Cross Museum | ⛪ كاتدرائية سان بيير – St. Pierre Cathedral | 🌿 حديقة إنغليش – English Garden"
+        data-restaurants="🍖 عطار – Attar Restaurant | 🥙 ساج إيت – Saj Eat | 🌿 آزار وشركاه – Azar & Co | ☕ يوتوبيا كوفي – Utopia Coffee | 🐇 وايت رابيت – White Rabbit"
+        data-cafes="☕ لومي – Lume | ☕ ميزون إريك – Maison Eric | ☕ لي باريستا – Le Barista | ☕ V&A Cafe | ☕ مقهى نواف الجامع – Nawaf Al-Jami Cafe"
+        data-events="⛲ نافورة جيت دو، – Jet d'Eau | 🚢 بحيرة جنيف – Lake Geneva Cruise | 🏘️ المدينة القديمة – Vieille Ville | 🏛️ متحف التاريخ الطبيعي – Natural History Museum | 🎭 فعاليات موسمية – Seasonal Events"
+      >
+        <button
+          class="save-btn"
+          onclick="
+            event.stopPropagation();
+            saveItem('city', 'geneva', 'جنيف', '/img/جنيف (Geneva).jpg');
+          "
+        >
+          🏙️
+        </button>
+        <img src="/img/جنيف (Geneva).jpg" alt="جنيف" class="cite-img" />
+        <span class="name">جنيف – Geneva</span>
+        <p class="info">
           مدينة راقية على البحيرة، مشهورة بالمنظمات الدولية والمناظر الهادئة.
-        </div>
+        </p>
+        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+          تفاصيل
+        </button>
       </div>
       <div class="cite">
         <img src="/img/لوسيرن (Lucerne).jpg" alt="" class="cite-img" />
