@@ -189,12 +189,33 @@
           تفاصيل
         </button>
       </div>
-      <div class="cite">
-        <img src="/img/بيرن (Bern).avif" alt="" class="cite-img" />
-        <span class="name">بيرن (Bern)</span>
-        <div class="info">
+      <div
+        class="cite"
+        data-name="بيرن – Bern"
+        data-img="/img/بيرن (Bern).avif"
+        data-desc="العاصمة الفيدرالية لسويسرا ومدينة التراث العالمي لليونسكو، تشتهر بأروقتها القديمة الممتدة لكيلومترات ونوافيرها الجميلة وساعتها الفلكية الشهيرة."
+        data-historic="🕰️ برج الساعة الفلكية – Zytglogge | 🏛️ متحف بيرن – Bern Museum | 🐻 حفرة الدببة – Bear Park | ⛪ كاتدرائية بيرن – Bern Cathedral"
+        data-restaurants="🏛️ كورنهاوسكيلر – Kornhauskeller | 🌿 واين آند زاين – Wein & Sein | ⭐ ميريديانو – Meridiano | 🌿 لا تيرازا – La Terrazza | 🚃 ألتيس ترامديبو – Altes Tramdepot"
+        data-cafes="☕ فريند أور فو – Friend Or Foe Specialty Coffee | ☕ آينشتاين كافيه – Einstein Cafe & Bel Etage | ☕ نوتشيولاتو – Nocciolato Specialty Coffee | ☕ آس-بار – Äss-Bar Bern | ☕ كوفي كوتشينج كلوب – Coffee Coaching Club"
+        data-events="🏘️ المدينة القديمة – Bern Old Town | 🐻 حديقة الدببة – Bärengraben | 🕰️ برج الساعة – Zytglogge Tower | 🌊 نهر آري – Aare River | 🏛️ البرلمان الفيدرالي – Bundeshaus"
+      >
+        <button
+          class="save-btn"
+          onclick="
+            event.stopPropagation();
+            saveItem('city', 'bern', 'بيرن', '/img/بيرن (Bern).avif');
+          "
+        >
+          🏙️
+        </button>
+        <img src="/img/بيرن (Bern).avif" alt="بيرن" class="cite-img" />
+        <span class="name">بيرن – Bern</span>
+        <p class="info">
           العاصمة التاريخية بشوارعها القديمة ونوافيرها الجميلة.
-        </div>
+        </p>
+        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+          تفاصيل
+        </button>
       </div>
       <div class="cite">
         <img src="/img/سانت موريتز.avif" alt="" class="cite-img" />
