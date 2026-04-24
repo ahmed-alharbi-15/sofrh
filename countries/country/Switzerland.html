@@ -217,10 +217,36 @@
           تفاصيل
         </button>
       </div>
-      <div class="cite">
-        <img src="/img/سانت موريتز.avif" alt="" class="cite-img" />
-        <span class="name">سانت موريتز (St. Moritz)</span>
-        <div class="info">منتجع فاخر للثلوج والأنشطة الشتوية.</div>
+      <div
+        class="cite"
+        data-name="سانت موريتز – St. Moritz"
+        data-img="/img/سانت موريتز.avif"
+        data-desc="الملكة المتوجة لمنتجعات التزلج العالمية، وجهة الأثرياء والمشاهير في قلب جبال الألب السويسرية، تشتهر بالثلوج الجميلة والشمس الساطعة والحياة الليلية الراقية."
+        data-historic="🏔️ جبل كورفيليا – Corviglia Mountain | 🏛️ متحف إنغادين – Engadine Museum | ⛷️ منحدرات التزلج – Ski Slopes | 🌊 بحيرة سانت موريتز – St. Moritz Lake"
+        data-restaurants="🍣 لا كوبول ماتسوهيسا – La Coupole Matsuhisa | 🏔️ سوفريتا ستوبي – Suvretta Stube | 🎹 ذا جراند هول – The Grand Hall | 🍫 هانسلمان – Hanselmann | 🌟 مطاعم فاخرة – Fine Dining St. Moritz"
+        data-cafes="☕ هانسلمان – Cafe Hanselmann | ☕ بونتشيلا – Puntschella CGC Café | ☕ كواترو بار – Quattro Bar | ☕ كونست كافيه – Kunst Café | ☕ جروند كافيه – Grond Café"
+        data-events="⛷️ التزلج – Skiing Corviglia & Corvatsch | 🌊 بحيرة سانت موريتز – St. Moritz Lake | 🚂 قطار بيرنينا – Bernina Express | 🛍️ وسط المدينة الفاخر – St. Moritz Village | 🏛️ متحف سيغانتيني – Segantini Museum"
+      >
+        <button
+          class="save-btn"
+          onclick="
+            event.stopPropagation();
+            saveItem(
+              'city',
+              'st-moritz',
+              'سانت موريتز',
+              '/img/سانت موريتز.avif',
+            );
+          "
+        >
+          🏙️
+        </button>
+        <img src="/img/سانت موريتز.avif" alt="سانت موريتز" class="cite-img" />
+        <span class="name">سانت موريتز – St. Moritz</span>
+        <p class="info">منتجع فاخر للثلوج والأنشطة الشتوية.</p>
+        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+          تفاصيل
+        </button>
       </div>
     </section>
     <!--الاكل-->
