@@ -5,12 +5,14 @@ from passlib.context import CryptContext
 from fastapi.middleware.cors import CORSMiddleware
 import re
 from typing import Optional
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
+    allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
@@ -19,8 +21,9 @@ pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
 def get_db_connection():
     # الرابط اللي أعطيتني إياه نحطه هنا كمتغير واحد
-    db_url = "postgresql://prostorge:e2g1E1i4ySRy768iEyks7eD25RAhp6Qv@dpg-d7gj4lpkh4rs739a6ff0-a/sofrah_web"
+    db_url = "postgresql://prostorge:e2g1E1i4ySRy768iEyks7eD25RAhp6Qv@dpg-d7gj4lpkh4rs739a6ff0-a.oregon-postgres.render.com/sofrah_web"
     return psycopg2.connect(db_url)
+
 
 # --- النماذج (Models) ---
 class UserCreate(BaseModel):
