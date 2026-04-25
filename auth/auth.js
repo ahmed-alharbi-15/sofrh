@@ -135,9 +135,11 @@ function saveItem(type, id, name, img) {
 }
 
 // --- 6. القائمة الجانبية ---
-const menuBtn = document.getElementById("menu-btn");
-const sideMenu = document.getElementById("side-menu");
-const closeBtn = document.getElementById("close-btn");
+if (typeof menuBtn === 'undefined') {
+    var menuBtn = document.getElementById("menu-btn");
+    var sideMenu = document.getElementById("side-menu");
+    var closeBtn = document.getElementById("close-btn");
+}
 
 if (menuBtn && sideMenu && closeBtn) {
     menuBtn.addEventListener("click", () => { sideMenu.style.right = "0px"; });

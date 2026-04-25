@@ -1,8 +1,7 @@
 // القائمة الجانبية
-const menuBtn = document.getElementById("menu-btn");
-const sideMenu = document.getElementById("side-menu");
-const closeBtn = document.getElementById("close-btn");
-
+var menuBtn = document.getElementById("menu-btn");
+var sideMenu = document.getElementById("side-menu");
+var closeBtn = document.getElementById("close-btn");
 if (menuBtn && sideMenu && closeBtn) {
     menuBtn.addEventListener("click", () => { sideMenu.style.right = "0px"; });
     closeBtn.addEventListener("click", () => { sideMenu.style.right = "-260px"; });
@@ -156,7 +155,7 @@ if (settingsForm) {
         const phone = document.getElementById("settingsPhone").value;
 
         try {
-            const response = await fetch("http://127.0.0.1:8001/update-profile", {
+            const response = await fetch("https://sofrh-1.onrender.com/update-profile", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ name, email, phone })
@@ -191,7 +190,7 @@ if (changePasswordBtn) {
         }
 
         try {
-            const response = await fetch("http://127.0.0.1:8001/change-password", {
+            const response = await fetch("https://sofrh-1.onrender.com/change-password", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ currentPassword, newPassword, email: user.email })

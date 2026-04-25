@@ -1,14 +1,3 @@
-const menuBtn = document.getElementById("menu-btn");
-const sideMenu = document.getElementById("side-menu");
-const closeBtn = document.getElementById("close-btn");
-
-menuBtn.addEventListener("click", () => { sideMenu.style.right = "0px"; });
-closeBtn.addEventListener("click", () => { sideMenu.style.right = "-260px"; });
-document.addEventListener("click", (e) => {
-    if (!sideMenu.contains(e.target) && !menuBtn.contains(e.target)) {
-        sideMenu.style.right = "-260px";
-    }
-});
 
 const searchInput = document.getElementById("searchInput");
 const filterBtns = document.querySelectorAll(".filter-buttons button");

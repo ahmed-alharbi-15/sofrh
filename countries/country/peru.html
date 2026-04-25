@@ -1,213 +1,192 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ar" dir="rtl">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>سفرة</title>
 
     <!-- ملف الستايل الأساسي -->
-    <link rel="stylesheet" href="/countries/countries.css">
+    <link rel="stylesheet" href="/countries/countries.css" />
 
     <!-- خط عربي -->
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@500;600&display=swap');
-
+      @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@500;600&display=swap");
     </style>
-     <script src="/countries/countries.js" defer></script>
+  </head>
 
-</head>
-
-
-<body>
-
+  <body>
     <!--  NAVBAR (ثابت في كل صفحة) -->
-    <header class="navbar"> 
+    <header class="navbar">
+      <div class="hamburger" id="menu-btn">☰</div>
 
-        <div class="hamburger" id="menu-btn">☰</div>
+      <div class="auth-buttons" id="authButtons">
+        <a href="/auth/login.html" class="login">تسجيل دخول</a>
+        <a href="/auth/signup.html" class="signup">إنشاء حساب</a>
+      </div>
 
-        <div class="auth-buttons" id="authButtons">
-    <a href="/auth/login.html" class="login">تسجيل دخول</a>
-    <a href="/auth/signup.html" class="signup">إنشاء حساب</a>
-</div>
-
-<div class="user-menu" id="userMenu">
-    <img id="userAvatar" src="/img/default-avatar.png" alt="المستخدم">
-    <span class="user-name" id="userName"></span>
-    <div class="user-dropdown">
-        <a href="#">الملف الشخصي</a>
-        <a href="#" id="logoutBtn">تسجيل الخروج</a>
-    </div>
-</div>
-
-        <ul class="nav-list">
-            <li><a href="/index/index.html">الرئيسية</a></li>
-            <li><a href="/countries/countries.html">الدول</a></li>
-            <li><a href="/events/events.html">الفعاليات</a></li>
-            <li><a href="/recipes/recipes.html">الوصفات</a></li>
-        </ul>
-
-        <div class="logo">
-           <a href="/index/index.html"> <img src="/img/logo3.JPG" alt="سفرة"></a>
+      <div class="user-menu" id="userMenu">
+        <img id="userAvatar" src="/img/default-avatar.png" alt="المستخدم" />
+        <span class="user-name" id="userName"></span>
+        <div class="user-dropdown">
+          <a href="/profile/profile.html">الملف الشخصي</a>
+          <a href="/index/index.html" id="logoutBtn">تسجيل الخروج</a>
         </div>
+      </div>
 
-       
+      <ul class="nav-list">
+        <li><a href="/index/index.html">الرئيسية</a></li>
+        <li><a href="/countries/countries.html">الدول</a></li>
+        <li><a href="/events/events.html">الفعاليات</a></li>
+        <li><a href="/recipes/recipes.html">الوصفات</a></li>
+      </ul>
+
+      <div class="logo">
+        <a href="/index/index.html"> <img src="/img/logo3.JPG" alt="سفرة" /></a>
+      </div>
     </header>
-  
+
     <!--  MENU للجوال -->
     <nav class="side-menu" id="side-menu">
-        <span class="close-btn" id="close-btn">✖</span>
+      <span class="close-btn" id="close-btn">✖</span>
 
-        <ul>
-            <li><a href="/index/index.html">الرئيسية</a></li>
-            <li><a href="/countries/countries.html">الدول</a></li>
-            <li><a href="/events/events.html">الفعاليات</a></li>
-            <li><a href="/recipes/recipes.html  ">الوصفات</a></li>
-        </ul>
+      <ul>
+        <li><a href="/index/index.html">الرئيسية</a></li>
+        <li><a href="/countries/countries.html">الدول</a></li>
+        <li><a href="/events/events.html">الفعاليات</a></li>
+        <li><a href="/recipes/recipes.html  ">الوصفات</a></li>
+      </ul>
     </nav>
-        <header>
-        <a href="/countries/countries.html" class="back-btn">رجوع</a>
+    <header>
+      <a href="/countries/countries.html" class="back-btn">رجوع</a>
     </header>
-      <section>
-        <div class="country-name">
-            <h1>البيرو</h1>
-            <p>أرض الحضارات العريقة وجبال الأنديز الشامخة.</p>
-        </div>
+    <section>
+      <div class="country-name">
+        <h1>البيرو</h1>
+        <p>أرض الحضارات العريقة وجبال الأنديز الشامخة.</p>
+      </div>
     </section>
-       <!--المدن -->
+    <!--المدن -->
     <div class="main-cites">
-        <h1>المدن</h1>
+      <h1>المدن</h1>
     </div>
     <section class="cities-grid">
-        <div class="cite">
-            <img src="/img/Lima.jpg" alt="" class="cite-img">
-            <span class="name">ليما (Lima)</span>
-            <div class="info">
-                العاصمة وأشهر مدن الأكل، تجمع بين البحر والثقافة.
-            </div>
+      <div class="cite">
+        <img src="/img/Lima.jpg" alt="" class="cite-img" />
+        <span class="name">ليما (Lima)</span>
+        <div class="info">
+          العاصمة وأشهر مدن الأكل، تجمع بين البحر والثقافة.
         </div>
-        <div class="cite">
-            <img src="/img/Cusco.webp" alt="" class="cite-img">
-            <span class="name">كوسكو (Cusco)</span>
-            <div class="info">
-                عاصمة حضارة الإنكا، مدينة تاريخية مدهشة.
-            </div>
-        </div>
-        <div class="cite">
-            <img src="/img/Arequipa.jpg" alt="" class="cite-img">
-            <span class="name">أريكيبا (Arequipa)</span>
-            <div class="info">
-                مدينة أنيقة بطابع استعماري وبراكين قريبة.
-            </div>
-        </div>
-        <div class="cite">
-            <img src="" alt="" class="cite-img">
-            <span class="name"></span>
-            <div class="info">
-
-            </div>
-        </div>
-        <div class="cite">
-            <img src="" alt="" class="cite-img">
-            <span class="name"></span>
-            <div class="info">
-
-            </div>
-        </div>
-        <div class="cite">
-            <img src="" alt="" class="cite-img">
-            <span class="name"></span>
-            <div class="info">
-
-            </div>
-        </div>
+      </div>
+      <div class="cite">
+        <img src="/img/Cusco.webp" alt="" class="cite-img" />
+        <span class="name">كوسكو (Cusco)</span>
+        <div class="info">عاصمة حضارة الإنكا، مدينة تاريخية مدهشة.</div>
+      </div>
+      <div class="cite">
+        <img src="/img/Arequipa.jpg" alt="" class="cite-img" />
+        <span class="name">أريكيبا (Arequipa)</span>
+        <div class="info">مدينة أنيقة بطابع استعماري وبراكين قريبة.</div>
+      </div>
+      <div class="cite">
+        <img src="" alt="" class="cite-img" />
+        <span class="name"></span>
+        <div class="info"></div>
+      </div>
+      <div class="cite">
+        <img src="" alt="" class="cite-img" />
+        <span class="name"></span>
+        <div class="info"></div>
+      </div>
+      <div class="cite">
+        <img src="" alt="" class="cite-img" />
+        <span class="name"></span>
+        <div class="info"></div>
+      </div>
     </section>
-        <!--الاكل-->
-        <div class="main-foods">
-            <h1>الماكولات</h1>
-        </div>
-        <section class="foods-grid">
-            <div class="foods">
-                <img src="" alt="" class="foods-img">
-                <span class="name-foods"></span>
-                <div class="food-info"></div>
-                <a href="/recipes/recipes.html" class="for-more-btn">المزيد</a>
-            </div>
-               <div class="foods">
-                <img src="" alt="" class="foods-img">
-                <span class="name-foods"></span>
-                <div class="food-info"></div>
-                <a href="/recipes/recipes.html" class="for-more-btn">المزيد</a>
-            </div>
-               <div class="foods">
-                <img src="" alt="" class="foods-img">
-                <span class="name-foods"></span>
-                <div class="food-info"></div>
-                <a href="/recipes/recipes.html" class="for-more-btn">المزيد</a>
-            </div>
-               <div class="foods">
-                <img src="" alt="" class="foods-img">
-                <span class="name-foods"></span>
-                <div class="food-info"></div>
-                <a href="/recipes/recipes.html" class="for-more-btn">المزيد</a>
-            </div>
-               <div class="foods">
-                <img src="" alt="" class="foods-img">
-                <span class="name-foods"></span>
-                <div class="food-info"></div>
-                <a href="/recipes/recipes.html" class="for-more-btn">المزيد</a>
-            </div>
-               <div class="foods">
-                <img src="" alt="" class="foods-img">
-                <span class="name-foods"></span>
-                <div class="food-info"></div>
-                <a href="/recipes/recipes.html" class="for-more-btn">المزيد</a>
-            </div>
-
-           
-        </section>
-        <div class="events-main">
-            <h1>الفعاليات</h1>
-        </div>
-        <section class="events-grid">
-            <div class="event">
-                <img src="" alt="" class="event-img">
-                <span class="name-event"></span>
-                <div class="event-info"></div>
-                <a href="/events/events.html" class="event-btn">المزيد</a>
-            </div>
-             <div class="event">
-                <img src="" alt="" class="event-img">
-                <span class="name-event"></span>
-                <div class="event-info"></div>
-                <a href="/events/events.html" class="event-btn">المزيد</a>
-            </div>
-               <div class="event">
-                <img src="" alt="" class="event-img">
-                <span class="name-event"></span>
-                <div class="event-info"></div>
-                <a href="/events/events.html" class="event-btn">المزيد</a>
-            </div>
-               <div class="event">
-                <img src="" alt="" class="event-img">
-                <span class="name-event"></span>
-                <div class="event-info"></div>
-                <a href="/events/events.html" class="event-btn">المزيد</a>
-            </div>
-               <div class="event">
-                <img src="" alt="" class="event-img">
-                <span class="name-event"></span>
-                <div class="event-info"></div>
-                <a href="/events/events.html" class="event-btn">المزيد</a>
-            </div>
-               <div class="event">
-                <img src="" alt="" class="event-img">
-                <span class="name-event"></span>
-                <div class="event-info"></div>
-                <a href="/events/events.html" class="event-btn">المزيد</a>
-            </div>
-        </section>
-          <!-- Modal المدينة -->
+    <!--الاكل-->
+    <div class="main-foods">
+      <h1>الماكولات</h1>
+    </div>
+    <section class="foods-grid">
+      <div class="foods">
+        <img src="" alt="" class="foods-img" />
+        <span class="name-foods"></span>
+        <div class="food-info"></div>
+        <a href="/recipes/recipes.html" class="for-more-btn">المزيد</a>
+      </div>
+      <div class="foods">
+        <img src="" alt="" class="foods-img" />
+        <span class="name-foods"></span>
+        <div class="food-info"></div>
+        <a href="/recipes/recipes.html" class="for-more-btn">المزيد</a>
+      </div>
+      <div class="foods">
+        <img src="" alt="" class="foods-img" />
+        <span class="name-foods"></span>
+        <div class="food-info"></div>
+        <a href="/recipes/recipes.html" class="for-more-btn">المزيد</a>
+      </div>
+      <div class="foods">
+        <img src="" alt="" class="foods-img" />
+        <span class="name-foods"></span>
+        <div class="food-info"></div>
+        <a href="/recipes/recipes.html" class="for-more-btn">المزيد</a>
+      </div>
+      <div class="foods">
+        <img src="" alt="" class="foods-img" />
+        <span class="name-foods"></span>
+        <div class="food-info"></div>
+        <a href="/recipes/recipes.html" class="for-more-btn">المزيد</a>
+      </div>
+      <div class="foods">
+        <img src="" alt="" class="foods-img" />
+        <span class="name-foods"></span>
+        <div class="food-info"></div>
+        <a href="/recipes/recipes.html" class="for-more-btn">المزيد</a>
+      </div>
+    </section>
+    <div class="events-main">
+      <h1>الفعاليات</h1>
+    </div>
+    <section class="events-grid">
+      <div class="event">
+        <img src="" alt="" class="event-img" />
+        <span class="name-event"></span>
+        <div class="event-info"></div>
+        <a href="/events/events.html" class="event-btn">المزيد</a>
+      </div>
+      <div class="event">
+        <img src="" alt="" class="event-img" />
+        <span class="name-event"></span>
+        <div class="event-info"></div>
+        <a href="/events/events.html" class="event-btn">المزيد</a>
+      </div>
+      <div class="event">
+        <img src="" alt="" class="event-img" />
+        <span class="name-event"></span>
+        <div class="event-info"></div>
+        <a href="/events/events.html" class="event-btn">المزيد</a>
+      </div>
+      <div class="event">
+        <img src="" alt="" class="event-img" />
+        <span class="name-event"></span>
+        <div class="event-info"></div>
+        <a href="/events/events.html" class="event-btn">المزيد</a>
+      </div>
+      <div class="event">
+        <img src="" alt="" class="event-img" />
+        <span class="name-event"></span>
+        <div class="event-info"></div>
+        <a href="/events/events.html" class="event-btn">المزيد</a>
+      </div>
+      <div class="event">
+        <img src="" alt="" class="event-img" />
+        <span class="name-event"></span>
+        <div class="event-info"></div>
+        <a href="/events/events.html" class="event-btn">المزيد</a>
+      </div>
+    </section>
+    <!-- Modal المدينة -->
     <div id="cityModal" class="modal" onclick="closeCityModal(event)">
       <div class="modal-content">
         <button class="modal-close" onclick="closeCityModal(event)">×</button>
@@ -228,7 +207,7 @@
         </div>
       </div>
     </div>
-    <script src="/auth/auth.js" ></script>
-</body>
-
+    <script src="/countries/countries.js"></script>
+    <script src="/auth/auth.js"></script>
+  </body>
 </html>
