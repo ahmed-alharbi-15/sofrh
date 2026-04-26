@@ -1906,6 +1906,37 @@
           <span class="arrow">الوصفة ⌄</span>
         </button>
       </div>
+      <div class="foods-card" data-region="main-foods" id="ceviche">
+        <button
+          class="save-btn"
+          onclick="
+            saveItem(
+              'recipe',
+              'ceviche',
+              'سيفيتشي – Ceviche',
+              '/img/Ceviche.jpg',
+            )
+          "
+        >
+          🍽️
+        </button>
+        <button
+          class="recipes-item"
+          data-title="سيفيتشي – Ceviche"
+          data-img="/img/Ceviche.jpg"
+          data-ingredients="سمك أبيض طازج|150|غ|ليمون|3|حبة|بصل أحمر|1|حبة صغيرة|فلفل أخضر حار|1|حبة|كزبرة خضراء|10|غ|ملح|2|غ|ثوم|1|فص"
+          data-spices="فلفل أسود|1|غ|كمون|1|غ"
+          data-sauces="ذرة مسلوقة|بطاطس حلوة مسلوقة"
+          data-steps="قطّع السمك لمكعبات صغيرة|اعصر الليمون فوق السمك وأضف الملح|اتركه يتتبل 10 دقائق حتى يصبح اللون أبيض|قطّع البصل شرائح رفيعة وانقعه في ماء بارد دقيقتين|افرم الثوم والفلفل الحار والكزبرة|أضف البصل والثوم والفلفل والكزبرة للسمك|أضف الكمون والفلفل الأسود وحرك جيداً|قدّم فوراً مع الذرة والبطاطس الحلوة"
+          onclick="openRecipeFromData(this)"
+        >
+          <div class="recipes-head">
+            <img src="/img/Ceviche.jpg" alt="سيفيتشي" />
+            <span>سيفيتشي – Ceviche</span>
+          </div>
+          <span class="arrow">الوصفة ⌄</span>
+        </button>
+      </div>
     </div>
 
     <!-- Modal -->
@@ -1940,6 +1971,7 @@
         </div>
       </div>
     </div>
-     <script src="/recipes/recipes.js"></script><script src="/auth/auth.js"></script>
+    <script src="/recipes/recipes.js"></script>
+    <script src="/auth/auth.js"></script>
   </body>
 </html>
