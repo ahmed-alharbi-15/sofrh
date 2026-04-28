@@ -65,36 +65,95 @@
       <h1>المدن</h1>
     </div>
     <section class="cities-grid">
-      <div class="cite">
-        <img src="" alt="" class="cite-img" />
-        <span class="name"></span>
-        <div class="info"></div>
-      </div>
-      <div class="cite">
-        <img src="" alt="" class="cite-img" />
-        <span class="name"></span>
-        <div class="info"></div>
-      </div>
-      <div class="cite">
-        <img src="" alt="" class="cite-img" />
-        <span class="name"></span>
-        <div class="info"></div>
-      </div>
-      <div class="cite">
-        <img src="" alt="" class="cite-img" />
-        <span class="name"></span>
-        <div class="info"></div>
-      </div>
-      <div class="cite">
-        <img src="" alt="" class="cite-img" />
-        <span class="name"></span>
-        <div class="info"></div>
-      </div>
-      <div class="cite">
-        <img src="" alt="" class="cite-img" />
-        <span class="name"></span>
-        <div class="info"></div>
-      </div>
+      <div class="cite"
+    data-name="مكسيكو سيتي – Mexico City"
+    data-img="/img/Mexico City.jpg"
+    data-desc="عاصمة المكسيك النابضة بالحياة، من أكبر المدن في العالم، تجمع بين التاريخ الأزتيكي العريق والفن الحديث والمطاعم المتنوعة والأجواء الثقافية الرائعة."
+    data-historic="🏛️ تيوتيهواكان – Teotihuacan | 🏺 متحف الأنثروبولوجيا – National Museum | 🏙️ زوكالو – Zócalo | 🎨 متحف فريدا كالو – Frida Kahlo Museum"
+    data-restaurants="🌮 بوجول – Pujol | 🌿 كوينتونيل – Quintonil | 🎨 دولسي باتريا – Dulce Patria | 🍽️ إل كاردينال – El Cardenal | 💙 أزول هيستوريكو – Azul Histórico"
+    data-cafes="☕ ألمانيغرا – Almanegra Cafe | ☕ كاردينال – Cardinal Casa de Café | ☕ كوينتين – Quentin Cafe | ☕ بليند ستيشن – Blend Station | ☕ كومبي – Cumbe Café"
+    data-events="🏛️ زوكالو – El Zócalo | 🚣 شوتشيميلكو – Xochimilco | 🏺 متحف الأنثروبولوجيا – National Anthropology Museum | 🌳 حديقة تشابولتيبيك – Chapultepec | 🌮 أحياء روما وكويواكان – Roma & Coyoacán">
+    <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'mexico-city', 'مكسيكو سيتي', '/img/Mexico City.jpg')">🏙️</button>
+    <img src="/img/Mexico City.jpg" alt="مكسيكو سيتي" class="cite-img">
+    <span class="name">مكسيكو سيتي – Mexico City</span>
+    <p class="info">عاصمة نابضة بالحياة، مليانة تاريخ وثقافة ومطاعم متنوعة.</p>
+    <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">تفاصيل</button>
+</div>
+
+<div class="cite"
+    data-name="كانكون – Cancún"
+    data-img="/img/Cancun.jpg"
+    data-desc="وجهة سياحية عالمية على ساحل البحر الكاريبي، تشتهر بشواطئها الفيروزية الساحرة ومنتجعاتها الفاخرة وحياتها الليلية المميزة."
+    data-historic="🏛️ تشيتشن إيتزا – Chichen Itza | 🌊 جزيرة موخيريس – Isla Mujeres | 🏺 متحف المايا – Maya Museum | 🌿 شينكال – Xcaret Park"
+    data-restaurants="🦞 مطعم La Habichuela | 🌮 مطعم Harry's | 🌊 مطعم Mocambo"
+    data-cafes="☕ مقهى Café Antoinette | ☕ مقهى La Vie en Rose | ☕ مقهى Coqui Coqui"
+    data-events="🏖️ الشواطئ الفيروزية – Cancún Beaches | 🏛️ تشيتشن إيتزا – Chichen Itza | 🤿 غوص في البحر الكاريبي – Diving">
+    <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'cancun', 'كانكون', '/img/Cancun.jpg')">🏙️</button>
+    <img src="/img/Cancun.jpg" alt="كانكون" class="cite-img">
+    <span class="name">كانكون – Cancún</span>
+    <p class="info">وجهة سياحية بشواطئ فيروزية وأجواء استرخاء فاخرة.</p>
+    <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">تفاصيل</button>
+</div>
+
+<div class="cite"
+    data-name="غوادالاخارا – Guadalajara"
+    data-img="/img/Guadalajara.jpg"
+    data-desc="عاصمة ولاية خاليسكو ومدينة المارياشي والتكيلا، تجمع بين الأجواء التقليدية المكسيكية الأصيلة والحياة الثقافية الغنية والعمارة الاستعمارية الجميلة."
+    data-historic="⛪ كاتدرائية غوادالاخارا – Guadalajara Cathedral | 🎭 مسرح ديغوليادو – Degollado Theater | 🏛️ معهد الفنون الثقافية – Instituto Cultural Cabañas | 🌵 تكيلا – Tequila Town"
+    data-restaurants="🌮 مطعم La Chata | 🍖 مطعم Karne Garibaldi | 🌿 مطعم Casa Bariachi"
+    data-cafes="☕ مقهى Café Madrid | ☕ مقهى Demetria | ☕ مقهى Boicot"
+    data-events="🎶 مهرجان مارياشي – Mariachi Festival | 🌵 جولة التكيلا – Tequila Tour | 🏛️ معهد كاباناس – Instituto Cabañas">
+    <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'guadalajara', 'غوادالاخارا', '/img/Guadalajara.jpg')">🏙️</button>
+    <img src="/img/Guadalajara.jpg" alt="غوادالاخارا" class="cite-img">
+    <span class="name">غوادالاخارا – Guadalajara</span>
+    <p class="info">مدينة تقليدية مليانة موسيقى مارياشي وثقافة مكسيكية أصيلة.</p>
+    <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">تفاصيل</button>
+</div>
+
+<div class="cite"
+    data-name="بلايا ديل كارمن – Playa del Carmen"
+    data-img="/img/Playa del Carmen.jpg"
+    data-desc="مدينة ساحلية هادئة وراقية على ساحل البحر الكاريبي، تشتهر بشارع كينتا أفينيدا الشهير والشواطئ الجميلة والأنشطة البحرية المتنوعة."
+    data-historic="🌊 شارع الخامسة – Quinta Avenida | 🏛️ كوبا – Coba Ruins | 🌿 شينكال – Xcaret | 🤿 سيان كاان – Sian Ka'an"
+    data-restaurants="🌮 مطعم La Perla Pixan | 🦞 مطعم Carboncitos | 🌿 مطعم Kaxapa Factory"
+    data-cafes="☕ مقهى Café Sasta | ☕ مقهى Oh Lala | ☕ مقهى Puro Corazón"
+    data-events="🏖️ شواطئ البحر الكاريبي – Caribbean Beaches | 🤿 غوص في الحفر الزرقاء – Cenotes | 🌿 شينكال – Xcaret Park">
+    <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'playa-del-carmen', 'بلايا ديل كارمن', '/img/Playa del Carmen.jpg')">🏙️</button>
+    <img src="/img/Playa del Carmen.jpg" alt="بلايا ديل كارمن" class="cite-img">
+    <span class="name">بلايا ديل كارمن – Playa del Carmen</span>
+    <p class="info">مدينة ساحلية هادئة، مثالية للاسترخاء والأنشطة البحرية.</p>
+    <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">تفاصيل</button>
+</div>
+
+<div class="cite"
+    data-name="مونتيري – Monterrey"
+    data-img="/img/Monterrey.jpg"
+    data-desc="ثاني أكبر مدينة اقتصادية في المكسيك، تجمع بين الحداثة والطبيعة الجبلية الخلابة، تشتهر بجبل السيلا الشهير وأجوائها الحضرية المتطورة."
+    data-historic="🏔️ جبل السيلا – Cerro de la Silla | 🏛️ ماكرو بلازا – Macroplaza | 🎨 متحف الفنون – MARCO Museum | 🌿 باركي فونديدورا – Parque Fundidora"
+    data-restaurants="🍖 مطعم El Rey del Cabrito | 🌮 مطعم Pangea | 🌿 مطعم Nave"
+    data-cafes="☕ مقهى Café Iguana | ☕ مقهى Tierra de Café | ☕ مقهى Buna"
+    data-events="🏔️ جبل السيلا – Cerro de la Silla | 🎨 متحف ماركو – MARCO Museum | 🌿 باركي فونديدورا – Parque Fundidora">
+    <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'monterrey', 'مونتيري', '/img/Monterrey.jpg')">🏙️</button>
+    <img src="/img/Monterrey.jpg" alt="مونتيري" class="cite-img">
+    <span class="name">مونتيري – Monterrey</span>
+    <p class="info">مدينة حديثة تجمع بين الطبيعة والاقتصاد والتطور.</p>
+    <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">تفاصيل</button>
+</div>
+
+<div class="cite"
+    data-name="أواكساكا – Oaxaca"
+    data-img="/img/Oaxaca.jpg"
+    data-desc="مدينة تاريخية ملونة في جنوب المكسيك، تشتهر بمطبخها التقليدي الفريد والحرف اليدوية الأصيلة وآثار حضارة الزاباتيك ومهرجان يوم الموتى الشهير."
+    data-historic="🏛️ مونتي ألبان – Monte Albán | ⛪ كاتدرائية أواكساكا – Oaxaca Cathedral | 🌳 شجرة تول – El Tule Tree | 🏺 متحف أواكساكا – Oaxaca Museum"
+    data-restaurants="🍫 مطعم Casa Oaxaca | 🌮 مطعم Los Danzantes | 🌿 مطعم Origen"
+    data-cafes="☕ مقهى Café Brujula | ☕ مقهى Origen Café | ☕ مقهى La Biznaga"
+    data-events="💀 يوم الموتى – Day of the Dead | 🏛️ مونتي ألبان – Monte Albán | 🎨 مهرجان غيلاغيتزا – Guelaguetza Festival">
+    <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'oaxaca', 'أواكساكا', '/img/Oaxaca.jpg')">🏙️</button>
+    <img src="/img/Oaxaca.jpg" alt="أواكساكا" class="cite-img">
+    <span class="name">أواكساكا – Oaxaca</span>
+    <p class="info">مدينة تاريخية بألوان جميلة وأكل تقليدي مميز.</p>
+    <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">تفاصيل</button>
+</div>
     </section>
     <!--الاكل-->
     <div class="main-foods">
