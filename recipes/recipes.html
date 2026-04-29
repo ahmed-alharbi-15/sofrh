@@ -2096,112 +2096,372 @@
         </button>
       </div>
       <div class="foods-card" data-region="main-foods" id="tacos">
-    <button class="save-btn" onclick="saveItem('recipe', 'tacos', 'تاكو – Tacos', '/img/Tacos.jpg')">🍽️</button>
-    <button class="recipes-item"
-        data-title="تاكو – Tacos"
-        data-img="/img/Tacos.jpg"
-        data-ingredients="تورتيلا ذرة|2|قطعة|دجاج|125|غ|بصل|1|حبة صغيرة|كزبرة خضراء|10|غ|ليمون|1|حبة|ملح|2|غ|زيت|10|مل"
-        data-spices="كمون|2|غ|فلفل أسود|1|غ|بابريكا|2|غ|ثوم بودرة|1|غ"
-        data-sauces="صوص سالسا|صوص أفوكادو|فلفل حار"
-        data-steps="تبّل الدجاج بالبهارات والملح والزيت|اشوِ الدجاج على الجريل أو المقلاة 6-8 دقائق من كل جهة|قطّع الدجاج شرائح صغيرة|سخّن التورتيلا على صاج جاف ثوانٍ من كل جهة|ضع الدجاج فوق التورتيلا|أضف البصل المفروم والكزبرة|عصّر الليمون فوقه|قدّم مع الصوصات"
-        onclick="openRecipeFromData(this)">
-        <div class="recipes-head">
-            <img src="/img/Tacos.jpg" alt="تاكو">
+        <button
+          class="save-btn"
+          onclick="
+            saveItem('recipe', 'tacos', 'تاكو – Tacos', '/img/Tacos.jpg')
+          "
+        >
+          🍽️
+        </button>
+        <button
+          class="recipes-item"
+          data-title="تاكو – Tacos"
+          data-img="/img/Tacos.jpg"
+          data-ingredients="تورتيلا ذرة|2|قطعة|دجاج|125|غ|بصل|1|حبة صغيرة|كزبرة خضراء|10|غ|ليمون|1|حبة|ملح|2|غ|زيت|10|مل"
+          data-spices="كمون|2|غ|فلفل أسود|1|غ|بابريكا|2|غ|ثوم بودرة|1|غ"
+          data-sauces="صوص سالسا|صوص أفوكادو|فلفل حار"
+          data-steps="تبّل الدجاج بالبهارات والملح والزيت|اشوِ الدجاج على الجريل أو المقلاة 6-8 دقائق من كل جهة|قطّع الدجاج شرائح صغيرة|سخّن التورتيلا على صاج جاف ثوانٍ من كل جهة|ضع الدجاج فوق التورتيلا|أضف البصل المفروم والكزبرة|عصّر الليمون فوقه|قدّم مع الصوصات"
+          onclick="openRecipeFromData(this)"
+        >
+          <div class="recipes-head">
+            <img src="/img/Tacos.jpg" alt="تاكو" />
             <span>تاكو – Tacos</span>
-        </div>
-        <span class="arrow">الوصفة ⌄</span>
-    </button>
-</div>
+          </div>
+          <span class="arrow">الوصفة ⌄</span>
+        </button>
+      </div>
 
-<div class="foods-card" data-region="main-foods" id="burrito">
-    <button class="save-btn" onclick="saveItem('recipe', 'burrito', 'بوريتو – Burrito', '/img/Burrito.jpg')">🍽️</button>
-    <button class="recipes-item"
-        data-title="بوريتو – Burrito"
-        data-img="/img/Burrito.jpg"
-        data-ingredients="تورتيلا قمح كبيرة|1|قطعة|دجاج|125|غ|أرز مطبوخ|80|غ|فاصوليا سوداء|50|غ|جبن مبشور|30|غ|بصل|1|حبة صغيرة|فلفل رومي|50|غ|زيت|10|مل|ملح|2|غ"
-        data-spices="كمون|2|غ|فلفل أسود|1|غ|بابريكا|2|غ|ثوم بودرة|1|غ|أوريغانو|1|غ"
-        data-sauces="صوص سالسا|كريمة حامضة|غواكامولي"
-        data-steps="تبّل الدجاج بالبهارات واشوِه في المقلاة|قطّع الدجاج وقلّي البصل والفلفل الرومي|سخّن التورتيلا الكبيرة على صاج|ضع الأرز في المنتصف ثم الفاصوليا والدجاج|أضف البصل والفلفل والجبن|ضع ملعقة كريمة حامضة وسالسا|اطوِ جانبي التورتيلا ثم لفّها بإحكام|قدّم مع الغواكامولي والسالسا"
-        onclick="openRecipeFromData(this)">
-        <div class="recipes-head">
-            <img src="/img/Burrito.jpg" alt="بوريتو">
+      <div class="foods-card" data-region="main-foods" id="burrito">
+        <button
+          class="save-btn"
+          onclick="
+            saveItem(
+              'recipe',
+              'burrito',
+              'بوريتو – Burrito',
+              '/img/Burrito.jpg',
+            )
+          "
+        >
+          🍽️
+        </button>
+        <button
+          class="recipes-item"
+          data-title="بوريتو – Burrito"
+          data-img="/img/Burrito.jpg"
+          data-ingredients="تورتيلا قمح كبيرة|1|قطعة|دجاج|125|غ|أرز مطبوخ|80|غ|فاصوليا سوداء|50|غ|جبن مبشور|30|غ|بصل|1|حبة صغيرة|فلفل رومي|50|غ|زيت|10|مل|ملح|2|غ"
+          data-spices="كمون|2|غ|فلفل أسود|1|غ|بابريكا|2|غ|ثوم بودرة|1|غ|أوريغانو|1|غ"
+          data-sauces="صوص سالسا|كريمة حامضة|غواكامولي"
+          data-steps="تبّل الدجاج بالبهارات واشوِه في المقلاة|قطّع الدجاج وقلّي البصل والفلفل الرومي|سخّن التورتيلا الكبيرة على صاج|ضع الأرز في المنتصف ثم الفاصوليا والدجاج|أضف البصل والفلفل والجبن|ضع ملعقة كريمة حامضة وسالسا|اطوِ جانبي التورتيلا ثم لفّها بإحكام|قدّم مع الغواكامولي والسالسا"
+          onclick="openRecipeFromData(this)"
+        >
+          <div class="recipes-head">
+            <img src="/img/Burrito.jpg" alt="بوريتو" />
             <span>بوريتو – Burrito</span>
-        </div>
-        <span class="arrow">الوصفة ⌄</span>
-    </button>
-</div>
+          </div>
+          <span class="arrow">الوصفة ⌄</span>
+        </button>
+      </div>
 
-<div class="foods-card" data-region="snacks" id="quesadilla">
-    <button class="save-btn" onclick="saveItem('recipe', 'quesadilla', 'كيساديلا – Quesadilla', '/img/Quesadilla.jpg')">🍽️</button>
-    <button class="recipes-item"
-        data-title="كيساديلا – Quesadilla"
-        data-img="/img/Quesadilla.jpg"
-        data-ingredients="تورتيلا قمح|2|قطعة|جبن موزاريلا|80|غ|دجاج مطبوخ|80|غ|فلفل رومي|30|غ|بصل|1|حبة صغيرة|زيت|5|مل|ملح|1|غ"
-        data-spices="فلفل أسود|1|غ|كمون|1|غ|ثوم بودرة|1|غ"
-        data-sauces="صوص سالسا|كريمة حامضة|غواكامولي"
-        data-steps="قلّي البصل والفلفل الرومي في الزيت|أضف الدجاج المقطع والبهارات وحرك|ضع تورتيلا على مقلاة ساخنة|وزّع الجبن بالتساوي فوقها|أضف خليط الدجاج والخضار|غطّيه بتورتيلا ثانية|اطبخ 2-3 دقائق حتى يذوب الجبن|اقلبها وكررها من الجهة الثانية|قطّعها مثلثات وقدّم مع الصوصات"
-        onclick="openRecipeFromData(this)">
-        <div class="recipes-head">
-            <img src="/img/Quesadilla.jpg" alt="كيساديلا">
+      <div class="foods-card" data-region="snacks" id="quesadilla">
+        <button
+          class="save-btn"
+          onclick="
+            saveItem(
+              'recipe',
+              'quesadilla',
+              'كيساديلا – Quesadilla',
+              '/img/Quesadilla.jpg',
+            )
+          "
+        >
+          🍽️
+        </button>
+        <button
+          class="recipes-item"
+          data-title="كيساديلا – Quesadilla"
+          data-img="/img/Quesadilla.jpg"
+          data-ingredients="تورتيلا قمح|2|قطعة|جبن موزاريلا|80|غ|دجاج مطبوخ|80|غ|فلفل رومي|30|غ|بصل|1|حبة صغيرة|زيت|5|مل|ملح|1|غ"
+          data-spices="فلفل أسود|1|غ|كمون|1|غ|ثوم بودرة|1|غ"
+          data-sauces="صوص سالسا|كريمة حامضة|غواكامولي"
+          data-steps="قلّي البصل والفلفل الرومي في الزيت|أضف الدجاج المقطع والبهارات وحرك|ضع تورتيلا على مقلاة ساخنة|وزّع الجبن بالتساوي فوقها|أضف خليط الدجاج والخضار|غطّيه بتورتيلا ثانية|اطبخ 2-3 دقائق حتى يذوب الجبن|اقلبها وكررها من الجهة الثانية|قطّعها مثلثات وقدّم مع الصوصات"
+          onclick="openRecipeFromData(this)"
+        >
+          <div class="recipes-head">
+            <img src="/img/Quesadilla.jpg" alt="كيساديلا" />
             <span>كيساديلا – Quesadilla</span>
-        </div>
-        <span class="arrow">الوصفة ⌄</span>
-    </button>
-</div>
+          </div>
+          <span class="arrow">الوصفة ⌄</span>
+        </button>
+      </div>
 
-<div class="foods-card" data-region="main-foods" id="enchilada">
-    <button class="save-btn" onclick="saveItem('recipe', 'enchilada', 'إنشيلادا – Enchilada', '/img/Enchilada.jpg')">🍽️</button>
-    <button class="recipes-item"
-        data-title="إنشيلادا – Enchilada"
-        data-img="/img/Enchilada.jpg"
-        data-ingredients="تورتيلا ذرة|3|قطعة|دجاج مطبوخ مفروم|125|غ|طماطم معلبة|150|غ|بصل|1|حبة صغيرة|ثوم|2|فص|جبن مبشور|40|غ|زيت|15|مل|ملح|2|غ"
-        data-spices="فلفل أحمر حار مجفف|3|غ|كمون|2|غ|أوريغانو|2|غ|فلفل أسود|1|غ"
-        data-sauces="كريمة حامضة|كزبرة خضراء"
-        data-steps="قلّي البصل والثوم في الزيت|أضف الطماطم والفلفل الحار والبهارات|اطبخ الصوص 15 دقيقة حتى يتكثف|اغمس كل تورتيلا في الصوص الدافئ|ضع ملعقة دجاج مفروم في المنتصف ولفّها|رتّبها في صينية فرن|صب باقي الصوص فوقها|رش الجبن|اخبز 15 دقيقة على 180°|قدّم مع الكريمة والكزبرة"
-        onclick="openRecipeFromData(this)">
-        <div class="recipes-head">
-            <img src="/img/Enchilada.jpg" alt="إنشيلادا">
+      <div class="foods-card" data-region="main-foods" id="enchilada">
+        <button
+          class="save-btn"
+          onclick="
+            saveItem(
+              'recipe',
+              'enchilada',
+              'إنشيلادا – Enchilada',
+              '/img/Enchilada.jpg',
+            )
+          "
+        >
+          🍽️
+        </button>
+        <button
+          class="recipes-item"
+          data-title="إنشيلادا – Enchilada"
+          data-img="/img/Enchilada.jpg"
+          data-ingredients="تورتيلا ذرة|3|قطعة|دجاج مطبوخ مفروم|125|غ|طماطم معلبة|150|غ|بصل|1|حبة صغيرة|ثوم|2|فص|جبن مبشور|40|غ|زيت|15|مل|ملح|2|غ"
+          data-spices="فلفل أحمر حار مجفف|3|غ|كمون|2|غ|أوريغانو|2|غ|فلفل أسود|1|غ"
+          data-sauces="كريمة حامضة|كزبرة خضراء"
+          data-steps="قلّي البصل والثوم في الزيت|أضف الطماطم والفلفل الحار والبهارات|اطبخ الصوص 15 دقيقة حتى يتكثف|اغمس كل تورتيلا في الصوص الدافئ|ضع ملعقة دجاج مفروم في المنتصف ولفّها|رتّبها في صينية فرن|صب باقي الصوص فوقها|رش الجبن|اخبز 15 دقيقة على 180°|قدّم مع الكريمة والكزبرة"
+          onclick="openRecipeFromData(this)"
+        >
+          <div class="recipes-head">
+            <img src="/img/Enchilada.jpg" alt="إنشيلادا" />
             <span>إنشيلادا – Enchilada</span>
-        </div>
-        <span class="arrow">الوصفة ⌄</span>
-    </button>
-</div>
+          </div>
+          <span class="arrow">الوصفة ⌄</span>
+        </button>
+      </div>
 
-<div class="foods-card" data-region="snacks" id="guacamole">
-    <button class="save-btn" onclick="saveItem('recipe', 'guacamole', 'غواكامولي – Guacamole', '/img/Guacamole.jpg')">🍽️</button>
-    <button class="recipes-item"
-        data-title="غواكامولي – Guacamole"
-        data-img="/img/Guacamole.jpg"
-        data-ingredients="أفوكادو|2|حبة|ليمون|1|حبة|بصل أحمر|1|حبة صغيرة|طماطم|1|حبة صغيرة|كزبرة خضراء|15|غ|ملح|2|غ|فلفل أخضر حار|1|حبة"
-        data-spices="فلفل أسود|1|غ|ثوم|1|فص"
-        data-sauces="رقائق تورتيلا – Tortilla Chips"
-        data-steps="اشقّ الأفوكادو وأزل النواة|اهرس الأفوكادو بالشوكة حتى يصبح كريمي مع بعض القطع|أضف عصير الليمون وحرك فوراً لمنع الأكسدة|افرم البصل والطماطم والكزبرة والفلفل الحار والثوم|أضف كل شيء للأفوكادو|أضف الملح والفلفل وعدّل التتبيل|قدّم فوراً مع رقائق التورتيلا"
-        onclick="openRecipeFromData(this)">
-        <div class="recipes-head">
-            <img src="/img/Guacamole.jpg" alt="غواكامولي">
+      <div class="foods-card" data-region="snacks" id="guacamole">
+        <button
+          class="save-btn"
+          onclick="
+            saveItem(
+              'recipe',
+              'guacamole',
+              'غواكامولي – Guacamole',
+              '/img/Guacamole.jpg',
+            )
+          "
+        >
+          🍽️
+        </button>
+        <button
+          class="recipes-item"
+          data-title="غواكامولي – Guacamole"
+          data-img="/img/Guacamole.jpg"
+          data-ingredients="أفوكادو|2|حبة|ليمون|1|حبة|بصل أحمر|1|حبة صغيرة|طماطم|1|حبة صغيرة|كزبرة خضراء|15|غ|ملح|2|غ|فلفل أخضر حار|1|حبة"
+          data-spices="فلفل أسود|1|غ|ثوم|1|فص"
+          data-sauces="رقائق تورتيلا – Tortilla Chips"
+          data-steps="اشقّ الأفوكادو وأزل النواة|اهرس الأفوكادو بالشوكة حتى يصبح كريمي مع بعض القطع|أضف عصير الليمون وحرك فوراً لمنع الأكسدة|افرم البصل والطماطم والكزبرة والفلفل الحار والثوم|أضف كل شيء للأفوكادو|أضف الملح والفلفل وعدّل التتبيل|قدّم فوراً مع رقائق التورتيلا"
+          onclick="openRecipeFromData(this)"
+        >
+          <div class="recipes-head">
+            <img src="/img/Guacamole.jpg" alt="غواكامولي" />
             <span>غواكامولي – Guacamole</span>
-        </div>
-        <span class="arrow">الوصفة ⌄</span>
-    </button>
-</div>
+          </div>
+          <span class="arrow">الوصفة ⌄</span>
+        </button>
+      </div>
 
-<div class="foods-card" data-region="sweets" id="churros">
-    <button class="save-btn" onclick="saveItem('recipe', 'churros', 'تشوروس – Churros', '/img/Churros.jpg')">🍽️</button>
-    <button class="recipes-item"
-        data-title="تشوروس – Churros"
-        data-img="/img/Churros.jpg"
-        data-ingredients="دقيق|150|غ|ماء|240|مل|زبدة|30|غ|بيض|2|حبة|سكر|20|غ|ملح|2|غ|زيت للقلي|200|مل|سكر بودرة|30|غ|قرفة|5|غ"
-        data-spices="فانيليا|2|غ"
-        data-sauces="شوكولاتة ساخنة|كراميل"
-        data-steps="سخّن الماء والزبدة والسكر والملح حتى يغلي|أضف الدقيق دفعة واحدة وحرك بقوة حتى تتشكل عجينة|أبعد عن النار واتركها تبرد 5 دقائق|أضف البيض واحداً واحداً مع التحريك حتى تصبح ناعمة|ضع العجينة في كيس الزينة بفوهة نجمية|سخّن الزيت على 180°|اضغط العجينة مباشرة في الزيت وقطّعها بالمقص|اقلِ 2-3 دقائق حتى تذهب|صفّيها وقلّبها في خليط السكر والقرفة|قدّم مع الشوكولاتة الساخنة"
-        onclick="openRecipeFromData(this)">
-        <div class="recipes-head">
-            <img src="/img/Churros.jpg" alt="تشوروس">
+      <div class="foods-card" data-region="sweets" id="churros">
+        <button
+          class="save-btn"
+          onclick="
+            saveItem(
+              'recipe',
+              'churros',
+              'تشوروس – Churros',
+              '/img/Churros.jpg',
+            )
+          "
+        >
+          🍽️
+        </button>
+        <button
+          class="recipes-item"
+          data-title="تشوروس – Churros"
+          data-img="/img/Churros.jpg"
+          data-ingredients="دقيق|150|غ|ماء|240|مل|زبدة|30|غ|بيض|2|حبة|سكر|20|غ|ملح|2|غ|زيت للقلي|200|مل|سكر بودرة|30|غ|قرفة|5|غ"
+          data-spices="فانيليا|2|غ"
+          data-sauces="شوكولاتة ساخنة|كراميل"
+          data-steps="سخّن الماء والزبدة والسكر والملح حتى يغلي|أضف الدقيق دفعة واحدة وحرك بقوة حتى تتشكل عجينة|أبعد عن النار واتركها تبرد 5 دقائق|أضف البيض واحداً واحداً مع التحريك حتى تصبح ناعمة|ضع العجينة في كيس الزينة بفوهة نجمية|سخّن الزيت على 180°|اضغط العجينة مباشرة في الزيت وقطّعها بالمقص|اقلِ 2-3 دقائق حتى تذهب|صفّيها وقلّبها في خليط السكر والقرفة|قدّم مع الشوكولاتة الساخنة"
+          onclick="openRecipeFromData(this)"
+        >
+          <div class="recipes-head">
+            <img src="/img/Churros.jpg" alt="تشوروس" />
             <span>تشوروس – Churros</span>
-        </div>
-        <span class="arrow">الوصفة ⌄</span>
-    </button>
-</div>
+          </div>
+          <span class="arrow">الوصفة ⌄</span>
+        </button>
+      </div>
+      <div class="foods-card" data-region="main-foods" id="burger">
+        <button
+          class="save-btn"
+          onclick="
+            saveItem('recipe', 'burger', 'برغر – Burger', '/img/Burger.jpg')
+          "
+        >
+          🍽️
+        </button>
+        <button
+          class="recipes-item"
+          data-title="برغر – Burger"
+          data-img="/img/Burger.jpg"
+          data-ingredients="لحم مفروم|150|غ|خبز برغر|1|قطعة|جبن شيدر|1|قطعة|خس|20|غ|طماطم|1|حبة صغيرة|بصل|1|حبة صغيرة|ملح|2|غ|زيت|10|مل"
+          data-spices="فلفل أسود|2|غ|ثوم بودرة|1|غ|بابريكا|1|غ"
+          data-sauces="كاتشب|مايونيز|خردل"
+          data-steps="اخلط اللحم مع الملح والفلفل وثوم البودرة|شكّله كقرص سميك ولا تضغط كثيراً|سخّن الجريل أو المقلاة على نار عالية|اشوِ البرغر 3-4 دقائق من كل جهة|ضع الجبن فوقه في آخر دقيقة حتى يذوب|حمّص الخبز على الجريل|رتّب الخبز الأسفل ثم الخس والطماطم والبصل|ضع البرغر فوقهم ثم الصوصات|أغلق بالخبز الأعلى وقدّم فوراً"
+          onclick="openRecipeFromData(this)"
+        >
+          <div class="recipes-head">
+            <img src="/img/Burger.jpg" alt="برغر" />
+            <span>برغر – Burger</span>
+          </div>
+          <span class="arrow">الوصفة ⌄</span>
+        </button>
+      </div>
+
+      <div class="foods-card" data-region="main-foods" id="american-pizza">
+        <button
+          class="save-btn"
+          onclick="
+            saveItem(
+              'recipe',
+              'american-pizza',
+              'بيتزا – Pizza',
+              '/img/American Pizza.jpg',
+            )
+          "
+        >
+          🍽️
+        </button>
+        <button
+          class="recipes-item"
+          data-title="بيتزا – Pizza"
+          data-img="/img/American Pizza.jpg"
+          data-ingredients="دقيق|200|غ|ماء|130|مل|خميرة|5|غ|زيت زيتون|15|مل|ملح|3|غ|صوص طماطم|80|غ|جبن موزاريلا|100|غ|دجاج|80|غ|فلفل رومي|50|غ|بصل|1|حبة صغيرة"
+          data-spices="أوريغانو|2|غ|فلفل أسود|1|غ|ثوم بودرة|1|غ|فلفل أحمر|1|غ"
+          data-sauces="صوص طماطم حار"
+          data-steps="اخلط الدقيق والملح والخميرة|أضف الماء والزيت واعجن 10 دقائق|اتركها ترتاح ساعة|افرد العجينة دائرة رقيقة|ضع صوص الطماطم وافرده بالتساوي|أضف جبن الموزاريلا|رتّب الدجاج والفلفل والبصل|رش الأوريغانو والبهارات|اخبز في فرن 230° لمدة 12-15 دقيقة|قدّم فوراً"
+          onclick="openRecipeFromData(this)"
+        >
+          <div class="recipes-head">
+            <img src="/img/American Pizza.jpg" alt="بيتزا" />
+            <span>بيتزا – Pizza</span>
+          </div>
+          <span class="arrow">الوصفة ⌄</span>
+        </button>
+      </div>
+
+      <div class="foods-card" data-region="snacks" id="hot-dog">
+        <button
+          class="save-btn"
+          onclick="
+            saveItem(
+              'recipe',
+              'hot-dog',
+              'هوت دوغ – Hot Dog',
+              '/img/Hot Dog.jpg',
+            )
+          "
+        >
+          🍽️
+        </button>
+        <button
+          class="recipes-item"
+          data-title="هوت دوغ – Hot Dog"
+          data-img="/img/Hot Dog.jpg"
+          data-ingredients="نقانق دجاج|2|قطعة|خبز هوت دوغ|2|قطعة|بصل|1|حبة صغيرة|فلفل أخضر|30|غ|زيت|10|مل|ملح|1|غ"
+          data-spices="فلفل أسود|1|غ|بابريكا|1|غ"
+          data-sauces="كاتشب|خردل|مايونيز"
+          data-steps="اشوِ النقانق على الجريل أو المقلاة حتى تحمر من جميع الجهات|قلّي البصل والفلفل الأخضر في الزيت حتى يذهب|حمّص خبز الهوت دوغ|ضع النقانق في الخبز|أضف البصل والفلفل المقلي فوقها|ضع الصوصات حسب الرغبة|قدّم فوراً"
+          onclick="openRecipeFromData(this)"
+        >
+          <div class="recipes-head">
+            <img src="/img/Hot Dog.jpg" alt="هوت دوغ" />
+            <span>هوت دوغ – Hot Dog</span>
+          </div>
+          <span class="arrow">الوصفة ⌄</span>
+        </button>
+      </div>
+
+      <div class="foods-card" data-region="main-foods" id="fried-chicken">
+        <button
+          class="save-btn"
+          onclick="
+            saveItem(
+              'recipe',
+              'fried-chicken',
+              'دجاج مقلي – Fried Chicken',
+              '/img/Fried Chicken.jpg',
+            )
+          "
+        >
+          🍽️
+        </button>
+        <button
+          class="recipes-item"
+          data-title="دجاج مقلي – Fried Chicken"
+          data-img="/img/Fried Chicken.jpg"
+          data-ingredients="دجاج|200|غ|دقيق|100|غ|بيض|1|حبة|حليب|50|مل|زيت للقلي|200|مل|ملح|3|غ"
+          data-spices="فلفل أسود|2|غ|بابريكا|3|غ|ثوم بودرة|2|غ|بصل بودرة|1|غ|كمون|1|غ|فلفل أبيض|1|غ"
+          data-sauces="صوص هاني مستر – Honey Mustard|كاتشب"
+          data-steps="تبّل الدجاج بالملح والبهارات واتركه ساعة في الثلاجة|اخلط البيض والحليب في وعاء|اخلط الدقيق مع باقي البهارات في وعاء آخر|اغمس الدجاج في خليط البيض ثم الدقيق|كررها مرتين للحصول على قشرة سميكة|سخّن الزيت على 170°|اقلِ الدجاج 12-15 دقيقة حتى يذهب ويصبح مقرمشاً|صفّيه على ورق مطبخ وقدّم مع الصوص"
+          onclick="openRecipeFromData(this)"
+        >
+          <div class="recipes-head">
+            <img src="/img/Fried Chicken.jpg" alt="دجاج مقلي" />
+            <span>دجاج مقلي – Fried Chicken</span>
+          </div>
+          <span class="arrow">الوصفة ⌄</span>
+        </button>
+      </div>
+
+      <div class="foods-card" data-region="sweets" id="pancakes">
+        <button
+          class="save-btn"
+          onclick="
+            saveItem(
+              'recipe',
+              'pancakes',
+              'بانكيك – Pancakes',
+              '/img/Pancakes.jpg',
+            )
+          "
+        >
+          🍽️
+        </button>
+        <button
+          class="recipes-item"
+          data-title="بانكيك – Pancakes"
+          data-img="/img/Pancakes.jpg"
+          data-ingredients="دقيق|150|غ|حليب|180|مل|بيض|1|حبة|سكر|20|غ|زبدة|30|غ|بيكنج بودر|5|غ|ملح|1|غ"
+          data-spices="فانيليا|2|غ"
+          data-sauces="شراب القيقب – Maple Syrup|عسل|فراولة طازجة"
+          data-steps="اخلط الدقيق والسكر والبيكنج بودر والملح|أضف البيض والحليب والزبدة المذابة والفانيليا|اخلط حتى تختفي التكتلات لكن لا تخلط كثيراً|اتركه يرتاح 5 دقائق|سخّن مقلاة على نار متوسطة وادهنها بزبدة|صب ملعقة كبيرة من الخليط|اطبخ حتى تظهر فقاعات على السطح ثم اقلب|اطبخ دقيقة من الجهة الثانية|قدّم ساخناً مع شراب القيقب"
+          onclick="openRecipeFromData(this)"
+        >
+          <div class="recipes-head">
+            <img src="/img/Pancakes.jpg" alt="بانكيك" />
+            <span>بانكيك – Pancakes</span>
+          </div>
+          <span class="arrow">الوصفة ⌄</span>
+        </button>
+      </div>
+
+      <div class="foods-card" data-region="sweets" id="donuts">
+        <button
+          class="save-btn"
+          onclick="
+            saveItem('recipe', 'donuts', 'دونات – Donuts', '/img/Donuts.jpg')
+          "
+        >
+          🍽️
+        </button>
+        <button
+          class="recipes-item"
+          data-title="دونات – Donuts"
+          data-img="/img/Donuts.jpg"
+          data-ingredients="دقيق|300|غ|حليب|120|مل|بيض|1|حبة|سكر|60|غ|زبدة|40|غ|خميرة|7|غ|ملح|2|غ|زيت للقلي|200|مل|سكر بودرة|50|غ"
+          data-spices="فانيليا|2|غ|جوزة الطيب|1|غ"
+          data-sauces="شوكولاتة ساخنة|سكر بودرة|قرفة"
+          data-steps="اخلط الدقيق والسكر والملح والخميرة|أضف الحليب الدافئ والبيض والزبدة والفانيليا|اعجن 10 دقائق حتى تصبح ناعمة ومرنة|اتركها ترتاح ساعة حتى تتضاعف|افرد العجينة بسماكة 1 سم|قطّعها دوائر بقاطع الدونات أو كوب|اتركها ترتاح 30 دقيقة|سخّن الزيت على 175°|اقلِ الدونات 1-2 دقيقة من كل جهة حتى تذهب|صفّيها وقلّبها في السكر البودرة أو الشوكولاتة"
+          onclick="openRecipeFromData(this)"
+        >
+          <div class="recipes-head">
+            <img src="/img/Donuts.jpg" alt="دونات" />
+            <span>دونات – Donuts</span>
+          </div>
+          <span class="arrow">الوصفة ⌄</span>
+        </button>
+      </div>
     </div>
 
     <!-- Modal -->
