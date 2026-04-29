@@ -59,42 +59,104 @@
     <header>
       <a href="/countries/countries.html" class="back-btn">رجوع</a>
     </header>
-
+    <div class="country-name">
+      <h1>الولايات المتحدة</h1>
+      <p>وجهة التنوع والحياة، بين مدن حديثة وتجارب لا تنتهي.</p>
+    </div>
     <!--المدن -->
     <div class="main-cites">
       <h1>المدن</h1>
     </div>
     <section class="cities-grid">
-      <div class="cite">
-        <img src="" alt="" class="cite-img" />
-        <span class="name"></span>
-        <div class="info"></div>
-      </div>
-      <div class="cite">
-        <img src="" alt="" class="cite-img" />
-        <span class="name"></span>
-        <div class="info"></div>
-      </div>
-      <div class="cite">
-        <img src="" alt="" class="cite-img" />
-        <span class="name"></span>
-        <div class="info"></div>
-      </div>
-      <div class="cite">
-        <img src="" alt="" class="cite-img" />
-        <span class="name"></span>
-        <div class="info"></div>
-      </div>
-      <div class="cite">
-        <img src="" alt="" class="cite-img" />
-        <span class="name"></span>
-        <div class="info"></div>
-      </div>
-      <div class="cite">
-        <img src="" alt="" class="cite-img" />
-        <span class="name"></span>
-        <div class="info"></div>
-      </div>
+      <div class="cite"
+    data-name="نيويورك – New York"
+    data-img="/img/New York.jpg"
+    data-desc="مدينة لا تنام وعاصمة العالم غير الرسمية، تجمع بين ناطحات السحاب الشاهقة والتنوع الثقافي الفريد والحياة الليلية المتقدة في مشهد حضري لا مثيل له."
+    data-historic="🗽 تمثال الحرية – Statue of Liberty | 🏙️ سنترال بارك – Central Park | 🌉 جسر بروكلين – Brooklyn Bridge | 🏛️ متحف ميت – The Met"
+    data-restaurants="🦞 لو برناردان – Le Bernardin | 🥪 كاتز ديليكاتيسن – Katz's Delicatessen | 🥩 لا غراند بوشيري – La Grande Boucherie | 🍕 جونز بيتزيريا – John's Pizzeria | 🌮 لوس تاكوس رقم 1 – Los Tacos No. 1"
+    data-cafes="☕ رالف لورين كوفي – Ralph's Coffee | 🍌 ماغنوليا بيكري – Magnolia Bakery | 🍪 كرمبل كوكيز – Crumbl Cookies | 🎂 كارلوس بيكري – Carlo's Bakery | ☕ مقاهي وول ستريت – Wall Street Cafés"
+    data-events="🗽 تمثال الحرية – Statue of Liberty | 🌳 سنترال بارك – Central Park | 🎆 تايمز سكوير – Times Square | 🏙️ إمباير ستيت – Empire State Building | 🌉 جسر بروكلين – Brooklyn Bridge">
+    <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'new-york', 'نيويورك', '/img/New York.jpg')">🏙️</button>
+    <img src="/img/New York.jpg" alt="نيويورك" class="cite-img">
+    <span class="name">نيويورك – New York</span>
+    <p class="info">مدينة لا تنام، مليانة حياة، ناطحات سحاب وتجارب متنوعة.</p>
+    <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">تفاصيل</button>
+</div>
+
+<div class="cite"
+    data-name="لوس أنجلوس – Los Angeles"
+    data-img="/img/Los Angeles.jpg"
+    data-desc="موطن السينما وعاصمة الترفيه العالمية، تجمع بين شواطئ المحيط الهادئ وهوليوود الشهيرة وأجواء المشاهير والطقس المشمس طوال العام."
+    data-historic="🎬 هوليوود – Hollywood | 🌊 شاطئ سانتا مونيكا – Santa Monica | 🏛️ متحف غيتي – Getty Museum | 🎡 ديزني لاند – Disneyland"
+    data-restaurants="🌮 مطعم Nobu | 🥩 مطعم Bestia | 🌿 مطعم Republique"
+    data-cafes="☕ مقهى Intelligentsia Coffee | ☕ مقهى Blue Bottle | ☕ مقهى Groundwork Coffee"
+    data-events="🎬 هوليوود – Hollywood Walk of Fame | 🌊 شاطئ سانتا مونيكا – Santa Monica | 🎡 ديزني لاند – Disneyland">
+    <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'los-angeles', 'لوس أنجلوس', '/img/Los Angeles.jpg')">🏙️</button>
+    <img src="/img/Los Angeles.jpg" alt="لوس أنجلوس" class="cite-img">
+    <span class="name">لوس أنجلوس – Los Angeles</span>
+    <p class="info">مدينة الترفيه والشواطئ، موطن السينما وأجواء المشاهير.</p>
+    <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">تفاصيل</button>
+</div>
+
+<div class="cite"
+    data-name="ميامي – Miami"
+    data-img="/img/Miami.jpg"
+    data-desc="الوجهة الاستوائية الساحرة على ساحل فلوريدا، تشتهر بشواطئها الذهبية وأجوائها اللاتينية الحيوية والحياة الليلية الرائعة والطقس الدافئ طوال العام."
+    data-historic="🏖️ شاطئ ساوث بيتش – South Beach | 🎨 حي وينوود – Wynwood Arts | 🌴 أيلاند سيتي – Island City | 🏛️ متحف بيريز – Pérez Art Museum"
+    data-restaurants="🦞 مطعم Joe's Stone Crab | 🌮 مطعم Versailles | 🌿 مطعم Zuma Miami"
+    data-cafes="☕ مقهى Panther Coffee | ☕ مقهى Wynwood Yard | ☕ مقهى Vice City Bean"
+    data-events="🏖️ ساوث بيتش – South Beach | 🎨 حي وينوود – Wynwood Walls | 🎉 مهرجان أولترا – Ultra Music Festival">
+    <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'miami', 'ميامي', '/img/Miami.jpg')">🏙️</button>
+    <img src="/img/Miami.jpg" alt="ميامي" class="cite-img">
+    <span class="name">ميامي – Miami</span>
+    <p class="info">وجهة استوائية، شواطئ جميلة وأجواء لاتينية حيوية.</p>
+    <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">تفاصيل</button>
+</div>
+
+<div class="cite"
+    data-name="لاس فيغاس – Las Vegas"
+    data-img="/img/Las Vegas.jpg"
+    data-desc="عاصمة الترفيه والأضواء في قلب الصحراء، تشتهر بكازيناتها الفاخرة وعروضها العالمية الساحرة والفنادق الضخمة والأجواء الاحتفالية التي لا تتوقف."
+    data-historic="🎰 شارع ذا ستريب – The Strip | 🎭 عروض سيرك دو سوليل – Cirque du Soleil | 🗼 برج إيفل لاس فيغاس – Paris Las Vegas | 🌋 بركان ذا ميراج – The Mirage"
+    data-restaurants="🥩 مطعم Gordon Ramsay Steak | 🍣 مطعم Nobu | 🌿 مطعم Joël Robuchon"
+    data-cafes="☕ مقهى Starbucks Reserve | ☕ مقهى PublicUs | ☕ مقهى Mothership Coffee"
+    data-events="🎰 شارع ذا ستريب – The Strip | 🎭 عروض لاس فيغاس – Vegas Shows | 🎆 احتفالات رأس السنة – New Year's Eve">
+    <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'las-vegas', 'لاس فيغاس', '/img/Las Vegas.jpg')">🏙️</button>
+    <img src="/img/Las Vegas.jpg" alt="لاس فيغاس" class="cite-img">
+    <span class="name">لاس فيغاس – Las Vegas</span>
+    <p class="info">مدينة الأضواء، مليانة عروض وترفيه وتجارب فريدة.</p>
+    <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">تفاصيل</button>
+</div>
+
+<div class="cite"
+    data-name="شيكاغو – Chicago"
+    data-img="/img/Chicago.jpg"
+    data-desc="مدينة الرياح والعمارة الرائعة، تجمع بين ناطحات السحاب الأيقونية وضفاف بحيرة ميشيغان الجميلة والثقافة الموسيقية الغنية والمطبخ الشهير."
+    data-historic="🏙️ الحلقة – The Loop | 🌊 بحيرة ميشيغان – Lake Michigan | 🎨 معهد الفنون – Art Institute | 🏗️ ملعب ويريلي – Wrigley Field"
+    data-restaurants="🍕 مطعم Lou Malnati's Pizza | 🥩 مطعم Gibson's Steakhouse | 🌿 مطعم Girl & the Goat"
+    data-cafes="☕ مقهى Intelligentsia Coffee | ☕ مقهى Dark Matter Coffee | ☕ مقهى Ipsento 606"
+    data-events="🏙️ ميلينيوم بارك – Millennium Park | 🌊 شاطئ بحيرة ميشيغان – Lake Michigan | 🎵 مهرجان لوللابالوزا – Lollapalooza">
+    <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'chicago', 'شيكاغو', '/img/Chicago.jpg')">🏙️</button>
+    <img src="/img/Chicago.jpg" alt="شيكاغو" class="cite-img">
+    <span class="name">شيكاغو – Chicago</span>
+    <p class="info">مدينة معمارية مميزة، أجواءها تجمع بين الحداثة والتاريخ.</p>
+    <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">تفاصيل</button>
+</div>
+
+<div class="cite"
+    data-name="سان فرانسيسكو – San Francisco"
+    data-img="/img/San Francisco.jpg"
+    data-desc="مدينة الجسر الذهبي والتلال الجميلة على ساحل المحيط الهادئ، تشتهر بطقسها المعتدل وأحيائها التاريخية الفريدة وثقافة التكنولوجيا والابتكار."
+    data-historic="🌉 جسر البوابة الذهبية – Golden Gate Bridge | 🏝️ جزيرة ألكاتراز – Alcatraz Island | 🚃 القطارات الكهربائية – Cable Cars | 🏘️ حي كاسترو – Castro District"
+    data-restaurants="🦀 مطعم Dungeness Crab | 🥩 مطعم Zuni Café | 🌿 مطعم Chez Panisse"
+    data-cafes="☕ مقهى Blue Bottle Coffee | ☕ مقهى Sightglass Coffee | ☕ مقهى Ritual Coffee"
+    data-events="🌉 جسر البوابة الذهبية – Golden Gate Bridge | 🏝️ ألكاتراز – Alcatraz Island | 🚃 القطارات الكهربائية – Cable Cars">
+    <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'san-francisco', 'سان فرانسيسكو', '/img/San Francisco.jpg')">🏙️</button>
+    <img src="/img/San Francisco.jpg" alt="سان فرانسيسكو" class="cite-img">
+    <span class="name">سان فرانسيسكو – San Francisco</span>
+    <p class="info">مدينة هادئة بطبيعة جميلة ومعالم مشهورة مثل الجسور.</p>
+    <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">تفاصيل</button>
+</div>
     </section>
     <!--الاكل-->
     <div class="main-foods">
