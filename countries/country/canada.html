@@ -64,36 +64,95 @@
       <h1>المدن</h1>
     </div>
     <section class="cities-grid">
-      <div class="cite">
-        <img src="" alt="" class="cite-img" />
-        <span class="name"></span>
-        <div class="info"></div>
-      </div>
-      <div class="cite">
-        <img src="" alt="" class="cite-img" />
-        <span class="name"></span>
-        <div class="info"></div>
-      </div>
-      <div class="cite">
-        <img src="" alt="" class="cite-img" />
-        <span class="name"></span>
-        <div class="info"></div>
-      </div>
-      <div class="cite">
-        <img src="" alt="" class="cite-img" />
-        <span class="name"></span>
-        <div class="info"></div>
-      </div>
-      <div class="cite">
-        <img src="" alt="" class="cite-img" />
-        <span class="name"></span>
-        <div class="info"></div>
-      </div>
-      <div class="cite">
-        <img src="" alt="" class="cite-img" />
-        <span class="name"></span>
-        <div class="info"></div>
-      </div>
+      <div class="cite"
+    data-name="تورونتو – Toronto"
+    data-img="/img/Toronto.jpg"
+    data-desc="أكبر مدن كندا ومركزها الاقتصادي والثقافي، مدينة حديثة نابضة بالحياة تجمع بين التنوع الثقافي الفريد وبرج CN الشهير والحياة الليلية الراقية على ضفاف بحيرة أونتاريو."
+    data-historic="🗼 برج CN – CN Tower | 🏘️ حي ديستيلري – Distillery District | 🏛️ متحف رويال أونتاريو – Royal Ontario Museum | 🌿 جزيرة تورونتو – Toronto Islands"
+    data-restaurants="⭐ ألو ريستورانت – Alo Restaurant | 🌆 سكارامش – Scaramouche Restaurant | 🍝 دون ألفونسو – Don Alfonso 1890 | 🍣 سوشي ماساكي سايتو – Sushi Masaki Saito | 🏛️ 20 فيكتوريا – 20 Victoria"
+    data-cafes="☕ فيكا كافيه – FIKA Cafe | ☕ جيمي كوفي – Jimmy's Coffee | ☕ بايلوت كوفي – Pilot Coffee Roasters | ☕ دينين كوفي – Dineen Coffee Co | ☕ سام جيمس – Sam James Coffee Bar"
+    data-events="🗼 برج CN – CN Tower | 🌊 جزر تورونتو – Toronto Islands | 🛒 سوق سانت لورانس – St. Lawrence Market | 🏛️ متحف أونتاريو الملكي – ROM | 🌿 منتزه هاي بارك – High Park">
+    <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'toronto', 'تورونتو', '/img/Toronto.jpg')">🏙️</button>
+    <img src="/img/Toronto.jpg" alt="تورونتو" class="cite-img">
+    <span class="name">تورونتو – Toronto</span>
+    <p class="info">مدينة حديثة نابضة بالحياة، تجمع بين الثقافات والتجارب المتنوعة.</p>
+    <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">تفاصيل</button>
+</div>
+
+<div class="cite"
+    data-name="فانكوفر – Vancouver"
+    data-img="/img/Vancouver.jpg"
+    data-desc="جوهرة المحيط الهادئ، مدينة ساحرة تجمع بين الجبال الثلجية والمحيط الأزرق والغابات الخضراء في مشهد طبيعي لا مثيل له. تُصنف باستمرار ضمن أجمل مدن العالم للعيش."
+    data-historic="🌲 حديقة ستانلي – Stanley Park | 🌉 جسر كاييلانو – Capilano Bridge | 🏔️ جبل غراوس – Grouse Mountain | 🏘️ حي غاستاون – Gastown"
+    data-restaurants="🍣 مطعم Miku | 🌿 مطعم The Salmon n' Bannock | 🥩 مطعم Hawksworth"
+    data-cafes="☕ مقهى Revolver Coffee | ☕ مقهى 49th Parallel | ☕ مقهى Matchstick Coffee"
+    data-events="🌲 حديقة ستانلي – Stanley Park | 🌉 جسر كاييلانو المعلق – Capilano Bridge | 🏔️ جبل ويسلر – Whistler Mountain">
+    <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'vancouver', 'فانكوفر', '/img/Vancouver.jpg')">🏙️</button>
+    <img src="/img/Vancouver.jpg" alt="فانكوفر" class="cite-img">
+    <span class="name">فانكوفر – Vancouver</span>
+    <p class="info">مدينة طبيعية ساحرة، بين الجبال والبحر بأجواء هادئة.</p>
+    <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">تفاصيل</button>
+</div>
+
+<div class="cite"
+    data-name="مونتريال – Montreal"
+    data-img="/img/Montreal.jpg"
+    data-desc="مدينة أوروبية الطابع في قلب كندا، تجمع بين الثقافتين الإنجليزية والفرنسية في مزيج فريد من الفن والموسيقى والطعام والمهرجانات الصاخبة طوال العام."
+    data-historic="⛪ بازيليكا نوتردام – Notre-Dame Basilica | 🏙️ المدينة القديمة – Old Montreal | 🏔️ جبل رويال – Mount Royal | 🎭 مهرجان الجاز – Jazz Festival"
+    data-restaurants="🥩 مطعم Joe Beef | 🍖 مطعم Schwartz's Deli | 🌿 مطعم Toqué"
+    data-cafes="☕ مقهى Café Olimpico | ☕ مقهى Dispatch Coffee | ☕ مقهى Crew Collective"
+    data-events="🎶 مهرجان الجاز – Montreal Jazz Festival | 🎆 مهرجان الألعاب النارية – Fireworks Festival | 🏙️ المدينة القديمة – Old Montreal">
+    <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'montreal', 'مونتريال', '/img/Montreal.jpg')">🏙️</button>
+    <img src="/img/Montreal.jpg" alt="مونتريال" class="cite-img">
+    <span class="name">مونتريال – Montreal</span>
+    <p class="info">مدينة أوروبية الطابع، مليئة بالفن والموسيقى والثقافة.</p>
+    <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">تفاصيل</button>
+</div>
+
+<div class="cite"
+    data-name="كالغاري – Calgary"
+    data-img="/img/Calgary.jpg"
+    data-desc="بوابة جبال روكي الكندية، مدينة حديثة وديناميكية تقع على مقربة من المناظر الطبيعية الخلابة في بانف وجاسبر. مثالية لعشاق المغامرات والطبيعة البكر."
+    data-historic="🏔️ بانف ناشيونال بارك – Banff National Park | 🎡 كالغاري ستامبيد – Calgary Stampede | 🏛️ متحف غليبو – Glenbow Museum | 🌿 حديقة بيس – Prince's Island Park"
+    data-restaurants="🥩 مطعم River Café | 🍖 مطعم Caesar's Steakhouse | 🌿 مطعم The Nash"
+    data-cafes="☕ مقهى Phil & Sebastian | ☕ مقهى Analog Coffee | ☕ مقهى Rosso Coffee"
+    data-events="🎡 كالغاري ستامبيد – Calgary Stampede | 🏔️ بانف ناشيونال بارك – Banff National Park | ⛷️ تزلج لويس ليك – Lake Louise Skiing">
+    <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'calgary', 'كالغاري', '/img/Calgary.jpg')">🏙️</button>
+    <img src="/img/Calgary.jpg" alt="كالغاري" class="cite-img">
+    <span class="name">كالغاري – Calgary</span>
+    <p class="info">مدينة قريبة من الجبال، مثالية لعشاق المغامرات والطبيعة.</p>
+    <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">تفاصيل</button>
+</div>
+
+<div class="cite"
+    data-name="أوتاوا – Ottawa"
+    data-img="/img/Ottawa.jpg"
+    data-desc="العاصمة الفيدرالية لكندا، مدينة هادئة وأنيقة تجمع بين المباني البرلمانية الفكتورية وقنوات ريدو الجميلة والمتاحف الوطنية الرائعة في أجواء هادئة ومنظمة."
+    data-historic="🏛️ البرلمان الكندي – Parliament Hill | 🌊 قناة ريدو – Rideau Canal | 🏺 متحف التاريخ – Canadian Museum of History | 🌿 حديقة ماجور هيل – Major's Hill Park"
+    data-restaurants="🍁 مطعم Beckta | 🥩 مطعم The Whalesbone | 🌿 مطعم Supply and Demand"
+    data-cafes="☕ مقهى Bridgehead Coffee | ☕ مقهى Happy Goat Coffee | ☕ مقهى Equator Coffee"
+    data-events="🏛️ البرلمان الكندي – Parliament Hill | 🌊 قناة ريدو – Rideau Canal | 🌸 مهرجان التوليب – Tulip Festival">
+    <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'ottawa', 'أوتاوا', '/img/Ottawa.jpg')">🏙️</button>
+    <img src="/img/Ottawa.jpg" alt="أوتاوا" class="cite-img">
+    <span class="name">أوتاوا – Ottawa</span>
+    <p class="info">العاصمة الهادئة، مليئة بالمعالم التاريخية والمتاحف.</p>
+    <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">تفاصيل</button>
+</div>
+
+<div class="cite"
+    data-name="كيبيك سيتي – Quebec City"
+    data-img="/img/Quebec City.jpg"
+    data-desc="أقدم مدينة مسوّرة في أمريكا الشمالية وموقع تراث عالمي لليونسكو، تتميز بشوارعها الحجرية التاريخية وقلعتها الشهيرة وطابعها الفرنسي الأصيل في قلب كيبيك."
+    data-historic="🏰 قلعة كيبيك – Citadelle of Quebec | 🏘️ المدينة القديمة – Old Quebec | 🏨 فندق شاتو فرونتيناك – Château Frontenac | 💦 شلال مونتمورنسي – Montmorency Falls"
+    data-restaurants="🥐 مطعم Le Saint-Amour | 🍁 مطعم Chez Boulay | 🌿 مطعم Le Lapin Sauté"
+    data-cafes="☕ مقهى Café Krieghoff | ☕ مقهى Brûlerie du Roy | ☕ مقهى Le Hobbit"
+    data-events="🏰 المدينة القديمة – Old Quebec | ❄️ مهرجان الشتاء – Winter Carnival | 💦 شلال مونتمورنسي – Montmorency Falls">
+    <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'quebec-city', 'كيبيك سيتي', '/img/Quebec City.jpg')">🏙️</button>
+    <img src="/img/Quebec City.jpg" alt="كيبيك سيتي" class="cite-img">
+    <span class="name">كيبيك سيتي – Quebec City</span>
+    <p class="info">مدينة تاريخية بطابع قديم وشوارع حجرية جميلة.</p>
+    <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">تفاصيل</button>
+</div>
     </section>
     <!--الاكل-->
     <div class="main-foods">
