@@ -79,48 +79,95 @@
         <h1>المدن</h1>
     </div>
     <section class="cities-grid">
-        <div class="cite">
-            <img src="/img/ريكيافيك (Reykjavík)" alt="" class="cite-img">
-            <span class="name">ريكيافيك (Reykjavík)</span>
-            <div class="info">
-                العاصمة النابضة بالحياة، تجمع بين الثقافة والطبيعة والمقاهي العصرية.
-            </div>
-        </div>
-        <div class="cite">
-            <img src="/img/Akureyri.jpg" alt="" class="cite-img">
-            <span class="name">أكوريري (Akureyri)</span>
-            <div class="info">
-                عاصمة الشمال، مدينة هادئة محاطة بالجبال والطبيعة.
-            </div>
-        </div>
-        <div class="cite">
-            <img src="/img/فيك (Vík).jpg" alt="" class="cite-img">
-            <span class="name">فيك (Vík)</span>
-            <div class="info">
-                قرية صغيرة مشهورة بالشواطئ السوداء والمناظر الدرامية.
-            </div>
-        </div>
-        <div class="cite">
-            <img src="/img/Höfn.jpg" alt="" class="cite-img">
-            <span class="name">هوفن (Höfn)</span>
-            <div class="info">
-            بلدة ساحلية هادئة مشهورة بالمأكولات البحرية وإطلالات الأنهار الجليدية.
-            </div>
-        </div>
-        <div class="cite">
-            <img src="/img/Húsavík.jpg" alt="" class="cite-img">
-            <span class="name">هوسافيك (Húsavík)</span>
-            <div class="info">
-                عاصمة مشاهدة الحيتان في آيسلندا.
-            </div>
-        </div>
-        <div class="cite">
-            <img src="/img/Ísafjörður.jpg" alt="" class="cite-img">
-            <span class="name">إيسافجوردور (Ísafjörður)</span>
-            <div class="info">
-                في غرب الفيوردات، ألوان الشفق تظهر بوضوح وسط الجبال
-            </div>
-        </div>
+       <div class="cite"
+    data-name="ريكيافيك – Reykjavík"
+    data-img="/img/Reykjavik.jpg"
+    data-desc="عاصمة آيسلندا النابضة بالحياة وأصغر عاصمة في العالم، تجمع بين الثقافة الغنية والمقاهي العصرية والبنية التحتية الحديثة مع إطلالات خلابة على الجبال والمحيط."
+    data-historic="🏛️ كنيسة هالغريمسكيركيا – Hallgrímskirkja | 🌊 قاعة هارپا – Harpa Concert Hall | 🏘️ حي الأولد هاربور – Old Harbour | 🗿 تمثال صن فوياجر – Sun Voyager"
+    data-restaurants="🦞 مطعم Dill | 🐟 مطعم Fiskmarkurinn | 🌿 مطعم Nostra"
+    data-cafes="☕ مقهى Reykjavík Roasters | ☕ مقهى Kaffihús Vesturbæjar | ☕ مقهى Café Babalu"
+    data-events="🌌 الشفق القطبي – Northern Lights | 🌊 بحيرة بلو لاغون – Blue Lagoon | 🏔️ جولة الدائرة الذهبية – Golden Circle">
+    <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'reykjavik', 'ريكيافيك', '/img/Reykjavik.jpg')">🏙️</button>
+    <img src="/img/Reykjavik.jpg" alt="ريكيافيك" class="cite-img">
+    <span class="name">ريكيافيك – Reykjavík</span>
+    <p class="info">العاصمة النابضة بالحياة، تجمع بين الثقافة والطبيعة والمقاهي العصرية.</p>
+    <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">تفاصيل</button>
+</div>
+
+<div class="cite"
+    data-name="أكوريري – Akureyri"
+    data-img="/img/Akureyri.jpg"
+    data-desc="عاصمة شمال آيسلندا ومركزها الثقافي والاقتصادي، مدينة هادئة وجميلة تقع على ضفاف أحد أعمق الفيوردات محاطة بالجبال الشاهقة والطبيعة الخلابة."
+    data-historic="⛪ كنيسة أكوريري – Akureyrarkirkja | 🌿 حديقة أكوريري النباتية – Botanical Garden | 🏔️ منتجع تزلج هليدارفيال – Hlíðarfjall | 🏘️ متحف المدينة – Akureyri Museum"
+    data-restaurants="🐟 مطعم Strikið | 🌿 مطعم Rub23 | 🍖 مطعم Greifinn"
+    data-cafes="☕ مقهى Bláa Kannan | ☕ مقهى Kaffi Ilmur | ☕ مقهى Bryggjan"
+    data-events="🌌 الشفق القطبي – Northern Lights | 🐋 مشاهدة الحيتان – Whale Watching | ⛷️ التزلج في هليدارفيال – Hlíðarfjall Skiing">
+    <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'akureyri', 'أكوريري', '/img/Akureyri.jpg')">🏙️</button>
+    <img src="/img/Akureyri.jpg" alt="أكوريري" class="cite-img">
+    <span class="name">أكوريري – Akureyri</span>
+    <p class="info">عاصمة الشمال، مدينة هادئة محاطة بالجبال والطبيعة.</p>
+    <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">تفاصيل</button>
+</div>
+
+<div class="cite"
+    data-name="فيك – Vík"
+    data-img="/img/Vik.jpg"
+    data-desc="أجمل قرية ساحلية في آيسلندا، تشتهر بشاطئها الأسود الدرامي المصنوع من الحمم البركانية وتكوينات الصخور البازلتية الشهيرة، تحيط بها الجبال والشلالات في مشهد طبيعي لا مثيل له."
+    data-historic="⛪ كنيسة فيك – Vík Church | 🏖️ شاطئ ريينيسفارا – Reynisfjara Black Beach | 🗿 صخور ريينيسدرانغار – Reynisdrangar | 🏔️ بركان كاتلا – Katla"
+    data-restaurants="🍖 مطعم Halldórskaffi | 🐟 مطعم The Soup Company | 🌿 مطعم Sudur-Vik"
+    data-cafes="☕ مقهى Black Beach Café | ☕ مقهى Vikurskáli | ☕ مقهى Ströndin"
+    data-events="🏖️ الشاطئ الأسود – Reynisfjara Beach | 🌋 بركان كاتلا – Katla Volcano | 💦 شلال سكوغافوس – Skógafoss">
+    <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'vik', 'فيك', '/img/Vik.jpg')">🏙️</button>
+    <img src="/img/Vik.jpg" alt="فيك" class="cite-img">
+    <span class="name">فيك – Vík</span>
+    <p class="info">قرية صغيرة مشهورة بالشواطئ السوداء والمناظر الدرامية.</p>
+    <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">تفاصيل</button>
+</div>
+
+<div class="cite"
+    data-name="هوفن – Höfn"
+    data-img="/img/Hofn.jpg"
+    data-desc="بلدة ساحلية هادئة في جنوب شرق آيسلندا، تشتهر بمأكولاتها البحرية الطازجة خاصة جراد البحر الشهير، وتقع على مقربة من بحيرة يوكولسارلون الجليدية الساحرة."
+    data-historic="🧊 بحيرة يوكولسارلون – Jökulsárlón Glacier Lagoon | 🏖️ شاطئ الألماس – Diamond Beach | 🏔️ نهر فاتنا الجليدي – Vatnajökull | 🌊 ميناء هوفن – Höfn Harbour"
+    data-restaurants="🦞 مطعم Pakkhús | 🐟 مطعم Hafnarbuðin | 🌿 مطعم Humarhöfnin"
+    data-cafes="☕ مقهى Café Skalinn | ☕ مقهى Ósinn | ☕ مقهى Gamlabúð"
+    data-events="🧊 بحيرة يوكولسارلون – Jökulsárlón | 🏖️ شاطئ الألماس – Diamond Beach | 🏔️ نهر فاتنا الجليدي – Vatnajökull Glacier">
+    <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'hofn', 'هوفن', '/img/Hofn.jpg')">🏙️</button>
+    <img src="/img/Hofn.jpg" alt="هوفن" class="cite-img">
+    <span class="name">هوفن – Höfn</span>
+    <p class="info">بلدة ساحلية هادئة مشهورة بالمأكولات البحرية وإطلالات الأنهار الجليدية.</p>
+    <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">تفاصيل</button>
+</div>
+
+<div class="cite"
+    data-name="هوسافيك – Húsavík"
+    data-img="/img/Husavik.jpg"
+    data-desc="عاصمة مشاهدة الحيتان في آيسلندا وربما في العالم، بلدة ساحلية صغيرة وساحرة في شمال آيسلندا تتميز بموقعها المثالي لرحلات مشاهدة الحيتان والدلافين في خليج سكيالفاندي."
+    data-historic="⛪ كنيسة هوسافيك – Húsavík Church | 🐋 متحف الحيتان – Whale Museum | 🌊 خليج سكيالفاندي – Skjálfandi Bay | 🌋 بركان كرافلا – Krafla"
+    data-restaurants="🐋 مطعم Gamli Baukur | 🐟 مطعم Naustið | 🌿 مطعم Salthúsið"
+    data-cafes="☕ مقهى Heimabyggð | ☕ مقهى Kaffihús Heimabyggðar | ☕ مقهى Bókakaffi"
+    data-events="🐋 مشاهدة الحيتان – Whale Watching | 🌌 الشفق القطبي – Northern Lights | 🌋 منطقة مايفاتن – Lake Mývatn">
+    <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'husavik', 'هوسافيك', '/img/Husavik.jpg')">🏙️</button>
+    <img src="/img/Husavik.jpg" alt="هوسافيك" class="cite-img">
+    <span class="name">هوسافيك – Húsavík</span>
+    <p class="info">عاصمة مشاهدة الحيتان في آيسلندا.</p>
+    <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">تفاصيل</button>
+</div>
+
+<div class="cite"
+    data-name="إيسافجوردور – Ísafjörður"
+    data-img="/img/Isafjordur.jpg"
+    data-desc="عاصمة منطقة الفيوردات الغربية في آيسلندا، بلدة جميلة وهادئة محاطة بجبال شاهقة وفيوردات عميقة، تعتبر من أفضل الأماكن لمشاهدة الشفق القطبي بعيداً عن أضواء المدينة."
+    data-historic="🏘️ متحف الفيوردات الغربية – Westfjords Heritage Museum | 🏔️ جبال الفيوردات – Westfjords Mountains | 🌊 فيورد إيسافجوردي – Ísafjarðardjúp | ⛷️ مركز التزلج – Ski Center"
+    data-restaurants="🐟 مطعم Tjöruhúsið | 🌿 مطعم Við Pollinn | 🍖 مطعم Heimabyggð"
+    data-cafes="☕ مقهى Café Riis | ☕ مقهى Simbahöllin | ☕ مقهى Edinborg"
+    data-events="🌌 الشفق القطبي – Northern Lights | 🏔️ مشي جبلي – Hiking | 🐦 مشاهدة الطيور البحرية – Birdwatching">
+    <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'isafjordur', 'إيسافجوردور', '/img/Isafjordur.jpg')">🏙️</button>
+    <img src="/img/Isafjordur.jpg" alt="إيسافجوردور" class="cite-img">
+    <span class="name">إيسافجوردور – Ísafjörður</span>
+    <p class="info">في غرب الفيوردات، ألوان الشفق تظهر بوضوح وسط الجبال.</p>
+    <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">تفاصيل</button>
+</div>
     </section>
     <!--الاكل-->
     <div class="main-foods">
