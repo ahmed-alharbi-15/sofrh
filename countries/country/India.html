@@ -68,35 +68,166 @@
       <h1>المدن</h1>
     </div>
     <section class="cities-grid">
-      <div class="cite">
-        <img src="" alt="" class="cite-img" />
-        <span class="name"></span>
-        <div class="info"></div>
+      <div
+        class="cite"
+        data-name="مومباي – Mumbai"
+        data-img="/img/Mumbai.jpg"
+        data-desc="عاصمة الترفيه الهندية وأكبر مدنها، مدينة لا تنام تجمع بين بوليوود الساحرة وناطحات السحاب الحديثة والشواطئ الجميلة والتنوع الثقافي الرائع على ساحل المحيط الهندي."
+        data-historic="🎬 استوديوهات بوليوود – Bollywood Studios | 🌊 بوابة الهند – Gateway of India | 🏝️ كهوف إيلفانتا – Elephanta Caves | 🏘️ حي دارافي – Dharavi"
+        data-restaurants="🍛 مطعم Trishna | 🥘 مطعم Wasabi by Morimoto | 🌿 مطعم The Table"
+        data-cafes="☕ مقهى Koinonia Coffee | ☕ مقهى Subko Coffee | ☕ مقهى Blue Tokai"
+        data-events="🎬 بوليوود – Bollywood Tour | 🌊 بوابة الهند – Gateway of India | 🏖️ شاطئ جوهو – Juhu Beach"
+      >
+        <button
+          class="save-btn"
+          onclick="
+            event.stopPropagation();
+            saveItem('city', 'mumbai', 'مومباي', '/img/Mumbai.jpg');
+          "
+        >
+          🏙️
+        </button>
+        <img src="/img/Mumbai.jpg" alt="مومباي" class="cite-img" />
+        <span class="name">مومباي – Mumbai</span>
+        <p class="info">مدينة نابضة بالحياة والترفيه.</p>
+        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+          تفاصيل
+        </button>
       </div>
-      <div class="cite">
-        <img src="" alt="" class="cite-img" />
-        <span class="name"></span>
-        <div class="info"></div>
+
+      <div
+        class="cite"
+        data-name="نيودلهي – New Delhi"
+        data-img="/img/New Delhi.jpg"
+        data-desc="عاصمة الهند الفخمة ومركزها السياسي والتاريخي، تجمع بين المعالم الإسلامية والهندوسية والمستعمرة البريطانية في مزيج حضاري فريد يعكس عمق التاريخ الهندي."
+        data-historic="🕌 جامع قطب منار – Qutub Minar | 🏯 قلعة لال قيلا – Red Fort | 🕍 مسجد جامع – Jama Masjid | 🌿 حديقة لوديس – Lodhi Garden"
+        data-restaurants="🍛 مطعم Indian Accent | 🥘 مطعم Bukhara | 🌿 مطعم Lavaash by Saby"
+        data-cafes="☕ مقهى Blue Tokai | ☕ مقهى Café Lota | ☕ مقهى Sisterfields"
+        data-events="🕌 قطب منار – Qutub Minar | 🏯 قلعة لال قيلا – Red Fort | 🛍️ أسواق دلهي – Delhi Markets"
+      >
+        <button
+          class="save-btn"
+          onclick="
+            event.stopPropagation();
+            saveItem('city', 'new-delhi', 'نيودلهي', '/img/New Delhi.jpg');
+          "
+        >
+          🏙️
+        </button>
+        <img src="/img/New Delhi.jpg" alt="نيودلهي" class="cite-img" />
+        <span class="name">نيودلهي – New Delhi</span>
+        <p class="info">العاصمة المليئة بالتاريخ.</p>
+        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+          تفاصيل
+        </button>
       </div>
-      <div class="cite">
-        <img src="" alt="" class="cite-img" />
-        <span class="name"></span>
-        <div class="info"></div>
+
+      <div
+        class="cite"
+        data-name="جايبور – Jaipur"
+        data-img="/img/Jaipur.jpg"
+        data-desc="المدينة الوردية عاصمة ولاية راجستان، تشتهر بقصورها الوردية الباهرة وقلاعها التاريخية الشامخة والأسواق الملونة التي تعكس روعة التاريخ الراجبوتي العريق."
+        data-historic="🏯 قصر هاوا محل – Hawa Mahal | 🏰 قلعة أمير – Amber Fort | 🌊 قصر جال محل – Jal Mahal | 🔭 جانتار منتار – Jantar Mantar"
+        data-restaurants="🍛 مطعم Suvarna Mahal | 🥘 مطعم Handi Restaurant | 🌿 مطعم Peacock Rooftop"
+        data-cafes="☕ مقهى Curious Life Coffee | ☕ مقهى Rawat Misthan | ☕ مقهى Café Palladio"
+        data-events="🏯 قصر هاوا محل – Hawa Mahal | 🏰 قلعة أمير – Amber Fort | 🎪 مهرجان جايبور – Jaipur Literature Festival"
+      >
+        <button
+          class="save-btn"
+          onclick="
+            event.stopPropagation();
+            saveItem('city', 'jaipur', 'جايبور', '/img/Jaipur.jpg');
+          "
+        >
+          🏙️
+        </button>
+        <img src="/img/Jaipur.jpg" alt="جايبور" class="cite-img" />
+        <span class="name">جايبور – Jaipur</span>
+        <p class="info">مدينة القصور الوردية.</p>
+        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+          تفاصيل
+        </button>
       </div>
-      <div class="cite">
-        <img src="" alt="" class="cite-img" />
-        <span class="name"></span>
-        <div class="info"></div>
+
+      <div
+        class="cite"
+        data-name="أغرا – Agra"
+        data-img="/img/Agra.jpg"
+        data-desc="موطن أعظم تحفة معمارية في العالم تاج محل، مدينة تاريخية على ضفاف نهر يامونا تضم كنوز الإمبراطورية المغولية الرائعة التي تجذب ملايين الزوار من أنحاء العالم."
+        data-historic="🕌 تاج محل – Taj Mahal | 🏯 قلعة أغرا – Agra Fort | 🕌 فتحبور سيكري – Fatehpur Sikri | 🌿 حديقة ميهتاب باغ – Mehtab Bagh"
+        data-restaurants="🍛 مطعم Pind Balluchi | 🥘 مطعم Esphahan | 🌿 مطعم Joney's Place"
+        data-cafes="☕ مقهى Café Sheroes | ☕ مقهى Saniya Palace | ☕ مقهى The Retreat"
+        data-events="🕌 تاج محل – Taj Mahal | 🏯 قلعة أغرا – Agra Fort | 🕌 فتحبور سيكري – Fatehpur Sikri"
+      >
+        <button
+          class="save-btn"
+          onclick="
+            event.stopPropagation();
+            saveItem('city', 'agra', 'أغرا', '/img/Agra.jpg');
+          "
+        >
+          🏙️
+        </button>
+        <img src="/img/Agra.jpg" alt="أغرا" class="cite-img" />
+        <span class="name">أغرا – Agra</span>
+        <p class="info">موطن تاج محل.</p>
+        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+          تفاصيل
+        </button>
       </div>
-      <div class="cite">
-        <img src="" alt="" class="cite-img" />
-        <span class="name"></span>
-        <div class="info"></div>
+
+      <div
+        class="cite"
+        data-name="غوا – Goa"
+        data-img="/img/Goa.jpg"
+        data-desc="جوهرة الساحل الهندي ووجهة الاسترخاء الأولى، تجمع بين الشواطئ الذهبية الرائعة والتراث البرتغالي الأصيل والحياة الليلية الصاخبة والطبيعة الاستوائية الخلابة."
+        data-historic="🏖️ شاطئ كالانغيوت – Calangute Beach | ⛪ كنيسة بوم خيسوس – Basilica of Bom Jesus | 🏯 قلعة أغادا – Aguada Fort | 🌿 محمية موليم – Mollem National Park"
+        data-restaurants="🦞 مطعم Fisherman's Wharf | 🌿 مطعم Gunpowder | 🥘 مطعم Thalassa"
+        data-cafes="☕ مقهى Artjuna | ☕ مقهى Café Bodega | ☕ مقهى Bean Me Up"
+        data-events="🏖️ شواطئ غوا – Goa Beaches | 🎉 مهرجان غوا – Goa Carnival | ⛪ كنيسة بوم خيسوس – Basilica of Bom Jesus"
+      >
+        <button
+          class="save-btn"
+          onclick="
+            event.stopPropagation();
+            saveItem('city', 'goa', 'غوا', '/img/Goa.jpg');
+          "
+        >
+          🏙️
+        </button>
+        <img src="/img/Goa.jpg" alt="غوا" class="cite-img" />
+        <span class="name">غوا – Goa</span>
+        <p class="info">مدينة شاطئية مريحة.</p>
+        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+          تفاصيل
+        </button>
       </div>
-      <div class="cite">
-        <img src="" alt="" class="cite-img" />
-        <span class="name"></span>
-        <div class="info"></div>
+
+      <div
+        class="cite"
+        data-name="بنغالور – Bangalore"
+        data-img="/img/Bangalore.jpg"
+        data-desc="عاصمة التقنية الهندية وسيليكون فالي آسيا، مدينة حديثة ومتطورة تجمع بين شركات التكنولوجيا العالمية والحدائق الجميلة والمشهد الثقافي الغني في طقس معتدل طوال العام."
+        data-historic="🌿 الحديقة النباتية – Lalbagh Botanical Garden | 🏯 قلعة بنغالور – Bangalore Fort | 🏛️ متحف الحكومة – Government Museum | 🌸 حديقة كوبون – Cubbon Park"
+        data-restaurants="🍛 مطعم Karavalli | 🥘 مطعم Toit Brewpub | 🌿 مطعم The Black Pearl"
+        data-cafes="☕ مقهى Blue Tokai | ☕ مقهى Third Wave Coffee | ☕ مقهى Matteo Coffea"
+        data-events="🌿 الحديقة النباتية – Lalbagh Garden | 🏯 قلعة بنغالور – Bangalore Fort | 🛍️ بريغيد رود – Brigade Road Shopping"
+      >
+        <button
+          class="save-btn"
+          onclick="
+            event.stopPropagation();
+            saveItem('city', 'bangalore', 'بنغالور', '/img/Bangalore.jpg');
+          "
+        >
+          🏙️
+        </button>
+        <img src="/img/Bangalore.jpg" alt="بنغالور" class="cite-img" />
+        <span class="name">بنغالور – Bangalore</span>
+        <p class="info">مدينة التقنية والحداثة.</p>
+        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+          تفاصيل
+        </button>
       </div>
     </section>
     <!--الاكل-->
