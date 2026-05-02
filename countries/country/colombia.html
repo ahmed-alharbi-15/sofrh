@@ -72,7 +72,95 @@
       <h1>المدن</h1>
     </div>
     <section class="cities-grid">
-      
+      <div class="cite"
+    data-name="ميديلين – Medellín"
+    data-img="/img/Medellin.jpg"
+    data-desc="مدينة الربيع الأبدي وقصة التحول الأكبر في أمريكا اللاتينية، تحولت من مدينة صعبة إلى وجهة سياحية عالمية مبتكرة بطقس معتدل وطبيعة خضراء وثقافة فنية رائعة."
+    data-historic="🚡 ميترو كابل – Metro Cable | 🌿 حديقة بوتانيكو – Botanical Garden | 🎨 متحف أنتيوكيا – Museum of Antioquia | 🏘️ حي كومونا 13 – Comuna 13"
+    data-restaurants="🌿 مطعم El Cielo | 🥩 مطعم Oci.Mde | 🌮 مطعم Mondongos"
+    data-cafes="☕ مقهى Pergamino Café | ☕ مقهى Café Revolución | ☕ مقهى Urbania Café"
+    data-events="🎨 حي كومونا 13 – Comuna 13 | 🌸 مهرجان الزهور – Flower Festival | 🚡 ميترو كابل – Metro Cable">
+    <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'medellin', 'ميديلين', '/img/Medellin.jpg')">🏙️</button>
+    <img src="/img/Medellin.jpg" alt="ميديلين" class="cite-img">
+    <span class="name">ميديلين – Medellín</span>
+    <p class="info">مدينة التطور والابتكار، طقسها معتدل وطبيعتها خضراء.</p>
+    <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">تفاصيل</button>
+</div>
+
+<div class="cite"
+    data-name="بوغوتا – Bogotá"
+    data-img="/img/Bogota.jpg"
+    data-desc="عاصمة كولومبيا الثقافية والسياسية، تقع على ارتفاع 2600 متر وسط جبال الأنديز، مليئة بالمتاحف والمطاعم الراقية والحياة الفنية الغنية والأحياء التاريخية الساحرة."
+    data-historic="🏛️ متحف الذهب – Gold Museum | 🏘️ حي لا كانديلاريا – La Candelaria | 🗼 مونسيرات – Monserrate | 🎨 متحف بوتيرو – Botero Museum"
+    data-restaurants="🥩 مطعم Andrés Carne de Res | 🌿 مطعم Leo | 🍽️ مطعم El Chato"
+    data-cafes="☕ مقهى Amor Perfecto | ☕ مقهى Azahar Coffee | ☕ مقهى Devoción"
+    data-events="🏛️ متحف الذهب – Gold Museum | 🗼 مونسيرات – Monserrate | 🎨 حي لا كانديلاريا – La Candelaria">
+    <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'bogota', 'بوغوتا', '/img/Bogota.jpg')">🏙️</button>
+    <img src="/img/Bogota.jpg" alt="بوغوتا" class="cite-img">
+    <span class="name">بوغوتا – Bogotá</span>
+    <p class="info">العاصمة الثقافية، مليئة بالمتاحف والمطاعم والحياة الفنية.</p>
+    <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">تفاصيل</button>
+</div>
+
+<div class="cite"
+    data-name="كارتاخينا – Cartagena"
+    data-img="/img/Cartagena.jpg"
+    data-desc="جوهرة البحر الكاريبي الكولومبي، مدينة تاريخية مسوّرة مدرجة في قائمة التراث العالمي لليونسكو، تتميز بأزقتها الملونة والمزهرة ومبانيها الاستعمارية وأجوائها الرومانسية الساحرة."
+    data-historic="🏰 القلعة القديمة – Old Walled City | 🏰 قلعة سان فيليبي – Castillo San Felipe | 🌊 جزر روساريو – Rosario Islands | 🏘️ حي خيتمار – Getsemaní"
+    data-restaurants="🦞 مطعم La Vitrola | 🌮 مطعم Carmen | 🐟 مطعم El Boliche"
+    data-cafes="☕ مقهى Café del Mar | ☕ مقهى Demente | ☕ مقهى Juan Valdez"
+    data-events="🏰 المدينة المسوّرة – Walled City | 🌊 جزر روساريو – Rosario Islands | 🏖️ بلايا بلانكا – Playa Blanca">
+    <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'cartagena', 'كارتاخينا', '/img/Cartagena.jpg')">🏙️</button>
+    <img src="/img/Cartagena.jpg" alt="كارتاخينا" class="cite-img">
+    <span class="name">كارتاخينا – Cartagena</span>
+    <p class="info">مدينة تاريخية على البحر، أزقتها ملونة وأجواؤها رومانسية.</p>
+    <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">تفاصيل</button>
+</div>
+
+<div class="cite"
+    data-name="كالي – Cali"
+    data-img="/img/Cali.jpg"
+    data-desc="عاصمة السالسا العالمية ومدينة الموسيقى والرقص في كولومبيا، تتميز بحياتها الليلية الصاخبة وأجوائها الاستوائية الدافئة والشعب الكولومبي المرح والمضياف."
+    data-historic="🕍 كنيسة لا ميرسيد – La Merced Church | 🗿 كريستو ريي – Cristo Rey | 🏛️ متحف لا تيرتوليا – La Tertulia Museum | 🌿 حديقة سوكوروما – Zoológico de Cali"
+    data-restaurants="🌮 مطعم Platillos Voladores | 🥩 مطعم Ringlete | 🌿 مطعم Chop Chop"
+    data-cafes="☕ مقهى Café El Paraguas | ☕ مقهى Macondo | ☕ مقهى Juan Valdez"
+    data-events="💃 مهرجان السالسا – Cali Salsa Festival | 🗿 كريستو ريي – Cristo Rey | 🌿 حديقة الحيوان – Cali Zoo">
+    <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'cali', 'كالي', '/img/Cali.jpg')">🏙️</button>
+    <img src="/img/Cali.jpg" alt="كالي" class="cite-img">
+    <span class="name">كالي – Cali</span>
+    <p class="info">عاصمة السالسا، مليئة بالموسيقى والحياة الليلية.</p>
+    <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">تفاصيل</button>
+</div>
+
+<div class="cite"
+    data-name="سانتا مارتا – Santa Marta"
+    data-img="/img/Santa Marta.jpg"
+    data-desc="أقدم مدينة في كولومبيا وبوابة طبيعتها الاستوائية، تقع بين البحر الكاريبي وجبال سييرا نيفادا الشاهقة، وتوفر وصولاً مثالياً لأجمل الشواطئ والغابات الاستوائية."
+    data-historic="🏖️ حديقة تاييرونا – Tayrona National Park | 🏔️ سييرا نيفادا – Sierra Nevada | 🏛️ متحف الذهب – Gold Museum | 🌊 شاطئ تاغانغا – Taganga Beach"
+    data-restaurants="🦞 مطعم Donde Chucho | 🐟 مطعم La Canoa | 🌿 مطعم Ouzo"
+    data-cafes="☕ مقهى Café Ikaro | ☕ مقهى El Buen Café | ☕ مقهى Lulo"
+    data-events="🏖️ حديقة تاييرونا – Tayrona Park | 🌊 شاطئ تاغانغا – Taganga | 🏔️ المدينة المفقودة – Ciudad Perdida">
+    <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'santa-marta', 'سانتا مارتا', '/img/Santa Marta.jpg')">🏙️</button>
+    <img src="/img/Santa Marta.jpg" alt="سانتا مارتا" class="cite-img">
+    <span class="name">سانتا مارتا – Santa Marta</span>
+    <p class="info">مدينة ساحلية قريبة من الشواطئ والطبيعة البرية.</p>
+    <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">تفاصيل</button>
+</div>
+
+<div class="cite"
+    data-name="بيريرا – Pereira"
+    data-img="/img/Pereira.jpg"
+    data-desc="قلب منطقة القهوة الكولومبية الشهيرة، مدينة هادئة ومريحة محاطة بمزارع القهوة الخضراء والمناظر الطبيعية الجميلة، وجهة مثالية لمحبي القهوة المختصة وهواة الريف."
+    data-historic="🌿 مزارع القهوة – Coffee Farms | 🏛️ متحف القهوة – Coffee Museum | 🌺 حديقة أوكاساي – Ukumarí Zoo | 🏔️ نيفادو دل روييز – Nevado del Ruiz"
+    data-restaurants="☕ مطعم Café y Crepes | 🌿 مطعم La Fogata | 🥩 مطعم El Rancho"
+    data-cafes="☕ مقهى Café Quindío | ☕ مقهى Mesabe | ☕ مقهى Juan Valdez"
+    data-events="☕ جولة مزارع القهوة – Coffee Farm Tour | 🌺 حديقة أوكاماري – Ukumarí | 🏔️ نيفادو دل روييز – Nevado del Ruiz">
+    <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'pereira', 'بيريرا', '/img/Pereira.jpg')">🏙️</button>
+    <img src="/img/Pereira.jpg" alt="بيريرا" class="cite-img">
+    <span class="name">بيريرا – Pereira</span>
+    <p class="info">قلب منطقة القهوة، هادئة ومليئة بالمزارع والمناظر الجميلة.</p>
+    <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">تفاصيل</button>
+</div>
     </section>
     <!--الاكل-->
     <div class="main-foods">
