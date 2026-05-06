@@ -69,35 +69,185 @@
       <h1>المدن</h1>
     </div>
     <section class="cities-grid">
-      <div class="cite">
-        <img src="" alt="" class="cite-img" />
-        <span class="name"></span>
-        <div class="info"></div>
+      <div
+        class="cite"
+        data-name="كوالالمبور – Kuala Lumpur"
+        data-img="/img/Kuala Lumpur.jpg"
+        data-desc="عاصمة ماليزيا الحديثة ومركزها الاقتصادي والثقافي، تشتهر بأبراج بتروناس الشهيرة وتنوعها الثقافي الفريد الذي يجمع الملاويين والصينيين والهنود في مزيج حضاري رائع."
+        data-historic="🏙️ أبراج بتروناس – Petronas Towers | 🏯 برج كوالالمبور – KL Tower | 🏛️ ساحة مردكا – Merdeka Square | 🦇 كهوف باتو – Batu Caves"
+        data-restaurants="🍛 مطعم Nadodi | 🌿 مطعم Kikubari | 🥘 مطعم Entier"
+        data-cafes="☕ مقهى VCR Cafe | ☕ مقهى Pulp by Papa Palheta | ☕ مقهى Artisan Roast"
+        data-events="🏙️ أبراج بتروناس – Petronas Towers | 🦇 كهوف باتو – Batu Caves | 🛍️ سوق تشاينا تاون – Chinatown"
+      >
+        <button
+          class="save-btn"
+          onclick="
+            event.stopPropagation();
+            saveItem(
+              'city',
+              'kuala-lumpur',
+              'كوالالمبور',
+              '/img/Kuala Lumpur.jpg',
+            );
+          "
+        >
+          🏙️
+        </button>
+        <img src="/img/Kuala Lumpur.jpg" alt="كوالالمبور" class="cite-img" />
+        <span class="name">كوالالمبور – Kuala Lumpur</span>
+        <p class="info">مدينة حديثة بأبراج شهيرة.</p>
+        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+          تفاصيل
+        </button>
       </div>
-      <div class="cite">
-        <img src="" alt="" class="cite-img" />
-        <span class="name"></span>
-        <div class="info"></div>
+
+      <div
+        class="cite"
+        data-name="لنكاوي – Langkawi"
+        data-img="/img/Langkawi.jpg"
+        data-desc="جزيرة الجنة الماليزية ومنطقة التسوق الحرة الشهيرة، تتميز بشواطئها البيضاء الرائعة والغابات المطيرة القديمة والمناخ الاستوائي الدافئ والتلفريك الشهير."
+        data-historic="🚡 تلفريك لنكاوي – Langkawi Cable Car | 🏖️ شاطئ سينانغ – Cenang Beach | 🌿 مانغروف كايو – Mangrove Kayak | 🦅 ميدان هيلانغ – Eagle Square"
+        data-restaurants="🦞 مطعم Harbour Restaurant | 🌿 مطعم Unkaizan | 🐟 مطعم Naam Restaurant"
+        data-cafes="☕ مقهى Yellow Cafe | ☕ مقهى Isola Bistro | ☕ مقهى Cliff Cafe"
+        data-events="🚡 تلفريك لنكاوي – Cable Car | 🏖️ شاطئ سينانغ – Cenang Beach | 🌿 جولة المانغروف – Mangrove Tour"
+      >
+        <button
+          class="save-btn"
+          onclick="
+            event.stopPropagation();
+            saveItem('city', 'langkawi', 'لنكاوي', '/img/Langkawi.jpg');
+          "
+        >
+          🏙️
+        </button>
+        <img src="/img/Langkawi.jpg" alt="لنكاوي" class="cite-img" />
+        <span class="name">لنكاوي – Langkawi</span>
+        <p class="info">جزيرة استوائية هادئة.</p>
+        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+          تفاصيل
+        </button>
       </div>
-      <div class="cite">
-        <img src="" alt="" class="cite-img" />
-        <span class="name"></span>
-        <div class="info"></div>
+
+      <div
+        class="cite"
+        data-name="بينانغ – Penang"
+        data-img="/img/Penang.jpg"
+        data-desc="جوهرة الشرق وعاصمة الطعام في آسيا، مدينة تاريخية مدرجة في قائمة التراث العالمي لليونسكو تشتهر بمطبخها الفريد الذي يجمع النكهات الملاوية والصينية والهندية في مزيج لا مثيل له."
+        data-historic="🏘️ جورج تاون – George Town | 🎨 جداريات بينانغ – Penang Street Art | 🛕 معبد كيك لوك سي – Kek Lok Si Temple | 🏯 قلعة كورنواليس – Fort Cornwallis"
+        data-restaurants="🍜 مطعم Kebaya | 🌿 مطعم Edelweiss | 🥘 مطعم Hameediyah"
+        data-cafes="☕ مقهى China House | ☕ مقهى Mugshot Café | ☕ مقهى Constant Gardener"
+        data-events="🎨 جداريات بينانغ – Street Art | 🛕 معبد كيك لوك سي – Kek Lok Si | 🍜 جولة الطعام – Food Tour"
+      >
+        <button
+          class="save-btn"
+          onclick="
+            event.stopPropagation();
+            saveItem('city', 'penang', 'بينانغ', '/img/Penang.jpg');
+          "
+        >
+          🏙️
+        </button>
+        <img src="/img/Penang.jpg" alt="بينانغ" class="cite-img" />
+        <span class="name">بينانغ – Penang</span>
+        <p class="info">مدينة مشهورة بالأكل والثقافة.</p>
+        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+          تفاصيل
+        </button>
       </div>
-      <div class="cite">
-        <img src="" alt="" class="cite-img" />
-        <span class="name"></span>
-        <div class="info"></div>
+
+      <div
+        class="cite"
+        data-name="ملاكا – Malacca"
+        data-img="/img/Malacca.jpg"
+        data-desc="مدينة التاريخ الماليزي العريق وموقع التراث العالمي لليونسكو، تحكي قصة الحضارات المتعاقبة من البرتغاليين والهولنديين والبريطانيين في مبانيها الاستعمارية الجميلة وأزقتها الملونة."
+        data-historic="🏯 المسيح كنيسة – Christ Church | 🌉 جونكر ستريت – Jonker Street | 🏰 قلعة سانتياغو – A Famosa Fort | 🌊 نهر ملاكا – Malacca River"
+        data-restaurants="🍜 مطعم Ole Sayang | 🌿 مطعم Bulldog | 🥘 مطعم Selvam"
+        data-cafes="☕ مقهى Calanthe Art Café | ☕ مقهى Kopi Rakan | ☕ مقهى Daily Fix"
+        data-events="🌉 جونكر ستريت – Jonker Street | 🏰 قلعة سانتياغو – A Famosa | 🌊 رحلة نهر ملاكا – River Cruise"
+      >
+        <button
+          class="save-btn"
+          onclick="
+            event.stopPropagation();
+            saveItem('city', 'malacca', 'ملاكا', '/img/Malacca.jpg');
+          "
+        >
+          🏙️
+        </button>
+        <img src="/img/Malacca.jpg" alt="ملاكا" class="cite-img" />
+        <span class="name">ملاكا – Malacca</span>
+        <p class="info">مدينة تاريخية جميلة.</p>
+        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+          تفاصيل
+        </button>
       </div>
-      <div class="cite">
-        <img src="" alt="" class="cite-img" />
-        <span class="name"></span>
-        <div class="info"></div>
+
+      <div
+        class="cite"
+        data-name="كوتا كينابالو – Kota Kinabalu"
+        data-img="/img/Kota Kinabalu.jpg"
+        data-desc="عاصمة صباح وبوابة طبيعة بورنيو الساحرة، تشتهر بغروب شمسها الذهبي الشهير وجزرها الفيروزية وجبل كينابالو الأعلى في جنوب شرق آسيا والحياة البحرية الرائعة."
+        data-historic="🏔️ جبل كينابالو – Mount Kinabalu | 🏝️ جزيرة مانوكان – Manukan Island | 🌅 غروب كوتا كينابالو – KK Sunset | 🌿 محمية صباح – Sabah Wildlife"
+        data-restaurants="🦞 مطعم Kohinoor | 🌿 مطعم Chilli Vanilla | 🐟 مطعم Upperstar"
+        data-cafes="☕ مقهى Kopitiams | ☕ مقهى Black Bean Coffee | ☕ مقهى Little Italy"
+        data-events="🏔️ جبل كينابالو – Mount Kinabalu | 🏝️ جزر صباح – Sabah Islands | 🦧 محمية الأوراق بوتان – Orangutan Sanctuary"
+      >
+        <button
+          class="save-btn"
+          onclick="
+            event.stopPropagation();
+            saveItem(
+              'city',
+              'kota-kinabalu',
+              'كوتا كينابالو',
+              '/img/Kota Kinabalu.jpg',
+            );
+          "
+        >
+          🏙️
+        </button>
+        <img
+          src="/img/Kota Kinabalu.jpg"
+          alt="كوتا كينابالو"
+          class="cite-img"
+        />
+        <span class="name">كوتا كينابالو – Kota Kinabalu</span>
+        <p class="info">طبيعة وجزر رائعة.</p>
+        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+          تفاصيل
+        </button>
       </div>
-      <div class="cite">
-        <img src="" alt="" class="cite-img" />
-        <span class="name"></span>
-        <div class="info"></div>
+
+      <div
+        class="cite"
+        data-name="جوهور باهرو – Johor Bahru"
+        data-img="/img/Johor Bahru.jpg"
+        data-desc="بوابة ماليزيا الجنوبية وثاني أكبر مدنها، تقع على مرمى حجر من سنغافورة عبر الجسر الشهير، تجمع بين المراكز الترفيهية الضخمة والمناطق التاريخية والتسوق المتميز."
+        data-historic="🏯 قصر إسكندر – Istana Besar | 🎡 ليغو لاند – Legoland Malaysia | 🛕 معبد أبو بكر – Sultan Abu Bakar Mosque | 🌉 جسر جوهور – Johor Causeway"
+        data-restaurants="🍜 مطعم Hiap Joo Bakery | 🌿 مطعم Roost Juice Bar | 🥘 مطعم Mok Mok"
+        data-cafes="☕ مقهى Ruang Reka | ☕ مقهى Palate Palette | ☕ مقهى Depot Kopi"
+        data-events="🎡 ليغو لاند – Legoland Malaysia | 🏯 قصر إسكندر – Istana Besar | 🛍️ تسوق جوهور – JB Shopping"
+      >
+        <button
+          class="save-btn"
+          onclick="
+            event.stopPropagation();
+            saveItem(
+              'city',
+              'johor-bahru',
+              'جوهور باهرو',
+              '/img/Johor Bahru.jpg',
+            );
+          "
+        >
+          🏙️
+        </button>
+        <img src="/img/Johor Bahru.jpg" alt="جوهور باهرو" class="cite-img" />
+        <span class="name">جوهور باهرو – Johor Bahru</span>
+        <p class="info">مدينة قريبة من سنغافورة.</p>
+        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+          تفاصيل
+        </button>
       </div>
     </section>
     <!--الاكل-->
