@@ -69,35 +69,194 @@
       <h1>المدن</h1>
     </div>
     <section class="cities-grid">
-      <div class="cite">
-        <img src="" alt="" class="cite-img" />
-        <span class="name"></span>
-        <div class="info"></div>
+      <div
+        class="cite"
+        data-name="مارينا باي – Marina Bay"
+        data-img="/img/Marina Bay.jpg"
+        data-desc="قلب سنغافورة الحديث وأيقونتها العالمية، تضم فندق مارينا باي ساندز الشهير وحدائق الخليج المستقبلية والأفق المبهر المنعكس على المياه في مشهد لا مثيل له."
+        data-historic="🏨 مارينا باي ساندز – Marina Bay Sands | 🌿 حدائق الخليج – Gardens by the Bay | 🎡 سينغاپور فلاير – Singapore Flyer | 🌉 جسر هيليكس – Helix Bridge"
+        data-restaurants="🦞 مطعم Waku Ghin | 🌿 مطعم CUT by Wolfgang Puck | 🥘 مطعم Sky on 57"
+        data-cafes="☕ مقهى Merci Marcel | ☕ مقهى Common Man Coffee | ☕ مقهى Habitat Coffee"
+        data-events="🌿 حدائق الخليج – Gardens by the Bay | 💡 عرض وندر فول – Wonder Full Show | 🎡 سينغافور فلاير – Singapore Flyer"
+      >
+        <button
+          class="save-btn"
+          onclick="
+            event.stopPropagation();
+            saveItem('city', 'marina-bay', 'مارينا باي', '/img/Marina Bay.jpg');
+          "
+        >
+          🏙️
+        </button>
+        <img src="/img/Marina Bay.jpg" alt="مارينا باي" class="cite-img" />
+        <span class="name">مارينا باي – Marina Bay</span>
+        <p class="info">قلب المدينة الحديثة.</p>
+        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+          تفاصيل
+        </button>
       </div>
-      <div class="cite">
-        <img src="" alt="" class="cite-img" />
-        <span class="name"></span>
-        <div class="info"></div>
+
+      <div
+        class="cite"
+        data-name="سينتوسا – Sentosa"
+        data-img="/img/Sentosa.jpg"
+        data-desc="جزيرة الترفيه والمتعة في سنغافورة، تضم يونيفرسال ستوديوز الشهير والشواطئ الجميلة وأكواريوم السنغافوري وملاعب الغولف الفاخرة والمنتجعات الراقية."
+        data-historic="🎬 يونيفرسال ستوديوز – Universal Studios | 🐠 أكواريوم السنغافوري – SEA Aquarium | 🏖️ شاطئ سيلوسو – Siloso Beach | 🚡 تلفريك سينتوسا – Sentosa Cable Car"
+        data-restaurants="🦞 مطعم Graze | 🌿 مطعم Forest | 🥘 مطعم Tanjong Beach Club"
+        data-cafes="☕ مقهى Coastes | ☕ مقهى Fox Pâtisserie | ☕ مقهى Shutters"
+        data-events="🎬 يونيفرسال ستوديوز – Universal Studios | 🐠 أكواريوم SEA – SEA Aquarium | 🏖️ شواطئ سينتوسا – Sentosa Beaches"
+      >
+        <button
+          class="save-btn"
+          onclick="
+            event.stopPropagation();
+            saveItem('city', 'sentosa', 'سينتوسا', '/img/Sentosa.jpg');
+          "
+        >
+          🏙️
+        </button>
+        <img src="/img/Sentosa.jpg" alt="سينتوسا" class="cite-img" />
+        <span class="name">سينتوسا – Sentosa</span>
+        <p class="info">جزيرة ترفيهية رائعة.</p>
+        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+          تفاصيل
+        </button>
       </div>
-      <div class="cite">
-        <img src="" alt="" class="cite-img" />
-        <span class="name"></span>
-        <div class="info"></div>
+
+      <div
+        class="cite"
+        data-name="أورتشارد رود – Orchard Road"
+        data-img="/img/Orchard Road.jpg"
+        data-desc="شارع التسوق الأشهر في آسيا وعاصمة الموضة في سنغافورة، يمتد بمراكز تسوق ضخمة وفنادق فاخرة وماركات عالمية في قلب المدينة النابض."
+        data-historic="🛍️ آيون أورتشارد – ION Orchard | 🏬 نيدمان ماركوس – Ngee Ann City | 🏨 فندق ريجنت – Regent Hotel | 🌿 بوتانيك غاردنز – Botanic Gardens"
+        data-restaurants="🍜 مطعم Iggy's | 🌿 مطعم Zafferano | 🥩 مطعم Morton's"
+        data-cafes="☕ مقهى Tiong Hoe Specialty Coffee | ☕ مقهى Strangers' Reunion | ☕ مقهى PPP Coffee"
+        data-events="🛍️ تسوق أورتشارد – Orchard Shopping | 🌿 حديقة بوتانيك – Botanic Gardens | 🎄 إضاءة أورتشارد – Orchard Lights"
+      >
+        <button
+          class="save-btn"
+          onclick="
+            event.stopPropagation();
+            saveItem(
+              'city',
+              'orchard-road',
+              'أورتشارد رود',
+              '/img/Orchard Road.jpg',
+            );
+          "
+        >
+          🏙️
+        </button>
+        <img src="/img/Orchard Road.jpg" alt="أورتشارد رود" class="cite-img" />
+        <span class="name">أورتشارد رود – Orchard Road</span>
+        <p class="info">أشهر منطقة تسوق.</p>
+        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+          تفاصيل
+        </button>
       </div>
-      <div class="cite">
-        <img src="" alt="" class="cite-img" />
-        <span class="name"></span>
-        <div class="info"></div>
+
+      <div
+        class="cite"
+        data-name="تشاينا تاون – Chinatown"
+        data-img="/img/Singapore Chinatown.jpg"
+        data-desc="قلب الثقافة الصينية في سنغافورة، حي تاريخي عريق يجمع بين المعابد القديمة والأسواق الملونة والمطاعم الشعبية والمباني التراثية التي تحكي تاريخ المهاجرين الصينيين."
+        data-historic="🛕 معبد بوذا توث ريليك – Buddha Tooth Relic Temple | 🏮 شارع باغودا – Pagoda Street | 🏛️ متحف تشاينا تاون – Chinatown Heritage Centre | 🕌 مسجد جامع – Jamae Mosque"
+        data-restaurants="🍜 مطعم Liao Fan Hong Kong Soya Sauce | 🥘 مطعم Chinatown Food Street | 🌿 مطعم Tong Heng"
+        data-cafes="☕ مقهى Nanyang Old Coffee | ☕ مقهى The Tuck Shop | ☕ مقهى Ah Seng Coffee"
+        data-events="🛕 معبد بوذا توث – Buddha Tooth Temple | 🏮 أسواق تشاينا تاون – Chinatown Markets | 🎊 احتفالات السنة الصينية – Chinese New Year"
+      >
+        <button
+          class="save-btn"
+          onclick="
+            event.stopPropagation();
+            saveItem(
+              'city',
+              'chinatown-sg',
+              'تشاينا تاون',
+              '/img/Singapore Chinatown.jpg',
+            );
+          "
+        >
+          🏙️
+        </button>
+        <img
+          src="/img/Singapore Chinatown.jpg"
+          alt="تشاينا تاون"
+          class="cite-img"
+        />
+        <span class="name">تشاينا تاون – Chinatown</span>
+        <p class="info">منطقة ثقافية مميزة.</p>
+        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+          تفاصيل
+        </button>
       </div>
-      <div class="cite">
-        <img src="" alt="" class="cite-img" />
-        <span class="name"></span>
-        <div class="info"></div>
+
+      <div
+        class="cite"
+        data-name="ليتل إنديا – Little India"
+        data-img="/img/Little India Singapore.jpg"
+        data-desc="قلب الثقافة الهندية في سنغافورة، حي نابض بالألوان والروائح والأجواء الهندية الأصيلة يضم المعابد الهندوسية الملونة وأسواق التوابل والمطاعم الهندية الشهيرة."
+        data-historic="🛕 معبد سري فيراماكاليامان – Sri Veeramakaliamman | 🌸 شارع سيرانغون – Serangoon Road | 🏛️ متحف ليتل إنديا – Indian Heritage Centre | 🌺 سوق موستافا – Mustafa Centre"
+        data-restaurants="🍛 مطعم Komala Vilas | 🥘 مطعم Banana Leaf Apolo | 🌿 مطعم Gayatri"
+        data-cafes="☕ مقهى Chye Seng Huat Hardware | ☕ مقهى Forty Hands | ☕ مقهى Plain Vanilla"
+        data-events="🛕 معبد سري فيراماكاليامان – Sri Veeramakaliamman | 🎊 مهرجان ديبافالي – Deepavali Festival | 🌸 أسواق ليتل إنديا – Little India Markets"
+      >
+        <button
+          class="save-btn"
+          onclick="
+            event.stopPropagation();
+            saveItem(
+              'city',
+              'little-india-sg',
+              'ليتل إنديا',
+              '/img/Little India Singapore.jpg',
+            );
+          "
+        >
+          🏙️
+        </button>
+        <img
+          src="/img/Little India Singapore.jpg"
+          alt="ليتل إنديا"
+          class="cite-img"
+        />
+        <span class="name">ليتل إنديا – Little India</span>
+        <p class="info">أجواء هندية نابضة.</p>
+        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+          تفاصيل
+        </button>
       </div>
-      <div class="cite">
-        <img src="" alt="" class="cite-img" />
-        <span class="name"></span>
-        <div class="info"></div>
+
+      <div
+        class="cite"
+        data-name="كامبونغ غلام – Kampong Glam"
+        data-img="/img/Kampong Glam.jpg"
+        data-desc="الحي الإسلامي التاريخي في سنغافورة، يتميز بمسجد السلطان الشهير وشارع هاجي لين الملون ومحلات العطور والأقمشة والمطاعم العربية والملاوية الأصيلة."
+        data-historic="🕌 مسجد السلطان – Sultan Mosque | 🎨 شارع هاجي لين – Haji Lane | 🏯 قصر المالايو – Malay Heritage Centre | 🛍️ شارع العرب – Arab Street"
+        data-restaurants="🥘 مطعم Zam Zam | 🌿 مطعم Hjh Maimunah | 🍖 مطعم Warong Nasi Pariaman"
+        data-cafes="☕ مقهى Artichoke | ☕ مقهى Symmetry | ☕ مقهى Selfie Coffee"
+        data-events="🕌 مسجد السلطان – Sultan Mosque | 🎨 شارع هاجي لين – Haji Lane | 🛍️ شارع العرب – Arab Street"
+      >
+        <button
+          class="save-btn"
+          onclick="
+            event.stopPropagation();
+            saveItem(
+              'city',
+              'kampong-glam',
+              'كامبونغ غلام',
+              '/img/Kampong Glam.jpg',
+            );
+          "
+        >
+          🏙️
+        </button>
+        <img src="/img/Kampong Glam.jpg" alt="كامبونغ غلام" class="cite-img" />
+        <span class="name">كامبونغ غلام – Kampong Glam</span>
+        <p class="info">حي تاريخي جميل.</p>
+        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+          تفاصيل
+        </button>
       </div>
     </section>
     <!--الاكل-->
