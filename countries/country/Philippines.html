@@ -69,35 +69,166 @@
       <h1>المدن</h1>
     </div>
     <section class="cities-grid">
-      <div class="cite">
-        <img src="" alt="" class="cite-img" />
-        <span class="name"></span>
-        <div class="info"></div>
+      <div
+        class="cite"
+        data-name="مانيلا – Manila"
+        data-img="/img/Manila.jpg"
+        data-desc="عاصمة الفلبين النابضة بالحياة ومركزها الاقتصادي والثقافي، مدينة تجمع بين التاريخ الإسباني العريق في إنتراموروس والحياة الحديثة الصاخبة والتسوق المتنوع والمطبخ الفلبيني الشهير."
+        data-historic="🏯 إنتراموروس – Intramuros | 🏛️ متحف الفن الوطني – National Museum | 🌊 ريزال بارك – Rizal Park | 🕌 كنيسة سان أوغستين – San Agustin Church"
+        data-restaurants="🍖 مطعم Ilustrado | 🌿 مطعم Gallery by Chele | 🥘 مطعم Manam"
+        data-cafes="☕ مقهى % Arabica Manila | ☕ مقهى Yardstick Coffee | ☕ مقهى Craft Coffee Revolution"
+        data-events="🏯 إنتراموروس – Intramuros | 🌊 ريزال بارك – Rizal Park | 🛍️ مول أوف آسيا – Mall of Asia"
+      >
+        <button
+          class="save-btn"
+          onclick="
+            event.stopPropagation();
+            saveItem('city', 'manila', 'مانيلا', '/img/Manila.jpg');
+          "
+        >
+          🏙️
+        </button>
+        <img src="/img/Manila.jpg" alt="مانيلا" class="cite-img" />
+        <span class="name">مانيلا – Manila</span>
+        <p class="info">عاصمة نابضة بالحياة مليئة بالتسوق والثقافة.</p>
+        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+          تفاصيل
+        </button>
       </div>
-      <div class="cite">
-        <img src="" alt="" class="cite-img" />
-        <span class="name"></span>
-        <div class="info"></div>
+
+      <div
+        class="cite"
+        data-name="سيبو – Cebu"
+        data-img="/img/Cebu.jpg"
+        data-desc="ملكة الجنوب ومدينة الفلبين الثانية، تجمع بين التاريخ الكولونيالي الإسباني والشواطئ الرائعة والمأكولات البحرية الطازجة وتجربة السباحة مع القروش الحوتية الشهيرة."
+        data-historic="🏛️ قلعة سان بيدرو – Fort San Pedro | ⛪ كنيسة باسيليكا – Basilica del Santo Niño | 🌊 شاطئ ماكتان – Mactan Beach | 🐋 السباحة مع القروش – Whale Shark Oslob"
+        data-restaurants="🍖 مطعم Anzani | 🌿 مطعم Abaca | 🥘 مطعم Lantaw"
+        data-cafes="☕ مقهى Bo's Coffee | ☕ مقهى Yolk | ☕ مقهى Handuraw"
+        data-events="🐋 السباحة مع القروش – Whale Shark | 🏖️ شاطئ ماكتان – Mactan Beach | 🎊 مهرجان سينولوغ – Sinulog Festival"
+      >
+        <button
+          class="save-btn"
+          onclick="
+            event.stopPropagation();
+            saveItem('city', 'cebu', 'سيبو', '/img/Cebu.jpg');
+          "
+        >
+          🏙️
+        </button>
+        <img src="/img/Cebu.jpg" alt="سيبو" class="cite-img" />
+        <span class="name">سيبو – Cebu</span>
+        <p class="info">مدينة ساحلية تجمع بين التاريخ والشواطئ.</p>
+        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+          تفاصيل
+        </button>
       </div>
-      <div class="cite">
-        <img src="" alt="" class="cite-img" />
-        <span class="name"></span>
-        <div class="info"></div>
+
+      <div
+        class="cite"
+        data-name="بوراكاي – Boracay"
+        data-img="/img/Boracay.jpg"
+        data-desc="جوهرة الفلبين البحرية وأشهر جزرها، تشتهر بشاطئ وايت بيتش الأسطوري ذو الرمال البيضاء الناعمة كالبودرة والمياه الفيروزية الساحرة في مشهد طبيعي لا مثيل له."
+        data-historic="🏖️ وايت بيتش – White Beach | 🌅 بولابوغ بيتش – Bulabog Beach | 🌊 كروز الغروب – Sunset Cruise | 🤿 غوص بوراكاي – Boracay Diving"
+        data-restaurants="🦞 مطعم Nonie's | 🌿 مطعم Aria | 🐟 مطعم Smoke"
+        data-cafes="☕ مقهى Café Racer | ☕ مقهى Local Brew | ☕ مقهى Coco Mama"
+        data-events="🏖️ وايت بيتش – White Beach | 🌅 كروز الغروب – Sunset Cruise | 🤿 الغوص – Boracay Diving"
+      >
+        <button
+          class="save-btn"
+          onclick="
+            event.stopPropagation();
+            saveItem('city', 'boracay', 'بوراكاي', '/img/Boracay.jpg');
+          "
+        >
+          🏙️
+        </button>
+        <img src="/img/Boracay.jpg" alt="بوراكاي" class="cite-img" />
+        <span class="name">بوراكاي – Boracay</span>
+        <p class="info">جزيرة مشهورة برمالها البيضاء.</p>
+        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+          تفاصيل
+        </button>
       </div>
-      <div class="cite">
-        <img src="" alt="" class="cite-img" />
-        <span class="name"></span>
-        <div class="info"></div>
+
+      <div
+        class="cite"
+        data-name="بالاوان – Palawan"
+        data-img="/img/Palawan.jpg"
+        data-desc="أجمل جزيرة في العالم وجنة الفلبين المخفية، تشتهر ببحيرة إيل نيدو الساحرة والنهر الجوفي الشهير وشعابها المرجانية المذهلة ومياهها الفيروزية النقية."
+        data-historic="🏝️ إيل نيدو – El Nido | 🌊 النهر الجوفي – Puerto Princesa Underground River | 🤿 كويون – Coron Islands | 🌿 محمية توباتاها – Tubbataha Reef"
+        data-restaurants="🦞 مطعم Kalui | 🌿 مطعم Badjao Seafront | 🐟 مطعم Kinabuch"
+        data-cafes="☕ مقهى Coffee Kong | ☕ مقهى Café Maia | ☕ مقهى Palawan Cacao"
+        data-events="🏝️ إيل نيدو – El Nido Island Hopping | 🌊 النهر الجوفي – Underground River | 🤿 غوص كويون – Coron Diving"
+      >
+        <button
+          class="save-btn"
+          onclick="
+            event.stopPropagation();
+            saveItem('city', 'palawan', 'بالاوان', '/img/Palawan.jpg');
+          "
+        >
+          🏙️
+        </button>
+        <img src="/img/Palawan.jpg" alt="بالاوان" class="cite-img" />
+        <span class="name">بالاوان – Palawan</span>
+        <p class="info">طبيعة بحرية ساحرة وجزر خلابة.</p>
+        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+          تفاصيل
+        </button>
       </div>
-      <div class="cite">
-        <img src="" alt="" class="cite-img" />
-        <span class="name"></span>
-        <div class="info"></div>
+
+      <div
+        class="cite"
+        data-name="دافاو – Davao"
+        data-img="/img/Davao.jpg"
+        data-desc="مدينة الفلبين الثالثة وعاصمة مينداناو، مدينة هادئة ومنظمة تشتهر بالفاكهة الاستوائية الشهيرة خاصة الدوريان وجبل أبو الشهير أعلى قمة في الفلبين."
+        data-historic="🏔️ جبل أبو – Mount Apo | 🌿 حديقة التمساح – Philippine Eagle Center | 🏖️ شاطئ سمال – Samal Island | 🌺 مهرجان كداياوان – Kadayawan Festival"
+        data-restaurants="🍖 مطعم Claude's Le Chateau de移 | 🌿 مطعم Lachi's | 🥘 مطعم Matina Town Square"
+        data-cafes="☕ مقهى Brew Bros | ☕ مقهى Café Demitasse | ☕ مقهى Beans & Cream"
+        data-events="🏔️ جبل أبو – Mount Apo | 🌺 مهرجان كداياوان – Kadayawan Festival | 🏝️ جزيرة سمال – Samal Island"
+      >
+        <button
+          class="save-btn"
+          onclick="
+            event.stopPropagation();
+            saveItem('city', 'davao', 'دافاو', '/img/Davao.jpg');
+          "
+        >
+          🏙️
+        </button>
+        <img src="/img/Davao.jpg" alt="دافاو" class="cite-img" />
+        <span class="name">دافاو – Davao</span>
+        <p class="info">مدينة هادئة محاطة بالطبيعة.</p>
+        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+          تفاصيل
+        </button>
       </div>
-      <div class="cite">
-        <img src="" alt="" class="cite-img" />
-        <span class="name"></span>
-        <div class="info"></div>
+
+      <div
+        class="cite"
+        data-name="باغيو – Baguio"
+        data-img="/img/Baguio.jpg"
+        data-desc="عاصمة الصيف الفلبينية ومدينة الجبال الباردة، تقع على ارتفاع 1500 متر وتتميز بأجوائها الباردة المنعشة وحقول الأرز الجميلة وحدائق الورود والأسواق الشعبية المميزة."
+        data-historic="🌹 حديقة الورود – Burnham Park | 🌾 حقول الأرز – Banaue Rice Terraces | 🏛️ متحف كورديليرا – Cordillera Museum | 🌲 سيشن رود – Session Road"
+        data-restaurants="🍖 مطعم Hill Station | 🌿 مطعم Vizco's | 🥘 مطعم Café by the Ruins"
+        data-cafes="☕ مقهى Baguio Craft Brewery | ☕ مقهى Choco-late de Batirol | ☕ مقهى Rumours"
+        data-events="🌹 حديقة بيرنهام – Burnham Park | 🌾 حقول الأرز – Rice Terraces | 🎊 مهرجان بينياك – Panagbenga Festival"
+      >
+        <button
+          class="save-btn"
+          onclick="
+            event.stopPropagation();
+            saveItem('city', 'baguio', 'باغيو', '/img/Baguio.jpg');
+          "
+        >
+          🏙️
+        </button>
+        <img src="/img/Baguio.jpg" alt="باغيو" class="cite-img" />
+        <span class="name">باغيو – Baguio</span>
+        <p class="info">مدينة جبلية بأجواء باردة ومنعشة.</p>
+        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+          تفاصيل
+        </button>
       </div>
     </section>
     <!--الاكل-->
