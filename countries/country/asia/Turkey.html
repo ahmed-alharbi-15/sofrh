@@ -67,7 +67,167 @@
       <h1>المدن</h1>
     </div>
     <section class="cities-grid">
-        
+      <div
+        class="cite"
+        data-name="إسطنبول – Istanbul"
+        data-img="/img/Istanbul.jpg"
+        data-desc="أيقونة العالم وملتقى الحضارات، مدينة تجمع بين قارتين على ضفتي مضيق البوسفور. تضم آلاف السنين من التاريخ بين قصر توبكابي وآيا صوفيا والبازار الكبير وأجواء لا مثيل لها."
+        data-historic="🕌 آيا صوفيا – Hagia Sophia | 🏰 قصر توبكابي – Topkapi Palace | 🛍️ البازار الكبير – Grand Bazaar | 🌊 مضيق البوسفور – Bosphorus"
+        data-restaurants="🍖 مطعم نوسرت – Nusr-Et | 🐟 مطعم بلق باليك – Balık Ekmek | 🍽️ مطعم مكاني – Mikla"
+        data-cafes="☕ بيير لوتي كافيه – Pierre Loti Cafe | ☕ منديفيل كافيه – Mandabatmaz | ☕ كافيه كوكورو – Karaköy Güllüoğlu"
+        data-events="🕌 آيا صوفيا – Hagia Sophia | 🚤 رحلة البوسفور – Bosphorus Cruise | 🛍️ البازار الكبير – Grand Bazaar"
+      >
+        <button
+          class="save-btn"
+          onclick="
+            event.stopPropagation();
+            saveItem('city', 'istanbul', 'إسطنبول', '/img/Istanbul.jpg');
+          "
+        >
+          🏙️
+        </button>
+        <img src="/img/Istanbul.jpg" alt="إسطنبول" class="cite-img" />
+        <span class="name">إسطنبول – Istanbul</span>
+        <p class="info">مدينة تاريخية تجمع بين آسيا وأوروبا.</p>
+        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+          تفاصيل
+        </button>
+      </div>
+
+      <div
+        class="cite"
+        data-name="أنطاليا – Antalya"
+        data-img="/img/Antalya.jpg"
+        data-desc="لؤلؤة البحر المتوسط التركي، مدينة ساحلية فاخرة تجمع بين الشواطئ الذهبية والمنتجعات الراقية والمدينة القديمة العريقة. وجهة سياحية عالمية من الدرجة الأولى."
+        data-historic="🏛️ المدينة القديمة – Kaleiçi | 🌊 شاطئ كونيالتي – Konyaaltı Beach | 🏛️ متحف أنطاليا | ⛵ ميناء أنطاليا"
+        data-restaurants="🐟 مطاعم الميناء القديم | 🍽️ مطعم سيرا – Sera | 🌎 مطعم البحر المتوسط"
+        data-cafes="☕ مقاهي المدينة القديمة | ☕ كافيه الميناء – Harbor Cafe | ☕ أولد سيتي كافيه – Old City Cafe"
+        data-events="🏖️ شاطئ كونيالتي – Konyaaltı | 🏛️ المدينة القديمة – Kaleiçi | 🌊 رحلات بحرية – Boat Tours"
+      >
+        <button
+          class="save-btn"
+          onclick="
+            event.stopPropagation();
+            saveItem('city', 'antalya', 'أنطاليا', '/img/Antalya.jpg');
+          "
+        >
+          🏙️
+        </button>
+        <img src="/img/Antalya.jpg" alt="أنطاليا" class="cite-img" />
+        <span class="name">أنطاليا – Antalya</span>
+        <p class="info">وجهة بحرية فاخرة.</p>
+        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+          تفاصيل
+        </button>
+      </div>
+
+      <div
+        class="cite"
+        data-name="طرابزون – Trabzon"
+        data-img="/img/Trabzon.jpg"
+        data-desc="جوهرة البحر الأسود التركي، مدينة خضراء ساحرة تحيط بها الجبال والغابات الكثيفة. تشتهر بدير سوميلا المنقور في الصخر وطبيعتها الخلابة وأجوائها الهادئة البعيدة عن الصخب."
+        data-historic="⛪ دير سوميلا – Sümela Monastery | 🌿 هضبة أوزنغول – Uzungöl | 🏰 قلعة طرابزون | 🌲 غابات طرابزون"
+        data-restaurants="🍵 مطعم الشاي التركي | 🐟 مطعم المأكولات البحرية | 🍽️ مطعم طرابزون التراثي"
+        data-cafes="☕ مقاهي البحر الأسود | ☕ أوزنغول كافيه – Uzungöl Cafe | ☕ كافيه الغابة"
+        data-events="⛪ دير سوميلا – Sümela Monastery | 🌿 هضبة أوزنغول – Uzungöl | 🌲 جولات الطبيعة"
+      >
+        <button
+          class="save-btn"
+          onclick="
+            event.stopPropagation();
+            saveItem('city', 'trabzon', 'طرابزون', '/img/Trabzon.jpg');
+          "
+        >
+          🏙️
+        </button>
+        <img src="/img/Trabzon.jpg" alt="طرابزون" class="cite-img" />
+        <span class="name">طرابزون – Trabzon</span>
+        <p class="info">طبيعة خضراء وأجواء هادئة.</p>
+        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+          تفاصيل
+        </button>
+      </div>
+
+      <div
+        class="cite"
+        data-name="بورصة – Bursa"
+        data-img="/img/Bursa.jpg"
+        data-desc="العاصمة العثمانية الأولى وإحدى أجمل مدن تركيا التاريخية، تحتضن جبل أولوداغ الثلجي ومعالم عثمانية أصيلة وأسواقاً تقليدية عريقة. مزيج رائع بين التاريخ والطبيعة."
+        data-historic="🕌 الجامع الكبير – Ulu Camii | 🏔️ جبل أولوداغ – Uludağ | 🛍️ بازار بورصة التاريخي | ⛺ ضريح أورهان"
+        data-restaurants="🍖 مطعم إسكندر كباب الأصلي | 🍽️ مطعم جيمنلك – Çekirge | 🥘 مطعم التراث العثماني"
+        data-cafes="☕ مقاهي المدينة القديمة | ☕ كافيه أولوداغ | ☕ بورصة كافيه التراثي"
+        data-events="🏔️ جبل أولوداغ – Uludağ | 🕌 الجامع الكبير – Ulu Camii | 🛍️ البازار التاريخي"
+      >
+        <button
+          class="save-btn"
+          onclick="
+            event.stopPropagation();
+            saveItem('city', 'bursa', 'بورصة', '/img/Bursa.jpg');
+          "
+        >
+          🏙️
+        </button>
+        <img src="/img/Bursa.jpg" alt="بورصة" class="cite-img" />
+        <span class="name">بورصة – Bursa</span>
+        <p class="info">مدينة جبلية وتاريخية.</p>
+        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+          تفاصيل
+        </button>
+      </div>
+
+      <div
+        class="cite"
+        data-name="كابادوكيا – Cappadocia"
+        data-img="/img/Cappadocia.jpg"
+        data-desc="وجهة أحلام عشاق السفر، منطقة طبيعية فريدة في وسط تركيا تشتهر بتكويناتها الصخرية المذهلة والمدن المنقورة تحت الأرض وتجربة المناطيد الشهيرة عند الشروق. منظر لا يُنسى في العمر."
+        data-historic="🎈 مناطيد كابادوكيا – Hot Air Balloons | 🏛️ متحف غوريمي – Göreme | 🏙️ المدينة تحت الأرض – Derinkuyu | 🌄 وادي الحب – Love Valley"
+        data-restaurants="🍽️ مطعم السراج – Sıralı Konak | 🥘 مطعم التراث الأناضولي | 🌿 مطعم المغارة – Cave Restaurant"
+        data-cafes="☕ كافيه المغارة – Cave Cafe | ☕ غوريمي كافيه | ☕ كافيه الصخرة"
+        data-events="🎈 مناطيد كابادوكيا – Hot Air Balloons | 🏛️ متحف غوريمي – Göreme | 🌄 وادي الحب – Love Valley"
+      >
+        <button
+          class="save-btn"
+          onclick="
+            event.stopPropagation();
+            saveItem('city', 'cappadocia', 'كابادوكيا', '/img/Cappadocia.jpg');
+          "
+        >
+          🏙️
+        </button>
+        <img src="/img/Cappadocia.jpg" alt="كابادوكيا" class="cite-img" />
+        <span class="name">كابادوكيا – Cappadocia</span>
+        <p class="info">وجهة فريدة بمناظرها الصخرية.</p>
+        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+          تفاصيل
+        </button>
+      </div>
+
+      <div
+        class="cite"
+        data-name="إزمير – Izmir"
+        data-img="/img/Izmir.jpg"
+        data-desc="ثالث أكبر مدن تركيا وعروسة بحر إيجة، مدينة ساحلية نابضة بالحياة تجمع بين الكورنيش الجميل والمعالم الأثرية الرومانية والحياة الليلية المتميزة. أجواء منفتحة وترحيبية لا مثيل لها."
+        data-historic="🏛️ أفسس – Ephesus | 🌊 كورنيش إزمير – Kordon | 🛍️ كيمريالتي – Kemeraltı Bazaar | 🏰 قلعة قاديفيكالي"
+        data-restaurants="🐟 مطاعم كورنيش إزمير | 🍽️ مطعم ألتن كابي – Altın Kapı | 🌎 مطاعم الميناء"
+        data-cafes="☕ مقاهي الكورنيش | ☕ كافيه كيمريالتي | ☕ إزمير كافيه الساحلي"
+        data-events="🏛️ أفسس – Ephesus | 🌊 كورنيش إزمير – Kordon | 🛍️ كيمريالتي – Kemeraltı Bazaar"
+      >
+        <button
+          class="save-btn"
+          onclick="
+            event.stopPropagation();
+            saveItem('city', 'izmir', 'إزمير', '/img/Izmir.jpg');
+          "
+        >
+          🏙️
+        </button>
+        <img src="/img/Izmir.jpg" alt="إزمير" class="cite-img" />
+        <span class="name">إزمير – Izmir</span>
+        <p class="info">مدينة ساحلية نابضة بالحياة.</p>
+        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+          تفاصيل
+        </button>
+      </div>
     </section>
     <!--الاكل-->
     <div class="main-foods">
