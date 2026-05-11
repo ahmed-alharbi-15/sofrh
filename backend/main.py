@@ -50,6 +50,7 @@ class ChangePassword(BaseModel):
 
 @app.post("/signup")
 def signup(user: UserCreate):
+    # 1. التحقق من طول اسم المستخدم وشروط كلمة المرور (موجودة سابقاً)
     if len(user.username) < 4:
         raise HTTPException(status_code=400, detail="اسم المستخدم يجب أن يكون 4 خانات على الأقل")
 
@@ -60,6 +61,17 @@ def signup(user: UserCreate):
     conn = get_db_connection()
     cur = conn.cursor()
     try:
+        # 2. التحقق من وجود اسم المستخدم مسبقاً
+        cur.execute("SELECT username FROM users WHERE username = %s", (user.username,))
+        if cur.fetchone():
+            raise HTTPException(status_code=400, detail="اسم المستخدم هذا مأخوذ، اختر اسماً آخر")
+
+        # 3. التحقق من وجود البريد الإلكتروني مسبقاً
+        cur.execute("SELECT email FROM users WHERE email = %s", (user.email,))
+        if cur.fetchone():
+            raise HTTPException(status_code=400, detail="هذا البريد الإلكتروني مسجل لدينا بالفعل")
+
+        # 4. إذا لم يوجد تكرار، نقوم بالتشفير والإضافة
         hashed_pwd = pwd_context.hash(user.password)
         cur.execute(
             "INSERT INTO users (username, password, email, phone) VALUES (%s, %s, %s, %s)",
@@ -67,8 +79,10 @@ def signup(user: UserCreate):
         )
         conn.commit()
         return {"status": "success", "message": "تم إنشاء الحساب بنجاح!"}
-    except psycopg2.errors.UniqueViolation:
-        raise HTTPException(status_code=400, detail="اسم المستخدم أو الإيميل موجود مسبقاً")
+
+    except Exception as e:
+        # في حال وجود أي خطأ غير متوقع
+        raise HTTPException(status_code=500, detail="حدث خطأ في السيرفر: " + str(e))
     finally:
         cur.close()
         conn.close()
