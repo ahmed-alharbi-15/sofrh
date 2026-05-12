@@ -29,20 +29,23 @@ if (signupBtn) {
             console.log("رد السيرفر:", data);
 
             if (response.ok) {
+                // حالة النجاح
+                alert("✅ " + data.message);
                 localStorage.setItem("safraUser", JSON.stringify({
                     name: username,
                     email: email,
                     avatar: ""
                 }));
-                alert(data.message);
-                // التحويل لرابط نسبي لضمان العمل عند خويك
                 window.location.href = "../index/index.html";
             } else {
-                alert("خطأ: " + (data.detail || "مشكلة في البيانات"));
+                // حالة الرفض (مثل إيميل مكرر أو يوزر مأخوذ)
+                // هنا يتعرض الرسالة اللي أنت كتبتها في الباكيند بالضبط
+                alert("⚠️ " + (data.detail || "حدث خطأ في البيانات"));
             }
         } catch (err) {
-            console.error("فشل الاتصال:", err);
-            alert("السيرفر لا يستجيب أو هناك مشكلة في الشبكة!");
+            // حالة إن السيرفر طافي أو ما فيه إنترنت
+            console.error(err);
+            alert("❌ فشل الاتصال بالسيرفر، تأكد من اتصالك!");
         }
     };
 } else {
@@ -111,6 +114,7 @@ if (logoutBtn) {
 }
 
 checkAuth();
+
 // --- 5. حفظ في المفضلة ---
 function saveItem(type, id, name, img) {
     const user = JSON.parse(localStorage.getItem("safraUser"));
