@@ -25,7 +25,11 @@
       </div>
 
       <div class="user-menu" id="userMenu">
-        <img id="userAvatar" src="/frontend/img/default-avatar.png" alt="المستخدم" />
+        <img
+          id="userAvatar"
+          src="/frontend/img/default-avatar.png"
+          alt="المستخدم"
+        />
         <span class="user-name" id="userName"></span>
         <div class="user-dropdown">
           <a href="/frontend/profile/profile.html">الملف الشخصي</a>
@@ -40,7 +44,9 @@
       </ul>
 
       <div class="logo">
-        <a href="/frontend/index/index.html"> <img src="/frontend/img/logo3.JPG" alt="سفرة" /></a>
+        <a href="/frontend/index/index.html">
+          <img src="/frontend/img/logo3.JPG" alt="سفرة"
+        /></a>
       </div>
     </header>
 
@@ -83,7 +89,12 @@
         <button
           class="save-btn"
           onclick="
-            saveItem('recipe', 'saleeg', 'السليق – Saleeg', '/frontend/img/سليق.jpg')
+            saveItem(
+              'recipe',
+              'saleeg',
+              'السليق – Saleeg',
+              '/frontend/img/سليق.jpg',
+            )
           "
         >
           🍽️
@@ -110,7 +121,12 @@
         <button
           class="save-btn"
           onclick="
-            saveItem('recipe', 'kabsa', 'الكبسة – Kabsa', '/frontend/img/كبسة.jpg')
+            saveItem(
+              'recipe',
+              'kabsa',
+              'الكبسة – Kabsa',
+              '/frontend/img/كبسة.jpg',
+            )
           "
         >
           🍽️
@@ -137,7 +153,12 @@
         <button
           class="save-btn"
           onclick="
-            saveItem('recipe', 'jareesh', 'الجريش – Jareesh', '/frontend/img/جريش.jpg')
+            saveItem(
+              'recipe',
+              'jareesh',
+              'الجريش – Jareesh',
+              '/frontend/img/جريش.jpg',
+            )
           "
         >
           🍽️
@@ -164,7 +185,12 @@
         <button
           class="save-btn"
           onclick="
-            saveItem('recipe', 'madfoon', 'المدفون – Madfoon', '/frontend/img/مدفون.jpg')
+            saveItem(
+              'recipe',
+              'madfoon',
+              'المدفون – Madfoon',
+              '/frontend/img/مدفون.jpg',
+            )
           "
         >
           🍽️
@@ -191,7 +217,12 @@
         <button
           class="save-btn"
           onclick="
-            saveItem('recipe', 'areeka', 'العريكة – Areeka', '/frontend/img/عريكة.jpg')
+            saveItem(
+              'recipe',
+              'areeka',
+              'العريكة – Areeka',
+              '/frontend/img/عريكة.jpg',
+            )
           "
         >
           🍽️
@@ -218,7 +249,12 @@
         <button
           class="save-btn"
           onclick="
-            saveItem('recipe', 'kleeja', 'الكليجة – Kleeja', '/frontend/img/كليجة.jpg')
+            saveItem(
+              'recipe',
+              'kleeja',
+              'الكليجة – Kleeja',
+              '/frontend/img/كليجة.jpg',
+            )
           "
         >
           🍽️
@@ -244,7 +280,14 @@
       <div class="foods-card" data-region="main-foods" id="sushi">
         <button
           class="save-btn"
-          onclick="saveItem('recipe', 'sushi', 'سوشي – Sushi', '/frontend/img/سوشي.jpg')"
+          onclick="
+            saveItem(
+              'recipe',
+              'sushi',
+              'سوشي – Sushi',
+              '/frontend/img/سوشي.jpg',
+            )
+          "
         >
           🍽️
         </button>
@@ -269,7 +312,14 @@
       <div class="foods-card" data-region="main-foods" id="ramen">
         <button
           class="save-btn"
-          onclick="saveItem('recipe', 'ramen', 'رامن – Ramen', '/frontend/img/رامن.jpg')"
+          onclick="
+            saveItem(
+              'recipe',
+              'ramen',
+              'رامن – Ramen',
+              '/frontend/img/رامن.jpg',
+            )
+          "
         >
           🍽️
         </button>
@@ -294,7 +344,12 @@
         <button
           class="save-btn"
           onclick="
-            saveItem('recipe', 'tempura', 'تمبورا – Tempura', '/frontend/img/تمبورا.jpg')
+            saveItem(
+              'recipe',
+              'tempura',
+              'تمبورا – Tempura',
+              '/frontend/img/تمبورا.jpg',
+            )
           "
         >
           🍽️
@@ -413,6 +468,196 @@
         </button>
       </div>
 
+      <div class="foods-card" data-region="main-foods" id="nasi-goreng">
+        <button
+          class="save-btn"
+          onclick="
+            saveItem(
+              'recipe',
+              'nasi-goreng',
+              'ناسي جورينج – Nasi Goreng',
+              '/frontend/img/Nasi Goreng.jpg',
+            )
+          "
+        >
+          🍽️
+        </button>
+        <button
+          class="recipes-item"
+          data-title="ناسي جورينج – Nasi Goreng"
+          data-img="/frontend/img/Nasi Goreng.jpg"
+          data-ingredients="أرز مطبوخ بارد |200| غ |دجاج |100| غ |بيض |2| حبة |بصل |1| حبة |ثوم |2| فص |جزر |40| غ |بازلاء |40| غ |بصل أخضر |20| غ |زيت |20| مل |ملح |2| غ"
+          data-spices="فلفل أسود |1| غ |فلفل أبيض |1| غ"
+          data-sauces="صوص الصويا الغامق|صوص المحار|زيت سمسم"
+          data-steps="سخّن الزيت في مقلاة كبيرة على نار عالية. | أضف الثوم والبصل وقلّب دقيقة. | أضف الدجاج وحمّره. | ادفع للجانب وأضف البيض وحركه. | أضف الأرز البارد واضغط عليه مع التحريك. | أضف صوص الصويا وصوص المحار والملح والفلفل. | حرك بسرعة على نار عالية 3 دقائق. | أضف زيت السمسم والبصل الأخضر وقدّم."
+          onclick="openRecipeFromData(this)"
+        >
+          <div class="recipes-head">
+            <img src="/frontend/img/Nasi Goreng.jpg" alt="ناسي جورينج" />
+            <span>ناسي جورينج – Nasi Goreng</span>
+          </div>
+          <span class="arrow">الوصفة ⌄</span>
+        </button>
+      </div>
+
+      <div class="foods-card" data-region="main-foods" id="mie-goreng">
+        <button
+          class="save-btn"
+          onclick="
+            saveItem(
+              'recipe',
+              'mie-goreng',
+              'مي جورينج – Mie Goreng',
+              '/frontend/img/(Mie Goreng.jpg',
+            )
+          "
+        >
+          🍽️
+        </button>
+        <button
+          class="recipes-item"
+          data-title="مي جورينج – Mie Goreng"
+          data-img="/frontend/img/(Mie Goreng.jpg"
+          data-ingredients="نودلز صفراء |150| غ |دجاج |100| غ |بيض |2| حبة |بصل أخضر |20| غ |ثوم |3| فص |فلفل رومي |50| غ |ملفوف |50| غ |زيت |20| مل |ملح |2| غ"
+          data-spices="فلفل أحمر حار |3| غ |كركم |1| غ |مسحوق الكاري |2| غ"
+          data-sauces="صوص الصويا الحلو – Kecap Manis|صوص المحار|كاتشب"
+          data-steps="اسلق النودلز حتى تنضج وصفّيها. | سخّن الزيت في ووك على نار عالية. | قلّي الثوم والفلفل الحار. | أضف الدجاج وحمّره. | ادفع للجانب وأضف البيض وحركه. | أضف النودلز والملفوف والفلفل الرومي. | أضف الصوصات والبهارات وحرك بسرعة 3 دقائق. | رش البصل الأخضر وقدّم ساخناً."
+          onclick="openRecipeFromData(this)"
+        >
+          <div class="recipes-head">
+            <img src="/frontend/img/(Mie Goreng.jpg" alt="مي جورينج" />
+            <span>مي جورينج – Mie Goreng</span>
+          </div>
+          <span class="arrow">الوصفة ⌄</span>
+        </button>
+      </div>
+
+      <div class="foods-card" data-region="snacks" id="satay">
+        <button
+          class="save-btn"
+          onclick="
+            saveItem(
+              'recipe',
+              'satay',
+              'ساتيه – Satay',
+              '/frontend/img/Satay.webp',
+            )
+          "
+        >
+          🍽️
+        </button>
+        <button
+          class="recipes-item"
+          data-title="ساتيه – Satay"
+          data-img="/frontend/img/Satay.webp"
+          data-ingredients="دجاج |150| غ |حليب جوز الهند |60| مل |زيت |10| مل |سكر |5| غ |ملح |2| غ"
+          data-spices="كركم |2| غ |كمون |2| غ |كزبرة مطحونة |2| غ |عشب الليمون |3| غ |فلفل أبيض |1| غ |ثوم |2| فص"
+          data-sauces="صوص الفول السوداني – Peanut Sauce|خيار مخلل"
+          data-steps="قطّع الدجاج شرائح رفيعة طويلة. | اخلط حليب الجوز والبهارات والزيت والسكر والملح. | تبّل الدجاج بالخليط واتركه ساعتين. | انظّم الدجاج على أسياخ خشبية مبللة. | اشوِ على الجريل أو الفحم 3–4 دقائق كل جهة. | اصنع صوص الفول السوداني بخلط زبدة الفول السوداني وحليب الجوز والسكر والليمون. | قدّم الأسياخ مع الصوص والخيار."
+          onclick="openRecipeFromData(this)"
+        >
+          <div class="recipes-head">
+            <img src="/frontend/img/Satay.webp" alt="ساتيه" />
+            <span>ساتيه – Satay</span>
+          </div>
+          <span class="arrow">الوصفة ⌄</span>
+        </button>
+      </div>
+
+      <div class="foods-card" data-region="sweets" id="dadar-gulung">
+        <button
+          class="save-btn"
+          onclick="
+            saveItem(
+              'recipe',
+              'dadar-gulung',
+              'دادار جولونغ – Dadar Gulung',
+              '/frontend/img/Dadar Gulung.webp',
+            )
+          "
+        >
+          🍽️
+        </button>
+        <button
+          class="recipes-item"
+          data-title="دادار جولونغ – Dadar Gulung"
+          data-img="/frontend/img/Dadar Gulung.webp"
+          data-ingredients="دقيق أرز |100| غ |بيض |1| حبة |حليب جوز الهند |200| مل |عصير باندان أو لون أخضر |5| مل |ملح |1| غ |جوز هند مبشور |150| غ |سكر نخيل |80| غ |ماء |30| مل"
+          data-spices="هيل |1| غ"
+          data-steps="اخلط دقيق الأرز مع البيض والحليب والملون الأخضر والملح حتى يصير سائل ناعم. | في قدر صغير اطبخ جوز الهند مع سكر النخيل والماء والهيل على نار هادئة 5–7 دقائق حتى يتماسك. | اتركه يبرد. | سخّن مقلاة غير لاصقة وادهنها بالزيت. | صب طبقة رفيعة من العجين واطبخ دقيقة واحدة. | ضع ملعقة من الحشو في المنتصف ولفّها رول. | قدّم فاتراً أو بارداً."
+          onclick="openRecipeFromData(this)"
+        >
+          <div class="recipes-head">
+            <img src="/frontend/img/Dadar Gulung.webp" alt="دادار جولونغ" />
+            <span>دادار جولونغ – Dadar Gulung</span>
+          </div>
+          <span class="arrow">الوصفة ⌄</span>
+        </button>
+      </div>
+
+      <div class="foods-card" data-region="main-foods" id="gado-gado">
+        <button
+          class="save-btn"
+          onclick="
+            saveItem(
+              'recipe',
+              'gado-gado',
+              'غادو غادو – Gado-Gado',
+              '/frontend/img/Gado-Gado.jpg',
+            )
+          "
+        >
+          🍽️
+        </button>
+        <button
+          class="recipes-item"
+          data-title="غادو غادو – Gado-Gado"
+          data-img="/frontend/img/Gado-Gado.jpg"
+          data-ingredients="بطاطس مسلوقة |100| غ |فاصوليا خضراء مسلوقة |60| غ |جزر مسلوق |60| غ |ملفوف |50| غ |خيار |60| غ |بيض مسلوق |2| حبة"
+          data-spices=""
+          data-sauces="زبدة فول السوداني 40 غ|صوص الصويا 10 مل|ماء دافئ 30 مل|عصير ليمون 10 مل|سكر بني 5 غ|شطة اختياري 5 غ"
+          data-steps="اسلق البطاطس والفاصوليا والجزر حتى تصير طرية لكن متماسكة. | اخلط جميع مكونات الصوص حتى يصير ناعم وكريمي. | رتّب الخضار في الطبق وأضف الصوص والبيض فوقهم. | رش البصل المقلي أو الفول السوداني المجروش وقدّم."
+          onclick="openRecipeFromData(this)"
+        >
+          <div class="recipes-head">
+            <img src="/frontend/img/Gado-Gado.jpg" alt="غادو غادو" />
+            <span>غادو غادو – Gado-Gado</span>
+          </div>
+          <span class="arrow">الوصفة ⌄</span>
+        </button>
+      </div>
+
+      <div class="foods-card" data-region="main-foods" id="rendang">
+        <button
+          class="save-btn"
+          onclick="
+            saveItem(
+              'recipe',
+              'rendang',
+              'ريندانغ – Rendang',
+              '/frontend/img/Rendang.webp',
+            )
+          "
+        >
+          🍽️
+        </button>
+        <button
+          class="recipes-item"
+          data-title="ريندانغ – Rendang"
+          data-img="/frontend/img/Rendang.webp"
+          data-ingredients="لحم غنم مكعبات |400| غ |بصل |1| حبة |ثوم |10| غ |زنجبيل |10| غ |كركم طازج |5| غ |فلفل أحمر حار |10| غ |زيت |15| مل |سكر نخيل |5| غ |حليب جوز الهند |400| مل"
+          data-spices="كزبرة مطحونة |5| غ |كمون |3| غ |قرفة |1| غ |ورق غار |2| ورقة |ملح |5| غ"
+          data-steps="سخّن الزيت وأضف البصل حتى يذبل ثم الثوم والزنجبيل والكركم والفلفل. | أضف اللحم وقلّبه حتى يتغير لونه. | أضف حليب جوز الهند وكل البهارات والملح والسكر. | خليه يغلي ثم خفف النار جداً. | اطبخ 1.5 إلى 2 ساعة مع تقليب كل فترة حتى يثخن الصوص. | قدّمه مع أرز أبيض."
+          onclick="openRecipeFromData(this)"
+        >
+          <div class="recipes-head">
+            <img src="/frontend/img/Rendang.webp" alt="ريندانغ" />
+            <span>ريندانغ – Rendang</span>
+          </div>
+          <span class="arrow">الوصفة ⌄</span>
+        </button>
+      </div>
+
       <div class="foods-card" data-region="main-foods" id="hoawshi">
         <button
           class="save-btn"
@@ -449,7 +694,12 @@
         <button
           class="save-btn"
           onclick="
-            saveItem('recipe', 'kushari', 'الكشري – Kushari', '/frontend/img/الكشري.jpg')
+            saveItem(
+              'recipe',
+              'kushari',
+              'الكشري – Kushari',
+              '/frontend/img/الكشري.jpg',
+            )
           "
         >
           🍽️
@@ -508,7 +758,12 @@
         <button
           class="save-btn"
           onclick="
-            saveItem('recipe', 'mahshi', 'المحشي – Mahshi', '/frontend/img/المحشي.jpg')
+            saveItem(
+              'recipe',
+              'mahshi',
+              'المحشي – Mahshi',
+              '/frontend/img/المحشي.jpg',
+            )
           "
         >
           🍽️
@@ -631,7 +886,12 @@
         <button
           class="save-btn"
           onclick="
-            saveItem('recipe', 'braai', 'براي – Braai', '/frontend/img/براي (Braai).jpg')
+            saveItem(
+              'recipe',
+              'braai',
+              'براي – Braai',
+              '/frontend/img/براي (Braai).jpg',
+            )
           "
         >
           🍽️
@@ -714,7 +974,10 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/frontend/img/باني تشاو (Bunny Chow).webp" alt="باني تشاو" />
+            <img
+              src="/frontend/img/باني تشاو (Bunny Chow).webp"
+              alt="باني تشاو"
+            />
             <span>باني تشاو – Bunny Chow</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -778,7 +1041,10 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/frontend/img/ميلك تارت (Milk Tart).jpg" alt="ميلك تارت" />
+            <img
+              src="/frontend/img/ميلك تارت (Milk Tart).jpg"
+              alt="ميلك تارت"
+            />
             <span>ميلك تارت – Milk Tart</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -821,7 +1087,12 @@
         <button
           class="save-btn"
           onclick="
-            saveItem('recipe', 'tajine', 'الطاجين – Tajine', '/frontend/img/الطاجين.jpg')
+            saveItem(
+              'recipe',
+              'tajine',
+              'الطاجين – Tajine',
+              '/frontend/img/الطاجين.jpg',
+            )
           "
         >
           🍽️
@@ -912,7 +1183,12 @@
         <button
           class="save-btn"
           onclick="
-            saveItem('recipe', 'harira', 'الحريرة – Harira', '/frontend/img/الحريرة.jpg')
+            saveItem(
+              'recipe',
+              'harira',
+              'الحريرة – Harira',
+              '/frontend/img/الحريرة.jpg',
+            )
           "
         >
           🍽️
@@ -939,7 +1215,12 @@
         <button
           class="save-btn"
           onclick="
-            saveItem('recipe', 'msemen', 'المسمن – Msemen', '/frontend/img/المسمن.jpeg')
+            saveItem(
+              'recipe',
+              'msemen',
+              'المسمن – Msemen',
+              '/frontend/img/المسمن.jpeg',
+            )
           "
         >
           🍽️
@@ -987,7 +1268,10 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/frontend/img/Neapolitan-Pizza.webp" alt="بيتزا نابوليتانا" />
+            <img
+              src="/frontend/img/Neapolitan-Pizza.webp"
+              alt="بيتزا نابوليتانا"
+            />
             <span>بيتزا نابوليتانا – Neapolitan Pizza</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -1114,7 +1398,10 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/frontend/img/Penne Arrabbiata.avif    " alt="بيني أرابياتا" />
+            <img
+              src="/frontend/img/Penne Arrabbiata.avif    "
+              alt="بيني أرابياتا"
+            />
             <span>بيني أرابياتا – Penne Arrabbiata</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -1145,7 +1432,10 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/frontend/img/Chicken Parmigiana.webp" alt="دجاج بارميجيانا" />
+            <img
+              src="/frontend/img/Chicken Parmigiana.webp"
+              alt="دجاج بارميجيانا"
+            />
             <span>دجاج بارميجيانا – Chicken Parmigiana</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -1581,7 +1871,12 @@
         <button
           class="save-btn"
           onclick="
-            saveItem('recipe', 'arepa', 'أريبا – Arepa', '/frontend/img/Arepa.webp')
+            saveItem(
+              'recipe',
+              'arepa',
+              'أريبا – Arepa',
+              '/frontend/img/Arepa.webp',
+            )
           "
         >
           🍽️
@@ -1703,7 +1998,12 @@
         <button
           class="save-btn"
           onclick="
-            saveItem('recipe', 'ajiaco', 'أجياكو – Ajiaco', '/frontend/img/Ajiaco.webp')
+            saveItem(
+              'recipe',
+              'ajiaco',
+              'أجياكو – Ajiaco',
+              '/frontend/img/Ajiaco.webp',
+            )
           "
         >
           🍽️
@@ -1884,7 +2184,12 @@
         <button
           class="save-btn"
           onclick="
-            saveItem('recipe', 'pudim', 'بوديم – Pudim', '/frontend/img/بوديم.jpg')
+            saveItem(
+              'recipe',
+              'pudim',
+              'بوديم – Pudim',
+              '/frontend/img/بوديم.jpg',
+            )
           "
         >
           🍽️
@@ -2099,7 +2404,12 @@
         <button
           class="save-btn"
           onclick="
-            saveItem('recipe', 'tacos', 'تاكو – Tacos', '/frontend/img/Tacos.jpg')
+            saveItem(
+              'recipe',
+              'tacos',
+              'تاكو – Tacos',
+              '/frontend/img/Tacos.jpg',
+            )
           "
         >
           🍽️
@@ -2285,7 +2595,12 @@
         <button
           class="save-btn"
           onclick="
-            saveItem('recipe', 'burger', 'برغر – Burger', '/frontend/img/Burger.jpg')
+            saveItem(
+              'recipe',
+              'burger',
+              'برغر – Burger',
+              '/frontend/img/Burger.jpg',
+            )
           "
         >
           🍽️
@@ -2440,7 +2755,12 @@
         <button
           class="save-btn"
           onclick="
-            saveItem('recipe', 'donuts', 'دونات – Donuts', '/frontend/img/Donuts.jpg')
+            saveItem(
+              'recipe',
+              'donuts',
+              'دونات – Donuts',
+              '/frontend/img/Donuts.jpg',
+            )
           "
         >
           🍽️
@@ -2466,7 +2786,12 @@
         <button
           class="save-btn"
           onclick="
-            saveItem('recipe', 'poutine', 'بوتين – Poutine', '/frontend/img/Poutine.jpg')
+            saveItem(
+              'recipe',
+              'poutine',
+              'بوتين – Poutine',
+              '/frontend/img/Poutine.jpg',
+            )
           "
         >
           🍽️
@@ -2514,7 +2839,10 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/frontend/img/Maple Pancakes.jpg" alt="بانكيك بشراب القيقب" />
+            <img
+              src="/frontend/img/Maple Pancakes.jpg"
+              alt="بانكيك بشراب القيقب"
+            />
             <span>بانكيك بشراب القيقب – Maple Pancakes</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -2546,7 +2874,10 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/frontend/img/Montreal Smoked Meat.jpg" alt="لحم مدخن مونتريال" />
+            <img
+              src="/frontend/img/Montreal Smoked Meat.jpg"
+              alt="لحم مدخن مونتريال"
+            />
             <span>لحم مدخن مونتريال – Montreal Smoked Meat</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -2938,7 +3269,9 @@
       <div class="foods-card" data-region="snacks" id="naan">
         <button
           class="save-btn"
-          onclick="saveItem('recipe', 'naan', 'نان – Naan', '/frontend/img/Naan.jpg')"
+          onclick="
+            saveItem('recipe', 'naan', 'نان – Naan', '/frontend/img/Naan.jpg')
+          "
         >
           🍽️
         </button>
@@ -3112,7 +3445,10 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/frontend/img/Mango Sticky Rice.jpg" alt="مانجو ستيكي رايس" />
+            <img
+              src="/frontend/img/Mango Sticky Rice.jpg"
+              alt="مانجو ستيكي رايس"
+            />
             <span>مانجو ستيكي رايس – Mango Sticky Rice</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -3123,7 +3459,12 @@
         <button
           class="save-btn"
           onclick="
-            saveItem('recipe', 'satay', 'ساتاي – Satay', '/frontend/img/Satay.jpg')
+            saveItem(
+              'recipe',
+              'satay',
+              'ساتاي – Satay',
+              '/frontend/img/Satay.jpg',
+            )
           "
         >
           🍽️
@@ -3203,7 +3544,10 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/frontend/img/Thai Fried Rice.jpg" alt="أرز مقلي تايلاندي" />
+            <img
+              src="/frontend/img/Thai Fried Rice.jpg"
+              alt="أرز مقلي تايلاندي"
+            />
             <span>أرز مقلي تايلاندي – Thai Fried Rice</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -3309,7 +3653,12 @@
         <button
           class="save-btn"
           onclick="
-            saveItem('recipe', 'laksa', 'لاكسا – Laksa', '/frontend/img/Laksa.jpg')
+            saveItem(
+              'recipe',
+              'laksa',
+              'لاكسا – Laksa',
+              '/frontend/img/Laksa.jpg',
+            )
           "
         >
           🍽️
@@ -3368,7 +3717,12 @@
         <button
           class="save-btn"
           onclick="
-            saveItem('recipe', 'cendol', 'سيندول – Cendol', '/frontend/img/Cendol.jpg')
+            saveItem(
+              'recipe',
+              'cendol',
+              'سيندول – Cendol',
+              '/frontend/img/Cendol.jpg',
+            )
           "
         >
           🍽️
@@ -3585,7 +3939,12 @@
         <button
           class="save-btn"
           onclick="
-            saveItem('recipe', 'adobo', 'أدوبو – Adobo', '/frontend/img/Adobo.jpg')
+            saveItem(
+              'recipe',
+              'adobo',
+              'أدوبو – Adobo',
+              '/frontend/img/Adobo.jpg',
+            )
           "
         >
           🍽️
@@ -3644,7 +4003,12 @@
         <button
           class="save-btn"
           onclick="
-            saveItem('recipe', 'sisig', 'سيسيغ – Sisig', '/frontend/img/Sisig.jpg')
+            saveItem(
+              'recipe',
+              'sisig',
+              'سيسيغ – Sisig',
+              '/frontend/img/Sisig.jpg',
+            )
           "
         >
           🍽️
@@ -3671,7 +4035,12 @@
         <button
           class="save-btn"
           onclick="
-            saveItem('recipe', 'pancit', 'بانسيت – Pancit', '/frontend/img/Pancit.jpg')
+            saveItem(
+              'recipe',
+              'pancit',
+              'بانسيت – Pancit',
+              '/frontend/img/Pancit.jpg',
+            )
           "
         >
           🍽️
@@ -3730,7 +4099,12 @@
         <button
           class="save-btn"
           onclick="
-            saveItem('recipe', 'lumpia', 'لومبيا – Lumpia', '/frontend/img/Lumpia.jpg')
+            saveItem(
+              'recipe',
+              'lumpia',
+              'لومبيا – Lumpia',
+              '/frontend/img/Lumpia.jpg',
+            )
           "
         >
           🍽️
@@ -4084,7 +4458,12 @@
         <button
           class="save-btn"
           onclick="
-            saveItem('recipe', 'margoug', 'مرقوق – Margoug', '/frontend/img/مرقوق.jpg')
+            saveItem(
+              'recipe',
+              'margoug',
+              'مرقوق – Margoug',
+              '/frontend/img/مرقوق.jpg',
+            )
           "
         >
           🍽️
@@ -4110,7 +4489,12 @@
         <button
           class="save-btn"
           onclick="
-            saveItem('recipe', 'tashreeb', 'تشريب – Tashreeb', '/frontend/img/تشريب.jpg')
+            saveItem(
+              'recipe',
+              'tashreeb',
+              'تشريب – Tashreeb',
+              '/frontend/img/تشريب.jpg',
+            )
           "
         >
           🍽️
@@ -4197,7 +4581,12 @@
         <button
           class="save-btn"
           onclick="
-            saveItem('recipe', 'manti', 'مانتي – Manti', '/frontend/img/مانتي.jpg')
+            saveItem(
+              'recipe',
+              'manti',
+              'مانتي – Manti',
+              '/frontend/img/مانتي.jpg',
+            )
           "
         >
           🍽️
@@ -4222,7 +4611,14 @@
       <div class="foods-card" data-region="main-foods" id="doner">
         <button
           class="save-btn"
-          onclick="saveItem('recipe', 'doner', 'دونر – Doner', '/frontend/img/دونر.jpg')"
+          onclick="
+            saveItem(
+              'recipe',
+              'doner',
+              'دونر – Doner',
+              '/frontend/img/دونر.jpg',
+            )
+          "
         >
           🍽️
         </button>
@@ -4246,7 +4642,9 @@
       <div class="foods-card" data-region="main-foods" id="pide">
         <button
           class="save-btn"
-          onclick="saveItem('recipe', 'pide', 'بيدا – Pide', '/frontend/img/بيدا.jpg')"
+          onclick="
+            saveItem('recipe', 'pide', 'بيدا – Pide', '/frontend/img/بيدا.jpg')
+          "
         >
           🍽️
         </button>
@@ -4270,7 +4668,14 @@
       <div class="foods-card" data-region="snacks" id="borek">
         <button
           class="save-btn"
-          onclick="saveItem('recipe', 'borek', 'بورك – Börek', '/frontend/img/بورك.jpg')"
+          onclick="
+            saveItem(
+              'recipe',
+              'borek',
+              'بورك – Börek',
+              '/frontend/img/بورك.jpg',
+            )
+          "
         >
           🍽️
         </button>
@@ -4438,7 +4843,10 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/frontend/img/أرز-بحري.jpg" alt="أرز بالمأكولات البحرية" />
+            <img
+              src="/frontend/img/أرز-بحري.jpg"
+              alt="أرز بالمأكولات البحرية"
+            />
             <span>أرز بالمأكولات البحرية – Seafood Rice</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -4469,7 +4877,10 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/frontend/img/بودينغ-جوز-الهند.jpg" alt="بودينغ جوز الهند" />
+            <img
+              src="/frontend/img/بودينغ-جوز-الهند.jpg"
+              alt="بودينغ جوز الهند"
+            />
             <span>بودينغ جوز الهند – Coconut Pudding</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -4530,7 +4941,10 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/frontend/img/برياني-سريلانكي.jpg" alt="برياني سريلانكي" />
+            <img
+              src="/frontend/img/برياني-سريلانكي.jpg"
+              alt="برياني سريلانكي"
+            />
             <span>برياني سريلانكي – Sri Lankan Biryani</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -4541,7 +4955,12 @@
         <button
           class="save-btn"
           onclick="
-            saveItem('recipe', 'hoppers', 'هوبرز – Hoppers', '/frontend/img/هوبرز.jpg')
+            saveItem(
+              'recipe',
+              'hoppers',
+              'هوبرز – Hoppers',
+              '/frontend/img/هوبرز.jpg',
+            )
           "
         >
           🍽️
@@ -4627,7 +5046,9 @@
       <div class="foods-card" data-region="snacks" id="brik">
         <button
           class="save-btn"
-          onclick="saveItem('recipe', 'brik', 'بريك – Brik', '/frontend/img/بريك.jpg')"
+          onclick="
+            saveItem('recipe', 'brik', 'بريك – Brik', '/frontend/img/بريك.jpg')
+          "
         >
           🍽️
         </button>
@@ -4652,7 +5073,12 @@
         <button
           class="save-btn"
           onclick="
-            saveItem('recipe', 'lablabi', 'لبلابي – Lablabi', '/frontend/img/لبلابي.jpg')
+            saveItem(
+              'recipe',
+              'lablabi',
+              'لبلابي – Lablabi',
+              '/frontend/img/لبلابي.jpg',
+            )
           "
         >
           🍽️
@@ -4740,7 +5166,12 @@
         <button
           class="save-btn"
           onclick="
-            saveItem('recipe', 'makroudh', 'مقروض – Makroudh', '/frontend/img/مقروض.jpg')
+            saveItem(
+              'recipe',
+              'makroudh',
+              'مقروض – Makroudh',
+              '/frontend/img/مقروض.jpg',
+            )
           "
         >
           🍽️
