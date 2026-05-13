@@ -64,26 +64,47 @@ if (!currentUser) {
 }
 
 // تغيير الصورة
+// تغيير الصورة والرفع للسيرفر
 const avatarInput = document.getElementById("avatarInput");
 if (avatarInput) {
-    avatarInput.addEventListener("change", (e) => {
+    avatarInput.addEventListener("change", async (e) => {
         const file = e.target.files[0];
         if (!file) return;
 
         const reader = new FileReader();
         reader.onload = (event) => {
-            const imgSrc = event.target.result;
-            document.getElementById("profileAvatar").src = imgSrc;
-            const user = JSON.parse(localStorage.getItem("safraUser"));
-            user.avatar = imgSrc;
-            localStorage.setItem("safraUser", JSON.stringify(user));
-            const userAvatar = document.getElementById("userAvatar");
-            if (userAvatar) userAvatar.src = imgSrc;
+            document.getElementById("profileAvatar").src = event.target.result;
         };
         reader.readAsDataURL(file);
+
+        const user = JSON.parse(localStorage.getItem("safraUser"));
+        const username = user.name;
+
+        const formData = new FormData();
+        formData.append("file", file);
+
+        try {
+            console.log("جاري الرفع...");
+            const response = await fetch(`https://sofrh-1.onrender.com/upload-avatar?username=${username}`, {
+                method: "POST",
+                body: formData
+            });
+
+            const data = await response.json();
+
+            if (response.ok) {
+                alert("✅ تم حفظ الصورة في السحاب بنجاح!");
+                user.avatar = data.url;
+                localStorage.setItem("safraUser", JSON.stringify(user));
+            } else {
+                alert("⚠️ فشل الرفع: " + data.message);
+            }
+        } catch (error) {
+            console.error("خطأ في الاتصال:", error);
+            alert("❌ حدث خطأ أثناء الاتصال بالسيرفر");
+        }
     });
 }
-
 // التنقل بين الأقسام
 document.querySelectorAll(".profile-nav a, .profile-mobile-nav a").forEach(link => {
     link.addEventListener("click", (e) => {

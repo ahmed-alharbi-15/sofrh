@@ -1,14 +1,14 @@
 
 const searchInput = document.getElementById("searchInput");
 const filterBtns = document.querySelectorAll(".filter-buttons button");
-const cards = document.querySelectorAll(".foods-card");
+const cards = document.querySelectorAll(".country-card");
 
 let activeFilter = "all";
 
 function applySearchAndFilter() {
     const query = (searchInput?.value || "").toLowerCase().trim();
     cards.forEach((card) => {
-        const name = (card.querySelector(".recipes-head span")?.textContent || "").toLowerCase();
+        const name = (card.querySelector("h1")?.textContent || "").toLowerCase();
         const region = card.getAttribute("data-region") || "";
         const matchesSearch = name.includes(query);
         const matchesFilter = activeFilter === "all" || region === activeFilter;
