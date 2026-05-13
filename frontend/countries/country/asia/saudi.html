@@ -6,7 +6,7 @@
     <title>سفرة</title>
 
     <!-- ملف الستايل الأساسي -->
-    <link rel="stylesheet" href="/frontend/countries/countries.css" />
+    <link rel="stylesheet" href="/countries/countries.css" />
 
     <!-- خط عربي -->
     <style>
@@ -20,28 +20,28 @@
       <div class="hamburger" id="menu-btn">☰</div>
 
       <div class="auth-buttons" id="authButtons">
-        <a href="/frontend/auth/login.html" class="login">تسجيل دخول</a>
-        <a href="/frontend/auth/signup.html" class="signup">إنشاء حساب</a>
+        <a href="/auth/login.html" class="login">تسجيل دخول</a>
+        <a href="/auth/signup.html" class="signup">إنشاء حساب</a>
       </div>
 
       <div class="user-menu" id="userMenu">
-        <img id="userAvatar" src="/frontend/img/default-avatar.png" alt="المستخدم" />
+        <img id="userAvatar" src="/img/default-avatar.png" alt="المستخدم" />
         <span class="user-name" id="userName"></span>
         <div class="user-dropdown">
-          <a href="/frontend/profile/profile.html">الملف الشخصي</a>
-          <a href="/frontend/index/.html" id="logoutBtn">تسجيل الخروج</a>
+          <a href="/profile/profile.html">الملف الشخصي</a>
+          <a href="/index/.html" id="logoutBtn">تسجيل الخروج</a>
         </div>
       </div>
 
       <ul class="nav-list">
-        <li><a href="/frontend/index/.html">الرئيسية</a></li>
-        <li><a href="/frontend/countries/countries.html">الدول</a></li>
-        <li><a href="/frontend/events/events.html">الفعاليات</a></li>
-        <li><a href="/frontend/recipes/recipes.html">الوصفات</a></li>
+        <li><a href="/index/.html">الرئيسية</a></li>
+        <li><a href="/countries/countries.html">الدول</a></li>
+        <li><a href="/events/events.html">الفعاليات</a></li>
+        <li><a href="/recipes/recipes.html">الوصفات</a></li>
       </ul>
 
       <div class="logo">
-        <a href="/frontend/index/.html"> <img src="/frontend/img/logo3.JPG" alt="سفرة" /></a>
+        <a href="/index/.html"> <img src="/img/logo3.JPG" alt="سفرة" /></a>
       </div>
     </header>
 
@@ -50,14 +50,14 @@
       <span class="close-btn" id="close-btn">✖</span>
 
       <ul>
-        <li><a href="/frontend/index/.html">الرئيسية</a></li>
-        <li><a href="/frontend/countries/countries.html">الدول</a></li>
-        <li><a href="/frontend/events/events.html">الفعاليات</a></li>
-        <li><a href="/frontend/recipes/recipes.html  ">الوصفات</a></li>
+        <li><a href="/index/.html">الرئيسية</a></li>
+        <li><a href="/countries/countries.html">الدول</a></li>
+        <li><a href="/events/events.html">الفعاليات</a></li>
+        <li><a href="/recipes/recipes.html  ">الوصفات</a></li>
       </ul>
     </nav>
     <header>
-      <a href="/frontend/countries/countries.html" class="back-btn">رجوع</a>
+      <a href="/countries/countries.html" class="back-btn">رجوع</a>
     </header>
 
     <div class="country-name">
@@ -73,7 +73,7 @@
       <div
         class="cite"
         data-name="الرياض – Riyadh"
-        data-img="/frontend/img/Riyadh.jpg"
+        data-img="/img/Riyadh.jpg"
         data-desc="عاصمة المملكة العربية السعودية ومركزها الاقتصادي، مدينة تجمع بين الأصالة والحداثة في مشهد واحد."
         data-historic="🏛️ حي الطريف – Al-Turaif District | 🏰 قصر المصمك – Masmak Fortress | 🏛️ المتحف الوطني – National Museum | 🏯 قصر المربع – Al-Murabba Palace | 🏺 قرية الفاو – Al-Faw Archaeological Village"
         data-restaurants="🍖 القرية النجدية – Najd Village | 🍣 ميازو – Myazu | 🍽️ لوسين – Lusin | 🥘 سهيل – Suhail | 🌎 كويا – COYA | 🌿 زعفران – Saffron"
@@ -84,12 +84,12 @@
           class="save-btn"
           onclick="
             event.stopPropagation();
-            saveItem('city', 'riyadh', 'الرياض', '/frontend/img/Riyadh.jpg');
+            saveItem('city', 'riyadh', 'الرياض', '/img/Riyadh.jpg');
           "
         >
           🏙️
         </button>
-        <img src="/frontend/img/Riyadh.jpg" alt="الرياض" class="cite-img" />
+        <img src="/img/Riyadh.jpg" alt="الرياض" class="cite-img" />
         <span class="name">الرياض – Riyadh</span>
         <p class="info">عاصمة المملكة ومركزها الاقتصادي والثقافي.</p>
         <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
@@ -100,7 +100,7 @@
       <div
         class="cite"
         data-name="جدة – Jeddah"
-        data-img="/frontend/img/jdh.jpg"
+        data-img="/img/jdh.jpg"
         data-desc="بوابة الحرمين وعروس البحر الأحمر، مدينة تجمع بين التاريخ العريق في جدة التاريخية والحداثة على طول كورنيشها الساحر."
         data-historic="🕌 مسجد الرحمة – Al-Rahma Mosque | 🏘️ جدة التاريخية – Historic Jeddah | ⛲ نافورة الملك فهد – King Fahd Fountain | 🌊 كورنيش جدة – Jeddah Corniche"
         data-restaurants="🍛 بيرياني جيت – Biryani Gate | 🍣 ساكورا – Sakura | 🍽️ تونتي فور – Twenty Four | 🍗 ناندوز – Nando's | 🫒 أوليف تري – Olive Tree | 🥩 بامباس – Pampas | 🌿 جينجر ليف – Ginger Leaf | 🦞 العالي – Alaaly Seafood"
@@ -111,12 +111,12 @@
           class="save-btn"
           onclick="
             event.stopPropagation();
-            saveItem('city', 'jeddah', 'جدة', '/frontend/img/jdh.jpg');
+            saveItem('city', 'jeddah', 'جدة', '/img/jdh.jpg');
           "
         >
           🏙️
         </button>
-        <img src="/frontend/img/jdh.jpg" alt="جدة" class="cite-img" />
+        <img src="/img/jdh.jpg" alt="جدة" class="cite-img" />
         <span class="name">جدة – Jeddah</span>
         <p class="info">بوابة الحرمين وعروس البحر الأحمر.</p>
         <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
@@ -127,7 +127,7 @@
       <div
         class="cite"
         data-name="أبها – Abha"
-        data-img="/frontend/img/abha.jpg"
+        data-img="/img/abha.jpg"
         data-desc="عاصمة منطقة عسير وعروس جبال السروات، تشتهر بمناخها المعتدل وطبيعتها الخلابة وتراثها الشعبي الأصيل."
         data-historic="🏰 قلعة شداء – Shada Palace | 🌿 حديقة عسير – Aseer Park | 🎨 قرية رجال ألمع – Rijal Almaa Village | 🌄 جبل سودة – Souda Mountain"
         data-restaurants="🏰 المطعم الدوار – Rotating Restaurant | 🌿 مطعم العاذرية – Al-Azhariya | 🏔️ قصر سرايا – Saraya Palace | 🔥 مشوي العنابي – Al-Anabi Grill | 🍽️ مطعم الطاهي – Al-Tahi"
@@ -138,12 +138,12 @@
           class="save-btn"
           onclick="
             event.stopPropagation();
-            saveItem('city', 'abha', 'أبها', '/frontend/img/abha.jpg');
+            saveItem('city', 'abha', 'أبها', '/img/abha.jpg');
           "
         >
           🏙️
         </button>
-        <img src="/frontend/img/abha.jpg" alt="أبها" class="cite-img" />
+        <img src="/img/abha.jpg" alt="أبها" class="cite-img" />
         <span class="name">أبها – Abha</span>
         <p class="info">عروس جبال السروات بمناخها المعتدل وطبيعتها الخلابة.</p>
         <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
@@ -154,7 +154,7 @@
       <div
         class="cite"
         data-name="العلا – AlUla"
-        data-img="/frontend/img/العلا.webp"
+        data-img="/img/العلا.webp"
         data-desc="مدينة التاريخ والأسرار، موطن الحضارات القديمة ومدائن صالح، وجهة سياحية استثنائية تجمع بين الطبيعة الصحراوية والتراث الإنساني."
         data-historic="🏛️ مدائن صالح – Hegra | 🌄 جبل الفيل – Elephant Rock | 🏺 متحف العلا – AlUla Museum | 🌙 دادان القديمة – Ancient Dadan"
         data-restaurants="🏺 سموير – Somewhere | 🌴 قلب الواحة – Oasis Heart | 🍕 سيركلو – Circolo | 🍔 سولت – Salt | 🍽️ طوفرية – Tofaria"
@@ -165,12 +165,12 @@
           class="save-btn"
           onclick="
             event.stopPropagation();
-            saveItem('city', 'alula', 'العلا', '/frontend/img/العلا.webp');
+            saveItem('city', 'alula', 'العلا', '/img/العلا.webp');
           "
         >
           🏙️
         </button>
-        <img src="/frontend/img/العلا.webp" alt="العلا" class="cite-img" />
+        <img src="/img/العلا.webp" alt="العلا" class="cite-img" />
         <span class="name">العلا – AlUla</span>
         <p class="info">موطن الحضارات القديمة ومدائن صالح.</p>
         <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
@@ -181,7 +181,7 @@
       <div
         class="cite"
         data-name="نيوم – NEOM"
-        data-img="/frontend/img/neom.webp"
+        data-img="/img/neom.webp"
         data-desc="مدينة المستقبل على ساحل البحر الأحمر، مشروع سعودي استثنائي يجمع بين التكنولوجيا المتقدمة والطبيعة الخلابة في تجربة فريدة من نوعها. ⚠️ الخيارات محدودة حاليًا بسبب التطوير، لكن التجارب الموجودة مميزة وقاعدة تتوسع بسرعة."
         data-historic="🌊 شواطئ تبوك – Tabuk Beaches | 🏔️ جبال الحجاز – Hejaz Mountains | 🌿 محمية شرما – Sharma Reserve | 🌄 وادي عقبة – Wadi Aqaba"
         data-restaurants="🍽️ سيك اب – Seek Up | 🏠 أطياف – Atyaf | 🍴 NEOM Dining Hall | 🌊 فلوت – Float | 🥘 مطاعم شرما – Sharma Restaurants"
@@ -192,12 +192,12 @@
           class="save-btn"
           onclick="
             event.stopPropagation();
-            saveItem('city', 'neom', 'نيوم', '/frontend/img/neom.webp');
+            saveItem('city', 'neom', 'نيوم', '/img/neom.webp');
           "
         >
           🏙️
         </button>
-        <img src="/frontend/img/neom.webp" alt="نيوم" class="cite-img" />
+        <img src="/img/neom.webp" alt="نيوم" class="cite-img" />
         <span class="name">نيوم – NEOM</span>
         <p class="info">مدينة المستقبل على ساحل البحر الأحمر.</p>
         <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
@@ -208,7 +208,7 @@
       <div
         class="cite"
         data-name="المدينة المنورة – Madinah"
-        data-img="/frontend/img/med.webp"
+        data-img="/img/med.webp"
         data-desc="ثاني أقدس المدن الإسلامية وموطن المسجد النبوي الشريف، مدينة تجمع بين الروحانية العميقة والتاريخ الإسلامي العريق."
         data-historic="🕌 المسجد النبوي – Al-Masjid An-Nabawi | 🏛️ متحف الحرمين – Al-Haramain Museum | 🌿 حديقة الشيخ جراح – Sheikh Jarrah Garden | 🏔️ جبل أحد – Mount Uhud"
         data-restaurants="🍽️ أرابيسك – Arabesque | 🇹🇷 شيف بوراك – Chef Burak | 🍗 البيك – Al Baik | 🥘 طعمة – To'mah | 🫒 زيتون – Zaitoon"
@@ -219,12 +219,12 @@
           class="save-btn"
           onclick="
             event.stopPropagation();
-            saveItem('city', 'madinah', 'المدينة المنورة', '/frontend/img/med.webp');
+            saveItem('city', 'madinah', 'المدينة المنورة', '/img/med.webp');
           "
         >
           🏙️
         </button>
-        <img src="/frontend/img/med.webp" alt="المدينة المنورة" class="cite-img" />
+        <img src="/img/med.webp" alt="المدينة المنورة" class="cite-img" />
         <span class="name">المدينة المنورة – Madinah</span>
         <p class="info">ثاني أقدس المدن الإسلامية وموطن المسجد النبوي.</p>
         <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
@@ -238,50 +238,50 @@
     </div>
     <section class="foods-grid">
       <div class="foods">
-        <img src="/frontend/img/كبسة.jpg" alt="" class="foods-img" />
+        <img src="/img/كبسة.jpg" alt="" class="foods-img" />
         <span class="name-foods">الكبسة – Kabsa</span>
         <div class="food-info">أرز متبّل يُقدّم مع اللحم أو الدجاج.</div>
-        <a href="/frontend/recipes/recipes.html?recipe=kabsa" class="for-more-btn"
+        <a href="/recipes/recipes.html?recipe=kabsa" class="for-more-btn"
           >المزيد</a
         >
       </div>
       <div class="foods">
-        <img src="/frontend/img/سليق.jpg" alt="" class="foods-img" />
+        <img src="/img/سليق.jpg" alt="" class="foods-img" />
         <span class="name-foods">السليق – Saleeg</span>
         <div class="food-info">أرز كريمي أبيض يُقدّم مع الدجاج.</div>
-        <a href="/frontend/recipes/recipes.html?recipe=Saleeg" class="for-more-btn"
+        <a href="/recipes/recipes.html?recipe=Saleeg" class="for-more-btn"
           >المزيد</a
         >
       </div>
       <div class="foods">
-        <img src="/frontend/img/جريش.jpg" alt="" class="foods-img" />
+        <img src="/img/جريش.jpg" alt="" class="foods-img" />
         <span class="name-foods">الجريش – Jarees</span>
         <div class="food-info">قمح مطبوخ مع اللحم واللبن.</div>
-        <a href="/frontend/recipes/recipes.html?recipe=jareesh" class="for-more-btn"
+        <a href="/recipes/recipes.html?recipe=jareesh" class="for-more-btn"
           >المزيد</a
         >
       </div>
       <div class="foods">
-        <img src="/frontend/img/مدفون.jpg" alt="" class="foods-img" />
+        <img src="/img/مدفون.jpg" alt="" class="foods-img" />
         <span class="name-foods">المدفون – Madfoon</span>
         <div class="food-info">لحم يُدفن ويُطهى بطريقة تقليدية.</div>
-        <a href="/frontend/recipes/recipes.html?recipe=madfoon" class="for-more-btn"
+        <a href="/recipes/recipes.html?recipe=madfoon" class="for-more-btn"
           >المزيد</a
         >
       </div>
       <div class="foods">
-        <img src="/frontend/img/عريكه.webp" alt="" class="foods-img" />
+        <img src="/img/عريكه.webp" alt="" class="foods-img" />
         <span class="name-foods">العريكة – Areeka</span>
         <div class="food-info">خليط تمر ودقيق يُقدّم مع العسل والسمن.</div>
-        <a href="/frontend/recipes/recipes.html?recipe=areeka" class="for-more-btn"
+        <a href="/recipes/recipes.html?recipe=areeka" class="for-more-btn"
           >المزيد</a
         >
       </div>
       <div class="foods">
-        <img src="/frontend/img/كليجة.jpg" alt="" class="foods-img" />
+        <img src="/img/كليجة.jpg" alt="" class="foods-img" />
         <span class="name-foods">الكليجة – Kleeja</span>
         <div class="food-info">حلى محشو بالتمر أو الدبس.</div>
-        <a href="/frontend/recipes/recipes.html?recipe=kleeja" class="for-more-btn"
+        <a href="/recipes/recipes.html?recipe=kleeja" class="for-more-btn"
           >المزيد</a
         >
       </div>
@@ -291,42 +291,42 @@
     </div>
     <section class="events-grid">
       <div class="event">
-        <img src="/frontend/img/السوده.webp" alt="" class="event-img" />
+        <img src="/img/السوده.webp" alt="" class="event-img" />
         <span class="name-event">موسم السودة</span>
         <div class="event-info">طبيعة وفعاليات جبلية في أبها.</div>
-        <a href="/frontend/events/events.html?event=sodh" class="event-btn">المزيد</a>
+        <a href="/events/events.html?event=sodh" class="event-btn">المزيد</a>
       </div>
       <div class="event">
-        <img src="/frontend/img/موسم الرياض.jpg" alt="" class="event-img" />
+        <img src="/img/موسم الرياض.jpg" alt="" class="event-img" />
         <span class="name-event">موسم الرياض</span>
         <div class="event-info">حفلات، فعاليات عالمية وتجارب ترفيهية.</div>
-        <a href="/frontend/events/events.html?event=Riyadhsesen" class="event-btn"
+        <a href="/events/events.html?event=Riyadhsesen" class="event-btn"
           >المزيد</a
         >
       </div>
       <div class="event">
-        <img src="/frontend/img/العلا.webp" alt="" class="event-img" />
+        <img src="/img/العلا.webp" alt="" class="event-img" />
         <span class="name-event">زيارة العلا</span>
         <div class="event-info">استكشاف الآثار والطبيعة الصحراوية.</div>
-        <a href="/frontend/events/events.html?event=alala" class="event-btn">المزيد</a>
+        <a href="/events/events.html?event=alala" class="event-btn">المزيد</a>
       </div>
       <div class="event">
-        <img src="/frontend/img/البحر الاحمر.jpg" alt="" class="event-img" />
+        <img src="/img/البحر الاحمر.jpg" alt="" class="event-img" />
         <span class="name-event">الغوص في البحر الاحمر</span>
         <div class="event-info">شعاب مرجانية مميزة.</div>
-        <a href="/frontend/events/events.html?event=redsea" class="event-btn">المزيد</a>
+        <a href="/events/events.html?event=redsea" class="event-btn">المزيد</a>
       </div>
       <div class="event">
-        <img src="/frontend/img/فرسان.jpg" alt="" class="event-img" />
+        <img src="/img/فرسان.jpg" alt="" class="event-img" />
         <span class="name-event">رحلة بحرية في جزر فرسان</span>
         <div class="event-info">طبيعة وبحر صافٍ.</div>
-        <a href="/frontend/events/events.html?event=frasan" class="event-btn">المزيد</a>
+        <a href="/events/events.html?event=frasan" class="event-btn">المزيد</a>
       </div>
       <div class="event">
-        <img src="/frontend/img/mkh.jpg" alt="" class="event-img" />
+        <img src="/img/mkh.jpg" alt="" class="event-img" />
         <span class="name-event">زيارة مواقع دينية</span>
         <div class="event-info">زيارة مكة المكرمة والمدينة المنورة.</div>
-        <a href="/frontend/events/events.html?event=dene" class="event-btn">المزيد</a>
+        <a href="/events/events.html?event=dene" class="event-btn">المزيد</a>
       </div>
     </section>
     <!-- Modal المدينة -->
@@ -350,7 +350,7 @@
         </div>
       </div>
     </div>
-    <script src="/frontend/countries/countries.js"></script>
-    <script src="/frontend/auth/auth.js"></script>
+    <script src="/countries/countries.js"></script>
+    <script src="/auth/auth.js"></script>
   </body>
 </html>

@@ -6,7 +6,7 @@
     <title>سفرة</title>
 
     <!-- ملف الستايل الأساسي -->
-    <link rel="stylesheet" href="/frontend/countries/countries.css" />
+    <link rel="stylesheet" href="/countries/countries.css" />
 
     <!-- خط عربي -->
     <style>
@@ -20,28 +20,28 @@
       <div class="hamburger" id="menu-btn">☰</div>
 
       <div class="auth-buttons" id="authButtons">
-        <a href="/frontend/auth/login.html" class="login">تسجيل دخول</a>
-        <a href="/frontend/auth/signup.html" class="signup">إنشاء حساب</a>
+        <a href="/auth/login.html" class="login">تسجيل دخول</a>
+        <a href="/auth/signup.html" class="signup">إنشاء حساب</a>
       </div>
 
       <div class="user-menu" id="userMenu">
-        <img id="userAvatar" src="/frontend/img/default-avatar.png" alt="المستخدم" />
+        <img id="userAvatar" src="/img/default-avatar.png" alt="المستخدم" />
         <span class="user-name" id="userName"></span>
         <div class="user-dropdown">
-        <a href="/frontend/profile/profile.html">الملف الشخصي</a>
-        <a href="/frontend/index/.html" id="logoutBtn">تسجيل الخروج</a>
+        <a href="/profile/profile.html">الملف الشخصي</a>
+        <a href="/index/.html" id="logoutBtn">تسجيل الخروج</a>
     </div>
       </div>
 
       <ul class="nav-list">
-        <li><a href="/frontend/index/.html">الرئيسية</a></li>
-        <li><a href="/frontend/countries/countries.html">الدول</a></li>
-        <li><a href="/frontend/events/events.html">الفعاليات</a></li>
-        <li><a href="/frontend/recipes/recipes.html">الوصفات</a></li>
+        <li><a href="/index/.html">الرئيسية</a></li>
+        <li><a href="/countries/countries.html">الدول</a></li>
+        <li><a href="/events/events.html">الفعاليات</a></li>
+        <li><a href="/recipes/recipes.html">الوصفات</a></li>
       </ul>
 
       <div class="logo">
-        <a href="/frontend/index/.html"> <img src="/frontend/img/logo3.JPG" alt="سفرة" /></a>
+        <a href="/index/.html"> <img src="/img/logo3.JPG" alt="سفرة" /></a>
       </div>
     </header>
 
@@ -50,14 +50,14 @@
       <span class="close-btn" id="close-btn">✖</span>
 
       <ul>
-        <li><a href="/frontend/index/.html">الرئيسية</a></li>
-        <li><a href="/frontend/countries/countries.html">الدول</a></li>
-        <li><a href="/frontend/events/events.html">الفعاليات</a></li>
-        <li><a href="/frontend/recipes/recipes.html  ">الوصفات</a></li>
+        <li><a href="/index/.html">الرئيسية</a></li>
+        <li><a href="/countries/countries.html">الدول</a></li>
+        <li><a href="/events/events.html">الفعاليات</a></li>
+        <li><a href="/recipes/recipes.html  ">الوصفات</a></li>
       </ul>
     </nav>
     <header>
-      <a href="/frontend/countries/countries.html" class="back-btn">رجوع</a>
+      <a href="/countries/countries.html" class="back-btn">رجوع</a>
     </header>
 
     <section>
@@ -74,7 +74,7 @@
       <div
         class="cite"
         data-name="طوكيو – Tokyo"
-        data-img="/frontend/img/طوكيو.jpg"
+        data-img="/img/طوكيو.jpg"
         data-desc="عاصمة اليابان ومدينة المتناقضات، تجمع بين المعابد القديمة وناطحات السحاب الحديثة والثقافة الفريدة في مشهد لا يُنسى."
         data-historic="🏯 قصر الإمبراطور – Imperial Palace | 🏛️ متحف طوكيو الوطني – Tokyo National Museum | 🌆 حي أساكوسا القديم – Asakusa Old District | 🏘️ قرية ياناكا – Yanaka Village | ⛩️ ضريح ميجي – Meiji Shrine"
         data-restaurants="🍜 ناريتايا – Narita-ya | 🥩 جونباتشي – Gonpachi Nishi-Azabu | 🔥 أكاساكا نيكوبي – Akasaka Nikubei | 🍣 سوشي زانماي – Sushi Zanmai | 🌯 كباب براذرز – Kebab Brothers"
@@ -85,12 +85,12 @@
           class="save-btn"
           onclick="
             event.stopPropagation();
-            saveItem('city', 'tokyo', 'طوكيو', '/frontend/img/طوكيو.jpg');
+            saveItem('city', 'tokyo', 'طوكيو', '/img/طوكيو.jpg');
           "
         >
           🏙️
         </button>
-        <img src="/frontend/img/طوكيو.jpg" alt="طوكيو" class="cite-img" />
+        <img src="/img/طوكيو.jpg" alt="طوكيو" class="cite-img" />
         <span class="name">طوكيو – Tokyo</span>
         <p class="info">
           عاصمة اليابان حيث التقاء الماضي والمستقبل في مكان واحد.
@@ -102,7 +102,7 @@
       <div
         class="cite"
         data-name="كيوتو – Kyoto"
-        data-img="/frontend/img/كيوتو.jpg"
+        data-img="/img/كيوتو.jpg"
         data-desc="عاصمة اليابان القديمة ومدينة التاريخ والمعابد، تشتهر بالحدائق اليابانية التقليدية والبيوت الخشبية القديمة وثقافة الغيشا الأصيلة."
         data-historic="⛩️ ضريح فوشيمي إناري – Fushimi Inari | 🏯 قلعة نيجو – Nijo Castle | 🌿 حديقة أراشياما – Arashiyama | 🏛️ معبد كينكاكوجي – Kinkaku-ji"
         data-restaurants="🍱 هيوتي – Hyotei | 🥢 كيكونوي – Kikunoi Honten | 🍽️ جيون ساساكي – Gion Sasaki | 🥩 ميشيماتي – Mishimatei | 🍤 تيمبورا إندو – Tempura Endo Yasaka"
@@ -113,12 +113,12 @@
           class="save-btn"
           onclick="
             event.stopPropagation();
-            saveItem('city', 'kyoto', 'كيوتو', '/frontend/img/كيوتو.jpg');
+            saveItem('city', 'kyoto', 'كيوتو', '/img/كيوتو.jpg');
           "
         >
           🏙️
         </button>
-        <img src="/frontend/img/كيوتو.jpg" alt="كيوتو" class="cite-img" />
+        <img src="/img/كيوتو.jpg" alt="كيوتو" class="cite-img" />
         <span class="name">كيوتو – Kyoto</span>
         <p class="info">عاصمة اليابان القديمة ومدينة التاريخ والمعابد.</p>
         <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
@@ -128,7 +128,7 @@
       <div
         class="cite"
         data-name="أوساكا – Osaka"
-        data-img="/frontend/img/اوساكا.jpg"
+        data-img="/img/اوساكا.jpg"
         data-desc="عاصمة الأكل في اليابان، مدينة مرحة ونابضة بالحياة مليئة بالمطاعم والأسواق الليلية والتراث العريق."
         data-historic="🏯 قلعة أوساكا – Osaka Castle | 🏛️ متحف أوساكا التاريخي – Osaka Museum of History | ⛩️ ضريح سومايوشي – Sumiyoshi Taisha | 🌆 حي دوتونبوري – Dotonbori"
         data-restaurants="🍣 سوشي زانماي – Sushi Zanmai | 🍽️ شيف دايننج – Chef Dining Cafe | 🦑 مطاعم دوتونبوري – Dotonbori District | 🥘 مطبخ علي الحلال – Ali's Kitchen Halal | 🌟 سيفن هيلز – Seven Hills"
@@ -139,12 +139,12 @@
           class="save-btn"
           onclick="
             event.stopPropagation();
-            saveItem('city', 'osaka', 'أوساكا', '/frontend/img/اوساكا.jpg');
+            saveItem('city', 'osaka', 'أوساكا', '/img/اوساكا.jpg');
           "
         >
           🏙️
         </button>
-        <img src="/frontend/img/اوساكا.jpg" alt="أوساكا" class="cite-img" />
+        <img src="/img/اوساكا.jpg" alt="أوساكا" class="cite-img" />
         <span class="name">أوساكا – Osaka</span>
         <p class="info">
           عاصمة الأكل في اليابان، مدينة مرحة مليئة بالمطاعم والأسواق الليلية.
@@ -156,7 +156,7 @@
       <div
         class="cite"
         data-name="هيروشيما – Hiroshima"
-        data-img="/frontend/img/هيروشيما.jpg"
+        data-img="/img/هيروشيما.jpg"
         data-desc="مدينة السلام والأمل، تجمع بين التاريخ المؤثر والطبيعة الجميلة والجزر القريبة، شاهدة على قدرة الإنسان على النهوض والتجدد."
         data-historic="🕊️ متحف السلام – Peace Memorial Museum | 🏛️ قبة غينباكو – Atomic Bomb Dome | ⛩️ ضريح إيتسوكوشيما – Itsukushima Shrine | 🏯 قلعة هيروشيما – Hiroshima Castle"
         data-restaurants="🥘 ناغاتايا – Nagataya | 🍳 ميتشان – Micchan Souhonten | 🏢 أوكونوميمورا – Okonomimura | 🍽️ تيتشان – Tecchan | 🦞 هيسان-يا – Hassan-ya"
@@ -167,12 +167,12 @@
           class="save-btn"
           onclick="
             event.stopPropagation();
-            saveItem('city', 'hiroshima', 'هيروشيما', '/frontend/img/هيروشيما.jpg');
+            saveItem('city', 'hiroshima', 'هيروشيما', '/img/هيروشيما.jpg');
           "
         >
           🏙️
         </button>
-        <img src="/frontend/img/هيروشيما.jpg" alt="هيروشيما" class="cite-img" />
+        <img src="/img/هيروشيما.jpg" alt="هيروشيما" class="cite-img" />
         <span class="name">هيروشيما – Hiroshima</span>
         <p class="info">
           مدينة السلام، تجمع بين التاريخ المؤثر والطبيعة الجميلة والجزر القريبة.
@@ -184,7 +184,7 @@
       <div
         class="cite"
         data-name="سابورو – Sapporo"
-        data-img="/frontend/img/سابورو.jpg"
+        data-img="/img/سابورو.jpg"
         data-desc="مدينة الثلج والطبيعة الخلابة في شمال اليابان، تشتهر بمهرجان الثلج السنوي الأسطوري والتزلج والمأكولات الطازجة من البحر."
         data-historic="🏯 قلعة سابورو – Sapporo Castle | 🏛️ متحف هوكايدو – Hokkaido Museum | 🌿 حديقة أودوري – Odori Park | 🗼 برج التلفزيون – Sapporo TV Tower"
         data-restaurants="🥩 داروما – Daruma Main Shop | 🍜 رامن يوكوتشو – Ramen Yokocho | 🍣 سوشي زين – Sushi Zen | 🍛 سوب كاري جاروكو – Soup Curry Garaku | 🦀 سوق نيجو – Nijo Market"
@@ -195,12 +195,12 @@
           class="save-btn"
           onclick="
             event.stopPropagation();
-            saveItem('city', 'sapporo', 'سابورو', '/frontend/img/سابورو.jpg');
+            saveItem('city', 'sapporo', 'سابورو', '/img/سابورو.jpg');
           "
         >
           🏙️
         </button>
-        <img src="/frontend/img/سابورو.jpg" alt="سابورو" class="cite-img" />
+        <img src="/img/سابورو.jpg" alt="سابورو" class="cite-img" />
         <span class="name">سابورو – Sapporo</span>
         <p class="info">
           مدينة شمالية معروفة بالثلوج والمهرجانات الشتوية والطبيعة الخلابة.
@@ -212,7 +212,7 @@
       <div
         class="cite"
         data-name="ناغويا – Nagoya"
-        data-img="/frontend/img/ناغويا.jpg"
+        data-img="/img/ناغويا.jpg"
         data-desc="المدينة الصناعية الكبرى في قلب اليابان، تجمع بين القلعة التاريخية العريقة والمطبخ المحلي الفريد والتكنولوجيا المتقدمة."
         data-historic="🏯 قلعة ناغويا – Nagoya Castle | 🏛️ متحف تويوتا – Toyota Museum | ⛩️ ضريح أتسوتا – Atsuta Shrine | 🌿 حديقة هيغاشياما – Higashiyama Park"
         data-restaurants="🍱 ياباتون – Yabaton | 🐟 أتسوتا هوراي-كن – Atsuta Horaiken | 🍙 تينموسو سينجو – Tenmusu Senju | 🍜 ياماموتو-يا – Yamamoto-ya | 🍗 يوماتشان – Sekai no Yamachan"
@@ -223,12 +223,12 @@
           class="save-btn"
           onclick="
             event.stopPropagation();
-            saveItem('city', 'nagoya', 'ناغويا', '/frontend/img/ناغويا.jpg');
+            saveItem('city', 'nagoya', 'ناغويا', '/img/ناغويا.jpg');
           "
         >
           🏙️
         </button>
-        <img src="/frontend/img/ناغويا.jpg" alt="ناغويا" class="cite-img" />
+        <img src="/img/ناغويا.jpg" alt="ناغويا" class="cite-img" />
         <span class="name">ناغويا – Nagoya</span>
         <p class="info">
           مدينة صناعية حديثة مشهورة بقلعتها التاريخية ومطبخها الفريد.
@@ -244,50 +244,50 @@
     </div>
     <section class="foods-grid">
       <div class="foods">
-        <img src="/frontend/img/soshe.jpg" alt="" class="foods-img" />
+        <img src="/img/soshe.jpg" alt="" class="foods-img" />
         <span class="name-foods">سوشي – Sushi</span>
         <div class="food-info">أرز متبل مع سمك طازج أو مأكولات بحرية.</div>
-        <a href="/frontend/recipes/recipes.html?recipe=sushi" class="for-more-btn"
+        <a href="/recipes/recipes.html?recipe=sushi" class="for-more-btn"
           >المزيد</a
         >
       </div>
       <div class="foods">
-        <img src="/frontend/img/رامن.jpg" alt="" class="foods-img" />
+        <img src="/img/رامن.jpg" alt="" class="foods-img" />
         <span class="name-foods">الرامن – Ramen</span>
         <div class="food-info">شوربة نودلز غنية بمرق اللحم أو الدجاج.</div>
-        <a href="/frontend/recipes/recipes.html?recipe=ramen" class="for-more-btn"
+        <a href="/recipes/recipes.html?recipe=ramen" class="for-more-btn"
           >المزيد</a
         >
       </div>
       <div class="foods">
-        <img src="/frontend/img/التمبورا.jpg" alt="" class="foods-img" />
+        <img src="/img/التمبورا.jpg" alt="" class="foods-img" />
         <span class="name-foods">التمبورا – Tempura</span>
         <div class="food-info">خضار أو روبيان مقلي بطبقة خفيفة ومقرمشة.</div>
-        <a href="/frontend/recipes/recipes.html?recipe=tempura" class="for-more-btn"
+        <a href="/recipes/recipes.html?recipe=tempura" class="for-more-btn"
           >المزيد</a
         >
       </div>
       <div class="foods">
-        <img src="/frontend/img/Okonomiyaki.jpg" alt="" class="foods-img" />
+        <img src="/img/Okonomiyaki.jpg" alt="" class="foods-img" />
         <span class="name-foods">أوكونوميياكي – Okonomiyaki</span>
         <div class="food-info">فطيرة يابانية مالحة محشوة بالخضار واللحم.</div>
-        <a href="/frontend/recipes/recipes.html?recipe=okonomiyaki" class="for-more-btn"
+        <a href="/recipes/recipes.html?recipe=okonomiyaki" class="for-more-btn"
           >المزيد</a
         >
       </div>
       <div class="foods">
-        <img src="/frontend/img/Takoyaki.jpg" alt="" class="foods-img" />
+        <img src="/img/Takoyaki.jpg" alt="" class="foods-img" />
         <span class="name-foods">التاكوياكي (Takoyaki)</span>
         <div class="food-info">كرات عجين محشوة بالدجاج تشتهر في أوساكا.</div>
-        <a href="/frontend/recipes/recipes.html?recipe=takoyaki" class="for-more-btn"
+        <a href="/recipes/recipes.html?recipe=takoyaki" class="for-more-btn"
           >المزيد</a
         >
       </div>
       <div class="foods">
-        <img src="/frontend/img/Tonkatsu.webp" alt="" class="foods-img" />
+        <img src="/img/Tonkatsu.webp" alt="" class="foods-img" />
         <span class="name-foods">تونكاتسو – Tonkatsu</span>
         <div class="food-info">شريحة لحم مقلية تقدم مع صلصة خاصة.</div>
-        <a href="/frontend/recipes/recipes.html?recipe=tonkatsu" class="for-more-btn"
+        <a href="/recipes/recipes.html?recipe=tonkatsu" class="for-more-btn"
           >المزيد</a
         >
       </div>
@@ -297,54 +297,54 @@
     </div>
     <section class="events-grid">
       <div class="event">
-        <img src="/frontend/img/Hanami.jpg" alt="" class="event-img" />
+        <img src="/img/Hanami.jpg" alt="" class="event-img" />
         <span class="name-event">مهرجان أزهار الكرز – Hanami</span>
         <div class="event-info">
           الاستمتاع بمشاهدة تفتح أزهار الساكورا في الربيع.
         </div>
-        <a href="/frontend/events/events.html?event=hanami" class="event-btn">المزيد</a>
+        <a href="/events/events.html?event=hanami" class="event-btn">المزيد</a>
       </div>
       <div class="event">
-        <img src="/frontend/img/akihabara.jpg" alt="" class="event-img" />
+        <img src="/img/akihabara.jpg" alt="" class="event-img" />
         <span class="name-event">أكيهابارا – Akihabara</span>
         <div class="event-info">
           عالم مليء بالشخصيات والقصص لمحبي الثقافة اليابانية.
         </div>
-        <a href="/frontend/events/events.html?event=Akihabara" class="event-btn"
+        <a href="/events/events.html?event=Akihabara" class="event-btn"
           >المزيد</a
         >
       </div>
       <div class="event">
-        <img src="/frontend/img/Onsen.jpg" alt="" class="event-img" />
+        <img src="/img/Onsen.jpg" alt="" class="event-img" />
         <span class="name-event">الينابيع الحارة – Onsen</span>
         <div class="event-info">الاسترخاء في ينابيع طبيعية مثل هاكوني.</div>
-        <a href="/frontend/events/events.html?event=Onsen" class="event-btn">المزيد</a>
+        <a href="/events/events.html?event=Onsen" class="event-btn">المزيد</a>
       </div>
       <div class="event">
-        <img src="/frontend/img/غابات الخيزران.webp" alt="" class="event-img" />
+        <img src="/img/غابات الخيزران.webp" alt="" class="event-img" />
         <span class="name-event">غابات الخيزران – Bamboo Forest</span>
         <div class="event-info">ممرات طبيعية ساحرة للتنزه والتصوير.</div>
-        <a href="/frontend/events/events.html?event=BambooForest" class="event-btn"
+        <a href="/events/events.html?event=BambooForest" class="event-btn"
           >المزيد</a
         >
       </div>
       <div class="event">
-        <img src="/frontend/img/فوجي.jpg" alt="" class="event-img" />
+        <img src="/img/فوجي.jpg" alt="" class="event-img" />
         <span class="name-event">جبل فوجي – Mount Fuji</span>
         <div class="event-info">
           أيقونة طبيعية يمكن مشاهدتها والتصوير عندها.
         </div>
-        <a href="/frontend/events/events.html?event=MountFuji" class="event-btn"
+        <a href="/events/events.html?event=MountFuji" class="event-btn"
           >المزيد</a
         >
       </div>
       <div class="event">
-        <img src="/frontend/img/cat cafe.webp" alt="" class="event-img" />
+        <img src="/img/cat cafe.webp" alt="" class="event-img" />
         <span class="name-event">مقاهي الحيوانات – animal Cafes</span>
         <div class="event-info">
           مقاهي لطيفة للاسترخاء مع القطط وحيوانات أليفة.
         </div>
-        <a href="/frontend/events/events.html?event=animalcafe" class="event-btn"
+        <a href="/events/events.html?event=animalcafe" class="event-btn"
           >المزيد</a
         >
       </div>
@@ -370,7 +370,7 @@
         </div>
       </div>
     </div>
-    <script src="/frontend/countries/countries.js"></script>
-    <script src="/frontend/auth/auth.js" ></script>
+    <script src="/countries/countries.js"></script>
+    <script src="/auth/auth.js" ></script>
   </body>
 </html>

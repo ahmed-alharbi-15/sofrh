@@ -6,7 +6,7 @@
     <title>سفرة</title>
 
     <!-- ملف الستايل الأساسي -->
-    <link rel="stylesheet" href="/frontend/countries/countries.css" />
+    <link rel="stylesheet" href="/countries/countries.css" />
 
     <!-- خط عربي -->
     <style>
@@ -19,28 +19,28 @@
     <header class="navbar">
       <div class="hamburger" id="menu-btn">☰</div>
       <div class="auth-buttons" id="authButtons">
-        <a href="/frontend/auth/login.html" class="login">تسجيل دخول</a>
-        <a href="/frontend/auth/signup.html" class="signup">إنشاء حساب</a>
+        <a href="/auth/login.html" class="login">تسجيل دخول</a>
+        <a href="/auth/signup.html" class="signup">إنشاء حساب</a>
       </div>
 
       <div class="user-menu" id="userMenu">
-        <img id="userAvatar" src="/frontend/img/default-avatar.png" alt="المستخدم" />
+        <img id="userAvatar" src="/img/default-avatar.png" alt="المستخدم" />
         <span class="user-name" id="userName"></span>
         <div class="user-dropdown">
-          <a href="/frontend/profile/profile.html">الملف الشخصي</a>
-          <a href="/frontend/index/.html" id="logoutBtn">تسجيل الخروج</a>
+          <a href="/profile/profile.html">الملف الشخصي</a>
+          <a href="/index/.html" id="logoutBtn">تسجيل الخروج</a>
         </div>
       </div>
 
       <ul class="nav-list">
-        <li><a href="/frontend/index/.html">الرئيسية</a></li>
-        <li><a href="/frontend/countries/countries.html">الدول</a></li>
-        <li><a href="/frontend/events/events.html">الفعاليات</a></li>
-        <li><a href="/frontend/recipes/recipes.html">الوصفات</a></li>
+        <li><a href="/index/.html">الرئيسية</a></li>
+        <li><a href="/countries/countries.html">الدول</a></li>
+        <li><a href="/events/events.html">الفعاليات</a></li>
+        <li><a href="/recipes/recipes.html">الوصفات</a></li>
       </ul>
 
       <div class="logo">
-        <a href="/frontend/index/.html"> <img src="/frontend/img/logo3.JPG" alt="سفرة" /></a>
+        <a href="/index/.html"> <img src="/img/logo3.JPG" alt="سفرة" /></a>
       </div>
     </header>
 
@@ -49,14 +49,14 @@
       <span class="close-btn" id="close-btn">✖</span>
 
       <ul>
-        <li><a href="/frontend/index/.html">الرئيسية</a></li>
-        <li><a href="/frontend/countries/countries.html">الدول</a></li>
-        <li><a href="/frontend/events/events.html">الفعاليات</a></li>
-        <li><a href="/frontend/recipes/recipes.html  ">الوصفات</a></li>
+        <li><a href="/index/.html">الرئيسية</a></li>
+        <li><a href="/countries/countries.html">الدول</a></li>
+        <li><a href="/events/events.html">الفعاليات</a></li>
+        <li><a href="/recipes/recipes.html  ">الوصفات</a></li>
       </ul>
     </nav>
     <section>
-      <a href="/frontend/countries/countries.html" class="back-btn">رجوع</a>
+      <a href="/countries/countries.html" class="back-btn">رجوع</a>
 
       <div class="country-name">
         <h1>ايطاليا</h1>
@@ -72,7 +72,7 @@
       <div
         class="cite"
         data-name="روما – Rome"
-        data-img="/frontend/img/roma-logo.jpg"
+        data-img="/img/roma-logo.jpg"
         data-desc="العاصمة الأبدية ومدينة التاريخ والرومانسية، تجمع بين الآثار الرومانية القديمة والفن الباروكي والحياة العصرية الجميلة في مزيج لا مثيل له."
         data-historic="🏛️ الكولوسيوم – Colosseum | ⛪ الفاتيكان – Vatican City | 🏛️ المنتدى الروماني – Roman Forum | ⛲ نافورة تريفي – Trevi Fountain"
         data-restaurants="🍝 توناريلو – Tonnarello | 🌿 سيباسو – Cipasso | 🍕 بيتزا إي موتزاريللا – Pizza e Mozzarella | 🏛️ دا أرماندو – Da Armando al Pantheon | 🍜 لا ماتريشيانا – La Matriciana"
@@ -83,12 +83,12 @@
           class="save-btn"
           onclick="
             event.stopPropagation();
-            saveItem('city', 'rome', 'روما', '/frontend/img/roma-logo.jpg');
+            saveItem('city', 'rome', 'روما', '/img/roma-logo.jpg');
           "
         >
           🏙️
         </button>
-        <img src="/frontend/img/roma-logo.jpg" alt="روما" class="cite-img" />
+        <img src="/img/roma-logo.jpg" alt="روما" class="cite-img" />
         <span class="name">روما – Rome</span>
         <p class="info">
           مدينة التاريخ والرومانسية، تجمع بين الآثار الرومانية القديمة والحياة
@@ -102,7 +102,7 @@
       <div
         class="cite"
         data-name="ميلانو – Milan"
-        data-img="/frontend/img/milano.jpg"
+        data-img="/img/milano.jpg"
         data-desc="عاصمة الموضة والتصميم في العالم، مدينة أنيقة تجمع بين الفن الرفيع والمطبخ الإيطالي الشهي والحياة الليلية الراقية والمعالم التاريخية العريقة."
         data-historic="⛪ كاتدرائية الدومو – Duomo di Milano | 🏛️ قلعة سفورزيسكو – Sforza Castle | 🎨 اللوحة الأخيرة للعشاء – The Last Supper | 🌿 حدائق سيمبيوني – Sempione Park"
         data-restaurants="🍕 سوربيلو – Sorbillo Milano | 🍝 تريبا – Trippa | 🌆 ذا دوم – The Dome Milano | 🌟 جلوري بوب – Glory Pop | 🐃 لا بوفالوتا – La Bufalotta"
@@ -113,12 +113,12 @@
           class="save-btn"
           onclick="
             event.stopPropagation();
-            saveItem('city', 'milan', 'ميلانو', '/frontend/img/milano.jpg');
+            saveItem('city', 'milan', 'ميلانو', '/img/milano.jpg');
           "
         >
           🏙️
         </button>
-        <img src="/frontend/img/milano.jpg" alt="ميلانو" class="cite-img" />
+        <img src="/img/milano.jpg" alt="ميلانو" class="cite-img" />
         <span class="name">ميلانو – Milan</span>
         <p class="info">
           عاصمة الموضة والتسوق، مدينة أنيقة مليئة بالأسواق والمطاعم والأجواء
@@ -132,7 +132,7 @@
       <div
         class="cite"
         data-name="فينيسيا – Venice"
-        data-img="/frontend/img/vinisia.jpg"
+        data-img="/img/vinisia.jpg"
         data-desc="مدينة الماء الساحرة، وجهة رومانسية استثنائية مبنية على 118 جزيرة تربطها 400 جسر، تشتهر بقنواتها وقواربها الأسطورية وفنها وتراثها العريق."
         data-historic="🏛️ ساحة سان ماركو – St. Mark's Square | ⛪ كنيسة سان ماركو – St. Mark's Basilica | 🏰 قصر الدوج – Doge's Palace | 🌉 جسر الريالتو – Rialto Bridge"
         data-restaurants="🍝 داي إيفو – Da Ivo | 🌊 كلوب ديل دوجي – Club del Doge | 🦞 أوستيريا تيستييري – Osteria alle Testiere | 🐟 أنتيكي كارامباني – Antiche Carampane | 🌅 ريفييرا – Riviera Restaurant"
@@ -143,12 +143,12 @@
           class="save-btn"
           onclick="
             event.stopPropagation();
-            saveItem('city', 'venice', 'فينيسيا', '/frontend/img/vinisia.jpg');
+            saveItem('city', 'venice', 'فينيسيا', '/img/vinisia.jpg');
           "
         >
           🏙️
         </button>
-        <img src="/frontend/img/vinisia.jpg" alt="فينيسيا" class="cite-img" />
+        <img src="/img/vinisia.jpg" alt="فينيسيا" class="cite-img" />
         <span class="name">فينيسيا – Venice</span>
         <p class="info">
           مدينة ساحرة مبنية على الماء، مشهورة بالقوارب والقنوات وجوها الرومانسي
@@ -162,7 +162,7 @@
       <div
         class="cite"
         data-name="فلورنسا – Florence"
-        data-img="/frontend/img/flornsa.jpg"
+        data-img="/img/flornsa.jpg"
         data-desc="عاصمة عصر النهضة الإيطالية وموطن الفن الرفيع، مدينة مليئة بالمتاحف والمعالم التاريخية والشوارع الجميلة والمطبخ التوسكاني الشهير."
         data-historic="🏛️ متحف أوفيتسي – Uffizi Gallery | ⛪ كاتدرائية سانتا ماريا – Florence Cathedral | 🌉 جسر فيكيو – Ponte Vecchio | 🏰 قصر بيتي – Pitti Palace"
         data-restaurants="🍖 تراتوريا زا زا – Trattoria Zà Zà | 🌹 لا جيوسترا – La Giostra | 🍝 كاميلو – Cammillo | 🍕 لا بوسولا – La Bussola | 🥩 دا ميكيلي – Da Michele"
@@ -173,12 +173,12 @@
           class="save-btn"
           onclick="
             event.stopPropagation();
-            saveItem('city', 'florence', 'فلورنسا', '/frontend/img/flornsa.jpg');
+            saveItem('city', 'florence', 'فلورنسا', '/img/flornsa.jpg');
           "
         >
           🏙️
         </button>
-        <img src="/frontend/img/flornsa.jpg" alt="فلورنسا" class="cite-img" />
+        <img src="/img/flornsa.jpg" alt="فلورنسا" class="cite-img" />
         <span class="name">فلورنسا – Florence</span>
         <p class="info">
           موطن الفن الإيطالي، مدينة مليئة بالمتاحف والمعالم التاريخية والشوارع
@@ -192,7 +192,7 @@
       <div
         class="cite"
         data-name="نابولي – Naples"
-        data-img="/frontend/img/napoli.jpg"
+        data-img="/img/napoli.jpg"
         data-desc="مدينة ساحلية مليئة بالطاقة والحيوية، موطن البيتزا الأصلية وموقع اليونسكو، تشتهر بمناظرها الخلابة على خليج نابولي وجبل فيزوف البركاني الشامخ."
         data-historic="🏛️ متحف أركيولوجيكو – National Archaeological Museum | 🏰 قلعة كاستيل نوفو – Castel Nuovo | ⛪ كاتدرائية نابولي – Naples Cathedral | 🌋 بومبي – Pompeii"
         data-restaurants="🍕 أنتيكا ميكيلي – L'Antica Pizzeria da Michele | 🍕 جينو سوربيلو – Gino Sorbillo | 🌟 لا نوتيتسيا – Pizzeria La Notizia 53 | 🏛️ ستاريتا ماتيرديي – Pizzeria Starita | 🍕 5 كالو – 5 Kalò"
@@ -203,12 +203,12 @@
           class="save-btn"
           onclick="
             event.stopPropagation();
-            saveItem('city', 'naples', 'نابولي', '/frontend/img/napoli.jpg');
+            saveItem('city', 'naples', 'نابولي', '/img/napoli.jpg');
           "
         >
           🏙️
         </button>
-        <img src="/frontend/img/napoli.jpg" alt="نابولي" class="cite-img" />
+        <img src="/img/napoli.jpg" alt="نابولي" class="cite-img" />
         <span class="name">نابولي – Naples</span>
         <p class="info">
           مدينة ساحلية مليئة بالطاقة، تشتهر بالبيتزا الأصلية والمناظر المطلة على
@@ -222,7 +222,7 @@
       <div
         class="cite"
         data-name="بيزا – Pisa"
-        data-img="/frontend/img/beza.jpg"
+        data-img="/img/beza.jpg"
         data-desc="مدينة هادئة على نهر أرنو تشتهر ببرجها المائل الأسطوري وساحة المعجزات الرائعة، وجهة مثالية للزيارة والاستمتاع بأجوائها التاريخية الهادئة."
         data-historic="🗼 برج بيزا المائل – Leaning Tower of Pisa | ⛪ كاتدرائية بيزا – Pisa Cathedral | 🏛️ المعمودية – Baptistery | 🌿 ساحة المعجزات – Piazza dei Miracoli"
         data-restaurants="🍖 إي بورتشي كومودي – I Porci Comodi | 🌿 أوستيريا دي كوليغنا – Osteria di Culegna | 🍕 لا تافيرنا دي بولتشينيلا – La Taverna di Pulcinella | 🦞 إي سانتي – I Santi | 🍝 أنتيكا تراتوريا برونو – Antica Trattoria Da Bruno"
@@ -233,12 +233,12 @@
           class="save-btn"
           onclick="
             event.stopPropagation();
-            saveItem('city', 'pisa', 'بيزا', '/frontend/img/beza.jpg');
+            saveItem('city', 'pisa', 'بيزا', '/img/beza.jpg');
           "
         >
           🏙️
         </button>
-        <img src="/frontend/img/beza.jpg" alt="بيزا" class="cite-img" />
+        <img src="/img/beza.jpg" alt="بيزا" class="cite-img" />
         <span class="name">بيزا – Pisa</span>
         <p class="info">
           مدينة هادئة ومشهورة ببرج بيزا المائل، وجهة مثالية للصور والزيارة
@@ -256,65 +256,65 @@
     </div>
     <section class="foods-grid">
       <div class="foods">
-        <img src="/frontend/img/Neapolitan-Pizza.webp" alt="" class="foods-img" />
+        <img src="/img/Neapolitan-Pizza.webp" alt="" class="foods-img" />
         <span class="name-foods">بيتزا نابوليتانا – Neapolitan Pizza</span>
         <div class="food-info">
           بيتزا أصلية بعجينة طرية وصلصة طماطم طازجة من نابولي.
         </div>
         <a
-          href="/frontend/recipes/recipes.html?recipe=neapolitan-pizza"
+          href="/recipes/recipes.html?recipe=neapolitan-pizza"
           class="for-more-btn"
           >المزيد</a
         >
       </div>
       <div class="foods">
-        <img src="/frontend/img/Carbonara.jpg" alt="" class="foods-img" />
+        <img src="/img/Carbonara.jpg" alt="" class="foods-img" />
         <span class="name-foods">باستا كاربونارا – Carbonara</span>
         <div class="food-info">
           معكرونة إيطالية شهيرة بصلصة البيض والجبنة والفلفل.
         </div>
-        <a href="/frontend/recipes/recipes.html?recipe=carbonara" class="for-more-btn"
+        <a href="/recipes/recipes.html?recipe=carbonara" class="for-more-btn"
           >المزيد</a
         >
       </div>
       <div class="foods">
-        <img src="/frontend/img/Lasagna.jpg" alt="" class="foods-img" />
+        <img src="/img/Lasagna.jpg" alt="" class="foods-img" />
         <span class="name-foods">لزانيا – Lasagna</span>
         <div class="food-info">
           طبقات من المعكرونة واللحم والجبنة بصوص طماطم غني.
         </div>
-        <a href="/frontend/recipes/recipes.html?recipe=lasagna" class="for-more-btn"
+        <a href="/recipes/recipes.html?recipe=lasagna" class="for-more-btn"
           >المزيد</a
         >
       </div>
       <div class="foods">
-        <img src="/frontend/img/Risotto.jpg " alt="" class="foods-img" />
+        <img src="/img/Risotto.jpg " alt="" class="foods-img" />
         <span class="name-foods">ريزوتو – Risotto</span>
         <div class="food-info">
           أرز كريمي مطهو بمرق خاص، غالبًا مع الفطر أو الجبنة.
         </div>
-        <a href="/frontend/recipes/recipes.html?recipe=risotto" class="for-more-btn"
+        <a href="/recipes/recipes.html?recipe=risotto" class="for-more-btn"
           >المزيد</a
         >
       </div>
       <div class="foods">
-        <img src="/frontend/img/Penne Arrabbiata.avif    " alt="" class="foods-img" />
+        <img src="/img/Penne Arrabbiata.avif    " alt="" class="foods-img" />
         <span class="name-foods">بيني أريباياتا – Penne Arrabbiata</span>
         <div class="food-info">مكرونة بنكهة حارة وصلصة طماطم قوية ولذيذة.</div>
         <a
-          href="/frontend/recipes/recipes.html?recipe=penne-arrabbiata"
+          href="/recipes/recipes.html?recipe=penne-arrabbiata"
           class="for-more-btn"
           >المزيد</a
         >
       </div>
       <div class="foods">
-        <img src="/frontend/img/Chicken Parmigiana.webp" alt="" class="foods-img" />
+        <img src="/img/Chicken Parmigiana.webp" alt="" class="foods-img" />
         <span class="name-foods">دجاج بارميجيانا – Chicken Parmigiana</span>
         <div class="food-info">
           دجاج مقرمش مغطّى بصلصة طماطم وجبنة مذابة، يقدم عادة مع باستا.
         </div>
         <a
-          href="/frontend/recipes/recipes.html?recipe=chicken-parmigiana"
+          href="/recipes/recipes.html?recipe=chicken-parmigiana"
           class="for-more-btn"
           >المزيد</a
         >
@@ -326,57 +326,57 @@
     </div>
     <section class="events-grid">
       <div class="event">
-        <img src="/frontend/img/amalve.jpg " alt="" class="event-img" />
+        <img src="/img/amalve.jpg " alt="" class="event-img" />
         <span class="name-event">مهرجانات ساحل أمالفي – Amalfi Coast</span>
         <div class="event-info">أمسيات بحرية، مطاعم مطلة، وغروب رومانسي.</div>
-        <a href="/frontend/events/events.html?event=AmalfiCoast" class="event-btn"
+        <a href="/events/events.html?event=AmalfiCoast" class="event-btn"
           >المزيد</a
         >
       </div>
       <div class="event">
-        <img src="/frontend/img/gandola.avif" alt="" class="event-img" />
+        <img src="/img/gandola.avif" alt="" class="event-img" />
         <span class="name-event">جندول فينيسيا – Venice Gondola</span>
         <div class="event-info">
           تجربة رومانسية هادئة بين القنوات المائية والمباني التاريخية.
         </div>
-        <a href="/frontend/events/events.html?event=VeniceGondola" class="event-btn"
+        <a href="/events/events.html?event=VeniceGondola" class="event-btn"
           >المزيد</a
         >
       </div>
       <div class="event">
-        <img src="/frontend/img/como.jpg" alt="" class="event-img" />
+        <img src="/img/como.jpg" alt="" class="event-img" />
         <span class="name-event">بحيرة كومو – Lake Como</span>
         <div class="event-info">قوارب خاصة ومناظر جبلية ساحرة.</div>
-        <a href="/frontend/events/events.html?event=LakeComo" class="event-btn"
+        <a href="/events/events.html?event=LakeComo" class="event-btn"
           >المزيد</a
         >
       </div>
       <div class="event">
-        <img src="/frontend/img/agritfurismo.jpg" alt="" class="event-img" />
+        <img src="/img/agritfurismo.jpg" alt="" class="event-img" />
         <span class="name-event">عشاء ريفي تقليدي – Agriturismo</span>
         <div class="event-info">تناول وجبة إيطالية منزلية في مزارع الريف.</div>
-        <a href="/frontend/events/events.html?event=Agriturismo" class="event-btn"
+        <a href="/events/events.html?event=Agriturismo" class="event-btn"
           >المزيد</a
         >
       </div>
       <div class="event">
-        <img src="/frontend/img/Gelato Festival.jpg" alt="" class="event-img" />
+        <img src="/img/Gelato Festival.jpg" alt="" class="event-img" />
         <span class="name-event">مهرجان الجيلاتو – Gelato Festival</span>
         <div class="event-info">
           تجربة نكهات الجيلاتو الشهيرة في مدن مختلفة.
         </div>
-        <a href="/frontend/events/events.html?event=GelatoFestival" class="event-btn"
+        <a href="/events/events.html?event=GelatoFestival" class="event-btn"
           >المزيد</a
         >
       </div>
       <div class="event">
-        <img src="/frontend/img/Cooking Class.jpg" alt="" class="event-img" />
+        <img src="/img/Cooking Class.jpg" alt="" class="event-img" />
         <span class="name-event">تجربة الطبخ الإيطالي – Cooking Class</span>
         <div class="event-info">
           تعلم تحضير الباستا أو البيتزا مع طاهٍ محلي — غالبًا في بيت ريفي أو
           مطبخ تقليدي.
         </div>
-        <a href="/frontend/events/events.html?event=CookingClass" class="event-btn"
+        <a href="/events/events.html?event=CookingClass" class="event-btn"
           >المزيد</a
         >
       </div>
@@ -402,7 +402,7 @@
         </div>
       </div>
     </div>
-    <script src="/frontend/countries/countries.js"></script>
-    <script src="/frontend/auth/auth.js"></script>
+    <script src="/countries/countries.js"></script>
+    <script src="/auth/auth.js"></script>
   </body>
 </html>

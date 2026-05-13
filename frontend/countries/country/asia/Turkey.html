@@ -6,7 +6,7 @@
     <title>سفرة</title>
 
     <!-- ملف الستايل الأساسي -->
-    <link rel="stylesheet" href="/frontend/countries/countries.css" />
+    <link rel="stylesheet" href="/countries/countries.css" />
 
     <!-- خط عربي -->
     <style>
@@ -20,27 +20,27 @@
       <div class="hamburger" id="menu-btn">☰</div>
 
       <div class="auth-buttons" id="authButtons">
-        <a href="/frontend/auth/login.html" class="login">تسجيل دخول</a>
-        <a href="/frontend/auth/signup.html" class="signup">إنشاء حساب</a>
+        <a href="/auth/login.html" class="login">تسجيل دخول</a>
+        <a href="/auth/signup.html" class="signup">إنشاء حساب</a>
       </div>
 
       <div class="user-menu" id="userMenu">
-        <img id="userAvatar" src="/frontend/img/default-avatar.png" alt="المستخدم" />
+        <img id="userAvatar" src="/img/default-avatar.png" alt="المستخدم" />
         <span class="user-name" id="userName"></span>
         <div class="user-dropdown">
-          <a href="/frontend/profile/profile.html">الملف الشخصي</a>
-          <a href="/frontend/index/.html" id="logoutBtn">تسجيل الخروج</a>
+          <a href="/profile/profile.html">الملف الشخصي</a>
+          <a href="/index/.html" id="logoutBtn">تسجيل الخروج</a>
         </div>
       </div>
       <ul class="nav-list">
-        <li><a href="/frontend/index/.html">الرئيسية</a></li>
-        <li><a href="/frontend/countries/countries.html">الدول</a></li>
-        <li><a href="/frontend/events/events.html">الفعاليات</a></li>
-        <li><a href="/frontend/recipes/recipes.html">الوصفات</a></li>
+        <li><a href="/index/.html">الرئيسية</a></li>
+        <li><a href="/countries/countries.html">الدول</a></li>
+        <li><a href="/events/events.html">الفعاليات</a></li>
+        <li><a href="/recipes/recipes.html">الوصفات</a></li>
       </ul>
 
       <div class="logo">
-        <a href="/frontend/index/.html"> <img src="/frontend/img/logo3.JPG" alt="سفرة" /></a>
+        <a href="/index/.html"> <img src="/img/logo3.JPG" alt="سفرة" /></a>
       </div>
     </header>
 
@@ -49,14 +49,14 @@
       <span class="close-btn" id="close-btn">✖</span>
 
       <ul>
-        <li><a href="/frontend/index/.html">الرئيسية</a></li>
-        <li><a href="/frontend/countries/countries.html">الدول</a></li>
-        <li><a href="/frontend/events/events.html">الفعاليات</a></li>
-        <li><a href="/frontend/recipes/recipes.html  ">الوصفات</a></li>
+        <li><a href="/index/.html">الرئيسية</a></li>
+        <li><a href="/countries/countries.html">الدول</a></li>
+        <li><a href="/events/events.html">الفعاليات</a></li>
+        <li><a href="/recipes/recipes.html  ">الوصفات</a></li>
       </ul>
     </nav>
     <header>
-      <a href="/frontend/countries/countries.html" class="back-btn">رجوع</a>
+      <a href="/countries/countries.html" class="back-btn">رجوع</a>
     </header>
     <div class="country-name">
       <h1>تركيا</h1>
@@ -70,7 +70,7 @@
       <div
         class="cite"
         data-name="إسطنبول – Istanbul"
-        data-img="/frontend/img/Istanbul.jpg"
+        data-img="/img/Istanbul.jpg"
         data-desc="أيقونة العالم وملتقى الحضارات، مدينة تجمع بين قارتين على ضفتي مضيق البوسفور. تضم آلاف السنين من التاريخ بين قصر توبكابي وآيا صوفيا والبازار الكبير وأجواء لا مثيل لها."
         data-historic="🕌 آيا صوفيا – Hagia Sophia | 🏰 قصر توبكابي – Topkapi Palace | 🛍️ البازار الكبير – Grand Bazaar | 🌊 مضيق البوسفور – Bosphorus"
         data-restaurants="🥩 مطعم نصرت – Nusr-Et Steakhouse | 🍽️ مطعم المدينة – Al Medina | 🌅 مطعم 360 إسطنبول – 360 Istanbul | ⭐ مطعم ميكلا – Mikla | 🥩 مطعم نزيه – Nezih Steakhouse"
@@ -81,12 +81,12 @@
           class="save-btn"
           onclick="
             event.stopPropagation();
-            saveItem('city', 'istanbul', 'إسطنبول', '/frontend/img/Istanbul.jpg');
+            saveItem('city', 'istanbul', 'إسطنبول', '/img/Istanbul.jpg');
           "
         >
           🏙️
         </button>
-        <img src="/frontend/img/Istanbul.jpg" alt="إسطنبول" class="cite-img" />
+        <img src="/img/Istanbul.jpg" alt="إسطنبول" class="cite-img" />
         <span class="name">إسطنبول – Istanbul</span>
         <p class="info">مدينة تاريخية تجمع بين آسيا وأوروبا.</p>
         <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
@@ -97,7 +97,7 @@
       <div
         class="cite"
         data-name="أنطاليا – Antalya"
-        data-img="/frontend/img/Antalya.jpg"
+        data-img="/img/Antalya.jpg"
         data-desc="لؤلؤة البحر المتوسط التركي، مدينة ساحلية فاخرة تجمع بين الشواطئ الذهبية والمنتجعات الراقية والمدينة القديمة العريقة. وجهة سياحية عالمية من الدرجة الأولى."
         data-historic="🏛️ المدينة القديمة – Kaleiçi | 🌊 شاطئ كونيالتي – Konyaaltı Beach | 🏛️ متحف أنطاليا | ⛵ ميناء أنطاليا"
         data-restaurants="🍽️ مطعم 7 محمد – 7 Mehmet | 🕯️ مطعم سيراسر – Seraser Fine Dining | 🐟 مطعم آرما – Arma Restaurant | 🐠 مطعم لارا باليك إيفي – Lara Balik Evi | 🥘 مطعم أورفا سلطان – Urfa Sultan Sofrasi"
@@ -108,12 +108,12 @@
           class="save-btn"
           onclick="
             event.stopPropagation();
-            saveItem('city', 'antalya', 'أنطاليا', '/frontend/img/Antalya.jpg');
+            saveItem('city', 'antalya', 'أنطاليا', '/img/Antalya.jpg');
           "
         >
           🏙️
         </button>
-        <img src="/frontend/img/Antalya.jpg" alt="أنطاليا" class="cite-img" />
+        <img src="/img/Antalya.jpg" alt="أنطاليا" class="cite-img" />
         <span class="name">أنطاليا – Antalya</span>
         <p class="info">وجهة بحرية فاخرة.</p>
         <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
@@ -124,7 +124,7 @@
       <div
         class="cite"
         data-name="طرابزون – Trabzon"
-        data-img="/frontend/img/Trabzon.jpg"
+        data-img="/img/Trabzon.jpg"
         data-desc="جوهرة البحر الأسود التركي، مدينة خضراء ساحرة تحيط بها الجبال والغابات الكثيفة. تشتهر بدير سوميلا المنقور في الصخر وطبيعتها الخلابة وأجوائها الهادئة البعيدة عن الصخب."
         data-historic="⛪ دير سوميلا – Sümela Monastery | 🌿 هضبة أوزنغول – Uzungöl | 🏰 قلعة طرابزون | 🌲 غابات طرابزون"
         data-restaurants="🍽️ مطعم نهاد أوسطا – Nihat Usta | 🥘 مطعم جميل أسطا – Cemilusta | 🌿 مطعم صوفيا جاردن – Sofia Garden | 🏛️ مطعم جيبهانلك – Cebanelik | 🍖 مطعم أكبينار – Akpınar"
@@ -135,12 +135,12 @@
           class="save-btn"
           onclick="
             event.stopPropagation();
-            saveItem('city', 'trabzon', 'طرابزون', '/frontend/img/Trabzon.jpg');
+            saveItem('city', 'trabzon', 'طرابزون', '/img/Trabzon.jpg');
           "
         >
           🏙️
         </button>
-        <img src="/frontend/img/Trabzon.jpg" alt="طرابزون" class="cite-img" />
+        <img src="/img/Trabzon.jpg" alt="طرابزون" class="cite-img" />
         <span class="name">طرابزون – Trabzon</span>
         <p class="info">طبيعة خضراء وأجواء هادئة.</p>
         <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
@@ -151,7 +151,7 @@
       <div
         class="cite"
         data-name="بورصة – Bursa"
-        data-img="/frontend/img/Bursa.jpg"
+        data-img="/img/Bursa.jpg"
         data-desc="العاصمة العثمانية الأولى وإحدى أجمل مدن تركيا التاريخية، تحتضن جبل أولوداغ الثلجي ومعالم عثمانية أصيلة وأسواقاً تقليدية عريقة. مزيج رائع بين التاريخ والطبيعة."
         data-historic="🕌 الجامع الكبير – Ulu Camii | 🏔️ جبل أولوداغ – Uludağ | 🛍️ بازار بورصة التاريخي | ⛺ ضريح أورهان"
         data-restaurants="🥩 مطعم إسكندر كباب – Kebapçı İskender | 🍖 مطعم كفتجي يوسف – Köfteci Yusuf | 🔥 مطعم أوزان آت مانجال – Ozan Et Mangal | 🍽️ مطعم أولوداغ كباب – Uludağ Kebap | 🏛️ مطعم زنوب – Zennup 1844"
@@ -162,12 +162,12 @@
           class="save-btn"
           onclick="
             event.stopPropagation();
-            saveItem('city', 'bursa', 'بورصة', '/frontend/img/Bursa.jpg');
+            saveItem('city', 'bursa', 'بورصة', '/img/Bursa.jpg');
           "
         >
           🏙️
         </button>
-        <img src="/frontend/img/Bursa.jpg" alt="بورصة" class="cite-img" />
+        <img src="/img/Bursa.jpg" alt="بورصة" class="cite-img" />
         <span class="name">بورصة – Bursa</span>
         <p class="info">مدينة جبلية وتاريخية.</p>
         <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
@@ -178,7 +178,7 @@
       <div
         class="cite"
         data-name="كابادوكيا – Cappadocia"
-        data-img="/frontend/img/Cappadocia.jpg"
+        data-img="/img/Cappadocia.jpg"
         data-desc="وجهة أحلام عشاق السفر، منطقة طبيعية فريدة في وسط تركيا تشتهر بتكويناتها الصخرية المذهلة والمدن المنقورة تحت الأرض وتجربة المناطيد الشهيرة عند الشروق. منظر لا يُنسى في العمر."
         data-historic="🎈 مناطيد كابادوكيا – Hot Air Balloons | 🏛️ متحف غوريمي – Göreme | 🏙️ المدينة تحت الأرض – Derinkuyu | 🌄 وادي الحب – Love Valley"
         data-restaurants="🏔️ مطعم توبديك كهف – Topdeck Cave Restaurant | 🍽️ مطعم ستين الأناضول – Seten Anatolian Cuisine | ⭐ مطعم ليلا – Lil'a Restaurant | 🎨 مطعم بامبكين جوريم – Pumpkin Göreme | 🥩 مطعم أوسكار ستيك هاوس – Oscar Steak House"
@@ -189,12 +189,12 @@
           class="save-btn"
           onclick="
             event.stopPropagation();
-            saveItem('city', 'cappadocia', 'كابادوكيا', '/frontend/img/Cappadocia.jpg');
+            saveItem('city', 'cappadocia', 'كابادوكيا', '/img/Cappadocia.jpg');
           "
         >
           🏙️
         </button>
-        <img src="/frontend/img/Cappadocia.jpg" alt="كابادوكيا" class="cite-img" />
+        <img src="/img/Cappadocia.jpg" alt="كابادوكيا" class="cite-img" />
         <span class="name">كابادوكيا – Cappadocia</span>
         <p class="info">وجهة فريدة بمناظرها الصخرية.</p>
         <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
@@ -205,7 +205,7 @@
       <div
         class="cite"
         data-name="إزمير – Izmir"
-        data-img="/frontend/img/Izmir.jpg"
+        data-img="/img/Izmir.jpg"
         data-desc="ثالث أكبر مدن تركيا وعروسة بحر إيجة، مدينة ساحلية نابضة بالحياة تجمع بين الكورنيش الجميل والمعالم الأثرية الرومانية والحياة الليلية المتميزة. أجواء منفتحة وترحيبية لا مثيل لها."
         data-historic="🏛️ أفسس – Ephesus | 🌊 كورنيش إزمير – Kordon | 🛍️ كيمريالتي – Kemeraltı Bazaar | 🏰 قلعة قاديفيكالي"
         data-restaurants="🥩 مطعم تافاجي رجب أوسطا – Tavacı Recep Usta | 🐟 مطعم ينجيج – Yengeç Restaurant | 🌅 مطعم أسوار – Asansör Restoran | 🌊 مطعم بوجازيجى – Boğaziçi Restaurant | 🍕 مطعم بيتزا البندقية – Pizzeria Venedik"
@@ -216,12 +216,12 @@
           class="save-btn"
           onclick="
             event.stopPropagation();
-            saveItem('city', 'izmir', 'إزمير', '/frontend/img/Izmir.jpg');
+            saveItem('city', 'izmir', 'إزمير', '/img/Izmir.jpg');
           "
         >
           🏙️
         </button>
-        <img src="/frontend/img/Izmir.jpg" alt="إزمير" class="cite-img" />
+        <img src="/img/Izmir.jpg" alt="إزمير" class="cite-img" />
         <span class="name">إزمير – Izmir</span>
         <p class="info">مدينة ساحلية نابضة بالحياة.</p>
         <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
@@ -235,58 +235,58 @@
     </div>
     <section class="foods-grid">
       <div class="foods">
-        <img src="/frontend/img/اسكندر-كباب.jpg" alt="" class="foods-img" />
+        <img src="/img/اسكندر-كباب.jpg" alt="" class="foods-img" />
         <span class="name-foods">إسكندر كباب – Iskender Kebab</span>
         <div class="food-info">لحم مع خبز وصوص مميز.</div>
         <a
-          href="/frontend/recipes/recipes.html?recipe=iskender-kebab"
+          href="/recipes/recipes.html?recipe=iskender-kebab"
           class="for-more-btn"
           >الوصفة</a
         >
       </div>
 
       <div class="foods">
-        <img src="/frontend/img/مانتي.jpg" alt="" class="foods-img" />
+        <img src="/img/مانتي.jpg" alt="" class="foods-img" />
         <span class="name-foods">مانتي – Manti</span>
         <div class="food-info">عجينة محشوة باللحم مع الزبادي.</div>
-        <a href="/frontend/recipes/recipes.html?recipe=manti" class="for-more-btn"
+        <a href="/recipes/recipes.html?recipe=manti" class="for-more-btn"
           >الوصفة</a
         >
       </div>
 
       <div class="foods">
-        <img src="/frontend/img/دونر.jpg" alt="" class="foods-img" />
+        <img src="/img/دونر.jpg" alt="" class="foods-img" />
         <span class="name-foods">دونر – Doner</span>
         <div class="food-info">لحم مشوي يقدم مع خبز.</div>
-        <a href="/frontend/recipes/recipes.html?recipe=doner" class="for-more-btn"
+        <a href="/recipes/recipes.html?recipe=doner" class="for-more-btn"
           >الوصفة</a
         >
       </div>
 
       <div class="foods">
-        <img src="/frontend/img/بيدا.jpg" alt="" class="foods-img" />
+        <img src="/img/بيدا.jpg" alt="" class="foods-img" />
         <span class="name-foods">بيدا – Pide</span>
         <div class="food-info">خبز تركي مع إضافات متنوعة.</div>
-        <a href="/frontend/recipes/recipes.html?recipe=pide" class="for-more-btn"
+        <a href="/recipes/recipes.html?recipe=pide" class="for-more-btn"
           >الوصفة</a
         >
       </div>
 
       <div class="foods">
-        <img src="/frontend/img/بورك.jpg" alt="" class="foods-img" />
+        <img src="/img/بورك.jpg" alt="" class="foods-img" />
         <span class="name-foods">بورك – Börek</span>
         <div class="food-info">معجنات محشوة بالجبن أو اللحم.</div>
-        <a href="/frontend/recipes/recipes.html?recipe=borek" class="for-more-btn"
+        <a href="/recipes/recipes.html?recipe=borek" class="for-more-btn"
           >الوصفة</a
         >
       </div>
 
       <div class="foods">
-        <img src="/frontend/img/كونافة-تركية.jpg" alt="" class="foods-img" />
+        <img src="/img/كونافة-تركية.jpg" alt="" class="foods-img" />
         <span class="name-foods">كونافة تركية – Turkish Kunafa</span>
         <div class="food-info">حلى غني ومشهور.</div>
         <a
-          href="/frontend/recipes/recipes.html?recipe=turkish-kunafa"
+          href="/recipes/recipes.html?recipe=turkish-kunafa"
           class="for-more-btn"
           >الوصفة</a
         >
@@ -297,57 +297,57 @@
     </div>
     <section class="events-grid">
       <div class="event">
-        <img src="/frontend/img/pierre-loti.jpg" alt="" class="event-img" />
+        <img src="/img/pierre-loti.jpg" alt="" class="event-img" />
         <span class="name-event">بيير لوتي كافيه – Pierre Loti Cafe</span>
         <div class="event-info">مقهى مشهور بإطلالة رائعة.</div>
-        <a href="/frontend/events/events.html?event=PierreLoti" class="event-btn"
+        <a href="/events/events.html?event=PierreLoti" class="event-btn"
           >التفاصيل</a
         >
       </div>
 
       <div class="event">
-        <img src="/frontend/img/hagia-sophia.jpg" alt="" class="event-img" />
+        <img src="/img/hagia-sophia.jpg" alt="" class="event-img" />
         <span class="name-event">آيا صوفيا – Hagia Sophia</span>
         <div class="event-info">معلم تاريخي عالمي.</div>
-        <a href="/frontend/events/events.html?event=HagiaSophia" class="event-btn"
+        <a href="/events/events.html?event=HagiaSophia" class="event-btn"
           >التفاصيل</a
         >
       </div>
 
       <div class="event">
-        <img src="/frontend/img/Cappadocia.jpg" alt="" class="event-img" />
+        <img src="/img/Cappadocia.jpg" alt="" class="event-img" />
         <span class="name-event">مناطيد كابادوكيا – Cappadocia Balloons</span>
         <div class="event-info">تجربة المناطيد الشهيرة.</div>
-        <a href="/frontend/events/events.html?event=CappadociaBalloons" class="event-btn"
+        <a href="/events/events.html?event=CappadociaBalloons" class="event-btn"
           >التفاصيل</a
         >
       </div>
 
       <div class="event">
-        <img src="/frontend/img/maxx-royal.jpg" alt="" class="event-img" />
+        <img src="/img/maxx-royal.jpg" alt="" class="event-img" />
         <span class="name-event"
           >ماكس رويال بيلك غولف ريزورت – Maxx Royal Belek Golf Resort</span
         >
         <div class="event-info">منتجع فاخر بإطلالات بحرية.</div>
-        <a href="/frontend/events/events.html?event=MaxxRoyalBelek" class="event-btn"
+        <a href="/events/events.html?event=MaxxRoyalBelek" class="event-btn"
           >التفاصيل</a
         >
       </div>
 
       <div class="event">
-        <img src="/frontend/img/bosphorus.jpg" alt="" class="event-img" />
+        <img src="/img/bosphorus.jpg" alt="" class="event-img" />
         <span class="name-event">رحلة البوسفور – Bosphorus Cruise</span>
         <div class="event-info">رحلة بحرية بين القارتين.</div>
-        <a href="/frontend/events/events.html?event=BosphorusCruise" class="event-btn"
+        <a href="/events/events.html?event=BosphorusCruise" class="event-btn"
           >التفاصيل</a
         >
       </div>
 
       <div class="event">
-        <img src="/frontend/img/grand-bazaar.jpg" alt="" class="event-img" />
+        <img src="/img/grand-bazaar.jpg" alt="" class="event-img" />
         <span class="name-event">البازار الكبير – Grand Bazaar</span>
         <div class="event-info">سوق تاريخي وتجربة تسوق ممتعة.</div>
-        <a href="/frontend/events/events.html?event=GrandBazaar" class="event-btn"
+        <a href="/events/events.html?event=GrandBazaar" class="event-btn"
           >التفاصيل</a
         >
       </div>
@@ -373,7 +373,7 @@
         </div>
       </div>
     </div>
-    <script src="/frontend/countries/countries.js"></script>
-    <script src="/frontend/auth/auth.js"></script>
+    <script src="/countries/countries.js"></script>
+    <script src="/auth/auth.js"></script>
   </body>
 </html>
