@@ -1,4 +1,3 @@
-
 const searchInput = document.getElementById("searchInput");
 const filterBtns = document.querySelectorAll(".filter-buttons button");
 const cards = document.querySelectorAll(".country-card");
@@ -27,6 +26,56 @@ filterBtns.forEach((btn) => {
     });
 });
 
+// --- City Modal ---
+function openCityModal(cite) {
+    const modal = document.getElementById("cityModal");
+    if (!modal) return;
+
+    document.getElementById("modalCityImg").src = cite.dataset.img || "";
+    document.getElementById("modalCityName").textContent = cite.dataset.name || "";
+    document.getElementById("modalCityDesc").textContent = cite.dataset.desc || "";
+
+    const fillTags = (id, raw) => {
+        const box = document.getElementById(id);
+        if (!box) return;
+        box.innerHTML = "";
+        (raw || "").split("|").map(x => x.trim()).filter(Boolean).forEach(item => {
+            const span = document.createElement("span");
+            span.textContent = item;
+            box.appendChild(span);
+        });
+    };
+
+    fillTags("modalCityHistoric", cite.dataset.historic);
+    fillTags("modalCityRestaurants", cite.dataset.restaurants);
+    fillTags("modalCityCafes", cite.dataset.cafes);
+    fillTags("modalCityEvents", cite.dataset.events);
+
+    modal.style.display = "block";
+    document.body.style.overflow = "hidden";
+}
+
+function closeCityModal(e) {
+    const modal = document.getElementById("cityModal");
+    if (!modal) return;
+    const content = modal.querySelector(".modal-content");
+    if (!content.contains(e.target) || e.target.classList.contains("modal-close")) {
+        modal.style.display = "none";
+        document.body.style.overflow = "auto";
+    }
+}
+
+document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+        const modal = document.getElementById("cityModal");
+        if (modal?.style.display === "block") {
+            modal.style.display = "none";
+            document.body.style.overflow = "auto";
+        }
+    }
+});
+
+// --- Recipe Modal ---
 const recipeModal = document.getElementById("recipeModal");
 const modalContent = recipeModal?.querySelector(".modal-content");
 const closeBtnModal = recipeModal?.querySelector(".modal-close");
@@ -50,10 +99,6 @@ if (recipeModal && modalContent) {
         if (!modalContent.contains(e.target)) closeModal();
     });
 }
-
-document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && recipeModal?.style.display === "block") closeModal();
-});
 
 function gramsToCups(value) { return value / 250; }
 function formatCups(value) {
