@@ -37,7 +37,7 @@ if (logoutBtn) {
     logoutBtn.addEventListener("click", (e) => {
         e.preventDefault();
         localStorage.removeItem("safraUser");
-        window.location.href = "/index/index.html";
+        window.location.href = "/frontend/index/index.html";
     });
 }
 
@@ -47,7 +47,7 @@ checkAuth();
 const currentUser = JSON.parse(localStorage.getItem("safraUser"));
 
 if (!currentUser) {
-    window.location.href = "/auth/login.html";
+    window.location.href = "/frontend/auth/login.html";
 } else {
     document.getElementById("profileName").textContent = currentUser.name;
     document.getElementById("profileEmail").textContent = currentUser.email;

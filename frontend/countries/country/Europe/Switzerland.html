@@ -6,11 +6,11 @@
     <title>سفرة</title>
 
     <!-- ملف الستايل الأساسي -->
-    <link rel="stylesheet" href="/countries/countries.css" />
+    <link rel="stylesheet" href="/frontend/countries/countries.css" />
 
     <!-- خط عربي -->
     <style>
-      @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@500;600&display=swap");
+      @import url("https://fonts.googleapis.com/css/2?family=Noto+Sans+Arabic:wght@500;600&display=swap");
     </style>
   </head>
 
@@ -20,28 +20,28 @@
       <div class="hamburger" id="menu-btn">☰</div>
 
       <div class="auth-buttons" id="authButtons">
-        <a href="/auth/login.html" class="login">تسجيل دخول</a>
-        <a href="/auth/signup.html" class="signup">إنشاء حساب</a>
+        <a href="/frontend/auth/login.html" class="login">تسجيل دخول</a>
+        <a href="/frontend/auth/signup.html" class="signup">إنشاء حساب</a>
       </div>
 
       <div class="user-menu" id="userMenu">
-        <img id="userAvatar" src="/img/default-avatar.png" alt="المستخدم" />
+        <img id="userAvatar" src="/frontend/img/default-avatar.png" alt="المستخدم" />
         <span class="user-name" id="userName"></span>
         <div class="user-dropdown">
-          <a href="/profile/profile.html">الملف الشخصي</a>
-          <a href="/index/index.html" id="logoutBtn">تسجيل الخروج</a>
+          <a href="/frontend/profile/profile.html">الملف الشخصي</a>
+          <a href="/frontend/index//frontend/index/.html" id="logoutBtn">تسجيل الخروج</a>
         </div>
       </div>
 
       <ul class="nav-list">
-        <li><a href="/index/index.html">الرئيسية</a></li>
-        <li><a href="/countries/countries.html">الدول</a></li>
-        <li><a href="/events/events.html">الفعاليات</a></li>
-        <li><a href="/recipes/recipes.html">الوصفات</a></li>
+        <li><a href="/frontend/index//frontend/index/.html">الرئيسية</a></li>
+        <li><a href="/frontend/countries/countries.html">الدول</a></li>
+        <li><a href="/frontend/events/events.html">الفعاليات</a></li>
+        <li><a href="/frontend/recipes/recipes.html">الوصفات</a></li>
       </ul>
 
       <div class="logo">
-        <a href="/index/index.html"> <img src="/img/logo3.JPG" alt="سفرة" /></a>
+        <a href="/frontend/index//frontend/index/.html"> <img src="/frontend/img/logo3.JPG" alt="سفرة" /></a>
       </div>
     </header>
 
@@ -50,14 +50,14 @@
       <span class="close-btn" id="close-btn">✖</span>
 
       <ul>
-        <li><a href="/index/index.html">الرئيسية</a></li>
-        <li><a href="/countries/countries.html">الدول</a></li>
-        <li><a href="/events/events.html">الفعاليات</a></li>
-        <li><a href="/recipes/recipes.html  ">الوصفات</a></li>
+        <li><a href="/frontend/index//frontend/index/.html">الرئيسية</a></li>
+        <li><a href="/frontend/countries/countries.html">الدول</a></li>
+        <li><a href="/frontend/events/events.html">الفعاليات</a></li>
+        <li><a href="/frontend/recipes/recipes.html  ">الوصفات</a></li>
       </ul>
     </nav>
     <header>
-      <a href="/countries/countries.html" class="back-btn">رجوع</a>
+      <a href="/frontend/countries/countries.html" class="back-btn">رجوع</a>
     </header>
 
     <section>
@@ -74,7 +74,7 @@
       <div
         class="cite"
         data-name="زيورخ – Zurich"
-        data-img="/img/زيورخ (Zurich).webp"
+        data-img="/frontend/img/زيورخ (Zurich).webp"
         data-desc="أكبر مدن سويسرا وعاصمتها الاقتصادية، تجمع بين الفخامة والطبيعة الخلابة والحياة العصرية الراقية على ضفاف بحيرة زيورخ الجميلة."
         data-historic="⛪ كاتدرائية جروسمونستر – Grossmünster | 🏛️ متحف الفنون – Kunsthaus Zurich | 🌉 جسر كواي – Quaibrücke | 🏘️ حي نيدردورف – Niederdorf"
         data-restaurants="🏛️ كرونينهال – Kronenhalle | 🍺 زيوغوسكيلر – Zeughauskeller | 🌿 المختار – Al Mouchtar | 🍔 ذا بايت – The Bite | 🏘️ مطاعم البلدة القديمة – Old Town Restaurants"
@@ -85,12 +85,12 @@
           class="save-btn"
           onclick="
             event.stopPropagation();
-            saveItem('city', 'zurich', 'زيورخ', '/img/زيورخ (Zurich).webp');
+            saveItem('city', 'zurich', 'زيورخ', '/frontend/img/زيورخ (Zurich).webp');
           "
         >
           🏙️
         </button>
-        <img src="/img/زيورخ (Zurich).webp" alt="زيورخ" class="cite-img" />
+        <img src="/frontend/img/زيورخ (Zurich).webp" alt="زيورخ" class="cite-img" />
         <span class="name">زيورخ – Zurich</span>
         <p class="info">
           أكبر مدن سويسرا، تجمع بين الفخامة والطبيعة والحياة العصرية.
@@ -102,7 +102,7 @@
       <div
         class="cite"
         data-name="جنيف – Geneva"
-        data-img="/img/جنيف (Geneva).jpg"
+        data-img="/frontend/img/جنيف (Geneva).jpg"
         data-desc="مدينة السلام والدبلوماسية الدولية، تقع على ضفاف بحيرة ليمان الساحرة وتحت أنظار جبال الألب، تشتهر بالساعات الفاخرة والشوكولاتة الرائعة والمنظمات الدولية."
         data-historic="⛲ نافورة جيت دو ، – Jet d'Eau | 🏛️ متحف الصليب الأحمر – Red Cross Museum | ⛪ كاتدرائية سان بيير – St. Pierre Cathedral | 🌿 حديقة إنغليش – English Garden"
         data-restaurants="🍖 عطار – Attar Restaurant | 🥙 ساج إيت – Saj Eat | 🌿 آزار وشركاه – Azar & Co | ☕ يوتوبيا كوفي – Utopia Coffee | 🐇 وايت رابيت – White Rabbit"
@@ -113,12 +113,12 @@
           class="save-btn"
           onclick="
             event.stopPropagation();
-            saveItem('city', 'geneva', 'جنيف', '/img/جنيف (Geneva).jpg');
+            saveItem('city', 'geneva', 'جنيف', '/frontend/img/جنيف (Geneva).jpg');
           "
         >
           🏙️
         </button>
-        <img src="/img/جنيف (Geneva).jpg" alt="جنيف" class="cite-img" />
+        <img src="/frontend/img/جنيف (Geneva).jpg" alt="جنيف" class="cite-img" />
         <span class="name">جنيف – Geneva</span>
         <p class="info">
           مدينة راقية على البحيرة، مشهورة بالمنظمات الدولية والمناظر الهادئة.
@@ -130,7 +130,7 @@
       <div
         class="cite"
         data-name="لوسيرن – Lucerne"
-        data-img="/img/لوسيرن (Lucerne).jpg"
+        data-img="/frontend/img/لوسيرن (Lucerne).jpg"
         data-desc="جوهرة سويسرا الرومانسية على ضفاف بحيرة لوسيرن، تشتهر بجسرها الخشبي التاريخي الشهير وإطلالاتها المذهلة على جبال الألب والمياه الزرقاء الصافية."
         data-historic="🌉 جسر كابيل – Chapel Bridge | 🏰 أسوار موسيغ – Musegg Walls | 🏛️ متحف التاريخ الطبيعي – Natural History Museum | ⛪ كنيسة القديس ليودغار – St. Leodegar Church"
         data-restaurants="🍽️ بوليرو – Bolero Restaurante | 🍕 جروتينو – Grottino 1313 | 🌿 لا كوتشينا – La Cucina | 🥐 ميل فوي – Mill'Feuille | 🏔️ بوندنر لاند – Restaurant Bündnerland"
@@ -141,12 +141,12 @@
           class="save-btn"
           onclick="
             event.stopPropagation();
-            saveItem('city', 'lucerne', 'لوسيرن', '/img/لوسيرن (Lucerne).jpg');
+            saveItem('city', 'lucerne', 'لوسيرن', '/frontend/img/لوسيرن (Lucerne).jpg');
           "
         >
           🏙️
         </button>
-        <img src="/img/لوسيرن (Lucerne).jpg" alt="لوسيرن" class="cite-img" />
+        <img src="/frontend/img/لوسيرن (Lucerne).jpg" alt="لوسيرن" class="cite-img" />
         <span class="name">لوسيرن – Lucerne</span>
         <p class="info">مدينة رومانسية بجانب البحيرة مع جسر خشبي تاريخي.</p>
         <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
@@ -156,7 +156,7 @@
       <div
         class="cite"
         data-name="إنترلاكن – Interlaken"
-        data-img="/img/إنترلاكن (Interlaken).webp"
+        data-img="/frontend/img/إنترلاكن (Interlaken).webp"
         data-desc="عاصمة المغامرات السويسرية، تقع بين بحيرتي تون وبريينز وسط جبال الألب الشامخة، وجهة مثالية لمحبي الطبيعة والمغامرة والرياضات الجبلية."
         data-historic="🏔️ جبل يونغفراو – Jungfrau Mountain | 🌊 بحيرة تون – Lake Thun | 🌊 بحيرة بريينز – Lake Brienz | 🏘️ المدينة القديمة – Interlaken Old Town"
         data-restaurants="🍛 تاج بالاس – Taj Palace | 🍕 نابولي بيتزا – Napoli Pizza | 🏔️ بيز جلوريا – Piz Gloria | 🍔 أسلاني كورنر – Asllani's Corner | 🌿 لا تراس – La Terrasse"
@@ -171,14 +171,14 @@
               'city',
               'interlaken',
               'إنترلاكن',
-              '/img/إنترلاكن (Interlaken).webp',
+              '/frontend/img/إنترلاكن (Interlaken).webp',
             );
           "
         >
           🏙️
         </button>
         <img
-          src="/img/إنترلاكن (Interlaken).webp"
+          src="/frontend/img/إنترلاكن (Interlaken).webp"
           alt="إنترلاكن"
           class="cite-img"
         />
@@ -191,7 +191,7 @@
       <div
         class="cite"
         data-name="بيرن – Bern"
-        data-img="/img/بيرن (Bern).avif"
+        data-img="/frontend/img/بيرن (Bern).avif"
         data-desc="العاصمة الفيدرالية لسويسرا ومدينة التراث العالمي لليونسكو، تشتهر بأروقتها القديمة الممتدة لكيلومترات ونوافيرها الجميلة وساعتها الفلكية الشهيرة."
         data-historic="🕰️ برج الساعة الفلكية – Zytglogge | 🏛️ متحف بيرن – Bern Museum | 🐻 حفرة الدببة – Bear Park | ⛪ كاتدرائية بيرن – Bern Cathedral"
         data-restaurants="🏛️ كورنهاوسكيلر – Kornhauskeller | 🌿 واين آند زاين – Wein & Sein | ⭐ ميريديانو – Meridiano | 🌿 لا تيرازا – La Terrazza | 🚃 ألتيس ترامديبو – Altes Tramdepot"
@@ -202,12 +202,12 @@
           class="save-btn"
           onclick="
             event.stopPropagation();
-            saveItem('city', 'bern', 'بيرن', '/img/بيرن (Bern).avif');
+            saveItem('city', 'bern', 'بيرن', '/frontend/img/بيرن (Bern).avif');
           "
         >
           🏙️
         </button>
-        <img src="/img/بيرن (Bern).avif" alt="بيرن" class="cite-img" />
+        <img src="/frontend/img/بيرن (Bern).avif" alt="بيرن" class="cite-img" />
         <span class="name">بيرن – Bern</span>
         <p class="info">
           العاصمة التاريخية بشوارعها القديمة ونوافيرها الجميلة.
@@ -219,7 +219,7 @@
       <div
         class="cite"
         data-name="سانت موريتز – St. Moritz"
-        data-img="/img/سانت موريتز.avif"
+        data-img="/frontend/img/سانت موريتز.avif"
         data-desc="الملكة المتوجة لمنتجعات التزلج العالمية، وجهة الأثرياء والمشاهير في قلب جبال الألب السويسرية، تشتهر بالثلوج الجميلة والشمس الساطعة والحياة الليلية الراقية."
         data-historic="🏔️ جبل كورفيليا – Corviglia Mountain | 🏛️ متحف إنغادين – Engadine Museum | ⛷️ منحدرات التزلج – Ski Slopes | 🌊 بحيرة سانت موريتز – St. Moritz Lake"
         data-restaurants="🍣 لا كوبول ماتسوهيسا – La Coupole Matsuhisa | 🏔️ سوفريتا ستوبي – Suvretta Stube | 🎹 ذا جراند هول – The Grand Hall | 🍫 هانسلمان – Hanselmann | 🌟 مطاعم فاخرة – Fine Dining St. Moritz"
@@ -234,13 +234,13 @@
               'city',
               'st-moritz',
               'سانت موريتز',
-              '/img/سانت موريتز.avif',
+              '/frontend/img/سانت موريتز.avif',
             );
           "
         >
           🏙️
         </button>
-        <img src="/img/سانت موريتز.avif" alt="سانت موريتز" class="cite-img" />
+        <img src="/frontend/img/سانت موريتز.avif" alt="سانت موريتز" class="cite-img" />
         <span class="name">سانت موريتز – St. Moritz</span>
         <p class="info">منتجع فاخر للثلوج والأنشطة الشتوية.</p>
         <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
@@ -254,56 +254,56 @@
     </div>
     <section class="foods-grid">
       <div class="foods">
-        <img src="/img/الفوندو (Fondue).jpg" alt="" class="foods-img" />
+        <img src="/frontend/img/الفوندو (Fondue).jpg" alt="" class="foods-img" />
         <span class="name-foods">فوندو – Fondue</span>
         <div class="food-info">جبن مذاب يقدم مع خبز في تجربة جماعية دافئة.</div>
-        <a href="/recipes/recipes.html?recipe=fondue" class="for-more-btn"
+        <a href="/frontend/recipes/recipes.html?recipe=fondue" class="for-more-btn"
           >المزيد</a
         >
       </div>
       <div class="foods">
-        <img src="/img/لراكليت (Raclette).webp" alt="" class="foods-img" />
+        <img src="/frontend/img/لراكليت (Raclette).webp" alt="" class="foods-img" />
         <span class="name-foods">راكليت – Raclette</span>
         <div class="food-info">جبن يذاب ويقدم مع بطاطس ومخللات.</div>
-        <a href="/recipes/recipes.html?recipe=raclette" class="for-more-btn"
+        <a href="/frontend/recipes/recipes.html?recipe=raclette" class="for-more-btn"
           >المزيد</a
         >
       </div>
       <div class="foods">
-        <img src="/img/Switzerland chocolate.jpg" alt="" class="foods-img" />
+        <img src="/frontend/img/Switzerland chocolate.jpg" alt="" class="foods-img" />
         <span class="name-foods">الشوكولاتة السويسرية – Swiss Chocolate</span>
         <div class="food-info">من أفضل أنواع الشوكولاتة في العالم.</div>
         <a
-          href="/recipes/recipes.html?recipe=swiss-chocolate"
+          href="/frontend/recipes/recipes.html?recipe=swiss-chocolate"
           class="for-more-btn"
           >المزيد</a
         >
       </div>
       <div class="foods">
-        <img src="/img/روستي (Rösti).jpg" alt="" class="foods-img" />
+        <img src="/frontend/img/روستي (Rösti).jpg" alt="" class="foods-img" />
         <span class="name-foods">روستي – Rösti</span>
         <div class="food-info">بطاطس مقرمشة تعتبر طبق شعبي شهير.</div>
-        <a href="/recipes/recipes.html?recipe=rosti" class="for-more-btn"
+        <a href="/frontend/recipes/recipes.html?recipe=rosti" class="for-more-btn"
           >المزيد</a
         >
       </div>
       <div class="foods">
         <img
-          src="/img/بيرشر موسلي (Bircher Müesli).jpg_1622122268"
+          src="/frontend/img/بيرشر موسلي (Bircher Müesli).jpg_1622122268"
           alt=""
           class="foods-img"
         />
         <span class="name-foods">بيرشر موسلي – Bircher Müesli</span>
         <div class="food-info">فطور صحي من الشوفان والفواكه.</div>
         <a
-          href="/recipes/recipes.html?recipe=bircher-muesli"
+          href="/frontend/recipes/recipes.html?recipe=bircher-muesli"
           class="for-more-btn"
           >المزيد</a
         >
       </div>
       <div class="foods">
         <img
-          src="/img/زوريشر غشنِتسلتِس (Zürcher Geschnetzeltes).jpg"
+          src="/frontend/img/زوريشر غشنِتسلتِس (Zürcher Geschnetzeltes).jpg"
           alt=""
           class="foods-img"
         />
@@ -312,7 +312,7 @@
         >
         <div class="food-info">لحم مع صوص كريمي يقدم مع الروستي.</div>
         <a
-          href="/recipes/recipes.html?recipe=zurcher-geschnetzeltes"
+          href="/frontend/recipes/recipes.html?recipe=zurcher-geschnetzeltes"
           class="for-more-btn"
           >المزيد</a
         >
@@ -323,54 +323,54 @@
     </div>
     <section class="events-grid">
       <div class="event">
-        <img src="/img/Glacier Express.jpg" alt="" class="event-img" />
+        <img src="/frontend/img/Glacier Express.jpg" alt="" class="event-img" />
         <span class="name-event">قطار غلاسير إكسبريس – Glacier Express</span>
         <div class="event-info">رحلة فاخرة بين الجبال والأنفاق.</div>
-        <a href="/events/events.html?event=GlacierExpress" class="event-btn"
+        <a href="/frontend/events/events.html?event=GlacierExpress" class="event-btn"
           >المزيد</a
         >
       </div>
       <div class="event">
-        <img src="/img/زيارة-شلالات-الراين.jpg" alt="" class="event-img" />
+        <img src="/frontend/img/زيارة-شلالات-الراين.jpg" alt="" class="event-img" />
         <span class="name-event">زيارة شلالات الراين – Rhine Falls</span>
         <div class="event-info">أكبر شلالات في أوروبا بمشهد قوي.</div>
-        <a href="/events/events.html?event=RhineFalls" class="event-btn"
+        <a href="/frontend/events/events.html?event=RhineFalls" class="event-btn"
           >المزيد</a
         >
       </div>
       <div class="event">
-        <img src="/img/ركوب القوارب في البحيرات.jpg" alt="" class="event-img" />
+        <img src="/frontend/img/ركوب القوارب في البحيرات.jpg" alt="" class="event-img" />
         <span class="name-event">ركوب القوارب في البحيرات – Swiss Lakes</span>
         <div class="event-info">جولة مريحة بمناظر طبيعية.</div>
-        <a href="/events/events.html?event=SwissLakes" class="event-btn"
+        <a href="/frontend/events/events.html?event=SwissLakes" class="event-btn"
           >المزيد</a
         >
       </div>
       <div class="event">
-        <img src="/img/التزلج على جبال الألب.webp" alt="" class="event-img" />
+        <img src="/frontend/img/التزلج على جبال الألب.webp" alt="" class="event-img" />
         <span class="name-event">التزلج على جبال الألب – Alpine Skiing</span>
         <div class="event-info">تجربة شتوية عالمية في منتجعات فاخرة.</div>
-        <a href="/events/events.html?event=AlpineSkiing" class="event-btn"
+        <a href="/frontend/events/events.html?event=AlpineSkiing" class="event-btn"
           >المزيد</a
         >
       </div>
       <div class="event">
-        <img src="/img/لإقامة في شاليه جبلي.webp" alt="" class="event-img" />
+        <img src="/frontend/img/لإقامة في شاليه جبلي.webp" alt="" class="event-img" />
         <span class="name-event">القرى الجبلية السويسرية – Swiss Villages</span>
         <div class="event-info">قرى خشبية بطابع سويسري أصيل.</div>
-        <a href="/events/events.html?event=SwissVillages" class="event-btn"
+        <a href="/frontend/events/events.html?event=SwissVillages" class="event-btn"
           >المزيد</a
         >
       </div>
       <div class="event">
         <img
-          src="/img/القفز المظلي (Paragliding).webp"
+          src="/frontend/img/القفز المظلي (Paragliding).webp"
           alt=""
           class="event-img"
         />
         <span class="name-event">البارجلايدنج – Paragliding</span>
         <div class="event-info">مشاهدة الجبال والبحيرات من السماء.</div>
-        <a href="/events/events.html?event=Paragliding" class="event-btn"
+        <a href="/frontend/events/events.html?event=Paragliding" class="event-btn"
           >المزيد</a
         >
       </div>
@@ -396,7 +396,7 @@
         </div>
       </div>
     </div>
-    <script src="/countries/countries.js"></script>
-    <script src="/auth/auth.js"></script>
+    <script src="/frontend/countries/countries.js"></script>
+    <script src="/frontend/auth/auth.js"></script>
   </body>
 </html>

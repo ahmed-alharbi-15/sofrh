@@ -6,11 +6,11 @@
     <title>سفرة</title>
 
     <!-- ملف الستايل الأساسي -->
-    <link rel="stylesheet" href="/countries/countries.css" />
+    <link rel="stylesheet" href="/frontend/countries/countries.css" />
 
     <!-- خط عربي -->
     <style>
-      @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@500;600&display=swap");
+      @import url("https://fonts.googleapis.com/css/2?family=Noto+Sans+Arabic:wght@500;600&display=swap");
     </style>
   </head>
 
@@ -20,28 +20,28 @@
       <div class="hamburger" id="menu-btn">☰</div>
 
       <div class="auth-buttons" id="authButtons">
-        <a href="/auth/login.html" class="login">تسجيل دخول</a>
-        <a href="/auth/signup.html" class="signup">إنشاء حساب</a>
+        <a href="/frontend/auth/login.html" class="login">تسجيل دخول</a>
+        <a href="/frontend/auth/signup.html" class="signup">إنشاء حساب</a>
       </div>
 
       <div class="user-menu" id="userMenu">
-        <img id="userAvatar" src="/img/default-avatar.png" alt="المستخدم" />
+        <img id="userAvatar" src="/frontend/img/default-avatar.png" alt="المستخدم" />
         <span class="user-name" id="userName"></span>
         <div class="user-dropdown">
-          <a href="/profile/profile.html">الملف الشخصي</a>
-          <a href="/index/index.html" id="logoutBtn">تسجيل الخروج</a>
+          <a href="/frontend/profile/profile.html">الملف الشخصي</a>
+          <a href="/frontend/index//frontend/index/.html" id="logoutBtn">تسجيل الخروج</a>
         </div>
       </div>
 
       <ul class="nav-list">
-        <li><a href="/index/index.html">الرئيسية</a></li>
-        <li><a href="/countries/countries.html">الدول</a></li>
-        <li><a href="/events/events.html">الفعاليات</a></li>
-        <li><a href="/recipes/recipes.html">الوصفات</a></li>
+        <li><a href="/frontend/index//frontend/index/.html">الرئيسية</a></li>
+        <li><a href="/frontend/countries/countries.html">الدول</a></li>
+        <li><a href="/frontend/events/events.html">الفعاليات</a></li>
+        <li><a href="/frontend/recipes/recipes.html">الوصفات</a></li>
       </ul>
 
       <div class="logo">
-        <a href="/index/index.html"> <img src="/img/logo3.JPG" alt="سفرة" /></a>
+        <a href="/frontend/index//frontend/index/.html"> <img src="/frontend/img/logo3.JPG" alt="سفرة" /></a>
       </div>
     </header>
 
@@ -50,14 +50,14 @@
       <span class="close-btn" id="close-btn">✖</span>
 
       <ul>
-        <li><a href="/index/index.html">الرئيسية</a></li>
-        <li><a href="/countries/countries.html">الدول</a></li>
-        <li><a href="/events/events.html">الفعاليات</a></li>
-        <li><a href="/recipes/recipes.html  ">الوصفات</a></li>
+        <li><a href="/frontend/index//frontend/index/.html">الرئيسية</a></li>
+        <li><a href="/frontend/countries/countries.html">الدول</a></li>
+        <li><a href="/frontend/events/events.html">الفعاليات</a></li>
+        <li><a href="/frontend/recipes/recipes.html  ">الوصفات</a></li>
       </ul>
     </nav>
     <header>
-      <a href="/countries/countries.html" class="back-btn">رجوع</a>
+      <a href="/frontend/countries/countries.html" class="back-btn">رجوع</a>
     </header>
 
     <div class="country-name">
@@ -73,7 +73,7 @@
       <div
         class="cite"
         data-name="أوبود – Ubud"
-        data-img="/img/Ubud.jpg"
+        data-img="/frontend/img/Ubud.jpg"
         data-desc="عاصمة الفنون والثقافة في بالي، تجمع بين الطبيعة الهادئة وسط الغابات وحقول الأرز الخضراء والمعابد الهندوسية العريقة والفنون التقليدية."
         data-historic="🏛️ متحف بيما سيتي – Puri Saren Palace | ⛩️ معبد تاناه لوت – Tanah Lot | 🌿 غابة القرود – Sacred Monkey Forest | 🌾 حقول أرز تيغالالانغ – Tegallalang Rice Terraces"
         data-restaurants="🍱 سان سان وارونغ – Sun Sun Warung | 🌿 هيرب ليبراري – Herb Library | 🍣 أمبار أوبود – Ambar Ubud | 🌺 تامان ديداري – Taman Dedari | 🍽️ ويدجا – Wedja Restaurant"
@@ -84,12 +84,12 @@
           class="save-btn"
           onclick="
             event.stopPropagation();
-            saveItem('city', 'ubud', 'أوبود', '/img/Ubud.jpg');
+            saveItem('city', 'ubud', 'أوبود', '/frontend/img/Ubud.jpg');
           "
         >
           🏙️
         </button>
-        <img src="/img/Ubud.jpg" alt="أوبود" class="cite-img" />
+        <img src="/frontend/img/Ubud.jpg" alt="أوبود" class="cite-img" />
         <span class="name">أوبود – Ubud</span>
         <p class="info">طبيعة هادئة وسط الغابات وحقول الأرز.</p>
         <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
@@ -99,7 +99,7 @@
       <div
         class="cite"
         data-name="باندونغ – Bandung"
-        data-img="/img/باندونغ.jpg"
+        data-img="/frontend/img/باندونغ.jpg"
         data-desc="مدينة المرتفعات والهواء البارد في إندونيسيا، تشتهر بالشلالات والبحيرات البركانية الخلابة والمصانع التاريخية والثقافة الفريدة."
         data-historic="🏛️ متحف جيولوجيا باندونغ – Geological Museum | 🌋 بحيرة كاواه بوتيه – Kawah Putih | 🏰 مبنى باندونغ التاريخي – Gedung Sate | 🌿 حديقة دريمارك – Dusun Bambu"
         data-restaurants="🌿 كامبونج داون – Kampung Daun | 🥘 الجازيرة – Al Jazeerah Signature | 🚣 سوق ليمبانغ العائم – Floating Market Lembang | 🌙 لايالي لاونج – Layalii Lounge | 🍽️ فود أوبرا – Food Opera"
@@ -110,12 +110,12 @@
           class="save-btn"
           onclick="
             event.stopPropagation();
-            saveItem('city', 'bandung', 'باندونغ', '/img/باندونغ.jpg');
+            saveItem('city', 'bandung', 'باندونغ', '/frontend/img/باندونغ.jpg');
           "
         >
           🏙️
         </button>
-        <img src="/img/باندونغ.jpg" alt="باندونغ" class="cite-img" />
+        <img src="/frontend/img/باندونغ.jpg" alt="باندونغ" class="cite-img" />
         <span class="name">باندونغ – Bandung</span>
         <p class="info">مرتفعات وهواء بارد، شلالات وبحيرات فوهات بركانية.</p>
         <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
@@ -125,7 +125,7 @@
       <div
         class="cite"
         data-name="لومبوك – Lombok"
-        data-img="/img/لومبوك.jpg"
+        data-img="/frontend/img/لومبوك.jpg"
         data-desc="جزيرة الهدوء والطبيعة البكر في إندونيسيا، تشتهر بشواطئها الفيروزية الساحرة وجبل رينجاني البركاني الشامخ والثقافة الساساك الأصيلة."
         data-historic="🏔️ جبل رينجاني – Mount Rinjani | 🌊 جزر غيلي – Gili Islands | 🕌 مسجد إسلام ألانغكار – Lombok Grand Mosque | 🏘️ قرية ساساك – Sasak Village"
         data-restaurants="🌍 إل بازار – El Bazar | 🦞 لاوت بيرو – Laut Biru | 🌿 أشتاري – Ashtari | 🍕 ماما بيتزا – Mama Pizza | 🏖️ تانجونغ آن – Tanjung Aan Cafe"
@@ -136,12 +136,12 @@
           class="save-btn"
           onclick="
             event.stopPropagation();
-            saveItem('city', 'lombok', 'لومبوك', '/img/لومبوك.jpg');
+            saveItem('city', 'lombok', 'لومبوك', '/frontend/img/لومبوك.jpg');
           "
         >
           🏙️
         </button>
-        <img src="/img/لومبوك.jpg" alt="لومبوك" class="cite-img" />
+        <img src="/frontend/img/لومبوك.jpg" alt="لومبوك" class="cite-img" />
         <span class="name">لومبوك – Lombok</span>
         <p class="info">شواطئ طبيعية هادئة، وجبل رينجاني لمحبي المغامرة.</p>
         <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
@@ -151,7 +151,7 @@
       <div
         class="cite"
         data-name="لابوان باجو – Labuan Bajo"
-        data-img="/img/لابوان باجو.webp"
+        data-img="/frontend/img/لابوان باجو.webp"
         data-desc="بوابة جزر كومودو الساحرة في غرب فلوريس، تشتهر ببحرها الصافي وجزرها البكر وتجاربها البحرية الاستثنائية وتنانين كومودو الشهيرة."
         data-historic="🦎 حديقة كومودو – Komodo National Park | 🌊 جزيرة باداو – Padar Island | 🏖️ الشاطئ الوردي – Pink Beach | 🌿 تلة سيلانو – Sylano Hill"
         data-restaurants="🍝 باكالا – Baccalá | 🌿 لا مورينجا – La Moringa | 🍕 لا كوتشينا – La Cucina | 🌊 أتلانتس أون ذا روك – Atlantis On The Rock | 🦎 رينكا – Rinca Restaurant"
@@ -166,13 +166,13 @@
               'city',
               'labuan-bajo',
               'لابوان باجو',
-              '/img/لابوان باجو.webp',
+              '/frontend/img/لابوان باجو.webp',
             );
           "
         >
           🏙️
         </button>
-        <img src="/img/لابوان باجو.webp" alt="لابوان باجو" class="cite-img" />
+        <img src="/frontend/img/لابوان باجو.webp" alt="لابوان باجو" class="cite-img" />
         <span class="name">لابوان باجو – Labuan Bajo</span>
         <p class="info">بحر صافي وجزر طبيعية وتجارب بحرية مميزة.</p>
         <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
@@ -182,7 +182,7 @@
       <div
         class="cite"
         data-name="بوكيتينغي – Lubang Jepang"
-        data-img="/img/bukittinggi_banner.webp"
+        data-img="/frontend/img/bukittinggi_banner.webp"
         data-desc="جوهرة سومطرة الغربية في إندونيسيا، مدينة المرتفعات الجميلة تحيط بها البراكين والوديان العميقة والشلالات الخلابة والثقافة المينانغكاباو الفريدة."
         data-historic="🕌 مسجد جام عيه – Jam Gadang Clock Tower | 🏔️ بركان ماراب – Marapi Volcano | 🌿 وادي سيانوك – Sianok Canyon | 🏛️ متحف أدي تياوارمان – Adityawarman Museum"
         data-restaurants="🌿 لالا باتيو – LALA Patio | 🏰 توريت كافيه – Turret Cafe | 🌊 تاروكو – TARUKO Caferesto | 🍱 سيمبانغ رايا – Simpang Raya | ☕ بيدودال – Bedudal Cafe"
@@ -197,14 +197,14 @@
               'city',
               'bukittinggi',
               'بوكيتينغي',
-              '/img/bukittinggi_banner.webp',
+              '/frontend/img/bukittinggi_banner.webp',
             );
           "
         >
           🏙️
         </button>
         <img
-          src="/img/bukittinggi_banner.webp"
+          src="/frontend/img/bukittinggi_banner.webp"
           alt="بوكيتينغي"
           class="cite-img"
         />
@@ -217,7 +217,7 @@
       <div
         class="cite"
         data-name="بونشاك – Puncak"
-        data-img="/img/Puncak.webp"
+        data-img="/frontend/img/Puncak.webp"
         data-desc="وجهة جبلية هادئة قريبة من جاكرتا، تشتهر بمزارع الشاي الخضراء والهواء البارد المنعش والطبيعة الخلابة، مكان مثالي للاسترخاء بعيداً عن ضجيج المدينة."
         data-historic="🌿 مزارع شاي بونشاك – Puncak Tea Plantations | 🌋 جبل غيدي باناغرانغو – Gede Pangrango | 🌺 حديقة كيبون رايا – Cibodas Botanical Garden | 🏔️ ممر بونشاك – Puncak Pass"
         data-restaurants="🌿 بومي أكي – Bumi Aki Heritage | 🏔️ ألتيوس – Altius Restaurant | 🍽️ نيكول – Nicole's Kitchen & Lounge | 🌊 ذا ليك هاوس – The Lake House | 🌺 كامننا – Kamannana Restaurant"
@@ -228,12 +228,12 @@
           class="save-btn"
           onclick="
             event.stopPropagation();
-            saveItem('city', 'puncak', 'بونشاك', '/img/Puncak.webp');
+            saveItem('city', 'puncak', 'بونشاك', '/frontend/img/Puncak.webp');
           "
         >
           🏙️
         </button>
-        <img src="/img/Puncak.webp" alt="بونشاك" class="cite-img" />
+        <img src="/frontend/img/Puncak.webp" alt="بونشاك" class="cite-img" />
         <span class="name">بونشاك – Puncak</span>
         <p class="info">وجهة جبلية هادئة بطبيعة خضراء.</p>
         <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
@@ -247,44 +247,44 @@
     </div>
     <section class="foods-grid">
       <div class="foods">
-        <img src="/img/Nasi Goreng.jpg" alt="" class="foods-img" />
+        <img src="/frontend/img/Nasi Goreng.jpg" alt="" class="foods-img" />
         <span class="name-foods">ناسي جورينج (Nasi Goreng)</span>
         <div class="food-info">أرز مقلي بنكهة مميزة مع خضار ولحم أو دجاج.</div>
-        <a href="/recipes/recipes.html" class="for-more-btn">المزيد</a>
+        <a href="/frontend/recipes/recipes.html" class="for-more-btn">المزيد</a>
       </div>
       <div class="foods">
-        <img src="/img/(Mie Goreng.jpg" alt="" class="foods-img" />
+        <img src="/frontend/img/(Mie Goreng.jpg" alt="" class="foods-img" />
         <span class="name-foods">مي جورينج (Mie Goreng)</span>
         <div class="food-info">نودلز مقلية مع صلصات إندونيسية وخضار.</div>
-        <a href="/recipes/recipes.html" class="for-more-btn">المزيد</a>
+        <a href="/frontend/recipes/recipes.html" class="for-more-btn">المزيد</a>
       </div>
       <div class="foods">
-        <img src="/img/Satay.webp" alt="" class="foods-img" />
+        <img src="/frontend/img/Satay.webp" alt="" class="foods-img" />
         <span class="name-foods">ساتيه (Satay)</span>
         <div class="food-info">
           أسياخ لحم او دجاج مشوية تُقدّم مع صلصة الفول السوداني.
         </div>
-        <a href="/recipes/recipes.html" class="for-more-btn">المزيد</a>
+        <a href="/frontend/recipes/recipes.html" class="for-more-btn">المزيد</a>
       </div>
       <div class="foods">
-        <img src="/img/Gado-Gado.jpg" alt="" class="foods-img" />
+        <img src="/frontend/img/Gado-Gado.jpg" alt="" class="foods-img" />
         <span class="name-foods">غادو غادو (Gado-Gado)</span>
         <div class="food-info">خضار مسلوقة مع صلصة فول سوداني لذيذة.</div>
-        <a href="/recipes/recipes.html" class="for-more-btn">المزيد</a>
+        <a href="/frontend/recipes/recipes.html" class="for-more-btn">المزيد</a>
       </div>
       <div class="foods">
-        <img src="/img/Rendang.webp" alt="" class="foods-img" />
+        <img src="/frontend/img/Rendang.webp" alt="" class="foods-img" />
         <span class="name-foods">ريندانغ (Rendang)</span>
         <div class="food-info">
           لحم مطهو ببطء مع توابل غنية وحليب جوز الهند.
         </div>
-        <a href="/recipes/recipes.html" class="for-more-btn">المزيد</a>
+        <a href="/frontend/recipes/recipes.html" class="for-more-btn">المزيد</a>
       </div>
       <div class="foods">
-        <img src="/img/Dadar Gulung.webp" alt="" class="foods-img" />
+        <img src="/frontend/img/Dadar Gulung.webp" alt="" class="foods-img" />
         <span class="name-foods">دادار جولونغ (Dadar Gulung)</span>
         <div class="food-info">كريب أخضر محشو بجوز الهند وسكر النخيل.</div>
-        <a href="/recipes/recipes.html" class="for-more-btn">المزيد</a>
+        <a href="/frontend/recipes/recipes.html" class="for-more-btn">المزيد</a>
       </div>
     </section>
     <div class="events-main">
@@ -292,50 +292,50 @@
     </div>
     <section class="events-grid">
       <div class="event">
-        <img src="/img/شلالات.jpg" alt="" class="event-img" />
+        <img src="/frontend/img/شلالات.jpg" alt="" class="event-img" />
         <span class="name-event">الاسترخاء في الشلالات – Waterfalls</span>
         <div class="event-info">
           زيارة شلالات طبيعية وسط الغابات مثل تيغينونغان.
         </div>
-        <a href="/events/events.html?event=Waterfalls" class="event-btn"
+        <a href="/frontend/events/events.html?event=Waterfalls" class="event-btn"
           >المزيد</a
         >
       </div>
       <div class="event">
-        <img src="/img/شاطئ الوردي.jpg" alt="" class="event-img" />
+        <img src="/frontend/img/شاطئ الوردي.jpg" alt="" class="event-img" />
         <span class="name-event">الشاطئ الوردي – Pink Beach</span>
         <div class="event-info">شواطئ طبيعية بعيدة عن الزحام في لومبوك.</div>
-        <a href="/events/events.html?event=Beaches" class="event-btn">المزيد</a>
+        <a href="/frontend/events/events.html?event=Beaches" class="event-btn">المزيد</a>
       </div>
       <div class="event">
-        <img src="/img/التجديف في الأنهار.jpg" alt="" class="event-img" />
+        <img src="/frontend/img/التجديف في الأنهار.jpg" alt="" class="event-img" />
         <span class="name-event">التجديف في الأنهار – River Rafting</span>
         <div class="event-info">تجربة مغامرة خفيفة وسط الطبيعة.</div>
-        <a href="/events/events.html?event=RiverRafting" class="event-btn"
+        <a href="/frontend/events/events.html?event=RiverRafting" class="event-btn"
           >المزيد</a
         >
       </div>
       <div class="event">
-        <img src="/img/SnowBay Waterpark.jpg" alt="" class="event-img" />
+        <img src="/frontend/img/SnowBay Waterpark.jpg" alt="" class="event-img" />
         <span class="name-event">سنو باي ووتر بارك – SnowBay</span>
         <div class="event-info">ملاهي مائية كبيرة بألعاب ومنزلقات ممتعة</div>
-        <a href="/events/events.html?event=SnowBay" class="event-btn">المزيد</a>
+        <a href="/frontend/events/events.html?event=SnowBay" class="event-btn">المزيد</a>
       </div>
       <div class="event">
         <img
-          src="/img/Katamaran Resort – لومبوك.webp"
+          src="/frontend/img/Katamaran Resort – لومبوك.webp"
           alt=""
           class="event-img"
         />
         <span class="name-event">كاتاماران ريزورت – Katamaran Resort</span>
         <div class="event-info">منتجع شاطئي هادئ مناسب للأزواج.</div>
-        <a href="/events/events.html?event=KatamaranResort" class="event-btn"
+        <a href="/frontend/events/events.html?event=KatamaranResort" class="event-btn"
           >المزيد</a
         >
       </div>
       <div class="event">
         <img
-          src="/img/Four Seasons Bali – أوبود.jpg"
+          src="/frontend/img/Four Seasons Bali – أوبود.jpg"
           alt=""
           class="event-img"
         />
@@ -343,7 +343,7 @@
         <div class="event-info">
           منتجع فاخر وسط الغابات وحقول الأرز، مثالي للاسترخاء.
         </div>
-        <a href="/events/events.html?event=FourSeasonsBali" class="event-btn"
+        <a href="/frontend/events/events.html?event=FourSeasonsBali" class="event-btn"
           >المزيد</a
         >
       </div>
@@ -369,7 +369,7 @@
         </div>
       </div>
     </div>
-    <script src="/countries/countries.js"></script>
-    <script src="/auth/auth.js"></script>
+    <script src="/frontend/countries/countries.js"></script>
+    <script src="/frontend/auth/auth.js"></script>
   </body>
 </html>

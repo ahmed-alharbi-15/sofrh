@@ -6,11 +6,11 @@
     <title>سفرة</title>
 
     <!-- ملف الستايل الأساسي -->
-    <link rel="stylesheet" href="/countries/countries.css" />
+    <link rel="stylesheet" href="/frontend/countries/countries.css" />
 
     <!-- خط عربي -->
     <style>
-      @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@500;600&display=swap");
+      @import url("https://fonts.googleapis.com/css/2?family=Noto+Sans+Arabic:wght@500;600&display=swap");
     </style>
   </head>
 
@@ -20,28 +20,28 @@
       <div class="hamburger" id="menu-btn">☰</div>
 
       <div class="auth-buttons" id="authButtons">
-        <a href="/auth/login.html" class="login">تسجيل دخول</a>
-        <a href="/auth/signup.html" class="signup">إنشاء حساب</a>
+        <a href="/frontend/auth/login.html" class="login">تسجيل دخول</a>
+        <a href="/frontend/auth/signup.html" class="signup">إنشاء حساب</a>
       </div>
 
       <div class="user-menu" id="userMenu">
-        <img id="userAvatar" src="/img/default-avatar.png" alt="المستخدم" />
+        <img id="userAvatar" src="/frontend/img/default-avatar.png" alt="المستخدم" />
         <span class="user-name" id="userName"></span>
         <div class="user-dropdown">
-          <a href="/profile/profile.html">الملف الشخصي</a>
-          <a href="/index/index.html" id="logoutBtn">تسجيل الخروج</a>
+          <a href="/frontend/profile/profile.html">الملف الشخصي</a>
+          <a href="/frontend/index//frontend/index/.html" id="logoutBtn">تسجيل الخروج</a>
         </div>
       </div>
 
       <ul class="nav-list">
-        <li><a href="/index/index.html">الرئيسية</a></li>
-        <li><a href="/countries/countries.html">الدول</a></li>
-        <li><a href="/events/events.html">الفعاليات</a></li>
-        <li><a href="/recipes/recipes.html">الوصفات</a></li>
+        <li><a href="/frontend/index//frontend/index/.html">الرئيسية</a></li>
+        <li><a href="/frontend/countries/countries.html">الدول</a></li>
+        <li><a href="/frontend/events/events.html">الفعاليات</a></li>
+        <li><a href="/frontend/recipes/recipes.html">الوصفات</a></li>
       </ul>
 
       <div class="logo">
-        <a href="/index/index.html"> <img src="/img/logo3.JPG" alt="سفرة" /></a>
+        <a href="/frontend/index//frontend/index/.html"> <img src="/frontend/img/logo3.JPG" alt="سفرة" /></a>
       </div>
     </header>
 
@@ -50,14 +50,14 @@
       <span class="close-btn" id="close-btn">✖</span>
 
       <ul>
-        <li><a href="/index/index.html">الرئيسية</a></li>
-        <li><a href="/countries/countries.html">الدول</a></li>
-        <li><a href="/events/events.html">الفعاليات</a></li>
-        <li><a href="/recipes/recipes.html  ">الوصفات</a></li>
+        <li><a href="/frontend/index//frontend/index/.html">الرئيسية</a></li>
+        <li><a href="/frontend/countries/countries.html">الدول</a></li>
+        <li><a href="/frontend/events/events.html">الفعاليات</a></li>
+        <li><a href="/frontend/recipes/recipes.html  ">الوصفات</a></li>
       </ul>
     </nav>
     <header>
-      <a href="/countries/countries.html" class="back-btn">رجوع</a>
+      <a href="/frontend/countries/countries.html" class="back-btn">رجوع</a>
     </header>
     <section>
       <div class="country-name">
@@ -73,7 +73,7 @@
       <div
         class="cite"
         data-name="ليما – Lima"
-        data-img="/img/Lima.jpg"
+        data-img="/frontend/img/Lima.jpg"
         data-desc="عاصمة بيرو ومركزها الثقافي والاقتصادي، تجمع بين البحر الهادئ والتراث الاستعماري والمطبخ البيروفي الشهير عالمياً."
         data-historic="🏛️ بلازا مايور – Plaza Mayor | 🏺 متحف لاركو – Larco Museum | ⛪ كاتدرائية ليما – Lima Cathedral | 🏰 حي ميرافلوريس – Miraflores"
         data-restaurants="🌍 سنترال – Central Restaurante | 🍣 مايدو – Maido | 🏛️ أستريد إي جاستون – Astrid y Gastón | 🍲 إيزولينا – Isolina Taberna Peruana | 🐟 لامار – La Mar Cebicheria"
@@ -84,12 +84,12 @@
           class="save-btn"
           onclick="
             event.stopPropagation();
-            saveItem('city', 'lima', 'ليما', '/img/Lima.jpg');
+            saveItem('city', 'lima', 'ليما', '/frontend/img/Lima.jpg');
           "
         >
           🏙️
         </button>
-        <img src="/img/Lima.jpg" alt="ليما" class="cite-img" />
+        <img src="/frontend/img/Lima.jpg" alt="ليما" class="cite-img" />
         <span class="name">ليما – Lima</span>
         <p class="info">العاصمة وأشهر مدن الأكل، تجمع بين البحر والثقافة.</p>
         <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
@@ -100,7 +100,7 @@
       <div
         class="cite"
         data-name="كوسكو – Cusco"
-        data-img="/img/Cusco.webp"
+        data-img="/frontend/img/Cusco.webp"
         data-desc="عاصمة حضارة الإنكا العريقة وبوابة ماتشو بيتشو، مدينة تاريخية مدهشة تجمع بين الحضارة الإنكية والطراز الاستعماري الإسباني على ارتفاع 3400 متر."
         data-historic="🏛️ ساحة الأرمز – Plaza de Armas | 🗿 معبد الشمس – Qorikancha | ⛪ كاتدرائية كوسكو – Cusco Cathedral | 🏔️ ماتشو بيتشو – Machu Picchu"
         data-restaurants=" | 🥢 كيون – KION Peruvian Chinese | 🍕 لا بوديجا – La Bodega 138 | 👨‍🍳 تشيتشا – Chicha por Gaston Acurio | 🌿 تشيتشوليناه – Cicciolina"
@@ -111,12 +111,12 @@
           class="save-btn"
           onclick="
             event.stopPropagation();
-            saveItem('city', 'cusco', 'كوسكو', '/img/Cusco.webp');
+            saveItem('city', 'cusco', 'كوسكو', '/frontend/img/Cusco.webp');
           "
         >
           🏙️
         </button>
-        <img src="/img/Cusco.webp" alt="كوسكو" class="cite-img" />
+        <img src="/frontend/img/Cusco.webp" alt="كوسكو" class="cite-img" />
         <span class="name">كوسكو – Cusco</span>
         <p class="info">عاصمة حضارة الإنكا، مدينة تاريخية مدهشة.</p>
         <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
@@ -127,7 +127,7 @@
       <div
         class="cite"
         data-name="أريكيبا – Arequipa"
-        data-img="/img/Arequipa.jpg"
+        data-img="/frontend/img/Arequipa.jpg"
         data-desc="المدينة البيضاء ذات الطابع الاستعماري الأنيق، تحيط بها ثلاثة براكين شاهقة أبرزها بركان ميستي. مدينة تجمع بين الجمال المعماري والطبيعة البركانية المذهلة."
         data-historic="⛪ كنيسة لا كومباني – La Compañía | 🏛️ دير سانتا كاتالينا – Santa Catalina Monastery | 🌋 بركان ميستي – Misti Volcano | 🏘️ المدينة القديمة – Historic Center"
         data-restaurants="🥩 زيج زاج – Zig Zag Restaurant | 👨‍🍳 تشيتشا – Chicha por Gaston Acurio | 🍲 لا نويفا بالومينو – La Nueva Palomino | 🌿 ذا جاردن – The Garden Arequipa | 🍝 لا تراتوريا – La Trattoria del Monasterio"
@@ -138,12 +138,12 @@
           class="save-btn"
           onclick="
             event.stopPropagation();
-            saveItem('city', 'arequipa', 'أريكيبا', '/img/Arequipa.jpg');
+            saveItem('city', 'arequipa', 'أريكيبا', '/frontend/img/Arequipa.jpg');
           "
         >
           🏙️
         </button>
-        <img src="/img/Arequipa.jpg" alt="أريكيبا" class="cite-img" />
+        <img src="/frontend/img/Arequipa.jpg" alt="أريكيبا" class="cite-img" />
         <span class="name">أريكيبا – Arequipa</span>
         <p class="info">مدينة أنيقة بطابع استعماري وبراكين قريبة.</p>
         <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
@@ -154,7 +154,7 @@
       <div
         class="cite"
         data-name="بونو – Puno"
-        data-img="/img/Puno.webp"
+        data-img="/frontend/img/Puno.webp"
         data-desc="بوابة بحيرة تيتيكاكا أعلى بحيرة صالحة للملاحة في العالم، موطن جزر أوروس العائمة المصنوعة من القصب. تجربة ثقافية فريدة على ارتفاع 3800 متر."
         data-historic="🌊 بحيرة تيتيكاكا – Lake Titicaca | 🏝️ جزر أوروس – Uros Islands | 🏛️ معبد أوكو – Sillustani | 🎭 رقصة ديابلادا – Diablada Dance"
         data-restaurants="🏔️ موخسا – Mojsa Restaurant | 🌟 ألما بار – Alma Bar Restaurante | 🍕 توليبانز – Tulipan's Restaurant & Pizzeria | 🍣 تسوبين بينتو – Tsubin Bento | 🏛️ لا كاسونا – La Casona Restaurant"
@@ -165,12 +165,12 @@
           class="save-btn"
           onclick="
             event.stopPropagation();
-            saveItem('city', 'puno', 'بونو', '/img/Puno.webp');
+            saveItem('city', 'puno', 'بونو', '/frontend/img/Puno.webp');
           "
         >
           🏙️
         </button>
-        <img src="/img/Puno.webp" alt="بونو" class="cite-img" />
+        <img src="/frontend/img/Puno.webp" alt="بونو" class="cite-img" />
         <span class="name">بونو – Puno</span>
         <p class="info">بوابة بحيرة تيتيكاكا، تجربة ثقافية فريدة على الماء.</p>
         <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
@@ -181,7 +181,7 @@
       <div
         class="cite"
         data-name="إيكا – Ica"
-        data-img="/img/Ica.jpg"
+        data-img="/frontend/img/Ica.jpg"
         data-desc="المدينة الصحراوية الساحرة الشهيرة بكثبانها الرملية الضخمة وواحة هواكاتشينا الخلابة. وجهة مثالية لعشاق التزلج على الرمال وركوب السيارات في الكثبان."
         data-historic="🏜️ واحة هواكاتشينا – Huacachina Oasis | 🗿 خطوط نازكا – Nazca Lines | 🍷 مزارع العنب – Vineyards | 🏛️ متحف إيكا – Ica Regional Museum"
         data-restaurants="🥂 بيسترو باستيل – Bistrot Bastille | 🌿 تامبو دي تاكاما – Tambo de Tacama | 🍷 8 سيباس – 8 Cepas | 🥩 روكا ستيك هاوس – Roca Steak House | 🌍 إل إنتيبالكا – El Intipalka"
@@ -192,12 +192,12 @@
           class="save-btn"
           onclick="
             event.stopPropagation();
-            saveItem('city', 'ica', 'إيكا', '/img/Ica.jpg');
+            saveItem('city', 'ica', 'إيكا', '/frontend/img/Ica.jpg');
           "
         >
           🏙️
         </button>
-        <img src="/img/Ica.jpg" alt="إيكا" class="cite-img" />
+        <img src="/frontend/img/Ica.jpg" alt="إيكا" class="cite-img" />
         <span class="name">إيكا – Ica</span>
         <p class="info">مدينة صحراوية مشهورة بالكثبان الرملية والتزلج عليها.</p>
         <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
@@ -208,7 +208,7 @@
       <div
         class="cite"
         data-name="تروخيو – Trujillo"
-        data-img="/img/Trujillo.jpg"
+        data-img="/frontend/img/Trujillo.jpg"
         data-desc="مدينة الربيع الأبدي ذات التصميم الاستعماري الجميل والشواطئ الهادئة، تضم آثار حضارة موتشي وتشيمو العريقة وأجواء ثقافية متميزة."
         data-historic="🏛️ هواكا دي لا لونا – Huaca de la Luna | 🏰 مدينة تشان تشان – Chan Chan | ⛪ كاتدرائية تروخيو – Trujillo Cathedral | 🏘️ المدينة الاستعمارية – Colonial City"
         data-restaurants="🏛️ إل رينكون دي فاليخو – El Rincón de Vallejo | 🥩 إستانسيا موشيك – Estancia Muchik | 🐟 سكوالوس – Squalo's | 🍝 أل دينتي – Al Dente"
@@ -219,12 +219,12 @@
           class="save-btn"
           onclick="
             event.stopPropagation();
-            saveItem('city', 'trujillo', 'تروخيو', '/img/Trujillo.jpg');
+            saveItem('city', 'trujillo', 'تروخيو', '/frontend/img/Trujillo.jpg');
           "
         >
           🏙️
         </button>
-        <img src="/img/Trujillo.jpg" alt="تروخيو" class="cite-img" />
+        <img src="/frontend/img/Trujillo.jpg" alt="تروخيو" class="cite-img" />
         <span class="name">تروخيو – Trujillo</span>
         <p class="info">مدينة هادئة بتصميم استعماري وشواطئ جميلة.</p>
         <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
@@ -238,42 +238,42 @@
     </div>
     <section class="foods-grid">
       <div class="foods">
-        <img src="/img/Ceviche.jpg" alt="Ceviche" class="foods-img" />
+        <img src="/frontend/img/Ceviche.jpg" alt="Ceviche" class="foods-img" />
         <span class="name-foods">سيفيتشي – Ceviche</span>
         <div class="food-info">سمك طازج متبل بالليمون، بطعم منعش وخفيف.</div>
-        <a href="/recipes/recipes.html?recipe=ceviche" class="for-more-btn"
+        <a href="/frontend/recipes/recipes.html?recipe=ceviche" class="for-more-btn"
           >المزيد</a
         >
       </div>
       <div class="foods">
         <img
-          src="/img/Lomo Saltado.webp"
+          src="/frontend/img/Lomo Saltado.webp"
           alt="Lomo Saltado"
           class="foods-img"
         />
         <span class="name-foods">لومو سالتادو – Lomo Saltado</span>
         <div class="food-info">لحم مقلي مع خضار وصلصة، يقدم مع رز وبطاطس.</div>
-        <a href="/recipes/recipes.html?recipe=lomo-saltado" class="for-more-btn"
+        <a href="/frontend/recipes/recipes.html?recipe=lomo-saltado" class="for-more-btn"
           >المزيد</a
         >
       </div>
       <div class="foods">
         <img
-          src="/img/Aji de Gallina.jpg"
+          src="/frontend/img/Aji de Gallina.jpg"
           alt="Aji de Gallina"
           class="foods-img"
         />
         <span class="name-foods">أخي دي غالينا – Aji de Gallina</span>
         <div class="food-info">دجاج بصوص كريمي متبل، بطعم غني ومميز.</div>
         <a
-          href="/recipes/recipes.html?recipe=aji-de-gallina"
+          href="/frontend/recipes/recipes.html?recipe=aji-de-gallina"
           class="for-more-btn"
           >المزيد</a
         >
       </div>
       <div class="foods">
         <img
-          src="/img/Papa a la Huancaina..jpg"
+          src="/frontend/img/Papa a la Huancaina..jpg"
           alt="Papa a la Huancaína"
           class="foods-img"
         />
@@ -282,14 +282,14 @@
         >
         <div class="food-info">بطاطس مع صوص جبن وفلفل، طبق بسيط ولذيذ.</div>
         <a
-          href="/recipes/recipes.html?recipe=papa-huancaina"
+          href="/frontend/recipes/recipes.html?recipe=papa-huancaina"
           class="for-more-btn"
           >المزيد</a
         >
       </div>
       <div class="foods">
         <img
-          src="/img/Anticuchos.jpg"
+          src="/frontend/img/Anticuchos.jpg"
           alt="أنتيكوتشوس – Anticuchos"
           class="foods-img"
         />
@@ -297,19 +297,19 @@
         <div class="food-info">
           أسياخ لحم مشوية، تقدم بتوابل قوية ونكهة لذيذة.
         </div>
-        <a href="/recipes/recipes.html?recipe=anticuchos" class="for-more-btn"
+        <a href="/frontend/recipes/recipes.html?recipe=anticuchos" class="for-more-btn"
           >المزيد</a
         >
       </div>
       <div class="foods">
         <img
-          src="/img/Picarones.jpg"
+          src="/frontend/img/Picarones.jpg"
           alt="بيكارونيس – Picarones"
           class="foods-img"
         />
         <span class="name-foods">بيكارونيس – Picarones</span>
         <div class="food-info">حلى مقلي يشبه الدونات، يقدم مع دبس حلو</div>
-        <a href="/recipes/recipes.html?recipe=picarones" class="for-more-btn"
+        <a href="/frontend/recipes/recipes.html?recipe=picarones" class="for-more-btn"
           >المزيد</a
         >
       </div>
@@ -320,7 +320,7 @@
     <section class="events-grid">
       <div class="event">
         <img
-          src="/img/IInti Raymi.jpg"
+          src="/frontend/img/IInti Raymi.jpg"
           alt="مهرجان إنتي رايمي – Inti Raymi"
           class="event-img"
         />
@@ -328,13 +328,13 @@
         <div class="event-info">
           احتفال تاريخي يجسد حضارة الإنكا بعروض تقليدية مبهرة
         </div>
-        <a href="/events/events.html?event=IntiRaymi" class="event-btn"
+        <a href="/frontend/events/events.html?event=IntiRaymi" class="event-btn"
           >المزيد</a
         >
       </div>
       <div class="event">
         <img
-          src="/img/Machu Picchu.jpg"
+          src="/frontend/img/Machu Picchu.jpg"
           alt="زيارة ماتشو بيتشو – Machu Picchu"
           class="event-img"
         />
@@ -342,13 +342,13 @@
         <div class="event-info">
           تجربة استكشاف واحدة من عجائب العالم وسط الجبال
         </div>
-        <a href="/events/events.html?event=machuPicchu" class="event-btn"
+        <a href="/frontend/events/events.html?event=machuPicchu" class="event-btn"
           >المزيد</a
         >
       </div>
       <div class="event">
         <img
-          src="/img/Huacachina.jpg"
+          src="/frontend/img/Huacachina.jpg"
           alt="التزلج على رمال هواكاتشينا – Huacachina Sandboarding"
           class="event-img"
         />
@@ -358,13 +358,13 @@
         <div class="event-info">
           مغامرة ممتعة فوق الكثبان الرملية في الصحراء.
         </div>
-        <a href="/events/events.html?event=Huacachina" class="event-btn"
+        <a href="/frontend/events/events.html?event=Huacachina" class="event-btn"
           >المزيد</a
         >
       </div>
       <div class="event">
         <img
-          src="/img/Ballesta Islands.jpg"
+          src="/frontend/img/Ballesta Islands.jpg"
           alt="جزر باليستاس – Ballesta Islands"
           class="event-img"
         />
@@ -372,13 +372,13 @@
         <div class="event-info">
           رحلة بحرية لمشاهدة الحياة البحرية والمناظر الطبيعية.
         </div>
-        <a href="/events/events.html?event=BallestaIslands" class="event-btn"
+        <a href="/frontend/events/events.html?event=BallestaIslands" class="event-btn"
           >المزيد</a
         >
       </div>
       <div class="event">
         <img
-          src="/img/Inca Trail.jpg"
+          src="/frontend/img/Inca Trail.jpg"
           alt="مسار الإنكا – Inca Trail"
           class="event-img"
         />
@@ -386,13 +386,13 @@
         <div class="event-info">
           رحلة مشي طويلة لعشاق المغامرة وسط الطبيعة الجبلية.
         </div>
-        <a href="/events/events.html?event=IncaTrail" class="event-btn"
+        <a href="/frontend/events/events.html?event=IncaTrail" class="event-btn"
           >المزيد</a
         >
       </div>
       <div class="event">
         <img
-          src="/img/Marinera Festival.webp"
+          src="/frontend/img/Marinera Festival.webp"
           alt="مهرجان مارينيرا – Marinera Festival"
           class="event-img"
         />
@@ -400,7 +400,7 @@
         <div class="event-info">
           رقص تقليدي يعكس ثقافة البيرو بأجواء فنية جميلة.
         </div>
-        <a href="/events/events.html?event=MarineraFestival" class="event-btn"
+        <a href="/frontend/events/events.html?event=MarineraFestival" class="event-btn"
           >المزيد</a
         >
       </div>
@@ -426,7 +426,7 @@
         </div>
       </div>
     </div>
-    <script src="/countries/countries.js"></script>
-    <script src="/auth/auth.js"></script>
+    <script src="/frontend/countries/countries.js"></script>
+    <script src="/frontend/auth/auth.js"></script>
   </body>
 </html>

@@ -36,7 +36,7 @@ if (signupBtn) {
                     email: email,
                     avatar: ""
                 }));
-                window.location.href = "../index/index.html";
+                window.location.href = "/index/index.html";
             } else {
                 // حالة الرفض (مثل إيميل مكرر أو يوزر مأخوذ)
                 // هنا يتعرض الرسالة اللي أنت كتبتها في الباكيند بالضبط
@@ -74,7 +74,7 @@ if (loginBtn) {
                     avatar: ""
                 }));
                 alert(data.message);
-                window.location.href = "../index/index.html";
+                window.location.href = "/frontend/index/index.html";
             } else {
                 alert("خطأ: " + data.detail);
             }
@@ -109,7 +109,7 @@ if (logoutBtn) {
     logoutBtn.addEventListener("click", (e) => {
         e.preventDefault();
         localStorage.removeItem("safraUser");
-        window.location.href = "../index/index.html";
+        window.location.href = "/frontend/index/index.html";
     });
 }
 
@@ -120,7 +120,7 @@ function saveItem(type, id, name, img) {
     const user = JSON.parse(localStorage.getItem("safraUser"));
     if (!user) {
         alert("سجل دخولك أولاً!");
-        window.location.href = "../auth/login.html";
+        window.location.href = "/frontend/auth/login.html";
         return;
     }
 

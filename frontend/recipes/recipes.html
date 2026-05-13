@@ -20,27 +20,27 @@
       <div class="hamburger" id="menu-btn">☰</div>
 
       <div class="auth-buttons" id="authButtons">
-        <a href="/auth/login.html" class="login">تسجيل دخول</a>
-        <a href="/auth/signup.html" class="signup">إنشاء حساب</a>
+        <a href="/frontend/auth/login.html" class="login">تسجيل دخول</a>
+        <a href="/frontend/auth/signup.html" class="signup">إنشاء حساب</a>
       </div>
 
       <div class="user-menu" id="userMenu">
-        <img id="userAvatar" src="/img/default-avatar.png" alt="المستخدم" />
+        <img id="userAvatar" src="/frontend/img/default-avatar.png" alt="المستخدم" />
         <span class="user-name" id="userName"></span>
         <div class="user-dropdown">
-          <a href="/profile/profile.html">الملف الشخصي</a>
-          <a href="/index/index.html" id="logoutBtn">تسجيل الخروج</a>
+          <a href="/frontend/profile/profile.html">الملف الشخصي</a>
+          <a href="/frontend/index/index.html" id="logoutBtn">تسجيل الخروج</a>
         </div>
       </div>
       <ul class="nav-list">
-        <li><a href="/index/index.html">الرئيسية</a></li>
-        <li><a href="/countries/countries.html">الدول</a></li>
-        <li><a href="/events/events.html">الفعاليات</a></li>
-        <li><a href="/recipes/recipes.html">الوصفات</a></li>
+        <li><a href="/frontend/index/index.html">الرئيسية</a></li>
+        <li><a href="/frontend/countries/countries.html">الدول</a></li>
+        <li><a href="/frontend/events/events.html">الفعاليات</a></li>
+        <li><a href="/frontend/recipes/recipes.html">الوصفات</a></li>
       </ul>
 
       <div class="logo">
-        <a href="/index/index.html"> <img src="/img/logo3.JPG" alt="سفرة" /></a>
+        <a href="/frontend/index/index.html"> <img src="/frontend/img/logo3.JPG" alt="سفرة" /></a>
       </div>
     </header>
 
@@ -49,10 +49,10 @@
       <span class="close-btn" id="close-btn">✖</span>
 
       <ul>
-        <li><a href="/index/index.html">الرئيسية</a></li>
-        <li><a href="/countries/countries.html">الدول</a></li>
-        <li><a href="/events/events.html">الفعاليات</a></li>
-        <li><a href="/recipes/recipes.html  ">الوصفات</a></li>
+        <li><a href="/frontend/index/index.html">الرئيسية</a></li>
+        <li><a href="/frontend/countries/countries.html">الدول</a></li>
+        <li><a href="/frontend/events/events.html">الفعاليات</a></li>
+        <li><a href="/frontend/recipes/recipes.html  ">الوصفات</a></li>
       </ul>
     </nav>
 
@@ -83,7 +83,7 @@
         <button
           class="save-btn"
           onclick="
-            saveItem('recipe', 'saleeg', 'السليق – Saleeg', '/img/سليق.jpg')
+            saveItem('recipe', 'saleeg', 'السليق – Saleeg', '/frontend/img/سليق.jpg')
           "
         >
           🍽️
@@ -91,7 +91,7 @@
         <button
           class="recipes-item"
           data-title="السليق – Saleeg"
-          data-img="/img/سليق.jpg"
+          data-img="/frontend/img/سليق.jpg"
           data-ingredients="أرز|100|غ|دجاج|125|غ|حليب|150|مل|مرق دجاج|200|مل|بصل|1|حبة صغيرة|زيت|15|مل|ملح|2|غ"
           data-spices="هيل|1|غ|قرفة|1|غ|فلفل أبيض|1|غ|زنجبيل|1|غ"
           data-sauces="صوص طماطم"
@@ -99,7 +99,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/سليق.jpg" alt="السليق" />
+            <img src="/frontend/img/سليق.jpg" alt="السليق" />
             <span>السليق – Saleeg</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -110,7 +110,7 @@
         <button
           class="save-btn"
           onclick="
-            saveItem('recipe', 'kabsa', 'الكبسة – Kabsa', '/img/كبسة.jpg')
+            saveItem('recipe', 'kabsa', 'الكبسة – Kabsa', '/frontend/img/كبسة.jpg')
           "
         >
           🍽️
@@ -118,7 +118,7 @@
         <button
           class="recipes-item"
           data-title="الكبسة – Kabsa"
-          data-img="/img/كبسة.jpg"
+          data-img="/frontend/img/كبسة.jpg"
           data-ingredients="أرز|100|غ|دجاج|125|غ|بصل|1|حبة صغيرة|طماطم|1|حبة صغيرة|ثوم|2|فص|زيت|15|مل|ملح|2|غ|معجون طماطم|15|غ"
           data-spices="كبسة جاهزة|3|غ|هيل|1|غ|قرفة|1|غ|فلفل أسود|1|غ|زعفران|0.5|غ|ورق غار|1|ورقة"
           data-sauces="دقوس"
@@ -126,7 +126,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/كبسة.jpg" alt="الكبسة" />
+            <img src="/frontend/img/كبسة.jpg" alt="الكبسة" />
             <span>الكبسة – Kabsa</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -137,7 +137,7 @@
         <button
           class="save-btn"
           onclick="
-            saveItem('recipe', 'jareesh', 'الجريش – Jareesh', '/img/جريش.jpg')
+            saveItem('recipe', 'jareesh', 'الجريش – Jareesh', '/frontend/img/جريش.jpg')
           "
         >
           🍽️
@@ -145,7 +145,7 @@
         <button
           class="recipes-item"
           data-title="الجريش – Jareesh"
-          data-img="/img/جريش.jpg"
+          data-img="/frontend/img/جريش.jpg"
           data-ingredients="جريش|100|غ|دجاج|125|غ|بصل|1|حبة صغيرة|طماطم|1|حبة صغيرة|ثوم|2|فص|زيت|15|مل|ملح|2|غ|لبن|50|مل"
           data-spices="كمون|2|غ|فلفل أسود|1|غ|هيل|1|غ|كركم|1|غ"
           data-sauces="لبن رائب"
@@ -153,7 +153,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/جريش.jpg" alt="الجريش" />
+            <img src="/frontend/img/جريش.jpg" alt="الجريش" />
             <span>الجريش – Jareesh</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -164,7 +164,7 @@
         <button
           class="save-btn"
           onclick="
-            saveItem('recipe', 'madfoon', 'المدفون – Madfoon', '/img/مدفون.jpg')
+            saveItem('recipe', 'madfoon', 'المدفون – Madfoon', '/frontend/img/مدفون.jpg')
           "
         >
           🍽️
@@ -172,7 +172,7 @@
         <button
           class="recipes-item"
           data-title="المدفون – Madfoon"
-          data-img="/img/مدفون.jpg"
+          data-img="/frontend/img/مدفون.jpg"
           data-ingredients="أرز|100|غ|لحم غنم|150|غ|بصل|1|حبة صغيرة|طماطم|1|حبة صغيرة|ثوم|2|فص|زيت|15|مل|ملح|2|غ|معجون طماطم|15|غ"
           data-spices="بهارات مشكلة|3|غ|هيل|1|غ|قرفة|1|غ|فلفل أسود|1|غ|كمون|2|غ|زعفران|0.5|غ"
           data-sauces="دقوس|لبن رائب"
@@ -180,7 +180,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/مدفون.jpg" alt="المدفون" />
+            <img src="/frontend/img/مدفون.jpg" alt="المدفون" />
             <span>المدفون – Madfoon</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -191,7 +191,7 @@
         <button
           class="save-btn"
           onclick="
-            saveItem('recipe', 'areeka', 'العريكة – Areeka', '/img/عريكة.jpg')
+            saveItem('recipe', 'areeka', 'العريكة – Areeka', '/frontend/img/عريكة.jpg')
           "
         >
           🍽️
@@ -199,7 +199,7 @@
         <button
           class="recipes-item"
           data-title="العريكة – Areeka"
-          data-img="/img/عريكه.webp"
+          data-img="/frontend/img/عريكه.webp"
           data-ingredients="دقيق|400|غ|سمن|120|غ|عسل|160|غ|ماء|320|مل|ملح|4|غ"
           data-spices="هيل|4|غ|زعفران|2|غ"
           data-sauces="عسل|سمن"
@@ -207,7 +207,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/عريكه.webp" alt="العريكة" />
+            <img src="/frontend/img/عريكه.webp" alt="العريكة" />
             <span>العريكة – Areeka</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -218,7 +218,7 @@
         <button
           class="save-btn"
           onclick="
-            saveItem('recipe', 'kleeja', 'الكليجة – Kleeja', '/img/كليجة.jpg')
+            saveItem('recipe', 'kleeja', 'الكليجة – Kleeja', '/frontend/img/كليجة.jpg')
           "
         >
           🍽️
@@ -226,7 +226,7 @@
         <button
           class="recipes-item"
           data-title="الكليجة – Kleeja"
-          data-img="/img/كليجة.jpg"
+          data-img="/frontend/img/كليجة.jpg"
           data-ingredients="دقيق|500|غ|سمن|120|غ|سكر|100|غ|حليب|150|مل|خميرة|7|غ|بيض|2|حبة"
           data-spices="هيل|4|غ|زعفران|1|غ|يانسون|2|غ"
           data-sauces=""
@@ -234,7 +234,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/كليجة.jpg" alt="الكليجة" />
+            <img src="/frontend/img/كليجة.jpg" alt="الكليجة" />
             <span>الكليجة – Kleeja</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -244,14 +244,14 @@
       <div class="foods-card" data-region="main-foods" id="sushi">
         <button
           class="save-btn"
-          onclick="saveItem('recipe', 'sushi', 'سوشي – Sushi', '/img/سوشي.jpg')"
+          onclick="saveItem('recipe', 'sushi', 'سوشي – Sushi', '/frontend/img/سوشي.jpg')"
         >
           🍽️
         </button>
         <button
           class="recipes-item"
           data-title="سوشي – Sushi"
-          data-img="/img/soshe.jpg"
+          data-img="/frontend/img/soshe.jpg"
           data-ingredients="أرز سوشي|100|غ|خل أرز|15|مل|سكر|5|غ|ملح|2|غ|أوراق نوري|1|ورقة|سمك سلمون|50|غ|جبن كريمي|30|غ|خيار|30|غ"
           data-spices=""
           data-sauces="صوص صويا|مايونيز ياباني"
@@ -259,7 +259,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/soshe.jpg" alt="سوشي" />
+            <img src="/frontend/img/soshe.jpg" alt="سوشي" />
             <span>سوشي – Sushi</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -269,14 +269,14 @@
       <div class="foods-card" data-region="main-foods" id="ramen">
         <button
           class="save-btn"
-          onclick="saveItem('recipe', 'ramen', 'رامن – Ramen', '/img/رامن.jpg')"
+          onclick="saveItem('recipe', 'ramen', 'رامن – Ramen', '/frontend/img/رامن.jpg')"
         >
           🍽️
         </button>
         <button
           class="recipes-item"
           data-title="رامن – Ramen"
-          data-img="/img/رامن.jpg"
+          data-img="/frontend/img/رامن.jpg"
           data-ingredients="نودلز رامن|100|غ|مرق دجاج|300|مل|دجاج|100|غ|بيض|1|حبة|بصل أخضر|20|غ|ذرة|30|غ|زيت سمسم|5|مل|صوص صويا|15|مل|ملح|2|غ"
           data-spices="ثوم|1|فص|زنجبيل|2|غ|فلفل أبيض|1|غ"
           data-sauces="صوص صويا|زيت حار"
@@ -284,7 +284,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/رامن.jpg" alt="رامن" />
+            <img src="/frontend/img/رامن.jpg" alt="رامن" />
             <span>رامن – Ramen</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -294,7 +294,7 @@
         <button
           class="save-btn"
           onclick="
-            saveItem('recipe', 'tempura', 'تمبورا – Tempura', '/img/تمبورا.jpg')
+            saveItem('recipe', 'tempura', 'تمبورا – Tempura', '/frontend/img/تمبورا.jpg')
           "
         >
           🍽️
@@ -302,7 +302,7 @@
         <button
           class="recipes-item"
           data-title="تمبورا – Tempura"
-          data-img="/img/التمبورا.jpg"
+          data-img="/frontend/img/التمبورا.jpg"
           data-ingredients="روبيان|100|غ|دقيق|50|غ|نشا|25|غ|بيض|1|حبة|ماء بارد|80|مل|زيت للقلي|200|مل|ملح|1|غ"
           data-spices="فلفل أبيض|1|غ"
           data-sauces="صوص تمبورا|صوص صويا"
@@ -310,7 +310,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/التمبورا.jpg" alt="تمبورا" />
+            <img src="/frontend/img/التمبورا.jpg" alt="تمبورا" />
             <span>تمبورا – Tempura</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -325,7 +325,7 @@
               'recipe',
               'okonomiyaki',
               'أوكونوميياكي – Okonomiyaki',
-              '/img/أوكونوميياكي.jpg',
+              '/frontend/img/أوكونوميياكي.jpg',
             )
           "
         >
@@ -334,7 +334,7 @@
         <button
           class="recipes-item"
           data-title="أوكونوميياكي – Okonomiyaki"
-          data-img="/img/Okonomiyaki.jpg"
+          data-img="/frontend/img/Okonomiyaki.jpg"
           data-ingredients="دقيق|75|غ|ماء|80|مل|بيض|1|حبة|ملفوف|100|غ|بصل أخضر|20|غ|روبيان|50|غ|زيت|10|مل|ملح|1|غ"
           data-spices="فلفل أبيض|1|غ"
           data-sauces="صوص أوكونوميياكي|مايونيز ياباني"
@@ -342,7 +342,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/Okonomiyaki.jpg" alt="أوكونوميياكي" />
+            <img src="/frontend/img/Okonomiyaki.jpg" alt="أوكونوميياكي" />
             <span>أوكونوميياكي – Okonomiyaki</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -357,7 +357,7 @@
               'recipe',
               'takoyaki',
               'تاكوياكي – Takoyaki',
-              '/img/تاكوياكي.jpg',
+              '/frontend/img/تاكوياكي.jpg',
             )
           "
         >
@@ -366,7 +366,7 @@
         <button
           class="recipes-item"
           data-title="تاكوياكي – Takoyaki"
-          data-img="/img/Takoyaki.jpg"
+          data-img="/frontend/img/Takoyaki.jpg"
           data-ingredients="دقيق|75|غ|ماء|200|مل|بيض|1|حبة|دجاج مفروم|80|غ|بصل أخضر|20|غ|زنجبيل مخلل|15|غ|زيت|10|مل|ملح|1|غ"
           data-spices="فلفل أبيض|1|غ|صوص صويا|10|مل"
           data-sauces="صوص تاكوياكي|مايونيز ياباني"
@@ -374,7 +374,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/Takoyaki.jpg" alt="تاكوياكي" />
+            <img src="/frontend/img/Takoyaki.jpg" alt="تاكوياكي" />
             <span>تاكوياكي – Takoyaki</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -389,7 +389,7 @@
               'recipe',
               'tonkatsu',
               'تونكاتسو – Tonkatsu',
-              '/img/تونكاتسو.jpg',
+              '/frontend/img/تونكاتسو.jpg',
             )
           "
         >
@@ -398,7 +398,7 @@
         <button
           class="recipes-item"
           data-title="تونكاتسو – Tonkatsu"
-          data-img="/img/Tonkatsu.webp"
+          data-img="/frontend/img/Tonkatsu.webp"
           data-ingredients="دجاج|150|غ|دقيق|30|غ|بيض|1|حبة|بانكو|50|غ|زيت للقلي|200|مل|ملح|2|غ"
           data-spices="فلفل أسود|1|غ|ثوم بودرة|1|غ"
           data-sauces="صوص تونكاتسو|خردل ياباني"
@@ -406,7 +406,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/Tonkatsu.webp" alt="تونكاتسو" />
+            <img src="/frontend/img/Tonkatsu.webp" alt="تونكاتسو" />
             <span>تونكاتسو – Tonkatsu</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -421,7 +421,7 @@
               'recipe',
               'hoawshi',
               'الحواوشي – Hoawshi',
-              '/img/حواوشي.jpg',
+              '/frontend/img/حواوشي.jpg',
             )
           "
         >
@@ -430,7 +430,7 @@
         <button
           class="recipes-item"
           data-title="الحواوشي – Hoawshi"
-          data-img="/img/حواوشي.jpg"
+          data-img="/frontend/img/حواوشي.jpg"
           data-ingredients="لحم مفروم|125|غ|بصل|1|حبة صغيرة|ثوم|1|فص|بقدونس|5|غ|ملح|1|غ|فلفل أسود|1|غ|كمون|1|غ|بهارات مشكلة|1|غ|خبز عيش بلدي|1|رغيف"
           data-spices="فلفل أحمر حار|1|غ|كركم|1|غ|قرفة|0.5|غ"
           data-sauces="صوص طماطم|صوص ثوم"
@@ -438,7 +438,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/حواوشي.jpg" alt="الحواوشي" />
+            <img src="/frontend/img/حواوشي.jpg" alt="الحواوشي" />
             <span>الحواوشي – Hoawshi</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -449,7 +449,7 @@
         <button
           class="save-btn"
           onclick="
-            saveItem('recipe', 'kushari', 'الكشري – Kushari', '/img/الكشري.jpg')
+            saveItem('recipe', 'kushari', 'الكشري – Kushari', '/frontend/img/الكشري.jpg')
           "
         >
           🍽️
@@ -457,7 +457,7 @@
         <button
           class="recipes-item"
           data-title="الكشري – Kushari"
-          data-img="/img/الكشري.jpg"
+          data-img="/frontend/img/الكشري.jpg"
           data-ingredients="أرز|100|غ|عدس|50|غ|مكرونة صغيرة|50|غ|حمص مسلوق|30|غ|بصل|1|حبة صغيرة|زيت|15|مل|ملح|2|غ"
           data-spices="كمون|2|غ|فلفل أسود|1|غ|كركم|1|غ"
           data-sauces="صوص طماطم حار|خل"
@@ -465,7 +465,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/الكشري.jpg" alt="الكشري" />
+            <img src="/frontend/img/الكشري.jpg" alt="الكشري" />
             <span>الكشري – Kushari</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -480,7 +480,7 @@
               'recipe',
               'tameya',
               'الطعمية – Tameya',
-              '/img/الفول والطعمية.jpeg',
+              '/frontend/img/الفول والطعمية.jpeg',
             )
           "
         >
@@ -489,7 +489,7 @@
         <button
           class="recipes-item"
           data-title="الطعمية – Tameya"
-          data-img="/img/الفول والطعمية.jpeg"
+          data-img="/frontend/img/الفول والطعمية.jpeg"
           data-ingredients="فول مجروش|100|غ|بصل|1|حبة صغيرة|ثوم|2|فص|بقدونس|20|غ|كزبرة خضراء|10|غ|زيت للقلي|200|مل|ملح|2|غ"
           data-spices="كمون|2|غ|فلفل أسود|1|غ|كزبرة مطحونة|2|غ|فلفل أحمر حار|1|غ"
           data-sauces="طحينة|صوص طماطم"
@@ -497,7 +497,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/الفول والطعمية.jpeg" alt="الطعمية" />
+            <img src="/frontend/img/الفول والطعمية.jpeg" alt="الطعمية" />
             <span>الطعمية – Tameya</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -508,7 +508,7 @@
         <button
           class="save-btn"
           onclick="
-            saveItem('recipe', 'mahshi', 'المحشي – Mahshi', '/img/المحشي.jpg')
+            saveItem('recipe', 'mahshi', 'المحشي – Mahshi', '/frontend/img/المحشي.jpg')
           "
         >
           🍽️
@@ -516,7 +516,7 @@
         <button
           class="recipes-item"
           data-title="المحشي – Mahshi"
-          data-img="/img/المحشي.jpg"
+          data-img="/frontend/img/المحشي.jpg"
           data-ingredients="أرز|80|غ|لحم مفروم|60|غ|كوسة|2|حبة صغيرة|طماطم|1|حبة صغيرة|بصل|1|حبة صغيرة|معجون طماطم|15|غ|زيت|10|مل|ملح|2|غ"
           data-spices="بهارات مشكلة|2|غ|كمون|1|غ|فلفل أسود|1|غ|قرفة|1|غ"
           data-sauces="صوص طماطم"
@@ -524,7 +524,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/المحشي.jpg" alt="المحشي" />
+            <img src="/frontend/img/المحشي.jpg" alt="المحشي" />
             <span>المحشي – Mahshi</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -539,7 +539,7 @@
               'recipe',
               'molokhia',
               'الملوخية – Molokhia',
-              '/img/ملوخيه ١.jpg',
+              '/frontend/img/ملوخيه ١.jpg',
             )
           "
         >
@@ -548,7 +548,7 @@
         <button
           class="recipes-item"
           data-title="الملوخية – Molokhia"
-          data-img="/img/ملوخيه ١.jpg"
+          data-img="/frontend/img/ملوخيه ١.jpg"
           data-ingredients="ملوخية مجففة|20|غ|دجاج|125|غ|مرق دجاج|250|مل|بصل|1|حبة صغيرة|ثوم|3|فص|زيت|15|مل|ملح|2|غ"
           data-spices="كمون|2|غ|كزبرة مطحونة|2|غ|فلفل أسود|1|غ"
           data-sauces="أرز أبيض|خبز"
@@ -556,7 +556,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/ملوخيه ١.jpg" alt="الملوخية" />
+            <img src="/frontend/img/ملوخيه ١.jpg" alt="الملوخية" />
             <span>الملوخية – Molokhia</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -571,7 +571,7 @@
               'recipe',
               'kofta',
               'الكفتة – Kofta',
-              '/img/الكباب والكفتة.jpeg',
+              '/frontend/img/الكباب والكفتة.jpeg',
             )
           "
         >
@@ -580,7 +580,7 @@
         <button
           class="recipes-item"
           data-title="الكفتة – Kofta"
-          data-img="/img/الكباب والكفتة.jpeg"
+          data-img="/frontend/img/الكباب والكفتة.jpeg"
           data-ingredients="لحم مفروم|125|غ|بصل|1|حبة صغيرة|ثوم|1|فص|بقدونس|10|غ|ملح|2|غ|زيت|10|مل"
           data-spices="بهارات مشكلة|2|غ|كمون|2|غ|فلفل أسود|1|غ|قرفة|1|غ|فلفل أحمر حار|1|غ"
           data-sauces="صوص طماطم|طحينة"
@@ -588,7 +588,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/الكباب والكفتة.jpeg" alt="الكفتة" />
+            <img src="/frontend/img/الكباب والكفتة.jpeg" alt="الكفتة" />
             <span>الكفتة – Kofta</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -603,7 +603,7 @@
               'recipe',
               'bobotie',
               'بوبوتي – Bobotie',
-              '/img/بوبوتي (Bobotie).jpg',
+              '/frontend/img/بوبوتي (Bobotie).jpg',
             )
           "
         >
@@ -612,7 +612,7 @@
         <button
           class="recipes-item"
           data-title="بوبوتي – Bobotie"
-          data-img="/img/بوبوتي (Bobotie).jpg"
+          data-img="/frontend/img/بوبوتي (Bobotie).jpg"
           data-ingredients="لحم مفروم|125|غ|بصل|1|حبة صغيرة|ثوم|1|فص|خبز|20|غ|حليب|50|مل|بيض|1|حبة|مشمش مجفف|20|غ|زيت|10|مل|ملح|2|غ"
           data-spices="كاري|3|غ|كركم|1|غ|قرفة|1|غ|زنجبيل|1|غ|فلفل أسود|1|غ"
           data-sauces="أرز أصفر|چاتني مانجا"
@@ -620,7 +620,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/بوبوتي (Bobotie).jpg" alt="بوبوتي" />
+            <img src="/frontend/img/بوبوتي (Bobotie).jpg" alt="بوبوتي" />
             <span>بوبوتي – Bobotie</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -631,7 +631,7 @@
         <button
           class="save-btn"
           onclick="
-            saveItem('recipe', 'braai', 'براي – Braai', '/img/براي (Braai).jpg')
+            saveItem('recipe', 'braai', 'براي – Braai', '/frontend/img/براي (Braai).jpg')
           "
         >
           🍽️
@@ -639,7 +639,7 @@
         <button
           class="recipes-item"
           data-title="براي – Braai"
-          data-img="/img/براي (Braai).jpg"
+          data-img="/frontend/img/براي (Braai).jpg"
           data-ingredients="لحم بقر|150|غ|ملح|2|غ|زيت|10|مل|ثوم|1|فص|ليمون|1|حبة صغيرة"
           data-spices="فلفل أسود|2|غ|بابريكا|2|غ|كمون|1|غ|كزبرة مطحونة|1|غ"
           data-sauces="صوص براي|سلطة خضراء"
@@ -647,7 +647,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/براي (Braai).jpg" alt="براي" />
+            <img src="/frontend/img/براي (Braai).jpg" alt="براي" />
             <span>براي – Braai</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -662,7 +662,7 @@
               'recipe',
               'pap-chakalaka',
               'باب وشاكالاكا – Pap & Chakalaka',
-              '/img/باب & تشاكالا (Pap & Chakalaka).jpg',
+              '/frontend/img/باب & تشاكالا (Pap & Chakalaka).jpg',
             )
           "
         >
@@ -671,7 +671,7 @@
         <button
           class="recipes-item"
           data-title="باب وشاكالاكا – Pap & Chakalaka"
-          data-img="/img/باب & تشاكالا (Pap & Chakalaka).jpg"
+          data-img="/frontend/img/باب & تشاكالا (Pap & Chakalaka).jpg"
           data-ingredients="دقيق ذرة|100|غ|ماء|250|مل|ملح|2|غ|بصل|1|حبة صغيرة|طماطم|1|حبة صغيرة|فلفل رومي|50|غ|جزر|50|غ|فاصوليا معلبة|50|غ|زيت|15|مل"
           data-spices="كاري|2|غ|فلفل أحمر حار|1|غ|كمون|1|غ|فلفل أسود|1|غ"
           data-sauces=""
@@ -680,7 +680,7 @@
         >
           <div class="recipes-head">
             <img
-              src="/img/باب & تشاكالا (Pap & Chakalaka).jpg"
+              src="/frontend/img/باب & تشاكالا (Pap & Chakalaka).jpg"
               alt="باب وشاكالاكا"
             />
             <span>باب وشاكالاكا – Pap & Chakalaka</span>
@@ -697,7 +697,7 @@
               'recipe',
               'bunny-chow',
               'باني تشاو – Bunny Chow',
-              '/img/باني تشاو (Bunny Chow).webp',
+              '/frontend/img/باني تشاو (Bunny Chow).webp',
             )
           "
         >
@@ -706,7 +706,7 @@
         <button
           class="recipes-item"
           data-title="باني تشاو – Bunny Chow"
-          data-img="/img/باني تشاو (Bunny Chow).webp"
+          data-img="/frontend/img/باني تشاو (Bunny Chow).webp"
           data-ingredients="دجاج|125|غ|بصل|1|حبة صغيرة|ثوم|2|فص|طماطم|1|حبة صغيرة|خبز توست|1|ربع رغيف|زيت|15|مل|ملح|2|غ"
           data-spices="كاري|3|غ|كركم|1|غ|زنجبيل|1|غ|فلفل أسود|1|غ|كمون|1|غ"
           data-sauces="چاتني مانجا"
@@ -714,7 +714,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/باني تشاو (Bunny Chow).webp" alt="باني تشاو" />
+            <img src="/frontend/img/باني تشاو (Bunny Chow).webp" alt="باني تشاو" />
             <span>باني تشاو – Bunny Chow</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -729,7 +729,7 @@
               'recipe',
               'sosatie',
               'سوساتي – Sosatie',
-              '/img/سوساتي (Sosatie).webp',
+              '/frontend/img/سوساتي (Sosatie).webp',
             )
           "
         >
@@ -738,7 +738,7 @@
         <button
           class="recipes-item"
           data-title="سوساتي – Sosatie"
-          data-img="/img/سوساتي (Sosatie).webp"
+          data-img="/frontend/img/سوساتي (Sosatie).webp"
           data-ingredients="دجاج|150|غ|بصل|1|حبة صغيرة|فلفل رومي|50|غ|مشمش مجفف|20|غ|زيت|10|مل|ملح|2|غ"
           data-spices="كاري|3|غ|كركم|1|غ|زنجبيل|1|غ|فلفل أسود|1|غ|كمون|1|غ"
           data-sauces="صوص كاري|چاتني مانجا"
@@ -746,7 +746,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/سوساتي (Sosatie).webp" alt="سوساتي" />
+            <img src="/frontend/img/سوساتي (Sosatie).webp" alt="سوساتي" />
             <span>سوساتي – Sosatie</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -761,7 +761,7 @@
               'recipe',
               'milk-tart',
               'ميلك تارت – Milk Tart',
-              '/img/ميلك تارت (Milk Tart).jpg',
+              '/frontend/img/ميلك تارت (Milk Tart).jpg',
             )
           "
         >
@@ -770,7 +770,7 @@
         <button
           class="recipes-item"
           data-title="ميلك تارت – Milk Tart"
-          data-img="/img/ميلك تارت (Milk Tart).jpg"
+          data-img="/frontend/img/ميلك تارت (Milk Tart).jpg"
           data-ingredients="حليب|500|مل|سكر|100|غ|دقيق|40|غ|نشا|30|غ|بيض|2|حبة|زبدة|60|غ|بسكوت مطحون|150|غ|قرفة|5|غ"
           data-spices="فانيليا|2|غ"
           data-sauces=""
@@ -778,7 +778,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/ميلك تارت (Milk Tart).jpg" alt="ميلك تارت" />
+            <img src="/frontend/img/ميلك تارت (Milk Tart).jpg" alt="ميلك تارت" />
             <span>ميلك تارت – Milk Tart</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -793,7 +793,7 @@
               'recipe',
               'shebakia',
               'الشباكية – Shebakia',
-              '/img/الشباكية.jpg',
+              '/frontend/img/الشباكية.jpg',
             )
           "
         >
@@ -802,7 +802,7 @@
         <button
           class="recipes-item"
           data-title="الشباكية – Shebakia"
-          data-img="/img/الشباكية.jpg"
+          data-img="/frontend/img/الشباكية.jpg"
           data-ingredients="دقيق|500|غ|سمسم|100|غ|زيت للقلي|200|مل|عسل|200|غ|ماء ورد|30|مل|زيت|50|مل|خميرة|7|غ|ماء|150|مل"
           data-spices="هيل|4|غ|قرفة|3|غ|زعفران|1|غ|يانسون|3|غ"
           data-sauces=""
@@ -810,7 +810,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/الشباكية.jpg" alt="الشباكية" />
+            <img src="/frontend/img/الشباكية.jpg" alt="الشباكية" />
             <span>الشباكية – Shebakia</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -821,7 +821,7 @@
         <button
           class="save-btn"
           onclick="
-            saveItem('recipe', 'tajine', 'الطاجين – Tajine', '/img/الطاجين.jpg')
+            saveItem('recipe', 'tajine', 'الطاجين – Tajine', '/frontend/img/الطاجين.jpg')
           "
         >
           🍽️
@@ -829,7 +829,7 @@
         <button
           class="recipes-item"
           data-title="الطاجين – Tajine"
-          data-img="/img/الطاجين.jpg"
+          data-img="/frontend/img/الطاجين.jpg"
           data-ingredients="دجاج|125|غ|بصل|1|حبة صغيرة|طماطم|1|حبة صغيرة|جزر|50|غ|بطاطس|50|غ|زيتون|20|غ|زيت زيتون|15|مل|ملح|2|غ|ليمون مخلل|1|حبة صغيرة"
           data-spices="كركم|2|غ|كمون|2|غ|كزبرة مطحونة|2|غ|زنجبيل|1|غ|فلفل أسود|1|غ|قرفة|1|غ"
           data-sauces=""
@@ -837,7 +837,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/الطاجين.jpg" alt="الطاجين" />
+            <img src="/frontend/img/الطاجين.jpg" alt="الطاجين" />
             <span>الطاجين – Tajine</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -852,7 +852,7 @@
               'recipe',
               'couscous',
               'الكسكس – Couscous',
-              '/img/الكسكس.webp',
+              '/frontend/img/الكسكس.webp',
             )
           "
         >
@@ -861,7 +861,7 @@
         <button
           class="recipes-item"
           data-title="الكسكس – Couscous"
-          data-img="/img/الكسكس.webp"
+          data-img="/frontend/img/الكسكس.webp"
           data-ingredients="كسكس|100|غ|دجاج|125|غ|بصل|1|حبة صغيرة|جزر|50|غ|كوسة|50|غ|حمص مسلوق|30|غ|زيت زيتون|15|مل|ملح|2|غ|ماء|150|مل"
           data-spices="كركم|2|غ|كمون|2|غ|كزبرة مطحونة|2|غ|زنجبيل|1|غ|فلفل أسود|1|غ|قرفة|1|غ"
           data-sauces="مرق الخضار"
@@ -869,7 +869,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/الكسكس.webp" alt="الكسكس" />
+            <img src="/frontend/img/الكسكس.webp" alt="الكسكس" />
             <span>الكسكس – Couscous</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -884,7 +884,7 @@
               'recipe',
               'bastilla',
               'البسطيلة – Bastilla',
-              '/img/البسطيلة.jpg',
+              '/frontend/img/البسطيلة.jpg',
             )
           "
         >
@@ -893,7 +893,7 @@
         <button
           class="recipes-item"
           data-title="البسطيلة – Bastilla"
-          data-img="/img/البسطيلة.jpg"
+          data-img="/frontend/img/البسطيلة.jpg"
           data-ingredients="دجاج|125|غ|بيض|2|حبة|بصل|1|حبة صغيرة|لوز|30|غ|سكر بودرة|15|غ|زبدة|30|غ|عجين ورقة|4|أوراق|ملح|2|غ|زيت|10|مل"
           data-spices="قرفة|3|غ|زعفران|1|غ|زنجبيل|1|غ|فلفل أسود|1|غ|كزبرة مطحونة|2|غ"
           data-sauces=""
@@ -901,7 +901,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/البسطيلة.jpg" alt="البسطيلة" />
+            <img src="/frontend/img/البسطيلة.jpg" alt="البسطيلة" />
             <span>البسطيلة – Bastilla</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -912,7 +912,7 @@
         <button
           class="save-btn"
           onclick="
-            saveItem('recipe', 'harira', 'الحريرة – Harira', '/img/الحريرة.jpg')
+            saveItem('recipe', 'harira', 'الحريرة – Harira', '/frontend/img/الحريرة.jpg')
           "
         >
           🍽️
@@ -920,7 +920,7 @@
         <button
           class="recipes-item"
           data-title="الحريرة – Harira"
-          data-img="/img/الحريرة.jpg"
+          data-img="/frontend/img/الحريرة.jpg"
           data-ingredients="دجاج|100|غ|عدس|40|غ|حمص مسلوق|30|غ|طماطم|1|حبة صغيرة|بصل|1|حبة صغيرة|كرفس|20|غ|معجون طماطم|15|غ|دقيق|15|غ|زيت|10|مل|ملح|2|غ|ماء|400|مل"
           data-spices="كركم|2|غ|كمون|2|غ|كزبرة مطحونة|2|غ|زنجبيل|1|غ|فلفل أسود|1|غ|قرفة|1|غ"
           data-sauces="ليمون|تمر"
@@ -928,7 +928,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/الحريرة.jpg" alt="الحريرة" />
+            <img src="/frontend/img/الحريرة.jpg" alt="الحريرة" />
             <span>الحريرة – Harira</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -939,7 +939,7 @@
         <button
           class="save-btn"
           onclick="
-            saveItem('recipe', 'msemen', 'المسمن – Msemen', '/img/المسمن.jpeg')
+            saveItem('recipe', 'msemen', 'المسمن – Msemen', '/frontend/img/المسمن.jpeg')
           "
         >
           🍽️
@@ -947,7 +947,7 @@
         <button
           class="recipes-item"
           data-title="المسمن – Msemen"
-          data-img="/img/المسمن.jpeg"
+          data-img="/frontend/img/المسمن.jpeg"
           data-ingredients="دقيق|100|غ|سميد|30|غ|ماء|80|مل|ملح|2|غ|خميرة|3|غ|سمن|20|غ|زيت|10|مل"
           data-spices=""
           data-sauces="عسل|زبدة"
@@ -955,7 +955,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/المسمن.jpeg" alt="المسمن" />
+            <img src="/frontend/img/المسمن.jpeg" alt="المسمن" />
             <span>المسمن – Msemen</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -970,7 +970,7 @@
               'recipe',
               'neapolitan-pizza',
               'بيتزا نابوليتانا – Neapolitan Pizza',
-              '/img/Neapolitan-Pizza.webp',
+              '/frontend/img/Neapolitan-Pizza.webp',
             )
           "
         >
@@ -979,7 +979,7 @@
         <button
           class="recipes-item"
           data-title="بيتزا نابوليتانا – Neapolitan Pizza"
-          data-img="/img/Neapolitan-Pizza.webp"
+          data-img="/frontend/img/Neapolitan-Pizza.webp"
           data-ingredients="دقيق|150|غ|ماء|100|مل|خميرة|3|غ|ملح|3|غ|صوص طماطم|50|غ|جبن موزاريلا|80|غ|زيت زيتون|10|مل"
           data-spices="ثوم|1|فص|أوريغانو|2|غ|فلفل أسود|1|غ"
           data-sauces="صوص طماطم طازج"
@@ -987,7 +987,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/Neapolitan-Pizza.webp" alt="بيتزا نابوليتانا" />
+            <img src="/frontend/img/Neapolitan-Pizza.webp" alt="بيتزا نابوليتانا" />
             <span>بيتزا نابوليتانا – Neapolitan Pizza</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -1002,7 +1002,7 @@
               'recipe',
               'carbonara',
               'كاربونارا – Carbonara',
-              '/img/Carbonara.jpg',
+              '/frontend/img/Carbonara.jpg',
             )
           "
         >
@@ -1011,7 +1011,7 @@
         <button
           class="recipes-item"
           data-title="كاربونارا – Carbonara"
-          data-img="/img/Carbonara.jpg"
+          data-img="/frontend/img/Carbonara.jpg"
           data-ingredients="سباغيتي|100|غ|بيض|2|حبة|جبن بيكورينو|30|غ|دجاج مدخن|50|غ|ملح|2|غ|زيت زيتون|10|مل"
           data-spices="فلفل أسود|3|غ|ثوم|1|فص"
           data-sauces=""
@@ -1019,7 +1019,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/Carbonara.jpg" alt="كاربونارا" />
+            <img src="/frontend/img/Carbonara.jpg" alt="كاربونارا" />
             <span>كاربونارا – Carbonara</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -1034,7 +1034,7 @@
               'recipe',
               'lasagna',
               'لازانيا – Lasagna',
-              '/img/Lasagna.jpg',
+              '/frontend/img/Lasagna.jpg',
             )
           "
         >
@@ -1043,7 +1043,7 @@
         <button
           class="recipes-item"
           data-title="لازانيا – Lasagna"
-          data-img="/img/Lasagna.jpg"
+          data-img="/frontend/img/Lasagna.jpg"
           data-ingredients="صفائح لازانيا|4|ورقة|لحم مفروم|125|غ|صوص طماطم|100|غ|بصل|1|حبة صغيرة|ثوم|1|فص|جبن موزاريلا|80|غ|حليب|150|مل|دقيق|15|غ|زبدة|15|غ|ملح|2|غ|زيت|10|مل"
           data-spices="أوريغانو|2|غ|فلفل أسود|1|غ|جوزة الطيب|1|غ"
           data-sauces=""
@@ -1051,7 +1051,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/Lasagna.jpg" alt="لازانيا" />
+            <img src="/frontend/img/Lasagna.jpg" alt="لازانيا" />
             <span>لازانيا – Lasagna</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -1066,7 +1066,7 @@
               'recipe',
               'risotto',
               'ريزوتو – Risotto',
-              '/img/Risotto.jpg',
+              '/frontend/img/Risotto.jpg',
             )
           "
         >
@@ -1075,7 +1075,7 @@
         <button
           class="recipes-item"
           data-title="ريزوتو – Risotto"
-          data-img="/img/Risotto.jpg"
+          data-img="/frontend/img/Risotto.jpg"
           data-ingredients="أرز أربوريو|100|غ|مرق دجاج|300|مل|بصل|1|حبة صغيرة|ثوم|1|فص|زبدة|20|غ|جبن بارميزان|25|غ|زيت زيتون|10|مل|ملح|2|غ"
           data-spices="فلفل أبيض|1|غ|زعفران|0.5|غ"
           data-sauces=""
@@ -1083,7 +1083,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/Risotto.jpg" alt="ريزوتو" />
+            <img src="/frontend/img/Risotto.jpg" alt="ريزوتو" />
             <span>ريزوتو – Risotto</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -1097,7 +1097,7 @@
               'recipe',
               'penne-arrabbiata',
               'بيني أرابياتا – Penne Arrabbiata',
-              '/img/Penne Arrabbiata.avif    ',
+              '/frontend/img/Penne Arrabbiata.avif    ',
             )
           "
         >
@@ -1106,7 +1106,7 @@
         <button
           class="recipes-item"
           data-title="بيني أرابياتا – Penne Arrabbiata"
-          data-img="/img/Penne Arrabbiata.avif    "
+          data-img="/frontend/img/Penne Arrabbiata.avif    "
           data-ingredients="بيني|100|غ|طماطم معلبة|150|غ|ثوم|2|فص|زيت زيتون|15|مل|ملح|2|غ|بقدونس|10|غ"
           data-spices="فلفل أحمر حار|2|غ|فلفل أسود|1|غ|أوريغانو|1|غ"
           data-sauces=""
@@ -1114,7 +1114,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/Penne Arrabbiata.avif    " alt="بيني أرابياتا" />
+            <img src="/frontend/img/Penne Arrabbiata.avif    " alt="بيني أرابياتا" />
             <span>بيني أرابياتا – Penne Arrabbiata</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -1128,7 +1128,7 @@
               'recipe',
               'chicken-parmigiana',
               'دجاج بارميجيانا – Chicken Parmigiana',
-              '/img/Chicken Parmigiana.webp',
+              '/frontend/img/Chicken Parmigiana.webp',
             )
           "
         >
@@ -1137,7 +1137,7 @@
         <button
           class="recipes-item"
           data-title="دجاج بارميجيانا – Chicken Parmigiana"
-          data-img="/img/Chicken Parmigiana.webp"
+          data-img="/frontend/img/Chicken Parmigiana.webp"
           data-ingredients="دجاج|150|غ|صوص طماطم|80|غ|جبن موزاريلا|60|غ|جبن بارميزان|20|غ|دقيق|30|غ|بيض|1|حبة|بانكو|50|غ|زيت للقلي|150|مل|ملح|2|غ"
           data-spices="فلفل أسود|1|غ|أوريغانو|2|غ|ثوم بودرة|1|غ"
           data-sauces="صوص طماطم"
@@ -1145,7 +1145,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/Chicken Parmigiana.webp" alt="دجاج بارميجيانا" />
+            <img src="/frontend/img/Chicken Parmigiana.webp" alt="دجاج بارميجيانا" />
             <span>دجاج بارميجيانا – Chicken Parmigiana</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -1159,7 +1159,7 @@
               'recipe',
               'fondue',
               'فوندو – Fondue',
-              '/img/الفوندو (Fondue).jpg',
+              '/frontend/img/الفوندو (Fondue).jpg',
             )
           "
         >
@@ -1168,7 +1168,7 @@
         <button
           class="recipes-item"
           data-title="فوندو – Fondue"
-          data-img="/img/الفوندو (Fondue).jpg"
+          data-img="/frontend/img/الفوندو (Fondue).jpg"
           data-ingredients="جبن غرويير|100|غ|جبن إيمنتال|100|غ|حليب|100|مل|دقيق|10|غ|ثوم|1|فص|خبز فرنسي|100|غ|ملح|1|غ"
           data-spices="جوزة الطيب|1|غ|فلفل أبيض|1|غ"
           data-sauces=""
@@ -1176,7 +1176,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/الفوندو (Fondue).jpg" alt="فوندو" />
+            <img src="/frontend/img/الفوندو (Fondue).jpg" alt="فوندو" />
             <span>فوندو – Fondue</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -1191,7 +1191,7 @@
               'recipe',
               'raclette',
               'راكليت – Raclette',
-              '/img/لراكليت (Raclette).webp',
+              '/frontend/img/لراكليت (Raclette).webp',
             )
           "
         >
@@ -1200,7 +1200,7 @@
         <button
           class="recipes-item"
           data-title="راكليت – Raclette"
-          data-img="/img/لراكليت (Raclette).webp"
+          data-img="/frontend/img/لراكليت (Raclette).webp"
           data-ingredients="جبن راكليت|150|غ|بطاطس مسلوقة|150|غ|مخللات|30|غ|بصل مخلل|20|غ|دجاج مدخن|50|غ|ملح|1|غ"
           data-spices="فلفل أسود|1|غ|فلفل أبيض|1|غ"
           data-sauces=""
@@ -1208,7 +1208,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/لراكليت (Raclette).webp" alt="راكليت" />
+            <img src="/frontend/img/لراكليت (Raclette).webp" alt="راكليت" />
             <span>راكليت – Raclette</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -1222,7 +1222,7 @@
               'recipe',
               'swiss-chocolate',
               'الشوكولاتة السويسرية – Swiss Chocolate',
-              '/img/Switzerland chocolate.jpg',
+              '/frontend/img/Switzerland chocolate.jpg',
             )
           "
         >
@@ -1231,7 +1231,7 @@
         <button
           class="recipes-item"
           data-title="الشوكولاتة السويسرية – Swiss Chocolate"
-          data-img="/img/Switzerland chocolate.jpg"
+          data-img="/frontend/img/Switzerland chocolate.jpg"
           data-ingredients="شوكولاتة داكنة|200|غ|كريمة|100|مل|زبدة|40|غ|سكر بودرة|40|غ|مسحوق كاكاو|30|غ"
           data-spices="فانيليا|2|غ"
           data-sauces=""
@@ -1240,7 +1240,7 @@
         >
           <div class="recipes-head">
             <img
-              src="/img/Switzerland chocolate.jpg"
+              src="/frontend/img/Switzerland chocolate.jpg"
               alt="الشوكولاتة السويسرية"
             />
             <span>الشوكولاتة السويسرية – Swiss Chocolate</span>
@@ -1257,7 +1257,7 @@
               'recipe',
               'rosti',
               'روستي – Rösti',
-              '/img/روستي (Rösti).jpg',
+              '/frontend/img/روستي (Rösti).jpg',
             )
           "
         >
@@ -1266,7 +1266,7 @@
         <button
           class="recipes-item"
           data-title="روستي – Rösti"
-          data-img="/img/روستي (Rösti).jpg"
+          data-img="/frontend/img/روستي (Rösti).jpg"
           data-ingredients="بطاطس|200|غ|زبدة|20|غ|ملح|2|غ|بصل|1|حبة صغيرة"
           data-spices="فلفل أسود|1|غ|إكليل الجبل|1|غ"
           data-sauces="كريمة حامضة"
@@ -1274,7 +1274,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/روستي (Rösti).jpg" alt="روستي" />
+            <img src="/frontend/img/روستي (Rösti).jpg" alt="روستي" />
             <span>روستي – Rösti</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -1289,7 +1289,7 @@
               'recipe',
               'bircher-muesli',
               'بيرشر موسلي – Bircher Müesli',
-              '/img/بيرشر موسلي (Bircher Müesli).jpg_1622122268',
+              '/frontend/img/بيرشر موسلي (Bircher Müesli).jpg_1622122268',
             )
           "
         >
@@ -1298,7 +1298,7 @@
         <button
           class="recipes-item"
           data-title="بيرشر موسلي – Bircher Müesli"
-          data-img="/img/بيرشر موسلي (Bircher Müesli).jpg_1622122268"
+          data-img="/frontend/img/بيرشر موسلي (Bircher Müesli).jpg_1622122268"
           data-ingredients="شوفان|80|غ|حليب|100|مل|لبن|50|غ|تفاح|1|حبة صغيرة|عسل|15|غ|ليمون|1|حبة صغيرة|مكسرات مشكلة|20|غ"
           data-spices="قرفة|1|غ"
           data-sauces=""
@@ -1307,7 +1307,7 @@
         >
           <div class="recipes-head">
             <img
-              src="/img/بيرشر موسلي (Bircher Müesli).jpg_1622122268"
+              src="/frontend/img/بيرشر موسلي (Bircher Müesli).jpg_1622122268"
               alt="بيرشر موسلي"
             />
             <span>بيرشر موسلي – Bircher Müesli</span>
@@ -1328,7 +1328,7 @@
               'recipe',
               'zurcher-geschnetzeltes',
               'زورخر غيشنيتزيلتس – Zürcher Geschnetzeltes',
-              '/img/زوريشر غشنِتسلتِس (Zürcher Geschnetzeltes).jpg',
+              '/frontend/img/زوريشر غشنِتسلتِس (Zürcher Geschnetzeltes).jpg',
             )
           "
         >
@@ -1337,7 +1337,7 @@
         <button
           class="recipes-item"
           data-title="زورخر غيشنيتزيلتس – Zürcher Geschnetzeltes"
-          data-img="/img/زوريشر غشنِتسلتِس (Zürcher Geschnetzeltes).jpg"
+          data-img="/frontend/img/زوريشر غشنِتسلتِس (Zürcher Geschnetzeltes).jpg"
           data-ingredients="دجاج|150|غ|فطر|80|غ|بصل|1|حبة صغيرة|كريمة|100|مل|زبدة|20|غ|ملح|2|غ|ليمون|1|حبة صغيرة"
           data-spices="فلفل أبيض|1|غ|بقدونس|10|غ"
           data-sauces="روستي"
@@ -1346,7 +1346,7 @@
         >
           <div class="recipes-head">
             <img
-              src="/img/زوريشر غشنِتسلتِس (Zürcher Geschnetzeltes).jpg"
+              src="/frontend/img/زوريشر غشنِتسلتِس (Zürcher Geschnetzeltes).jpg"
               alt="زورخر غيشنيتزيلتس"
             />
             <span>زورخر غيشنيتزيلتس – Zürcher Geschnetzeltes</span>
@@ -1363,7 +1363,7 @@
               'recipe',
               'hangikjot',
               'هانغيكيوت – Hangikjöt',
-              '/img/Hangikjöt.jpg',
+              '/frontend/img/Hangikjöt.jpg',
             )
           "
         >
@@ -1372,7 +1372,7 @@
         <button
           class="recipes-item"
           data-title="هانغيكيوت – Hangikjöt"
-          data-img="/img/Hangikjöt.jpg"
+          data-img="/frontend/img/Hangikjöt.jpg"
           data-ingredients="دجاج مدخن|150|غ|بطاطس|150|غ|بازلاء|50|غ|زبدة|15|غ|حليب|50|مل|ملح|2|غ"
           data-spices="فلفل أبيض|1|غ|إكليل الجبل|1|غ"
           data-sauces="صوص أبيض كريمي"
@@ -1380,7 +1380,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/Hangikjöt.jpg" alt="هانغيكيوت" />
+            <img src="/frontend/img/Hangikjöt.jpg" alt="هانغيكيوت" />
             <span>هانغيكيوت – Hangikjöt</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -1394,7 +1394,7 @@
               'recipe',
               'vinarterta',
               'فينارتيرتا – Vínarterta',
-              '/img/Vínarterta.webp',
+              '/frontend/img/Vínarterta.webp',
             )
           "
         >
@@ -1403,7 +1403,7 @@
         <button
           class="recipes-item"
           data-title="فينارتيرتا – Vínarterta"
-          data-img="/img/Vínarterta.webp"
+          data-img="/frontend/img/Vínarterta.webp"
           data-ingredients="دقيق|500|غ|زبدة|200|غ|سكر|150|غ|بيض|2|حبة|كريمة حامضة|50|غ|برقوق مجفف|300|غ|سكر|80|غ|ماء|150|مل"
           data-spices="هيل|4|غ|فانيليا|2|غ|قرفة|2|غ"
           data-sauces=""
@@ -1411,7 +1411,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/Vínarterta.webp" alt="فينارتيرتا" />
+            <img src="/frontend/img/Vínarterta.webp" alt="فينارتيرتا" />
             <span>فينارتيرتا – Vínarterta</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -1426,7 +1426,7 @@
               'recipe',
               'plokkfiskur',
               'بلوكفيسكر – Plokkfiskur',
-              '/img/Plokkfiskur.jpg',
+              '/frontend/img/Plokkfiskur.jpg',
             )
           "
         >
@@ -1435,7 +1435,7 @@
         <button
           class="recipes-item"
           data-title="بلوكفيسكر – Plokkfiskur"
-          data-img="/img/Plokkfiskur.jpg"
+          data-img="/frontend/img/Plokkfiskur.jpg"
           data-ingredients="سمك أبيض|150|غ|بطاطس|150|غ|بصل|1|حبة صغيرة|زبدة|20|غ|حليب|100|مل|دقيق|15|غ|ملح|2|غ"
           data-spices="فلفل أبيض|1|غ|جوزة الطيب|1|غ"
           data-sauces="خبز أسود"
@@ -1443,7 +1443,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/Plokkfiskur.jpg" alt="بلوكفيسكر" />
+            <img src="/frontend/img/Plokkfiskur.jpg" alt="بلوكفيسكر" />
             <span>بلوكفيسكر – Plokkfiskur</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -1458,7 +1458,7 @@
               'recipe',
               'seafood-soup',
               'شوربة المأكولات البحرية – Seafood Soup',
-              '/img/seafood-soup-7-1.jpg',
+              '/frontend/img/seafood-soup-7-1.jpg',
             )
           "
         >
@@ -1467,7 +1467,7 @@
         <button
           class="recipes-item"
           data-title="شوربة المأكولات البحرية – Seafood Soup"
-          data-img="/img/seafood-soup-7-1.jpg"
+          data-img="/frontend/img/seafood-soup-7-1.jpg"
           data-ingredients="سمك أبيض|100|غ|روبيان|50|غ|بصل|1|حبة صغيرة|جزر|50|غ|كرفس|30|غ|كريمة|80|مل|زبدة|15|غ|مرق سمك|300|مل|ملح|2|غ"
           data-spices="فلفل أبيض|1|غ|زعتر|1|غ|ورق غار|1|ورقة"
           data-sauces="خبز محمص"
@@ -1476,7 +1476,7 @@
         >
           <div class="recipes-head">
             <img
-              src="/img/seafood-soup-7-1.jpg"
+              src="/frontend/img/seafood-soup-7-1.jpg"
               alt="شوربة المأكولات البحرية"
             />
             <span>شوربة المأكولات البحرية – Seafood Soup</span>
@@ -1492,7 +1492,7 @@
               'recipe',
               'ponnukokur',
               'بونوكوكور – Pönnukökur',
-              '/img/Pönnukökur.jpg',
+              '/frontend/img/Pönnukökur.jpg',
             )
           "
         >
@@ -1501,7 +1501,7 @@
         <button
           class="recipes-item"
           data-title="بونوكوكور – Pönnukökur"
-          data-img="/img/Pönnukökur.jpg"
+          data-img="/frontend/img/Pönnukökur.jpg"
           data-ingredients="دقيق|200|غ|حليب|400|مل|بيض|2|حبة|سكر|30|غ|زبدة|20|غ|ملح|1|غ"
           data-spices="فانيليا|2|غ|قرفة|2|غ"
           data-sauces="مربى|كريمة مخفوقة"
@@ -1509,7 +1509,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/Pönnukökur.jpg" alt="بونوكوكور" />
+            <img src="/frontend/img/Pönnukökur.jpg" alt="بونوكوكور" />
             <span>بونوكوكور – Pönnukökur</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -1523,7 +1523,7 @@
               'recipe',
               'skyr-cheesecake',
               'تشيز كيك سكير – Skyr Cheesecake',
-              '/img/Skyr Cheesecake.webp',
+              '/frontend/img/Skyr Cheesecake.webp',
             )
           "
         >
@@ -1532,7 +1532,7 @@
         <button
           class="recipes-item"
           data-title="تشيز كيك سكير – Skyr Cheesecake"
-          data-img="/img/Skyr Cheesecake.webp"
+          data-img="/frontend/img/Skyr Cheesecake.webp"
           data-ingredients="سكير|400|غ|جبن كريمي|200|غ|سكر|100|غ|بيض|2|حبة|بسكوت مطحون|150|غ|زبدة|60|غ|كريمة|100|مل"
           data-spices="فانيليا|2|غ|ليمون|1|حبة صغيرة"
           data-sauces="توت أحمر طازج"
@@ -1540,7 +1540,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/Skyr Cheesecake.webp" alt="تشيز كيك سكير" />
+            <img src="/frontend/img/Skyr Cheesecake.webp" alt="تشيز كيك سكير" />
             <span>تشيز كيك سكير – Skyr Cheesecake</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -1554,7 +1554,7 @@
               'recipe',
               'bandeja-paisa',
               'بانديخا بايسا – Bandeja Paisa',
-              '/img/Bandeja Paisa.jpg',
+              '/frontend/img/Bandeja Paisa.jpg',
             )
           "
         >
@@ -1563,7 +1563,7 @@
         <button
           class="recipes-item"
           data-title="بانديخا بايسا – Bandeja Paisa"
-          data-img="/img/Bandeja Paisa.jpg"
+          data-img="/frontend/img/Bandeja Paisa.jpg"
           data-ingredients="لحم مفروم|100|غ|فاصوليا حمراء|50|غ|أرز|80|غ|بيض|1|حبة|موز أخضر|1|حبة صغيرة|طماطم|1|حبة صغيرة|بصل|1|حبة صغيرة|زيت|15|مل|ملح|2|غ"
           data-spices="كمون|2|غ|ثوم|1|فص|فلفل أسود|1|غ|كركم|1|غ"
           data-sauces="صوص طماطم"
@@ -1571,7 +1571,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/Bandeja Paisa.jpg" alt="بانديخا بايسا" />
+            <img src="/frontend/img/Bandeja Paisa.jpg" alt="بانديخا بايسا" />
             <span>بانديخا بايسا – Bandeja Paisa</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -1581,7 +1581,7 @@
         <button
           class="save-btn"
           onclick="
-            saveItem('recipe', 'arepa', 'أريبا – Arepa', '/img/Arepa.webp')
+            saveItem('recipe', 'arepa', 'أريبا – Arepa', '/frontend/img/Arepa.webp')
           "
         >
           🍽️
@@ -1589,7 +1589,7 @@
         <button
           class="recipes-item"
           data-title="أريبا – Arepa"
-          data-img="/img/Arepa.webp"
+          data-img="/frontend/img/Arepa.webp"
           data-ingredients="دقيق ذرة أبيض|100|غ|ماء|120|مل|ملح|2|غ|زبدة|10|غ|جبن|30|غ"
           data-spices=""
           data-sauces="جبن|زبدة|صوص طماطم"
@@ -1597,7 +1597,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/Arepa.webp" alt="أريبا" />
+            <img src="/frontend/img/Arepa.webp" alt="أريبا" />
             <span>أريبا – Arepa</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -1612,7 +1612,7 @@
               'recipe',
               'sancocho',
               'سانكوتشو – Sancocho',
-              '/img/Sancocho.webp',
+              '/frontend/img/Sancocho.webp',
             )
           "
         >
@@ -1621,7 +1621,7 @@
         <button
           class="recipes-item"
           data-title="سانكوتشو – Sancocho"
-          data-img="/img/Sancocho.webp"
+          data-img="/frontend/img/Sancocho.webp"
           data-ingredients="دجاج|125|غ|بطاطس|80|غ|يوكا|80|غ|ذرة|50|غ|بصل|1|حبة صغيرة|طماطم|1|حبة صغيرة|ثوم|2|فص|كزبرة خضراء|10|غ|زيت|10|مل|ملح|2|غ|ماء|400|مل"
           data-spices="كمون|2|غ|فلفل أسود|1|غ|كركم|1|غ"
           data-sauces="أرز أبيض|أفوكادو"
@@ -1629,7 +1629,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/Sancocho.webp" alt="سانكوتشو" />
+            <img src="/frontend/img/Sancocho.webp" alt="سانكوتشو" />
             <span>سانكوتشو – Sancocho</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -1644,7 +1644,7 @@
               'recipe',
               'empanadas',
               'إمبانادا – Empanadas',
-              '/img/Empanadas.webp',
+              '/frontend/img/Empanadas.webp',
             )
           "
         >
@@ -1653,7 +1653,7 @@
         <button
           class="recipes-item"
           data-title="إمبانادا – Empanadas"
-          data-img="/img/Empanadas.webp"
+          data-img="/frontend/img/Empanadas.webp"
           data-ingredients="دقيق|100|غ|زبدة|30|غ|ماء|50|مل|ملح|1|غ|لحم مفروم|80|غ|بصل|1|حبة صغيرة|طماطم|1|حبة صغيرة|زيت للقلي|150|مل"
           data-spices="كمون|2|غ|فلفل أسود|1|غ|بابريكا|1|غ|ثوم|1|فص"
           data-sauces="صوص طماطم حار"
@@ -1661,7 +1661,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/Empanadas.webp" alt="إمبانادا" />
+            <img src="/frontend/img/Empanadas.webp" alt="إمبانادا" />
             <span>إمبانادا – Empanadas</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -1676,7 +1676,7 @@
               'recipe',
               'patacones',
               'باتاكونيس – Patacones',
-              '/img/Patacones.jpeg',
+              '/frontend/img/Patacones.jpeg',
             )
           "
         >
@@ -1685,7 +1685,7 @@
         <button
           class="recipes-item"
           data-title="باتاكونيس – Patacones"
-          data-img="/img/Patacones.jpeg"
+          data-img="/frontend/img/Patacones.jpeg"
           data-ingredients="موز أخضر|2|حبة|زيت للقلي|150|مل|ملح|2|غ"
           data-spices="ثوم بودرة|1|غ"
           data-sauces="جواكامولي|صوص طماطم"
@@ -1693,7 +1693,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/Patacones.jpeg" alt="باتاكونيس" />
+            <img src="/frontend/img/Patacones.jpeg" alt="باتاكونيس" />
             <span>باتاكونيس – Patacones</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -1703,7 +1703,7 @@
         <button
           class="save-btn"
           onclick="
-            saveItem('recipe', 'ajiaco', 'أجياكو – Ajiaco', '/img/Ajiaco.webp')
+            saveItem('recipe', 'ajiaco', 'أجياكو – Ajiaco', '/frontend/img/Ajiaco.webp')
           "
         >
           🍽️
@@ -1711,7 +1711,7 @@
         <button
           class="recipes-item"
           data-title="أجياكو – Ajiaco"
-          data-img="/img/Ajiaco.webp"
+          data-img="/frontend/img/Ajiaco.webp"
           data-ingredients="دجاج|125|غ|بطاطس صفراء|80|غ|بطاطس بيضاء|80|غ|ذرة|50|غ|بصل أخضر|20|غ|كزبرة خضراء|10|غ|ملح|2|غ|ماء|400|مل"
           data-spices="كمون|2|غ|فلفل أسود|1|غ|ثوم|2|فص"
           data-sauces="كريمة حامضة|أفوكادو|أرز أبيض"
@@ -1719,7 +1719,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/Ajiaco.webp" alt="أجياكو" />
+            <img src="/frontend/img/Ajiaco.webp" alt="أجياكو" />
             <span>أجياكو – Ajiaco</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -1733,7 +1733,7 @@
               'recipe',
               'feijoada',
               'فيجوادا – Feijoada',
-              '/img/فيجوادا.jpg',
+              '/frontend/img/فيجوادا.jpg',
             )
           "
         >
@@ -1742,7 +1742,7 @@
         <button
           class="recipes-item"
           data-title="فيجوادا – Feijoada"
-          data-img="/img/فيجوادا.jpg"
+          data-img="/frontend/img/فيجوادا.jpg"
           data-ingredients="فاصوليا سوداء|100|غ|دجاج مدخن|100|غ|بصل|1|حبة صغيرة|ثوم|2|فص|طماطم|1|حبة صغيرة|زيت|15|مل|ملح|2|غ|ماء|400|مل"
           data-spices="كمون|2|غ|فلفل أسود|1|غ|ورق غار|1|ورقة|بابريكا|2|غ"
           data-sauces="أرز أبيض|برتقال مقطع|كيل"
@@ -1750,7 +1750,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/فيجوادا.jpg" alt="فيجوادا" />
+            <img src="/frontend/img/فيجوادا.jpg" alt="فيجوادا" />
             <span>فيجوادا – Feijoada</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -1764,7 +1764,7 @@
               'recipe',
               'churrasco',
               'شوراسكو – Churrasco',
-              '/img/شوراسكو.jpg',
+              '/frontend/img/شوراسكو.jpg',
             )
           "
         >
@@ -1773,7 +1773,7 @@
         <button
           class="recipes-item"
           data-title="شوراسكو – Churrasco"
-          data-img="/img/شوراسكو.jpg"
+          data-img="/frontend/img/شوراسكو.jpg"
           data-ingredients="لحم بقر|150|غ|ملح خشن|5|غ|زيت|10|مل|ليمون|1|حبة صغيرة|ثوم|2|فص"
           data-spices="فلفل أسود|2|غ|بابريكا|2|غ|كمون|1|غ"
           data-sauces="صوص فينياغريتي|فاروفا"
@@ -1781,7 +1781,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/شوراسكو.jpg" alt="شوراسكو" />
+            <img src="/frontend/img/شوراسكو.jpg" alt="شوراسكو" />
             <span>شوراسكو – Churrasco</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -1795,7 +1795,7 @@
               'recipe',
               'pao-de-queijo',
               'باو دي كيجو – Pão de Queijo',
-              '/img/باو دي كيجو.jpg',
+              '/frontend/img/باو دي كيجو.jpg',
             )
           "
         >
@@ -1804,7 +1804,7 @@
         <button
           class="recipes-item"
           data-title="باو دي كيجو – Pão de Queijo"
-          data-img="/img/باو دي كيجو.jpg"
+          data-img="/frontend/img/باو دي كيجو.jpg"
           data-ingredients="نشا مانيوك|100|غ|جبن بارميزان|50|غ|بيض|1|حبة|حليب|60|مل|زيت|30|مل|ملح|2|غ"
           data-spices=""
           data-sauces=""
@@ -1812,7 +1812,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/باو دي كيجو.jpg" alt="باو دي كيجو" />
+            <img src="/frontend/img/باو دي كيجو.jpg" alt="باو دي كيجو" />
             <span>باو دي كيجو – Pão de Queijo</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -1826,7 +1826,7 @@
               'recipe',
               'moqueca',
               'موكيكا – Moqueca',
-              '/img/موكيكا.jpeg',
+              '/frontend/img/موكيكا.jpeg',
             )
           "
         >
@@ -1835,7 +1835,7 @@
         <button
           class="recipes-item"
           data-title="موكيكا – Moqueca"
-          data-img="/img/موكيكا.jpeg"
+          data-img="/frontend/img/موكيكا.jpeg"
           data-ingredients="سمك أبيض|150|غ|حليب جوز الهند|100|مل|طماطم|1|حبة صغيرة|بصل|1|حبة صغيرة|فلفل رومي|50|غ|ثوم|2|فص|زيت زيتون|15|مل|ملح|2|غ|ليمون|1|حبة صغيرة"
           data-spices="كركم|2|غ|كمون|1|غ|فلفل أسود|1|غ|كزبرة مطحونة|2|غ"
           data-sauces="أرز أبيض|فاروفا"
@@ -1843,7 +1843,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/موكيكا.jpeg" alt="موكيكا" />
+            <img src="/frontend/img/موكيكا.jpeg" alt="موكيكا" />
             <span>موكيكا – Moqueca</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -1857,7 +1857,7 @@
               'recipe',
               'acaraje',
               'أكاراجي – Acarajé',
-              '/img/أكاراجي.jpg',
+              '/frontend/img/أكاراجي.jpg',
             )
           "
         >
@@ -1866,7 +1866,7 @@
         <button
           class="recipes-item"
           data-title="أكاراجي – Acarajé"
-          data-img="/img/أكاراجي.jpg"
+          data-img="/frontend/img/أكاراجي.jpg"
           data-ingredients="فول مقشر|100|غ|بصل|1|حبة صغيرة|ملح|2|غ|زيت للقلي|200|مل"
           data-spices="فلفل أحمر حار|1|غ|كمون|1|غ"
           data-sauces="صوص فاتا|جمبري مجفف|صوص حار"
@@ -1874,7 +1874,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/أكاراجي.jpg" alt="أكاراجي" />
+            <img src="/frontend/img/أكاراجي.jpg" alt="أكاراجي" />
             <span>أكاراجي – Acarajé</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -1884,7 +1884,7 @@
         <button
           class="save-btn"
           onclick="
-            saveItem('recipe', 'pudim', 'بوديم – Pudim', '/img/بوديم.jpg')
+            saveItem('recipe', 'pudim', 'بوديم – Pudim', '/frontend/img/بوديم.jpg')
           "
         >
           🍽️
@@ -1892,7 +1892,7 @@
         <button
           class="recipes-item"
           data-title="بوديم – Pudim"
-          data-img="/img/بوديم.jpg"
+          data-img="/frontend/img/بوديم.jpg"
           data-ingredients="حليب مكثف|400|غ|حليب|400|مل|بيض|4|حبة|سكر|200|غ|ماء|60|مل"
           data-spices="فانيليا|2|غ"
           data-sauces=""
@@ -1900,7 +1900,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/بوديم.jpg" alt="بوديم" />
+            <img src="/frontend/img/بوديم.jpg" alt="بوديم" />
             <span>بوديم – Pudim</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -1914,7 +1914,7 @@
               'recipe',
               'ceviche',
               'سيفيتشي – Ceviche',
-              '/img/Ceviche.jpg',
+              '/frontend/img/Ceviche.jpg',
             )
           "
         >
@@ -1923,7 +1923,7 @@
         <button
           class="recipes-item"
           data-title="سيفيتشي – Ceviche"
-          data-img="/img/Ceviche.jpg"
+          data-img="/frontend/img/Ceviche.jpg"
           data-ingredients="سمك أبيض طازج|150|غ|ليمون|3|حبة|بصل أحمر|1|حبة صغيرة|فلفل أخضر حار|1|حبة|كزبرة خضراء|10|غ|ملح|2|غ|ثوم|1|فص"
           data-spices="فلفل أسود|1|غ|كمون|1|غ"
           data-sauces="ذرة مسلوقة|بطاطس حلوة مسلوقة"
@@ -1931,7 +1931,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/Ceviche.jpg" alt="سيفيتشي" />
+            <img src="/frontend/img/Ceviche.jpg" alt="سيفيتشي" />
             <span>سيفيتشي – Ceviche</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -1945,7 +1945,7 @@
               'recipe',
               'lomo-saltado',
               'لومو سالتادو – Lomo Saltado',
-              '/img/Lomo Saltado.webp',
+              '/frontend/img/Lomo Saltado.webp',
             )
           "
         >
@@ -1954,7 +1954,7 @@
         <button
           class="recipes-item"
           data-title="لومو سالتادو – Lomo Saltado"
-          data-img="/img/Lomo Saltado.webp"
+          data-img="/frontend/img/Lomo Saltado.webp"
           data-ingredients="لحم بقر|150|غ|بصل أحمر|1|حبة صغيرة|طماطم|1|حبة صغيرة|فلفل أصفر|50|غ|ثوم|2|فص|زيت|15|مل|ملح|2|غ|صوص صويا|20|مل|خل|10|مل"
           data-spices="فلفل أسود|2|غ|كمون|1|غ|بابريكا|1|غ"
           data-sauces="أرز أبيض|بطاطس مقلية"
@@ -1962,7 +1962,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/Lomo Saltado.webp" alt="لومو سالتادو" />
+            <img src="/frontend/img/Lomo Saltado.webp" alt="لومو سالتادو" />
             <span>لومو سالتادو – Lomo Saltado</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -1976,7 +1976,7 @@
               'recipe',
               'aji-de-gallina',
               'أخي دي غالينا – Aji de Gallina',
-              '/img/Aji de Gallina.jpg',
+              '/frontend/img/Aji de Gallina.jpg',
             )
           "
         >
@@ -1985,7 +1985,7 @@
         <button
           class="recipes-item"
           data-title="أخي دي غالينا – Aji de Gallina"
-          data-img="/img/Aji de Gallina.jpg"
+          data-img="/frontend/img/Aji de Gallina.jpg"
           data-ingredients="دجاج|150|غ|خبز أبيض|30|غ|حليب|80|مل|بصل|1|حبة صغيرة|ثوم|2|فص|جبن بارميزان|20|غ|زيت|15|مل|ملح|2|غ|مرق دجاج|100|مل"
           data-spices="فلفل أصفر حار – أخي أماريو|3|غ|كركم|1|غ|فلفل أسود|1|غ|كمون|1|غ"
           data-sauces="أرز أبيض|بطاطس مسلوقة|بيض مسلوق"
@@ -1993,7 +1993,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/Aji de Gallina.jpg" alt="أخي دي غالينا" />
+            <img src="/frontend/img/Aji de Gallina.jpg" alt="أخي دي غالينا" />
             <span>أخي دي غالينا – Aji de Gallina</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -2007,7 +2007,7 @@
               'recipe',
               'papa-huancaina',
               'بابا أ لا هوانكاينا – Papa a la Huancaína',
-              '/img/Papa a la Huancaina..jpg',
+              '/frontend/img/Papa a la Huancaina..jpg',
             )
           "
         >
@@ -2016,7 +2016,7 @@
         <button
           class="recipes-item"
           data-title="بابا أ لا هوانكاينا – Papa a la Huancaína"
-          data-img="/img/Papa a la Huancaina..jpg"
+          data-img="/frontend/img/Papa a la Huancaina..jpg"
           data-ingredients="بطاطس|200|غ|جبن كريمي|80|غ|حليب|60|مل|بصل|1|حبة صغيرة|ثوم|1|فص|خبز توست|20|غ|زيت|10|مل|ملح|2|غ|ليمون|1|حبة صغيرة"
           data-spices="فلفل أصفر حار – أخي أماريو|3|غ|كركم|1|غ|فلفل أسود|1|غ"
           data-sauces="بيض مسلوق|زيتون أسود|خس"
@@ -2025,7 +2025,7 @@
         >
           <div class="recipes-head">
             <img
-              src="/img/Papa a la Huancaina..jpg"
+              src="/frontend/img/Papa a la Huancaina..jpg"
               alt="بابا أ لا هوانكاينا"
             />
             <span>بابا أ لا هوانكاينا – Papa a la Huancaína</span>
@@ -2041,7 +2041,7 @@
               'recipe',
               'anticuchos',
               'أنتيكوتشوس – Anticuchos',
-              '/img/Anticuchos.jpg',
+              '/frontend/img/Anticuchos.jpg',
             )
           "
         >
@@ -2050,7 +2050,7 @@
         <button
           class="recipes-item"
           data-title="أنتيكوتشوس – Anticuchos"
-          data-img="/img/Anticuchos.jpg"
+          data-img="/frontend/img/Anticuchos.jpg"
           data-ingredients="قلب لحم بقر|150|غ|ثوم|2|فص|خل|20|مل|زيت|15|مل|ملح|2|غ|كمون|2|غ"
           data-spices="فلفل أحمر حار – أخي بانكا|3|غ|فلفل أسود|1|غ|أوريغانو|1|غ|بابريكا|2|غ"
           data-sauces="صوص هوانكاينا|ذرة مشوية|بطاطس حلوة"
@@ -2058,7 +2058,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/Anticuchos.jpg" alt="أنتيكوتشوس" />
+            <img src="/frontend/img/Anticuchos.jpg" alt="أنتيكوتشوس" />
             <span>أنتيكوتشوس – Anticuchos</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -2072,7 +2072,7 @@
               'recipe',
               'picarones',
               'بيكارونيس – Picarones',
-              '/img/Picarones.jpg',
+              '/frontend/img/Picarones.jpg',
             )
           "
         >
@@ -2081,7 +2081,7 @@
         <button
           class="recipes-item"
           data-title="بيكارونيس – Picarones"
-          data-img="/img/Picarones.jpg"
+          data-img="/frontend/img/Picarones.jpg"
           data-ingredients="بطاطس حلوة|200|غ|قرع عسلي|200|غ|دقيق|150|غ|خميرة|7|غ|سكر|30|غ|بيض|1|حبة|زيت للقلي|200|مل|ماء|50|مل"
           data-spices="هيل|2|غ|يانسون|2|غ|قرفة|2|غ"
           data-sauces="شراب المانكا بيتشا – chancaca syrup"
@@ -2089,7 +2089,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/Picarones.jpg" alt="بيكارونيس" />
+            <img src="/frontend/img/Picarones.jpg" alt="بيكارونيس" />
             <span>بيكارونيس – Picarones</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -2099,7 +2099,7 @@
         <button
           class="save-btn"
           onclick="
-            saveItem('recipe', 'tacos', 'تاكو – Tacos', '/img/Tacos.jpg')
+            saveItem('recipe', 'tacos', 'تاكو – Tacos', '/frontend/img/Tacos.jpg')
           "
         >
           🍽️
@@ -2107,7 +2107,7 @@
         <button
           class="recipes-item"
           data-title="تاكو – Tacos"
-          data-img="/img/Tacos.jpg"
+          data-img="/frontend/img/Tacos.jpg"
           data-ingredients="تورتيلا ذرة|2|قطعة|دجاج|125|غ|بصل|1|حبة صغيرة|كزبرة خضراء|10|غ|ليمون|1|حبة|ملح|2|غ|زيت|10|مل"
           data-spices="كمون|2|غ|فلفل أسود|1|غ|بابريكا|2|غ|ثوم بودرة|1|غ"
           data-sauces="صوص سالسا|صوص أفوكادو|فلفل حار"
@@ -2115,7 +2115,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/Tacos.jpg" alt="تاكو" />
+            <img src="/frontend/img/Tacos.jpg" alt="تاكو" />
             <span>تاكو – Tacos</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -2130,7 +2130,7 @@
               'recipe',
               'burrito',
               'بوريتو – Burrito',
-              '/img/Burrito.jpg',
+              '/frontend/img/Burrito.jpg',
             )
           "
         >
@@ -2139,7 +2139,7 @@
         <button
           class="recipes-item"
           data-title="بوريتو – Burrito"
-          data-img="/img/Burrito.jpg"
+          data-img="/frontend/img/Burrito.jpg"
           data-ingredients="تورتيلا قمح كبيرة|1|قطعة|دجاج|125|غ|أرز مطبوخ|80|غ|فاصوليا سوداء|50|غ|جبن مبشور|30|غ|بصل|1|حبة صغيرة|فلفل رومي|50|غ|زيت|10|مل|ملح|2|غ"
           data-spices="كمون|2|غ|فلفل أسود|1|غ|بابريكا|2|غ|ثوم بودرة|1|غ|أوريغانو|1|غ"
           data-sauces="صوص سالسا|كريمة حامضة|غواكامولي"
@@ -2147,7 +2147,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/Burrito.jpg" alt="بوريتو" />
+            <img src="/frontend/img/Burrito.jpg" alt="بوريتو" />
             <span>بوريتو – Burrito</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -2162,7 +2162,7 @@
               'recipe',
               'quesadilla',
               'كيساديلا – Quesadilla',
-              '/img/Quesadilla.jpg',
+              '/frontend/img/Quesadilla.jpg',
             )
           "
         >
@@ -2171,7 +2171,7 @@
         <button
           class="recipes-item"
           data-title="كيساديلا – Quesadilla"
-          data-img="/img/Quesadilla.jpg"
+          data-img="/frontend/img/Quesadilla.jpg"
           data-ingredients="تورتيلا قمح|2|قطعة|جبن موزاريلا|80|غ|دجاج مطبوخ|80|غ|فلفل رومي|30|غ|بصل|1|حبة صغيرة|زيت|5|مل|ملح|1|غ"
           data-spices="فلفل أسود|1|غ|كمون|1|غ|ثوم بودرة|1|غ"
           data-sauces="صوص سالسا|كريمة حامضة|غواكامولي"
@@ -2179,7 +2179,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/Quesadilla.jpg" alt="كيساديلا" />
+            <img src="/frontend/img/Quesadilla.jpg" alt="كيساديلا" />
             <span>كيساديلا – Quesadilla</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -2194,7 +2194,7 @@
               'recipe',
               'enchilada',
               'إنشيلادا – Enchilada',
-              '/img/Enchilada.jpg',
+              '/frontend/img/Enchilada.jpg',
             )
           "
         >
@@ -2203,7 +2203,7 @@
         <button
           class="recipes-item"
           data-title="إنشيلادا – Enchilada"
-          data-img="/img/Enchilada.jpg"
+          data-img="/frontend/img/Enchilada.jpg"
           data-ingredients="تورتيلا ذرة|3|قطعة|دجاج مطبوخ مفروم|125|غ|طماطم معلبة|150|غ|بصل|1|حبة صغيرة|ثوم|2|فص|جبن مبشور|40|غ|زيت|15|مل|ملح|2|غ"
           data-spices="فلفل أحمر حار مجفف|3|غ|كمون|2|غ|أوريغانو|2|غ|فلفل أسود|1|غ"
           data-sauces="كريمة حامضة|كزبرة خضراء"
@@ -2211,7 +2211,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/Enchilada.jpg" alt="إنشيلادا" />
+            <img src="/frontend/img/Enchilada.jpg" alt="إنشيلادا" />
             <span>إنشيلادا – Enchilada</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -2226,7 +2226,7 @@
               'recipe',
               'guacamole',
               'غواكامولي – Guacamole',
-              '/img/Guacamole.jpg',
+              '/frontend/img/Guacamole.jpg',
             )
           "
         >
@@ -2235,7 +2235,7 @@
         <button
           class="recipes-item"
           data-title="غواكامولي – Guacamole"
-          data-img="/img/Guacamole.jpg"
+          data-img="/frontend/img/Guacamole.jpg"
           data-ingredients="أفوكادو|2|حبة|ليمون|1|حبة|بصل أحمر|1|حبة صغيرة|طماطم|1|حبة صغيرة|كزبرة خضراء|15|غ|ملح|2|غ|فلفل أخضر حار|1|حبة"
           data-spices="فلفل أسود|1|غ|ثوم|1|فص"
           data-sauces="رقائق تورتيلا – Tortilla Chips"
@@ -2243,7 +2243,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/Guacamole.jpg" alt="غواكامولي" />
+            <img src="/frontend/img/Guacamole.jpg" alt="غواكامولي" />
             <span>غواكامولي – Guacamole</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -2258,7 +2258,7 @@
               'recipe',
               'churros',
               'تشوروس – Churros',
-              '/img/Churros.jpg',
+              '/frontend/img/Churros.jpg',
             )
           "
         >
@@ -2267,7 +2267,7 @@
         <button
           class="recipes-item"
           data-title="تشوروس – Churros"
-          data-img="/img/Churros.jpg"
+          data-img="/frontend/img/Churros.jpg"
           data-ingredients="دقيق|150|غ|ماء|240|مل|زبدة|30|غ|بيض|2|حبة|سكر|20|غ|ملح|2|غ|زيت للقلي|200|مل|سكر بودرة|30|غ|قرفة|5|غ"
           data-spices="فانيليا|2|غ"
           data-sauces="شوكولاتة ساخنة|كراميل"
@@ -2275,7 +2275,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/Churros.jpg" alt="تشوروس" />
+            <img src="/frontend/img/Churros.jpg" alt="تشوروس" />
             <span>تشوروس – Churros</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -2285,7 +2285,7 @@
         <button
           class="save-btn"
           onclick="
-            saveItem('recipe', 'burger', 'برغر – Burger', '/img/Burger.jpg')
+            saveItem('recipe', 'burger', 'برغر – Burger', '/frontend/img/Burger.jpg')
           "
         >
           🍽️
@@ -2293,7 +2293,7 @@
         <button
           class="recipes-item"
           data-title="برغر – Burger"
-          data-img="/img/Burger.jpg"
+          data-img="/frontend/img/Burger.jpg"
           data-ingredients="لحم مفروم|150|غ|خبز برغر|1|قطعة|جبن شيدر|1|قطعة|خس|20|غ|طماطم|1|حبة صغيرة|بصل|1|حبة صغيرة|ملح|2|غ|زيت|10|مل"
           data-spices="فلفل أسود|2|غ|ثوم بودرة|1|غ|بابريكا|1|غ"
           data-sauces="كاتشب|مايونيز|خردل"
@@ -2301,7 +2301,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/Burger.jpg" alt="برغر" />
+            <img src="/frontend/img/Burger.jpg" alt="برغر" />
             <span>برغر – Burger</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -2316,7 +2316,7 @@
               'recipe',
               'american-pizza',
               'بيتزا – Pizza',
-              '/img/American Pizza.jpg',
+              '/frontend/img/American Pizza.jpg',
             )
           "
         >
@@ -2325,7 +2325,7 @@
         <button
           class="recipes-item"
           data-title="بيتزا – Pizza"
-          data-img="/img/American Pizza.jpg"
+          data-img="/frontend/img/American Pizza.jpg"
           data-ingredients="دقيق|200|غ|ماء|130|مل|خميرة|5|غ|زيت زيتون|15|مل|ملح|3|غ|صوص طماطم|80|غ|جبن موزاريلا|100|غ|دجاج|80|غ|فلفل رومي|50|غ|بصل|1|حبة صغيرة"
           data-spices="أوريغانو|2|غ|فلفل أسود|1|غ|ثوم بودرة|1|غ|فلفل أحمر|1|غ"
           data-sauces="صوص طماطم حار"
@@ -2333,7 +2333,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/American Pizza.jpg" alt="بيتزا" />
+            <img src="/frontend/img/American Pizza.jpg" alt="بيتزا" />
             <span>بيتزا – Pizza</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -2348,7 +2348,7 @@
               'recipe',
               'hot-dog',
               'هوت دوغ – Hot Dog',
-              '/img/Hot Dog.jpg',
+              '/frontend/img/Hot Dog.jpg',
             )
           "
         >
@@ -2357,7 +2357,7 @@
         <button
           class="recipes-item"
           data-title="هوت دوغ – Hot Dog"
-          data-img="/img/Hot Dog.jpg"
+          data-img="/frontend/img/Hot Dog.jpg"
           data-ingredients="نقانق دجاج|2|قطعة|خبز هوت دوغ|2|قطعة|بصل|1|حبة صغيرة|فلفل أخضر|30|غ|زيت|10|مل|ملح|1|غ"
           data-spices="فلفل أسود|1|غ|بابريكا|1|غ"
           data-sauces="كاتشب|خردل|مايونيز"
@@ -2365,7 +2365,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/Hot Dog.jpg" alt="هوت دوغ" />
+            <img src="/frontend/img/Hot Dog.jpg" alt="هوت دوغ" />
             <span>هوت دوغ – Hot Dog</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -2380,7 +2380,7 @@
               'recipe',
               'fried-chicken',
               'دجاج مقلي – Fried Chicken',
-              '/img/Fried Chicken.jpg',
+              '/frontend/img/Fried Chicken.jpg',
             )
           "
         >
@@ -2389,7 +2389,7 @@
         <button
           class="recipes-item"
           data-title="دجاج مقلي – Fried Chicken"
-          data-img="/img/Fried Chicken.jpg"
+          data-img="/frontend/img/Fried Chicken.jpg"
           data-ingredients="دجاج|200|غ|دقيق|100|غ|بيض|1|حبة|حليب|50|مل|زيت للقلي|200|مل|ملح|3|غ"
           data-spices="فلفل أسود|2|غ|بابريكا|3|غ|ثوم بودرة|2|غ|بصل بودرة|1|غ|كمون|1|غ|فلفل أبيض|1|غ"
           data-sauces="صوص هاني مستر – Honey Mustard|كاتشب"
@@ -2397,7 +2397,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/Fried Chicken.jpg" alt="دجاج مقلي" />
+            <img src="/frontend/img/Fried Chicken.jpg" alt="دجاج مقلي" />
             <span>دجاج مقلي – Fried Chicken</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -2412,7 +2412,7 @@
               'recipe',
               'pancakes',
               'بانكيك – Pancakes',
-              '/img/Pancakes.jpg',
+              '/frontend/img/Pancakes.jpg',
             )
           "
         >
@@ -2421,7 +2421,7 @@
         <button
           class="recipes-item"
           data-title="بانكيك – Pancakes"
-          data-img="/img/Pancakes.jpg"
+          data-img="/frontend/img/Pancakes.jpg"
           data-ingredients="دقيق|150|غ|حليب|180|مل|بيض|1|حبة|سكر|20|غ|زبدة|30|غ|بيكنج بودر|5|غ|ملح|1|غ"
           data-spices="فانيليا|2|غ"
           data-sauces="شراب القيقب – Maple Syrup|عسل|فراولة طازجة"
@@ -2429,7 +2429,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/Pancakes.jpg" alt="بانكيك" />
+            <img src="/frontend/img/Pancakes.jpg" alt="بانكيك" />
             <span>بانكيك – Pancakes</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -2440,7 +2440,7 @@
         <button
           class="save-btn"
           onclick="
-            saveItem('recipe', 'donuts', 'دونات – Donuts', '/img/Donuts.jpg')
+            saveItem('recipe', 'donuts', 'دونات – Donuts', '/frontend/img/Donuts.jpg')
           "
         >
           🍽️
@@ -2448,7 +2448,7 @@
         <button
           class="recipes-item"
           data-title="دونات – Donuts"
-          data-img="/img/Donuts.jpg"
+          data-img="/frontend/img/Donuts.jpg"
           data-ingredients="دقيق|300|غ|حليب|120|مل|بيض|1|حبة|سكر|60|غ|زبدة|40|غ|خميرة|7|غ|ملح|2|غ|زيت للقلي|200|مل|سكر بودرة|50|غ"
           data-spices="فانيليا|2|غ|جوزة الطيب|1|غ"
           data-sauces="شوكولاتة ساخنة|سكر بودرة|قرفة"
@@ -2456,7 +2456,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/Donuts.jpg" alt="دونات" />
+            <img src="/frontend/img/Donuts.jpg" alt="دونات" />
             <span>دونات – Donuts</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -2466,7 +2466,7 @@
         <button
           class="save-btn"
           onclick="
-            saveItem('recipe', 'poutine', 'بوتين – Poutine', '/img/Poutine.jpg')
+            saveItem('recipe', 'poutine', 'بوتين – Poutine', '/frontend/img/Poutine.jpg')
           "
         >
           🍽️
@@ -2474,7 +2474,7 @@
         <button
           class="recipes-item"
           data-title="بوتين – Poutine"
-          data-img="/img/Poutine.jpg"
+          data-img="/frontend/img/Poutine.jpg"
           data-ingredients="بطاطس|200|غ|جبن تشيدر|80|غ|زيت للقلي|200|مل|ملح|2|غ|زبدة|20|غ|دقيق|15|غ|مرق دجاج|250|مل"
           data-spices="فلفل أسود|1|غ|ثوم بودرة|1|غ|أوريغانو|1|غ"
           data-sauces=""
@@ -2482,7 +2482,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/Poutine.jpg" alt="بوتين" />
+            <img src="/frontend/img/Poutine.jpg" alt="بوتين" />
             <span>بوتين – Poutine</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -2497,7 +2497,7 @@
               'recipe',
               'maple-pancakes',
               'بانكيك بشراب القيقب – Maple Pancakes',
-              '/img/Maple Pancakes.jpg',
+              '/frontend/img/Maple Pancakes.jpg',
             )
           "
         >
@@ -2506,7 +2506,7 @@
         <button
           class="recipes-item"
           data-title="بانكيك بشراب القيقب – Maple Pancakes"
-          data-img="/img/Maple Pancakes.jpg"
+          data-img="/frontend/img/Maple Pancakes.jpg"
           data-ingredients="دقيق|150|غ|حليب|180|مل|بيض|1|حبة|سكر|20|غ|زبدة|30|غ|بيكنج بودر|5|غ|ملح|1|غ|شراب القيقب|60|مل"
           data-spices="فانيليا|2|غ|قرفة|1|غ"
           data-sauces="شراب القيقب – Maple Syrup|زبدة|فواكه طازجة"
@@ -2514,7 +2514,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/Maple Pancakes.jpg" alt="بانكيك بشراب القيقب" />
+            <img src="/frontend/img/Maple Pancakes.jpg" alt="بانكيك بشراب القيقب" />
             <span>بانكيك بشراب القيقب – Maple Pancakes</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -2529,7 +2529,7 @@
               'recipe',
               'smoked-meat',
               'لحم مدخن مونتريال – Montreal Smoked Meat',
-              '/img/Montreal Smoked Meat.jpg',
+              '/frontend/img/Montreal Smoked Meat.jpg',
             )
           "
         >
@@ -2538,7 +2538,7 @@
         <button
           class="recipes-item"
           data-title="لحم مدخن مونتريال – Montreal Smoked Meat"
-          data-img="/img/Montreal Smoked Meat.jpg"
+          data-img="/frontend/img/Montreal Smoked Meat.jpg"
           data-ingredients="لحم بقر|150|غ|خبز رايه|2|قطعة|خردل|15|غ|ملح|3|غ"
           data-spices="فلفل أسود|3|غ|كزبرة مطحونة|2|غ|ثوم بودرة|2|غ|بابريكا|2|غ|فلفل أحمر حار|1|غ|بذور خردل|2|غ"
           data-sauces="خردل ديجون|مخللات"
@@ -2546,7 +2546,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/Montreal Smoked Meat.jpg" alt="لحم مدخن مونتريال" />
+            <img src="/frontend/img/Montreal Smoked Meat.jpg" alt="لحم مدخن مونتريال" />
             <span>لحم مدخن مونتريال – Montreal Smoked Meat</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -2561,7 +2561,7 @@
               'recipe',
               'tourtiere',
               'تورتيير – Tourtière',
-              '/img/Tourtiere.jpg',
+              '/frontend/img/Tourtiere.jpg',
             )
           "
         >
@@ -2570,7 +2570,7 @@
         <button
           class="recipes-item"
           data-title="تورتيير – Tourtière"
-          data-img="/img/Tourtiere.jpg"
+          data-img="/frontend/img/Tourtiere.jpg"
           data-ingredients="لحم مفروم|200|غ|بصل|1|حبة صغيرة|ثوم|2|فص|بطاطس|100|غ|مرق لحم|100|مل|دقيق|200|غ|زبدة|100|غ|ماء بارد|60|مل|ملح|3|غ|بيض|1|حبة"
           data-spices="قرفة|2|غ|قرنفل|1|غ|فلفل أسود|2|غ|زعتر|1|غ|بردقوش|1|غ"
           data-sauces="صوص تفاح – Apple Chutney|مخللات"
@@ -2578,7 +2578,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/Tourtiere.jpg" alt="تورتيير" />
+            <img src="/frontend/img/Tourtiere.jpg" alt="تورتيير" />
             <span>تورتيير – Tourtière</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -2593,7 +2593,7 @@
               'recipe',
               'lobster-canada',
               'لوبستر – Lobster',
-              '/img/Lobster Canada.jpg',
+              '/frontend/img/Lobster Canada.jpg',
             )
           "
         >
@@ -2602,7 +2602,7 @@
         <button
           class="recipes-item"
           data-title="لوبستر – Lobster"
-          data-img="/img/Lobster Canada.jpg"
+          data-img="/frontend/img/Lobster Canada.jpg"
           data-ingredients="جراد البحر|1|حبة|زبدة|60|غ|ثوم|3|فص|ليمون|1|حبة|بقدونس|15|غ|ملح|3|غ"
           data-spices="فلفل أسود|2|غ|فلفل أحمر حار|1|غ|بابريكا|1|غ"
           data-sauces="زبدة بالثوم|ليمون"
@@ -2610,7 +2610,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/Lobster Canada.jpg" alt="لوبستر" />
+            <img src="/frontend/img/Lobster Canada.jpg" alt="لوبستر" />
             <span>لوبستر – Lobster</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -2625,7 +2625,7 @@
               'recipe',
               'beavertails',
               'بيفرتيلز – BeaverTails',
-              '/img/BeaverTails.jpg',
+              '/frontend/img/BeaverTails.jpg',
             )
           "
         >
@@ -2634,7 +2634,7 @@
         <button
           class="recipes-item"
           data-title="بيفرتيلز – BeaverTails"
-          data-img="/img/BeaverTails.jpg"
+          data-img="/frontend/img/BeaverTails.jpg"
           data-ingredients="دقيق|250|غ|حليب|150|مل|بيض|1|حبة|سكر|30|غ|خميرة|7|غ|زبدة|30|غ|ملح|2|غ|زيت للقلي|200|مل|سكر بودرة|40|غ|قرفة|5|غ"
           data-spices="فانيليا|2|غ"
           data-sauces="نوتيلا|سكر وقرفة|عسل وليمون"
@@ -2642,7 +2642,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/BeaverTails.jpg" alt="بيفرتيلز" />
+            <img src="/frontend/img/BeaverTails.jpg" alt="بيفرتيلز" />
             <span>بيفرتيلز – BeaverTails</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -2656,7 +2656,7 @@
               'recipe',
               'peking-duck',
               'بط بكين – Peking Duck',
-              '/img/Peking Duck.jpg',
+              '/frontend/img/Peking Duck.jpg',
             )
           "
         >
@@ -2665,7 +2665,7 @@
         <button
           class="recipes-item"
           data-title="بط بكين – Peking Duck"
-          data-img="/img/Peking Duck.jpg"
+          data-img="/frontend/img/Peking Duck.jpg"
           data-ingredients="صدر بط|200|غ|عسل|30|غ|صوص الصويا|30|مل|خل أرز|15|مل|خبز رقيق – Mandarin Pancakes|4|قطعة|خيار|50|غ|بصل أخضر|30|غ|ملح|2|غ"
           data-spices="فلفل أسود|1|غ|أنيسون نجمي|2|غ|قرفة|1|غ|قرنفل|1|غ"
           data-sauces="صوص الهويسين – Hoisin Sauce"
@@ -2673,7 +2673,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/Peking Duck.jpg" alt="بط بكين" />
+            <img src="/frontend/img/Peking Duck.jpg" alt="بط بكين" />
             <span>بط بكين – Peking Duck</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -2688,7 +2688,7 @@
               'recipe',
               'dumplings',
               'دامبلنغ – Dumplings',
-              '/img/Dumplings.jpg',
+              '/frontend/img/Dumplings.jpg',
             )
           "
         >
@@ -2697,7 +2697,7 @@
         <button
           class="recipes-item"
           data-title="دامبلنغ – Dumplings"
-          data-img="/img/Dumplings.jpg"
+          data-img="/frontend/img/Dumplings.jpg"
           data-ingredients="دقيق|150|غ|ماء دافئ|80|مل|لحم مفروم|100|غ|ملفوف صيني|50|غ|بصل أخضر|20|غ|زنجبيل|5|غ|ملح|2|غ|زيت سمسم|10|مل"
           data-spices="فلفل أسود|1|غ|ثوم|2|فص"
           data-sauces="صوص الصويا|خل أرز|زيت فلفل حار"
@@ -2705,7 +2705,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/Dumplings.jpg" alt="دامبلنغ" />
+            <img src="/frontend/img/Dumplings.jpg" alt="دامبلنغ" />
             <span>دامبلنغ – Dumplings</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -2720,7 +2720,7 @@
               'recipe',
               'chinese-noodles',
               'نودلز صيني – Chinese Noodles',
-              '/img/Chinese Noodles.jpg',
+              '/frontend/img/Chinese Noodles.jpg',
             )
           "
         >
@@ -2729,7 +2729,7 @@
         <button
           class="recipes-item"
           data-title="نودلز صيني – Chinese Noodles"
-          data-img="/img/Chinese Noodles.jpg"
+          data-img="/frontend/img/Chinese Noodles.jpg"
           data-ingredients="نودلز|150|غ|دجاج|100|غ|بصل أخضر|20|غ|ثوم|2|فص|زنجبيل|5|غ|جزر|50|غ|فلفل رومي|50|غ|زيت|15|مل|ملح|2|غ|مرق دجاج|200|مل"
           data-spices="فلفل أسود|1|غ|أنيسون نجمي|1|غ|كركم|1|غ"
           data-sauces="صوص الصويا|صوص المحار – Oyster Sauce|زيت سمسم"
@@ -2737,7 +2737,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/Chinese Noodles.jpg" alt="نودلز صيني" />
+            <img src="/frontend/img/Chinese Noodles.jpg" alt="نودلز صيني" />
             <span>نودلز صيني – Chinese Noodles</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -2752,7 +2752,7 @@
               'recipe',
               'fried-rice',
               'أرز مقلي – Fried Rice',
-              '/img/Fried Rice.jpg',
+              '/frontend/img/Fried Rice.jpg',
             )
           "
         >
@@ -2761,7 +2761,7 @@
         <button
           class="recipes-item"
           data-title="أرز مقلي – Fried Rice"
-          data-img="/img/Fried Rice.jpg"
+          data-img="/frontend/img/Fried Rice.jpg"
           data-ingredients="أرز مطبوخ بارد|200|غ|بيض|2|حبة|دجاج|80|غ|جزر|40|غ|بازلاء|40|غ|بصل أخضر|20|غ|ثوم|2|فص|زيت|20|مل|ملح|2|غ"
           data-spices="فلفل أسود|1|غ|فلفل أبيض|1|غ"
           data-sauces="صوص الصويا|زيت سمسم"
@@ -2769,7 +2769,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/Fried Rice.jpg" alt="أرز مقلي" />
+            <img src="/frontend/img/Fried Rice.jpg" alt="أرز مقلي" />
             <span>أرز مقلي – Fried Rice</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -2784,7 +2784,7 @@
               'recipe',
               'dim-sum',
               'ديم سام – Dim Sum',
-              '/img/Dim Sum.jpg',
+              '/frontend/img/Dim Sum.jpg',
             )
           "
         >
@@ -2793,7 +2793,7 @@
         <button
           class="recipes-item"
           data-title="ديم سام – Dim Sum"
-          data-img="/img/Dim Sum.jpg"
+          data-img="/frontend/img/Dim Sum.jpg"
           data-ingredients="دقيق|100|غ|ماء مغلي|60|مل|روبيان|100|غ|لحم مفروم|50|غ|بصل أخضر|15|غ|زنجبيل|3|غ|نشا|10|غ|ملح|2|غ|زيت سمسم|5|مل"
           data-spices="فلفل أبيض|1|غ|سكر|3|غ"
           data-sauces="صوص الصويا|صوص الفلفل الحار"
@@ -2801,7 +2801,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/Dim Sum.jpg" alt="ديم سام" />
+            <img src="/frontend/img/Dim Sum.jpg" alt="ديم سام" />
             <span>ديم سام – Dim Sum</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -2816,7 +2816,7 @@
               'recipe',
               'kung-pao-chicken',
               'دجاج كونغ باو – Kung Pao Chicken',
-              '/img/Kung Pao Chicken.jpg',
+              '/frontend/img/Kung Pao Chicken.jpg',
             )
           "
         >
@@ -2825,7 +2825,7 @@
         <button
           class="recipes-item"
           data-title="دجاج كونغ باو – Kung Pao Chicken"
-          data-img="/img/Kung Pao Chicken.jpg"
+          data-img="/frontend/img/Kung Pao Chicken.jpg"
           data-ingredients="دجاج|150|غ|فول سوداني محمص|40|غ|فلفل رومي|50|غ|بصل أخضر|20|غ|ثوم|2|فص|زنجبيل|5|غ|زيت|20|مل|ملح|2|غ|نشا|10|غ"
           data-spices="فلفل أحمر صيني حار|5|غ|فلفل سيتشوان|2|غ|فلفل أسود|1|غ"
           data-sauces="صوص الصويا|خل أرز|سكر|زيت سمسم"
@@ -2833,7 +2833,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/Kung Pao Chicken.jpg" alt="دجاج كونغ باو" />
+            <img src="/frontend/img/Kung Pao Chicken.jpg" alt="دجاج كونغ باو" />
             <span>دجاج كونغ باو – Kung Pao Chicken</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -2847,7 +2847,7 @@
               'recipe',
               'biryani',
               'برياني – Biryani',
-              '/img/Biryani.jpg',
+              '/frontend/img/Biryani.jpg',
             )
           "
         >
@@ -2856,7 +2856,7 @@
         <button
           class="recipes-item"
           data-title="برياني – Biryani"
-          data-img="/img/Biryani.jpg"
+          data-img="/frontend/img/Biryani.jpg"
           data-ingredients="أرز بسمتي|200|غ|دجاج|150|غ|بصل|2|حبة|طماطم|2|حبة|زبادي|80|غ|زيت|30|مل|ملح|3|غ|زعفران|1|غ|حليب دافئ|30|مل"
           data-spices="كاري|3|غ|كمون|2|غ|قرفة|2|غ|هيل|3|حبة|قرنفل|3|حبة|ورق غار|2|ورقة|كركم|2|غ|فلفل أسود|2|غ|بهارات برياني|5|غ"
           data-sauces="رايتا – Raita|صوص نعناع"
@@ -2864,7 +2864,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/Biryani.jpg" alt="برياني" />
+            <img src="/frontend/img/Biryani.jpg" alt="برياني" />
             <span>برياني – Biryani</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -2879,7 +2879,7 @@
               'recipe',
               'butter-chicken',
               'زبدة الدجاج – Butter Chicken',
-              '/img/Butter Chicken.jpg',
+              '/frontend/img/Butter Chicken.jpg',
             )
           "
         >
@@ -2888,7 +2888,7 @@
         <button
           class="recipes-item"
           data-title="زبدة الدجاج – Butter Chicken"
-          data-img="/img/Butter Chicken.jpg"
+          data-img="/frontend/img/Butter Chicken.jpg"
           data-ingredients="دجاج|150|غ|طماطم|3|حبة|بصل|1|حبة|زبدة|40|غ|كريمة|80|مل|ثوم|3|فص|زنجبيل|5|غ|زبادي|50|غ|ملح|3|غ"
           data-spices="كاري|3|غ|كمون|2|غ|كركم|2|غ|فلفل أحمر|2|غ|غارام ماسالا|3|غ|بابريكا|2|غ|قرفة|1|غ"
           data-sauces="خبز نان|أرز أبيض"
@@ -2896,7 +2896,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/Butter Chicken.jpg" alt="زبدة الدجاج" />
+            <img src="/frontend/img/Butter Chicken.jpg" alt="زبدة الدجاج" />
             <span>زبدة الدجاج – Butter Chicken</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -2911,7 +2911,7 @@
               'recipe',
               'samosa',
               'سمبوسة هندية – Samosa',
-              '/img/Samosa.jpg',
+              '/frontend/img/Samosa.jpg',
             )
           "
         >
@@ -2920,7 +2920,7 @@
         <button
           class="recipes-item"
           data-title="سمبوسة هندية – Samosa"
-          data-img="/img/Samosa.jpg"
+          data-img="/frontend/img/Samosa.jpg"
           data-ingredients="دقيق|150|غ|زيت|30|مل|ماء|60|مل|بطاطس|200|غ|بازلاء|50|غ|بصل|1|حبة صغيرة|ملح|3|غ|زيت للقلي|200|مل"
           data-spices="كمون|2|غ|كاري|2|غ|كركم|1|غ|فلفل أخضر حار|1|حبة|كزبرة|2|غ|غارام ماسالا|2|غ"
           data-sauces="صوص التمر الهندي – Tamarind Chutney|صوص النعناع"
@@ -2928,7 +2928,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/Samosa.jpg" alt="سمبوسة هندية" />
+            <img src="/frontend/img/Samosa.jpg" alt="سمبوسة هندية" />
             <span>سمبوسة هندية – Samosa</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -2938,14 +2938,14 @@
       <div class="foods-card" data-region="snacks" id="naan">
         <button
           class="save-btn"
-          onclick="saveItem('recipe', 'naan', 'نان – Naan', '/img/Naan.jpg')"
+          onclick="saveItem('recipe', 'naan', 'نان – Naan', '/frontend/img/Naan.jpg')"
         >
           🍽️
         </button>
         <button
           class="recipes-item"
           data-title="نان – Naan"
-          data-img="/img/Naan.jpg"
+          data-img="/frontend/img/Naan.jpg"
           data-ingredients="دقيق|250|غ|زبادي|80|غ|حليب|60|مل|زبدة|30|غ|خميرة|5|غ|سكر|10|غ|ملح|3|غ|بيض|1|حبة"
           data-spices="ثوم|2|فص|كزبرة خضراء|10|غ"
           data-sauces="زبدة مذابة|صوص الكاري"
@@ -2953,7 +2953,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/Naan.jpg" alt="نان" />
+            <img src="/frontend/img/Naan.jpg" alt="نان" />
             <span>نان – Naan</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -2968,7 +2968,7 @@
               'recipe',
               'masala-dosa',
               'ماسالا دوسا – Masala Dosa',
-              '/img/Masala Dosa.jpg',
+              '/frontend/img/Masala Dosa.jpg',
             )
           "
         >
@@ -2977,7 +2977,7 @@
         <button
           class="recipes-item"
           data-title="ماسالا دوسا – Masala Dosa"
-          data-img="/img/Masala Dosa.jpg"
+          data-img="/frontend/img/Masala Dosa.jpg"
           data-ingredients="أرز|200|غ|عدس أسود|50|غ|بطاطس|200|غ|بصل|1|حبة|ملح|3|غ|زيت|20|مل"
           data-spices="كمون|2|غ|كركم|2|غ|فلفل أخضر|1|حبة|زنجبيل|3|غ|أوراق كاري|5|ورقة|بذور خردل|2|غ"
           data-sauces="صوص جوز الهند – Coconut Chutney|صوص سامبار – Sambar"
@@ -2985,7 +2985,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/Masala Dosa.jpg" alt="ماسالا دوسا" />
+            <img src="/frontend/img/Masala Dosa.jpg" alt="ماسالا دوسا" />
             <span>ماسالا دوسا – Masala Dosa</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -3000,7 +3000,7 @@
               'recipe',
               'gulab-jamun',
               'جولاب جامون – Gulab Jamun',
-              '/img/Gulab Jamun.jpg',
+              '/frontend/img/Gulab Jamun.jpg',
             )
           "
         >
@@ -3009,7 +3009,7 @@
         <button
           class="recipes-item"
           data-title="جولاب جامون – Gulab Jamun"
-          data-img="/img/Gulab Jamun.jpg"
+          data-img="/frontend/img/Gulab Jamun.jpg"
           data-ingredients="حليب مجفف|100|غ|دقيق|30|غ|بيكنج بودر|2|غ|زبدة|15|غ|حليب|40|مل|زيت للقلي|200|مل|سكر|200|غ|ماء|200|مل"
           data-spices="هيل|3|غ|ماء ورد|10|مل|زعفران|1|غ"
           data-sauces=""
@@ -3017,7 +3017,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/Gulab Jamun.jpg" alt="جولاب جامون" />
+            <img src="/frontend/img/Gulab Jamun.jpg" alt="جولاب جامون" />
             <span>جولاب جامون – Gulab Jamun</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -3031,7 +3031,7 @@
               'recipe',
               'pad-thai',
               'باد تاي – Pad Thai',
-              '/img/Pad Thai.jpg',
+              '/frontend/img/Pad Thai.jpg',
             )
           "
         >
@@ -3040,7 +3040,7 @@
         <button
           class="recipes-item"
           data-title="باد تاي – Pad Thai"
-          data-img="/img/Pad Thai.jpg"
+          data-img="/frontend/img/Pad Thai.jpg"
           data-ingredients="نودلز أرز|150|غ|دجاج|100|غ|بيض|2|حبة|روبيان|80|غ|بصل أخضر|20|غ|فول سوداني محمص|30|غ|فاصوليا خضراء|30|غ|ثوم|2|فص|زيت|20|مل|ليمون|1|حبة"
           data-spices="فلفل أحمر حار|2|غ|سكر|10|غ"
           data-sauces="صوص تاماريند – Tamarind Sauce|صوص السمك – Fish Sauce|صوص المحار – Oyster Sauce"
@@ -3048,7 +3048,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/Pad Thai.jpg" alt="باد تاي" />
+            <img src="/frontend/img/Pad Thai.jpg" alt="باد تاي" />
             <span>باد تاي – Pad Thai</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -3063,7 +3063,7 @@
               'recipe',
               'tom-yum',
               'توم يوم – Tom Yum',
-              '/img/Tom Yum.jpg',
+              '/frontend/img/Tom Yum.jpg',
             )
           "
         >
@@ -3072,7 +3072,7 @@
         <button
           class="recipes-item"
           data-title="توم يوم – Tom Yum"
-          data-img="/img/Tom Yum.jpg"
+          data-img="/frontend/img/Tom Yum.jpg"
           data-ingredients="روبيان|150|غ|فطر|80|غ|طماطم كرزية|50|غ|عيش الغراب|50|غ|ليمون|2|حبة|مرق دجاج|500|مل|زيت|10|مل|ملح|2|غ"
           data-spices="عشب الليمون – Lemongrass|3|غ|ورق كفير لايم|4|ورقة|جذر الجنجل – Galangal|10|غ|فلفل أحمر حار|3|غ"
           data-sauces="صوص السمك – Fish Sauce|معجون التوم يوم – Tom Yum Paste|كريمة جوز الهند"
@@ -3080,7 +3080,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/Tom Yum.jpg" alt="توم يوم" />
+            <img src="/frontend/img/Tom Yum.jpg" alt="توم يوم" />
             <span>توم يوم – Tom Yum</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -3095,7 +3095,7 @@
               'recipe',
               'mango-sticky-rice',
               'مانجو ستيكي رايس – Mango Sticky Rice',
-              '/img/Mango Sticky Rice.jpg',
+              '/frontend/img/Mango Sticky Rice.jpg',
             )
           "
         >
@@ -3104,7 +3104,7 @@
         <button
           class="recipes-item"
           data-title="مانجو ستيكي رايس – Mango Sticky Rice"
-          data-img="/img/Mango Sticky Rice.jpg"
+          data-img="/frontend/img/Mango Sticky Rice.jpg"
           data-ingredients="أرز لزج|200|غ|مانجو|2|حبة|حليب جوز الهند|250|مل|سكر|60|غ|ملح|3|غ|نشا|10|غ"
           data-spices="هيل|1|غ"
           data-sauces="صوص جوز الهند الكريمي"
@@ -3112,7 +3112,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/Mango Sticky Rice.jpg" alt="مانجو ستيكي رايس" />
+            <img src="/frontend/img/Mango Sticky Rice.jpg" alt="مانجو ستيكي رايس" />
             <span>مانجو ستيكي رايس – Mango Sticky Rice</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -3123,7 +3123,7 @@
         <button
           class="save-btn"
           onclick="
-            saveItem('recipe', 'satay', 'ساتاي – Satay', '/img/Satay.jpg')
+            saveItem('recipe', 'satay', 'ساتاي – Satay', '/frontend/img/Satay.jpg')
           "
         >
           🍽️
@@ -3131,7 +3131,7 @@
         <button
           class="recipes-item"
           data-title="ساتاي – Satay"
-          data-img="/img/Satay.jpg"
+          data-img="/frontend/img/Satay.jpg"
           data-ingredients="دجاج|150|غ|حليب جوز الهند|60|مل|زيت|10|مل|ملح|2|غ|سكر|5|غ"
           data-spices="كركم|2|غ|كمون|2|غ|كزبرة مطحونة|2|غ|عشب الليمون|3|غ|فلفل أبيض|1|غ|ثوم|2|فص"
           data-sauces="صوص الفول السوداني – Peanut Sauce|خيار مخلل"
@@ -3139,7 +3139,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/Satay.jpg" alt="ساتاي" />
+            <img src="/frontend/img/Satay.jpg" alt="ساتاي" />
             <span>ساتاي – Satay</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -3154,7 +3154,7 @@
               'recipe',
               'green-curry',
               'الكاري الأخضر – Green Curry',
-              '/img/Green Curry.jpg',
+              '/frontend/img/Green Curry.jpg',
             )
           "
         >
@@ -3163,7 +3163,7 @@
         <button
           class="recipes-item"
           data-title="الكاري الأخضر – Green Curry"
-          data-img="/img/Green Curry.jpg"
+          data-img="/frontend/img/Green Curry.jpg"
           data-ingredients="دجاج|150|غ|حليب جوز الهند|400|مل|باذنجان تايلاندي|100|غ|فلفل أحمر|50|غ|ريحان تايلاندي|15|غ|زيت|15|مل|ملح|2|غ|سكر|5|غ"
           data-spices="معجون الكاري الأخضر – Green Curry Paste|30|غ|ورق كفير لايم|4|ورقة|عشب الليمون|3|غ"
           data-sauces="صوص السمك – Fish Sauce|أرز أبيض"
@@ -3171,7 +3171,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/Green Curry.jpg" alt="الكاري الأخضر" />
+            <img src="/frontend/img/Green Curry.jpg" alt="الكاري الأخضر" />
             <span>الكاري الأخضر – Green Curry</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -3186,7 +3186,7 @@
               'recipe',
               'thai-fried-rice',
               'أرز مقلي تايلاندي – Thai Fried Rice',
-              '/img/Thai Fried Rice.jpg',
+              '/frontend/img/Thai Fried Rice.jpg',
             )
           "
         >
@@ -3195,7 +3195,7 @@
         <button
           class="recipes-item"
           data-title="أرز مقلي تايلاندي – Thai Fried Rice"
-          data-img="/img/Thai Fried Rice.jpg"
+          data-img="/frontend/img/Thai Fried Rice.jpg"
           data-ingredients="أرز مطبوخ بارد|200|غ|دجاج|100|غ|بيض|2|حبة|بصل|1|حبة صغيرة|ثوم|3|فص|طماطم|1|حبة صغيرة|بصل أخضر|20|غ|زيت|20|مل|ملح|2|غ"
           data-spices="فلفل أبيض|1|غ|سكر|3|غ"
           data-sauces="صوص المحار – Oyster Sauce|صوص السمك – Fish Sauce|ليمون"
@@ -3203,7 +3203,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/Thai Fried Rice.jpg" alt="أرز مقلي تايلاندي" />
+            <img src="/frontend/img/Thai Fried Rice.jpg" alt="أرز مقلي تايلاندي" />
             <span>أرز مقلي تايلاندي – Thai Fried Rice</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -3217,7 +3217,7 @@
               'recipe',
               'nasi-lemak',
               'ناسي لماك – Nasi Lemak',
-              '/img/Nasi Lemak.jpg',
+              '/frontend/img/Nasi Lemak.jpg',
             )
           "
         >
@@ -3226,7 +3226,7 @@
         <button
           class="recipes-item"
           data-title="ناسي لماك – Nasi Lemak"
-          data-img="/img/Nasi Lemak.jpg"
+          data-img="/frontend/img/Nasi Lemak.jpg"
           data-ingredients="أرز|200|غ|حليب جوز الهند|200|مل|ماء|100|مل|أنشوجة مقلية|30|غ|فول سوداني محمص|40|غ|بيض|2|حبة|خيار|50|غ|ملح|3|غ|عشب الليمون|3|غ"
           data-spices="ورق كيلام|2|ورقة|زنجبيل|5|غ|هيل|2|حبة"
           data-sauces="صوص سمبال – Sambal Sauce"
@@ -3234,7 +3234,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/Nasi Lemak.jpg" alt="ناسي لماك" />
+            <img src="/frontend/img/Nasi Lemak.jpg" alt="ناسي لماك" />
             <span>ناسي لماك – Nasi Lemak</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -3249,7 +3249,7 @@
               'recipe',
               'malaysia-satay',
               'ساتاي ماليزي – Malaysia Satay',
-              '/img/Malaysia Satay.jpg',
+              '/frontend/img/Malaysia Satay.jpg',
             )
           "
         >
@@ -3258,7 +3258,7 @@
         <button
           class="recipes-item"
           data-title="ساتاي ماليزي – Malaysia Satay"
-          data-img="/img/Malaysia Satay.jpg"
+          data-img="/frontend/img/Malaysia Satay.jpg"
           data-ingredients="دجاج|150|غ|حليب جوز الهند|60|مل|بصل|1|حبة صغيرة|ثوم|2|فص|زيت|10|مل|سكر|10|غ|ملح|2|غ"
           data-spices="كركم|2|غ|كمون|2|غ|كزبرة|2|غ|عشب الليمون|3|غ|فلفل أبيض|1|غ|هيل|1|غ"
           data-sauces="صوص الفول السوداني – Peanut Sauce|كيوبي محمص – Ketupat"
@@ -3266,7 +3266,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/Malaysia Satay.jpg" alt="ساتاي ماليزي" />
+            <img src="/frontend/img/Malaysia Satay.jpg" alt="ساتاي ماليزي" />
             <span>ساتاي ماليزي – Malaysia Satay</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -3281,7 +3281,7 @@
               'recipe',
               'roti-canai',
               'روتي كاناي – Roti Canai',
-              '/img/Roti Canai.jpg',
+              '/frontend/img/Roti Canai.jpg',
             )
           "
         >
@@ -3290,7 +3290,7 @@
         <button
           class="recipes-item"
           data-title="روتي كاناي – Roti Canai"
-          data-img="/img/Roti Canai.jpg"
+          data-img="/frontend/img/Roti Canai.jpg"
           data-ingredients="دقيق|250|غ|ماء|120|مل|بيض|1|حبة|سمن|40|غ|ملح|3|غ|سكر|10|غ|حليب مكثف|30|مل"
           data-spices=""
           data-sauces="كاري دال – Dhal Curry|صوص سمبال|كاري دجاج"
@@ -3298,7 +3298,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/Roti Canai.jpg" alt="روتي كاناي" />
+            <img src="/frontend/img/Roti Canai.jpg" alt="روتي كاناي" />
             <span>روتي كاناي – Roti Canai</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -3309,7 +3309,7 @@
         <button
           class="save-btn"
           onclick="
-            saveItem('recipe', 'laksa', 'لاكسا – Laksa', '/img/Laksa.jpg')
+            saveItem('recipe', 'laksa', 'لاكسا – Laksa', '/frontend/img/Laksa.jpg')
           "
         >
           🍽️
@@ -3317,7 +3317,7 @@
         <button
           class="recipes-item"
           data-title="لاكسا – Laksa"
-          data-img="/img/Laksa.jpg"
+          data-img="/frontend/img/Laksa.jpg"
           data-ingredients="نودلز أرز|150|غ|روبيان|100|غ|حليب جوز الهند|300|مل|مرق دجاج|400|مل|توفو مقلي|80|غ|بيض|2|حبة|فاصوليا خضراء|50|غ|ملح|2|غ"
           data-spices="معجون لاكسا – Laksa Paste|40|غ|عشب الليمون|3|غ|ورق كيلام|2|ورقة|كركم|2|غ|فلفل حار|3|غ"
           data-sauces="صوص السمك|ليمون|ريحان فيتنامي"
@@ -3325,7 +3325,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/Laksa.jpg" alt="لاكسا" />
+            <img src="/frontend/img/Laksa.jpg" alt="لاكسا" />
             <span>لاكسا – Laksa</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -3340,7 +3340,7 @@
               'recipe',
               'mee-goreng',
               'مي غورينغ – Mee Goreng',
-              '/img/Mee Goreng.jpg',
+              '/frontend/img/Mee Goreng.jpg',
             )
           "
         >
@@ -3349,7 +3349,7 @@
         <button
           class="recipes-item"
           data-title="مي غورينغ – Mee Goreng"
-          data-img="/img/Mee Goreng.jpg"
+          data-img="/frontend/img/Mee Goreng.jpg"
           data-ingredients="نودلز صفراء|150|غ|دجاج|100|غ|بيض|2|حبة|بصل أخضر|20|غ|ثوم|3|فص|فلفل رومي|50|غ|ملفوف|50|غ|زيت|20|مل|ملح|2|غ"
           data-spices="فلفل أحمر حار|3|غ|كركم|1|غ|مسحوق الكاري|2|غ"
           data-sauces="صوص الصويا الحلو – Kecap Manis|صوص المحار|كاتشب"
@@ -3357,7 +3357,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/Mee Goreng.jpg" alt="مي غورينغ" />
+            <img src="/frontend/img/Mee Goreng.jpg" alt="مي غورينغ" />
             <span>مي غورينغ – Mee Goreng</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -3368,7 +3368,7 @@
         <button
           class="save-btn"
           onclick="
-            saveItem('recipe', 'cendol', 'سيندول – Cendol', '/img/Cendol.jpg')
+            saveItem('recipe', 'cendol', 'سيندول – Cendol', '/frontend/img/Cendol.jpg')
           "
         >
           🍽️
@@ -3376,7 +3376,7 @@
         <button
           class="recipes-item"
           data-title="سيندول – Cendol"
-          data-img="/img/Cendol.jpg"
+          data-img="/frontend/img/Cendol.jpg"
           data-ingredients="حليب جوز الهند|300|مل|ثلج مجروش|200|غ|دقيق الأرز|80|غ|ماء|200|مل|سكر نخيل – Gula Melaka|100|غ|ماء|50|مل|ملح|2|غ"
           data-spices="عشب الليمون|2|غ|ورق باندان|3|ورقة"
           data-sauces="فاصوليا حمراء مسلوقة – Red Beans"
@@ -3384,7 +3384,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/Cendol.jpg" alt="سيندول" />
+            <img src="/frontend/img/Cendol.jpg" alt="سيندول" />
             <span>سيندول – Cendol</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -3398,7 +3398,7 @@
               'recipe',
               'chicken-rice',
               'أرز الدجاج – Chicken Rice',
-              '/img/Chicken Rice.jpg',
+              '/frontend/img/Chicken Rice.jpg',
             )
           "
         >
@@ -3407,7 +3407,7 @@
         <button
           class="recipes-item"
           data-title="أرز الدجاج – Chicken Rice"
-          data-img="/img/Chicken Rice.jpg"
+          data-img="/frontend/img/Chicken Rice.jpg"
           data-ingredients="دجاج|200|غ|أرز|200|غ|مرق دجاج|500|مل|ثوم|4|فص|زنجبيل|10|غ|زيت سمسم|15|مل|ملح|3|غ|بصل أخضر|20|غ"
           data-spices="فلفل أبيض|2|غ|هيل|2|حبة|قرفة|1|غ"
           data-sauces="صوص الزنجبيل|صوص الصويا الحلو|صوص الفلفل الحار"
@@ -3415,7 +3415,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/Chicken Rice.jpg" alt="أرز الدجاج" />
+            <img src="/frontend/img/Chicken Rice.jpg" alt="أرز الدجاج" />
             <span>أرز الدجاج – Chicken Rice</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -3430,7 +3430,7 @@
               'recipe',
               'chilli-crab',
               'تشيلي كراب – Chilli Crab',
-              '/img/Chilli Crab.jpg',
+              '/frontend/img/Chilli Crab.jpg',
             )
           "
         >
@@ -3439,7 +3439,7 @@
         <button
           class="recipes-item"
           data-title="تشيلي كراب – Chilli Crab"
-          data-img="/img/Chilli Crab.jpg"
+          data-img="/frontend/img/Chilli Crab.jpg"
           data-ingredients="سلطعون|500|غ|بيض|2|حبة|بصل|1|حبة|ثوم|4|فص|زنجبيل|10|غ|معجون طماطم|50|غ|كاتشب|50|غ|زيت|30|مل|ملح|2|غ|سكر|15|غ|نشا|15|غ|ماء|100|مل"
           data-spices="فلفل أحمر حار|5|غ|فلفل أبيض|2|غ"
           data-sauces="خبز مانتو – Mantou Bread"
@@ -3447,7 +3447,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/Chilli Crab.jpg" alt="تشيلي كراب" />
+            <img src="/frontend/img/Chilli Crab.jpg" alt="تشيلي كراب" />
             <span>تشيلي كراب – Chilli Crab</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -3462,7 +3462,7 @@
               'recipe',
               'singapore-laksa',
               'لاكسا سنغافوري – Singapore Laksa',
-              '/img/Singapore Laksa.jpg',
+              '/frontend/img/Singapore Laksa.jpg',
             )
           "
         >
@@ -3471,7 +3471,7 @@
         <button
           class="recipes-item"
           data-title="لاكسا سنغافوري – Singapore Laksa"
-          data-img="/img/Singapore Laksa.jpg"
+          data-img="/frontend/img/Singapore Laksa.jpg"
           data-ingredients="نودلز أرز سميكة|150|غ|روبيان|100|غ|حليب جوز الهند|300|مل|مرق دجاج|300|مل|توفو مقلي|60|غ|بيض|2|حبة|فاصوليا|40|غ|ملح|2|غ"
           data-spices="معجون لاكسا|40|غ|عشب الليمون|3|غ|ورق كيلام|2|ورقة|كركم|1|غ"
           data-sauces="صوص السمك|ليمون|ريحان لاكسا – Laksa Leaves"
@@ -3479,7 +3479,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/Singapore Laksa.jpg" alt="لاكسا سنغافوري" />
+            <img src="/frontend/img/Singapore Laksa.jpg" alt="لاكسا سنغافوري" />
             <span>لاكسا سنغافوري – Singapore Laksa</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -3494,7 +3494,7 @@
               'recipe',
               'singapore-satay',
               'ساتاي سنغافوري – Singapore Satay',
-              '/img/Singapore Satay.jpg',
+              '/frontend/img/Singapore Satay.jpg',
             )
           "
         >
@@ -3503,7 +3503,7 @@
         <button
           class="recipes-item"
           data-title="ساتاي سنغافوري – Singapore Satay"
-          data-img="/img/Singapore Satay.jpg"
+          data-img="/frontend/img/Singapore Satay.jpg"
           data-ingredients="دجاج|150|غ|حليب جوز الهند|60|مل|بصل|1|حبة صغيرة|ثوم|2|فص|زيت|10|مل|سكر|10|غ|ملح|2|غ"
           data-spices="كركم|2|غ|كمون|2|غ|كزبرة|2|غ|عشب الليمون|3|غ|فلفل أبيض|1|غ"
           data-sauces="صوص الفول السوداني – Peanut Sauce|كيوبي – Ketupat|بصل ومكعبات خيار"
@@ -3511,7 +3511,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/Singapore Satay.jpg" alt="ساتاي سنغافوري" />
+            <img src="/frontend/img/Singapore Satay.jpg" alt="ساتاي سنغافوري" />
             <span>ساتاي سنغافوري – Singapore Satay</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -3526,7 +3526,7 @@
               'recipe',
               'kaya-toast',
               'كايا توست – Kaya Toast',
-              '/img/Kaya Toast.jpg',
+              '/frontend/img/Kaya Toast.jpg',
             )
           "
         >
@@ -3535,7 +3535,7 @@
         <button
           class="recipes-item"
           data-title="كايا توست – Kaya Toast"
-          data-img="/img/Kaya Toast.jpg"
+          data-img="/frontend/img/Kaya Toast.jpg"
           data-ingredients="خبز توست|4|شريحة|زبدة|30|غ|بيض|3|حبة|حليب جوز الهند|200|مل|سكر|80|غ|ورق باندان|3|ورقة|بيض مسلوق ناعم|2|حبة|ملح|1|غ"
           data-spices="فانيليا|1|غ"
           data-sauces="صوص الصويا الخفيف|فلفل أبيض"
@@ -3543,7 +3543,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/Kaya Toast.jpg" alt="كايا توست" />
+            <img src="/frontend/img/Kaya Toast.jpg" alt="كايا توست" />
             <span>كايا توست – Kaya Toast</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -3558,7 +3558,7 @@
               'recipe',
               'ice-kachang',
               'آيس كاتشانغ – Ice Kachang',
-              '/img/Ice Kachang.jpg',
+              '/frontend/img/Ice Kachang.jpg',
             )
           "
         >
@@ -3567,7 +3567,7 @@
         <button
           class="recipes-item"
           data-title="آيس كاتشانغ – Ice Kachang"
-          data-img="/img/Ice Kachang.jpg"
+          data-img="/frontend/img/Ice Kachang.jpg"
           data-ingredients="ثلج مجروش|200|غ|فاصوليا حمراء مسلوقة|50|غ|ذرة حلوة|30|غ|هلام أتاب – Attap Chee|30|غ|خيوط باندان – Cendol|40|غ|حليب مكثف|30|مل"
           data-spices=""
           data-sauces="شراب الورد الأحمر|شراب الشوكولاتة|شراب الكراميل|شراب سكر النخيل – Gula Melaka"
@@ -3575,7 +3575,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/Ice Kachang.jpg" alt="آيس كاتشانغ" />
+            <img src="/frontend/img/Ice Kachang.jpg" alt="آيس كاتشانغ" />
             <span>آيس كاتشانغ – Ice Kachang</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -3585,7 +3585,7 @@
         <button
           class="save-btn"
           onclick="
-            saveItem('recipe', 'adobo', 'أدوبو – Adobo', '/img/Adobo.jpg')
+            saveItem('recipe', 'adobo', 'أدوبو – Adobo', '/frontend/img/Adobo.jpg')
           "
         >
           🍽️
@@ -3593,7 +3593,7 @@
         <button
           class="recipes-item"
           data-title="أدوبو – Adobo"
-          data-img="/img/Adobo.jpg"
+          data-img="/frontend/img/Adobo.jpg"
           data-ingredients="دجاج|200|غ|ثوم|5|فص|بصل|1|حبة|زيت|20|مل|ملح|2|غ|سكر|10|غ"
           data-spices="فلفل أسود|3|غ|ورق غار|3|ورقة"
           data-sauces="خل أبيض|60|مل|صوص الصويا|60|مل"
@@ -3601,7 +3601,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/Adobo.jpg" alt="أدوبو" />
+            <img src="/frontend/img/Adobo.jpg" alt="أدوبو" />
             <span>أدوبو – Adobo</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -3616,7 +3616,7 @@
               'recipe',
               'sinigang',
               'سينيغانغ – Sinigang',
-              '/img/Sinigang.jpg',
+              '/frontend/img/Sinigang.jpg',
             )
           "
         >
@@ -3625,7 +3625,7 @@
         <button
           class="recipes-item"
           data-title="سينيغانغ – Sinigang"
-          data-img="/img/Sinigang.jpg"
+          data-img="/frontend/img/Sinigang.jpg"
           data-ingredients="لحم خروف|200|غ|طماطم|2|حبة|بصل|1|حبة|فلفل أخضر|50|غ|باذنجان|100|غ|فاصوليا خضراء|50|غ|سبانخ|50|غ|ملح|3|غ|ماء|1000|مل"
           data-spices="فلفل أبيض|2|غ"
           data-sauces="عصير تمر هندي – Tamarind|صوص السمك – Fish Sauce"
@@ -3633,7 +3633,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/Sinigang.jpg" alt="سينيغانغ" />
+            <img src="/frontend/img/Sinigang.jpg" alt="سينيغانغ" />
             <span>سينيغانغ – Sinigang</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -3644,7 +3644,7 @@
         <button
           class="save-btn"
           onclick="
-            saveItem('recipe', 'sisig', 'سيسيغ – Sisig', '/img/Sisig.jpg')
+            saveItem('recipe', 'sisig', 'سيسيغ – Sisig', '/frontend/img/Sisig.jpg')
           "
         >
           🍽️
@@ -3652,7 +3652,7 @@
         <button
           class="recipes-item"
           data-title="سيسيغ – Sisig"
-          data-img="/img/Sisig.jpg"
+          data-img="/frontend/img/Sisig.jpg"
           data-ingredients="لحم مفروم|200|غ|بصل|1|حبة|فلفل أخضر|30|غ|فلفل أحمر|30|غ|ثوم|3|فص|زيت|20|مل|ملح|2|غ|بيض|1|حبة|ليمون|1|حبة|مايونيز|30|غ"
           data-spices="فلفل أسود|2|غ|فلفل حار|2|غ|بابريكا|2|غ"
           data-sauces="صوص الصويا|خل|صوص الفلفل الحار"
@@ -3660,7 +3660,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/Sisig.jpg" alt="سيسيغ" />
+            <img src="/frontend/img/Sisig.jpg" alt="سيسيغ" />
             <span>سيسيغ – Sisig</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -3671,7 +3671,7 @@
         <button
           class="save-btn"
           onclick="
-            saveItem('recipe', 'pancit', 'بانسيت – Pancit', '/img/Pancit.jpg')
+            saveItem('recipe', 'pancit', 'بانسيت – Pancit', '/frontend/img/Pancit.jpg')
           "
         >
           🍽️
@@ -3679,7 +3679,7 @@
         <button
           class="recipes-item"
           data-title="بانسيت – Pancit"
-          data-img="/img/Pancit.jpg"
+          data-img="/frontend/img/Pancit.jpg"
           data-ingredients="نودلز أرز|150|غ|دجاج مطبوخ|100|غ|جزر|50|غ|ملفوف|80|غ|بصل أخضر|20|غ|ثوم|3|فص|بصل|1|حبة صغيرة|زيت|20|مل|ملح|2|غ|مرق دجاج|150|مل"
           data-spices="فلفل أبيض|2|غ"
           data-sauces="صوص الصويا|ليمون"
@@ -3687,7 +3687,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/Pancit.jpg" alt="بانسيت" />
+            <img src="/frontend/img/Pancit.jpg" alt="بانسيت" />
             <span>بانسيت – Pancit</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -3702,7 +3702,7 @@
               'recipe',
               'halo-halo',
               'هالو هالو – Halo Halo',
-              '/img/Halo Halo.jpg',
+              '/frontend/img/Halo Halo.jpg',
             )
           "
         >
@@ -3711,7 +3711,7 @@
         <button
           class="recipes-item"
           data-title="هالو هالو – Halo Halo"
-          data-img="/img/Halo Halo.jpg"
+          data-img="/frontend/img/Halo Halo.jpg"
           data-ingredients="ثلج مجروش|200|غ|حليب مكثف|40|مل|فاصوليا حمراء|40|غ|موز مقطع|50|غ|هلام ناتا دي كوكو|30|غ|كيك أرجاي – Leche Flan|50|غ|آيس كريم|1|كرة|بطاطا حلوة مسلوقة|40|غ"
           data-spices=""
           data-sauces="شراب الفانيليا|شراب الفراولة"
@@ -3719,7 +3719,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/Halo Halo.jpg" alt="هالو هالو" />
+            <img src="/frontend/img/Halo Halo.jpg" alt="هالو هالو" />
             <span>هالو هالو – Halo Halo</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -3730,7 +3730,7 @@
         <button
           class="save-btn"
           onclick="
-            saveItem('recipe', 'lumpia', 'لومبيا – Lumpia', '/img/Lumpia.jpg')
+            saveItem('recipe', 'lumpia', 'لومبيا – Lumpia', '/frontend/img/Lumpia.jpg')
           "
         >
           🍽️
@@ -3738,7 +3738,7 @@
         <button
           class="recipes-item"
           data-title="لومبيا – Lumpia"
-          data-img="/img/Lumpia.jpg"
+          data-img="/frontend/img/Lumpia.jpg"
           data-ingredients="ورق السبرينغ رول|10|قطعة|لحم مفروم|100|غ|جزر|50|غ|ملفوف|80|غ|بصل أخضر|20|غ|ثوم|2|فص|زيت للقلي|200|مل|ملح|2|غ|بيض|1|حبة"
           data-spices="فلفل أبيض|2|غ|فلفل أسود|1|غ"
           data-sauces="صوص الحلو والحامض – Sweet & Sour|خل الثوم"
@@ -3746,7 +3746,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/Lumpia.jpg" alt="لومبيا" />
+            <img src="/frontend/img/Lumpia.jpg" alt="لومبيا" />
             <span>لومبيا – Lumpia</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -3760,7 +3760,7 @@
               'recipe',
               'pho-chicken',
               'فو دجاج – Pho Chicken',
-              '/img/Pho Chicken.jpg',
+              '/frontend/img/Pho Chicken.jpg',
             )
           "
         >
@@ -3769,7 +3769,7 @@
         <button
           class="recipes-item"
           data-title="فو دجاج – Pho Chicken"
-          data-img="/img/Pho Chicken.jpg"
+          data-img="/frontend/img/Pho Chicken.jpg"
           data-ingredients="نودلز أرز رفيعة|150|غ|دجاج|200|غ|بصل|1|حبة|زنجبيل|15|غ|بصل أخضر|20|غ|كزبرة خضراء|15|غ|ليمون|1|حبة|ماء|1000|مل|ملح|3|غ"
           data-spices="أنيسون نجمي|3|حبة|قرفة|2|غ|قرنفل|3|حبة|هيل|2|حبة|فلفل أسود|2|غ"
           data-sauces="صوص هويسين – Hoisin Sauce|صوص سريراتشا – Sriracha|صوص السمك – Fish Sauce"
@@ -3777,7 +3777,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/Pho Chicken.jpg" alt="فو دجاج" />
+            <img src="/frontend/img/Pho Chicken.jpg" alt="فو دجاج" />
             <span>فو دجاج – Pho Chicken</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -3792,7 +3792,7 @@
               'recipe',
               'banh-mi',
               'بان مي – Banh Mi',
-              '/img/Banh Mi.jpg',
+              '/frontend/img/Banh Mi.jpg',
             )
           "
         >
@@ -3801,7 +3801,7 @@
         <button
           class="recipes-item"
           data-title="بان مي – Banh Mi"
-          data-img="/img/Banh Mi.jpg"
+          data-img="/frontend/img/Banh Mi.jpg"
           data-ingredients="خبز باغيت صغير|1|قطعة|دجاج|100|غ|جزر|30|غ|فجل أبيض|30|غ|خيار|30|غ|كزبرة خضراء|10|غ|فلفل حار|1|حبة|زيت|10|مل|ملح|2|غ"
           data-spices="ثوم|2|فص|فلفل أسود|1|غ|كمون|1|غ"
           data-sauces="مايونيز|صوص السمك – Fish Sauce|خل أرز"
@@ -3809,7 +3809,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/Banh Mi.jpg" alt="بان مي" />
+            <img src="/frontend/img/Banh Mi.jpg" alt="بان مي" />
             <span>بان مي – Banh Mi</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -3824,7 +3824,7 @@
               'recipe',
               'spring-rolls',
               'سبرنغ رول – Spring Rolls',
-              '/img/Spring Rolls.jpg',
+              '/frontend/img/Spring Rolls.jpg',
             )
           "
         >
@@ -3833,7 +3833,7 @@
         <button
           class="recipes-item"
           data-title="سبرنغ رول – Spring Rolls"
-          data-img="/img/Spring Rolls.jpg"
+          data-img="/frontend/img/Spring Rolls.jpg"
           data-ingredients="ورق الأرز – Rice Paper|8|قطعة|روبيان|100|غ|نودلز أرز رفيعة|50|غ|خس|4|ورقة|جزر|40|غ|خيار|40|غ|نعناع طازج|15|غ|كزبرة|15|غ"
           data-spices=""
           data-sauces="صوص الفول السوداني – Peanut Sauce|صوص نوك تشام – Nuoc Cham"
@@ -3841,7 +3841,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/Spring Rolls.jpg" alt="سبرنغ رول" />
+            <img src="/frontend/img/Spring Rolls.jpg" alt="سبرنغ رول" />
             <span>سبرنغ رول – Spring Rolls</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -3856,7 +3856,7 @@
               'recipe',
               'com-ga',
               'أرز بالدجاج المشوي – Com Ga',
-              '/img/Com Ga.jpg',
+              '/frontend/img/Com Ga.jpg',
             )
           "
         >
@@ -3865,7 +3865,7 @@
         <button
           class="recipes-item"
           data-title="أرز بالدجاج المشوي – Com Ga"
-          data-img="/img/Com Ga.jpg"
+          data-img="/frontend/img/Com Ga.jpg"
           data-ingredients="أرز|200|غ|دجاج|200|غ|ثوم|3|فص|زنجبيل|10|غ|عشب الليمون|3|غ|زيت|20|مل|ملح|3|غ|بصل أصفر|1|حبة"
           data-spices="كركم|2|غ|فلفل أبيض|2|غ|هيل|2|حبة"
           data-sauces="صوص السمك – Fish Sauce|صوص الزنجبيل|مرق الدجاج"
@@ -3873,7 +3873,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/Com Ga.jpg" alt="أرز بالدجاج المشوي" />
+            <img src="/frontend/img/Com Ga.jpg" alt="أرز بالدجاج المشوي" />
             <span>أرز بالدجاج المشوي – Com Ga</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -3888,7 +3888,7 @@
               'recipe',
               'bun-tom',
               'نودلز بالروبيان – Bun Tom',
-              '/img/Bun Tom.jpg',
+              '/frontend/img/Bun Tom.jpg',
             )
           "
         >
@@ -3897,7 +3897,7 @@
         <button
           class="recipes-item"
           data-title="نودلز بالروبيان – Bun Tom"
-          data-img="/img/Bun Tom.jpg"
+          data-img="/frontend/img/Bun Tom.jpg"
           data-ingredients="نودلز أرز|150|غ|روبيان|120|غ|جزر|50|غ|خيار|50|غ|فاصوليا خضراء|40|غ|بصل أخضر|20|غ|ثوم|2|فص|زيت|15|مل|ملح|2|غ"
           data-spices="فلفل أبيض|1|غ|كركم|1|غ|عشب الليمون|2|غ"
           data-sauces="صوص نوك تشام – Nuoc Cham|ليمون|فلفل حار"
@@ -3905,7 +3905,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/Bun Tom.jpg" alt="نودلز بالروبيان" />
+            <img src="/frontend/img/Bun Tom.jpg" alt="نودلز بالروبيان" />
             <span>نودلز بالروبيان – Bun Tom</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -3920,7 +3920,7 @@
               'recipe',
               'che-chuoi',
               'حلوى تشي تشوي – Che Chuoi',
-              '/img/Che Chuoi.jpg',
+              '/frontend/img/Che Chuoi.jpg',
             )
           "
         >
@@ -3929,7 +3929,7 @@
         <button
           class="recipes-item"
           data-title="حلوى تشي تشوي – Che Chuoi"
-          data-img="/img/Che Chuoi.jpg"
+          data-img="/frontend/img/Che Chuoi.jpg"
           data-ingredients="موز|3|حبة|حليب جوز الهند|400|مل|سكر|60|غ|نشا|20|غ|ماء|100|مل|ملح|2|غ|سمسم محمص|10|غ"
           data-spices="فانيليا|2|غ"
           data-sauces=""
@@ -3937,7 +3937,7 @@
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/Che Chuoi.jpg" alt="حلوى تشي تشوي" />
+            <img src="/frontend/img/Che Chuoi.jpg" alt="حلوى تشي تشوي" />
             <span>حلوى تشي تشوي – Che Chuoi</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -3947,14 +3947,14 @@
         <button
           class="recipes-item"
           data-title="مجبوس – Majboos"
-          data-img="/img/مجبوس.jpg"
+          data-img="/frontend/img/مجبوس.jpg"
           data-ingredients="أرز بسمتي |300| غ |دجاج أو لحم |500| غ |بصل |150| غ |طماطم |150| غ |معجون طماطم |30| غ |زيت |40| مل |ماء |600| مل"
           data-spices="بهارات مجبوس |10| غ |كركم |3| غ |كمون |3| غ |هيل مطحون |2| غ |قرفة |2| غ |فلفل أسود |2| غ |ملح |8| غ |زعفران |1| غ"
           data-steps="شوّح البصل بالزيت حتى يذهب. | أضف اللحم أو الدجاج وقلّبه حتى يتحمّر. | أضف الطماطم والمعجون وكل البهارات وقلّب. | أضف الماء واتركه يطبخ 30–40 دقيقة حتى ينضج اللحم. | أخرج اللحم وأضف الأرز للمرق واطبخه حتى ينشف. | ضع اللحم فوق الأرز وقدّم ساخناً."
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/مجبوس.jpg" alt="مجبوس" />
+            <img src="/frontend/img/مجبوس.jpg" alt="مجبوس" />
             <span>مجبوس – Majboos</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -3965,14 +3965,14 @@
         <button
           class="recipes-item"
           data-title="هريس – Harees"
-          data-img="/img/هريس.jpg"
+          data-img="/frontend/img/هريس.jpg"
           data-ingredients="قمح مجروش منقوع |300| غ |لحم غنم أو دجاج |400| غ |ماء |1| لتر |سمن بلدي |50| غ"
           data-spices="ملح |8| غ |قرفة |2| غ |هيل مطحون |2| غ"
           data-steps="اسلق اللحم مع الماء والملح حتى يطرى تماماً. | أضف القمح المنقوع واتركه يطبخ على نار هادئة 60–90 دقيقة مع التحريك المستمر. | هرّس الخليط حتى يصير قوامه ناعم وكريمي. | أضف البهارات وحرّك. | قدّمه ساخناً مع السمن البلدي فوقه."
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/هريس.jpg" alt="هريس" />
+            <img src="/frontend/img/هريس.jpg" alt="هريس" />
             <span>هريس – Harees</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -3983,14 +3983,14 @@
         <button
           class="recipes-item"
           data-title="ثريد – Threed"
-          data-img="/img/ثريد.jpg"
+          data-img="/frontend/img/ثريد.jpg"
           data-ingredients="خبز رقيق أو خبز عيش |4| أرغفة |لحم أو دجاج |500| غ |بطاطس مكعبات |200| غ |جزر مكعبات |150| غ |بصل |120| غ |طماطم |150| غ |ثوم |10| غ |زيت |30| مل |ماء أو مرق |800| مل"
           data-spices="بهارات مشكلة |8| غ |كركم |3| غ |كمون |3| غ |فلفل أسود |2| غ |ملح |8| غ"
           data-steps="شوّح البصل والثوم بالزيت. | أضف اللحم وقلّبه حتى يتحمّر. | أضف الطماطم والبهارات وقلّب دقيقتين. | أضف الخضار والماء واتركه يطبخ 40 دقيقة حتى يثخن المرق. | قطّع الخبز في الطبق وأسكب المرق واللحم فوقه وقدّم ساخناً."
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/ثريد.jpg" alt="ثريد" />
+            <img src="/frontend/img/ثريد.jpg" alt="ثريد" />
             <span>ثريد – Threed</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -4001,14 +4001,14 @@
         <button
           class="recipes-item"
           data-title="لقيمات – Luqaimat"
-          data-img="/img/لقيمات.jpg"
+          data-img="/frontend/img/لقيمات.jpg"
           data-ingredients="دقيق |250| غ |خميرة فورية |5| غ |سكر |20| غ |ماء دافئ |300| مل |زيت للقلي |500| مل"
           data-spices="ملح |2| غ |زعفران |1| غ اختياري"
           data-steps="اخلط الدقيق + الخميرة + السكر + الملح + الماء حتى يصير عجينة سائلة. | اتركها ترتاح 30 دقيقة حتى تختمر. | سخّن الزيت على 170°. | صب العجينة بملعقة صغيرة في الزيت الحار. | اقلِها 3–4 دقائق حتى تصير ذهبية. | أخرجها وأضف الدبس أو العسل فوقها وقدّم فوراً."
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/لقيمات.jpg" alt="لقيمات" />
+            <img src="/frontend/img/لقيمات.jpg" alt="لقيمات" />
             <span>لقيمات – Luqaimat</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -4019,14 +4019,14 @@
         <button
           class="recipes-item"
           data-title="سمك مشوي – Grilled Fish"
-          data-img="/img/سمك-مشوي.jpg"
+          data-img="/frontend/img/سمك-مشوي.jpg"
           data-ingredients="سمك كامل (هامور أو زبيدي) |1| كيلو |زيت زيتون |40| مل |عصير ليمون |30| مل |ثوم مفروم |10| غ"
           data-spices="كمون |4| غ |كركم |3| غ |كزبرة مطحونة |3| غ |فلفل أسود |2| غ |ملح |8| غ |بهارات سمك |5| غ"
           data-steps="اخلط الزيت + الليمون + الثوم + البهارات وادهن السمك من الداخل والخارج. | اتركه يتتبّل 30 دقيقة. | سخّن الشواية أو الفرن على 200°. | اشوِ السمك 15–20 دقيقة مع قلبه في المنتصف. | قدّمه مع الأرز والليمون والطحينة."
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/سمك-مشوي.jpg" alt="سمك مشوي" />
+            <img src="/frontend/img/سمك-مشوي.jpg" alt="سمك مشوي" />
             <span>سمك مشوي – Grilled Fish</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -4037,14 +4037,14 @@
         <button
           class="recipes-item"
           data-title="خبيص – Khabees"
-          data-img="/img/خبيص.jpg"
+          data-img="/frontend/img/خبيص.jpg"
           data-ingredients="دقيق بر أو قمح |200| غ |سمن بلدي |100| غ |سكر أو دبس |100| غ |ماء |200| مل"
           data-spices="هيل مطحون |3| غ |زعفران |1| غ |ماء ورد |10| مل"
           data-steps="حمّص الدقيق في السمن على نار هادئة مع التحريك المستمر حتى يصير لونه ذهبياً. | أضف الماء تدريجياً مع الاستمرار في التحريك. | أضف السكر أو الدبس والهيل والزعفران وماء الورد. | استمر في التحريك 10–15 دقيقة حتى يتماسك الخليط ويصير قوامه ناعم. | قدّمه دافئاً مع السمن فوقه."
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/خبيص.jpg" alt="خبيص" />
+            <img src="/frontend/img/خبيص.jpg" alt="خبيص" />
             <span>خبيص – Khabees</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -4058,7 +4058,7 @@
               'recipe',
               'balaleet',
               'بلاليط – Balaleet',
-              '/img/بلاليط.jpg',
+              '/frontend/img/بلاليط.jpg',
             )
           "
         >
@@ -4067,14 +4067,14 @@
         <button
           class="recipes-item"
           data-title="بلاليط – Balaleet"
-          data-img="/img/بلاليط.jpg"
+          data-img="/frontend/img/بلاليط.jpg"
           data-ingredients="شعيرية |200| غ |بيض |2| حبة |سكر |60| غ |سمن |40| غ |ماء ورد |15| مل"
           data-spices="هيل مطحون |3| غ |زعفران |1| غ |قرفة |2| غ"
           data-steps="اسلق الشعيرية في ماء مملح حتى تنضج ثم صفّيها. | في قدر سخّن السمن وأضف الشعيرية والسكر والهيل والزعفران وماء الورد. | حرك على نار هادئة حتى يتشرب السكر. | في مقلاة منفصلة اطبخ البيض عيون أو مخفوق. | قدّم الشعيرية في طبق وضع البيض فوقها."
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/بلاليط.jpg" alt="بلاليط" />
+            <img src="/frontend/img/بلاليط.jpg" alt="بلاليط" />
             <span>بلاليط – Balaleet</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -4084,7 +4084,7 @@
         <button
           class="save-btn"
           onclick="
-            saveItem('recipe', 'margoug', 'مرقوق – Margoug', '/img/مرقوق.jpg')
+            saveItem('recipe', 'margoug', 'مرقوق – Margoug', '/frontend/img/مرقوق.jpg')
           "
         >
           🍽️
@@ -4092,14 +4092,14 @@
         <button
           class="recipes-item"
           data-title="مرقوق – Margoug"
-          data-img="/img/مرقوق.jpg"
+          data-img="/frontend/img/مرقوق.jpg"
           data-ingredients="دجاج أو لحم |300| غ |عجين رقيق |200| غ |بطاطس |150| غ |جزر |100| غ |كوسة |100| غ |بصل |100| غ |طماطم |150| غ |ثوم |10| غ |زيت |30| مل |ماء |800| مل |ملح |8| غ"
           data-spices="بهارات مشكلة |8| غ |كركم |3| غ |كمون |3| غ |هيل |2| غ |فلفل أسود |2| غ"
           data-steps="شوّح البصل والثوم بالزيت. | أضف اللحم أو الدجاج وقلّبه حتى يتحمّر. | أضف الطماطم والبهارات وقلّب. | أضف الماء واتركه يغلي 20 دقيقة. | أضف الخضار واتركها 15 دقيقة. | قطّع العجين قطعاً صغيرة وأضفه للمرق. | اطبخ على نار هادئة 20 دقيقة حتى يتماسك العجين. | قدّم ساخناً."
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/مرقوق.jpg" alt="مرقوق" />
+            <img src="/frontend/img/مرقوق.jpg" alt="مرقوق" />
             <span>مرقوق – Margoug</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -4110,7 +4110,7 @@
         <button
           class="save-btn"
           onclick="
-            saveItem('recipe', 'tashreeb', 'تشريب – Tashreeb', '/img/تشريب.jpg')
+            saveItem('recipe', 'tashreeb', 'تشريب – Tashreeb', '/frontend/img/تشريب.jpg')
           "
         >
           🍽️
@@ -4118,14 +4118,14 @@
         <button
           class="recipes-item"
           data-title="تشريب – Tashreeb"
-          data-img="/img/تشريب.jpg"
+          data-img="/frontend/img/تشريب.jpg"
           data-ingredients="دجاج أو لحم |400| غ |خبز رقيق |4| أرغفة |بطاطس |150| غ |بصل |120| غ |طماطم |150| غ |ثوم |10| غ |زيت |30| مل |ماء |800| مل |ملح |8| غ"
           data-spices="بهارات مشكلة |8| غ |كركم |3| غ |كمون |3| غ |هيل |2| غ |فلفل أسود |2| غ |قرفة |2| غ"
           data-steps="شوّح البصل والثوم بالزيت. | أضف اللحم وقلّبه حتى يتحمّر. | أضف الطماطم والبهارات وقلّب. | أضف الماء والبطاطس واتركه يطبخ 40 دقيقة حتى يثخن المرق. | كسّر الخبز في الطبق. | صب المرق واللحم فوق الخبز. | قدّم ساخناً."
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/تشريب.jpg" alt="تشريب" />
+            <img src="/frontend/img/تشريب.jpg" alt="تشريب" />
             <span>تشريب – Tashreeb</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -4140,7 +4140,7 @@
               'recipe',
               'zubaidi-fish',
               'سمك زبيدي – Zubaidi Fish',
-              '/img/سمك-زبيدي.jpg',
+              '/frontend/img/سمك-زبيدي.jpg',
             )
           "
         >
@@ -4149,14 +4149,14 @@
         <button
           class="recipes-item"
           data-title="سمك زبيدي – Zubaidi Fish"
-          data-img="/img/سمك-زبيدي.jpg"
+          data-img="/frontend/img/سمك-زبيدي.jpg"
           data-ingredients="سمك زبيدي كامل |1| كيلو |زيت زيتون |40| مل |عصير ليمون |30| مل |ثوم مفروم |10| غ"
           data-spices="كمون |4| غ |كركم |3| غ |كزبرة مطحونة |3| غ |فلفل أسود |2| غ |ملح |8| غ |بهارات سمك |5| غ"
           data-steps="اخلط الزيت والليمون والثوم والبهارات وادهن السمك من الداخل والخارج. | اتركه يتتبّل 30 دقيقة. | سخّن الشواية أو الفرن على 200°. | اشوِ السمك 15–20 دقيقة مع قلبه في المنتصف. | قدّمه مع الأرز والليمون."
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/سمك-زبيدي.jpg" alt="سمك زبيدي" />
+            <img src="/frontend/img/سمك-زبيدي.jpg" alt="سمك زبيدي" />
             <span>سمك زبيدي – Zubaidi Fish</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -4170,7 +4170,7 @@
               'recipe',
               'iskender-kebab',
               'إسكندر كباب – Iskender Kebab',
-              '/img/اسكندر-كباب.jpg',
+              '/frontend/img/اسكندر-كباب.jpg',
             )
           "
         >
@@ -4179,14 +4179,14 @@
         <button
           class="recipes-item"
           data-title="إسكندر كباب – Iskender Kebab"
-          data-img="/img/اسكندر-كباب.jpg"
+          data-img="/frontend/img/اسكندر-كباب.jpg"
           data-ingredients="لحم مفروم أو شرائح |300| غ |خبز بيتا أو خبز رقيق |3| أرغفة |زبدة |50| غ |زبادي |200| غ |طماطم |2| حبة |ملح |5| غ |زيت |20| مل"
           data-spices="فلفل أسود |2| غ |بابريكا |3| غ |كمون |2| غ |أوريغانو |2| غ"
           data-steps="شكّل اللحم على أسياخ وتبّله بالبهارات. | اشوِه على الجريل أو المقلاة حتى يحمر. | قطّع الخبز مكعبات وضعه في الطبق. | اصنع صوص الطماطم بطبخ الطماطم مع الزيت والملح 10 دقائق. | ذوّب الزبدة حتى تصبح بنية اللون. | رتّب اللحم فوق الخبز. | صب صوص الطماطم ثم الزبدة المذابة. | ضع الزبادي على الجانب وقدّم فوراً."
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/اسكندر-كباب.jpg" alt="إسكندر كباب" />
+            <img src="/frontend/img/اسكندر-كباب.jpg" alt="إسكندر كباب" />
             <span>إسكندر كباب – Iskender Kebab</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -4197,7 +4197,7 @@
         <button
           class="save-btn"
           onclick="
-            saveItem('recipe', 'manti', 'مانتي – Manti', '/img/مانتي.jpg')
+            saveItem('recipe', 'manti', 'مانتي – Manti', '/frontend/img/مانتي.jpg')
           "
         >
           🍽️
@@ -4205,14 +4205,14 @@
         <button
           class="recipes-item"
           data-title="مانتي – Manti"
-          data-img="/img/مانتي.jpg"
+          data-img="/frontend/img/مانتي.jpg"
           data-ingredients="دقيق |300| غ |بيض |2| حبة |ماء |80| مل |ملح |3| غ |لحم مفروم |200| غ |بصل |1| حبة |زبادي |300| غ |ثوم |3| فص |زبدة |50| غ"
           data-spices="فلفل أسود |2| غ |فلفل أحمر حار |2| غ |بابريكا |3| غ |نعناع مجفف |2| غ"
           data-steps="اعجن الدقيق مع البيض والماء والملح حتى تتكون عجينة ناعمة. | اتركها ترتاح 30 دقيقة. | اخلط اللحم مع البصل المفروم والملح والفلفل. | افرد العجينة رقيقة وقطّعها مربعات صغيرة. | ضع كمية صغيرة من اللحم في كل مربع واطوِه. | اسلق المانتي في ماء مملح 10 دقائق. | اخلط الزبادي مع الثوم المفروم. | ذوّب الزبدة مع البابريكا والفلفل الأحمر. | ضع المانتي في الطبق وصب الزبادي ثم الزبدة فوقه."
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/مانتي.jpg" alt="مانتي" />
+            <img src="/frontend/img/مانتي.jpg" alt="مانتي" />
             <span>مانتي – Manti</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -4222,21 +4222,21 @@
       <div class="foods-card" data-region="main-foods" id="doner">
         <button
           class="save-btn"
-          onclick="saveItem('recipe', 'doner', 'دونر – Doner', '/img/دونر.jpg')"
+          onclick="saveItem('recipe', 'doner', 'دونر – Doner', '/frontend/img/دونر.jpg')"
         >
           🍽️
         </button>
         <button
           class="recipes-item"
           data-title="دونر – Doner"
-          data-img="/img/دونر.jpg"
+          data-img="/frontend/img/دونر.jpg"
           data-ingredients="لحم دجاج أو غنم |400| غ |خبز تركي أو بيتا |4| قطعة |بصل |1| حبة |طماطم |2| حبة |خس |50| غ |زبادي |100| غ |زيت |20| مل |ملح |5| غ"
           data-spices="بابريكا |3| غ |كمون |2| غ |أوريغانو |2| غ |فلفل أسود |2| غ |ثوم بودرة |2| غ"
           data-steps="تبّل اللحم بالبهارات والزيت والملح واتركه ساعتين. | اشوِه على سيخ دوّار أو في الفرن على 200° لمدة 40 دقيقة. | قطّع اللحم شرائح رفيعة. | سخّن الخبز قليلاً. | ضع اللحم مع البصل والطماطم والخس. | أضف الزبادي وقدّم."
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/دونر.jpg" alt="دونر" />
+            <img src="/frontend/img/دونر.jpg" alt="دونر" />
             <span>دونر – Doner</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -4246,21 +4246,21 @@
       <div class="foods-card" data-region="main-foods" id="pide">
         <button
           class="save-btn"
-          onclick="saveItem('recipe', 'pide', 'بيدا – Pide', '/img/بيدا.jpg')"
+          onclick="saveItem('recipe', 'pide', 'بيدا – Pide', '/frontend/img/بيدا.jpg')"
         >
           🍽️
         </button>
         <button
           class="recipes-item"
           data-title="بيدا – Pide"
-          data-img="/img/بيدا.jpg"
+          data-img="/frontend/img/بيدا.jpg"
           data-ingredients="دقيق |400| غ |خميرة |7| غ |ماء دافئ |220| مل |زيت |20| مل |ملح |5| غ |سكر |5| غ |لحم مفروم |200| غ |بصل |1| حبة |طماطم |1| حبة |فلفل أخضر |1| حبة |جبن |100| غ |بيض |1| حبة"
           data-spices="فلفل أسود |2| غ |بابريكا |2| غ |كمون |2| غ"
           data-steps="اخلط الخميرة مع الماء والسكر واتركها 5 دقائق. | أضف الدقيق والملح والزيت واعجن 10 دقائق. | اتركها ترتاح ساعة. | قلّي البصل مع اللحم والبهارات حتى ينضج. | افرد العجينة بيضاوية رفيعة. | ضع الحشو في المنتصف. | اطوِ الحواف وأغلقها. | اكسر البيض فوق الحشو. | اخبز على 220° لمدة 15 دقيقة حتى تذهب."
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/بيدا.jpg" alt="بيدا" />
+            <img src="/frontend/img/بيدا.jpg" alt="بيدا" />
             <span>بيدا – Pide</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -4270,21 +4270,21 @@
       <div class="foods-card" data-region="snacks" id="borek">
         <button
           class="save-btn"
-          onclick="saveItem('recipe', 'borek', 'بورك – Börek', '/img/بورك.jpg')"
+          onclick="saveItem('recipe', 'borek', 'بورك – Börek', '/frontend/img/بورك.jpg')"
         >
           🍽️
         </button>
         <button
           class="recipes-item"
           data-title="بورك – Börek"
-          data-img="/img/بورك.jpg"
+          data-img="/frontend/img/بورك.jpg"
           data-ingredients="عجين يوفكا أو فيلو |8| أوراق |جبن فيتا |200| غ |بقدونس |30| غ |بيض |2| حبة |حليب |100| مل |زيت |50| مل |ملح |3| غ"
           data-spices="فلفل أسود |1| غ |سمسم |10| غ"
           data-steps="اخلط الجبن مع البقدونس المفروم والفلفل. | اخفق البيض مع الحليب والزيت. | ادهن صينية بالزيت. | ضع ورقة يوفكا وادهنها بخليط البيض. | ضع طبقة من الجبن. | كرر الطبقات وانته بورقة يوفكا. | ادهن الوجه بخليط البيض ورش السمسم. | اخبز على 180° لمدة 30 دقيقة حتى تذهب."
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/بورك.jpg" alt="بورك" />
+            <img src="/frontend/img/بورك.jpg" alt="بورك" />
             <span>بورك – Börek</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -4299,7 +4299,7 @@
               'recipe',
               'turkish-kunafa',
               'كونافة تركية – Turkish Kunafa',
-              '/img/كونافة-تركية.jpg',
+              '/frontend/img/كونافة-تركية.jpg',
             )
           "
         >
@@ -4308,14 +4308,14 @@
         <button
           class="recipes-item"
           data-title="كونافة تركية – Turkish Kunafa"
-          data-img="/img/كونافة-تركية.jpg"
+          data-img="/frontend/img/كونافة-تركية.jpg"
           data-ingredients="عجينة كنافة |300| غ |جبن موزاريلا |250| غ |سمن |100| غ |سكر |300| غ |ماء |200| مل |عصير ليمون |15| مل |فستق حلبي |50| غ"
           data-spices="ماء ورد |15| مل"
           data-steps="اصنع الشراب بإذابة السكر مع الماء وعصير الليمون وماء الورد على نار متوسطة 10 دقائق. | افرم عجينة الكنافة ناعماً واخلطها مع السمن المذاب. | ضع نصف الكنافة في صينية مدهونة واضغط جيداً. | ضع الجبن بالتساوي فوقها. | غطّيها بالنصف الثاني من الكنافة واضغط. | اخبز على 200° لمدة 25 دقيقة حتى تذهب. | صب الشراب البارد فوق الكنافة الساخنة فوراً. | رش الفستق وقدّم."
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/كونافة-تركية.jpg" alt="كونافة تركية" />
+            <img src="/frontend/img/كونافة-تركية.jpg" alt="كونافة تركية" />
             <span>كونافة تركية – Turkish Kunafa</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -4329,7 +4329,7 @@
               'recipe',
               'garudhiya',
               'غاروديا – Garudhiya',
-              '/img/غاروديا.jpg',
+              '/frontend/img/غاروديا.jpg',
             )
           "
         >
@@ -4338,14 +4338,14 @@
         <button
           class="recipes-item"
           data-title="غاروديا – Garudhiya"
-          data-img="/img/غاروديا.jpg"
+          data-img="/frontend/img/غاروديا.jpg"
           data-ingredients="سمك تونة طازج |400| غ |ماء |1| لتر |بصل |1| حبة |ثوم |3| فص |زنجبيل |10| غ |ملح |5| غ"
           data-spices="فلفل أسود |2| غ |كركم |2| غ |ورق كاري |5| ورقة"
           data-steps="اغسل السمك وقطّعه قطعاً كبيرة. | اغلِ الماء مع البصل والثوم والزنجبيل والبهارات. | أضف السمك واتركه يطبخ 20 دقيقة على نار هادئة. | أزل الرغوة أثناء الطبخ. | صفّ الشوربة وأضف الملح. | قدّمها ساخنة مع الأرز والليمون والفلفل الحار."
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/غاروديا.jpg" alt="غاروديا" />
+            <img src="/frontend/img/غاروديا.jpg" alt="غاروديا" />
             <span>غاروديا – Garudhiya</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -4360,7 +4360,7 @@
               'recipe',
               'mas-huni',
               'ماس هوني – Mas Huni',
-              '/img/ماس-هوني.jpg',
+              '/frontend/img/ماس-هوني.jpg',
             )
           "
         >
@@ -4369,14 +4369,14 @@
         <button
           class="recipes-item"
           data-title="ماس هوني – Mas Huni"
-          data-img="/img/ماس-هوني.jpg"
+          data-img="/frontend/img/ماس-هوني.jpg"
           data-ingredients="تونة مدخنة أو معلبة |200| غ |جوز هند مبشور |100| غ |بصل أحمر |1| حبة |طماطم |1| حبة |كزبرة خضراء |20| غ |عصير ليمون |15| مل |ملح |3| غ"
           data-spices="فلفل أحمر حار |2| غ |فلفل أسود |1| غ"
           data-steps="فتّت التونة بالشوكة. | افرم البصل والطماطم والكزبرة ناعماً. | اخلط التونة مع جوز الهند والخضار المفرومة. | أضف الليمون والملح والفلفل وحرك جيداً. | قدّمه بارداً مع خبز روشي أو خبز رقيق."
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/ماس-هوني.jpg" alt="ماس هوني" />
+            <img src="/frontend/img/ماس-هوني.jpg" alt="ماس هوني" />
             <span>ماس هوني – Mas Huni</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -4391,7 +4391,7 @@
               'recipe',
               'rihaakuru',
               'ريهاكورو – Rihaakuru',
-              '/img/ريهاكورو.jpg',
+              '/frontend/img/ريهاكورو.jpg',
             )
           "
         >
@@ -4400,14 +4400,14 @@
         <button
           class="recipes-item"
           data-title="ريهاكورو – Rihaakuru"
-          data-img="/img/ريهاكورو.jpg"
+          data-img="/frontend/img/ريهاكورو.jpg"
           data-ingredients="سمك تونة |500| غ |ماء |500| مل |ملح |8| غ"
           data-spices="كركم |3| غ |فلفل أسود |2| غ |ورق كاري |5| ورقة"
           data-steps="اسلق التونة في الماء حتى تنضج تماماً. | صفّ المرق واحتفظ به. | أعد المرق للقدر وأضف الملح والبهارات. | اتركه يغلي على نار هادئة جداً ساعتين حتى يتكثف ويصبح معجوناً بنياً. | حرك باستمرار في النهاية لمنع الاحتراق. | برّده وقدّمه مع الأرز أو الخبز."
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/ريهاكورو.jpg" alt="ريهاكورو" />
+            <img src="/frontend/img/ريهاكورو.jpg" alt="ريهاكورو" />
             <span>ريهاكورو – Rihaakuru</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -4422,7 +4422,7 @@
               'recipe',
               'seafood-rice',
               'أرز بالمأكولات البحرية – Seafood Rice',
-              '/img/أرز-بحري.jpg',
+              '/frontend/img/أرز-بحري.jpg',
             )
           "
         >
@@ -4431,14 +4431,14 @@
         <button
           class="recipes-item"
           data-title="أرز بالمأكولات البحرية – Seafood Rice"
-          data-img="/img/أرز-بحري.jpg"
+          data-img="/frontend/img/أرز-بحري.jpg"
           data-ingredients="أرز |300| غ |روبيان |200| غ |سمك تونة |150| غ |حبار |100| غ |بصل |1| حبة |ثوم |3| فص |طماطم |2| حبة |حليب جوز الهند |200| مل |زيت |30| مل |ملح |5| غ |ماء |400| مل"
           data-spices="كركم |3| غ |كمون |2| غ |فلفل أسود |2| غ |ورق كاري |5| ورقة |عشب الليمون |2| غ"
           data-steps="شوّح البصل والثوم بالزيت. | أضف الطماطم والبهارات وقلّب. | أضف المأكولات البحرية وقلّب 5 دقائق. | أضف حليب جوز الهند والماء واتركه يغلي. | أضف الأرز وخفف النار. | اطبخ حتى ينشف الأرز ويستوي. | قدّم ساخناً مع الليمون."
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/أرز-بحري.jpg" alt="أرز بالمأكولات البحرية" />
+            <img src="/frontend/img/أرز-بحري.jpg" alt="أرز بالمأكولات البحرية" />
             <span>أرز بالمأكولات البحرية – Seafood Rice</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -4453,7 +4453,7 @@
               'recipe',
               'coconut-pudding',
               'بودينغ جوز الهند – Coconut Pudding',
-              '/img/بودينغ-جوز-الهند.jpg',
+              '/frontend/img/بودينغ-جوز-الهند.jpg',
             )
           "
         >
@@ -4462,14 +4462,14 @@
         <button
           class="recipes-item"
           data-title="بودينغ جوز الهند – Coconut Pudding"
-          data-img="/img/بودينغ-جوز-الهند.jpg"
+          data-img="/frontend/img/بودينغ-جوز-الهند.jpg"
           data-ingredients="حليب جوز الهند |400| مل |سكر |80| غ |نشا |40| غ |ماء |100| مل |ملح |1| غ |جوز هند مبشور |50| غ"
           data-spices="فانيليا |2| غ |هيل |1| غ"
           data-steps="اخلط النشا مع الماء البارد حتى يذوب. | سخّن حليب جوز الهند مع السكر والملح والفانيليا والهيل على نار متوسطة. | أضف خليط النشا مع التحريك المستمر حتى يتكثف. | صب في قوالب وأضف جوز الهند المبشور فوقه. | برّده في الثلاجة ساعتين. | قدّمه بارداً."
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/بودينغ-جوز-الهند.jpg" alt="بودينغ جوز الهند" />
+            <img src="/frontend/img/بودينغ-جوز-الهند.jpg" alt="بودينغ جوز الهند" />
             <span>بودينغ جوز الهند – Coconut Pudding</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -4483,7 +4483,7 @@
               'recipe',
               'kottu-roti',
               'كوتو روتي – Kottu Roti',
-              '/img/كوتو-روتي.jpg',
+              '/frontend/img/كوتو-روتي.jpg',
             )
           "
         >
@@ -4492,14 +4492,14 @@
         <button
           class="recipes-item"
           data-title="كوتو روتي – Kottu Roti"
-          data-img="/img/كوتو-روتي.jpg"
+          data-img="/frontend/img/كوتو-روتي.jpg"
           data-ingredients="خبز روتي أو خبز رقيق |4| أرغفة |دجاج مطبوخ مفروم |200| غ |بيض |2| حبة |بصل |1| حبة |فلفل أخضر |1| حبة |جزر مبشور |80| غ |ملفوف مقطع |80| غ |ثوم |3| فص |زيت |30| مل |ملح |4| غ"
           data-spices="كاري بودرة |5| غ |كركم |2| غ |فلفل أسود |2| غ |كمون |2| غ"
           data-steps="قطّع الخبز إلى قطع صغيرة جداً. | سخّن الزيت وقلّي البصل والثوم والفلفل. | أضف الدجاج والخضار وقلّب. | أضف البهارات وحرك. | أضف قطع الخبز وقلّب بسرعة على نار عالية. | ادفع كل شيء للجانب وأضف البيض واخلطه. | امزج كل شيء معاً وقلّب 3 دقائق. | قدّم ساخناً."
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/كوتو-روتي.jpg" alt="كوتو روتي" />
+            <img src="/frontend/img/كوتو-روتي.jpg" alt="كوتو روتي" />
             <span>كوتو روتي – Kottu Roti</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -4514,7 +4514,7 @@
               'recipe',
               'sri-lankan-biryani',
               'برياني سريلانكي – Sri Lankan Biryani',
-              '/img/برياني-سريلانكي.jpg',
+              '/frontend/img/برياني-سريلانكي.jpg',
             )
           "
         >
@@ -4523,14 +4523,14 @@
         <button
           class="recipes-item"
           data-title="برياني سريلانكي – Sri Lankan Biryani"
-          data-img="/img/برياني-سريلانكي.jpg"
+          data-img="/frontend/img/برياني-سريلانكي.jpg"
           data-ingredients="أرز بسمتي |300| غ |دجاج |400| غ |بصل |2| حبة |طماطم |2| حبة |زبادي |100| غ |ثوم |4| فص |زنجبيل |10| غ |زيت |40| مل |ملح |6| غ |زعفران |1| غ |حليب دافئ |30| مل"
           data-spices="كاري سريلانكي |8| غ |هيل |3| حبة |قرفة |2| غ |قرنفل |3| حبة |كمون |3| غ |كركم |2| غ |فلفل أسود |2| غ"
           data-steps="تبّل الدجاج بالزبادي والثوم والزنجبيل والبهارات واتركه ساعة. | قلّي البصل حتى يذهب واحتفظ ببعضه للتزيين. | شوّح الدجاج مع البصل والطماطم حتى ينضج. | اسلق الأرز نصف نضج. | اذب الزعفران في الحليب. | رتّب طبقة دجاج ثم طبقة أرز. | رش الزعفران والبصل المقلي. | أغلق القدر واطبخ 20 دقيقة على نار خفيفة. | قدّم مع الرايتا."
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/برياني-سريلانكي.jpg" alt="برياني سريلانكي" />
+            <img src="/frontend/img/برياني-سريلانكي.jpg" alt="برياني سريلانكي" />
             <span>برياني سريلانكي – Sri Lankan Biryani</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -4541,7 +4541,7 @@
         <button
           class="save-btn"
           onclick="
-            saveItem('recipe', 'hoppers', 'هوبرز – Hoppers', '/img/هوبرز.jpg')
+            saveItem('recipe', 'hoppers', 'هوبرز – Hoppers', '/frontend/img/هوبرز.jpg')
           "
         >
           🍽️
@@ -4549,14 +4549,14 @@
         <button
           class="recipes-item"
           data-title="هوبرز – Hoppers"
-          data-img="/img/هوبرز.jpg"
+          data-img="/frontend/img/هوبرز.jpg"
           data-ingredients="دقيق أرز |300| غ |حليب جوز الهند |400| مل |خميرة |5| غ |سكر |10| غ |ملح |3| غ |ماء |100| مل"
           data-spices=""
           data-steps="اخلط الدقيق مع الخميرة والسكر والملح. | أضف حليب جوز الهند والماء تدريجياً واخلط حتى يصبح الخليط سائلاً ناعماً. | اتركه يختمر 4–6 ساعات. | سخّن مقلاة هوبرز أو مقلاة عميقة صغيرة. | صب ملعقة من الخليط وأدر المقلاة حتى يغطي الجوانب. | غطّها واتركها 2 دقيقة حتى تنضج. | قدّمها مع كاري أو عسل أو بيض."
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/هوبرز.jpg" alt="هوبرز" />
+            <img src="/frontend/img/هوبرز.jpg" alt="هوبرز" />
             <span>هوبرز – Hoppers</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -4571,7 +4571,7 @@
               'recipe',
               'fish-curry',
               'سمك بالكاري – Fish Curry',
-              '/img/سمك-كاري.jpg',
+              '/frontend/img/سمك-كاري.jpg',
             )
           "
         >
@@ -4580,14 +4580,14 @@
         <button
           class="recipes-item"
           data-title="سمك بالكاري – Fish Curry"
-          data-img="/img/سمك-كاري.jpg"
+          data-img="/frontend/img/سمك-كاري.jpg"
           data-ingredients="سمك أبيض مكعبات |500| غ |حليب جوز الهند |400| مل |بصل |1| حبة |طماطم |2| حبة |ثوم |4| فص |زنجبيل |10| غ |زيت |30| مل |ملح |5| غ |عصير ليمون |15| مل"
           data-spices="كاري بودرة |8| غ |كركم |3| غ |فلفل أحمر حار |3| غ |كمون |2| غ |بذور الخردل |2| غ |ورق كاري |8| ورقة"
           data-steps="تبّل السمك بالكركم والملح والليمون واتركه 15 دقيقة. | سخّن الزيت وأضف بذور الخردل وورق الكاري حتى تتفتح. | أضف البصل والثوم والزنجبيل وقلّب حتى يذهب. | أضف الطماطم وكاري البودرة والفلفل واطبخ 5 دقائق. | أضف حليب جوز الهند واتركه يغلي. | أضف السمك واطبخ 10–12 دقيقة. | قدّم مع الأرز أو الهوبرز."
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/سمك-كاري.jpg" alt="سمك بالكاري" />
+            <img src="/frontend/img/سمك-كاري.jpg" alt="سمك بالكاري" />
             <span>سمك بالكاري – Fish Curry</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -4602,7 +4602,7 @@
               'recipe',
               'watalappam',
               'واتالابام – Watalappam',
-              '/img/واتالابام.jpg',
+              '/frontend/img/واتالابام.jpg',
             )
           "
         >
@@ -4611,14 +4611,14 @@
         <button
           class="recipes-item"
           data-title="واتالابام – Watalappam"
-          data-img="/img/واتالابام.jpg"
+          data-img="/frontend/img/واتالابام.jpg"
           data-ingredients="حليب جوز الهند |400| مل |سكر نخيل أو سكر بني |150| غ |بيض |4| حبة |ماء |60| مل |ملح |1| غ"
           data-spices="هيل مطحون |3| غ |جوزة الطيب |1| غ |قرفة |2| غ |فانيليا |2| غ"
           data-steps="أذب سكر النخيل في الماء الدافئ وصفّيه. | اخفق البيض خفقاً خفيفاً. | أضف حليب جوز الهند والسكر الذائب والبهارات والملح. | حرك برفق حتى يتجانس الخليط. | صفّ الخليط واسكبه في قوالب. | اطبخ على البخار 30–40 دقيقة حتى يتماسك. | برّده في الثلاجة ساعتين. | قدّمه بارداً."
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/واتالابام.jpg" alt="واتالابام" />
+            <img src="/frontend/img/واتالابام.jpg" alt="واتالابام" />
             <span>واتالابام – Watalappam</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -4627,21 +4627,21 @@
       <div class="foods-card" data-region="snacks" id="brik">
         <button
           class="save-btn"
-          onclick="saveItem('recipe', 'brik', 'بريك – Brik', '/img/بريك.jpg')"
+          onclick="saveItem('recipe', 'brik', 'بريك – Brik', '/frontend/img/بريك.jpg')"
         >
           🍽️
         </button>
         <button
           class="recipes-item"
           data-title="بريك – Brik"
-          data-img="/img/بريك.jpg"
+          data-img="/frontend/img/بريك.jpg"
           data-ingredients="ورق مالسوقة أو يوفكا |4| أوراق |تونة معلبة |150| غ |بيض |4| حبة |بصل |1| حبة |بقدونس |20| غ |كبر مخلل |15| غ |زيت للقلي |300| مل |ملح |3| غ"
           data-spices="فلفل أسود |2| غ |كمون |2| غ |هريسة |5| غ"
           data-steps="افرم البصل والبقدونس ناعماً. | اخلطهم مع التونة والكبر والملح والبهارات. | ضع ورقة المالسوقة على سطح مستوٍ. | ضع ملعقة من الحشو في المنتصف. | اكسر بيضة فوق الحشو. | اطوِ الورقة مثلثاً بسرعة. | اقلِ في زيت ساخن 2–3 دقائق حتى يتماسك البيض وتذهب. | قدّم ساخناً مع الليمون."
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/بريك.jpg" alt="بريك" />
+            <img src="/frontend/img/بريك.jpg" alt="بريك" />
             <span>بريك – Brik</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -4652,7 +4652,7 @@
         <button
           class="save-btn"
           onclick="
-            saveItem('recipe', 'lablabi', 'لبلابي – Lablabi', '/img/لبلابي.jpg')
+            saveItem('recipe', 'lablabi', 'لبلابي – Lablabi', '/frontend/img/لبلابي.jpg')
           "
         >
           🍽️
@@ -4660,14 +4660,14 @@
         <button
           class="recipes-item"
           data-title="لبلابي – Lablabi"
-          data-img="/img/لبلابي.jpg"
+          data-img="/frontend/img/لبلابي.jpg"
           data-ingredients="حمص مسلوق |400| غ |خبز قديم مكسر |200| غ |ثوم |5| فص |عصير ليمون |30| مل |زيت زيتون |40| مل |ماء الطبخ |500| مل |ملح |5| غ |بيض |2| حبة"
           data-spices="كمون |5| غ |هريسة |10| غ |فلفل أسود |2| غ"
           data-steps="اسحق الثوم مع الملح والكمون. | سخّن ماء الحمص مع الحمص والثوم. | ضع قطع الخبز في الطبق. | اكسر البيض في الماء الساخن واتركه يتماسك. | صب الحمص مع مائه فوق الخبز. | أضف البيض فوقه. | أضف عصير الليمون وزيت الزيتون والهريسة. | قدّم ساخناً."
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/لبلابي.jpg" alt="لبلابي" />
+            <img src="/frontend/img/لبلابي.jpg" alt="لبلابي" />
             <span>لبلابي – Lablabi</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -4682,7 +4682,7 @@
               'recipe',
               'tunisian-grills',
               'مشوي تونسي – Tunisian Grills',
-              '/img/مشوي-تونسي.jpg',
+              '/frontend/img/مشوي-تونسي.jpg',
             )
           "
         >
@@ -4691,14 +4691,14 @@
         <button
           class="recipes-item"
           data-title="مشوي تونسي – Tunisian Grills"
-          data-img="/img/مشوي-تونسي.jpg"
+          data-img="/frontend/img/مشوي-تونسي.jpg"
           data-ingredients="لحم مفروم |400| غ |دجاج |400| غ |بصل |2| حبة |ثوم |4| فص |زيت زيتون |40| مل |عصير ليمون |20| مل |ملح |8| غ"
           data-spices="هريسة |15| غ |كمون |5| غ |كزبرة مطحونة |4| غ |فلفل أسود |3| غ |بابريكا |4| غ |قرفة |2| غ"
           data-steps="اخلط اللحم مع البصل المفروم والثوم والبهارات والهريسة. | اعجن جيداً واتركه يتتبل ساعتين. | شكّل اللحم على أسياخ. | تبّل الدجاج بالهريسة والبهارات والزيت. | اشوِ على الفحم أو الجريل 15–20 دقيقة. | قدّم مع الخبز التونسي والسلاطة."
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/مشوي-تونسي.jpg" alt="مشوي تونسي" />
+            <img src="/frontend/img/مشوي-تونسي.jpg" alt="مشوي تونسي" />
             <span>مشوي تونسي – Tunisian Grills</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -4713,7 +4713,7 @@
               'recipe',
               'tunisian-tajine',
               'طاجين تونسي – Tunisian Tajine',
-              '/img/طاجين-تونسي.jpg',
+              '/frontend/img/طاجين-تونسي.jpg',
             )
           "
         >
@@ -4722,14 +4722,14 @@
         <button
           class="recipes-item"
           data-title="طاجين تونسي – Tunisian Tajine"
-          data-img="/img/طاجين-تونسي.jpg"
+          data-img="/frontend/img/طاجين-تونسي.jpg"
           data-ingredients="لحم مفروم |300| غ |بيض |6| حبة |بصل |1| حبة |ثوم |3| فص |جبن مبشور |80| غ |بقدونس |30| غ |زيت |30| مل |ملح |5| غ"
           data-spices="فلفل أسود |2| غ |كمون |3| غ |كركم |2| غ |بهارات مشكلة |3| غ"
           data-steps="قلّي البصل والثوم بالزيت. | أضف اللحم وقلّبه حتى يحمر. | أضف البهارات والملح وحرك. | اتركه يبرد قليلاً. | اخفق البيض وأضف اللحم والجبن والبقدونس. | صب في صينية مدهونة. | اخبز على 180° لمدة 30–35 دقيقة حتى يتماسك. | قدّم دافئاً مقطعاً مربعات."
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/طاجين-تونسي.jpg" alt="طاجين تونسي" />
+            <img src="/frontend/img/طاجين-تونسي.jpg" alt="طاجين تونسي" />
             <span>طاجين تونسي – Tunisian Tajine</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -4740,7 +4740,7 @@
         <button
           class="save-btn"
           onclick="
-            saveItem('recipe', 'makroudh', 'مقروض – Makroudh', '/img/مقروض.jpg')
+            saveItem('recipe', 'makroudh', 'مقروض – Makroudh', '/frontend/img/مقروض.jpg')
           "
         >
           🍽️
@@ -4748,14 +4748,14 @@
         <button
           class="recipes-item"
           data-title="مقروض – Makroudh"
-          data-img="/img/مقروض.jpg"
+          data-img="/frontend/img/مقروض.jpg"
           data-ingredients="سميد خشن |500| غ |زيت زيتون |150| مل |ماء |150| مل |ملح |3| غ |تمر منزوع النوى |400| غ |زيت للقلي |400| مل |عسل |200| غ"
           data-spices="هيل مطحون |3| غ |ماء ورد |15| مل |قرفة |2| غ"
           data-steps="اخلط السميد مع الملح والزيت وافرك. | أضف الماء تدريجياً واعجن حتى تتكون عجينة. | اتركها ترتاح 30 دقيقة. | اهرس التمر مع الهيل والقرفة. | افرد العجينة وضع شريط من التمر في المنتصف. | لفّها وأغلق الأطراف. | قطّع بشكل معيّني. | اقلِ في زيت ساخن حتى تذهب. | اغمس في العسل الدافئ وقدّم."
           onclick="openRecipeFromData(this)"
         >
           <div class="recipes-head">
-            <img src="/img/مقروض.jpg" alt="مقروض" />
+            <img src="/frontend/img/مقروض.jpg" alt="مقروض" />
             <span>مقروض – Makroudh</span>
           </div>
           <span class="arrow">الوصفة ⌄</span>
@@ -4795,7 +4795,7 @@
         </div>
       </div>
     </div>
-    <script src="/recipes/recipes.js"></script>
-    <script src="/auth/auth.js"></script>
+    <script src="/frontend/recipes/recipes.js"></script>
+    <script src="/frontend/auth/auth.js"></script>
   </body>
 </html>

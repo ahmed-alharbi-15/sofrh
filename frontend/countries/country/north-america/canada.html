@@ -6,11 +6,11 @@
     <title>سفرة</title>
 
     <!-- ملف الستايل الأساسي -->
-    <link rel="stylesheet" href="/countries/countries.css" />
+    <link rel="stylesheet" href="/frontend/countries/countries.css" />
 
     <!-- خط عربي -->
     <style>
-      @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@500;600&display=swap");
+      @import url("https://fonts.googleapis.com/css/2?family=Noto+Sans+Arabic:wght@500;600&display=swap");
     </style>
   </head>
 
@@ -19,27 +19,27 @@
     <header class="navbar">
       <div class="hamburger" id="menu-btn">☰</div>
       <div class="auth-buttons" id="authButtons">
-        <a href="/auth/login.html" class="login">تسجيل دخول</a>
-        <a href="/auth/signup.html" class="signup">إنشاء حساب</a>
+        <a href="/frontend/auth/login.html" class="login">تسجيل دخول</a>
+        <a href="/frontend/auth/signup.html" class="signup">إنشاء حساب</a>
       </div>
 
       <div class="user-menu" id="userMenu">
-        <img id="userAvatar" src="/img/default-avatar.png" alt="المستخدم" />
+        <img id="userAvatar" src="/frontend/img/default-avatar.png" alt="المستخدم" />
         <span class="user-name" id="userName"></span>
         <div class="user-dropdown">
-          <a href="/profile/profile.html">الملف الشخصي</a>
-          <a href="/index/index.html" id="logoutBtn">تسجيل الخروج</a>
+          <a href="/frontend/profile/profile.html">الملف الشخصي</a>
+          <a href="/frontend/index//frontend/index/.html" id="logoutBtn">تسجيل الخروج</a>
         </div>
       </div>
       <ul class="nav-list">
-        <li><a href="/index/index.html">الرئيسية</a></li>
-        <li><a href="/countries/countries.html">الدول</a></li>
-        <li><a href="/events/events.html">الفعاليات</a></li>
-        <li><a href="/recipes/recipes.html">الوصفات</a></li>
+        <li><a href="/frontend/index//frontend/index/.html">الرئيسية</a></li>
+        <li><a href="/frontend/countries/countries.html">الدول</a></li>
+        <li><a href="/frontend/events/events.html">الفعاليات</a></li>
+        <li><a href="/frontend/recipes/recipes.html">الوصفات</a></li>
       </ul>
 
       <div class="logo">
-        <a href="/index/index.html"> <img src="/img/logo3.JPG" alt="سفرة" /></a>
+        <a href="/frontend/index//frontend/index/.html"> <img src="/frontend/img/logo3.JPG" alt="سفرة" /></a>
       </div>
     </header>
 
@@ -48,15 +48,15 @@
       <span class="close-btn" id="close-btn">✖</span>
 
       <ul>
-        <li><a href="/index/index.html">الرئيسية</a></li>
-        <li><a href="/countries/countries.html">الدول</a></li>
-        <li><a href="/events/events.html">الفعاليات</a></li>
-        <li><a href="/recipes/recipes.html  ">الوصفات</a></li>
+        <li><a href="/frontend/index//frontend/index/.html">الرئيسية</a></li>
+        <li><a href="/frontend/countries/countries.html">الدول</a></li>
+        <li><a href="/frontend/events/events.html">الفعاليات</a></li>
+        <li><a href="/frontend/recipes/recipes.html  ">الوصفات</a></li>
       </ul>
     </nav>
     <header>
-      <script src="/countries/countries.js"></script>
-      <a href="/countries/countries.html" class="back-btn">رجوع</a>
+      <script src="/frontend/countries/countries.js"></script>
+      <a href="/frontend/countries/countries.html" class="back-btn">رجوع</a>
     </header>
 
     <div class="country-name">
@@ -72,7 +72,7 @@
       <div
         class="cite"
         data-name="تورونتو – Toronto"
-        data-img="/img/Toronto.jpg"
+        data-img="/frontend/img/Toronto.jpg"
         data-desc="أكبر مدن كندا ومركزها الاقتصادي والثقافي، مدينة حديثة نابضة بالحياة تجمع بين التنوع الثقافي الفريد وبرج CN الشهير والحياة الليلية الراقية على ضفاف بحيرة أونتاريو."
         data-historic="🗼 برج CN – CN Tower | 🏘️ حي ديستيلري – Distillery District | 🏛️ متحف رويال أونتاريو – Royal Ontario Museum | 🌿 جزيرة تورونتو – Toronto Islands"
         data-restaurants="⭐ ألو ريستورانت – Alo Restaurant | 🌆 سكارامش – Scaramouche Restaurant | 🍝 دون ألفونسو – Don Alfonso 1890 | 🍣 سوشي ماساكي سايتو – Sushi Masaki Saito | 🏛️ 20 فيكتوريا – 20 Victoria"
@@ -83,12 +83,12 @@
           class="save-btn"
           onclick="
             event.stopPropagation();
-            saveItem('city', 'toronto', 'تورونتو', '/img/Toronto.jpg');
+            saveItem('city', 'toronto', 'تورونتو', '/frontend/img/Toronto.jpg');
           "
         >
           🏙️
         </button>
-        <img src="/img/Toronto.jpg" alt="تورونتو" class="cite-img" />
+        <img src="/frontend/img/Toronto.jpg" alt="تورونتو" class="cite-img" />
         <span class="name">تورونتو – Toronto</span>
         <p class="info">
           مدينة حديثة نابضة بالحياة، تجمع بين الثقافات والتجارب المتنوعة.
@@ -101,7 +101,7 @@
       <div
         class="cite"
         data-name="فانكوفر – Vancouver"
-        data-img="/img/Vancouver.jpg"
+        data-img="/frontend/img/Vancouver.jpg"
         data-desc="جوهرة المحيط الهادئ، مدينة ساحرة تجمع بين الجبال الثلجية والمحيط الأزرق والغابات الخضراء في مشهد طبيعي لا مثيل له. تُصنف باستمرار ضمن أجمل مدن العالم للعيش."
         data-historic="🌲 حديقة ستانلي – Stanley Park | 🌉 جسر كاييلانو – Capilano Bridge | 🏔️ جبل غراوس – Grouse Mountain | 🏘️ حي غاستاون – Gastown"
         data-restaurants="⭐ كيسا تانتو – Kissa Tanto | 🌟 ماكنزي روم – The Mackenzie Room | 🦀 مأكولات بحرية ساحلية – West Coast Seafood | 🍜 مطاعم آسيوية مدمجة – Asian Fusion | 🌊 مطاعم الإطلالات الساحلية – Waterfront Dining"
@@ -112,12 +112,12 @@
           class="save-btn"
           onclick="
             event.stopPropagation();
-            saveItem('city', 'vancouver', 'فانكوفر', '/img/Vancouver.jpg');
+            saveItem('city', 'vancouver', 'فانكوفر', '/frontend/img/Vancouver.jpg');
           "
         >
           🏙️
         </button>
-        <img src="/img/Vancouver.jpg" alt="فانكوفر" class="cite-img" />
+        <img src="/frontend/img/Vancouver.jpg" alt="فانكوفر" class="cite-img" />
         <span class="name">فانكوفر – Vancouver</span>
         <p class="info">مدينة طبيعية ساحرة، بين الجبال والبحر بأجواء هادئة.</p>
         <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
@@ -128,7 +128,7 @@
       <div
         class="cite"
         data-name="مونتريال – Montreal"
-        data-img="/img/Montreal.jpg"
+        data-img="/frontend/img/Montreal.jpg"
         data-desc="مدينة أوروبية الطابع في قلب كندا، تجمع بين الثقافتين الإنجليزية والفرنسية في مزيج فريد من الفن والموسيقى والطعام والمهرجانات الصاخبة طوال العام."
         data-historic="⛪ بازيليكا نوتردام – Notre-Dame Basilica | 🏙️ المدينة القديمة – Old Montreal | 🏔️ جبل رويال – Mount Royal | 🎭 مهرجان الجاز – Jazz Festival"
         data-restaurants="🌟 توكي – Toqué! | 🐇 مون لابان – Mon Lapin | 🥩 جو بيف – Joe Beef | 🌿 داماس – Damas | 🎣 كلوب تشاس إي بيش – Club Chasse et Pêche"
@@ -139,12 +139,12 @@
           class="save-btn"
           onclick="
             event.stopPropagation();
-            saveItem('city', 'montreal', 'مونتريال', '/img/Montreal.jpg');
+            saveItem('city', 'montreal', 'مونتريال', '/frontend/img/Montreal.jpg');
           "
         >
           🏙️
         </button>
-        <img src="/img/Montreal.jpg" alt="مونتريال" class="cite-img" />
+        <img src="/frontend/img/Montreal.jpg" alt="مونتريال" class="cite-img" />
         <span class="name">مونتريال – Montreal</span>
         <p class="info">
           مدينة أوروبية الطابع، مليئة بالفن والموسيقى والثقافة.
@@ -157,7 +157,7 @@
       <div
         class="cite"
         data-name="كالغاري – Calgary"
-        data-img="/img/Calgary.jpg"
+        data-img="/frontend/img/Calgary.jpg"
         data-desc="بوابة جبال روكي الكندية، مدينة حديثة وديناميكية تقع على مقربة من المناظر الطبيعية الخلابة في بانف وجاسبر. مثالية لعشاق المغامرات والطبيعة البكر."
         data-historic="🏔️ بانف ناشيونال بارك – Banff National Park | 🎡 كالغاري ستامبيد – Calgary Stampede | 🏛️ متحف غليبو – Glenbow Museum | 🌿 حديقة بيس – Prince's Island Park"
         data-restaurants="🌿 ريفر كافيه – River Café | 🥩 تشاركت روست هاوس – Charcut Roast House | 🍽️ موديل ميلك – Model Milk | 🏛️ روج – Rouge Restaurant | 🥩 ذا تشيرمان ستيكهاوس – The Chairman's Steakhouse"
@@ -168,12 +168,12 @@
           class="save-btn"
           onclick="
             event.stopPropagation();
-            saveItem('city', 'calgary', 'كالغاري', '/img/Calgary.jpg');
+            saveItem('city', 'calgary', 'كالغاري', '/frontend/img/Calgary.jpg');
           "
         >
           🏙️
         </button>
-        <img src="/img/Calgary.jpg" alt="كالغاري" class="cite-img" />
+        <img src="/frontend/img/Calgary.jpg" alt="كالغاري" class="cite-img" />
         <span class="name">كالغاري – Calgary</span>
         <p class="info">
           مدينة قريبة من الجبال، مثالية لعشاق المغامرات والطبيعة.
@@ -186,7 +186,7 @@
       <div
         class="cite"
         data-name="أوتاوا – Ottawa"
-        data-img="/img/Ottawa.jpg"
+        data-img="/frontend/img/Ottawa.jpg"
         data-desc="العاصمة الفيدرالية لكندا، مدينة هادئة وأنيقة تجمع بين المباني البرلمانية الفكتورية وقنوات ريدو الجميلة والمتاحف الوطنية الرائعة في أجواء هادئة ومنظمة."
         data-historic="🏛️ البرلمان الكندي – Parliament Hill | 🌊 قناة ريدو – Rideau Canal | 🏺 متحف التاريخ – Canadian Museum of History | 🌿 حديقة ماجور هيل – Major's Hill Park"
         data-restaurants="🍷 بلاي فود آند واين – Play Food & Wine | 🌟 تاون – Town Restaurant | 🍛 إيست إنديا كومباني – The East India Company | 🌿 جيريكو – Jericho | 🍺 ذا مانكس – The Manx Pub"
@@ -197,12 +197,12 @@
           class="save-btn"
           onclick="
             event.stopPropagation();
-            saveItem('city', 'ottawa', 'أوتاوا', '/img/Ottawa.jpg');
+            saveItem('city', 'ottawa', 'أوتاوا', '/frontend/img/Ottawa.jpg');
           "
         >
           🏙️
         </button>
-        <img src="/img/Ottawa.jpg" alt="أوتاوا" class="cite-img" />
+        <img src="/frontend/img/Ottawa.jpg" alt="أوتاوا" class="cite-img" />
         <span class="name">أوتاوا – Ottawa</span>
         <p class="info">العاصمة الهادئة، مليئة بالمعالم التاريخية والمتاحف.</p>
         <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
@@ -213,7 +213,7 @@
       <div
         class="cite"
         data-name="كيبيك سيتي – Quebec City"
-        data-img="/img/Quebec City.jpg"
+        data-img="/frontend/img/Quebec City.jpg"
         data-desc="أقدم مدينة مسوّرة في أمريكا الشمالية وموقع تراث عالمي لليونسكو، تتميز بشوارعها الحجرية التاريخية وقلعتها الشهيرة وطابعها الفرنسي الأصيل في قلب كيبيك."
         data-historic="🏰 قلعة كيبيك – Citadelle of Quebec | 🏘️ المدينة القديمة – Old Quebec | 🏨 فندق شاتو فرونتيناك – Château Frontenac | 💦 شلال مونتمورنسي – Montmorency Falls"
         data-restaurants="🌲 شيه بوليه – Chez Boulay Bistro Boréal | 🍷 لويز تافيرن – Louise Taverne & Bar à Vin | 🥂 لو سانت أمور – Le Saint-Amour | 🏛️ بيسترو سو لو فور – Bistro sous le fort | 🌆 سييل – Ciel! Bistro-bar"
@@ -228,13 +228,13 @@
               'city',
               'quebec-city',
               'كيبيك سيتي',
-              '/img/Quebec City.jpg',
+              '/frontend/img/Quebec City.jpg',
             );
           "
         >
           🏙️
         </button>
-        <img src="/img/Quebec City.jpg" alt="كيبيك سيتي" class="cite-img" />
+        <img src="/frontend/img/Quebec City.jpg" alt="كيبيك سيتي" class="cite-img" />
         <span class="name">كيبيك سيتي – Quebec City</span>
         <p class="info">مدينة تاريخية بطابع قديم وشوارع حجرية جميلة.</p>
         <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
@@ -248,61 +248,61 @@
     </div>
     <section class="foods-grid">
       <div class="foods">
-        <img src="/img/Poutine.jpg" alt="" class="foods-img" />
+        <img src="/frontend/img/Poutine.jpg" alt="" class="foods-img" />
         <span class="name-foods">بوتين – Poutine</span>
         <div class="food-info">بطاطس مقلية مع جبن وصوص لحم، طعم غني ومميز.</div>
-        <a href="/recipes/recipes.html?recipe=poutine" class="for-more-btn"
+        <a href="/frontend/recipes/recipes.html?recipe=poutine" class="for-more-btn"
           >المزيد</a
         >
       </div>
 
       <div class="foods">
-        <img src="/img/Maple Pancakes.jpg" alt="" class="foods-img" />
+        <img src="/frontend/img/Maple Pancakes.jpg" alt="" class="foods-img" />
         <span class="name-foods">بانكيك بشراب القيقب – Maple Pancakes</span>
         <div class="food-info">فطائر خفيفة تقدم مع شراب القيقب الشهير.</div>
         <a
-          href="/recipes/recipes.html?recipe=maple-pancakes"
+          href="/frontend/recipes/recipes.html?recipe=maple-pancakes"
           class="for-more-btn"
           >المزيد</a
         >
       </div>
 
       <div class="foods">
-        <img src="/img/Montreal Smoked Meat.jpg" alt="" class="foods-img" />
+        <img src="/frontend/img/Montreal Smoked Meat.jpg" alt="" class="foods-img" />
         <span class="name-foods">لحم مدخن مونتريال – Montreal Smoked Meat</span>
         <div class="food-info">لحم متبل ومدخن، يقدم في ساندويتش بطعم قوي.</div>
-        <a href="/recipes/recipes.html?recipe=smoked-meat" class="for-more-btn"
+        <a href="/frontend/recipes/recipes.html?recipe=smoked-meat" class="for-more-btn"
           >المزيد</a
         >
       </div>
 
       <div class="foods">
-        <img src="/img/Tourtiere.jpg" alt="" class="foods-img" />
+        <img src="/frontend/img/Tourtiere.jpg" alt="" class="foods-img" />
         <span class="name-foods">تورتيير – Tourtière</span>
         <div class="food-info">فطيرة لحم تقليدية، تقدم خاصة في الشتاء.</div>
-        <a href="/recipes/recipes.html?recipe=tourtiere" class="for-more-btn"
+        <a href="/frontend/recipes/recipes.html?recipe=tourtiere" class="for-more-btn"
           >المزيد</a
         >
       </div>
 
       <div class="foods">
-        <img src="/img/Lobster Canada.jpg" alt="" class="foods-img" />
+        <img src="/frontend/img/Lobster Canada.jpg" alt="" class="foods-img" />
         <span class="name-foods">لوبستر – Lobster</span>
         <div class="food-info">
           مأكولات بحرية طازجة، تقدم بنكهات بسيطة ولذيذة.
         </div>
         <a
-          href="/recipes/recipes.html?recipe=lobster-canada"
+          href="/frontend/recipes/recipes.html?recipe=lobster-canada"
           class="for-more-btn"
           >المزيد</a
         >
       </div>
 
       <div class="foods">
-        <img src="/img/BeaverTails.jpg" alt="" class="foods-img" />
+        <img src="/frontend/img/BeaverTails.jpg" alt="" class="foods-img" />
         <span class="name-foods">بيفرتيلز – BeaverTails</span>
         <div class="food-info">عجينة مقلية حلوة، تقدم مع إضافات متنوعة.</div>
-        <a href="/recipes/recipes.html?recipe=beavertails" class="for-more-btn"
+        <a href="/frontend/recipes/recipes.html?recipe=beavertails" class="for-more-btn"
           >المزيد</a
         >
       </div>
@@ -312,65 +312,65 @@
     </div>
     <section class="events-grid">
       <div class="event">
-        <img src="/img/Montreal Fireworks.jpg" alt="" class="event-img" />
+        <img src="/frontend/img/Montreal Fireworks.jpg" alt="" class="event-img" />
         <span class="name-event"
           >مهرجان الألعاب النارية – Montreal Fireworks</span
         >
         <div class="event-info">عروض مبهرة تضيء السماء بألوان ساحرة.</div>
-        <a href="/events/events.html?event=MontrealFireworks" class="event-btn"
+        <a href="/frontend/events/events.html?event=MontrealFireworks" class="event-btn"
           >المزيد</a
         >
       </div>
 
       <div class="event">
-        <img src="/img/Quebec Winter Carnival.jpg" alt="" class="event-img" />
+        <img src="/frontend/img/Quebec Winter Carnival.jpg" alt="" class="event-img" />
         <span class="name-event"
           >مهرجان شتاء كيبيك – Quebec Winter Carnival</span
         >
         <div class="event-info">فعاليات ثلجية ممتعة وأجواء شتوية مميزة.</div>
         <a
-          href="/events/events.html?event=QuebecWinterCarnival"
+          href="/frontend/events/events.html?event=QuebecWinterCarnival"
           class="event-btn"
           >المزيد</a
         >
       </div>
 
       <div class="event">
-        <img src="/img/Canada Kayaking.jpg" alt="" class="event-img" />
+        <img src="/frontend/img/Canada Kayaking.jpg" alt="" class="event-img" />
         <span class="name-event">التجديف في بحيرات كندا – Canada Kayaking</span>
         <div class="event-info">تجربة هادئة وسط طبيعة خلابة ومياه صافية.</div>
-        <a href="/events/events.html?event=CanadaKayaking" class="event-btn"
+        <a href="/frontend/events/events.html?event=CanadaKayaking" class="event-btn"
           >المزيد</a
         >
       </div>
 
       <div class="event">
-        <img src="/img/Canadian Rockies.jpg" alt="" class="event-img" />
+        <img src="/frontend/img/Canadian Rockies.jpg" alt="" class="event-img" />
         <span class="name-event">جبال روكي الكندية – Canadian Rockies</span>
         <div class="event-info">تجربة طبيعية خلابة بين الجبال والبحيرات.</div>
-        <a href="/events/events.html?event=CanadianRockies" class="event-btn"
+        <a href="/frontend/events/events.html?event=CanadianRockies" class="event-btn"
           >المزيد</a
         >
       </div>
 
       <div class="event">
-        <img src="/img/Canada Fall Leaves.jpg" alt="" class="event-img" />
+        <img src="/frontend/img/Canada Fall Leaves.jpg" alt="" class="event-img" />
         <span class="name-event"
           >مشاهدة أوراق الخريف – Canada Fall Foliage</span
         >
         <div class="event-info">مناظر طبيعية مذهلة بألوان الخريف الساحرة.</div>
-        <a href="/events/events.html?event=CanadaFallLeaves" class="event-btn"
+        <a href="/frontend/events/events.html?event=CanadaFallLeaves" class="event-btn"
           >المزيد</a
         >
       </div>
 
       <div class="event">
-        <img src="/img/Calgary Stampede.jpg" alt="" class="event-img" />
+        <img src="/frontend/img/Calgary Stampede.jpg" alt="" class="event-img" />
         <span class="name-event">كالغاري ستامبيد – Calgary Stampede</span>
         <div class="event-info">
           احتفال ضخم بطابع رعاة البقر والعروض الترفيهية.
         </div>
-        <a href="/events/events.html?event=CalgaryStampede" class="event-btn"
+        <a href="/frontend/events/events.html?event=CalgaryStampede" class="event-btn"
           >المزيد</a
         >
       </div>
@@ -396,7 +396,7 @@
         </div>
       </div>
     </div>
-    <script src="/countries/countries.js"></script>
-    <script src="/auth/auth.js"></script>
+    <script src="/frontend/countries/countries.js"></script>
+    <script src="/frontend/auth/auth.js"></script>
   </body>
 </html>

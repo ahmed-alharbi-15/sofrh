@@ -4,9 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>سفرة</title>
-    <link rel="stylesheet" href="/countries/countries.css" />
+    <link rel="stylesheet" href="/frontend/countries/countries.css" />
     <style>
-      @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@500;600&display=swap");
+      @import url("https://fonts.googleapis.com/css/2?family=Noto+Sans+Arabic:wght@500;600&display=swap");
     </style>
   </head>
 
@@ -15,25 +15,25 @@
     <header class="navbar">
       <div class="hamburger" id="menu-btn">☰</div>
       <div class="auth-buttons" id="authButtons">
-        <a href="/auth/login.html" class="login">تسجيل دخول</a>
-        <a href="/auth/signup.html" class="signup">إنشاء حساب</a>
+        <a href="/frontend/auth/login.html" class="login">تسجيل دخول</a>
+        <a href="/frontend/auth/signup.html" class="signup">إنشاء حساب</a>
       </div>
       <div class="user-menu" id="userMenu">
-        <img id="userAvatar" src="/img/default-avatar.png" alt="المستخدم" />
+        <img id="userAvatar" src="/frontend/img/default-avatar.png" alt="المستخدم" />
         <span class="user-name" id="userName"></span>
         <div class="user-dropdown">
-          <a href="/profile/profile.html">الملف الشخصي</a>
-          <a href="/index/index.html" id="logoutBtn">تسجيل الخروج</a>
+          <a href="/frontend/profile/profile.html">الملف الشخصي</a>
+          <a href="/frontend/index//frontend/index/.html" id="logoutBtn">تسجيل الخروج</a>
         </div>
       </div>
       <ul class="nav-list">
-        <li><a href="/index/index.html">الرئيسية</a></li>
-        <li><a href="/countries/countries.html">الدول</a></li>
-        <li><a href="/events/events.html">الفعاليات</a></li>
-        <li><a href="/recipes/recipes.html">الوصفات</a></li>
+        <li><a href="/frontend/index//frontend/index/.html">الرئيسية</a></li>
+        <li><a href="/frontend/countries/countries.html">الدول</a></li>
+        <li><a href="/frontend/events/events.html">الفعاليات</a></li>
+        <li><a href="/frontend/recipes/recipes.html">الوصفات</a></li>
       </ul>
       <div class="logo">
-        <a href="/index/index.html"><img src="/img/logo3.JPG" alt="سفرة" /></a>
+        <a href="/frontend/index//frontend/index/.html"><img src="/frontend/img/logo3.JPG" alt="سفرة" /></a>
       </div>
     </header>
 
@@ -41,15 +41,15 @@
     <nav class="side-menu" id="side-menu">
       <span class="close-btn" id="close-btn">✖</span>
       <ul>
-        <li><a href="/index/index.html">الرئيسية</a></li>
-        <li><a href="/countries/countries.html">الدول</a></li>
-        <li><a href="/events/events.html">الفعاليات</a></li>
-        <li><a href="/recipes/recipes.html">الوصفات</a></li>
+        <li><a href="/frontend/index//frontend/index/.html">الرئيسية</a></li>
+        <li><a href="/frontend/countries/countries.html">الدول</a></li>
+        <li><a href="/frontend/events/events.html">الفعاليات</a></li>
+        <li><a href="/frontend/recipes/recipes.html">الوصفات</a></li>
       </ul>
     </nav>
 
     <header>
-      <a href="/countries/countries.html" class="back-btn">رجوع</a>
+      <a href="/frontend/countries/countries.html" class="back-btn">رجوع</a>
     </header>
     <section>
       <div class="country-name">
@@ -66,7 +66,7 @@
       <div
         class="cite"
         data-name="ريو دي جانيرو – Rio de Janeiro"
-        data-img="/img/ريو دي جانيرو .jpg"
+        data-img="/frontend/img/ريو دي جانيرو .jpg"
         data-desc="مدينة الحياة والألوان، تجمع بين الشواطئ الذهبية والجبال الخضراء وأجواء احتفالية طول السنة."
         data-historic="🗿 تمثال المسيح الفادي | 🏰 قلعة ساو خوان | ⛪ كاتدرائية ريو | 🌿 حديقة نباتية ريو"
         data-restaurants="🍖 مطعم Fogo de Chão | 🍤 مطعم Aprazível | 🥩 مطعم Churrascaria Palace"
@@ -77,13 +77,13 @@
           class="save-btn"
           onclick="
             event.stopPropagation();
-            saveItem('city', 'rio', 'ريو دي جانيرو', '/img/ريو دي جانيرو .jpg');
+            saveItem('city', 'rio', 'ريو دي جانيرو', '/frontend/img/ريو دي جانيرو .jpg');
           "
         >
           🏙️
         </button>
         <img
-          src="/img/ريو دي جانيرو .jpg"
+          src="/frontend/img/ريو دي جانيرو .jpg"
           alt="ريو دي جانيرو"
           class="cite-img"
         />
@@ -98,7 +98,7 @@
       <div
         class="cite"
         data-name="ساو باولو – São Paulo"
-        data-img="/img/ساوباولو.jpg"
+        data-img="/frontend/img/ساوباولو.jpg"
         data-desc="أكبر مدن البرازيل وعاصمتها الاقتصادية، مدينة لا تنام تجمع بين التنوع الثقافي والحياة الليلية الصاخبة والطعام العالمي."
         data-historic="🏛️ متحف إيبيرابويرا | 🎨 متحف الفن الحديث | ⛪ كاتدرائية سيه | 🏙️ حي ليبرداد الياباني"
         data-restaurants="🍖 مطعم D.O.M | 🥩 مطعم Fogo de Chão | 🍝 مطعم Fasano"
@@ -109,12 +109,12 @@
           class="save-btn"
           onclick="
             event.stopPropagation();
-            saveItem('city', 'sao-paulo', 'ساو باولو', '/img/ساو باولو.jpg');
+            saveItem('city', 'sao-paulo', 'ساو باولو', '/frontend/img/ساو باولو.jpg');
           "
         >
           🏙️
         </button>
-        <img src="/img/ساوباولو.jpg" alt="ساو باولو" class="cite-img" />
+        <img src="/frontend/img/ساوباولو.jpg" alt="ساو باولو" class="cite-img" />
         <span class="name">ساو باولو – São Paulo</span>
         <p class="info">أكبر مدن البرازيل وعاصمتها الاقتصادية.</p>
         <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
@@ -125,7 +125,7 @@
       <div
         class="cite"
         data-name="برازيليا – Brasília"
-        data-img="/img/brasilia.jpg"
+        data-img="/frontend/img/brasilia.jpg"
         data-desc="العاصمة الفيدرالية للبرازيل، مدينة مصممة بشكل طائرة من الجو، تشتهر بمبانيها المعمارية الحداثية الفريدة."
         data-historic="🏛️ قصر البرلمان | ⛪ كاتدرائية برازيليا | 🏰 قصر الفجر | 🌿 الحديقة النباتية"
         data-restaurants="🍖 مطعم Universal Diner | 🥩 مطعم Fogo de Chão | 🍝 مطعم Aquavit"
@@ -136,12 +136,12 @@
           class="save-btn"
           onclick="
             event.stopPropagation();
-            saveItem('city', 'brasilia', 'برازيليا', '/img/برازيليا.jpg');
+            saveItem('city', 'brasilia', 'برازيليا', '/frontend/img/برازيليا.jpg');
           "
         >
           🏙️
         </button>
-        <img src="/img/brasilia.jpg" alt="برازيليا" class="cite-img" />
+        <img src="/frontend/img/brasilia.jpg" alt="برازيليا" class="cite-img" />
         <span class="name">برازيليا – Brasília</span>
         <p class="info">العاصمة الفيدرالية ذات المعمار الحداثي الفريد.</p>
         <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
@@ -151,7 +151,7 @@
       <div
         class="cite"
         data-name="فورتاليزا – Fortaleza"
-        data-img="/img/Fortaleza.jpg"
+        data-img="/frontend/img/Fortaleza.jpg"
         data-desc="مدينة الشواطئ الساحرة في شمال البرازيل، تشتهر بالرمال البيضاء والمياه الفيروزية وثقافة الشعب الدافئة."
         data-historic="🏰 قلعة فورتاليزا | ⛪ كاتدرائية متروبوليتان | 🎨 متحف الفن سيارا | 🌊 شاطئ إيراسيما"
         data-restaurants="🦞 مطعم Coco Bambu | 🍤 مطعم Chico do Caranguejo | 🥘 مطعم La Tablita"
@@ -162,12 +162,12 @@
           class="save-btn"
           onclick="
             event.stopPropagation();
-            saveItem('city', 'fortaleza', 'فورتاليزا', '/img/فورتاليزا.jpg');
+            saveItem('city', 'fortaleza', 'فورتاليزا', '/frontend/img/فورتاليزا.jpg');
           "
         >
           🏙️
         </button>
-        <img src="/img/Fortaleza.jpg" alt="فورتاليزا" class="cite-img" />
+        <img src="/frontend/img/Fortaleza.jpg" alt="فورتاليزا" class="cite-img" />
         <span class="name">فورتاليزا – Fortaleza</span>
         <p class="info">مدينة الشواطئ الساحرة في شمال البرازيل.</p>
         <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
@@ -177,7 +177,7 @@
       <div
         class="cite"
         data-name="فلوريانوبوليس – Florianópolis"
-        data-img="/img/florianapolis.jpg"
+        data-img="/frontend/img/florianapolis.jpg"
         data-desc="جزيرة السحر البرازيلية، تجمع بين 42 شاطئاً رائعاً وطبيعة خضراء وأجواء هادئة تجعلها وجهة مثالية للاسترخاء."
         data-historic="🏰 قلعة سانت كروز | ⛪ كاتدرائية متروبوليتان | 🌉 جسر هيركيليو لوز | 🏛️ متحف الأنثروبولوجيا"
         data-restaurants="🦞 مطعم Ostradamus | 🍤 مطعم Macarronada Italiana | 🥘 مطعم Box 32"
@@ -192,14 +192,14 @@
               'city',
               'florianopolis',
               'فلوريانوبوليس',
-              '/img/فلوريانوبوليس.jpg',
+              '/frontend/img/فلوريانوبوليس.jpg',
             );
           "
         >
           🏙️
         </button>
         <img
-          src="/img/florianapolis.jpg"
+          src="/frontend/img/florianapolis.jpg"
           alt="فلوريانوبوليس"
           class="cite-img"
         />
@@ -212,7 +212,7 @@
       <div
         class="cite"
         data-name="ريسيفي – Recife"
-        data-img="/img/ريسيفي.jpg"
+        data-img="/frontend/img/ريسيفي.jpg"
         data-desc="عاصمة الشمال الشرقي البرازيلي، تُعرف بشواطئها الجميلة وجسورها التاريخية وكرنفالها الشهير الذي يُعد من أكبر كرنفالات العالم."
         data-historic="🏰 قلعة بروم | ⛪ كنيسة سانت أنطونيو | 🌉 جسر ريسيفي القديم | 🏛️ متحف ريسيفي"
         data-restaurants="🦞 مطعم Bargaço | 🍤 مطعم Chica Pitanga | 🥘 مطعم Leite"
@@ -223,12 +223,12 @@
           class="save-btn"
           onclick="
             event.stopPropagation();
-            saveItem('city', 'recife', 'ريسيفي', '/img/ريسيفي.jpg');
+            saveItem('city', 'recife', 'ريسيفي', '/frontend/img/ريسيفي.jpg');
           "
         >
           🏙️
         </button>
-        <img src="/img/ريسيفي.jpg" alt="ريسيفي" class="cite-img" />
+        <img src="/frontend/img/ريسيفي.jpg" alt="ريسيفي" class="cite-img" />
         <span class="name">ريسيفي – Recife</span>
         <p class="info">عاصمة الشمال الشرقي وموطن أكبر كرنفال في العالم.</p>
         <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
@@ -243,60 +243,60 @@
     </div>
     <section class="foods-grid">
       <div class="foods">
-        <img src="/img/فيجوادا.jpg" alt="فيجوادا" class="foods-img" />
+        <img src="/frontend/img/فيجوادا.jpg" alt="فيجوادا" class="foods-img" />
         <span class="name-foods">فيجوادا – Feijoada</span>
         <div class="food-info">
           فاصوليا سوداء مطبوخة مع اللحم والتوابل، بطعم غني ودسم.
         </div>
-        <a href="/recipes/recipes.html?recipe=feijoada" class="for-more-btn"
+        <a href="/frontend/recipes/recipes.html?recipe=feijoada" class="for-more-btn"
           >المزيد</a
         >
       </div>
       <div class="foods">
-        <img src="/img/شوراسكو.jpg" alt="شوراسكو" class="foods-img" />
+        <img src="/frontend/img/شوراسكو.jpg" alt="شوراسكو" class="foods-img" />
         <span class="name-foods">شوراسكو – Churrasco</span>
         <div class="food-info">لحم مشوي على الفحم، طري وعصيري بنكهة مدخنة.</div>
-        <a href="/recipes/recipes.html?recipe=churrasco" class="for-more-btn"
+        <a href="/frontend/recipes/recipes.html?recipe=churrasco" class="for-more-btn"
           >المزيد</a
         >
       </div>
       <div class="foods">
-        <img src="/img/باو دي كيجو.jpg" alt="باو دي كيجو" class="foods-img" />
+        <img src="/frontend/img/باو دي كيجو.jpg" alt="باو دي كيجو" class="foods-img" />
         <span class="name-foods">باو دي كيجو – Pão de Queijo</span>
         <div class="food-info">كعكة من الجبن والنشا، بطعم لذيذ وناعم.</div>
         <a
-          href="/recipes/recipes.html?recipe=pao-de-queijo"
+          href="/frontend/recipes/recipes.html?recipe=pao-de-queijo"
           class="for-more-btn"
           >المزيد</a
         >
       </div>
       <div class="foods">
-        <img src="/img/موكيكا.jpeg" alt="موكيكا" class="foods-img" />
+        <img src="/frontend/img/موكيكا.jpeg" alt="موكيكا" class="foods-img" />
         <span class="name-foods">موكيكا – Moqueca</span>
         <div class="food-info">
           سمك مطبوخ في صينية مع توابل، بطعم لذيذ ودسم.
         </div>
-        <a href="/recipes/recipes.html?recipe=moqueca" class="for-more-btn"
+        <a href="/frontend/recipes/recipes.html?recipe=moqueca" class="for-more-btn"
           >المزيد</a
         >
       </div>
       <div class="foods">
-        <img src="/img/أكاراجي.jpg" alt="أكاراجي" class="foods-img" />
+        <img src="/frontend/img/أكاراجي.jpg" alt="أكاراجي" class="foods-img" />
         <span class="name-foods">أكاراجي – Acarajé</span>
         <div class="food-info">
           كرات مقلية من الفاصوليا، تقدم بحشوات حارة ولذيذة.
         </div>
-        <a href="/recipes/recipes.html?recipe=acaraje" class="for-more-btn"
+        <a href="/frontend/recipes/recipes.html?recipe=acaraje" class="for-more-btn"
           >المزيد</a
         >
       </div>
       <div class="foods">
-        <img src="/img/بوديم.jpg" alt="بوديم" class="foods-img" />
+        <img src="/frontend/img/بوديم.jpg" alt="بوديم" class="foods-img" />
         <span class="name-foods">بوديم – Pudim</span>
         <div class="food-info">
           كريم كراميل برازيلي ناعم، بقوام خفيف وطعم حلو غني يذوب بالفم
         </div>
-        <a href="/recipes/recipes.html?recipe=pudim" class="for-more-btn"
+        <a href="/frontend/recipes/recipes.html?recipe=pudim" class="for-more-btn"
           >المزيد</a
         >
       </div>
@@ -308,18 +308,18 @@
     </div>
     <section class="events-grid">
       <div class="event">
-        <img src="/img/كرنفال ريو .jpg" alt="كرنفال ريو" class="event-img" />
+        <img src="/frontend/img/كرنفال ريو .jpg" alt="كرنفال ريو" class="event-img" />
         <span class="name-event">كرنفال ريو – Rio Carnival</span>
         <div class="event-info">
           أكبر كرنفال بالعالم — رقص سامبا، استعراضات ضخمة، أجواء ما تنوصف.
         </div>
-        <a href="/events/events.html?event=rioCarnival" class="event-btn"
+        <a href="/frontend/events/events.html?event=rioCarnival" class="event-btn"
           >المزيد</a
         >
       </div>
       <div class="event">
         <img
-          src="/img/كوباكابانا.jpg"
+          src="/frontend/img/كوباكابانا.jpg"
           alt="شاطئ كوباكابانا"
           class="event-img"
         />
@@ -327,43 +327,43 @@
         <div class="event-info">
           مو بس شاطئ، تجربة متكاملة: بحر، كورة قدم، موسيقى، وأجواء حياة يومية.
         </div>
-        <a href="/events/events.html?event=copacabana" class="event-btn"
+        <a href="/frontend/events/events.html?event=copacabana" class="event-btn"
           >المزيد</a
         >
       </div>
       <div class="event">
-        <img src="/img/أمازون.jpg" alt="غابة الأمازون" class="event-img" />
+        <img src="/frontend/img/أمازون.jpg" alt="غابة الأمازون" class="event-img" />
         <span class="name-event">غابة الأمازون – Amazon Rainforest</span>
         <div class="event-info">
           تجربة مغامرة حقيقية — طبيعة، حيوانات، وقوارب داخل الغابات.
         </div>
-        <a href="/events/events.html?event=amazon" class="event-btn">المزيد</a>
+        <a href="/frontend/events/events.html?event=amazon" class="event-btn">المزيد</a>
       </div>
       <div class="event">
         <img
-          src="/img/روك-إن-ريو.jpg"
+          src="/frontend/img/روك-إن-ريو.jpg"
           alt="مهرجان روك إن ريو"
           class="event-img"
         />
         <span class="name-event">مهرجان روك إن ريو – Rock in Rio</span>
         <div class="event-info">لعشاق الموسيقى — حفلات عالمية وأجواء ضخمة.</div>
-        <a href="/events/events.html?event=rockInRio" class="event-btn"
+        <a href="/frontend/events/events.html?event=rockInRio" class="event-btn"
           >المزيد</a
         >
       </div>
       <div class="event">
-        <img src="/img/شوجر-لوف.jpg" alt="جبل شوجر لوف" class="event-img" />
+        <img src="/frontend/img/شوجر-لوف.jpg" alt="جبل شوجر لوف" class="event-img" />
         <span class="name-event">جبل شوجر لوف – Sugarloaf Mountain</span>
         <div class="event-info">
           تطلع بالتلفريك وتشوف منظر خرافي لمدينة ريو من فوق
         </div>
-        <a href="/events/events.html?event=sugarloaf" class="event-btn"
+        <a href="/frontend/events/events.html?event=sugarloaf" class="event-btn"
           >المزيد</a
         >
       </div>
       <div class="event">
         <img
-          src="/img/ساو-باولو-فن.jpg"
+          src="/frontend/img/ساو-باولو-فن.jpg"
           alt="جولة فنية في شوارع ساو باولو"
           class="event-img"
         />
@@ -373,7 +373,7 @@
         <div class="event-info">
           استكشاف جداريات وفنون الشارع، تجربة مليانة ألوان وإبداع وثقافة محلية
         </div>
-        <a href="/events/events.html?event=saoPauloArt" class="event-btn"
+        <a href="/frontend/events/events.html?event=saoPauloArt" class="event-btn"
           >المزيد</a
         >
       </div>
@@ -400,7 +400,7 @@
         </div>
       </div>
     </div>
-    <script src="/countries/countries.js"></script>
-    <script src="/auth/auth.js"></script>
+    <script src="/frontend/countries/countries.js"></script>
+    <script src="/frontend/auth/auth.js"></script>
   </body>
 </html>

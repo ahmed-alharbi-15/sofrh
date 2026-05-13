@@ -6,11 +6,11 @@
     <title>سفرة</title>
 
     <!-- ملف الستايل الأساسي -->
-    <link rel="stylesheet" href="/countries/countries.css" />
+    <link rel="stylesheet" href="/frontend/countries/countries.css" />
 
     <!-- خط عربي -->
     <style>
-      @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@500;600&display=swap");
+      @import url("https://fonts.googleapis.com/css/2?family=Noto+Sans+Arabic:wght@500;600&display=swap");
     </style>
   </head>
 
@@ -20,27 +20,27 @@
       <div class="hamburger" id="menu-btn">☰</div>
 
       <div class="auth-buttons" id="authButtons">
-        <a href="/auth/login.html" class="login">تسجيل دخول</a>
-        <a href="/auth/signup.html" class="signup">إنشاء حساب</a>
+        <a href="/frontend/auth/login.html" class="login">تسجيل دخول</a>
+        <a href="/frontend/auth/signup.html" class="signup">إنشاء حساب</a>
       </div>
 
       <div class="user-menu" id="userMenu">
-        <img id="userAvatar" src="/img/default-avatar.png" alt="المستخدم" />
+        <img id="userAvatar" src="/frontend/img/default-avatar.png" alt="المستخدم" />
         <span class="user-name" id="userName"></span>
         <div class="user-dropdown">
-          <a href="/profile/profile.html">الملف الشخصي</a>
-          <a href="/index/index.html" id="logoutBtn">تسجيل الخروج</a>
+          <a href="/frontend/profile/profile.html">الملف الشخصي</a>
+          <a href="/frontend/index//frontend/index/.html" id="logoutBtn">تسجيل الخروج</a>
         </div>
       </div>
       <ul class="nav-list">
-        <li><a href="/index/index.html">الرئيسية</a></li>
-        <li><a href="/countries/countries.html">الدول</a></li>
-        <li><a href="/events/events.html">الفعاليات</a></li>
-        <li><a href="/recipes/recipes.html">الوصفات</a></li>
+        <li><a href="/frontend/index//frontend/index/.html">الرئيسية</a></li>
+        <li><a href="/frontend/countries/countries.html">الدول</a></li>
+        <li><a href="/frontend/events/events.html">الفعاليات</a></li>
+        <li><a href="/frontend/recipes/recipes.html">الوصفات</a></li>
       </ul>
 
       <div class="logo">
-        <a href="/index/index.html"> <img src="/img/logo3.JPG" alt="سفرة" /></a>
+        <a href="/frontend/index//frontend/index/.html"> <img src="/frontend/img/logo3.JPG" alt="سفرة" /></a>
       </div>
     </header>
 
@@ -49,14 +49,14 @@
       <span class="close-btn" id="close-btn">✖</span>
 
       <ul>
-        <li><a href="/index/index.html">الرئيسية</a></li>
-        <li><a href="/countries/countries.html">الدول</a></li>
-        <li><a href="/events/events.html">الفعاليات</a></li>
-        <li><a href="/recipes/recipes.html  ">الوصفات</a></li>
+        <li><a href="/frontend/index//frontend/index/.html">الرئيسية</a></li>
+        <li><a href="/frontend/countries/countries.html">الدول</a></li>
+        <li><a href="/frontend/events/events.html">الفعاليات</a></li>
+        <li><a href="/frontend/recipes/recipes.html  ">الوصفات</a></li>
       </ul>
     </nav>
     <header>
-      <a href="/countries/countries.html" class="back-btn">رجوع</a>
+      <a href="/frontend/countries/countries.html" class="back-btn">رجوع</a>
     </header>
 
     <div class="country-name">
@@ -72,7 +72,7 @@
       <div
         class="cite"
         data-name="مارينا باي – Marina Bay"
-        data-img="/img/Marina Bay.jpg"
+        data-img="/frontend/img/Marina Bay.jpg"
         data-desc="قلب سنغافورة الحديث وأيقونتها العالمية، تضم فندق مارينا باي ساندز الشهير وحدائق الخليج المستقبلية والأفق المبهر المنعكس على المياه في مشهد لا مثيل له."
         data-historic="🏨 مارينا باي ساندز – Marina Bay Sands | 🌿 حدائق الخليج – Gardens by the Bay | 🎡 سينغاپور فلاير – Singapore Flyer | 🌉 جسر هيليكس – Helix Bridge"
         data-restaurants="🦞 مطعم Waku Ghin | 🌿 مطعم CUT by Wolfgang Puck | 🥘 مطعم Sky on 57"
@@ -83,12 +83,12 @@
           class="save-btn"
           onclick="
             event.stopPropagation();
-            saveItem('city', 'marina-bay', 'مارينا باي', '/img/Marina Bay.jpg');
+            saveItem('city', 'marina-bay', 'مارينا باي', '/frontend/img/Marina Bay.jpg');
           "
         >
           🏙️
         </button>
-        <img src="/img/Marina Bay.jpg" alt="مارينا باي" class="cite-img" />
+        <img src="/frontend/img/Marina Bay.jpg" alt="مارينا باي" class="cite-img" />
         <span class="name">مارينا باي – Marina Bay</span>
         <p class="info">قلب المدينة الحديثة.</p>
         <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
@@ -99,7 +99,7 @@
       <div
         class="cite"
         data-name="سينتوسا – Sentosa"
-        data-img="/img/Sentosa.jpg"
+        data-img="/frontend/img/Sentosa.jpg"
         data-desc="جزيرة الترفيه والمتعة في سنغافورة، تضم يونيفرسال ستوديوز الشهير والشواطئ الجميلة وأكواريوم السنغافوري وملاعب الغولف الفاخرة والمنتجعات الراقية."
         data-historic="🎬 يونيفرسال ستوديوز – Universal Studios | 🐠 أكواريوم السنغافوري – SEA Aquarium | 🏖️ شاطئ سيلوسو – Siloso Beach | 🚡 تلفريك سينتوسا – Sentosa Cable Car"
         data-restaurants="🦞 مطعم Graze | 🌿 مطعم Forest | 🥘 مطعم Tanjong Beach Club"
@@ -110,12 +110,12 @@
           class="save-btn"
           onclick="
             event.stopPropagation();
-            saveItem('city', 'sentosa', 'سينتوسا', '/img/Sentosa.jpg');
+            saveItem('city', 'sentosa', 'سينتوسا', '/frontend/img/Sentosa.jpg');
           "
         >
           🏙️
         </button>
-        <img src="/img/Sentosa.jpg" alt="سينتوسا" class="cite-img" />
+        <img src="/frontend/img/Sentosa.jpg" alt="سينتوسا" class="cite-img" />
         <span class="name">سينتوسا – Sentosa</span>
         <p class="info">جزيرة ترفيهية رائعة.</p>
         <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
@@ -126,7 +126,7 @@
       <div
         class="cite"
         data-name="أورتشارد رود – Orchard Road"
-        data-img="/img/Orchard Road.jpg"
+        data-img="/frontend/img/Orchard Road.jpg"
         data-desc="شارع التسوق الأشهر في آسيا وعاصمة الموضة في سنغافورة، يمتد بمراكز تسوق ضخمة وفنادق فاخرة وماركات عالمية في قلب المدينة النابض."
         data-historic="🛍️ آيون أورتشارد – ION Orchard | 🏬 نيدمان ماركوس – Ngee Ann City | 🏨 فندق ريجنت – Regent Hotel | 🌿 بوتانيك غاردنز – Botanic Gardens"
         data-restaurants="🍜 مطعم Iggy's | 🌿 مطعم Zafferano | 🥩 مطعم Morton's"
@@ -141,13 +141,13 @@
               'city',
               'orchard-road',
               'أورتشارد رود',
-              '/img/Orchard Road.jpg',
+              '/frontend/img/Orchard Road.jpg',
             );
           "
         >
           🏙️
         </button>
-        <img src="/img/Orchard Road.jpg" alt="أورتشارد رود" class="cite-img" />
+        <img src="/frontend/img/Orchard Road.jpg" alt="أورتشارد رود" class="cite-img" />
         <span class="name">أورتشارد رود – Orchard Road</span>
         <p class="info">أشهر منطقة تسوق.</p>
         <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
@@ -158,7 +158,7 @@
       <div
         class="cite"
         data-name="تشاينا تاون – Chinatown"
-        data-img="/img/Singapore Chinatown.jpg"
+        data-img="/frontend/img/Singapore Chinatown.jpg"
         data-desc="قلب الثقافة الصينية في سنغافورة، حي تاريخي عريق يجمع بين المعابد القديمة والأسواق الملونة والمطاعم الشعبية والمباني التراثية التي تحكي تاريخ المهاجرين الصينيين."
         data-historic="🛕 معبد بوذا توث ريليك – Buddha Tooth Relic Temple | 🏮 شارع باغودا – Pagoda Street | 🏛️ متحف تشاينا تاون – Chinatown Heritage Centre | 🕌 مسجد جامع – Jamae Mosque"
         data-restaurants="🍜 مطعم Liao Fan Hong Kong Soya Sauce | 🥘 مطعم Chinatown Food Street | 🌿 مطعم Tong Heng"
@@ -173,14 +173,14 @@
               'city',
               'chinatown-sg',
               'تشاينا تاون',
-              '/img/Singapore Chinatown.jpg',
+              '/frontend/img/Singapore Chinatown.jpg',
             );
           "
         >
           🏙️
         </button>
         <img
-          src="/img/Singapore Chinatown.jpg"
+          src="/frontend/img/Singapore Chinatown.jpg"
           alt="تشاينا تاون"
           class="cite-img"
         />
@@ -194,7 +194,7 @@
       <div
         class="cite"
         data-name="ليتل إنديا – Little India"
-        data-img="/img/Little India Singapore.jpg"
+        data-img="/frontend/img/Little India Singapore.jpg"
         data-desc="قلب الثقافة الهندية في سنغافورة، حي نابض بالألوان والروائح والأجواء الهندية الأصيلة يضم المعابد الهندوسية الملونة وأسواق التوابل والمطاعم الهندية الشهيرة."
         data-historic="🛕 معبد سري فيراماكاليامان – Sri Veeramakaliamman | 🌸 شارع سيرانغون – Serangoon Road | 🏛️ متحف ليتل إنديا – Indian Heritage Centre | 🌺 سوق موستافا – Mustafa Centre"
         data-restaurants="🍛 مطعم Komala Vilas | 🥘 مطعم Banana Leaf Apolo | 🌿 مطعم Gayatri"
@@ -209,14 +209,14 @@
               'city',
               'little-india-sg',
               'ليتل إنديا',
-              '/img/Little India Singapore.jpg',
+              '/frontend/img/Little India Singapore.jpg',
             );
           "
         >
           🏙️
         </button>
         <img
-          src="/img/Little India Singapore.jpg"
+          src="/frontend/img/Little India Singapore.jpg"
           alt="ليتل إنديا"
           class="cite-img"
         />
@@ -230,7 +230,7 @@
       <div
         class="cite"
         data-name="كامبونغ غلام – Kampong Glam"
-        data-img="/img/Kampong Glam.jpg"
+        data-img="/frontend/img/Kampong Glam.jpg"
         data-desc="الحي الإسلامي التاريخي في سنغافورة، يتميز بمسجد السلطان الشهير وشارع هاجي لين الملون ومحلات العطور والأقمشة والمطاعم العربية والملاوية الأصيلة."
         data-historic="🕌 مسجد السلطان – Sultan Mosque | 🎨 شارع هاجي لين – Haji Lane | 🏯 قصر المالايو – Malay Heritage Centre | 🛍️ شارع العرب – Arab Street"
         data-restaurants="🥘 مطعم Zam Zam | 🌿 مطعم Hjh Maimunah | 🍖 مطعم Warong Nasi Pariaman"
@@ -245,13 +245,13 @@
               'city',
               'kampong-glam',
               'كامبونغ غلام',
-              '/img/Kampong Glam.jpg',
+              '/frontend/img/Kampong Glam.jpg',
             );
           "
         >
           🏙️
         </button>
-        <img src="/img/Kampong Glam.jpg" alt="كامبونغ غلام" class="cite-img" />
+        <img src="/frontend/img/Kampong Glam.jpg" alt="كامبونغ غلام" class="cite-img" />
         <span class="name">كامبونغ غلام – Kampong Glam</span>
         <p class="info">حي تاريخي جميل.</p>
         <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
@@ -265,59 +265,59 @@
     </div>
     <section class="foods-grid">
       <div class="foods">
-        <img src="/img/Chicken Rice.jpg" alt="" class="foods-img" />
+        <img src="/frontend/img/Chicken Rice.jpg" alt="" class="foods-img" />
         <span class="name-foods">أرز الدجاج – Chicken Rice</span>
         <div class="food-info">طبق سنغافوري مشهور.</div>
-        <a href="/recipes/recipes.html?recipe=chicken-rice" class="for-more-btn"
+        <a href="/frontend/recipes/recipes.html?recipe=chicken-rice" class="for-more-btn"
           >المزيد</a
         >
       </div>
 
       <div class="foods">
-        <img src="/img/Chilli Crab.jpg" alt="" class="foods-img" />
+        <img src="/frontend/img/Chilli Crab.jpg" alt="" class="foods-img" />
         <span class="name-foods">تشيلي كراب – Chilli Crab</span>
         <div class="food-info">سلطعون بصلصة حارة.</div>
-        <a href="/recipes/recipes.html?recipe=chilli-crab" class="for-more-btn"
+        <a href="/frontend/recipes/recipes.html?recipe=chilli-crab" class="for-more-btn"
           >المزيد</a
         >
       </div>
 
       <div class="foods">
-        <img src="/img/Singapore Laksa.jpg" alt="" class="foods-img" />
+        <img src="/frontend/img/Singapore Laksa.jpg" alt="" class="foods-img" />
         <span class="name-foods">لاكسا – Singapore Laksa</span>
         <div class="food-info">شوربة نودلز غنية.</div>
         <a
-          href="/recipes/recipes.html?recipe=singapore-laksa"
+          href="/frontend/recipes/recipes.html?recipe=singapore-laksa"
           class="for-more-btn"
           >المزيد</a
         >
       </div>
 
       <div class="foods">
-        <img src="/img/Singapore Satay.jpg" alt="" class="foods-img" />
+        <img src="/frontend/img/Singapore Satay.jpg" alt="" class="foods-img" />
         <span class="name-foods">ساتاي – Singapore Satay</span>
         <div class="food-info">أسياخ مشوية لذيذة.</div>
         <a
-          href="/recipes/recipes.html?recipe=singapore-satay"
+          href="/frontend/recipes/recipes.html?recipe=singapore-satay"
           class="for-more-btn"
           >المزيد</a
         >
       </div>
 
       <div class="foods">
-        <img src="/img/Kaya Toast.jpg" alt="" class="foods-img" />
+        <img src="/frontend/img/Kaya Toast.jpg" alt="" class="foods-img" />
         <span class="name-foods">كايا توست – Kaya Toast</span>
         <div class="food-info">خبز مع مربى جوز الهند.</div>
-        <a href="/recipes/recipes.html?recipe=kaya-toast" class="for-more-btn"
+        <a href="/frontend/recipes/recipes.html?recipe=kaya-toast" class="for-more-btn"
           >المزيد</a
         >
       </div>
 
       <div class="foods">
-        <img src="/img/Ice Kachang.jpg" alt="" class="foods-img" />
+        <img src="/frontend/img/Ice Kachang.jpg" alt="" class="foods-img" />
         <span class="name-foods">آيس كاتشانغ – Ice Kachang</span>
         <div class="food-info">حلى مثلج منعش.</div>
-        <a href="/recipes/recipes.html?recipe=ice-kachang" class="for-more-btn"
+        <a href="/frontend/recipes/recipes.html?recipe=ice-kachang" class="for-more-btn"
           >المزيد</a
         >
       </div>
@@ -328,58 +328,58 @@
     <section class="events-grid">
       <div class="event">
         <img
-          src="/img/Universal Studios Singapore.jpg"
+          src="/frontend/img/Universal Studios Singapore.jpg"
           alt=""
           class="event-img"
         />
         <span class="name-event">يونيفرسال ستوديوز – Universal Studios</span>
         <div class="event-info">مدينة ألعاب ممتعة.</div>
-        <a href="/events/events.html?event=UniversalStudios" class="event-btn"
+        <a href="/frontend/events/events.html?event=UniversalStudios" class="event-btn"
           >المزيد</a
         >
       </div>
 
       <div class="event">
-        <img src="/img/Gardens by the Bay.jpg" alt="" class="event-img" />
+        <img src="/frontend/img/Gardens by the Bay.jpg" alt="" class="event-img" />
         <span class="name-event">حدائق الخليج – Gardens by the Bay</span>
         <div class="event-info">معالم طبيعية مستقبلية.</div>
-        <a href="/events/events.html?event=GardensByTheBay" class="event-btn"
+        <a href="/frontend/events/events.html?event=GardensByTheBay" class="event-btn"
           >المزيد</a
         >
       </div>
 
       <div class="event">
-        <img src="/img/Night Safari Singapore.jpg" alt="" class="event-img" />
+        <img src="/frontend/img/Night Safari Singapore.jpg" alt="" class="event-img" />
         <span class="name-event">سفاري الليل – Night Safari</span>
         <div class="event-info">تجربة فريدة بالحيوانات.</div>
-        <a href="/events/events.html?event=NightSafari" class="event-btn"
+        <a href="/frontend/events/events.html?event=NightSafari" class="event-btn"
           >المزيد</a
         >
       </div>
 
       <div class="event">
-        <img src="/img/Marina Bay Sands.jpg" alt="" class="event-img" />
+        <img src="/frontend/img/Marina Bay Sands.jpg" alt="" class="event-img" />
         <span class="name-event">مارينا باي ساندز – Marina Bay Sands</span>
         <div class="event-info">عروض ضوئية رائعة.</div>
-        <a href="/events/events.html?event=MarinaBaySands" class="event-btn"
+        <a href="/frontend/events/events.html?event=MarinaBaySands" class="event-btn"
           >المزيد</a
         >
       </div>
 
       <div class="event">
-        <img src="/img/Singapore Shopping.jpg" alt="" class="event-img" />
+        <img src="/frontend/img/Singapore Shopping.jpg" alt="" class="event-img" />
         <span class="name-event">التسوق – Singapore Shopping</span>
         <div class="event-info">تجربة عالمية متنوعة.</div>
-        <a href="/events/events.html?event=SingaporeShopping" class="event-btn"
+        <a href="/frontend/events/events.html?event=SingaporeShopping" class="event-btn"
           >المزيد</a
         >
       </div>
 
       <div class="event">
-        <img src="/img/SEA Aquarium.jpg" alt="" class="event-img" />
+        <img src="/frontend/img/SEA Aquarium.jpg" alt="" class="event-img" />
         <span class="name-event">أكواريوم سنغافورة – SEA Aquarium</span>
         <div class="event-info">تجربة بحرية جميلة.</div>
-        <a href="/events/events.html?event=SEAAquarium" class="event-btn"
+        <a href="/frontend/events/events.html?event=SEAAquarium" class="event-btn"
           >المزيد</a
         >
       </div>
@@ -405,7 +405,7 @@
         </div>
       </div>
     </div>
-    <script src="/countries/countries.js"></script>
-    <script src="/auth/auth.js"></script>
+    <script src="/frontend/countries/countries.js"></script>
+    <script src="/frontend/auth/auth.js"></script>
   </body>
 </html>

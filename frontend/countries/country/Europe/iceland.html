@@ -7,11 +7,11 @@
     <title>سفرة</title>
 
     <!-- ملف الستايل الأساسي -->
-    <link rel="stylesheet" href="/countries/countries.css">
+    <link rel="stylesheet" href="/frontend/countries/countries.css">
 
     <!-- خط عربي -->
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@500;600&display=swap');
+        @import url('https://fonts.googleapis.com/css/2?family=Noto+Sans+Arabic:wght@500;600&display=swap');
     </style>
 
 </head>
@@ -25,28 +25,28 @@
         <div class="hamburger" id="menu-btn">☰</div>
 
         <div class="auth-buttons" id="authButtons">
-    <a href="/auth/login.html" class="login">تسجيل دخول</a>
-    <a href="/auth/signup.html" class="signup">إنشاء حساب</a>
+    <a href="/frontend/auth/login.html" class="login">تسجيل دخول</a>
+    <a href="/frontend/auth/signup.html" class="signup">إنشاء حساب</a>
 </div>
 
 <div class="user-menu" id="userMenu">
-    <img id="userAvatar" src="/img/default-avatar.png" alt="المستخدم">
+    <img id="userAvatar" src="/frontend/img/default-avatar.png" alt="المستخدم">
     <span class="user-name" id="userName"></span>
     <div class="user-dropdown">
-        <a href="/profile/profile.html">الملف الشخصي</a>
-        <a href="/index/index.html" id="logoutBtn">تسجيل الخروج</a>
+        <a href="/frontend/profile/profile.html">الملف الشخصي</a>
+        <a href="/frontend/index//frontend/index/.html" id="logoutBtn">تسجيل الخروج</a>
     </div>
 </div>
 
         <ul class="nav-list">
-            <li><a href="/index/index.html">الرئيسية</a></li>
-            <li><a href="/countries/countries.html">الدول</a></li>
-            <li><a href="/events/events.html">الفعاليات</a></li>
-            <li><a href="/recipes/recipes.html">الوصفات</a></li>
+            <li><a href="/frontend/index//frontend/index/.html">الرئيسية</a></li>
+            <li><a href="/frontend/countries/countries.html">الدول</a></li>
+            <li><a href="/frontend/events/events.html">الفعاليات</a></li>
+            <li><a href="/frontend/recipes/recipes.html">الوصفات</a></li>
         </ul>
 
         <div class="logo">
-            <a href="/index/index.html"> <img src="/img/logo3.JPG" alt="سفرة"></a>
+            <a href="/frontend/index//frontend/index/.html"> <img src="/frontend/img/logo3.JPG" alt="سفرة"></a>
         </div>
 
 
@@ -58,14 +58,14 @@
         <span class="close-btn" id="close-btn">✖</span>
 
         <ul>
-            <li><a href="/index/index.html">الرئيسية</a></li>
-            <li><a href="/countries/countries.html">الدول</a></li>
-            <li><a href="/events/events.html">الفعاليات</a></li>
-            <li><a href="/recipes/recipes.html  ">الوصفات</a></li>
+            <li><a href="/frontend/index//frontend/index/.html">الرئيسية</a></li>
+            <li><a href="/frontend/countries/countries.html">الدول</a></li>
+            <li><a href="/frontend/events/events.html">الفعاليات</a></li>
+            <li><a href="/frontend/recipes/recipes.html  ">الوصفات</a></li>
         </ul>
     </nav>
     <header>
-        <a href="/countries/countries.html" class="back-btn">رجوع</a>
+        <a href="/frontend/countries/countries.html" class="back-btn">رجوع</a>
     </header>
 
     <section>
@@ -81,14 +81,14 @@
     <section class="cities-grid">
        <div class="cite"
     data-name="ريكيافيك – Reykjavík"
-    data-img="/img/Reykjavik.jpg"
+    data-img="/frontend/img/Reykjavik.jpg"
     data-desc="عاصمة آيسلندا النابضة بالحياة وأصغر عاصمة في العالم، تجمع بين الثقافة الغنية والمقاهي العصرية والبنية التحتية الحديثة مع إطلالات خلابة على الجبال والمحيط."
     data-historic="🏛️ كنيسة هالغريمسكيركيا – Hallgrímskirkja | 🌊 قاعة هارپا – Harpa Concert Hall | 🏘️ حي الأولد هاربور – Old Harbour | 🗿 تمثال صن فوياجر – Sun Voyager"
     data-restaurants="🦞 مطعم Dill | 🐟 مطعم Fiskmarkurinn | 🌿 مطعم Nostra"
     data-cafes="☕ مقهى Reykjavík Roasters | ☕ مقهى Kaffihús Vesturbæjar | ☕ مقهى Café Babalu"
     data-events="🌌 الشفق القطبي – Northern Lights | 🌊 بحيرة بلو لاغون – Blue Lagoon | 🏔️ جولة الدائرة الذهبية – Golden Circle">
-    <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'reykjavik', 'ريكيافيك', '/img/Reykjavik.jpg')">🏙️</button>
-    <img src="/img/Reykjavik.jpg" alt="ريكيافيك" class="cite-img">
+    <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'reykjavik', 'ريكيافيك', '/frontend/img/Reykjavik.jpg')">🏙️</button>
+    <img src="/frontend/img/Reykjavik.jpg" alt="ريكيافيك" class="cite-img">
     <span class="name">ريكيافيك – Reykjavík</span>
     <p class="info">العاصمة النابضة بالحياة، تجمع بين الثقافة والطبيعة والمقاهي العصرية.</p>
     <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">تفاصيل</button>
@@ -96,14 +96,14 @@
 
 <div class="cite"
     data-name="أكوريري – Akureyri"
-    data-img="/img/Akureyri.jpg"
+    data-img="/frontend/img/Akureyri.jpg"
     data-desc="عاصمة شمال آيسلندا ومركزها الثقافي والاقتصادي، مدينة هادئة وجميلة تقع على ضفاف أحد أعمق الفيوردات محاطة بالجبال الشاهقة والطبيعة الخلابة."
     data-historic="⛪ كنيسة أكوريري – Akureyrarkirkja | 🌿 حديقة أكوريري النباتية – Botanical Garden | 🏔️ منتجع تزلج هليدارفيال – Hlíðarfjall | 🏘️ متحف المدينة – Akureyri Museum"
     data-restaurants="🐟 مطعم Strikið | 🌿 مطعم Rub23 | 🍖 مطعم Greifinn"
     data-cafes="☕ مقهى Bláa Kannan | ☕ مقهى Kaffi Ilmur | ☕ مقهى Bryggjan"
     data-events="🌌 الشفق القطبي – Northern Lights | 🐋 مشاهدة الحيتان – Whale Watching | ⛷️ التزلج في هليدارفيال – Hlíðarfjall Skiing">
-    <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'akureyri', 'أكوريري', '/img/Akureyri.jpg')">🏙️</button>
-    <img src="/img/Akureyri.jpg" alt="أكوريري" class="cite-img">
+    <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'akureyri', 'أكوريري', '/frontend/img/Akureyri.jpg')">🏙️</button>
+    <img src="/frontend/img/Akureyri.jpg" alt="أكوريري" class="cite-img">
     <span class="name">أكوريري – Akureyri</span>
     <p class="info">عاصمة الشمال، مدينة هادئة محاطة بالجبال والطبيعة.</p>
     <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">تفاصيل</button>
@@ -111,14 +111,14 @@
 
 <div class="cite"
     data-name="فيك – Vík"
-    data-img="/img/Vik.jpg"
+    data-img="/frontend/img/Vik.jpg"
     data-desc="أجمل قرية ساحلية في آيسلندا، تشتهر بشاطئها الأسود الدرامي المصنوع من الحمم البركانية وتكوينات الصخور البازلتية الشهيرة، تحيط بها الجبال والشلالات في مشهد طبيعي لا مثيل له."
     data-historic="⛪ كنيسة فيك – Vík Church | 🏖️ شاطئ ريينيسفارا – Reynisfjara Black Beach | 🗿 صخور ريينيسدرانغار – Reynisdrangar | 🏔️ بركان كاتلا – Katla"
     data-restaurants="🍖 مطعم Halldórskaffi | 🐟 مطعم The Soup Company | 🌿 مطعم Sudur-Vik"
     data-cafes="☕ مقهى Black Beach Café | ☕ مقهى Vikurskáli | ☕ مقهى Ströndin"
     data-events="🏖️ الشاطئ الأسود – Reynisfjara Beach | 🌋 بركان كاتلا – Katla Volcano | 💦 شلال سكوغافوس – Skógafoss">
-    <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'vik', 'فيك', '/img/Vik.jpg')">🏙️</button>
-    <img src="/img/Vik.jpg" alt="فيك" class="cite-img">
+    <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'vik', 'فيك', '/frontend/img/Vik.jpg')">🏙️</button>
+    <img src="/frontend/img/Vik.jpg" alt="فيك" class="cite-img">
     <span class="name">فيك – Vík</span>
     <p class="info">قرية صغيرة مشهورة بالشواطئ السوداء والمناظر الدرامية.</p>
     <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">تفاصيل</button>
@@ -126,14 +126,14 @@
 
 <div class="cite"
     data-name="هوفن – Höfn"
-    data-img="/img/Hofn.jpg"
+    data-img="/frontend/img/Hofn.jpg"
     data-desc="بلدة ساحلية هادئة في جنوب شرق آيسلندا، تشتهر بمأكولاتها البحرية الطازجة خاصة جراد البحر الشهير، وتقع على مقربة من بحيرة يوكولسارلون الجليدية الساحرة."
     data-historic="🧊 بحيرة يوكولسارلون – Jökulsárlón Glacier Lagoon | 🏖️ شاطئ الألماس – Diamond Beach | 🏔️ نهر فاتنا الجليدي – Vatnajökull | 🌊 ميناء هوفن – Höfn Harbour"
     data-restaurants="🦞 مطعم Pakkhús | 🐟 مطعم Hafnarbuðin | 🌿 مطعم Humarhöfnin"
     data-cafes="☕ مقهى Café Skalinn | ☕ مقهى Ósinn | ☕ مقهى Gamlabúð"
     data-events="🧊 بحيرة يوكولسارلون – Jökulsárlón | 🏖️ شاطئ الألماس – Diamond Beach | 🏔️ نهر فاتنا الجليدي – Vatnajökull Glacier">
-    <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'hofn', 'هوفن', '/img/Hofn.jpg')">🏙️</button>
-    <img src="/img/Hofn.jpg" alt="هوفن" class="cite-img">
+    <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'hofn', 'هوفن', '/frontend/img/Hofn.jpg')">🏙️</button>
+    <img src="/frontend/img/Hofn.jpg" alt="هوفن" class="cite-img">
     <span class="name">هوفن – Höfn</span>
     <p class="info">بلدة ساحلية هادئة مشهورة بالمأكولات البحرية وإطلالات الأنهار الجليدية.</p>
     <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">تفاصيل</button>
@@ -141,14 +141,14 @@
 
 <div class="cite"
     data-name="هوسافيك – Húsavík"
-    data-img="/img/Husavik.jpg"
+    data-img="/frontend/img/Husavik.jpg"
     data-desc="عاصمة مشاهدة الحيتان في آيسلندا وربما في العالم، بلدة ساحلية صغيرة وساحرة في شمال آيسلندا تتميز بموقعها المثالي لرحلات مشاهدة الحيتان والدلافين في خليج سكيالفاندي."
     data-historic="⛪ كنيسة هوسافيك – Húsavík Church | 🐋 متحف الحيتان – Whale Museum | 🌊 خليج سكيالفاندي – Skjálfandi Bay | 🌋 بركان كرافلا – Krafla"
     data-restaurants="🐋 مطعم Gamli Baukur | 🐟 مطعم Naustið | 🌿 مطعم Salthúsið"
     data-cafes="☕ مقهى Heimabyggð | ☕ مقهى Kaffihús Heimabyggðar | ☕ مقهى Bókakaffi"
     data-events="🐋 مشاهدة الحيتان – Whale Watching | 🌌 الشفق القطبي – Northern Lights | 🌋 منطقة مايفاتن – Lake Mývatn">
-    <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'husavik', 'هوسافيك', '/img/Husavik.jpg')">🏙️</button>
-    <img src="/img/Husavik.jpg" alt="هوسافيك" class="cite-img">
+    <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'husavik', 'هوسافيك', '/frontend/img/Husavik.jpg')">🏙️</button>
+    <img src="/frontend/img/Husavik.jpg" alt="هوسافيك" class="cite-img">
     <span class="name">هوسافيك – Húsavík</span>
     <p class="info">عاصمة مشاهدة الحيتان في آيسلندا.</p>
     <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">تفاصيل</button>
@@ -156,14 +156,14 @@
 
 <div class="cite"
     data-name="إيسافجوردور – Ísafjörður"
-    data-img="/img/Isafjordur.jpg"
+    data-img="/frontend/img/Isafjordur.jpg"
     data-desc="عاصمة منطقة الفيوردات الغربية في آيسلندا، بلدة جميلة وهادئة محاطة بجبال شاهقة وفيوردات عميقة، تعتبر من أفضل الأماكن لمشاهدة الشفق القطبي بعيداً عن أضواء المدينة."
     data-historic="🏘️ متحف الفيوردات الغربية – Westfjords Heritage Museum | 🏔️ جبال الفيوردات – Westfjords Mountains | 🌊 فيورد إيسافجوردي – Ísafjarðardjúp | ⛷️ مركز التزلج – Ski Center"
     data-restaurants="🐟 مطعم Tjöruhúsið | 🌿 مطعم Við Pollinn | 🍖 مطعم Heimabyggð"
     data-cafes="☕ مقهى Café Riis | ☕ مقهى Simbahöllin | ☕ مقهى Edinborg"
     data-events="🌌 الشفق القطبي – Northern Lights | 🏔️ مشي جبلي – Hiking | 🐦 مشاهدة الطيور البحرية – Birdwatching">
-    <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'isafjordur', 'إيسافجوردور', '/img/Isafjordur.jpg')">🏙️</button>
-    <img src="/img/Isafjordur.jpg" alt="إيسافجوردور" class="cite-img">
+    <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'isafjordur', 'إيسافجوردور', '/frontend/img/Isafjordur.jpg')">🏙️</button>
+    <img src="/frontend/img/Isafjordur.jpg" alt="إيسافجوردور" class="cite-img">
     <span class="name">إيسافجوردور – Ísafjörður</span>
     <p class="info">في غرب الفيوردات، ألوان الشفق تظهر بوضوح وسط الجبال.</p>
     <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">تفاصيل</button>
@@ -175,52 +175,52 @@
     </div>
     <section class="foods-grid">
         <div class="foods">
-            <img src="/img/Hangikjöt.jpg" alt="" class="foods-img">
+            <img src="/frontend/img/Hangikjöt.jpg" alt="" class="foods-img">
             <span class="name-foods">هانغيكيوت – Hangikjöt</span>
             <div class="food-info">
                 طبق مشهور يقدم مع بطاطس.
             </div>
-            <a href="/recipes/recipes.html?recipe=hangikjot" class="for-more-btn">المزيد</a>
+            <a href="/frontend/recipes/recipes.html?recipe=hangikjot" class="for-more-btn">المزيد</a>
         </div>
         <div class="foods">
-            <img src="/img/Vínarterta.webp" alt="" class="foods-img">
+            <img src="/frontend/img/Vínarterta.webp" alt="" class="foods-img">
             <span class="name-foods">فينارتيرتا – Vínarterta</span>
             <div class="food-info">
                 كيك طبقات تقليدي.
             </div>
-            <a href="/recipes/recipes.html?recipe=vinarterta" class="for-more-btn">المزيد</a>
+            <a href="/frontend/recipes/recipes.html?recipe=vinarterta" class="for-more-btn">المزيد</a>
         </div>
         <div class="foods">
-            <img src="/img/Plokkfiskur.jpg" alt="" class="foods-img">
+            <img src="/frontend/img/Plokkfiskur.jpg" alt="" class="foods-img">
             <span class="name-foods">بلوكفيسكر – Plokkfiskur</span>
             <div class="food-info">
                 سمك أبيض مع صوص كريمي.
             </div>
-            <a href="/recipes/recipes.html?recipe=plokkfiskur" class="for-more-btn">المزيد</a>
+            <a href="/frontend/recipes/recipes.html?recipe=plokkfiskur" class="for-more-btn">المزيد</a>
         </div>
         <div class="foods">
-            <img src="/img/seafood-soup-7-1.jpg" alt="" class="foods-img">
+            <img src="/frontend/img/seafood-soup-7-1.jpg" alt="" class="foods-img">
             <span class="name-foods">شوربة المأكولات البحرية – Seafood Soup</span>
             <div class="food-info">
                 شوربة كريمية غنية.
             </div>
-            <a href="/recipes/recipes.html?recipe=seafood-soup" class="for-more-btn">المزيد</a>
+            <a href="/frontend/recipes/recipes.html?recipe=seafood-soup" class="for-more-btn">المزيد</a>
         </div>
         <div class="foods">
-            <img src="/img/Pönnukökur.jpg" alt="" class="foods-img">
+            <img src="/frontend/img/Pönnukökur.jpg" alt="" class="foods-img">
             <span class="name-foods">بونوكوكور – Pönnukökur</span>
             <div class="food-info">
                 فطائر رقيقة تقدم مع مربى.
             </div>
-            <a href="/recipes/recipes.html?recipe=ponnukokur" class="for-more-btn">المزيد</a>
+            <a href="/frontend/recipes/recipes.html?recipe=ponnukokur" class="for-more-btn">المزيد</a>
         </div>
         <div class="foods">
-            <img src="/img/Skyr Cheesecake.webp" alt="" class="foods-img">
+            <img src="/frontend/img/Skyr Cheesecake.webp" alt="" class="foods-img">
             <span class="name-foods">تشيز كيك سكير – Skyr Cheesecake</span>
             <div class="food-info">
                 تشيزكيك خفيف بطابع محلي.
             </div>
-            <a href="/recipes/recipes.html?recipe=skyr-cheesecake" class="for-more-btn">المزيد</a>
+            <a href="/frontend/recipes/recipes.html?recipe=skyr-cheesecake" class="for-more-btn">المزيد</a>
         </div>
     </section>
     <div class="events-main">
@@ -228,50 +228,50 @@
     </div>
     <section class="events-grid">
         <div class="event">
-            <img src="/img/Northern Lights (Aurora Borealis).webp" alt="" class="event-img">
+            <img src="/frontend/img/Northern Lights (Aurora Borealis).webp" alt="" class="event-img">
             <span class="name-event">الشفق القطبي – Northern Lights</span>
             <div class="event-info">
                 مشاهدة السماء تتلوّن بألوان خضراء وبنفسجية ساحرة.
             </div>
-            <a href="/events/events.html?event=NorthernLights" class="event-btn">المزيد</a>
+            <a href="/frontend/events/events.html?event=NorthernLights" class="event-btn">المزيد</a>
         </div>
         <div class="event">
-            <img src="/img/Blue-Lagoon.jpg" alt="" class="event-img">
+            <img src="/frontend/img/Blue-Lagoon.jpg" alt="" class="event-img">
             <span class="name-event">البحيرة الزرقاء – Blue Lagoon</span>
             <div class="event-info">الاسترخاء في ينابيع حارة وسط طبيعة بركانية.</div>
-            <a href="/events/events.html?event=BlueLagoon" class="event-btn">المزيد</a>
+            <a href="/frontend/events/events.html?event=BlueLagoon" class="event-btn">المزيد</a>
         </div>
         <div class="event">
-            <img src="/img/مشاهدة الحيتان في هيرمانوس.jpg" alt="" class="event-img">
+            <img src="/frontend/img/مشاهدة الحيتان في هيرمانوس.jpg" alt="" class="event-img">
             <span class="name-event">مشاهدة الحيتان – Whale Watching</span>
             <div class="event-info">
                 رحلات بحرية لرؤية الحيتان والدلافين.
             </div>
-            <a href="/events/events.html?event=WhaleWatching" class="event-btn">المزيد</a>
+            <a href="/frontend/events/events.html?event=WhaleWatching" class="event-btn">المزيد</a>
         </div>
         <div class="event">
-            <img src="/img/Skógafoss Waterfall.jpeg" alt="" class="event-img">
+            <img src="/frontend/img/Skógafoss Waterfall.jpeg" alt="" class="event-img">
             <span class="name-event">شلال سكوغافوس – Skógafoss</span>
             <div class="event-info">
                 شلال ضخم بقوة اندفاع رائعة.
             </div>
-            <a href="/events/events.html?event=Skogafoss" class="event-btn">المزيد</a>
+            <a href="/frontend/events/events.html?event=Skogafoss" class="event-btn">المزيد</a>
         </div>
         <div class="event">
-            <img src="/img/Horse Riding.jpg" alt="" class="event-img">
+            <img src="/frontend/img/Horse Riding.jpg" alt="" class="event-img">
             <span class="name-event">ركوب الخيل الآيسلندي – Icelandic Horse Riding</span>
             <div class="event-info">
                 جولة هادئة على خيول آيسلندية أصيلة
             </div>
-            <a href="/events/events.html?event=IcelandicHorseRiding" class="event-btn">المزيد</a>
+            <a href="/frontend/events/events.html?event=IcelandicHorseRiding" class="event-btn">المزيد</a>
         </div>
         <div class="event">
-            <img src="/img/Jökulsárlón Glacier Lagoon" alt="" class="event-img">
+            <img src="/frontend/img/Jökulsárlón Glacier Lagoon" alt="" class="event-img">
             <span class="name-event">بحيرة جوكولسارلون الجليدية – Glacier Lagoon</span>
             <div class="event-info">
                 قوارب بين كتل جليدية عائمة.
             </div>
-            <a href="/events/events.html?event=GlacierLagoon" class="event-btn">المزيد</a>
+            <a href="/frontend/events/events.html?event=GlacierLagoon" class="event-btn">المزيد</a>
         </div>
     </section>
       <!-- Modal المدينة -->
@@ -295,8 +295,8 @@
         </div>
       </div>
     </div>
-    <script src="/countries/countries.js"></script>
-    <script src="/auth/auth.js" ></script>
+    <script src="/frontend/countries/countries.js"></script>
+    <script src="/frontend/auth/auth.js" ></script>
 </body>
 
 </html>

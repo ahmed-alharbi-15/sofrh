@@ -6,11 +6,11 @@
     <title>سفرة</title>
 
     <!-- ملف الستايل الأساسي -->
-    <link rel="stylesheet" href="/countries/countries.css" />
+    <link rel="stylesheet" href="/frontend/countries/countries.css" />
 
     <!-- خط عربي -->
     <style>
-      @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@500;600&display=swap");
+      @import url("https://fonts.googleapis.com/css/2?family=Noto+Sans+Arabic:wght@500;600&display=swap");
     </style>
   </head>
 
@@ -20,28 +20,28 @@
       <div class="hamburger" id="menu-btn">☰</div>
 
       <div class="auth-buttons" id="authButtons">
-        <a href="/auth/login.html" class="login">تسجيل دخول</a>
-        <a href="/auth/signup.html" class="signup">إنشاء حساب</a>
+        <a href="/frontend/auth/login.html" class="login">تسجيل دخول</a>
+        <a href="/frontend/auth/signup.html" class="signup">إنشاء حساب</a>
       </div>
 
       <div class="user-menu" id="userMenu">
-        <img id="userAvatar" src="/img/default-avatar.png" alt="المستخدم" />
+        <img id="userAvatar" src="/frontend/img/default-avatar.png" alt="المستخدم" />
         <span class="user-name" id="userName"></span>
         <div class="user-dropdown">
-          <a href="/profile/profile.html">الملف الشخصي</a>
-          <a href="/index/index.html" id="logoutBtn">تسجيل الخروج</a>
+          <a href="/frontend/profile/profile.html">الملف الشخصي</a>
+          <a href="/frontend/index//frontend/index/.html" id="logoutBtn">تسجيل الخروج</a>
         </div>
       </div>
 
       <ul class="nav-list">
-        <li><a href="/index/index.html">الرئيسية</a></li>
-        <li><a href="/countries/countries.html">الدول</a></li>
-        <li><a href="/events/events.html">الفعاليات</a></li>
-        <li><a href="/recipes/recipes.html">الوصفات</a></li>
+        <li><a href="/frontend/index//frontend/index/.html">الرئيسية</a></li>
+        <li><a href="/frontend/countries/countries.html">الدول</a></li>
+        <li><a href="/frontend/events/events.html">الفعاليات</a></li>
+        <li><a href="/frontend/recipes/recipes.html">الوصفات</a></li>
       </ul>
 
       <div class="logo">
-        <a href="/index/index.html"> <img src="/img/logo3.JPG" alt="سفرة" /></a>
+        <a href="/frontend/index//frontend/index/.html"> <img src="/frontend/img/logo3.JPG" alt="سفرة" /></a>
       </div>
     </header>
 
@@ -50,14 +50,14 @@
       <span class="close-btn" id="close-btn">✖</span>
 
       <ul>
-        <li><a href="/index/index.html">الرئيسية</a></li>
-        <li><a href="/countries/countries.html">الدول</a></li>
-        <li><a href="/events/events.html">الفعاليات</a></li>
-        <li><a href="/recipes/recipes.html  ">الوصفات</a></li>
+        <li><a href="/frontend/index//frontend/index/.html">الرئيسية</a></li>
+        <li><a href="/frontend/countries/countries.html">الدول</a></li>
+        <li><a href="/frontend/events/events.html">الفعاليات</a></li>
+        <li><a href="/frontend/recipes/recipes.html  ">الوصفات</a></li>
       </ul>
     </nav>
     <header>
-      <a href="/countries/countries.html" class="back-btn">رجوع</a>
+      <a href="/frontend/countries/countries.html" class="back-btn">رجوع</a>
     </header>
 
     <section>
@@ -74,7 +74,7 @@
       <div
         class="cite"
         data-name="مراكش – Marrakech"
-        data-img="/img/مراكش.webp"
+        data-img="/frontend/img/مراكش.webp"
         data-desc="المدينة الحمراء وجوهرة المغرب، تجمع بين ساحة جامع الفنا الأسطورية والأسواق الملونة الحيوية والقصور التاريخية والحدائق الساحرة."
         data-historic="🕌 جامع الكتبية – Koutoubia Mosque | 🏰 قصر البهيا – Bahia Palace | 🏛️ متحف مراكش – Marrakech Museum | 🌿 حدائق المجورل – Majorelle Garden"
         data-restaurants="🏰 دار ياقوت – Dar Yacout | 🍝 بيبي نيرو – Pepe Nero | 🌿 بازار كافيه – Bazaar Café | 🌹 لا تابل دو رياض – La Table Du Riad | 🎪 مطاعم الساحة – Jemaa el-Fna Stalls"
@@ -85,12 +85,12 @@
           class="save-btn"
           onclick="
             event.stopPropagation();
-            saveItem('city', 'marrakech', 'مراكش', '/img/مراكش.webp');
+            saveItem('city', 'marrakech', 'مراكش', '/frontend/img/مراكش.webp');
           "
         >
           🏙️
         </button>
-        <img src="/img/مراكش.webp" alt="مراكش" class="cite-img" />
+        <img src="/frontend/img/مراكش.webp" alt="مراكش" class="cite-img" />
         <span class="name">مراكش – Marrakech</span>
         <p class="info">
           المدينة الحمراء، ساحة جامع الفنا، أسواق ملونة وحيوية.
@@ -102,7 +102,7 @@
       <div
         class="cite"
         data-name="فاس – Fes"
-        data-img="/img/فاس.jpg"
+        data-img="/frontend/img/فاس.jpg"
         data-desc="عاصمة المغرب الثقافية وأقدم مدينة إسلامية معمورة في العالم، تشتهر بمدينتها القديمة المتاهة من الأزقة الضيقة والحرف التقليدية ودباغة الجلود الأسطورية."
         data-historic="🕌 جامعة القرويين – Al-Qarawiyyin University | 🏰 القصر الملكي – Royal Palace | 🏺 دباغة شوارة – Chouara Tannery | 🕌 المدرسة البوعنانية – Bou Inania Madrasa"
         data-restaurants="🍲 دار الشوا – Dar Chwaa | 🌹 لا فيلا فاس – La Villa Fes | 🔥 الحقوني جريل – Elhaqouni Grill | 🥧 مطاعم البسطيلة – Traditional Bastilla | 🎪 مطاعم النجارين – Nejjarine Square"
@@ -113,12 +113,12 @@
           class="save-btn"
           onclick="
             event.stopPropagation();
-            saveItem('city', 'fes', 'فاس', '/img/فاس.jpg');
+            saveItem('city', 'fes', 'فاس', '/frontend/img/فاس.jpg');
           "
         >
           🏙️
         </button>
-        <img src="/img/فاس.jpg" alt="فاس" class="cite-img" />
+        <img src="/frontend/img/فاس.jpg" alt="فاس" class="cite-img" />
         <span class="name">فاس – Fes</span>
         <p class="info">أقدم مدينة قديمة، شوارع ضيقة وصناعات تقليدية.</p>
         <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
@@ -128,7 +128,7 @@
       <div
         class="cite"
         data-name="شفشاون – Chefchaouen"
-        data-img="/img/شفشاون.jpg"
+        data-img="/frontend/img/شفشاون.jpg"
         data-desc="اللؤلؤة الزرقاء في جبال الريف المغربية، مدينة ساحرة تشتهر بأزقتها وجدرانها الزرقاء الفريدة والهواء النقي والهدوء المطلق."
         data-historic="🏰 قصبة شفشاون – Chefchaouen Kasbah | 🕌 ساحة أوطا الحمام – Uta el-Hammam | 🌿 شلالات راس الماء – Ras el-Maa Waterfall | 🏔️ جبال الريف – Rif Mountains"
         data-restaurants="🌄 تريانا – Triana Restaurant | 🥘 باب العين – Bab El Ain | 🌿 السمسم – Sesame Restaurant | 🍽️ البلازا – Plaza Restaurant | 🎭 أندلسيا – Andalucia Restaurant"
@@ -139,12 +139,12 @@
           class="save-btn"
           onclick="
             event.stopPropagation();
-            saveItem('city', 'chefchaouen', 'شفشاون', '/img/شفشاون.jpg');
+            saveItem('city', 'chefchaouen', 'شفشاون', '/frontend/img/شفشاون.jpg');
           "
         >
           🏙️
         </button>
-        <img src="/img/شفشاون.jpg" alt="شفشاون" class="cite-img" />
+        <img src="/frontend/img/شفشاون.jpg" alt="شفشاون" class="cite-img" />
         <span class="name">شفشاون – Chefchaouen</span>
         <p class="info">المدينة الزرقاء، شوارع زرقاء ساحرة وجو هادئ.</p>
         <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
@@ -154,7 +154,7 @@
       <div
         class="cite"
         data-name="دار البيضاء – Casablanca"
-        data-img="/img/دار البيضاء.jpg"
+        data-img="/frontend/img/دار البيضاء.jpg"
         data-desc="أكبر مدينة في المغرب، تشتهر بمنطقة الترفيه والتسوق والكورنيش."
         data-historic="🏗️ مجمع البحرين – Bahrain Mall | 🏢 مركز التجارة العالمي – Global Trade Center | 🌊 الكورنيش – Corniche"
         data-restaurants="🏰 دار القائد – Dar El Kaid | 🌿 المونية – Al Mounia | 🍽️ تابل 3 – Table III | 🦞 برونز – BRONZ Seafood | 🌊 إلولي – Iloli Restaurant"
@@ -169,13 +169,13 @@
               'city',
               'casablanca',
               'دار البيضاء',
-              '/img/دار البيضاء.jpg',
+              '/frontend/img/دار البيضاء.jpg',
             );
           "
         >
           🏙️
         </button>
-        <img src="/img/دار البيضاء.jpg" alt="دار البيضاء" class="cite-img" />
+        <img src="/frontend/img/دار البيضاء.jpg" alt="دار البيضاء" class="cite-img" />
         <span class="name">دار البيضاء – Casablanca</span>
         <p class="info">أكبر مدينة حديثة، مسجد الحسن الثاني والكورنيش.</p>
         <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
@@ -185,7 +185,7 @@
       <div
         class="cite"
         data-name="الصويرة – Essaouira"
-        data-img="/img/الصويرة.jpg"
+        data-img="/frontend/img/الصويرة.jpg"
         data-desc="مدينة ساحلية هادئة، ميناء قديم ورياح قوية."
         data-historic="🏖️ الشاطئ – Beach | 🏛️ المجمع الثقافي – Cultural Complex | 🌊 البحر – Sea"
         data-restaurants="🌊 طاروس – Taros Restaurant | 🎨 كارافان كافيه – Caravan Café | 🧀 لا فرومجري – La Fromagerie | 🍝 سيلفسترو – Silvestro | 🌿 كاريير دي إلسا – Carriére d'Elsa"
@@ -196,12 +196,12 @@
           class="save-btn"
           onclick="
             event.stopPropagation();
-            saveItem('city', 'essaouira', 'الصويرة', '/img/الصويرة.jpg');
+            saveItem('city', 'essaouira', 'الصويرة', '/frontend/img/الصويرة.jpg');
           "
         >
           🏙️
         </button>
-        <img src="/img/الصويرة.jpg" alt="الصويرة" class="cite-img" />
+        <img src="/frontend/img/الصويرة.jpg" alt="الصويرة" class="cite-img" />
         <span class="name">الصويرة – Essaouira</span>
         <p class="info">مدينة ساحلية هادئة، ميناء قديم ورياح قوية.</p>
         <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
@@ -211,7 +211,7 @@
       <div
         class="cite"
         data-name="طنجة – Tanger"
-        data-img="/img/طنجة.jpg"
+        data-img="/frontend/img/طنجة.jpg"
         data-desc="مدينة تاريخية تشتهر بمنطقة الترفيه والتسوق والكورنيش."
         data-historic="🏛️ القصر الملكي – Royal Palace | 🏛️ المتحف الوطني – National Museum | 🌊 الكورنيش – Corniche"
         data-restaurants="🍲 مطعم البشير – Al Bashir Restaurant | 🥘 شي حسن – Chez Hassan | 🌍 علي بابا – Ali Baba Restaurant | 🎪 جندول طنجة – Gondole Tanger | 🌊 مقهى اشقار – Achqar Cafe"
@@ -222,12 +222,12 @@
           class="save-btn"
           onclick="
             event.stopPropagation();
-            saveItem('city', 'tanger', 'طنجة', '/img/طنجة.jpg');
+            saveItem('city', 'tanger', 'طنجة', '/frontend/img/طنجة.jpg');
           "
         >
           🏙️
         </button>
-        <img src="/img/طنجة.jpg" alt="طنجة" class="cite-img" />
+        <img src="/frontend/img/طنجة.jpg" alt="طنجة" class="cite-img" />
         <span class="name">طنجة – Tanger</span>
         <p class="info">
           مدينة تاريخية تشتهر بمنطقة الترفيه والتسوق والكورنيش.
@@ -243,51 +243,51 @@
     </div>
     <section class="foods-grid">
       <div class="foods">
-        <img src="/img/الطاجين.jpg" alt="" class="foods-img" />
+        <img src="/frontend/img/الطاجين.jpg" alt="" class="foods-img" />
         <span class="name-foods">الطاجين – Tajine</span>
         <div class="food-info">لحم أو دجاج مطهو ببطء مع خضار وتوابل.</div>
-        <a href="/recipes/recipes.html?recipe=tajine" class="for-more-btn"
+        <a href="/frontend/recipes/recipes.html?recipe=tajine" class="for-more-btn"
           >المزيد</a
         >
       </div>
       <div class="foods">
-        <img src="/img/الكسكس.webp" alt="" class="foods-img" />
+        <img src="/frontend/img/الكسكس.webp" alt="" class="foods-img" />
         <span class="name-foods">الكسكس – Couscous</span>
         <div class="food-info">حبوب سميد مع خضار ولحم، طبق الجمعة.</div>
-        <a href="/recipes/recipes.html?recipe=couscous" class="for-more-btn"
+        <a href="/frontend/recipes/recipes.html?recipe=couscous" class="for-more-btn"
           >المزيد</a
         >
       </div>
       <div class="foods">
-        <img src="/img/البسطيلة.jpg" alt="" class="foods-img" />
+        <img src="/frontend/img/البسطيلة.jpg" alt="" class="foods-img" />
         <span class="name-foods">البسطيلة – Bastilla</span>
         <div class="food-info">فطيرة حلوة/مالحة بدجاج ولوز وقرفة.</div>
-        <a href="/recipes/recipes.html?recipe=bastilla" class="for-more-btn"
+        <a href="/frontend/recipes/recipes.html?recipe=bastilla" class="for-more-btn"
           >المزيد</a
         >
       </div>
       <div class="foods">
-        <img src="/img/الحريرة.jpg" alt="" class="foods-img" />
+        <img src="/frontend/img/الحريرة.jpg" alt="" class="foods-img" />
         <span class="name-foods">الحريرة – Harira</span>
         <div class="food-info">شوربة دافئة بالطماطم والعدس واللحم.</div>
-        <a href="/recipes/recipes.html?recipe=harira" class="for-more-btn"
+        <a href="/frontend/recipes/recipes.html?recipe=harira" class="for-more-btn"
           >المزيد</a
         >
       </div>
       <div class="foods">
-        <img src="/img/المسمن.jpeg" alt="" class="foods-img" />
+        <img src="/frontend/img/المسمن.jpeg" alt="" class="foods-img" />
         <span class="name-foods">المسمن – Msemen</span>
         <div class="food-info">خبز مقلي مع عسل وزبدة للفطور.</div>
-        <a href="/recipes/recipes.html?recipe=msemen" class="for-more-btn"
+        <a href="/frontend/recipes/recipes.html?recipe=msemen" class="for-more-btn"
           >المزيد</a
         >
       </div>
       <div class="foods">
-        <img src="/img/الشباكية.jpg" alt="" class="foods-img" />
+        <img src="/frontend/img/الشباكية.jpg" alt="" class="foods-img" />
         <span class="name-foods">الشباكية – Shebakia</span>
         عجينة مقلية مغطّسة بالعسل والسمسم.
         <div class="food-info"></div>
-        <a href="/recipes/recipes.html?recipe=shebakia" class="for-more-btn"
+        <a href="/frontend/recipes/recipes.html?recipe=shebakia" class="for-more-btn"
           >المزيد</a
         >
       </div>
@@ -297,48 +297,48 @@
     </div>
     <section class="events-grid">
       <div class="event">
-        <img src="/img/رحلة الجمال في الصحراء.jpg" alt="" class="event-img" />
+        <img src="/frontend/img/رحلة الجمال في الصحراء.jpg" alt="" class="event-img" />
         <span class="name-event">رحلة بالجمال في الصحراء – Camel Trek</span>
         <div class="event-info">تركب جمل وتشوف غروب في الكثبان.</div>
-        <a href="/events/events.html?event=CamelTrek" class="event-btn"
+        <a href="/frontend/events/events.html?event=CamelTrek" class="event-btn"
           >المزيد</a
         >
       </div>
       <div class="event">
-        <img src="/img/حمام-مغربي.jpg" alt="" class="event-img" />
+        <img src="/frontend/img/حمام-مغربي.jpg" alt="" class="event-img" />
         <span class="name-event">الحمام المغربي – Hammam</span>
         <div class="event-info">تدليك وتقشير ومساج، استرخاء كامل.</div>
-        <a href="/events/events.html?event=Hammam" class="event-btn">المزيد</a>
+        <a href="/frontend/events/events.html?event=Hammam" class="event-btn">المزيد</a>
       </div>
       <div class="event">
-        <img src="/img/منطاد في مراكش.jpg" alt="" class="event-img" />
+        <img src="/frontend/img/منطاد في مراكش.jpg" alt="" class="event-img" />
         <span class="name-event">منطاد فوق مراكش – Hot Air Balloon</span>
         <div class="event-info">تطير وتشوف الشروق فوق المدينة.</div>
-        <a href="/events/events.html?event=HotAirBalloon" class="event-btn"
+        <a href="/frontend/events/events.html?event=HotAirBalloon" class="event-btn"
           >المزيد</a
         >
       </div>
       <div class="event">
-        <img src="/img/ركوب الأمواج في الصويرة.jpg" alt="" class="event-img" />
+        <img src="/frontend/img/ركوب الأمواج في الصويرة.jpg" alt="" class="event-img" />
         <span class="name-event">ركوب الأمواج في الصويرة – Essaouira</span>
         <div class="event-info">تزلج على الموج أو الكايت في الشاطئ.</div>
-        <a href="/events/events.html?event=Essaouira" class="event-btn"
+        <a href="/frontend/events/events.html?event=Essaouira" class="event-btn"
           >المزيد</a
         >
       </div>
       <div class="event">
-        <img src="/img/ساحة جامع الفنا ليلاً.webp" alt="" class="event-img" />
+        <img src="/frontend/img/ساحة جامع الفنا ليلاً.webp" alt="" class="event-img" />
         <span class="name-event">ساحة جامع الفنا ليلاً – Jemaa el-Fna</span>
         <div class="event-info">أكل وعروض وموسيقى وحياة كثيرة.</div>
-        <a href="/events/events.html?event=JemaaElFna" class="event-btn"
+        <a href="/frontend/events/events.html?event=JemaaElFna" class="event-btn"
           >المزيد</a
         >
       </div>
       <div class="event">
-        <img src="/img/شفشاون الزرقاء.webp" alt="" class="event-img" />
+        <img src="/frontend/img/شفشاون الزرقاء.webp" alt="" class="event-img" />
         <span class="name-event">شفشاون الزرقاء – Chefchaouen</span>
         <div class="event-info">تمشية في الشوارع الزرقاء وجبال قريبة.</div>
-        <a href="/events/events.html?event=Chefchaouen" class="event-btn"
+        <a href="/frontend/events/events.html?event=Chefchaouen" class="event-btn"
           >المزيد</a
         >
       </div>
@@ -364,7 +364,7 @@
         </div>
       </div>
     </div>
-    <script src="/countries/countries.js"></script>
-    <script src="/auth/auth.js"></script>
+    <script src="/frontend/countries/countries.js"></script>
+    <script src="/frontend/auth/auth.js"></script>
   </body>
 </html>
