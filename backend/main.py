@@ -6,8 +6,19 @@ from fastapi.middleware.cors import CORSMiddleware
 import re
 from typing import Optional
 from fastapi.middleware.cors import CORSMiddleware
+import os
+import cloudinary
+import cloudinary.uploader
+from fastapi import UploadFile, File
 
 app = FastAPI()
+
+# إعدادات كلاوديناري - يسحبها تلقائياً من الـ Environment Variables اللي حطيناها في رندر
+cloudinary.config(
+    cloud_name = os.environ.get('CLOUDINARY_CLOUD_NAME'),
+    api_key = os.environ.get('CLOUDINARY_API_KEY'),
+    api_secret = os.environ.get('CLOUDINARY_API_SECRET')
+)
 
 app.add_middleware(
     CORSMiddleware,
@@ -150,3 +161,26 @@ def change_password(data: ChangePassword):
     finally:
         cur.close()
         conn.close()
+
+
+@app.post("/upload-avatar")
+async def upload_avatar(username: str, file: UploadFile = File(...)):
+    try:
+        # 1. إرسال الصورة للسحاب (في مجلد خاص بمشروع سفرة)  
+        upload_result = cloudinary.uploader.upload(file.file, folder="sofrah_avatars")
+        
+        # 2. استخراج الرابط المباشر للصورة
+        image_url = upload_result.get("secure_url")
+
+        # 3. حفظ الرابط في الداتابيس للمستخدم المعني
+        conn = get_db_connection()
+        cur = conn.cursor()
+        cur.execute("UPDATE users SET avatar_url = %s WHERE username = %s", (image_url, username))
+        conn.commit()
+        cur.close()
+        conn.close()
+
+        return {"status": "success", "url": image_url}
+
+    except Exception as e:
+        return {"status": "error", "message": str(e)}   
