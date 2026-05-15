@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سفرة</title>
+
+    <!-- ملف الستايل الأساسي -->
+    <link rel="stylesheet" href="/countries/countries.css">
+    
+    <!-- خط عربي -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@500;600&display=swap');
+
+    </style>
+</head>
+
+
+<body>
+
+    <!--  NAVBAR (ثابت في كل صفحة) -->
+    <header class="navbar"> 
+        
+        <div class="hamburger" id="menu-btn">☰</div>
+
+        <div class="auth-buttons" id="authButtons">
+    <a href="/auth/login.html" class="login">تسجيل دخول</a>
+    <a href="/auth/signup.html" class="signup">إنشاء حساب</a>
+</div>  
+
+<div class="user-menu" id="userMenu">
+    <img id="userAvatar" src="/img/default-avatar.png" alt="المستخدم">
+    <span class="user-name" id="userName"></span>
+    <div class="user-dropdown">
+        <a href="/profile/profile.html">الملف الشخصي</a>
+        <a href="/index/index.html" id="logoutBtn">تسجيل الخروج</a>
+    </div>
+</div>
+
+        <ul class="nav-list">
+            <li><a href="/index/index.html">الرئيسية</a></li>
+            <li><a href="/countries/countries.html">الدول</a></li>
+            <li><a href="/events/events.html">الفعاليات</a></li>
+            <li><a href="/recipes/recipes.html">الوصفات</a></li>
+        </ul>
+
+        <div class="logo">
+           <a href="/index/index.html"><img src="/img/logo3.JPG" alt="سفرة" ></a> 
+        </div>
+
+
+    </header>
+
+
+    <!--  MENU للجوال -->
+    <nav class="side-menu" id="side-menu">
+        <span class="close-btn" id="close-btn">✖</span>
+
+        <ul>
+            <li><a href="/index/index.html">الرئيسية</a></li>
+            <li><a href="/countries/countries.html">الدول</a></li>
+            <li><a href="/events/events.html">الفعاليات</a></li>
+            <li><a href="/recipes/recipes.html  ">الوصفات</a></li>
+        </ul>
+    </nav>
+
+
+    <Section class="countries-title">
+        <!--مقدمة قسم الدول -->
+        <h1>سافر حول العالم من مكانك… تعرّف على ثقافات مختلفة<br> مدن جميلة، وتاريخ كل بلد في لمحة واحدة.</h1>
+        <!-- زر البخث-->
+        <input type="text" id="searchInput" placeholder="ابحث عن دولة ...." class="search-box">
+        <!--فلتر الدول -->
+        <div class="filter-buttons">
+            <button data-filter="all" class="active">الكل</button>
+            <button data-filter="asia">اسيا</button>
+            <button data-filter="europe">اوروبا</button>
+            <button data-filter="africa">افريقيا</button>
+            <button data-filter="south-america">امريكا الجنوبية</button>
+            <button data-filter="north-america">امريكا الشمالية</button>
+        </div>
+
+        <div class="countries-grid">
+            <!--قارة اسيا-->
+            <div class="country-card" data-region="asia">
+    <button class="save-btn" onclick="saveItem('country', 'saudi', '  السعودية', '/img/Riyadh_Skyline.jpg')">📌</button>
+    <img src="/img/Riyadh_Skyline.jpg" alt="">
+    <h1>  السعودية</h1>
+    <h2>رحلة تجمع بين التراث والحدثة<br> في قلب الجزيرة العربية</h2>
+    <a href="/countries/country/asia/saudi.html" class="Section-btn">استكشف</a>
+</div>
+
+<div class="country-card" data-region="asia">
+    <button class="save-btn" onclick="saveItem('country', 'japan', 'اليابان', '/img/japan-logo.jpg')">📌</button>
+    <img src="/img/japan-logo.jpg" alt="">
+    <h1>اليابان</h1>
+    <h2>تنوع مذهل بين طبيعة هادئة <br>ومدن تنبض بالحياة والتطور.</h2>
+    <a href="/countries/country/asia/japan.html" class="Section-btn" id="japan-card">استكشف</a>
+</div>
+
+<div class="country-card" data-region="asia">
+    <button class="save-btn" onclick="saveItem('country', 'indonesia', 'اندونيسيا', '/img/Indonesia_logo.png')">📌</button>
+    <img src="/img/Indonesia_logo.png" alt="">
+    <h1>اندونيسيا</h1>
+    <h2>روح الطبيعة غابات مطيرة<br> براكين نشطة، وشعوب بتراث فريد.</h2>
+    <a href="/countries/country/asia/indonesia.html" class="Section-btn">استكشف</a>
+</div>
+
+<div class="country-card" data-region="asia">
+    <button class="save-btn" onclick="saveItem('country', 'china', 'الصين', '/img/China.jpg')">📌</button>
+    <img src="/img/China.jpg" alt="">
+    <h1>الصين</h1>
+    <h2>حضارة عريقة تمتد آلاف السنين،<br> بين التقاليد الأصيلة والتطور المذهل.</h2>
+    <a href="/countries/country/asia/china.html" class="Section-btn">استكشف</a>
+</div>
+
+<div class="country-card" data-region="asia">
+    <button class="save-btn" onclick="saveItem('country', 'south-korea', 'كوريا الجنوبية', '/img/South Korea.jpg')">📌</button>
+    <img src="/img/South Korea.jpg" alt="">
+    <h1>كوريا الجنوبية</h1>
+    <h2>مزيج ساحر بين التراث الكوري<br> والحدثة والثقافة الشعبية.</h2>
+    <a href="/countries/country/asia/south-korea.html" class="Section-btn">استكشف</a>
+</div>
+
+<div class="country-card" data-region="asia">
+    <button class="save-btn" onclick="saveItem('country', 'india', 'الهند', '/img/India.jpg')">📌</button>
+    <img src="/img/India.jpg" alt="">
+    <h1>الهند</h1>
+    <h2>بلد الألوان والتنوع，<br> حضارات قديمة وطبيعة خلابة.</h2>
+    <a href="/countries/country/asia/india.html" class="Section-btn">استكشف</a>
+</div>
+
+<div class="country-card" data-region="asia">
+    <button class="save-btn" onclick="saveItem('country', 'thailand', 'تايلاند', '/img/Thailand.jpg')">📌</button>
+    <img src="/img/Thailand.jpg" alt="">
+    <h1>تايلاند</h1>
+    <h2>شواطئ فيروزية، معابد ذهبية،<br> وأكل لا يُنسى في كل زاوية.</h2>
+    <a href="/countries/country/asia/thailand.html" class="Section-btn">استكشف</a>
+</div>
+
+<div class="country-card" data-region="asia">
+    <button class="save-btn" onclick="saveItem('country', 'malaysia', 'ماليزيا', '/img/Malaysia.jpg')">📌</button>
+    <img src="/img/Malaysia.jpg" alt="">
+    <h1>ماليزيا</h1>
+    <h2>تنوع ثقافي رائع بين الغابات<br> والمدن الحديثة والشواطئ الجميلة.</h2>
+    <a href="/countries/country/asia/malaysia.html" class="Section-btn">استكشف</a>
+</div>
+
+<div class="country-card" data-region="asia">
+    <button class="save-btn" onclick="saveItem('country', 'singapore', 'سنغافورة', '/img/Singapore.jpg')">📌</button>
+    <img src="/img/Singapore.jpg" alt="">
+    <h1>سنغافورة</h1>
+    <h2>مدينة المستقبل، نظيفة وحديثة<br> وتجمع ثقافات العالم في مكان واحد.</h2>
+    <a href="/countries/country/asia/Singapore.html" class="Section-btn">استكشف</a>
+</div>
+
+<div class="country-card" data-region="asia">
+    <button class="save-btn" onclick="saveItem('country', 'philippines', 'الفلبين', '/img/Philippines.jpg')">📌</button>
+    <img src="/img/Philippines.jpg" alt="">
+    <h1>الفلبين</h1>
+    <h2>جزر لا تُحصى بشواطئ بيضاء<br> ومياه فيروزية ساحرة.</h2>
+    <a href="/countries/country/asia/philippines.html" class="Section-btn">استكشف</a>
+</div>
+
+<div class="country-card" data-region="asia">
+    <button class="save-btn" onclick="saveItem('country', 'vietnam', 'فيتنام', '/img/Vietnam.jpg')">📌</button>
+    <img src="/img/Vietnam.jpg" alt="">
+    <h1>فيتنام</h1>
+    <h2>طبيعة خضراء خلابة، أكل شهير，<br> وتاريخ عريق في كل مدينة.</h2>
+    <a href="/countries/country/asia/vietnam.html" class="Section-btn">استكشف</a>
+</div>
+
+<div class="country-card" data-region="asia">
+    <button class="save-btn" onclick="saveItem('country', 'uae', 'الإمارات', '/img/UAE.jpg')">📌</button>
+    <img src="/img/UAE.jpg" alt="">
+    <h1>الإمارات</h1>
+    <h2>ناطحات سحاب، رفاهية لا حدود لها<br> وصحراء تخبر حكايات قديمة.</h2>
+    <a href="/countries/country/asia/uae.html" class="Section-btn">استكشف</a>
+</div>
+
+<div class="country-card" data-region="asia">
+    <button class="save-btn" onclick="saveItem('country', 'qatar', 'قطر', '/img/Qatar.jpg')">📌</button>
+    <img src="/img/Qatar.jpg" alt="">
+    <h1>قطر</h1>
+    <h2>الحدثة والتراث في مكان واحد，<br> وجهة عالمية تبهر الزوار.</h2>
+    <a href="/countries/country/asia/qatar.html" class="Section-btn">استكشف</a>
+</div>
+
+<div class="country-card" data-region="asia">
+    <button class="save-btn" onclick="saveItem('country', 'kuwait', 'الكويت', '/img/Kuwait.jpg')">📌</button>
+    <img src="/img/Kuwait.jpg" alt="">
+    <h1>الكويت</h1>
+    <h2>خليج عربي أصيل بكرم لا مثيل له，<br> بين التراث والحياة العصرية.</h2>
+    <a href="/countries/country/asia/kuwait.html" class="Section-btn">استكشف</a>
+</div>
+
+<div class="country-card" data-region="asia">
+    <button class="save-btn" onclick="saveItem('country', 'turkey', 'تركيا', '/img/Turkey.jpg')">📌</button>
+    <img src="/img/Turkey.jpg" alt="">
+    <h1>تركيا</h1>
+    <h2>جسر بين الشرق والغرب،<br> تاريخ عثماني وطبيعة لا تُنسى.</h2>
+    <a href="/countries/country/asia/turkey.html" class="Section-btn">استكشف</a>
+</div>
+
+<div class="country-card" data-region="asia">
+    <button class="save-btn" onclick="saveItem('country', 'maldives', 'المالديف', '/img/Maldives.jpg')">📌</button>
+    <img src="/img/Maldives.jpg" alt="">
+    <h1>المالديف</h1>
+    <h2>جنة على الأرض، مياه كريستالية<br> وبنغالوات فوق المحيط الهندي.</h2>
+    <a href="/countries/country/asia/maldives.html" class="Section-btn">استكشف</a>
+</div>
+
+<div class="country-card" data-region="asia">
+    <button class="save-btn" onclick="saveItem('country', 'sri-lanka', 'سريلانكا', '/img/Sri Lanka.jpg')">📌</button>
+    <img src="/img/Sri Lanka.jpg" alt="">
+    <h1>سريلانكا</h1>
+    <h2>جزيرة الدمعة بين الغابات الاستوائية<br> والشواطئ والمعابد القديمة.</h2>
+    <a href="/countries/country/asia/sri-lanka.html" class="Section-btn">استكشف</a>
+</div>
+
+<div class="country-card" data-region="africa">
+    <button class="save-btn" onclick="saveItem('country', 'egypt', 'مصر', '/img/egypt-logo.jpeg')">📌</button>
+    <img src="/img/egypt-logo.jpeg" alt="">
+    <h1>مصر</h1>
+    <h2>أهرامات، نيل، وشعب يحب الحياة<br> تجربة تجمع التاريخ والضيافة في مكان واحد.</h2>
+    <a href="/countries/country/africa/egypt.html" class="Section-btn">استكشف</a>
+</div>
+
+<div class="country-card" data-region="africa">
+    <button class="save-btn" onclick="saveItem('country', 'south-africa', 'جنوب افريقيا', '/img/south- africa.jpg')">📌</button>
+    <img src="/img/south- africa.jpg" alt="">
+    <h1>جنوب افريقيا</h1>
+    <h2>طبيعة ساحرة، ثقافات متعددة，<br> ومدن تجمع المغامرة والاسترخاء في كل زاوية.</h2>
+    <a href="/countries/country/africa/south-africa.html" class="Section-btn">استكشف</a>
+</div>
+
+<div class="country-card" data-region="africa">
+    <button class="save-btn" onclick="saveItem('country', 'morocco', 'المغرب', '/img/moroco-logo.jpg')">📌</button>
+    <img src="/img/moroco-logo.jpg" alt="">
+    <h1>المغرب</h1>
+    <h2>مدينة قديمة تروي التاريخ <br> وطبيعة تكشف أجمل المغامرات</h2>
+    <a href="/countries/country/africa/moroco.html" class="Section-btn">استكشف</a>
+</div>
+
+<div class="country-card" data-region="africa">
+    <img src="/img/tunisia-logo.jpg" alt="">
+    <h1>تونس</h1>
+    <h2>تاريخ عريق، شواطئ ساحرة،<br> وصحراء لا تُنسى.</h2>
+    <a href="/countries/country/africa/Tunisia.html" class="Section-btn">استكشف</a>
+    <button class="save-btn" onclick="saveItem('country', 'tunisia', 'تونس', '/img/tunisia-logo.jpg')">📌</button>
+</div>
+
+<div class="country-card" data-region="europe">
+    <button class="save-btn" onclick="saveItem('country', 'italy', 'ايطاليا', '/img/italy logo.webp')">📌</button>
+    <img src="/img/italy logo.webp" alt="">
+    <h1>ايطاليا</h1>
+    <h2>ثقافة، موسيقى، وطعام <br>يغير مفهوم الرحلات.</h2>
+    <a href="/countries/country/europe/italy.html" class="Section-btn">استكشف</a>
+</div>
+
+<div class="country-card" data-region="europe">
+    <button class="save-btn" onclick="saveItem('country', 'switzerland', 'سويسرا', '/img/Switzerland logo.jpg')">📌</button>
+    <img src="/img/Switzerland logo.jpg" alt="">
+    <h1>سويسرا</h1>
+    <h2>طبيعة ساحرة تجمع بين <br>الجبال والبحيرات في مشهد واحد.</h2>
+    <a href="/countries/country/europe/switzerland.html" class="Section-btn">استكشف</a>
+</div>
+
+<div class="country-card" data-region="europe">
+    <button class="save-btn" onclick="saveItem('country', 'iceland', 'ايسلندا', '/img/icelanda.jpg')">📌</button>
+    <img src="/img/icelanda.jpg" alt="">
+    <h1>ايسلندا</h1>
+    <h2>بلد الطبيعة الخلابة، تشتهر بالشلالات، البراكين، والأنهار الجليدية</h2>
+    <a href="/countries/country/europe/iceland.html" class="Section-btn">استكشف</a>
+</div>
+
+<div class="country-card" data-region="south-america">
+    <button class="save-btn" onclick="saveItem('country', 'colombia', 'كولومبيا', '/img/colomvi logo.jpg')">📌</button>
+    <img src="/img/colomvi logo.jpg" alt="">
+    <h1>كولومبيا</h1>
+    <h2>قهوة تُشرب من المصدر…<br> وأجواء ما تنساها.</h2>
+    <a href="/countries/country/south-america/colombia.html" class="Section-btn">استكشف</a>
+</div>
+
+<div class="country-card" data-region="south-america">
+    <button class="save-btn" onclick="saveItem('country', 'brazil', 'البرازيل', '/img/brazil logo.jpg')">📌</button>
+    <img src="/img/brazil logo.jpg" alt="">
+    <h1>البرازيل</h1>
+    <h2>غابات الأمازون… <br>أضخم أسرار الطبيعة على الكوكب.</h2>
+    <a href="/countries/country/south-america/brazil.html" class="Section-btn">استكشف</a>
+</div>
+
+<div class="country-card" data-region="south-america">
+    <button class="save-btn" onclick="saveItem('country', 'peru', 'بيرو', '/img/Peru log.jpeg')">📌</button>
+    <img src="/img/Peru log.jpeg" alt="">
+    <h1>بيرو</h1>
+    <h2>بلد الأساطير… تاريخ، روح，<br> وحكايات ما تخلص.</h2>
+    <a href="/countries/country/south-america/peru.html" class="Section-btn">استكشف</a>
+</div>
+
+<div class="country-card" data-region="north-america">
+    <button class="save-btn" onclick="saveItem('country', 'mexico', 'المكسيك', '/img/mexico logo.jpg')">📌</button>
+    <img src="/img/mexico logo.jpg" alt="">
+    <h1>المكسيك</h1>
+    <h2>رحلة مليانة تفاصيل…<br> ما بين المحيط، المدن، والجبال.</h2>
+    <a href="/countries/country/north-america/mexico.html" class="Section-btn">استكشف</a>
+</div>
+
+<div class="country-card" data-region="north-america">
+    <button class="save-btn" onclick="saveItem('country', 'usa', 'الولايات المتحدة', '/img/usa lgo.jpg')">📌</button>
+    <img src="/img/usa lgo.jpg" alt="">
+    <h1>الولايات المتحدة</h1>
+    <h2>ناطحات سحاب، شواطئ، جبال، وصحاري… <br>كل شيء في مكان واحد.</h2>
+    <a href="/countries/country/north-america/usa.html" class="Section-btn">استكشف</a>
+</div>
+
+<div class="country-card" data-region="north-america">
+    <button class="save-btn" onclick="saveItem('country', 'canada', 'كندا', '/img/Canada logo.jpg')">📌</button>
+    <img src="/img/Canada logo.jpg" alt="">
+    <h1>كندا</h1>
+    <h2>مساحات خضراء لا تنتهي…<br> من جبال الروكي إلى شلالات نياجارا.</h2>
+    <a href="/countries/country/north-america/canada.html" class="Section-btn">استكشف</a>
+</div>
+
+<div class="country-card" data-region="">
+    <img src="" alt="soon">
+    <h1>soon</h1>
+    <h2></h2>
+    <a href="" class="Section-btn">استكشف</a>
+</div>
+    </Section>
+    <script src="/countries/countries.js"></script>
+    <script src="/auth/auth.js"></script>
+</body>
+
+</html>

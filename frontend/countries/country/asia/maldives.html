@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>سفرة</title>
+
+    <!-- ملف الستايل الأساسي -->
+    <link rel="stylesheet" href="/countries/countries.css" />
+
+    <!-- خط عربي -->
+    <style>
+      @import url("https://fonts.googleapis.com/css/2?family=Noto+Sans+Arabic:wght@500;600&display=swap");
+    </style>
+  </head>
+
+  <body>
+    <!--  NAVBAR (ثابت في كل صفحة) -->
+    <header class="navbar">
+      <div class="hamburger" id="menu-btn">☰</div>
+
+      <div class="auth-buttons" id="authButtons">
+        <a href="/auth/login.html" class="login">تسجيل دخول</a>
+        <a href="/auth/signup.html" class="signup">إنشاء حساب</a>
+      </div>
+
+      <div class="user-menu" id="userMenu">
+        <img id="userAvatar" src="/img/default-avatar.png" alt="المستخدم" />
+        <span class="user-name" id="userName"></span>
+        <div class="user-dropdown">
+          <a href="/profile/profile.html">الملف الشخصي</a>
+          <a href="/index/index.html" id="logoutBtn">تسجيل الخروج</a>
+        </div>
+      </div>
+      <ul class="nav-list">
+        <li><a href="/index/index.html">الرئيسية</a></li>
+        <li><a href="/countries/countries.html">الدول</a></li>
+        <li><a href="/events/events.html">الفعاليات</a></li>
+        <li><a href="/recipes/recipes.html">الوصفات</a></li>
+      </ul>
+
+      <div class="logo">
+        <a href="/index/index.html"> <img src="/img/logo3.JPG" alt="سفرة" /></a>
+      </div>
+    </header>
+
+    <!--  MENU للجوال -->
+    <nav class="side-menu" id="side-menu">
+      <span class="close-btn" id="close-btn">✖</span>
+
+      <ul>
+        <li><a href="/index/index.html">الرئيسية</a></li>
+        <li><a href="/countries/countries.html">الدول</a></li>
+        <li><a href="/events/events.html">الفعاليات</a></li>
+        <li><a href="/recipes/recipes.html  ">الوصفات</a></li>
+      </ul>
+    </nav>
+    <header>
+      <a href="/countries/countries.html" class="back-btn">رجوع</a>
+    </header>
+    <div class="country-name">
+      <h1>المالديف</h1>
+      <p>جنة استوائية تجمع بين المياه الفيروزية والمنتجعات الفاخرة.</p>
+    </div>
+    <!--المدن -->
+    <div class="main-cites">
+      <h1>المدن</h1>
+    </div>
+    <section class="cities-grid">
+      <div
+        class="cite"
+        data-name="ماليه – Malé"
+        data-img="/img/Male.jpg"
+        data-desc="عاصمة المالديف النابضة بالحياة، مدينة صغيرة مكتظة على جزيرة صغيرة تجمع بين الأسواق الشعبية والمساجد التاريخية والمطاعم المتنوعة. نقطة الانطلاق لكل رحلات المالديف الساحرة."
+        data-historic="🕌 مسجد الجمعة الكبير – Grand Friday Mosque | 🏛️ متحف المالديف الوطني | 🛍️ سوق محلية – Local Market | 🌊 كورنيش ماليه"
+        data-restaurants="🌅 ذا كلاود – The Cloud Restaurant | 🍜 سالا تاي – Sala Thai Restaurant | 🌍 بيل أمي بيسترو – Belle Amie Bistro | ☕ سيجال كافيه هاوس – Seagull Café House | 🌊 سي هاوس كافيه – Sea House Café"
+        data-cafes="☕ ميراكي كوفي روسترز – Meraki Coffee Roasters | ☕ سيفيل كوفي روسترز – Civil Coffee Roasters | 🌊 سي هاوس كافيه – Sea House Café | ☕ سيجال كافيه – Seagull Cafe House | ☕ أوكسجين كافيه – Oxygen Cafe"
+        data-events="🕌 مسجد الجمعة القديم – Hukuru Miskiiy | 🛍️ السوق المحلي – Local Market | 🐟 سوق السمك – Fish Market | 🏛️ المتحف الوطني – National Museum | 🚶 شارع ماديجي – Majeedhee Magu"
+      >
+        <button
+          class="save-btn"
+          onclick="
+            event.stopPropagation();
+            saveItem('city', 'male', 'ماليه', '/img/Male.jpg');
+          "
+        >
+          🏙️
+        </button>
+        <img src="/img/Male.jpg" alt="ماليه" class="cite-img" />
+        <span class="name">ماليه – Malé</span>
+        <p class="info">عاصمة حيوية تضم الأسواق والمعالم المحلية.</p>
+        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+          تفاصيل
+        </button>
+      </div>
+
+      <div
+        class="cite"
+        data-name="مآفوشي – Maafushi"
+        data-img="/img/Maafushi.jpg"
+        data-desc="الجزيرة المحلية الأشهر في المالديف، وجهة مثالية لعشاق الأنشطة البحرية بأسعار معقولة. تشتهر بشواطئها البيضاء ومياهها الفيروزية وتوفرها على كل أنشطة الغوص والرياضات المائية."
+        data-historic="🏖️ شاطئ مآفوشي – Maafushi Beach | 🤿 غوص مآفوشي – Diving | 🚤 جت سكي وسبورتس مائية | 🌊 جزر رملية قريبة"
+        data-restaurants="🍛 تندوري فلاميز – Tandoori Flames Maafushi | 🌊 كافيار كافيه – Caviar Café & Restaurant | 🏖️ أرينا بيتش – Arena Beach Restaurant | 🐙 مستر أوكتوبس – Mr. Octopus | 🌙 مون لايت – Moonlight Restaurant"
+        data-cafes="☕ ذا كوفي هوت – The Coffee Hutt | 🌿 بيبرمينت لاونج – Peppermint Lounge | 🌴 ذا بالم كافيه – The Palm Cafe | 🥐 فاين بيك باي سوزي – Fine Bake by Suzy | ☕ هوت بايت – Hot Bite"
+        data-events="🤿 الغطس مع الكائنات البحرية – Snorkeling | 🏝️ البنوك الرملية وعشاء الغروب – Sandbanks | 🚤 الرياضات المائية – Water Sports | 🐬 مشاهدة الدلافين – Dolphin Watching | 🏨 يوم في منتجع فاخر – Resort Day Trip"
+      >
+        <button
+          class="save-btn"
+          onclick="
+            event.stopPropagation();
+            saveItem('city', 'maafushi', 'مآفوشي', '/img/Maafushi.jpg');
+          "
+        >
+          🏙️
+        </button>
+        <img src="/img/Maafushi.jpg" alt="مآفوشي" class="cite-img" />
+        <span class="name">مآفوشي – Maafushi</span>
+        <p class="info">جزيرة مشهورة بالأنشطة البحرية.</p>
+        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+          تفاصيل
+        </button>
+      </div>
+
+      <div
+        class="cite"
+        data-name="هولهومالي – Hulhumalé"
+        data-img="/img/Hulhumale.jpg"
+        data-desc="جزيرة اصطناعية حديثة قريبة من ماليه، تتميز بشواطئها البيضاء النظيفة وبنيتها التحتية الحديثة وأجوائها الهادئة. وجهة مثالية للاسترخاء والاستمتاع بالبحر بعيداً عن ضجة العاصمة."
+        data-historic="🏖️ شاطئ هولهومالي – Hulhumalé Beach | 🌊 مياه فيروزية صافية | 🚶 ممشى الكورنيش | 🏄 ألعاب مائية"
+        data-restaurants="🍛 خانجي المالديف – Khanji Maldives | 🏖️ ريفيلي بيتش كلوب – Riveli Beach Club & Restaurant | 🌶️ بومباي داربار – Bombay Darbar | 🦞 ذا مانهاتن فيش ماركت – The Manhattan Fish Market | 🍜 كوريان فود زون – Korean Food Zone"
+        data-cafes="☕ ميراكي كوفي روسترز – Meraki Coffee Roasters | 🏠 فاميلي روم كافيه – Family Room Cafe | ☕ شيل بينز – Shell Beans Hulhumale | 🌊 سي هاوس كافيه – Sea House Café | 🏖️ كافيير هولهومالي – Cafe'ier Hulhumalé"
+        data-events="🤿 الغوص والسنوركلينج – Snorkeling | 🏖️ شاطئ هولهومالي – Hulhumale Beach | 🚤 الرياضات المائية – Water Sports | 🐬 مشاهدة الدلافين والغروب – Dolphin & Sunset | 🌿 المنتزه المركزي – Central Park"
+      >
+        <button
+          class="save-btn"
+          onclick="
+            event.stopPropagation();
+            saveItem('city', 'hulhumale', 'هولهومالي', '/img/Hulhumale.jpg');
+          "
+        >
+          🏙️
+        </button>
+        <img src="/img/Hulhumale.jpg" alt="هولهومالي" class="cite-img" />
+        <span class="name">هولهومالي – Hulhumalé</span>
+        <p class="info">جزيرة حديثة بشواطئ جميلة.</p>
+        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+          تفاصيل
+        </button>
+      </div>
+
+      <div
+        class="cite"
+        data-name="فافو أتول – Vaavu Atoll"
+        data-img="/img/Vaavu Atoll.jpg"
+        data-desc="واحد من أهدأ وأجمل أتولات المالديف، يشتهر بشعابه المرجانية النقية ومياهه الصافية ووفرة حياته البحرية. وجهة مثالية لعشاق الغوص الباحثين عن تجربة بعيدة عن الازدحام."
+        data-historic="🤿 غوص فافو – Vaavu Diving | 🐠 شعاب مرجانية نادرة | 🦈 مشاهدة أسماك القرش | 🏝️ جزر معزولة"
+        data-restaurants="🐟 فارو كافيه – Faru Cafe | 🍝 إيكوبو – Ecoboo | ☕ كافيه دي أورزو – Cafe De Orzo | 🌊 فافوي بلو كافيه – Vavoy Blue Café | 🏖️ دريم هت فوليذو – Dream Hut Fulidhoo"
+        data-cafes="☕ فارو كافيه – Faru Cafe | 🏖️ دريم هت فوليذو – Dream Hut Fulidhoo | ☕ كافيه دي أورزو – Cafe De Orzo | 🌊 فافوي بلو كافيه – Vavoy Blue Café | ☕ كافيه كيولهو آزي – Cafe Keyolhu Azy"
+        data-events="🦈 السباحة مع قروش الممرضة – Nurse Sharks Swimming | 🌙 الغوص الليلي في أليماثا – Alimatha Night Diving | 🏝️ جزيرة فوليذو – Fulidhoo Island | 🏖️ البنوك الرملية – Sandbanks | 🤿 الغوص في فوتيو كاندو – Fotteyo Kandu Diving"
+      >
+        <button
+          class="save-btn"
+          onclick="
+            event.stopPropagation();
+            saveItem(
+              'city',
+              'vaavu-atoll',
+              'فافو أتول',
+              '/img/Vaavu Atoll.jpg',
+            );
+          "
+        >
+          🏙️
+        </button>
+        <img src="/img/Vaavu Atoll.jpg" alt="فافو أتول" class="cite-img" />
+        <span class="name">فافو أتول – Vaavu Atoll</span>
+        <p class="info">وجهة هادئة للغوص والاسترخاء.</p>
+        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+          تفاصيل
+        </button>
+      </div>
+
+      <div
+        class="cite"
+        data-name="أري أتول – Ari Atoll"
+        data-img="/img/Ari Atoll.jpg"
+        data-desc="قلب منتجعات المالديف الفاخرة، يضم عشرات المنتجعات العالمية الراقية فوق المياه الفيروزية. يشتهر بتنوعه البحري الاستثنائي وإمكانية الغوص مع أسماك المانتا الضخمة طوال العام."
+        data-historic="🏨 منتجعات فوق الماء – Overwater Villas | 🐠 غوص مع المانتا – Manta Diving | 🦈 غوص مع القرش الحوتي | 🌊 شعاب مرجانية استثنائية"
+        data-restaurants="🌊 إيثا تحت الماء – Ithaa Undersea Restaurant | 🍛 سنسيز – Senses Restaurant | 🍝 أليجريا – Allegria Restaurant | 🍣 أومامي – Umami | 🍽️ هيرميتس – Hermit's"
+        data-cafes="☕ ذونفيلي كافيه – Dhonveli Cafe | 🍔 يو إف إيه كيتشن – UFA Kitchen | 🏖️ بيتش فريش ديغورا – Beach Fresh Dhigurah | ☕ جاسمين كوفي كلوب – Jasmine Coffee Club | 🌊 مونالاز بيتش كافيه – Monalaz Beach Cafe"
+        data-events="🦈 السباحة مع قرش الحوت – Whale Shark Swimming | 🐠 الغوص مع المانتا راي – Manta Ray Diving | 🤿 مواقع الغوص العالمية – Scuba Diving | 🐬 رحلات الدلافين وصيد الأسماك – Dolphin & Fishing | 🧖 الاسترخاء والرياضات المائية – Spa & Water Sports"
+      >
+        <button
+          class="save-btn"
+          onclick="
+            event.stopPropagation();
+            saveItem('city', 'ari-atoll', 'أري أتول', '/img/Ari Atoll.jpg');
+          "
+        >
+          🏙️
+        </button>
+        <img src="/img/Ari Atoll.jpg" alt="أري أتول" class="cite-img" />
+        <span class="name">أري أتول – Ari Atoll</span>
+        <p class="info">منتجعات فاخرة وإطلالات مذهلة.</p>
+        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+          تفاصيل
+        </button>
+      </div>
+
+      <div
+        class="cite"
+        data-name="با أتول – Baa Atoll"
+        data-img="/img/Baa Atoll.jpg"
+        data-desc="محمية طبيعية بحرية معترف بها من اليونسكو، تضم خليج هانيفارو الشهير الذي يستقطب آلاف أسماك المانتا والحيتان الشهبية موسمياً. طبيعة بحرية ساحرة لا مثيل لها في العالم."
+        data-historic="🐠 خليج هانيفارو – Hanifaru Bay | 🦈 الحيتان الشهبية – Whale Sharks | 🏝️ محمية بيوسفير – UNESCO Biosphere | 🤿 غوص استثنائي"
+        data-restaurants="🌊 سي تحت الماء – SEA Underwater Restaurant | 🍽️ كريل – Krill Restaurant | 🌅 موذو بار آند ريستورانت – Moodhu Bar & Restaurant | 🏖️ رابوندي – Raabondi Restaurant | 🍴 أكاماضو – Akamadoo"
+        data-cafes="🐠 سي تحت الماء – SEA Underwater Restaurant | 🌅 سانست بار – Sunset Bar | 🌊 لاغون بار – Lagoon Bar | ☕ أكاماضو – Akamadoo | 🍜 زن وك ذارافاندو – Zen Wok Dharavandhoo"
+        data-events="🐠 السباحة مع المانتا في هانيفارو – Hanifaru Bay | 🤿 الغوص والسنوركلينج – Diving & Snorkeling | 🐬 رحلات قوارب الدلافين – Dolphin Watching | 🏝️ الجزر المحلية والثقافة – Local Islands | 🧖 السبا والمنتجعات الصحية – Spa & Wellness"
+      >
+        <button
+          class="save-btn"
+          onclick="
+            event.stopPropagation();
+            saveItem('city', 'baa-atoll', 'با أتول', '/img/Baa Atoll.jpg');
+          "
+        >
+          🏙️
+        </button>
+        <img src="/img/Baa Atoll.jpg" alt="با أتول" class="cite-img" />
+        <span class="name">با أتول – Baa Atoll</span>
+        <p class="info">طبيعة بحرية ساحرة.</p>
+        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+          تفاصيل
+        </button>
+      </div>
+    </section>
+    <!--الاكل-->
+    <div class="main-foods">
+      <h1>الماكولات</h1>
+    </div>
+    <section class="foods-grid">
+      <div class="foods">
+        <img src="/img/غاروديا.jpg" alt="" class="foods-img" />
+        <span class="name-foods">غاروديا – Garudhiya</span>
+        <div class="food-info">شوربة سمك تقليدية خفيفة.</div>
+        <a href="/recipes/recipes.html?recipe=garudhiya" class="for-more-btn"
+          >الوصفة</a
+        >
+      </div>
+
+      <div class="foods">
+        <img src="/img/ماس-هوني.jpg" alt="" class="foods-img" />
+        <span class="name-foods">ماس هوني – Mas Huni</span>
+        <div class="food-info">تونة مع جوز الهند والخبز.</div>
+        <a href="/recipes/recipes.html?recipe=mas-huni" class="for-more-btn"
+          >الوصفة</a
+        >
+      </div>
+
+      <div class="foods">
+        <img src="/img/ريهاكورو.jpg" alt="" class="foods-img" />
+        <span class="name-foods">ريهاكورو – Rihaakuru</span>
+        <div class="food-info">معجون سمك بنكهة قوية.</div>
+        <a href="/recipes/recipes.html?recipe=rihaakuru" class="for-more-btn"
+          >الوصفة</a
+        >
+      </div>
+
+      <div class="foods">
+        <img src="/img/أرز-بحري.jpg" alt="" class="foods-img" />
+        <span class="name-foods">أرز بالمأكولات البحرية – Seafood Rice</span>
+        <div class="food-info">أرز غني بالنكهات البحرية.</div>
+        <a href="/recipes/recipes.html?recipe=seafood-rice" class="for-more-btn"
+          >الوصفة</a
+        >
+      </div>
+
+      <div class="foods">
+        <img src="/img/سمك-مشوي.jpg" alt="" class="foods-img" />
+        <span class="name-foods">سمك مشوي – Grilled Fish</span>
+        <div class="food-info">مأكولات بحرية طازجة.</div>
+        <a
+          href="/recipes/recipes.html?recipe=grilled-fish-uae"
+          class="for-more-btn"
+          >الوصفة</a
+        >
+      </div>
+
+      <div class="foods">
+        <img src="/img/بودينغ-جوز-الهند.jpg" alt="" class="foods-img" />
+        <span class="name-foods">بودينغ جوز الهند – Coconut Pudding</span>
+        <div class="food-info">حلى استوائي خفيف.</div>
+        <a
+          href="/recipes/recipes.html?recipe=coconut-pudding"
+          class="for-more-btn"
+          >الوصفة</a
+        >
+      </div>
+    </section>
+    <div class="events-main">
+      <h1>الفعاليات</h1>
+    </div>
+    <section class="events-grid">
+      <div class="event">
+        <img src="/img/soneva-jani.jpg" alt="" class="event-img" />
+        <span class="name-event">سونيفا جاني – Soneva Jani</span>
+        <div class="event-info">منتجع فاخر فوق المياه بتجربة استثنائية.</div>
+        <a href="/events/events.html?event=SonevaJani" class="event-btn"
+          >التفاصيل</a
+        >
+      </div>
+
+      <div class="event">
+        <img src="/img/hanifaru-bay.jpg" alt="" class="event-img" />
+        <span class="name-event">خليج هانيفارو – Hanifaru Bay</span>
+        <div class="event-info">الغوص مع أسماك المانتا وتجربة بحرية مذهلة.</div>
+        <a href="/events/events.html?event=HanifaruBay" class="event-btn"
+          >التفاصيل</a
+        >
+      </div>
+
+      <div class="event">
+        <img src="/img/cafe-del-mar-maldives.jpg" alt="" class="event-img" />
+        <span class="name-event">كافيه ديل مار – Cafe Del Mar Maldives</span>
+        <div class="event-info">مقهى بإطلالة بحرية جميلة.</div>
+        <a href="/events/events.html?event=CafeDelMarMaldives" class="event-btn"
+          >التفاصيل</a
+        >
+      </div>
+
+      <div class="event">
+        <img src="/img/vaadhoo-island.jpg" alt="" class="event-img" />
+        <span class="name-event">جزيرة فاضو – Vaadhoo Island</span>
+        <div class="event-info">مشاهدة الشاطئ المضيء ليلاً.</div>
+        <a href="/events/events.html?event=VaadhooIsland" class="event-btn"
+          >التفاصيل</a
+        >
+      </div>
+
+      <div class="event">
+        <img src="/img/Maafushi.jpg" alt="" class="event-img" />
+        <span class="name-event">جزيرة مآفوشي – Maafushi Island</span>
+        <div class="event-info">أنشطة غوص وجت سكي.</div>
+        <a href="/events/events.html?event=MaafushiIsland" class="event-btn"
+          >التفاصيل</a
+        >
+      </div>
+
+      <div class="event">
+        <img src="/img/sandbank.jpg" alt="" class="event-img" />
+        <span class="name-event"
+          >رحلات الجزر الرملية – Sandbank Excursions</span
+        >
+        <div class="event-info">رحلات خاصة لجزر رملية منعزلة.</div>
+        <a href="/events/events.html?event=SandbankExcursions" class="event-btn"
+          >التفاصيل</a
+        >
+      </div>
+    </section>
+    <!-- Modal المدينة -->
+    <div id="cityModal" class="modal" onclick="closeCityModal(event)">
+      <div class="modal-content">
+        <button class="modal-close" onclick="closeCityModal(event)">×</button>
+        <div class="modal-top">
+          <img id="modalCityImg" src="" alt="" />
+          <h2 id="modalCityName"></h2>
+        </div>
+        <div class="modal-body">
+          <p id="modalCityDesc" class="event-desc"></p>
+          <h4>🏛️ أفضل الأماكن التاريخية</h4>
+          <div id="modalCityHistoric" class="ingredients-tags"></div>
+          <h4>🍽️ أفضل المطاعم</h4>
+          <div id="modalCityRestaurants" class="ingredients-tags"></div>
+          <h4>☕ أفضل المقاهي</h4>
+          <div id="modalCityCafes" class="ingredients-tags"></div>
+          <h4>🎉 فعاليات المدينة</h4>
+          <div id="modalCityEvents" class="ingredients-tags"></div>
+        </div>
+      </div>
+    </div>
+    <script src="/countries/countries.js"></script>
+    <script src="/auth/auth.js"></script>
+  </body>
+</html>

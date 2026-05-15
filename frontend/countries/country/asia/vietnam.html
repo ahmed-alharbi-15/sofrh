@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>سفرة</title>
+
+    <!-- ملف الستايل الأساسي -->
+    <link rel="stylesheet" href="/countries/countries.css" />
+
+    <!-- خط عربي -->
+    <style>
+      @import url("https://fonts.googleapis.com/css/2?family=Noto+Sans+Arabic:wght@500;600&display=swap");
+    </style>
+  </head>
+
+  <body>
+    <!--  NAVBAR (ثابت في كل صفحة) -->
+    <header class="navbar">
+      <div class="hamburger" id="menu-btn">☰</div>
+
+      <div class="auth-buttons" id="authButtons">
+        <a href="/auth/login.html" class="login">تسجيل دخول</a>
+        <a href="/auth/signup.html" class="signup">إنشاء حساب</a>
+      </div>
+
+      <div class="user-menu" id="userMenu">
+        <img id="userAvatar" src="/img/default-avatar.png" alt="المستخدم" />
+        <span class="user-name" id="userName"></span>
+        <div class="user-dropdown">
+          <a href="/profile/profile.html">الملف الشخصي</a>
+          <a href="/index/index.html" id="logoutBtn">تسجيل الخروج</a>
+        </div>
+      </div>
+      <ul class="nav-list">
+        <li><a href="/index/index.html">الرئيسية</a></li>
+        <li><a href="/countries/countries.html">الدول</a></li>
+        <li><a href="/events/events.html">الفعاليات</a></li>
+        <li><a href="/recipes/recipes.html">الوصفات</a></li>
+      </ul>
+
+      <div class="logo">
+        <a href="/index/index.html"> <img src="/img/logo3.JPG" alt="سفرة" /></a>
+      </div>
+    </header>
+
+    <!--  MENU للجوال -->
+    <nav class="side-menu" id="side-menu">
+      <span class="close-btn" id="close-btn">✖</span>
+
+      <ul>
+        <li><a href="/index/index.html">الرئيسية</a></li>
+        <li><a href="/countries/countries.html">الدول</a></li>
+        <li><a href="/events/events.html">الفعاليات</a></li>
+        <li><a href="/recipes/recipes.html  ">الوصفات</a></li>
+      </ul>
+    </nav>
+    <header>
+      <a href="/countries/countries.html" class="back-btn">رجوع</a>
+    </header>
+    <div class="country-name">
+      <h1>فيتنام</h1>
+      <p>وجهة الطبيعة الخضراء والثقافة الغنية والنكهات المميزة.</p>
+    </div>
+    <!--المدن -->
+    <div class="main-cites">
+      <h1>المدن</h1>
+    </div>
+    <section class="cities-grid">
+      <div
+        class="cite"
+        data-name="هانوي – Hanoi"
+        data-img="/img/Hanoi.jpg"
+        data-desc="عاصمة فيتنام التاريخية ومركزها الثقافي والسياسي، مدينة عريقة تجمع بين المعمار الفرنسي الاستعماري الجميل والمعابد البوذية القديمة والأسواق التقليدية الصاخبة وبحيرة السيف الساحرة."
+        data-historic="🏛️ ضريح هو شي منه – Ho Chi Minh Mausoleum | 🌊 بحيرة السيف – Hoan Kiem Lake | 🛕 معبد الأدب – Temple of Literature | 🏘️ الحي القديم – Old Quarter"
+        data-restaurants="🍜 مطعم Cha Ca Thang Long | 🌿 مطعم Green Tangerine | 🥘 مطعم Bun Cha Huong Lien"
+        data-cafes="☕ مقهى The Note Coffee | ☕ مقهى Cafe Pho Co | ☕ مقهى Tranquil Books"
+        data-events="🌊 بحيرة السيف – Hoan Kiem Lake | 🏘️ الحي القديم – Old Quarter | 🛕 معبد الأدب – Temple of Literature"
+      >
+        <button
+          class="save-btn"
+          onclick="
+            event.stopPropagation();
+            saveItem('city', 'hanoi', 'هانوي', '/img/Hanoi.jpg');
+          "
+        >
+          🏙️
+        </button>
+        <img src="/img/Hanoi.jpg" alt="هانوي" class="cite-img" />
+        <span class="name">هانوي – Hanoi</span>
+        <p class="info">عاصمة تاريخية تجمع بين الثقافة والأسواق التقليدية.</p>
+        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+          تفاصيل
+        </button>
+      </div>
+
+      <div
+        class="cite"
+        data-name="هو تشي منه – Ho Chi Minh City"
+        data-img="/img/Ho Chi Minh City.jpg"
+        data-desc="المدينة الأكبر في فيتنام وعاصمتها الاقتصادية، مدينة حديثة ونابضة بالحياة تجمع بين الناطحات الحديثة والمعالم التاريخية والأسواق الصاخبة والحياة الليلية الرائعة."
+        data-historic="🏛️ قصر الاستقلال – Reunification Palace | ⛪ كنيسة نوتردام – Notre-Dame Cathedral | 🏤 مكتب البريد – Central Post Office | 🌿 متحف الحرب – War Remnants Museum"
+        data-restaurants="🍜 مطعم Cuc Gach Quan | 🌿 مطعم The Deck | 🥘 مطعم Nha Hang Ngon"
+        data-cafes="☕ مقهى The Workshop | ☕ مقهى Saigon Coffee | ☕ مقهى L'Usine"
+        data-events="🏛️ قصر الاستقلال – Reunification Palace | 🛍️ سوق بن ثان – Ben Thanh Market | 🌿 نفق تو تشي – Cu Chi Tunnels"
+      >
+        <button
+          class="save-btn"
+          onclick="
+            event.stopPropagation();
+            saveItem(
+              'city',
+              'ho-chi-minh',
+              'هو تشي منه',
+              '/img/Ho Chi Minh City.jpg',
+            );
+          "
+        >
+          🏙️
+        </button>
+        <img
+          src="/img/Ho Chi Minh City.jpg"
+          alt="هو تشي منه"
+          class="cite-img"
+        />
+        <span class="name">هو تشي منه – Ho Chi Minh City</span>
+        <p class="info">مدينة حديثة نابضة بالحياة والتسوق.</p>
+        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+          تفاصيل
+        </button>
+      </div>
+
+      <div
+        class="cite"
+        data-name="دا نانغ – Da Nang"
+        data-img="/img/Da Nang.jpg"
+        data-desc="مدينة الشواطئ الرائعة في وسط فيتنام، تجمع بين شواطئ مي خي الذهبية وجسر التنين الشهير وتلال با نا الساحرة ومنتجعات الاسترخاء الفاخرة في أجواء هادئة ومريحة."
+        data-historic="🌉 جسر التنين – Dragon Bridge | 🏔️ با نا هيلز – Ba Na Hills | 🏖️ شاطئ مي خي – My Khe Beach | 🗿 تمثال الإلهة – Lady Buddha"
+        data-restaurants="🍜 مطعم Luna Pub | 🌿 مطعم Waterfront | 🥘 مطعم Madame Lan"
+        data-cafes="☕ مقهى 43 Factory Coffee | ☕ مقهى Cong Caphe | ☕ مقهى Rainforest"
+        data-events="🌉 جسر التنين – Dragon Bridge | 🏔️ با نا هيلز – Ba Na Hills | 🏖️ شاطئ مي خي – My Khe Beach"
+      >
+        <button
+          class="save-btn"
+          onclick="
+            event.stopPropagation();
+            saveItem('city', 'da-nang', 'دا نانغ', '/img/Da Nang.jpg');
+          "
+        >
+          🏙️
+        </button>
+        <img src="/img/Da Nang.jpg" alt="دا نانغ" class="cite-img" />
+        <span class="name">دا نانغ – Da Nang</span>
+        <p class="info">مدينة ساحلية بشواطئ جميلة وأجواء هادئة.</p>
+        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+          تفاصيل
+        </button>
+      </div>
+
+      <div
+        class="cite"
+        data-name="هوي آن – Hoi An"
+        data-img="/img/Hoi An.jpg"
+        data-desc="مدينة الفوانيس الساحرة وموقع التراث العالمي لليونسكو، تشتهر بمدينتها القديمة الملونة وفوانيسها الورقية المضيئة وأسواقها التقليدية وجولات القوارب الليلية الرومانسية."
+        data-historic="🏮 المدينة القديمة – Ancient Town | 🌉 الجسر الياباني – Japanese Bridge | 🛶 جولات القوارب – Boat Tours | 🌾 حقول الأرز – Rice Fields"
+        data-restaurants="🍜 مطعم Morning Glory | 🌿 مطعم The Cargo Club | 🥘 مطعم Mango Rooms"
+        data-cafes="☕ مقهى Reaching Out | ☕ مقهى Hoi An Roastery | ☕ مقهى White Marble"
+        data-events="🏮 المدينة القديمة – Ancient Town | 🌉 الجسر الياباني – Japanese Bridge | 🛶 جولة القوارب الليلية – Lantern Boat Tour"
+      >
+        <button
+          class="save-btn"
+          onclick="
+            event.stopPropagation();
+            saveItem('city', 'hoi-an', 'هوي آن', '/img/Hoi An.jpg');
+          "
+        >
+          🏙️
+        </button>
+        <img src="/img/Hoi An.jpg" alt="هوي آن" class="cite-img" />
+        <span class="name">هوي آن – Hoi An</span>
+        <p class="info">مدينة قديمة بأجواء ساحرة وفوانيس ملونة.</p>
+        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+          تفاصيل
+        </button>
+      </div>
+
+      <div
+        class="cite"
+        data-name="سابا – Sapa"
+        data-img="/img/Sapa.jpg"
+        data-desc="جنة الشمال الفيتنامي ووجهة عشاق الطبيعة الجبلية، تتميز بمدرجات الأرز الخضراء الرائعة وقرى القبائل الملونة وجبل فانسيبان أعلى قمة في الهند الصينية."
+        data-historic="🏔️ جبل فانسيبان – Fansipan Mountain | 🌾 مدرجات الأرز – Rice Terraces | 🏘️ قرية كاتكات – Cat Cat Village | 🌿 محمية هوانغ ليان – Hoang Lien National Park"
+        data-restaurants="🍜 مطعم Nature View | 🌿 مطعم Baguette & Chocolat | 🥘 مطعم H'mong Sisters"
+        data-cafes="☕ مقهى Cong Caphe Sapa | ☕ مقهى Mountain Bar | ☕ مقهى Sapa O'Chau"
+        data-events="🏔️ جبل فانسيبان – Fansipan | 🌾 مدرجات الأرز – Rice Terraces | 🏘️ قرى القبائل – Tribal Villages"
+      >
+        <button
+          class="save-btn"
+          onclick="
+            event.stopPropagation();
+            saveItem('city', 'sapa', 'سابا', '/img/Sapa.jpg');
+          "
+        >
+          🏙️
+        </button>
+        <img src="/img/Sapa.jpg" alt="سابا" class="cite-img" />
+        <span class="name">سابا – Sapa</span>
+        <p class="info">وجهة جبلية بطبيعة خضراء خلابة.</p>
+        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+          تفاصيل
+        </button>
+      </div>
+
+      <div
+        class="cite"
+        data-name="نها ترانغ – Nha Trang"
+        data-img="/img/Nha Trang.jpg"
+        data-desc="مدينة الشواطئ والمنتجعات الفيتنامية الشهيرة، تتميز بشاطئها الطويل الرائع والجزر البحرية الجميلة والمأكولات البحرية الطازجة والأنشطة المائية المتنوعة."
+        data-historic="🏖️ شاطئ نها ترانغ – Nha Trang Beach | 🏝️ جزيرة هون تام – Hon Tam Island | 🛕 معبد بو ناغار – Po Nagar Towers | 🎡 فينبيرل لاند – Vinpearl Land"
+        data-restaurants="🦞 مطعم Sailing Club | 🌿 مطعم Lanterns | 🐟 مطعم Lac Canh"
+        data-cafes="☕ مقهى Cong Caphe | ☕ مقهى Infuse Kitchen | ☕ مقهى Seashell"
+        data-events="🏖️ شاطئ نها ترانغ – Nha Trang Beach | 🎡 فينبيرل لاند – Vinpearl Land | 🏝️ جولة الجزر – Island Tour"
+      >
+        <button
+          class="save-btn"
+          onclick="
+            event.stopPropagation();
+            saveItem('city', 'nha-trang', 'نها ترانغ', '/img/Nha Trang.jpg');
+          "
+        >
+          🏙️
+        </button>
+        <img src="/img/Nha Trang.jpg" alt="نها ترانغ" class="cite-img" />
+        <span class="name">نها ترانغ – Nha Trang</span>
+        <p class="info">مدينة بحرية مناسبة للأنشطة والاسترخاء.</p>
+        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+          تفاصيل
+        </button>
+      </div>
+    </section>
+    <!--الاكل-->
+    <div class="main-foods">
+      <h1>الماكولات</h1>
+    </div>
+    <section class="foods-grid">
+      <div class="foods">
+        <img src="/img/Pho Chicken.jpg" alt="" class="foods-img" />
+        <span class="name-foods">فو دجاج – Pho Chicken</span>
+        <div class="food-info">شوربة نودلز مع الدجاج والأعشاب الطازجة.</div>
+        <a href="/recipes/recipes.html?recipe=pho-chicken" class="for-more-btn"
+          >المزيد</a
+        >
+      </div>
+
+      <div class="foods">
+        <img src="/img/Banh Mi.jpg" alt="" class="foods-img" />
+        <span class="name-foods">بان مي – Banh Mi</span>
+        <div class="food-info">ساندويتش خبز مقرمش بحشوة دجاج وخضار.</div>
+        <a href="/recipes/recipes.html?recipe=banh-mi" class="for-more-btn"
+          >المزيد</a
+        >
+      </div>
+
+      <div class="foods">
+        <img src="/img/Spring Rolls.jpg" alt="" class="foods-img" />
+        <span class="name-foods">سبرنغ رول – Spring Rolls</span>
+        <div class="food-info">رول طازج بحشوات حلال متنوعة.</div>
+        <a href="/recipes/recipes.html?recipe=spring-rolls" class="for-more-btn"
+          >المزيد</a
+        >
+      </div>
+
+      <div class="foods">
+        <img src="/img/Com Ga.jpg" alt="" class="foods-img" />
+        <span class="name-foods">أرز بالدجاج المشوي – Com Ga</span>
+        <div class="food-info">أرز يقدم مع دجاج متبل بطريقة فيتنامية.</div>
+        <a href="/recipes/recipes.html?recipe=com-ga" class="for-more-btn"
+          >المزيد</a
+        >
+      </div>
+
+      <div class="foods">
+        <img src="/img/Bun Tom.jpg" alt="" class="foods-img" />
+        <span class="name-foods">نودلز بالروبيان – Bun Tom</span>
+        <div class="food-info">طبق خفيف بنكهة آسيوية مميزة.</div>
+        <a href="/recipes/recipes.html?recipe=bun-tom" class="for-more-btn"
+          >المزيد</a
+        >
+      </div>
+
+      <div class="foods">
+        <img src="/img/Che Chuoi.jpg" alt="" class="foods-img" />
+        <span class="name-foods">حلوى تشي تشوي – Che Chuoi</span>
+        <div class="food-info">حلوى تقليدية بحليب جوز الهند والموز.</div>
+        <a href="/recipes/recipes.html?recipe=che-chuoi" class="for-more-btn"
+          >المزيد</a
+        >
+      </div>
+    </section>
+    <div class="events-main">
+      <h1>الفعاليات</h1>
+    </div>
+    <section class="events-grid">
+      <div class="event">
+        <img src="/img/The Note Coffee.jpg" alt="" class="event-img" />
+        <span class="name-event">ذا نوت كوفي – The Note Coffee</span>
+        <div class="event-info">
+          مقهى مشهور بملاحظاته الملونة وأجوائه الفريدة.
+        </div>
+        <a href="/events/events.html?event=TheNoteCoffee" class="event-btn"
+          >المزيد</a
+        >
+      </div>
+
+      <div class="event">
+        <img src="/img/Golden Bridge Vietnam.jpg" alt="" class="event-img" />
+        <span class="name-event">الجسر الذهبي – Golden Bridge</span>
+        <div class="event-info">
+          جسر تحمله يدان عملاقتان بإطلالة جبلية رائعة.
+        </div>
+        <a href="/events/events.html?event=GoldenBridge" class="event-btn"
+          >المزيد</a
+        >
+      </div>
+
+      <div class="event">
+        <img src="/img/Ha Long Bay.jpg" alt="" class="event-img" />
+        <span class="name-event">خليج هالونغ – Ha Long Bay</span>
+        <div class="event-info">
+          رحلة بحرية بين الجزر الصخرية والمناظر الساحرة.
+        </div>
+        <a href="/events/events.html?event=HaLongBay" class="event-btn"
+          >المزيد</a
+        >
+      </div>
+
+      <div class="event">
+        <img src="/img/InterContinental Danang.jpg" alt="" class="event-img" />
+        <span class="name-event"
+          >منتجع إنتركونتيننتال – InterContinental Danang</span
+        >
+        <div class="event-info">
+          منتجع فاخر بإطلالة بحرية وتجربة استرخاء رائعة.
+        </div>
+        <a
+          href="/events/events.html?event=InterContinentalDanang"
+          class="event-btn"
+          >المزيد</a
+        >
+      </div>
+
+      <div class="event">
+        <img src="/img/Ba Na Hills.jpg" alt="" class="event-img" />
+        <span class="name-event">با نا هيلز – Ba Na Hills</span>
+        <div class="event-info">تلفريك وألعاب وإطلالات مميزة فوق الجبال.</div>
+        <a href="/events/events.html?event=BaNaHills" class="event-btn"
+          >المزيد</a
+        >
+      </div>
+
+      <div class="event">
+        <img src="/img/Hoi An Ancient Town.jpg" alt="" class="event-img" />
+        <span class="name-event">هوي آن القديمة – Hoi An Ancient Town</span>
+        <div class="event-info">
+          جولة بالقوارب وسط الفوانيس والأسواق القديمة.
+        </div>
+        <a href="/events/events.html?event=HoiAnAncientTown" class="event-btn"
+          >المزيد</a
+        >
+      </div>
+    </section>
+    <!-- Modal المدينة -->
+    <div id="cityModal" class="modal" onclick="closeCityModal(event)">
+      <div class="modal-content">
+        <button class="modal-close" onclick="closeCityModal(event)">×</button>
+        <div class="modal-top">
+          <img id="modalCityImg" src="" alt="" />
+          <h2 id="modalCityName"></h2>
+        </div>
+        <div class="modal-body">
+          <p id="modalCityDesc" class="event-desc"></p>
+          <h4>🏛️ أفضل الأماكن التاريخية</h4>
+          <div id="modalCityHistoric" class="ingredients-tags"></div>
+          <h4>🍽️ أفضل المطاعم</h4>
+          <div id="modalCityRestaurants" class="ingredients-tags"></div>
+          <h4>☕ أفضل المقاهي</h4>
+          <div id="modalCityCafes" class="ingredients-tags"></div>
+          <h4>🎉 فعاليات المدينة</h4>
+          <div id="modalCityEvents" class="ingredients-tags"></div>
+        </div>
+      </div>
+    </div>
+    <script src="/countries/countries.js"></script>
+    <script src="/auth/auth.js"></script>
+  </body>
+</html>

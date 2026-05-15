@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>سفرة</title>
+
+    <!-- ملف الستايل الأساسي -->
+    <link rel="stylesheet" href="/countries/countries.css" />
+
+    <!-- خط عربي -->
+    <style>
+      @import url("https://fonts.googleapis.com/css/2?family=Noto+Sans+Arabic:wght@500;600&display=swap");
+    </style>
+  </head>
+
+  <body>
+    <!--  NAVBAR (ثابت في كل صفحة) -->
+    <header class="navbar">
+      <div class="hamburger" id="menu-btn">☰</div>
+
+      <div class="auth-buttons" id="authButtons">
+        <a href="/auth/login.html" class="login">تسجيل دخول</a>
+        <a href="/auth/signup.html" class="signup">إنشاء حساب</a>
+      </div>
+
+      <div class="user-menu" id="userMenu">
+        <img id="userAvatar" src="/img/default-avatar.png" alt="المستخدم" />
+        <span class="user-name" id="userName"></span>
+        <div class="user-dropdown">
+          <a href="/profile/profile.html">الملف الشخصي</a>
+          <a href="/index/index.html" id="logoutBtn">تسجيل الخروج</a>
+        </div>
+      </div>
+
+      <ul class="nav-list">
+        <li><a href="/index/index.html">الرئيسية</a></li>
+        <li><a href="/countries/countries.html">الدول</a></li>
+        <li><a href="/events/events.html">الفعاليات</a></li>
+        <li><a href="/recipes/recipes.html">الوصفات</a></li>
+      </ul>
+
+      <div class="logo">
+        <a href="/index/index.html">
+          <img src="/img/logo3.JPG" alt="سفرة" />
+        </a>
+      </div>
+    </header>
+
+    <!--  MENU للجوال -->
+    <nav class="side-menu" id="side-menu">
+      <span class="close-btn" id="close-btn">✖</span>
+
+      <ul>
+        <li><a href="/index/index.html">الرئيسية</a></li>
+        <li><a href="/countries/countries.html">الدول</a></li>
+        <li><a href="/events/events.html">الفعاليات</a></li>
+        <li><a href="/recipes/recipes.html  ">الوصفات</a></li>
+      </ul>
+    </nav>
+    <header>
+      <a href="/countries/countries.html" class="back-btn">رجوع</a>
+    </header>
+    <section>
+      <div class="country-name">
+        <h1>جنوب افريقيا</h1>
+        <p>بلد التنوع الثقافي والسفاري البرية.</p>
+      </div>
+    </section>
+    <!--المدن -->
+    <div class="main-cites">
+      <h1>المدن</h1>
+    </div>
+    <section class="cities-grid">
+      <div
+        class="cite"
+        data-name="كيب تاون – Cape Town"
+        data-img="/img/كيب تاون.jpg"
+        data-desc="أجمل مدن أفريقيا وعاصمة جنوب أفريقيا التشريعية، تجمع بين جبل الطاولة الشامخ والشواطئ الرملية الساحرة والثقافة الغنية والمطبخ العالمي."
+        data-historic="🏔️ جبل الطاولة – Table Mountain | 🏰 قلعة رأس الرجاء – Castle of Good Hope | 🏘️ حي بو كاب – Bo-Kaap | 🏛️ متحف جنوب أفريقيا – South African Museum"
+        data-restaurants="🍽️ لا كولومب – La Colombe | 🧪 تيست كيتشن – The Test Kitchen | 🌿 جروت كونستانتيا – Groot Constantia | 🌊 زينزيرو – Zenzero | 🦞 مأكولات بحرية – Alaaly Seafood"
+        data-cafes="☕ تروث كوفي – Truth Coffee Roasting | ☕ سيريال كافيه – Cereal Cafe Cape Town | ☕ أوريجن كوفي – Origin Coffee Roasting | ☕ ذا كريمري – The Creamery Cafe | ☕ إسبريسو لاب – Espresso Lab Microroasters"
+        data-events="🏔️ جبل الطاولة – Table Mountain | 🛍️ واجهة فيكتوريا وألبرت – V&A Waterfront | 🌿 حدائق كيرستنبوش – Kirstenbosch Gardens | 🏘️ حي بو كاب – Bo-Kaap | 🚁 سفاري وطيران – Aquila Safari & Helicopter"
+      >
+        <button
+          class="save-btn"
+          onclick="
+            event.stopPropagation();
+            saveItem('city', 'cape-town', 'كيب تاون', '/img/كيب تاون.jpg');
+          "
+        >
+          🏙️
+        </button>
+        <img src="/img/كيب تاون.jpg" alt="كيب تاون" class="cite-img" />
+        <span class="name">كيب تاون – Cape Town</span>
+        <p class="info">
+          مدينة ساحلية جميلة تشتهر بجبل الطاولة والشواطئ الرملية والثقافة
+          الغنية.
+        </p>
+        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+          تفاصيل
+        </button>
+      </div>
+      <div
+        class="cite"
+        data-name="جوهانسبرغ – Johannesburg"
+        data-img="/img/جوهانسبرغ (Johannesburg).jpg"
+        data-desc="القلب الاقتصادي لجنوب أفريقيا ومدينة الذهب، تجمع بين الحياة العصرية الصاخبة والتاريخ العميق لمقاومة الفصل العنصري والثقافة الأفريقية الغنية."
+        data-historic="🏛️ متحف الفصل العنصري – Apartheid Museum | 🏘️ حي سويتو – Soweto Township | 🏰 قلعة برعم – Constitution Hill | 🌿 حديقة جوهانسبرغ – Johannesburg Zoo"
+        data-restaurants="🌆 توب أوف ذا روك – Top of the Rock | 🍛 ساجان – Sajan Restaurant | 🥢 ووك آند تانك – Wok & Tank | 🌿 ليفينغ لوم – Living Room | 🍽️ بيسرو – Bistro 276"
+        data-cafes="☕ سالفايشن – Salvation Cafe | ☕ ذا ويبت – The Whippet Coffee | ☕ هوم أوف ذا بين – Home of the Bean | ☕ نايس أون فورث – Nice on 4th | ☕ هارد روك – Hard Rock Cafe"
+        data-events="🏛️ متحف الفصل العنصري – Apartheid Museum | 🏘️ جولة سويتو – Soweto Tour | 🎭 مونتي كازينو – Montecasino | 🛍️ ماركت أون مين – Market on Main | 🦴 مهد البشرية – Cradle of Humankind"
+      >
+        <button
+          class="save-btn"
+          onclick="
+            event.stopPropagation();
+            saveItem(
+              'city',
+              'johannesburg',
+              'جوهانسبرغ',
+              '/img/جوهانسبرغ (Johannesburg).jpg',
+            );
+          "
+        >
+          🏙️
+        </button>
+        <img
+          src="/img/جوهانسبرغ (Johannesburg).jpg"
+          alt="جوهانسبرغ"
+          class="cite-img"
+        />
+        <span class="name">جوهانسبرغ – Johannesburg</span>
+        <p class="info">
+          القلب الاقتصادي للبلد، مليئة بالمطاعم والمولات والحياة العصرية.
+        </p>
+        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+          تفاصيل
+        </button>
+      </div>
+      <div
+        class="cite"
+        data-name="ديربان – Durban"
+        data-img="/img/ديربان (Durban).jpg"
+        data-desc="مدينة الشواطئ الدافئة والتنوع الثقافي في جنوب أفريقيا، تشتهر بأمواجها الرائعة للتزلج والمطبخ الهندي الأصيل والأجواء الصيفية طول السنة."
+        data-historic="🏛️ متحف ديربان – Durban Museum | 🕌 مسجد جامع ديربان – Juma Mosque | 🏘️ حي أمباسانجي – uMhlanga | 🌊 شواطئ الذهب – Golden Mile Beach"
+        data-restaurants="🌍 دوكا – Dukkah Restaurant | 🏛️ بلو زو – Blue Zoo Restaurant | 🍽️ ميندولا – Mendola | 🦞 مطاعم الشاطئ – Golden Mile Seafood | 🍛 كاري ديربان – Durban Curry & Bunny Chow"
+        data-cafes="☕ بوسطن برو – Boston Brew | ☕ مايفير – Cafe Mayfair | ☕ كولومبو كوفي – Colombo Coffee & Tea | ☕ همبل كوفي – Humble Coffee | ☕ لوف كوفي – Love Coffee"
+        data-events="🐬 عالم أوشاكا – uShaka Marine World | 🏖️ شاطئ جولدن مايل – Golden Mile Beach | 🌿 الحدائق النباتية – Durban Botanic Gardens | 🦕 متحف العلوم – Natural Science Museum | 🍛 الحي الهندي – Indian Quarter Tour"
+      >
+        <button
+          class="save-btn"
+          onclick="
+            event.stopPropagation();
+            saveItem('city', 'durban', 'ديربان', '/img/ديربان (Durban).jpg');
+          "
+        >
+          🏙️
+        </button>
+        <img src="/img/ديربان (Durban).jpg" alt="ديربان" class="cite-img" />
+        <span class="name">ديربان – Durban</span>
+        <p class="info">
+          مدينة شاطئية دافئة، مشهورة بالأمواج والأجواء الصيفية طول السنة.
+        </p>
+        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+          تفاصيل
+        </button>
+      </div>
+      <div
+        class="cite"
+        data-name="بريتوريا – Pretoria"
+        data-img="/img/بريتوريا (Pretoria).jpg"
+        data-desc="العاصمة الإدارية لجنوب أفريقيا ومدينة الجاكاراندا، تشتهر بأشجارها البنفسجية الساحرة في موسم الربيع والمعالم التاريخية والحدائق الأنيقة."
+        data-historic="🏛️ مبنى الاتحاد – Union Buildings | 🗿 نصب فورتريكر – Voortrekker Monument | 🏺 متحف بريتوريا – Pretoria Museum | 🌿 حدائق بريتوريا – National Zoological Gardens"
+        data-restaurants="🍽️ لا بينتولا – La Pentola | 🌿 دي كلوف – De Kloof | 🥩 فورتي جريل – Forti Grill & Bar | 🎵 لي سي – Le Si Casa Toscana | 🌍 إنديجينوس – Indigenous Restaurant"
+        data-cafes="☕ جيك هاوس – Geek House Eatery | ☕ ويست كافيه – West Cafe | ☕ جراوند كوفي – Ground Coffee | ☕ فيدا إي كافيه – Vida e Caffe | ☕ باوباب – Baobab Cafe & Grill"
+        data-events="🏛️ مباني الاتحاد – Union Buildings | 🗿 نصب فورتريكر – Voortrekker Monument | 🌿 الحدائق النباتية – National Botanical Gardens | 🦁 حديقة الحيوان – National Zoo | 🛍️ بروكلين مول – Brooklyn Mall"
+      >
+        <button
+          class="save-btn"
+          onclick="
+            event.stopPropagation();
+            saveItem(
+              'city',
+              'pretoria',
+              'بريتوريا',
+              '/img/بريتوريا (Pretoria).jpg',
+            );
+          "
+        >
+          🏙️
+        </button>
+        <img
+          src="/img/بريتوريا (Pretoria).jpg"
+          alt="بريتوريا"
+          class="cite-img"
+        />
+        <span class="name">بريتوريا – Pretoria</span>
+        <p class="info">
+          مدينة هادئة وأنيقة، مليئة بالحدائق والمعالم التاريخية.
+        </p>
+        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+          تفاصيل
+        </button>
+      </div>
+      <div
+        class="cite"
+        data-name="بورت إليزابيث – Gqeberha"
+        data-img="/img/بورت إليزابيث (Gqeberha).jpg"
+        data-desc="مدينة الشواطئ الهادئة وبوابة سفاري الحياة البرية في جنوب أفريقيا، تجمع بين الاسترخاء على الشواطئ الرملية الجميلة وتجارب السفاري المثيرة في المحميات القريبة."
+        data-historic="🏛️ متحف نيلسون مانديلا – Nelson Mandela Museum | 🏖️ شاطئ هومبي – Humewood Beach | 🌿 حديقة الفيلة – Addo Elephant Park | 🏰 قلعة فريدريك – Fort Frederick"
+        data-restaurants="🥩 ذا كوتشمان – The Coachman | 🌊 جينجر – Ginger Restaurant | 🦞 فيش فايندر – Fish Finder | 🍝 جراتيس – Grattis Cafe | 💧 بلو ووترز – Blue Waters Cafe"
+        data-cafes="☕ فوفو تيلو – Vovo Telo | ☕ برويش – Brioche Food and Coffee | ☕ هيريتيج – Heritage Café | ☕ بوكاديلوس – Bocadillos Bakery | ☕ جراس روف – Grass Roof"
+        data-events="🐘 منتزه أدو – Addo Elephant Park | 🏛️ محمية دونكين – Donkin Reserve | 🏖️ شواطئ خليج ألغوا – Algoa Bay Beaches | 🐬 مشاهدة الدلافين – Dolphin & Whale Watching | 🌿 طريق الحدائق – Garden Route"
+      >
+        <button
+          class="save-btn"
+          onclick="
+            event.stopPropagation();
+            saveItem(
+              'city',
+              'port-elizabeth',
+              'بورت إليزابيث',
+              '/img/بورت إليزابيث (Gqeberha).jpg',
+            );
+          "
+        >
+          🏙️
+        </button>
+        <img
+          src="/img/بورت إليزابيث (Gqeberha).jpg"
+          alt="بورت إليزابيث"
+          class="cite-img"
+        />
+        <span class="name">بورت إليزابيث – Gqeberha</span>
+        <p class="info">
+          مدينة ساحلية جميلة، مناسبة للاسترخاء ومشاهدة الحياة البرية.
+        </p>
+        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+          تفاصيل
+        </button>
+      </div>
+      <div
+        class="cite"
+        data-name="كنيسنا – Knysna"
+        data-img="/img/كنيسنا (Knysna).jpg"
+        data-desc="جوهرة طريق الحدائق في جنوب أفريقيا، مدينة صغيرة فاخرة تشتهر بالطبيعة الخضراء والبحيرات الزرقاء وغابات الضباب والمحار الشهير."
+        data-historic="🏛️ متحف كنيسنا – Knysna Museum | 🌊 رؤوس كنيسنا – Knysna Heads | 🌿 غابة ضباب كنيسنا – Knysna Forest | 🦘 محمية ميلكوود – Millwood Reserve"
+        data-restaurants="🌊 باترفلاي بلو – Butterfly Blu | 🏗️ ذا درايدوك – The Drydock Food Co | 🦞 34 ساوث – 34 South | 🐟 فريشلاين – Freshline Fisheries | 🍽️ بيمبريز – Pembreys Restaurant"
+        data-cafes="☕ إيل دي باين – Île de Pain | ☕ إيست هيد – East Head Café | ☕ أفريكان بين – African Bean | ☕ آرت كافيه – The Art Café On Queen | ☕ سولت آند بيتال – Salt & Petal"
+        data-events="🌊 مضيق كنيسنا – Knysna Heads | 🌿 محمية فيذريدج – Featherbed Nature Reserve | 🌳 غابات كنيسنا – Knysna Forests | 🚢 جزيرة ثيسن – Thesen Island Marina | 🏖️ شاطئ بوفالو باي – Buffalo Bay Beach"
+      >
+        <button
+          class="save-btn"
+          onclick="
+            event.stopPropagation();
+            saveItem('city', 'knysna', 'كنيسنا', '/img/كنيسنا (Knysna).jpg');
+          "
+        >
+          🏙️
+        </button>
+        <img src="/img/كنيسنا (Knysna).jpg" alt="كنيسنا" class="cite-img" />
+        <span class="name">كنيسنا – Knysna</span>
+        <p class="info">مدينة صغيرة فخمة، تشتهر بالطبيعة الخضراء والبحيرات.</p>
+        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+          تفاصيل
+        </button>
+      </div>
+    </section>
+    <!--الاكل-->
+    <div class="main-foods">
+      <h1>الماكولات</h1>
+    </div>
+    <section class="foods-grid">
+      <div class="foods">
+        <img src="/img/بوبوتي (Bobotie).jpg" alt="" class="foods-img" />
+        <span class="name-foods">وبوتي – Bobotie</span>
+        <div class="food-info">
+          لحم مفروم متبل مع طبقة بيض مخبوزة – نكهته فريدة.
+        </div>
+        <a href="/recipes/recipes.html?recipe=bobotie" class="for-more-btn"
+          >المزيد</a
+        >
+      </div>
+      <div class="foods">
+        <img src="/img/براي (Braai).jpg" alt="" class="foods-img" />
+        <span class="name-foods">براي – Braai</span>
+        <div class="food-info">
+          الشواء الجنوب أفريقي الشهير (لحم، دجاج، نقانق).
+        </div>
+        <a href="/recipes/recipes.html?recipe=braai" class="for-more-btn"
+          >المزيد</a
+        >
+      </div>
+      <div class="foods">
+        <img
+          src="/img/باب & تشاكالا (Pap & Chakalaka).jpg"
+          alt=""
+          class="foods-img"
+        />
+        <span class="name-foods">باب وشاكالاكا – Pap & Chakalaka</span>
+        <div class="food-info">
+          أكلة شعبية مكوّنة من عصيدة الذرة مع صلصة خضار حارة، تقدم غالبًا مع
+          المشويات.
+        </div>
+        <a
+          href="/recipes/recipes.html?recipe=pap-chakalaka"
+          class="for-more-btn"
+          >المزيد</a
+        >
+      </div>
+      <div class="foods">
+        <img src="/img/باني تشاو (Bunny Chow).webp" alt="" class="foods-img" />
+        <span class="name-foods">باني تشاو – Bunny Chow</span>
+        <div class="food-info">خبز محشو بالكاري، مشهور في ديربان.</div>
+        <a href="/recipes/recipes.html?recipe=bunny-chow" class="for-more-btn"
+          >المزيد</a
+        >
+      </div>
+      <div class="foods">
+        <img src="/img/سوساتي (Sosatie).webp" alt="" class="foods-img" />
+        <span class="name-foods">سوساتي – Sosatie</span>
+        <div class="food-info">نقانق تقليدية مشوية بطعم قوي.</div>
+        <a href="/recipes/recipes.html?recipe=sosatie" class="for-more-btn"
+          >المزيد</a
+        >
+      </div>
+      <div class="foods">
+        <img src="/img/ميلك تارت (Milk Tart).jpg" alt="" class="foods-img" />
+        <span class="name-foods">ميلك تارت – Milk Tart</span>
+        <div class="food-info">حلى تقليدي بالحليب والقرفة.</div>
+        <a href="/recipes/recipes.html?recipe=milk-tart" class="for-more-btn"
+          >المزيد</a
+        >
+      </div>
+    </section>
+    <div class="events-main">
+      <h1>الفعاليات</h1>
+    </div>
+    <section class="events-grid">
+      <div class="event">
+        <img
+          src="/img/السفاري في حديقة كروغر الوطنية.jpg"
+          alt=""
+          class="event-img"
+        />
+        <span class="name-event">سفاري كروغر – Kruger National Park</span>
+        <div class="event-info">مشاهدة الأسود والفيلة والزرافات عن قرب</div>
+        <a href="/events/events.html?event=KrugerNationalPark" class="event-btn"
+          >المزيد</a
+        >
+      </div>
+      <div class="event">
+        <img
+          src="/img/الصعود إلى جبل الطاولة (Table Mountain).jpg"
+          alt=""
+          class="event-img"
+        />
+        <span class="name-event">جبل الطاولة – Table Mountain</span>
+        <div class="event-info">إطلالة بانورامية مذهلة على كيب تاون.</div>
+        <a href="/events/events.html?event=TableMountain" class="event-btn"
+          >المزيد</a
+        >
+      </div>
+      <div class="event">
+        <img
+          src="/img/مشاهدة الحيتان في هيرمانوس.jpg"
+          alt=""
+          class="event-img"
+        />
+        <span class="name-event">مشاهدة الحيتان – Hermanus Whale Watching</span>
+        <div class="event-info">من أفضل الأماكن عالميًا لمشاهدة الحيتان.</div>
+        <a href="/events/events.html?event=WhaleWatching" class="event-btn"
+          >المزيد</a
+        >
+      </div>
+      <div class="event">
+        <img
+          src="/img/الغوص مع أسماك القرش البيضاء.jpg"
+          alt=""
+          class="event-img"
+        />
+        <span class="name-event">الغوص مع القرش الأبيض – Shark Diving</span>
+        <div class="event-info">تجربة جريئة ومشهورة عالميًا.</div>
+        <a href="/events/events.html?event=SharkDiving" class="event-btn"
+          >المزيد</a
+        >
+      </div>
+      <div class="event">
+        <img
+          src="/img/جولة مزارع العنب في ستيلينبوش.jpg"
+          alt=""
+          class="event-img"
+        />
+        <span class="name-event">مزارع العنب في ستيلينبوش – Stellenbosch</span>
+        <div class="event-info">طبيعة فاخرة وتجربة راقية.</div>
+        <a href="/events/events.html?event=Stellenbosch" class="event-btn"
+          >المزيد</a
+        >
+      </div>
+      <div class="event">
+        <img
+          src="/img/الشواطئ وركوب الأمواج في ديربان.jpeg"
+          alt=""
+          class="event-img"
+        />
+        <span class="name-event">شواطئ ديربان – Durban Beache</span>
+        <div class="event-info">أجواء ممتعة لمحبي البحر.</div>
+        <a href="/events/events.html?event=DurbanBeaches" class="event-btn"
+          >المزيد</a
+        >
+      </div>
+    </section>
+    <!-- Modal المدينة -->
+    <div id="cityModal" class="modal" onclick="closeCityModal(event)">
+      <div class="modal-content">
+        <button class="modal-close" onclick="closeCityModal(event)">×</button>
+        <div class="modal-top">
+          <img id="modalCityImg" src="" alt="" />
+          <h2 id="modalCityName"></h2>
+        </div>
+        <div class="modal-body">
+          <p id="modalCityDesc" class="event-desc"></p>
+          <h4>🏛️ أفضل الأماكن التاريخية</h4>
+          <div id="modalCityHistoric" class="ingredients-tags"></div>
+          <h4>🍽️ أفضل المطاعم</h4>
+          <div id="modalCityRestaurants" class="ingredients-tags"></div>
+          <h4>☕ أفضل المقاهي</h4>
+          <div id="modalCityCafes" class="ingredients-tags"></div>
+          <h4>🎉 فعاليات المدينة</h4>
+          <div id="modalCityEvents" class="ingredients-tags"></div>
+        </div>
+      </div>
+    </div>
+    <script src="/countries/countries.js"></script>
+    <script src="/auth/auth.js"></script>
+  </body>
+</html>

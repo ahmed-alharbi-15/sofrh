@@ -1,0 +1,612 @@
+/*********************************
+     RESET — تنظيف التنسيقات الأساسية
+*********************************/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/*********************************
+     BODY — التنسيق العام للصفحة
+*********************************/
+body {
+    background-color: #FAF4E6;
+    font-family: "Noto Sans Arabic", sans-serif;
+    padding-top: 120px !important;  /* لأن النافبار ثابت */
+}
+
+
+/*********************************
+     COLORS — ألوان ثابتة للموقع
+*********************************/
+:root {
+    --brown-dark: #4A2E1F;
+    --cream-light: #FAF4E6;
+    --cream-soft: #F3E8D2;
+    --caramel: #D2A673;
+}
+
+/*********************************
+     LOGO — صورة اللوقو
+*********************************/
+.logo img {
+    height: 90px;
+}
+
+
+/*********************************
+     NAVBAR — شريط الموقع الثابت بالأعلى
+*********************************/
+.navbar {
+    background-color: var(--brown-dark);
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    z-index: 999;
+}
+
+
+/*********************************
+     NAV LINKS — روابط الأقسام في الديسكتوب
+*********************************/
+.nav-list {
+    display: flex;
+    gap: 90px;
+    list-style: none;
+}
+
+.nav-list a {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+    color: var(--cream-light);
+    position: relative;
+    transition: .3s ease;
+}
+
+
+/*** Hover احترافي على روابط النافبار ***/
+.nav-list a::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    right: 0;
+    width: 0%;
+    height: 3px;
+    background-color: var(--caramel);
+    transition: width .3s ease;
+}
+
+.nav-list a:hover::after {
+    width: 100%;
+}
+
+.nav-list a:hover {
+    color: var(--caramel);
+}
+
+
+/*********************************
+     AUTH BUTTONS — تسجيل دخول / إنشاء حساب
+*********************************/
+.auth-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.auth-buttons a {
+    text-decoration: none;
+    font-size: 20px;
+    padding: 8px 20px;
+    font-weight: bold;
+    border-radius: 20px;
+    white-space: nowrap;
+}
+
+
+/*** زر تسجيل الدخول ***/
+.login {
+    background-color: var(--cream-soft);
+    color: var(--brown-dark);
+}
+
+.login:hover {
+    background-color: var(--cream-soft);
+    color: var(--brown-dark);
+    transform: translateY(-2px);
+}
+
+
+/*** زر إنشاء حساب ***/
+.signup {
+    background: transparent;
+    border: 2px solid var(--cream-soft);
+    color: var(--cream-soft);
+}
+
+.signup:hover {
+    background-color: var(--cream-soft);
+    color: var(--brown-dark);
+    transform: translateY(-2px);
+}
+
+
+/*********************************
+     HAMBURGER — زر القائمة للجوال
+*********************************/
+.hamburger {
+    display: none;
+    font-size: 32px;
+    color: var(--cream-light);
+    cursor: pointer;
+    user-select: none;
+}
+
+
+/*********************************
+     SIDE MENU — القائمة الجانبية للجوال
+*********************************/
+.side-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: -260px;
+    width: 260px;
+    height: 100%;
+    background-color: var(--brown-dark);
+    padding-top: 100px;
+    transition: 0.4s ease;
+    z-index: 9999;
+}
+
+.side-menu ul {
+    list-style: none;
+}
+
+.side-menu li {
+    margin: 20px 0;
+}
+
+.side-menu a {
+    display: block;
+    padding: 10px 20px;
+    color: var(--cream-light);
+    font-size: 22px;
+    text-decoration: none;
+}
+
+.side-menu a:hover {
+    background-color: var(--caramel);
+    color: white;
+    border-radius: 12px;
+}
+
+
+/*********************************
+     CLOSE BUTTON — زر إغلاق القائمة
+*********************************/
+/* زر اغلاق القائمة الجانبية */
+
+.close-btn {
+    position: absolute;
+    top:20px;
+    left: 20px;
+    font-size: 30px;
+    color: #FAF4E6;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 8px;
+    transition: 0.2s;
+}
+
+.close-btn:hover{
+    background-color: #D2A673;
+    color: #4A2E1F;
+}
+
+
+/*********************************
+     RESPONSIVE — مشاهد الجوال
+*********************************/
+@media (max-width: 900px) {
+
+    /* إخفاء روابط الديسكتوب */
+    .nav-list {
+        display: none;
+    }
+
+    /* إظهار زر القائمة + القائمة الجانبية */
+    .hamburger {
+        display: block;
+    }
+
+    .side-menu {
+        display: block;
+    }
+}
+
+
+
+/*********************************
+     HERO — عنوان ونص مقدمة الصفحة الرئيسية
+*********************************/
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-text h1 {
+    font-size: 100px;
+    color: var(--brown-dark);
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.hero-text p {
+    font-size: 35px;
+    color: var(--brown-dark);
+    opacity: .9;
+}
+
+
+/*********************************
+     SECTIONS PREVIEW — حاوية الكروت الثلاثة
+*********************************/
+.sections-preview {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    padding: 10px 40px;
+}
+
+
+/*********************************
+     CARD — تصميم البطاقة (صورة + نص + زر)
+*********************************/
+.card {
+    width: 550px;
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+}
+
+
+/*********************************
+     CARD IMG — الصورة داخل البطاقة
+*********************************/
+.card-img img {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+
+/*********************************
+     CARD TEXT — النص الموجود تحت الصورة
+*********************************/
+.card p {
+    font-size: 20px;
+    color: var(--brown-dark);
+    margin: 0 0 10px 0;
+}
+
+
+/*********************************
+     SECTION BUTTON — زر (استكشاف...)
+*********************************/
+.section-btn {
+    padding: 12px 50px;
+    border-radius: 30px;
+    background-color: var(--cream-light);
+    border: 2px solid var(--brown-dark);
+    color: var(--brown-dark);
+    font-size: 20px;
+    font-weight: bold;
+    display: inline-block;
+    text-decoration: none;
+    transition: .3s;
+}
+
+.section-btn:hover {
+    background-color: var(--caramel);
+    color: white;
+    transform: translateY(-3px);
+}
+
+.user-menu {
+    display: none;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    position: relative;
+}
+
+.user-name {
+    color: var(--cream-light);
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#userAvatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--caramel);
+}
+
+.user-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: auto;
+    background: #FAF4E6;
+    border-radius: 12px;
+    padding: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    min-width: 160px;
+    z-index: 9999;
+}
+
+.user-menu:hover .user-dropdown {
+    display: block;
+}
+
+.user-dropdown a {
+    display: block;
+    padding: 8px 12px;
+    color: #4A2E1F;
+    text-decoration: none;
+    font-size: 15px;
+    border-radius: 8px;
+    white-space: nowrap;
+}
+
+.user-dropdown a:hover {
+    background: #F3E8D2;
+}
+
+/*********************************
+     RESPONSIVE — الجوال الصغير (أقل من 480px)
+*********************************/
+@media (max-width: 480px) {
+
+    body {
+        padding-top: 80px !important;
+    }
+
+    .navbar {
+        padding: 0 12px;
+        height: 70px;
+    }
+
+    .logo img {
+        height: 60px;
+    }
+
+    .hamburger {
+        font-size: 28px;
+    }
+
+    .hero-text h1 {
+        font-size: 42px;
+    }
+
+    .hero-text p {
+        font-size: 18px;
+        padding: 0 15px;
+    }
+
+    .sections-preview {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        padding: 10px 15px;
+    }
+
+    .card {
+        width: 100%;
+        height: auto;
+    }
+
+    .card-img img {
+        height: 250px;
+    }
+
+    .section-btn {
+        font-size: 16px;
+        padding: 10px 30px;
+    }
+}
+
+
+/*********************************
+     RESPONSIVE — الجوال الكبير (480px – 767px)
+*********************************/
+@media (min-width: 480px) and (max-width: 767px) {
+
+    body {
+        padding-top: 85px !important;
+    }
+
+    .navbar {
+        padding: 0 15px;
+        height: 75px;
+    }
+
+    .logo img {
+        height: 65px;
+    }
+
+    .hero-text h1 {
+        font-size: 55px;
+    }
+
+    .hero-text p {
+        font-size: 20px;
+        padding: 0 20px;
+    }
+
+    .sections-preview {
+        flex-direction: column;
+        align-items: center;
+        gap: 35px;
+        padding: 10px 20px;
+    }
+
+    .card {
+        width: 90%;
+        height: auto;
+    }
+
+    .card-img img {
+        height: 300px;
+    }
+
+    .section-btn {
+        font-size: 17px;
+        padding: 10px 35px;
+    }
+}
+
+
+/*********************************
+     RESPONSIVE — الأيباد (768px – 1024px)
+*********************************/
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    body {
+        padding-top: 100px !important;
+    }
+
+    .navbar {
+        padding: 0 15px;
+        height: 85px;
+    }
+
+    .logo img {
+        height: 75px;
+    }
+
+    .nav-list {
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .side-menu {
+        display: block;
+    }
+
+    .hero-text h1 {
+        font-size: 70px;
+    }
+
+    .hero-text p {
+        font-size: 25px;
+    }
+
+    .sections-preview {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+        padding: 10px 30px;
+    }
+
+    .card {
+        width: 80%;
+        height: auto;
+    }
+
+    .card-img img {
+        height: 400px;
+    }
+
+    .section-btn {
+        font-size: 18px;
+        padding: 11px 40px;
+    }
+}
+
+
+/*********************************
+     RESPONSIVE — اللابتوب الصغير (1025px – 1280px)
+*********************************/
+@media (min-width: 1025px) and (max-width: 1280px) {
+
+    .nav-list {
+        gap: 40px;
+    }
+
+    .nav-list a {
+        font-size: 17px;
+    }
+
+    .hero-text h1 {
+        font-size: 75px;
+    }
+
+    .hero-text p {
+        font-size: 28px;
+    }
+
+    .sections-preview {
+        gap: 30px;
+        padding: 10px 25px;
+    }
+
+    .card {
+        width: 420px;
+        height: auto;
+    }
+
+    .card-img img {
+        height: 450px;
+    }
+}
+
+
+/*********************************
+     RESPONSIVE — اللابتوب الكبير (1281px – 1600px)
+*********************************/
+@media (min-width: 1281px) and (max-width: 1600px) {
+
+    .nav-list {
+        gap: 60px;
+    }
+
+    .hero-text h1 {
+        font-size: 85px;
+    }
+
+    .hero-text p {
+        font-size: 30px;
+    }
+
+    .sections-preview {
+        gap: 40px;
+    }
+
+    .card {
+        width: 480px;
+    }
+
+    .card-img img {
+        height: 520px;
+    }
+}

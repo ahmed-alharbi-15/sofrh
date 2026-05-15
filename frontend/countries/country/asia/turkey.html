@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>سفرة</title>
+
+    <!-- ملف الستايل الأساسي -->
+    <link rel="stylesheet" href="/countries/countries.css" />
+
+    <!-- خط عربي -->
+    <style>
+      @import url("https://fonts.googleapis.com/css/2?family=Noto+Sans+Arabic:wght@500;600&display=swap");
+    </style>
+  </head>
+
+  <body>
+    <!--  NAVBAR (ثابت في كل صفحة) -->
+    <header class="navbar">
+      <div class="hamburger" id="menu-btn">☰</div>
+
+      <div class="auth-buttons" id="authButtons">
+        <a href="/auth/login.html" class="login">تسجيل دخول</a>
+        <a href="/auth/signup.html" class="signup">إنشاء حساب</a>
+      </div>
+
+      <div class="user-menu" id="userMenu">
+        <img id="userAvatar" src="/img/default-avatar.png" alt="المستخدم" />
+        <span class="user-name" id="userName"></span>
+        <div class="user-dropdown">
+          <a href="/profile/profile.html">الملف الشخصي</a>
+          <a href="/index/index.html" id="logoutBtn">تسجيل الخروج</a>
+        </div>
+      </div>
+      <ul class="nav-list">
+        <li><a href="/index/index.html">الرئيسية</a></li>
+        <li><a href="/countries/countries.html">الدول</a></li>
+        <li><a href="/events/events.html">الفعاليات</a></li>
+        <li><a href="/recipes/recipes.html">الوصفات</a></li>
+      </ul>
+
+      <div class="logo">
+        <a href="/index/index.html"> <img src="/img/logo3.JPG" alt="سفرة" /></a>
+      </div>
+    </header>
+
+    <!--  MENU للجوال -->
+    <nav class="side-menu" id="side-menu">
+      <span class="close-btn" id="close-btn">✖</span>
+
+      <ul>
+        <li><a href="/index/index.html">الرئيسية</a></li>
+        <li><a href="/countries/countries.html">الدول</a></li>
+        <li><a href="/events/events.html">الفعاليات</a></li>
+        <li><a href="/recipes/recipes.html  ">الوصفات</a></li>
+      </ul>
+    </nav>
+    <header>
+      <a href="/countries/countries.html" class="back-btn">رجوع</a>
+    </header>
+    <div class="country-name">
+      <h1>تركيا</h1>
+      <p>أرض التاريخ والطبيعة الساحرة، وتجارب تجمع بين الشرق والغرب.</p>
+    </div>
+    <!--المدن -->
+    <div class="main-cites">
+      <h1>المدن</h1>
+    </div>
+    <section class="cities-grid">
+      <div
+        class="cite"
+        data-name="إسطنبول – Istanbul"
+        data-img="/img/Istanbul.jpg"
+        data-desc="أيقونة العالم وملتقى الحضارات، مدينة تجمع بين قارتين على ضفتي مضيق البوسفور. تضم آلاف السنين من التاريخ بين قصر توبكابي وآيا صوفيا والبازار الكبير وأجواء لا مثيل لها."
+        data-historic="🕌 آيا صوفيا – Hagia Sophia | 🏰 قصر توبكابي – Topkapi Palace | 🛍️ البازار الكبير – Grand Bazaar | 🌊 مضيق البوسفور – Bosphorus"
+        data-restaurants="🥩 مطعم نصرت – Nusr-Et Steakhouse | 🍽️ مطعم المدينة – Al Medina | 🌅 مطعم 360 إسطنبول – 360 Istanbul | ⭐ مطعم ميكلا – Mikla | 🥩 مطعم نزيه – Nezih Steakhouse"
+        data-cafes="☕ ماندابتماز – Mandabatmaz | ☕ بيير لوتي كافيه – Pierre Loti Cafe | ☕ عشق كافيه – Aşk Kahve | 🎨 فيلفيت كافيه – Velvet Cafe | ☕ أولوس كافيه – Ulus Café"
+        data-events="🚢 جولة البوسفور – Bosphorus Cruise | 🕌 السلطان أحمد – Sultanahmet | 🛍️ البازار الكبير – Grand Bazaar | 🎢 فيالاند – Vialand | 🌿 غابة بلغراد وأورتاكوي – Belgrade Forest"
+      >
+        <button
+          class="save-btn"
+          onclick="
+            event.stopPropagation();
+            saveItem('city', 'istanbul', 'إسطنبول', '/img/Istanbul.jpg');
+          "
+        >
+          🏙️
+        </button>
+        <img src="/img/Istanbul.jpg" alt="إسطنبول" class="cite-img" />
+        <span class="name">إسطنبول – Istanbul</span>
+        <p class="info">مدينة تاريخية تجمع بين آسيا وأوروبا.</p>
+        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+          تفاصيل
+        </button>
+      </div>
+
+      <div
+        class="cite"
+        data-name="أنطاليا – Antalya"
+        data-img="/img/Antalya.jpg"
+        data-desc="لؤلؤة البحر المتوسط التركي، مدينة ساحلية فاخرة تجمع بين الشواطئ الذهبية والمنتجعات الراقية والمدينة القديمة العريقة. وجهة سياحية عالمية من الدرجة الأولى."
+        data-historic="🏛️ المدينة القديمة – Kaleiçi | 🌊 شاطئ كونيالتي – Konyaaltı Beach | 🏛️ متحف أنطاليا | ⛵ ميناء أنطاليا"
+        data-restaurants="🍽️ مطعم 7 محمد – 7 Mehmet | 🕯️ مطعم سيراسر – Seraser Fine Dining | 🐟 مطعم آرما – Arma Restaurant | 🐠 مطعم لارا باليك إيفي – Lara Balik Evi | 🥘 مطعم أورفا سلطان – Urfa Sultan Sofrasi"
+        data-cafes="☕ سييستيتا كافيه – Siestita Cafe & Lounge | ☕ سيلي فود آند درينكس – Seli Food & Drinks | 🫖 تشاي تيز بوتيك كافيه – Çay-Tea's Boutique Café | ☕ فيلاب كوفي – Filab Coffee | ☕ ديم ليك كافيه – Dem-Lik Cafe Bar"
+        data-events="🏛️ البلدة القديمة كاليتشي – Kaleiçi | 💦 شلالات دودين – Duden Waterfalls | 🎢 أرض الأساطير – Land of Legends | 🚤 جولة قارب الميناء القديم – Old Harbor Boat Tour | 🚡 تلفريك أوليمبوس – Tahtalı Mountain Cable Car"
+      >
+        <button
+          class="save-btn"
+          onclick="
+            event.stopPropagation();
+            saveItem('city', 'antalya', 'أنطاليا', '/img/Antalya.jpg');
+          "
+        >
+          🏙️
+        </button>
+        <img src="/img/Antalya.jpg" alt="أنطاليا" class="cite-img" />
+        <span class="name">أنطاليا – Antalya</span>
+        <p class="info">وجهة بحرية فاخرة.</p>
+        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+          تفاصيل
+        </button>
+      </div>
+
+      <div
+        class="cite"
+        data-name="طرابزون – Trabzon"
+        data-img="/img/Trabzon.jpg"
+        data-desc="جوهرة البحر الأسود التركي، مدينة خضراء ساحرة تحيط بها الجبال والغابات الكثيفة. تشتهر بدير سوميلا المنقور في الصخر وطبيعتها الخلابة وأجوائها الهادئة البعيدة عن الصخب."
+        data-historic="⛪ دير سوميلا – Sümela Monastery | 🌿 هضبة أوزنغول – Uzungöl | 🏰 قلعة طرابزون | 🌲 غابات طرابزون"
+        data-restaurants="🍽️ مطعم نهاد أوسطا – Nihat Usta | 🥘 مطعم جميل أسطا – Cemilusta | 🌿 مطعم صوفيا جاردن – Sofia Garden | 🏛️ مطعم جيبهانلك – Cebanelik | 🍖 مطعم أكبينار – Akpınar"
+        data-cafes="☕ ماهورا جاردن – Mahura Garden | ☕ كاهفي دنياسي – Kahve Dünyası | 🫖 كاليندر لوكانتا – Kalender Lokanta ve Kafe | ✨ هوجوارتس إكسبريس – Hogwarts Express | 🏔️ أكبينار يلديزلي – Akpinar Yildizli"
+        data-events="🌊 بحيرة أوزنجول – Uzungöl | 🪂 القفز المظلي – Paragliding | ⛰️ مرتفعات حيدر نبي ومغارة تشال – Haydarnabi | ⛪ دير سوميلا – Sümela Monastery | 🛍️ ميدان طرابزون – Trabzon Square"
+      >
+        <button
+          class="save-btn"
+          onclick="
+            event.stopPropagation();
+            saveItem('city', 'trabzon', 'طرابزون', '/img/Trabzon.jpg');
+          "
+        >
+          🏙️
+        </button>
+        <img src="/img/Trabzon.jpg" alt="طرابزون" class="cite-img" />
+        <span class="name">طرابزون – Trabzon</span>
+        <p class="info">طبيعة خضراء وأجواء هادئة.</p>
+        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+          تفاصيل
+        </button>
+      </div>
+
+      <div
+        class="cite"
+        data-name="بورصة – Bursa"
+        data-img="/img/Bursa.jpg"
+        data-desc="العاصمة العثمانية الأولى وإحدى أجمل مدن تركيا التاريخية، تحتضن جبل أولوداغ الثلجي ومعالم عثمانية أصيلة وأسواقاً تقليدية عريقة. مزيج رائع بين التاريخ والطبيعة."
+        data-historic="🕌 الجامع الكبير – Ulu Camii | 🏔️ جبل أولوداغ – Uludağ | 🛍️ بازار بورصة التاريخي | ⛺ ضريح أورهان"
+        data-restaurants="🥩 مطعم إسكندر كباب – Kebapçı İskender | 🍖 مطعم كفتجي يوسف – Köfteci Yusuf | 🔥 مطعم أوزان آت مانجال – Ozan Et Mangal | 🍽️ مطعم أولوداغ كباب – Uludağ Kebap | 🏛️ مطعم زنوب – Zennup 1844"
+        data-cafes="☕ مقهى كوزا هان – Koza Han | 🌿 مقهى سير وصفاء – Seyr u Sefa | 🫖 أوتانتيك قهفالتي إيفي – Otantik Kahvalti Evi | 📚 كتاب إيفي – Kitap Evi Hotel | ☕ قهوة دنيا – Kahve Dünyası"
+        data-events="🚡 تلفريك أولوداغ – Uludağ Cable Car | 🛍️ كوزا هان سوق الحرير – Koza Han | 🕌 أولو جامع – Ulu Camii | ♨️ حمامات تشيكرغة – Çekirge Thermal Baths | 🌳 الشجرة التاريخية – İnkaya Çınarı"
+      >
+        <button
+          class="save-btn"
+          onclick="
+            event.stopPropagation();
+            saveItem('city', 'bursa', 'بورصة', '/img/Bursa.jpg');
+          "
+        >
+          🏙️
+        </button>
+        <img src="/img/Bursa.jpg" alt="بورصة" class="cite-img" />
+        <span class="name">بورصة – Bursa</span>
+        <p class="info">مدينة جبلية وتاريخية.</p>
+        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+          تفاصيل
+        </button>
+      </div>
+
+      <div
+        class="cite"
+        data-name="كابادوكيا – Cappadocia"
+        data-img="/img/Cappadocia.jpg"
+        data-desc="وجهة أحلام عشاق السفر، منطقة طبيعية فريدة في وسط تركيا تشتهر بتكويناتها الصخرية المذهلة والمدن المنقورة تحت الأرض وتجربة المناطيد الشهيرة عند الشروق. منظر لا يُنسى في العمر."
+        data-historic="🎈 مناطيد كابادوكيا – Hot Air Balloons | 🏛️ متحف غوريمي – Göreme | 🏙️ المدينة تحت الأرض – Derinkuyu | 🌄 وادي الحب – Love Valley"
+        data-restaurants="🏔️ مطعم توبديك كهف – Topdeck Cave Restaurant | 🍽️ مطعم ستين الأناضول – Seten Anatolian Cuisine | ⭐ مطعم ليلا – Lil'a Restaurant | 🎨 مطعم بامبكين جوريم – Pumpkin Göreme | 🥩 مطعم أوسكار ستيك هاوس – Oscar Steak House"
+        data-cafes="☕ كينجز كوفي شوب – King's Coffee Shop | ☕ هيكتور كوفي هاوس – Hector Coffee House | 🏛️ كوفيدوشيا – Coffeedocia | 🌊 كيي كافيه – Kiyi Cafe | 🫖 كافيه شفق – Cafe Safak"
+        data-events="🎈 مناطيد كابادوكيا – Hot Air Ballooning | 🏙️ المدن تحت الأرض – Underground Cities | 🏛️ متحف غوريمي المفتوح – Göreme Open Air Museum | 🏍️ جولات ATV والوديان – ATV Safari & Hiking | 🛏️ فندق كهفي – Cave Hotel Experience"
+      >
+        <button
+          class="save-btn"
+          onclick="
+            event.stopPropagation();
+            saveItem('city', 'cappadocia', 'كابادوكيا', '/img/Cappadocia.jpg');
+          "
+        >
+          🏙️
+        </button>
+        <img src="/img/Cappadocia.jpg" alt="كابادوكيا" class="cite-img" />
+        <span class="name">كابادوكيا – Cappadocia</span>
+        <p class="info">وجهة فريدة بمناظرها الصخرية.</p>
+        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+          تفاصيل
+        </button>
+      </div>
+
+      <div
+        class="cite"
+        data-name="إزمير – Izmir"
+        data-img="/img/Izmir.jpg"
+        data-desc="ثالث أكبر مدن تركيا وعروسة بحر إيجة، مدينة ساحلية نابضة بالحياة تجمع بين الكورنيش الجميل والمعالم الأثرية الرومانية والحياة الليلية المتميزة. أجواء منفتحة وترحيبية لا مثيل لها."
+        data-historic="🏛️ أفسس – Ephesus | 🌊 كورنيش إزمير – Kordon | 🛍️ كيمريالتي – Kemeraltı Bazaar | 🏰 قلعة قاديفيكالي"
+        data-restaurants="🥩 مطعم تافاجي رجب أوسطا – Tavacı Recep Usta | 🐟 مطعم ينجيج – Yengeç Restaurant | 🌅 مطعم أسوار – Asansör Restoran | 🌊 مطعم بوجازيجى – Boğaziçi Restaurant | 🍕 مطعم بيتزا البندقية – Pizzeria Venedik"
+        data-cafes="🍰 سيفينش باستانيسي – Sevinc Pastanesi | 🎂 ريحان باستانيسي – Reyhan Pastanesi | ☕ تو كابس كوفي – Two Cups Coffee Bar & Roastery | 🌿 كوشه قهوة – Kose Kahve | ☕ بوكا كوفي روسترز – Poka Coffee Roasters"
+        data-events="🏛️ مدينة أفسس – Ephesus | 🕐 ساحة كوناك وبرج الساعة – Konak Square | 🛗 مصعد إزمير التاريخي – Tarihi Asansör | 🛍️ سوق كيميرالتي – Kemeraltı Bazaar | 🌊 كورنيش كوردون – Kordonboyu"
+      >
+        <button
+          class="save-btn"
+          onclick="
+            event.stopPropagation();
+            saveItem('city', 'izmir', 'إزمير', '/img/Izmir.jpg');
+          "
+        >
+          🏙️
+        </button>
+        <img src="/img/Izmir.jpg" alt="إزمير" class="cite-img" />
+        <span class="name">إزمير – Izmir</span>
+        <p class="info">مدينة ساحلية نابضة بالحياة.</p>
+        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+          تفاصيل
+        </button>
+      </div>
+    </section>
+    <!--الاكل-->
+    <div class="main-foods">
+      <h1>الماكولات</h1>
+    </div>
+    <section class="foods-grid">
+      <div class="foods">
+        <img src="/img/اسكندر-كباب.jpg" alt="" class="foods-img" />
+        <span class="name-foods">إسكندر كباب – Iskender Kebab</span>
+        <div class="food-info">لحم مع خبز وصوص مميز.</div>
+        <a
+          href="/recipes/recipes.html?recipe=iskender-kebab"
+          class="for-more-btn"
+          >الوصفة</a
+        >
+      </div>
+
+      <div class="foods">
+        <img src="/img/مانتي.jpg" alt="" class="foods-img" />
+        <span class="name-foods">مانتي – Manti</span>
+        <div class="food-info">عجينة محشوة باللحم مع الزبادي.</div>
+        <a href="/recipes/recipes.html?recipe=manti" class="for-more-btn"
+          >الوصفة</a
+        >
+      </div>
+
+      <div class="foods">
+        <img src="/img/دونر.jpg" alt="" class="foods-img" />
+        <span class="name-foods">دونر – Doner</span>
+        <div class="food-info">لحم مشوي يقدم مع خبز.</div>
+        <a href="/recipes/recipes.html?recipe=doner" class="for-more-btn"
+          >الوصفة</a
+        >
+      </div>
+
+      <div class="foods">
+        <img src="/img/بيدا.jpg" alt="" class="foods-img" />
+        <span class="name-foods">بيدا – Pide</span>
+        <div class="food-info">خبز تركي مع إضافات متنوعة.</div>
+        <a href="/recipes/recipes.html?recipe=pide" class="for-more-btn"
+          >الوصفة</a
+        >
+      </div>
+
+      <div class="foods">
+        <img src="/img/بورك.jpg" alt="" class="foods-img" />
+        <span class="name-foods">بورك – Börek</span>
+        <div class="food-info">معجنات محشوة بالجبن أو اللحم.</div>
+        <a href="/recipes/recipes.html?recipe=borek" class="for-more-btn"
+          >الوصفة</a
+        >
+      </div>
+
+      <div class="foods">
+        <img src="/img/كونافة-تركية.jpg" alt="" class="foods-img" />
+        <span class="name-foods">كونافة تركية – Turkish Kunafa</span>
+        <div class="food-info">حلى غني ومشهور.</div>
+        <a
+          href="/recipes/recipes.html?recipe=turkish-kunafa"
+          class="for-more-btn"
+          >الوصفة</a
+        >
+      </div>
+    </section>
+    <div class="events-main">
+      <h1>الفعاليات</h1>
+    </div>
+    <section class="events-grid">
+      <div class="event">
+        <img src="/img/pierre-loti.jpg" alt="" class="event-img" />
+        <span class="name-event">بيير لوتي كافيه – Pierre Loti Cafe</span>
+        <div class="event-info">مقهى مشهور بإطلالة رائعة.</div>
+        <a href="/events/events.html?event=PierreLoti" class="event-btn"
+          >التفاصيل</a
+        >
+      </div>
+
+      <div class="event">
+        <img src="/img/hagia-sophia.jpg" alt="" class="event-img" />
+        <span class="name-event">آيا صوفيا – Hagia Sophia</span>
+        <div class="event-info">معلم تاريخي عالمي.</div>
+        <a href="/events/events.html?event=HagiaSophia" class="event-btn"
+          >التفاصيل</a
+        >
+      </div>
+
+      <div class="event">
+        <img src="/img/Cappadocia.jpg" alt="" class="event-img" />
+        <span class="name-event">مناطيد كابادوكيا – Cappadocia Balloons</span>
+        <div class="event-info">تجربة المناطيد الشهيرة.</div>
+        <a href="/events/events.html?event=CappadociaBalloons" class="event-btn"
+          >التفاصيل</a
+        >
+      </div>
+
+      <div class="event">
+        <img src="/img/maxx-royal.jpg" alt="" class="event-img" />
+        <span class="name-event"
+          >ماكس رويال بيلك غولف ريزورت – Maxx Royal Belek Golf Resort</span
+        >
+        <div class="event-info">منتجع فاخر بإطلالات بحرية.</div>
+        <a href="/events/events.html?event=MaxxRoyalBelek" class="event-btn"
+          >التفاصيل</a
+        >
+      </div>
+
+      <div class="event">
+        <img src="/img/bosphorus.jpg" alt="" class="event-img" />
+        <span class="name-event">رحلة البوسفور – Bosphorus Cruise</span>
+        <div class="event-info">رحلة بحرية بين القارتين.</div>
+        <a href="/events/events.html?event=BosphorusCruise" class="event-btn"
+          >التفاصيل</a
+        >
+      </div>
+
+      <div class="event">
+        <img src="/img/grand-bazaar.jpg" alt="" class="event-img" />
+        <span class="name-event">البازار الكبير – Grand Bazaar</span>
+        <div class="event-info">سوق تاريخي وتجربة تسوق ممتعة.</div>
+        <a href="/events/events.html?event=GrandBazaar" class="event-btn"
+          >التفاصيل</a
+        >
+      </div>
+    </section>
+    <!-- Modal المدينة -->
+    <div id="cityModal" class="modal" onclick="closeCityModal(event)">
+      <div class="modal-content">
+        <button class="modal-close" onclick="closeCityModal(event)">×</button>
+        <div class="modal-top">
+          <img id="modalCityImg" src="" alt="" />
+          <h2 id="modalCityName"></h2>
+        </div>
+        <div class="modal-body">
+          <p id="modalCityDesc" class="event-desc"></p>
+          <h4>🏛️ أفضل الأماكن التاريخية</h4>
+          <div id="modalCityHistoric" class="ingredients-tags"></div>
+          <h4>🍽️ أفضل المطاعم</h4>
+          <div id="modalCityRestaurants" class="ingredients-tags"></div>
+          <h4>☕ أفضل المقاهي</h4>
+          <div id="modalCityCafes" class="ingredients-tags"></div>
+          <h4>🎉 فعاليات المدينة</h4>
+          <div id="modalCityEvents" class="ingredients-tags"></div>
+        </div>
+      </div>
+    </div>
+    <script src="/countries/countries.js"></script>
+    <script src="/auth/auth.js"></script>
+  </body>
+</html>
