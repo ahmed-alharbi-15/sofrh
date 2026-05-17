@@ -76,47 +76,88 @@
         <h1>المدن</h1>
     </div>
     <section class="cities-grid">
-        <div class="cite">
-            <img src="" alt="" class="cite-img">
-            <span class="name"></span>
-            <div class="info">
-
-            </div>
+        <div class="cite" data-name="دار السلام – Dar es Salaam" data-img="/img/Dar es Salaam.jpg"
+            data-desc="أكبر مدن تنزانيا وعاصمتها الاقتصادية، مدينة ساحلية نابضة بالحياة على المحيط الهندي تجمع بين الثقافات الأفريقية والعربية والهندية في مزيج حضاري فريد مع أسواق صاخبة وشواطئ جميلة."
+            data-historic="🏛️ متحف تنزانيا الوطني – National Museum | 🌊 شاطئ كيونغوني – Coco Beach | 🏘️ حي كاريا كو – Kariakoo Market | 🕌 مسجد ملندي – Msikiti Mlindi"
+            data-restaurants="🍖 مطعم Addis in Dar | 🌿 مطعم The Waterfront | 🥘 مطعم Langi Langi"
+            data-cafes="☕ مقهى Puzzle Coffee Shop | ☕ مقهى Kibo Coffee | ☕ مقهى Café Deli"
+            data-events="🌊 شاطئ كيونغوني – Coco Beach | 🏛️ متحف تنزانيا – National Museum | 🛍️ سوق كاريا كو – Kariakoo Market">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'dar-es-salaam', 'دار السلام', '/img/Dar es Salaam.jpg')">🏙️</button>
+            <img src="/img/Dar es Salaam.jpg" alt="دار السلام" class="cite-img">
+            <span class="name">دار السلام – Dar es Salaam</span>
+            <p class="info">مدينة ساحلية نابضة بالحياة.</p>
+            <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">تفاصيل</button>
         </div>
-        <div class="cite">
-            <img src="" alt="" class="cite-img">
-            <span class="name"></span>
-            <div class="info">
 
-            </div>
+        <div class="cite" data-name="أروشا – Arusha" data-img="/img/Arusha.jpg"
+            data-desc="بوابة رحلات السفاري الأشهر في العالم، مدينة جميلة تقع بين جبل كليمنجارو وجبل مير ومحاطة بالمتنزهات الوطنية الرائعة كسيرينغيتي ونغورونغورو."
+            data-historic="🦁 متنزه سيرينغيتي – Serengeti National Park | 🌿 فوهة نغورونغورو – Ngorongoro Crater | 🏔️ جبل مير – Mount Meru | 🏛️ متحف أروشا – Arusha Museum"
+            data-restaurants="🍖 مطعم Arusha Coffee Lodge | 🌿 مطعم Via Via | 🥘 مطعم Spices & Herbs"
+            data-cafes="☕ مقهى Arusha Coffee Lodge | ☕ مقهى Msoma Coffee | ☕ مقهى Africafe"
+            data-events="🦁 سيرينغيتي – Serengeti National Park | 🌿 نغورونغورو – Ngorongoro Crater | 🏔️ جبل مير – Mount Meru">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'arusha', 'أروشا', '/img/Arusha.jpg')">🏙️</button>
+            <img src="/img/Arusha.jpg" alt="أروشا" class="cite-img">
+            <span class="name">أروشا – Arusha</span>
+            <p class="info">بوابة رحلات السفاري.</p>
+            <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">تفاصيل</button>
         </div>
-        <div class="cite">
-            <img src="" alt="" class="cite-img">
-            <span class="name"></span>
-            <div class="info">
 
-            </div>
+        <div class="cite" data-name="زنجبار – Zanzibar" data-img="/img/Zanzibar.jpg"
+            data-desc="جزيرة التوابل الساحرة ومعجزة المحيط الهندي، تشتهر بشواطئها الفيروزية البيضاء ومدينة ستون تاون التاريخية العريقة وعروض الغروب المذهلة والغوص في مياهها الصافية."
+            data-historic="🏘️ ستون تاون – Stone Town | 🏖️ شاطئ نونغوي – Nungwi Beach | 🐬 جزيرة منيمبا – Mnemba Island | 🌿 جولة التوابل – Spice Tour"
+            data-restaurants="🦞 مطعم The Rock Restaurant | 🌿 مطعم Emerson Spice | 🥘 مطعم Forodhani Gardens"
+            data-cafes="☕ مقهى Zanzibar Coffee House | ☕ مقهى Archipelago | ☕ مقهى Livingstone Beach"
+            data-events="🏘️ ستون تاون – Stone Town | 🏖️ شاطئ نونغوي – Nungwi Beach | 🐬 غوص منيمبا – Mnemba Diving">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'zanzibar', 'زنجبار', '/img/Zanzibar.jpg')">🏙️</button>
+            <img src="/img/Zanzibar.jpg" alt="زنجبار" class="cite-img">
+            <span class="name">زنجبار – Zanzibar</span>
+            <p class="info">جزيرة ساحرة بشواطئ مذهلة.</p>
+            <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">تفاصيل</button>
         </div>
-        <div class="cite">
-            <img src="" alt="" class="cite-img">
-            <span class="name"></span>
-            <div class="info">
 
-            </div>
+        <div class="cite" data-name="موانزا – Mwanza" data-img="/img/Mwanza.jpg"
+            data-desc="مدينة الصخور الجميلة على ضفاف بحيرة فيكتوريا أكبر بحيرة في أفريقيا، تتميز بمناظرها الطبيعية الساحرة والصخور العملاقة المتوازنة وأجوائها الهادئة المميزة."
+            data-historic="🌊 بحيرة فيكتوريا – Lake Victoria | 🗿 صخور بيسمارك – Bismarck Rock | 🏛️ متحف موانزا – Mwanza Museum | 🌿 جزيرة سعا نانه – Saanane Island"
+            data-restaurants="🐟 مطعم Tilapia Hotel | 🌿 مطعم Yacht Club | 🥘 مطعم Deluxe"
+            data-cafes="☕ مقهى Kibo Coffee | ☕ مقهى Café Java | ☕ مقهى Lake View"
+            data-events="🌊 بحيرة فيكتوريا – Lake Victoria | 🗿 صخور بيسمارك – Bismarck Rock | 🏝️ جزيرة سعا نانه – Saanane Island">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'mwanza', 'موانزا', '/img/Mwanza.jpg')">🏙️</button>
+            <img src="/img/Mwanza.jpg" alt="موانزا" class="cite-img">
+            <span class="name">موانزا – Mwanza</span>
+            <p class="info">مدينة جميلة على البحيرة.</p>
+            <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">تفاصيل</button>
         </div>
-        <div class="cite">
-            <img src="" alt="" class="cite-img">
-            <span class="name"></span>
-            <div class="info">
 
-            </div>
+        <div class="cite" data-name="موشي – Moshi" data-img="/img/Moshi.jpg"
+            data-desc="مدينة الجبل الشهير بوابة كليمنجارو العظيم، تقع عند سفح أعلى قمة في أفريقيا وتوفر إطلالات مذهلة على الجبل الثلجي في أجواء منعشة ومريحة مع ترحيب أهلها الدافئ."
+            data-historic="🏔️ جبل كليمنجارو – Mount Kilimanjaro | 🌿 حديقة كليمنجارو – Kilimanjaro National Park | ☕ مزارع القهوة – Coffee Farms | 🌊 شلالات ماتشامي – Materuni Waterfalls"
+            data-restaurants="🍖 مطعم Uchaguzi | 🌿 مطعم Kindoroko | 🥘 مطعم El Rancho"
+            data-cafes="☕ مقهى Arabica Coffee | ☕ مقهى Kibo Coffee | ☕ مقهى Moshi Coffee Shop"
+            data-events="🏔️ جبل كليمنجارو – Mount Kilimanjaro | 🌊 شلالات ماتشامي – Materuni Waterfalls | ☕ جولة مزارع القهوة – Coffee Farm Tour">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'moshi', 'موشي', '/img/Moshi.jpg')">🏙️</button>
+            <img src="/img/Moshi.jpg" alt="موشي" class="cite-img">
+            <span class="name">موشي – Moshi</span>
+            <p class="info">قريبة من جبل كليمنجارو.</p>
+            <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">تفاصيل</button>
         </div>
-        <div class="cite">
-            <img src="" alt="" class="cite-img">
-            <span class="name"></span>
-            <div class="info">
 
-            </div>
+        <div class="cite" data-name="دودوما – Dodoma" data-img="/img/Dodoma.jpg"
+            data-desc="العاصمة الرسمية لتنزانيا، مدينة هادئة ومنظمة في قلب البلاد تتميز بطابعها الحكومي والإداري وكرومها العنبية الشهيرة في محيطها الريفي الجميل."
+            data-historic="🏛️ البرلمان التنزاني – Parliament Buildings | 🍇 كروم العنب – Dodoma Vineyards | 🕌 مسجد دودوما – Dodoma Mosque | 🌿 حديقة دودوما – Dodoma Park"
+            data-restaurants="🍖 مطعم Dodoma Hotel | 🌿 مطعم Capital City | 🥘 مطعم Mzee Kitenge"
+            data-cafes="☕ مقهى Café Royal | ☕ مقهى City Coffee | ☕ مقهى Parliament View"
+            data-events="🏛️ البرلمان التنزاني – Parliament | 🍇 كروم العنب – Vineyards Tour | 🌿 حديقة دودوما – Dodoma Park">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'dodoma', 'دودوما', '/img/Dodoma.jpg')">🏙️</button>
+            <img src="/img/Dodoma.jpg" alt="دودوما" class="cite-img">
+            <span class="name">دودوما – Dodoma</span>
+            <p class="info">العاصمة الهادئة.</p>
+            <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">تفاصيل</button>
         </div>
     </section>
     <!--الاكل-->
