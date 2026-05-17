@@ -498,3 +498,11 @@ body {
 .user-dropdown a:hover {
     background: #F3E8D2;
 }
+
+@media (max-width: 767px) {
+    .auth-buttons a {
+        font-size: 13px;
+        padding: 6px 12px;
+        border-radius: 15px;
+    }
+}
