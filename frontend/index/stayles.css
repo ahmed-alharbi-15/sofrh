@@ -14,7 +14,8 @@
 body {
     background-color: #FAF4E6;
     font-family: "Noto Sans Arabic", sans-serif;
-    padding-top: 120px !important;  /* لأن النافبار ثابت */
+    padding-top: 120px !important;
+    /* لأن النافبار ثابت */
 }
 
 
@@ -196,7 +197,7 @@ body {
 
 .close-btn {
     position: absolute;
-    top:20px;
+    top: 20px;
     left: 20px;
     font-size: 30px;
     color: #FAF4E6;
@@ -206,7 +207,7 @@ body {
     transition: 0.2s;
 }
 
-.close-btn:hover{
+.close-btn:hover {
     background-color: #D2A673;
     color: #4A2E1F;
 }
@@ -356,7 +357,7 @@ body {
     background: #FAF4E6;
     border-radius: 12px;
     padding: 10px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
     min-width: 160px;
     z-index: 9999;
 }
@@ -608,5 +609,13 @@ body {
 
     .card-img img {
         height: 520px;
+    }
+}
+
+@media (max-width: 767px) {
+    .auth-buttons a {
+        font-size: 13px;
+        padding: 6px 12px;
+        border-radius: 15px;
     }
 }
