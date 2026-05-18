@@ -33,7 +33,9 @@ body {
     z-index: 999;
 }
 
-.logo img { height: 90px; }
+.logo img {
+    height: 90px;
+}
 
 .nav-list {
     display: flex;
@@ -61,10 +63,18 @@ body {
     transition: width .3s ease;
 }
 
-.nav-list a:hover::after { width: 100%; }
-.nav-list a:hover { color: var(--caramel); }
+.nav-list a:hover::after {
+    width: 100%;
+}
 
-.auth-buttons { display: flex; gap: 15px; }
+.nav-list a:hover {
+    color: var(--caramel);
+}
+
+.auth-buttons {
+    display: flex;
+    gap: 15px;
+}
 
 .auth-buttons a {
     text-decoration: none;
@@ -75,14 +85,21 @@ body {
     white-space: nowrap;
 }
 
-.login { background-color: var(--cream-soft); color: var(--brown-dark); }
-.login:hover { transform: translateY(-2px); }
+.login {
+    background-color: var(--cream-soft);
+    color: var(--brown-dark);
+}
+
+.login:hover {
+    transform: translateY(-2px);
+}
 
 .signup {
     background: transparent;
     border: 2px solid var(--cream-soft);
     color: var(--cream-soft);
 }
+
 .signup:hover {
     background-color: var(--cream-soft);
     color: var(--brown-dark);
@@ -110,8 +127,13 @@ body {
     z-index: 9999;
 }
 
-.side-menu ul { list-style: none; }
-.side-menu li { margin: 20px 0; }
+.side-menu ul {
+    list-style: none;
+}
+
+.side-menu li {
+    margin: 20px 0;
+}
 
 .side-menu a {
     display: block;
@@ -145,18 +167,27 @@ body {
 }
 
 @media (max-width: 900px) {
-    .nav-list { display: none; }
-    .hamburger { display: block; }
-    .side-menu { display: block; }
+    .nav-list {
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .side-menu {
+        display: block;
+    }
 }
 
 /* مقدمة الموقع*/
-.countries-title{
+.countries-title {
     text-align: center;
     margin-bottom: 50px;
     margin-top: 100px;
 }
-.countries-title    h1 {
+
+.countries-title h1 {
     margin-bottom: 20px;
 }
 
@@ -168,14 +199,14 @@ body {
     border-radius: 25px;
     border: 2px solid var(--brown-dark);
     margin-bottom: 30px;
-    font-size: 18px; 
-    text-align: center;   
+    font-size: 18px;
+    text-align: center;
     text-align: center;
 }
 
 .filter-buttons {
     display: flex;
-    justify-content: center ;
+    justify-content: center;
     gap: 15px;
     margin-bottom: 40px;
     flex-wrap: wrap;
@@ -191,7 +222,8 @@ body {
     transition: .3s;
 }
 
-.filter-buttons button:hover , .filter-buttons .active {
+.filter-buttons button:hover,
+.filter-buttons .active {
     background: var(--caramel);
     color: white;
 }
@@ -223,7 +255,7 @@ body {
 
 .country-card:hover {
     transform: scale(1.03);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.18);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.18);
 }
 
 .country-card img {
@@ -247,7 +279,7 @@ body {
     flex-grow: 1;
 }
 
-.Section-btn{
+.Section-btn {
     padding: 12px 50px;
     border-radius: 30px;
     background-color: var(--brown-dark);
@@ -328,7 +360,7 @@ body {
 }
 
 /*شبكة المدن  */
-.main-cites{
+.main-cites {
     font-size: 40px;
     font-weight: bold;
     text-align: center;
@@ -337,7 +369,7 @@ body {
     position: relative;
 }
 
-.main-cites::after{
+.main-cites::after {
     content: "";
     width: 80px;
     height: 3px;
@@ -361,14 +393,14 @@ body {
     background: #F3E8D2;
     border-radius: 18px;
     padding: 15px;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
     display: flex;
     flex-direction: column;
 }
 
 .cite:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
 
 /* الصورة */
@@ -378,7 +410,7 @@ body {
     object-fit: cover;
     border-radius: 14px;
     margin-bottom: 12px;
-    position: static;  
+    position: static;
 }
 
 /* الاسم */
@@ -408,7 +440,8 @@ body {
         font-size: px;
         margin-top: 10px;
     }
-    .country-name  p {
+
+    .country-name p {
         font-size: 35px;
     }
 }
@@ -418,7 +451,8 @@ body {
         font-size: 80px;
         margin-top: 10px;
     }
-    .country-name  p {
+
+    .country-name p {
         font-size: 35px;
     }
 }
@@ -427,10 +461,12 @@ body {
     .country-card h1 {
         font-size: 22px;
     }
+
     .country-card h2 {
         font-size: 13px;
     }
 }
+
 @media (max-width: 950px) {
     .cities-grid {
         grid-template-columns: repeat(3, 1fr);
@@ -468,7 +504,7 @@ body {
     position: relative;
 }
 
-.main-foods::after{
+.main-foods::after {
     content: "";
     width: 80px;
     height: 3px;
@@ -493,17 +529,17 @@ body {
     background: #F3E8D2;
     padding: 20px;
     border-radius: 18px;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
     text-align: center;
     transition: 0.3s ease;
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     height: 100%;
 }
 
 .foods:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
 
 /* صور الأكلات */
@@ -548,17 +584,20 @@ body {
     box-sizing: border-box;
     align-self: flex-start;
 }
+
 .for-more-btn:hover {
     background: #D2A673;
     color: #4A2E1F;
 }
-@media (max-width: 1200px){
-    .foods-grid{
-        grid-template-columns:  repeat(3,1fr);
+
+@media (max-width: 1200px) {
+    .foods-grid {
+        grid-template-columns: repeat(3, 1fr);
     }
 }
-@media (max-width: 900px){
-    .foods-grid{
+
+@media (max-width: 900px) {
+    .foods-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 30px;
     }
@@ -608,7 +647,7 @@ body {
     background: #F3E8D2;
     border-radius: 18px;
     padding: 16px;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
 
     display: flex;
     flex-direction: column;
@@ -617,7 +656,7 @@ body {
 
 .event:hover {
     transform: translateY(-6px);
-    box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
 }
 
 /* صورة الفعالية */
@@ -642,7 +681,7 @@ body {
     font-size: 16px;
     color: #6b4a37;
     line-height: 1.5;
-    flex-grow: 1;   
+    flex-grow: 1;
     margin-bottom: 14px;
 }
 
@@ -700,7 +739,7 @@ body {
     height: 34px;
     font-size: 18px;
     cursor: pointer;
-    box-shadow: 0 2px 8px rgba(0,0,0,.15);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .15);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -711,6 +750,7 @@ body {
     background: var(--caramel);
     transform: scale(1.1);
 }
+
 .user-menu {
     display: none;
 }
@@ -719,7 +759,7 @@ body {
     display: none;
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,.45);
+    background: rgba(0, 0, 0, .45);
     z-index: 9999;
     padding: 20px;
     overflow-y: auto;
@@ -733,13 +773,15 @@ body {
     border-radius: 18px;
     overflow: hidden;
     position: relative;
-    box-shadow: 0 20px 60px rgba(0,0,0,.25);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, .25);
 }
 
 .modal-close {
     position: absolute;
-    top: 12px; left: 12px;
-    width: 40px; height: 40px;
+    top: 12px;
+    left: 12px;
+    width: 40px;
+    height: 40px;
     border: none;
     border-radius: 12px;
     cursor: pointer;
@@ -766,10 +808,22 @@ body {
     flex: 0 0 auto;
 }
 
-.modal-top h2 { margin: 0; color: #4A2E1F; font-size: 26px; }
+.modal-top h2 {
+    margin: 0;
+    color: #4A2E1F;
+    font-size: 26px;
+}
 
-.modal-body { padding: 18px 22px 26px; color: #2f261f; line-height: 1.9; }
-.modal-body h4 { margin: 14px 0 8px; color: #B07A2A; }
+.modal-body {
+    padding: 18px 22px 26px;
+    color: #2f261f;
+    line-height: 1.9;
+}
+
+.modal-body h4 {
+    margin: 14px 0 8px;
+    color: #B07A2A;
+}
 
 .event-desc {
     font-size: 15px;
@@ -788,17 +842,25 @@ body {
 
 .ingredients-tags span {
     background: #fff;
-    border: 1px solid rgba(0,0,0,.08);
+    border: 1px solid rgba(0, 0, 0, .08);
     padding: 6px 12px;
     border-radius: 999px;
     font-size: 14px;
     color: #4A2E1F;
-    box-shadow: 0 4px 10px rgba(0,0,0,.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, .05);
 }
 
 @media (max-width: 650px) {
-    .modal-top { flex-direction: column; text-align: center; }
-    .modal-top img { width: 100%; max-width: 420px; height: 220px; }
+    .modal-top {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .modal-top img {
+        width: 100%;
+        max-width: 420px;
+        height: 220px;
+    }
 }
 
 .cite-btn {
@@ -859,7 +921,7 @@ body {
     background: #FAF4E6;
     border-radius: 12px;
     padding: 10px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
     min-width: 160px;
     z-index: 9999;
 }
@@ -887,7 +949,8 @@ body {
 }
 
 .filter-btn.active {
-    color: white; /* أو var(--cream-light) */
+    color: white;
+    /* أو var(--cream-light) */
 }
 
 
@@ -906,6 +969,7 @@ body {
 @media (max-width: 767px) {
     .countries-title h1 {
         font-size: 20px;
-        padding: 0 15px;
+        padding-top: 20px;
+        margin-top: 0;
     }
 }
