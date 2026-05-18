@@ -449,3 +449,10 @@ body {
         height: 55px;
     }
 }
+
+@media (max-width: 767px) {
+    .events-title h1 {
+        font-size: 20px;
+        padding: 0 15px;
+    }
+}
