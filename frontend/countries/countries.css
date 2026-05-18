@@ -466,7 +466,7 @@ body {
 
 @media (max-width: 950px) {
     .country-name h1 {
-        font-size: px;
+        font-size: 18px;
         margin-top: 10px;
     }
 
@@ -1045,5 +1045,13 @@ body {
     .section-btn {
         font-size: 16px;
         padding: 10px 30px;
+    }
+    .country-name h1{
+        font-size: 42px;
+    }
+
+    .country-name p{
+        font-size: 18px;
+        padding: 0 15px;
     }
 }
