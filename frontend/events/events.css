@@ -604,22 +604,57 @@ body {
     background: #F3E8D2;
 }
 
-@media (max-width: 767px) {
-    .auth-buttons a {
-        font-size: 13px;
-        padding: 6px 12px;
-        border-radius: 15px;
+@media (max-width: 480px) {
+    body {
+        padding-top: 70px !important;
+    }
+
+    .navbar {
+        height: 70px;
+        padding: 0 12px;
     }
 
     .logo img {
-        height: 55px;
+        height: 50px;
     }
-}
 
-@media (max-width: 767px) {
-    .events-title h1 {
-        font-size: 20px;
-        padding-top: 20px;
-        margin-top: 0;
+    .hamburger {
+        font-size: 28px;
+    }
+
+    .auth-buttons a {
+        font-size: 11px;
+        padding: 5px 8px;
+        border-radius: 12px;
+    }
+
+    .hero-text h1 {
+        font-size: 42px;
+    }
+
+    .hero-text p {
+        font-size: 18px;
+        padding: 0 15px;
+    }
+
+    .sections-preview {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        padding: 10px 15px;
+    }
+
+    .card {
+        width: 100%;
+        height: auto;
+    }
+
+    .card-img img {
+        height: 250px;
+    }
+
+    .section-btn {
+        font-size: 16px;
+        padding: 10px 30px;
     }
 }
