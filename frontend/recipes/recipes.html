@@ -11,7 +11,7 @@
 
   <!-- خط عربي -->
   <style>
-    @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@500;600&display=swap");
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@500;600&display=swap');
   </style>
 </head>
 
@@ -26,7 +26,7 @@
     </div>
 
     <div class="user-menu" id="userMenu">
-      <img id="userAvatar" src="/img/default-avatar.png" alt="المستخدم" />
+      <img id="userAvatar" src="/img/avater-icon.jpeg" alt="المستخدم" />
       <span class="user-name" id="userName"></span>
       <div class="user-dropdown">
         <a href="/profile/profile.html">الملف الشخصي</a>
@@ -58,15 +58,16 @@
     </ul>
   </nav>
 
+  <section class="hero">
+    <div class="hero-text">
+      <h1>أطباق من كل مكان</h1>
+      <p>استمتع بنكهات ووصفات متنوعة من مختلف دول العالم</p>
+    </div>
+  </section>
+   <!-- زر البحث -->
+    <input type="text" id="searchInput" placeholder="ابحث عن وصفة..." class="search-box" />
   <!--مقدمة قسم الوصفات-->
   <section class="recipes-title">
-    <!--المقدمه -->
-    <h1>
-      عالم مليء بالأفكار اللذيذة، يقدّم لك وصفات سهلة ومتنوعة تناسب جميع
-      الأذواق.
-    </h1>
-    <!-- زر البحث -->
-    <input type="text" id="searchInput" placeholder="ابحث عن وصفة..." class="search-box" />
     <!--فلتر الوصفات-->
     <div class="filter-buttons">
       <button class="active" data-filter="all">الكل</button>

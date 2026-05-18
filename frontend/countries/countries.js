@@ -278,3 +278,17 @@ document.addEventListener("DOMContentLoaded", () => {
     card.scrollIntoView({ behavior: "smooth", block: "center" });
     btn.click();
 });
+
+const userMenu = document.querySelector(".user-menu");
+const userAvatar = document.getElementById("userAvatar");
+
+// فتح / إغلاق عند الضغط على الصورة
+userAvatar.addEventListener("click", (e) => {
+    e.stopPropagation();
+    userMenu.classList.toggle("active");
+});
+
+// إغلاق عند الضغط خارج القائمة
+document.addEventListener("click", () => {
+    userMenu.classList.remove("active");
+});

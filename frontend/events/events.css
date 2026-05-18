@@ -177,65 +177,82 @@ body {
     }
 }
 
-.events-title {
+/* ================================
+   HERO SECTION
+================================ */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    margin-bottom: 50px;
-    margin-top: 100px;
+    padding: 40px 20px;
+    color: var(--brown-dark);
 }
 
-.events-title h1 {
-    margin-bottom: 20px;
-    font-size: 26px;
-    color: var(--brown-dark);
+.hero-text h1 {
+    font-size: clamp(28px, 6vw, 60px);
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.hero-text p {
+    font-size: clamp(16px, 3vw, 22px);
+    color: var(--text-muted);
     line-height: 1.8;
 }
+/* ================================
+   EVENTS TITLE / FILTER BAR
+================================ */
 
 .search-box {
-    width: 300px;
+    width: min(360px, 90%);
     padding: 12px 20px;
     border-radius: 25px;
     border: 2px solid var(--brown-dark);
-    margin-bottom: 30px;
-    font-size: 18px;
+    margin: 0 auto 28px;
+    font-size: 16px;
+    font-family: inherit;
     text-align: center;
+    display: block;
     outline: none;
+    background: #fff;
+    transition: border-color .3s, box-shadow .3s;
+}
+
+.search-box:focus {
+    border-color: var(--caramel);
+    box-shadow: 0 0 0 3px rgba(210,166,115,.25);
 }
 
 .filter-buttons {
     display: flex;
     justify-content: center;
-    gap: 15px;
-    margin-bottom: 40px;
+    gap: 10px;
     flex-wrap: wrap;
+    padding: 0 10px 20px;
 }
 
 .filter-buttons button {
-    padding: 10px 20px;
+    padding: 9px 18px;
     border-radius: 20px;
     border: 2px solid var(--brown-dark);
     background: var(--cream-light);
-    font-size: 15px;
+    color: var(--brown-dark);
+    font-family: inherit;
+    font-size: 14px;
     cursor: pointer;
-    transition: .3s;
+    transition: background .25s, color .25s, transform .2s;
+    white-space: nowrap;
 }
 
 .filter-buttons button:hover,
-.filter-buttons .active {
+.filter-buttons button.active {
     background: var(--caramel);
-    color: white;
+    color: #fff;
     border-color: var(--caramel);
 }
 
-@media (max-width: 600px) {
-    .filter-buttons button {
-        padding: 8px 12px;
-        font-size: 13px;
-    }
-
-    .filter-buttons {
-        gap: 8px;
-    }
-}
+.filter-buttons button:hover { transform: translateY(-2px); }
 
 .events-grid {
     max-width: 1200px;

@@ -255,29 +255,6 @@ body {
 }
 
 /*********************************
-     HERO
-*********************************/
-.hero {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-.hero-text h1 {
-    font-size: 100px;
-    color: var(--brown-dark);
-    font-weight: bold;
-    margin-bottom: 20px;
-}
-
-.hero-text p {
-    font-size: 35px;
-    color: var(--brown-dark);
-    opacity: .9;
-}
-
-/*********************************
      SECTIONS PREVIEW
 *********************************/
 .sections-preview {
@@ -589,4 +566,28 @@ body {
     .auth-buttons {
         display: none;
     }
+}
+
+/* ================================
+   HERO SECTION
+================================ */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--brown-dark);
+}
+
+.hero-text h1 {
+    font-size: clamp(28px, 6vw, 60px);
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.hero-text p {
+    font-size: clamp(16px, 3vw, 22px);
+    color: var(--text-muted);
+    line-height: 1.8;
 }
