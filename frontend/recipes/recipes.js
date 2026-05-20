@@ -233,3 +233,16 @@ document.addEventListener("DOMContentLoaded", () => {
     card.scrollIntoView({ behavior: "smooth", block: "center" });
     btn.click();
 });
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const grid = document.querySelector('.foods-grid');
+    if (!grid) return;
+    const allCards = [...grid.querySelectorAll('.foods-card')];
+    allCards.sort((a, b) => {
+        const nameA = a.querySelector('.recipes-head span')?.textContent.trim() || '';
+        const nameB = b.querySelector('.recipes-head span')?.textContent.trim() || '';
+        return nameA.localeCompare(nameB, 'ar');
+    });
+    allCards.forEach(card => grid.appendChild(card));
+});

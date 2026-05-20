@@ -121,3 +121,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const btn = card.querySelector(".event-item");
     if (btn) btn.click();
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const grid = document.querySelector('.events-grid');
+    if (!grid) return;
+    const allCards = [...grid.querySelectorAll('.event-card')];
+    allCards.sort((a, b) => {
+        const nameA = a.querySelector('.event-name')?.textContent.trim() || '';
+        const nameB = b.querySelector('.event-name')?.textContent.trim() || '';
+        return nameA.localeCompare(nameB, 'ar');
+    });
+    allCards.forEach(card => grid.appendChild(card));
+});
