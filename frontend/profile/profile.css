@@ -1,30 +1,45 @@
+:root {
+    --brown-dark: #4A2E1F;
+    --cream-light: #FAF4E6;
+    --cream-soft: #F3E8D2;
+    --caramel: #D2A673;
+}
+
+/* ================================
+   PROFILE PAGE
+================================ */
 .profile-page {
     display: flex;
     min-height: 100vh;
+    background: #FAF4E6;
 }
 
+/* ================================
+   SIDEBAR
+================================ */
 .profile-sidebar {
     width: 260px;
-    background: #F3E8D2;
+    background: linear-gradient(180deg, #2c1a0e 0%, #1e1008 100%);
     padding: 30px 0;
     position: fixed;
     top: 90px;
     right: 0;
-    height: 100%;
+    height: calc(100% - 90px);
     z-index: 100;
+    border-left: 1px solid rgba(200,133,74,0.15);
 }
 
 .profile-avatar-section {
     text-align: center;
-    padding: 20px;
-    border-bottom: 2px solid #e0cdb0;
+    padding: 24px 20px;
+    border-bottom: 1px solid rgba(200,133,74,0.2);
     margin-bottom: 20px;
 }
 
 .avatar-wrapper {
     position: relative;
     width: 90px;
-    margin: 0 auto 12px;
+    margin: 0 auto 14px;
 }
 
 .avatar-wrapper img {
@@ -32,14 +47,14 @@
     height: 90px;
     border-radius: 50%;
     object-fit: cover;
-    border: 3px solid var(--caramel);
+    border: 3px solid rgba(200,133,74,0.6);
 }
 
 .avatar-edit {
     position: absolute;
     bottom: 0;
     left: 0;
-    background: var(--caramel);
+    background: rgba(200,133,74,0.8);
     border-radius: 50%;
     width: 26px;
     height: 26px;
@@ -51,134 +66,175 @@
     transition: .3s;
 }
 
-.avatar-edit:hover {
-    background: #4A2E1F;
-}
+.avatar-edit:hover { background: #c8854a; }
 
 .profile-avatar-section h2 {
-    font-size: 18px;
-    color: #4A2E1F;
+    font-size: 17px;
+    color: #f5ede0;
     margin-bottom: 4px;
 }
 
 .profile-avatar-section p {
-    font-size: 13px;
-    color: #9b7a5e;
+    font-size: 12px;
+    color: rgba(245,237,224,0.5);
 }
 
 .profile-nav {
     list-style: none;
-    padding: 0 16px;
+    padding: 0 14px;
 }
 
-.profile-nav li {
-    margin-bottom: 8px;
-}
+.profile-nav li { margin-bottom: 6px; }
 
 .profile-nav li a {
     display: flex;
     align-items: center;
     gap: 10px;
-    padding: 12px 16px;
+    padding: 11px 16px;
     border-radius: 12px;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 600;
-    color: #4A2E1F;
+    color: rgba(245,237,224,0.65);
     transition: .3s;
+    font-family: "Noto Sans Arabic", sans-serif;
 }
 
 .profile-nav li a:hover {
-    background: #e8d5b5;
+    background: rgba(255,255,255,0.07);
+    color: #f5ede0;
 }
 
 .profile-nav li a.active {
-    background: var(--caramel);
-    color: white;
-    box-shadow: 0 4px 12px rgba(210,166,115,.4);
+    background: rgba(200,133,74,0.25);
+    color: #f5ede0;
+    border: 1px solid rgba(200,133,74,0.35);
 }
 
+/* ================================
+   CONTENT
+================================ */
 .profile-content {
     margin-right: 260px;
     padding: 40px;
     width: 100%;
+    background: #FAF4E6;
 }
 
-.fav-section {
-    display: none;
-}
-
-.fav-section.active {
-    display: block;
-}
+.fav-section { display: none; }
+.fav-section.active { display: block; }
 
 .fav-title {
-    font-size: 26px;
+    font-size: 24px;
     color: #4A2E1F;
     margin-bottom: 24px;
     padding-bottom: 12px;
     border-bottom: 3px solid var(--caramel);
 }
 
+/* ================================
+   FAV GRID - تصميم المجلة
+================================ */
 .fav-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    gap: 16px;
 }
 
 .fav-card {
-    background: #fff7ec;
+    position: relative;
     border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 4px 14px rgba(0,0,0,.06);
+    background: #1a0f07;
+    height: 220px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.fav-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.25);
 }
 
 .fav-card img {
     width: 100%;
-    height: 150px;
+    height: 100%;
     object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.fav-card:hover img { transform: scale(1.05); }
+
+.fav-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(20,8,2,0.88) 0%, rgba(20,8,2,0.15) 55%, transparent 100%);
+    pointer-events: none;
 }
 
 .fav-card-info {
-    padding: 12px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    padding: 14px 16px;
+    z-index: 2;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-end;
 }
 
 .fav-card-info span {
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 700;
-    color: #4A2E1F;
+    color: #fff;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+    line-height: 1.3;
+    flex: 1;
+    padding-left: 8px;
 }
 
 .fav-remove {
     border: none;
-    background: transparent;
-    font-size: 18px;
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(6px);
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
     cursor: pointer;
-    color: #D2A673;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     transition: .3s;
+    flex-shrink: 0;
+    z-index: 3;
 }
 
 .fav-remove:hover {
-    color: #4A2E1F;
-    transform: scale(1.2);
+    background: rgba(200,60,60,0.7);
+    transform: scale(1.1);
 }
 
 .fav-empty {
     color: #9b7a5e;
     font-size: 16px;
     text-align: center;
-    padding: 40px;
+    padding: 50px 40px;
     background: #fff7ec;
     border-radius: 16px;
+    border: 1px solid rgba(0,0,0,0.06);
 }
 
+/* ================================
+   SETTINGS
+================================ */
 .settings-form {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 24px;
 }
 
 .settings-group {
@@ -186,10 +242,11 @@
     border-radius: 16px;
     padding: 24px;
     box-shadow: 0 4px 14px rgba(0,0,0,.06);
+    border: 1px solid rgba(0,0,0,0.05);
 }
 
 .settings-group h3 {
-    font-size: 18px;
+    font-size: 17px;
     color: #4A2E1F;
     margin-bottom: 20px;
     padding-bottom: 10px;
@@ -205,13 +262,13 @@
 }
 
 .input-group label {
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 600;
     color: #4A2E1F;
 }
 
 .input-group input {
-    padding: 12px 16px;
+    padding: 11px 16px;
     border-radius: 12px;
     border: 2px solid #F3E8D2;
     font-size: 15px;
@@ -229,12 +286,12 @@
 }
 
 .settings-btn {
-    padding: 12px 24px;
+    padding: 11px 24px;
     border-radius: 12px;
     border: none;
     background: #4A2E1F;
     color: #FAF4E6;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 700;
     font-family: "Noto Sans Arabic", sans-serif;
     cursor: pointer;
@@ -246,23 +303,24 @@
     color: #4A2E1F;
 }
 
-/* قائمة الجوال */
-.profile-mobile-nav {
-    display: none;
-}
+/* ================================
+   MOBILE NAV
+================================ */
+.profile-mobile-nav { display: none; }
 
+/* ================================
+   RESPONSIVE
+================================ */
 @media (max-width: 900px) {
-    .profile-sidebar {
-        display: none;
-    }
+    .profile-sidebar { display: none; }
 
     .profile-mobile-nav {
         display: flex;
         overflow-x: auto;
-        gap: 10px;
+        gap: 8px;
         padding: 12px 16px;
-        background: #F3E8D2;
-        margin-bottom: 20px;
+        background: #2c1a0e;
+        border-bottom: 1px solid rgba(200,133,74,0.2);
     }
 
     .profile-mobile-nav a {
@@ -270,18 +328,19 @@
         padding: 8px 16px;
         border-radius: 20px;
         text-decoration: none;
-        font-size: 14px;
+        font-size: 13px;
         font-weight: 600;
-        color: #4A2E1F;
-        background: #fff7ec;
-        border: 1px solid #e0cdb0;
+        color: rgba(245,237,224,0.65);
+        background: rgba(255,255,255,0.07);
+        border: 1px solid rgba(255,255,255,0.1);
         transition: .3s;
+        font-family: "Noto Sans Arabic", sans-serif;
     }
 
     .profile-mobile-nav a.active {
-        background: var(--caramel);
-        color: white;
-        border-color: var(--caramel);
+        background: rgba(200,133,74,0.3);
+        color: #f5ede0;
+        border-color: rgba(200,133,74,0.4);
     }
 
     .profile-content {
@@ -289,77 +348,14 @@
         padding: 20px;
     }
 
-    .fav-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+    .fav-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 600px) {
-    .fav-grid {
-        grid-template-columns: 1fr;
-    }
+    .fav-grid { grid-template-columns: 1fr; }
+    .fav-card { height: 200px; }
 }
 
-@media (max-width: 767px) {
-    .auth-buttons a {
-        font-size: 13px;
-        padding: 6px 12px;
-        border-radius: 15px;
-    }
-
-    @media (max-width: 480px) {
-    body {
-        padding-top: 70px !important;
-    }
-
-    .navbar {
-        height: 70px;
-        padding: 0 12px;
-    }
-
-    .logo img {
-        height: 50px;
-    }
-
-    .hamburger {
-        font-size: 28px;
-    }
-
-    .auth-buttons a {
-        font-size: 11px;
-        padding: 5px 8px;
-        border-radius: 12px;
-    }
-
-    .hero-text h1 {
-        font-size: 42px;
-    }
-
-    .hero-text p {
-        font-size: 18px;
-        padding: 0 15px;
-    }
-
-    .sections-preview {
-        flex-direction: column;
-        align-items: center;
-        gap: 30px;
-        padding: 10px 15px;
-    }
-
-    .card {
-        width: 100%;
-        height: auto;
-    }
-
-    .card-img img {
-        height: 250px;
-    }
-
-    .section-btn {
-        font-size: 16px;
-        padding: 10px 30px;
-    }
-}
-
+@media (max-width: 480px) {
+    .profile-content { padding: 14px; }
 }
