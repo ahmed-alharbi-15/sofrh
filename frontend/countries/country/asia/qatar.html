@@ -1,381 +1,313 @@
 <!doctype html>
 <html lang="ar" dir="rtl">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>سفرة</title>
 
-    <!-- ملف الستايل الأساسي -->
-    <link rel="stylesheet" href="/countries/countries.css" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>سفرة</title>
 
-    <!-- خط عربي -->
-    <style>
-      @import url("https://fonts.googleapis.com/css/2?family=Noto+Sans+Arabic:wght@500;600&display=swap");
-    </style>
-  </head>
+  <!-- ملف الستايل الأساسي -->
+  <link rel="stylesheet" href="/countries/countries.css" />
 
-  <body>
-    <!--  NAVBAR (ثابت في كل صفحة) -->
-    <header class="navbar">
-      <div class="hamburger" id="menu-btn">☰</div>
+  <!-- خط عربي -->
+  <style>
+    @import url("https://fonts.googleapis.com/css/2?family=Noto+Sans+Arabic:wght@500;600&display=swap");
+  </style>
+</head>
 
-      <div class="auth-buttons" id="authButtons">
-        <a href="/auth/login.html" class="login">تسجيل دخول</a>
-        <a href="/auth/signup.html" class="signup">إنشاء حساب</a>
-      </div>
+<body>
+  <!--  NAVBAR (ثابت في كل صفحة) -->
+  <header class="navbar">
+    <div class="hamburger" id="menu-btn">☰</div>
 
-      <div class="user-menu" id="userMenu">
-        <img id="userAvatar" src="/img/avater-icon.jpeg" alt="المستخدم" />
-        <span class="user-name" id="userName"></span>
-        <div class="user-dropdown">
-          <a href="/profile/profile.html">الملف الشخصي</a>
-          <a href="/index/index.html" id="logoutBtn">تسجيل الخروج</a>
-        </div>
-      </div>
-      <ul class="nav-list">
-        <li><a href="/index/index.html">الرئيسية</a></li>
-        <li><a href="/countries/countries.html">الدول</a></li>
-        <li><a href="/events/events.html">الفعاليات</a></li>
-        <li><a href="/recipes/recipes.html">الوصفات</a></li>
-      </ul>
-
-      <div class="logo">
-        <a href="/index/index.html"> <img src="/img/logo3.JPG" alt="سفرة" /></a>
-      </div>
-    </header>
-
-    <!--  MENU للجوال -->
-    <nav class="side-menu" id="side-menu">
-      <span class="close-btn" id="close-btn">✖</span>
-
-      <ul>
-        <li><a href="/index/index.html">الرئيسية</a></li>
-        <li><a href="/countries/countries.html">الدول</a></li>
-        <li><a href="/events/events.html">الفعاليات</a></li>
-        <li><a href="/recipes/recipes.html  ">الوصفات</a></li>
-      </ul>
-    </nav>
-    <header>
-      <a href="/countries/countries.html" class="back-btn">رجوع</a>
-    </header>
-    <div class="country-name">
-      <h1>قطر</h1>
-      <p>وجهة تجمع بين الفخامة الخليجية والتجارب البحرية والصحراوية.</p>
+    <div class="auth-buttons" id="authButtons">
+      <a href="/auth/login.html" class="login">تسجيل دخول</a>
+      <a href="/auth/signup.html" class="signup">إنشاء حساب</a>
     </div>
-    <!--المدن -->
-    <div class="main-cites">
-      <h1>المدن</h1>
+
+    <div class="user-menu" id="userMenu">
+      <img id="userAvatar" src="/img/avater-icon.jpeg" alt="المستخدم" />
+      <span class="user-name" id="userName"></span>
+      <div class="user-dropdown">
+        <a href="/profile/profile.html">الملف الشخصي</a>
+        <a href="/index/index.html" id="logoutBtn">تسجيل الخروج</a>
+      </div>
     </div>
-    <section class="cities-grid">
-      <div
-        class="cite"
-        data-name="الدوحة – Doha"
-        data-img="/img/Doha.jpg"
-        data-desc="عاصمة قطر الحديثة وقلبها النابض، تجمع بين ناطحات السحاب الفارهة وكورنيش البحر الخلاب والمتاحف العالمية. مدينة تمزج بين الأصالة والحداثة في مشهد بصري لا مثيل له."
-        data-historic="🏛️ متحف الفن الإسلامي – Museum of Islamic Art | 🛍️ سوق واقف – Souq Waqif | 🌊 كورنيش الدوحة – Corniche | 🏙️ منطقة المرسى – The Pearl"
-        data-restaurants="🍽️ زوما الدوحة – Zuma Doha | 🌎 نوبو الدوحة – Nobu Doha | 🥩 بلاك تاب – Black Tap"
-        data-cafes="☕ فلات وايت – Flat White Specialty Coffee | ☕ أرابيكا – % Arabica | ☕ بريور – Prior Coffee"
-        data-events="🏛️ متحف الفن الإسلامي – MIA | 🛍️ سوق واقف – Souq Waqif | 🌊 كورنيش الدوحة – Corniche"
-      >
-        <button
-          class="save-btn"
-          onclick="
+    <ul class="nav-list">
+      <li><a href="/index/index.html">الرئيسية</a></li>
+      <li><a href="/countries/countries.html">الدول</a></li>
+      <li><a href="/events/events.html">الفعاليات</a></li>
+      <li><a href="/recipes/recipes.html">الوصفات</a></li>
+    </ul>
+
+    <div class="logo">
+      <a href="/index/index.html"> <img src="/img/logo3.JPG" alt="سفرة" /></a>
+    </div>
+  </header>
+
+  <!--  MENU للجوال -->
+  <nav class="side-menu" id="side-menu">
+    <span class="close-btn" id="close-btn">✖</span>
+
+    <ul>
+      <li><a href="/index/index.html">الرئيسية</a></li>
+      <li><a href="/countries/countries.html">الدول</a></li>
+      <li><a href="/events/events.html">الفعاليات</a></li>
+      <li><a href="/recipes/recipes.html  ">الوصفات</a></li>
+    </ul>
+  </nav>
+  <header>
+    <a href="/countries/countries.html" class="back-btn">رجوع</a>
+  </header>
+  <div class="country-name">
+    <h1>قطر</h1>
+    <p>وجهة تجمع بين الفخامة الخليجية والتجارب البحرية والصحراوية.</p>
+  </div>
+  <!--المدن -->
+  <div class="main-cites">
+    <h1>المدن</h1>
+  </div>
+  <section class="cities-grid">
+    <div class="cite" data-name="الدوحة – Doha" data-img="/img/Doha.jpg"
+      data-desc="عاصمة قطر الحديثة وقلبها النابض، تجمع بين ناطحات السحاب الفارهة وكورنيش البحر الخلاب والمتاحف العالمية. مدينة تمزج بين الأصالة والحداثة في مشهد بصري لا مثيل له."
+      data-historic="🏛️ متحف الفن الإسلامي – Museum of Islamic Art | 🛍️ سوق واقف – Souq Waqif | 🌊 كورنيش الدوحة – Corniche | 🏙️ منطقة المرسى – The Pearl"
+      data-restaurants="🍽️ زوما الدوحة – Zuma Doha | 🌎 نوبو الدوحة – Nobu Doha | 🥩 بلاك تاب – Black Tap"
+      data-cafes="☕ فلات وايت – Flat White Specialty Coffee | ☕ أرابيكا – % Arabica | ☕ بريور – Prior Coffee"
+      data-events="🏛️ متحف الفن الإسلامي – MIA | 🛍️ سوق واقف – Souq Waqif | 🌊 كورنيش الدوحة – Corniche">
+      <button class="save-btn" onclick="
             event.stopPropagation();
             saveItem('city', 'doha', 'الدوحة', '/img/Doha.jpg');
-          "
-        >
-          🏙️
-        </button>
-        <img src="/img/Doha.jpg" alt="الدوحة" class="cite-img" />
-        <span class="name">الدوحة – Doha</span>
-        <p class="info">عاصمة حديثة تجمع بين الفخامة والثقافة.</p>
-        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
-          تفاصيل
-        </button>
-      </div>
+          ">
+        🏙️
+      </button>
+      <img src="/img/Doha.jpg" alt="الدوحة" class="cite-img" />
+      <span class="name">الدوحة – Doha</span>
+      <p class="info">عاصمة حديثة تجمع بين الفخامة والثقافة.</p>
+      <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+        تفاصيل
+      </button>
+    </div>
 
-      <div
-        class="cite"
-        data-name="الوكرة – Al Wakrah"
-        data-img="/img/Al Wakrah.jpg"
-        data-desc="مدينة ساحلية هادئة تحتفظ بطابعها التراثي الأصيل، تشتهر بسوقها الشعبي العريق وشواطئها الجميلة ومركزها الرياضي الحديث الذي شهد مباريات كأس العالم 2022."
-        data-historic="🏟️ استاد الوكرة – Al Wakrah Stadium | 🛍️ سوق الوكرة – Al Wakrah Souq | 🏖️ شاطئ الوكرة – Al Wakrah Beach | 🕌 مسجد الوكرة التراثي"
-        data-restaurants="🐟 مطعم البحر – Al Bahr | 🍽️ مطعم الكورنيش | 🥘 مطعم البيت القطري"
-        data-cafes="☕ كافيه الواجهة | ☕ مقهى الوكرة | ☕ سي فيو كافيه – Sea View Cafe"
-        data-events="🏟️ استاد الوكرة – Al Wakrah Stadium | 🛍️ سوق الوكرة التراثي | 🏖️ شاطئ الوكرة – Al Wakrah Beach"
-      >
-        <button
-          class="save-btn"
-          onclick="
+    <div class="cite" data-name="الوكرة – Al Wakrah" data-img="/img/Al Wakrah.jpg"
+      data-desc="مدينة ساحلية هادئة تحتفظ بطابعها التراثي الأصيل، تشتهر بسوقها الشعبي العريق وشواطئها الجميلة ومركزها الرياضي الحديث الذي شهد مباريات كأس العالم 2022."
+      data-historic="🏟️ استاد الوكرة – Al Wakrah Stadium | 🛍️ سوق الوكرة – Al Wakrah Souq | 🏖️ شاطئ الوكرة – Al Wakrah Beach | 🕌 مسجد الوكرة التراثي"
+      data-restaurants="🐟 مطعم البحر – Al Bahr | 🍽️ مطعم الكورنيش | 🥘 مطعم البيت القطري"
+      data-cafes="☕ كافيه الواجهة | ☕ مقهى الوكرة | ☕ سي فيو كافيه – Sea View Cafe"
+      data-events="🏟️ استاد الوكرة – Al Wakrah Stadium | 🛍️ سوق الوكرة التراثي | 🏖️ شاطئ الوكرة – Al Wakrah Beach">
+      <button class="save-btn" onclick="
             event.stopPropagation();
             saveItem('city', 'al-wakrah', 'الوكرة', '/img/Al Wakrah.jpg');
-          "
-        >
-          🏙️
-        </button>
-        <img src="/img/Al Wakrah.jpg" alt="الوكرة" class="cite-img" />
-        <span class="name">الوكرة – Al Wakrah</span>
-        <p class="info">مدينة ساحلية هادئة بطابع تراثي.</p>
-        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
-          تفاصيل
-        </button>
-      </div>
+          ">
+        🏙️
+      </button>
+      <img src="/img/Al Wakrah.jpg" alt="الوكرة" class="cite-img" />
+      <span class="name">الوكرة – Al Wakrah</span>
+      <p class="info">مدينة ساحلية هادئة بطابع تراثي.</p>
+      <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+        تفاصيل
+      </button>
+    </div>
 
-      <div
-        class="cite"
-        data-name="الخور – Al Khor"
-        data-img="/img/Al Khor.webp"
-        data-desc="مدينة بحرية ساحرة تقع شمال الدوحة، تشتهر بحدائقها الخضراء ومناطقها الترفيهية وموانئها الهادئة. وجهة مثالية للاسترخاء بعيداً عن صخب العاصمة مع إطلالات بحرية رائعة."
-        data-historic="🌿 حديقة الخور – Al Khor Park | 🏖️ شاطئ الخور – Al Khor Beach | 🦩 محمية طيور الفلامنغو | 🛶 ميناء الخور التراثي"
-        data-restaurants="🐟 مطعم البحر – Al Bahr | 🍽️ مطعم الكورنيش | 🥘 مطعم الخور للمأكولات البحرية"
-        data-cafes="☕ كافيه الحديقة – Garden Cafe | ☕ مقهى الخور | ☕ سي فيو كافيه – Sea View Cafe"
-        data-events="🌿 حديقة الخور – Al Khor Park | 🦩 مشاهدة الفلامنغو | 🏖️ شاطئ الخور – Al Khor Beach"
-      >
-        <button
-          class="save-btn"
-          onclick="
+    <div class="cite" data-name="الخور – Al Khor" data-img="/img/Al Khor.webp"
+      data-desc="مدينة بحرية ساحرة تقع شمال الدوحة، تشتهر بحدائقها الخضراء ومناطقها الترفيهية وموانئها الهادئة. وجهة مثالية للاسترخاء بعيداً عن صخب العاصمة مع إطلالات بحرية رائعة."
+      data-historic="🌿 حديقة الخور – Al Khor Park | 🏖️ شاطئ الخور – Al Khor Beach | 🦩 محمية طيور الفلامنغو | 🛶 ميناء الخور التراثي"
+      data-restaurants="🐟 مطعم البحر – Al Bahr | 🍽️ مطعم الكورنيش | 🥘 مطعم الخور للمأكولات البحرية"
+      data-cafes="☕ كافيه الحديقة – Garden Cafe | ☕ مقهى الخور | ☕ سي فيو كافيه – Sea View Cafe"
+      data-events="🌿 حديقة الخور – Al Khor Park | 🦩 مشاهدة الفلامنغو | 🏖️ شاطئ الخور – Al Khor Beach">
+      <button class="save-btn" onclick="
             event.stopPropagation();
             saveItem('city', 'al-khor', 'الخور', '/img/Al Khor.webp');
-          "
-        >
-          🏙️
-        </button>
-        <img src="/img/Al Khor.webp" alt="الخور" class="cite-img" />
-        <span class="name">الخور – Al Khor</span>
-        <p class="info">مدينة بحرية مناسبة للاسترخاء.</p>
-        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
-          تفاصيل
-        </button>
-      </div>
+          ">
+        🏙️
+      </button>
+      <img src="/img/Al Khor.webp" alt="الخور" class="cite-img" />
+      <span class="name">الخور – Al Khor</span>
+      <p class="info">مدينة بحرية مناسبة للاسترخاء.</p>
+      <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+        تفاصيل
+      </button>
+    </div>
 
-      <div
-        class="cite"
-        data-name="لوسيل – Lusail"
-        data-img="/img/Lusail.jpg"
-        data-desc="مدينة المستقبل في قطر، مدينة ذكية متكاملة تضم ناطحات السحاب الحديثة وكورنيش لوسيل الرائع واستاد لوسيل الأيقوني الذي احتضن نهائي كأس العالم 2022."
-        data-historic="🏟️ استاد لوسيل – Lusail Stadium | 🌊 كورنيش لوسيل – Lusail Marina | 🏙️ برج لوسيل – Lusail Tower | 🎭 مسرح لوسيل – Lusail Theatre"
-        data-restaurants="🍽️ مطاعم مارينا لوسيل | 🌎 واجهة كورنيش لوسيل | 🥩 مطاعم بلازا لوسيل"
-        data-cafes="☕ مقاهي مارينا لوسيل | ☕ كورنيش كافيه | ☕ لوسيل بلازا كافيه"
-        data-events="🏟️ استاد لوسيل – Lusail Stadium | 🌊 كورنيش لوسيل – Lusail Marina | 🎭 مسرح لوسيل – Lusail Theatre"
-      >
-        <button
-          class="save-btn"
-          onclick="
+    <div class="cite" data-name="لوسيل – Lusail" data-img="/img/Lusail.jpg"
+      data-desc="مدينة المستقبل في قطر، مدينة ذكية متكاملة تضم ناطحات السحاب الحديثة وكورنيش لوسيل الرائع واستاد لوسيل الأيقوني الذي احتضن نهائي كأس العالم 2022."
+      data-historic="🏟️ استاد لوسيل – Lusail Stadium | 🌊 كورنيش لوسيل – Lusail Marina | 🏙️ برج لوسيل – Lusail Tower | 🎭 مسرح لوسيل – Lusail Theatre"
+      data-restaurants="🍽️ مطاعم مارينا لوسيل | 🌎 واجهة كورنيش لوسيل | 🥩 مطاعم بلازا لوسيل"
+      data-cafes="☕ مقاهي مارينا لوسيل | ☕ كورنيش كافيه | ☕ لوسيل بلازا كافيه"
+      data-events="🏟️ استاد لوسيل – Lusail Stadium | 🌊 كورنيش لوسيل – Lusail Marina | 🎭 مسرح لوسيل – Lusail Theatre">
+      <button class="save-btn" onclick="
             event.stopPropagation();
             saveItem('city', 'lusail', 'لوسيل', '/img/Lusail.jpg');
-          "
-        >
-          🏙️
-        </button>
-        <img src="/img/Lusail.jpg" alt="لوسيل" class="cite-img" />
-        <span class="name">لوسيل – Lusail</span>
-        <p class="info">مدينة مستقبلية حديثة.</p>
-        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
-          تفاصيل
-        </button>
-      </div>
+          ">
+        🏙️
+      </button>
+      <img src="/img/Lusail.jpg" alt="لوسيل" class="cite-img" />
+      <span class="name">لوسيل – Lusail</span>
+      <p class="info">مدينة مستقبلية حديثة.</p>
+      <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+        تفاصيل
+      </button>
+    </div>
 
-      <div
-        class="cite"
-        data-name="الريان – Al Rayyan"
-        data-img="/img/Al Rayyan.jpg"
-        data-desc="أكبر بلديات قطر وأكثرها نشاطاً، تضم مجمعات التسوق الكبرى ومتنزه أسباير الضخم والعديد من المعالم الترفيهية والرياضية."
-        data-historic="🏟️ استاد أحمد بن علي – Ahmad Bin Ali Stadium | 🌳 متنزه أسباير – Aspire Park | 🛍️ مول قطر – Mall of Qatar | 🎡 فيلاجيو مول – Villaggio Mall"
-        data-restaurants="🍽️ مطاعم مول قطر | 🌎 مطاعم فيلاجيو | 🥩 مطعم تكساس دي برازيل"
-        data-cafes="☕ مقاهي مول قطر | ☕ كافيه أسباير | ☕ ستاربكس ريزيرف"
-        data-events="🌳 متنزه أسباير – Aspire Park | 🏟️ استاد أحمد بن علي | 🛍️ مول قطر – Mall of Qatar"
-      >
-        <button
-          class="save-btn"
-          onclick="
+    <div class="cite" data-name="الريان – Al Rayyan" data-img="/img/Al Rayyan.jpg"
+      data-desc="أكبر بلديات قطر وأكثرها نشاطاً، تضم مجمعات التسوق الكبرى ومتنزه أسباير الضخم والعديد من المعالم الترفيهية والرياضية."
+      data-historic="🏟️ استاد أحمد بن علي – Ahmad Bin Ali Stadium | 🌳 متنزه أسباير – Aspire Park | 🛍️ مول قطر – Mall of Qatar | 🎡 فيلاجيو مول – Villaggio Mall"
+      data-restaurants="🍽️ مطاعم مول قطر | 🌎 مطاعم فيلاجيو | 🥩 مطعم تكساس دي برازيل"
+      data-cafes="☕ مقاهي مول قطر | ☕ كافيه أسباير | ☕ ستاربكس ريزيرف"
+      data-events="🌳 متنزه أسباير – Aspire Park | 🏟️ استاد أحمد بن علي | 🛍️ مول قطر – Mall of Qatar">
+      <button class="save-btn" onclick="
             event.stopPropagation();
             saveItem('city', 'al-rayyan', 'الريان', '/img/Al Rayyan.jpg');
-          "
-        >
-          🏙️
-        </button>
-        <img src="/img/Al Rayyan.jpg" alt="الريان" class="cite-img" />
-        <span class="name">الريان – Al Rayyan</span>
-        <p class="info">مدينة مليئة بالمجمعات والمعالم.</p>
-        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
-          تفاصيل
-        </button>
-      </div>
+          ">
+        🏙️
+      </button>
+      <img src="/img/Al Rayyan.jpg" alt="الريان" class="cite-img" />
+      <span class="name">الريان – Al Rayyan</span>
+      <p class="info">مدينة مليئة بالمجمعات والمعالم.</p>
+      <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+        تفاصيل
+      </button>
+    </div>
 
-      <div
-        class="cite"
-        data-name="الزبارة – Al Zubarah"
-        data-img="/img/Al Zubarah.jpg"
-        data-desc="موقع تراث عالمي لليونسكو في شمال غرب قطر، تضم مدينة الزبارة الأثرية المندثرة وقلعة الزبارة التاريخية التي تروي قصة الحضارة القطرية العريقة."
-        data-historic="🏰 قلعة الزبارة – Al Zubarah Fort | 🏛️ موقع الزبارة الأثري – UNESCO | 🌅 الشاطئ الشمالي | 🔭 محمية الزبارة الطبيعية"
-        data-restaurants="🍽️ مطعم القلعة | 🥘 مطعم التراث القطري"
-        data-cafes="☕ كافيه الزبارة | ☕ مقهى القلعة"
-        data-events="🏰 قلعة الزبارة – Al Zubarah Fort | 🏛️ الموقع الأثري – UNESCO Site | 🌅 غروب شمس الشمال"
-      >
-        <button
-          class="save-btn"
-          onclick="
+    <div class="cite" data-name="الزبارة – Al Zubarah" data-img="/img/Al Zubarah.jpg"
+      data-desc="موقع تراث عالمي لليونسكو في شمال غرب قطر، تضم مدينة الزبارة الأثرية المندثرة وقلعة الزبارة التاريخية التي تروي قصة الحضارة القطرية العريقة."
+      data-historic="🏰 قلعة الزبارة – Al Zubarah Fort | 🏛️ موقع الزبارة الأثري – UNESCO | 🌅 الشاطئ الشمالي | 🔭 محمية الزبارة الطبيعية"
+      data-restaurants="🍽️ مطعم القلعة | 🥘 مطعم التراث القطري" data-cafes="☕ كافيه الزبارة | ☕ مقهى القلعة"
+      data-events="🏰 قلعة الزبارة – Al Zubarah Fort | 🏛️ الموقع الأثري – UNESCO Site | 🌅 غروب شمس الشمال">
+      <button class="save-btn" onclick="
             event.stopPropagation();
             saveItem('city', 'al-zubarah', 'الزبارة', '/img/Al Zubarah.jpg');
-          "
-        >
-          🏙️
-        </button>
-        <img src="/img/Al Zubarah.jpg" alt="الزبارة" class="cite-img" />
-        <span class="name">الزبارة – Al Zubarah</span>
-        <p class="info">مدينة تاريخية وموقع تراثي.</p>
-        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
-          تفاصيل
-        </button>
-      </div>
-    </section>
-    <!--الاكل-->
-    <div class="main-foods">
-      <h1>الماكولات</h1>
+          ">
+        🏙️
+      </button>
+      <img src="/img/Al Zubarah.jpg" alt="الزبارة" class="cite-img" />
+      <span class="name">الزبارة – Al Zubarah</span>
+      <p class="info">مدينة تاريخية وموقع تراثي.</p>
+      <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+        تفاصيل
+      </button>
     </div>
-    <section class="foods-grid">
-      <div class="foods">
-        <img src="/img/مجبوس.jpg" alt="" class="foods-img" />
-        <span class="name-foods">مجبوس – Majboos</span>
-        <div class="food-info">أرز متبل يقدم مع اللحم أو الدجاج.</div>
-        <a href="/recipes/recipes.html?recipe=majboos" class="for-more-btn"
-          >الوصفة</a
-        >
-      </div>
-
-      <div class="foods">
-        <img src="/img/هريس.jpg" alt="" class="foods-img" />
-        <span class="name-foods">هريس – Harees</span>
-        <div class="food-info">قمح مطبوخ مع اللحم.</div>
-        <a href="/recipes/recipes.html?recipe=harees" class="for-more-btn"
-          >الوصفة</a
-        >
-      </div>
-
-      <div class="foods">
-        <img src="/img/لقيمات.jpg" alt="" class="foods-img" />
-        <span class="name-foods">لقيمات – Luqaimat</span>
-        <div class="food-info">حلى مقرمش مع الدبس.</div>
-        <a href="/recipes/recipes.html?recipe=luqaimat" class="for-more-btn"
-          >الوصفة</a
-        >
-      </div>
-
-      <div class="foods">
-        <img src="/img/ثريد.jpg" alt="" class="foods-img" />
-        <span class="name-foods">ثريد – Threed</span>
-        <div class="food-info">خبز مع مرق اللحم والخضار.</div>
-        <a href="/recipes/recipes.html?recipe=threed" class="for-more-btn"
-          >الوصفة</a
-        >
-      </div>
-
-      <div class="foods">
-        <img src="/img/سمك-مشوي.jpg" alt="" class="foods-img" />
-        <span class="name-foods">سمك مشوي – Grilled Fish</span>
-        <div class="food-info">مأكولات بحرية بطعم طازج.</div>
-        <a
-          href="/recipes/recipes.html?recipe=grilled-fish-uae"
-          class="for-more-btn"
-          >الوصفة</a
-        >
-      </div>
-
-      <div class="foods">
-        <img src="/img/بلاليط.jpg" alt="" class="foods-img" />
-        <span class="name-foods">بلاليط – Balaleet</span>
-        <div class="food-info">شعيرية حلوة تقدم مع البيض.</div>
-        <a href="/recipes/recipes.html?recipe=balaleet" class="for-more-btn"
-          >الوصفة</a
-        >
-      </div>
-    </section>
-    <div class="events-main">
-      <h1>الفعاليات</h1>
+  </section>
+  <!--الاكل-->
+  <div class="main-foods">
+    <h1>الماكولات</h1>
+  </div>
+  <section class="foods-grid">
+    <div class="foods">
+      <img src="/img/مجبوس.jpg" alt="" class="foods-img" />
+      <span class="name-foods">مجبوس – Majboos</span>
+      <div class="food-info">أرز متبل يقدم مع اللحم أو الدجاج.</div>
+      <a href="/recipes/recipes.html?recipe=majboos" class="for-more-btn">الوصفة</a>
     </div>
-    <section class="events-grid">
-      <div class="event">
-        <img src="/img/flat-white.png" alt="" class="event-img" />
-        <span class="name-event">فلات وايت – Flat White Specialty Coffee</span>
-        <div class="event-info">
-          مقهى مشهور بالقهوة المختصة والأجواء الهادئة.
-        </div>
-        <a href="/events/events.html?event=FlatWhiteQatar" class="event-btn"
-          >التفاصيل</a
-        >
-      </div>
 
-      <div class="event">
-        <img src="/img/mia-qatar.jpg" alt="" class="event-img" />
-        <span class="name-event"
-          >متحف الفن الإسلامي – Museum of Islamic Art</span
-        >
-        <div class="event-info">معلم ثقافي بإطلالة رائعة.</div>
-        <a href="/events/events.html?event=MIAQatar" class="event-btn"
-          >التفاصيل</a
-        >
-      </div>
+    <div class="foods">
+      <img src="/img/هريس.jpg" alt="" class="foods-img" />
+      <span class="name-foods">هريس – Harees</span>
+      <div class="food-info">قمح مطبوخ مع اللحم.</div>
+      <a href="/recipes/recipes.html?recipe=harees" class="for-more-btn">الوصفة</a>
+    </div>
 
-      <div class="event">
-        <img src="/img/banana-island.jpg" alt="" class="event-img" />
-        <span class="name-event"
-          >بنانا آيلاند ريزورت – Banana Island Resort</span
-        >
-        <div class="event-info">منتجع جزيرة فاخر.</div>
-        <a href="/events/events.html?event=BananaIslandQatar" class="event-btn"
-          >التفاصيل</a
-        >
-      </div>
+    <div class="foods">
+      <img src="/img/لقيمات.jpg" alt="" class="foods-img" />
+      <span class="name-foods">لقيمات – Luqaimat</span>
+      <div class="food-info">حلى مقرمش مع الدبس.</div>
+      <a href="/recipes/recipes.html?recipe=luqaimat" class="for-more-btn">الوصفة</a>
+    </div>
 
-      <div class="event">
-        <img src="/img/souq-waqif.jpg" alt="" class="event-img" />
-        <span class="name-event">سوق واقف – Souq Waqif</span>
-        <div class="event-info">سوق تراثي وتجربة محلية مميزة.</div>
-        <a href="/events/events.html?event=SouqWaqif" class="event-btn"
-          >التفاصيل</a
-        >
-      </div>
+    <div class="foods">
+      <img src="/img/ثريد.jpg" alt="" class="foods-img" />
+      <span class="name-foods">ثريد – Threed</span>
+      <div class="food-info">خبز مع مرق اللحم والخضار.</div>
+      <a href="/recipes/recipes.html?recipe=threed" class="for-more-btn">الوصفة</a>
+    </div>
 
-      <div class="event">
-        <img src="/img/inland-sea.jpg" alt="" class="event-img" />
-        <span class="name-event">البحر الداخلي – Inland Sea</span>
-        <div class="event-info">سفاري الكثبان الرملية والبحر الداخلي.</div>
-        <a href="/events/events.html?event=InlandSea" class="event-btn"
-          >التفاصيل</a
-        >
-      </div>
+    <div class="foods">
+      <img src="/img/سمك-مشوي.jpg" alt="" class="foods-img" />
+      <span class="name-foods">سمك مشوي – Grilled Fish</span>
+      <div class="food-info">مأكولات بحرية بطعم طازج.</div>
+      <a href="/recipes/recipes.html?recipe=grilled-fish-uae" class="for-more-btn">الوصفة</a>
+    </div>
 
-      <div class="event">
-        <img src="/img/meryal.jpg" alt="" class="event-img" />
-        <span class="name-event">ميريال ووتربارك – Meryal Waterpark</span>
-        <div class="event-info">مدينة ألعاب مائية ممتعة.</div>
-        <a href="/events/events.html?event=MeryalWaterpark" class="event-btn"
-          >التفاصيل</a
-        >
+    <div class="foods">
+      <img src="/img/بلاليط.jpg" alt="" class="foods-img" />
+      <span class="name-foods">بلاليط – Balaleet</span>
+      <div class="food-info">شعيرية حلوة تقدم مع البيض.</div>
+      <a href="/recipes/recipes.html?recipe=balaleet" class="for-more-btn">الوصفة</a>
+    </div>
+  </section>
+  <div class="events-main">
+    <h1>الفعاليات</h1>
+  </div>
+  <section class="events-grid">
+    <div class="event">
+      <img src="/img/flat-white.png" alt="" class="event-img" />
+      <span class="name-event">فلات وايت – Flat White Specialty Coffee</span>
+      <div class="event-info">
+        مقهى مشهور بالقهوة المختصة والأجواء الهادئة.
       </div>
-    </section>
-    <!-- Modal المدينة -->
-    <div id="cityModal" class="modal" onclick="closeCityModal(event)">
-      <div class="modal-content">
-        <button class="modal-close" onclick="closeCityModal(event)">×</button>
-        <div class="modal-top">
-          <img id="modalCityImg" src="" alt="" />
+      <a href="/events/events.html?event=FlatWhiteQatar" class="event-btn">التفاصيل</a>
+    </div>
+
+    <div class="event">
+      <img src="/img/mia-qatar.jpg" alt="" class="event-img" />
+      <span class="name-event">متحف الفن الإسلامي – Museum of Islamic Art</span>
+      <div class="event-info">معلم ثقافي بإطلالة رائعة.</div>
+      <a href="/events/events.html?event=MIAQatar" class="event-btn">التفاصيل</a>
+    </div>
+
+    <div class="event">
+      <img src="/img/banana-island.jpg" alt="" class="event-img" />
+      <span class="name-event">بنانا آيلاند ريزورت – Banana Island Resort</span>
+      <div class="event-info">منتجع جزيرة فاخر.</div>
+      <a href="/events/events.html?event=BananaIslandQatar" class="event-btn">التفاصيل</a>
+    </div>
+
+    <div class="event">
+      <img src="/img/souq-waqif.jpg" alt="" class="event-img" />
+      <span class="name-event">سوق واقف – Souq Waqif</span>
+      <div class="event-info">سوق تراثي وتجربة محلية مميزة.</div>
+      <a href="/events/events.html?event=SouqWaqif" class="event-btn">التفاصيل</a>
+    </div>
+
+    <div class="event">
+      <img src="/img/inland-sea.jpg" alt="" class="event-img" />
+      <span class="name-event">البحر الداخلي – Inland Sea</span>
+      <div class="event-info">سفاري الكثبان الرملية والبحر الداخلي.</div>
+      <a href="/events/events.html?event=InlandSea" class="event-btn">التفاصيل</a>
+    </div>
+
+    <div class="event">
+      <img src="/img/meryal.jpg" alt="" class="event-img" />
+      <span class="name-event">ميريال ووتربارك – Meryal Waterpark</span>
+      <div class="event-info">مدينة ألعاب مائية ممتعة.</div>
+      <a href="/events/events.html?event=MeryalWaterpark" class="event-btn">التفاصيل</a>
+    </div>
+  </section>
+  <!-- Modal المدينة -->
+  <div id="cityModal" class="modal" onclick="closeCityModal(event)">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeCityModal(event)">×</button>
+      <div class="modal-top">
+        <img id="modalCityImg" src="" alt="" />
+        <div class="modal-top-info">
           <h2 id="modalCityName"></h2>
-        </div>
-        <div class="modal-body">
-          <p id="modalCityDesc" class="event-desc"></p>
-          <h4>🏛️ أفضل الأماكن التاريخية</h4>
-          <div id="modalCityHistoric" class="ingredients-tags"></div>
-          <h4>🍽️ أفضل المطاعم</h4>
-          <div id="modalCityRestaurants" class="ingredients-tags"></div>
-          <h4>☕ أفضل المقاهي</h4>
-          <div id="modalCityCafes" class="ingredients-tags"></div>
-          <h4>🎉 فعاليات المدينة</h4>
-          <div id="modalCityEvents" class="ingredients-tags"></div>
+          <span class="modal-top-badge">✦ تفاصيل المدينة</span>
         </div>
       </div>
+      <div class="modal-body">
+        <p id="modalCityDesc" class="event-desc"></p>
+        <h4>🏛️ أفضل الأماكن التاريخية</h4>
+        <div id="modalCityHistoric" class="ingredients-tags"></div>
+        <h4>🍽️ أفضل المطاعم</h4>
+        <div id="modalCityRestaurants" class="ingredients-tags"></div>
+        <h4>☕ أفضل المقاهي</h4>
+        <div id="modalCityCafes" class="ingredients-tags"></div>
+        <h4>🎉 فعاليات المدينة</h4>
+        <div id="modalCityEvents" class="ingredients-tags"></div>
+      </div>
     </div>
-    <script src="/countries/countries.js"></script>
-    <script src="/auth/auth.js"></script>
-  </body>
+  </div>
+  <script src="/countries/countries.js"></script>
+  <script src="/auth/auth.js"></script>
+</body>
+
 </html>

@@ -1,379 +1,316 @@
 <!doctype html>
 <html lang="ar" dir="rtl">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>سفرة</title>
 
-    <!-- ملف الستايل الأساسي -->
-    <link rel="stylesheet" href="/countries/countries.css" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>سفرة</title>
 
-    <!-- خط عربي -->
-    <style>
-      @import url("https://fonts.googleapis.com/css/2?family=Noto+Sans+Arabic:wght@500;600&display=swap");
-    </style>
-  </head>
+  <!-- ملف الستايل الأساسي -->
+  <link rel="stylesheet" href="/countries/countries.css" />
 
-  <body>
-    <!--  NAVBAR (ثابت في كل صفحة) -->
-    <header class="navbar">
-      <div class="hamburger" id="menu-btn">☰</div>
+  <!-- خط عربي -->
+  <style>
+    @import url("https://fonts.googleapis.com/css/2?family=Noto+Sans+Arabic:wght@500;600&display=swap");
+  </style>
+</head>
 
-      <div class="auth-buttons" id="authButtons">
-        <a href="/auth/login.html" class="login">تسجيل دخول</a>
-        <a href="/auth/signup.html" class="signup">إنشاء حساب</a>
-      </div>
+<body>
+  <!--  NAVBAR (ثابت في كل صفحة) -->
+  <header class="navbar">
+    <div class="hamburger" id="menu-btn">☰</div>
 
-      <div class="user-menu" id="userMenu">
-        <img id="userAvatar" src="/img/avater-icon.jpeg" alt="المستخدم" />
-        <span class="user-name" id="userName"></span>
-        <div class="user-dropdown">
-          <a href="/profile/profile.html">الملف الشخصي</a>
-          <a href="/index/index.html" id="logoutBtn">تسجيل الخروج</a>
-        </div>
-      </div>
-      <ul class="nav-list">
-        <li><a href="/index/index.html">الرئيسية</a></li>
-        <li><a href="/countries/countries.html">الدول</a></li>
-        <li><a href="/events/events.html">الفعاليات</a></li>
-        <li><a href="/recipes/recipes.html">الوصفات</a></li>
-      </ul>
-
-      <div class="logo">
-        <a href="/index/index.html"> <img src="/img/logo3.JPG" alt="سفرة" /></a>
-      </div>
-    </header>
-
-    <!--  MENU للجوال -->
-    <nav class="side-menu" id="side-menu">
-      <span class="close-btn" id="close-btn">✖</span>
-
-      <ul>
-        <li><a href="/index/index.html">الرئيسية</a></li>
-        <li><a href="/countries/countries.html">الدول</a></li>
-        <li><a href="/events/events.html">الفعاليات</a></li>
-        <li><a href="/recipes/recipes.html  ">الوصفات</a></li>
-      </ul>
-    </nav>
-    <header>
-      <a href="/countries/countries.html" class="back-btn">رجوع</a>
-    </header>
-
-    <div class="country-name">
-      <h1>الفلبين</h1>
-      <p>أرض الجزر الاستوائية والشواطئ الساحرة والطبيعة الخلابة.</p>
+    <div class="auth-buttons" id="authButtons">
+      <a href="/auth/login.html" class="login">تسجيل دخول</a>
+      <a href="/auth/signup.html" class="signup">إنشاء حساب</a>
     </div>
 
-    <!--المدن -->
-    <div class="main-cites">
-      <h1>المدن</h1>
+    <div class="user-menu" id="userMenu">
+      <img id="userAvatar" src="/img/avater-icon.jpeg" alt="المستخدم" />
+      <span class="user-name" id="userName"></span>
+      <div class="user-dropdown">
+        <a href="/profile/profile.html">الملف الشخصي</a>
+        <a href="/index/index.html" id="logoutBtn">تسجيل الخروج</a>
+      </div>
     </div>
-    <section class="cities-grid">
-      <div
-        class="cite"
-        data-name="مانيلا – Manila"
-        data-img="/img/Manila.jpg"
-        data-desc="عاصمة الفلبين النابضة بالحياة ومركزها الاقتصادي والثقافي، مدينة تجمع بين التاريخ الإسباني العريق في إنتراموروس والحياة الحديثة الصاخبة والتسوق المتنوع والمطبخ الفلبيني الشهير."
-        data-historic="🏯 إنتراموروس – Intramuros | 🏛️ متحف الفن الوطني – National Museum | 🌊 ريزال بارك – Rizal Park | 🕌 كنيسة سان أوغستين – San Agustin Church"
-        data-restaurants="🍖 مطعم Ilustrado | 🌿 مطعم Gallery by Chele | 🥘 مطعم Manam"
-        data-cafes="☕ مقهى % Arabica Manila | ☕ مقهى Yardstick Coffee | ☕ مقهى Craft Coffee Revolution"
-        data-events="🏯 إنتراموروس – Intramuros | 🌊 ريزال بارك – Rizal Park | 🛍️ مول أوف آسيا – Mall of Asia"
-      >
-        <button
-          class="save-btn"
-          onclick="
+    <ul class="nav-list">
+      <li><a href="/index/index.html">الرئيسية</a></li>
+      <li><a href="/countries/countries.html">الدول</a></li>
+      <li><a href="/events/events.html">الفعاليات</a></li>
+      <li><a href="/recipes/recipes.html">الوصفات</a></li>
+    </ul>
+
+    <div class="logo">
+      <a href="/index/index.html"> <img src="/img/logo3.JPG" alt="سفرة" /></a>
+    </div>
+  </header>
+
+  <!--  MENU للجوال -->
+  <nav class="side-menu" id="side-menu">
+    <span class="close-btn" id="close-btn">✖</span>
+
+    <ul>
+      <li><a href="/index/index.html">الرئيسية</a></li>
+      <li><a href="/countries/countries.html">الدول</a></li>
+      <li><a href="/events/events.html">الفعاليات</a></li>
+      <li><a href="/recipes/recipes.html  ">الوصفات</a></li>
+    </ul>
+  </nav>
+  <header>
+    <a href="/countries/countries.html" class="back-btn">رجوع</a>
+  </header>
+
+  <div class="country-name">
+    <h1>الفلبين</h1>
+    <p>أرض الجزر الاستوائية والشواطئ الساحرة والطبيعة الخلابة.</p>
+  </div>
+
+  <!--المدن -->
+  <div class="main-cites">
+    <h1>المدن</h1>
+  </div>
+  <section class="cities-grid">
+    <div class="cite" data-name="مانيلا – Manila" data-img="/img/Manila.jpg"
+      data-desc="عاصمة الفلبين النابضة بالحياة ومركزها الاقتصادي والثقافي، مدينة تجمع بين التاريخ الإسباني العريق في إنتراموروس والحياة الحديثة الصاخبة والتسوق المتنوع والمطبخ الفلبيني الشهير."
+      data-historic="🏯 إنتراموروس – Intramuros | 🏛️ متحف الفن الوطني – National Museum | 🌊 ريزال بارك – Rizal Park | 🕌 كنيسة سان أوغستين – San Agustin Church"
+      data-restaurants="🍖 مطعم Ilustrado | 🌿 مطعم Gallery by Chele | 🥘 مطعم Manam"
+      data-cafes="☕ مقهى % Arabica Manila | ☕ مقهى Yardstick Coffee | ☕ مقهى Craft Coffee Revolution"
+      data-events="🏯 إنتراموروس – Intramuros | 🌊 ريزال بارك – Rizal Park | 🛍️ مول أوف آسيا – Mall of Asia">
+      <button class="save-btn" onclick="
             event.stopPropagation();
             saveItem('city', 'manila', 'مانيلا', '/img/Manila.jpg');
-          "
-        >
-          🏙️
-        </button>
-        <img src="/img/Manila.jpg" alt="مانيلا" class="cite-img" />
-        <span class="name">مانيلا – Manila</span>
-        <p class="info">عاصمة نابضة بالحياة مليئة بالتسوق والثقافة.</p>
-        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
-          تفاصيل
-        </button>
-      </div>
+          ">
+        🏙️
+      </button>
+      <img src="/img/Manila.jpg" alt="مانيلا" class="cite-img" />
+      <span class="name">مانيلا – Manila</span>
+      <p class="info">عاصمة نابضة بالحياة مليئة بالتسوق والثقافة.</p>
+      <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+        تفاصيل
+      </button>
+    </div>
 
-      <div
-        class="cite"
-        data-name="سيبو – Cebu"
-        data-img="/img/Cebu.jpg"
-        data-desc="ملكة الجنوب ومدينة الفلبين الثانية، تجمع بين التاريخ الكولونيالي الإسباني والشواطئ الرائعة والمأكولات البحرية الطازجة وتجربة السباحة مع القروش الحوتية الشهيرة."
-        data-historic="🏛️ قلعة سان بيدرو – Fort San Pedro | ⛪ كنيسة باسيليكا – Basilica del Santo Niño | 🌊 شاطئ ماكتان – Mactan Beach | 🐋 السباحة مع القروش – Whale Shark Oslob"
-        data-restaurants="🍖 مطعم Anzani | 🌿 مطعم Abaca | 🥘 مطعم Lantaw"
-        data-cafes="☕ مقهى Bo's Coffee | ☕ مقهى Yolk | ☕ مقهى Handuraw"
-        data-events="🐋 السباحة مع القروش – Whale Shark | 🏖️ شاطئ ماكتان – Mactan Beach | 🎊 مهرجان سينولوغ – Sinulog Festival"
-      >
-        <button
-          class="save-btn"
-          onclick="
+    <div class="cite" data-name="سيبو – Cebu" data-img="/img/Cebu.jpg"
+      data-desc="ملكة الجنوب ومدينة الفلبين الثانية، تجمع بين التاريخ الكولونيالي الإسباني والشواطئ الرائعة والمأكولات البحرية الطازجة وتجربة السباحة مع القروش الحوتية الشهيرة."
+      data-historic="🏛️ قلعة سان بيدرو – Fort San Pedro | ⛪ كنيسة باسيليكا – Basilica del Santo Niño | 🌊 شاطئ ماكتان – Mactan Beach | 🐋 السباحة مع القروش – Whale Shark Oslob"
+      data-restaurants="🍖 مطعم Anzani | 🌿 مطعم Abaca | 🥘 مطعم Lantaw"
+      data-cafes="☕ مقهى Bo's Coffee | ☕ مقهى Yolk | ☕ مقهى Handuraw"
+      data-events="🐋 السباحة مع القروش – Whale Shark | 🏖️ شاطئ ماكتان – Mactan Beach | 🎊 مهرجان سينولوغ – Sinulog Festival">
+      <button class="save-btn" onclick="
             event.stopPropagation();
             saveItem('city', 'cebu', 'سيبو', '/img/Cebu.jpg');
-          "
-        >
-          🏙️
-        </button>
-        <img src="/img/Cebu.jpg" alt="سيبو" class="cite-img" />
-        <span class="name">سيبو – Cebu</span>
-        <p class="info">مدينة ساحلية تجمع بين التاريخ والشواطئ.</p>
-        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
-          تفاصيل
-        </button>
-      </div>
+          ">
+        🏙️
+      </button>
+      <img src="/img/Cebu.jpg" alt="سيبو" class="cite-img" />
+      <span class="name">سيبو – Cebu</span>
+      <p class="info">مدينة ساحلية تجمع بين التاريخ والشواطئ.</p>
+      <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+        تفاصيل
+      </button>
+    </div>
 
-      <div
-        class="cite"
-        data-name="بوراكاي – Boracay"
-        data-img="/img/Boracay.jpg"
-        data-desc="جوهرة الفلبين البحرية وأشهر جزرها، تشتهر بشاطئ وايت بيتش الأسطوري ذو الرمال البيضاء الناعمة كالبودرة والمياه الفيروزية الساحرة في مشهد طبيعي لا مثيل له."
-        data-historic="🏖️ وايت بيتش – White Beach | 🌅 بولابوغ بيتش – Bulabog Beach | 🌊 كروز الغروب – Sunset Cruise | 🤿 غوص بوراكاي – Boracay Diving"
-        data-restaurants="🦞 مطعم Nonie's | 🌿 مطعم Aria | 🐟 مطعم Smoke"
-        data-cafes="☕ مقهى Café Racer | ☕ مقهى Local Brew | ☕ مقهى Coco Mama"
-        data-events="🏖️ وايت بيتش – White Beach | 🌅 كروز الغروب – Sunset Cruise | 🤿 الغوص – Boracay Diving"
-      >
-        <button
-          class="save-btn"
-          onclick="
+    <div class="cite" data-name="بوراكاي – Boracay" data-img="/img/Boracay.jpg"
+      data-desc="جوهرة الفلبين البحرية وأشهر جزرها، تشتهر بشاطئ وايت بيتش الأسطوري ذو الرمال البيضاء الناعمة كالبودرة والمياه الفيروزية الساحرة في مشهد طبيعي لا مثيل له."
+      data-historic="🏖️ وايت بيتش – White Beach | 🌅 بولابوغ بيتش – Bulabog Beach | 🌊 كروز الغروب – Sunset Cruise | 🤿 غوص بوراكاي – Boracay Diving"
+      data-restaurants="🦞 مطعم Nonie's | 🌿 مطعم Aria | 🐟 مطعم Smoke"
+      data-cafes="☕ مقهى Café Racer | ☕ مقهى Local Brew | ☕ مقهى Coco Mama"
+      data-events="🏖️ وايت بيتش – White Beach | 🌅 كروز الغروب – Sunset Cruise | 🤿 الغوص – Boracay Diving">
+      <button class="save-btn" onclick="
             event.stopPropagation();
             saveItem('city', 'boracay', 'بوراكاي', '/img/Boracay.jpg');
-          "
-        >
-          🏙️
-        </button>
-        <img src="/img/Boracay.jpg" alt="بوراكاي" class="cite-img" />
-        <span class="name">بوراكاي – Boracay</span>
-        <p class="info">جزيرة مشهورة برمالها البيضاء.</p>
-        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
-          تفاصيل
-        </button>
-      </div>
+          ">
+        🏙️
+      </button>
+      <img src="/img/Boracay.jpg" alt="بوراكاي" class="cite-img" />
+      <span class="name">بوراكاي – Boracay</span>
+      <p class="info">جزيرة مشهورة برمالها البيضاء.</p>
+      <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+        تفاصيل
+      </button>
+    </div>
 
-      <div
-        class="cite"
-        data-name="بالاوان – Palawan"
-        data-img="/img/Palawan.jpg"
-        data-desc="أجمل جزيرة في العالم وجنة الفلبين المخفية، تشتهر ببحيرة إيل نيدو الساحرة والنهر الجوفي الشهير وشعابها المرجانية المذهلة ومياهها الفيروزية النقية."
-        data-historic="🏝️ إيل نيدو – El Nido | 🌊 النهر الجوفي – Puerto Princesa Underground River | 🤿 كويون – Coron Islands | 🌿 محمية توباتاها – Tubbataha Reef"
-        data-restaurants="🦞 مطعم Kalui | 🌿 مطعم Badjao Seafront | 🐟 مطعم Kinabuch"
-        data-cafes="☕ مقهى Coffee Kong | ☕ مقهى Café Maia | ☕ مقهى Palawan Cacao"
-        data-events="🏝️ إيل نيدو – El Nido Island Hopping | 🌊 النهر الجوفي – Underground River | 🤿 غوص كويون – Coron Diving"
-      >
-        <button
-          class="save-btn"
-          onclick="
+    <div class="cite" data-name="بالاوان – Palawan" data-img="/img/Palawan.jpg"
+      data-desc="أجمل جزيرة في العالم وجنة الفلبين المخفية، تشتهر ببحيرة إيل نيدو الساحرة والنهر الجوفي الشهير وشعابها المرجانية المذهلة ومياهها الفيروزية النقية."
+      data-historic="🏝️ إيل نيدو – El Nido | 🌊 النهر الجوفي – Puerto Princesa Underground River | 🤿 كويون – Coron Islands | 🌿 محمية توباتاها – Tubbataha Reef"
+      data-restaurants="🦞 مطعم Kalui | 🌿 مطعم Badjao Seafront | 🐟 مطعم Kinabuch"
+      data-cafes="☕ مقهى Coffee Kong | ☕ مقهى Café Maia | ☕ مقهى Palawan Cacao"
+      data-events="🏝️ إيل نيدو – El Nido Island Hopping | 🌊 النهر الجوفي – Underground River | 🤿 غوص كويون – Coron Diving">
+      <button class="save-btn" onclick="
             event.stopPropagation();
             saveItem('city', 'palawan', 'بالاوان', '/img/Palawan.jpg');
-          "
-        >
-          🏙️
-        </button>
-        <img src="/img/Palawan.jpg" alt="بالاوان" class="cite-img" />
-        <span class="name">بالاوان – Palawan</span>
-        <p class="info">طبيعة بحرية ساحرة وجزر خلابة.</p>
-        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
-          تفاصيل
-        </button>
-      </div>
+          ">
+        🏙️
+      </button>
+      <img src="/img/Palawan.jpg" alt="بالاوان" class="cite-img" />
+      <span class="name">بالاوان – Palawan</span>
+      <p class="info">طبيعة بحرية ساحرة وجزر خلابة.</p>
+      <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+        تفاصيل
+      </button>
+    </div>
 
-      <div
-        class="cite"
-        data-name="دافاو – Davao"
-        data-img="/img/Davao.jpg"
-        data-desc="مدينة الفلبين الثالثة وعاصمة مينداناو، مدينة هادئة ومنظمة تشتهر بالفاكهة الاستوائية الشهيرة خاصة الدوريان وجبل أبو الشهير أعلى قمة في الفلبين."
-        data-historic="🏔️ جبل أبو – Mount Apo | 🌿 حديقة التمساح – Philippine Eagle Center | 🏖️ شاطئ سمال – Samal Island | 🌺 مهرجان كداياوان – Kadayawan Festival"
-        data-restaurants="🍖 مطعم Claude's Le Chateau de移 | 🌿 مطعم Lachi's | 🥘 مطعم Matina Town Square"
-        data-cafes="☕ مقهى Brew Bros | ☕ مقهى Café Demitasse | ☕ مقهى Beans & Cream"
-        data-events="🏔️ جبل أبو – Mount Apo | 🌺 مهرجان كداياوان – Kadayawan Festival | 🏝️ جزيرة سمال – Samal Island"
-      >
-        <button
-          class="save-btn"
-          onclick="
+    <div class="cite" data-name="دافاو – Davao" data-img="/img/Davao.jpg"
+      data-desc="مدينة الفلبين الثالثة وعاصمة مينداناو، مدينة هادئة ومنظمة تشتهر بالفاكهة الاستوائية الشهيرة خاصة الدوريان وجبل أبو الشهير أعلى قمة في الفلبين."
+      data-historic="🏔️ جبل أبو – Mount Apo | 🌿 حديقة التمساح – Philippine Eagle Center | 🏖️ شاطئ سمال – Samal Island | 🌺 مهرجان كداياوان – Kadayawan Festival"
+      data-restaurants="🍖 مطعم Claude's Le Chateau de移 | 🌿 مطعم Lachi's | 🥘 مطعم Matina Town Square"
+      data-cafes="☕ مقهى Brew Bros | ☕ مقهى Café Demitasse | ☕ مقهى Beans & Cream"
+      data-events="🏔️ جبل أبو – Mount Apo | 🌺 مهرجان كداياوان – Kadayawan Festival | 🏝️ جزيرة سمال – Samal Island">
+      <button class="save-btn" onclick="
             event.stopPropagation();
             saveItem('city', 'davao', 'دافاو', '/img/Davao.jpg');
-          "
-        >
-          🏙️
-        </button>
-        <img src="/img/Davao.jpg" alt="دافاو" class="cite-img" />
-        <span class="name">دافاو – Davao</span>
-        <p class="info">مدينة هادئة محاطة بالطبيعة.</p>
-        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
-          تفاصيل
-        </button>
-      </div>
+          ">
+        🏙️
+      </button>
+      <img src="/img/Davao.jpg" alt="دافاو" class="cite-img" />
+      <span class="name">دافاو – Davao</span>
+      <p class="info">مدينة هادئة محاطة بالطبيعة.</p>
+      <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+        تفاصيل
+      </button>
+    </div>
 
-      <div
-        class="cite"
-        data-name="باغيو – Baguio"
-        data-img="/img/Baguio.jpg"
-        data-desc="عاصمة الصيف الفلبينية ومدينة الجبال الباردة، تقع على ارتفاع 1500 متر وتتميز بأجوائها الباردة المنعشة وحقول الأرز الجميلة وحدائق الورود والأسواق الشعبية المميزة."
-        data-historic="🌹 حديقة الورود – Burnham Park | 🌾 حقول الأرز – Banaue Rice Terraces | 🏛️ متحف كورديليرا – Cordillera Museum | 🌲 سيشن رود – Session Road"
-        data-restaurants="🍖 مطعم Hill Station | 🌿 مطعم Vizco's | 🥘 مطعم Café by the Ruins"
-        data-cafes="☕ مقهى Baguio Craft Brewery | ☕ مقهى Choco-late de Batirol | ☕ مقهى Rumours"
-        data-events="🌹 حديقة بيرنهام – Burnham Park | 🌾 حقول الأرز – Rice Terraces | 🎊 مهرجان بينياك – Panagbenga Festival"
-      >
-        <button
-          class="save-btn"
-          onclick="
+    <div class="cite" data-name="باغيو – Baguio" data-img="/img/Baguio.jpg"
+      data-desc="عاصمة الصيف الفلبينية ومدينة الجبال الباردة، تقع على ارتفاع 1500 متر وتتميز بأجوائها الباردة المنعشة وحقول الأرز الجميلة وحدائق الورود والأسواق الشعبية المميزة."
+      data-historic="🌹 حديقة الورود – Burnham Park | 🌾 حقول الأرز – Banaue Rice Terraces | 🏛️ متحف كورديليرا – Cordillera Museum | 🌲 سيشن رود – Session Road"
+      data-restaurants="🍖 مطعم Hill Station | 🌿 مطعم Vizco's | 🥘 مطعم Café by the Ruins"
+      data-cafes="☕ مقهى Baguio Craft Brewery | ☕ مقهى Choco-late de Batirol | ☕ مقهى Rumours"
+      data-events="🌹 حديقة بيرنهام – Burnham Park | 🌾 حقول الأرز – Rice Terraces | 🎊 مهرجان بينياك – Panagbenga Festival">
+      <button class="save-btn" onclick="
             event.stopPropagation();
             saveItem('city', 'baguio', 'باغيو', '/img/Baguio.jpg');
-          "
-        >
-          🏙️
-        </button>
-        <img src="/img/Baguio.jpg" alt="باغيو" class="cite-img" />
-        <span class="name">باغيو – Baguio</span>
-        <p class="info">مدينة جبلية بأجواء باردة ومنعشة.</p>
-        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
-          تفاصيل
-        </button>
-      </div>
-    </section>
-    <!--الاكل-->
-    <div class="main-foods">
-      <h1>الماكولات</h1>
+          ">
+        🏙️
+      </button>
+      <img src="/img/Baguio.jpg" alt="باغيو" class="cite-img" />
+      <span class="name">باغيو – Baguio</span>
+      <p class="info">مدينة جبلية بأجواء باردة ومنعشة.</p>
+      <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+        تفاصيل
+      </button>
     </div>
-    <section class="foods-grid">
-      <div class="foods">
-        <img src="/img/Adobo.jpg" alt="" class="foods-img" />
-        <span class="name-foods">أدوبو – Adobo</span>
-        <div class="food-info">لحم أو دجاج مطبوخ بصلصة غنية.</div>
-        <a href="/recipes/recipes.html?recipe=adobo" class="for-more-btn"
-          >المزيد</a
-        >
-      </div>
-
-      <div class="foods">
-        <img src="/img/Sinigang.jpg" alt="" class="foods-img" />
-        <span class="name-foods">سينيغانغ – Sinigang</span>
-        <div class="food-info">شوربة حامضة بنكهة مميزة.</div>
-        <a href="/recipes/recipes.html?recipe=sinigang" class="for-more-btn"
-          >المزيد</a
-        >
-      </div>
-
-      <div class="foods">
-        <img src="/img/Sisig.jpg" alt="" class="foods-img" />
-        <span class="name-foods">سيسيغ – Sisig</span>
-        <div class="food-info">
-          لحم مفروم متبل يقدم ساخنًا بنكهات حامضة وحارة.
-        </div>
-        <a href="/recipes/recipes.html?recipe=sisig" class="for-more-btn"
-          >المزيد</a
-        >
-      </div>
-
-      <div class="foods">
-        <img src="/img/Pancit.jpg" alt="" class="foods-img" />
-        <span class="name-foods">بانسيت – Pancit</span>
-        <div class="food-info">نودلز مع خضار ولحم.</div>
-        <a href="/recipes/recipes.html?recipe=pancit" class="for-more-btn"
-          >المزيد</a
-        >
-      </div>
-
-      <div class="foods">
-        <img src="/img/Halo Halo.jpg" alt="" class="foods-img" />
-        <span class="name-foods">هالو هالو – Halo Halo</span>
-        <div class="food-info">حلى مثلج منعش.</div>
-        <a href="/recipes/recipes.html?recipe=halo-halo" class="for-more-btn"
-          >المزيد</a
-        >
-      </div>
-
-      <div class="foods">
-        <img src="/img/Lumpia.jpg" alt="" class="foods-img" />
-        <span class="name-foods">لومبيا – Lumpia</span>
-        <div class="food-info">رول مقرمش محشو بالخضار أو اللحم.</div>
-        <a href="/recipes/recipes.html?recipe=lumpia" class="for-more-btn"
-          >المزيد</a
-        >
-      </div>
-    </section>
-    <div class="events-main">
-      <h1>الفعاليات</h1>
+  </section>
+  <!--الاكل-->
+  <div class="main-foods">
+    <h1>الماكولات</h1>
+  </div>
+  <section class="foods-grid">
+    <div class="foods">
+      <img src="/img/Adobo.jpg" alt="" class="foods-img" />
+      <span class="name-foods">أدوبو – Adobo</span>
+      <div class="food-info">لحم أو دجاج مطبوخ بصلصة غنية.</div>
+      <a href="/recipes/recipes.html?recipe=adobo" class="for-more-btn">المزيد</a>
     </div>
-    <section class="events-grid">
-      <div class="event">
-        <img src="/img/Philippines Islands.jpg" alt="" class="event-img" />
-        <span class="name-event">رحلات الجزر – Philippines Islands</span>
-        <div class="event-info">استكشاف جزر وشواطئ خلابة.</div>
-        <a href="/events/events.html?event=PhilippinesIslands" class="event-btn"
-          >المزيد</a
-        >
-      </div>
 
-      <div class="event">
-        <img src="/img/Philippines Diving.jpg" alt="" class="event-img" />
-        <span class="name-event">الغوص – Philippines Diving</span>
-        <div class="event-info">مشاهدة الشعاب المرجانية والحياة البحرية.</div>
-        <a href="/events/events.html?event=PhilippinesDiving" class="event-btn"
-          >المزيد</a
-        >
-      </div>
+    <div class="foods">
+      <img src="/img/Sinigang.jpg" alt="" class="foods-img" />
+      <span class="name-foods">سينيغانغ – Sinigang</span>
+      <div class="food-info">شوربة حامضة بنكهة مميزة.</div>
+      <a href="/recipes/recipes.html?recipe=sinigang" class="for-more-btn">المزيد</a>
+    </div>
 
-      <div class="event">
-        <img src="/img/Sinulog Festival.jpg" alt="" class="event-img" />
-        <span class="name-event">مهرجان سينولوغ – Sinulog Festival</span>
-        <div class="event-info">احتفال شعبي مليء بالألوان.</div>
-        <a href="/events/events.html?event=SinulogFestival" class="event-btn"
-          >المزيد</a
-        >
+    <div class="foods">
+      <img src="/img/Sisig.jpg" alt="" class="foods-img" />
+      <span class="name-foods">سيسيغ – Sisig</span>
+      <div class="food-info">
+        لحم مفروم متبل يقدم ساخنًا بنكهات حامضة وحارة.
       </div>
+      <a href="/recipes/recipes.html?recipe=sisig" class="for-more-btn">المزيد</a>
+    </div>
 
-      <div class="event">
-        <img src="/img/Rice Terraces.jpg" alt="" class="event-img" />
-        <span class="name-event">حقول الأرز – Rice Terraces</span>
-        <div class="event-info">مناظر طبيعية مدهشة.</div>
-        <a href="/events/events.html?event=RiceTerraces" class="event-btn"
-          >المزيد</a
-        >
-      </div>
+    <div class="foods">
+      <img src="/img/Pancit.jpg" alt="" class="foods-img" />
+      <span class="name-foods">بانسيت – Pancit</span>
+      <div class="food-info">نودلز مع خضار ولحم.</div>
+      <a href="/recipes/recipes.html?recipe=pancit" class="for-more-btn">المزيد</a>
+    </div>
 
-      <div class="event">
-        <img src="/img/Whale Shark Swimming.jpg" alt="" class="event-img" />
-        <span class="name-event">السباحة مع القروش الحوتية – Whale Shark</span>
-        <div class="event-info">تجربة بحرية فريدة.</div>
-        <a href="/events/events.html?event=WhaleSharkSwimming" class="event-btn"
-          >المزيد</a
-        >
-      </div>
+    <div class="foods">
+      <img src="/img/Halo Halo.jpg" alt="" class="foods-img" />
+      <span class="name-foods">هالو هالو – Halo Halo</span>
+      <div class="food-info">حلى مثلج منعش.</div>
+      <a href="/recipes/recipes.html?recipe=halo-halo" class="for-more-btn">المزيد</a>
+    </div>
 
-      <div class="event">
-        <img src="/img/Philippines Cable Car.jpg" alt="" class="event-img" />
-        <span class="name-event">التلفريك الجبلي – Philippines Cable Car</span>
-        <div class="event-info">إطلالات رائعة على الطبيعة.</div>
-        <a
-          href="/events/events.html?event=PhilippinesCableCar"
-          class="event-btn"
-          >المزيد</a
-        >
-      </div>
-    </section>
-    <!-- Modal المدينة -->
-    <div id="cityModal" class="modal" onclick="closeCityModal(event)">
-      <div class="modal-content">
-        <button class="modal-close" onclick="closeCityModal(event)">×</button>
-        <div class="modal-top">
-          <img id="modalCityImg" src="" alt="" />
+    <div class="foods">
+      <img src="/img/Lumpia.jpg" alt="" class="foods-img" />
+      <span class="name-foods">لومبيا – Lumpia</span>
+      <div class="food-info">رول مقرمش محشو بالخضار أو اللحم.</div>
+      <a href="/recipes/recipes.html?recipe=lumpia" class="for-more-btn">المزيد</a>
+    </div>
+  </section>
+  <div class="events-main">
+    <h1>الفعاليات</h1>
+  </div>
+  <section class="events-grid">
+    <div class="event">
+      <img src="/img/Philippines Islands.jpg" alt="" class="event-img" />
+      <span class="name-event">رحلات الجزر – Philippines Islands</span>
+      <div class="event-info">استكشاف جزر وشواطئ خلابة.</div>
+      <a href="/events/events.html?event=PhilippinesIslands" class="event-btn">المزيد</a>
+    </div>
+
+    <div class="event">
+      <img src="/img/Philippines Diving.jpg" alt="" class="event-img" />
+      <span class="name-event">الغوص – Philippines Diving</span>
+      <div class="event-info">مشاهدة الشعاب المرجانية والحياة البحرية.</div>
+      <a href="/events/events.html?event=PhilippinesDiving" class="event-btn">المزيد</a>
+    </div>
+
+    <div class="event">
+      <img src="/img/Sinulog Festival.jpg" alt="" class="event-img" />
+      <span class="name-event">مهرجان سينولوغ – Sinulog Festival</span>
+      <div class="event-info">احتفال شعبي مليء بالألوان.</div>
+      <a href="/events/events.html?event=SinulogFestival" class="event-btn">المزيد</a>
+    </div>
+
+    <div class="event">
+      <img src="/img/Rice Terraces.jpg" alt="" class="event-img" />
+      <span class="name-event">حقول الأرز – Rice Terraces</span>
+      <div class="event-info">مناظر طبيعية مدهشة.</div>
+      <a href="/events/events.html?event=RiceTerraces" class="event-btn">المزيد</a>
+    </div>
+
+    <div class="event">
+      <img src="/img/Whale Shark Swimming.jpg" alt="" class="event-img" />
+      <span class="name-event">السباحة مع القروش الحوتية – Whale Shark</span>
+      <div class="event-info">تجربة بحرية فريدة.</div>
+      <a href="/events/events.html?event=WhaleSharkSwimming" class="event-btn">المزيد</a>
+    </div>
+
+    <div class="event">
+      <img src="/img/Philippines Cable Car.jpg" alt="" class="event-img" />
+      <span class="name-event">التلفريك الجبلي – Philippines Cable Car</span>
+      <div class="event-info">إطلالات رائعة على الطبيعة.</div>
+      <a href="/events/events.html?event=PhilippinesCableCar" class="event-btn">المزيد</a>
+    </div>
+  </section>
+  <!-- Modal المدينة -->
+  <div id="cityModal" class="modal" onclick="closeCityModal(event)">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeCityModal(event)">×</button>
+      <div class="modal-top">
+        <img id="modalCityImg" src="" alt="" />
+        <div class="modal-top-info">
           <h2 id="modalCityName"></h2>
-        </div>
-        <div class="modal-body">
-          <p id="modalCityDesc" class="event-desc"></p>
-          <h4>🏛️ أفضل الأماكن التاريخية</h4>
-          <div id="modalCityHistoric" class="ingredients-tags"></div>
-          <h4>🍽️ أفضل المطاعم</h4>
-          <div id="modalCityRestaurants" class="ingredients-tags"></div>
-          <h4>☕ أفضل المقاهي</h4>
-          <div id="modalCityCafes" class="ingredients-tags"></div>
-          <h4>🎉 فعاليات المدينة</h4>
-          <div id="modalCityEvents" class="ingredients-tags"></div>
+          <span class="modal-top-badge">✦ تفاصيل المدينة</span>
         </div>
       </div>
+      <div class="modal-body">
+        <p id="modalCityDesc" class="event-desc"></p>
+        <h4>🏛️ أفضل الأماكن التاريخية</h4>
+        <div id="modalCityHistoric" class="ingredients-tags"></div>
+        <h4>🍽️ أفضل المطاعم</h4>
+        <div id="modalCityRestaurants" class="ingredients-tags"></div>
+        <h4>☕ أفضل المقاهي</h4>
+        <div id="modalCityCafes" class="ingredients-tags"></div>
+        <h4>🎉 فعاليات المدينة</h4>
+        <div id="modalCityEvents" class="ingredients-tags"></div>
+      </div>
     </div>
-    <script src="/countries/countries.js"></script>
-    <script src="/auth/auth.js"></script>
-  </body>
+  </div>
+  <script src="/countries/countries.js"></script>
+  <script src="/auth/auth.js"></script>
+</body>
+
 </html>

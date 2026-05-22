@@ -9,6 +9,7 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@500;600&display=swap');
     </style>
+    
     <script src="/index/index.js" defer></script>
 
 </head>
@@ -56,38 +57,66 @@
     </nav>
 
     <section class="hero">
+        <div class="hero-badge">✦ اكتشف العالم</div>
         <div class="hero-text">
-            <h1> سافر وتذوق</h1>
-            <p>اكتشف وجهات وماكؤلات من مختلف انحاء العالم</p>
+            <h1>سافر<span class="hero-accent"> وتذوق</span></h1>
+            <p>اكتشف وجهات وماكولات من مختلف أنحاء العالم</p>
+        </div>
+        <div class="hero-stats">
+            <div class="hero-stat">
+                <span class="stat-num">٢٠+</span>
+                <span class="stat-label">دولة</span>
+            </div>
+            <div class="hero-stat-divider"></div>
+            <div class="hero-stat">
+                <span class="stat-num">٥٠+</span>
+                <span class="stat-label">وصفة</span>
+            </div>
+            <div class="hero-stat-divider"></div>
+            <div class="hero-stat">
+                <span class="stat-num">١٠+</span>
+                <span class="stat-label">فعالية</span>
+            </div>
         </div>
     </section>
 
     <section class="sections-preview">
 
-        <div class="card">
+        <a href="/recipes/recipes.html" class="card">
             <div class="card-img">
-                <img src="/img/food1.png" alt="" id="food1">
+                <img src="/img/food1.png" alt="وصفات">
+                <div class="card-overlay"></div>
+                <div class="card-label">الوصفات</div>
             </div>
-            <p class="text">تذوق نكهات متنوعة من وصفات عالمية سهلة و لذيذة.</p>
-            <a href="/recipes/recipes.html" class="section-btn">استكشاف الوصفات</a>
-        </div>
+            <div class="card-body">
+                <p class="text">تذوق نكهات متنوعة من وصفات عالمية سهلة و لذيذة.</p>
+                <span class="section-btn">استكشاف ←</span>
+            </div>
+        </a>
 
-        <div class="card">
+        <a href="/events/events.html" class="card">
             <div class="card-img">
-                <img src="/img/events.png" alt="" id="events">
+                <img src="/img/events.png" alt="فعاليات">
+                <div class="card-overlay"></div>
+                <div class="card-label">الفعاليات</div>
             </div>
-            <p class="text"> عِش أجواء فعاليات عالمية ممتعة… وكلها بمواعيدها السنوية.</p>
-            <a href="/events/events.html" class="section-btn">استكشاف الفعاليات</a>
-        </div>
+            <div class="card-body">
+                <p class="text">عِش أجواء فعاليات عالمية ممتعة… وكلها بمواعيدها السنوية.</p>
+                <span class="section-btn">استكشاف ←</span>
+            </div>
+        </a>
 
-        <div class="card">
+        <a href="/countries/countries.html" class="card">
             <div class="card-img">
-                <img src="/img/Countries.png" alt="" id="Countries">
+                <img src="/img/Countries.png" alt="دول">
+                <div class="card-overlay"></div>
+                <div class="card-label">الدول</div>
             </div>
-            <p class="text">تعرف على نكهات وأجواء كل دولة بلمحة سريعة.</p>
-            <a href="/countries/countries.html" class="section-btn">استكشاف الدول</a>
-        </div>
-
+            <div class="card-body">
+                <p class="text">تعرف على نكهات وأجواء كل دولة بلمحة سريعة.</p>
+                <span class="section-btn">استكشاف ←</span>
+            </div>
+        </a>
 
     </section>
     <script src="/index/index.js" ></script>
@@ -96,5 +125,3 @@
 </body>
 
 </html>
-
-

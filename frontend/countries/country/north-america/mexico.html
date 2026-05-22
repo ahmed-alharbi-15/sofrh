@@ -1,86 +1,81 @@
 <!doctype html>
 <html lang="ar" dir="rtl">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>سفرة</title>
 
-    <!-- ملف الستايل الأساسي -->
-    <link rel="stylesheet" href="/countries/countries.css" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>سفرة</title>
 
-    <!-- خط عربي -->
-    <style>
-      @import url("https://fonts.googleapis.com/css/2?family=Noto+Sans+Arabic:wght@500;600&display=swap");
-    </style>
-  </head>
+  <!-- ملف الستايل الأساسي -->
+  <link rel="stylesheet" href="/countries/countries.css" />
 
-  <body>
-    <!--  NAVBAR (ثابت في كل صفحة) -->
-    <header class="navbar">
-      <div class="hamburger" id="menu-btn">☰</div>
+  <!-- خط عربي -->
+  <style>
+    @import url("https://fonts.googleapis.com/css/2?family=Noto+Sans+Arabic:wght@500;600&display=swap");
+  </style>
+</head>
 
-      <div class="auth-buttons" id="authButtons">
-        <a href="/auth/login.html" class="login">تسجيل دخول</a>
-        <a href="/auth/signup.html" class="signup">إنشاء حساب</a>
-      </div>
+<body>
+  <!--  NAVBAR (ثابت في كل صفحة) -->
+  <header class="navbar">
+    <div class="hamburger" id="menu-btn">☰</div>
 
-      <div class="user-menu" id="userMenu">
-        <img id="userAvatar" src="/img/avater-icon.jpeg" alt="المستخدم" />
-        <span class="user-name" id="userName"></span>
-        <div class="user-dropdown">
-          <a href="/profile/profile.html">الملف الشخصي</a>
-          <a href="/index/index.html" id="logoutBtn">تسجيل الخروج</a>
-        </div>
-      </div>
-
-      <ul class="nav-list">
-        <li><a href="/index/index.html">الرئيسية</a></li>
-        <li><a href="/countries/countries.html">الدول</a></li>
-        <li><a href="/events/events.html">الفعاليات</a></li>
-        <li><a href="/recipes/recipes.html">الوصفات</a></li>
-      </ul>
-
-      <div class="logo">
-        <a href="/index/index.html"> <img src="/img/logo3.JPG" alt="سفرة" /></a>
-      </div>
-    </header>
-
-    <!--  MENU للجوال -->
-    <nav class="side-menu" id="side-menu">
-      <span class="close-btn" id="close-btn">✖</span>
-
-      <ul>
-        <li><a href="/index/index.html">الرئيسية</a></li>
-        <li><a href="/countries/countries.html">الدول</a></li>
-        <li><a href="/events/events.html">الفعاليات</a></li>
-        <li><a href="/recipes/recipes.html  ">الوصفات</a></li>
-      </ul>
-    </nav>
-    <header>
-      <a href="/countries/countries.html" class="back-btn">رجوع</a>
-    </header>
-    <div class="country-name">
-      <h1>المكسيك</h1>
-      <p>أرض الألوان والنكهات، وثقافة نابضة بالحياة.</p>
+    <div class="auth-buttons" id="authButtons">
+      <a href="/auth/login.html" class="login">تسجيل دخول</a>
+      <a href="/auth/signup.html" class="signup">إنشاء حساب</a>
     </div>
-    <!--المدن -->
-    <div class="main-cites">
-      <h1>المدن</h1>
+
+    <div class="user-menu" id="userMenu">
+      <img id="userAvatar" src="/img/avater-icon.jpeg" alt="المستخدم" />
+      <span class="user-name" id="userName"></span>
+      <div class="user-dropdown">
+        <a href="/profile/profile.html">الملف الشخصي</a>
+        <a href="/index/index.html" id="logoutBtn">تسجيل الخروج</a>
+      </div>
     </div>
-    <section class="cities-grid">
-      <div
-        class="cite"
-        data-name="مكسيكو سيتي – Mexico City"
-        data-img="/img/Mexico City.jpg"
-        data-desc="عاصمة المكسيك النابضة بالحياة، من أكبر المدن في العالم، تجمع بين التاريخ الأزتيكي العريق والفن الحديث والمطاعم المتنوعة والأجواء الثقافية الرائعة."
-        data-historic="🏛️ تيوتيهواكان – Teotihuacan | 🏺 متحف الأنثروبولوجيا – National Museum | 🏙️ زوكالو – Zócalo | 🎨 متحف فريدا كالو – Frida Kahlo Museum"
-        data-restaurants="🌮 بوجول – Pujol | 🌿 كوينتونيل – Quintonil | 🎨 دولسي باتريا – Dulce Patria | 🍽️ إل كاردينال – El Cardenal | 💙 أزول هيستوريكو – Azul Histórico"
-        data-cafes="☕ ألمانيغرا – Almanegra Cafe | ☕ كاردينال – Cardinal Casa de Café | ☕ كوينتين – Quentin Cafe | ☕ بليند ستيشن – Blend Station | ☕ كومبي – Cumbe Café"
-        data-events="🏛️ زوكالو – El Zócalo | 🚣 شوتشيميلكو – Xochimilco | 🏺 متحف الأنثروبولوجيا – National Anthropology Museum | 🌳 حديقة تشابولتيبيك – Chapultepec | 🌮 أحياء روما وكويواكان – Roma & Coyoacán"
-      >
-        <button
-          class="save-btn"
-          onclick="
+
+    <ul class="nav-list">
+      <li><a href="/index/index.html">الرئيسية</a></li>
+      <li><a href="/countries/countries.html">الدول</a></li>
+      <li><a href="/events/events.html">الفعاليات</a></li>
+      <li><a href="/recipes/recipes.html">الوصفات</a></li>
+    </ul>
+
+    <div class="logo">
+      <a href="/index/index.html"> <img src="/img/logo3.JPG" alt="سفرة" /></a>
+    </div>
+  </header>
+
+  <!--  MENU للجوال -->
+  <nav class="side-menu" id="side-menu">
+    <span class="close-btn" id="close-btn">✖</span>
+
+    <ul>
+      <li><a href="/index/index.html">الرئيسية</a></li>
+      <li><a href="/countries/countries.html">الدول</a></li>
+      <li><a href="/events/events.html">الفعاليات</a></li>
+      <li><a href="/recipes/recipes.html  ">الوصفات</a></li>
+    </ul>
+  </nav>
+  <header>
+    <a href="/countries/countries.html" class="back-btn">رجوع</a>
+  </header>
+  <div class="country-name">
+    <h1>المكسيك</h1>
+    <p>أرض الألوان والنكهات، وثقافة نابضة بالحياة.</p>
+  </div>
+  <!--المدن -->
+  <div class="main-cites">
+    <h1>المدن</h1>
+  </div>
+  <section class="cities-grid">
+    <div class="cite" data-name="مكسيكو سيتي – Mexico City" data-img="/img/Mexico City.jpg"
+      data-desc="عاصمة المكسيك النابضة بالحياة، من أكبر المدن في العالم، تجمع بين التاريخ الأزتيكي العريق والفن الحديث والمطاعم المتنوعة والأجواء الثقافية الرائعة."
+      data-historic="🏛️ تيوتيهواكان – Teotihuacan | 🏺 متحف الأنثروبولوجيا – National Museum | 🏙️ زوكالو – Zócalo | 🎨 متحف فريدا كالو – Frida Kahlo Museum"
+      data-restaurants="🌮 بوجول – Pujol | 🌿 كوينتونيل – Quintonil | 🎨 دولسي باتريا – Dulce Patria | 🍽️ إل كاردينال – El Cardenal | 💙 أزول هيستوريكو – Azul Histórico"
+      data-cafes="☕ ألمانيغرا – Almanegra Cafe | ☕ كاردينال – Cardinal Casa de Café | ☕ كوينتين – Quentin Cafe | ☕ بليند ستيشن – Blend Station | ☕ كومبي – Cumbe Café"
+      data-events="🏛️ زوكالو – El Zócalo | 🚣 شوتشيميلكو – Xochimilco | 🏺 متحف الأنثروبولوجيا – National Anthropology Museum | 🌳 حديقة تشابولتيبيك – Chapultepec | 🌮 أحياء روما وكويواكان – Roma & Coyoacán">
+      <button class="save-btn" onclick="
             event.stopPropagation();
             saveItem(
               'city',
@@ -88,60 +83,46 @@
               'مكسيكو سيتي',
               '/img/Mexico City.jpg',
             );
-          "
-        >
-          🏙️
-        </button>
-        <img src="/img/Mexico City.jpg" alt="مكسيكو سيتي" class="cite-img" />
-        <span class="name">مكسيكو سيتي – Mexico City</span>
-        <p class="info">
-          عاصمة نابضة بالحياة، مليانة تاريخ وثقافة ومطاعم متنوعة.
-        </p>
-        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
-          تفاصيل
-        </button>
-      </div>
+          ">
+        🏙️
+      </button>
+      <img src="/img/Mexico City.jpg" alt="مكسيكو سيتي" class="cite-img" />
+      <span class="name">مكسيكو سيتي – Mexico City</span>
+      <p class="info">
+        عاصمة نابضة بالحياة، مليانة تاريخ وثقافة ومطاعم متنوعة.
+      </p>
+      <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+        تفاصيل
+      </button>
+    </div>
 
-      <div
-        class="cite"
-        data-name="كانكون – Cancún"
-        data-img="/img/Cancun.jpg"
-        data-desc="وجهة سياحية عالمية على ساحل البحر الكاريبي، تشتهر بشواطئها الفيروزية الساحرة ومنتجعاتها الفاخرة وحياتها الليلية المميزة."
-        data-historic="🏛️ تشيتشن إيتزا – Chichen Itza | 🌊 جزيرة موخيريس – Isla Mujeres | 🏺 متحف المايا – Maya Museum | 🌿 شينكال – Xcaret Park"
-        data-restaurants="🐟 إل فيش فريتانغا – El Fish Fritanga | 🦎 بلو جيكو كانتين – Blue Gecko Cantina | 🌮 تاكو وتيكيلا – Tacos y Tequila | 🌯 تاكون – Tacon | 🏪 باركي لاس بالاباس – Parque Las Palapas"
-        data-cafes="☕ كون غراسيا – Café con Gracia | ☕ روستر ميرو – Rooster Mero | ☕ دولسي بيسكيت – Dolce Bisquet Cancún | ☕ أنطوانيت – Cafe Antoinette Puerto Cancun | ☕ سيلينا – Selina Downtown Cancun"
-        data-events="🏊 الكهوف الجوفية – Cenotes | 🏛️ تولوم وتشيتشن إيتزا – Tulum & Chichen Itza | 🏝️ جزيرة موخيريس – Isla Mujeres | 🌿 منتزهات إكسكارت – Xcaret Parks | 🤿 المتحف تحت الماء – MUSA"
-      >
-        <button
-          class="save-btn"
-          onclick="
+    <div class="cite" data-name="كانكون – Cancún" data-img="/img/Cancun.jpg"
+      data-desc="وجهة سياحية عالمية على ساحل البحر الكاريبي، تشتهر بشواطئها الفيروزية الساحرة ومنتجعاتها الفاخرة وحياتها الليلية المميزة."
+      data-historic="🏛️ تشيتشن إيتزا – Chichen Itza | 🌊 جزيرة موخيريس – Isla Mujeres | 🏺 متحف المايا – Maya Museum | 🌿 شينكال – Xcaret Park"
+      data-restaurants="🐟 إل فيش فريتانغا – El Fish Fritanga | 🦎 بلو جيكو كانتين – Blue Gecko Cantina | 🌮 تاكو وتيكيلا – Tacos y Tequila | 🌯 تاكون – Tacon | 🏪 باركي لاس بالاباس – Parque Las Palapas"
+      data-cafes="☕ كون غراسيا – Café con Gracia | ☕ روستر ميرو – Rooster Mero | ☕ دولسي بيسكيت – Dolce Bisquet Cancún | ☕ أنطوانيت – Cafe Antoinette Puerto Cancun | ☕ سيلينا – Selina Downtown Cancun"
+      data-events="🏊 الكهوف الجوفية – Cenotes | 🏛️ تولوم وتشيتشن إيتزا – Tulum & Chichen Itza | 🏝️ جزيرة موخيريس – Isla Mujeres | 🌿 منتزهات إكسكارت – Xcaret Parks | 🤿 المتحف تحت الماء – MUSA">
+      <button class="save-btn" onclick="
             event.stopPropagation();
             saveItem('city', 'cancun', 'كانكون', '/img/Cancun.jpg');
-          "
-        >
-          🏙️
-        </button>
-        <img src="/img/Cancun.jpg" alt="كانكون" class="cite-img" />
-        <span class="name">كانكون – Cancún</span>
-        <p class="info">وجهة سياحية بشواطئ فيروزية وأجواء استرخاء فاخرة.</p>
-        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
-          تفاصيل
-        </button>
-      </div>
+          ">
+        🏙️
+      </button>
+      <img src="/img/Cancun.jpg" alt="كانكون" class="cite-img" />
+      <span class="name">كانكون – Cancún</span>
+      <p class="info">وجهة سياحية بشواطئ فيروزية وأجواء استرخاء فاخرة.</p>
+      <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+        تفاصيل
+      </button>
+    </div>
 
-      <div
-        class="cite"
-        data-name="غوادالاخارا – Guadalajara"
-        data-img="/img/Guadalajara.jpg"
-        data-desc="عاصمة ولاية خاليسكو ومدينة المارياشي والتكيلا، تجمع بين الأجواء التقليدية المكسيكية الأصيلة والحياة الثقافية الغنية والعمارة الاستعمارية الجميلة."
-        data-historic="⛪ كاتدرائية غوادالاخارا – Guadalajara Cathedral | 🎭 مسرح ديغوليادو – Degollado Theater | 🏛️ معهد الفنون الثقافية – Instituto Cultural Cabañas | 🌵 تكيلا – Tequila Town"
-        data-restaurants="🐟 تاكو فيش لا باز – Taco Fish la Paz | 🌮 تاكوس إل غيرو – Tacos el Güero | 🏮 لوس فارولس – Los Faroles | 🍖 منطقة نيوبي إسكيناس – Nueve Esquinas | 🌿 كينتا هايارا – Quinta Hayara"
-        data-cafes="☕ بال ريال – Pa'l Real | ☕ باهام كافيه – Baham Café | ☕ إل تيريبلي خوان – El Terrible Juan Café | ☕ كريما دي إسبريسو – Crema Di Espresso | ☕ فينكا ريفيرول – Finca Riveroll"
-        data-events="🚂 قطار خوسيه كويرفو – Jose Cuervo Express | 🏛️ المركز التاريخي – Historic Center | 🎨 تلاكويباك – Tlaquepaque | ⛪ بازيليكا زابوبان – Basilica de Zapopan | 🐠 أكواريوم ميشين – Acuario Michin"
-      >
-        <button
-          class="save-btn"
-          onclick="
+    <div class="cite" data-name="غوادالاخارا – Guadalajara" data-img="/img/Guadalajara.jpg"
+      data-desc="عاصمة ولاية خاليسكو ومدينة المارياشي والتكيلا، تجمع بين الأجواء التقليدية المكسيكية الأصيلة والحياة الثقافية الغنية والعمارة الاستعمارية الجميلة."
+      data-historic="⛪ كاتدرائية غوادالاخارا – Guadalajara Cathedral | 🎭 مسرح ديغوليادو – Degollado Theater | 🏛️ معهد الفنون الثقافية – Instituto Cultural Cabañas | 🌵 تكيلا – Tequila Town"
+      data-restaurants="🐟 تاكو فيش لا باز – Taco Fish la Paz | 🌮 تاكوس إل غيرو – Tacos el Güero | 🏮 لوس فارولس – Los Faroles | 🍖 منطقة نيوبي إسكيناس – Nueve Esquinas | 🌿 كينتا هايارا – Quinta Hayara"
+      data-cafes="☕ بال ريال – Pa'l Real | ☕ باهام كافيه – Baham Café | ☕ إل تيريبلي خوان – El Terrible Juan Café | ☕ كريما دي إسبريسو – Crema Di Espresso | ☕ فينكا ريفيرول – Finca Riveroll"
+      data-events="🚂 قطار خوسيه كويرفو – Jose Cuervo Express | 🏛️ المركز التاريخي – Historic Center | 🎨 تلاكويباك – Tlaquepaque | ⛪ بازيليكا زابوبان – Basilica de Zapopan | 🐠 أكواريوم ميشين – Acuario Michin">
+      <button class="save-btn" onclick="
             event.stopPropagation();
             saveItem(
               'city',
@@ -149,33 +130,26 @@
               'غوادالاخارا',
               '/img/Guadalajara.jpg',
             );
-          "
-        >
-          🏙️
-        </button>
-        <img src="/img/Guadalajara.jpg" alt="غوادالاخارا" class="cite-img" />
-        <span class="name">غوادالاخارا – Guadalajara</span>
-        <p class="info">
-          مدينة تقليدية مليانة موسيقى مارياشي وثقافة مكسيكية أصيلة.
-        </p>
-        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
-          تفاصيل
-        </button>
-      </div>
+          ">
+        🏙️
+      </button>
+      <img src="/img/Guadalajara.jpg" alt="غوادالاخارا" class="cite-img" />
+      <span class="name">غوادالاخارا – Guadalajara</span>
+      <p class="info">
+        مدينة تقليدية مليانة موسيقى مارياشي وثقافة مكسيكية أصيلة.
+      </p>
+      <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+        تفاصيل
+      </button>
+    </div>
 
-      <div
-        class="cite"
-        data-name="بلايا ديل كارمن – Playa del Carmen"
-        data-img="/img/Playa del Carmen.jpg"
-        data-desc="مدينة ساحلية هادئة وراقية على ساحل البحر الكاريبي، تشتهر بشارع كينتا أفينيدا الشهير والشواطئ الجميلة والأنشطة البحرية المتنوعة."
-        data-historic="🌊 شارع الخامسة – Quinta Avenida | 🏛️ كوبا – Coba Ruins | 🌿 شينكال – Xcaret | 🤿 سيان كاان – Sian Ka'an"
-        data-restaurants="🌮 إل فوغون – El Fogón | 🌿 لا كويفا ديل تشانغو – La Cueva del Chango | 🦇 ألوكس ريستورانت – Alux Restaurant | 🦐 لوس أغواتشيليس – Los Aguachiles | 🐟 إيكتيو فيش هاوس – Ictio Fish House"
-        data-cafes="☕ شو شو كافيه – Choux Choux Café | ☕ آه كاكاو – Ah Cacao Chocolate Cafe | ☕ ليز أمي – Les Amis | ☕ كارلوتا هوم بيكري – Carlota Home Bakery | ☕ لا كويفا ديل تشانغو – La Cueva del Chango"
-        data-events="🚣 منتزه شوشيميلكو – Xoximilco Park | 🛍️ شارع فيفث أفينيو – Quinta Avenida | 🏖️ شواطئ بلايا ديل كارمن – Playa Beaches | 🤿 غوص وسنوركلينج – Diving & Snorkeling | 🌿 غابات ومنتجعات بيئية – Eco Parks"
-      >
-        <button
-          class="save-btn"
-          onclick="
+    <div class="cite" data-name="بلايا ديل كارمن – Playa del Carmen" data-img="/img/Playa del Carmen.jpg"
+      data-desc="مدينة ساحلية هادئة وراقية على ساحل البحر الكاريبي، تشتهر بشارع كينتا أفينيدا الشهير والشواطئ الجميلة والأنشطة البحرية المتنوعة."
+      data-historic="🌊 شارع الخامسة – Quinta Avenida | 🏛️ كوبا – Coba Ruins | 🌿 شينكال – Xcaret | 🤿 سيان كاان – Sian Ka'an"
+      data-restaurants="🌮 إل فوغون – El Fogón | 🌿 لا كويفا ديل تشانغو – La Cueva del Chango | 🦇 ألوكس ريستورانت – Alux Restaurant | 🦐 لوس أغواتشيليس – Los Aguachiles | 🐟 إيكتيو فيش هاوس – Ictio Fish House"
+      data-cafes="☕ شو شو كافيه – Choux Choux Café | ☕ آه كاكاو – Ah Cacao Chocolate Cafe | ☕ ليز أمي – Les Amis | ☕ كارلوتا هوم بيكري – Carlota Home Bakery | ☕ لا كويفا ديل تشانغو – La Cueva del Chango"
+      data-events="🚣 منتزه شوشيميلكو – Xoximilco Park | 🛍️ شارع فيفث أفينيو – Quinta Avenida | 🏖️ شواطئ بلايا ديل كارمن – Playa Beaches | 🤿 غوص وسنوركلينج – Diving & Snorkeling | 🌿 غابات ومنتجعات بيئية – Eco Parks">
+      <button class="save-btn" onclick="
             event.stopPropagation();
             saveItem(
               'city',
@@ -183,233 +157,194 @@
               'بلايا ديل كارمن',
               '/img/Playa del Carmen.jpg',
             );
-          "
-        >
-          🏙️
-        </button>
-        <img
-          src="/img/Playa del Carmen.jpg"
-          alt="بلايا ديل كارمن"
-          class="cite-img"
-        />
-        <span class="name">بلايا ديل كارمن – Playa del Carmen</span>
-        <p class="info">
-          مدينة ساحلية هادئة، مثالية للاسترخاء والأنشطة البحرية.
-        </p>
-        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
-          تفاصيل
-        </button>
-      </div>
+          ">
+        🏙️
+      </button>
+      <img src="/img/Playa del Carmen.jpg" alt="بلايا ديل كارمن" class="cite-img" />
+      <span class="name">بلايا ديل كارمن – Playa del Carmen</span>
+      <p class="info">
+        مدينة ساحلية هادئة، مثالية للاسترخاء والأنشطة البحرية.
+      </p>
+      <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+        تفاصيل
+      </button>
+    </div>
 
-      <div
-        class="cite"
-        data-name="مونتيري – Monterrey"
-        data-img="/img/Monterrey.jpg"
-        data-desc="ثاني أكبر مدينة اقتصادية في المكسيك، تجمع بين الحداثة والطبيعة الجبلية الخلابة، تشتهر بجبل السيلا الشهير وأجوائها الحضرية المتطورة."
-        data-historic="🏔️ جبل السيلا – Cerro de la Silla | 🏛️ ماكرو بلازا – Macroplaza | 🎨 متحف الفنون – MARCO Museum | 🌿 باركي فونديدورا – Parque Fundidora"
-        data-restaurants="🥩 غالو 71 – Gallo 71 | 🍖 لا ناسيونال – La Nacional | 🍣 أنيمال كالزادا – Animal Calzada | 🌮 موتشوموس – Mochomos | 🌆 ميركوريو هايبارك – Mercurio Highpark"
-        data-cafes="☕ ميل ديليس – Mille Délices | ☕ سيبيرد كوفي – Seabird Coffee | ☕ بريد بانادروس – Bread Panaderos Artesanales | ☕ بانيم بيكري – Panem Bakery & Bistro | ☕ غوايويو كوفي – Guayoyo Coffee"
-        data-events="🌿 منتزه فونديدورا – Parque Fundidora | 🚢 باسييو سانتا لوسيا – Paseo de Santa Lucía | 🏔️ جبل سيرو دي لا سيلا – Cerro de la Silla | 🦁 حديقة لا باستورا – Parque Zoologico La Pastora | 🧗 جولات المغامرات – Gaia Xtreme Tours"
-      >
-        <button
-          class="save-btn"
-          onclick="
+    <div class="cite" data-name="مونتيري – Monterrey" data-img="/img/Monterrey.jpg"
+      data-desc="ثاني أكبر مدينة اقتصادية في المكسيك، تجمع بين الحداثة والطبيعة الجبلية الخلابة، تشتهر بجبل السيلا الشهير وأجوائها الحضرية المتطورة."
+      data-historic="🏔️ جبل السيلا – Cerro de la Silla | 🏛️ ماكرو بلازا – Macroplaza | 🎨 متحف الفنون – MARCO Museum | 🌿 باركي فونديدورا – Parque Fundidora"
+      data-restaurants="🥩 غالو 71 – Gallo 71 | 🍖 لا ناسيونال – La Nacional | 🍣 أنيمال كالزادا – Animal Calzada | 🌮 موتشوموس – Mochomos | 🌆 ميركوريو هايبارك – Mercurio Highpark"
+      data-cafes="☕ ميل ديليس – Mille Délices | ☕ سيبيرد كوفي – Seabird Coffee | ☕ بريد بانادروس – Bread Panaderos Artesanales | ☕ بانيم بيكري – Panem Bakery & Bistro | ☕ غوايويو كوفي – Guayoyo Coffee"
+      data-events="🌿 منتزه فونديدورا – Parque Fundidora | 🚢 باسييو سانتا لوسيا – Paseo de Santa Lucía | 🏔️ جبل سيرو دي لا سيلا – Cerro de la Silla | 🦁 حديقة لا باستورا – Parque Zoologico La Pastora | 🧗 جولات المغامرات – Gaia Xtreme Tours">
+      <button class="save-btn" onclick="
             event.stopPropagation();
             saveItem('city', 'monterrey', 'مونتيري', '/img/Monterrey.jpg');
-          "
-        >
-          🏙️
-        </button>
-        <img src="/img/Monterrey.jpg" alt="مونتيري" class="cite-img" />
-        <span class="name">مونتيري – Monterrey</span>
-        <p class="info">مدينة حديثة تجمع بين الطبيعة والاقتصاد والتطور.</p>
-        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
-          تفاصيل
-        </button>
-      </div>
+          ">
+        🏙️
+      </button>
+      <img src="/img/Monterrey.jpg" alt="مونتيري" class="cite-img" />
+      <span class="name">مونتيري – Monterrey</span>
+      <p class="info">مدينة حديثة تجمع بين الطبيعة والاقتصاد والتطور.</p>
+      <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+        تفاصيل
+      </button>
+    </div>
 
-      <div
-        class="cite"
-        data-name="أواكساكا – Oaxaca"
-        data-img="/img/Oaxaca.jpg"
-        data-desc="مدينة تاريخية ملونة في جنوب المكسيك، تشتهر بمطبخها التقليدي الفريد والحرف اليدوية الأصيلة وآثار حضارة الزاباتيك ومهرجان يوم الموتى الشهير."
-        data-historic="🏛️ مونتي ألبان – Monte Albán | ⛪ كاتدرائية أواكساكا – Oaxaca Cathedral | 🌳 شجرة تول – El Tule Tree | 🏺 متحف أواكساكا – Oaxaca Museum"
-        data-restaurants="🌽 إيتانوني – Itanoní | 🌟 أوريجين – Origen | 🍲 زاندونغا – Zandunga | 🥘 لا أولا – La Olla | 🌳 كاسا ديل تولي – Casa del Tule"
-        data-cafes="☕ بولينك – Boulenc | ☕ كافيه بروجولا – Cafe Brujula | ☕ كيو كافيه – Kiyo Café | ☕ بانام – Pan:AM | ☕ ماريتو إي موجلي – Marito & Moglie"
-        data-events="🏛️ مونتي ألبان – Monte Albán | ⛪ ساحة سانتو دومينغو – Plaza Santo Domingo | 🛍️ أسواق أواكساكا – Oaxaca Markets | 💦 شلالات هيرف إل أغوا – Hierve el Agua | 🥃 تذوق الميزكال – Mezcal Tasting"
-      >
-        <button
-          class="save-btn"
-          onclick="
+    <div class="cite" data-name="أواكساكا – Oaxaca" data-img="/img/Oaxaca.jpg"
+      data-desc="مدينة تاريخية ملونة في جنوب المكسيك، تشتهر بمطبخها التقليدي الفريد والحرف اليدوية الأصيلة وآثار حضارة الزاباتيك ومهرجان يوم الموتى الشهير."
+      data-historic="🏛️ مونتي ألبان – Monte Albán | ⛪ كاتدرائية أواكساكا – Oaxaca Cathedral | 🌳 شجرة تول – El Tule Tree | 🏺 متحف أواكساكا – Oaxaca Museum"
+      data-restaurants="🌽 إيتانوني – Itanoní | 🌟 أوريجين – Origen | 🍲 زاندونغا – Zandunga | 🥘 لا أولا – La Olla | 🌳 كاسا ديل تولي – Casa del Tule"
+      data-cafes="☕ بولينك – Boulenc | ☕ كافيه بروجولا – Cafe Brujula | ☕ كيو كافيه – Kiyo Café | ☕ بانام – Pan:AM | ☕ ماريتو إي موجلي – Marito & Moglie"
+      data-events="🏛️ مونتي ألبان – Monte Albán | ⛪ ساحة سانتو دومينغو – Plaza Santo Domingo | 🛍️ أسواق أواكساكا – Oaxaca Markets | 💦 شلالات هيرف إل أغوا – Hierve el Agua | 🥃 تذوق الميزكال – Mezcal Tasting">
+      <button class="save-btn" onclick="
             event.stopPropagation();
             saveItem('city', 'oaxaca', 'أواكساكا', '/img/Oaxaca.jpg');
-          "
-        >
-          🏙️
-        </button>
-        <img src="/img/Oaxaca.jpg" alt="أواكساكا" class="cite-img" />
-        <span class="name">أواكساكا – Oaxaca</span>
-        <p class="info">مدينة تاريخية بألوان جميلة وأكل تقليدي مميز.</p>
-        <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
-          تفاصيل
-        </button>
-      </div>
-    </section>
-    <!--الاكل-->
-    <div class="main-foods">
-      <h1>الماكولات</h1>
+          ">
+        🏙️
+      </button>
+      <img src="/img/Oaxaca.jpg" alt="أواكساكا" class="cite-img" />
+      <span class="name">أواكساكا – Oaxaca</span>
+      <p class="info">مدينة تاريخية بألوان جميلة وأكل تقليدي مميز.</p>
+      <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+        تفاصيل
+      </button>
     </div>
-    <section class="foods-grid">
-      <div class="foods">
-        <img src="/img/Tacos.jpg" alt="" class="foods-img" />
-        <span class="name-foods">تاكو – Tacos</span>
-        <div class="food-info">
-          خبز تورتيلا محشي باللحم أو الدجاج مع صوصات لذيذة.
-        </div>
-        <a href="/recipes/recipes.html?recipe=tacos" class="for-more-btn"
-          >المزيد</a
-        >
+  </section>
+  <!--الاكل-->
+  <div class="main-foods">
+    <h1>الماكولات</h1>
+  </div>
+  <section class="foods-grid">
+    <div class="foods">
+      <img src="/img/Tacos.jpg" alt="" class="foods-img" />
+      <span class="name-foods">تاكو – Tacos</span>
+      <div class="food-info">
+        خبز تورتيلا محشي باللحم أو الدجاج مع صوصات لذيذة.
       </div>
-
-      <div class="foods">
-        <img src="/img/Burrito.jpg" alt="" class="foods-img" />
-        <span class="name-foods">بوريتو – Burrito</span>
-        <div class="food-info">لفائف تورتيلا محشوة بالأرز واللحم والخضار.</div>
-        <a href="/recipes/recipes.html?recipe=burrito" class="for-more-btn"
-          >المزيد</a
-        >
-      </div>
-
-      <div class="foods">
-        <img src="/img/Quesadilla.jpg" alt="" class="foods-img" />
-        <span class="name-foods">كيساديلا – Quesadilla</span>
-        <div class="food-info">
-          تورتيلا محشوة بالجبن ومشوية بطعم بسيط ولذيذ.
-        </div>
-        <a href="/recipes/recipes.html?recipe=quesadilla" class="for-more-btn"
-          >المزيد</a
-        >
-      </div>
-
-      <div class="foods">
-        <img src="/img/Enchilada.jpg" alt="" class="foods-img" />
-        <span class="name-foods">إنشيلادا – Enchilada</span>
-        <div class="food-info">
-          لفائف تورتيلا مغطاة بصوص حار ومحشوة باللحم أو الدجاج.
-        </div>
-        <a href="/recipes/recipes.html?recipe=enchilada" class="for-more-btn"
-          >المزيد</a
-        >
-      </div>
-
-      <div class="foods">
-        <img src="/img/Guacamole.jpg" alt="" class="foods-img" />
-        <span class="name-foods">غواكامولي – Guacamole</span>
-        <div class="food-info">
-          صوص أفوكادو طازج مع ليمون وتوابل، يقدم مع رقائق.
-        </div>
-        <a href="/recipes/recipes.html?recipe=guacamole" class="for-more-btn"
-          >المزيد</a
-        >
-      </div>
-
-      <div class="foods">
-        <img src="/img/Churros.jpg" alt="" class="foods-img" />
-        <span class="name-foods">تشوروس – Churros</span>
-        <div class="food-info">حلى مقلي مقرمش، يقدم مع سكر أو شوكولاتة.</div>
-        <a href="/recipes/recipes.html?recipe=churros" class="for-more-btn"
-          >المزيد</a
-        >
-      </div>
-    </section>
-    <div class="events-main">
-      <h1>الفعاليات</h1>
+      <a href="/recipes/recipes.html?recipe=tacos" class="for-more-btn">المزيد</a>
     </div>
-    <section class="events-grid">
-      <div class="event">
-        <img src="/img/Day of the Dead.jpg" alt="" class="event-img" />
-        <span class="name-event">يوم الموتى – Day of the Dead</span>
-        <div class="event-info">
-          احتفال تقليدي مميز بالألوان والرموز تكريماً للأرواح.
-        </div>
-        <a href="/events/events.html?event=DayOfTheDead" class="event-btn"
-          >المزيد</a
-        >
-      </div>
 
-      <div class="event">
-        <img src="/img/Mariachi Festival Mexico.jpg" alt="" class="event-img" />
-        <span class="name-event">مهرجان مارياشي – Mariachi Festival</span>
-        <div class="event-info">
-          عروض موسيقية تعكس روح المكسيك وأجواء احتفالية.
-        </div>
-        <a href="/events/events.html?event=MariachiMexico" class="event-btn"
-          >المزيد</a
-        >
-      </div>
+    <div class="foods">
+      <img src="/img/Burrito.jpg" alt="" class="foods-img" />
+      <span class="name-foods">بوريتو – Burrito</span>
+      <div class="food-info">لفائف تورتيلا محشوة بالأرز واللحم والخضار.</div>
+      <a href="/recipes/recipes.html?recipe=burrito" class="for-more-btn">المزيد</a>
+    </div>
 
-      <div class="event">
-        <img src="/img/Cancun Beaches.jpg" alt="" class="event-img" />
-        <span class="name-event">شواطئ كانكون – Cancún Beaches</span>
-        <div class="event-info">غوص، سباحة، وفعاليات بحرية ممتعة.</div>
-        <a href="/events/events.html?event=CancunBeaches" class="event-btn"
-          >المزيد</a
-        >
+    <div class="foods">
+      <img src="/img/Quesadilla.jpg" alt="" class="foods-img" />
+      <span class="name-foods">كيساديلا – Quesadilla</span>
+      <div class="food-info">
+        تورتيلا محشوة بالجبن ومشوية بطعم بسيط ولذيذ.
       </div>
+      <a href="/recipes/recipes.html?recipe=quesadilla" class="for-more-btn">المزيد</a>
+    </div>
 
-      <div class="event">
-        <img src="/img/Chichen Itza.jpg" alt="" class="event-img" />
-        <span class="name-event">تشيتشن إيتزا – Chichen Itza</span>
-        <div class="event-info">
-          استكشاف أحد عجائب الدنيا وأشهر معالم حضارة المايا.
-        </div>
-        <a href="/events/events.html?event=ChichenItza" class="event-btn"
-          >المزيد</a
-        >
+    <div class="foods">
+      <img src="/img/Enchilada.jpg" alt="" class="foods-img" />
+      <span class="name-foods">إنشيلادا – Enchilada</span>
+      <div class="food-info">
+        لفائف تورتيلا مغطاة بصوص حار ومحشوة باللحم أو الدجاج.
       </div>
+      <a href="/recipes/recipes.html?recipe=enchilada" class="for-more-btn">المزيد</a>
+    </div>
 
-      <div class="event">
-        <img src="/img/Mexico Food Tour.jpg" alt="" class="event-img" />
-        <span class="name-event">جولة تذوق الأكل – Mexico Food Tour</span>
-        <div class="event-info">
-          تجربة تذوق أكلات الشارع والنكهات المكسيكية الأصيلة.
-        </div>
-        <a href="/events/events.html?event=MexicoFoodTour" class="event-btn"
-          >المزيد</a
-        >
+    <div class="foods">
+      <img src="/img/Guacamole.jpg" alt="" class="foods-img" />
+      <span class="name-foods">غواكامولي – Guacamole</span>
+      <div class="food-info">
+        صوص أفوكادو طازج مع ليمون وتوابل، يقدم مع رقائق.
       </div>
+      <a href="/recipes/recipes.html?recipe=guacamole" class="for-more-btn">المزيد</a>
+    </div>
 
-      <div class="event">
-        <img src="/img/Mexico Carnival.jpg" alt="" class="event-img" />
-        <span class="name-event">الكرنفالات المكسيكية – Mexico Carnivals</span>
-        <div class="event-info">احتفالات شعبية مليانة رقص وألوان وموسيقى.</div>
-        <a href="/events/events.html?event=MexicoCarnival" class="event-btn"
-          >المزيد</a
-        >
+    <div class="foods">
+      <img src="/img/Churros.jpg" alt="" class="foods-img" />
+      <span class="name-foods">تشوروس – Churros</span>
+      <div class="food-info">حلى مقلي مقرمش، يقدم مع سكر أو شوكولاتة.</div>
+      <a href="/recipes/recipes.html?recipe=churros" class="for-more-btn">المزيد</a>
+    </div>
+  </section>
+  <div class="events-main">
+    <h1>الفعاليات</h1>
+  </div>
+  <section class="events-grid">
+    <div class="event">
+      <img src="/img/Day of the Dead.jpg" alt="" class="event-img" />
+      <span class="name-event">يوم الموتى – Day of the Dead</span>
+      <div class="event-info">
+        احتفال تقليدي مميز بالألوان والرموز تكريماً للأرواح.
       </div>
-    </section>
-    <!-- Modal المدينة -->
-    <div id="cityModal" class="modal" onclick="closeCityModal(event)">
-      <div class="modal-content">
-        <button class="modal-close" onclick="closeCityModal(event)">×</button>
-        <div class="modal-top">
-          <img id="modalCityImg" src="" alt="" />
+      <a href="/events/events.html?event=DayOfTheDead" class="event-btn">المزيد</a>
+    </div>
+
+    <div class="event">
+      <img src="/img/Mariachi Festival Mexico.jpg" alt="" class="event-img" />
+      <span class="name-event">مهرجان مارياشي – Mariachi Festival</span>
+      <div class="event-info">
+        عروض موسيقية تعكس روح المكسيك وأجواء احتفالية.
+      </div>
+      <a href="/events/events.html?event=MariachiMexico" class="event-btn">المزيد</a>
+    </div>
+
+    <div class="event">
+      <img src="/img/Cancun Beaches.jpg" alt="" class="event-img" />
+      <span class="name-event">شواطئ كانكون – Cancún Beaches</span>
+      <div class="event-info">غوص، سباحة، وفعاليات بحرية ممتعة.</div>
+      <a href="/events/events.html?event=CancunBeaches" class="event-btn">المزيد</a>
+    </div>
+
+    <div class="event">
+      <img src="/img/Chichen Itza.jpg" alt="" class="event-img" />
+      <span class="name-event">تشيتشن إيتزا – Chichen Itza</span>
+      <div class="event-info">
+        استكشاف أحد عجائب الدنيا وأشهر معالم حضارة المايا.
+      </div>
+      <a href="/events/events.html?event=ChichenItza" class="event-btn">المزيد</a>
+    </div>
+
+    <div class="event">
+      <img src="/img/Mexico Food Tour.jpg" alt="" class="event-img" />
+      <span class="name-event">جولة تذوق الأكل – Mexico Food Tour</span>
+      <div class="event-info">
+        تجربة تذوق أكلات الشارع والنكهات المكسيكية الأصيلة.
+      </div>
+      <a href="/events/events.html?event=MexicoFoodTour" class="event-btn">المزيد</a>
+    </div>
+
+    <div class="event">
+      <img src="/img/Mexico Carnival.jpg" alt="" class="event-img" />
+      <span class="name-event">الكرنفالات المكسيكية – Mexico Carnivals</span>
+      <div class="event-info">احتفالات شعبية مليانة رقص وألوان وموسيقى.</div>
+      <a href="/events/events.html?event=MexicoCarnival" class="event-btn">المزيد</a>
+    </div>
+  </section>
+  <!-- Modal المدينة -->
+  <div id="cityModal" class="modal" onclick="closeCityModal(event)">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeCityModal(event)">×</button>
+      <div class="modal-top">
+        <img id="modalCityImg" src="" alt="" />
+        <div class="modal-top-info">
           <h2 id="modalCityName"></h2>
-        </div>
-        <div class="modal-body">
-          <p id="modalCityDesc" class="event-desc"></p>
-          <h4>🏛️ أفضل الأماكن التاريخية</h4>
-          <div id="modalCityHistoric" class="ingredients-tags"></div>
-          <h4>🍽️ أفضل المطاعم</h4>
-          <div id="modalCityRestaurants" class="ingredients-tags"></div>
-          <h4>☕ أفضل المقاهي</h4>
-          <div id="modalCityCafes" class="ingredients-tags"></div>
-          <h4>🎉 فعاليات المدينة</h4>
-          <div id="modalCityEvents" class="ingredients-tags"></div>
+          <span class="modal-top-badge">✦ تفاصيل المدينة</span>
         </div>
       </div>
+      <div class="modal-body">
+        <p id="modalCityDesc" class="event-desc"></p>
+        <h4>🏛️ أفضل الأماكن التاريخية</h4>
+        <div id="modalCityHistoric" class="ingredients-tags"></div>
+        <h4>🍽️ أفضل المطاعم</h4>
+        <div id="modalCityRestaurants" class="ingredients-tags"></div>
+        <h4>☕ أفضل المقاهي</h4>
+        <div id="modalCityCafes" class="ingredients-tags"></div>
+        <h4>🎉 فعاليات المدينة</h4>
+        <div id="modalCityEvents" class="ingredients-tags"></div>
+      </div>
     </div>
-    <script src="/countries/countries.js"></script>
-    <script src="/auth/auth.js"></script>
-  </body>
+  </div>
+  <script src="/countries/countries.js"></script>
+  <script src="/auth/auth.js"></script>
+</body>
+
 </html>
