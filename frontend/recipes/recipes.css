@@ -10,7 +10,7 @@
 body {
     background-color: #FAF4E6;
     font-family: "Noto Sans Arabic", sans-serif;
-    padding-top: 120px;
+    padding-top: 90px;
 }
 
 :root {
@@ -155,22 +155,41 @@ body {
 ================================ */
 .hero {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 40px 20px;
-    color: var(--brown-dark);
+    padding: 60px 20px 50px;
+    background: linear-gradient(160deg, #2c1a0e 0%, #3d2410 40%, #1a0f07 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(180,110,50,0.15) 0%, transparent 70%);
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    pointer-events: none;
 }
 
 .hero-text h1 {
-    font-size: clamp(28px, 6vw, 60px);
-    margin-bottom: 15px;
-    font-weight: bold;
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    font-weight: 700;
+    color: #f5ede0;
+    margin: 0 0 12px;
+    line-height: 1.15;
 }
 
 .hero-text p {
-    font-size: clamp(16px, 3vw, 22px);
-    color: var(--text-muted);
+    font-size: 1rem;
+    color: rgba(245,237,224,0.6);
+    margin: 0;
     line-height: 1.8;
 }
 /* ================================
@@ -226,162 +245,306 @@ body {
 }
 
 .filter-buttons button:hover { transform: translateY(-2px); }
-
+/* ================================
+   FOODS GRID - تصميم المجلة
+================================ */
 .foods-grid {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 30px auto 60px;
-    padding: 0 16px;
+    padding: 0 20px;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 14px;
 }
-
-@media (max-width: 900px) { .foods-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 600px) { .foods-grid { grid-template-columns: 1fr; } }
 
 .foods-card {
-    background: #fff7ec;
+    position: relative;
     border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 8px 25px rgba(0,0,0,.06);
-    border: 1px solid rgba(0,0,0,.06);
-    position: relative;
+    background: #1a0f07;
+    border: none;
+    box-shadow: none;
+    cursor: pointer;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
+/* أحجام الكروت - متساوية */
+.foods-card { grid-column: span 4; height: 300px; }
+
+.foods-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+}
+
+/* زر الوصفة يملأ الكرت كاملاً */
 .recipes-item {
+    position: absolute;
+    inset: 0;
     width: 100%;
+    height: 100%;
     border: 0;
     background: transparent;
     cursor: pointer;
-    padding: 14px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 10px;
+    padding: 0;
+    display: block;
+    font-family: "Noto Sans Arabic", sans-serif;
 }
 
+/* الصورة */
 .recipes-head {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    min-width: 0;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: block;
 }
 
 .recipes-head img {
-    width: 70px;
-    height: 70px;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    border-radius: 12px;
-    flex: 0 0 auto;
+    border-radius: 0;
+    flex: none;
+    display: block;
+    transition: transform 0.5s ease;
 }
 
+.foods-card:hover .recipes-head img {
+    transform: scale(1.06);
+}
+
+/* Overlay */
+.recipes-head::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(20,8,2,0.90) 0%, rgba(20,8,2,0.25) 55%, transparent 100%);
+    pointer-events: none;
+}
+
+/* النص فوق الصورة */
 .recipes-head span {
-    font-size: 18px;
+    position: absolute;
+    bottom: 44px;
+    right: 16px;
+    left: 16px;
+    z-index: 2;
+    font-size: clamp(0.95rem, 1.6vw, 1.15rem);
     font-weight: 700;
-    color: #4A2E1F;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    color: #fff;
+    text-align: right;
+    white-space: normal;
+    overflow: visible;
+    text-shadow: 0 1px 6px rgba(0,0,0,0.5);
 }
 
-.arrow {
-    color: #B07A2A;
-    font-weight: 700;
-    white-space: nowrap;
+/* بادج الدولة */
+.country-badge {
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+    z-index: 2;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.2);
+    backdrop-filter: blur(6px);
+    color: rgba(255,255,255,0.85);
+    font-size: 12px;
+    padding: 3px 10px;
+    border-radius: 999px;
+    font-family: "Noto Sans Arabic", sans-serif;
+    display: none;
+}
+
+/* زر الحفظ */
+.save-btn {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    z-index: 10;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 50%;
+    width: 34px;
+    height: 34px;
+    font-size: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .3s;
+    box-shadow: none;
+    color: #fff;
+}
+
+.save-btn:hover {
+    background: rgba(210,166,115,0.8);
+    transform: scale(1.1);
+}
+
+/* السهم يختفي */
+.arrow { display: none; }
+
+/* ================================
+   RESPONSIVE
+================================ */
+@media (max-width: 900px) {
+    .foods-grid {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 95%;
+        margin: 20px auto 40px;
+    }
+    .foods-card:nth-child(n) {
+        grid-column: span 1 !important;
+        height: 240px !important;
+    }
+}
+
+@media (max-width: 500px) {
+    .foods-grid { grid-template-columns: 1fr; }
+    .foods-card:nth-child(n) { height: 220px !important; }
 }
 
 .modal {
     display: none;
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,.45);
+    background: rgba(0,0,0,.65);
     z-index: 9999;
     padding: 20px;
+    overflow-y: auto;
+    backdrop-filter: blur(4px);
 }
 
 .modal-content {
-    max-width: 900px;
+    max-width: 780px;
     width: 100%;
-    margin: auto;
-    background: #fffaf2;
-    border-radius: 18px;
+    margin: 40px auto;
+    background: #1e1008;
+    border-radius: 20px;
     overflow: hidden;
     position: relative;
-    box-shadow: 0 20px 60px rgba(0,0,0,.25);
+    border: 1px solid rgba(200,133,74,0.2);
+    box-shadow: 0 30px 80px rgba(0,0,0,0.6);
 }
 
 .modal-close {
     position: absolute;
-    top: 12px;
-    left: 12px;
-    width: 40px;
-    height: 40px;
-    border: none;
-    border-radius: 12px;
+    top: 14px;
+    left: 14px;
+    width: 36px;
+    height: 36px;
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 50%;
     cursor: pointer;
-    font-size: 24px;
-    background: #ffffffcc;
-    color: #4A2E1F;
+    font-size: 18px;
+    background: rgba(255,255,255,0.08);
+    color: #f5ede0;
     line-height: 1;
+    z-index: 10;
+    transition: background 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
+.modal-close:hover { background: rgba(200,133,74,0.4); }
+
 .modal-top {
-    padding: 16px;
-    background: #fff2e6;
+    padding: 0;
+    background: none;
     display: flex;
-    gap: 14px;
-    align-items: center;
+    gap: 0;
+    align-items: stretch;
+    min-height: 160px;
 }
 
 .modal-top img {
-    width: 110px;
-    height: 110px;
-    border-radius: 16px;
+    width: 200px;
+    min-height: 160px;
+    height: 100%;
+    border-radius: 0;
     object-fit: cover;
     flex: 0 0 auto;
 }
 
+.modal-top-info {
+    flex: 1;
+    background: linear-gradient(135deg, #2c1a0e 0%, #1e1008 100%);
+    padding: 24px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+    border-bottom: 1px solid rgba(200,133,74,0.15);
+}
+
 .modal-top h2 {
     margin: 0;
-    color: #4A2E1F;
-    font-size: 26px;
+    color: #f5ede0;
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.modal-country-badge {
+    display: inline-block;
+    font-size: 12px;
+    color: rgba(245,237,224,0.7);
+    background: rgba(255,255,255,0.08);
+    padding: 3px 12px;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,0.12);
+    width: fit-content;
 }
 
 .modal-body {
-    padding: 18px 22px 26px;
-    color: #2f261f;
+    padding: 22px 26px 28px;
+    color: #e8ddd0;
     line-height: 1.9;
+    background: #1e1008;
 }
 
 .modal-body h4 {
-    margin: 14px 0 8px;
-    color: #B07A2A;
+    margin: 20px 0 10px;
+    color: #c8854a;
+    font-size: 0.95rem;
+    font-weight: 600;
 }
+
+.modal-body h4:first-child { margin-top: 0; }
 
 .ingredients-tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 8px;
 }
 
 .ingredients-tags span {
-    background: #fff;
-    border: 1px solid rgba(0,0,0,.08);
-    padding: 6px 12px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 5px 14px;
     border-radius: 999px;
-    font-size: 14px;
-    color: #4A2E1F;
-    box-shadow: 0 4px 10px rgba(0,0,0,.05);
+    font-size: 13px;
+    color: #e8ddd0;
+    transition: background 0.2s;
+}
+
+.ingredients-tags span:hover {
+    background: rgba(200,133,74,0.2);
+    border-color: rgba(200,133,74,0.4);
 }
 
 .steps-list {
     padding-right: 18px;
     margin: 0;
+    color: rgba(245,237,224,0.8);
 }
 
 @media (max-width: 650px) {
-    .modal-top { flex-direction: column; text-align: center; }
-    .modal-top img { width: 100%; max-width: 420px; height: 220px; }
+    .modal-top { flex-direction: column; }
+    .modal-top img { width: 100%; height: 200px; min-height: unset; }
+    .modal-top-info { padding: 16px 16px 14px; }
+    .modal-content { margin: 20px auto; }
 }
 
 .servings-box {
@@ -392,41 +555,21 @@ body {
 }
 
 .serv-btn {
-    border: none;
+    border: 1px solid rgba(255,255,255,0.15);
     padding: 6px 14px;
     border-radius: 20px;
     cursor: pointer;
-    background: #fff;
-    border: 1px solid #ddd;
+    background: rgba(255,255,255,0.06);
+    color: #e8ddd0;
+    font-family: inherit;
 }
 
 .serv-btn.active {
-    background: #B07A2A;
-    color: #fff;
+    background: rgba(200,133,74,0.4);
+    border-color: rgba(200,133,74,0.6);
+    color: #f5ede0;
 }
 
-.save-btn {
-    position: absolute;
-    left: 10px;
-    z-index: 10;
-    background: white;
-    border: none;
-    border-radius: 50%;
-    width: 20px;
-    height: 20px;
-    font-size: 11px;
-    cursor: pointer;
-    box-shadow: 0 2px 8px rgba(0,0,0,.15);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: .3s;
-}
-
-.save-btn:hover {
-    background: var(--caramel);
-    transform: scale(1.1);
-}
 .user-menu {
     display: none;
 }
