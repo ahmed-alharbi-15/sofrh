@@ -152,7 +152,7 @@ const countryContinent = {
     drc: 'africa', gabon: 'africa', equatorial_guinea: 'africa',
     // أفريقيا الجنوبية
     southafrica: 'africa', namibia: 'africa', botswana: 'africa',
-    lesotho: 'africa', swaziland: 'africa', angola: 'africa',
+    lesotho: 'africa', swaziland: 'africa', angola: 'africa', mauritius: 'africa',
 
     // ==================== أمريكا الشمالية ====================
     usa: 'north-america', canada: 'north-america', mexico: 'north-america',
