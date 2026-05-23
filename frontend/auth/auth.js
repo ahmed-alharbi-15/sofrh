@@ -1,55 +1,33 @@
 // --- 1. وظيفة إنشاء الحساب ---
-console.log("ملف auth.js محمل وجاهز!"); 
 
 const signupBtn = document.getElementById('signupBtn');
 if (signupBtn) {
-    console.log("تم العثور على زر إنشاء الحساب (signupBtn)");
-    
     signupBtn.onclick = async function(e) {
         e.preventDefault(); 
-        console.log("تم ضغط الزر بنجاح!");
-
-        // جمع البيانات من الحقول
         const username = document.getElementById('username').value;
         const email = document.getElementById('email').value;
         const phone = document.getElementById('phone').value;
         const password = document.getElementById('password').value;
 
-        console.log("البيانات المجموعة:", { username, email, phone, password });
-
         try {
-            console.log("جاري الإرسال إلى السيرفر في Render...");
             const response = await fetch('https://sofrh-1.onrender.com/signup', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ username, email, phone, password })
             });
-
             const data = await response.json();
-            console.log("رد السيرفر:", data);
-
             if (response.ok) {
-                // حالة النجاح
-                alert("✅ " + data.message);
-                localStorage.setItem("safraUser", JSON.stringify({
-                    name: username,
-                    email: email,
-                    avatar: ""
-                }));
-                window.location.href = "/index/index.html";
+                localStorage.setItem("safraUser", JSON.stringify({ name: username, email, avatar: "" }));
+                showToast("تم إنشاء الحساب بنجاح ✨", "success");
+                setTimeout(() => window.location.href = "/index/index.html", 1500);
             } else {
-                // حالة الرفض (مثل إيميل مكرر أو يوزر مأخوذ)
-                // هنا يتعرض الرسالة اللي أنت كتبتها في الباكيند بالضبط
-                alert("⚠️ " + (data.detail || "حدث خطأ في البيانات"));
+                showToast("⚠️ " + (data.detail || "حدث خطأ في البيانات"), "error");
             }
         } catch (err) {
-            // حالة إن السيرفر طافي أو ما فيه إنترنت
             console.error(err);
-            alert("❌ فشل الاتصال بالسيرفر، تأكد من اتصالك!");
+            showToast("فشل الاتصال بالسيرفر، تأكد من اتصالك!", "error");
         }
     };
-} else {
-    console.error("تحذير: لم يتم العثور على عنصر بـ ID: signupBtn في هذه الصفحة");
 }
 
 // --- 2. وظيفة تسجيل الدخول ---
@@ -70,16 +48,16 @@ if (loginBtn) {
             if (response.ok) {
                 localStorage.setItem("safraUser", JSON.stringify({
                     name: data.username || email.split("@")[0],
-                    email: email,
+                    email,
                     avatar: ""
                 }));
-                alert(data.message);
-                window.location.href = "/index/index.html";
+                showToast(`أهلاً بك يا ${data.username || email.split("@")[0]} ✨`, "success");
+                setTimeout(() => window.location.href = "/index/index.html", 1500);
             } else {
-                alert("خطأ: " + data.detail);
+                showToast("خطأ: " + data.detail, "error");
             }
         } catch (err) {
-            alert("السيرفر طافي!");
+            showToast("السيرفر طافي! حاول لاحقاً", "error");
         }
     });
 }
@@ -119,8 +97,8 @@ checkAuth();
 function saveItem(type, id, name, img) {
     const user = JSON.parse(localStorage.getItem("safraUser"));
     if (!user) {
-        alert("سجل دخولك أولاً!");
-        window.location.href = "/auth/login.html";
+        showToast("سجل دخولك أولاً! 🔐", "error");
+        setTimeout(() => window.location.href = "/auth/login.html", 1500);
         return;
     }
 
@@ -129,16 +107,69 @@ function saveItem(type, id, name, img) {
 
     const exists = saved[type].find(item => item.id === id);
     if (exists) {
-        alert("موجود بالفعل في المفضلة!");
+        showToast("موجود بالفعل في المفضلة!", "info");
         return;
     }
 
     saved[type].push({ id, name, img });
     localStorage.setItem("safraFavorites", JSON.stringify(saved));
-    alert("✅ تمت الإضافة للمفضلة!");
+    showToast("تمت الإضافة للمفضلة ✨", "success");
 }
 
-// --- 6. القائمة الجانبية ---
+// --- 6. Toast ---
+function showToast(message, type = "success") {
+    const old = document.getElementById("safra-toast");
+    if (old) old.remove();
+
+    const colors = {
+        success: { bg: "rgba(30,16,8,0.96)", border: "rgba(200,133,74,0.5)", icon: "✅" },
+        error:   { bg: "rgba(30,16,8,0.96)", border: "rgba(200,60,60,0.5)",  icon: "❌" },
+        info:    { bg: "rgba(30,16,8,0.96)", border: "rgba(150,150,150,0.4)", icon: "ℹ️" },
+    };
+    const c = colors[type] || colors.success;
+
+    const toast = document.createElement("div");
+    toast.id = "safra-toast";
+    toast.innerHTML = `<span style="font-size:18px">${c.icon}</span><span>${message}</span>`;
+    toast.style.cssText = `
+        position: fixed;
+        bottom: 32px;
+        left: 50%;
+        transform: translateX(-50%) translateY(20px);
+        background: ${c.bg};
+        border: 1px solid ${c.border};
+        color: #f5ede0;
+        font-family: "Noto Sans Arabic", sans-serif;
+        font-size: 15px;
+        font-weight: 600;
+        padding: 14px 28px;
+        border-radius: 50px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        z-index: 99999;
+        box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+        backdrop-filter: blur(10px);
+        opacity: 0;
+        transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+        white-space: nowrap;
+    `;
+
+    document.body.appendChild(toast);
+    requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+            toast.style.opacity = "1";
+            toast.style.transform = "translateX(-50%) translateY(0)";
+        });
+    });
+    setTimeout(() => {
+        toast.style.opacity = "0";
+        toast.style.transform = "translateX(-50%) translateY(20px)";
+        setTimeout(() => toast.remove(), 400);
+    }, 2500);
+}
+
+// --- 7. القائمة الجانبية ---
 if (typeof menuBtn === 'undefined') {
     var menuBtn = document.getElementById("menu-btn");
     var sideMenu = document.getElementById("side-menu");
