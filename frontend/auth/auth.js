@@ -46,11 +46,14 @@ if (loginBtn) {
             });
             const data = await response.json();
             if (response.ok) {
+                // استرجع الصورة المحفوظة لهذا المستخدم
+                const savedAvatar = localStorage.getItem(`safraAvatar_${email}`) || "";
                 localStorage.setItem("safraUser", JSON.stringify({
                     name: data.username || email.split("@")[0],
                     email,
-                    avatar: ""
+                    avatar: savedAvatar
                 }));
+                if (savedAvatar) localStorage.setItem("safraAvatar", savedAvatar);
                 showToast(`أهلاً بك يا ${data.username || email.split("@")[0]} ✨`, "success");
                 setTimeout(() => window.location.href = "/index/index.html", 1500);
             } else {
@@ -74,7 +77,11 @@ function checkAuth() {
         if (authButtons) authButtons.style.display = "none";
         if (userMenu) userMenu.style.display = "flex";
         if (userName) userName.textContent = user.name;
-        if (userAvatar && user.avatar) userAvatar.src = user.avatar;
+        if (userAvatar) {
+            const savedAvatar = localStorage.getItem("safraAvatar");
+            const src = user.avatar || savedAvatar || null;
+            if (src) userAvatar.src = src;
+        }
     } else {
         if (authButtons) authButtons.style.display = "flex";
         if (userMenu) userMenu.style.display = "none";
@@ -86,7 +93,14 @@ const logoutBtn = document.getElementById("logoutBtn");
 if (logoutBtn) {
     logoutBtn.addEventListener("click", (e) => {
         e.preventDefault();
+        const user = JSON.parse(localStorage.getItem("safraUser"));
+        // احفظ الصورة مرتبطة بالإيميل قبل الخروج
+        if (user && user.email) {
+            const avatar = localStorage.getItem("safraAvatar");
+            if (avatar) localStorage.setItem(`safraAvatar_${user.email}`, avatar);
+        }
         localStorage.removeItem("safraUser");
+        localStorage.removeItem("safraAvatar");
         window.location.href = "/index/index.html";
     });
 }
