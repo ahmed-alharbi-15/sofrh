@@ -5,26 +5,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>سفرة</title>
-
-  <!-- ملف الستايل الأساسي -->
   <link rel="stylesheet" href="/countries/countries.css" />
-
-  <!-- خط عربي -->
   <style>
-    @import url("https://fonts.googleapis.com/css/2?family=Noto+Sans+Arabic:wght@500;600&display=swap");
+    @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@500;600&display=swap");
   </style>
 </head>
 
 <body>
-  <!--  NAVBAR (ثابت في كل صفحة) -->
   <header class="navbar">
     <div class="hamburger" id="menu-btn">☰</div>
-
     <div class="auth-buttons" id="authButtons">
       <a href="/auth/login.html" class="login">تسجيل دخول</a>
       <a href="/auth/signup.html" class="signup">إنشاء حساب</a>
     </div>
-
     <div class="user-menu" id="userMenu">
       <img id="userAvatar" src="/img/avater-icon.jpeg" alt="المستخدم" />
       <span class="user-name" id="userName"></span>
@@ -33,30 +26,27 @@
         <a href="/index/index.html" id="logoutBtn">تسجيل الخروج</a>
       </div>
     </div>
-
     <ul class="nav-list">
       <li><a href="/index/index.html">الرئيسية</a></li>
       <li><a href="/countries/countries.html">الدول</a></li>
       <li><a href="/events/events.html">الفعاليات</a></li>
       <li><a href="/recipes/recipes.html">الوصفات</a></li>
     </ul>
-
     <div class="logo">
-      <a href="/index/index.html"> <img src="/img/logo3.JPG" alt="سفرة" /></a>
+      <a href="/index/index.html"><img src="/img/logo3.JPG" alt="سفرة" /></a>
     </div>
   </header>
 
-  <!--  MENU للجوال -->
   <nav class="side-menu" id="side-menu">
     <span class="close-btn" id="close-btn">✖</span>
-
     <ul>
       <li><a href="/index/index.html">الرئيسية</a></li>
       <li><a href="/countries/countries.html">الدول</a></li>
       <li><a href="/events/events.html">الفعاليات</a></li>
-      <li><a href="/recipes/recipes.html  ">الوصفات</a></li>
+      <li><a href="/recipes/recipes.html">الوصفات</a></li>
     </ul>
   </nav>
+
   <header>
     <a href="/countries/countries.html" class="back-btn">رجوع</a>
   </header>
@@ -68,143 +58,97 @@
     </div>
   </section>
 
-  <!--المدن -->
   <div class="main-cites">
     <h1>المدن</h1>
   </div>
   <section class="cities-grid">
+
     <div class="cite" data-name="القاهرة – Cairo" data-img="/img/القاهرة.jpg"
       data-desc="عاصمة مصر الكبرى ومدينة الألف مئذنة، تجمع بين التاريخ الفرعوني العريق والحضارة الإسلامية والحياة المعاصرة في مزيج فريد لا مثيل له."
       data-historic="🏛️ الأهرامات وأبو الهول – Pyramids & Sphinx | 🏺 المتحف المصري – Egyptian Museum | 🕌 الجامع الأزهر – Al-Azhar Mosque | 🏰 قلعة صلاح الدين – Saladin Citadel"
       data-restaurants="🍽️ مطعم الخال – Al Khal | 🇹🇷 نيشانتاشي – Nişantaşi | 🌊 سوليس – Solis | 🔥 كبابجي – Kebabgy | 🍜 أبو طارق – Abou Tarek"
       data-cafes="☕ قهوة الفيشاوي – El Fishawi | ☕ مقهى نجيب محفوظ – Naguib Mahfouz Cafe | ☕ زن كافيه – ZEN Cafe & Lounge | ☕ قهوة جروبي – Groppi | ☕ أوسيس لاونج – Oasis Lounge"
-      data-events="🐪 أهرامات الجيزة – Giza Pyramids | � شارع المعز وخان الخليلي – Al-Muizz Street | 🚢 جولة نيلية – Nile Cruise | 🏛️ متحف الحضارة – National Museum | 🗼 برج القاهرة – Cairo Tower">
-      <button class="save-btn" onclick="
-            event.stopPropagation();
-            saveItem('city', 'cairo', 'القاهرة', '/img/القاهرة.jpg');
-          ">
-        🏙️
-      </button>
+      data-events="🐪 أهرامات الجيزة – Giza Pyramids | 🛍️ شارع المعز وخان الخليلي – Al-Muizz Street | 🚢 جولة نيلية – Nile Cruise | 🏛️ متحف الحضارة – National Museum | 🗼 برج القاهرة – Cairo Tower"
+      onclick="openCityModal(this)">
+      <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'cairo', 'القاهرة', '/img/القاهرة.jpg')">🏙️</button>
       <img src="/img/القاهرة.jpg" alt="القاهرة" class="cite-img" />
       <span class="name">القاهرة – Cairo</span>
       <p class="info">عاصمة مصر الكبرى، تجمع بين التاريخ والمعاصرة.</p>
-      <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
-        تفاصيل
-      </button>
+      <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
     </div>
+
     <div class="cite" data-name="الإسكندرية – Alexandria" data-img="/img/الإسكندرية .webp"
       data-desc="عروس البحر الأبيض المتوسط ومدينة الإسكندر الأكبر، تجمع بين التاريخ العريق والهواء البحري المنعش والثقافة الكوزموبوليتانية الفريدة."
       data-historic="🏛️ مكتبة الإسكندرية – Bibliotheca Alexandrina | 🏰 قلعة قايتباي – Qaitbay Citadel | 🗿 عمود السواري – Pompey's Pillar | 🏺 المتحف اليوناني الروماني – Greco-Roman Museum"
       data-restaurants="🦞 سان جيوفاني – San Giovanni | 🇬🇷 سانتوريني – Santorini | 🌊 النادي اليوناني – The Greek Club | 🍽️ بيبلوس – Byblos Restaurant | 🌿 قرية بلبع – Balbaa Village"
       data-cafes="☕ دليس – Delice | ☕ تريانون – Trianon | ☕ أتينوس – Athenios | ☕ إيليت – Elite | ☕ جليم باي – Gleem Bay"
-      data-events="🏛️ مكتبة الإسكندرية – Bibliotheca Alexandrina | 🏰 قلعة قايتباي – Qaitbay Citadel | 💎 متحف المجوهرات الملكية – Royal Jewelry Museum | 🌉 كوبري ستانلي – Stanley Bridge | 🚶 جولة بحري التاريخية – Bahari Historic Tour">
-      <button class="save-btn" onclick="
-            event.stopPropagation();
-            saveItem(
-              'city',
-              'alexandria',
-              'الإسكندرية',
-              '/img/الإسكندرية .webp',
-            );
-          ">
-        🏙️
-      </button>
+      data-events="🏛️ مكتبة الإسكندرية – Bibliotheca Alexandrina | 🏰 قلعة قايتباي – Qaitbay Citadel | 💎 متحف المجوهرات الملكية – Royal Jewelry Museum | 🌉 كوبري ستانلي – Stanley Bridge | 🚶 جولة بحري التاريخية – Bahari Historic Tour"
+      onclick="openCityModal(this)">
+      <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'alexandria', 'الإسكندرية', '/img/الإسكندرية .webp')">🏙️</button>
       <img src="/img/الإسكندرية .webp" alt="الإسكندرية" class="cite-img" />
       <span class="name">الإسكندرية – Alexandria</span>
       <p class="info">مدينة ساحلية على البحر الأبيض المتوسط بجو فخم وهادئ.</p>
-      <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
-        تفاصيل
-      </button>
+      <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
     </div>
+
     <div class="cite" data-name="الأقصر – Luxor" data-img="/img/الأقصر.jpg"
       data-desc="عاصمة العالم القديم ومتحف مفتوح تحت السماء، تضم أعظم المعابد والمقابر الفرعونية في العالم على ضفاف النيل الخالد."
       data-historic="🏛️ معبد الكرنك – Karnak Temple | 🏺 وادي الملوك – Valley of the Kings | 🌅 معبد حتشبسوت – Hatshepsut Temple | 🗿 تمثالا ممنون – Colossi of Memnon"
       data-restaurants="🌊 الصاحبي لين – Al-Sahaby Lane | 🍖 علي بابا – Ali Baba Restaurant | 🍽️ عائشة – Aisha Restaurant | 🥘 أم هاشم – Om Hashim | 🏺 توت عنخ آمون – Tutankhamun Restaurant"
       data-cafes="☕ واناس آرت – Wannas Art Cafe | ☕ الوايت جاردن – Al White Garden | ☕ مون كافيه – Moon Café | ☕ أبودي بريك – Aboudi Break | ☕ أوسيس كافيه – Oasis Cafe"
-      data-events="🎈 منطاد الشروق – Hot Air Balloon | 🏺 وادي الملوك – Valley of the Kings | 🏛️ معبد الكرنك – Karnak Temple | 🚢 فلوكة نيلية – Nile Felucca | 🌟 عرض الصوت والضوء – Sound & Light Show">
-      <button class="save-btn" onclick="
-            event.stopPropagation();
-            saveItem('city', 'luxor', 'الأقصر', '/img/الأقصر.jpg');
-          ">
-        🏙️
-      </button>
+      data-events="🎈 منطاد الشروق – Hot Air Balloon | 🏺 وادي الملوك – Valley of the Kings | 🏛️ معبد الكرنك – Karnak Temple | 🚢 فلوكة نيلية – Nile Felucca | 🌟 عرض الصوت والضوء – Sound & Light Show"
+      onclick="openCityModal(this)">
+      <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'luxor', 'الأقصر', '/img/الأقصر.jpg')">🏙️</button>
       <img src="/img/الأقصر.jpg" alt="الأقصر" class="cite-img" />
       <span class="name">الأقصر – Luxor</span>
       <p class="info">مدينة المعابد والأهرامات التاريخية على ضفاف النيل.</p>
-      <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
-        تفاصيل
-      </button>
+      <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
     </div>
+
     <div class="cite" data-name="أسوان – Aswan" data-img="/img/أسوان.jpg"
       data-desc="جوهرة النيل الجنوبية، مدينة الهدوء والجمال النوبي الأصيل، تشتهر بجزيرتها الخلابة وسد أسوان العظيم ومعبد أبو سمبل الأسطوري."
       data-historic="🏛️ معبد أبو سمبل – Abu Simbel Temple | 🏺 معبد فيلة – Philae Temple | 🌊 سد أسوان – Aswan Dam | 🏘️ القرية النوبية – Nubian Village"
       data-restaurants="🔥 كينج جامايكا – King Jamaica | 🍽️ مازا – Maza Restaurant | 🌊 بانوراما – Panorama Restaurant | 🌿 جذور – Juzoor | 🏘️ بوب مارلي – Bob Marley Restaurant"
       data-cafes="☕ كافيه العوامة – Al Awama Cafe | ☕ كانكاتو – Kankato | ☕ كيان – Kayan Cafe | ☕ تاي هاوس – Thai House | ☕ كافيار – Caviar Cafe"
-      data-events="🏛️ معبد فيلة – Philae Temple | 🏘️ القرية النوبية – Nubian Village | 🚢 فلوكة الغروب – Sunset Felucca | 🗿 معابد أبو سمبل – Abu Simbel Temples | 🏺 المتحف النوبي – Nubian Museum">
-      <button class="save-btn" onclick="
-            event.stopPropagation();
-            saveItem('city', 'aswan', 'أسوان', '/img/أسوان.jpg');
-          ">
-        🏙️
-      </button>
+      data-events="🏛️ معبد فيلة – Philae Temple | 🏘️ القرية النوبية – Nubian Village | 🚢 فلوكة الغروب – Sunset Felucca | 🗿 معابد أبو سمبل – Abu Simbel Temples | 🏺 المتحف النوبي – Nubian Museum"
+      onclick="openCityModal(this)">
+      <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'aswan', 'أسوان', '/img/أسوان.jpg')">🏙️</button>
       <img src="/img/أسوان.jpg" alt="أسوان" class="cite-img" />
       <span class="name">أسوان – Aswan</span>
-      <p class="info">
-        مدينة هادئة على النيل، مشهورة بالجزيرة النوبية والطبيعة الخلابة.
-      </p>
-      <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
-        تفاصيل
-      </button>
+      <p class="info">مدينة هادئة على النيل، مشهورة بالجزيرة النوبية والطبيعة الخلابة.</p>
+      <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
     </div>
+
     <div class="cite" data-name="شرم الشيخ – Sharm El Sheikh" data-img="/img/شرم الشيخ.jpg"
       data-desc="منتجع بحري شهير للغوص والأنشطة البحرية، يقع على ساحل البحر الأحمر."
       data-historic="🏖️ الشاطئ – Beach | 🏖️ المنتزه – Resort | 🌊 البحر – Sea"
       data-restaurants="🌶️ بهارات – Boharat Restaurant | 🍣 مون ريف سوشي – Mon Reve Sushi | 🥡 مانجو الصيني – Mango Chinese | 🍔 ميكس آند مانش – Mix n' Munch | 🔥 مشويات السوق – Old Market Grills"
       data-cafes="☕ فرشة كافيه – Farsha Mountain Lounge | ☕ سانتوريني – Santorini Sharm | ☕ مقاهي خليج نعمة – Naama Bay Cafes | ☕ مقاهي السوق القديم – Old Market Cafes | ☕ سوهو سكوير – Soho Square Cafes"
-      data-events="🤿 غوص رأس محمد – Ras Muhammad Diving | 🏜️ سفاري سيناء – Sinai Desert Safari | 🛍️ السوق القديم – Old Market Sharm | 🐬 دولفينا بارك – Dolphina Park | 🌴 خليج نعمة وسوهو – Naama Bay & Soho Square">
-      <button class="save-btn" onclick="
-            event.stopPropagation();
-            saveItem(
-              'city',
-              'sharm_el_sheikh',
-              'شرم الشيخ',
-              '/img/شرم الشيخ.jpg',
-            );
-          ">
-        🏙️
-      </button>
+      data-events="🤿 غوص رأس محمد – Ras Muhammad Diving | 🏜️ سفاري سيناء – Sinai Desert Safari | 🛍️ السوق القديم – Old Market Sharm | 🐬 دولفينا بارك – Dolphina Park | 🌴 خليج نعمة وسوهو – Naama Bay & Soho Square"
+      onclick="openCityModal(this)">
+      <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'sharm_el_sheikh', 'شرم الشيخ', '/img/شرم الشيخ.jpg')">🏙️</button>
       <img src="/img/شرم الشيخ.jpg" alt="شرم الشيخ" class="cite-img" />
       <span class="name">شرم الشيخ – Sharm El Sheikh</span>
-      <p class="info">
-        منتجع بحري شهير للغوص والأنشطة البحرية، يقع على ساحل البحر الأحمر.
-      </p>
-      <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
-        تفاصيل
-      </button>
+      <p class="info">منتجع بحري شهير للغوص والأنشطة البحرية، يقع على ساحل البحر الأحمر.</p>
+      <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
     </div>
+
     <div class="cite" data-name="الغردقة – Hurghada" data-img="/img/الغردقة.webp"
       data-desc="مدينة ساحلية على البحر الأحمر للمنتجعات والشواطئ الجميلة."
       data-historic="🏖️ الشاطئ – Beach | 🏖️ المنتزه – Resort | 🌊 البحر – Sea"
       data-restaurants="🦞 أم ياسين – Om Yassin | 🌊 مطاعم مارينا – Hurghada Marina | 🍕 مطعم جاد – Gad Restaurant | 🥪 كوك دور – Cook Door | 🍔 بافلو برجر – Buffalo Burger"
       data-cafes="☕ كافيه مارينا – Marina Cafe | ☕ كافيهات الممشى – Corniche Cafes | ☕ كابتن مورجان – Captain Morgan Cafe | ☕ إليمنتس – Elements Club & Lounge | ☕ مقاهي سهل حشيش – Sahl Hasheesh Cafes"
-      data-events="🤿 غوص جزيرة جفتون – Giftun Island Diving | 🏜️ سفاري صحراوي – Desert Safari | 🦈 جراند أكواريوم – Grand Aquarium | 🚢 مارينا اليخوت – Hurghada Marina | 🌊 مكادي ووتر وورلد – Makadi Water World">
-      <button class="save-btn" onclick="
-            event.stopPropagation();
-            saveItem('city', 'hurghada', 'الغردقة', '/img/الغردقة.webp');
-          ">
-        🏙️
-      </button>
+      data-events="🤿 غوص جزيرة جفتون – Giftun Island Diving | 🏜️ سفاري صحراوي – Desert Safari | 🦈 جراند أكواريوم – Grand Aquarium | 🚢 مارينا اليخوت – Hurghada Marina | 🌊 مكادي ووتر وورلد – Makadi Water World"
+      onclick="openCityModal(this)">
+      <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'hurghada', 'الغردقة', '/img/الغردقة.webp')">🏙️</button>
       <img src="/img/الغردقة.webp" alt="الغردقة" class="cite-img" />
       <span class="name">الغردقة – Hurghada</span>
-      <p class="info">
-        مدينة ساحلية على البحر الأحمر للمنتجعات والشواطئ الجميلة.
-      </p>
-      <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
-        تفاصيل
-      </button>
+      <p class="info">مدينة ساحلية على البحر الأحمر للمنتجعات والشواطئ الجميلة.</p>
+      <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
     </div>
+
   </section>
-  <!--الاكل-->
+
   <div class="main-foods">
     <h1>الماكولات</h1>
   </div>
@@ -230,7 +174,7 @@
     <div class="foods">
       <img src="/img/ملوخيه ١.jpg" alt="" class="foods-img" />
       <span class="name-foods">الملوخية – Molokhia</span>
-      <div class="food-info">شوربة خضراء لذيذة تقدم مع الأرز أو الخبز</div>
+      <div class="food-info">شوربة خضراء لذيذة تقدم مع الأرز أو الخبز.</div>
       <a href="/recipes/recipes.html?recipe=Molokhia" class="for-more-btn">المزيد</a>
     </div>
     <div class="foods">
@@ -246,6 +190,7 @@
       <a href="/recipes/recipes.html?recipe=kofta" class="for-more-btn">المزيد</a>
     </div>
   </section>
+
   <div class="events-main">
     <h1>الفعاليات</h1>
   </div>
@@ -258,7 +203,7 @@
     </div>
     <div class="event">
       <img src="/img/المتحف الكبير.jpg" alt="" class="event-img" />
-      <span class="name-event">زيارة المتحف الكبير </span>
+      <span class="name-event">زيارة المتحف الكبير</span>
       <div class="event-info">اكتشاف كنوز الفراعنة بطريقة حديثة.</div>
       <a href="/events/events.html?event=EgyptianMuseum" class="event-btn">المزيد</a>
     </div>
@@ -271,17 +216,13 @@
     <div class="event">
       <img src="/img/جولة نيلية بالقارب.jpg" alt="" class="event-img" />
       <span class="name-event">جولة نيلية بالقارب – Nile Cruise</span>
-      <div class="event-info">
-        رحلة ممتعة على نهر النيل لمشاهدة المدن والمعالم.
-      </div>
+      <div class="event-info">رحلة ممتعة على نهر النيل لمشاهدة المدن والمعالم.</div>
       <a href="/events/events.html?event=NileCruise" class="event-btn">المزيد</a>
     </div>
     <div class="event">
       <img src="/img/رحلة منطاد في الأقصر.jpeg" alt="" class="event-img" />
       <span class="name-event">رحلة منطاد في الأقصر – Hot Air Balloon Ride</span>
-      <div class="event-info">
-        مشاهدة المعابد والنيل من السماء وقت الشروق.
-      </div>
+      <div class="event-info">مشاهدة المعابد والنيل من السماء وقت الشروق.</div>
       <a href="/events/events.html?event=HotAirBalloon" class="event-btn">المزيد</a>
     </div>
     <div class="event">
@@ -291,7 +232,7 @@
       <a href="/events/events.html?event=KhanElKhalili" class="event-btn">المزيد</a>
     </div>
   </section>
-  <!-- Modal المدينة -->
+
   <div id="cityModal" class="modal" onclick="closeCityModal(event)">
     <div class="modal-content">
       <button class="modal-close" onclick="closeCityModal(event)">×</button>
@@ -315,6 +256,7 @@
       </div>
     </div>
   </div>
+
   <script src="/countries/countries.js"></script>
   <script src="/auth/auth.js"></script>
 </body>
