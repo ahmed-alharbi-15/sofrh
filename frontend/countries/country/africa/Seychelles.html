@@ -66,56 +66,97 @@
     <header>
         <a href="/countries/countries.html" class="back-btn">رجوع</a>
     </header>
-
-
-
-
+    <div class="country-name">
+        <h1>سيشل</h1>
+        <p>جنة استوائية بشواطئ بيضاء ومياه فيروزية وطبيعة ساحرة.</p>
+    </div>
     <!--المدن -->
     <div class="main-cites">
         <h1>المدن</h1>
     </div>
     <section class="cities-grid">
-        <div class="cite">
-            <img src="" alt="" class="cite-img">
-            <span class="name"></span>
-            <div class="info">
-
-            </div>
+        <div class="cite" data-name="فيكتوريا – Victoria" data-img="/img/Victoria Seychelles.jpg"
+            data-desc="عاصمة سيشل ومدينة استوائية هادئة تجمع بين الأسواق المحلية والطبيعة الساحلية والأجواء الاسترخائية."
+            data-historic="🏛️ برج الساعة – Clock Tower | 🌿 الحديقة النباتية – Botanical Gardens | 🕌 مسجد فيكتوريا | 🌊 ميناء فيكتوريا"
+            data-restaurants="🍤 مطعم The Maharajas | 🥘 مطعم Marie Antoinette | 🍖 مطعم Boat House"
+            data-cafes="☕ مقهى Level 3 Bar Lounge | ☕ مقهى Esplanade Café | ☕ مقهى Chatterbox"
+            data-events="🛍️ سوق Sir Selwyn Market | 🌊 جولات بحرية | 🏝️ رحلات الجزر">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'victoria', 'فيكتوريا', '/img/Victoria Seychelles.jpg')">🏙️</button>
+            <img src="/img/Victoria Seychelles.jpg" alt="فيكتوريا" class="cite-img">
+            <span class="name">فيكتوريا – Victoria</span>
+            <p class="info">عاصمة هادئة تجمع بين الأسواق والطبيعة البحرية.</p>
+            <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">تفاصيل</button>
         </div>
-        <div class="cite">
-            <img src="" alt="" class="cite-img">
-            <span class="name"></span>
-            <div class="info">
-
-            </div>
+        <div class="cite" data-name="فيكتوريا – Victoria" data-img="/img/Victoria Seychelles.jpg"
+            data-desc="عاصمة سيشل ومدينة استوائية هادئة تجمع بين الأسواق المحلية والطبيعة الساحلية والأجواء الاسترخائية."
+            data-historic="🏛️ برج الساعة – Clock Tower | 🌿 الحديقة النباتية – Botanical Gardens | 🕌 مسجد فيكتوريا | 🌊 ميناء فيكتوريا"
+            data-restaurants="🍤 مطعم The Maharajas | 🥘 مطعم Marie Antoinette | 🍖 مطعم Boat House"
+            data-cafes="☕ مقهى Level 3 Bar Lounge | ☕ مقهى Esplanade Café | ☕ مقهى Chatterbox"
+            data-events="🛍️ سوق Sir Selwyn Market | 🌊 جولات بحرية | 🏝️ رحلات الجزر">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'victoria', 'فيكتوريا', '/img/Victoria Seychelles.jpg')">🏙️</button>
+            <img src="/img/Victoria Seychelles.jpg" alt="فيكتوريا" class="cite-img">
+            <span class="name">فيكتوريا – Victoria</span>
+            <p class="info">عاصمة هادئة تجمع بين الأسواق والطبيعة البحرية.</p>
+            <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">تفاصيل</button>
         </div>
-        <div class="cite">
-            <img src="" alt="" class="cite-img">
-            <span class="name"></span>
-            <div class="info">
-
-            </div>
+        <div class="cite" data-name="لا ديغ – La Digue" data-img="/img/La Digue Seychelles.jpg"
+            data-desc="جزيرة هادئة مشهورة بالشواطئ البيضاء والصخور الجرانيتية والطبيعة الاستوائية الساحرة."
+            data-historic="🌊 شاطئ Anse Source d'Argent | 🚲 جولات الدراجات | 🌿 محميات طبيعية"
+            data-restaurants="🍤 مطعم Fish Trap | 🥘 مطعم Rey & Josh | 🍖 مطعم Lanbousir"
+            data-cafes="☕ مقهى Tarosa | ☕ مقهى La Digue Café | ☕ مقهى Island Vibes"
+            data-events="🚤 رحلات بحرية | 🌊 سباحة وغوص | 📸 جلسات تصوير">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'la-digue', 'لا ديغ', '/img/La Digue Seychelles.jpg')">🏙️</button>
+            <img src="/img/La Digue Seychelles.jpg" alt="لا ديغ" class="cite-img">
+            <span class="name">لا ديغ – La Digue</span>
+            <p class="info">جزيرة استوائية هادئة بشواطئ خلابة.</p>
+            <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">تفاصيل</button>
         </div>
-        <div class="cite">
-            <img src="" alt="" class="cite-img">
-            <span class="name"></span>
-            <div class="info">
-
-            </div>
+        <div class="cite" data-name="بو فالون – Beau Vallon" data-img="/img/Beau Vallon Seychelles.jpg"
+            data-desc="منطقة ساحلية حيوية تضم أشهر شواطئ سيشل والأنشطة البحرية والمطاعم."
+            data-historic="🌊 شاطئ Beau Vallon | 🚤 رحلات بحرية | 🌅 ممشى البحر"
+            data-restaurants="🍖 مطعم Baobab | 🍤 مطعم Boat House | 🥘 مطعم La Plage"
+            data-cafes="☕ مقهى Green Coconut | ☕ مقهى Ocean Café | ☕ مقهى Beach House"
+            data-events="🤿 غوص | 🏄 أنشطة بحرية | 🌅 جلسات غروب">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'beau-vallon', 'بو فالون', '/img/Beau Vallon Seychelles.jpg')">🏙️</button>
+            <img src="/img/Beau Vallon Seychelles.jpg" alt="بو فالون" class="cite-img">
+            <span class="name">بو فالون – Beau Vallon</span>
+            <p class="info">شاطئ حيوي وأنشطة بحرية ممتعة.</p>
+            <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">تفاصيل</button>
         </div>
-        <div class="cite">
-            <img src="" alt="" class="cite-img">
-            <span class="name"></span>
-            <div class="info">
-
-            </div>
+        <div class="cite" data-name="ماهي – Mahé" data-img="/img/Mahe Seychelles.jpg"
+            data-desc="الجزيرة الرئيسية في سيشل وتضم المنتجعات الفاخرة والطبيعة الجبلية والشواطئ."
+            data-historic="🏝️ شاطئ Beau Vallon | 🌿 Morne National Park | 🌊 جولات بحرية"
+            data-restaurants="🍖 مطعم Del Place | 🍤 مطعم Bravo | 🥘 مطعم La Scala"
+            data-cafes="☕ مقهى Eden Café | ☕ مقهى Kafe Kreol | ☕ مقهى Coco Café"
+            data-events="🚤 رحلات جزر | 🌊 غوص | 🌿 هايكنق">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'mahe', 'ماهي', '/img/Mahe Seychelles.jpg')">🏙️</button>
+            <img src="/img/Mahe Seychelles.jpg" alt="ماهي" class="cite-img">
+            <span class="name">ماهي – Mahé</span>
+            <p class="info">جزيرة تجمع بين المنتجعات والطبيعة الساحرة.</p>
+            <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">تفاصيل</button>
         </div>
-        <div class="cite">
-            <img src="" alt="" class="cite-img">
-            <span class="name"></span>
-            <div class="info">
+        <div class="cite" data-name="أنس رويال – Anse Royale" data-img="/img/Anse Royale Seychelles.jpg"
+            data-desc="منطقة ساحلية هادئة مناسبة للاسترخاء والأنشطة البحرية وسط أجواء استوائية."
+            data-historic="🌊 شاطئ Anse Royale | 🏝️ جولات بحرية | 🌿 طبيعة استوائية"
+            data-restaurants="🍤 مطعم Les Dauphins | 🥘 مطعم Kafe Kreol | 🍖 مطعم Royale Takeaway"
+            data-cafes="☕ مقهى Beach Café | ☕ مقهى Tropical Coffee | ☕ مقهى Island Brew"
+            data-events="🤿 غوص | 🏄 سباحة | 🚤 رحلات بحرية">
 
-            </div>
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'anse-royale', 'أنس رويال', '/img/Anse Royale Seychelles.jpg')">🏙️</button>
+
+            <img src="/img/Anse Royale Seychelles.jpg" alt="أنس رويال" class="cite-img">
+
+            <span class="name">أنس رويال – Anse Royale</span>
+
+            <p class="info">شاطئ هادئ مثالي للاسترخاء والسباحة.</p>
+
+            <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">تفاصيل</button>
         </div>
     </section>
     <!--الاكل-->
@@ -228,4 +269,5 @@
     <script src="/countries/countries.js"></script>
     <script src="/auth/auth.js"></script>
 </body>
+
 </html>
