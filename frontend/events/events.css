@@ -18,7 +18,7 @@ body {
 }
 
 .navbar {
-    background-color: var(--brown-dark);
+  background-color: var(--brown-dark);
     padding: 0 20px;
     display: flex;
     align-items: center;
@@ -28,9 +28,10 @@ body {
     right: 0;
     width: 100%;
     z-index: 999;
+    height: 90px;
 }
 
-.logo img { height: 90px; }
+.logo img { height: 70px; }
 
 .nav-list {
     display: flex;

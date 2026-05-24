@@ -31,10 +31,11 @@ body {
     right: 0;
     width: 100%;
     z-index: 999;
+    height: 90px;
 }
 
 .logo img {
-    height: 90px;
+    height: 70px;
 }
 
 .nav-list {
