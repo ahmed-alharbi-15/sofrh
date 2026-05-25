@@ -73,7 +73,8 @@
       data-historic="🕌 جامع الزيتونة – Zitouna Mosque | 🛍️ مدينة تونس العتيقة – Medina | 🏛️ متحف باردو – Bardo Museum | 🏰 قرطاج – Carthage"
       data-restaurants="🍽️ مطعم دار الجلد – Dar El Jeld | 🌿 مطعم لابيزا – La Bizza | 🥘 مطعم المدينة"
       data-cafes="☕ مقهى الشواشين – Cafe Chaouachine | ☕ كافيه ديلايس – Cafe des Delices | ☕ مقهى باريزيان"
-      data-events="🏛️ قرطاج – Carthage | 🛍️ المدينة العتيقة – Medina | 🏛️ متحف باردو – Bardo Museum">
+      data-events="🏛️ قرطاج – Carthage | 🛍️ المدينة العتيقة – Medina | 🏛️ متحف باردو – Bardo Museum"
+      onclick="openCityModal(this)">
       <button class="save-btn" onclick="
             event.stopPropagation();
             saveItem('city', 'tunis', 'تونس العاصمة', '/img/Tunis.jpg');
@@ -83,7 +84,7 @@
       <img src="/img/Tunis.jpg" alt="تونس العاصمة" class="cite-img" />
       <span class="name">تونس العاصمة – Tunis</span>
       <p class="info">مدينة تجمع بين التاريخ والأسواق التقليدية.</p>
-      <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+      <button class="cite-btn"onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">
         تفاصيل
       </button>
     </div>
@@ -93,7 +94,8 @@
       data-historic="🏰 قلعة سوسة – Ribat of Sousse | 🛍️ مدينة سوسة العتيقة | 🕌 مسجد الكبير – Great Mosque | 🏛️ متحف سوسة الأثري"
       data-restaurants="🐟 مطعم البحر – Le Lido | 🍽️ مطعم بورت إيل كانتو – Port el Canto | 🌊 مطعم الكورنيش"
       data-cafes="☕ كافيه الكورنيش | ☕ مقهى المدينة | ☕ سي فيو كافيه – Sea View"
-      data-events="🏖️ شاطئ سوسة – Sousse Beach | 🏰 قلعة سوسة – Ribat | 🛍️ المدينة العتيقة">
+      data-events="🏖️ شاطئ سوسة – Sousse Beach | 🏰 قلعة سوسة – Ribat | 🛍️ المدينة العتيقة"
+      onclick="openCityModal(this)">
       <button class="save-btn" onclick="
             event.stopPropagation();
             saveItem('city', 'sousse', 'سوسة', '/img/Sousse.jpg');
@@ -103,7 +105,7 @@
       <img src="/img/Sousse.jpg" alt="سوسة" class="cite-img" />
       <span class="name">سوسة – Sousse</span>
       <p class="info">مدينة ساحلية بأجواء حيوية.</p>
-      <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+      <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">
         تفاصيل
       </button>
     </div>
@@ -113,7 +115,8 @@
       data-historic="🏰 قلعة الحمامات – Hammamet Kasbah | 🌿 حديقة يسمين – Yasmine Hammamet | 🏖️ شاطئ الحمامات | 🎭 مركز الحمامات الثقافي"
       data-restaurants="🍽️ مطعم لابيلا فيستا – La Bella Vista | 🐟 مطعم المأكولات البحرية | 🌊 مطعم يسمين"
       data-cafes="☕ كافيه الشاطئ | ☕ مقهى القلعة | ☕ يسمين كافيه"
-      data-events="🏖️ شاطئ الحمامات | 🏰 قلعة الحمامات – Kasbah | 🌿 يسمين الحمامات – Yasmine">
+      data-events="🏖️ شاطئ الحمامات | 🏰 قلعة الحمامات – Kasbah | 🌿 يسمين الحمامات – Yasmine"
+      onclick="openCityModal(this)">
       <button class="save-btn" onclick="
             event.stopPropagation();
             saveItem('city', 'hammamet', 'الحمامات', '/img/Hammamet.jpg');
@@ -123,7 +126,7 @@
       <img src="/img/Hammamet.jpg" alt="الحمامات" class="cite-img" />
       <span class="name">الحمامات – Hammamet</span>
       <p class="info">وجهة بحرية ومنتجعات رائعة.</p>
-      <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+      <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">
         تفاصيل
       </button>
     </div>
@@ -133,7 +136,8 @@
       data-historic="🕍 معبد الغريبة – El Ghriba Synagogue | 🏘️ قرية اجيم التراثية | 🏖️ شاطئ سيدي محرس | 🏰 قلعة جربة"
       data-restaurants="🐟 مطعم لو فينيسيان | 🍽️ مطعم المدينة | 🌊 مطعم الشاطئ"
       data-cafes="☕ مقهى الميدان | ☕ كافيه الجزيرة | ☕ سي فيو كافيه"
-      data-events="🏖️ شواطئ جربة | 🕍 معبد الغريبة – El Ghriba | 🏘️ قرية اجيم التراثية">
+      data-events="🏖️ شواطئ جربة | 🕍 معبد الغريبة – El Ghriba | 🏘️ قرية اجيم التراثية"
+      onclick="openCityModal(this)">
       <button class="save-btn" onclick="
             event.stopPropagation();
             saveItem('city', 'djerba', 'جربة', '/img/Djerba.jpg');
@@ -143,7 +147,7 @@
       <img src="/img/Djerba.jpg" alt="جربة" class="cite-img" />
       <span class="name">جربة – Djerba</span>
       <p class="info">جزيرة هادئة بشواطئ جميلة.</p>
-      <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+      <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">
         تفاصيل
       </button>
     </div>
@@ -153,7 +157,8 @@
       data-historic="🏰 قلعة صفاقس – Sfax Kasbah | 🛍️ مدينة صفاقس العتيقة | 🕌 جامع صفاقس الكبير | 🏛️ متحف صفاقس"
       data-restaurants="🥘 مطعم التراث الصفاقسي | 🍽️ مطعم الكورنيش | 🌿 مطعم المدينة"
       data-cafes="☕ مقهى المدينة العتيقة | ☕ كافيه صفاقس | ☕ مقهى البحر"
-      data-events="🏰 قلعة صفاقس – Kasbah | 🛍️ المدينة العتيقة | 🌿 جزر قرقنة – Kerkennah Islands">
+      data-events="🏰 قلعة صفاقس – Kasbah | 🛍️ المدينة العتيقة | 🌿 جزر قرقنة – Kerkennah Islands"
+      onclick="openCityModal(this)">
       <button class="save-btn" onclick="
             event.stopPropagation();
             saveItem('city', 'sfax', 'صفاقس', '/img/Sfax.jpg');
@@ -163,7 +168,7 @@
       <img src="/img/Sfax.jpg" alt="صفاقس" class="cite-img" />
       <span class="name">صفاقس – Sfax</span>
       <p class="info">مدينة ثقافية بطابع محلي.</p>
-      <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+      <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">
         تفاصيل
       </button>
     </div>
@@ -173,7 +178,8 @@
       data-historic="🏰 قلعة طبرقة – Tabarka Fort | 🌿 غابات طبرقة | 🤿 شعاب مرجانية – Coral Reefs | 🎭 مهرجان طبرقة الدولي"
       data-restaurants="🐟 مطاعم المأكولات البحرية | 🍽️ مطعم الكورنيش | 🌿 مطعم الغابة"
       data-cafes="☕ مقهى الشاطئ | ☕ كافيه القلعة | ☕ فورست كافيه – Forest Cafe"
-      data-events="🏰 قلعة طبرقة – Tabarka Fort | 🤿 الغوص في الشعاب المرجانية | 🎭 مهرجان طبرقة – Jazz Festival">
+      data-events="🏰 قلعة طبرقة – Tabarka Fort | 🤿 الغوص في الشعاب المرجانية | 🎭 مهرجان طبرقة – Jazz Festival"
+      onclick="openCityModal(this)">
       <button class="save-btn" onclick="
             event.stopPropagation();
             saveItem('city', 'tabarka', 'طبرقة', '/img/Tabarka.jpg');
@@ -183,7 +189,7 @@
       <img src="/img/Tabarka.jpg" alt="طبرقة" class="cite-img" />
       <span class="name">طبرقة – Tabarka</span>
       <p class="info">طبيعة خضراء وشواطئ جميلة.</p>
-      <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
+      <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">
         تفاصيل
       </button>
     </div>
@@ -193,92 +199,92 @@
     <h1>الماكولات</h1>
   </div>
   <section class="foods-grid">
-    <div class="foods">
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=couscous'">
       <img src="/img/كسكسي-تونسي.jpg" alt="" class="foods-img" />
       <span class="name-foods">كسكسي تونسي – Tunisian Couscous</span>
       <div class="food-info">سميد يقدم مع اللحم والخضار.</div>
-      <a href="/recipes/recipes.html?recipe=couscous" class="for-more-btn">الوصفة</a>
+      <a href="/recipes/recipes.html?recipe=couscous" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
     </div>
 
-    <div class="foods">
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=brik'">
       <img src="/img/بريك.jpg" alt="" class="foods-img" />
       <span class="name-foods">بريك – Brik</span>
       <div class="food-info">عجينة مقرمشة محشوة بالتونة أو الجبن.</div>
-      <a href="/recipes/recipes.html?recipe=brik" class="for-more-btn">الوصفة</a>
+      <a href="/recipes/recipes.html?recipe=brik" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
     </div>
 
-    <div class="foods">
+    <div class="foods"style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=lablabi'">
       <img src="/img/لبلابي.jpg" alt="" class="foods-img" />
       <span class="name-foods">لبلابي – Lablabi</span>
       <div class="food-info">شوربة حمص بنكهة غنية.</div>
-      <a href="/recipes/recipes.html?recipe=lablabi" class="for-more-btn">الوصفة</a>
+      <a href="/recipes/recipes.html?recipe=lablabi" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
     </div>
 
-    <div class="foods">
+    <div class="foods"style="cursor: pointer" onclick="window.location.href='/recipes/recipes.html?recipe=tunisian-grills'">
       <img src="/img/مشوي-تونسي.jpg" alt="" class="foods-img" />
       <span class="name-foods">مشوي تونسي – Tunisian Grills</span>
       <div class="food-info">لحوم مشوية متبلة.</div>
-      <a href="/recipes/recipes.html?recipe=tunisian-grills" class="for-more-btn">الوصفة</a>
+      <a href="/recipes/recipes.html?recipe=tunisian-grills" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
     </div>
 
-    <div class="foods">
+    <div class="foods" style="cursor:pointer" onclick="window.locationherf='/recipes/recipes.html?recipe=tunisian-tajine'">
       <img src="/img/طاجين-تونسي.jpg" alt="" class="foods-img" />
       <span class="name-foods">طاجين تونسي – Tunisian Tajine</span>
       <div class="food-info">طبق بالبيض واللحم.</div>
       <a href="/recipes/recipes.html?recipe=tunisian-tajine" class="for-more-btn">الوصفة</a>
     </div>
 
-    <div class="foods">
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=makroudh'">
       <img src="/img/مقروض.jpg" alt="" class="foods-img" />
       <span class="name-foods">مقروض – Makroudh</span>
       <div class="food-info">حلى تقليدي بالتمر.</div>
-      <a href="/recipes/recipes.html?recipe=makroudh" class="for-more-btn">الوصفة</a>
+      <a href="/recipes/recipes.html?recipe=makroudh" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
     </div>
   </section>
   <div class="events-main">
     <h1>الفعاليات</h1>
   </div>
   <section class="events-grid">
-    <div class="event">
+    <div class="event" style="cursor:pointer" onclick="window.location.herf='/events/events.html?event=CafeDesDelices'">
       <img src="/img/cafe-des-delices.jpg" alt="" class="event-img" />
       <span class="name-event">كافيه ديلايس – Cafe des Delices</span>
       <div class="event-info">مقهى مشهور بإطلالة بحرية رائعة.</div>
-      <a href="/events/events.html?event=CafeDesDelices" class="event-btn">التفاصيل</a>
+      <a href="/events/events.html?event=CafeDesDelices" class="event-btn" onclick="event.stopPropagation()">التفاصيل</a>
     </div>
 
-    <div class="event">
+    <div class="event" style="cursor:pointer" onclick="window.location.herf='/events/events.html?event=Carthage'">
       <img src="/img/carthage.jpg" alt="" class="event-img" />
       <span class="name-event">قرطاج – Carthage</span>
       <div class="event-info">آثار تاريخية مشهورة.</div>
-      <a href="/events/events.html?event=Carthage" class="event-btn">التفاصيل</a>
+      <a href="/events/events.html?event=Carthage" class="event-btn" onclick="event.stopPropagation()">التفاصيل</a>
     </div>
 
-    <div class="event">
+    <div class="event" style="cursor:pointer" onclick="window.location.herf='/events/events.html?event=LaBadira'">
       <img src="/img/la-badira.jpg" alt="" class="event-img" />
       <span class="name-event">لا باديرا – La Badira</span>
       <div class="event-info">منتجع فاخر بإطلالة بحرية.</div>
-      <a href="/events/events.html?event=LaBadira" class="event-btn">التفاصيل</a>
+      <a href="/events/events.html?event=LaBadira" class="event-btn" onclick="event.stopPropagation()">التفاصيل</a>
     </div>
 
-    <div class="event">
+    <div class="event" style="cursor:pointer" onclick="window.location.herf='/events/events.html?event=MedinaTunis'">
       <img src="/img/medina-tunis.jpg" alt="" class="event-img" />
       <span class="name-event">مدينة تونس العتيقة – Medina of Tunis</span>
       <div class="event-info">سوق تقليدي وتجربة ثقافية جميلة.</div>
-      <a href="/events/events.html?event=MedinaTunis" class="event-btn">التفاصيل</a>
+      <a href="/events/events.html?event=MedinaTunis" class="event-btn" onclick="event.stopPropagation()">التفاصيل</a>
     </div>
 
-    <div class="event">
+    <div class="event" style="cursor:pointer" onclick="window.location.herf='/events/events.html?event=SaharaTunisia'">
       <img src="/img/sahara-tunisia.jpg" alt="" class="event-img" />
       <span class="name-event">صحراء تونس – Sahara Desert Tunisia</span>
       <div class="event-info">رحلات سفاري صحراوية.</div>
-      <a href="/events/events.html?event=SaharaTunisia" class="event-btn">التفاصيل</a>
+      <a href="/events/events.html?event=SaharaTunisia" class="event-btn" onclick="event.stopPropagation()">التفاصيل</a>
     </div>
 
-    <div class="event">
+    <div class="event" style="cursor: pointer" onclick="window.location.herf='/events/events.html?event=DjerbaIsland'">
       <img src="/img/Djerba.jpg" alt="" class="event-img" />
       <span class="name-event">جزيرة جربة – Djerba Island</span>
       <div class="event-info">أنشطة بحرية وشواطئ هادئة.</div>
-      <a href="/events/events.html?event=DjerbaIsland" class="event-btn">التفاصيل</a>
+      <a href="/events/events.html?event=DjerbaIsland" class="event-btn" onclick="event.stopPropagation()">التفاصيل</a>
     </div>
   </section>
   <!-- Modal المدينة -->
