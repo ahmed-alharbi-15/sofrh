@@ -5,26 +5,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>سفرة</title>
-
-  <!-- ملف الستايل الأساسي -->
   <link rel="stylesheet" href="/countries/countries.css" />
-
-  <!-- خط عربي -->
   <style>
-    @import url("https://fonts.googleapis.com/css/2?family=Noto+Sans+Arabic:wght@500;600&display=swap");
+    @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@500;600&display=swap");
   </style>
 </head>
 
 <body>
-  <!--  NAVBAR (ثابت في كل صفحة) -->
   <header class="navbar">
     <div class="hamburger" id="menu-btn">☰</div>
-
     <div class="auth-buttons" id="authButtons">
       <a href="/auth/login.html" class="login">تسجيل دخول</a>
       <a href="/auth/signup.html" class="signup">إنشاء حساب</a>
     </div>
-
     <div class="user-menu" id="userMenu">
       <img id="userAvatar" src="/img/avater-icon.jpeg" alt="المستخدم" />
       <span class="user-name" id="userName"></span>
@@ -33,30 +26,27 @@
         <a href="/index/index.html" id="logoutBtn">تسجيل الخروج</a>
       </div>
     </div>
-
     <ul class="nav-list">
       <li><a href="/index/index.html">الرئيسية</a></li>
       <li><a href="/countries/countries.html">الدول</a></li>
       <li><a href="/events/events.html">الفعاليات</a></li>
       <li><a href="/recipes/recipes.html">الوصفات</a></li>
     </ul>
-
     <div class="logo">
-      <a href="/index/index.html"> <img src="/img/logo3.JPG" alt="سفرة" /></a>
+      <a href="/index/index.html"><img src="/img/logo3.JPG" alt="سفرة" /></a>
     </div>
   </header>
 
-  <!--  MENU للجوال -->
   <nav class="side-menu" id="side-menu">
     <span class="close-btn" id="close-btn">✖</span>
-
     <ul>
       <li><a href="/index/index.html">الرئيسية</a></li>
       <li><a href="/countries/countries.html">الدول</a></li>
       <li><a href="/events/events.html">الفعاليات</a></li>
-      <li><a href="/recipes/recipes.html  ">الوصفات</a></li>
+      <li><a href="/recipes/recipes.html">الوصفات</a></li>
     </ul>
   </nav>
+
   <header>
     <a href="/countries/countries.html" class="back-btn">رجوع</a>
   </header>
@@ -67,228 +57,182 @@
       <p>بلد الثقافة و الابتكار</p>
     </div>
   </section>
-  <!--المدن -->
+
   <div class="main-cites">
     <h1>المدن</h1>
   </div>
   <section class="cities-grid">
+
     <div class="cite" data-name="طوكيو – Tokyo" data-img="/img/طوكيو.jpg"
       data-desc="عاصمة اليابان ومدينة المتناقضات، تجمع بين المعابد القديمة وناطحات السحاب الحديثة والثقافة الفريدة في مشهد لا يُنسى."
       data-historic="🏯 قصر الإمبراطور – Imperial Palace | 🏛️ متحف طوكيو الوطني – Tokyo National Museum | 🌆 حي أساكوسا القديم – Asakusa Old District | 🏘️ قرية ياناكا – Yanaka Village | ⛩️ ضريح ميجي – Meiji Shrine"
       data-restaurants="🍜 ناريتايا – Narita-ya | 🥩 جونباتشي – Gonpachi Nishi-Azabu | 🔥 أكاساكا نيكوبي – Akasaka Nikubei | 🍣 سوشي زانماي – Sushi Zanmai | 🌯 كباب براذرز – Kebab Brothers"
-      data-cafes="☕ كوفي ماميا – Coffee Mameya | ☕ ليفز – Leaves Coffee | ☕ دي لامبر – Café de L'Ambre | ☕ ليتل ناب – Little Nap Coffee Stand | ☕ Ivy Place | 🐻 Anakuma Cafe"
-      data-events="🚶 تقاطع شيبويا – Shibuya Crossing | ⛩️ معبد سينسوجي – Senso-ji Temple | 🎮 أكيهابارا – Akihabara | 🌸 حديقة شينجوكو غيون – Shinjuku Gyoen | 🗼 برج سكاي تري – Tokyo Skytree">
-      <button class="save-btn" onclick="
-            event.stopPropagation();
-            saveItem('city', 'tokyo', 'طوكيو', '/img/طوكيو.jpg');
-          ">
-        🏙️
-      </button>
+      data-cafes="☕ كوفي ماميا – Coffee Mameya | ☕ ليفز – Leaves Coffee | ☕ دي لامبر – Café de L'Ambre | ☕ ليتل ناب – Little Nap Coffee Stand | ☕ Ivy Place"
+      data-events="🚶 تقاطع شيبويا – Shibuya Crossing | ⛩️ معبد سينسوجي – Senso-ji Temple | 🎮 أكيهابارا – Akihabara | 🌸 حديقة شينجوكو غيون – Shinjuku Gyoen | 🗼 برج سكاي تري – Tokyo Skytree"
+      onclick="openCityModal(this)">
+      <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'tokyo', 'طوكيو', '/img/طوكيو.jpg')">🏙️</button>
       <img src="/img/طوكيو.jpg" alt="طوكيو" class="cite-img" />
       <span class="name">طوكيو – Tokyo</span>
-      <p class="info">
-        عاصمة اليابان حيث التقاء الماضي والمستقبل في مكان واحد.
-      </p>
-      <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
-        تفاصيل
-      </button>
+      <p class="info">عاصمة اليابان حيث التقاء الماضي والمستقبل في مكان واحد.</p>
+      <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
     </div>
+
     <div class="cite" data-name="كيوتو – Kyoto" data-img="/img/كيوتو.jpg"
       data-desc="عاصمة اليابان القديمة ومدينة التاريخ والمعابد، تشتهر بالحدائق اليابانية التقليدية والبيوت الخشبية القديمة وثقافة الغيشا الأصيلة."
       data-historic="⛩️ ضريح فوشيمي إناري – Fushimi Inari | 🏯 قلعة نيجو – Nijo Castle | 🌿 حديقة أراشياما – Arashiyama | 🏛️ معبد كينكاكوجي – Kinkaku-ji"
       data-restaurants="🍱 هيوتي – Hyotei | 🥢 كيكونوي – Kikunoi Honten | 🍽️ جيون ساساكي – Gion Sasaki | 🥩 ميشيماتي – Mishimatei | 🍤 تيمبورا إندو – Tempura Endo Yasaka"
       data-cafes="☕ أرابيكا أراشياما – Arabica Arashiyama | ☕ ويكيندرز – Weekenders Coffee | ☕ أرابيكا هيغاشياما – Arabica Higashiyama | ☕ كوراسو – Kurasu Kyoto | ☕ كاغيزن يوشيفوسا – Kagizen Yoshifusa"
-      data-events="🏯 المعبد الذهبي – Kinkaku-ji | 🌿 غابة الخيزران – Bamboo Forest | 🎭 حي غيون – Gion District | 🛒 سوق نيشيكي – Nishiki Market | 🎆 مهرجانات الماتسوري – Matsuri Festivals">
-      <button class="save-btn" onclick="
-            event.stopPropagation();
-            saveItem('city', 'kyoto', 'كيوتو', '/img/كيوتو.jpg');
-          ">
-        🏙️
-      </button>
+      data-events="🏯 المعبد الذهبي – Kinkaku-ji | 🌿 غابة الخيزران – Bamboo Forest | 🎭 حي غيون – Gion District | 🛒 سوق نيشيكي – Nishiki Market | 🎆 مهرجانات الماتسوري – Matsuri Festivals"
+      onclick="openCityModal(this)">
+      <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'kyoto', 'كيوتو', '/img/كيوتو.jpg')">🏙️</button>
       <img src="/img/كيوتو.jpg" alt="كيوتو" class="cite-img" />
       <span class="name">كيوتو – Kyoto</span>
       <p class="info">عاصمة اليابان القديمة ومدينة التاريخ والمعابد.</p>
-      <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
-        تفاصيل
-      </button>
+      <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
     </div>
+
     <div class="cite" data-name="أوساكا – Osaka" data-img="/img/اوساكا.jpg"
       data-desc="عاصمة الأكل في اليابان، مدينة مرحة ونابضة بالحياة مليئة بالمطاعم والأسواق الليلية والتراث العريق."
       data-historic="🏯 قلعة أوساكا – Osaka Castle | 🏛️ متحف أوساكا التاريخي – Osaka Museum of History | ⛩️ ضريح سومايوشي – Sumiyoshi Taisha | 🌆 حي دوتونبوري – Dotonbori"
       data-restaurants="🍣 سوشي زانماي – Sushi Zanmai | 🍽️ شيف دايننج – Chef Dining Cafe | 🦑 مطاعم دوتونبوري – Dotonbori District | 🥘 مطبخ علي الحلال – Ali's Kitchen Halal | 🌟 سيفن هيلز – Seven Hills"
       data-cafes="☕ قليتش كوفي – Glitch Coffee Osaka | ☕ ميل كوفي – Mel Coffee Roasters | ☕ ليلو كوفي – Lilo Coffee Roasters | ☕ تاكامورا – Takamura Wine & Coffee | ☕ بروكلين روستينج – Brooklyn Roasting Company"
-      data-events="🌆 دوتونبوري ومينامي – Dotonbori & Minami | 🏯 قلعة أوساكا – Osaka Castle | 🎢 يونيفرسال ستوديوز – Universal Studios Japan | 🎆 مهرجان تينجين – Tenjin Matsuri | 🌿 حديقة إكسبو – Expo Commemorative Park">
-      <button class="save-btn" onclick="
-            event.stopPropagation();
-            saveItem('city', 'osaka', 'أوساكا', '/img/اوساكا.jpg');
-          ">
-        🏙️
-      </button>
+      data-events="🌆 دوتونبوري ومينامي – Dotonbori & Minami | 🏯 قلعة أوساكا – Osaka Castle | 🎢 يونيفرسال ستوديوز – Universal Studios Japan | 🎆 مهرجان تينجين – Tenjin Matsuri | 🌿 حديقة إكسبو – Expo Commemorative Park"
+      onclick="openCityModal(this)">
+      <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'osaka', 'أوساكا', '/img/اوساكا.jpg')">🏙️</button>
       <img src="/img/اوساكا.jpg" alt="أوساكا" class="cite-img" />
       <span class="name">أوساكا – Osaka</span>
-      <p class="info">
-        عاصمة الأكل في اليابان، مدينة مرحة مليئة بالمطاعم والأسواق الليلية.
-      </p>
-      <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
-        تفاصيل
-      </button>
+      <p class="info">عاصمة الأكل في اليابان، مدينة مرحة مليئة بالمطاعم والأسواق الليلية.</p>
+      <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
     </div>
+
     <div class="cite" data-name="هيروشيما – Hiroshima" data-img="/img/هيروشيما.jpg"
       data-desc="مدينة السلام والأمل، تجمع بين التاريخ المؤثر والطبيعة الجميلة والجزر القريبة، شاهدة على قدرة الإنسان على النهوض والتجدد."
       data-historic="🕊️ متحف السلام – Peace Memorial Museum | 🏛️ قبة غينباكو – Atomic Bomb Dome | ⛩️ ضريح إيتسوكوشيما – Itsukushima Shrine | 🏯 قلعة هيروشيما – Hiroshima Castle"
       data-restaurants="🥘 ناغاتايا – Nagataya | 🍳 ميتشان – Micchan Souhonten | 🏢 أوكونوميمورا – Okonomimura | 🍽️ تيتشان – Tecchan | 🦞 هيسان-يا – Hassan-ya"
       data-cafes="☕ ماريفو كوفي – Marifu Coffee Roaster | ☕ أوبسكورا – Obscura Coffee Roasters | ☕ ألوفت باسيرا – ALOFT Pasera | ☕ كوميدا كوفي – Komeda Coffee | ☕ مقاهي سوجو – Sogo Cafes"
-      data-events="🕊️ حديقة السلام – Peace Memorial Park | ⛩️ جزيرة مياجيما – Miyajima Island | 🍳 أوكونومياكي – Okonomiyaki Experience | 🏯 قلعة هيروشيما – Hiroshima Castle | 🌿 حديقة شوكيين – Shukkeien Garden">
-      <button class="save-btn" onclick="
-            event.stopPropagation();
-            saveItem('city', 'hiroshima', 'هيروشيما', '/img/هيروشيما.jpg');
-          ">
-        🏙️
-      </button>
+      data-events="🕊️ حديقة السلام – Peace Memorial Park | ⛩️ جزيرة مياجيما – Miyajima Island | 🍳 أوكونومياكي – Okonomiyaki Experience | 🏯 قلعة هيروشيما – Hiroshima Castle | 🌿 حديقة شوكيين – Shukkeien Garden"
+      onclick="openCityModal(this)">
+      <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'hiroshima', 'هيروشيما', '/img/هيروشيما.jpg')">🏙️</button>
       <img src="/img/هيروشيما.jpg" alt="هيروشيما" class="cite-img" />
       <span class="name">هيروشيما – Hiroshima</span>
-      <p class="info">
-        مدينة السلام، تجمع بين التاريخ المؤثر والطبيعة الجميلة والجزر القريبة.
-      </p>
-      <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
-        تفاصيل
-      </button>
+      <p class="info">مدينة السلام، تجمع بين التاريخ المؤثر والطبيعة الجميلة والجزر القريبة.</p>
+      <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
     </div>
+
     <div class="cite" data-name="سابورو – Sapporo" data-img="/img/سابورو.jpg"
       data-desc="مدينة الثلج والطبيعة الخلابة في شمال اليابان، تشتهر بمهرجان الثلج السنوي الأسطوري والتزلج والمأكولات الطازجة من البحر."
       data-historic="🏯 قلعة سابورو – Sapporo Castle | 🏛️ متحف هوكايدو – Hokkaido Museum | 🌿 حديقة أودوري – Odori Park | 🗼 برج التلفزيون – Sapporo TV Tower"
       data-restaurants="🥩 داروما – Daruma Main Shop | 🍜 رامن يوكوتشو – Ramen Yokocho | 🍣 سوشي زين – Sushi Zen | 🍛 سوب كاري جاروكو – Soup Curry Garaku | 🦀 سوق نيجو – Nijo Market"
       data-cafes="☕ TNOC The Cafe | ☕ كافيه يوشيمي – Cafe Yoshimi | ☕ روكفور كافيه – Roquefort Cafe | ☕ شيروغانه – Shirogane Coffee | ☕ أونياما بيس – ONIYANMA BASE"
-      data-events="⛄ مهرجان الثلج – Sapporo Snow Festival | 💡 إضاءة سابورو – White Illumination | 🍛 حساء الكاري – Soup Curry Experience | 🏔️ جبل مويوا – Mount Moiwa | 🌿 حديقة أودوري – Odori Park & TV Tower">
-      <button class="save-btn" onclick="
-            event.stopPropagation();
-            saveItem('city', 'sapporo', 'سابورو', '/img/سابورو.jpg');
-          ">
-        🏙️
-      </button>
+      data-events="⛄ مهرجان الثلج – Sapporo Snow Festival | 💡 إضاءة سابورو – White Illumination | 🍛 حساء الكاري – Soup Curry Experience | 🏔️ جبل مويوا – Mount Moiwa | 🌿 حديقة أودوري – Odori Park & TV Tower"
+      onclick="openCityModal(this)">
+      <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'sapporo', 'سابورو', '/img/سابورو.jpg')">🏙️</button>
       <img src="/img/سابورو.jpg" alt="سابورو" class="cite-img" />
       <span class="name">سابورو – Sapporo</span>
-      <p class="info">
-        مدينة شمالية معروفة بالثلوج والمهرجانات الشتوية والطبيعة الخلابة.
-      </p>
-      <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
-        تفاصيل
-      </button>
+      <p class="info">مدينة شمالية معروفة بالثلوج والمهرجانات الشتوية والطبيعة الخلابة.</p>
+      <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
     </div>
+
     <div class="cite" data-name="ناغويا – Nagoya" data-img="/img/ناغويا.jpg"
       data-desc="المدينة الصناعية الكبرى في قلب اليابان، تجمع بين القلعة التاريخية العريقة والمطبخ المحلي الفريد والتكنولوجيا المتقدمة."
       data-historic="🏯 قلعة ناغويا – Nagoya Castle | 🏛️ متحف تويوتا – Toyota Museum | ⛩️ ضريح أتسوتا – Atsuta Shrine | 🌿 حديقة هيغاشياما – Higashiyama Park"
       data-restaurants="🍱 ياباتون – Yabaton | 🐟 أتسوتا هوراي-كن – Atsuta Horaiken | 🍙 تينموسو سينجو – Tenmusu Senju | 🍜 ياماموتو-يا – Yamamoto-ya | 🍗 يوماتشان – Sekai no Yamachan"
       data-cafes="☕ صانداي فولر – Sunday Fuller Cafe | ☕ بانيل كافيه – Panel Cafe | ☕ تسوبامي – Tsubame Pan & Milk | ☕ كوميدا – Komeda's Coffee | ☕ كاكو – Kaku Cafe"
-      data-events="🏯 قلعة ناغويا – Nagoya Castle | 🚗 متحف تويوتا – Toyota Museum | 🐬 حوض الميناء – Port Aquarium | 🛍️ منطقة أوسو – Osu Shopping District | 🌿 حديقة هيغاشياما – Higashiyama Park">
-      <button class="save-btn" onclick="
-            event.stopPropagation();
-            saveItem('city', 'nagoya', 'ناغويا', '/img/ناغويا.jpg');
-          ">
-        🏙️
-      </button>
+      data-events="🏯 قلعة ناغويا – Nagoya Castle | 🚗 متحف تويوتا – Toyota Museum | 🐬 حوض الميناء – Port Aquarium | 🛍️ منطقة أوسو – Osu Shopping District | 🌿 حديقة هيغاشياما – Higashiyama Park"
+      onclick="openCityModal(this)">
+      <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'nagoya', 'ناغويا', '/img/ناغويا.jpg')">🏙️</button>
       <img src="/img/ناغويا.jpg" alt="ناغويا" class="cite-img" />
       <span class="name">ناغويا – Nagoya</span>
-      <p class="info">
-        مدينة صناعية حديثة مشهورة بقلعتها التاريخية ومطبخها الفريد.
-      </p>
-      <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
-        تفاصيل
-      </button>
+      <p class="info">مدينة صناعية حديثة مشهورة بقلعتها التاريخية ومطبخها الفريد.</p>
+      <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
     </div>
+
   </section>
-  <!--الاكل-->
+
   <div class="main-foods">
     <h1>الماكولات</h1>
   </div>
   <section class="foods-grid">
-    <div class="foods">
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=sushi'">
       <img src="/img/soshe.jpg" alt="" class="foods-img" />
       <span class="name-foods">سوشي – Sushi</span>
       <div class="food-info">أرز متبل مع سمك طازج أو مأكولات بحرية.</div>
-      <a href="/recipes/recipes.html?recipe=sushi" class="for-more-btn">المزيد</a>
+      <a href="/recipes/recipes.html?recipe=sushi" class="for-more-btn" onclick="event.stopPropagation()">المزيد</a>
     </div>
-    <div class="foods">
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=ramen'">
       <img src="/img/رامن.jpg" alt="" class="foods-img" />
       <span class="name-foods">الرامن – Ramen</span>
       <div class="food-info">شوربة نودلز غنية بمرق اللحم أو الدجاج.</div>
-      <a href="/recipes/recipes.html?recipe=ramen" class="for-more-btn">المزيد</a>
+      <a href="/recipes/recipes.html?recipe=ramen" class="for-more-btn" onclick="event.stopPropagation()">المزيد</a>
     </div>
-    <div class="foods">
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=tempura'">
       <img src="/img/التمبورا.jpg" alt="" class="foods-img" />
       <span class="name-foods">التمبورا – Tempura</span>
       <div class="food-info">خضار أو روبيان مقلي بطبقة خفيفة ومقرمشة.</div>
-      <a href="/recipes/recipes.html?recipe=tempura" class="for-more-btn">المزيد</a>
+      <a href="/recipes/recipes.html?recipe=tempura" class="for-more-btn" onclick="event.stopPropagation()">المزيد</a>
     </div>
-    <div class="foods">
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=okonomiyaki'">
       <img src="/img/Okonomiyaki.jpg" alt="" class="foods-img" />
       <span class="name-foods">أوكونوميياكي – Okonomiyaki</span>
       <div class="food-info">فطيرة يابانية مالحة محشوة بالخضار واللحم.</div>
-      <a href="/recipes/recipes.html?recipe=okonomiyaki" class="for-more-btn">المزيد</a>
+      <a href="/recipes/recipes.html?recipe=okonomiyaki" class="for-more-btn" onclick="event.stopPropagation()">المزيد</a>
     </div>
-    <div class="foods">
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=takoyaki'">
       <img src="/img/Takoyaki.jpg" alt="" class="foods-img" />
       <span class="name-foods">التاكوياكي (Takoyaki)</span>
       <div class="food-info">كرات عجين محشوة بالدجاج تشتهر في أوساكا.</div>
-      <a href="/recipes/recipes.html?recipe=takoyaki" class="for-more-btn">المزيد</a>
+      <a href="/recipes/recipes.html?recipe=takoyaki" class="for-more-btn" onclick="event.stopPropagation()">المزيد</a>
     </div>
-    <div class="foods">
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=tonkatsu'">
       <img src="/img/Tonkatsu.webp" alt="" class="foods-img" />
       <span class="name-foods">تونكاتسو – Tonkatsu</span>
       <div class="food-info">شريحة لحم مقلية تقدم مع صلصة خاصة.</div>
-      <a href="/recipes/recipes.html?recipe=tonkatsu" class="for-more-btn">المزيد</a>
+      <a href="/recipes/recipes.html?recipe=tonkatsu" class="for-more-btn" onclick="event.stopPropagation()">المزيد</a>
     </div>
   </section>
+
   <div class="events-main">
     <h1>الفعاليات</h1>
   </div>
   <section class="events-grid">
-    <div class="event">
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=hanami'">
       <img src="/img/Hanami.jpg" alt="" class="event-img" />
       <span class="name-event">مهرجان أزهار الكرز – Hanami</span>
-      <div class="event-info">
-        الاستمتاع بمشاهدة تفتح أزهار الساكورا في الربيع.
-      </div>
-      <a href="/events/events.html?event=hanami" class="event-btn">المزيد</a>
+      <div class="event-info">الاستمتاع بمشاهدة تفتح أزهار الساكورا في الربيع.</div>
+      <a href="/events/events.html?event=hanami" class="event-btn" onclick="event.stopPropagation()">المزيد</a>
     </div>
-    <div class="event">
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=Akihabara'">
       <img src="/img/akihabara.jpg" alt="" class="event-img" />
       <span class="name-event">أكيهابارا – Akihabara</span>
-      <div class="event-info">
-        عالم مليء بالشخصيات والقصص لمحبي الثقافة اليابانية.
-      </div>
-      <a href="/events/events.html?event=Akihabara" class="event-btn">المزيد</a>
+      <div class="event-info">عالم مليء بالشخصيات والقصص لمحبي الثقافة اليابانية.</div>
+      <a href="/events/events.html?event=Akihabara" class="event-btn" onclick="event.stopPropagation()">المزيد</a>
     </div>
-    <div class="event">
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=Onsen'">
       <img src="/img/Onsen.jpg" alt="" class="event-img" />
       <span class="name-event">الينابيع الحارة – Onsen</span>
       <div class="event-info">الاسترخاء في ينابيع طبيعية مثل هاكوني.</div>
-      <a href="/events/events.html?event=Onsen" class="event-btn">المزيد</a>
+      <a href="/events/events.html?event=Onsen" class="event-btn" onclick="event.stopPropagation()">المزيد</a>
     </div>
-    <div class="event">
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=BambooForest'">
       <img src="/img/غابات الخيزران.webp" alt="" class="event-img" />
       <span class="name-event">غابات الخيزران – Bamboo Forest</span>
       <div class="event-info">ممرات طبيعية ساحرة للتنزه والتصوير.</div>
-      <a href="/events/events.html?event=BambooForest" class="event-btn">المزيد</a>
+      <a href="/events/events.html?event=BambooForest" class="event-btn" onclick="event.stopPropagation()">المزيد</a>
     </div>
-    <div class="event">
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=MountFuji'">
       <img src="/img/فوجي.jpg" alt="" class="event-img" />
       <span class="name-event">جبل فوجي – Mount Fuji</span>
-      <div class="event-info">
-        أيقونة طبيعية يمكن مشاهدتها والتصوير عندها.
-      </div>
-      <a href="/events/events.html?event=MountFuji" class="event-btn">المزيد</a>
+      <div class="event-info">أيقونة طبيعية يمكن مشاهدتها والتصوير عندها.</div>
+      <a href="/events/events.html?event=MountFuji" class="event-btn" onclick="event.stopPropagation()">المزيد</a>
     </div>
-    <div class="event">
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=animalcafe'">
       <img src="/img/cat cafe.webp" alt="" class="event-img" />
       <span class="name-event">مقاهي الحيوانات – animal Cafes</span>
-      <div class="event-info">
-        مقاهي لطيفة للاسترخاء مع القطط وحيوانات أليفة.
-      </div>
-      <a href="/events/events.html?event=animalcafe" class="event-btn">المزيد</a>
+      <div class="event-info">مقاهي لطيفة للاسترخاء مع القطط وحيوانات أليفة.</div>
+      <a href="/events/events.html?event=animalcafe" class="event-btn" onclick="event.stopPropagation()">المزيد</a>
     </div>
   </section>
-  <!-- Modal المدينة -->
+
   <div id="cityModal" class="modal" onclick="closeCityModal(event)">
     <div class="modal-content">
       <button class="modal-close" onclick="closeCityModal(event)">×</button>
@@ -312,6 +256,7 @@
       </div>
     </div>
   </div>
+
   <script src="/countries/countries.js"></script>
   <script src="/auth/auth.js"></script>
 </body>
