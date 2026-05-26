@@ -292,3 +292,4 @@ userAvatar.addEventListener("click", (e) => {
 document.addEventListener("click", () => {
     userMenu.classList.remove("active");
 });
+

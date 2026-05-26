@@ -66,236 +66,326 @@
   </div>
 
   <!--المدن -->
-  <div class="main-cites">
-    <h1>المدن</h1>
+  <!-- المدن -->
+<div class="main-cites">
+  <h1>المدن</h1>
+</div>
+
+<section class="cities-grid">
+
+  <!-- دبي -->
+  <div class="cite"
+    onclick="openCityModal(this)"
+    data-name="دبي – Dubai"
+    data-img="/img/Dubai.jpg"
+    data-desc="مدينة المستقبل وعاصمة الفخامة العالمية."
+    data-historic="🏙️ برج خليفة | 🏝️ نخلة جميرا | 🛍️ دبي مول"
+    data-restaurants="🥩 Zuma | 🍝 Il Borro | ⭐ Tresind Studio"
+    data-cafes="☕ EL&N | ☕ Arabian Tea House | ☕ 21 Grams"
+    data-events="🏜️ سفاري الصحراء | ⛷️ سكي دبي | ⛲ نافورة دبي">
+
+    <button class="save-btn"
+      onclick="event.stopPropagation(); saveItem('city','dubai','دبي','/img/Dubai.jpg')">
+      🏙️
+    </button>
+
+    <img src="/img/Dubai.jpg" alt="دبي" class="cite-img" />
+    <span class="name">دبي – Dubai</span>
+
+    <p class="info">
+      مدينة مستقبلية تجمع بين الفخامة والترفيه.
+    </p>
+
+    <button class="cite-btn"
+      onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">
+      تفاصيل
+    </button>
   </div>
-  <section class="cities-grid">
-    <div class="cite" data-name="دبي – Dubai" data-img="/img/Dubai.jpg"
-      data-desc="مدينة المستقبل وعاصمة الفخامة العالمية، تجمع بين أعلى الأبراج وأفخم المنتجعات والتسوق العالمي الراقي في مشهد حضري مبهر يجمع بين الصحراء والبحر والسماء."
-      data-historic="🏙️ برج خليفة – Burj Khalifa | 🏝️ نخلة جميرا – Palm Jumeirah | 🛍️ دبي مول – Dubai Mall | 🏜️ صحراء دبي – Dubai Desert"
-      data-restaurants="🥩 مطعم زوما – Zuma | 🍝 مطعم إل بورو توسكان بيسترو – Il Borro Tuscan Bistro | ⭐ تريسيند استوديو – Tresind Studio | 🏙️ أتموسفير – At.mosphere | 🌎 مطعم كويا – COYA | 🐟 مطعم 3 فلس – 3 Fils"
-      data-cafes="☕ إيرث روستري – Earth Roastery | 🌸 إل آند إن – EL&N London | 🇦🇪 كونكريت – KONCRETE | 🎨 كاسيت – Cassette | 🫖 مقهى الشاي العربي – Arabian Tea House | ☕ 21 غرام – 21 Grams"
-      data-events="🏜️ سفاري الصحراء – Desert Safari | 🏙️ قمة برج خليفة – Burj Khalifa Top | ⛲ نافورة دبي الراقصة – Dubai Fountain | ⛷️ سكي دبي – Ski Dubai | 🎢 آي إم جي عالم المغامرات – IMG Worlds of Adventure | 🛥️ رحلات اليخوت – Yachting & Cruising">
-      <button class="save-btn" onclick="
-            event.stopPropagation();
-            saveItem('city', 'dubai', 'دبي', '/img/Dubai.jpg');
-          ">
-        🏙️
-      </button>
-      <img src="/img/Dubai.jpg" alt="دبي" class="cite-img" />
-      <span class="name">دبي – Dubai</span>
-      <p class="info">مدينة مستقبلية تجمع بين الفخامة والترفيه العالمي.</p>
-      <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
-        تفاصيل
-      </button>
-    </div>
 
-    <div class="cite" data-name="أبوظبي – Abu Dhabi" data-img="/img/Abu Dhabi.jpg"
-      data-desc="عاصمة الإمارات الهادئة ومركزها الثقافي الراقي، تضم مسجد الشيخ زايد الشهير وجزيرة السعديات الثقافية ومتحف اللوفر وسباقات الفورمولا 1 في أجواء رفيعة المستوى."
-      data-historic="🕌 مسجد الشيخ زايد – Sheikh Zayed Mosque | 🏛️ متحف اللوفر – Louvre Abu Dhabi | 🎡 فيراري وورلد – Ferrari World | 🏝️ جزيرة السعديات – Saadiyat Island"
-      data-restaurants="⭐ تاليا باي أنطونيو غيدا – Talea by Antonio Guida | 🥩 بوتشر آند ستيل – Butcher & Still | 🌎 كويا أبوظبي – Coya Abu Dhabi | 🍝 كافيه ميلانو – Café Milano | 🫙 لي بيروت – Li Beirut"
-      data-cafes="🧀 راكليت براسري آند كافيه – Raclette Brasserie Cafe | 🌹 فوريفر روز كافيه – Forever Rose Cafe | ☕ جود كافيه – Joud Cafe | 🎨 آرت هاوس كافيه – Art House Cafe | ☕ كافيه سيفن – Cafe 7.Seven.7"
-      data-events="🎪 مهرجان الشيخ زايد التراثي – Sheikh Zayed Heritage Festival | 🎢 عالم فيراري – Ferrari World | 🕌 جامع الشيخ زايد – Sheikh Zayed Grand Mosque | 🏛️ متحف اللوفر – Louvre Abu Dhabi | 🚣 كاياك غابات القرم – Mangrove Kayaking">
-      <button class="save-btn" onclick="
-            event.stopPropagation();
-            saveItem('city', 'abu-dhabi', 'أبوظبي', '/img/Abu Dhabi.jpg');
-          ">
-        🏙️
-      </button>
-      <img src="/img/Abu Dhabi.jpg" alt="أبوظبي" class="cite-img" />
-      <span class="name">أبوظبي – Abu Dhabi</span>
-      <p class="info">عاصمة هادئة تضم معالم ثقافية فاخرة.</p>
-      <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
-        تفاصيل
-      </button>
-    </div>
+  <!-- أبوظبي -->
+  <div class="cite"
+    onclick="openCityModal(this)"
+    data-name="أبوظبي – Abu Dhabi"
+    data-img="/img/Abu Dhabi.jpg"
+    data-desc="عاصمة الإمارات الهادئة ومركزها الثقافي."
+    data-historic="🕌 جامع الشيخ زايد | 🏛️ اللوفر أبوظبي | 🎢 فيراري وورلد"
+    data-restaurants="⭐ Talea | 🥩 Butcher & Still | 🌎 COYA"
+    data-cafes="☕ Forever Rose | ☕ Joud Cafe | ☕ Art House"
+    data-events="🎪 مهرجان الشيخ زايد | 🚣 القرم | 🏎️ الفورمولا 1">
 
-    <div class="cite" data-name="الشارقة – Sharjah" data-img="/img/Sharjah.jpg"
-      data-desc="عاصمة الثقافة في الإمارات وعاصمة الثقافة العربية، تشتهر بمتاحفها الثقافية الرائعة والبيوت التراثية الجميلة والأسواق الشعبية الأصيلة التي تعكس روح الهوية العربية."
-      data-historic="🏛️ متحف الشارقة – Sharjah Museum | 🏘️ المنطقة التراثية – Heritage Area | 🕌 مسجد الشارقة – Sharjah Mosque | 🛍️ سوق الشارقة – Sharjah Souq"
-      data-restaurants="🍛 مطعم Al Fanar | 🌿 مطعم Bait Al Wakeel | 🥘 مطعم Saray"
-      data-cafes="☕ مقهى Café Bateel | ☕ مقهى Al Nakheel | ☕ مقهى Sheraa"
-      data-events="🏛️ متاحف الشارقة – Sharjah Museums | 🏘️ المنطقة التراثية – Heritage Area | 🛍️ سوق الشارقة – Blue Souk">
-      <button class="save-btn" onclick="
-            event.stopPropagation();
-            saveItem('city', 'sharjah', 'الشارقة', '/img/Sharjah.jpg');
-          ">
-        🏙️
-      </button>
-      <img src="/img/Sharjah.jpg" alt="الشارقة" class="cite-img" />
-      <span class="name">الشارقة – Sharjah</span>
-      <p class="info">مدينة الفن والمتاحف والتراث العربي.</p>
-      <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
-        تفاصيل
-      </button>
-    </div>
+    <button class="save-btn"
+      onclick="event.stopPropagation(); saveItem('city','abu-dhabi','أبوظبي','/img/Abu Dhabi.jpg')">
+      🏙️
+    </button>
 
-    <div class="cite" data-name="رأس الخيمة – Ras Al Khaimah" data-img="/img/Ras Al Khaimah.jpg"
-      data-desc="جوهرة الإمارات الطبيعية، تجمع بشكل فريد بين جبال الحجر الشاهقة وشواطئ الخليج الذهبية والمنتجعات الفاخرة وأعلى زيب لاين في العالم فوق جبل جيس."
-      data-historic="🏔️ جبل جيس – Jebel Jais | 🏖️ شاطئ مرجان – Marjan Island | 🏰 قلعة ضاية – Dhayah Fort | 🌿 وادي الصفا – Wadi Al Safa"
-      data-restaurants="🦞 مطعم Maison Mathis | 🌿 مطعم Sonara Camp | 🥘 مطعم Al Hamra"
-      data-cafes="☕ مقهى Café Bateel | ☕ مقهى Lexington | ☕ مقهى RAK Coffee"
-      data-events="🏔️ زيب لاين جبل جيس – Jebel Jais Flight | 🏖️ جزيرة مرجان – Marjan Island | 🏰 قلعة ضاية – Dhayah Fort">
-      <button class="save-btn" onclick="
-            event.stopPropagation();
-            saveItem(
-              'city',
-              'ras-al-khaimah',
-              'رأس الخيمة',
-              '/img/Ras Al Khaimah.jpg',
-            );
-          ">
-        🏙️
-      </button>
-      <img src="/img/Ras Al Khaimah.jpg" alt="رأس الخيمة" class="cite-img" />
-      <span class="name">رأس الخيمة – Ras Al Khaimah</span>
-      <p class="info">وجهة طبيعية تجمع بين الجبال والشواطئ.</p>
-      <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
-        تفاصيل
-      </button>
-    </div>
+    <img src="/img/Abu Dhabi.jpg" alt="أبوظبي" class="cite-img" />
+    <span class="name">أبوظبي – Abu Dhabi</span>
 
-    <div class="cite" data-name="الفجيرة – Fujairah" data-img="/img/Fujairah.jpg"
-      data-desc="الإمارة الساحلية الهادئة على خليج عُمان، تتميز بمياهها الصافية الرائعة للغوص والسنوركلينج والقلاع التاريخية العريقة والطبيعة الجبلية الخلابة بعيداً عن صخب المدن."
-      data-historic="🏰 قلعة الفجيرة – Fujairah Fort | 🤿 غوص الفجيرة – Fujairah Diving | 🕌 مسجد الفجيرة – Fujairah Mosque | 🏖️ شاطئ الفجيرة – Fujairah Beach"
-      data-restaurants="🦞 مطعم Sea Horse | 🌿 مطعم Kalba Fish Market | 🥘 مطعم Milas"
-      data-cafes="☕ مقهى Cafe del Mar | ☕ مقهى Bab Al Bahr | ☕ مقهى Fujairah Coffee"
-      data-events="🤿 غوص الفجيرة – Fujairah Diving | 🏰 قلعة الفجيرة – Fujairah Fort | 🏖️ شواطئ الفجيرة – Fujairah Beaches">
-      <button class="save-btn" onclick="
-            event.stopPropagation();
-            saveItem('city', 'fujairah', 'الفجيرة', '/img/Fujairah.jpg');
-          ">
-        🏙️
-      </button>
-      <img src="/img/Fujairah.jpg" alt="الفجيرة" class="cite-img" />
-      <span class="name">الفجيرة – Fujairah</span>
-      <p class="info">مدينة بحرية مناسبة للاسترخاء والأنشطة البحرية.</p>
-      <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
-        تفاصيل
-      </button>
-    </div>
+    <p class="info">
+      عاصمة هادئة تضم معالم ثقافية فاخرة.
+    </p>
 
-    <div class="cite" data-name="العين – Al Ain" data-img="/img/Al Ain.webp"
-      data-desc="مدينة الواحات والتراث الإماراتي الأصيل، موقع تراث عالمي لليونسكو تشتهر بواحاتها النخيلية الخضراء وقلاعها التاريخية وحديقة حيوانها الشهيرة والجبل الأخضر."
-      data-historic="🏰 قلعة العين – Al Ain Palace | 🌿 واحة العين – Al Ain Oasis | 🦁 حديقة حيوان العين – Al Ain Zoo | 🏔️ جبل حفيت – Jebel Hafeet"
-      data-restaurants="🍛 مطعم Al Diwan | 🌿 مطعم Mercato | 🥘 مطعم Arabesque"
-      data-cafes="☕ مقهى Café Bateel | ☕ مقهى Al Ain Coffee | ☕ مقهى Starbucks Reserve"
-      data-events="🏰 قلعة العين – Al Ain Palace | 🌿 واحة العين – Al Ain Oasis | 🏔️ جبل حفيت – Jebel Hafeet">
-      <button class="save-btn" onclick="
-            event.stopPropagation();
-            saveItem('city', 'al-ain', 'العين', '/img/Al Ain.webp');
-          ">
-        🏙️
-      </button>
-      <img src="/img/Al Ain.webp" alt="العين" class="cite-img" />
-      <span class="name">العين – Al Ain</span>
-      <p class="info">مدينة الواحات والطبيعة الهادئة.</p>
-      <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
-        تفاصيل
-      </button>
-    </div>
-  </section>
-  <!--الاكل-->
-  <div class="main-foods">
-    <h1>الماكولات</h1>
+    <button class="cite-btn"
+      onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">
+      تفاصيل
+    </button>
   </div>
-  <section class="foods-grid">
-    <div class="foods">
-      <img src="/img/مجبوس.jpg" alt="" class="foods-img" />
-      <span class="name-foods">مجبوس – Majboos</span>
-      <div class="food-info">أرز متبل يقدم مع اللحم أو الدجاج.</div>
-      <a href="/recipes/recipes.html?recipe=majboos" class="for-more-btn">الوصفة</a>
-    </div>
 
-    <div class="foods">
-      <img src="/img/هريس.jpg" alt="" class="foods-img" />
-      <span class="name-foods">هريس – Harees</span>
-      <div class="food-info">قمح مطبوخ مع اللحم بقوام غني.</div>
-      <a href="/recipes/recipes.html?recipe=harees" class="for-more-btn">الوصفة</a>
-    </div>
+  <!-- الشارقة -->
+  <div class="cite"
+    onclick="openCityModal(this)"
+    data-name="الشارقة – Sharjah"
+    data-img="/img/Sharjah.jpg"
+    data-desc="عاصمة الثقافة والفنون في الإمارات."
+    data-historic="🏛️ متحف الشارقة | 🏘️ المنطقة التراثية | 🛍️ السوق الأزرق"
+    data-restaurants="🍛 Al Fanar | 🌿 Bait Al Wakeel | 🥘 Saray"
+    data-cafes="☕ Café Bateel | ☕ Al Nakheel | ☕ Sheraa"
+    data-events="🏛️ متاحف الشارقة | 🛍️ السوق الأزرق | 🏘️ التراث">
 
-    <div class="foods">
-      <img src="/img/ثريد.jpg" alt="" class="foods-img" />
-      <span class="name-foods">ثريد – Threed</span>
-      <div class="food-info">خبز مع مرق اللحم أو الدجاج والخضار.</div>
-      <a href="/recipes/recipes.html?recipe=threed" class="for-more-btn">الوصفة</a>
-    </div>
+    <button class="save-btn"
+      onclick="event.stopPropagation(); saveItem('city','sharjah','الشارقة','/img/Sharjah.jpg')">
+      🏙️
+    </button>
 
-    <div class="foods">
-      <img src="/img/لقيمات.jpg" alt="" class="foods-img" />
-      <span class="name-foods">لقيمات – Luqaimat</span>
-      <div class="food-info">حلى مقرمش يقدم مع الدبس.</div>
-      <a href="/recipes/recipes.html?recipe=luqaimat" class="for-more-btn">الوصفة</a>
-    </div>
+    <img src="/img/Sharjah.jpg" alt="الشارقة" class="cite-img" />
+    <span class="name">الشارقة – Sharjah</span>
 
-    <div class="foods">
-      <img src="/img/سمك-مشوي.jpg" alt="" class="foods-img" />
-      <span class="name-foods">سمك مشوي – Grilled Fish</span>
-      <div class="food-info">مأكولات بحرية طازجة بنكهات خليجية.</div>
-      <a href="/recipes/recipes.html?recipe=grilled-fish-uae" class="for-more-btn">الوصفة</a>
-    </div>
+    <p class="info">
+      مدينة الفن والمتاحف والتراث العربي.
+    </p>
 
-    <div class="foods">
-      <img src="/img/خبيص.jpg" alt="" class="foods-img" />
-      <span class="name-foods">خبيص – Khabees</span>
-      <div class="food-info">حلوى تقليدية بطعم غني ومميز.</div>
-      <a href="/recipes/recipes.html?recipe=khabees" class="for-more-btn">الوصفة</a>
-    </div>
-  </section>
-  <div class="events-main">
-    <h1>الفعاليات</h1>
+    <button class="cite-btn"
+      onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">
+      تفاصيل
+    </button>
   </div>
-  <section class="events-grid">
-    <div class="event">
-      <img src="/img/forever-rose.jpg" alt="" class="event-img" />
-      <span class="name-event">فوريفر روز كافيه – Forever Rose Cafe</span>
-      <div class="event-info">
-        مقهى مشهور بتصميمه ثنائي الأبعاد وتجربة تصوير مميزة.
-      </div>
-      <a href="/events/events.html?event=ForeverRose" class="event-btn">التفاصيل</a>
-    </div>
 
-    <div class="event">
-      <img src="/img/برج-خليفة.jpg" alt="" class="event-img" />
-      <span class="name-event">برج خليفة – Burj Khalifa</span>
-      <div class="event-info">
-        أعلى برج في العالم بإطلالة بانورامية مذهلة.
-      </div>
-      <a href="/events/events.html?event=BurjKhalifa" class="event-btn">التفاصيل</a>
-    </div>
+  <!-- رأس الخيمة -->
+  <div class="cite"
+    onclick="openCityModal(this)"
+    data-name="رأس الخيمة – Ras Al Khaimah"
+    data-img="/img/Ras Al Khaimah.jpg"
+    data-desc="وجهة طبيعية تجمع بين الجبال والشواطئ."
+    data-historic="🏔️ جبل جيس | 🏖️ جزيرة المرجان | 🏰 قلعة ضاية"
+    data-restaurants="🦞 Maison Mathis | 🌿 Sonara Camp | 🥘 Al Hamra"
+    data-cafes="☕ Café Bateel | ☕ Lexington | ☕ RAK Coffee"
+    data-events="🏔️ زيب لاين | 🏖️ المرجان | 🏰 قلعة ضاية">
 
-    <div class="event">
-      <img src="/img/مسجد-الشيخ-زايد.jpg" alt="" class="event-img" />
-      <span class="name-event">مسجد الشيخ زايد – Sheikh Zayed Grand Mosque</span>
-      <div class="event-info">
-        أحد أجمل المعالم المعمارية في العالم الإسلامي.
-      </div>
-      <a href="/events/events.html?event=SheikhZayedMosque" class="event-btn">التفاصيل</a>
-    </div>
+    <button class="save-btn"
+      onclick="event.stopPropagation(); saveItem('city','ras-al-khaimah','رأس الخيمة','/img/Ras Al Khaimah.jpg')">
+      🏙️
+    </button>
 
-    <div class="event">
-      <img src="/img/اتلانتيس.jpg" alt="" class="event-img" />
-      <span class="name-event">أتلانتيس ذا رويال – Atlantis The Royal</span>
-      <div class="event-info">منتجع فاخر بإطلالات بحرية وتجارب راقية.</div>
-      <a href="/events/events.html?event=AtlantisRoyal" class="event-btn">التفاصيل</a>
-    </div>
+    <img src="/img/Ras Al Khaimah.jpg" alt="رأس الخيمة" class="cite-img" />
+    <span class="name">رأس الخيمة – Ras Al Khaimah</span>
 
-    <div class="event">
-      <img src="/img/فيراري-ورلد.jpg" alt="" class="event-img" />
-      <span class="name-event">فيراري وورلد أبوظبي – Ferrari World Abu Dhabi</span>
-      <div class="event-info">
-        مدينة ألعاب مليئة بالسرعة والتجارب الحماسية.
-      </div>
-      <a href="/events/events.html?event=FerrariWorld" class="event-btn">التفاصيل</a>
-    </div>
+    <p class="info">
+      جبال وشواطئ ومنتجعات فاخرة.
+    </p>
 
-    <div class="event">
-      <img src="/img/دبي-ديزرت.jpg" alt="" class="event-img" />
-      <span class="name-event">محمية دبي الصحراوية – Dubai Desert Conservation Reserve</span>
-      <div class="event-info">سفاري صحراوي وتجارب عربية مميزة.</div>
-      <a href="/events/events.html?event=DubaiDesert" class="event-btn">التفاصيل</a>
-    </div>
-  </section>
+    <button class="cite-btn"
+      onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">
+      تفاصيل
+    </button>
+  </div>
+
+  <!-- الفجيرة -->
+  <div class="cite"
+    onclick="openCityModal(this)"
+    data-name="الفجيرة – Fujairah"
+    data-img="/img/Fujairah.jpg"
+    data-desc="إمارة بحرية هادئة مناسبة للغوص والاسترخاء."
+    data-historic="🏰 قلعة الفجيرة | 🤿 الغوص | 🏖️ شواطئ الفجيرة"
+    data-restaurants="🦞 Sea Horse | 🌿 Kalba Fish | 🥘 Milas"
+    data-cafes="☕ Cafe del Mar | ☕ Bab Al Bahr | ☕ Fujairah Coffee"
+    data-events="🤿 الغوص | 🏖️ الشواطئ | 🏰 القلعة">
+
+    <button class="save-btn"
+      onclick="event.stopPropagation(); saveItem('city','fujairah','الفجيرة','/img/Fujairah.jpg')">
+      🏙️
+    </button>
+
+    <img src="/img/Fujairah.jpg" alt="الفجيرة" class="cite-img" />
+    <span class="name">الفجيرة – Fujairah</span>
+
+    <p class="info">
+      مدينة بحرية مناسبة للأنشطة البحرية.
+    </p>
+
+    <button class="cite-btn"
+      onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">
+      تفاصيل
+    </button>
+  </div>
+
+  <!-- العين -->
+  <div class="cite"
+    onclick="openCityModal(this)"
+    data-name="العين – Al Ain"
+    data-img="/img/Al Ain.webp"
+    data-desc="مدينة الواحات والطبيعة الهادئة."
+    data-historic="🏰 قلعة العين | 🌿 الواحات | 🏔️ جبل حفيت"
+    data-restaurants="🍛 Al Diwan | 🌿 Mercato | 🥘 Arabesque"
+    data-cafes="☕ Café Bateel | ☕ Al Ain Coffee | ☕ Starbucks Reserve"
+    data-events="🌿 الواحات | 🏔️ جبل حفيت | 🏰 القلعة">
+
+    <button class="save-btn"
+      onclick="event.stopPropagation(); saveItem('city','al-ain','العين','/img/Al Ain.webp')">
+      🏙️
+    </button>
+
+    <img src="/img/Al Ain.webp" alt="العين" class="cite-img" />
+    <span class="name">العين – Al Ain</span>
+
+    <p class="info">
+      مدينة الواحات والتراث الإماراتي.
+    </p>
+
+    <button class="cite-btn"
+      onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">
+      تفاصيل
+    </button>
+  </div>
+
+</section>
+
+<!-- المأكولات -->
+<div class="main-foods">
+  <h1>الماكولات</h1>
+</div>
+
+<section class="foods-grid">
+
+  <div class="foods" style="cursor:pointer"
+    onclick="window.location.href='/recipes/recipes.html?recipe=majboos'">
+    <img src="/img/مجبوس.jpg" class="foods-img" />
+    <span class="name-foods">مجبوس – Majboos</span>
+    <div class="food-info">أرز متبل يقدم مع اللحم أو الدجاج.</div>
+    <a href="/recipes/recipes.html?recipe=majboos"
+      class="for-more-btn"
+      onclick="event.stopPropagation()">الوصفة</a>
+  </div>
+
+  <div class="foods" style="cursor:pointer"
+    onclick="window.location.href='/recipes/recipes.html?recipe=harees'">
+    <img src="/img/هريس.jpg" class="foods-img" />
+    <span class="name-foods">هريس – Harees</span>
+    <div class="food-info">قمح مطبوخ مع اللحم.</div>
+    <a href="/recipes/recipes.html?recipe=harees"
+      class="for-more-btn"
+      onclick="event.stopPropagation()">الوصفة</a>
+  </div>
+
+  <div class="foods" style="cursor:pointer"
+    onclick="window.location.href='/recipes/recipes.html?recipe=threed'">
+    <img src="/img/ثريد.jpg" class="foods-img" />
+    <span class="name-foods">ثريد – Threed</span>
+    <div class="food-info">خبز مع مرق اللحم والخضار.</div>
+    <a href="/recipes/recipes.html?recipe=threed"
+      class="for-more-btn"
+      onclick="event.stopPropagation()">الوصفة</a>
+  </div>
+
+  <div class="foods" style="cursor:pointer"
+    onclick="window.location.href='/recipes/recipes.html?recipe=luqaimat'">
+    <img src="/img/لقيمات.jpg" class="foods-img" />
+    <span class="name-foods">لقيمات – Luqaimat</span>
+    <div class="food-info">حلى مقرمش مع الدبس.</div>
+    <a href="/recipes/recipes.html?recipe=luqaimat"
+      class="for-more-btn"
+      onclick="event.stopPropagation()">الوصفة</a>
+  </div>
+
+  <div class="foods" style="cursor:pointer"
+    onclick="window.location.href='/recipes/recipes.html?recipe=grilled-fish-uae'">
+    <img src="/img/سمك-مشوي.jpg" class="foods-img" />
+    <span class="name-foods">سمك مشوي – Grilled Fish</span>
+    <div class="food-info">مأكولات بحرية بنكهات خليجية.</div>
+    <a href="/recipes/recipes.html?recipe=grilled-fish-uae"
+      class="for-more-btn"
+      onclick="event.stopPropagation()">الوصفة</a>
+  </div>
+
+  <div class="foods" style="cursor:pointer"
+    onclick="window.location.href='/recipes/recipes.html?recipe=khabees'">
+    <img src="/img/خبيص.jpg" class="foods-img" />
+    <span class="name-foods">خبيص – Khabees</span>
+    <div class="food-info">حلوى إماراتية تقليدية.</div>
+    <a href="/recipes/recipes.html?recipe=khabees"
+      class="for-more-btn"
+      onclick="event.stopPropagation()">الوصفة</a>
+  </div>
+
+</section>
+
+<!-- الفعاليات -->
+<div class="events-main">
+  <h1>الفعاليات</h1>
+</div>
+
+<section class="events-grid">
+
+  <div class="event" style="cursor:pointer"
+    onclick="window.location.href='/events/events.html?event=ForeverRose'">
+    <img src="/img/forever-rose.jpg" class="event-img" />
+    <span class="name-event">Forever Rose Cafe</span>
+    <div class="event-info">مقهى بتصميم ثنائي الأبعاد.</div>
+    <a href="/events/events.html?event=ForeverRose"
+      class="event-btn"
+      onclick="event.stopPropagation()">التفاصيل</a>
+  </div>
+
+  <div class="event" style="cursor:pointer"
+    onclick="window.location.href='/events/events.html?event=BurjKhalifa'">
+    <img src="/img/برج-خليفة.jpg" class="event-img" />
+    <span class="name-event">برج خليفة – Burj Khalifa</span>
+    <div class="event-info">أعلى برج في العالم.</div>
+    <a href="/events/events.html?event=BurjKhalifa"
+      class="event-btn"
+      onclick="event.stopPropagation()">التفاصيل</a>
+  </div>
+
+  <div class="event" style="cursor:pointer"
+    onclick="window.location.href='/events/events.html?event=SheikhZayedMosque'">
+    <img src="/img/مسجد-الشيخ-زايد.jpg" class="event-img" />
+    <span class="name-event">مسجد الشيخ زايد</span>
+    <div class="event-info">أحد أجمل المساجد بالعالم.</div>
+    <a href="/events/events.html?event=SheikhZayedMosque"
+      class="event-btn"
+      onclick="event.stopPropagation()">التفاصيل</a>
+  </div>
+
+  <div class="event" style="cursor:pointer"
+    onclick="window.location.href='/events/events.html?event=AtlantisRoyal'">
+    <img src="/img/اتلانتيس.jpg" class="event-img" />
+    <span class="name-event">Atlantis The Royal</span>
+    <div class="event-info">منتجع فاخر بإطلالات بحرية.</div>
+    <a href="/events/events.html?event=AtlantisRoyal"
+      class="event-btn"
+      onclick="event.stopPropagation()">التفاصيل</a>
+  </div>
+
+  <div class="event" style="cursor:pointer"
+    onclick="window.location.href='/events/events.html?event=FerrariWorld'">
+    <img src="/img/فيراري-ورلد.jpg" class="event-img" />
+    <span class="name-event">Ferrari World</span>
+    <div class="event-info">مدينة ألعاب حماسية.</div>
+    <a href="/events/events.html?event=FerrariWorld"
+      class="event-btn"
+      onclick="event.stopPropagation()">التفاصيل</a>
+  </div>
+
+  <div class="event" style="cursor:pointer"
+    onclick="window.location.href='/events/events.html?event=DubaiDesert'">
+    <img src="/img/دبي-ديزرت.jpg" class="event-img" />
+    <span class="name-event">Dubai Desert</span>
+    <div class="event-info">سفاري وتجارب صحراوية.</div>
+    <a href="/events/events.html?event=DubaiDesert"
+      class="event-btn"
+      onclick="event.stopPropagation()">التفاصيل</a>
+  </div>
+
+</section>
   <!-- Modal المدينة -->
   <div id="cityModal" class="modal" onclick="closeCityModal(event)">
     <div class="modal-content">

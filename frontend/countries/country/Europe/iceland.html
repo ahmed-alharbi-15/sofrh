@@ -5,30 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>سفرة</title>
-
-    <!-- ملف الستايل الأساسي -->
     <link rel="stylesheet" href="/countries/countries.css">
-
-    <!-- خط عربي -->
     <style>
-        @import url('https://fonts.googleapis.com/css/2?family=Noto+Sans+Arabic:wght@500;600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@500;600&display=swap');
     </style>
-
 </head>
 
-
 <body>
-
-    <!--  NAVBAR (ثابت في كل صفحة) -->
     <header class="navbar">
-
         <div class="hamburger" id="menu-btn">☰</div>
-
         <div class="auth-buttons" id="authButtons">
             <a href="/auth/login.html" class="login">تسجيل دخول</a>
             <a href="/auth/signup.html" class="signup">إنشاء حساب</a>
         </div>
-
         <div class="user-menu" id="userMenu">
             <img id="userAvatar" src="/img/avater-icon.jpeg" alt="المستخدم">
             <span class="user-name" id="userName"></span>
@@ -37,60 +26,53 @@
                 <a href="/index/index.html" id="logoutBtn">تسجيل الخروج</a>
             </div>
         </div>
-
         <ul class="nav-list">
             <li><a href="/index/index.html">الرئيسية</a></li>
             <li><a href="/countries/countries.html">الدول</a></li>
             <li><a href="/events/events.html">الفعاليات</a></li>
             <li><a href="/recipes/recipes.html">الوصفات</a></li>
         </ul>
-
         <div class="logo">
-            <a href="/index/index.html"> <img src="/img/logo3.JPG" alt="سفرة"></a>
+            <a href="/index/index.html"><img src="/img/logo3.JPG" alt="سفرة"></a>
         </div>
-
-
     </header>
 
-
-    <!--  MENU للجوال -->
     <nav class="side-menu" id="side-menu">
         <span class="close-btn" id="close-btn">✖</span>
-
         <ul>
             <li><a href="/index/index.html">الرئيسية</a></li>
             <li><a href="/countries/countries.html">الدول</a></li>
             <li><a href="/events/events.html">الفعاليات</a></li>
-            <li><a href="/recipes/recipes.html  ">الوصفات</a></li>
+            <li><a href="/recipes/recipes.html">الوصفات</a></li>
         </ul>
     </nav>
+
     <header>
         <a href="/countries/countries.html" class="back-btn">رجوع</a>
     </header>
 
-    <section>
-        <div class="country-name">
-            <h1>ايسلندا</h1>
-            <p>أرض النار والجليد</p>
-    </section>
+    <div class="country-name">
+        <h1>ايسلندا</h1>
+        <p>أرض النار والجليد</p>
     </div>
-    <!--المدن -->
+
     <div class="main-cites">
         <h1>المدن</h1>
     </div>
     <section class="cities-grid">
+
         <div class="cite" data-name="ريكيافيك – Reykjavík" data-img="/img/Reykjavik.jpg"
             data-desc="عاصمة آيسلندا النابضة بالحياة وأصغر عاصمة في العالم، تجمع بين الثقافة الغنية والمقاهي العصرية والبنية التحتية الحديثة مع إطلالات خلابة على الجبال والمحيط."
             data-historic="🏛️ كنيسة هالغريمسكيركيا – Hallgrímskirkja | 🌊 قاعة هارپا – Harpa Concert Hall | 🏘️ حي الأولد هاربور – Old Harbour | 🗿 تمثال صن فوياجر – Sun Voyager"
             data-restaurants="🦞 مطعم Dill | 🐟 مطعم Fiskmarkurinn | 🌿 مطعم Nostra"
             data-cafes="☕ مقهى Reykjavík Roasters | ☕ مقهى Kaffihús Vesturbæjar | ☕ مقهى Café Babalu"
-            data-events="🌌 الشفق القطبي – Northern Lights | 🌊 بحيرة بلو لاغون – Blue Lagoon | 🏔️ جولة الدائرة الذهبية – Golden Circle">
-            <button class="save-btn"
-                onclick="event.stopPropagation(); saveItem('city', 'reykjavik', 'ريكيافيك', '/img/Reykjavik.jpg')">🏙️</button>
+            data-events="🌌 الشفق القطبي – Northern Lights | 🌊 بحيرة بلو لاغون – Blue Lagoon | 🏔️ جولة الدائرة الذهبية – Golden Circle"
+            onclick="openCityModal(this)">
+            <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'reykjavik', 'ريكيافيك', '/img/Reykjavik.jpg')">🏙️</button>
             <img src="/img/Reykjavik.jpg" alt="ريكيافيك" class="cite-img">
             <span class="name">ريكيافيك – Reykjavík</span>
             <p class="info">العاصمة النابضة بالحياة، تجمع بين الثقافة والطبيعة والمقاهي العصرية.</p>
-            <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">تفاصيل</button>
+            <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
         </div>
 
         <div class="cite" data-name="أكوريري – Akureyri" data-img="/img/Akureyri.jpg"
@@ -98,13 +80,13 @@
             data-historic="⛪ كنيسة أكوريري – Akureyrarkirkja | 🌿 حديقة أكوريري النباتية – Botanical Garden | 🏔️ منتجع تزلج هليدارفيال – Hlíðarfjall | 🏘️ متحف المدينة – Akureyri Museum"
             data-restaurants="🐟 مطعم Strikið | 🌿 مطعم Rub23 | 🍖 مطعم Greifinn"
             data-cafes="☕ مقهى Bláa Kannan | ☕ مقهى Kaffi Ilmur | ☕ مقهى Bryggjan"
-            data-events="🌌 الشفق القطبي – Northern Lights | 🐋 مشاهدة الحيتان – Whale Watching | ⛷️ التزلج في هليدارفيال – Hlíðarfjall Skiing">
-            <button class="save-btn"
-                onclick="event.stopPropagation(); saveItem('city', 'akureyri', 'أكوريري', '/img/Akureyri.jpg')">🏙️</button>
+            data-events="🌌 الشفق القطبي – Northern Lights | 🐋 مشاهدة الحيتان – Whale Watching | ⛷️ التزلج في هليدارفيال – Hlíðarfjall Skiing"
+            onclick="openCityModal(this)">
+            <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'akureyri', 'أكوريري', '/img/Akureyri.jpg')">🏙️</button>
             <img src="/img/Akureyri.jpg" alt="أكوريري" class="cite-img">
             <span class="name">أكوريري – Akureyri</span>
             <p class="info">عاصمة الشمال، مدينة هادئة محاطة بالجبال والطبيعة.</p>
-            <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">تفاصيل</button>
+            <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
         </div>
 
         <div class="cite" data-name="فيك – Vík" data-img="/img/Vik.jpg"
@@ -112,13 +94,13 @@
             data-historic="⛪ كنيسة فيك – Vík Church | 🏖️ شاطئ ريينيسفارا – Reynisfjara Black Beach | 🗿 صخور ريينيسدرانغار – Reynisdrangar | 🏔️ بركان كاتلا – Katla"
             data-restaurants="🍖 مطعم Halldórskaffi | 🐟 مطعم The Soup Company | 🌿 مطعم Sudur-Vik"
             data-cafes="☕ مقهى Black Beach Café | ☕ مقهى Vikurskáli | ☕ مقهى Ströndin"
-            data-events="🏖️ الشاطئ الأسود – Reynisfjara Beach | 🌋 بركان كاتلا – Katla Volcano | 💦 شلال سكوغافوس – Skógafoss">
-            <button class="save-btn"
-                onclick="event.stopPropagation(); saveItem('city', 'vik', 'فيك', '/img/Vik.jpg')">🏙️</button>
+            data-events="🏖️ الشاطئ الأسود – Reynisfjara Beach | 🌋 بركان كاتلا – Katla Volcano | 💦 شلال سكوغافوس – Skógafoss"
+            onclick="openCityModal(this)">
+            <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'vik', 'فيك', '/img/Vik.jpg')">🏙️</button>
             <img src="/img/Vik.jpg" alt="فيك" class="cite-img">
             <span class="name">فيك – Vík</span>
             <p class="info">قرية صغيرة مشهورة بالشواطئ السوداء والمناظر الدرامية.</p>
-            <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">تفاصيل</button>
+            <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
         </div>
 
         <div class="cite" data-name="هوفن – Höfn" data-img="/img/Hofn.jpg"
@@ -126,13 +108,13 @@
             data-historic="🧊 بحيرة يوكولسارلون – Jökulsárlón Glacier Lagoon | 🏖️ شاطئ الألماس – Diamond Beach | 🏔️ نهر فاتنا الجليدي – Vatnajökull | 🌊 ميناء هوفن – Höfn Harbour"
             data-restaurants="🦞 مطعم Pakkhús | 🐟 مطعم Hafnarbuðin | 🌿 مطعم Humarhöfnin"
             data-cafes="☕ مقهى Café Skalinn | ☕ مقهى Ósinn | ☕ مقهى Gamlabúð"
-            data-events="🧊 بحيرة يوكولسارلون – Jökulsárlón | 🏖️ شاطئ الألماس – Diamond Beach | 🏔️ نهر فاتنا الجليدي – Vatnajökull Glacier">
-            <button class="save-btn"
-                onclick="event.stopPropagation(); saveItem('city', 'hofn', 'هوفن', '/img/Hofn.jpg')">🏙️</button>
+            data-events="🧊 بحيرة يوكولسارلون – Jökulsárlón | 🏖️ شاطئ الألماس – Diamond Beach | 🏔️ نهر فاتنا الجليدي – Vatnajökull Glacier"
+            onclick="openCityModal(this)">
+            <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'hofn', 'هوفن', '/img/Hofn.jpg')">🏙️</button>
             <img src="/img/Hofn.jpg" alt="هوفن" class="cite-img">
             <span class="name">هوفن – Höfn</span>
             <p class="info">بلدة ساحلية هادئة مشهورة بالمأكولات البحرية وإطلالات الأنهار الجليدية.</p>
-            <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">تفاصيل</button>
+            <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
         </div>
 
         <div class="cite" data-name="هوسافيك – Húsavík" data-img="/img/Husavik.jpg"
@@ -140,13 +122,13 @@
             data-historic="⛪ كنيسة هوسافيك – Húsavík Church | 🐋 متحف الحيتان – Whale Museum | 🌊 خليج سكيالفاندي – Skjálfandi Bay | 🌋 بركان كرافلا – Krafla"
             data-restaurants="🐋 مطعم Gamli Baukur | 🐟 مطعم Naustið | 🌿 مطعم Salthúsið"
             data-cafes="☕ مقهى Heimabyggð | ☕ مقهى Kaffihús Heimabyggðar | ☕ مقهى Bókakaffi"
-            data-events="🐋 مشاهدة الحيتان – Whale Watching | 🌌 الشفق القطبي – Northern Lights | 🌋 منطقة مايفاتن – Lake Mývatn">
-            <button class="save-btn"
-                onclick="event.stopPropagation(); saveItem('city', 'husavik', 'هوسافيك', '/img/Husavik.jpg')">🏙️</button>
+            data-events="🐋 مشاهدة الحيتان – Whale Watching | 🌌 الشفق القطبي – Northern Lights | 🌋 منطقة مايفاتن – Lake Mývatn"
+            onclick="openCityModal(this)">
+            <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'husavik', 'هوسافيك', '/img/Husavik.jpg')">🏙️</button>
             <img src="/img/Husavik.jpg" alt="هوسافيك" class="cite-img">
             <span class="name">هوسافيك – Húsavík</span>
             <p class="info">عاصمة مشاهدة الحيتان في آيسلندا.</p>
-            <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">تفاصيل</button>
+            <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
         </div>
 
         <div class="cite" data-name="إيسافجوردور – Ísafjörður" data-img="/img/Isafjordur.jpg"
@@ -154,121 +136,101 @@
             data-historic="🏘️ متحف الفيوردات الغربية – Westfjords Heritage Museum | 🏔️ جبال الفيوردات – Westfjords Mountains | 🌊 فيورد إيسافجوردي – Ísafjarðardjúp | ⛷️ مركز التزلج – Ski Center"
             data-restaurants="🐟 مطعم Tjöruhúsið | 🌿 مطعم Við Pollinn | 🍖 مطعم Heimabyggð"
             data-cafes="☕ مقهى Café Riis | ☕ مقهى Simbahöllin | ☕ مقهى Edinborg"
-            data-events="🌌 الشفق القطبي – Northern Lights | 🏔️ مشي جبلي – Hiking | 🐦 مشاهدة الطيور البحرية – Birdwatching">
-            <button class="save-btn"
-                onclick="event.stopPropagation(); saveItem('city', 'isafjordur', 'إيسافجوردور', '/img/Isafjordur.jpg')">🏙️</button>
+            data-events="🌌 الشفق القطبي – Northern Lights | 🏔️ مشي جبلي – Hiking | 🐦 مشاهدة الطيور البحرية – Birdwatching"
+            onclick="openCityModal(this)">
+            <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'isafjordur', 'إيسافجوردور', '/img/Isafjordur.jpg')">🏙️</button>
             <img src="/img/Isafjordur.jpg" alt="إيسافجوردور" class="cite-img">
             <span class="name">إيسافجوردور – Ísafjörður</span>
             <p class="info">في غرب الفيوردات، ألوان الشفق تظهر بوضوح وسط الجبال.</p>
-            <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">تفاصيل</button>
+            <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
         </div>
+
     </section>
-    <!--الاكل-->
+
     <div class="main-foods">
         <h1>الماكولات</h1>
     </div>
     <section class="foods-grid">
-        <div class="foods">
-            <img src="/img/Hangikjöt.jpg" alt="" class="foods-img">
+        <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=hangikjot'">
+            <img src="/img/Hangikjöt.jpg" alt="" class="foods-img">
             <span class="name-foods">هانغيكيوت – Hangikjöt</span>
-            <div class="food-info">
-                طبق مشهور يقدم مع بطاطس.
-            </div>
-            <a href="/recipes/recipes.html?recipe=hangikjot" class="for-more-btn">المزيد</a>
+            <div class="food-info">طبق مشهور يقدم مع بطاطس.</div>
+            <a href="/recipes/recipes.html?recipe=hangikjot" class="for-more-btn" onclick="event.stopPropagation()">المزيد</a>
         </div>
-        <div class="foods">
+        <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=vinarterta'">
             <img src="/img/Vínarterta.webp" alt="" class="foods-img">
             <span class="name-foods">فينارتيرتا – Vínarterta</span>
-            <div class="food-info">
-                كيك طبقات تقليدي.
-            </div>
-            <a href="/recipes/recipes.html?recipe=vinarterta" class="for-more-btn">المزيد</a>
+            <div class="food-info">كيك طبقات تقليدي.</div>
+            <a href="/recipes/recipes.html?recipe=vinarterta" class="for-more-btn" onclick="event.stopPropagation()">المزيد</a>
         </div>
-        <div class="foods">
+        <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=plokkfiskur'">
             <img src="/img/Plokkfiskur.jpg" alt="" class="foods-img">
             <span class="name-foods">بلوكفيسكر – Plokkfiskur</span>
-            <div class="food-info">
-                سمك أبيض مع صوص كريمي.
-            </div>
-            <a href="/recipes/recipes.html?recipe=plokkfiskur" class="for-more-btn">المزيد</a>
+            <div class="food-info">سمك أبيض مع صوص كريمي.</div>
+            <a href="/recipes/recipes.html?recipe=plokkfiskur" class="for-more-btn" onclick="event.stopPropagation()">المزيد</a>
         </div>
-        <div class="foods">
+        <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=seafood-soup'">
             <img src="/img/seafood-soup-7-1.jpg" alt="" class="foods-img">
             <span class="name-foods">شوربة المأكولات البحرية – Seafood Soup</span>
-            <div class="food-info">
-                شوربة كريمية غنية.
-            </div>
-            <a href="/recipes/recipes.html?recipe=seafood-soup" class="for-more-btn">المزيد</a>
+            <div class="food-info">شوربة كريمية غنية.</div>
+            <a href="/recipes/recipes.html?recipe=seafood-soup" class="for-more-btn" onclick="event.stopPropagation()">المزيد</a>
         </div>
-        <div class="foods">
+        <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=ponnukokur'">
             <img src="/img/Pönnukökur.jpg" alt="" class="foods-img">
             <span class="name-foods">بونوكوكور – Pönnukökur</span>
-            <div class="food-info">
-                فطائر رقيقة تقدم مع مربى.
-            </div>
-            <a href="/recipes/recipes.html?recipe=ponnukokur" class="for-more-btn">المزيد</a>
+            <div class="food-info">فطائر رقيقة تقدم مع مربى.</div>
+            <a href="/recipes/recipes.html?recipe=ponnukokur" class="for-more-btn" onclick="event.stopPropagation()">المزيد</a>
         </div>
-        <div class="foods">
+        <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=skyr-cheesecake'">
             <img src="/img/Skyr Cheesecake.webp" alt="" class="foods-img">
             <span class="name-foods">تشيز كيك سكير – Skyr Cheesecake</span>
-            <div class="food-info">
-                تشيزكيك خفيف بطابع محلي.
-            </div>
-            <a href="/recipes/recipes.html?recipe=skyr-cheesecake" class="for-more-btn">المزيد</a>
+            <div class="food-info">تشيزكيك خفيف بطابع محلي.</div>
+            <a href="/recipes/recipes.html?recipe=skyr-cheesecake" class="for-more-btn" onclick="event.stopPropagation()">المزيد</a>
         </div>
     </section>
+
     <div class="events-main">
         <h1>الفعاليات</h1>
     </div>
     <section class="events-grid">
-        <div class="event">
+        <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=NorthernLights'">
             <img src="/img/Northern Lights (Aurora Borealis).webp" alt="" class="event-img">
             <span class="name-event">الشفق القطبي – Northern Lights</span>
-            <div class="event-info">
-                مشاهدة السماء تتلوّن بألوان خضراء وبنفسجية ساحرة.
-            </div>
-            <a href="/events/events.html?event=NorthernLights" class="event-btn">المزيد</a>
+            <div class="event-info">مشاهدة السماء تتلوّن بألوان خضراء وبنفسجية ساحرة.</div>
+            <a href="/events/events.html?event=NorthernLights" class="event-btn" onclick="event.stopPropagation()">المزيد</a>
         </div>
-        <div class="event">
+        <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=BlueLagoon'">
             <img src="/img/Blue-Lagoon.jpg" alt="" class="event-img">
             <span class="name-event">البحيرة الزرقاء – Blue Lagoon</span>
             <div class="event-info">الاسترخاء في ينابيع حارة وسط طبيعة بركانية.</div>
-            <a href="/events/events.html?event=BlueLagoon" class="event-btn">المزيد</a>
+            <a href="/events/events.html?event=BlueLagoon" class="event-btn" onclick="event.stopPropagation()">المزيد</a>
         </div>
-        <div class="event">
+        <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=WhaleWatching'">
             <img src="/img/مشاهدة الحيتان في هيرمانوس.jpg" alt="" class="event-img">
             <span class="name-event">مشاهدة الحيتان – Whale Watching</span>
-            <div class="event-info">
-                رحلات بحرية لرؤية الحيتان والدلافين.
-            </div>
-            <a href="/events/events.html?event=WhaleWatching" class="event-btn">المزيد</a>
+            <div class="event-info">رحلات بحرية لرؤية الحيتان والدلافين.</div>
+            <a href="/events/events.html?event=WhaleWatching" class="event-btn" onclick="event.stopPropagation()">المزيد</a>
         </div>
-        <div class="event">
+        <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=Skogafoss'">
             <img src="/img/Skógafoss Waterfall.jpeg" alt="" class="event-img">
             <span class="name-event">شلال سكوغافوس – Skógafoss</span>
-            <div class="event-info">
-                شلال ضخم بقوة اندفاع رائعة.
-            </div>
-            <a href="/events/events.html?event=Skogafoss" class="event-btn">المزيد</a>
+            <div class="event-info">شلال ضخم بقوة اندفاع رائعة.</div>
+            <a href="/events/events.html?event=Skogafoss" class="event-btn" onclick="event.stopPropagation()">المزيد</a>
         </div>
-        <div class="event">
+        <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=IcelandicHorseRiding'">
             <img src="/img/Horse Riding.jpg" alt="" class="event-img">
             <span class="name-event">ركوب الخيل الآيسلندي – Icelandic Horse Riding</span>
-            <div class="event-info">
-                جولة هادئة على خيول آيسلندية أصيلة
-            </div>
-            <a href="/events/events.html?event=IcelandicHorseRiding" class="event-btn">المزيد</a>
+            <div class="event-info">جولة هادئة على خيول آيسلندية أصيلة.</div>
+            <a href="/events/events.html?event=IcelandicHorseRiding" class="event-btn" onclick="event.stopPropagation()">المزيد</a>
         </div>
-        <div class="event">
-            <img src="/img/Jökulsárlón Glacier Lagoon" alt="" class="event-img">
+        <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=GlacierLagoon'">
+            <img src="/img/Jökulsárlón Glacier Lagoon.jpg" alt="" class="event-img">
             <span class="name-event">بحيرة جوكولسارلون الجليدية – Glacier Lagoon</span>
-            <div class="event-info">
-                قوارب بين كتل جليدية عائمة.
-            </div>
-            <a href="/events/events.html?event=GlacierLagoon" class="event-btn">المزيد</a>
+            <div class="event-info">قوارب بين كتل جليدية عائمة.</div>
+            <a href="/events/events.html?event=GlacierLagoon" class="event-btn" onclick="event.stopPropagation()">المزيد</a>
         </div>
     </section>
-    <!-- Modal المدينة -->
+
     <div id="cityModal" class="modal" onclick="closeCityModal(event)">
         <div class="modal-content">
             <button class="modal-close" onclick="closeCityModal(event)">×</button>
@@ -292,6 +254,7 @@
             </div>
         </div>
     </div>
+
     <script src="/countries/countries.js"></script>
     <script src="/auth/auth.js"></script>
 </body>
