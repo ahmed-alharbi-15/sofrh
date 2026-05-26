@@ -7,12 +7,11 @@
   <title>سفرة</title>
   <link rel="stylesheet" href="/countries/countries.css" />
   <style>
-    @import url("https://fonts.googleapis.com/css/2?family=Noto+Sans+Arabic:wght@500;600&display=swap");
+    @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@500;600&display=swap");
   </style>
 </head>
 
 <body>
-  <!-- NAVBAR -->
   <header class="navbar">
     <div class="hamburger" id="menu-btn">☰</div>
     <div class="auth-buttons" id="authButtons">
@@ -38,7 +37,6 @@
     </div>
   </header>
 
-  <!-- SIDE MENU -->
   <nav class="side-menu" id="side-menu">
     <span class="close-btn" id="close-btn">✖</span>
     <ul>
@@ -52,57 +50,43 @@
   <header>
     <a href="/countries/countries.html" class="back-btn">رجوع</a>
   </header>
-  <section>
-    <div class="country-name">
-      <h1>البرازيل</h1>
-      <p>أرض الغابات الخضراء والحياة المليانة طاقة</p>
-    </div>
-  </section>
-  <!-- المدن -->
+
+  <div class="country-name">
+    <h1>البرازيل</h1>
+    <p>أرض الغابات الخضراء والحياة المليانة طاقة</p>
+  </div>
 
   <div class="main-cites">
     <h1>المدن</h1>
   </div>
   <section class="cities-grid">
+
     <div class="cite" data-name="ريو دي جانيرو – Rio de Janeiro" data-img="/img/ريو دي جانيرو .jpg"
       data-desc="مدينة الحياة والألوان، تجمع بين الشواطئ الذهبية والجبال الخضراء وأجواء احتفالية طول السنة."
       data-historic="🗿 تمثال المسيح الفادي | 🏰 قلعة ساو خوان | ⛪ كاتدرائية ريو | 🌿 حديقة نباتية ريو"
       data-restaurants="🍖 مطعم Fogo de Chão | 🍤 مطعم Aprazível | 🥩 مطعم Churrascaria Palace"
       data-cafes="☕ مقهى Confeitaria Colombo | ☕ مقهى Armazém do Café | ☕ مقهى Casa Cultura"
-      data-events="🎪 كرنفال ريو | 🎵 مهرجان Rock in Rio | 🏖️ حفلات شاطئ إيبانيما">
-      <button class="save-btn" onclick="
-            event.stopPropagation();
-            saveItem('city', 'rio', 'ريو دي جانيرو', '/img/ريو دي جانيرو .jpg');
-          ">
-        🏙️
-      </button>
+      data-events="🎪 كرنفال ريو | 🎵 مهرجان Rock in Rio | 🏖️ حفلات شاطئ إيبانيما"
+      onclick="openCityModal(this)">
+      <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'rio', 'ريو دي جانيرو', '/img/ريو دي جانيرو .jpg')">🏙️</button>
       <img src="/img/ريو دي جانيرو .jpg" alt="ريو دي جانيرو" class="cite-img" />
       <span class="name">ريو دي جانيرو – Rio de Janeiro</span>
-      <p class="info">
-        مدينة الحياة – شواطئ وجبال وأجواء احتفالية طول السنة.
-      </p>
-      <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
-        تفاصيل
-      </button>
+      <p class="info">مدينة الحياة – شواطئ وجبال وأجواء احتفالية طول السنة.</p>
+      <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
     </div>
+
     <div class="cite" data-name="ساو باولو – São Paulo" data-img="/img/ساوباولو.jpg"
       data-desc="أكبر مدن البرازيل وعاصمتها الاقتصادية، مدينة لا تنام تجمع بين التنوع الثقافي والحياة الليلية الصاخبة والطعام العالمي."
       data-historic="🏛️ متحف إيبيرابويرا | 🎨 متحف الفن الحديث | ⛪ كاتدرائية سيه | 🏙️ حي ليبرداد الياباني"
       data-restaurants="🍖 مطعم D.O.M | 🥩 مطعم Fogo de Chão | 🍝 مطعم Fasano"
       data-cafes="☕ مقهى Suplicy Cafés | ☕ مقهى Santo Grão | ☕ مقهى Café Floresta"
-      data-events="🎪 كرنفال ساو باولو | 🎵 مهرجان Lollapalooza | 🎭 أسبوع الموضة البرازيلي">
-      <button class="save-btn" onclick="
-            event.stopPropagation();
-            saveItem('city', 'sao-paulo', 'ساو باولو', '/img/ساو باولو.jpg');
-          ">
-        🏙️
-      </button>
+      data-events="🎪 كرنفال ساو باولو | 🎵 مهرجان Lollapalooza | 🎭 أسبوع الموضة البرازيلي"
+      onclick="openCityModal(this)">
+      <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'sao-paulo', 'ساو باولو', '/img/ساوباولو.jpg')">🏙️</button>
       <img src="/img/ساوباولو.jpg" alt="ساو باولو" class="cite-img" />
       <span class="name">ساو باولو – São Paulo</span>
       <p class="info">أكبر مدن البرازيل وعاصمتها الاقتصادية.</p>
-      <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
-        تفاصيل
-      </button>
+      <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
     </div>
 
     <div class="cite" data-name="برازيليا – Brasília" data-img="/img/brasilia.jpg"
@@ -110,188 +94,143 @@
       data-historic="🏛️ قصر البرلمان | ⛪ كاتدرائية برازيليا | 🏰 قصر الفجر | 🌿 الحديقة النباتية"
       data-restaurants="🍖 مطعم Universal Diner | 🥩 مطعم Fogo de Chão | 🍝 مطعم Aquavit"
       data-cafes="☕ مقهى Café com Letras | ☕ مقهى Bom Dia | ☕ مقهى Grão Espresso"
-      data-events="🎪 مهرجان برازيليا السينمائي | 🎵 مهرجان الموسيقى البرازيلية | 🎭 أسبوع الفنون">
-      <button class="save-btn" onclick="
-            event.stopPropagation();
-            saveItem('city', 'brasilia', 'برازيليا', '/img/برازيليا.jpg');
-          ">
-        🏙️
-      </button>
+      data-events="🎪 مهرجان برازيليا السينمائي | 🎵 مهرجان الموسيقى البرازيلية | 🎭 أسبوع الفنون"
+      onclick="openCityModal(this)">
+      <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'brasilia', 'برازيليا', '/img/brasilia.jpg')">🏙️</button>
       <img src="/img/brasilia.jpg" alt="برازيليا" class="cite-img" />
       <span class="name">برازيليا – Brasília</span>
       <p class="info">العاصمة الفيدرالية ذات المعمار الحداثي الفريد.</p>
-      <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
-        تفاصيل
-      </button>
+      <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
     </div>
+
     <div class="cite" data-name="فورتاليزا – Fortaleza" data-img="/img/Fortaleza.jpg"
       data-desc="مدينة الشواطئ الساحرة في شمال البرازيل، تشتهر بالرمال البيضاء والمياه الفيروزية وثقافة الشعب الدافئة."
       data-historic="🏰 قلعة فورتاليزا | ⛪ كاتدرائية متروبوليتان | 🎨 متحف الفن سيارا | 🌊 شاطئ إيراسيما"
       data-restaurants="🦞 مطعم Coco Bambu | 🍤 مطعم Chico do Caranguejo | 🥘 مطعم La Tablita"
       data-cafes="☕ مقهى Café 1400 | ☕ مقهى Bravo Café | ☕ مقهى Santo Grão"
-      data-events="🎪 كرنفال فورتاليزا | 🎵 مهرجان فوريو | 🏄 بطولة ركوب الأمواج">
-      <button class="save-btn" onclick="
-            event.stopPropagation();
-            saveItem('city', 'fortaleza', 'فورتاليزا', '/img/فورتاليزا.jpg');
-          ">
-        🏙️
-      </button>
+      data-events="🎪 كرنفال فورتاليزا | 🎵 مهرجان فوريو | 🏄 بطولة ركوب الأمواج"
+      onclick="openCityModal(this)">
+      <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'fortaleza', 'فورتاليزا', '/img/Fortaleza.jpg')">🏙️</button>
       <img src="/img/Fortaleza.jpg" alt="فورتاليزا" class="cite-img" />
       <span class="name">فورتاليزا – Fortaleza</span>
       <p class="info">مدينة الشواطئ الساحرة في شمال البرازيل.</p>
-      <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
-        تفاصيل
-      </button>
+      <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
     </div>
+
     <div class="cite" data-name="فلوريانوبوليس – Florianópolis" data-img="/img/florianapolis.jpg"
       data-desc="جزيرة السحر البرازيلية، تجمع بين 42 شاطئاً رائعاً وطبيعة خضراء وأجواء هادئة تجعلها وجهة مثالية للاسترخاء."
       data-historic="🏰 قلعة سانت كروز | ⛪ كاتدرائية متروبوليتان | 🌉 جسر هيركيليو لوز | 🏛️ متحف الأنثروبولوجيا"
       data-restaurants="🦞 مطعم Ostradamus | 🍤 مطعم Macarronada Italiana | 🥘 مطعم Box 32"
       data-cafes="☕ مقهى Café da Ponte | ☕ مقهى Café Cultura | ☕ مقهى Santo Antônio"
-      data-events="🏄 بطولة ركوب الأمواج | 🎵 مهرجان الموسيقى | 🎪 مهرجان المأكولات البحرية">
-      <button class="save-btn" onclick="
-            event.stopPropagation();
-            saveItem(
-              'city',
-              'florianopolis',
-              'فلوريانوبوليس',
-              '/img/فلوريانوبوليس.jpg',
-            );
-          ">
-        🏙️
-      </button>
+      data-events="🏄 بطولة ركوب الأمواج | 🎵 مهرجان الموسيقى | 🎪 مهرجان المأكولات البحرية"
+      onclick="openCityModal(this)">
+      <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'florianopolis', 'فلوريانوبوليس', '/img/florianapolis.jpg')">🏙️</button>
       <img src="/img/florianapolis.jpg" alt="فلوريانوبوليس" class="cite-img" />
       <span class="name">فلوريانوبوليس – Florianópolis</span>
       <p class="info">جزيرة السحر البرازيلية بـ 42 شاطئاً رائعاً.</p>
-      <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
-        تفاصيل
-      </button>
+      <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
     </div>
+
     <div class="cite" data-name="ريسيفي – Recife" data-img="/img/ريسيفي.jpg"
       data-desc="عاصمة الشمال الشرقي البرازيلي، تُعرف بشواطئها الجميلة وجسورها التاريخية وكرنفالها الشهير الذي يُعد من أكبر كرنفالات العالم."
       data-historic="🏰 قلعة بروم | ⛪ كنيسة سانت أنطونيو | 🌉 جسر ريسيفي القديم | 🏛️ متحف ريسيفي"
       data-restaurants="🦞 مطعم Bargaço | 🍤 مطعم Chica Pitanga | 🥘 مطعم Leite"
       data-cafes="☕ مقهى Café Imperial | ☕ مقهى Benção do Café | ☕ مقهى Starbucks Recife"
-      data-events="🎪 كرنفال ريسيفي وأولينا | 🎵 مهرجان فريفو | 🎭 مهرجان الفنون الشعبية">
-      <button class="save-btn" onclick="
-            event.stopPropagation();
-            saveItem('city', 'recife', 'ريسيفي', '/img/ريسيفي.jpg');
-          ">
-        🏙️
-      </button>
+      data-events="🎪 كرنفال ريسيفي وأولينا | 🎵 مهرجان فريفو | 🎭 مهرجان الفنون الشعبية"
+      onclick="openCityModal(this)">
+      <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'recife', 'ريسيفي', '/img/ريسيفي.jpg')">🏙️</button>
       <img src="/img/ريسيفي.jpg" alt="ريسيفي" class="cite-img" />
       <span class="name">ريسيفي – Recife</span>
       <p class="info">عاصمة الشمال الشرقي وموطن أكبر كرنفال في العالم.</p>
-      <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
-        تفاصيل
-      </button>
+      <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
     </div>
+
   </section>
 
-  <!-- الأكل -->
   <div class="main-foods">
     <h1>الماكولات</h1>
   </div>
   <section class="foods-grid">
-    <div class="foods">
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=feijoada'">
       <img src="/img/فيجوادا.jpg" alt="فيجوادا" class="foods-img" />
       <span class="name-foods">فيجوادا – Feijoada</span>
-      <div class="food-info">
-        فاصوليا سوداء مطبوخة مع اللحم والتوابل، بطعم غني ودسم.
-      </div>
-      <a href="/recipes/recipes.html?recipe=feijoada" class="for-more-btn">المزيد</a>
+      <div class="food-info">فاصوليا سوداء مطبوخة مع اللحم والتوابل، بطعم غني ودسم.</div>
+      <a href="/recipes/recipes.html?recipe=feijoada" class="for-more-btn" onclick="event.stopPropagation()">المزيد</a>
     </div>
-    <div class="foods">
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=churrasco'">
       <img src="/img/شوراسكو.jpg" alt="شوراسكو" class="foods-img" />
       <span class="name-foods">شوراسكو – Churrasco</span>
       <div class="food-info">لحم مشوي على الفحم، طري وعصيري بنكهة مدخنة.</div>
-      <a href="/recipes/recipes.html?recipe=churrasco" class="for-more-btn">المزيد</a>
+      <a href="/recipes/recipes.html?recipe=churrasco" class="for-more-btn" onclick="event.stopPropagation()">المزيد</a>
     </div>
-    <div class="foods">
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=pao-de-queijo'">
       <img src="/img/باو دي كيجو.jpg" alt="باو دي كيجو" class="foods-img" />
       <span class="name-foods">باو دي كيجو – Pão de Queijo</span>
       <div class="food-info">كعكة من الجبن والنشا، بطعم لذيذ وناعم.</div>
-      <a href="/recipes/recipes.html?recipe=pao-de-queijo" class="for-more-btn">المزيد</a>
+      <a href="/recipes/recipes.html?recipe=pao-de-queijo" class="for-more-btn" onclick="event.stopPropagation()">المزيد</a>
     </div>
-    <div class="foods">
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=moqueca'">
       <img src="/img/موكيكا.jpeg" alt="موكيكا" class="foods-img" />
       <span class="name-foods">موكيكا – Moqueca</span>
-      <div class="food-info">
-        سمك مطبوخ في صينية مع توابل، بطعم لذيذ ودسم.
-      </div>
-      <a href="/recipes/recipes.html?recipe=moqueca" class="for-more-btn">المزيد</a>
+      <div class="food-info">سمك مطبوخ في صينية مع توابل، بطعم لذيذ ودسم.</div>
+      <a href="/recipes/recipes.html?recipe=moqueca" class="for-more-btn" onclick="event.stopPropagation()">المزيد</a>
     </div>
-    <div class="foods">
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=acaraje'">
       <img src="/img/أكاراجي.jpg" alt="أكاراجي" class="foods-img" />
       <span class="name-foods">أكاراجي – Acarajé</span>
-      <div class="food-info">
-        كرات مقلية من الفاصوليا، تقدم بحشوات حارة ولذيذة.
-      </div>
-      <a href="/recipes/recipes.html?recipe=acaraje" class="for-more-btn">المزيد</a>
+      <div class="food-info">كرات مقلية من الفاصوليا، تقدم بحشوات حارة ولذيذة.</div>
+      <a href="/recipes/recipes.html?recipe=acaraje" class="for-more-btn" onclick="event.stopPropagation()">المزيد</a>
     </div>
-    <div class="foods">
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=pudim'">
       <img src="/img/بوديم.jpg" alt="بوديم" class="foods-img" />
       <span class="name-foods">بوديم – Pudim</span>
-      <div class="food-info">
-        كريم كراميل برازيلي ناعم، بقوام خفيف وطعم حلو غني يذوب بالفم
-      </div>
-      <a href="/recipes/recipes.html?recipe=pudim" class="for-more-btn">المزيد</a>
+      <div class="food-info">كريم كراميل برازيلي ناعم، بقوام خفيف وطعم حلو غني يذوب بالفم.</div>
+      <a href="/recipes/recipes.html?recipe=pudim" class="for-more-btn" onclick="event.stopPropagation()">المزيد</a>
     </div>
   </section>
 
-  <!-- الفعاليات -->
   <div class="events-main">
     <h1>الفعاليات</h1>
   </div>
   <section class="events-grid">
-    <div class="event">
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=rioCarnival'">
       <img src="/img/كرنفال ريو .jpg" alt="كرنفال ريو" class="event-img" />
       <span class="name-event">كرنفال ريو – Rio Carnival</span>
-      <div class="event-info">
-        أكبر كرنفال بالعالم — رقص سامبا، استعراضات ضخمة، أجواء ما تنوصف.
-      </div>
-      <a href="/events/events.html?event=rioCarnival" class="event-btn">المزيد</a>
+      <div class="event-info">أكبر كرنفال بالعالم — رقص سامبا، استعراضات ضخمة، أجواء ما تنوصف.</div>
+      <a href="/events/events.html?event=rioCarnival" class="event-btn" onclick="event.stopPropagation()">المزيد</a>
     </div>
-    <div class="event">
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=copacabana'">
       <img src="/img/كوباكابانا.jpg" alt="شاطئ كوباكابانا" class="event-img" />
       <span class="name-event">شاطئ كوباكابانا – Copacabana Beach</span>
-      <div class="event-info">
-        مو بس شاطئ، تجربة متكاملة: بحر، كورة قدم، موسيقى، وأجواء حياة يومية.
-      </div>
-      <a href="/events/events.html?event=copacabana" class="event-btn">المزيد</a>
+      <div class="event-info">مو بس شاطئ، تجربة متكاملة: بحر، كورة قدم، موسيقى، وأجواء حياة يومية.</div>
+      <a href="/events/events.html?event=copacabana" class="event-btn" onclick="event.stopPropagation()">المزيد</a>
     </div>
-    <div class="event">
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=amazon'">
       <img src="/img/أمازون.jpg" alt="غابة الأمازون" class="event-img" />
       <span class="name-event">غابة الأمازون – Amazon Rainforest</span>
-      <div class="event-info">
-        تجربة مغامرة حقيقية — طبيعة، حيوانات، وقوارب داخل الغابات.
-      </div>
-      <a href="/events/events.html?event=amazon" class="event-btn">المزيد</a>
+      <div class="event-info">تجربة مغامرة حقيقية — طبيعة، حيوانات، وقوارب داخل الغابات.</div>
+      <a href="/events/events.html?event=amazon" class="event-btn" onclick="event.stopPropagation()">المزيد</a>
     </div>
-    <div class="event">
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=rockInRio'">
       <img src="/img/روك-إن-ريو.jpg" alt="مهرجان روك إن ريو" class="event-img" />
       <span class="name-event">مهرجان روك إن ريو – Rock in Rio</span>
       <div class="event-info">لعشاق الموسيقى — حفلات عالمية وأجواء ضخمة.</div>
-      <a href="/events/events.html?event=rockInRio" class="event-btn">المزيد</a>
+      <a href="/events/events.html?event=rockInRio" class="event-btn" onclick="event.stopPropagation()">المزيد</a>
     </div>
-    <div class="event">
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=sugarloaf'">
       <img src="/img/شوجر-لوف.jpg" alt="جبل شوجر لوف" class="event-img" />
       <span class="name-event">جبل شوجر لوف – Sugarloaf Mountain</span>
-      <div class="event-info">
-        تطلع بالتلفريك وتشوف منظر خرافي لمدينة ريو من فوق
-      </div>
-      <a href="/events/events.html?event=sugarloaf" class="event-btn">المزيد</a>
+      <div class="event-info">تطلع بالتلفريك وتشوف منظر خرافي لمدينة ريو من فوق.</div>
+      <a href="/events/events.html?event=sugarloaf" class="event-btn" onclick="event.stopPropagation()">المزيد</a>
     </div>
-    <div class="event">
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=saoPauloArt'">
       <img src="/img/ساو-باولو-فن.jpg" alt="جولة فنية في شوارع ساو باولو" class="event-img" />
       <span class="name-event">جولة فنية في شوارع ساو باولو – São Paulo Street Art</span>
-      <div class="event-info">
-        استكشاف جداريات وفنون الشارع، تجربة مليانة ألوان وإبداع وثقافة محلية
-      </div>
-      <a href="/events/events.html?event=saoPauloArt" class="event-btn">المزيد</a>
+      <div class="event-info">استكشاف جداريات وفنون الشارع، تجربة مليانة ألوان وإبداع وثقافة محلية.</div>
+      <a href="/events/events.html?event=saoPauloArt" class="event-btn" onclick="event.stopPropagation()">المزيد</a>
     </div>
   </section>
-  <!-- Modal المدينة -->
+
   <div id="cityModal" class="modal" onclick="closeCityModal(event)">
     <div class="modal-content">
       <button class="modal-close" onclick="closeCityModal(event)">×</button>
@@ -315,6 +254,7 @@
       </div>
     </div>
   </div>
+
   <script src="/countries/countries.js"></script>
   <script src="/auth/auth.js"></script>
 </body>
