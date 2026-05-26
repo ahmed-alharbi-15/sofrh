@@ -5,26 +5,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>سفرة</title>
-
-  <!-- ملف الستايل الأساسي -->
   <link rel="stylesheet" href="/countries/countries.css" />
-
-  <!-- خط عربي -->
   <style>
-    @import url("https://fonts.googleapis.com/css/2?family=Noto+Sans+Arabic:wght@500;600&display=swap");
+    @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@500;600&display=swap");
   </style>
 </head>
 
 <body>
-  <!--  NAVBAR (ثابت في كل صفحة) -->
   <header class="navbar">
     <div class="hamburger" id="menu-btn">☰</div>
-
     <div class="auth-buttons" id="authButtons">
       <a href="/auth/login.html" class="login">تسجيل دخول</a>
       <a href="/auth/signup.html" class="signup">إنشاء حساب</a>
     </div>
-
     <div class="user-menu" id="userMenu">
       <img id="userAvatar" src="/img/avater-icon.jpeg" alt="المستخدم" />
       <span class="user-name" id="userName"></span>
@@ -39,254 +32,205 @@
       <li><a href="/events/events.html">الفعاليات</a></li>
       <li><a href="/recipes/recipes.html">الوصفات</a></li>
     </ul>
-
     <div class="logo">
-      <a href="/index/index.html"> <img src="/img/logo3.JPG" alt="سفرة" /></a>
+      <a href="/index/index.html"><img src="/img/logo3.JPG" alt="سفرة" /></a>
     </div>
   </header>
 
-  <!--  MENU للجوال -->
   <nav class="side-menu" id="side-menu">
     <span class="close-btn" id="close-btn">✖</span>
-
     <ul>
       <li><a href="/index/index.html">الرئيسية</a></li>
       <li><a href="/countries/countries.html">الدول</a></li>
       <li><a href="/events/events.html">الفعاليات</a></li>
-      <li><a href="/recipes/recipes.html  ">الوصفات</a></li>
+      <li><a href="/recipes/recipes.html">الوصفات</a></li>
     </ul>
   </nav>
+
   <header>
     <a href="/countries/countries.html" class="back-btn">رجوع</a>
   </header>
+
   <div class="country-name">
     <h1>سريلانكا</h1>
     <p>أرض الشلالات والجبال الخضراء والشواطئ الهادئة.</p>
   </div>
-  <!--المدن -->
+
   <div class="main-cites">
     <h1>المدن</h1>
   </div>
   <section class="cities-grid">
+
     <div class="cite" data-name="كولومبو – Colombo" data-img="/img/Colombo.jpg"
-      data-desc="عاصمة سريلانكا النابضة بالحياة، مدينة ساحلية حيوية تجمع بين المباني الاستعمارية العريقة والمراكز التجارية الحديثة والمطاعم المتنوعة. وجهة مثالية للتسوق وتذوق المطبخ السريلانكي الغني."
+      data-desc="عاصمة سريلانكا النابضة بالحياة، مدينة ساحلية حيوية تجمع بين المباني الاستعمارية العريقة والمراكز التجارية الحديثة والمطاعم المتنوعة."
       data-historic="🏛️ برج لوتوس – Lotus Tower | 🕌 مسجد جامي الكبير – Grand Mosque | 🏰 قلعة كولومبو – Colombo Fort | 🌊 كورنيش غال فيس – Galle Face Green"
       data-restaurants="🍛 مطعم ميني بي – Ministry of Crab | 🌊 مطعم سي سبريت – Sea Spray | 🍽️ مطعم فرنانديز – Noodles"
       data-cafes="☕ كافيه كومبوك – Cafe Kumbuk | ☕ بريميوم كافيه – Premium Cafe | ☕ زيلون كافيه – Ceylon Cafe"
-      data-events="🏛️ برج لوتوس – Lotus Tower | 🌊 غال فيس غرين – Galle Face Green | 🛍️ مول أوف كولومبو – Mall of Colombo">
-      <button class="save-btn" onclick="
-            event.stopPropagation();
-            saveItem('city', 'colombo', 'كولومبو', '/img/Colombo.jpg');
-          ">
-        🏙️
-      </button>
+      data-events="🏛️ برج لوتوس – Lotus Tower | 🌊 غال فيس غرين – Galle Face Green | 🛍️ مول أوف كولومبو – Mall of Colombo"
+      onclick="openCityModal(this)">
+      <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'colombo', 'كولومبو', '/img/Colombo.jpg')">🏙️</button>
       <img src="/img/Colombo.jpg" alt="كولومبو" class="cite-img" />
       <span class="name">كولومبو – Colombo</span>
       <p class="info">عاصمة حيوية مليئة بالمطاعم والتسوق.</p>
-      <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
-        تفاصيل
-      </button>
+      <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
     </div>
 
     <div class="cite" data-name="كاندي – Kandy" data-img="/img/Kandy.jpg"
-      data-desc="عاصمة سريلانكا الثقافية ومدينة التراث العالمي، تضم معبد السن المقدس الشهير وبحيرة كاندي الجميلة والحدائق النباتية الخلابة. مدينة تاريخية تحيط بها الجبال الخضراء والغابات الاستوائية."
+      data-desc="عاصمة سريلانكا الثقافية ومدينة التراث العالمي، تضم معبد السن المقدس الشهير وبحيرة كاندي الجميلة والحدائق النباتية الخلابة."
       data-historic="🏛️ معبد السن – Temple of the Tooth | 🌿 الحديقة النباتية – Peradeniya Gardens | 🌊 بحيرة كاندي – Kandy Lake | 🎭 عروض الرقص التقليدي"
       data-restaurants="🍛 مطعم ذا هيلتوب – The Helltop | 🌿 مطعم بلوم | 🍽️ مطعم فارينا – Farina"
       data-cafes="☕ كافيه كاندي – Kandy Cafe | ☕ ليك رود كافيه – Lake Road Cafe | ☕ مقهى الحديقة"
-      data-events="🏛️ معبد السن – Temple of the Tooth | 🌿 الحديقة النباتية – Peradeniya | 🚂 قطار كاندي إيلا – Train Ride">
-      <button class="save-btn" onclick="
-            event.stopPropagation();
-            saveItem('city', 'kandy', 'كاندي', '/img/Kandy.jpg');
-          ">
-        🏙️
-      </button>
+      data-events="🏛️ معبد السن – Temple of the Tooth | 🌿 الحديقة النباتية – Peradeniya | 🚂 قطار كاندي إيلا – Train Ride"
+      onclick="openCityModal(this)">
+      <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'kandy', 'كاندي', '/img/Kandy.jpg')">🏙️</button>
       <img src="/img/Kandy.jpg" alt="كاندي" class="cite-img" />
       <span class="name">كاندي – Kandy</span>
       <p class="info">مدينة تاريخية بطبيعة جميلة.</p>
-      <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
-        تفاصيل
-      </button>
+      <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
     </div>
 
     <div class="cite" data-name="إيلا – Ella" data-img="/img/Ella.jpg"
-      data-desc="جوهرة جبال سريلانكا، قرية صغيرة ساحرة محاطة بمزارع الشاي الخضراء والجبال الضبابية. تشتهر بجسر تسعة أقواس الأيقوني ورحلة القطار الخلابة وممرات المشي بين مزارع الشاي."
+      data-desc="جوهرة جبال سريلانكا، قرية صغيرة ساحرة محاطة بمزارع الشاي الخضراء والجبال الضبابية. تشتهر بجسر تسعة أقواس الأيقوني ورحلة القطار الخلابة."
       data-historic="🌿 جسر تسعة أقواس – Nine Arch Bridge | 🏔️ قمة أدم بيك – Little Adam's Peak | 🍵 مزارع الشاي – Tea Plantations | 🌊 شلال رافانا – Ravana Falls"
       data-restaurants="🍛 مطعم آلا – Ala Restaurant | 🌿 مطعم كاف شيف – Cafe Chef | 🍽️ مطعم فريدا – Freda's"
       data-cafes="☕ كافيه إيلا – Ella Cafe | ☕ دريم كافيه – Dream Cafe | ☕ سكاي كافيه – Sky Cafe"
-      data-events="🌉 جسر تسعة أقواس – Nine Arch Bridge | 🍵 مزارع الشاي – Tea Plantations | 🚂 قطار إيلا – Ella Train">
-      <button class="save-btn" onclick="
-            event.stopPropagation();
-            saveItem('city', 'ella', 'إيلا', '/img/Ella.jpg');
-          ">
-        🏙️
-      </button>
+      data-events="🌉 جسر تسعة أقواس – Nine Arch Bridge | 🍵 مزارع الشاي – Tea Plantations | 🚂 قطار إيلا – Ella Train"
+      onclick="openCityModal(this)">
+      <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'ella', 'إيلا', '/img/Ella.jpg')">🏙️</button>
       <img src="/img/Ella.jpg" alt="إيلا" class="cite-img" />
       <span class="name">إيلا – Ella</span>
       <p class="info">جبال خضراء ومناظر ساحرة.</p>
-      <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
-        تفاصيل
-      </button>
+      <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
     </div>
 
     <div class="cite" data-name="بنتوتة – Bentota" data-img="/img/Bentota.jpg"
-      data-desc="وجهة بحرية هادئة جنوب سريلانكا، تشتهر بشواطئها الذهبية الطويلة ومنتجعاتها الفاخرة ونهرها الجميل المناسب للرياضات المائية. وجهة مثالية للاسترخاء والأنشطة البحرية بعيداً عن الضجيج."
+      data-desc="وجهة بحرية هادئة جنوب سريلانكا، تشتهر بشواطئها الذهبية الطويلة ومنتجعاتها الفاخرة ونهرها الجميل المناسب للرياضات المائية."
       data-historic="🏖️ شاطئ بنتوتة – Bentota Beach | 🌊 نهر بنتوتة – Bentota River | 🐢 محطة تربية السلاحف – Turtle Hatchery | 🌿 حديقة بريف"
       data-restaurants="🐟 مطاعم الشاطئ | 🍽️ مطعم المنتجع | 🌊 مطعم البحر"
       data-cafes="☕ بيتش كافيه – Beach Cafe | ☕ ريفر كافيه – River Cafe | ☕ سانست كافيه"
-      data-events="🏖️ شاطئ بنتوتة – Bentota Beach | 🚤 رياضات مائية – Water Sports | 🐢 محطة السلاحف – Turtle Hatchery">
-      <button class="save-btn" onclick="
-            event.stopPropagation();
-            saveItem('city', 'bentota', 'بنتوتة', '/img/Bentota.jpg');
-          ">
-        🏙️
-      </button>
+      data-events="🏖️ شاطئ بنتوتة – Bentota Beach | 🚤 رياضات مائية – Water Sports | 🐢 محطة السلاحف – Turtle Hatchery"
+      onclick="openCityModal(this)">
+      <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'bentota', 'بنتوتة', '/img/Bentota.jpg')">🏙️</button>
       <img src="/img/Bentota.jpg" alt="بنتوتة" class="cite-img" />
       <span class="name">بنتوتة – Bentota</span>
       <p class="info">مدينة شاطئية هادئة.</p>
-      <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
-        تفاصيل
-      </button>
+      <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
     </div>
 
     <div class="cite" data-name="جالي – Galle" data-img="/img/Galle.jpg"
-      data-desc="مدينة ساحلية تاريخية تحمل إرثاً استعمارياً فريداً، تشتهر بقلعتها الهولندية المسوّرة المدرجة على قائمة التراث العالمي لليونسكو. أزقة مرصوفة بالحجارة ومبانٍ استعمارية جميلة ومحلات تجارية أنيقة."
+      data-desc="مدينة ساحلية تاريخية تحمل إرثاً استعمارياً فريداً، تشتهر بقلعتها الهولندية المسوّرة المدرجة على قائمة التراث العالمي لليونسكو."
       data-historic="🏰 قلعة جالي – Galle Fort | 🕌 مسجد جالي – Galle Mosque | 🏛️ متحف جالي – Galle Museum | 🌊 منارة جالي – Galle Lighthouse"
       data-restaurants="🍽️ مطعم آماجيلي – Amangalle | 🐟 مطعم الميناء | 🌿 مطعم فورت"
       data-cafes="☕ كافيه فورت – Fort Cafe | ☕ مقهى القلعة | ☕ سي فيو كافيه"
-      data-events="🏰 قلعة جالي – Galle Fort | 🌊 منارة جالي – Lighthouse | 🛍️ محلات داخل القلعة">
-      <button class="save-btn" onclick="
-            event.stopPropagation();
-            saveItem('city', 'galle', 'جالي', '/img/Galle.jpg');
-          ">
-        🏙️
-      </button>
+      data-events="🏰 قلعة جالي – Galle Fort | 🌊 منارة جالي – Lighthouse | 🛍️ محلات داخل القلعة"
+      onclick="openCityModal(this)">
+      <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'galle', 'جالي', '/img/Galle.jpg')">🏙️</button>
       <img src="/img/Galle.jpg" alt="جالي" class="cite-img" />
       <span class="name">جالي – Galle</span>
       <p class="info">مدينة ساحلية تاريخية.</p>
-      <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
-        تفاصيل
-      </button>
+      <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
     </div>
 
     <div class="cite" data-name="نوارا إليا – Nuwara Eliya" data-img="/img/Nuwara Eliya.jpg"
-      data-desc="إنجلترا الصغيرة في سريلانكا، مدينة جبلية باردة على ارتفاع 1868 متر محاطة بمزارع الشاي الخضراء اللانهائية والطبيعة الضبابية الساحرة. تشتهر بأجوائها الباردة المنعشة وإنتاج أجود أنواع الشاي السيلاني."
+      data-desc="إنجلترا الصغيرة في سريلانكا، مدينة جبلية باردة على ارتفاع 1868 متر محاطة بمزارع الشاي الخضراء اللانهائية والطبيعة الضبابية الساحرة."
       data-historic="🍵 مزارع الشاي – Tea Plantations | 🏔️ جبل بيدرو – Mount Pedro | 🌿 حديقة فيكتوريا بارك | 🏞️ بحيرة غريكي – Gregory Lake"
       data-restaurants="🍵 مطعم الشاي – Tea Factory | 🌿 مطعم جراند هوتل | 🍽️ مطعم بيدرو"
       data-cafes="☕ مقهى الشاي السيلاني | ☕ كافيه المزرعة – Farm Cafe | ☕ هيل كليب كافيه – Hill Club Cafe"
-      data-events="🍵 مزارع الشاي – Tea Plantations | 🏞️ بحيرة غريكي – Gregory Lake | 🏔️ جبل بيدرو – Mount Pedro">
-      <button class="save-btn" onclick="
-            event.stopPropagation();
-            saveItem(
-              'city',
-              'nuwara-eliya',
-              'نوارا إليا',
-              '/img/Nuwara Eliya.jpg',
-            );
-          ">
-        🏙️
-      </button>
+      data-events="🍵 مزارع الشاي – Tea Plantations | 🏞️ بحيرة غريكي – Gregory Lake | 🏔️ جبل بيدرو – Mount Pedro"
+      onclick="openCityModal(this)">
+      <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'nuwara-eliya', 'نوارا إليا', '/img/Nuwara Eliya.jpg')">🏙️</button>
       <img src="/img/Nuwara Eliya.jpg" alt="نوارا إليا" class="cite-img" />
       <span class="name">نوارا إليا – Nuwara Eliya</span>
       <p class="info">أجواء باردة ومزارع شاي.</p>
-      <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">
-        تفاصيل
-      </button>
+      <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
     </div>
+
   </section>
-  <!--الاكل-->
+
   <div class="main-foods">
     <h1>الماكولات</h1>
   </div>
   <section class="foods-grid">
-    <div class="foods">
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=kottu-roti'">
       <img src="/img/كوتو-روتي.jpg" alt="" class="foods-img" />
       <span class="name-foods">كوتو روتي – Kottu Roti</span>
       <div class="food-info">خبز مقطع مع دجاج وخضار.</div>
-      <a href="/recipes/recipes.html?recipe=kottu-roti" class="for-more-btn">الوصفة</a>
+      <a href="/recipes/recipes.html?recipe=kottu-roti" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
     </div>
-
-    <div class="foods">
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=sri-lankan-biryani'">
       <img src="/img/برياني-سريلانكي.jpg" alt="" class="foods-img" />
       <span class="name-foods">برياني سريلانكي – Sri Lankan Biryani</span>
       <div class="food-info">أرز متبل مع اللحم أو الدجاج.</div>
-      <a href="/recipes/recipes.html?recipe=sri-lankan-biryani" class="for-more-btn">الوصفة</a>
+      <a href="/recipes/recipes.html?recipe=sri-lankan-biryani" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
     </div>
-
-    <div class="foods">
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=hoppers'">
       <img src="/img/هوبرز.jpg" alt="" class="foods-img" />
       <span class="name-foods">هوبرز – Hoppers</span>
       <div class="food-info">فطائر أرز خفيفة.</div>
-      <a href="/recipes/recipes.html?recipe=hoppers" class="for-more-btn">الوصفة</a>
+      <a href="/recipes/recipes.html?recipe=hoppers" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
     </div>
-
-    <div class="foods">
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=fish-curry'">
       <img src="/img/سمك-كاري.jpg" alt="" class="foods-img" />
       <span class="name-foods">سمك بالكاري – Fish Curry</span>
       <div class="food-info">طبق غني بالنكهات.</div>
-      <a href="/recipes/recipes.html?recipe=fish-curry" class="for-more-btn">الوصفة</a>
+      <a href="/recipes/recipes.html?recipe=fish-curry" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
     </div>
-
-    <div class="foods">
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=samosa'">
       <img src="/img/Samosa.jpg" alt="" class="foods-img" />
       <span class="name-foods">ساموسا – Samosa</span>
       <div class="food-info">معجنات محشوة.</div>
-      <a href="/recipes/recipes.html?recipe=samosa" class="for-more-btn">الوصفة</a>
+      <a href="/recipes/recipes.html?recipe=samosa" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
     </div>
-
-    <div class="foods">
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=watalappam'">
       <img src="/img/واتالابام.jpg" alt="" class="foods-img" />
       <span class="name-foods">واتالابام – Watalappam</span>
       <div class="food-info">حلى بجوز الهند.</div>
-      <a href="/recipes/recipes.html?recipe=watalappam" class="for-more-btn">الوصفة</a>
+      <a href="/recipes/recipes.html?recipe=watalappam" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
     </div>
   </section>
+
   <div class="events-main">
     <h1>الفعاليات</h1>
   </div>
   <section class="events-grid">
-    <div class="event">
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=KandyEllaTrain'">
       <img src="/img/kandy-ella-train.jpg" alt="" class="event-img" />
       <span class="name-event">قطار كاندي إيلا – Kandy to Ella Train</span>
       <div class="event-info">أحد أجمل رحلات القطار بالعالم.</div>
-      <a href="/events/events.html?event=KandyEllaTrain" class="event-btn">التفاصيل</a>
+      <a href="/events/events.html?event=KandyEllaTrain" class="event-btn" onclick="event.stopPropagation()">التفاصيل</a>
     </div>
-
-    <div class="event">
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=TajBentota'">
       <img src="/img/taj-bentota.jpg" alt="" class="event-img" />
       <span class="name-event">تاج بنتوتة ريزورت – Taj Bentota Resort & Spa</span>
       <div class="event-info">منتجع فاخر بإطلالة بحرية.</div>
-      <a href="/events/events.html?event=TajBentota" class="event-btn">التفاصيل</a>
+      <a href="/events/events.html?event=TajBentota" class="event-btn" onclick="event.stopPropagation()">التفاصيل</a>
     </div>
-
-    <div class="event">
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=YalaNationalPark'">
       <img src="/img/yala-park.jpg" alt="" class="event-img" />
       <span class="name-event">حديقة يالا الوطنية – Yala National Park</span>
       <div class="event-info">سفاري ومشاهدة الحيوانات.</div>
-      <a href="/events/events.html?event=YalaNationalPark" class="event-btn">التفاصيل</a>
+      <a href="/events/events.html?event=YalaNationalPark" class="event-btn" onclick="event.stopPropagation()">التفاصيل</a>
     </div>
-
-    <div class="event">
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=CafeKumbuk'">
       <img src="/img/cafe-kumbuk.jpg" alt="" class="event-img" />
       <span class="name-event">كافيه كومبوك – Cafe Kumbuk</span>
       <div class="event-info">مقهى مشهور بأجوائه الجميلة.</div>
-      <a href="/events/events.html?event=CafeKumbuk" class="event-btn">التفاصيل</a>
+      <a href="/events/events.html?event=CafeKumbuk" class="event-btn" onclick="event.stopPropagation()">التفاصيل</a>
     </div>
-
-    <div class="event">
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=Sigiriya'">
       <img src="/img/sigiriya.jpg" alt="" class="event-img" />
       <span class="name-event">صخرة سيغيريا – Sigiriya</span>
       <div class="event-info">صخرة تاريخية بإطلالة مذهلة.</div>
-      <a href="/events/events.html?event=Sigiriya" class="event-btn">التفاصيل</a>
+      <a href="/events/events.html?event=Sigiriya" class="event-btn" onclick="event.stopPropagation()">التفاصيل</a>
     </div>
-
-    <div class="event">
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=Mirissa'">
       <img src="/img/mirissa.jpg" alt="" class="event-img" />
       <span class="name-event">ميريسا – Mirissa</span>
       <div class="event-info">مشاهدة الحيتان والأنشطة البحرية.</div>
-      <a href="/events/events.html?event=Mirissa" class="event-btn">التفاصيل</a>
+      <a href="/events/events.html?event=Mirissa" class="event-btn" onclick="event.stopPropagation()">التفاصيل</a>
     </div>
   </section>
-  <!-- Modal المدينة -->
+
   <div id="cityModal" class="modal" onclick="closeCityModal(event)">
     <div class="modal-content">
       <button class="modal-close" onclick="closeCityModal(event)">×</button>
@@ -310,6 +254,7 @@
       </div>
     </div>
   </div>
+
   <script src="/countries/countries.js"></script>
   <script src="/auth/auth.js"></script>
 </body>
