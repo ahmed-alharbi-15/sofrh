@@ -1,273 +1,262 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ar" dir="rtl">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>سفرة</title>
-
-    <!-- ملف الستايل الأساسي -->
-    <link rel="stylesheet" href="/countries/countries.css">
-
-    <!-- خط عربي -->
-    <style>
-        @import url('https://fonts.googleapis.com/css/2?family=Noto+Sans+Arabic:wght@500;600&display=swap');
-    </style>
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>سفرة</title>
+  <link rel="stylesheet" href="/countries/countries.css" />
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@500;600&display=swap");
+  </style>
 </head>
 
-
 <body>
-
-    <!--  NAVBAR (ثابت في كل صفحة) -->
-    <header class="navbar">
-
-        <div class="hamburger" id="menu-btn">☰</div>
-
-        <div class="auth-buttons" id="authButtons">
-            <a href="/auth/login.html" class="login">تسجيل دخول</a>
-            <a href="/auth/signup.html" class="signup">إنشاء حساب</a>
-        </div>
-
-        <div class="user-menu" id="userMenu">
-            <img id="userAvatar" src="/img/avater-icon.jpeg" alt="المستخدم">
-            <span class="user-name" id="userName"></span>
-            <div class="user-dropdown">
-                <a href="/profile/profile.html">الملف الشخصي</a>
-                <a href="/index/index.html" id="logoutBtn">تسجيل الخروج</a>
-            </div>
-        </div>
-        <ul class="nav-list">
-            <li><a href="/index/index.html">الرئيسية</a></li>
-            <li><a href="/countries/countries.html">الدول</a></li>
-            <li><a href="/events/events.html">الفعاليات</a></li>
-            <li><a href="/recipes/recipes.html">الوصفات</a></li>
-        </ul>
-
-        <div class="logo">
-            <a href="/index/index.html"> <img src="/img/logo3.JPG" alt="سفرة"></a>
-        </div>
-
-
-    </header>
-
-
-    <!--  MENU للجوال -->
-    <nav class="side-menu" id="side-menu">
-        <span class="close-btn" id="close-btn">✖</span>
-
-        <ul>
-            <li><a href="/index/index.html">الرئيسية</a></li>
-            <li><a href="/countries/countries.html">الدول</a></li>
-            <li><a href="/events/events.html">الفعاليات</a></li>
-            <li><a href="/recipes/recipes.html  ">الوصفات</a></li>
-        </ul>
-    </nav>
-    <header>
-        <a href="/countries/countries.html" class="back-btn">رجوع</a>
-    </header>
-    <div class="country-name">
-        <h1>سيشل</h1>
-        <p>جنة استوائية بشواطئ بيضاء ومياه فيروزية وطبيعة ساحرة.</p>
+  <header class="navbar">
+    <div class="hamburger" id="menu-btn">☰</div>
+    <div class="auth-buttons" id="authButtons">
+      <a href="/auth/login.html" class="login">تسجيل دخول</a>
+      <a href="/auth/signup.html" class="signup">إنشاء حساب</a>
     </div>
-    <!--المدن -->
-    <div class="main-cites">
-        <h1>المدن</h1>
+    <div class="user-menu" id="userMenu">
+      <img id="userAvatar" src="/img/avater-icon.jpeg" alt="المستخدم" />
+      <span class="user-name" id="userName"></span>
+      <div class="user-dropdown">
+        <a href="/profile/profile.html">الملف الشخصي</a>
+        <a href="/index/index.html" id="logoutBtn">تسجيل الخروج</a>
+      </div>
     </div>
-    <section class="cities-grid">
-        <div class="cite" data-name="فيكتوريا – Victoria" data-img="/img/Victoria Seychelles.jpg"
-            data-desc="عاصمة سيشل ومدينة استوائية هادئة تجمع بين الأسواق المحلية والطبيعة الساحلية والأجواء الاسترخائية."
-            data-historic="🏛️ برج الساعة – Clock Tower | 🌿 الحديقة النباتية – Botanical Gardens | 🕌 مسجد فيكتوريا | 🌊 ميناء فيكتوريا"
-            data-restaurants="🍤 مطعم The Maharajas | 🥘 مطعم Marie Antoinette | 🍖 مطعم Boat House"
-            data-cafes="☕ مقهى Level 3 Bar Lounge | ☕ مقهى Esplanade Café | ☕ مقهى Chatterbox"
-            data-events="🛍️ سوق Sir Selwyn Market | 🌊 جولات بحرية | 🏝️ رحلات الجزر">
-            <button class="save-btn"
-                onclick="event.stopPropagation(); saveItem('city', 'victoria', 'فيكتوريا', '/img/Victoria Seychelles.jpg')">🏙️</button>
-            <img src="/img/Victoria Seychelles.jpg" alt="فيكتوريا" class="cite-img">
-            <span class="name">فيكتوريا – Victoria</span>
-            <p class="info">عاصمة هادئة تجمع بين الأسواق والطبيعة البحرية.</p>
-            <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">تفاصيل</button>
-        </div>
-        <div class="cite" data-name="فيكتوريا – Victoria" data-img="/img/Victoria Seychelles.jpg"
-            data-desc="عاصمة سيشل ومدينة استوائية هادئة تجمع بين الأسواق المحلية والطبيعة الساحلية والأجواء الاسترخائية."
-            data-historic="🏛️ برج الساعة – Clock Tower | 🌿 الحديقة النباتية – Botanical Gardens | 🕌 مسجد فيكتوريا | 🌊 ميناء فيكتوريا"
-            data-restaurants="🍤 مطعم The Maharajas | 🥘 مطعم Marie Antoinette | 🍖 مطعم Boat House"
-            data-cafes="☕ مقهى Level 3 Bar Lounge | ☕ مقهى Esplanade Café | ☕ مقهى Chatterbox"
-            data-events="🛍️ سوق Sir Selwyn Market | 🌊 جولات بحرية | 🏝️ رحلات الجزر">
-            <button class="save-btn"
-                onclick="event.stopPropagation(); saveItem('city', 'victoria', 'فيكتوريا', '/img/Victoria Seychelles.jpg')">🏙️</button>
-            <img src="/img/Victoria Seychelles.jpg" alt="فيكتوريا" class="cite-img">
-            <span class="name">فيكتوريا – Victoria</span>
-            <p class="info">عاصمة هادئة تجمع بين الأسواق والطبيعة البحرية.</p>
-            <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">تفاصيل</button>
-        </div>
-        <div class="cite" data-name="لا ديغ – La Digue" data-img="/img/La Digue Seychelles.jpg"
-            data-desc="جزيرة هادئة مشهورة بالشواطئ البيضاء والصخور الجرانيتية والطبيعة الاستوائية الساحرة."
-            data-historic="🌊 شاطئ Anse Source d'Argent | 🚲 جولات الدراجات | 🌿 محميات طبيعية"
-            data-restaurants="🍤 مطعم Fish Trap | 🥘 مطعم Rey & Josh | 🍖 مطعم Lanbousir"
-            data-cafes="☕ مقهى Tarosa | ☕ مقهى La Digue Café | ☕ مقهى Island Vibes"
-            data-events="🚤 رحلات بحرية | 🌊 سباحة وغوص | 📸 جلسات تصوير">
-            <button class="save-btn"
-                onclick="event.stopPropagation(); saveItem('city', 'la-digue', 'لا ديغ', '/img/La Digue Seychelles.jpg')">🏙️</button>
-            <img src="/img/La Digue Seychelles.jpg" alt="لا ديغ" class="cite-img">
-            <span class="name">لا ديغ – La Digue</span>
-            <p class="info">جزيرة استوائية هادئة بشواطئ خلابة.</p>
-            <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">تفاصيل</button>
-        </div>
-        <div class="cite" data-name="بو فالون – Beau Vallon" data-img="/img/Beau Vallon Seychelles.jpg"
-            data-desc="منطقة ساحلية حيوية تضم أشهر شواطئ سيشل والأنشطة البحرية والمطاعم."
-            data-historic="🌊 شاطئ Beau Vallon | 🚤 رحلات بحرية | 🌅 ممشى البحر"
-            data-restaurants="🍖 مطعم Baobab | 🍤 مطعم Boat House | 🥘 مطعم La Plage"
-            data-cafes="☕ مقهى Green Coconut | ☕ مقهى Ocean Café | ☕ مقهى Beach House"
-            data-events="🤿 غوص | 🏄 أنشطة بحرية | 🌅 جلسات غروب">
-            <button class="save-btn"
-                onclick="event.stopPropagation(); saveItem('city', 'beau-vallon', 'بو فالون', '/img/Beau Vallon Seychelles.jpg')">🏙️</button>
-            <img src="/img/Beau Vallon Seychelles.jpg" alt="بو فالون" class="cite-img">
-            <span class="name">بو فالون – Beau Vallon</span>
-            <p class="info">شاطئ حيوي وأنشطة بحرية ممتعة.</p>
-            <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">تفاصيل</button>
-        </div>
-        <div class="cite" data-name="ماهي – Mahé" data-img="/img/Mahe Seychelles.jpg"
-            data-desc="الجزيرة الرئيسية في سيشل وتضم المنتجعات الفاخرة والطبيعة الجبلية والشواطئ."
-            data-historic="🏝️ شاطئ Beau Vallon | 🌿 Morne National Park | 🌊 جولات بحرية"
-            data-restaurants="🍖 مطعم Del Place | 🍤 مطعم Bravo | 🥘 مطعم La Scala"
-            data-cafes="☕ مقهى Eden Café | ☕ مقهى Kafe Kreol | ☕ مقهى Coco Café"
-            data-events="🚤 رحلات جزر | 🌊 غوص | 🌿 هايكنق">
-            <button class="save-btn"
-                onclick="event.stopPropagation(); saveItem('city', 'mahe', 'ماهي', '/img/Mahe Seychelles.jpg')">🏙️</button>
-            <img src="/img/Mahe Seychelles.jpg" alt="ماهي" class="cite-img">
-            <span class="name">ماهي – Mahé</span>
-            <p class="info">جزيرة تجمع بين المنتجعات والطبيعة الساحرة.</p>
-            <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">تفاصيل</button>
-        </div>
-        <div class="cite" data-name="أنس رويال – Anse Royale" data-img="/img/Anse Royale Seychelles.jpg"
-            data-desc="منطقة ساحلية هادئة مناسبة للاسترخاء والأنشطة البحرية وسط أجواء استوائية."
-            data-historic="🌊 شاطئ Anse Royale | 🏝️ جولات بحرية | 🌿 طبيعة استوائية"
-            data-restaurants="🍤 مطعم Les Dauphins | 🥘 مطعم Kafe Kreol | 🍖 مطعم Royale Takeaway"
-            data-cafes="☕ مقهى Beach Café | ☕ مقهى Tropical Coffee | ☕ مقهى Island Brew"
-            data-events="🤿 غوص | 🏄 سباحة | 🚤 رحلات بحرية">
-
-            <button class="save-btn"
-                onclick="event.stopPropagation(); saveItem('city', 'anse-royale', 'أنس رويال', '/img/Anse Royale Seychelles.jpg')">🏙️</button>
-
-            <img src="/img/Anse Royale Seychelles.jpg" alt="أنس رويال" class="cite-img">
-
-            <span class="name">أنس رويال – Anse Royale</span>
-
-            <p class="info">شاطئ هادئ مثالي للاسترخاء والسباحة.</p>
-
-            <button class="cite-btn" onclick="openCityModal(this.closest('.cite'))">تفاصيل</button>
-        </div>
-    </section>
-    <!--الاكل-->
-    <div class="main-foods">
-        <h1>الماكولات</h1>
+    <ul class="nav-list">
+      <li><a href="/index/index.html">الرئيسية</a></li>
+      <li><a href="/countries/countries.html">الدول</a></li>
+      <li><a href="/events/events.html">الفعاليات</a></li>
+      <li><a href="/recipes/recipes.html">الوصفات</a></li>
+    </ul>
+    <div class="logo">
+      <a href="/index/index.html"><img src="/img/logo3.JPG" alt="سفرة" /></a>
     </div>
-    <section class="foods-grid">
-        <div class="foods">
-            <img src="" alt="" class="foods-img">
-            <span class="name-foods"></span>
-            <div class="food-info"></div>
-            <a href="" class="for-more-btn"></a>
-        </div>
-        <div class="foods">
-            <img src="" alt="" class="foods-img">
-            <span class="name-foods"></span>
-            <div class="food-info"></div>
-            <a href="" class="for-more-btn"></a>
-        </div>
-        <div class="foods">
-            <img src="" alt="" class="foods-img">
-            <span class="name-foods"></span>
-            <div class="food-info"></div>
-            <a href="" class="for-more-btn"></a>
-        </div>
-        <div class="foods">
-            <img src="" alt="" class="foods-img">
-            <span class="name-foods"></span>
-            <div class="food-info"></div>
-            <a href="" class="for-more-btn"></a>
-        </div>
-        <div class="foods">
-            <img src="" alt="" class="foods-img">
-            <span class="name-foods"></span>
-            <div class="food-info"></div>
-            <a href="" class="for-more-btn"></a>
-        </div>
-        <div class="foods">
-            <img src="" alt="" class="foods-img">
-            <span class="name-foods"></span>
-            <div class="food-info"></div>
-            <a href="" class="for-more-btn"></a>
-        </div>
-    </section>
-    <div class="events-main">
-        <h1>الفعاليات</h1>
+  </header>
+
+  <nav class="side-menu" id="side-menu">
+    <span class="close-btn" id="close-btn">✖</span>
+    <ul>
+      <li><a href="/index/index.html">الرئيسية</a></li>
+      <li><a href="/countries/countries.html">الدول</a></li>
+      <li><a href="/events/events.html">الفعاليات</a></li>
+      <li><a href="/recipes/recipes.html">الوصفات</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <a href="/countries/countries.html" class="back-btn">رجوع</a>
+  </header>
+
+  <div class="country-name">
+    <h1>سيشل</h1>
+    <p>جنة استوائية تجمع بين الشواطئ البيضاء والطبيعة الخلابة.</p>
+  </div>
+
+  <div class="main-cites">
+    <h1>المدن</h1>
+  </div>
+  <section class="cities-grid">
+
+    <div class="cite" data-name="فيكتوريا – Victoria" data-img="/img/Victoria Seychelles.jpg"
+      data-desc="عاصمة سيشل الصغيرة والنابضة بالحياة، أصغر عواصم العالم وأكثرها سحراً، تجمع بين الأسواق الشعبية الملونة والمباني الاستعمارية والأجواء الاستوائية الدافئة."
+      data-historic="🕰️ برج الساعة – Clock Tower | 🏛️ متحف سيشل الوطني – National Museum | 🛍️ سوق سير سيلستان – Sir Selwyn Clarke Market | 🌿 الحديقة النباتية – Botanical Gardens"
+      data-restaurants="🐟 مطعم The Pirates Arms | 🌿 مطعم Café des Arts | 🦞 مطعم Chez Jules"
+      data-cafes="☕ Bravo Café | ☕ Del Place Café | ☕ Coffee Tree"
+      data-events="🛍️ سوق فيكتوريا – Victoria Market | 🌿 الحديقة النباتية – Botanical Gardens | 🕰️ برج الساعة – Clock Tower"
+      onclick="openCityModal(this)">
+      <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'victoria-seychelles', 'فيكتوريا', '/img/Victoria Seychelles.jpg')">🏙️</button>
+      <img src="/img/Victoria Seychelles.jpg" alt="فيكتوريا" class="cite-img" />
+      <span class="name">فيكتوريا – Victoria</span>
+      <p class="info">عاصمة صغيرة بأجواء استوائية جميلة.</p>
+      <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
     </div>
-    <section class="events-grid">
-        <div class="event">
-            <img src="" alt="" class="event-img">
-            <span class="name-event"></span>
-            <div class="event-info"></div>
-            <a href="" class="event-btn"></a>
-        </div>
-        <div class="event">
-            <img src="" alt="" class="event-img">
-            <span class="name-event"></span>
-            <div class="event-info"></div>
-            <a href="" class="event-btn"></a>
-        </div>
-        <div class="event">
-            <img src="" alt="" class="event-img">
-            <span class="name-event"></span>
-            <div class="event-info"></div>
-            <a href="" class="event-btn"></a>
-        </div>
-        <div class="event">
-            <img src="" alt="" class="event-img">
-            <span class="name-event"></span>
-            <div class="event-info"></div>
-            <a href="" class="event-btn"></a>
-        </div>
-        <div class="event">
-            <img src="" alt="" class="event-img">
-            <span class="name-event"></span>
-            <div class="event-info"></div>
-            <a href="" class="event-btn"></a>
-        </div>
-        <div class="event">
-            <img src="" alt="" class="event-img">
-            <span class="name-event"></span>
-            <div class="event-info"></div>
-            <a href="" class="event-btn"></a>
-        </div>
-    </section>
-    <!-- Modal المدينة -->
-    <div id="cityModal" class="modal" onclick="closeCityModal(event)">
-        <div class="modal-content">
-            <button class="modal-close" onclick="closeCityModal(event)">×</button>
-            <div class="modal-top">
-                <img id="modalCityImg" src="" alt="" />
-                <div class="modal-top-info">
-                    <h2 id="modalCityName"></h2>
-                    <span class="modal-top-badge">✦ تفاصيل المدينة</span>
-                </div>
-            </div>
-            <div class="modal-body">
-                <p id="modalCityDesc" class="event-desc"></p>
-                <h4>🏛️ أفضل الأماكن التاريخية</h4>
-                <div id="modalCityHistoric" class="ingredients-tags"></div>
-                <h4>🍽️ أفضل المطاعم</h4>
-                <div id="modalCityRestaurants" class="ingredients-tags"></div>
-                <h4>☕ أفضل المقاهي</h4>
-                <div id="modalCityCafes" class="ingredients-tags"></div>
-                <h4>🎉 فعاليات المدينة</h4>
-                <div id="modalCityEvents" class="ingredients-tags"></div>
-            </div>
-        </div>
+
+    <div class="cite" data-name="ماهي – Mahé" data-img="/img/Mahe Seychelles.jpg"
+      data-desc="الجزيرة الرئيسية في سيشل وأكبرها، تضم أجمل الشواطئ والمنتجعات الفاخرة والغابات الاستوائية المورقة. وجهة مثالية لكل من يبحث عن الفخامة وسط الطبيعة البكر."
+      data-historic="🏖️ شاطئ بو فالون – Beau Vallon Beach | 🌿 محمية مورن سيشلوا – Morne Seychellois | 🏊 شاطئ تاكاما – Takamaka Beach | 🏛️ فيكتوريا العاصمة – Victoria Capital"
+      data-restaurants="🦞 مطعم Kaz'Kreol | 🌊 مطعم The Boardwalk | 🐟 مطعم Marie Antoinette"
+      data-cafes="☕ Boat House Café | ☕ Kreolab Café | ☕ Coco Rouge"
+      data-events="🏖️ شاطئ بو فالون – Beau Vallon Beach | 🌿 محمية مورن سيشلوا – Morne Seychellois Park | 🤿 غوص ماهي – Mahé Diving"
+      onclick="openCityModal(this)">
+      <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'mahe', 'ماهي', '/img/Mahe Seychelles.jpg')">🏙️</button>
+      <img src="/img/Mahe Seychelles.jpg" alt="ماهي" class="cite-img" />
+      <span class="name">ماهي – Mahé</span>
+      <p class="info">الجزيرة الرئيسية بالشواطئ والمنتجعات.</p>
+      <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
     </div>
-    <script src="/countries/countries.js"></script>
-    <script src="/auth/auth.js"></script>
+
+    <div class="cite" data-name="براسلين – Praslin" data-img="/img/Praslin Seychelles.jpg"
+      data-desc="ثاني أكبر جزر سيشل وموطن غابة Vallée de Mai السحرية المدرجة كتراث عالمي لليونسكو. تشتهر بشواطئها الهادئة وطبيعتها الخضراء الاستثنائية."
+      data-historic="🌿 وادي مايو – Vallée de Mai | 🏖️ شاطئ أنس لازيو – Anse Lazio | 🌴 نخيل كوكو دو مير – Coco de Mer Palms | 🐦 طائر الأسود – Black Parrot"
+      data-restaurants="🦞 مطعم Café des Arts | 🌿 مطعم Bonbon Plume | 🐟 مطعم La Plage"
+      data-cafes="☕ Gelateria Côte d'Or | ☕ Coco Rouge Praslin | ☕ Village du Pêcheur Café"
+      data-events="🌿 محمية وادي مايو – Vallée de Mai | 🏖️ شاطئ أنس لازيو – Anse Lazio | 🐦 مشاهدة الطيور – Birdwatching"
+      onclick="openCityModal(this)">
+      <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'praslin', 'براسلين', '/img/Praslin Seychelles.jpg')">🏙️</button>
+      <img src="/img/Praslin Seychelles.jpg" alt="براسلين" class="cite-img" />
+      <span class="name">براسلين – Praslin</span>
+      <p class="info">طبيعة خضراء وشواطئ هادئة.</p>
+      <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="لا ديغ – La Digue" data-img="/img/La Digue Seychelles.jpg"
+      data-desc="جزيرة الأحلام الاستوائية، مشهورة بصخورها الغرانيتية العملاقة وشاطئ Anse Source d'Argent الذي يُعد من أجمل شواطئ العالم. حركة هادئة وأجواء لا مثيل لها."
+      data-historic="🏖️ شاطئ أنس سورس داجون – Anse Source d'Argent | 🗿 صخور غرانيتية – Granite Boulders | 🚲 جولات بالدراجة – Cycling Tours | 🌴 منتزه يونيون – L'Union Estate"
+      data-restaurants="🦞 مطعم Loutier Coco | 🌊 مطعم Zerof | 🐟 مطعم Chez Jules La Digue"
+      data-cafes="☕ Chez Marston | ☕ La Passe Café | ☕ Tarosa Café"
+      data-events="🏖️ أنس سورس داجون – Anse Source d'Argent | 🚲 جولة بالدراجة – Island Cycling | 🌴 منتزه يونيون – L'Union Estate"
+      onclick="openCityModal(this)">
+      <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'la-digue', 'لا ديغ', '/img/La Digue Seychelles.jpg')">🏙️</button>
+      <img src="/img/La Digue Seychelles.jpg" alt="لا ديغ" class="cite-img" />
+      <span class="name">لا ديغ – La Digue</span>
+      <p class="info">جزيرة مشهورة بصخورها وشواطئها.</p>
+      <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="بو فالون – Beau Vallon" data-img="/img/Beau Vallon Seychelles.jpg"
+      data-desc="أشهر مناطق الشاطئ في ماهي وأكثرها حيوية، تمتد على شاطئ رملي ذهبي يطل على المحيط الهندي الأزرق. وجهة مثالية للغوص والرياضات المائية والأجواء البحرية المنعشة."
+      data-historic="🏖️ شاطئ بو فالون – Beau Vallon Beach | 🤿 مركز غوص – Dive Center | 🚤 رياضات مائية – Water Sports | 🌊 أسواق ليلية – Night Markets"
+      data-restaurants="🌊 مطعم The Boardwalk Bar & Grill | 🦞 مطعم La Perle Noire | 🐟 مطعم Baobab Pizzeria"
+      data-cafes="☕ Boat House Café | ☕ Berjaya Beau Vallon Bay | ☕ Sunset Café"
+      data-events="🏖️ شاطئ بو فالون – Beau Vallon Beach | 🤿 الغوص – Snorkeling & Diving | 🌙 الأسواق الليلية – Night Markets"
+      onclick="openCityModal(this)">
+      <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'beau-vallon', 'بو فالون', '/img/Beau Vallon Seychelles.jpg')">🏙️</button>
+      <img src="/img/Beau Vallon Seychelles.jpg" alt="بو فالون" class="cite-img" />
+      <span class="name">بو فالون – Beau Vallon</span>
+      <p class="info">منطقة بحرية حيوية.</p>
+      <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="أنس رويال – Anse Royale" data-img="/img/Anse Royale Seychelles.jpg"
+      data-desc="قرية ساحلية هادئة في جنوب ماهي، تتميز بشاطئها الجميل ومياهها الدافئة الصافية وإطلالاتها الساحرة على الأفق. بعيدة عن الضجيج ومثالية للاسترخاء والهدوء."
+      data-historic="🏖️ شاطئ أنس رويال – Anse Royale Beach | 🌊 كورال سيا – Coral Sea | 🌿 حديقة استوائية – Tropical Garden | 🐠 غوص محلي – Local Snorkeling"
+      data-restaurants="🐟 مطعم Surfers Beach | 🌿 مطعم Chez Batista | 🦞 مطعم La Residence"
+      data-cafes="☕ Bamboo Bar | ☕ Anse Royale Café | ☕ Bagatelle Café"
+      data-events="🏖️ شاطئ أنس رويال – Anse Royale Beach | 🐠 سنوركلينج – Snorkeling | 🌅 غروب الشمس – Sunset Views"
+      onclick="openCityModal(this)">
+      <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'anse-royale', 'أنس رويال', '/img/Anse Royale Seychelles.jpg')">🏙️</button>
+      <img src="/img/Anse Royale Seychelles.jpg" alt="أنس رويال" class="cite-img" />
+      <span class="name">أنس رويال – Anse Royale</span>
+      <p class="info">شواطئ هادئة وإطلالات جميلة.</p>
+      <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+  </section>
+
+  <div class="main-foods">
+    <h1>الماكولات</h1>
+  </div>
+  <section class="foods-grid">
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=fish-curry-seychelles'">
+      <img src="/img/Fish Curry Seychelles.jpg" alt="" class="foods-img" />
+      <span class="name-foods">سمك بالكاري – Fish Curry</span>
+      <div class="food-info">مأكولات بحرية بتوابل استوائية.</div>
+      <a href="/recipes/recipes.html?recipe=fish-curry-seychelles" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=turmeric-rice-seychelles'">
+      <img src="/img/Turmeric Rice Seychelles.jpg" alt="" class="foods-img" />
+      <span class="name-foods">أرز بالكركم – Turmeric Rice</span>
+      <div class="food-info">أرز خفيف مع نكهات محلية.</div>
+      <a href="/recipes/recipes.html?recipe=turmeric-rice-seychelles" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=grilled-chicken-seychelles'">
+      <img src="/img/Grilled Chicken Seychelles.jpg" alt="" class="foods-img" />
+      <span class="name-foods">دجاج مشوي – Grilled Chicken</span>
+      <div class="food-info">دجاج متبل ومشوي.</div>
+      <a href="/recipes/recipes.html?recipe=grilled-chicken-seychelles" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=octopus-curry-seychelles'">
+      <img src="/img/Octopus Curry Seychelles.jpg" alt="" class="foods-img" />
+      <span class="name-foods">أخطبوط بالكاري – Octopus Curry</span>
+      <div class="food-info">طبق بحري مشهور.</div>
+      <a href="/recipes/recipes.html?recipe=octopus-curry-seychelles" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=lentil-soup-seychelles'">
+      <img src="/img/Lentil Soup Seychelles.jpg" alt="" class="foods-img" />
+      <span class="name-foods">شوربة عدس – Lentil Soup</span>
+      <div class="food-info">شوربة دافئة وخفيفة.</div>
+      <a href="/recipes/recipes.html?recipe=lentil-soup-seychelles" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=fried-banana-seychelles'">
+      <img src="/img/Fried Banana Seychelles.jpg" alt="" class="foods-img" />
+      <span class="name-foods">موز مقلي – Fried Banana</span>
+      <div class="food-info">حلى بسيط ولذيذ.</div>
+      <a href="/recipes/recipes.html?recipe=fried-banana-seychelles" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+  </section>
+
+  <div class="events-main">
+    <h1>الفعاليات</h1>
+  </div>
+  <section class="events-grid">
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=BoardwalkSeychelles'">
+      <img src="/img/Boardwalk Seychelles.jpg" alt="" class="event-img" />
+      <span class="name-event">The Boardwalk Bar & Grill</span>
+      <div class="event-info">مطعم ومقهى بإطلالة بحرية رائعة.</div>
+      <a href="/events/events.html?event=BoardwalkSeychelles" class="event-btn" onclick="event.stopPropagation()">التفاصيل</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=FourSeasonsSeychelles'">
+      <img src="/img/Four Seasons Seychelles.jpg" alt="" class="event-img" />
+      <span class="name-event">فور سيزونز ريزورت – Four Seasons Resort Seychelles</span>
+      <div class="event-info">منتجع فاخر وسط الطبيعة.</div>
+      <a href="/events/events.html?event=FourSeasonsSeychelles" class="event-btn" onclick="event.stopPropagation()">التفاصيل</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=AnseSourceDArgent'">
+      <img src="/img/Anse Source d'Argent.jpg" alt="" class="event-img" />
+      <span class="name-event">أنس سورس داجون – Anse Source d'Argent</span>
+      <div class="event-info">أحد أجمل الشواطئ بالعالم.</div>
+      <a href="/events/events.html?event=AnseSourceDArgent" class="event-btn" onclick="event.stopPropagation()">التفاصيل</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=SainteAnnePark'">
+      <img src="/img/Sainte Anne Marine Park.jpg" alt="" class="event-img" />
+      <span class="name-event">حديقة سانت آن البحرية – Sainte Anne Marine National Park</span>
+      <div class="event-info">غوص وأنشطة بحرية مذهلة.</div>
+      <a href="/events/events.html?event=SainteAnnePark" class="event-btn" onclick="event.stopPropagation()">التفاصيل</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=CurieuseIsland'">
+      <img src="/img/Curieuse Island Seychelles.jpg" alt="" class="event-img" />
+      <span class="name-event">جزيرة كيوريوز – Curieuse Island</span>
+      <div class="event-info">جزيرة السلاحف والطبيعة الخلابة.</div>
+      <a href="/events/events.html?event=CurieuseIsland" class="event-btn" onclick="event.stopPropagation()">التفاصيل</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=ValleeDeMai'">
+      <img src="/img/Vallee de Mai Seychelles.jpg" alt="" class="event-img" />
+      <span class="name-event">وادي مايو – Vallée de Mai</span>
+      <div class="event-info">محمية طبيعية استوائية رائعة.</div>
+      <a href="/events/events.html?event=ValleeDeMai" class="event-btn" onclick="event.stopPropagation()">التفاصيل</a>
+    </div>
+  </section>
+
+  <div id="cityModal" class="modal" onclick="closeCityModal(event)">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeCityModal(event)">×</button>
+      <div class="modal-top">
+        <img id="modalCityImg" src="" alt="" />
+        <div class="modal-top-info">
+          <h2 id="modalCityName"></h2>
+          <span class="modal-top-badge">✦ تفاصيل المدينة</span>
+        </div>
+      </div>
+      <div class="modal-body">
+        <p id="modalCityDesc" class="event-desc"></p>
+        <h4>🏛️ أفضل الأماكن التاريخية</h4>
+        <div id="modalCityHistoric" class="ingredients-tags"></div>
+        <h4>🍽️ أفضل المطاعم</h4>
+        <div id="modalCityRestaurants" class="ingredients-tags"></div>
+        <h4>☕ أفضل المقاهي</h4>
+        <div id="modalCityCafes" class="ingredients-tags"></div>
+        <h4>🎉 فعاليات المدينة</h4>
+        <div id="modalCityEvents" class="ingredients-tags"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/countries/countries.js"></script>
+  <script src="/auth/auth.js"></script>
 </body>
 
 </html>
