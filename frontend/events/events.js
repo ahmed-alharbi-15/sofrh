@@ -1,5 +1,3 @@
-
-
 const searchInput = document.getElementById("searchInput");
 const filterBtns = document.querySelectorAll(".filter-buttons button");
 const cards = document.querySelectorAll(".event-card");
@@ -61,6 +59,10 @@ function openEventModal(btn) {
     }
     document.getElementById("modalActivities").innerHTML = activitiesHTML;
 
+    // إخفاء خانة السكن إذا المدة ساعات أو نصف يوم
+    const stay = (btn.dataset.stay || "").toLowerCase();
+    const hideHotel = stay.includes("ساعة") || stay.includes("ساعات") || stay.includes("نصف يوم");
+
     document.getElementById("modalBudget").innerHTML = `
         <div class="budget-row">
             <span>مدة الإقامة</span>
@@ -70,10 +72,12 @@ function openEventModal(btn) {
             <span>رسوم الفعاليات</span>
             <span>${btn.dataset.eventFee || ""}</span>
         </div>
+        ${hideHotel ? "" : `
         <div class="budget-row">
             <span>السكن (الليلة)</span>
             <span>${btn.dataset.hotelPrice || ""}</span>
         </div>
+        `}
         <div class="budget-row total">
             <span>المجموع التقريبي</span>
             <span>${btn.dataset.total || ""}</span>
@@ -97,18 +101,6 @@ document.addEventListener("keydown", (e) => {
     }
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-    const params = new URLSearchParams(window.location.search);
-    const eventId = params.get("event");
-    if (!eventId) return;
-
-    const card = document.getElementById(eventId);
-    if (!card) return;
-
-    card.scrollIntoView({ behavior: "smooth", block: "center" });
-    const btn = card.querySelector(".event-item");
-    if (btn) btn.click();
-});
 document.addEventListener("DOMContentLoaded", () => {
     const params = new URLSearchParams(window.location.search);
     const eventId = params.get("event");
