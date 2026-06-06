@@ -157,12 +157,14 @@
     <h1>الماكولات</h1>
   </div>
   <section class="foods-grid">
-    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=seychelles-fish-curry'">
-  <img src="/img/Fish Curry Seychelles.jpg" alt="" class="foods-img" />
-  <span class="name-foods">سمك بالكاري السيشلي – Seychellois Fish Curry</span>
-  <div class="food-info">مأكولات بحرية بتوابل استوائية.</div>
-  <a href="/recipes/recipes.html?recipe=seychelles-fish-curry" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
-</div>
+    <div class="foods" style="cursor:pointer"
+      onclick="window.location.href='/recipes/recipes.html?recipe=seychelles-fish-curry'">
+      <img src="/img/Fish Curry Seychelles.jpg" alt="" class="foods-img" />
+      <span class="name-foods">سمك بالكاري السيشلي – Seychellois Fish Curry</span>
+      <div class="food-info">مأكولات بحرية بتوابل استوائية.</div>
+      <a href="/recipes/recipes.html?recipe=seychelles-fish-curry" class="for-more-btn"
+        onclick="event.stopPropagation()">الوصفة</a>
+    </div>
     <div class="foods" style="cursor:pointer"
       onclick="window.location.href='/recipes/recipes.html?recipe=seychelles-turmeric-rice'">
       <img src="/img/Turmeric Rice Seychelles.jpg" alt="" class="foods-img" />
@@ -255,6 +257,7 @@
     </div>
   </section>
 
+
   <div id="cityModal" class="modal" onclick="closeCityModal(event)">
     <div class="modal-content">
       <button class="modal-close" onclick="closeCityModal(event)">×</button>
@@ -278,7 +281,39 @@
       </div>
     </div>
   </div>
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h2 class="footer-logo">سفرة</h2>
+        <p>وجهتك للسفر والطعام حول العالم</p>
+      </div>
 
+      <div class="footer-links">
+        <h4>روابط سريعة</h4>
+        <ul>
+          <li><a href="/index.html">الرئيسية</a></li>
+          <li><a href="/countries/countries.html">الدول</a></li>
+          <li><a href="/events/events.html">الفعاليات</a></li>
+          <li><a href="/recipes/recipes.html">الوصفات</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-contact">
+        <h4>تواصل معنا</h4>
+        <ul>
+          <li>📧 <a href="mailto:Sofrh.info@gmail.com" target="_blank">Sofrh.info@gmail.com</a></li>
+          <li>📧 <a href="mailto:Sofrh.support@gmail.com" target="_blank">Sofrh.support@gmail.com</a></li>
+          <li>🐦 <a href="https://twitter.com/safra" target="_blank">X (Twitter)</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 سفرة — جميع الحقوق محفوظة</p>
+      <p>صُنع بواسطة فريق شفرة</p>
+      <p>📧 <a href="mailto:hello@safra.com" style="color: #D2A673;">hello@safra.com</a></p>
+    </div>
+  </footer>
   <script src="/countries/countries.js"></script>
   <script src="/auth/auth.js"></script>
 </body>
