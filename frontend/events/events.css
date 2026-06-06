@@ -7,7 +7,7 @@
 body {
     background-color: #FAF4E6;
     font-family: "Noto Sans Arabic", sans-serif;
-    padding-top: 90px;
+    padding-top: 90px !important;
 }
 
 :root {
@@ -72,6 +72,7 @@ body {
 .auth-buttons {
     display: flex;
     gap: 15px;
+    align-items: center;
 }
 
 .auth-buttons a {
@@ -86,6 +87,7 @@ body {
 .login {
     background-color: var(--cream-soft);
     color: var(--brown-dark);
+    transition: .3s;
 }
 
 .login:hover {
