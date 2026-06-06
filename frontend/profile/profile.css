@@ -19,7 +19,7 @@
 ================================ */
 .profile-sidebar {
     width: 260px;
-    background: linear-gradient(180deg, #2c1a0e 0%, #1e1008 100%);
+    background: var(--brown-dark);
     padding: 30px 0;
     position: fixed;
     top: 90px;
