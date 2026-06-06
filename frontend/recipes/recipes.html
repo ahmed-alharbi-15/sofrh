@@ -4067,7 +4067,8 @@
           ">
         🍽️
       </button>
-      <button class="recipes-item" data-title="سمك بالكاري السيريلانكي – Sri Lankan Fish Curry" data-img="/img/سمك-كاري.jpg"
+      <button class="recipes-item" data-title="سمك بالكاري السيريلانكي – Sri Lankan Fish Curry"
+        data-img="/img/سمك-كاري.jpg"
         data-ingredients="سمك أبيض مكعبات |500| غ |حليب جوز الهند |400| مل |بصل |1| حبة |طماطم |2| حبة |ثوم |4| فص |زنجبيل |10| غ |زيت |30| مل |ملح |5| غ |عصير ليمون |15| مل"
         data-spices="كاري بودرة |8| غ |كركم |3| غ |فلفل أحمر حار |3| غ |كمون |2| غ |بذور الخردل |2| غ |ورق كاري |8| ورقة"
         data-steps="تبّل السمك بالكركم والملح والليمون واتركه 15 دقيقة. | سخّن الزيت وأضف بذور الخردل وورق الكاري حتى تتفتح. | أضف البصل والثوم والزنجبيل وقلّب حتى يذهب. | أضف الطماطم وكاري البودرة والفلفل واطبخ 5 دقائق. | أضف حليب جوز الهند واتركه يغلي. | أضف السمك واطبخ 10–12 دقيقة. | قدّم مع الأرز أو الهوبرز."
@@ -4719,6 +4720,106 @@
         <div class="recipes-head">
           <img src="/img/Rwanda Mandazi.jpg" alt="ماندازي">
           <span>ماندازي – Mandazi</span>
+          <span class="country-badge"></span>
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+      </button>
+    </div>
+    <div class="foods-card" data-region="main-foods" id="kimchi" data-country="كوريا">
+      <button class="save-btn" onclick="saveItem('recipe', 'kimchi', 'كيمتشي – Kimchi', '/img/Kimchi.jpg')">🍽️</button>
+      <button class="recipes-item" data-title="كيمتشي – Kimchi" data-img="/img/Kimchi.jpg"
+        data-ingredients="ملفوف صيني|500|غ|ملح خشن|30|غ|فجل|100|غ|بصل أخضر|3|ساق|ثوم|4|فص|زنجبيل|5|غ|صلصة سمك|15|مل|سكر|5|غ"
+        data-spices="فلفل أحمر كوري (غوتشوغارو)|30|غ" data-sauces=""
+        data-steps="قطّع الملفوف وأضف الملح واتركه ساعتين|اشطف الملفوف وصفّيه جيداً|اخلط الثوم والزنجبيل وصلصة السمك والسكر والفلفل|أضف الفجل والبصل الأخضر للخليط|امزج الملفوف مع الخليط جيداً|ضعه في وعاء محكم واتركه يتخمر يوم أو يومين في درجة حرارة الغرفة"
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+          <img src="/img/Kimchi.jpg" alt="كيمتشي" />
+          <span>كيمتشي – Kimchi</span>
+          <span class="country-badge"></span>
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+      </button>
+    </div>
+
+    <div class="foods-card" data-region="main-foods" id="bibimbap" data-country="كوريا">
+      <button class="save-btn"
+        onclick="saveItem('recipe', 'bibimbap', 'بيبيمباب – Bibimbap', '/img/Bibimbap.jpg')">🍽️</button>
+      <button class="recipes-item" data-title="بيبيمباب – Bibimbap" data-img="/img/Bibimbap.jpg"
+        data-ingredients="أرز أبيض|100|غ|لحم بقري مفروم|80|غ|جزر|50|غ|سبانخ|50|غ|فطر شيتاكي|40|غ|خيار|40|غ|بيضة|1|حبة|زيت سمسم|10|مل|صلصة صويا|10|مل|ثوم|2|فص"
+        data-spices="ملح|2|غ|فلفل أسود|1|غ|سكر|3|غ" data-sauces="غوتشوجانغ (صلصة فلفل كورية)"
+        data-steps="اطبخ الأرز واتركه جانباً|قلّ اللحم بالصلصة والثوم حتى ينضج|قلّ الخضار كل نوع على حدة بزيت السمسم والملح|اقلي البيضة عيون|ضع الأرز في الوعاء وارتب الخضار واللحم فوقه|ضع البيضة في المنتصف وأضف صلصة الغوتشوجانغ|اخلط كل شيء قبل الأكل"
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+          <img src="/img/Bibimbap.jpg" alt="بيبيمباب" />
+          <span>بيبيمباب – Bibimbap</span>
+          <span class="country-badge"></span>
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+      </button>
+    </div>
+
+    <div class="foods-card" data-region="main-foods" id="bulgogi" data-country="كوريا">
+      <button class="save-btn"
+        onclick="saveItem('recipe', 'bulgogi', 'بولغوغي – Bulgogi', '/img/Bulgogi.jpg')">🍽️</button>
+      <button class="recipes-item" data-title="بولغوغي – Bulgogi" data-img="/img/Bulgogi.jpg"
+        data-ingredients="لحم بقري رفيع|200|غ|بصل|1|حبة صغيرة|بصل أخضر|2|ساق|ثوم|3|فص|زنجبيل|5|غ|صلصة صويا|30|مل|زيت سمسم|10|مل|سكر|10|غ|كمثرى مبشورة|30|غ"
+        data-spices="فلفل أسود|1|غ|بذور سمسم|3|غ" data-sauces=""
+        data-steps="اخلط صلصة الصويا والسكر والثوم والزنجبيل والكمثرى وزيت السمسم|أضف اللحم للتتبيلة واتركه 30 دقيقة|سخّن المقلاة على نار عالية|اشوِ اللحم مع البصل حتى يتكرمل|أضف البصل الأخضر وبذور السمسم عند التقديم"
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+          <img src="/img/Bulgogi.jpg" alt="بولغوغي" />
+          <span>بولغوغي – Bulgogi</span>
+          <span class="country-badge"></span>
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+      </button>
+    </div>
+
+    <div class="foods-card" data-region="main-foods" id="ramyeon" data-country="كوريا">
+      <button class="save-btn"
+        onclick="saveItem('recipe', 'ramyeon', 'راميون – Ramyeon', '/img/Ramyeon.jpg')">🍽️</button>
+      <button class="recipes-item" data-title="راميون – Ramyeon" data-img="/img/Ramyeon.jpg"
+        data-ingredients="نودلز فورية كورية|1|عبوة|ماء|500|مل|بيضة|1|حبة|بصل أخضر|2|ساق|فطر|40|غ|جبن شيدر|1|شريحة"
+        data-spices="مسحوق التتبيلة المرفق|1|كيس|فلفل أحمر|2|غ" data-sauces=""
+        data-steps="أغلِ الماء في القدر|أضف النودلز ومسحوق التتبيلة|أضف الفطر والبصل الأخضر|اكسر البيضة فوق النودلز واتركها تنضج|ضع الجبن فوقها عند التقديم|قدّم مباشرة في القدر"
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+          <img src="/img/Ramyeon.jpg" alt="راميون" />
+          <span>راميون – Ramyeon</span>
+          <span class="country-badge"></span>
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+      </button>
+    </div>
+
+    <div class="foods-card" data-region="main-foods" id="tteokbokki" data-country="كوريا">
+      <button class="save-btn"
+        onclick="saveItem('recipe', 'tteokbokki', 'تيوكبوكي – Tteokbokki', '/img/Tteokbokki.jpg')">🍽️</button>
+      <button class="recipes-item" data-title="تيوكبوكي – Tteokbokki" data-img="/img/Tteokbokki.jpg"
+        data-ingredients="كعك أرز كوري (توك)|200|غ|مرق أنشوجة|300|مل|بصل أخضر|3|ساق|كرات السمك (أوامو)|80|غ|سكر|10|غ|صلصة صويا|10|مل"
+        data-spices="غوتشوجانغ|30|غ|غوتشوغارو|5|غ" data-sauces=""
+        data-steps="أغلِ مرق الأنشوجة في القدر|أضف الغوتشوجانغ والغوتشوغارو والسكر والصلصة|أضف كعك الأرز وكرات السمك|اطبخ على نار متوسطة 10 دقائق مع التحريك|أضف البصل الأخضر وقدّم ساخناً"
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+          <img src="/img/Tteokbokki.jpg" alt="تيوكبوكي" />
+          <span>تيوكبوكي – Tteokbokki</span>
+          <span class="country-badge"></span>
+        </div>
+        <span class="arrow">الوصفة ⌄</span>
+      </button>
+    </div>
+
+    <div class="foods-card" data-region="main-foods" id="jajangmyeon" data-country="كوريا">
+      <button class="save-btn"
+        onclick="saveItem('recipe', 'jajangmyeon', 'جاجانغميون – Jajangmyeon', '/img/Jajangmyeon.jpg')">🍽️</button>
+      <button class="recipes-item" data-title="جاجانغميون – Jajangmyeon" data-img="/img/Jajangmyeon.jpg"
+        data-ingredients="نودلز طازجة|150|غ|لحم دجاج|100|غ|بصل|1|حبة|كوسا|80|غ|بطاطس|80|غ|زيت|15|مل|ماء|200|مل|نشا ذرة|10|غ|تشونجانغ معجون فول أسود|40|غ"
+        data-spices="ملح|2|غ|فلفل أسود|1|غ" data-sauces=""
+        data-steps="اطبخ النودلز واتركها جانباً|قلّ اللحم والبصل في الزيت|أضف الكوسا والبطاطس وقلّبها|أضف معجون التشونجانغ وقلّب 2 دقيقة|أضف الماء واتركه يغلي حتى تنضج الخضار|أذب النشا في ماء بارد وأضفه للصلصة حتى تتكثف|اسكب الصلصة فوق النودلز وقدّم"
+        onclick="openRecipeFromData(this)">
+        <div class="recipes-head">
+          <img src="/img/Jajangmyeon.jpg" alt="جاجانغميون" />
+          <span>جاجانغميون – Jajangmyeon</span>
           <span class="country-badge"></span>
         </div>
         <span class="arrow">الوصفة ⌄</span>
