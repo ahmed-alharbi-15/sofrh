@@ -46,14 +46,20 @@ if (loginBtn) {
             });
             const data = await response.json();
             if (response.ok) {
-                // استرجع الصورة المحفوظة لهذا المستخدم
-                const savedAvatar = localStorage.getItem(`safraAvatar_${email}`) || "";
+                // جلب الصورة من السيرفر
+                let avatar = "";
+                try {
+                    const avatarRes = await fetch(`https://sofrh-1.onrender.com/avatar/${email}`);
+                    const avatarData = await avatarRes.json();
+                    avatar = avatarData.avatar || "";
+                } catch(e) {}
+
                 localStorage.setItem("safraUser", JSON.stringify({
                     name: data.username || email.split("@")[0],
                     email,
-                    avatar: savedAvatar
+                    avatar
                 }));
-                if (savedAvatar) localStorage.setItem("safraAvatar", savedAvatar);
+                if (avatar) localStorage.setItem("safraAvatar", avatar);
                 showToast(`أهلاً بك يا ${data.username || email.split("@")[0]} ✨`, "success");
                 setTimeout(() => window.location.href = "/index/index.html", 1500);
             } else {
@@ -93,12 +99,6 @@ const logoutBtn = document.getElementById("logoutBtn");
 if (logoutBtn) {
     logoutBtn.addEventListener("click", (e) => {
         e.preventDefault();
-        const user = JSON.parse(localStorage.getItem("safraUser"));
-        // احفظ الصورة مرتبطة بالإيميل قبل الخروج
-        if (user && user.email) {
-            const avatar = localStorage.getItem("safraAvatar");
-            if (avatar) localStorage.setItem(`safraAvatar_${user.email}`, avatar);
-        }
         localStorage.removeItem("safraUser");
         localStorage.removeItem("safraAvatar");
         window.location.href = "/index/index.html";
@@ -108,7 +108,7 @@ if (logoutBtn) {
 checkAuth();
 
 // --- 5. حفظ في المفضلة ---
-function saveItem(type, id, name, img) {
+async function saveItem(type, id, name, img) {
     const user = JSON.parse(localStorage.getItem("safraUser"));
     if (!user) {
         showToast("سجل دخولك أولاً! 🔐", "error");
@@ -116,21 +116,52 @@ function saveItem(type, id, name, img) {
         return;
     }
 
-    const saved = JSON.parse(localStorage.getItem("safraFavorites") || "{}");
-    if (!saved[type]) saved[type] = [];
-
-    const exists = saved[type].find(item => item.id === id);
-    if (exists) {
-        showToast("موجود بالفعل في المفضلة!", "info");
-        return;
+    try {
+        const response = await fetch('https://sofrh-1.onrender.com/favorites/add', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email: user.email, type, id, name, img })
+        });
+        const data = await response.json();
+        if (response.ok) {
+            showToast("تمت الإضافة للمفضلة ✨", "success");
+        } else {
+            showToast(data.detail || "موجود بالفعل في المفضلة!", "info");
+        }
+    } catch (err) {
+        showToast("فشل الاتصال بالسيرفر", "error");
     }
-
-    saved[type].push({ id, name, img });
-    localStorage.setItem("safraFavorites", JSON.stringify(saved));
-    showToast("تمت الإضافة للمفضلة ✨", "success");
 }
 
-// --- 6. Toast ---
+// --- 6. جلب المفضلة ---
+async function loadFavorites() {
+    const user = JSON.parse(localStorage.getItem("safraUser"));
+    if (!user) return {};
+    try {
+        const response = await fetch(`https://sofrh-1.onrender.com/favorites/${user.email}`);
+        const data = await response.json();
+        return data.favorites || {};
+    } catch (err) {
+        return {};
+    }
+}
+
+// --- 7. حذف من المفضلة ---
+async function removeItem(type, id) {
+    const user = JSON.parse(localStorage.getItem("safraUser"));
+    if (!user) return;
+    try {
+        await fetch('https://sofrh-1.onrender.com/favorites/remove', {
+            method: 'DELETE',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email: user.email, type, id })
+        });
+    } catch (err) {
+        showToast("فشل الحذف", "error");
+    }
+}
+
+// --- 8. Toast ---
 function showToast(message, type = "success") {
     const old = document.getElementById("safra-toast");
     if (old) old.remove();
@@ -183,7 +214,7 @@ function showToast(message, type = "success") {
     }, 2500);
 }
 
-// --- 7. القائمة الجانبية ---
+// --- 9. القائمة الجانبية ---
 if (typeof menuBtn === 'undefined') {
     var menuBtn = document.getElementById("menu-btn");
     var sideMenu = document.getElementById("side-menu");

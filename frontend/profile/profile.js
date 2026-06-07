@@ -35,6 +35,7 @@ if (logoutBtn) {
     logoutBtn.addEventListener("click", (e) => {
         e.preventDefault();
         localStorage.removeItem("safraUser");
+        localStorage.removeItem("safraAvatar");
         window.location.href = "/index/index.html";
     });
 }
@@ -47,7 +48,6 @@ if (!currentUser) {
 } else {
     document.getElementById("profileName").textContent = currentUser.name;
     document.getElementById("profileEmail").textContent = currentUser.email;
-    // تحميل الصورة — من السيرفر أو من localStorage
     const savedAvatar = localStorage.getItem("safraAvatar");
     const avatarSrc = currentUser.avatar || savedAvatar || null;
     if (avatarSrc) {
@@ -70,11 +70,9 @@ if (avatarInput) {
         const reader = new FileReader();
         reader.onload = (event) => {
             const base64 = event.target.result;
-            // عرض الصورة فوراً
             document.getElementById("profileAvatar").src = base64;
             const navAvatar = document.getElementById("userAvatar");
             if (navAvatar) navAvatar.src = base64;
-            // حفظ محلي فوري عشان تبقى حتى لو السيرفر ما رد
             localStorage.setItem("safraAvatar", base64);
             const user = JSON.parse(localStorage.getItem("safraUser"));
             user.avatar = base64;
@@ -82,7 +80,6 @@ if (avatarInput) {
         };
         reader.readAsDataURL(file);
 
-        // رفع للسيرفر
         const user = JSON.parse(localStorage.getItem("safraUser"));
         const formData = new FormData();
         formData.append("file", file);
@@ -93,7 +90,6 @@ if (avatarInput) {
             });
             const data = await response.json();
             if (response.ok) {
-                // حفظ رابط السيرفر فوق الـ base64
                 user.avatar = data.url;
                 localStorage.setItem("safraUser", JSON.stringify(user));
                 localStorage.setItem("safraAvatar", data.url);
@@ -158,18 +154,32 @@ const typeLinks = {
     city: (item) => getCountryLink(item.id),
 };
 
-// عرض المفضلة
-function renderFavorites() {
-    const saved = JSON.parse(localStorage.getItem("safraFavorites") || "{}");
+// عرض المفضلة من السيرفر
+async function renderFavorites() {
+    const user = JSON.parse(localStorage.getItem("safraUser"));
+    if (!user) return;
+
+    let saved = {};
+    try {
+        const response = await fetch(`https://sofrh-1.onrender.com/favorites/${user.email}`);
+        const data = await response.json();
+        saved = data.favorites || {};
+    } catch (err) {
+        // fallback للـ localStorage إذا السيرفر ما رد
+        saved = JSON.parse(localStorage.getItem("safraFavorites") || "{}");
+    }
+
     const types = [
         { key: "event", gridId: "favEvents", emptyId: "emptyEvents" },
         { key: "recipe", gridId: "favRecipes", emptyId: "emptyRecipes" },
         { key: "country", gridId: "favCountries", emptyId: "emptyCountries" },
         { key: "city", gridId: "favCities", emptyId: "emptyCity" },
     ];
+
     types.forEach(({ key, gridId, emptyId }) => {
         const grid = document.getElementById(gridId);
         const empty = document.getElementById(emptyId);
+        if (!grid) return;
         const items = saved[key] || [];
         grid.innerHTML = "";
         if (items.length === 0) { empty.style.display = "block"; return; }
@@ -198,11 +208,19 @@ function renderFavorites() {
     });
 }
 
-function removeItem(type, id) {
-    const saved = JSON.parse(localStorage.getItem("safraFavorites") || "{}");
-    if (!saved[type]) return;
-    saved[type] = saved[type].filter(item => item.id !== id);
-    localStorage.setItem("safraFavorites", JSON.stringify(saved));
+// حذف من المفضلة
+async function removeItem(type, id) {
+    const user = JSON.parse(localStorage.getItem("safraUser"));
+    if (!user) return;
+    try {
+        await fetch('https://sofrh-1.onrender.com/favorites/remove', {
+            method: 'DELETE',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email: user.email, type, id })
+        });
+    } catch (err) {
+        showToast("فشل الحذف", "error");
+    }
     renderFavorites();
 }
 
