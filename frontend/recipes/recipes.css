@@ -612,25 +612,50 @@ body {
 
 .servings-box {
     display: flex;
-    gap: 10px;
     align-items: center;
-    margin-bottom: 12px;
+    gap: 12px;
+    margin-bottom: 16px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(210, 166, 115, 0.3);
+    border-radius: 50px;
+    padding: 8px 16px;
+    width: fit-content;
 }
 
-.serv-btn {
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    padding: 6px 14px;
-    border-radius: 20px;
+.servings-box span:first-child {
+    color: #D2A673;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+#servingsCount {
+    min-width: 28px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 1rem;
+    color: #FAF4E6;
+}
+
+.serv-minus,
+.serv-plus {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 1px solid rgba(210, 166, 115, 0.5);
+    background: rgba(210, 166, 115, 0.15);
+    color: #D2A673;
+    font-size: 1.1rem;
     cursor: pointer;
-    background: rgba(255, 255, 255, 0.06);
-    color: #e8ddd0;
-    font-family: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
 }
 
-.serv-btn.active {
-    background: rgba(200, 133, 74, 0.4);
-    border-color: rgba(200, 133, 74, 0.6);
-    color: #f5ede0;
+.serv-minus:hover,
+.serv-plus:hover {
+    background: #D2A673;
+    color: #4A2E1F;
 }
 
 .user-menu {
