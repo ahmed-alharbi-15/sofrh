@@ -151,7 +151,10 @@ const typeLinks = {
     event: (item) => `/events/events.html?event=${item.id}`,
     recipe: (item) => `/recipes/recipes.html?recipe=${item.id}`,
     country: (item) => getCountryLink(item.id),
-    city: (item) => getCountryLink(item.id),
+    city: (item) => {
+    const countryId = item.id.split('_')[0];
+    return getCountryLink(countryId);
+},
 };
 
 // عرض المفضلة من السيرفر
