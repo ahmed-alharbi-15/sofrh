@@ -130,7 +130,7 @@ const countryContinent = {
     greece: 'europe', croatia: 'europe', slovenia: 'europe', serbia: 'europe', bosnia: 'europe', montenegro: 'europe', albania: 'europe', north_macedonia: 'europe', malta: 'europe', san_marino: 'europe', vatican: 'europe',
     poland: 'europe', czechia: 'europe', slovakia: 'europe', hungary: 'europe', romania: 'europe', bulgaria: 'europe', moldova: 'europe', ukraine: 'europe', belarus: 'europe', russia: 'europe',
     egypt: 'africa', morocco: 'africa', tunisia: 'africa', algeria: 'africa', libya: 'africa', sudan: 'africa', mauritania: 'africa',
-    ethiopia: 'africa', kenya: 'africa', tanzania: 'africa', uganda: 'africa', rwanda: 'africa', burundi: 'africa', somalia: 'africa', djibouti: 'africa', eritrea: 'africa', south_sudan: 'africa', madagascar: 'africa', mozambique: 'africa', zimbabwe: 'africa', zambia: 'africa', malawi: 'africa',
+    ethiopia: 'africa', kenya2: 'africa', tanzania: 'africa', uganda: 'africa', rwanda: 'africa', burundi: 'africa', somalia: 'africa', djibouti: 'africa', eritrea: 'africa', south_sudan: 'africa', madagascar: 'africa', mozambique: 'africa', zimbabwe: 'africa', zambia: 'africa', malawi: 'africa',
     nigeria: 'africa', ghana: 'africa', senegal: 'africa', ivory_coast: 'africa', mali: 'africa', burkina_faso: 'africa', niger: 'africa', guinea: 'africa', sierra_leone: 'africa', liberia: 'africa', togo: 'africa', benin: 'africa', gambia: 'africa', guinea_bissau: 'africa', cape_verde: 'africa',
     cameroon: 'africa', chad: 'africa', car: 'africa', congo: 'africa', drc: 'africa', gabon: 'africa', equatorial_guinea: 'africa',
     southafrica: 'africa', namibia: 'africa', botswana: 'africa', lesotho: 'africa', swaziland: 'africa', angola: 'africa', mauritius: 'africa',
