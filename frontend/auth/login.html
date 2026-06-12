@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,8 +9,9 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@500;600&display=swap');
     </style>
-    
+
 </head>
+
 <body>
     <div class="auth-page">
         <div class="auth-card">
@@ -34,6 +36,13 @@
             <p class="auth-switch">ما عندك حساب؟ <a href="/auth/signup.html">إنشاء حساب</a></p>
         </div>
     </div>
+    <div id="loadingScreen"
+        style="display:none; position:fixed; inset:0; background:rgba(20,8,2,0.95); z-index:99999; flex-direction:column; align-items:center; justify-content:center; gap:20px;">
+        <img src="/img/logo3.JPG" alt="سفرة" style="width:80px; border-radius:50%; animation: pulse 1.5s infinite;">
+        <p style="color:#D2A673; font-family:'Noto Sans Arabic',sans-serif; font-size:16px; font-weight:600;">جاري تسجيل
+            الدخول...</p>
+    </div>
     <script src="/auth/auth.js"></script>
 </body>
+
 </html>

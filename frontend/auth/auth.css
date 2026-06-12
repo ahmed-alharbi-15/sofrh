@@ -1,4 +1,8 @@
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 body {
     background-color: #FAF4E6;
@@ -116,7 +120,9 @@ body {
 }
 
 @media (max-width: 480px) {
-    .auth-card { padding: 30px 20px; }
+    .auth-card {
+        padding: 30px 20px;
+    }
 }
 
 .user-menu {
@@ -149,7 +155,7 @@ body {
     background: #FAF4E6;
     border-radius: 12px;
     padding: 10px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
     min-width: 150px;
     z-index: 999;
 }
@@ -171,3 +177,16 @@ body {
     background: #F3E8D2;
 }
 
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.08);
+        opacity: 0.7;
+    }
+}

@@ -9,6 +9,9 @@ if (signupBtn) {
         const phone = document.getElementById('phone').value;
         const password = document.getElementById('password').value;
 
+        const loadingScreen = document.getElementById('loadingScreen');
+        if (loadingScreen) loadingScreen.style.display = "flex";
+
         try {
             const response = await fetch('https://sofrh-1.onrender.com/signup', {
                 method: 'POST',
@@ -21,9 +24,11 @@ if (signupBtn) {
                 showToast("تم إنشاء الحساب بنجاح ✨", "success");
                 setTimeout(() => window.location.href = "/index/index.html", 1500);
             } else {
+                if (loadingScreen) loadingScreen.style.display = "none";
                 showToast("⚠️ " + (data.detail || "حدث خطأ في البيانات"), "error");
             }
         } catch (err) {
+            if (loadingScreen) loadingScreen.style.display = "none";
             console.error(err);
             showToast("فشل الاتصال بالسيرفر، تأكد من اتصالك!", "error");
         }
@@ -38,6 +43,9 @@ if (loginBtn) {
         const email = document.getElementById('loginEmail').value;
         const password = document.getElementById('loginPassword').value;
 
+        const loadingScreen = document.getElementById('loadingScreen');
+        if (loadingScreen) loadingScreen.style.display = "flex";
+
         try {
             const response = await fetch('https://sofrh-1.onrender.com/login', {
                 method: 'POST',
@@ -46,7 +54,6 @@ if (loginBtn) {
             });
             const data = await response.json();
             if (response.ok) {
-                // جلب الصورة من السيرفر
                 let avatar = "";
                 try {
                     const avatarRes = await fetch(`https://sofrh-1.onrender.com/avatar/${email}`);
@@ -63,9 +70,11 @@ if (loginBtn) {
                 showToast(`أهلاً بك يا ${data.username || email.split("@")[0]} ✨`, "success");
                 setTimeout(() => window.location.href = "/index/index.html", 1500);
             } else {
+                if (loadingScreen) loadingScreen.style.display = "none";
                 showToast("خطأ: " + data.detail, "error");
             }
         } catch (err) {
+            if (loadingScreen) loadingScreen.style.display = "none";
             showToast("السيرفر طافي! حاول لاحقاً", "error");
         }
     });
