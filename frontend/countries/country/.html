@@ -265,324 +265,355 @@
 
 </html>
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>سفرة</title>
-  <link rel="stylesheet" href="/countries/countries.css" />
-  <style>
-    @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@500;600&display=swap");
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سفرة</title>
+
+    <!-- ملف الستايل الأساسي -->
+    <link rel="stylesheet" href="/countries/countries.css">
+
+    <!-- خط عربي -->
+    <style>
+        @import url('https://fonts.googleapis.com/css/2?family=Noto+Sans+Arabic:wght@500;600&display=swap');
+    </style>
+
 </head>
 
+
 <body>
-  <header class="navbar">
-    <div class="hamburger" id="menu-btn">☰</div>
-    <div class="auth-buttons" id="authButtons">
-      <a href="/auth/login.html" class="login">تسجيل دخول</a>
-      <a href="/auth/signup.html" class="signup">إنشاء حساب</a>
-    </div>
-    <div class="user-menu" id="userMenu">
-      <img id="userAvatar" src="/img/avater-icon.jpeg" alt="المستخدم" />
-      <span class="user-name" id="userName"></span>
-      <div class="user-dropdown">
-        <a href="/profile/profile.html">الملف الشخصي</a>
-        <a href="/index/index.html" id="logoutBtn">تسجيل الخروج</a>
-      </div>
-    </div>
-    <ul class="nav-list">
-      <li><a href="/index/index.html">الرئيسية</a></li>
-      <li><a href="/countries/countries.html">الدول</a></li>
-      <li><a href="/events/events.html">الفعاليات</a></li>
-      <li><a href="/recipes/recipes.html">الوصفات</a></li>
-    </ul>
-    <div class="logo">
-      <a href="/index/index.html"><img src="/img/logo3.JPG" alt="سفرة" /></a>
-    </div>
-  </header>
 
-  <nav class="side-menu" id="side-menu">
-    <span class="close-btn" id="close-btn">✖</span>
-    <ul>
-      <li><a href="/index/index.html">الرئيسية</a></li>
-      <li><a href="/countries/countries.html">الدول</a></li>
-      <li><a href="/events/events.html">الفعاليات</a></li>
-      <li><a href="/recipes/recipes.html">الوصفات</a></li>
-    </ul>
-  </nav>
+    <!--  NAVBAR (ثابت في كل صفحة) -->
+    <header class="navbar">
 
-  <header>
-    <a href="/countries/countries.html" class="back-btn">رجوع</a>
-  </header>
+        <div class="hamburger" id="menu-btn">☰</div>
 
-  <div class="country-name">
-    <h1>سيشل</h1>
-    <p>جنة استوائية تجمع بين الشواطئ البيضاء والطبيعة الخلابة.</p>
-  </div>
-
-  <div class="main-cites">
-    <h1>المدن</h1>
-  </div>
-  <section class="cities-grid">
-
-    <div class="cite" data-name="فيكتوريا – Victoria" data-img="/img/Victoria Seychelles.jpg"
-      data-desc="عاصمة سيشل الصغيرة والنابضة بالحياة، أصغر عواصم العالم وأكثرها سحراً، تجمع بين الأسواق الشعبية الملونة والمباني الاستعمارية والأجواء الاستوائية الدافئة."
-      data-historic="🕰️ برج الساعة – Clock Tower | 🏛️ متحف سيشل الوطني – National Museum | 🛍️ سوق سير سيلستان – Sir Selwyn Clarke Market | 🌿 الحديقة النباتية – Botanical Gardens"
-      data-restaurants="🐟 مطعم The Pirates Arms | 🌿 مطعم Café des Arts | 🦞 مطعم Chez Jules"
-      data-cafes="☕ Bravo Café | ☕ Del Place Café | ☕ Coffee Tree"
-      data-events="🛍️ سوق فيكتوريا – Victoria Market | 🌿 الحديقة النباتية – Botanical Gardens | 🕰️ برج الساعة – Clock Tower"
-      onclick="openCityModal(this)">
-      <button class="save-btn"
-        onclick="event.stopPropagation(); saveItem('city', 'seychelles_victoria-seychelles', 'فيكتوريا - Victoria', '/img/Victoria Seychelles.jpg')">🏙️</button>
-      <img src="/img/Victoria Seychelles.jpg" alt="فيكتوريا" class="cite-img" />
-      <span class="name">فيكتوريا – Victoria</span>
-      <p class="info">عاصمة صغيرة بأجواء استوائية جميلة.</p>
-      <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
-    </div>
-
-    <div class="cite" data-name="ماهي – Mahé" data-img="/img/Mahe Seychelles.jpg"
-      data-desc="الجزيرة الرئيسية في سيشل وأكبرها، تضم أجمل الشواطئ والمنتجعات الفاخرة والغابات الاستوائية المورقة. وجهة مثالية لكل من يبحث عن الفخامة وسط الطبيعة البكر."
-      data-historic="🏖️ شاطئ بو فالون – Beau Vallon Beach | 🌿 محمية مورن سيشلوا – Morne Seychellois | 🏊 شاطئ تاكاما – Takamaka Beach | 🏛️ فيكتوريا العاصمة – Victoria Capital"
-      data-restaurants="🦞 مطعم Kaz'Kreol | 🌊 مطعم The Boardwalk | 🐟 مطعم Marie Antoinette"
-      data-cafes="☕ Boat House Café | ☕ Kreolab Café | ☕ Coco Rouge"
-      data-events="🏖️ شاطئ بو فالون – Beau Vallon Beach | 🌿 محمية مورن سيشلوا – Morne Seychellois Park | 🤿 غوص ماهي – Mahé Diving"
-      onclick="openCityModal(this)">
-      <button class="save-btn"
-        onclick="event.stopPropagation(); saveItem('city', 'seychelles_mahe', 'ماهي - Mahé', '/img/Mahe Seychelles.jpg')">🏙️</button>
-      <img src="/img/Mahe Seychelles.jpg" alt="ماهي" class="cite-img" />
-      <span class="name">ماهي – Mahé</span>
-      <p class="info">الجزيرة الرئيسية بالشواطئ والمنتجعات.</p>
-      <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
-    </div>
-
-    <div class="cite" data-name="براسلين – Praslin" data-img="/img/Praslin Seychelles.jpg"
-      data-desc="ثاني أكبر جزر سيشل وموطن غابة Vallée de Mai السحرية المدرجة كتراث عالمي لليونسكو. تشتهر بشواطئها الهادئة وطبيعتها الخضراء الاستثنائية."
-      data-historic="🌿 وادي مايو – Vallée de Mai | 🏖️ شاطئ أنس لازيو – Anse Lazio | 🌴 نخيل كوكو دو مير – Coco de Mer Palms | 🐦 طائر الأسود – Black Parrot"
-      data-restaurants="🦞 مطعم Café des Arts | 🌿 مطعم Bonbon Plume | 🐟 مطعم La Plage"
-      data-cafes="☕ Gelateria Côte d'Or | ☕ Coco Rouge Praslin | ☕ Village du Pêcheur Café"
-      data-events="🌿 محمية وادي مايو – Vallée de Mai | 🏖️ شاطئ أنس لازيو – Anse Lazio | 🐦 مشاهدة الطيور – Birdwatching"
-      onclick="openCityModal(this)">
-      <button class="save-btn"
-        onclick="event.stopPropagation(); saveItem('city', 'seychelles_praslin', 'براسلين - Praslin', '/img/Praslin Seychelles.jpg')">🏙️</button>
-      <img src="/img/Praslin Seychelles.jpg" alt="براسلين" class="cite-img" />
-      <span class="name">براسلين – Praslin</span>
-      <p class="info">طبيعة خضراء وشواطئ هادئة.</p>
-      <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
-    </div>
-
-    <div class="cite" data-name="لا ديغ – La Digue" data-img="/img/La Digue Seychelles.jpg"
-      data-desc="جزيرة الأحلام الاستوائية، مشهورة بصخورها الغرانيتية العملاقة وشاطئ Anse Source d'Argent الذي يُعد من أجمل شواطئ العالم. حركة هادئة وأجواء لا مثيل لها."
-      data-historic="🏖️ شاطئ أنس سورس داجون – Anse Source d'Argent | 🗿 صخور غرانيتية – Granite Boulders | 🚲 جولات بالدراجة – Cycling Tours | 🌴 منتزه يونيون – L'Union Estate"
-      data-restaurants="🦞 مطعم Loutier Coco | 🌊 مطعم Zerof | 🐟 مطعم Chez Jules La Digue"
-      data-cafes="☕ Chez Marston | ☕ La Passe Café | ☕ Tarosa Café"
-      data-events="🏖️ أنس سورس داجون – Anse Source d'Argent | 🚲 جولة بالدراجة – Island Cycling | 🌴 منتزه يونيون – L'Union Estate"
-      onclick="openCityModal(this)">
-      <button class="save-btn"
-        onclick="event.stopPropagation(); saveItem('city', 'seychelles_la-digue', 'لا ديغ - La Digue', '/img/La Digue Seychelles.jpg')">🏙️</button>
-      <img src="/img/La Digue Seychelles.jpg" alt="لا ديغ" class="cite-img" />
-      <span class="name">لا ديغ – La Digue</span>
-      <p class="info">جزيرة مشهورة بصخورها وشواطئها.</p>
-      <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
-    </div>
-
-    <div class="cite" data-name="بو فالون – Beau Vallon" data-img="/img/Beau Vallon Seychelles.jpg"
-      data-desc="أشهر مناطق الشاطئ في ماهي وأكثرها حيوية، تمتد على شاطئ رملي ذهبي يطل على المحيط الهندي الأزرق. وجهة مثالية للغوص والرياضات المائية والأجواء البحرية المنعشة."
-      data-historic="🏖️ شاطئ بو فالون – Beau Vallon Beach | 🤿 مركز غوص – Dive Center | 🚤 رياضات مائية – Water Sports | 🌊 أسواق ليلية – Night Markets"
-      data-restaurants="🌊 مطعم The Boardwalk Bar & Grill | 🦞 مطعم La Perle Noire | 🐟 مطعم Baobab Pizzeria"
-      data-cafes="☕ Boat House Café | ☕ Berjaya Beau Vallon Bay | ☕ Sunset Café"
-      data-events="🏖️ شاطئ بو فالون – Beau Vallon Beach | 🤿 الغوص – Snorkeling & Diving | 🌙 الأسواق الليلية – Night Markets"
-      onclick="openCityModal(this)">
-      <button class="save-btn"
-        onclick="event.stopPropagation(); saveItem('city', 'seychelles_beau-vallon', 'بو فالون - Beau Vallon', '/img/Beau Vallon Seychelles.jpg')">🏙️</button>
-      <img src="/img/Beau Vallon Seychelles.jpg" alt="بو فالون" class="cite-img" />
-      <span class="name">بو فالون – Beau Vallon</span>
-      <p class="info">منطقة بحرية حيوية.</p>
-      <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
-    </div>
-
-    <div class="cite" data-name="أنس رويال – Anse Royale" data-img="/img/Anse Royale Seychelles.jpg"
-      data-desc="قرية ساحلية هادئة في جنوب ماهي، تتميز بشاطئها الجميل ومياهها الدافئة الصافية وإطلالاتها الساحرة على الأفق. بعيدة عن الضجيج ومثالية للاسترخاء والهدوء."
-      data-historic="🏖️ شاطئ أنس رويال – Anse Royale Beach | 🌊 كورال سيا – Coral Sea | 🌿 حديقة استوائية – Tropical Garden | 🐠 غوص محلي – Local Snorkeling"
-      data-restaurants="🐟 مطعم Surfers Beach | 🌿 مطعم Chez Batista | 🦞 مطعم La Residence"
-      data-cafes="☕ Bamboo Bar | ☕ Anse Royale Café | ☕ Bagatelle Café"
-      data-events="🏖️ شاطئ أنس رويال – Anse Royale Beach | 🐠 سنوركلينج – Snorkeling | 🌅 غروب الشمس – Sunset Views"
-      onclick="openCityModal(this)">
-      <button class="save-btn"
-        onclick="event.stopPropagation(); saveItem('city', 'seychelles_anse-royale', 'أنس رويال - Anse Royale', '/img/Anse Royale Seychelles.jpg')">🏙️</button>
-      <img src="/img/Anse Royale Seychelles.jpg" alt="أنس رويال" class="cite-img" />
-      <span class="name">أنس رويال – Anse Royale</span>
-      <p class="info">شواطئ هادئة وإطلالات جميلة.</p>
-      <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
-    </div>
-
-  </section>
-
-  <div class="main-foods">
-    <h1>الماكولات</h1>
-  </div>
-  <section class="foods-grid">
-    <div class="foods" style="cursor:pointer"
-      onclick="window.location.href='/recipes/recipes.html?recipe=seychelles-fish-curry'">
-      <img src="/img/Fish Curry Seychelles.jpg" alt="" class="foods-img" />
-      <span class="name-foods">سمك بالكاري السيشلي – Seychellois Fish Curry</span>
-      <div class="food-info">مأكولات بحرية بتوابل استوائية.</div>
-      <a href="/recipes/recipes.html?recipe=seychelles-fish-curry" class="for-more-btn"
-        onclick="event.stopPropagation()">الوصفة</a>
-    </div>
-    <div class="foods" style="cursor:pointer"
-      onclick="window.location.href='/recipes/recipes.html?recipe=seychelles-turmeric-rice'">
-      <img src="/img/Turmeric Rice Seychelles.jpg" alt="" class="foods-img" />
-      <span class="name-foods">أرز بالكركم – Turmeric Rice</span>
-      <div class="food-info">أرز خفيف مع نكهات محلية.</div>
-      <a href="/recipes/recipes.html?recipe=seychelles-turmeric-rice" class="for-more-btn"
-        onclick="event.stopPropagation()">الوصفة</a>
-    </div>
-    <div class="foods" style="cursor:pointer"
-      onclick="window.location.href='/recipes/recipes.html?recipe=seychelles-grilled-chicken'">
-      <img src="/img/Grilled Chicken Seychelles.jpg" alt="" class="foods-img" />
-      <span class="name-foods">دجاج مشوي – Grilled Chicken</span>
-      <div class="food-info">دجاج متبل ومشوي.</div>
-      <a href="/recipes/recipes.html?recipe=seychelles-grilled-chicken" class="for-more-btn"
-        onclick="event.stopPropagation()">الوصفة</a>
-    </div>
-    <div class="foods" style="cursor:pointer"
-      onclick="window.location.href='/recipes/recipes.html?recipe=seychelles-octopus-curry'">
-      <img src="/img/Octopus Curry Seychelles.jpg" alt="" class="foods-img" />
-      <span class="name-foods">أخطبوط بالكاري – Octopus Curry</span>
-      <div class="food-info">طبق بحري مشهور.</div>
-      <a href="/recipes/recipes.html?recipe=seychelles-octopus-curry" class="for-more-btn"
-        onclick="event.stopPropagation()">الوصفة</a>
-    </div>
-    <div class="foods" style="cursor:pointer"
-      onclick="window.location.href='/recipes/recipes.html?recipe=seychelles-lentil-soup'">
-      <img src="/img/Lentil Soup Seychelles.webp" alt="" class="foods-img" />
-      <span class="name-foods">شوربة عدس – Lentil Soup</span>
-      <div class="food-info">شوربة دافئة وخفيفة.</div>
-      <a href="/recipes/recipes.html?recipe=seychelles-lentil-soup" class="for-more-btn"
-        onclick="event.stopPropagation()">الوصفة</a>
-    </div>
-    <div class="foods" style="cursor:pointer"
-      onclick="window.location.href='/recipes/recipes.html?recipe=seychelles-fried-banana'">
-      <img src="/img/Fried Banana Seychelles.jpg" alt="" class="foods-img" />
-      <span class="name-foods">موز مقلي – Fried Banana</span>
-      <div class="food-info">حلى بسيط ولذيذ.</div>
-      <a href="/recipes/recipes.html?recipe=seychelles-fried-banana" class="for-more-btn"
-        onclick="event.stopPropagation()">الوصفة</a>
-    </div>
-  </section>
-
-  <div class="events-main">
-    <h1>الفعاليات</h1>
-  </div>
-  <section class="events-grid">
-    <div class="event" style="cursor:pointer"
-      onclick="window.location.href='/events/events.html?event=BoardwalkSeychelles'">
-      <img src="/img/Boardwalk Seychelles.jpg" alt="" class="event-img" />
-      <span class="name-event">ذا بوردووك بار آند غريل – The Boardwalk Bar & Grill</span>
-      <div class="event-info">مطعم ومقهى بإطلالة بحرية رائعة.</div>
-      <a href="/events/events.html?event=BoardwalkSeychelles" class="event-btn"
-        onclick="event.stopPropagation()">التفاصيل</a>
-    </div>
-    <div class="event" style="cursor:pointer"
-      onclick="window.location.href='/events/events.html?event=FourSeasonsSeychelles'">
-      <img src="/img/Four Seasons Seychelles..webp" alt="" class="event-img" />
-      <span class="name-event">فور سيزونز ريزورت – Four Seasons Resort Seychelles</span>
-      <div class="event-info">منتجع فاخر وسط الطبيعة.</div>
-      <a href="/events/events.html?event=FourSeasonsSeychelles" class="event-btn"
-        onclick="event.stopPropagation()">التفاصيل</a>
-    </div>
-    <div class="event" style="cursor:pointer"
-      onclick="window.location.href='/events/events.html?event=AnseSourceDArgent'">
-      <img src="/img/Anse Source d'Argent.jpg" alt="" class="event-img" />
-      <span class="name-event">أنس سورس داجون – Anse Source d'Argent</span>
-      <div class="event-info">أحد أجمل الشواطئ بالعالم.</div>
-      <a href="/events/events.html?event=AnseSourceDArgent" class="event-btn"
-        onclick="event.stopPropagation()">التفاصيل</a>
-    </div>
-    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=SainteAnnePark'">
-      <img src="/img/Sainte Anne Marine Park.webp" alt="" class="event-img" />
-      <span class="name-event">حديقة سانت آن البحرية – Sainte Anne Marine National Park</span>
-      <div class="event-info">غوص وأنشطة بحرية مذهلة.</div>
-      <a href="/events/events.html?event=SainteAnnePark" class="event-btn"
-        onclick="event.stopPropagation()">التفاصيل</a>
-    </div>
-    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=CurieuseIsland'">
-      <img src="/img/Curieuse Island Seychelles.jpg" alt="" class="event-img" />
-      <span class="name-event">جزيرة كيوريوز – Curieuse Island</span>
-      <div class="event-info">جزيرة السلاحف والطبيعة الخلابة.</div>
-      <a href="/events/events.html?event=CurieuseIsland" class="event-btn"
-        onclick="event.stopPropagation()">التفاصيل</a>
-    </div>
-    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=ValleeDeMai'">
-      <img src="/img/Vallee de Mai Seychelles.jpg" alt="" class="event-img" />
-      <span class="name-event">وادي مايو – Vallée de Mai</span>
-      <div class="event-info">محمية طبيعية استوائية رائعة.</div>
-      <a href="/events/events.html?event=ValleeDeMai" class="event-btn" onclick="event.stopPropagation()">التفاصيل</a>
-    </div>
-  </section>
-
-
-  <div id="cityModal" class="modal" onclick="closeCityModal(event)">
-    <div class="modal-content">
-      <button class="modal-close" onclick="closeCityModal(event)">×</button>
-      <div class="modal-top">
-        <img id="modalCityImg" src="" alt="" />
-        <div class="modal-top-info">
-          <h2 id="modalCityName"></h2>
-          <span class="modal-top-badge">✦ تفاصيل المدينة</span>
+        <div class="auth-buttons" id="authButtons">
+            <a href="/auth/login.html" class="login">تسجيل دخول</a>
+            <a href="/auth/signup.html" class="signup">إنشاء حساب</a>
         </div>
-      </div>
-      <div class="modal-body">
-        <p id="modalCityDesc" class="event-desc"></p>
-        <h4>🏛️ أفضل الأماكن التاريخية</h4>
-        <div id="modalCityHistoric" class="ingredients-tags"></div>
-        <h4>🍽️ أفضل المطاعم</h4>
-        <div id="modalCityRestaurants" class="ingredients-tags"></div>
-        <h4>☕ أفضل المقاهي</h4>
-        <div id="modalCityCafes" class="ingredients-tags"></div>
-        <h4>🎉 فعاليات المدينة</h4>
-        <div id="modalCityEvents" class="ingredients-tags"></div>
-      </div>
-    </div>
-  </div>
-  <footer class="site-footer">
-    <div class="footer-container">
-      <div class="footer-brand">
-        <h2 class="footer-logo">سفرة</h2>
-        <p>وجهتك للسفر والطعام حول العالم</p>
-      </div>
 
-      <div class="footer-links">
-        <h4>روابط سريعة</h4>
-        <ul>
-          <li><a href="/index/index.html">الرئيسية</a></li>
-          <li><a href="/countries/countries.html">الدول</a></li>
-          <li><a href="/events/events.html">الفعاليات</a></li>
-          <li><a href="/recipes/recipes.html">الوصفات</a></li>
+        <div class="user-menu" id="userMenu">
+            <img id="userAvatar" src="/img/avater-icon.jpeg" alt="المستخدم">
+            <span class="user-name" id="userName"></span>
+            <div class="user-dropdown">
+                <a href="/profile/profile.html">الملف الشخصي</a>
+                <a href="/index/index.html" id="logoutBtn">تسجيل الخروج</a>
+            </div>
+        </div>
+        <ul class="nav-list">
+            <li><a href="/index/index.html">الرئيسية</a></li>
+            <li><a href="/countries/countries.html">الدول</a></li>
+            <li><a href="/events/events.html">الفعاليات</a></li>
+            <li><a href="/recipes/recipes.html">الوصفات</a></li>
         </ul>
-      </div>
 
-      <div class="footer-contact">
-        <h4>تواصل معنا</h4>
+        <div class="logo">
+            <a href="/index/index.html"> <img src="/img/logo3.JPG" alt="سفرة"></a>
+        </div>
+
+
+    </header>
+
+
+    <!--  MENU للجوال -->
+    <nav class="side-menu" id="side-menu">
+        <span class="close-btn" id="close-btn">✖</span>
+
         <ul>
-          <li>📧 <a href="mailto:Sofrh.info@gmail.com" target="_blank">Sofrh.info@gmail.com</a></li>
-          <li>📧 <a href="mailto:Sofrh.support@gmail.com" target="_blank">Sofrh.support@gmail.com</a></li>
-          <li>🐦 <a href="https://twitter.com/safra" target="_blank">X (Twitter)</a></li>
+            <li><a href="/index/index.html">الرئيسية</a></li>
+            <li><a href="/countries/countries.html">الدول</a></li>
+            <li><a href="/events/events.html">الفعاليات</a></li>
+            <li><a href="/recipes/recipes.html  ">الوصفات</a></li>
         </ul>
-      </div>
+    </nav>
+    <header>
+        <a href="/countries/countries.html" class="back-btn">رجوع</a>
+    </header>
+    <div class="country-name">
+        <h1>رواندا</h1>
+        <p>أرض التلال الخضراء والطبيعة الهادئة وتجارب السفاري الفريدة.</p>
     </div>
+    <!--المدن -->
+    <div class="main-cites">
+        <h1>المدن</h1>
+    </div>
+    <section class="cities-grid">
+        <div class="cite" data-name="كيغالي – Kigali" data-img="/img/Kigali.jpg"
+            data-desc="عاصمة رواندا الحديثة والنظيفة، تُصنَّف من أنظف عواصم أفريقيا وأكثرها أماناً. تجمع بين الحياة العصرية والأجواء الهادئة والمطاعم المتنوعة والثقافة الرواندية الأصيلة."
+            data-historic="🏛️ نصب كيغالي التذكاري – Genocide Memorial | 🎨 متحف كيغالي – Kigali Museum | 🌿 حديقة نياروغينغو – Nyarugunga Park | 🛍️ سوق نياميرامبو – Nyamirambo Market"
+            data-restaurants="☕ مطعم Question Coffee | 🥩 مطعم Repub Lounge | 🌿 مطعم Heaven Restaurant"
+            data-cafes="☕ Question Coffee Cafe | ☕ Bourbon Coffee | ☕ Café Cäfé"
+            data-events="🏛️ نصب كيغالي التذكاري – Genocide Memorial | 🛍️ سوق نياميرامبو – Nyamirambo | 🌿 حديقة كيغالي – Kigali City Park"
+            onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'rwanda_kigali', 'كيغالي - Kigali', '/img/Kigali.jpg')">🏙️</button>
+            <img src="/img/Kigali.jpg" alt="كيغالي" class="cite-img" />
+            <span class="name">كيغالي – Kigali</span>
+            <p class="info">عاصمة نظيفة وحديثة بأجواء هادئة.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
 
-    <div class="footer-bottom">
-      <p>© 2025 سفرة — جميع الحقوق محفوظة</p>
-      <p>صُنع بواسطة فريق شفرة</p>
-      <p>📧 <a href="mailto:hello@safra.com" style="color: #D2A673;">hello@safra.com</a></p>
+        <div class="cite" data-name="موسانزي – Musanze" data-img="/img/Musanze Rwanda.jpeg"
+            data-desc="بوابة الجبال والغوريلا في رواندا، تقع عند سفح سلسلة جبال البراكين وتوفر وصولاً مثالياً لحديقة البراكين الوطنية وتجربة مشاهدة الغوريلا الجبلية النادرة."
+            data-historic="🦍 حديقة البراكين – Volcanoes National Park | 🌋 جبل كاريسيمبي – Karisimbi | 🏛️ كهف موسانزي – Musanze Caves | 🌿 بحيرة بولير – Burera Lake"
+            data-restaurants="🥩 مطعم Gorilla's Nest | 🌿 مطعم La Palme | 🍽️ مطعم Fatima"
+            data-cafes="☕ Bourbon Coffee Musanze | ☕ Gorilla Coffee | ☕ Virunga Café"
+            data-events="🦍 مشاهدة الغوريلا – Gorilla Trekking | 🌋 تسلق البراكين – Volcano Hiking | 🌿 بحيرة بولير – Burera Lake"
+            onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'rwanda_musanze', 'موسانزي - Musanze', '/img/Musanze Rwanda.jpeg')">🏙️</button>
+            <img src="/img/Musanze Rwanda.jpeg" alt="موسانزي" class="cite-img" />
+            <span class="name">موسانزي – Musanze</span>
+            <p class="info">بوابة الجبال والطبيعة.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+        <div class="cite" data-name="جييسيني – Gisenyi" data-img="/img/Gisenyi Rwanda.jpg"
+            data-desc="مدينة ساحلية جميلة على ضفاف بحيرة كيفو في غرب رواندا، تتميز بشواطئها الهادئة وأجوائها المنعشة ومطاعمها المطلة على البحيرة في مشهد طبيعي ساحر."
+            data-historic="🌊 شاطئ بحيرة كيفو – Lake Kivu Beach | 🏖️ ميناء جييسيني – Gisenyi Port | 🌿 حديقة روبافو – Rubavu Park | 🌋 بركان نيراغونغو – Nyiragongo"
+            data-restaurants="🐟 مطعم Paradis Malahide | 🌊 مطعم Cormoran Lodge | 🍽️ مطعم Inzu Lodge"
+            data-cafes="☕ Lake Kivu Serena Café | ☕ Bourbon Coffee Gisenyi | ☕ Beach Café"
+            data-events="🌊 بحيرة كيفو – Lake Kivu | 🚤 جولة قارب – Boat Tour | 🏖️ شاطئ جييسيني – Gisenyi Beach"
+            onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'rwanda_gisenyi', 'جييسيني - Gisenyi', '/img/Gisenyi Rwanda.jpg')">🏙️</button>
+            <img src="/img/Gisenyi Rwanda.jpg" alt="جييسيني" class="cite-img" />
+            <span class="name">جييسيني – Gisenyi</span>
+            <p class="info">مدينة جميلة على البحيرة.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+        <div class="cite" data-name="بوتاري – Butare" data-img="/img/Huye Rwanda.jpeg"
+            data-desc="المدينة الجامعية والثقافية في جنوب رواندا، تضم جامعة رواندا الوطنية والمتحف الوطني الرواندي الشهير. أجواؤها هادئة وأكاديمية مع ثقافة غنية وتراث محلي أصيل."
+            data-historic="🏛️ المتحف الوطني الرواندي – Rwanda National Museum | 🎓 جامعة رواندا – University of Rwanda | 🌿 حديقة بوتاري – Butare Park | 🕌 كاتدرائية بوتاري – Butare Cathedral"
+            data-restaurants="🍽️ مطعم Chez Véronique | 🌿 مطعم Garden Restaurant | 🥘 مطعم Ishyo Arts Centre"
+            data-cafes="☕ Bourbon Coffee Butare | ☕ University Café | ☕ Horizon Café"
+            data-events="🏛️ المتحف الوطني – National Museum | 🎓 حرم الجامعة – University Campus | 🌿 الحديقة النباتية – Botanical Garden"
+            onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'rwanda_butare', 'بوتاري - Butare', '/img/Huye Rwanda.jpeg')">🏙️</button>
+            <img src="/img/Huye Rwanda.jpeg" alt="بوتاري" class="cite-img" />
+            <span class="name">بوتاري – Butare</span>
+            <p class="info">مدينة ثقافية هادئة.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+        <div class="cite" data-name="نيانزا – Nyanza" data-img="/img/Nyanza Rwanda.jpg"
+            data-desc="المدينة الملكية التاريخية في رواندا، موطن القصر الملكي التقليدي المُعاد بناؤه والمتحف الملكي الذي يروي تاريخ مملكة رواندا العريقة وثقافتها الأصيلة."
+            data-historic="🏰 القصر الملكي – Royal Palace Museum | 👑 متحف الملك موتارا – King Mutara Museum | 🐄 الأبقار الملكية – Royal Cattle | 🌿 حديقة نيانزا – Nyanza Park"
+            data-restaurants="🍽️ مطعم Royal Palace Restaurant | 🌿 مطعم Nyanza Lodge | 🥘 مطعم محلي"
+            data-cafes="☕ Royal Café | ☕ Nyanza Coffee | ☕ Heritage Café"
+            data-events="🏰 القصر الملكي – Royal Palace | 👑 المتحف الملكي – Royal Museum | 🌿 جولة تاريخية – Historical Tour"
+            onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'rwanda_nyanza', 'نيانزا - Nyanza', '/img/Nyanza Rwanda.jpg')">🏙️</button>
+            <img src="/img/Nyanza Rwanda.jpg" alt="نيانزا" class="cite-img" />
+            <span class="name">نيانزا – Nyanza</span>
+            <p class="info">مدينة تاريخية وتراثية.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+        <div class="cite" data-name="روسيزي – Rusizi" data-img="/img/Rusizi Rwanda.jpg"
+            data-desc="مدينة استوائية في جنوب غرب رواندا على الحدود مع بوروندي والكونغو، تتميز بطبيعتها الخضراء الكثيفة ونهر روسيزي الجميل ومحمية أكاجيرا الطبيعية القريبة."
+            data-historic="🌿 نهر روسيزي – Rusizi River | 🐊 محمية روسيزي – Rusizi National Park | 🌊 دلتا روسيزي – Rusizi Delta | 🏞️ غابات استوائية – Tropical Forests"
+            data-restaurants="🍽️ مطعم Rusizi Lodge | 🌿 مطعم River View | 🥘 مطعم محلي"
+            data-cafes="☕ Rusizi Café | ☕ Delta Coffee | ☕ Green Valley Café"
+            data-events="🌿 محمية روسيزي – Rusizi National Park | 🐊 مشاهدة التماسيح – Crocodile Watching | 🚤 جولة النهر – River Tour"
+            onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'rwanda_rusizi', 'روسيزي - Rusizi', '/img/Rusizi Rwanda.jpg')">🏙️</button>
+            <img src="/img/Rusizi Rwanda.jpg" alt="روسيزي" class="cite-img" />
+            <span class="name">روسيزي – Rusizi</span>
+            <p class="info">مدينة استوائية قريبة من الطبيعة.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+    </section>
+    <!--الاكل-->
+    <div class="main-foods">
+        <h1>الماكولات</h1>
     </div>
-  </footer>
-  <script src="/countries/countries.js"></script>
-  <script src="/auth/auth.js"></script>
+    <section class="foods-grid">
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=rwanda-brochette'">
+            <img src="/img/Rwanda Brochette.jpg" alt="" class="foods-img" />
+            <span class="name-foods">بروشيت – Brochette</span>
+            <div class="food-info">أسياخ لحم مشوية.</div>
+            <a href="/recipes/recipes.html?recipe=rwanda-brochette" class="for-more-btn"
+                onclick="event.stopPropagation()">الوصفة</a>
+        </div>
+
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=rwanda-rice-beans'">
+            <img src="/img/Rwanda Rice Beans.jpg" alt="" class="foods-img" />
+            <span class="name-foods">أرز بالفاصوليا – Rice and Beans</span>
+            <div class="food-info">طبق تقليدي غني.</div>
+            <a href="/recipes/recipes.html?recipe=rwanda-rice-beans" class="for-more-btn"
+                onclick="event.stopPropagation()">الوصفة</a>
+        </div>
+
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=rwanda-ubugali'">
+            <img src="/img/Rwanda Ubugali.jpg" alt="" class="foods-img" />
+            <span class="name-foods">أوبوغالي – Ubugali</span>
+            <div class="food-info">عجينة ذرة تقدم مع الفاصوليا أو الخضار.</div>
+            <a href="/recipes/recipes.html?recipe=rwanda-ubugali" class="for-more-btn"
+                onclick="event.stopPropagation()">الوصفة</a>
+        </div>
+
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=rwanda-grilled-chicken'">
+            <img src="/img/Rwanda Grilled Chicken.jpg" alt="" class="foods-img" />
+            <span class="name-foods">دجاج مشوي – Grilled Chicken</span>
+            <div class="food-info">دجاج متبل بطريقة محلية.</div>
+            <a href="/recipes/recipes.html?recipe=rwanda-grilled-chicken" class="for-more-btn"
+                onclick="event.stopPropagation()">الوصفة</a>
+        </div>
+
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=rwanda-sweet-potato-cake'">
+            <img src="/img/Rwanda Sweet Potato Cake.jpg" alt="" class="foods-img" />
+            <span class="name-foods">كيكة البطاطا الحلوة – Sweet Potato Cake</span>
+            <div class="food-info">حلى تقليدي من البطاطا الحلوة.</div>
+            <a href="/recipes/recipes.html?recipe=rwanda-sweet-potato-cake" class="for-more-btn"
+                onclick="event.stopPropagation()">الوصفة</a>
+        </div>
+
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=rwanda-mandazi'">
+            <img src="/img/Rwanda Mandazi.jpg" alt="" class="foods-img" />
+            <span class="name-foods">ماندازي – Mandazi</span>
+            <div class="food-info">حلى خفيف يشبه الدونات.</div>
+            <a href="/recipes/recipes.html?recipe=rwanda-mandazi" class="for-more-btn"
+                onclick="event.stopPropagation()">الوصفة</a>
+        </div>
+    </section>
+    <div class="events-main">
+        <h1>الفعاليات</h1>
+    </div>
+    <section class="events-grid">
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=QuestionCoffeeKigali'">
+            <img src="/img/Question Coffee Rwanda.jpeg" alt="" class="event-img" />
+            <span class="name-event">كوستشن كوفي كافيه – Question Coffee Cafe</span>
+            <div class="event-info">مقهى مشهور بالقهوة الرواندية المميزة.</div>
+            <a href="/events/events.html?event=QuestionCoffeeKigali" class="event-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=VolcanoesNationalPark'">
+            <img src="/img/Volcanoes National Park Rwanda.jpg" alt="" class="event-img" />
+            <span class="name-event">حديقة البراكين الوطنية – Volcanoes National Park</span>
+            <div class="event-info">مشاهدة الغوريلا وسط الطبيعة.</div>
+            <a href="/events/events.html?event=VolcanoesNationalPark" class="event-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=GorillasnestRwanda'">
+            <img src="/img/One&Only Gorillas Nest.jpg" alt="" class="event-img" />
+            <span class="name-event">ون آند أونلي غوريلاز نيست – One&Only Gorilla's Nest</span>
+            <div class="event-info">منتجع فاخر وسط الغابات.</div>
+            <a href="/events/events.html?event=GorillasnestRwanda" class="event-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=LakeKivuRwanda'">
+            <img src="/img/Lake Kivu Rwanda.jpg" alt="" class="event-img" />
+            <span class="name-event">بحيرة كيفو – Lake Kivu</span>
+            <div class="event-info">بحيرة جميلة للأنشطة والاسترخاء.</div>
+            <a href="/events/events.html?event=LakeKivuRwanda" class="event-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=CongoNileTrail'">
+            <img src="/img/Congo Nile Trail Rwanda.jpg" alt="" class="event-img" />
+            <span class="name-event">مسار كونغو نايل – Congo Nile Trail</span>
+            <div class="event-info">مسارات للدراجات والمغامرات.</div>
+            <a href="/events/events.html?event=CongoNileTrail" class="event-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=NyungweForest'">
+            <img src="/img/Nyungwe Forest.jpg" alt="" class="event-img" />
+            <span class="name-event">غابة نيونغوي – Nyungwe Forest</span>
+            <div class="event-info">غابة استوائية بمسارات مشي وجسر معلق بين قمم الأشجار.</div>
+            <a href="/events/events.html?event=NyungweForest" class="event-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+    </section>
+    <!-- Modal المدينة -->
+    <div id="cityModal" class="modal" onclick="closeCityModal(event)">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeCityModal(event)">×</button>
+            <div class="modal-top">
+                <img id="modalCityImg" src="" alt="" />
+                <div class="modal-top-info">
+                    <h2 id="modalCityName"></h2>
+                    <span class="modal-top-badge">✦ تفاصيل المدينة</span>
+                </div>
+            </div>
+            <div class="modal-body">
+                <p id="modalCityDesc" class="event-desc"></p>
+                <h4>🏛️ أفضل الأماكن التاريخية</h4>
+                <div id="modalCityHistoric" class="ingredients-tags"></div>
+                <h4>🍽️ أفضل المطاعم</h4>
+                <div id="modalCityRestaurants" class="ingredients-tags"></div>
+                <h4>☕ أفضل المقاهي</h4>
+                <div id="modalCityCafes" class="ingredients-tags"></div>
+                <h4>🎉 فعاليات المدينة</h4>
+                <div id="modalCityEvents" class="ingredients-tags"></div>
+            </div>
+        </div>
+    </div>
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h2 class="footer-logo">سفرة</h2>
+                <p>وجهتك للسفر والطعام حول العالم</p>
+            </div>
+
+            <div class="footer-links">
+                <h4>روابط سريعة</h4>
+                <ul>
+                    <li><a href="/index/index.html">الرئيسية</a></li>
+                    <li><a href="/countries/countries.html">الدول</a></li>
+                    <li><a href="/events/events.html">الفعاليات</a></li>
+                    <li><a href="/recipes/recipes.html">الوصفات</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h4>تواصل معنا</h4>
+                <ul>
+                    <li>📧 <a href="mailto:Sofrh.info@gmail.com" target="_blank">Sofrh.info@gmail.com</a></li>
+                    <li>📧 <a href="mailto:Sofrh.support@gmail.com" target="_blank">Sofrh.support@gmail.com</a></li>
+                    <li>🐦 <a href="https://twitter.com/safra" target="_blank">X (Twitter)</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2025 سفرة — جميع الحقوق محفوظة</p>
+            <p>صُنع بواسطة فريق شفرة</p>
+            <p>📧 <a href="mailto:hello@safra.com" style="color: #D2A673;">hello@safra.com</a></p>
+        </div>
+    </footer>
+    <script src="/countries/countries.js"></script>
+    <script src="/auth/auth.js"></script>
 </body>
 
 </html>
