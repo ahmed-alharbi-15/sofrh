@@ -1,4 +1,4 @@
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, UploadFile, File
 from pydantic import BaseModel
 import psycopg2
 from passlib.context import CryptContext
@@ -8,10 +8,10 @@ from typing import Optional
 import os
 import cloudinary
 import cloudinary.uploader
-from fastapi import UploadFile, File
 
 app = FastAPI()
 
+# إعدادات كلاوديناري - يسحبها تلقائياً من الـ Environment Variables في رندر
 cloudinary.config(
     cloud_name = os.environ.get('CLOUDINARY_CLOUD_NAME'),
     api_key = os.environ.get('CLOUDINARY_API_KEY'),
@@ -29,7 +29,10 @@ app.add_middleware(
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
 def get_db_connection():
-    db_url = "postgresql://prostorge:e2g1E1i4ySRy768iEyks7eD25RAhp6Qv@dpg-d7gj4lpkh4rs739a6ff0-a.oregon-postgres.render.com/sofrah_web"
+    # يقرأ رابط الداتابيس السحابية من رندر، وإذا لم يجدها يستخدم الرابط الافتراضي
+    db_url = os.environ.get('DATABASE_URL')
+    if not db_url:
+        db_url = "postgresql://prostorge:e2g1E1i4ySRy768iEyks7eD25RAhp6Qv@dpg-d7gj4lpkh4rs739a6ff0-a.oregon-postgres.render.com/sofrah_web"
     return psycopg2.connect(db_url)
 
 
@@ -67,11 +70,24 @@ class RemoveFavorite(BaseModel):
     id: str
 
 
-# --- إنشاء جدول المفضلة عند التشغيل ---
+# --- دالة فحص قوة كلمة المرور بالشروط الجديدة ---
+def check_password_strength(password: str):
+    if len(password) < 8:
+        raise HTTPException(status_code=400, detail="كلمة المرور يجب أن تكون 8 خانات على الأقل")
+    if not re.search(r'[A-Z]', password):
+        raise HTTPException(status_code=400, detail="كلمة المرور يجب أن تحتوي على حرف كبير واحد على الأقل (A-Z)")
+    if not re.search(r'[a-z]', password):
+        raise HTTPException(status_code=400, detail="كلمة المرور يجب أن تحتوي على حرف صغير واحد على الأقل (a-z)")
+    if not re.search(r'[0-9]', password):
+        raise HTTPException(status_code=400, detail="كلمة المرور يجب أن تحتوي على رقم واحد على الأقل (0-9)")
+
+
+# --- إنشاء جدول المفضلة وتأكيد جدول المستخدمين عند التشغيل ---
 @app.on_event("startup")
 def create_tables():
     conn = get_db_connection()
     cur = conn.cursor()
+    # جدول المفضلة
     cur.execute("""
         CREATE TABLE IF NOT EXISTS favorites (
             id SERIAL PRIMARY KEY,
@@ -82,6 +98,10 @@ def create_tables():
             img TEXT NOT NULL,
             UNIQUE(email, type, item_id)
         )
+    """)
+    # التأكد من وجود عمود avatar_url في جدول المستخدمين
+    cur.execute("""
+        ALTER TABLE users ADD COLUMN IF NOT EXISTS avatar_url TEXT;
     """)
     conn.commit()
     cur.close()
@@ -95,9 +115,8 @@ def signup(user: UserCreate):
     if len(user.username) < 4:
         raise HTTPException(status_code=400, detail="اسم المستخدم يجب أن يكون 4 خانات على الأقل")
 
-    password_pattern = r"^[A-Z][a-zA-Z0-9]*[0-9][a-zA-Z0-9]*$"
-    if not re.match(password_pattern, user.password):
-        raise HTTPException(status_code=400, detail="كلمة المرور يجب أن تبدأ بحرف كبير وتحتوي على رقم")
+    # تطبيق الفحص المطور الجديد (طول 8، كبير، صغير، رقم)
+    check_password_strength(user.password)
 
     conn = get_db_connection()
     cur = conn.cursor()
@@ -118,6 +137,9 @@ def signup(user: UserCreate):
         conn.commit()
         return {"status": "success", "message": "تم إنشاء الحساب بنجاح!"}
 
+    except HTTPException as he:
+        # إعادة توجيه أخطاء الباسوورد لتصل للفرونت اند كـ detail
+        raise he
     except Exception as e:
         raise HTTPException(status_code=500, detail="حدث خطأ في السيرفر: " + str(e))
     finally:
@@ -179,14 +201,15 @@ def change_password(data: ChangePassword):
         if not pwd_context.verify(data.currentPassword, user_data[0]):
             raise HTTPException(status_code=401, detail="كلمة المرور الحالية غلط")
 
-        password_pattern = r"^[A-Z][a-zA-Z0-9]*[0-9][a-zA-Z0-9]*$"
-        if not re.match(password_pattern, data.newPassword):
-            raise HTTPException(status_code=400, detail="كلمة المرور الجديدة ضعيفة")
+        # تطبيق الفحص المطور الجديد عند تغيير الباسوورد أيضاً
+        check_password_strength(data.newPassword)
 
         hashed_new = pwd_context.hash(data.newPassword)
         cur.execute("UPDATE users SET password = %s WHERE email = %s", (hashed_new, data.email))
         conn.commit()
         return {"message": "تم تغيير كلمة المرور!"}
+    except HTTPException as he:
+        raise he
     finally:
         cur.close()
         conn.close()
@@ -194,21 +217,26 @@ def change_password(data: ChangePassword):
 
 @app.post("/upload-avatar")
 async def upload_avatar(username: str, file: UploadFile = File(...)):
+    conn = None
+    cur = None
     try:
+        # 1. رفع الصورة لـ Cloudinary في مجلد خاص
         upload_result = cloudinary.uploader.upload(file.file, folder="sofrah_avatars")
         image_url = upload_result.get("secure_url")
 
+        # 2. تحديث رابط الصورة في جدول الـ users
         conn = get_db_connection()
         cur = conn.cursor()
         cur.execute("UPDATE users SET avatar_url = %s WHERE username = %s", (image_url, username))
         conn.commit()
-        cur.close()
-        conn.close()
 
         return {"status": "success", "url": image_url}
 
     except Exception as e:
         return {"status": "error", "message": str(e)}
+    finally:
+        if cur: cur.close()
+        if conn: conn.close()
 
 
 # --- المفضلة ---
