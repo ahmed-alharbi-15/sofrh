@@ -70,7 +70,9 @@
             data-events="🛍️ سوق مركزي – Central Market | 🏛️ متحف التاريخ الطبيعي | 🌊 ميناء بورت لويس – Caudan Waterfront"
             onclick="openCityModal(this)">
             <button class="save-btn"
-                onclick="event.stopPropagation(); saveItem('city', 'mauritius_port_louis', 'بورت لويس - Port Louis', '/img/Port Louis.jpg')">🏙️</button>
+                onclick="event.stopPropagation(); console.log('save'); saveItem('city','mauritius_port_louis','بورت لويس','/img/Port Louis.jpg')">
+                🏙️
+            </button>
             <img src="/img/Port Louis.jpg" alt="بورت لويس" class="cite-img">
             <span class="name">بورت لويس – Port Louis</span>
             <p class="info">عاصمة حيوية تجمع بين الأسواق والبحر.</p>
@@ -132,7 +134,7 @@
             <button class="save-btn"
                 onclick="event.stopPropagation(); saveItem('city', 'mauritius_curepipe', 'كوريبيب - Curepipe', '/img/Curepipe.jpeg')">🏙️</button>
             <img src="/img/Curepipe.jpeg" alt="كوريبيب" class="cite-img">
-            <span class="name">كوريبيب –  Curepipe</span>
+            <span class="name">كوريبيب – Curepipe</span>
             <p class="info">مدينة مرتفعة بأجواء باردة نسبياً.</p>
             <button class="cite-btn"
                 onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
