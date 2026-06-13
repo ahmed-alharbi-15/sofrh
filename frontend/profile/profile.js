@@ -121,7 +121,7 @@ const countryContinent = {
     jordan: 'asia', lebanon: 'asia', syria: 'asia', iraq: 'asia', yemen: 'asia', palestine: 'asia', israel: 'asia',
     turkey: 'asia', iran: 'asia', armenia: 'asia', azerbaijan: 'asia', georgia: 'asia', cyprus: 'asia',
     india: 'asia', pakistan: 'asia', bangladesh: 'asia', srilanka: 'asia', maldives: 'asia', nepal: 'asia', bhutan: 'asia', afghanistan: 'asia',
-    china: 'asia', japan: 'asia', south_korea: 'asia', north_korea: 'asia', taiwan: 'asia', mongolia: 'asia', hongkong: 'asia', macau: 'asia',
+    china: 'asia', japan: 'asia', korea: 'asia', north_korea: 'asia', taiwan: 'asia', mongolia: 'asia', hongkong: 'asia', macau: 'asia',
     vietnam: 'asia', thailand: 'asia', malaysia: 'asia', indonesia: 'asia', philippines: 'asia', singapore: 'asia', cambodia: 'asia', myanmar: 'asia', laos: 'asia', brunei: 'asia', timor_leste: 'asia',
     kazakhstan: 'asia', uzbekistan: 'asia', turkmenistan: 'asia', kyrgyzstan: 'asia', tajikistan: 'asia',
     france: 'europe', germany: 'europe', italy: 'europe', spain: 'europe', portugal: 'europe', uk: 'europe', ireland: 'europe', netherlands: 'europe',
