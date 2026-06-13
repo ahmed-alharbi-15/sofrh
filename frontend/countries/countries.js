@@ -280,11 +280,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // فتح المدينة من URL
     const cityId = params.get("city");
-    console.log("cityId:", cityId);
-    const cites = document.querySelectorAll(".cite");
-    console.log("cites found:", cites.length);
-    cites.forEach(cite => {
-        const saveBtn = cite.querySelector(".save-btn");
-        console.log("onclick:", saveBtn?.getAttribute("onclick"));
-    });
+    if (cityId) {
+        const cites = document.querySelectorAll(".cite");
+        cites.forEach(cite => {
+            const saveBtn = cite.querySelector(".save-btn");
+            const onclickAttr = saveBtn?.getAttribute("onclick") || "";
+            if (onclickAttr.includes(cityId)) {
+                openCityModal(cite);
+                cite.scrollIntoView({ behavior: "smooth", block: "center" });
+            }
+        });
+    }
 });
