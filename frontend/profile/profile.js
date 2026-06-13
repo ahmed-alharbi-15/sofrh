@@ -145,7 +145,7 @@ const countryContinent = {
 
 function getCountryLink(id) {
     const continent = countryContinent[id] || 'asia';
-    return `/countries/country/${continent}/${id}.html`;
+    return `https://sofrh.vercel.app/countries/country/${continent}/${id}.html`;
 }
 
 const typeLinks = {
@@ -153,9 +153,9 @@ const typeLinks = {
     recipe: (item) => `/recipes/recipes.html?recipe=${item.id}`,
     country: (item) => getCountryLink(item.id),
     city: (item) => {
-    const countryId = item.id.split('_')[0];
-    return getCountryLink(countryId) + `?city=${item.id}`;
-},
+        const countryId = item.id.split('_')[0];
+        return getCountryLink(countryId) + `?city=${item.id}`;
+    },
 };
 
 // عرض المفضلة من السيرفر
@@ -259,7 +259,7 @@ const changePasswordBtn = document.getElementById("changePasswordBtn");
 if (changePasswordBtn) {
     changePasswordBtn.addEventListener("click", async () => {
         const currentPassword = document.getElementById("currentPassword").value;
-        const newPassword = document.getElementById("newPassword").value;
+        const newPassword = document.getElementById("currentPassword").value;
         const confirmPassword = document.getElementById("confirmPassword").value;
         const user = JSON.parse(localStorage.getItem("safraUser"));
         if (newPassword !== confirmPassword) { showToast("كلمة المرور الجديدة مو متطابقة!", "error"); return; }
