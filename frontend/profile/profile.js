@@ -132,7 +132,7 @@ const countryContinent = {
     egypt: 'africa', moroco: 'africa', tunisia: 'africa', algeria: 'africa', libya: 'africa', sudan: 'africa', mauritania: 'africa',
     ethiopia: 'africa', kenya: 'africa', tanzania: 'africa', uganda: 'africa', rwanda: 'africa', burundi: 'africa', somalia: 'africa', djibouti: 'africa', eritrea: 'africa', south_sudan: 'africa', madagascar: 'africa', mozambique: 'africa', zimbabwe: 'africa', zambia: 'africa', malawi: 'africa',
     nigeria: 'africa', ghana: 'africa', senegal: 'africa', ivory_coast: 'africa', mali: 'africa', burkina_faso: 'africa', niger: 'africa', guinea: 'africa', sierra_leone: 'africa', liberia: 'africa', togo: 'africa', benin: 'africa', gambia: 'africa', guinea_bissau: 'africa', cape_verde: 'africa',
-    cameroon: 'africa', chad: 'africa', car: 'africa', congo: 'africa', drc: 'africa', gabon: 'africa', equatorial_guinea: 'africa',
+    cameroon: 'africa', chad: 'africa', car: 'africa', congo: 'africa', drc: 'africa', gabon: 'africa', equatorial_guinea: 'africa', seychelles: 'africa',
     southafrica: 'africa', namibia: 'africa', botswana: 'africa', lesotho: 'africa', swaziland: 'africa', angola: 'africa', mauritius: 'africa',
     usa: 'north-america', canada: 'north-america', mexico: 'north-america', cuba: 'north-america', jamaica: 'north-america', haiti: 'north-america',
     dominican_republic: 'north-america', puerto_rico: 'north-america', costa_rica: 'north-america', panama: 'north-america', guatemala: 'north-america',
