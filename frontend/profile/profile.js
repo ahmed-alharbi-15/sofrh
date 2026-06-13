@@ -140,6 +140,7 @@ const countryContinent = {
     brazil: 'south-america', argentina: 'south-america', colombia: 'south-america', peru: 'south-america', chile: 'south-america', venezuela: 'south-america',
     ecuador: 'south-america', bolivia: 'south-america', uruguay: 'south-america', paraguay: 'south-america', guyana: 'south-america', suriname: 'south-america',
     australia: 'oceania', newzealand: 'oceania', fiji: 'oceania', papua_new_guinea: 'oceania', solomon_islands: 'oceania', vanuatu: 'oceania', samoa: 'oceania', tonga: 'oceania', kiribati: 'oceania',
+    'sri-lanka': 'asia',
 };
 
 function getCountryLink(id) {
@@ -152,9 +153,10 @@ const typeLinks = {
     recipe: (item) => `/recipes/recipes.html?recipe=${item.id}`,
     country: (item) => getCountryLink(item.id),
     city: (item) => {
-    const countryId = item.id.split('_')[0];
-    return getCountryLink(countryId);
-},
+        const countryId = item.id.split('_')[0];
+        const cityId = item.id.split('_').slice(1).join('_');
+        return getCountryLink(countryId) + `?city=${cityId}`;
+    },
 };
 
 // عرض المفضلة من السيرفر
@@ -168,7 +170,6 @@ async function renderFavorites() {
         const data = await response.json();
         saved = data.favorites || {};
     } catch (err) {
-        // fallback للـ localStorage إذا السيرفر ما رد
         saved = JSON.parse(localStorage.getItem("safraFavorites") || "{}");
     }
 

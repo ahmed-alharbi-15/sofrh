@@ -263,19 +263,31 @@ window.openRecipeFromData = function (btn) {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
+    // فتح الوصفة من URL
     const params = new URLSearchParams(window.location.search);
     const recipeId = params.get("recipe");
-    if (!recipeId) return;
+    if (recipeId) {
+        const card = document.getElementById(recipeId);
+        if (card) {
+            card.style.display = "block";
+            const btn = card.querySelector(".recipes-item");
+            if (btn) {
+                card.scrollIntoView({ behavior: "smooth", block: "center" });
+                btn.click();
+            }
+        }
+    }
 
-    const card = document.getElementById(recipeId);
-    if (!card) return;
-
-    card.style.display = "block";
-
-    const btn = card.querySelector(".recipes-item");
-    if (!btn) return;
-
-    card.scrollIntoView({ behavior: "smooth", block: "center" });
-    btn.click();
+    // فتح المدينة من URL
+    const cityId = params.get("city");
+    if (cityId) {
+        const cites = document.querySelectorAll(".cite");
+        cites.forEach(cite => {
+            const saveBtn = cite.querySelector(".save-btn");
+            if (saveBtn && saveBtn.getAttribute("onclick")?.includes(cityId)) {
+                openCityModal(cite);
+                cite.scrollIntoView({ behavior: "smooth", block: "center" });
+            }
+        });
+    }
 });
-
