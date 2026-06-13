@@ -106,18 +106,18 @@ function formatCups(value) {
 }
 
 const noCupsFor = [
-    "لحم","دجاج","سمك","سلمون","تونة","روبيان","جمبري","فيليه","ستيك","مفروم","كبدة",
-    "بصل","ثوم","طماطم","بطاطس","جزر","كوسة","باذنجان","فلفل","خيار","خس","سبانخ",
-    "بروكلي","قرنبيط","فطر","فاصوليا","بازلاء","ملفوف","ذرة","كرفس","شمندر","جرجير",
-    "تفاح","موز","برتقال","فراولة","عنب","مانجا","أناناس","رمان","كيوي","تمر","تين",
-    "خوخ","كمثرى","بطيخ","شمام","ليمون","نودلز","بيض","فطر","فول","بسكوت","عدس","حلبة","لوز","بلح","حبار","كزبرة","بط","سلطعون","ثلج","شعيرية"
+    "لحم", "دجاج", "سمك", "سلمون", "تونة", "روبيان", "جمبري", "فيليه", "ستيك", "مفروم", "كبدة",
+    "بصل", "ثوم", "طماطم", "بطاطس", "جزر", "كوسة", "باذنجان", "فلفل", "خيار", "خس", "سبانخ",
+    "بروكلي", "قرنبيط", "فطر", "فاصوليا", "بازلاء", "ملفوف", "ذرة", "كرفس", "شمندر", "جرجير",
+    "تفاح", "موز", "برتقال", "فراولة", "عنب", "مانجا", "أناناس", "رمان", "كيوي", "تمر", "تين",
+    "خوخ", "كمثرى", "بطيخ", "شمام", "ليمون", "نودلز", "بيض", "فطر", "فول", "بسكوت", "عدس", "حلبة", "لوز", "بلح", "حبار", "كزبرة", "بط", "سلطعون", "ثلج", "شعيرية"
 ];
 
 function isNoCupItem(name = "") {
     return noCupsFor.some(word => name.includes(word));
 }
 
-const noSpoonsFor = ["فطر","بيض","بصل","ثوم","حلبة","كزبرة"];
+const noSpoonsFor = ["فطر", "بيض", "بصل", "ثوم", "حلبة", "كزبرة"];
 
 function isNoSpoonItem(name = "") {
     return noSpoonsFor.some(word => name.includes(word));
@@ -284,7 +284,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const cites = document.querySelectorAll(".cite");
         cites.forEach(cite => {
             const saveBtn = cite.querySelector(".save-btn");
-            if (saveBtn && saveBtn.getAttribute("onclick")?.includes(cityId)) {
+            const onclickAttr = saveBtn?.getAttribute("onclick") || "";
+            if (onclickAttr.includes(cityId)) {
                 openCityModal(cite);
                 cite.scrollIntoView({ behavior: "smooth", block: "center" });
             }
