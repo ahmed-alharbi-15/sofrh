@@ -12,41 +12,85 @@
 </head>
 
 <body>
+
     <header class="navbar">
         <div class="hamburger" id="menu-btn">☰</div>
+
         <div class="auth-buttons" id="authButtons">
             <a href="/auth/login.html" class="login">تسجيل دخول</a>
             <a href="/auth/signup.html" class="signup">إنشاء حساب</a>
         </div>
+
         <div class="user-menu" id="userMenu">
-            <img id="userAvatar" src="/img/avater-icon.jpeg" alt="المستخدم">
+            <img id="userAvatar" src="" alt="">
             <span class="user-name" id="userName"></span>
             <div class="user-dropdown">
                 <a href="/profile/profile.html">الملف الشخصي</a>
-                <a href="/index/index.html" id="logoutBtn">تسجيل الخروج</a>
+                <a href="#" id="logoutBtn">تسجيل خروج</a>
             </div>
         </div>
+
         <ul class="nav-list">
             <li><a href="/index/index.html">الرئيسية</a></li>
             <li><a href="/countries/countries.html">الدول</a></li>
             <li><a href="/events/events.html">الفعاليات</a></li>
             <li><a href="/recipes/recipes.html">الوصفات</a></li>
+            <li><a href="/plan/plan.html" class="active">خطتي</a></li>
         </ul>
+
         <div class="logo">
-            <a href="/index/index.html"><img src="/img/logo3.JPG" alt="سفرة"></a>
+            <img src="/img/logo3.JPG" alt="سفرة">
         </div>
     </header>
 
-    <nav class="side-menu" id="side-menu">
-        <span class="close-btn" id="close-btn">✖</span>
+    <!-- SIDE MENU -->
+    <div class="side-menu" id="side-menu">
+        <span class="close-btn" id="close-btn">×</span>
+        <span class="side-menu-kicker">استكشف</span>
         <ul>
-            <li><a href="/index/index.html">الرئيسية</a></li>
-            <li><a href="/countries/countries.html">الدول</a></li>
-            <li><a href="/events/events.html">الفعاليات</a></li>
-            <li><a href="/recipes/recipes.html">الوصفات</a></li>
+            <li><a href="/index/index.html" class="active">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M3 11.5 12 4l9 7.5" />
+                        <path
+                            d="M5.5 10v9a1 1 0 0 0 1 1H9a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h2.5a1 1 0 0 0 1-1v-9" />
+                    </svg>
+                    <span>الرئيسية</span>
+                </a></li>
+            <li><a href="/countries/countries.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M12 21s7-6.6 7-12a7 7 0 1 0-14 0c0 5.4 7 12 7 12Z" />
+                        <circle cx="12" cy="9" r="2.3" />
+                    </svg>
+                    <span>الدول</span>
+                </a></li>
+            <li><a href="/events/events.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <rect x="3.5" y="5" width="17" height="16" rx="2.5" />
+                        <path d="M8 3v4M16 3v4M3.5 10h17" />
+                        <circle cx="12" cy="15" r="1.4" fill="currentColor" stroke="none" />
+                    </svg>
+                    <span>الفعاليات</span>
+                </a></li>
+            <li><a href="/recipes/recipes.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M7 2v8a2 2 0 0 0 2 2v10M5 2v6M9 2v6M14 2c-1.5 2-1.5 7 0 9 .6.6 1 1.3 1 2v9" />
+                    </svg>
+                    <span>الوصفات</span>
+                </a></li>
+            <li><a href="/plan/plan.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="9" />
+                        <path d="M14.8 9.2 13 13l-3.8 1.8L11 11l3.8-1.8Z" />
+                    </svg>
+                    <span>خطتي</span>
+                </a></li>
         </ul>
-    </nav>
-
+    </div>
     <header>
         <a href="/countries/countries.html" class="back-btn">رجوع</a>
     </header>

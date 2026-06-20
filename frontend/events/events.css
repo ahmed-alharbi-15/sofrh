@@ -114,6 +114,9 @@ body {
     user-select: none;
 }
 
+/*********************************
+     SIDE MENU
+*********************************/
 .side-menu {
     display: none;
     position: fixed;
@@ -123,32 +126,106 @@ body {
     height: 100%;
     background-color: var(--brown-dark);
     padding-top: 100px;
-    transition: 0.4s ease;
+    transition: right 0.4s ease;
     z-index: 9999;
+    overflow: hidden;
+}
+
+.side-menu::before {
+    content: "";
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(210, 166, 115, .18) 0%, transparent 70%);
+    top: -60px;
+    left: -70px;
+    pointer-events: none;
+}
+
+.side-menu-kicker {
+    display: block;
+    color: var(--caramel);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin: 0 24px 18px;
+    opacity: .8;
 }
 
 .side-menu ul {
     list-style: none;
+    padding: 0 12px;
 }
 
 .side-menu li {
-    margin: 20px 0;
+    margin: 4px 0;
+    opacity: 0;
+    transform: translateX(18px);
+    transition: opacity .35s ease, transform .35s ease;
 }
 
+.side-menu.menu-open li {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.side-menu.menu-open li:nth-child(1) { transition-delay: .05s; }
+.side-menu.menu-open li:nth-child(2) { transition-delay: .1s; }
+.side-menu.menu-open li:nth-child(3) { transition-delay: .15s; }
+.side-menu.menu-open li:nth-child(4) { transition-delay: .2s; }
+.side-menu.menu-open li:nth-child(5) { transition-delay: .25s; }
+
 .side-menu a {
-    display: block;
-    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 16px;
+    border-radius: 14px;
     color: var(--cream-light);
-    font-size: 22px;
+    font-size: 19px;
+    font-weight: 600;
     text-decoration: none;
+    transition: background .25s, color .25s;
+}
+
+.side-menu a svg {
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+    opacity: .75;
+    transition: opacity .25s, transform .25s;
 }
 
 .side-menu a:hover {
-    background-color: var(--caramel);
-    color: white;
-    border-radius: 12px;
+    background-color: rgba(210, 166, 115, .16);
+    color: var(--caramel);
 }
 
+.side-menu a:hover svg {
+    opacity: 1;
+    transform: scale(1.08);
+}
+
+.side-menu a.active {
+    background-color: var(--caramel);
+    color: var(--brown-dark);
+}
+
+.side-menu a.active svg {
+    opacity: 1;
+}
+
+@media (max-width: 480px) {
+    .side-menu {
+        width: 78vw;
+        max-width: 300px;
+    }
+}
+
+/*********************************
+     CLOSE BUTTON
+*********************************/
 .close-btn {
     position: absolute;
     top: 20px;
@@ -158,12 +235,14 @@ body {
     cursor: pointer;
     padding: 5px 10px;
     border-radius: 8px;
-    transition: 0.2s;
+    transition: background-color .2s, color .2s, transform .3s;
+    z-index: 1;
 }
 
 .close-btn:hover {
     background-color: #D2A673;
     color: #4A2E1F;
+    transform: rotate(90deg);
 }
 
 @media (max-width: 900px) {
@@ -658,33 +737,6 @@ body {
     font-weight: bold;
     font-size: 16px;
     border-color: rgba(200, 133, 74, 0.4);
-}
-
-/* ================================
-   زر الحفظ
-================================ */
-.save-btn {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    z-index: 10;
-    background: white;
-    border: none;
-    border-radius: 50%;
-    width: 20px;
-    height: 20px;
-    font-size: 18px;
-    cursor: pointer;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, .15);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: .3s;
-}
-
-.save-btn:hover {
-    background: var(--caramel);
-    transform: scale(1.1);
 }
 
 /* ================================

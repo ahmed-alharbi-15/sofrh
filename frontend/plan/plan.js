@@ -1,0 +1,3469 @@
+document.addEventListener("DOMContentLoaded", () => {
+
+    // ===== القائمة الجانبية =====
+    const menuBtn = document.getElementById("menu-btn");
+    const sideMenu = document.getElementById("side-menu");
+    const closeBtn = document.getElementById("close-btn");
+    if (menuBtn && sideMenu && closeBtn) {
+        menuBtn.addEventListener("click", () => {
+            sideMenu.style.right = "0px";
+            requestAnimationFrame(() => sideMenu.classList.add("menu-open"));
+        });
+        closeBtn.addEventListener("click", () => {
+            sideMenu.style.right = "-260px";
+            sideMenu.classList.remove("menu-open");
+        });
+        document.addEventListener("click", (e) => {
+            if (!sideMenu.contains(e.target) && !menuBtn.contains(e.target)) {
+                sideMenu.style.right = "-260px";
+                sideMenu.classList.remove("menu-open");
+            }
+        });
+    }
+
+    // ===== أسماء القارات بالعربي (للعرض) =====
+    const continentNames = {
+        asia: "آسيا",
+        europe: "أوروبا",
+        africa: "أفريقيا",
+        north_america: "أمريكا الشمالية",
+        south_america: "أمريكا الجنوبية",
+        oceania: "أوقيانوسيا",
+    };
+
+    function getCountryLink(country) {
+        return `https://sofrh.vercel.app/countries/country/${country.continent}/${country.id}.html`;
+    }
+
+    // ===== بيانات الدول (١٦١ دولة تغطي كل قارات العالم) =====
+    // dailyCost: متوسط تكلفة الفرد باليوم بالريال (إقامة + أكل + تنقل + أنشطة)، غير شامل تذاكر الطيران
+    // الأرقام مبنية على متوسطات بيانات سفر حقيقية منشورة (مثل Budget Your Trip) ومحوّلة لتقريب بالريال السعودي
+    // ملاحظة: تم استبعاد عدد قليل من الدول التي تشهد حالياً نزاعات مسلحة فعلية لعدم وجود بنية سياحية آمنة فيها
+    // عدّل القيم والصور لاحقاً حسب بياناتك الفعلية — مسار الصور img/{id}.jpg
+    const countries = 
+[
+        {
+                "id": "uae",
+                "nameAr": "الإمارات",
+                "nameEn": "UAE",
+                "continent": "asia",
+                "img": "img/uae.jpg",
+                "dailyCost": 490,
+                "durationMin": 3,
+                "durationMax": 7,
+                "tripTypes": [
+                        "family",
+                        "honeymoon"
+                ],
+                "activities": [
+                        "beaches",
+                        "amusement",
+                        "resorts",
+                        "landmarks"
+                ],
+                "bestTime": "نوفمبر - مارس"
+        },
+        {
+                "id": "qatar",
+                "nameAr": "قطر",
+                "nameEn": "Qatar",
+                "continent": "asia",
+                "img": "img/qatar.jpg",
+                "dailyCost": 450,
+                "durationMin": 3,
+                "durationMax": 6,
+                "tripTypes": [
+                        "family",
+                        "honeymoon"
+                ],
+                "activities": [
+                        "beaches",
+                        "museums",
+                        "landmarks",
+                        "resorts"
+                ],
+                "bestTime": "نوفمبر - مارس"
+        },
+        {
+                "id": "kuwait",
+                "nameAr": "الكويت",
+                "nameEn": "Kuwait",
+                "continent": "asia",
+                "img": "img/kuwait.jpg",
+                "dailyCost": 340,
+                "durationMin": 2,
+                "durationMax": 5,
+                "tripTypes": [
+                        "family",
+                        "youth"
+                ],
+                "activities": [
+                        "beaches",
+                        "landmarks"
+                ],
+                "bestTime": "نوفمبر - مارس"
+        },
+        {
+                "id": "bahrain",
+                "nameAr": "البحرين",
+                "nameEn": "Bahrain",
+                "continent": "asia",
+                "img": "img/bahrain.jpg",
+                "dailyCost": 320,
+                "durationMin": 2,
+                "durationMax": 4,
+                "tripTypes": [
+                        "family",
+                        "youth"
+                ],
+                "activities": [
+                        "beaches",
+                        "landmarks",
+                        "amusement"
+                ],
+                "bestTime": "نوفمبر - مارس"
+        },
+        {
+                "id": "oman",
+                "nameAr": "عمان",
+                "nameEn": "Oman",
+                "continent": "asia",
+                "img": "img/oman.jpg",
+                "dailyCost": 280,
+                "durationMin": 4,
+                "durationMax": 8,
+                "tripTypes": [
+                        "family",
+                        "youth",
+                        "honeymoon"
+                ],
+                "activities": [
+                        "mountains",
+                        "beaches",
+                        "sea",
+                        "landmarks"
+                ],
+                "bestTime": "أكتوبر - أبريل"
+        },
+        {
+                "id": "saudi",
+                "nameAr": "السعودية",
+                "nameEn": "Saudi Arabia",
+                "continent": "asia",
+                "img": "img/saudi.jpg",
+                "dailyCost": 300,
+                "durationMin": 3,
+                "durationMax": 7,
+                "tripTypes": [
+                        "family",
+                        "youth",
+                        "honeymoon"
+                ],
+                "activities": [
+                        "landmarks",
+                        "mountains",
+                        "beaches",
+                        "resorts"
+                ],
+                "bestTime": "أكتوبر - أبريل"
+        },
+        {
+                "id": "jordan",
+                "nameAr": "الأردن",
+                "nameEn": "Jordan",
+                "continent": "asia",
+                "img": "img/jordan.jpg",
+                "dailyCost": 360,
+                "durationMin": 4,
+                "durationMax": 7,
+                "tripTypes": [
+                        "family",
+                        "youth",
+                        "honeymoon"
+                ],
+                "activities": [
+                        "landmarks",
+                        "mountains",
+                        "sea"
+                ],
+                "bestTime": "مارس - مايو"
+        },
+        {
+                "id": "lebanon",
+                "nameAr": "لبنان",
+                "nameEn": "Lebanon",
+                "continent": "asia",
+                "img": "img/lebanon.jpg",
+                "dailyCost": 250,
+                "durationMin": 4,
+                "durationMax": 7,
+                "tripTypes": [
+                        "youth",
+                        "family"
+                ],
+                "activities": [
+                        "mountains",
+                        "landmarks",
+                        "beaches"
+                ],
+                "bestTime": "أبريل - يونيو"
+        },
+        {
+                "id": "turkey",
+                "nameAr": "تركيا",
+                "nameEn": "Turkey",
+                "continent": "asia",
+                "img": "img/turkey.jpg",
+                "dailyCost": 250,
+                "durationMin": 7,
+                "durationMax": 14,
+                "tripTypes": [
+                        "youth",
+                        "family",
+                        "honeymoon"
+                ],
+                "activities": [
+                        "beaches",
+                        "sea",
+                        "mountains",
+                        "landmarks",
+                        "museums",
+                        "amusement"
+                ],
+                "bestTime": "أبريل - يونيو"
+        },
+        {
+                "id": "maldives",
+                "nameAr": "المالديف",
+                "nameEn": "Maldives",
+                "continent": "asia",
+                "img": "img/maldives.jpg",
+                "dailyCost": 1120,
+                "durationMin": 5,
+                "durationMax": 10,
+                "tripTypes": [
+                        "honeymoon"
+                ],
+                "activities": [
+                        "beaches",
+                        "sea",
+                        "resorts"
+                ],
+                "bestTime": "نوفمبر - أبريل"
+        },
+        {
+                "id": "srilanka",
+                "nameAr": "سريلانكا",
+                "nameEn": "Sri Lanka",
+                "continent": "asia",
+                "img": "img/srilanka.jpg",
+                "dailyCost": 200,
+                "durationMin": 7,
+                "durationMax": 12,
+                "tripTypes": [
+                        "family",
+                        "youth"
+                ],
+                "activities": [
+                        "safari",
+                        "mountains",
+                        "beaches",
+                        "sea",
+                        "landmarks"
+                ],
+                "bestTime": "ديسمبر - مارس"
+        },
+        {
+                "id": "china",
+                "nameAr": "الصين",
+                "nameEn": "China",
+                "continent": "asia",
+                "img": "img/china.jpg",
+                "dailyCost": 300,
+                "durationMin": 8,
+                "durationMax": 15,
+                "tripTypes": [
+                        "youth",
+                        "family"
+                ],
+                "activities": [
+                        "museums",
+                        "landmarks",
+                        "amusement"
+                ],
+                "bestTime": "مارس - مايو"
+        },
+        {
+                "id": "korea",
+                "nameAr": "كوريا الجنوبية",
+                "nameEn": "South Korea",
+                "continent": "asia",
+                "img": "img/korea.jpg",
+                "dailyCost": 420,
+                "durationMin": 6,
+                "durationMax": 10,
+                "tripTypes": [
+                        "youth",
+                        "family"
+                ],
+                "activities": [
+                        "amusement",
+                        "museums",
+                        "landmarks"
+                ],
+                "bestTime": "مارس - مايو"
+        },
+        {
+                "id": "japan",
+                "nameAr": "اليابان",
+                "nameEn": "Japan",
+                "continent": "asia",
+                "img": "img/japan.jpg",
+                "dailyCost": 460,
+                "durationMin": 7,
+                "durationMax": 12,
+                "tripTypes": [
+                        "youth",
+                        "family",
+                        "honeymoon"
+                ],
+                "activities": [
+                        "landmarks",
+                        "museums",
+                        "amusement",
+                        "mountains"
+                ],
+                "bestTime": "مارس - مايو"
+        },
+        {
+                "id": "thailand",
+                "nameAr": "تايلاند",
+                "nameEn": "Thailand",
+                "continent": "asia",
+                "img": "img/thailand.jpg",
+                "dailyCost": 210,
+                "durationMin": 7,
+                "durationMax": 12,
+                "tripTypes": [
+                        "youth",
+                        "family",
+                        "honeymoon"
+                ],
+                "activities": [
+                        "beaches",
+                        "sea",
+                        "landmarks",
+                        "amusement"
+                ],
+                "bestTime": "نوفمبر - فبراير"
+        },
+        {
+                "id": "vietnam",
+                "nameAr": "فيتنام",
+                "nameEn": "Vietnam",
+                "continent": "asia",
+                "img": "img/vietnam.jpg",
+                "dailyCost": 225,
+                "durationMin": 7,
+                "durationMax": 12,
+                "tripTypes": [
+                        "youth",
+                        "family"
+                ],
+                "activities": [
+                        "beaches",
+                        "sea",
+                        "mountains",
+                        "landmarks"
+                ],
+                "bestTime": "فبراير - أبريل"
+        },
+        {
+                "id": "indonesia",
+                "nameAr": "إندونيسيا",
+                "nameEn": "Indonesia",
+                "continent": "asia",
+                "img": "img/indonesia.jpg",
+                "dailyCost": 210,
+                "durationMin": 7,
+                "durationMax": 12,
+                "tripTypes": [
+                        "youth",
+                        "honeymoon",
+                        "family"
+                ],
+                "activities": [
+                        "beaches",
+                        "sea",
+                        "mountains",
+                        "landmarks"
+                ],
+                "bestTime": "أبريل - أكتوبر"
+        },
+        {
+                "id": "malaysia",
+                "nameAr": "ماليزيا",
+                "nameEn": "Malaysia",
+                "continent": "asia",
+                "img": "img/malaysia.jpg",
+                "dailyCost": 230,
+                "durationMin": 5,
+                "durationMax": 9,
+                "tripTypes": [
+                        "youth",
+                        "family"
+                ],
+                "activities": [
+                        "beaches",
+                        "landmarks",
+                        "amusement"
+                ],
+                "bestTime": "يونيو - أغسطس"
+        },
+        {
+                "id": "singapore",
+                "nameAr": "سنغافورة",
+                "nameEn": "Singapore",
+                "continent": "asia",
+                "img": "img/singapore.jpg",
+                "dailyCost": 580,
+                "durationMin": 3,
+                "durationMax": 5,
+                "tripTypes": [
+                        "family",
+                        "youth"
+                ],
+                "activities": [
+                        "amusement",
+                        "landmarks",
+                        "museums"
+                ],
+                "bestTime": "فبراير - أبريل"
+        },
+        {
+                "id": "philippines",
+                "nameAr": "الفلبين",
+                "nameEn": "Philippines",
+                "continent": "asia",
+                "img": "img/philippines.jpg",
+                "dailyCost": 230,
+                "durationMin": 7,
+                "durationMax": 12,
+                "tripTypes": [
+                        "youth",
+                        "honeymoon",
+                        "family"
+                ],
+                "activities": [
+                        "beaches",
+                        "sea",
+                        "landmarks"
+                ],
+                "bestTime": "ديسمبر - مايو"
+        },
+        {
+                "id": "india",
+                "nameAr": "الهند",
+                "nameEn": "India",
+                "continent": "asia",
+                "img": "img/india.jpg",
+                "dailyCost": 150,
+                "durationMin": 8,
+                "durationMax": 15,
+                "tripTypes": [
+                        "youth",
+                        "family"
+                ],
+                "activities": [
+                        "landmarks",
+                        "museums",
+                        "mountains"
+                ],
+                "bestTime": "أكتوبر - مارس"
+        },
+        {
+                "id": "nepal",
+                "nameAr": "نيبال",
+                "nameEn": "Nepal",
+                "continent": "asia",
+                "img": "img/nepal.jpg",
+                "dailyCost": 150,
+                "durationMin": 7,
+                "durationMax": 12,
+                "tripTypes": [
+                        "youth"
+                ],
+                "activities": [
+                        "mountains",
+                        "landmarks"
+                ],
+                "bestTime": "أكتوبر - نوفمبر"
+        },
+        {
+                "id": "cambodia",
+                "nameAr": "كمبوديا",
+                "nameEn": "Cambodia",
+                "continent": "asia",
+                "img": "img/cambodia.jpg",
+                "dailyCost": 190,
+                "durationMin": 4,
+                "durationMax": 7,
+                "tripTypes": [
+                        "youth",
+                        "family"
+                ],
+                "activities": [
+                        "landmarks",
+                        "museums"
+                ],
+                "bestTime": "نوفمبر - فبراير"
+        },
+        {
+                "id": "laos",
+                "nameAr": "لاوس",
+                "nameEn": "Laos",
+                "continent": "asia",
+                "img": "img/laos.jpg",
+                "dailyCost": 90,
+                "durationMin": 5,
+                "durationMax": 9,
+                "tripTypes": [
+                        "youth"
+                ],
+                "activities": [
+                        "mountains",
+                        "landmarks"
+                ],
+                "bestTime": "نوفمبر - فبراير"
+        },
+        {
+                "id": "hongkong",
+                "nameAr": "هونغ كونغ",
+                "nameEn": "Hong Kong",
+                "continent": "asia",
+                "img": "img/hongkong.jpg",
+                "dailyCost": 650,
+                "durationMin": 3,
+                "durationMax": 5,
+                "tripTypes": [
+                        "youth",
+                        "family"
+                ],
+                "activities": [
+                        "amusement",
+                        "landmarks",
+                        "museums"
+                ],
+                "bestTime": "أكتوبر - ديسمبر"
+        },
+        {
+                "id": "taiwan",
+                "nameAr": "تايوان",
+                "nameEn": "Taiwan",
+                "continent": "asia",
+                "img": "img/taiwan.jpg",
+                "dailyCost": 300,
+                "durationMin": 5,
+                "durationMax": 8,
+                "tripTypes": [
+                        "youth",
+                        "family"
+                ],
+                "activities": [
+                        "mountains",
+                        "landmarks",
+                        "amusement"
+                ],
+                "bestTime": "أكتوبر - ديسمبر"
+        },
+        {
+                "id": "georgia",
+                "nameAr": "جورجيا",
+                "nameEn": "Georgia",
+                "continent": "asia",
+                "img": "img/georgia.jpg",
+                "dailyCost": 135,
+                "durationMin": 5,
+                "durationMax": 9,
+                "tripTypes": [
+                        "youth",
+                        "family",
+                        "honeymoon"
+                ],
+                "activities": [
+                        "mountains",
+                        "landmarks"
+                ],
+                "bestTime": "مايو - سبتمبر"
+        },
+        {
+                "id": "armenia",
+                "nameAr": "أرمينيا",
+                "nameEn": "Armenia",
+                "continent": "asia",
+                "img": "img/armenia.jpg",
+                "dailyCost": 135,
+                "durationMin": 4,
+                "durationMax": 7,
+                "tripTypes": [
+                        "youth",
+                        "family"
+                ],
+                "activities": [
+                        "mountains",
+                        "landmarks"
+                ],
+                "bestTime": "مايو - سبتمبر"
+        },
+        {
+                "id": "azerbaijan",
+                "nameAr": "أذربيجان",
+                "nameEn": "Azerbaijan",
+                "continent": "asia",
+                "img": "img/azerbaijan.jpg",
+                "dailyCost": 190,
+                "durationMin": 4,
+                "durationMax": 7,
+                "tripTypes": [
+                        "youth",
+                        "family"
+                ],
+                "activities": [
+                        "mountains",
+                        "landmarks"
+                ],
+                "bestTime": "أبريل - يونيو"
+        },
+        {
+                "id": "kazakhstan",
+                "nameAr": "كازاخستان",
+                "nameEn": "Kazakhstan",
+                "continent": "asia",
+                "img": "img/kazakhstan.jpg",
+                "dailyCost": 90,
+                "durationMin": 5,
+                "durationMax": 9,
+                "tripTypes": [
+                        "youth"
+                ],
+                "activities": [
+                        "mountains",
+                        "landmarks"
+                ],
+                "bestTime": "مايو - سبتمبر"
+        },
+        {
+                "id": "iran",
+                "nameAr": "إيران",
+                "nameEn": "Iran",
+                "continent": "asia",
+                "img": "img/iran.jpg",
+                "dailyCost": 150,
+                "durationMin": 6,
+                "durationMax": 10,
+                "tripTypes": [
+                        "youth",
+                        "family"
+                ],
+                "activities": [
+                        "landmarks",
+                        "museums",
+                        "mountains"
+                ],
+                "bestTime": "مارس - مايو"
+        },
+        {
+                "id": "pakistan",
+                "nameAr": "باكستان",
+                "nameEn": "Pakistan",
+                "continent": "asia",
+                "img": "img/pakistan.jpg",
+                "dailyCost": 110,
+                "durationMin": 6,
+                "durationMax": 10,
+                "tripTypes": [
+                        "youth"
+                ],
+                "activities": [
+                        "mountains",
+                        "landmarks"
+                ],
+                "bestTime": "مارس - مايو"
+        },
+        {
+                "id": "bangladesh",
+                "nameAr": "بنغلاديش",
+                "nameEn": "Bangladesh",
+                "continent": "asia",
+                "img": "img/bangladesh.jpg",
+                "dailyCost": 110,
+                "durationMin": 5,
+                "durationMax": 8,
+                "tripTypes": [
+                        "youth"
+                ],
+                "activities": [
+                        "landmarks"
+                ],
+                "bestTime": "أكتوبر - مارس"
+        },
+        {
+                "id": "bhutan",
+                "nameAr": "بوتان",
+                "nameEn": "Bhutan",
+                "continent": "asia",
+                "img": "img/bhutan.jpg",
+                "dailyCost": 700,
+                "durationMin": 5,
+                "durationMax": 8,
+                "tripTypes": [
+                        "honeymoon",
+                        "youth"
+                ],
+                "activities": [
+                        "mountains",
+                        "landmarks"
+                ],
+                "bestTime": "مارس - مايو"
+        },
+        {
+                "id": "myanmar",
+                "nameAr": "ميانمار",
+                "nameEn": "Myanmar",
+                "continent": "asia",
+                "img": "img/myanmar.jpg",
+                "dailyCost": 140,
+                "durationMin": 6,
+                "durationMax": 10,
+                "tripTypes": [
+                        "youth"
+                ],
+                "activities": [
+                        "landmarks",
+                        "museums"
+                ],
+                "bestTime": "نوفمبر - فبراير"
+        },
+        {
+                "id": "brunei",
+                "nameAr": "بروناي",
+                "nameEn": "Brunei",
+                "continent": "asia",
+                "img": "img/brunei.jpg",
+                "dailyCost": 350,
+                "durationMin": 3,
+                "durationMax": 5,
+                "tripTypes": [
+                        "family"
+                ],
+                "activities": [
+                        "landmarks",
+                        "mountains"
+                ],
+                "bestTime": "مارس - أبريل"
+        },
+        {
+                "id": "mongolia",
+                "nameAr": "منغوليا",
+                "nameEn": "Mongolia",
+                "continent": "asia",
+                "img": "img/mongolia.jpg",
+                "dailyCost": 150,
+                "durationMin": 6,
+                "durationMax": 10,
+                "tripTypes": [
+                        "youth"
+                ],
+                "activities": [
+                        "mountains",
+                        "safari"
+                ],
+                "bestTime": "يونيو - سبتمبر"
+        },
+        {
+                "id": "uzbekistan",
+                "nameAr": "أوزبكستان",
+                "nameEn": "Uzbekistan",
+                "continent": "asia",
+                "img": "img/uzbekistan.jpg",
+                "dailyCost": 140,
+                "durationMin": 6,
+                "durationMax": 9,
+                "tripTypes": [
+                        "youth",
+                        "family"
+                ],
+                "activities": [
+                        "landmarks",
+                        "museums"
+                ],
+                "bestTime": "مارس - مايو"
+        },
+        {
+                "id": "kyrgyzstan",
+                "nameAr": "قيرغيزستان",
+                "nameEn": "Kyrgyzstan",
+                "continent": "asia",
+                "img": "img/kyrgyzstan.jpg",
+                "dailyCost": 120,
+                "durationMin": 5,
+                "durationMax": 8,
+                "tripTypes": [
+                        "youth"
+                ],
+                "activities": [
+                        "mountains"
+                ],
+                "bestTime": "مايو - سبتمبر"
+        },
+        {
+                "id": "tajikistan",
+                "nameAr": "طاجيكستان",
+                "nameEn": "Tajikistan",
+                "continent": "asia",
+                "img": "img/tajikistan.jpg",
+                "dailyCost": 110,
+                "durationMin": 5,
+                "durationMax": 8,
+                "tripTypes": [
+                        "youth"
+                ],
+                "activities": [
+                        "mountains"
+                ],
+                "bestTime": "مايو - سبتمبر"
+        },
+        {
+                "id": "turkmenistan",
+                "nameAr": "تركمانستان",
+                "nameEn": "Turkmenistan",
+                "continent": "asia",
+                "img": "img/turkmenistan.jpg",
+                "dailyCost": 250,
+                "durationMin": 4,
+                "durationMax": 7,
+                "tripTypes": [
+                        "youth"
+                ],
+                "activities": [
+                        "landmarks"
+                ],
+                "bestTime": "مارس - مايو"
+        },
+        {
+                "id": "timorleste",
+                "nameAr": "تيمور الشرقية",
+                "nameEn": "Timor-Leste",
+                "continent": "asia",
+                "img": "img/timorleste.jpg",
+                "dailyCost": 170,
+                "durationMin": 4,
+                "durationMax": 7,
+                "tripTypes": [
+                        "youth"
+                ],
+                "activities": [
+                        "beaches",
+                        "sea"
+                ],
+                "bestTime": "مايو - نوفمبر"
+        },
+        {
+                "id": "egypt",
+                "nameAr": "مصر",
+                "nameEn": "Egypt",
+                "continent": "africa",
+                "img": "img/egypt.jpg",
+                "dailyCost": 170,
+                "durationMin": 5,
+                "durationMax": 9,
+                "tripTypes": [
+                        "family",
+                        "youth",
+                        "honeymoon"
+                ],
+                "activities": [
+                        "landmarks",
+                        "museums",
+                        "sea",
+                        "beaches"
+                ],
+                "bestTime": "أكتوبر - أبريل"
+        },
+        {
+                "id": "morocco",
+                "nameAr": "المغرب",
+                "nameEn": "Morocco",
+                "continent": "africa",
+                "img": "img/morocco.jpg",
+                "dailyCost": 210,
+                "durationMin": 6,
+                "durationMax": 10,
+                "tripTypes": [
+                        "youth",
+                        "family",
+                        "honeymoon"
+                ],
+                "activities": [
+                        "landmarks",
+                        "mountains",
+                        "beaches"
+                ],
+                "bestTime": "مارس - مايو"
+        },
+        {
+                "id": "tunisia",
+                "nameAr": "تونس",
+                "nameEn": "Tunisia",
+                "continent": "africa",
+                "img": "img/tunisia.jpg",
+                "dailyCost": 150,
+                "durationMin": 5,
+                "durationMax": 9,
+                "tripTypes": [
+                        "family",
+                        "youth"
+                ],
+                "activities": [
+                        "beaches",
+                        "sea",
+                        "landmarks"
+                ],
+                "bestTime": "مارس - مايو"
+        },
+        {
+                "id": "kenya",
+                "nameAr": "كينيا",
+                "nameEn": "Kenya",
+                "continent": "africa",
+                "img": "img/kenya.jpg",
+                "dailyCost": 820,
+                "durationMin": 6,
+                "durationMax": 10,
+                "tripTypes": [
+                        "youth",
+                        "family",
+                        "honeymoon"
+                ],
+                "activities": [
+                        "safari"
+                ],
+                "bestTime": "يونيو - أكتوبر"
+        },
+        {
+                "id": "rwanda",
+                "nameAr": "رواندا",
+                "nameEn": "Rwanda",
+                "continent": "africa",
+                "img": "img/rwanda.jpg",
+                "dailyCost": 750,
+                "durationMin": 5,
+                "durationMax": 8,
+                "tripTypes": [
+                        "youth",
+                        "honeymoon"
+                ],
+                "activities": [
+                        "safari",
+                        "mountains"
+                ],
+                "bestTime": "يونيو - سبتمبر"
+        },
+        {
+                "id": "southafrica",
+                "nameAr": "جنوب أفريقيا",
+                "nameEn": "South Africa",
+                "continent": "africa",
+                "img": "img/southafrica.jpg",
+                "dailyCost": 300,
+                "durationMin": 7,
+                "durationMax": 12,
+                "tripTypes": [
+                        "youth",
+                        "family",
+                        "honeymoon"
+                ],
+                "activities": [
+                        "safari",
+                        "landmarks",
+                        "mountains",
+                        "beaches"
+                ],
+                "bestTime": "مايو - سبتمبر"
+        },
+        {
+                "id": "tanzania",
+                "nameAr": "تنزانيا",
+                "nameEn": "Tanzania",
+                "continent": "africa",
+                "img": "img/tanzania.jpg",
+                "dailyCost": 500,
+                "durationMin": 6,
+                "durationMax": 10,
+                "tripTypes": [
+                        "youth",
+                        "family",
+                        "honeymoon"
+                ],
+                "activities": [
+                        "safari",
+                        "beaches"
+                ],
+                "bestTime": "يونيو - أكتوبر"
+        },
+        {
+                "id": "ethiopia",
+                "nameAr": "إثيوبيا",
+                "nameEn": "Ethiopia",
+                "continent": "africa",
+                "img": "img/ethiopia.jpg",
+                "dailyCost": 95,
+                "durationMin": 5,
+                "durationMax": 9,
+                "tripTypes": [
+                        "youth"
+                ],
+                "activities": [
+                        "mountains",
+                        "landmarks"
+                ],
+                "bestTime": "أكتوبر - يناير"
+        },
+        {
+                "id": "namibia",
+                "nameAr": "ناميبيا",
+                "nameEn": "Namibia",
+                "continent": "africa",
+                "img": "img/namibia.jpg",
+                "dailyCost": 350,
+                "durationMin": 7,
+                "durationMax": 12,
+                "tripTypes": [
+                        "youth",
+                        "honeymoon"
+                ],
+                "activities": [
+                        "safari",
+                        "mountains"
+                ],
+                "bestTime": "مايو - أكتوبر"
+        },
+        {
+                "id": "uganda",
+                "nameAr": "أوغندا",
+                "nameEn": "Uganda",
+                "continent": "africa",
+                "img": "img/uganda.jpg",
+                "dailyCost": 560,
+                "durationMin": 5,
+                "durationMax": 8,
+                "tripTypes": [
+                        "youth"
+                ],
+                "activities": [
+                        "safari",
+                        "mountains"
+                ],
+                "bestTime": "يونيو - سبتمبر"
+        },
+        {
+                "id": "seychelles",
+                "nameAr": "سيشل",
+                "nameEn": "Seychelles",
+                "continent": "africa",
+                "img": "img/seychelles.jpg",
+                "dailyCost": 850,
+                "durationMin": 5,
+                "durationMax": 9,
+                "tripTypes": [
+                        "honeymoon"
+                ],
+                "activities": [
+                        "beaches",
+                        "sea",
+                        "resorts"
+                ],
+                "bestTime": "أبريل - مايو"
+        },
+        {
+                "id": "mauritius",
+                "nameAr": "موريشيوس",
+                "nameEn": "Mauritius",
+                "continent": "africa",
+                "img": "img/mauritius.jpg",
+                "dailyCost": 500,
+                "durationMin": 6,
+                "durationMax": 10,
+                "tripTypes": [
+                        "honeymoon",
+                        "family"
+                ],
+                "activities": [
+                        "beaches",
+                        "sea",
+                        "resorts"
+                ],
+                "bestTime": "مايو - ديسمبر"
+        },
+        {
+                "id": "algeria",
+                "nameAr": "الجزائر",
+                "nameEn": "Algeria",
+                "continent": "africa",
+                "img": "img/algeria.jpg",
+                "dailyCost": 170,
+                "durationMin": 5,
+                "durationMax": 9,
+                "tripTypes": [
+                        "youth",
+                        "family"
+                ],
+                "activities": [
+                        "landmarks",
+                        "mountains"
+                ],
+                "bestTime": "مارس - مايو"
+        },
+        {
+                "id": "nigeria",
+                "nameAr": "نيجيريا",
+                "nameEn": "Nigeria",
+                "continent": "africa",
+                "img": "img/nigeria.jpg",
+                "dailyCost": 230,
+                "durationMin": 4,
+                "durationMax": 7,
+                "tripTypes": [
+                        "youth"
+                ],
+                "activities": [
+                        "landmarks"
+                ],
+                "bestTime": "نوفمبر - فبراير"
+        },
+        {
+                "id": "ghana",
+                "nameAr": "غانا",
+                "nameEn": "Ghana",
+                "continent": "africa",
+                "img": "img/ghana.jpg",
+                "dailyCost": 200,
+                "durationMin": 5,
+                "durationMax": 8,
+                "tripTypes": [
+                        "youth"
+                ],
+                "activities": [
+                        "beaches",
+                        "landmarks"
+                ],
+                "bestTime": "نوفمبر - مارس"
+        },
+        {
+                "id": "senegal",
+                "nameAr": "السنغال",
+                "nameEn": "Senegal",
+                "continent": "africa",
+                "img": "img/senegal.jpg",
+                "dailyCost": 220,
+                "durationMin": 5,
+                "durationMax": 8,
+                "tripTypes": [
+                        "youth"
+                ],
+                "activities": [
+                        "beaches",
+                        "landmarks"
+                ],
+                "bestTime": "نوفمبر - مايو"
+        },
+        {
+                "id": "ivorycoast",
+                "nameAr": "ساحل العاج",
+                "nameEn": "Ivory Coast",
+                "continent": "africa",
+                "img": "img/ivorycoast.jpg",
+                "dailyCost": 240,
+                "durationMin": 5,
+                "durationMax": 8,
+                "tripTypes": [
+                        "youth"
+                ],
+                "activities": [
+                        "beaches",
+                        "landmarks"
+                ],
+                "bestTime": "نوفمبر - فبراير"
+        },
+        {
+                "id": "cameroon",
+                "nameAr": "الكاميرون",
+                "nameEn": "Cameroon",
+                "continent": "africa",
+                "img": "img/cameroon.jpg",
+                "dailyCost": 230,
+                "durationMin": 5,
+                "durationMax": 8,
+                "tripTypes": [
+                        "youth"
+                ],
+                "activities": [
+                        "mountains",
+                        "safari"
+                ],
+                "bestTime": "نوفمبر - فبراير"
+        },
+        {
+                "id": "gabon",
+                "nameAr": "الغابون",
+                "nameEn": "Gabon",
+                "continent": "africa",
+                "img": "img/gabon.jpg",
+                "dailyCost": 400,
+                "durationMin": 5,
+                "durationMax": 8,
+                "tripTypes": [
+                        "youth"
+                ],
+                "activities": [
+                        "safari"
+                ],
+                "bestTime": "يونيو - سبتمبر"
+        },
+        {
+                "id": "congo",
+                "nameAr": "الكونغو",
+                "nameEn": "Republic of Congo",
+                "continent": "africa",
+                "img": "img/congo.jpg",
+                "dailyCost": 380,
+                "durationMin": 5,
+                "durationMax": 8,
+                "tripTypes": [
+                        "youth"
+                ],
+                "activities": [
+                        "safari"
+                ],
+                "bestTime": "يونيو - سبتمبر"
+        },
+        {
+                "id": "zambia",
+                "nameAr": "زامبيا",
+                "nameEn": "Zambia",
+                "continent": "africa",
+                "img": "img/zambia.jpg",
+                "dailyCost": 480,
+                "durationMin": 6,
+                "durationMax": 9,
+                "tripTypes": [
+                        "youth",
+                        "honeymoon"
+                ],
+                "activities": [
+                        "safari"
+                ],
+                "bestTime": "مايو - أكتوبر"
+        },
+        {
+                "id": "zimbabwe",
+                "nameAr": "زيمبابوي",
+                "nameEn": "Zimbabwe",
+                "continent": "africa",
+                "img": "img/zimbabwe.jpg",
+                "dailyCost": 420,
+                "durationMin": 5,
+                "durationMax": 8,
+                "tripTypes": [
+                        "youth",
+                        "honeymoon"
+                ],
+                "activities": [
+                        "safari",
+                        "landmarks"
+                ],
+                "bestTime": "مايو - أكتوبر"
+        },
+        {
+                "id": "botswana",
+                "nameAr": "بوتسوانا",
+                "nameEn": "Botswana",
+                "continent": "africa",
+                "img": "img/botswana.jpg",
+                "dailyCost": 650,
+                "durationMin": 5,
+                "durationMax": 9,
+                "tripTypes": [
+                        "youth",
+                        "honeymoon"
+                ],
+                "activities": [
+                        "safari"
+                ],
+                "bestTime": "مايو - أكتوبر"
+        },
+        {
+                "id": "mozambique",
+                "nameAr": "موزمبيق",
+                "nameEn": "Mozambique",
+                "continent": "africa",
+                "img": "img/mozambique.jpg",
+                "dailyCost": 350,
+                "durationMin": 5,
+                "durationMax": 9,
+                "tripTypes": [
+                        "honeymoon",
+                        "youth"
+                ],
+                "activities": [
+                        "beaches",
+                        "sea"
+                ],
+                "bestTime": "مايو - نوفمبر"
+        },
+        {
+                "id": "malawi",
+                "nameAr": "مالاوي",
+                "nameEn": "Malawi",
+                "continent": "africa",
+                "img": "img/malawi.jpg",
+                "dailyCost": 250,
+                "durationMin": 5,
+                "durationMax": 8,
+                "tripTypes": [
+                        "youth"
+                ],
+                "activities": [
+                        "safari",
+                        "beaches"
+                ],
+                "bestTime": "مايو - أكتوبر"
+        },
+        {
+                "id": "madagascar",
+                "nameAr": "مدغشقر",
+                "nameEn": "Madagascar",
+                "continent": "africa",
+                "img": "img/madagascar.jpg",
+                "dailyCost": 280,
+                "durationMin": 7,
+                "durationMax": 12,
+                "tripTypes": [
+                        "youth",
+                        "honeymoon"
+                ],
+                "activities": [
+                        "beaches",
+                        "safari"
+                ],
+                "bestTime": "أبريل - نوفمبر"
+        },
+        {
+                "id": "comoros",
+                "nameAr": "جزر القمر",
+                "nameEn": "Comoros",
+                "continent": "africa",
+                "img": "img/comoros.jpg",
+                "dailyCost": 300,
+                "durationMin": 5,
+                "durationMax": 8,
+                "tripTypes": [
+                        "honeymoon"
+                ],
+                "activities": [
+                        "beaches",
+                        "sea"
+                ],
+                "bestTime": "مايو - نوفمبر"
+        },
+        {
+                "id": "capeverde",
+                "nameAr": "الرأس الأخضر",
+                "nameEn": "Cape Verde",
+                "continent": "africa",
+                "img": "img/capeverde.jpg",
+                "dailyCost": 350,
+                "durationMin": 5,
+                "durationMax": 9,
+                "tripTypes": [
+                        "honeymoon",
+                        "family"
+                ],
+                "activities": [
+                        "beaches",
+                        "sea",
+                        "resorts"
+                ],
+                "bestTime": "نوفمبر - يونيو"
+        },
+        {
+                "id": "gambia",
+                "nameAr": "غامبيا",
+                "nameEn": "Gambia",
+                "continent": "africa",
+                "img": "img/gambia.jpg",
+                "dailyCost": 220,
+                "durationMin": 5,
+                "durationMax": 8,
+                "tripTypes": [
+                        "youth",
+                        "family"
+                ],
+                "activities": [
+                        "beaches"
+                ],
+                "bestTime": "نوفمبر - مايو"
+        },
+        {
+                "id": "benin",
+                "nameAr": "بنين",
+                "nameEn": "Benin",
+                "continent": "africa",
+                "img": "img/benin.jpg",
+                "dailyCost": 200,
+                "durationMin": 4,
+                "durationMax": 7,
+                "tripTypes": [
+                        "youth"
+                ],
+                "activities": [
+                        "landmarks"
+                ],
+                "bestTime": "نوفمبر - فبراير"
+        },
+        {
+                "id": "togo",
+                "nameAr": "توغو",
+                "nameEn": "Togo",
+                "continent": "africa",
+                "img": "img/togo.jpg",
+                "dailyCost": 200,
+                "durationMin": 4,
+                "durationMax": 7,
+                "tripTypes": [
+                        "youth"
+                ],
+                "activities": [
+                        "beaches",
+                        "landmarks"
+                ],
+                "bestTime": "نوفمبر - مارس"
+        },
+        {
+                "id": "djibouti",
+                "nameAr": "جيبوتي",
+                "nameEn": "Djibouti",
+                "continent": "africa",
+                "img": "img/djibouti.jpg",
+                "dailyCost": 300,
+                "durationMin": 4,
+                "durationMax": 7,
+                "tripTypes": [
+                        "youth"
+                ],
+                "activities": [
+                        "sea",
+                        "mountains"
+                ],
+                "bestTime": "نوفمبر - فبراير"
+        },
+        {
+                "id": "angola",
+                "nameAr": "أنغولا",
+                "nameEn": "Angola",
+                "continent": "africa",
+                "img": "img/angola.jpg",
+                "dailyCost": 450,
+                "durationMin": 5,
+                "durationMax": 8,
+                "tripTypes": [
+                        "youth"
+                ],
+                "activities": [
+                        "beaches",
+                        "landmarks"
+                ],
+                "bestTime": "مايو - سبتمبر"
+        },
+        {
+                "id": "mauritania",
+                "nameAr": "موريتانيا",
+                "nameEn": "Mauritania",
+                "continent": "africa",
+                "img": "img/mauritania.jpg",
+                "dailyCost": 230,
+                "durationMin": 4,
+                "durationMax": 7,
+                "tripTypes": [
+                        "youth"
+                ],
+                "activities": [
+                        "mountains",
+                        "landmarks"
+                ],
+                "bestTime": "نوفمبر - فبراير"
+        },
+        {
+                "id": "guinea",
+                "nameAr": "غينيا",
+                "nameEn": "Guinea",
+                "continent": "africa",
+                "img": "img/guinea.jpg",
+                "dailyCost": 230,
+                "durationMin": 4,
+                "durationMax": 7,
+                "tripTypes": [
+                        "youth"
+                ],
+                "activities": [
+                        "beaches",
+                        "mountains"
+                ],
+                "bestTime": "نوفمبر - مارس"
+        },
+        {
+                "id": "iceland",
+                "nameAr": "آيسلندا",
+                "nameEn": "Iceland",
+                "continent": "europe",
+                "img": "img/iceland.jpg",
+                "dailyCost": 750,
+                "durationMin": 6,
+                "durationMax": 10,
+                "tripTypes": [
+                        "honeymoon",
+                        "youth"
+                ],
+                "activities": [
+                        "mountains",
+                        "landmarks"
+                ],
+                "bestTime": "يونيو - أغسطس"
+        },
+        {
+                "id": "uk",
+                "nameAr": "بريطانيا",
+                "nameEn": "United Kingdom",
+                "continent": "europe",
+                "img": "img/uk.jpg",
+                "dailyCost": 690,
+                "durationMin": 6,
+                "durationMax": 10,
+                "tripTypes": [
+                        "family",
+                        "youth"
+                ],
+                "activities": [
+                        "landmarks",
+                        "museums"
+                ],
+                "bestTime": "مايو - سبتمبر"
+        },
+        {
+                "id": "france",
+                "nameAr": "فرنسا",
+                "nameEn": "France",
+                "continent": "europe",
+                "img": "img/france.jpg",
+                "dailyCost": 550,
+                "durationMin": 6,
+                "durationMax": 10,
+                "tripTypes": [
+                        "family",
+                        "honeymoon",
+                        "youth"
+                ],
+                "activities": [
+                        "landmarks",
+                        "museums"
+                ],
+                "bestTime": "أبريل - يونيو"
+        },
+        {
+                "id": "italy",
+                "nameAr": "إيطاليا",
+                "nameEn": "Italy",
+                "continent": "europe",
+                "img": "img/italy.jpg",
+                "dailyCost": 660,
+                "durationMin": 7,
+                "durationMax": 12,
+                "tripTypes": [
+                        "honeymoon",
+                        "family",
+                        "youth"
+                ],
+                "activities": [
+                        "landmarks",
+                        "museums",
+                        "beaches"
+                ],
+                "bestTime": "أبريل - يونيو"
+        },
+        {
+                "id": "spain",
+                "nameAr": "إسبانيا",
+                "nameEn": "Spain",
+                "continent": "europe",
+                "img": "img/spain.jpg",
+                "dailyCost": 420,
+                "durationMin": 6,
+                "durationMax": 10,
+                "tripTypes": [
+                        "youth",
+                        "family",
+                        "honeymoon"
+                ],
+                "activities": [
+                        "beaches",
+                        "landmarks",
+                        "museums"
+                ],
+                "bestTime": "أبريل - يونيو"
+        },
+        {
+                "id": "germany",
+                "nameAr": "ألمانيا",
+                "nameEn": "Germany",
+                "continent": "europe",
+                "img": "img/germany.jpg",
+                "dailyCost": 460,
+                "durationMin": 6,
+                "durationMax": 10,
+                "tripTypes": [
+                        "family",
+                        "youth"
+                ],
+                "activities": [
+                        "landmarks",
+                        "museums"
+                ],
+                "bestTime": "مايو - سبتمبر"
+        },
+        {
+                "id": "switzerland",
+                "nameAr": "سويسرا",
+                "nameEn": "Switzerland",
+                "continent": "europe",
+                "img": "img/switzerland.jpg",
+                "dailyCost": 850,
+                "durationMin": 5,
+                "durationMax": 9,
+                "tripTypes": [
+                        "honeymoon",
+                        "family"
+                ],
+                "activities": [
+                        "mountains",
+                        "landmarks"
+                ],
+                "bestTime": "يونيو - سبتمبر"
+        },
+        {
+                "id": "greece",
+                "nameAr": "اليونان",
+                "nameEn": "Greece",
+                "continent": "europe",
+                "img": "img/greece.jpg",
+                "dailyCost": 380,
+                "durationMin": 6,
+                "durationMax": 10,
+                "tripTypes": [
+                        "honeymoon",
+                        "youth",
+                        "family"
+                ],
+                "activities": [
+                        "beaches",
+                        "sea",
+                        "landmarks"
+                ],
+                "bestTime": "مايو - سبتمبر"
+        },
+        {
+                "id": "portugal",
+                "nameAr": "البرتغال",
+                "nameEn": "Portugal",
+                "continent": "europe",
+                "img": "img/portugal.jpg",
+                "dailyCost": 350,
+                "durationMin": 6,
+                "durationMax": 9,
+                "tripTypes": [
+                        "youth",
+                        "family",
+                        "honeymoon"
+                ],
+                "activities": [
+                        "beaches",
+                        "landmarks"
+                ],
+                "bestTime": "أبريل - يونيو"
+        },
+        {
+                "id": "netherlands",
+                "nameAr": "هولندا",
+                "nameEn": "Netherlands",
+                "continent": "europe",
+                "img": "img/netherlands.jpg",
+                "dailyCost": 560,
+                "durationMin": 4,
+                "durationMax": 7,
+                "tripTypes": [
+                        "family",
+                        "youth"
+                ],
+                "activities": [
+                        "landmarks",
+                        "museums"
+                ],
+                "bestTime": "أبريل - يونيو"
+        },
+        {
+                "id": "austria",
+                "nameAr": "النمسا",
+                "nameEn": "Austria",
+                "continent": "europe",
+                "img": "img/austria.jpg",
+                "dailyCost": 480,
+                "durationMin": 5,
+                "durationMax": 8,
+                "tripTypes": [
+                        "family",
+                        "honeymoon"
+                ],
+                "activities": [
+                        "mountains",
+                        "landmarks"
+                ],
+                "bestTime": "يونيو - سبتمبر"
+        },
+        {
+                "id": "czechrepublic",
+                "nameAr": "التشيك",
+                "nameEn": "Czech Republic",
+                "continent": "europe",
+                "img": "img/czechrepublic.jpg",
+                "dailyCost": 300,
+                "durationMin": 4,
+                "durationMax": 7,
+                "tripTypes": [
+                        "youth",
+                        "family"
+                ],
+                "activities": [
+                        "landmarks",
+                        "museums"
+                ],
+                "bestTime": "أبريل - يونيو"
+        },
+        {
+                "id": "hungary",
+                "nameAr": "المجر",
+                "nameEn": "Hungary",
+                "continent": "europe",
+                "img": "img/hungary.jpg",
+                "dailyCost": 270,
+                "durationMin": 4,
+                "durationMax": 7,
+                "tripTypes": [
+                        "youth",
+                        "family"
+                ],
+                "activities": [
+                        "landmarks",
+                        "museums"
+                ],
+                "bestTime": "أبريل - يونيو"
+        },
+        {
+                "id": "poland",
+                "nameAr": "بولندا",
+                "nameEn": "Poland",
+                "continent": "europe",
+                "img": "img/poland.jpg",
+                "dailyCost": 280,
+                "durationMin": 5,
+                "durationMax": 8,
+                "tripTypes": [
+                        "family",
+                        "youth"
+                ],
+                "activities": [
+                        "landmarks",
+                        "museums"
+                ],
+                "bestTime": "مايو - سبتمبر"
+        },
+        {
+                "id": "croatia",
+                "nameAr": "كرواتيا",
+                "nameEn": "Croatia",
+                "continent": "europe",
+                "img": "img/croatia.jpg",
+                "dailyCost": 350,
+                "durationMin": 6,
+                "durationMax": 9,
+                "tripTypes": [
+                        "youth",
+                        "honeymoon",
+                        "family"
+                ],
+                "activities": [
+                        "beaches",
+                        "sea",
+                        "landmarks"
+                ],
+                "bestTime": "مايو - سبتمبر"
+        },
+        {
+                "id": "norway",
+                "nameAr": "النرويج",
+                "nameEn": "Norway",
+                "continent": "europe",
+                "img": "img/norway.jpg",
+                "dailyCost": 750,
+                "durationMin": 6,
+                "durationMax": 10,
+                "tripTypes": [
+                        "honeymoon",
+                        "youth"
+                ],
+                "activities": [
+                        "mountains",
+                        "landmarks"
+                ],
+                "bestTime": "يونيو - أغسطس"
+        },
+        {
+                "id": "sweden",
+                "nameAr": "السويد",
+                "nameEn": "Sweden",
+                "continent": "europe",
+                "img": "img/sweden.jpg",
+                "dailyCost": 580,
+                "durationMin": 5,
+                "durationMax": 8,
+                "tripTypes": [
+                        "family",
+                        "youth"
+                ],
+                "activities": [
+                        "landmarks",
+                        "mountains"
+                ],
+                "bestTime": "مايو - أغسطس"
+        },
+        {
+                "id": "denmark",
+                "nameAr": "الدنمارك",
+                "nameEn": "Denmark",
+                "continent": "europe",
+                "img": "img/denmark.jpg",
+                "dailyCost": 580,
+                "durationMin": 4,
+                "durationMax": 7,
+                "tripTypes": [
+                        "family",
+                        "youth"
+                ],
+                "activities": [
+                        "landmarks",
+                        "museums"
+                ],
+                "bestTime": "مايو - أغسطس"
+        },
+        {
+                "id": "finland",
+                "nameAr": "فنلندا",
+                "nameEn": "Finland",
+                "continent": "europe",
+                "img": "img/finland.jpg",
+                "dailyCost": 500,
+                "durationMin": 5,
+                "durationMax": 8,
+                "tripTypes": [
+                        "honeymoon",
+                        "youth"
+                ],
+                "activities": [
+                        "mountains",
+                        "landmarks"
+                ],
+                "bestTime": "ديسمبر - مارس"
+        },
+        {
+                "id": "ireland",
+                "nameAr": "أيرلندا",
+                "nameEn": "Ireland",
+                "continent": "europe",
+                "img": "img/ireland.jpg",
+                "dailyCost": 560,
+                "durationMin": 5,
+                "durationMax": 8,
+                "tripTypes": [
+                        "family",
+                        "youth",
+                        "honeymoon"
+                ],
+                "activities": [
+                        "landmarks",
+                        "mountains"
+                ],
+                "bestTime": "مايو - سبتمبر"
+        },
+        {
+                "id": "russia",
+                "nameAr": "روسيا",
+                "nameEn": "Russia",
+                "continent": "europe",
+                "img": "img/russia.jpg",
+                "dailyCost": 300,
+                "durationMin": 6,
+                "durationMax": 10,
+                "tripTypes": [
+                        "youth",
+                        "family"
+                ],
+                "activities": [
+                        "landmarks",
+                        "museums"
+                ],
+                "bestTime": "مايو - سبتمبر"
+        },
+        {
+                "id": "ukraine",
+                "nameAr": "أوكرانيا",
+                "nameEn": "Ukraine",
+                "continent": "europe",
+                "img": "img/ukraine.jpg",
+                "dailyCost": 90,
+                "durationMin": 5,
+                "durationMax": 8,
+                "tripTypes": [
+                        "youth"
+                ],
+                "activities": [
+                        "landmarks",
+                        "museums"
+                ],
+                "bestTime": "مايو - سبتمبر"
+        },
+        {
+                "id": "serbia",
+                "nameAr": "صربيا",
+                "nameEn": "Serbia",
+                "continent": "europe",
+                "img": "img/serbia.jpg",
+                "dailyCost": 170,
+                "durationMin": 4,
+                "durationMax": 7,
+                "tripTypes": [
+                        "youth"
+                ],
+                "activities": [
+                        "landmarks",
+                        "museums"
+                ],
+                "bestTime": "أبريل - أكتوبر"
+        },
+        {
+                "id": "belgium",
+                "nameAr": "بلجيكا",
+                "nameEn": "Belgium",
+                "continent": "europe",
+                "img": "img/belgium.jpg",
+                "dailyCost": 520,
+                "durationMin": 4,
+                "durationMax": 6,
+                "tripTypes": [
+                        "family",
+                        "youth"
+                ],
+                "activities": [
+                        "landmarks",
+                        "museums"
+                ],
+                "bestTime": "أبريل - سبتمبر"
+        },
+        {
+                "id": "luxembourg",
+                "nameAr": "لوكسمبورغ",
+                "nameEn": "Luxembourg",
+                "continent": "europe",
+                "img": "img/luxembourg.jpg",
+                "dailyCost": 600,
+                "durationMin": 2,
+                "durationMax": 4,
+                "tripTypes": [
+                        "family"
+                ],
+                "activities": [
+                        "landmarks"
+                ],
+                "bestTime": "أبريل - سبتمبر"
+        },
+        {
+                "id": "monaco",
+                "nameAr": "موناكو",
+                "nameEn": "Monaco",
+                "continent": "europe",
+                "img": "img/monaco.jpg",
+                "dailyCost": 950,
+                "durationMin": 2,
+                "durationMax": 4,
+                "tripTypes": [
+                        "honeymoon"
+                ],
+                "activities": [
+                        "beaches",
+                        "landmarks",
+                        "resorts"
+                ],
+                "bestTime": "مايو - سبتمبر"
+        },
+        {
+                "id": "andorra",
+                "nameAr": "أندورا",
+                "nameEn": "Andorra",
+                "continent": "europe",
+                "img": "img/andorra.jpg",
+                "dailyCost": 400,
+                "durationMin": 3,
+                "durationMax": 6,
+                "tripTypes": [
+                        "family",
+                        "youth"
+                ],
+                "activities": [
+                        "mountains"
+                ],
+                "bestTime": "ديسمبر - مارس"
+        },
+        {
+                "id": "liechtenstein",
+                "nameAr": "ليختنشتاين",
+                "nameEn": "Liechtenstein",
+                "continent": "europe",
+                "img": "img/liechtenstein.jpg",
+                "dailyCost": 550,
+                "durationMin": 2,
+                "durationMax": 4,
+                "tripTypes": [
+                        "family"
+                ],
+                "activities": [
+                        "mountains"
+                ],
+                "bestTime": "يونيو - سبتمبر"
+        },
+        {
+                "id": "malta",
+                "nameAr": "مالطا",
+                "nameEn": "Malta",
+                "continent": "europe",
+                "img": "img/malta.jpg",
+                "dailyCost": 380,
+                "durationMin": 5,
+                "durationMax": 8,
+                "tripTypes": [
+                        "youth",
+                        "honeymoon",
+                        "family"
+                ],
+                "activities": [
+                        "beaches",
+                        "sea",
+                        "landmarks"
+                ],
+                "bestTime": "مايو - أكتوبر"
+        },
+        {
+                "id": "cyprus",
+                "nameAr": "قبرص",
+                "nameEn": "Cyprus",
+                "continent": "europe",
+                "img": "img/cyprus.jpg",
+                "dailyCost": 360,
+                "durationMin": 5,
+                "durationMax": 8,
+                "tripTypes": [
+                        "family",
+                        "honeymoon"
+                ],
+                "activities": [
+                        "beaches",
+                        "sea",
+                        "landmarks"
+                ],
+                "bestTime": "مايو - أكتوبر"
+        },
+        {
+                "id": "slovenia",
+                "nameAr": "سلوفينيا",
+                "nameEn": "Slovenia",
+                "continent": "europe",
+                "img": "img/slovenia.jpg",
+                "dailyCost": 330,
+                "durationMin": 4,
+                "durationMax": 7,
+                "tripTypes": [
+                        "family",
+                        "honeymoon"
+                ],
+                "activities": [
+                        "mountains",
+                        "landmarks"
+                ],
+                "bestTime": "مايو - سبتمبر"
+        },
+        {
+                "id": "slovakia",
+                "nameAr": "سلوفاكيا",
+                "nameEn": "Slovakia",
+                "continent": "europe",
+                "img": "img/slovakia.jpg",
+                "dailyCost": 260,
+                "durationMin": 4,
+                "durationMax": 6,
+                "tripTypes": [
+                        "youth",
+                        "family"
+                ],
+                "activities": [
+                        "mountains",
+                        "landmarks"
+                ],
+                "bestTime": "مايو - سبتمبر"
+        },
+        {
+                "id": "romania",
+                "nameAr": "رومانيا",
+                "nameEn": "Romania",
+                "continent": "europe",
+                "img": "img/romania.jpg",
+                "dailyCost": 220,
+                "durationMin": 5,
+                "durationMax": 8,
+                "tripTypes": [
+                        "youth",
+                        "family"
+                ],
+                "activities": [
+                        "mountains",
+                        "landmarks"
+                ],
+                "bestTime": "مايو - سبتمبر"
+        },
+        {
+                "id": "bulgaria",
+                "nameAr": "بلغاريا",
+                "nameEn": "Bulgaria",
+                "continent": "europe",
+                "img": "img/bulgaria.jpg",
+                "dailyCost": 190,
+                "durationMin": 5,
+                "durationMax": 8,
+                "tripTypes": [
+                        "youth",
+                        "family"
+                ],
+                "activities": [
+                        "beaches",
+                        "mountains"
+                ],
+                "bestTime": "مايو - سبتمبر"
+        },
+        {
+                "id": "albania",
+                "nameAr": "ألبانيا",
+                "nameEn": "Albania",
+                "continent": "europe",
+                "img": "img/albania.jpg",
+                "dailyCost": 170,
+                "durationMin": 5,
+                "durationMax": 8,
+                "tripTypes": [
+                        "youth"
+                ],
+                "activities": [
+                        "beaches",
+                        "mountains"
+                ],
+                "bestTime": "مايو - سبتمبر"
+        },
+        {
+                "id": "bosnia",
+                "nameAr": "البوسنة",
+                "nameEn": "Bosnia and Herzegovina",
+                "continent": "europe",
+                "img": "img/bosnia.jpg",
+                "dailyCost": 180,
+                "durationMin": 4,
+                "durationMax": 7,
+                "tripTypes": [
+                        "youth"
+                ],
+                "activities": [
+                        "mountains",
+                        "landmarks"
+                ],
+                "bestTime": "مايو - سبتمبر"
+        },
+        {
+                "id": "montenegro",
+                "nameAr": "الجبل الأسود",
+                "nameEn": "Montenegro",
+                "continent": "europe",
+                "img": "img/montenegro.jpg",
+                "dailyCost": 250,
+                "durationMin": 4,
+                "durationMax": 7,
+                "tripTypes": [
+                        "youth",
+                        "honeymoon"
+                ],
+                "activities": [
+                        "beaches",
+                        "mountains"
+                ],
+                "bestTime": "مايو - سبتمبر"
+        },
+        {
+                "id": "northmacedonia",
+                "nameAr": "مقدونيا الشمالية",
+                "nameEn": "North Macedonia",
+                "continent": "europe",
+                "img": "img/northmacedonia.jpg",
+                "dailyCost": 170,
+                "durationMin": 4,
+                "durationMax": 6,
+                "tripTypes": [
+                        "youth"
+                ],
+                "activities": [
+                        "mountains",
+                        "landmarks"
+                ],
+                "bestTime": "مايو - سبتمبر"
+        },
+        {
+                "id": "moldova",
+                "nameAr": "مولدوفا",
+                "nameEn": "Moldova",
+                "continent": "europe",
+                "img": "img/moldova.jpg",
+                "dailyCost": 150,
+                "durationMin": 3,
+                "durationMax": 5,
+                "tripTypes": [
+                        "youth"
+                ],
+                "activities": [
+                        "landmarks"
+                ],
+                "bestTime": "مايو - سبتمبر"
+        },
+        {
+                "id": "belarus",
+                "nameAr": "بيلاروسيا",
+                "nameEn": "Belarus",
+                "continent": "europe",
+                "img": "img/belarus.jpg",
+                "dailyCost": 150,
+                "durationMin": 4,
+                "durationMax": 7,
+                "tripTypes": [
+                        "youth"
+                ],
+                "activities": [
+                        "landmarks"
+                ],
+                "bestTime": "مايو - سبتمبر"
+        },
+        {
+                "id": "lithuania",
+                "nameAr": "ليتوانيا",
+                "nameEn": "Lithuania",
+                "continent": "europe",
+                "img": "img/lithuania.jpg",
+                "dailyCost": 260,
+                "durationMin": 4,
+                "durationMax": 6,
+                "tripTypes": [
+                        "youth",
+                        "family"
+                ],
+                "activities": [
+                        "landmarks"
+                ],
+                "bestTime": "مايو - سبتمبر"
+        },
+        {
+                "id": "latvia",
+                "nameAr": "لاتفيا",
+                "nameEn": "Latvia",
+                "continent": "europe",
+                "img": "img/latvia.jpg",
+                "dailyCost": 260,
+                "durationMin": 4,
+                "durationMax": 6,
+                "tripTypes": [
+                        "youth",
+                        "family"
+                ],
+                "activities": [
+                        "landmarks"
+                ],
+                "bestTime": "مايو - سبتمبر"
+        },
+        {
+                "id": "estonia",
+                "nameAr": "إستونيا",
+                "nameEn": "Estonia",
+                "continent": "europe",
+                "img": "img/estonia.jpg",
+                "dailyCost": 290,
+                "durationMin": 4,
+                "durationMax": 6,
+                "tripTypes": [
+                        "youth",
+                        "family"
+                ],
+                "activities": [
+                        "landmarks"
+                ],
+                "bestTime": "مايو - سبتمبر"
+        },
+        {
+                "id": "sanmarino",
+                "nameAr": "سان مارينو",
+                "nameEn": "San Marino",
+                "continent": "europe",
+                "img": "img/sanmarino.jpg",
+                "dailyCost": 350,
+                "durationMin": 2,
+                "durationMax": 3,
+                "tripTypes": [
+                        "family"
+                ],
+                "activities": [
+                        "landmarks"
+                ],
+                "bestTime": "أبريل - سبتمبر"
+        },
+        {
+                "id": "kosovo",
+                "nameAr": "كوسوفو",
+                "nameEn": "Kosovo",
+                "continent": "europe",
+                "img": "img/kosovo.jpg",
+                "dailyCost": 150,
+                "durationMin": 3,
+                "durationMax": 5,
+                "tripTypes": [
+                        "youth"
+                ],
+                "activities": [
+                        "landmarks",
+                        "mountains"
+                ],
+                "bestTime": "مايو - سبتمبر"
+        },
+        {
+                "id": "usa",
+                "nameAr": "أمريكا",
+                "nameEn": "USA",
+                "continent": "north_america",
+                "img": "img/usa.jpg",
+                "dailyCost": 940,
+                "durationMin": 8,
+                "durationMax": 15,
+                "tripTypes": [
+                        "family",
+                        "youth",
+                        "honeymoon"
+                ],
+                "activities": [
+                        "landmarks",
+                        "amusement",
+                        "museums",
+                        "mountains",
+                        "beaches"
+                ],
+                "bestTime": "أبريل - يونيو"
+        },
+        {
+                "id": "canada",
+                "nameAr": "كندا",
+                "nameEn": "Canada",
+                "continent": "north_america",
+                "img": "img/canada.jpg",
+                "dailyCost": 620,
+                "durationMin": 7,
+                "durationMax": 12,
+                "tripTypes": [
+                        "family",
+                        "youth",
+                        "honeymoon"
+                ],
+                "activities": [
+                        "mountains",
+                        "landmarks",
+                        "museums"
+                ],
+                "bestTime": "يونيو - سبتمبر"
+        },
+        {
+                "id": "mexico",
+                "nameAr": "المكسيك",
+                "nameEn": "Mexico",
+                "continent": "north_america",
+                "img": "img/mexico.jpg",
+                "dailyCost": 260,
+                "durationMin": 6,
+                "durationMax": 10,
+                "tripTypes": [
+                        "youth",
+                        "family",
+                        "honeymoon"
+                ],
+                "activities": [
+                        "beaches",
+                        "sea",
+                        "landmarks"
+                ],
+                "bestTime": "نوفمبر - أبريل"
+        },
+        {
+                "id": "costarica",
+                "nameAr": "كوستاريكا",
+                "nameEn": "Costa Rica",
+                "continent": "north_america",
+                "img": "img/costarica.jpg",
+                "dailyCost": 340,
+                "durationMin": 6,
+                "durationMax": 10,
+                "tripTypes": [
+                        "youth",
+                        "honeymoon"
+                ],
+                "activities": [
+                        "safari",
+                        "beaches",
+                        "mountains"
+                ],
+                "bestTime": "ديسمبر - أبريل"
+        },
+        {
+                "id": "panama",
+                "nameAr": "بنما",
+                "nameEn": "Panama",
+                "continent": "north_america",
+                "img": "img/panama.jpg",
+                "dailyCost": 300,
+                "durationMin": 5,
+                "durationMax": 8,
+                "tripTypes": [
+                        "youth",
+                        "family"
+                ],
+                "activities": [
+                        "beaches",
+                        "mountains",
+                        "landmarks"
+                ],
+                "bestTime": "ديسمبر - أبريل"
+        },
+        {
+                "id": "cuba",
+                "nameAr": "كوبا",
+                "nameEn": "Cuba",
+                "continent": "north_america",
+                "img": "img/cuba.jpg",
+                "dailyCost": 260,
+                "durationMin": 6,
+                "durationMax": 9,
+                "tripTypes": [
+                        "youth",
+                        "honeymoon"
+                ],
+                "activities": [
+                        "beaches",
+                        "landmarks"
+                ],
+                "bestTime": "نوفمبر - أبريل"
+        },
+        {
+                "id": "dominicanrepublic",
+                "nameAr": "جمهورية الدومينيكان",
+                "nameEn": "Dominican Republic",
+                "continent": "north_america",
+                "img": "img/dominicanrepublic.jpg",
+                "dailyCost": 300,
+                "durationMin": 5,
+                "durationMax": 9,
+                "tripTypes": [
+                        "honeymoon",
+                        "family"
+                ],
+                "activities": [
+                        "beaches",
+                        "sea",
+                        "resorts"
+                ],
+                "bestTime": "ديسمبر - أبريل"
+        },
+        {
+                "id": "jamaica",
+                "nameAr": "جامايكا",
+                "nameEn": "Jamaica",
+                "continent": "north_america",
+                "img": "img/jamaica.jpg",
+                "dailyCost": 380,
+                "durationMin": 5,
+                "durationMax": 8,
+                "tripTypes": [
+                        "honeymoon",
+                        "youth"
+                ],
+                "activities": [
+                        "beaches",
+                        "sea",
+                        "resorts"
+                ],
+                "bestTime": "ديسمبر - أبريل"
+        },
+        {
+                "id": "guatemala",
+                "nameAr": "غواتيمالا",
+                "nameEn": "Guatemala",
+                "continent": "north_america",
+                "img": "img/guatemala.jpg",
+                "dailyCost": 230,
+                "durationMin": 5,
+                "durationMax": 8,
+                "tripTypes": [
+                        "youth"
+                ],
+                "activities": [
+                        "mountains",
+                        "landmarks"
+                ],
+                "bestTime": "نوفمبر - أبريل"
+        },
+        {
+                "id": "honduras",
+                "nameAr": "هندوراس",
+                "nameEn": "Honduras",
+                "continent": "north_america",
+                "img": "img/honduras.jpg",
+                "dailyCost": 220,
+                "durationMin": 5,
+                "durationMax": 8,
+                "tripTypes": [
+                        "youth"
+                ],
+                "activities": [
+                        "beaches",
+                        "mountains"
+                ],
+                "bestTime": "نوفمبر - أبريل"
+        },
+        {
+                "id": "elsalvador",
+                "nameAr": "السلفادور",
+                "nameEn": "El Salvador",
+                "continent": "north_america",
+                "img": "img/elsalvador.jpg",
+                "dailyCost": 220,
+                "durationMin": 4,
+                "durationMax": 7,
+                "tripTypes": [
+                        "youth"
+                ],
+                "activities": [
+                        "beaches",
+                        "mountains"
+                ],
+                "bestTime": "نوفمبر - أبريل"
+        },
+        {
+                "id": "nicaragua",
+                "nameAr": "نيكاراغوا",
+                "nameEn": "Nicaragua",
+                "continent": "north_america",
+                "img": "img/nicaragua.jpg",
+                "dailyCost": 210,
+                "durationMin": 5,
+                "durationMax": 8,
+                "tripTypes": [
+                        "youth"
+                ],
+                "activities": [
+                        "beaches",
+                        "mountains"
+                ],
+                "bestTime": "نوفمبر - أبريل"
+        },
+        {
+                "id": "belize",
+                "nameAr": "بليز",
+                "nameEn": "Belize",
+                "continent": "north_america",
+                "img": "img/belize.jpg",
+                "dailyCost": 350,
+                "durationMin": 5,
+                "durationMax": 8,
+                "tripTypes": [
+                        "honeymoon",
+                        "youth"
+                ],
+                "activities": [
+                        "beaches",
+                        "sea"
+                ],
+                "bestTime": "ديسمبر - أبريل"
+        },
+        {
+                "id": "bahamas",
+                "nameAr": "الباهاما",
+                "nameEn": "Bahamas",
+                "continent": "north_america",
+                "img": "img/bahamas.jpg",
+                "dailyCost": 550,
+                "durationMin": 5,
+                "durationMax": 8,
+                "tripTypes": [
+                        "honeymoon",
+                        "family"
+                ],
+                "activities": [
+                        "beaches",
+                        "sea",
+                        "resorts"
+                ],
+                "bestTime": "ديسمبر - أبريل"
+        },
+        {
+                "id": "trinidad",
+                "nameAr": "ترينيداد وتوباغو",
+                "nameEn": "Trinidad and Tobago",
+                "continent": "north_america",
+                "img": "img/trinidad.jpg",
+                "dailyCost": 350,
+                "durationMin": 4,
+                "durationMax": 7,
+                "tripTypes": [
+                        "youth",
+                        "family"
+                ],
+                "activities": [
+                        "beaches",
+                        "sea"
+                ],
+                "bestTime": "يناير - مايو"
+        },
+        {
+                "id": "barbados",
+                "nameAr": "بربادوس",
+                "nameEn": "Barbados",
+                "continent": "north_america",
+                "img": "img/barbados.jpg",
+                "dailyCost": 500,
+                "durationMin": 5,
+                "durationMax": 8,
+                "tripTypes": [
+                        "honeymoon",
+                        "family"
+                ],
+                "activities": [
+                        "beaches",
+                        "sea",
+                        "resorts"
+                ],
+                "bestTime": "ديسمبر - أبريل"
+        },
+        {
+                "id": "puertorico",
+                "nameAr": "بورتوريكو",
+                "nameEn": "Puerto Rico",
+                "continent": "north_america",
+                "img": "img/puertorico.jpg",
+                "dailyCost": 420,
+                "durationMin": 5,
+                "durationMax": 8,
+                "tripTypes": [
+                        "youth",
+                        "honeymoon"
+                ],
+                "activities": [
+                        "beaches",
+                        "sea"
+                ],
+                "bestTime": "ديسمبر - أبريل"
+        },
+        {
+                "id": "brazil",
+                "nameAr": "البرازيل",
+                "nameEn": "Brazil",
+                "continent": "south_america",
+                "img": "img/brazil.jpg",
+                "dailyCost": 300,
+                "durationMin": 8,
+                "durationMax": 14,
+                "tripTypes": [
+                        "youth",
+                        "family"
+                ],
+                "activities": [
+                        "beaches",
+                        "landmarks",
+                        "mountains"
+                ],
+                "bestTime": "مايو - سبتمبر"
+        },
+        {
+                "id": "argentina",
+                "nameAr": "الأرجنتين",
+                "nameEn": "Argentina",
+                "continent": "south_america",
+                "img": "img/argentina.jpg",
+                "dailyCost": 315,
+                "durationMin": 8,
+                "durationMax": 14,
+                "tripTypes": [
+                        "youth",
+                        "honeymoon"
+                ],
+                "activities": [
+                        "mountains",
+                        "landmarks"
+                ],
+                "bestTime": "أكتوبر - أبريل"
+        },
+        {
+                "id": "peru",
+                "nameAr": "بيرو",
+                "nameEn": "Peru",
+                "continent": "south_america",
+                "img": "img/peru.jpg",
+                "dailyCost": 230,
+                "durationMin": 7,
+                "durationMax": 12,
+                "tripTypes": [
+                        "youth"
+                ],
+                "activities": [
+                        "mountains",
+                        "landmarks"
+                ],
+                "bestTime": "مايو - سبتمبر"
+        },
+        {
+                "id": "chile",
+                "nameAr": "تشيلي",
+                "nameEn": "Chile",
+                "continent": "south_america",
+                "img": "img/chile.jpg",
+                "dailyCost": 350,
+                "durationMin": 7,
+                "durationMax": 12,
+                "tripTypes": [
+                        "youth",
+                        "honeymoon"
+                ],
+                "activities": [
+                        "mountains",
+                        "landmarks"
+                ],
+                "bestTime": "أكتوبر - أبريل"
+        },
+        {
+                "id": "colombia",
+                "nameAr": "كولومبيا",
+                "nameEn": "Colombia",
+                "continent": "south_america",
+                "img": "img/colombia.jpg",
+                "dailyCost": 215,
+                "durationMin": 6,
+                "durationMax": 10,
+                "tripTypes": [
+                        "youth"
+                ],
+                "activities": [
+                        "beaches",
+                        "mountains",
+                        "landmarks"
+                ],
+                "bestTime": "ديسمبر - مارس"
+        },
+        {
+                "id": "ecuador",
+                "nameAr": "الإكوادور",
+                "nameEn": "Ecuador",
+                "continent": "south_america",
+                "img": "img/ecuador.jpg",
+                "dailyCost": 215,
+                "durationMin": 6,
+                "durationMax": 10,
+                "tripTypes": [
+                        "youth"
+                ],
+                "activities": [
+                        "mountains",
+                        "safari",
+                        "landmarks"
+                ],
+                "bestTime": "يونيو - سبتمبر"
+        },
+        {
+                "id": "bolivia",
+                "nameAr": "بوليفيا",
+                "nameEn": "Bolivia",
+                "continent": "south_america",
+                "img": "img/bolivia.jpg",
+                "dailyCost": 180,
+                "durationMin": 6,
+                "durationMax": 10,
+                "tripTypes": [
+                        "youth"
+                ],
+                "activities": [
+                        "mountains",
+                        "landmarks"
+                ],
+                "bestTime": "مايو - أكتوبر"
+        },
+        {
+                "id": "paraguay",
+                "nameAr": "باراغواي",
+                "nameEn": "Paraguay",
+                "continent": "south_america",
+                "img": "img/paraguay.jpg",
+                "dailyCost": 190,
+                "durationMin": 5,
+                "durationMax": 8,
+                "tripTypes": [
+                        "youth"
+                ],
+                "activities": [
+                        "landmarks"
+                ],
+                "bestTime": "مايو - أكتوبر"
+        },
+        {
+                "id": "uruguay",
+                "nameAr": "أوروغواي",
+                "nameEn": "Uruguay",
+                "continent": "south_america",
+                "img": "img/uruguay.jpg",
+                "dailyCost": 350,
+                "durationMin": 5,
+                "durationMax": 8,
+                "tripTypes": [
+                        "family",
+                        "honeymoon"
+                ],
+                "activities": [
+                        "beaches",
+                        "landmarks"
+                ],
+                "bestTime": "ديسمبر - مارس"
+        },
+        {
+                "id": "guyana",
+                "nameAr": "غيانا",
+                "nameEn": "Guyana",
+                "continent": "south_america",
+                "img": "img/guyana.jpg",
+                "dailyCost": 260,
+                "durationMin": 5,
+                "durationMax": 8,
+                "tripTypes": [
+                        "youth"
+                ],
+                "activities": [
+                        "mountains",
+                        "safari"
+                ],
+                "bestTime": "سبتمبر - أبريل"
+        },
+        {
+                "id": "suriname",
+                "nameAr": "سورينام",
+                "nameEn": "Suriname",
+                "continent": "south_america",
+                "img": "img/suriname.jpg",
+                "dailyCost": 260,
+                "durationMin": 5,
+                "durationMax": 8,
+                "tripTypes": [
+                        "youth"
+                ],
+                "activities": [
+                        "mountains",
+                        "safari"
+                ],
+                "bestTime": "أغسطس - نوفمبر"
+        },
+        {
+                "id": "australia",
+                "nameAr": "أستراليا",
+                "nameEn": "Australia",
+                "continent": "oceania",
+                "img": "img/australia.jpg",
+                "dailyCost": 710,
+                "durationMin": 10,
+                "durationMax": 18,
+                "tripTypes": [
+                        "youth",
+                        "family",
+                        "honeymoon"
+                ],
+                "activities": [
+                        "beaches",
+                        "landmarks",
+                        "safari"
+                ],
+                "bestTime": "سبتمبر - نوفمبر"
+        },
+        {
+                "id": "newzealand",
+                "nameAr": "نيوزيلندا",
+                "nameEn": "New Zealand",
+                "continent": "oceania",
+                "img": "img/newzealand.jpg",
+                "dailyCost": 600,
+                "durationMin": 8,
+                "durationMax": 14,
+                "tripTypes": [
+                        "youth",
+                        "honeymoon"
+                ],
+                "activities": [
+                        "mountains",
+                        "landmarks"
+                ],
+                "bestTime": "ديسمبر - فبراير"
+        },
+        {
+                "id": "fiji",
+                "nameAr": "فيجي",
+                "nameEn": "Fiji",
+                "continent": "oceania",
+                "img": "img/fiji.jpg",
+                "dailyCost": 500,
+                "durationMin": 5,
+                "durationMax": 9,
+                "tripTypes": [
+                        "honeymoon",
+                        "family"
+                ],
+                "activities": [
+                        "beaches",
+                        "sea",
+                        "resorts"
+                ],
+                "bestTime": "مايو - أكتوبر"
+        },
+        {
+                "id": "papuanewguinea",
+                "nameAr": "بابوا غينيا الجديدة",
+                "nameEn": "Papua New Guinea",
+                "continent": "oceania",
+                "img": "img/papuanewguinea.jpg",
+                "dailyCost": 450,
+                "durationMin": 6,
+                "durationMax": 10,
+                "tripTypes": [
+                        "youth"
+                ],
+                "activities": [
+                        "mountains",
+                        "safari"
+                ],
+                "bestTime": "مايو - أكتوبر"
+        },
+        {
+                "id": "samoa",
+                "nameAr": "ساموا",
+                "nameEn": "Samoa",
+                "continent": "oceania",
+                "img": "img/samoa.jpg",
+                "dailyCost": 420,
+                "durationMin": 5,
+                "durationMax": 9,
+                "tripTypes": [
+                        "honeymoon"
+                ],
+                "activities": [
+                        "beaches",
+                        "sea"
+                ],
+                "bestTime": "مايو - أكتوبر"
+        },
+        {
+                "id": "tonga",
+                "nameAr": "تونغا",
+                "nameEn": "Tonga",
+                "continent": "oceania",
+                "img": "img/tonga.jpg",
+                "dailyCost": 420,
+                "durationMin": 5,
+                "durationMax": 9,
+                "tripTypes": [
+                        "honeymoon"
+                ],
+                "activities": [
+                        "beaches",
+                        "sea"
+                ],
+                "bestTime": "مايو - أكتوبر"
+        },
+        {
+                "id": "vanuatu",
+                "nameAr": "فانواتو",
+                "nameEn": "Vanuatu",
+                "continent": "oceania",
+                "img": "img/vanuatu.jpg",
+                "dailyCost": 450,
+                "durationMin": 5,
+                "durationMax": 9,
+                "tripTypes": [
+                        "honeymoon",
+                        "youth"
+                ],
+                "activities": [
+                        "beaches",
+                        "sea"
+                ],
+                "bestTime": "مايو - أكتوبر"
+        },
+        {
+                "id": "solomonislands",
+                "nameAr": "جزر سليمان",
+                "nameEn": "Solomon Islands",
+                "continent": "oceania",
+                "img": "img/solomonislands.jpg",
+                "dailyCost": 450,
+                "durationMin": 5,
+                "durationMax": 9,
+                "tripTypes": [
+                        "youth"
+                ],
+                "activities": [
+                        "beaches",
+                        "sea"
+                ],
+                "bestTime": "مايو - أكتوبر"
+        },
+        {
+                "id": "palau",
+                "nameAr": "بالاو",
+                "nameEn": "Palau",
+                "continent": "oceania",
+                "img": "img/palau.jpg",
+                "dailyCost": 650,
+                "durationMin": 5,
+                "durationMax": 8,
+                "tripTypes": [
+                        "honeymoon"
+                ],
+                "activities": [
+                        "beaches",
+                        "sea",
+                        "resorts"
+                ],
+                "bestTime": "نوفمبر - أبريل"
+        },
+        {
+                "id": "cookislands",
+                "nameAr": "جزر كوك",
+                "nameEn": "Cook Islands",
+                "continent": "oceania",
+                "img": "img/cookislands.jpg",
+                "dailyCost": 600,
+                "durationMin": 5,
+                "durationMax": 9,
+                "tripTypes": [
+                        "honeymoon"
+                ],
+                "activities": [
+                        "beaches",
+                        "sea",
+                        "resorts"
+                ],
+                "bestTime": "مايو - أكتوبر"
+        },
+        {
+                "id": "frenchpolynesia",
+                "nameAr": "بولينيزيا الفرنسية",
+                "nameEn": "French Polynesia",
+                "continent": "oceania",
+                "img": "img/frenchpolynesia.jpg",
+                "dailyCost": 900,
+                "durationMin": 5,
+                "durationMax": 9,
+                "tripTypes": [
+                        "honeymoon"
+                ],
+                "activities": [
+                        "beaches",
+                        "sea",
+                        "resorts"
+                ],
+                "bestTime": "مايو - أكتوبر"
+        }
+];
+
+    // ===== حالة المعالج =====
+    const state = {
+        step: 1,
+        budget: 3000,
+        tripType: null,
+        people: 1,
+        duration: 5,
+        continent: null,   // null = كل العالم
+        isRandom: false,
+        activities: [],
+    };
+
+    // ===== عناصر الصفحة =====
+    const wizard = document.getElementById("wizard");
+    const resultsSection = document.getElementById("resultsSection");
+    const resultsGrid = document.getElementById("resultsGrid");
+    const resultsTitle = document.getElementById("resultsTitle");
+    const resultsSubtitle = document.getElementById("resultsSubtitle");
+    const steps = document.querySelectorAll(".wizard-step");
+    const dots = document.querySelectorAll(".step-dot");
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
+    const restartBtn = document.getElementById("restartBtn");
+    const rerollBtn = document.getElementById("rerollBtn");
+    const TOTAL_STEPS = steps.length;
+
+    const budgetRange = document.getElementById("budgetRange");
+    const budgetDisplay = document.getElementById("budgetDisplay");
+    const peopleDisplay = document.getElementById("peopleDisplay");
+    const increasePeople = document.getElementById("increasePeople");
+    const decreasePeople = document.getElementById("decreasePeople");
+    const durationDisplay = document.getElementById("durationDisplay");
+    const increaseDuration = document.getElementById("increaseDuration");
+    const decreaseDuration = document.getElementById("decreaseDuration");
+    const randomBtn = document.getElementById("randomBtn");
+
+    function formatNumber(n) {
+        return n.toLocaleString("en-US");
+    }
+
+    function arabicDigits(n) {
+        return n.toString().replace(/[0-9]/g, (d) => "٠١٢٣٤٥٦٧٨٩"[d]);
+    }
+
+    // ===== الميزانية =====
+    budgetRange?.addEventListener("input", () => {
+        state.budget = parseInt(budgetRange.value, 10);
+        if (budgetDisplay) budgetDisplay.textContent = formatNumber(state.budget);
+    });
+
+    // ===== نوع الرحلة =====
+    document.querySelectorAll(".trip-card").forEach((card) => {
+        card.addEventListener("click", () => {
+            document.querySelectorAll(".trip-card").forEach((c) => c.classList.remove("active"));
+            card.classList.add("active");
+            state.tripType = card.dataset.type;
+            updateNextButtonState();
+        });
+    });
+
+    // ===== عدد المسافرين =====
+    increasePeople?.addEventListener("click", () => {
+        if (state.people < 20) {
+            state.people++;
+            if (peopleDisplay) peopleDisplay.textContent = state.people;
+        }
+    });
+    decreasePeople?.addEventListener("click", () => {
+        if (state.people > 1) {
+            state.people--;
+            if (peopleDisplay) peopleDisplay.textContent = state.people;
+        }
+    });
+
+    // ===== مدة الإقامة =====
+    increaseDuration?.addEventListener("click", () => {
+        if (state.duration < 30) {
+            state.duration++;
+            if (durationDisplay) durationDisplay.textContent = state.duration;
+        }
+    });
+    decreaseDuration?.addEventListener("click", () => {
+        if (state.duration > 1) {
+            state.duration--;
+            if (durationDisplay) durationDisplay.textContent = state.duration;
+        }
+    });
+
+    // ===== اختيار القارة =====
+    document.querySelectorAll(".continent-chip").forEach((chip) => {
+        chip.addEventListener("click", () => {
+            const already = chip.classList.contains("active");
+            document.querySelectorAll(".continent-chip").forEach((c) => c.classList.remove("active"));
+            randomBtn?.classList.remove("active");
+            state.isRandom = false;
+
+            if (already) {
+                // إلغاء التحديد = كل العالم
+                state.continent = null;
+            } else {
+                chip.classList.add("active");
+                state.continent = chip.dataset.continent;
+            }
+        });
+    });
+
+    // ===== زر العشوائي =====
+    randomBtn?.addEventListener("click", () => {
+        const wasActive = randomBtn.classList.contains("active");
+        document.querySelectorAll(".continent-chip").forEach((c) => c.classList.remove("active"));
+        state.continent = null;
+
+        if (wasActive) {
+            randomBtn.classList.remove("active");
+            state.isRandom = false;
+        } else {
+            randomBtn.classList.add("active");
+            state.isRandom = true;
+        }
+    });
+
+    // ===== الفعاليات =====
+    document.querySelectorAll(".activity-chip").forEach((chip) => {
+        chip.addEventListener("click", () => {
+            chip.classList.toggle("active");
+            const act = chip.dataset.activity;
+            if (state.activities.includes(act)) {
+                state.activities = state.activities.filter((a) => a !== act);
+            } else {
+                state.activities.push(act);
+            }
+            updateNextButtonState();
+        });
+    });
+
+    // ===== التنقل بين الخطوات =====
+    function showStep(n) {
+        steps.forEach((s) => s.classList.toggle("active", parseInt(s.dataset.step, 10) === n));
+        dots.forEach((d) => {
+            const dStep = parseInt(d.dataset.step, 10);
+            d.classList.toggle("active", dStep === n);
+            d.classList.toggle("done", dStep < n);
+        });
+        if (prevBtn) prevBtn.disabled = n === 1;
+        if (nextBtn) nextBtn.textContent = n === TOTAL_STEPS ? "عرض النتائج" : "التالي";
+        updateNextButtonState();
+    }
+
+    function updateNextButtonState() {
+        if (!nextBtn) return;
+        if (state.step === 2) {
+            nextBtn.disabled = !state.tripType;
+        } else if (state.step === 5) {
+            nextBtn.disabled = state.activities.length === 0;
+        } else {
+            nextBtn.disabled = false;
+        }
+    }
+
+    nextBtn?.addEventListener("click", () => {
+        if (state.step === TOTAL_STEPS) {
+            if (wizard) wizard.style.display = "none";
+            if (resultsSection) resultsSection.style.display = "block";
+            renderResults();
+            resultsSection?.scrollIntoView({ behavior: "smooth" });
+            return;
+        }
+        state.step++;
+        showStep(state.step);
+    });
+
+    prevBtn?.addEventListener("click", () => {
+        if (state.step > 1) {
+            state.step--;
+            showStep(state.step);
+        }
+    });
+
+    restartBtn?.addEventListener("click", () => {
+        state.step = 1;
+        state.budget = 3000;
+        state.tripType = null;
+        state.people = 1;
+        state.duration = 5;
+        state.continent = null;
+        state.isRandom = false;
+        state.activities = [];
+
+        if (budgetRange) budgetRange.value = 3000;
+        if (budgetDisplay) budgetDisplay.textContent = "3,000";
+        if (peopleDisplay) peopleDisplay.textContent = "1";
+        if (durationDisplay) durationDisplay.textContent = "5";
+        document.querySelectorAll(".trip-card").forEach((c) => c.classList.remove("active"));
+        document.querySelectorAll(".continent-chip").forEach((c) => c.classList.remove("active"));
+        randomBtn?.classList.remove("active");
+        document.querySelectorAll(".activity-chip").forEach((c) => c.classList.remove("active"));
+
+        if (resultsSection) resultsSection.style.display = "none";
+        if (wizard) wizard.style.display = "block";
+        showStep(1);
+        wizard?.scrollIntoView({ behavior: "smooth" });
+    });
+
+    // ===== حساب نسبة التطابق (حسب نوع الرحلة والفعاليات فقط) =====
+    function calculateMatch(country) {
+        let score = 0;
+
+        // نوع الرحلة (٤٠ نقطة) — كل ما كانت الدولة متخصصة بنوع رحلة أقل، تطلع نسبة أعلى لو طابقت
+        if (country.tripTypes.includes(state.tripType)) {
+            score += Math.round(40 - (country.tripTypes.length - 1) * 5);
+        } else {
+            score += 5;
+        }
+
+        // الفعاليات (٦٠ نقطة)
+        if (state.activities.length > 0) {
+            const matched = state.activities.filter((a) => country.activities.includes(a)).length;
+            score += Math.round((matched / state.activities.length) * 60);
+        }
+
+        return Math.min(100, Math.max(0, score));
+    }
+
+    // ===== ملاحظة الميزانية (تحذير أو إيجابي) =====
+    function budgetNoteHtml(country) {
+        const daysAffordable = Math.floor(state.budget / country.dailyCost);
+
+        if (daysAffordable >= state.duration) {
+            return `
+            <div class="budget-note ok">
+                <span class="note-icon">✅</span>
+                <span>ميزانيتك (${formatNumber(state.budget)} ريال) تكفي رحلتك كاملة (${arabicDigits(state.duration)} ${state.duration === 1 ? "يوم" : "أيام"}) في ${country.nameAr}، وتزيد.</span>
+            </div>`;
+        }
+
+        if (daysAffordable <= 0) {
+            return `
+            <div class="budget-note warn">
+                <span class="note-icon">⚠️</span>
+                <span>ميزانيتك (${formatNumber(state.budget)} ريال) أقل من تكلفة يوم واحد في ${country.nameAr}. جرّب تزود الميزانية أو تختار وجهة أوفر.</span>
+            </div>`;
+        }
+
+        return `
+        <div class="budget-note warn">
+            <span class="note-icon">⚠️</span>
+            <span>ميزانيتك (${formatNumber(state.budget)} ريال) ما تكفي ${arabicDigits(state.duration)} ${state.duration === 1 ? "يوم" : "أيام"} في ${country.nameAr}. تقدر تقعد فيها <strong>${arabicDigits(daysAffordable)} ${daysAffordable === 1 ? "يوم" : "أيام"}</strong> بهذا المبلغ.</span>
+        </div>`;
+    }
+
+    function cardTemplate(country, index, isFeaturedSingle) {
+        const featuredClass = (index === 0 || isFeaturedSingle) ? " featured" : "";
+        const kicker = (index === 0 && !isFeaturedSingle)
+            ? '<span class="card-kicker">الأنسب لرحلتك ⭐</span>'
+            : (isFeaturedSingle ? '<span class="card-kicker">اختيارك العشوائي 🎲</span>' : "");
+
+        return `
+        <div class="result-card${featuredClass}">
+            <div class="card-image-wrap">
+                <img src="${country.img}" alt="${country.nameAr}">
+                <span class="card-rank">${arabicDigits(index + 1).padStart(2, "٠")}</span>
+                <div class="card-title-wrap">
+                    ${kicker}
+                    <span class="card-title-ar">${country.nameAr}</span>
+                    <span class="card-title-en">${country.nameEn}</span>
+                </div>
+            </div>
+            <div class="card-editorial">
+                <div class="card-facts">
+                    <div class="fact-row">
+                        <span class="fact-label">نسبة التطابق</span>
+                        <span class="fact-value highlight">${country.score}%</span>
+                    </div>
+                    <div class="fact-row">
+                        <span class="fact-label">أفضل وقت للسفر</span>
+                        <span class="fact-value">${country.bestTime}</span>
+                    </div>
+                </div>
+                ${budgetNoteHtml(country)}
+                <a href="${getCountryLink(country)}" class="card-link">استعرض الدولة ←</a>
+            </div>
+        </div>`;
+    }
+
+    // ===== منع تكرار نفس الدولة مرتين متتاليتين بالاختيار العشوائي =====
+    function pickRandomCountry() {
+        const lastId = localStorage.getItem("sofrhLastRandomCountry");
+        // تفضيل الدول التي تناسب الميزانية لمدة الإقامة المطلوبة، وإلا أي دولة يقدر يزورها يوم واحد على الأقل
+        let pool = countries.filter((c) => Math.floor(state.budget / c.dailyCost) >= state.duration);
+        if (pool.length === 0) {
+            pool = countries.filter((c) => Math.floor(state.budget / c.dailyCost) >= 1);
+        }
+        if (pool.length === 0) {
+            pool = countries.slice();
+        }
+        if (pool.length > 1 && lastId) {
+            const filtered = pool.filter((c) => c.id !== lastId);
+            if (filtered.length > 0) pool = filtered;
+        }
+        const choice = pool[Math.floor(Math.random() * pool.length)];
+        localStorage.setItem("sofrhLastRandomCountry", choice.id);
+        return choice;
+    }
+
+    function renderResults() {
+        if (!resultsGrid) return;
+
+        // ===== وضع العشوائي: دولة واحدة فقط =====
+        if (state.isRandom) {
+            const picked = pickRandomCountry();
+            const scoredCountry = { ...picked, score: calculateMatch(picked) };
+
+            if (resultsTitle) resultsTitle.textContent = "وجهتك العشوائية";
+            if (resultsSubtitle) resultsSubtitle.textContent = "اخترنا لك دولة بناءً على ميزانيتك — اضغط جرّب وجهة ثانية لاختيار غيرها";
+            resultsGrid.classList.add("random-mode");
+            resultsGrid.innerHTML = cardTemplate(scoredCountry, 0, true);
+            if (rerollBtn) rerollBtn.style.display = "inline-block";
+            return;
+        }
+
+        // ===== وضع عادي: قارة محددة أو كل العالم =====
+        resultsGrid.classList.remove("random-mode");
+        if (rerollBtn) rerollBtn.style.display = "none";
+
+        let pool = countries;
+        if (state.continent) {
+            pool = countries.filter((c) => c.continent === state.continent);
+            if (resultsTitle) resultsTitle.textContent = `أفضل وجهات ${continentNames[state.continent] || ""} لك`;
+        } else {
+            if (resultsTitle) resultsTitle.textContent = "أفضل وجهات العالم لك";
+        }
+        if (resultsSubtitle) {
+            resultsSubtitle.textContent = `كل الدول ظاهرة مرتبة من الأقرب لاختياراتك — ${arabicDigits(pool.length)} وجهة`;
+        }
+
+        // لا نخفي أي دولة — فقط نرتبها حسب الأقرب للاختيارات
+        const scored = pool
+            .map((c) => ({ ...c, score: calculateMatch(c) }))
+            .sort((a, b) => b.score - a.score);
+
+        resultsGrid.innerHTML = scored.map((c, i) => cardTemplate(c, i, false)).join("");
+    }
+
+    rerollBtn?.addEventListener("click", () => {
+        renderResults();
+        resultsSection?.scrollIntoView({ behavior: "smooth" });
+    });
+
+    showStep(1);
+});

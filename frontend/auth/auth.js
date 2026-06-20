@@ -231,11 +231,18 @@ if (typeof menuBtn === 'undefined') {
 }
 
 if (menuBtn && sideMenu && closeBtn) {
-    menuBtn.addEventListener("click", () => { sideMenu.style.right = "0px"; });
-    closeBtn.addEventListener("click", () => { sideMenu.style.right = "-260px"; });
+    menuBtn.addEventListener("click", () => {
+        sideMenu.style.right = "0px";
+        sideMenu.classList.add("menu-open");
+    });
+    closeBtn.addEventListener("click", () => {
+        sideMenu.style.right = "-260px";
+        sideMenu.classList.remove("menu-open");
+    });
     document.addEventListener("click", (e) => {
         if (!sideMenu.contains(e.target) && !menuBtn.contains(e.target)) {
             sideMenu.style.right = "-260px";
+            sideMenu.classList.remove("menu-open");
         }
     });
 }
