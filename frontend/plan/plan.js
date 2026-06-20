@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 "nameAr": "الإمارات",
                 "nameEn": "UAE",
                 "continent": "asia",
-                "img": "img/uae.jpg",
+                "img": "/img/UAE.jpg",
                 "dailyCost": 490,
                 "durationMin": 3,
                 "durationMax": 7,
