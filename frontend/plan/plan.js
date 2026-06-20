@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 "nameAr": "الإمارات",
                 "nameEn": "UAE",
                 "continent": "asia",
-                "img": "/img/UAE.jpg",
+                "img": "img/uae.jpg",
                 "dailyCost": 490,
                 "durationMin": 3,
                 "durationMax": 7,
@@ -3162,10 +3162,20 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // ===== الميزانية =====
+    function updateBudgetTrack() {
+        if (!budgetRange) return;
+        const min = parseInt(budgetRange.min, 10);
+        const max = parseInt(budgetRange.max, 10);
+        const percent = ((state.budget - min) / (max - min)) * 100;
+        budgetRange.style.background = `linear-gradient(to right, var(--caramel) 0%, var(--caramel) ${percent}%, var(--cream-soft) ${percent}%, var(--cream-soft) 100%)`;
+    }
+
     budgetRange?.addEventListener("input", () => {
         state.budget = parseInt(budgetRange.value, 10);
         if (budgetDisplay) budgetDisplay.textContent = formatNumber(state.budget);
+        updateBudgetTrack();
     });
+    updateBudgetTrack();
 
     // ===== نوع الرحلة =====
     document.querySelectorAll(".trip-card").forEach((card) => {
@@ -3307,6 +3317,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (budgetRange) budgetRange.value = 3000;
         if (budgetDisplay) budgetDisplay.textContent = "3,000";
+        updateBudgetTrack();
         if (peopleDisplay) peopleDisplay.textContent = "1";
         if (durationDisplay) durationDisplay.textContent = "5";
         document.querySelectorAll(".trip-card").forEach((c) => c.classList.remove("active"));

@@ -580,16 +580,69 @@ body {
 }
 
 #budgetRange {
+    -webkit-appearance: none;
+    appearance: none;
     width: 100%;
-    height: 6px;
-    border-radius: 4px;
-    background: var(--brown-dark);
+    height: 8px;
+    border-radius: 6px;
     outline: none;
-    accent-color: var(--caramel);
     cursor: pointer;
+    /* إصلاح خلل اللمس بمتصفحات الجوال (خصوصاً iOS Safari) مع input range داخل صفحة RTL:
+       المتصفح ما يربط نقطة اللمس بالقيمة الصحيحة لما يكون اتجاه العنصر rtl.
+       نخلي الشريط LTR من الداخل (يصير سحبه طبيعي وصحيح) ثم نعكسه بصريًا
+       عشان يضل شكله مطابق لتسميات ٣٠٠٠ / ٣٠٠٠٠+ كما هي. */
     direction: ltr;
     transform: scaleX(-1);
     touch-action: pan-y;
+    /* التعبئة اللونية (الجزء المختار من الميزانية) — تُحدّث من الجافاسكربت حسب القيمة */
+    background: linear-gradient(to right, var(--caramel) 0%, var(--caramel) 0%, var(--cream-soft) 0%, var(--cream-soft) 100%);
+}
+
+/* المقبض — Chrome / Safari / Edge */
+#budgetRange::-webkit-slider-runnable-track {
+    height: 8px;
+    border-radius: 6px;
+    background: transparent;
+}
+
+#budgetRange::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 26px;
+    height: 26px;
+    margin-top: -9px;
+    border-radius: 50%;
+    background: var(--brown-dark);
+    border: 4px solid var(--caramel);
+    box-shadow: 0 2px 8px rgba(74, 46, 31, .45);
+    cursor: pointer;
+    transition: transform .15s;
+}
+
+#budgetRange::-webkit-slider-thumb:active {
+    transform: scale(1.15);
+}
+
+/* المقبض — Firefox */
+#budgetRange::-moz-range-track {
+    height: 8px;
+    border-radius: 6px;
+    background: var(--cream-soft);
+}
+
+#budgetRange::-moz-range-progress {
+    height: 8px;
+    border-radius: 6px;
+    background: var(--caramel);
+}
+
+#budgetRange::-moz-range-thumb {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: var(--brown-dark);
+    border: 4px solid var(--caramel);
+    box-shadow: 0 2px 8px rgba(74, 46, 31, .45);
+    cursor: pointer;
 }
 
 .budget-value {
