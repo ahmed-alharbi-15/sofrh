@@ -876,3 +876,23 @@ body {
         margin-top: 30px;
     }
 }
+@media (max-width: 480px) {
+    .side-menu {
+        width: 80vw;
+        max-width: 280px;
+    }
+}
+
+@media (max-width: 480px) {
+    .side-menu {
+        width: 80vw;
+        max-width: 260px;
+    }
+}
+
+@media (max-width: 320px) {
+    .side-menu {
+        width: 90vw;
+        max-width: 240px;
+    }
+}
