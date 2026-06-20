@@ -148,16 +148,14 @@ body {
     display: none;
     position: fixed;
     top: 0;
-    right: -300px;
-    width: 300px;
-    max-width: 80vw;
+    right: -260px;
+    width: 260px;
     height: 100%;
     background-color: var(--brown-dark);
     padding-top: 100px;
     transition: right 0.4s ease;
     z-index: 9999;
-    overflow-y: auto;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 .side-menu::before {
@@ -189,8 +187,34 @@ body {
 
 .side-menu li {
     margin: 4px 0;
+    opacity: 0;
+    transform: translateX(18px);
+    transition: opacity .35s ease, transform .35s ease;
+}
+
+.side-menu.menu-open li {
     opacity: 1;
     transform: translateX(0);
+}
+
+.side-menu.menu-open li:nth-child(1) {
+    transition-delay: .05s;
+}
+
+.side-menu.menu-open li:nth-child(2) {
+    transition-delay: .1s;
+}
+
+.side-menu.menu-open li:nth-child(3) {
+    transition-delay: .15s;
+}
+
+.side-menu.menu-open li:nth-child(4) {
+    transition-delay: .2s;
+}
+
+.side-menu.menu-open li:nth-child(5) {
+    transition-delay: .25s;
 }
 
 .side-menu a {
@@ -231,6 +255,13 @@ body {
 
 .side-menu a.active svg {
     opacity: 1;
+}
+
+@media (max-width: 480px) {
+    .side-menu {
+        width: 78vw;
+        max-width: 300px;
+    }
 }
 
 /*********************************
@@ -570,6 +601,13 @@ body {
     outline: none;
     accent-color: var(--caramel);
     cursor: pointer;
+    /* إصلاح خلل اللمس بمتصفحات الجوال (خصوصاً iOS Safari) مع input range داخل صفحة RTL:
+       المتصفح ما يربط نقطة اللمس بالقيمة الصحيحة لما يكون اتجاه العنصر rtl.
+       نخلي الشريط LTR من الداخل (يصير سحبه طبيعي وصحيح) ثم نعكسه بصريًا
+       عشان يضل شكله مطابق لتسميات ٣٠٠٠ / ٣٠٠٠٠+ كما هي. */
+    direction: ltr;
+    transform: scaleX(-1);
+    touch-action: pan-y;
 }
 
 .budget-value {
@@ -1215,6 +1253,7 @@ body {
         width: 100%;
     }
 }
+
 @media (max-width: 480px) {
     .side-menu {
         width: 80vw;
