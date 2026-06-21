@@ -974,7 +974,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 "nameAr": "جنوب افريقيا",
                 "nameEn": "South Africa",
                 "continent": "africa",
-                "img": "img/south- africa.jpg",
+                "img": "/img/south- africa.jpg",
                 "dailyCost": 300,
                 "durationMin": 7,
                 "durationMax": 12,
