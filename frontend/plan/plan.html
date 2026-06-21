@@ -7,19 +7,21 @@
     <title>سفرة - خطتي</title>
     <link rel="stylesheet" href="plan.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
     </style>
+    <script src="plan.js" defer></script>
+    <script src="/auth/auth.js" defer></script>
 </head>
 
 <body>
 
-
+    <!-- NAVBAR -->
     <header class="navbar">
         <div class="hamburger" id="menu-btn">☰</div>
 
         <div class="auth-buttons" id="authButtons">
             <a href="/auth/login.html" class="login">تسجيل دخول</a>
-            <a href="/auth/signup.html" class="signup">إنشاء حساب</a>
+            <a href="signup.html" class="signup">إنشاء حساب</a>
         </div>
 
         <div class="user-menu" id="userMenu">
@@ -36,11 +38,11 @@
             <li><a href="/countries/countries.html">الدول</a></li>
             <li><a href="/events/events.html">الفعاليات</a></li>
             <li><a href="/recipes/recipes.html">الوصفات</a></li>
-            <li><a href="/plan/plan.html" class="active">خطتي</a></li>
+            <li><a href="plan.html" class="active">خطتي</a></li>
         </ul>
 
         <div class="logo">
-            <img src="/img/logo3.JPG" alt="سفرة">
+           <a href="/index/index.html"><img src="/img/logo3.JPG" alt="سفرة"></a>
         </div>
     </header>
 
@@ -49,217 +51,220 @@
         <span class="close-btn" id="close-btn">×</span>
         <span class="side-menu-kicker">استكشف</span>
         <ul>
-            <li><a href="/index/index.html" class="active">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <path d="M3 11.5 12 4l9 7.5" />
-                        <path
-                            d="M5.5 10v9a1 1 0 0 0 1 1H9a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h2.5a1 1 0 0 0 1-1v-9" />
-                    </svg>
-                    <span>الرئيسية</span>
-                </a></li>
+            <li><a href="/index/index.html">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 10v9a1 1 0 0 0 1 1H9a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h2.5a1 1 0 0 0 1-1v-9"/></svg>
+                <span>الرئيسية</span>
+            </a></li>
             <li><a href="/countries/countries.html">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <path d="M12 21s7-6.6 7-12a7 7 0 1 0-14 0c0 5.4 7 12 7 12Z" />
-                        <circle cx="12" cy="9" r="2.3" />
-                    </svg>
-                    <span>الدول</span>
-                </a></li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.6 7-12a7 7 0 1 0-14 0c0 5.4 7 12 7 12Z"/><circle cx="12" cy="9" r="2.3"/></svg>
+                <span>الدول</span>
+            </a></li>
             <li><a href="/events/events.html">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <rect x="3.5" y="5" width="17" height="16" rx="2.5" />
-                        <path d="M8 3v4M16 3v4M3.5 10h17" />
-                        <circle cx="12" cy="15" r="1.4" fill="currentColor" stroke="none" />
-                    </svg>
-                    <span>الفعاليات</span>
-                </a></li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="16" rx="2.5"/><path d="M8 3v4M16 3v4M3.5 10h17"/><circle cx="12" cy="15" r="1.4" fill="currentColor" stroke="none"/></svg>
+                <span>الفعاليات</span>
+            </a></li>
             <li><a href="/recipes/recipes.html">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <path d="M7 2v8a2 2 0 0 0 2 2v10M5 2v6M9 2v6M14 2c-1.5 2-1.5 7 0 9 .6.6 1 1.3 1 2v9" />
-                    </svg>
-                    <span>الوصفات</span>
-                </a></li>
-            <li><a href="/plan/plan.html">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="9" />
-                        <path d="M14.8 9.2 13 13l-3.8 1.8L11 11l3.8-1.8Z" />
-                    </svg>
-                    <span>خطتي</span>
-                </a></li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 2v8a2 2 0 0 0 2 2v10M5 2v6M9 2v6M14 2c-1.5 2-1.5 7 0 9 .6.6 1 1.3 1 2v9"/></svg>
+                <span>الوصفات</span>
+            </a></li>
+            <li><a href="plan.html" class="active">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M14.8 9.2 13 13l-3.8 1.8L11 11l3.8-1.8Z"/></svg>
+                <span>خطتي</span>
+            </a></li>
         </ul>
     </div>
+
     <main>
 
         <!-- HERO -->
-        <section class="plan-hero">
+        <section class="hero-open">
+            <span class="hero-eyebrow">✈ تذكرة سفرك تبدأ هنا</span>
             <h1>خطتي</h1>
-            <p>جاوب على بضع أسئلة بسيطة، ونطلع لك أفضل وجهات العالم اللي تناسب رحلتك</p>
+            <div class="hero-flightpath" aria-hidden="true">
+                <span class="fp-dot"></span>
+                <span class="fp-line"></span>
+                <span class="fp-plane">✈</span>
+                <span class="fp-line"></span>
+                <span class="fp-dot"></span>
+            </div>
+            <p>جاوب على بضع أسئلة، ونجهّز لك بطاقة صعود لأفضل وجهات العالم اللي تناسبك</p>
         </section>
 
         <!-- WIZARD -->
-        <section class="wizard" id="wizard">
+        <section class="ticket-wizard" id="wizard">
+            <div class="ticket-card">
 
-            <div class="progress-steps" id="progressSteps">
-                <div class="step-dot active" data-step="1">
-                    <span class="dot-num">1</span>
-                    <span class="dot-label">الميزانية</span>
-                </div>
-                <div class="step-line"></div>
-                <div class="step-dot" data-step="2">
-                    <span class="dot-num">2</span>
-                    <span class="dot-label">نوع الرحلة</span>
-                </div>
-                <div class="step-line"></div>
-                <div class="step-dot" data-step="3">
-                    <span class="dot-num">3</span>
-                    <span class="dot-label">المسافرين</span>
-                </div>
-                <div class="step-line"></div>
-                <div class="step-dot" data-step="4">
-                    <span class="dot-num">4</span>
-                    <span class="dot-label">الوجهة</span>
-                </div>
-                <div class="step-line"></div>
-                <div class="step-dot" data-step="5">
-                    <span class="dot-num">5</span>
-                    <span class="dot-label">الفعاليات</span>
-                </div>
-            </div>
-
-            <!-- Step 1: Budget -->
-            <div class="wizard-step active" data-step="1">
-                <h2>كم ميزانية سفرتك؟</h2>
-                <p class="step-hint">للفرد، غير شامل سعر التذاكر</p>
-                <div class="budget-slider-wrap">
-                    <input type="range" id="budgetRange" min="3000" max="30000" step="500" value="3000">
-                    <div class="budget-value"><span id="budgetDisplay">3,000</span> ريال</div>
-                    <div class="range-labels">
-                        <span>٣٠٠٠</span>
-                        <span>٣٠٠٠٠+</span>
+                <div class="ticket-main">
+                    <div class="ticket-topline">
+                        <span class="ticket-brand">سفرة <span class="ticket-brand-sub">TRAVEL PASS</span></span>
+                        <span class="ticket-step-code" id="stepCode">STEP 01/05</span>
                     </div>
-                </div>
-            </div>
+                    <div class="ticket-steps-rule"><span class="ticket-steps-fill" id="stepsFill"></span></div>
 
-            <!-- Step 2: Trip type -->
-            <div class="wizard-step" data-step="2">
-                <h2>وش نوع رحلتك؟</h2>
-                <div class="trip-type-grid">
-                    <button type="button" class="trip-card" data-type="youth">
-                        <span class="trip-icon">🎉</span>
-                        <span class="trip-name">شبابية</span>
-                    </button>
-                    <button type="button" class="trip-card" data-type="family">
-                        <span class="trip-icon">👨‍👩‍👧‍👦</span>
-                        <span class="trip-name">عائلية</span>
-                    </button>
-                    <button type="button" class="trip-card" data-type="honeymoon">
-                        <span class="trip-icon">💍</span>
-                        <span class="trip-name">شهر عسل</span>
-                    </button>
-                </div>
-            </div>
-
-            <!-- Step 3: Travelers + Duration -->
-            <div class="wizard-step" data-step="3">
-                <h2>كم عدد المسافرين، وكم مدة الإقامة؟</h2>
-                <p class="step-hint">حدد العدد والمدة بالأيام</p>
-
-                <div class="dual-counter">
-                    <div class="counter-block">
-                        <span class="counter-block-label">عدد المسافرين</span>
-                        <div class="counter-box">
-                            <button type="button" class="counter-btn" id="decreasePeople"
-                                aria-label="تقليل العدد">−</button>
-                            <span class="counter-display" id="peopleDisplay">1</span>
-                            <button type="button" class="counter-btn" id="increasePeople"
-                                aria-label="زيادة العدد">+</button>
+                    <!-- Step 1: Budget -->
+                    <div class="wizard-step active" data-step="1">
+                        <h2>كم ميزانية سفرتك؟</h2>
+                        <p class="step-hint">للفرد، غير شامل سعر التذاكر</p>
+                        <div class="budget-slider-wrap">
+                            <input type="range" id="budgetRange" min="3000" max="30000" step="500" value="3000">
+                            <div class="budget-value"><span id="budgetDisplay">3,000</span> ريال</div>
+                            <div class="range-labels">
+                                <span>٣٠٠٠</span>
+                                <span>٣٠٠٠٠+</span>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="counter-block">
-                        <span class="counter-block-label">مدة الإقامة (أيام)</span>
-                        <div class="counter-box">
-                            <button type="button" class="counter-btn" id="decreaseDuration"
-                                aria-label="تقليل المدة">−</button>
-                            <span class="counter-display" id="durationDisplay">5</span>
-                            <button type="button" class="counter-btn" id="increaseDuration"
-                                aria-label="زيادة المدة">+</button>
+                    <!-- Step 2: Trip type -->
+                    <div class="wizard-step" data-step="2">
+                        <h2>وش نوع رحلتك؟</h2>
+                        <div class="trip-type-grid">
+                            <button type="button" class="trip-card" data-type="youth">
+                                <span class="trip-icon">🎉</span>
+                                <span class="trip-name">شبابية</span>
+                                <span class="trip-code">YOUTH</span>
+                            </button>
+                            <button type="button" class="trip-card" data-type="family">
+                                <span class="trip-icon">👨‍👩‍👧‍👦</span>
+                                <span class="trip-name">عائلية</span>
+                                <span class="trip-code">FAMILY</span>
+                            </button>
+                            <button type="button" class="trip-card" data-type="honeymoon">
+                                <span class="trip-icon">💍</span>
+                                <span class="trip-name">شهر عسل</span>
+                                <span class="trip-code">HONEYMOON</span>
+                            </button>
                         </div>
                     </div>
+
+                    <!-- Step 3: Travelers + Duration -->
+                    <div class="wizard-step" data-step="3">
+                        <h2>كم عدد المسافرين، وكم مدة الإقامة؟</h2>
+                        <p class="step-hint">حدد العدد والمدة بالأيام</p>
+
+                        <div class="dual-counter">
+                            <div class="counter-block">
+                                <span class="counter-block-label">عدد المسافرين<small>PAX</small></span>
+                                <div class="counter-box">
+                                    <button type="button" class="counter-btn" id="decreasePeople" aria-label="تقليل العدد">−</button>
+                                    <span class="counter-display" id="peopleDisplay">1</span>
+                                    <button type="button" class="counter-btn" id="increasePeople" aria-label="زيادة العدد">+</button>
+                                </div>
+                            </div>
+
+                            <div class="counter-block">
+                                <span class="counter-block-label">مدة الإقامة<small>NIGHTS</small></span>
+                                <div class="counter-box">
+                                    <button type="button" class="counter-btn" id="decreaseDuration" aria-label="تقليل المدة">−</button>
+                                    <span class="counter-display" id="durationDisplay">5</span>
+                                    <button type="button" class="counter-btn" id="increaseDuration" aria-label="زيادة المدة">+</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 4: Destination -->
+                    <div class="wizard-step" data-step="4">
+                        <h2>وين تحب تكون وجهتك؟</h2>
+                        <p class="step-hint">اختر قارة معينة، أو خله يفاجئك باختيار عشوائي</p>
+
+                        <div class="continent-grid">
+                            <button type="button" class="continent-chip" data-continent="asia">
+                                <svg class="continent-icon" viewBox="0 0 100 100" fill="currentColor" aria-hidden="true">
+                                    <path d="M18,12 L60,8 L86,16 L90,34 L80,48 L82,60 L72,62 L68,52 L58,54 L52,80 L46,82 L44,56 L34,62 L26,52 L30,40 L20,30 L14,22 Z" />
+                                </svg>
+                                آسيا
+                            </button>
+                            <button type="button" class="continent-chip" data-continent="europe">
+                                <svg class="continent-icon" viewBox="0 0 100 100" fill="currentColor" aria-hidden="true">
+                                    <path d="M40,8 L48,4 L52,14 L62,12 L66,22 L60,32 L64,40 L58,52 L62,60 L54,68 L56,76 L48,72 L46,62 L36,56 L32,44 L24,38 L28,26 L36,20 Z" />
+                                </svg>
+                                أوروبا
+                            </button>
+                            <button type="button" class="continent-chip" data-continent="africa">
+                                <svg class="continent-icon" viewBox="0 0 100 100" fill="currentColor" aria-hidden="true">
+                                    <path d="M34,6 L66,8 L70,18 L82,24 L74,32 L68,30 L66,44 L60,58 L62,72 L52,92 L46,80 L48,64 L38,60 L30,48 L32,34 L24,26 L26,14 Z" />
+                                </svg>
+                                أفريقيا
+                            </button>
+                            <button type="button" class="continent-chip" data-continent="north_america">
+                                <svg class="continent-icon" viewBox="0 0 100 100" fill="currentColor" aria-hidden="true">
+                                    <path d="M16,10 L60,6 L82,16 L78,28 L86,36 L72,46 L76,54 L60,58 L62,70 L50,76 L48,90 L40,76 L42,64 L30,60 L24,46 L32,38 L18,30 L22,18 Z" />
+                                </svg>
+                                أمريكا الشمالية
+                            </button>
+                            <button type="button" class="continent-chip" data-continent="south_america">
+                                <svg class="continent-icon" viewBox="0 0 100 100" fill="currentColor" aria-hidden="true">
+                                    <path d="M40,8 L58,10 L66,20 L74,26 L68,38 L70,48 L62,58 L64,70 L54,92 L48,72 L50,58 L40,50 L36,34 L30,28 L34,16 Z" />
+                                </svg>
+                                أمريكا الجنوبية
+                            </button>
+                            <button type="button" class="continent-chip" data-continent="oceania">
+                                <svg class="continent-icon" viewBox="0 0 100 100" fill="currentColor" aria-hidden="true">
+                                    <path d="M22,32 L38,16 L50,24 L58,16 L70,24 L82,30 L84,48 L76,64 L60,74 L40,72 L24,60 L16,46 Z" />
+                                </svg>
+                                أوقيانوسيا
+                            </button>
+                        </div>
+
+                        <button type="button" class="random-btn" id="randomBtn">
+                            <span class="random-icon">🎲</span>
+                            <span>فاجئني — اختيار عشوائي حسب ميزانيتي</span>
+                        </button>
+                    </div>
+
+                    <!-- Step 5: Activities -->
+                    <div class="wizard-step" data-step="5">
+                        <h2>وش الفعاليات اللي تفضلها؟</h2>
+                        <p class="step-hint">اختر فعالية واحدة على الأقل، يمكن أكثر من واحدة</p>
+                        <div class="activities-grid">
+                            <button type="button" class="activity-chip" data-activity="beaches">
+                                <span>🏖️</span> شواطئ
+                            </button>
+                            <button type="button" class="activity-chip" data-activity="sea">
+                                <span>🌊</span> بحر
+                            </button>
+                            <button type="button" class="activity-chip" data-activity="safari">
+                                <span>🦁</span> سفاري
+                            </button>
+                            <button type="button" class="activity-chip" data-activity="mountains">
+                                <span>⛰️</span> جبال
+                            </button>
+                            <button type="button" class="activity-chip" data-activity="amusement">
+                                <span>🎡</span> ملاهي
+                            </button>
+                            <button type="button" class="activity-chip" data-activity="resorts">
+                                <span>🏨</span> منتجعات
+                            </button>
+                            <button type="button" class="activity-chip" data-activity="museums">
+                                <span>🏛️</span> متاحف
+                            </button>
+                            <button type="button" class="activity-chip" data-activity="landmarks">
+                                <span>📍</span> معالم
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="ticket-nav">
+                        <button type="button" id="prevBtn" class="ticket-btn ghost" disabled>السابق</button>
+                        <button type="button" id="nextBtn" class="ticket-btn solid">التالي</button>
+                    </div>
+
+                    <div class="skip-all-wrap">
+                        <button type="button" id="skipAllBtn" class="skip-all-link">
+                            🌍 تصفح كل دول العالم مباشرة بدون أسئلة
+                        </button>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Step 4: Destination -->
-            <div class="wizard-step" data-step="4">
-                <h2>وين تحب تكون وجهتك؟</h2>
-                <p class="step-hint">اختر قارة معينة، أو خله يفاجئك باختيار عشوائي</p>
+                <div class="ticket-perforation" aria-hidden="true"></div>
 
-                <div class="continent-grid">
-                    <button type="button" class="continent-chip" data-continent="asia">
-                        <span>🌏</span> آسيا
-                    </button>
-                    <button type="button" class="continent-chip" data-continent="europe">
-                        <span>🏰</span> أوروبا
-                    </button>
-                    <button type="button" class="continent-chip" data-continent="africa">
-                        <span>🦒</span> أفريقيا
-                    </button>
-                    <button type="button" class="continent-chip" data-continent="north_america">
-                        <span>🗽</span> أمريكا الشمالية
-                    </button>
-                    <button type="button" class="continent-chip" data-continent="south_america">
-                        <span>🌴</span> أمريكا الجنوبية
-                    </button>
-                    <button type="button" class="continent-chip" data-continent="oceania">
-                        <span>🏝️</span> أوقيانوسيا
-                    </button>
+                <div class="ticket-stub">
+                    <span class="stub-label">بطاقتك حتى الآن</span>
+                    <div class="stub-fields" id="stubFields"></div>
+                    <div class="stub-barcode" aria-hidden="true"></div>
                 </div>
 
-                <button type="button" class="random-btn" id="randomBtn">
-                    <span class="random-icon">🎲</span>
-                    <span>فاجئني — اختيار عشوائي حسب ميزانيتي</span>
-                </button>
-            </div>
-
-            <!-- Step 5: Activities -->
-            <div class="wizard-step" data-step="5">
-                <h2>وش الفعاليات اللي تفضلها؟</h2>
-                <p class="step-hint">اختر فعالية واحدة على الأقل، يمكن أكثر من واحدة</p>
-                <div class="activities-grid">
-                    <button type="button" class="activity-chip" data-activity="beaches">
-                        <span>🏖️</span> شواطئ
-                    </button>
-                    <button type="button" class="activity-chip" data-activity="sea">
-                        <span>🌊</span> بحر
-                    </button>
-                    <button type="button" class="activity-chip" data-activity="safari">
-                        <span>🦁</span> سفاري
-                    </button>
-                    <button type="button" class="activity-chip" data-activity="mountains">
-                        <span>⛰️</span> جبال
-                    </button>
-                    <button type="button" class="activity-chip" data-activity="amusement">
-                        <span>🎡</span> ملاهي
-                    </button>
-                    <button type="button" class="activity-chip" data-activity="resorts">
-                        <span>🏨</span> منتجعات
-                    </button>
-                    <button type="button" class="activity-chip" data-activity="museums">
-                        <span>🏛️</span> متاحف
-                    </button>
-                    <button type="button" class="activity-chip" data-activity="landmarks">
-                        <span>📍</span> معالم
-                    </button>
-                </div>
-            </div>
-
-            <div class="wizard-nav">
-                <button type="button" id="prevBtn" class="wizard-btn secondary" disabled>السابق</button>
-                <button type="button" id="nextBtn" class="wizard-btn primary">التالي</button>
             </div>
         </section>
 
@@ -271,11 +276,15 @@
                     <p class="results-subtitle" id="resultsSubtitle"></p>
                 </div>
                 <div class="results-actions">
-                    <button type="button" id="rerollBtn" class="wizard-btn secondary" style="display:none">جرّب وجهة
-                        ثانية 🎲</button>
-                    <button type="button" id="restartBtn" class="wizard-btn secondary">تعديل الاختيارات</button>
+                    <button type="button" id="rerollBtn" class="ticket-btn ghost" style="display:none">جرّب وجهة ثانية 🎲</button>
+                    <button type="button" id="restartBtn" class="ticket-btn ghost">تعديل الاختيارات</button>
                 </div>
             </div>
+
+            <div class="results-search-wrap" id="resultsSearchWrap">
+                <input type="text" id="resultsSearch" class="results-search" placeholder="🔍 ابحث عن دولة بالاسم...">
+            </div>
+
             <div class="results-grid" id="resultsGrid"></div>
         </section>
 
@@ -295,10 +304,8 @@
                     <li><a href="/countries/countries.html">الدول</a></li>
                     <li><a href="/events/events.html">الفعاليات</a></li>
                     <li><a href="/recipes/recipes.html">الوصفات</a></li>
-                    <li><a href="/plan/plan.html">خطتي</a></li>
                 </ul>
             </div>
-
             <div class="footer-contact">
                 <h4>تواصل معنا</h4>
                 <ul>
@@ -311,8 +318,7 @@
             <p>© 2026 سفرة. جميع الحقوق محفوظة.</p>
         </div>
     </footer>
-    <script src="/plan/plan.js" ></script>
-    <script src="/auth/auth.js" ></script>
+
 </body>
 
 </html>

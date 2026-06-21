@@ -3114,7 +3114,744 @@ document.addEventListener("DOMContentLoaded", () => {
                         "resorts"
                 ],
                 "bestTime": "مايو - أكتوبر"
-        }
+        },
+        {
+        "id": "afghanistan",
+        "nameAr": "أفغانستان",
+        "nameEn": "Afghanistan",
+        "continent": "asia",
+        "img": "img/afghanistan.jpg",
+        "dailyCost": 90,
+        "durationMin": 5,
+        "durationMax": 8,
+        "tripTypes": [
+                "youth"
+        ],
+        "activities": [
+                "mountains",
+                "landmarks"
+        ],
+        "bestTime": "أبريل - يونيو",
+        "advisory": true
+},
+        {
+        "id": "burkinafaso",
+        "nameAr": "بوركينا فاسو",
+        "nameEn": "Burkina Faso",
+        "continent": "africa",
+        "img": "img/burkinafaso.jpg",
+        "dailyCost": 150,
+        "durationMin": 5,
+        "durationMax": 8,
+        "tripTypes": [
+                "youth"
+        ],
+        "activities": [
+                "mountains",
+                "landmarks"
+        ],
+        "bestTime": "نوفمبر - فبراير",
+        "advisory": true
+},
+        {
+        "id": "centralafricanrepublic",
+        "nameAr": "إفريقيا الوسطى",
+        "nameEn": "Central African Republic",
+        "continent": "africa",
+        "img": "img/centralafricanrepublic.jpg",
+        "dailyCost": 200,
+        "durationMin": 5,
+        "durationMax": 9,
+        "tripTypes": [
+                "youth"
+        ],
+        "activities": [
+                "safari"
+        ],
+        "bestTime": "ديسمبر - فبراير",
+        "advisory": true
+},
+        {
+        "id": "chad",
+        "nameAr": "تشاد",
+        "nameEn": "Chad",
+        "continent": "africa",
+        "img": "img/chad.jpg",
+        "dailyCost": 150,
+        "durationMin": 5,
+        "durationMax": 9,
+        "tripTypes": [
+                "youth"
+        ],
+        "activities": [
+                "safari",
+                "mountains"
+        ],
+        "bestTime": "نوفمبر - فبراير",
+        "advisory": true
+},
+        {
+        "id": "democraticrepubliccongo",
+        "nameAr": "الكونغو الديمقراطية",
+        "nameEn": "Democratic Republic of the Congo",
+        "continent": "africa",
+        "img": "img/democraticrepubliccongo.jpg",
+        "dailyCost": 250,
+        "durationMin": 6,
+        "durationMax": 10,
+        "tripTypes": [
+                "youth"
+        ],
+        "activities": [
+                "safari",
+                "mountains"
+        ],
+        "bestTime": "يونيو - سبتمبر",
+        "advisory": true
+},
+        {
+        "id": "eritrea",
+        "nameAr": "إريتريا",
+        "nameEn": "Eritrea",
+        "continent": "africa",
+        "img": "img/eritrea.jpg",
+        "dailyCost": 200,
+        "durationMin": 5,
+        "durationMax": 8,
+        "tripTypes": [
+                "youth"
+        ],
+        "activities": [
+                "landmarks",
+                "beaches"
+        ],
+        "bestTime": "أكتوبر - فبراير",
+        "advisory": true
+},
+        {
+        "id": "haiti",
+        "nameAr": "هايتي",
+        "nameEn": "Haiti",
+        "continent": "north_america",
+        "img": "img/haiti.jpg",
+        "dailyCost": 200,
+        "durationMin": 5,
+        "durationMax": 8,
+        "tripTypes": [
+                "youth"
+        ],
+        "activities": [
+                "beaches",
+                "landmarks"
+        ],
+        "bestTime": "ديسمبر - أبريل",
+        "advisory": true
+},
+        {
+        "id": "iraq",
+        "nameAr": "العراق",
+        "nameEn": "Iraq",
+        "continent": "asia",
+        "img": "img/iraq.jpg",
+        "dailyCost": 120,
+        "durationMin": 5,
+        "durationMax": 9,
+        "tripTypes": [
+                "youth",
+                "family"
+        ],
+        "activities": [
+                "landmarks",
+                "museums"
+        ],
+        "bestTime": "مارس - مايو",
+        "advisory": true
+},
+        {
+        "id": "libya",
+        "nameAr": "ليبيا",
+        "nameEn": "Libya",
+        "continent": "africa",
+        "img": "img/libya.jpg",
+        "dailyCost": 150,
+        "durationMin": 5,
+        "durationMax": 9,
+        "tripTypes": [
+                "youth"
+        ],
+        "activities": [
+                "landmarks",
+                "beaches"
+        ],
+        "bestTime": "مارس - مايو",
+        "advisory": true
+},
+        {
+        "id": "mali",
+        "nameAr": "مالي",
+        "nameEn": "Mali",
+        "continent": "africa",
+        "img": "img/mali.jpg",
+        "dailyCost": 120,
+        "durationMin": 5,
+        "durationMax": 9,
+        "tripTypes": [
+                "youth"
+        ],
+        "activities": [
+                "landmarks",
+                "mountains"
+        ],
+        "bestTime": "نوفمبر - فبراير",
+        "advisory": true
+},
+        {
+        "id": "niger",
+        "nameAr": "النيجر",
+        "nameEn": "Niger",
+        "continent": "africa",
+        "img": "img/niger.jpg",
+        "dailyCost": 120,
+        "durationMin": 5,
+        "durationMax": 9,
+        "tripTypes": [
+                "youth"
+        ],
+        "activities": [
+                "landmarks",
+                "mountains"
+        ],
+        "bestTime": "نوفمبر - فبراير",
+        "advisory": true
+},
+        {
+        "id": "northkorea",
+        "nameAr": "كوريا الشمالية",
+        "nameEn": "North Korea",
+        "continent": "asia",
+        "img": "img/northkorea.jpg",
+        "dailyCost": 600,
+        "durationMin": 4,
+        "durationMax": 7,
+        "tripTypes": [
+                "youth"
+        ],
+        "activities": [
+                "landmarks",
+                "museums"
+        ],
+        "bestTime": "أبريل - أكتوبر",
+        "advisory": true
+},
+        {
+        "id": "somalia",
+        "nameAr": "الصومال",
+        "nameEn": "Somalia",
+        "continent": "africa",
+        "img": "img/somalia.jpg",
+        "dailyCost": 150,
+        "durationMin": 5,
+        "durationMax": 8,
+        "tripTypes": [
+                "youth"
+        ],
+        "activities": [
+                "beaches",
+                "landmarks"
+        ],
+        "bestTime": "ديسمبر - فبراير",
+        "advisory": true
+},
+        {
+        "id": "southsudan",
+        "nameAr": "جنوب السودان",
+        "nameEn": "South Sudan",
+        "continent": "africa",
+        "img": "img/southsudan.jpg",
+        "dailyCost": 250,
+        "durationMin": 5,
+        "durationMax": 8,
+        "tripTypes": [
+                "youth"
+        ],
+        "activities": [
+                "safari"
+        ],
+        "bestTime": "نوفمبر - فبراير",
+        "advisory": true
+},
+        {
+        "id": "sudan",
+        "nameAr": "السودان",
+        "nameEn": "Sudan",
+        "continent": "africa",
+        "img": "img/sudan.jpg",
+        "dailyCost": 100,
+        "durationMin": 5,
+        "durationMax": 9,
+        "tripTypes": [
+                "youth"
+        ],
+        "activities": [
+                "landmarks",
+                "safari"
+        ],
+        "bestTime": "نوفمبر - فبراير",
+        "advisory": true
+},
+        {
+        "id": "syria",
+        "nameAr": "سوريا",
+        "nameEn": "Syria",
+        "continent": "asia",
+        "img": "img/syria.jpg",
+        "dailyCost": 100,
+        "durationMin": 5,
+        "durationMax": 9,
+        "tripTypes": [
+                "youth"
+        ],
+        "activities": [
+                "landmarks",
+                "museums"
+        ],
+        "bestTime": "مارس - مايو",
+        "advisory": true
+},
+        {
+        "id": "venezuela",
+        "nameAr": "فنزويلا",
+        "nameEn": "Venezuela",
+        "continent": "south_america",
+        "img": "img/venezuela.jpg",
+        "dailyCost": 150,
+        "durationMin": 6,
+        "durationMax": 10,
+        "tripTypes": [
+                "youth"
+        ],
+        "activities": [
+                "mountains",
+                "beaches",
+                "landmarks"
+        ],
+        "bestTime": "ديسمبر - أبريل",
+        "advisory": true
+},
+        {
+        "id": "yemen",
+        "nameAr": "اليمن",
+        "nameEn": "Yemen",
+        "continent": "asia",
+        "img": "img/yemen.jpg",
+        "dailyCost": 90,
+        "durationMin": 5,
+        "durationMax": 9,
+        "tripTypes": [
+                "youth"
+        ],
+        "activities": [
+                "landmarks",
+                "mountains"
+        ],
+        "bestTime": "أكتوبر - مارس",
+        "advisory": true
+},
+
+        {
+        "id": "palestine",
+        "nameAr": "فلسطين",
+        "nameEn": "Palestine",
+        "continent": "asia",
+        "img": "img/palestine.jpg",
+        "dailyCost": 250,
+        "durationMin": 4,
+        "durationMax": 7,
+        "tripTypes": [
+                "youth",
+                "family"
+        ],
+        "activities": [
+                "landmarks",
+                "museums"
+        ],
+        "bestTime": "مارس - مايو",
+        "advisory": true
+},
+        {
+        "id": "vaticancity",
+        "nameAr": "الفاتيكان",
+        "nameEn": "Vatican City",
+        "continent": "europe",
+        "img": "img/vaticancity.jpg",
+        "dailyCost": 700,
+        "durationMin": 1,
+        "durationMax": 2,
+        "tripTypes": [
+                "family",
+                "youth",
+                "honeymoon"
+        ],
+        "activities": [
+                "landmarks",
+                "museums"
+        ],
+        "bestTime": "أبريل - يونيو"
+},
+        {
+        "id": "antiguabarbuda",
+        "nameAr": "أنتيغوا وباربودا",
+        "nameEn": "Antigua and Barbuda",
+        "continent": "north_america",
+        "img": "img/antiguabarbuda.jpg",
+        "dailyCost": 550,
+        "durationMin": 5,
+        "durationMax": 8,
+        "tripTypes": [
+                "honeymoon",
+                "family"
+        ],
+        "activities": [
+                "beaches",
+                "sea",
+                "resorts"
+        ],
+        "bestTime": "ديسمبر - أبريل"
+},
+        {
+        "id": "burundi",
+        "nameAr": "بوروندي",
+        "nameEn": "Burundi",
+        "continent": "africa",
+        "img": "img/burundi.jpg",
+        "dailyCost": 180,
+        "durationMin": 5,
+        "durationMax": 8,
+        "tripTypes": [
+                "youth"
+        ],
+        "activities": [
+                "safari",
+                "mountains"
+        ],
+        "bestTime": "يونيو - أغسطس"
+},
+        {
+        "id": "dominica",
+        "nameAr": "دومينيكا",
+        "nameEn": "Dominica",
+        "continent": "north_america",
+        "img": "img/dominica.jpg",
+        "dailyCost": 400,
+        "durationMin": 5,
+        "durationMax": 8,
+        "tripTypes": [
+                "youth",
+                "honeymoon"
+        ],
+        "activities": [
+                "mountains",
+                "beaches",
+                "sea"
+        ],
+        "bestTime": "ديسمبر - يونيو"
+},
+        {
+        "id": "equatorialguinea",
+        "nameAr": "غينيا الاستوائية",
+        "nameEn": "Equatorial Guinea",
+        "continent": "africa",
+        "img": "img/equatorialguinea.jpg",
+        "dailyCost": 450,
+        "durationMin": 5,
+        "durationMax": 8,
+        "tripTypes": [
+                "youth"
+        ],
+        "activities": [
+                "beaches",
+                "mountains"
+        ],
+        "bestTime": "ديسمبر - فبراير"
+},
+        {
+        "id": "eswatini",
+        "nameAr": "إسواتيني",
+        "nameEn": "Eswatini",
+        "continent": "africa",
+        "img": "img/eswatini.jpg",
+        "dailyCost": 300,
+        "durationMin": 4,
+        "durationMax": 7,
+        "tripTypes": [
+                "youth",
+                "family"
+        ],
+        "activities": [
+                "safari",
+                "mountains"
+        ],
+        "bestTime": "مايو - سبتمبر"
+},
+        {
+        "id": "grenada",
+        "nameAr": "غرينادا",
+        "nameEn": "Grenada",
+        "continent": "north_america",
+        "img": "img/grenada.jpg",
+        "dailyCost": 500,
+        "durationMin": 5,
+        "durationMax": 8,
+        "tripTypes": [
+                "honeymoon",
+                "family"
+        ],
+        "activities": [
+                "beaches",
+                "sea",
+                "resorts"
+        ],
+        "bestTime": "ديسمبر - أبريل"
+},
+        {
+        "id": "guineabissau",
+        "nameAr": "غينيا بيساو",
+        "nameEn": "Guinea-Bissau",
+        "continent": "africa",
+        "img": "img/guineabissau.jpg",
+        "dailyCost": 250,
+        "durationMin": 4,
+        "durationMax": 7,
+        "tripTypes": [
+                "youth"
+        ],
+        "activities": [
+                "beaches",
+                "sea"
+        ],
+        "bestTime": "ديسمبر - مايو"
+},
+        {
+        "id": "kiribati",
+        "nameAr": "كيريباتي",
+        "nameEn": "Kiribati",
+        "continent": "oceania",
+        "img": "img/kiribati.jpg",
+        "dailyCost": 450,
+        "durationMin": 5,
+        "durationMax": 8,
+        "tripTypes": [
+                "youth"
+        ],
+        "activities": [
+                "beaches",
+                "sea"
+        ],
+        "bestTime": "مايو - أكتوبر"
+},
+        {
+        "id": "lesotho",
+        "nameAr": "ليسوتو",
+        "nameEn": "Lesotho",
+        "continent": "africa",
+        "img": "img/lesotho.jpg",
+        "dailyCost": 250,
+        "durationMin": 4,
+        "durationMax": 7,
+        "tripTypes": [
+                "youth"
+        ],
+        "activities": [
+                "mountains"
+        ],
+        "bestTime": "مايو - سبتمبر"
+},
+        {
+        "id": "liberia",
+        "nameAr": "ليبيريا",
+        "nameEn": "Liberia",
+        "continent": "africa",
+        "img": "img/liberia.jpg",
+        "dailyCost": 280,
+        "durationMin": 5,
+        "durationMax": 8,
+        "tripTypes": [
+                "youth"
+        ],
+        "activities": [
+                "beaches",
+                "mountains"
+        ],
+        "bestTime": "نوفمبر - مارس"
+},
+        {
+        "id": "marshallislands",
+        "nameAr": "جزر مارشال",
+        "nameEn": "Marshall Islands",
+        "continent": "oceania",
+        "img": "img/marshallislands.jpg",
+        "dailyCost": 500,
+        "durationMin": 5,
+        "durationMax": 8,
+        "tripTypes": [
+                "honeymoon",
+                "youth"
+        ],
+        "activities": [
+                "beaches",
+                "sea"
+        ],
+        "bestTime": "ديسمبر - أبريل"
+},
+        {
+        "id": "micronesia",
+        "nameAr": "ميكرونيزيا",
+        "nameEn": "Micronesia",
+        "continent": "oceania",
+        "img": "img/micronesia.jpg",
+        "dailyCost": 480,
+        "durationMin": 5,
+        "durationMax": 8,
+        "tripTypes": [
+                "honeymoon",
+                "youth"
+        ],
+        "activities": [
+                "beaches",
+                "sea"
+        ],
+        "bestTime": "ديسمبر - أبريل"
+},
+        {
+        "id": "nauru",
+        "nameAr": "ناورو",
+        "nameEn": "Nauru",
+        "continent": "oceania",
+        "img": "img/nauru.jpg",
+        "dailyCost": 600,
+        "durationMin": 3,
+        "durationMax": 5,
+        "tripTypes": [
+                "youth"
+        ],
+        "activities": [
+                "beaches"
+        ],
+        "bestTime": "مايو - أكتوبر"
+},
+        {
+        "id": "stkittsnevis",
+        "nameAr": "سانت كيتس ونيفيس",
+        "nameEn": "Saint Kitts and Nevis",
+        "continent": "north_america",
+        "img": "img/stkittsnevis.jpg",
+        "dailyCost": 550,
+        "durationMin": 5,
+        "durationMax": 8,
+        "tripTypes": [
+                "honeymoon",
+                "family"
+        ],
+        "activities": [
+                "beaches",
+                "sea",
+                "resorts"
+        ],
+        "bestTime": "ديسمبر - أبريل"
+},
+        {
+        "id": "stlucia",
+        "nameAr": "سانت لوسيا",
+        "nameEn": "Saint Lucia",
+        "continent": "north_america",
+        "img": "img/stlucia.jpg",
+        "dailyCost": 600,
+        "durationMin": 5,
+        "durationMax": 8,
+        "tripTypes": [
+                "honeymoon"
+        ],
+        "activities": [
+                "beaches",
+                "sea",
+                "resorts",
+                "mountains"
+        ],
+        "bestTime": "ديسمبر - أبريل"
+},
+        {
+        "id": "stvincentgrenadines",
+        "nameAr": "سانت فينسنت والغرينادين",
+        "nameEn": "Saint Vincent and the Grenadines",
+        "continent": "north_america",
+        "img": "img/stvincentgrenadines.jpg",
+        "dailyCost": 550,
+        "durationMin": 5,
+        "durationMax": 8,
+        "tripTypes": [
+                "honeymoon"
+        ],
+        "activities": [
+                "beaches",
+                "sea",
+                "resorts"
+        ],
+        "bestTime": "ديسمبر - أبريل"
+},
+        {
+        "id": "saotomeprincipe",
+        "nameAr": "ساو تومي وبرينسيب",
+        "nameEn": "Sao Tome and Principe",
+        "continent": "africa",
+        "img": "img/saotomeprincipe.jpg",
+        "dailyCost": 400,
+        "durationMin": 5,
+        "durationMax": 8,
+        "tripTypes": [
+                "honeymoon",
+                "youth"
+        ],
+        "activities": [
+                "beaches",
+                "sea"
+        ],
+        "bestTime": "يونيو - سبتمبر"
+},
+        {
+        "id": "sierraleone",
+        "nameAr": "سيراليون",
+        "nameEn": "Sierra Leone",
+        "continent": "africa",
+        "img": "img/sierraleone.jpg",
+        "dailyCost": 280,
+        "durationMin": 5,
+        "durationMax": 8,
+        "tripTypes": [
+                "youth"
+        ],
+        "activities": [
+                "beaches"
+        ],
+        "bestTime": "نوفمبر - أبريل"
+},
+        {
+        "id": "tuvalu",
+        "nameAr": "توفالو",
+        "nameEn": "Tuvalu",
+        "continent": "oceania",
+        "img": "img/tuvalu.jpg",
+        "dailyCost": 500,
+        "durationMin": 4,
+        "durationMax": 7,
+        "tripTypes": [
+                "youth"
+        ],
+        "activities": [
+                "beaches",
+                "sea"
+        ],
+        "bestTime": "مايو - أكتوبر"
+}
 ];
 
     // ===== حالة المعالج =====
@@ -3126,8 +3863,17 @@ document.addEventListener("DOMContentLoaded", () => {
         duration: 5,
         continent: null,   // null = كل العالم
         isRandom: false,
+        isSkipAll: false,
         activities: [],
     };
+
+    const stepsMeta = [
+        { ar: "الميزانية", code: "BUDGET" },
+        { ar: "نوع الرحلة", code: "TRIP TYPE" },
+        { ar: "المسافرين والمدة", code: "TRAVELERS" },
+        { ar: "الوجهة", code: "DESTINATION" },
+        { ar: "الفعاليات", code: "ACTIVITIES" },
+    ];
 
     // ===== عناصر الصفحة =====
     const wizard = document.getElementById("wizard");
@@ -3136,11 +3882,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const resultsTitle = document.getElementById("resultsTitle");
     const resultsSubtitle = document.getElementById("resultsSubtitle");
     const steps = document.querySelectorAll(".wizard-step");
-    const dots = document.querySelectorAll(".step-dot");
     const prevBtn = document.getElementById("prevBtn");
     const nextBtn = document.getElementById("nextBtn");
     const restartBtn = document.getElementById("restartBtn");
     const rerollBtn = document.getElementById("rerollBtn");
+    const stepCodeEl = document.getElementById("stepCode");
+    const stepsFillEl = document.getElementById("stepsFill");
+    const stubFields = document.getElementById("stubFields");
     const TOTAL_STEPS = steps.length;
 
     const budgetRange = document.getElementById("budgetRange");
@@ -3152,6 +3900,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const increaseDuration = document.getElementById("increaseDuration");
     const decreaseDuration = document.getElementById("decreaseDuration");
     const randomBtn = document.getElementById("randomBtn");
+    const skipAllBtn = document.getElementById("skipAllBtn");
+    const resultsSearchWrap = document.getElementById("resultsSearchWrap");
+    const resultsSearch = document.getElementById("resultsSearch");
 
     function formatNumber(n) {
         return n.toLocaleString("en-US");
@@ -3161,7 +3912,45 @@ document.addEventListener("DOMContentLoaded", () => {
         return n.toString().replace(/[0-9]/g, (d) => "٠١٢٣٤٥٦٧٨٩"[d]);
     }
 
-    // ===== الميزانية =====
+    // تطبيع الهمزة فوق/تحت الألف (أ، إ، آ) إلى ألف عادية — يخلي البحث يلقى
+    // النتيجة سواء كتب الزائر الاسم بالهمزة أو بدونها، بدون ما نغيّر شكل
+    // الاسم المعروض بالكرت (يضل مكتوب صح إملائياً)
+    function normalizeArabic(str) {
+        return str.replace(/[أإآ]/g, "ا");
+    }
+
+    function tripTypeArabicLabel(t) {
+        if (t === "youth") return "شبابية";
+        if (t === "family") return "عائلية";
+        if (t === "honeymoon") return "شهر عسل";
+        return "—";
+    }
+
+    function airportCode(nameEn) {
+        return nameEn.replace(/[^A-Za-z]/g, "").slice(0, 3).toUpperCase() || "—";
+    }
+
+    // ===== تحديث بطاقة الستب الحية =====
+    function renderTicketStub() {
+        if (!stubFields) return;
+        const destLabel = state.isRandom
+            ? "عشوائي 🎲"
+            : (state.continent ? continentNames[state.continent] : "كل العالم");
+        const activitiesLabel = state.activities.length
+            ? `${arabicDigits(state.activities.length)} مختارة`
+            : "—";
+
+        stubFields.innerHTML = `
+            <div class="stub-row"><span class="stub-k">BUDGET</span><span class="stub-v">${formatNumber(state.budget)} ﷼</span></div>
+            <div class="stub-row"><span class="stub-k">CLASS</span><span class="stub-v">${tripTypeArabicLabel(state.tripType)}</span></div>
+            <div class="stub-row"><span class="stub-k">PAX</span><span class="stub-v">${arabicDigits(state.people)}</span></div>
+            <div class="stub-row"><span class="stub-k">NIGHTS</span><span class="stub-v">${arabicDigits(state.duration)}</span></div>
+            <div class="stub-row"><span class="stub-k">DEST</span><span class="stub-v">${destLabel}</span></div>
+            <div class="stub-row"><span class="stub-k">ACTV</span><span class="stub-v">${activitiesLabel}</span></div>
+        `;
+    }
+
+    // ===== التحكم بالميزانية =====
     function updateBudgetTrack() {
         if (!budgetRange) return;
         const min = parseInt(budgetRange.min, 10);
@@ -3174,6 +3963,7 @@ document.addEventListener("DOMContentLoaded", () => {
         state.budget = parseInt(budgetRange.value, 10);
         if (budgetDisplay) budgetDisplay.textContent = formatNumber(state.budget);
         updateBudgetTrack();
+        renderTicketStub();
     });
     updateBudgetTrack();
 
@@ -3184,6 +3974,7 @@ document.addEventListener("DOMContentLoaded", () => {
             card.classList.add("active");
             state.tripType = card.dataset.type;
             updateNextButtonState();
+            renderTicketStub();
         });
     });
 
@@ -3192,12 +3983,14 @@ document.addEventListener("DOMContentLoaded", () => {
         if (state.people < 20) {
             state.people++;
             if (peopleDisplay) peopleDisplay.textContent = state.people;
+            renderTicketStub();
         }
     });
     decreasePeople?.addEventListener("click", () => {
         if (state.people > 1) {
             state.people--;
             if (peopleDisplay) peopleDisplay.textContent = state.people;
+            renderTicketStub();
         }
     });
 
@@ -3206,12 +3999,14 @@ document.addEventListener("DOMContentLoaded", () => {
         if (state.duration < 30) {
             state.duration++;
             if (durationDisplay) durationDisplay.textContent = state.duration;
+            renderTicketStub();
         }
     });
     decreaseDuration?.addEventListener("click", () => {
         if (state.duration > 1) {
             state.duration--;
             if (durationDisplay) durationDisplay.textContent = state.duration;
+            renderTicketStub();
         }
     });
 
@@ -3224,12 +4019,12 @@ document.addEventListener("DOMContentLoaded", () => {
             state.isRandom = false;
 
             if (already) {
-                // إلغاء التحديد = كل العالم
                 state.continent = null;
             } else {
                 chip.classList.add("active");
                 state.continent = chip.dataset.continent;
             }
+            renderTicketStub();
         });
     });
 
@@ -3246,6 +4041,7 @@ document.addEventListener("DOMContentLoaded", () => {
             randomBtn.classList.add("active");
             state.isRandom = true;
         }
+        renderTicketStub();
     });
 
     // ===== الفعاليات =====
@@ -3259,17 +4055,18 @@ document.addEventListener("DOMContentLoaded", () => {
                 state.activities.push(act);
             }
             updateNextButtonState();
+            renderTicketStub();
         });
     });
 
     // ===== التنقل بين الخطوات =====
     function showStep(n) {
         steps.forEach((s) => s.classList.toggle("active", parseInt(s.dataset.step, 10) === n));
-        dots.forEach((d) => {
-            const dStep = parseInt(d.dataset.step, 10);
-            d.classList.toggle("active", dStep === n);
-            d.classList.toggle("done", dStep < n);
-        });
+        if (stepCodeEl) {
+            const meta = stepsMeta[n - 1];
+            stepCodeEl.textContent = `STEP ${String(n).padStart(2, "0")}/0${TOTAL_STEPS} · ${meta.code}`;
+        }
+        if (stepsFillEl) stepsFillEl.style.width = `${(n / TOTAL_STEPS) * 100}%`;
         if (prevBtn) prevBtn.disabled = n === 1;
         if (nextBtn) nextBtn.textContent = n === TOTAL_STEPS ? "عرض النتائج" : "التالي";
         updateNextButtonState();
@@ -3305,6 +4102,14 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
+    skipAllBtn?.addEventListener("click", () => {
+        state.isSkipAll = true;
+        if (wizard) wizard.style.display = "none";
+        if (resultsSection) resultsSection.style.display = "block";
+        renderResults();
+        resultsSection?.scrollIntoView({ behavior: "smooth" });
+    });
+
     restartBtn?.addEventListener("click", () => {
         state.step = 1;
         state.budget = 3000;
@@ -3313,6 +4118,7 @@ document.addEventListener("DOMContentLoaded", () => {
         state.duration = 5;
         state.continent = null;
         state.isRandom = false;
+        state.isSkipAll = false;
         state.activities = [];
 
         if (budgetRange) budgetRange.value = 3000;
@@ -3328,6 +4134,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (resultsSection) resultsSection.style.display = "none";
         if (wizard) wizard.style.display = "block";
         showStep(1);
+        renderTicketStub();
         wizard?.scrollIntoView({ behavior: "smooth" });
     });
 
@@ -3335,14 +4142,12 @@ document.addEventListener("DOMContentLoaded", () => {
     function calculateMatch(country) {
         let score = 0;
 
-        // نوع الرحلة (٤٠ نقطة) — كل ما كانت الدولة متخصصة بنوع رحلة أقل، تطلع نسبة أعلى لو طابقت
         if (country.tripTypes.includes(state.tripType)) {
             score += Math.round(40 - (country.tripTypes.length - 1) * 5);
         } else {
             score += 5;
         }
 
-        // الفعاليات (٦٠ نقطة)
         if (state.activities.length > 0) {
             const matched = state.activities.filter((a) => country.activities.includes(a)).length;
             score += Math.round((matched / state.activities.length) * 60);
@@ -3357,57 +4162,77 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (daysAffordable >= state.duration) {
             return `
-            <div class="budget-note ok">
+            <div class="bp-note ok">
                 <span class="note-icon">✅</span>
-                <span>ميزانيتك (${formatNumber(state.budget)} ريال) تكفي رحلتك كاملة (${arabicDigits(state.duration)} ${state.duration === 1 ? "يوم" : "أيام"}) في ${country.nameAr}، وتزيد.</span>
+                <span>ميزانيتك (${formatNumber(state.budget)} ريال) تكفي رحلتك كاملة (${arabicDigits(state.duration)} ${state.duration === 1 ? "يوم" : "أيام"})، وتزيد.</span>
             </div>`;
         }
 
         if (daysAffordable <= 0) {
             return `
-            <div class="budget-note warn">
+            <div class="bp-note warn">
                 <span class="note-icon">⚠️</span>
-                <span>ميزانيتك (${formatNumber(state.budget)} ريال) أقل من تكلفة يوم واحد في ${country.nameAr}. جرّب تزود الميزانية أو تختار وجهة أوفر.</span>
+                <span>ميزانيتك (${formatNumber(state.budget)} ريال) أقل من تكلفة يوم واحد هنا. جرّب تزود الميزانية أو تختار وجهة أوفر.</span>
             </div>`;
         }
 
         return `
-        <div class="budget-note warn">
+        <div class="bp-note warn">
             <span class="note-icon">⚠️</span>
-            <span>ميزانيتك (${formatNumber(state.budget)} ريال) ما تكفي ${arabicDigits(state.duration)} ${state.duration === 1 ? "يوم" : "أيام"} في ${country.nameAr}. تقدر تقعد فيها <strong>${arabicDigits(daysAffordable)} ${daysAffordable === 1 ? "يوم" : "أيام"}</strong> بهذا المبلغ.</span>
+            <span>ميزانيتك ما تكفي ${arabicDigits(state.duration)} ${state.duration === 1 ? "يوم" : "أيام"}. تقدر تقعد <strong>${arabicDigits(daysAffordable)} ${daysAffordable === 1 ? "يوم" : "أيام"}</strong> بهذا المبلغ.</span>
         </div>`;
     }
 
-    function cardTemplate(country, index, isFeaturedSingle) {
-        const featuredClass = (index === 0 || isFeaturedSingle) ? " featured" : "";
-        const kicker = (index === 0 && !isFeaturedSingle)
-            ? '<span class="card-kicker">الأنسب لرحلتك ⭐</span>'
-            : (isFeaturedSingle ? '<span class="card-kicker">اختيارك العشوائي 🎲</span>' : "");
+    // ===== كرت بطاقة الصعود =====
+    function cardTemplate(country, index, isFeaturedSingle, skipMode) {
+        const featuredClass = (!skipMode && (index === 0 || isFeaturedSingle)) ? " featured" : "";
+        const tag = skipMode
+            ? ""
+            : ((index === 0 && !isFeaturedSingle)
+                ? '<span class="bp-tag">الأنسب لرحلتك ⭐</span>'
+                : (isFeaturedSingle ? '<span class="bp-tag">اختيارك العشوائي 🎲</span>' : ""));
+        const seatNum = `${arabicDigits(index + 1).padStart(2, "٠")}A`;
+
+        const fieldsHtml = skipMode
+            ? `
+                    <div class="bp-field"><span class="bp-k">DURATION</span><span class="bp-v">${arabicDigits(country.durationMin)}–${arabicDigits(country.durationMax)} يوم</span></div>
+                    <div class="bp-field"><span class="bp-k">BUDGET</span><span class="bp-v">${formatNumber(country.dailyCost * country.durationMin)}–${formatNumber(country.dailyCost * country.durationMax)} ﷼</span></div>
+                    <div class="bp-field"><span class="bp-k">BOARDING</span><span class="bp-v">${country.bestTime}</span></div>`
+            : `
+                    <div class="bp-field"><span class="bp-k">MATCH</span><span class="bp-v">${country.score}%</span></div>
+                    <div class="bp-field"><span class="bp-k">CLASS</span><span class="bp-v">${tripTypeArabicLabel(state.tripType)}</span></div>
+                    <div class="bp-field"><span class="bp-k">BOARDING</span><span class="bp-v">${country.bestTime}</span></div>`;
+
+        const noteHtml = skipMode ? "" : budgetNoteHtml(country);
+        const advisoryBadge = country.advisory
+            ? '<span class="bp-advisory">⚠️ راجع تنبيهات السفر</span>'
+            : "";
 
         return `
-        <div class="result-card${featuredClass}">
-            <div class="card-image-wrap">
-                <img src="${country.img}" alt="${country.nameAr}">
-                <span class="card-rank">${arabicDigits(index + 1).padStart(2, "٠")}</span>
-                <div class="card-title-wrap">
-                    ${kicker}
-                    <span class="card-title-ar">${country.nameAr}</span>
-                    <span class="card-title-en">${country.nameEn}</span>
+        <div class="bp-card${featuredClass}">
+            <div class="bp-main">
+                <div class="bp-photo">
+                    <img src="${country.img}" alt="${country.nameAr}">
+                    ${advisoryBadge}
+                    ${tag}
                 </div>
+                <div class="bp-route">
+                    <span>RUH</span><span class="bp-arrow">✈</span><span>${airportCode(country.nameEn)}</span>
+                </div>
+                <h3 class="bp-title">${country.nameAr}<small>${country.nameEn}</small></h3>
+                <div class="bp-fields">${fieldsHtml}
+                </div>
+                ${noteHtml}
             </div>
-            <div class="card-editorial">
-                <div class="card-facts">
-                    <div class="fact-row">
-                        <span class="fact-label">نسبة التطابق</span>
-                        <span class="fact-value highlight">${country.score}%</span>
-                    </div>
-                    <div class="fact-row">
-                        <span class="fact-label">أفضل وقت للسفر</span>
-                        <span class="fact-value">${country.bestTime}</span>
-                    </div>
+            <div class="bp-perf" aria-hidden="true"></div>
+            <div class="bp-stub">
+                <div>
+                    <span class="bp-seat-label">SEAT</span>
+                    <span class="bp-seat-num">${seatNum}</span>
+
                 </div>
-                ${budgetNoteHtml(country)}
-                <a href="${getCountryLink(country)}" class="card-link">استعرض الدولة ←</a>
+                <div class="bp-barcode" aria-hidden="true"></div>
+                <a href="${getCountryLink(country)}" class="bp-link">افتح ←</a>
             </div>
         </div>`;
     }
@@ -3415,7 +4240,6 @@ document.addEventListener("DOMContentLoaded", () => {
     // ===== منع تكرار نفس الدولة مرتين متتاليتين بالاختيار العشوائي =====
     function pickRandomCountry() {
         const lastId = localStorage.getItem("sofrhLastRandomCountry");
-        // تفضيل الدول التي تناسب الميزانية لمدة الإقامة المطلوبة، وإلا أي دولة يقدر يزورها يوم واحد على الأقل
         let pool = countries.filter((c) => Math.floor(state.budget / c.dailyCost) >= state.duration);
         if (pool.length === 0) {
             pool = countries.filter((c) => Math.floor(state.budget / c.dailyCost) >= 1);
@@ -3432,25 +4256,62 @@ document.addEventListener("DOMContentLoaded", () => {
         return choice;
     }
 
+    // ===== البحث الحي داخل النتائج =====
+    let currentResultsList = [];
+    let currentResultsSkipMode = false;
+
+    function applySearchFilter() {
+        if (!resultsGrid) return;
+        const q = normalizeArabic((resultsSearch?.value || "").trim().toLowerCase());
+        const filtered = q
+            ? currentResultsList.filter((c) =>
+                normalizeArabic(c.nameAr.toLowerCase()).includes(q) || c.nameEn.toLowerCase().includes(q)
+            )
+            : currentResultsList;
+
+        if (filtered.length === 0) {
+            resultsGrid.innerHTML = `<p class="no-results">ما لقينا دولة تطابق بحثك 🔍 — جرّب اسم ثاني.</p>`;
+            return;
+        }
+        resultsGrid.innerHTML = filtered.map((c, i) => cardTemplate(c, i, false, currentResultsSkipMode)).join("");
+    }
+
+    resultsSearch?.addEventListener("input", applySearchFilter);
+
     function renderResults() {
         if (!resultsGrid) return;
+        if (resultsSearch) resultsSearch.value = "";
 
-        // ===== وضع العشوائي: دولة واحدة فقط =====
+        if (state.isSkipAll) {
+            resultsGrid.classList.remove("random-mode");
+            if (rerollBtn) rerollBtn.style.display = "none";
+            if (resultsSearchWrap) resultsSearchWrap.style.display = "block";
+            if (resultsTitle) resultsTitle.textContent = "كل دول العالم";
+            if (resultsSubtitle) {
+                resultsSubtitle.textContent = `بدون أي تصفية حسب تفضيلاتك — ${arabicDigits(countries.length)} وجهة، مرتبة أبجدياً، وفي كل بطاقة المدة المقترحة والميزانية المطلوبة`;
+            }
+            currentResultsList = countries.slice().sort((a, b) => a.nameAr.localeCompare(b.nameAr, "ar"));
+            currentResultsSkipMode = true;
+            applySearchFilter();
+            return;
+        }
+
         if (state.isRandom) {
             const picked = pickRandomCountry();
             const scoredCountry = { ...picked, score: calculateMatch(picked) };
 
             if (resultsTitle) resultsTitle.textContent = "وجهتك العشوائية";
             if (resultsSubtitle) resultsSubtitle.textContent = "اخترنا لك دولة بناءً على ميزانيتك — اضغط جرّب وجهة ثانية لاختيار غيرها";
+            if (resultsSearchWrap) resultsSearchWrap.style.display = "none";
             resultsGrid.classList.add("random-mode");
-            resultsGrid.innerHTML = cardTemplate(scoredCountry, 0, true);
+            resultsGrid.innerHTML = cardTemplate(scoredCountry, 0, true, false);
             if (rerollBtn) rerollBtn.style.display = "inline-block";
             return;
         }
 
-        // ===== وضع عادي: قارة محددة أو كل العالم =====
         resultsGrid.classList.remove("random-mode");
         if (rerollBtn) rerollBtn.style.display = "none";
+        if (resultsSearchWrap) resultsSearchWrap.style.display = "block";
 
         let pool = countries;
         if (state.continent) {
@@ -3463,12 +4324,11 @@ document.addEventListener("DOMContentLoaded", () => {
             resultsSubtitle.textContent = `كل الدول ظاهرة مرتبة من الأقرب لاختياراتك — ${arabicDigits(pool.length)} وجهة`;
         }
 
-        // لا نخفي أي دولة — فقط نرتبها حسب الأقرب للاختيارات
-        const scored = pool
+        currentResultsList = pool
             .map((c) => ({ ...c, score: calculateMatch(c) }))
             .sort((a, b) => b.score - a.score);
-
-        resultsGrid.innerHTML = scored.map((c, i) => cardTemplate(c, i, false)).join("");
+        currentResultsSkipMode = false;
+        applySearchFilter();
     }
 
     rerollBtn?.addEventListener("click", () => {
@@ -3476,5 +4336,6 @@ document.addEventListener("DOMContentLoaded", () => {
         resultsSection?.scrollIntoView({ behavior: "smooth" });
     });
 
+    renderTicketStub();
     showStep(1);
 });
