@@ -5,238 +5,282 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>سفرة</title>
-
-    <!-- ملف الستايل الأساسي -->
     <link rel="stylesheet" href="/countries/countries.css">
-
-    <!-- خط عربي -->
     <style>
-        @import url('https://fonts.googleapis.com/css/2?family=Noto+Sans+Arabic:wght@500;600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@500;600&display=swap');
     </style>
-
 </head>
-
 
 <body>
 
-
     <header class="navbar">
         <div class="hamburger" id="menu-btn">☰</div>
-
         <div class="auth-buttons" id="authButtons">
             <a href="/auth/login.html" class="login">تسجيل دخول</a>
             <a href="/auth/signup.html" class="signup">إنشاء حساب</a>
         </div>
-
         <div class="user-menu" id="userMenu">
-            <img id="userAvatar" src="" alt="">
+            <img id="userAvatar" src="/img/avater-icon.jpeg" alt="المستخدم">
             <span class="user-name" id="userName"></span>
             <div class="user-dropdown">
                 <a href="/profile/profile.html">الملف الشخصي</a>
-                <a href="#" id="logoutBtn">تسجيل خروج</a>
+                <a href="/index/index.html" id="logoutBtn">تسجيل الخروج</a>
             </div>
         </div>
-
         <ul class="nav-list">
             <li><a href="/index/index.html">الرئيسية</a></li>
             <li><a href="/countries/countries.html">الدول</a></li>
             <li><a href="/events/events.html">الفعاليات</a></li>
             <li><a href="/recipes/recipes.html">الوصفات</a></li>
-            <li><a href="/plan/plan.html" class="active">خطتي</a></li>
         </ul>
-
         <div class="logo">
             <a href="/index/index.html"><img src="/img/logo3.JPG" alt="سفرة"></a>
         </div>
     </header>
 
-    <!-- SIDE MENU -->
-    <div class="side-menu" id="side-menu">
-        <span class="close-btn" id="close-btn">×</span>
+    <nav class="side-menu" id="side-menu">
+        <span class="close-btn" id="close-btn">✖</span>
         <span class="side-menu-kicker">استكشف</span>
         <ul>
-            <li><a href="/index/index.html" class="active">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <path d="M3 11.5 12 4l9 7.5" />
-                        <path
-                            d="M5.5 10v9a1 1 0 0 0 1 1H9a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h2.5a1 1 0 0 0 1-1v-9" />
-                    </svg>
-                    <span>الرئيسية</span>
-                </a></li>
-            <li><a href="/countries/countries.html">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <path d="M12 21s7-6.6 7-12a7 7 0 1 0-14 0c0 5.4 7 12 7 12Z" />
-                        <circle cx="12" cy="9" r="2.3" />
-                    </svg>
-                    <span>الدول</span>
-                </a></li>
+            <li><a href="/index/index.html">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 10v9a1 1 0 0 0 1 1H9a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h2.5a1 1 0 0 0 1-1v-9"/></svg>
+                <span>الرئيسية</span>
+            </a></li>
+            <li><a href="/countries/countries.html" class="active">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.6 7-12a7 7 0 1 0-14 0c0 5.4 7 12 7 12Z"/><circle cx="12" cy="9" r="2.3"/></svg>
+                <span>الدول</span>
+            </a></li>
             <li><a href="/events/events.html">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <rect x="3.5" y="5" width="17" height="16" rx="2.5" />
-                        <path d="M8 3v4M16 3v4M3.5 10h17" />
-                        <circle cx="12" cy="15" r="1.4" fill="currentColor" stroke="none" />
-                    </svg>
-                    <span>الفعاليات</span>
-                </a></li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="16" rx="2.5"/><path d="M8 3v4M16 3v4M3.5 10h17"/><circle cx="12" cy="15" r="1.4" fill="currentColor" stroke="none"/></svg>
+                <span>الفعاليات</span>
+            </a></li>
             <li><a href="/recipes/recipes.html">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <path d="M7 2v8a2 2 0 0 0 2 2v10M5 2v6M9 2v6M14 2c-1.5 2-1.5 7 0 9 .6.6 1 1.3 1 2v9" />
-                    </svg>
-                    <span>الوصفات</span>
-                </a></li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 2v8a2 2 0 0 0 2 2v10M5 2v6M9 2v6M14 2c-1.5 2-1.5 7 0 9 .6.6 1 1.3 1 2v9"/></svg>
+                <span>الوصفات</span>
+            </a></li>
             <li><a href="/plan/plan.html">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="9" />
-                        <path d="M14.8 9.2 13 13l-3.8 1.8L11 11l3.8-1.8Z" />
-                    </svg>
-                    <span>خطتي</span>
-                </a></li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M14.8 9.2 13 13l-3.8 1.8L11 11l3.8-1.8Z"/></svg>
+                <span>خطتي</span>
+            </a></li>
         </ul>
+    </nav>
+
+    <div class="country-name">
+        <h1>مدغشقر</h1>
+        <p>أرض التلال الخضراء والطبيعة الهادئة وتجارب السفاري الفريدة.</p>
     </div>
-    <header>
-        <a href="/countries/countries.html" class="back-btn">رجوع</a>
-    </header>
 
-
-
-
-    <!--المدن -->
     <div class="main-cites">
         <h1>المدن</h1>
     </div>
     <section class="cities-grid">
-        <div class="cite">
-            <img src="" alt="" class="cite-img">
-            <span class="name"></span>
-            <div class="info">
 
-            </div>
+        <div class="cite" data-name="أنتاناناريفو – Antananarivo" data-img="/img/Antananarivo.jpg"
+            data-desc="عاصمة مدغشقر النابضة بالحياة، مدينة جبلية تجمع بين البيوت التقليدية والقصور الملكية القديمة والأسواق الشعبية الصاخبة وسط تلال خضراء ساحرة."
+            data-historic="🏰 قصر روفا الملكي – Rova of Antananarivo | 🏛️ متحف أندافيراهانا – Andafiavaratra Palace | 🌿 حديقة تسيمبازازا – Tsimbazaza Botanical Garden | 🛍️ سوق أناكلي – Analakely Market"
+            data-restaurants="🍖 مطعم لا فاراندولي – La Varangue | 🌿 مطعم سكاي بار – Sky Bar | 🥘 مطعم ساكامانجا – Sakamanga"
+            data-cafes="☕ مقهى جاكاراندا – Jacaranda | ☕ مقهى دو بارك – Café du Parc | ☕ مقهى لوبزيرفاتوار – L'Observatoire"
+            data-events="🏰 قصر روفا الملكي | 🛍️ سوق أناكلي | 🌿 حديقة تسيمبازازا"
+            onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'madagascar_antananarivo', 'أنتاناناريفو – Antananarivo', '/img/Antananarivo.jpg')">🏙️</button>
+            <img src="/img/Antananarivo.jpg" alt="أنتاناناريفو" class="cite-img">
+            <span class="name">أنتاناناريفو – Antananarivo</span>
+            <p class="info">عاصمة نابضة بالحياة وسط تلال خضراء.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
         </div>
-        <div class="cite">
-            <img src="" alt="" class="cite-img">
-            <span class="name"></span>
-            <div class="info">
 
-            </div>
+        <div class="cite" data-name="نوزي بي – Nosy Be" data-img="/img/Nosy Be.jpg"
+            data-desc="جزيرة العطور الاستوائية وأشهر الوجهات السياحية في مدغشقر، تشتهر بشواطئها البكر ومياهها الفيروزية الصافية ومزارع اليلانغ يلانغ العطرية."
+            data-historic="🌊 شاطئ أمبارو – Ambaro Beach | 🤿 محمية لوكوبي البحرية – Lokobe Reserve | 🌺 مزارع العطور – Perfume Plantations | 🏝️ جزيرة نوزي كومبا – Nosy Komba"
+            data-restaurants="🍖 مطعم شيز لويس – Chez Loulou | 🌿 مطعم لي ماكي – Le Makis | 🥘 مطعم لا تيرّاس – La Terrasse"
+            data-cafes="☕ مقهى أمبارو بيتش – Ambaro Beach Cafe | ☕ مقهى أندوني باي – Andilana Bay Cafe"
+            data-events="🌊 شاطئ أمبارو | 🤿 محمية لوكوبي | 🏝️ جزيرة نوزي كومبا"
+            onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'madagascar_nosy-be', 'نوزي بي – Nosy Be', '/img/Nosy Be.jpg')">🏙️</button>
+            <img src="/img/Nosy Be.jpg" alt="نوزي بي" class="cite-img">
+            <span class="name">نوزي بي – Nosy Be</span>
+            <p class="info">جزيرة العطور بشواطئ بكر ومياه فيروزية.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
         </div>
-        <div class="cite">
-            <img src="" alt="" class="cite-img">
-            <span class="name"></span>
-            <div class="info">
 
-            </div>
+        <div class="cite" data-name="موروندافا – Morondava" data-img="/img/Morondava.jpg"
+            data-desc="بوابة شارع الباوباب الشهير، مدينة ساحلية هادئة على المحيط الهندي تجمع بين الطبيعة الخلابة وأشجار الباوباب العملاقة العمرها مئات السنين."
+            data-historic="🌳 شارع الباوباب – Avenue of the Baobabs | 🌊 شاطئ موروندافا – Morondava Beach | 🦎 محمية كيرندي – Kirindy Reserve"
+            data-restaurants="🍖 مطعم رينالا – Renala Restaurant | 🌿 مطعم باوباب كافيه – Baobab Cafe"
+            data-cafes="☕ مقهى شيز فريدي – Chez Freddy"
+            data-events="🌳 شارع الباوباب | 🦎 محمية كيرندي | 🌊 شاطئ موروندافا"
+            onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'madagascar_morondava', 'موروندافا – Morondava', '/img/Morondava.jpg')">🏙️</button>
+            <img src="/img/Morondava.jpg" alt="موروندافا" class="cite-img">
+            <span class="name">موروندافا – Morondava</span>
+            <p class="info">بوابة شارع الباوباب الأسطوري.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
         </div>
-        <div class="cite">
-            <img src="" alt="" class="cite-img">
-            <span class="name"></span>
-            <div class="info">
 
-            </div>
+        <div class="cite" data-name="دييغو سواريز – Antsiranana" data-img="/img/Antsiranana.jpg"
+            data-desc="مدينة شمالية ساحرة على خليج طبيعي عميق، تجمع بين الطبيعة الجبلية والشواطئ النائية ومحمية الجبل الأمبر الاستوائية الغنية بالتنوع الحيوي."
+            data-historic="🏔️ محمية الجبل الأمبر – Montagne d'Ambre | 🌊 خليج ديانا – Diana Bay | 🏝️ شاطئ السكر اللوف – Sugarloaf Beach"
+            data-restaurants="🍖 مطعم لا روزيري – La Rosticceria | 🌿 مطعم كايس دو بور – Quai du Port"
+            data-cafes="☕ مقهى لو غران بلو – Le Grand Bleu"
+            data-events="🏔️ محمية الجبل الأمبر | 🌊 خليج ديانا | 🏝️ شاطئ السكر اللوف"
+            onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'madagascar_antsiranana', 'دييغو سواريز – Antsiranana', '/img/Antsiranana.jpg')">🏙️</button>
+            <img src="/img/Antsiranana.jpg" alt="دييغو سواريز" class="cite-img">
+            <span class="name">دييغو سواريز – Antsiranana</span>
+            <p class="info">طبيعة جبلية وشواطئ نائية ساحرة.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
         </div>
-        <div class="cite">
-            <img src="" alt="" class="cite-img">
-            <span class="name"></span>
-            <div class="info">
 
-            </div>
+        <div class="cite" data-name="توليارا – Toliara" data-img="/img/Toliara.jpg"
+            data-desc="مدينة جنوبية صحراوية على ساحل قناة موزمبيق، تشتهر بشعابها المرجانية وأشجار الباوباب وأسلوب حياة شعب فيزو البحري التقليدي."
+            data-historic="🏝️ محمية إيفولو – Ifaty Reserve | 🤿 الشعاب المرجانية – Coral Reefs | 🌵 حديقة أرابورتو النباتية – Arboretum d'Antsokay"
+            data-restaurants="🍖 مطعم لي تالينجو – Le Talinjoo | 🌿 مطعم أكواريوم – Aquarium Restaurant"
+            data-cafes="☕ مقهى دانا بيتش – Dana Beach Cafe"
+            data-events="🤿 الشعاب المرجانية | 🏝️ محمية إيفولو | 🌵 حديقة أرابورتو"
+            onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'madagascar_toliara', 'توليارا – Toliara', '/img/Toliara.jpg')">🏙️</button>
+            <img src="/img/Toliara.jpg" alt="توليارا" class="cite-img">
+            <span class="name">توليارا – Toliara</span>
+            <p class="info">شعاب مرجانية وحياة بحرية تقليدية.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
         </div>
-        <div class="cite">
-            <img src="" alt="" class="cite-img">
-            <span class="name"></span>
-            <div class="info">
 
-            </div>
+        <div class="cite" data-name="فورت دوفين – Fort Dauphin" data-img="/img/Fort Dauphin.jpg"
+            data-desc="مدينة جنوبية شرقية محاطة بالجبال والشواطئ البكر، بوابة لمحميات طبيعية غنية بالليمور النادر وغابات استوائية مطيرة آسرة."
+            data-historic="🦒 محمية بيرينتي – Berenty Reserve | 🌊 شاطئ ليبانتو – Libanona Beach | 🌿 حديقة أندوهاهيلا الوطنية – Andohahela National Park"
+            data-restaurants="🍖 مطعم تالينجو فورت دوفين – Dauphin Restaurant | 🌿 مطعم لا تيرّاس دو بور – Terrasse du Port"
+            data-cafes="☕ مقهى لانيرا – Lanira Cafe"
+            data-events="🦒 محمية بيرينتي | 🌊 شاطئ ليبانتو | 🌿 حديقة أندوهاهيلا"
+            onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'madagascar_fort-dauphin', 'فورت دوفين – Fort Dauphin', '/img/Fort Dauphin.jpg')">🏙️</button>
+            <img src="/img/Fort Dauphin.jpg" alt="فورت دوفين" class="cite-img">
+            <span class="name">فورت دوفين – Fort Dauphin</span>
+            <p class="info">جبال وشواطئ بكر ومحميات الليمور.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
         </div>
+
     </section>
-    <!--الاكل-->
+
     <div class="main-foods">
         <h1>الماكولات</h1>
     </div>
     <section class="foods-grid">
-        <div class="foods">
-            <img src="" alt="" class="foods-img">
-            <span class="name-foods"></span>
-            <div class="food-info"></div>
-            <a href="" class="for-more-btn"></a>
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=romazava'">
+            <img src="/img/Romazava.jpg" alt="رومزافا" class="foods-img">
+            <span class="name-foods">رومزافا – Romazava</span>
+            <div class="food-info">طبق لحم وخضار تقليدي، الأكلة الوطنية لمدغشقر.</div>
+            <a href="/recipes/recipes.html?recipe=romazava" class="for-more-btn"
+                onclick="event.stopPropagation()">الوصفة</a>
         </div>
-        <div class="foods">
-            <img src="" alt="" class="foods-img">
-            <span class="name-foods"></span>
-            <div class="food-info"></div>
-            <a href="" class="for-more-btn"></a>
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=ravitoto'">
+            <img src="/img/Ravitoto.jpg" alt="رافيتوتو" class="foods-img">
+            <span class="name-foods">رافيتوتو – Ravitoto</span>
+            <div class="food-info">أوراق الكسافا المطحونة مع اللحم.</div>
+            <a href="/recipes/recipes.html?recipe=ravitoto" class="for-more-btn"
+                onclick="event.stopPropagation()">الوصفة</a>
         </div>
-        <div class="foods">
-            <img src="" alt="" class="foods-img">
-            <span class="name-foods"></span>
-            <div class="food-info"></div>
-            <a href="" class="for-more-btn"></a>
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=mofo-akondro'">
+            <img src="/img/Mofo Akondro.jpg" alt="موفون أكوندرو" class="foods-img">
+            <span class="name-foods">موفون أكوندرو – Mofo Akondro</span>
+            <div class="food-info">فطائر الموز المقلية الشعبية.</div>
+            <a href="/recipes/recipes.html?recipe=mofo-akondro" class="for-more-btn"
+                onclick="event.stopPropagation()">الوصفة</a>
         </div>
-        <div class="foods">
-            <img src="" alt="" class="foods-img">
-            <span class="name-foods"></span>
-            <div class="food-info"></div>
-            <a href="" class="for-more-btn"></a>
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=koba'">
+            <img src="/img/Koba.jpg" alt="كوبا" class="foods-img">
+            <span class="name-foods">كوبا – Koba</span>
+            <div class="food-info">حلوى الفول السوداني والأرز الملفوفة بأوراق الموز.</div>
+            <a href="/recipes/recipes.html?recipe=koba" class="for-more-btn"
+                onclick="event.stopPropagation()">الوصفة</a>
         </div>
-        <div class="foods">
-            <img src="" alt="" class="foods-img">
-            <span class="name-foods"></span>
-            <div class="food-info"></div>
-            <a href="" class="for-more-btn"></a>
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=lasary-carottes'">
+            <img src="/img/Lasary Carottes.jpg" alt="لاساري كاروطي" class="foods-img">
+            <span class="name-foods">لاساري كاروطي – Lasary Carottes</span>
+            <div class="food-info">سلطة جزر مخللة منعشة.</div>
+            <a href="/recipes/recipes.html?recipe=lasary-carottes" class="for-more-btn"
+                onclick="event.stopPropagation()">الوصفة</a>
         </div>
-        <div class="foods">
-            <img src="" alt="" class="foods-img">
-            <span class="name-foods"></span>
-            <div class="food-info"></div>
-            <a href="" class="for-more-btn"></a>
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=henomby-ritra'">
+            <img src="/img/Henomby Ritra.jpg" alt="هنومبي ريترا" class="foods-img">
+            <span class="name-foods">هنومبي ريترا – Hen'omby Ritra</span>
+            <div class="food-info">لحم بقري مطهو ببطء بصلصة غنية.</div>
+            <a href="/recipes/recipes.html?recipe=henomby-ritra" class="for-more-btn"
+                onclick="event.stopPropagation()">الوصفة</a>
         </div>
     </section>
+
     <div class="events-main">
         <h1>الفعاليات</h1>
     </div>
     <section class="events-grid">
-        <div class="event">
-            <img src="" alt="" class="event-img">
-            <span class="name-event"></span>
-            <div class="event-info"></div>
-            <a href="" class="event-btn"></a>
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=AvenueBaobabsMadagascar'">
+            <img src="/img/Avenue of the Baobabs.jpg" alt="شارع الباوباب" class="event-img">
+            <span class="name-event">🌳 شارع الباوباب – Avenue of the Baobabs</span>
+            <div class="event-info">أشجار باوباب عملاقة عمرها مئات السنين.</div>
+            <a href="/events/events.html?event=AvenueBaobabsMadagascar" class="event-btn"
+                onclick="event.stopPropagation()">اكتشف</a>
         </div>
-        <div class="event">
-            <img src="" alt="" class="event-img">
-            <span class="name-event"></span>
-            <div class="event-info"></div>
-            <a href="" class="event-btn"></a>
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=TsingyBemaraha'">
+            <img src="/img/Tsingy de Bemaraha.jpg" alt="محمية تسينغي دي بيماراها" class="event-img">
+            <span class="name-event">🗿 محمية تسينغي دي بيماراها – Tsingy de Bemaraha</span>
+            <div class="event-info">تشكيلات صخرية حجرية فريدة من نوعها بالعالم.</div>
+            <a href="/events/events.html?event=TsingyBemaraha" class="event-btn"
+                onclick="event.stopPropagation()">اكتشف</a>
         </div>
-        <div class="event">
-            <img src="" alt="" class="event-img">
-            <span class="name-event"></span>
-            <div class="event-info"></div>
-            <a href="" class="event-btn"></a>
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=NosyBeIsland'">
+            <img src="/img/Nosy Be Island.jpg" alt="جزيرة نوزي بي" class="event-img">
+            <span class="name-event">🏝️ جزيرة نوزي بي – Nosy Be Island</span>
+            <div class="event-info">جزيرة استوائية بشواطئ فيروزية ساحرة.</div>
+            <a href="/events/events.html?event=NosyBeIsland" class="event-btn"
+                onclick="event.stopPropagation()">اكتشف</a>
         </div>
-        <div class="event">
-            <img src="" alt="" class="event-img">
-            <span class="name-event"></span>
-            <div class="event-info"></div>
-            <a href="" class="event-btn"></a>
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=LemurWatching'">
+            <img src="/img/Lemur Watching.jpg" alt="مشاهدة الليمور" class="event-img">
+            <span class="name-event">🐒 مشاهدة الليمور – Lemur Watching</span>
+            <div class="event-info">تجربة فريدة لمشاهدة الليمور في موطنه الطبيعي.</div>
+            <a href="/events/events.html?event=LemurWatching" class="event-btn"
+                onclick="event.stopPropagation()">اكتشف</a>
         </div>
-        <div class="event">
-            <img src="" alt="" class="event-img">
-            <span class="name-event"></span>
-            <div class="event-info"></div>
-            <a href="" class="event-btn"></a>
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=DivingSnorkelingMadagascar'">
+            <img src="/img/Diving Snorkeling Madagascar.jpg" alt="الغوص والسنوركل" class="event-img">
+            <span class="name-event">🤿 الغوص والسنوركل – Diving & Snorkeling</span>
+            <div class="event-info">شعاب مرجانية ملونة وحياة بحرية غنية.</div>
+            <a href="/events/events.html?event=DivingSnorkelingMadagascar" class="event-btn"
+                onclick="event.stopPropagation()">اكتشف</a>
         </div>
-        <div class="event">
-            <img src="" alt="ss" class="event-img">
-            <span class="name-event"></span>
-            <div class="event-info"></div>
-            <a href="" class="event-btn"></a>
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=IsaloNationalPark'">
+            <img src="/img/Isalo National Park.jpg" alt="منتزه إيزالو الوطني" class="event-img">
+            <span class="name-event">🏞️ منتزه إيزالو الوطني – Isalo National Park</span>
+            <div class="event-info">تشكيلات صخرية ووديان وأنهار طبيعية خلابة.</div>
+            <a href="/events/events.html?event=IsaloNationalPark" class="event-btn"
+                onclick="event.stopPropagation()">اكتشف</a>
         </div>
     </section>
-    <!-- Modal المدينة -->
+
     <div id="cityModal" class="modal" onclick="closeCityModal(event)">
         <div class="modal-content">
             <button class="modal-close" onclick="closeCityModal(event)">×</button>
@@ -262,39 +306,36 @@
     </div>
 
     <footer class="site-footer">
-    <div class="footer-container">
-      <div class="footer-brand">
-        <h2 class="footer-logo">سفرة</h2>
-        <p>وجهتك للسفر والطعام حول العالم</p>
-      </div>
-
-        <div class="footer-links">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h2 class="footer-logo">سفرة</h2>
+                <p>وجهتك للسفر والطعام حول العالم</p>
+            </div>
+            <div class="footer-links">
                 <h4>روابط سريعة</h4>
                 <ul>
                     <li><a href="/index/index.html">الرئيسية</a></li>
                     <li><a href="/countries/countries.html">الدول</a></li>
                     <li><a href="/events/events.html">الفعاليات</a></li>
                     <li><a href="/recipes/recipes.html">الوصفات</a></li>
-                    <li><a href="/plan/plan.html">خطتي</a></li>
                 </ul>
             </div>
+            <div class="footer-contact">
+                <h4>تواصل معنا</h4>
+                <ul>
+                    <li>📧 <a href="mailto:Sofrh.info@gmail.com" target="_blank">Sofrh.info@gmail.com</a></li>
+                    <li>📧 <a href="mailto:Sofrh.support@gmail.com" target="_blank">Sofrh.support@gmail.com</a></li>
+                    <li>🐦 <a href="https://twitter.com/sofrah_sa" target="_blank">X (Twitter)</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 سفرة — جميع الحقوق محفوظة</p>
+            <p>صُنع بواسطة فريق شفرة</p>
+            <p>📧 <a href="mailto:Sofrh.info@gmail.com" style="color: #D2A673;">Sofrh.info@gmail.com</a></p>
+        </div>
+    </footer>
 
-      <div class="footer-contact">
-        <h4>تواصل معنا</h4>
-        <ul>
-          <li>📧 <a href="mailto:Sofrh.info@gmail.com" target="_blank">Sofrh.info@gmail.com</a></li>
-          <li>📧 <a href="mailto:Sofrh.support@gmail.com" target="_blank">Sofrh.support@gmail.com</a></li>
-          <li>🐦 <a href="https://twitter.com/sofrah_sa" target="_blank">X (Twitter)</a></li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="footer-bottom">
-      <p>© 2025 سفرة — جميع الحقوق محفوظة</p>
-      <p>صُنع بواسطة فريق شفرة</p>
-      <p>📧 <a href="mailto:hello@safra.com" style="color: #D2A673;">hello@safra.com</a></p>
-    </div>
-  </footer>
     <script src="/countries/countries.js"></script>
     <script src="/auth/auth.js"></script>
 </body>
