@@ -1344,7 +1344,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 "nameAr": "مدغشقر",
                 "nameEn": "Madagascar",
                 "continent": "africa",
-                "img": "/img/coming-soon.jpg",
+                "img": "/img/madagascar-logo.webp",
                 "dailyCost": 280,
                 "durationMin": 7,
                 "durationMax": 12,
