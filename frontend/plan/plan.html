@@ -9,8 +9,6 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
     </style>
-    <script src="plan.js" defer></script>
-    <script src="/auth/auth.js" defer></script>
 </head>
 
 <body>
@@ -21,7 +19,7 @@
 
         <div class="auth-buttons" id="authButtons">
             <a href="/auth/login.html" class="login">تسجيل دخول</a>
-            <a href="/auth/signup.html" class="signup">إنشاء حساب</a>
+            <a href="signup.html" class="signup">إنشاء حساب</a>
         </div>
 
         <div class="user-menu" id="userMenu">
@@ -191,8 +189,31 @@
                         </div>
                     </div>
 
-                    <!-- Step 4: Destination -->
+                    <!-- Step 4: Hotel Stars -->
                     <div class="wizard-step" data-step="4">
+                        <h2>كم نجمة تبغاها للفندق؟</h2>
+                        <p class="step-hint">اختياري — يمكنك تخطي هذه الخطوة</p>
+                        <div class="hotel-grid">
+                            <button type="button" class="hotel-chip" data-stars="3">
+                                <span class="hotel-stars">★★★</span>
+                                <span class="hotel-name">٣ نجوم</span>
+                                <span class="hotel-price">٢٥٠ – ٥٥٠ ﷼ / ليلة</span>
+                            </button>
+                            <button type="button" class="hotel-chip" data-stars="4">
+                                <span class="hotel-stars">★★★★</span>
+                                <span class="hotel-name">٤ نجوم</span>
+                                <span class="hotel-price">٥٥٠ – ١٣٠٠ ﷼ / ليلة</span>
+                            </button>
+                            <button type="button" class="hotel-chip" data-stars="5">
+                                <span class="hotel-stars">★★★★★</span>
+                                <span class="hotel-name">٥ نجوم</span>
+                                <span class="hotel-price">١٣٠٠ – ٤٠٠٠+ ﷼ / ليلة</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Step 5: Destination -->
+                    <div class="wizard-step" data-step="5">
                         <h2>وين تحب تكون وجهتك؟</h2>
                         <p class="step-hint">اختر قارة معينة، أو خله يفاجئك باختيار عشوائي</p>
 
@@ -253,35 +274,58 @@
                         </button>
                     </div>
 
-                    <!-- Step 5: Activities -->
-                    <div class="wizard-step" data-step="5">
+                    <!-- Step 6: Activities -->
+                    <div class="wizard-step" data-step="6">
                         <h2>وش الفعاليات اللي تفضلها؟</h2>
-                        <p class="step-hint">اختر فعالية واحدة على الأقل، يمكن أكثر من واحدة</p>
+                        <p class="step-hint">اختر فعالية واحدة على الأقل — يمكنك اختيار أكثر من واحدة</p>
+
+
                         <div class="activities-grid">
                             <button type="button" class="activity-chip" data-activity="beaches">
-                                <span>🏖️</span> شواطئ
+                                <span class="act-icon">🏖️</span>
+                                <span class="act-name">شواطئ</span>
+                                <span class="act-sub">استرخاء وشمس</span>
                             </button>
                             <button type="button" class="activity-chip" data-activity="sea">
-                                <span>🌊</span> بحر
+                                <span class="act-icon">🌊</span>
+                                <span class="act-name">بحر</span>
+                                <span class="act-sub">غطس ورياضات مائية</span>
                             </button>
                             <button type="button" class="activity-chip" data-activity="safari">
-                                <span>🦁</span> سفاري
+                                <span class="act-icon">🦁</span>
+                                <span class="act-name">سفاري</span>
+                                <span class="act-sub">مغامرات طبيعية</span>
                             </button>
                             <button type="button" class="activity-chip" data-activity="mountains">
-                                <span>⛰️</span> جبال
+                                <span class="act-icon">⛰️</span>
+                                <span class="act-name">جبال</span>
+                                <span class="act-sub">هواء نقي ومناظر</span>
                             </button>
                             <button type="button" class="activity-chip" data-activity="amusement">
-                                <span>🎡</span> ملاهي
+                                <span class="act-icon">🎡</span>
+                                <span class="act-name">ملاهي</span>
+                                <span class="act-sub">مرح وترفيه</span>
                             </button>
                             <button type="button" class="activity-chip" data-activity="resorts">
-                                <span>🏨</span> منتجعات
+                                <span class="act-icon">🏨</span>
+                                <span class="act-name">منتجعات</span>
+                                <span class="act-sub">راحة ورفاهية</span>
                             </button>
                             <button type="button" class="activity-chip" data-activity="museums">
-                                <span>🏛️</span> متاحف
+                                <span class="act-icon">🏛️</span>
+                                <span class="act-name">متاحف</span>
+                                <span class="act-sub">تاريخ وثقافة</span>
                             </button>
                             <button type="button" class="activity-chip" data-activity="landmarks">
-                                <span>📍</span> معالم
+                                <span class="act-icon">📍</span>
+                                <span class="act-name">معالم</span>
+                                <span class="act-sub">سياحة وذكريات</span>
                             </button>
+                            <button type="button" class="activity-chip activity-chip-all" data-activity="all">
+                                <span class="act-all-icon">✨</span>
+                                <span class="act-all-label">جميع ما سبق</span>
+                            </button>
+
                         </div>
                     </div>
 
@@ -326,6 +370,16 @@
                 <input type="text" id="resultsSearch" class="results-search" placeholder="🔍 ابحث عن دولة بالاسم...">
             </div>
 
+            <div class="results-continent-filter" id="resultsContiFilter" style="display:none">
+                <button type="button" class="rcf-chip active" data-continent="all">🌍 الكل</button>
+                <button type="button" class="rcf-chip" data-continent="asia">آسيا</button>
+                <button type="button" class="rcf-chip" data-continent="europe">أوروبا</button>
+                <button type="button" class="rcf-chip" data-continent="africa">أفريقيا</button>
+                <button type="button" class="rcf-chip" data-continent="north_america">أمريكا الشمالية</button>
+                <button type="button" class="rcf-chip" data-continent="south_america">أمريكا الجنوبية</button>
+                <button type="button" class="rcf-chip" data-continent="oceania">أوقيانوسيا</button>
+            </div>
+
             <div class="results-grid" id="resultsGrid"></div>
         </section>
 
@@ -335,10 +389,9 @@
     <footer class="site-footer">
         <div class="footer-container">
             <div class="footer-brand">
-                <h2 class="footer-logo">سفرة</h2>
-                <p>وجهتك للسفر والطعام حول العالم</p>
+                <h3 class="footer-logo">سفرة</h3>
+                <p>دليلك للسفر والأكل حول العالم</p>
             </div>
-
             <div class="footer-links">
                 <h4>روابط سريعة</h4>
                 <ul>
@@ -346,27 +399,22 @@
                     <li><a href="/countries/countries.html">الدول</a></li>
                     <li><a href="/events/events.html">الفعاليات</a></li>
                     <li><a href="/recipes/recipes.html">الوصفات</a></li>
-                    <li><a href="/plan/plan.html">خطتي</a></li>
                 </ul>
             </div>
-
             <div class="footer-contact">
                 <h4>تواصل معنا</h4>
                 <ul>
-                    <li>📧 <a href="mailto:Sofrh.info@gmail.com" target="_blank">Sofrh.info@gmail.com</a></li>
-                    <li>📧 <a href="mailto:Sofrh.support@gmail.com" target="_blank">Sofrh.support@gmail.com</a></li>
-                    <li>🐦 <a href="https://twitter.com/sofrah_sa" target="_blank">X (Twitter)</a></li>
+                    <li><a href="mailto:Sofrh.info@gmail.com">Sofrh.info@gmail.com</a></li>
+                    <li><a href="mailto:Sofrh.support@gmail.com">Sofrh.support@gmail.com</a></li>
                 </ul>
             </div>
         </div>
-
         <div class="footer-bottom">
-            <p>© 2025 سفرة — جميع الحقوق محفوظة</p>
-            <p>صُنع بواسطة فريق شفرة</p>
-            <p>📧 <a href="mailto:hello@safra.com" style="color: #D2A673;">hello@safra.com</a></p>
+            <p>© 2026 سفرة. جميع الحقوق محفوظة.</p>
         </div>
     </footer>
-
+    <script src="plan.js" defer></script>
+    <script src="/auth/auth.js" defer></script>
 </body>
 
 </html>

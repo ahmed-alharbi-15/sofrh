@@ -974,7 +974,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 "nameAr": "جنوب افريقيا",
                 "nameEn": "South Africa",
                 "continent": "africa",
-                "img": "/img/south- africa.jpg",
+                "img": "img/south- africa.jpg",
                 "dailyCost": 300,
                 "durationMin": 7,
                 "durationMax": 12,
@@ -1344,7 +1344,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 "nameAr": "مدغشقر",
                 "nameEn": "Madagascar",
                 "continent": "africa",
-                "img": "/img/madagascar-logo.webp",
+                "img": "/img/coming-soon.jpg",
                 "dailyCost": 280,
                 "durationMin": 7,
                 "durationMax": 12,
@@ -3860,6 +3860,7 @@ document.addEventListener("DOMContentLoaded", () => {
         tripType: null,
         people: 1,
         duration: 5,
+        hotelStars: null,
         continent: null,   // null = كل العالم
         isRandom: false,
         isSkipAll: false,
@@ -3870,6 +3871,7 @@ document.addEventListener("DOMContentLoaded", () => {
         { ar: "الميزانية", code: "BUDGET" },
         { ar: "نوع الرحلة", code: "TRIP TYPE" },
         { ar: "المسافرين والمدة", code: "TRAVELERS" },
+        { ar: "الفندق", code: "HOTEL" },
         { ar: "الوجهة", code: "DESTINATION" },
         { ar: "الفعاليات", code: "ACTIVITIES" },
     ];
@@ -3902,6 +3904,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const skipAllBtn = document.getElementById("skipAllBtn");
     const resultsSearchWrap = document.getElementById("resultsSearchWrap");
     const resultsSearch = document.getElementById("resultsSearch");
+    const resultsContiFilter = document.getElementById("resultsContiFilter");
 
     function formatNumber(n) {
         return n.toLocaleString("en-US");
@@ -3944,6 +3947,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <div class="stub-row"><span class="stub-k">CLASS</span><span class="stub-v">${tripTypeArabicLabel(state.tripType)}</span></div>
             <div class="stub-row"><span class="stub-k">PAX</span><span class="stub-v">${arabicDigits(state.people)}</span></div>
             <div class="stub-row"><span class="stub-k">NIGHTS</span><span class="stub-v">${arabicDigits(state.duration)}</span></div>
+            <div class="stub-row"><span class="stub-k">HOTEL</span><span class="stub-v">${state.hotelStars ? "★".repeat(state.hotelStars) : "—"}</span></div>
             <div class="stub-row"><span class="stub-k">DEST</span><span class="stub-v">${destLabel}</span></div>
             <div class="stub-row"><span class="stub-k">ACTV</span><span class="stub-v">${activitiesLabel}</span></div>
         `;
@@ -3972,6 +3976,21 @@ document.addEventListener("DOMContentLoaded", () => {
             document.querySelectorAll(".trip-card").forEach((c) => c.classList.remove("active"));
             card.classList.add("active");
             state.tripType = card.dataset.type;
+
+            // شهر العسل: أشخاص يبدأ من ٢ والميزانية من ٢٠٠٠٠
+            if (state.tripType === "honeymoon") {
+                if (state.people < 2) {
+                    state.people = 2;
+                    if (peopleDisplay) peopleDisplay.textContent = state.people;
+                }
+                if (state.budget < 20000) {
+                    state.budget = 20000;
+                    if (budgetRange) budgetRange.value = 20000;
+                    if (budgetDisplay) budgetDisplay.textContent = formatNumber(20000);
+                    updateBudgetTrack();
+                }
+            }
+
             updateNextButtonState();
             renderTicketStub();
         });
@@ -3986,7 +4005,8 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
     decreasePeople?.addEventListener("click", () => {
-        if (state.people > 1) {
+        const minPeople = state.tripType === "honeymoon" ? 2 : 1;
+        if (state.people > minPeople) {
             state.people--;
             if (peopleDisplay) peopleDisplay.textContent = state.people;
             renderTicketStub();
@@ -4014,8 +4034,7 @@ document.addEventListener("DOMContentLoaded", () => {
         chip.addEventListener("click", () => {
             const already = chip.classList.contains("active");
             document.querySelectorAll(".continent-chip").forEach((c) => c.classList.remove("active"));
-            randomBtn?.classList.remove("active");
-            state.isRandom = false;
+            // لا نشيل العشوائي هنا — القارة والعشوائي يعملان معاً
 
             if (already) {
                 state.continent = null;
@@ -4030,8 +4049,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // ===== زر العشوائي =====
     randomBtn?.addEventListener("click", () => {
         const wasActive = randomBtn.classList.contains("active");
-        document.querySelectorAll(".continent-chip").forEach((c) => c.classList.remove("active"));
-        state.continent = null;
+        // لا نشيل القارة المختارة — تبقى لتضيّق نطاق العشوائي
 
         if (wasActive) {
             randomBtn.classList.remove("active");
@@ -4044,15 +4062,38 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // ===== الفعاليات =====
+    const ALL_ACTIVITIES = ['beaches', 'sea', 'safari', 'mountains', 'amusement', 'resorts', 'museums', 'landmarks'];
+
     document.querySelectorAll(".activity-chip").forEach((chip) => {
         chip.addEventListener("click", () => {
-            chip.classList.toggle("active");
             const act = chip.dataset.activity;
-            if (state.activities.includes(act)) {
-                state.activities = state.activities.filter((a) => a !== act);
+            const allChip = document.querySelector('.activity-chip[data-activity="all"]');
+
+            if (act === "all") {
+                const wasActive = chip.classList.contains("active");
+                document.querySelectorAll(".activity-chip").forEach((c) => c.classList.remove("active"));
+                if (!wasActive) {
+                    chip.classList.add("active");
+                    document.querySelectorAll(".activity-chip:not([data-activity='all'])").forEach((c) => c.classList.add("active"));
+                    state.activities = [...ALL_ACTIVITIES];
+                } else {
+                    state.activities = [];
+                }
             } else {
-                state.activities.push(act);
+                // إلغاء "الكل" عند اختيار فردي
+                if (allChip) allChip.classList.remove("active");
+                chip.classList.toggle("active");
+                if (state.activities.includes(act)) {
+                    state.activities = state.activities.filter((a) => a !== act);
+                } else {
+                    state.activities.push(act);
+                }
+                // لو اختار كل الفعاليات يدوياً — نفعّل زر "الكل" تلقائياً
+                if (ALL_ACTIVITIES.every((a) => state.activities.includes(a)) && allChip) {
+                    allChip.classList.add("active");
+                }
             }
+
             updateNextButtonState();
             renderTicketStub();
         });
@@ -4071,11 +4112,26 @@ document.addEventListener("DOMContentLoaded", () => {
         updateNextButtonState();
     }
 
+    // ===== الفنادق =====
+    document.querySelectorAll(".hotel-chip").forEach((chip) => {
+        chip.addEventListener("click", () => {
+            const already = chip.classList.contains("active");
+            document.querySelectorAll(".hotel-chip").forEach((c) => c.classList.remove("active"));
+            if (already) {
+                state.hotelStars = null;
+            } else {
+                chip.classList.add("active");
+                state.hotelStars = parseInt(chip.dataset.stars, 10);
+            }
+            renderTicketStub();
+        });
+    });
+
     function updateNextButtonState() {
         if (!nextBtn) return;
         if (state.step === 2) {
             nextBtn.disabled = !state.tripType;
-        } else if (state.step === 5) {
+        } else if (state.step === 6) {
             nextBtn.disabled = state.activities.length === 0;
         } else {
             nextBtn.disabled = false;
@@ -4116,6 +4172,7 @@ document.addEventListener("DOMContentLoaded", () => {
         state.people = 1;
         state.duration = 5;
         state.continent = null;
+        state.hotelStars = null;
         state.isRandom = false;
         state.isSkipAll = false;
         state.activities = [];
@@ -4126,6 +4183,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (peopleDisplay) peopleDisplay.textContent = "1";
         if (durationDisplay) durationDisplay.textContent = "5";
         document.querySelectorAll(".trip-card").forEach((c) => c.classList.remove("active"));
+        document.querySelectorAll(".hotel-chip").forEach((c) => c.classList.remove("active"));
         document.querySelectorAll(".continent-chip").forEach((c) => c.classList.remove("active"));
         randomBtn?.classList.remove("active");
         document.querySelectorAll(".activity-chip").forEach((c) => c.classList.remove("active"));
@@ -4246,6 +4304,11 @@ document.addEventListener("DOMContentLoaded", () => {
         if (pool.length === 0) {
             pool = countries.slice();
         }
+        // تصفية حسب القارة لو مختارة
+        if (state.continent) {
+            const continentPool = pool.filter((c) => c.continent === state.continent);
+            if (continentPool.length > 0) pool = continentPool;
+        }
         if (pool.length > 1 && lastId) {
             const filtered = pool.filter((c) => c.id !== lastId);
             if (filtered.length > 0) pool = filtered;
@@ -4258,15 +4321,21 @@ document.addEventListener("DOMContentLoaded", () => {
     // ===== البحث الحي داخل النتائج =====
     let currentResultsList = [];
     let currentResultsSkipMode = false;
+    let currentFilterContinent = null;
 
     function applySearchFilter() {
         if (!resultsGrid) return;
         const q = normalizeArabic((resultsSearch?.value || "").trim().toLowerCase());
-        const filtered = q
-            ? currentResultsList.filter((c) =>
-                normalizeArabic(c.nameAr.toLowerCase()).includes(q) || c.nameEn.toLowerCase().includes(q)
-            )
+
+        let filtered = currentFilterContinent
+            ? currentResultsList.filter((c) => c.continent === currentFilterContinent)
             : currentResultsList;
+
+        if (q) {
+            filtered = filtered.filter((c) =>
+                normalizeArabic(c.nameAr.toLowerCase()).includes(q) || c.nameEn.toLowerCase().includes(q)
+            );
+        }
 
         if (filtered.length === 0) {
             resultsGrid.innerHTML = `<p class="no-results">ما لقينا دولة تطابق بحثك 🔍 — جرّب اسم ثاني.</p>`;
@@ -4277,6 +4346,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
     resultsSearch?.addEventListener("input", applySearchFilter);
 
+    // فلتر القارات في صفحة النتائج (skipAll)
+    resultsContiFilter?.querySelectorAll(".rcf-chip").forEach((chip) => {
+        chip.addEventListener("click", () => {
+            resultsContiFilter.querySelectorAll(".rcf-chip").forEach((c) => c.classList.remove("active"));
+            chip.classList.add("active");
+            const val = chip.dataset.continent;
+            currentFilterContinent = val === "all" ? null : val;
+            if (resultsSearch) resultsSearch.value = "";
+            applySearchFilter();
+        });
+    });
+
     function renderResults() {
         if (!resultsGrid) return;
         if (resultsSearch) resultsSearch.value = "";
@@ -4285,9 +4366,17 @@ document.addEventListener("DOMContentLoaded", () => {
             resultsGrid.classList.remove("random-mode");
             if (rerollBtn) rerollBtn.style.display = "none";
             if (resultsSearchWrap) resultsSearchWrap.style.display = "block";
+            if (resultsContiFilter) {
+                resultsContiFilter.style.display = "block";
+                // إعادة تعيين الفلتر
+                resultsContiFilter.querySelectorAll(".rcf-chip").forEach((c) => c.classList.remove("active"));
+                const allChip = resultsContiFilter.querySelector('[data-continent="all"]');
+                if (allChip) allChip.classList.add("active");
+                currentFilterContinent = null;
+            }
             if (resultsTitle) resultsTitle.textContent = "كل دول العالم";
             if (resultsSubtitle) {
-                resultsSubtitle.textContent = `بدون أي تصفية حسب تفضيلاتك — ${arabicDigits(countries.length)} وجهة، مرتبة أبجدياً، وفي كل بطاقة المدة المقترحة والميزانية المطلوبة`;
+                resultsSubtitle.textContent = `بدون أي تصفية حسب تفضيلاتك — ${arabicDigits(countries.length)} وجهة، مرتبة أبجدياً`;
             }
             currentResultsList = countries.slice().sort((a, b) => a.nameAr.localeCompare(b.nameAr, "ar"));
             currentResultsSkipMode = true;
@@ -4295,12 +4384,15 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
+        if (resultsContiFilter) resultsContiFilter.style.display = "none";
+        currentFilterContinent = null;
+
         if (state.isRandom) {
             const picked = pickRandomCountry();
             const scoredCountry = { ...picked, score: calculateMatch(picked) };
-
+            const continentLabel = state.continent ? ` من ${continentNames[state.continent]}` : "";
             if (resultsTitle) resultsTitle.textContent = "وجهتك العشوائية";
-            if (resultsSubtitle) resultsSubtitle.textContent = "اخترنا لك دولة بناءً على ميزانيتك — اضغط جرّب وجهة ثانية لاختيار غيرها";
+            if (resultsSubtitle) resultsSubtitle.textContent = `اخترنا لك دولة عشوائية${continentLabel} — اضغط جرّب وجهة ثانية لاختيار غيرها`;
             if (resultsSearchWrap) resultsSearchWrap.style.display = "none";
             resultsGrid.classList.add("random-mode");
             resultsGrid.innerHTML = cardTemplate(scoredCountry, 0, true, false);
