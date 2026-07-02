@@ -4464,11 +4464,13 @@ document.addEventListener("DOMContentLoaded", () => {
         function pickRandomCountry() {
                 const lastId = localStorage.getItem("sofrhLastRandomCountry");
                 let pool = countries.filter((c) => Math.floor(state.budget / c.dailyCost) >= state.duration);
+                pool = pool.filter((c) => c.ready !== false);
                 if (pool.length === 0) {
                         pool = countries.filter((c) => Math.floor(state.budget / c.dailyCost) >= 1);
+                        pool = pool.filter((c) => c.ready !== false);
                 }
                 if (pool.length === 0) {
-                        pool = countries.slice();
+                        pool = countries.filter((c) => c.ready !== false);
                 }
                 // تصفية حسب القارة لو مختارة
                 if (state.continent) {
@@ -4483,7 +4485,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 localStorage.setItem("sofrhLastRandomCountry", choice.id);
                 return choice;
         }
-
         // ===== البحث الحي داخل النتائج =====
         let currentResultsList = [];
         let currentResultsSkipMode = false;
