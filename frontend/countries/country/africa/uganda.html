@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سفرة</title>
+    <link rel="stylesheet" href="/countries/countries.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@500;600&display=swap');
+    </style>
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="hamburger" id="menu-btn">☰</div>
+        <div class="auth-buttons" id="authButtons">
+            <a href="/auth/login.html" class="login">تسجيل دخول</a>
+            <a href="/auth/signup.html" class="signup">إنشاء حساب</a>
+        </div>
+        <div class="user-menu" id="userMenu">
+            <img id="userAvatar" src="/img/avater-icon.jpeg" alt="المستخدم">
+            <span class="user-name" id="userName"></span>
+            <div class="user-dropdown">
+                <a href="/profile/profile.html">الملف الشخصي</a>
+                <a href="/index/index.html" id="logoutBtn">تسجيل الخروج</a>
+            </div>
+        </div>
+        <ul class="nav-list">
+            <li><a href="/index/index.html">الرئيسية</a></li>
+            <li><a href="/countries/countries.html">الدول</a></li>
+            <li><a href="/events/events.html">الفعاليات</a></li>
+            <li><a href="/recipes/recipes.html">الوصفات</a></li>
+            <li><a href="/plan/plan.html" class="active">خطتي</a></li>
+        </ul>
+        <div class="logo">
+            <a href="/index/index.html"><img src="/img/logo3.JPG" alt="سفرة"></a>
+        </div>
+    </header>
+
+    <nav class="side-menu" id="side-menu">
+        <span class="close-btn" id="close-btn">✖</span>
+        <span class="side-menu-kicker">استكشف</span>
+        <ul>
+            <li><a href="/index/index.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M3 11.5 12 4l9 7.5" />
+                        <path
+                            d="M5.5 10v9a1 1 0 0 0 1 1H9a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h2.5a1 1 0 0 0 1-1v-9" />
+                    </svg>
+                    <span>الرئيسية</span>
+                </a></li>
+            <li><a href="/countries/countries.html" class="active">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M12 21s7-6.6 7-12a7 7 0 1 0-14 0c0 5.4 7 12 7 12Z" />
+                        <circle cx="12" cy="9" r="2.3" />
+                    </svg>
+                    <span>الدول</span>
+                </a></li>
+            <li><a href="/events/events.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <rect x="3.5" y="5" width="17" height="16" rx="2.5" />
+                        <path d="M8 3v4M16 3v4M3.5 10h17" />
+                        <circle cx="12" cy="15" r="1.4" fill="currentColor" stroke="none" />
+                    </svg>
+                    <span>الفعاليات</span>
+                </a></li>
+            <li><a href="/recipes/recipes.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M7 2v8a2 2 0 0 0 2 2v10M5 2v6M9 2v6M14 2c-1.5 2-1.5 7 0 9 .6.6 1 1.3 1 2v9" />
+                    </svg>
+                    <span>الوصفات</span>
+                </a></li>
+            <li><a href="/plan/plan.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="9" />
+                        <path d="M14.8 9.2 13 13l-3.8 1.8L11 11l3.8-1.8Z" />
+                    </svg>
+                    <span>خطتي</span>
+                </a></li>
+        </ul>
+    </nav>
+
+    <div class="country-name">
+        <h1>أوغندا</h1>
+        <p>لؤلؤة أفريقيا الخضراء بغاباتها المطيرة وبحيرة فيكتوريا ومنابع نهر النيل الأبيض.</p>
+    </div>
+
+    <div class="main-cites">
+        <h1>المدن</h1>
+    </div>
+    <section class="cities-grid">
+
+        <div class="cite" data-name="كمبالا – Kampala" data-img="/img/Kampala.jpg"
+            data-desc="عاصمة أوغندا الممتدة فوق سبعة تلال خضراء، مدينة نابضة بالحياة تجمع بين الأسواق الصاخبة والمعالم الدينية المتنوعة ومقابر الملوك التاريخية."
+            data-historic="🕌 مسجد كمبالا الوطني – Gaddafi National Mosque | 🏛️ قصور كاسوبي – Kasubi Tombs | 🛍️ سوق أوينو – Owino Market"
+            data-restaurants="🍖 مطعم فانغ فانغ – Fang Fang Restaurant | 🌿 مطعم لو شاليه – Le Chalet"
+            data-cafes="☕ مقهى جافانا كافيه – Java House Cafe"
+            data-events="🕌 مسجد كمبالا الوطني | 🏛️ قصور كاسوبي | 🛍️ سوق أوينو" onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'uganda_kampala', 'كمبالا – Kampala', '/img/Kampala.jpg')">🏙️</button>
+            <img src="/img/Kampala.jpg" alt="كمبالا" class="cite-img">
+            <span class="name">كمبالا – Kampala</span>
+            <p class="info">عاصمة أوغندا الممتدة فوق سبعة تلال.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+        <div class="cite" data-name="عنتيبي – Entebbe" data-img="/img/Entebbe.jpg"
+            data-desc="مدينة هادئة على ضفاف بحيرة فيكتوريا، تحتضن مطار أوغندا الدولي وحدائق نباتية استوائية غنية بالطيور والحياة البرية المتنوعة."
+            data-historic="🌿 حدائق عنتيبي النباتية – Entebbe Botanical Gardens | 🦎 مركز عنتيبي للحياة البرية – Uganda Wildlife Education Centre | 🛍️ سوق عنتيبي المحلي – Entebbe Local Market"
+            data-restaurants="🍖 مطعم آنا روز – Anna Rose Restaurant | 🌿 مطعم ذا بوتنيكال – The Botanical Restaurant"
+            data-cafes="☕ مقهى عنتيبي البحيرة – Lake View Cafe"
+            data-events="🌿 حدائق عنتيبي النباتية | 🦎 مركز عنتيبي للحياة البرية | 🛍️ سوق عنتيبي المحلي" onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'uganda_entebbe', 'عنتيبي – Entebbe', '/img/Entebbe.jpg')">🏙️</button>
+            <img src="/img/Entebbe.jpg" alt="عنتيبي" class="cite-img">
+            <span class="name">عنتيبي – Entebbe</span>
+            <p class="info">مدينة هادئة على ضفاف بحيرة فيكتوريا.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+        <div class="cite" data-name="جينجا – Jinja" data-img="/img/Jinja.jpg"
+            data-desc="المدينة التي ينبع منها نهر النيل الأبيض من بحيرة فيكتوريا، وتُعد عاصمة رياضات المغامرة في شرق أفريقيا برحلات الرافتينج والكاياك."
+            data-historic="🌊 منبع نهر النيل – Source of the Nile | 🎣 شلالات بوجاغالي – Bujagali Falls | 🛍️ سوق جينجا المركزي – Jinja Central Market"
+            data-restaurants="🍖 مطعم ذا سورس كافيه – The Source Cafe | 🌿 مطعم تو فرندز – 2 Friends Restaurant"
+            data-cafes="☕ مقهى جينجا نايل – Jinja Nile Cafe"
+            data-events="🌊 منبع نهر النيل | 🎣 شلالات بوجاغالي | 🛍️ سوق جينجا المركزي" onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'uganda_jinja', 'جينجا – Jinja', '/img/Jinja.jpg')">🏙️</button>
+            <img src="/img/Jinja.jpg" alt="جينجا" class="cite-img">
+            <span class="name">جينجا – Jinja</span>
+            <p class="info">المدينة التي ينبع منها نهر النيل الأبيض.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+        <div class="cite" data-name="فورت بورتال – Fort Portal" data-img="/img/Fort Portal.jpg"
+            data-desc="مدينة جبلية خضراء تُعد بوابة جبال روينزوري الثلجية الاستوائية، محاطة ببحيرات الفوهات البركانية ومزارع الشاي الممتدة."
+            data-historic="⛰️ جبال روينزوري – Rwenzori Mountains | 🌋 بحيرات الفوهات – Crater Lakes | 🛍️ سوق فورت بورتال – Fort Portal Market"
+            data-restaurants="🍖 مطعم جبال القمر – Mountains of the Moon Hotel | 🌿 مطعم مركز المدينة – Town Centre Restaurant"
+            data-cafes="☕ مقهى فورت بورتال – Fort Portal Cafe"
+            data-events="⛰️ جبال روينزوري | 🌋 بحيرات الفوهات | 🛍️ سوق فورت بورتال" onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'uganda_fort-portal', 'فورت بورتال – Fort Portal', '/img/Fort Portal.jpg')">🏙️</button>
+            <img src="/img/Fort Portal.jpg" alt="فورت بورتال" class="cite-img">
+            <span class="name">فورت بورتال – Fort Portal</span>
+            <p class="info">بوابة جبال روينزوري الثلجية الاستوائية.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+        <div class="cite" data-name="مباررا – Mbarara" data-img="/img/Mbarara.jpg"
+            data-desc="قلب بلاد الماشية في جنوب غرب أوغندا، مدينة زراعية مزدهرة تُعد بوابة رئيسية لمحمية بحيرة مبورو الوطنية القريبة."
+            data-historic="🐄 مركز إيغونغو الثقافي – Igongo Cultural Centre | 🌿 حديقة بحيرة مبورو – Lake Mburo National Park | 🛍️ سوق مباررا – Mbarara Market"
+            data-restaurants="🍖 مطعم أجيب موتيل – Agip Motel Restaurant | 🌿 مطعم لايك فيو – Lake View Restaurant"
+            data-cafes="☕ مقهى مباررا – Mbarara Cafe"
+            data-events="🐄 مركز إيغونغو الثقافي | 🌿 حديقة بحيرة مبورو | 🛍️ سوق مباررا" onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'uganda_mbarara', 'مباررا – Mbarara', '/img/Mbarara.jpg')">🏙️</button>
+            <img src="/img/Mbarara.jpg" alt="مباررا" class="cite-img">
+            <span class="name">مباررا – Mbarara</span>
+            <p class="info">قلب بلاد الماشية والسافانا الأوغندية.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+        <div class="cite" data-name="غولو – Gulu" data-img="/img/Gulu.jpg"
+            data-desc="أكبر مدن شمال أوغندا ومركزها الثقافي، مدينة آخذة في النمو السريع بعد سنوات من إعادة الإعمار، تجمع بين التراث الأتشولي والحياة الحديثة."
+            data-historic="🏛️ مركز غولو الثقافي – Gulu Cultural Centre | ⛪ كاتدرائية غولو – Gulu Cathedral | 🛍️ سوق غولو المركزي – Gulu Central Market"
+            data-restaurants="🍖 مطعم أكان – Acan Restaurant | 🌿 مطعم غولو ريستور – Gulu Resort Restaurant"
+            data-cafes="☕ مقهى غولو – Gulu Cafe"
+            data-events="🏛️ مركز غولو الثقافي | ⛪ كاتدرائية غولو | 🛍️ سوق غولو المركزي" onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'uganda_gulu', 'غولو – Gulu', '/img/Gulu.jpg')">🏙️</button>
+            <img src="/img/Gulu.jpg" alt="غولو" class="cite-img">
+            <span class="name">غولو – Gulu</span>
+            <p class="info">مركز ثقافي في شمال أوغندا الأخضر.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+    </section>
+
+    <div class="main-foods">
+        <h1>الماكولات</h1>
+    </div>
+    <section class="foods-grid">
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=matoke'">
+            <img src="/img/Matoke.jpg" alt="ماتوكي" class="foods-img">
+            <span class="name-foods">ماتوكي – Matoke</span>
+            <div class="food-info">موز أخضر مطهو بالبخار ومهروس، الطبق الوطني لأوغندا.</div>
+            <a href="/recipes/recipes.html?recipe=matoke" class="for-more-btn"
+                onclick="event.stopPropagation()">الوصفة</a>
+        </div>
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=luwombo'">
+            <img src="/img/Luwombo.jpg" alt="لوومبو" class="foods-img">
+            <span class="name-foods">لوومبو – Luwombo</span>
+            <div class="food-info">دجاج أو لحم بقري مطهو داخل أوراق الموز على البخار.</div>
+            <a href="/recipes/recipes.html?recipe=luwombo" class="for-more-btn"
+                onclick="event.stopPropagation()">الوصفة</a>
+        </div>
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=rolex'">
+            <img src="/img/Rolex.jpg" alt="رولكس" class="foods-img">
+            <span class="name-foods">رولكس – Rolex</span>
+            <div class="food-info">شباتي ملفوف بالبيض والخضار، أشهر وجبة شارع أوغندية.</div>
+            <a href="/recipes/recipes.html?recipe=rolex" class="for-more-btn"
+                onclick="event.stopPropagation()">الوصفة</a>
+        </div>
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=posho'">
+            <img src="/img/Posho.jpg" alt="بوشو" class="foods-img">
+            <span class="name-foods">بوشو – Posho</span>
+            <div class="food-info">عصيدة الذرة الأساسية، تُقدم مع اليخنات المختلفة.</div>
+            <a href="/recipes/recipes.html?recipe=posho" class="for-more-btn"
+                onclick="event.stopPropagation()">الوصفة</a>
+        </div>
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=binyebwa'">
+            <img src="/img/Binyebwa.jpg" alt="بينيبوا" class="foods-img">
+            <span class="name-foods">بينيبوا – Binyebwa</span>
+            <div class="food-info">يخنة الفول السوداني الغنية، تُقدم مع اللحم أو الأرز.</div>
+            <a href="/recipes/recipes.html?recipe=binyebwa" class="for-more-btn"
+                onclick="event.stopPropagation()">الوصفة</a>
+        </div>
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=muchomo'">
+            <img src="/img/Muchomo.jpg" alt="موتشومو" class="foods-img">
+            <span class="name-foods">موتشومو – Muchomo</span>
+            <div class="food-info">أسياخ لحم بقري أو ماعز مشوية على الفحم.</div>
+            <a href="/recipes/recipes.html?recipe=muchomo" class="for-more-btn"
+                onclick="event.stopPropagation()">الوصفة</a>
+        </div>
+    </section>
+
+    <div class="events-main">
+        <h1>الفعاليات</h1>
+    </div>
+    <section class="events-grid">
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=BwindiGorillaTrekkingUganda'">
+            <img src="/img/Bwindi Impenetrable Forest.jpg" alt="غابة بويندي غير المنفذة" class="event-img">
+            <span class="name-event">غابة بويندي – Bwindi Impenetrable Forest</span>
+            <div class="event-info">رحلات تتبع الغوريلا الجبلية النادرة في غابة كثيفة.</div>
+            <a href="/events/events.html?event=BwindiGorillaTrekkingUganda" class="event-btn"
+                onclick="event.stopPropagation()">اكتشف</a>
+        </div>
+
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=SourceOfNileJinjaUganda'">
+            <img src="/img/Source of the Nile.jpg" alt="منبع نهر النيل" class="event-img">
+            <span class="name-event">منبع نهر النيل – Source of the Nile</span>
+            <div class="event-info">النقطة التي ينبثق منها نهر النيل الأبيض من البحيرة.</div>
+            <a href="/events/events.html?event=SourceOfNileJinjaUganda" class="event-btn"
+                onclick="event.stopPropagation()">اكتشف</a>
+        </div>
+
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=MurchisonFallsUganda'">
+            <img src="/img/Murchison Falls.jpg" alt="شلالات مورشيسون" class="event-img">
+            <span class="name-event">شلالات مورشيسون – Murchison Falls</span>
+            <div class="event-info">شلال قوي يندفع عبر شق صخري ضيق بقوة هائلة.</div>
+            <a href="/events/events.html?event=MurchisonFallsUganda" class="event-btn"
+                onclick="event.stopPropagation()">اكتشف</a>
+        </div>
+
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=LakeVictoriaUganda'">
+            <img src="/img/Lake Victoria.jpg" alt="بحيرة فيكتوريا" class="event-img">
+            <span class="name-event">بحيرة فيكتوريا – Lake Victoria</span>
+            <div class="event-info">أكبر بحيرة استوائية في أفريقيا وموطن جزر عديدة.</div>
+            <a href="/events/events.html?event=LakeVictoriaUganda" class="event-btn"
+                onclick="event.stopPropagation()">اكتشف</a>
+        </div>
+
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=RwenzoriMountainsUganda'">
+            <img src="/img/Rwenzori Mountains.jpg" alt="جبال روينزوري" class="event-img">
+            <span class="name-event">جبال روينزوري – Rwenzori Mountains</span>
+            <div class="event-info">جبال ملقبة بجبال القمر بقممها الثلجية الاستوائية.</div>
+            <a href="/events/events.html?event=RwenzoriMountainsUganda" class="event-btn"
+                onclick="event.stopPropagation()">اكتشف</a>
+        </div>
+
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=QueenElizabethParkUganda'">
+            <img src="/img/Queen Elizabeth National Park.jpg" alt="حديقة الملكة إليزابيث الوطنية" class="event-img">
+            <span class="name-event">حديقة الملكة إليزابيث – Queen Elizabeth National Park</span>
+            <div class="event-info">محمية غنية بالأسود المتسلقة للأشجار والفيلة البرية.</div>
+            <a href="/events/events.html?event=QueenElizabethParkUganda" class="event-btn"
+                onclick="event.stopPropagation()">اكتشف</a>
+        </div>
+    </section>
+
+    <div id="cityModal" class="modal" onclick="closeCityModal(event)">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeCityModal(event)">×</button>
+            <div class="modal-top">
+                <img id="modalCityImg" src="" alt="" />
+                <div class="modal-top-info">
+                    <h2 id="modalCityName"></h2>
+                    <span class="modal-top-badge">✦ تفاصيل المدينة</span>
+                </div>
+            </div>
+            <div class="modal-body">
+                <p id="modalCityDesc" class="event-desc"></p>
+                <h4>🏛️ أفضل الأماكن التاريخية</h4>
+                <div id="modalCityHistoric" class="ingredients-tags"></div>
+                <h4>🍽️ أفضل المطاعم</h4>
+                <div id="modalCityRestaurants" class="ingredients-tags"></div>
+                <h4>☕ أفضل المقاهي</h4>
+                <div id="modalCityCafes" class="ingredients-tags"></div>
+                <h4>🎉 فعاليات المدينة</h4>
+                <div id="modalCityEvents" class="ingredients-tags"></div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h2 class="footer-logo">سفرة</h2>
+                <p>وجهتك للسفر والطعام حول العالم</p>
+            </div>
+            <div class="footer-links">
+                <h4>روابط سريعة</h4>
+                <ul>
+                    <li><a href="/index/index.html">الرئيسية</a></li>
+                    <li><a href="/countries/countries.html">الدول</a></li>
+                    <li><a href="/events/events.html">الفعاليات</a></li>
+                    <li><a href="/recipes/recipes.html">الوصفات</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>تواصل معنا</h4>
+                <ul>
+                    <li>📧 <a href="mailto:Sofrh.info@gmail.com" target="_blank">Sofrh.info@gmail.com</a></li>
+                    <li>📧 <a href="mailto:Sofrh.support@gmail.com" target="_blank">Sofrh.support@gmail.com</a></li>
+                    <li>🐦 <a href="https://twitter.com/sofrah_sa" target="_blank">X (Twitter)</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 سفرة — جميع الحقوق محفوظة</p>
+            <p>صُنع بواسطة فريق شفرة</p>
+            <p>📧 <a href="mailto:Sofrh.info@gmail.com" style="color: #D2A673;">Sofrh.info@gmail.com</a></p>
+        </div>
+    </footer>
+
+    <script src="/countries/countries.js"></script>
+    <script src="/auth/auth.js"></script>
+</body>
+
+</html>

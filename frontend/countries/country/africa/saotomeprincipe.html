@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سفرة</title>
+    <link rel="stylesheet" href="/countries/countries.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@500;600&display=swap');
+    </style>
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="hamburger" id="menu-btn">☰</div>
+        <div class="auth-buttons" id="authButtons">
+            <a href="/auth/login.html" class="login">تسجيل دخول</a>
+            <a href="/auth/signup.html" class="signup">إنشاء حساب</a>
+        </div>
+        <div class="user-menu" id="userMenu">
+            <img id="userAvatar" src="/img/avater-icon.jpeg" alt="المستخدم">
+            <span class="user-name" id="userName"></span>
+            <div class="user-dropdown">
+                <a href="/profile/profile.html">الملف الشخصي</a>
+                <a href="/index/index.html" id="logoutBtn">تسجيل الخروج</a>
+            </div>
+        </div>
+        <ul class="nav-list">
+            <li><a href="/index/index.html">الرئيسية</a></li>
+            <li><a href="/countries/countries.html">الدول</a></li>
+            <li><a href="/events/events.html">الفعاليات</a></li>
+            <li><a href="/recipes/recipes.html">الوصفات</a></li>
+            <li><a href="/plan/plan.html" class="active">خطتي</a></li>
+        </ul>
+        <div class="logo">
+            <a href="/index/index.html"><img src="/img/logo3.JPG" alt="سفرة"></a>
+        </div>
+    </header>
+
+    <nav class="side-menu" id="side-menu">
+        <span class="close-btn" id="close-btn">✖</span>
+        <span class="side-menu-kicker">استكشف</span>
+        <ul>
+            <li><a href="/index/index.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M3 11.5 12 4l9 7.5" />
+                        <path
+                            d="M5.5 10v9a1 1 0 0 0 1 1H9a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h2.5a1 1 0 0 0 1-1v-9" />
+                    </svg>
+                    <span>الرئيسية</span>
+                </a></li>
+            <li><a href="/countries/countries.html" class="active">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M12 21s7-6.6 7-12a7 7 0 1 0-14 0c0 5.4 7 12 7 12Z" />
+                        <circle cx="12" cy="9" r="2.3" />
+                    </svg>
+                    <span>الدول</span>
+                </a></li>
+            <li><a href="/events/events.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <rect x="3.5" y="5" width="17" height="16" rx="2.5" />
+                        <path d="M8 3v4M16 3v4M3.5 10h17" />
+                        <circle cx="12" cy="15" r="1.4" fill="currentColor" stroke="none" />
+                    </svg>
+                    <span>الفعاليات</span>
+                </a></li>
+            <li><a href="/recipes/recipes.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M7 2v8a2 2 0 0 0 2 2v10M5 2v6M9 2v6M14 2c-1.5 2-1.5 7 0 9 .6.6 1 1.3 1 2v9" />
+                    </svg>
+                    <span>الوصفات</span>
+                </a></li>
+            <li><a href="/plan/plan.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="9" />
+                        <path d="M14.8 9.2 13 13l-3.8 1.8L11 11l3.8-1.8Z" />
+                    </svg>
+                    <span>خطتي</span>
+                </a></li>
+        </ul>
+    </nav>
+
+    <div class="country-name">
+        <h1>ساو تومي وبرينسيب</h1>
+        <p>جزر استوائية ساحرة عند خط الاستواء في قلب المحيط الأطلسي.</p>
+    </div>
+
+    <div class="main-cites">
+        <h1>المدن</h1>
+    </div>
+    <section class="cities-grid">
+
+        <div class="cite" data-name="ساو تومي – São Tomé" data-img="/img/Sao Tome City.jpg"
+            data-desc="عاصمة الأرخبيل الساحلية الصغيرة، مدينة استوائية هادئة تجمع بين العمارة البرتغالية الاستعمارية والشواطئ الذهبية وأشجار الكاكاو المحيطة."
+            data-historic="🏰 قلعة ساو سيباستيان – Fort São Sebastião | ⛪ كاتدرائية ساو تومي – São Tomé Cathedral | 🛍️ سوق السمك المحلي – Central Fish Market | 🌴 حديقة القصر الرئاسي – Presidential Palace Gardens"
+            data-restaurants="🍖 مطعم روزا نيغرا – Rosa Negra | 🌿 مطعم بيم كويدادو – Bem Cuidado | 🥘 مطعم أس فاراندس – As Varandas"
+            data-cafes="☕ مقهى أوسيانيكو – Café Oceânico | ☕ مقهى بيرا مار – Beira Mar Cafe"
+            data-events="🏰 قلعة ساو سيباستيان | ⛪ كاتدرائية ساو تومي | 🛍️ سوق السمك المحلي" onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'saotomeprincipe_sao-tome', 'ساو تومي – São Tomé', '/img/Sao Tome City.jpg')">🏙️</button>
+            <img src="/img/Sao Tome City.jpg" alt="ساو تومي" class="cite-img">
+            <span class="name">ساو تومي – São Tomé</span>
+            <p class="info">عاصمة استوائية بعمارة برتغالية وشواطئ ذهبية.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+        <div class="cite" data-name="سانتو أنطونيو – Santo António" data-img="/img/Santo Antonio Principe.jpg"
+            data-desc="عاصمة جزيرة برينسيب الصغيرة، بلدة استوائية هادئة محاطة بغابات كثيفة نادرة ومحمية حيوية عالمياً من اليونسكو."
+            data-historic="⛪ كنيسة سانتو أنطونيو – Santo António Church | 🌴 محمية أوبو الطبيعية – Príncipe Obô Natural Park | 🏝️ شاطئ بانانا – Banana Beach"
+            data-restaurants="🍖 مطعم روسا سوندي – Roça Sundy Restaurant"
+            data-cafes="☕ مقهى برينسيب – Príncipe Cafe"
+            data-events="⛪ كنيسة سانتو أنطونيو | 🌴 محمية أوبو | 🏝️ شاطئ بانانا" onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'saotomeprincipe_santo-antonio', 'سانتو أنطونيو – Santo António', '/img/Santo Antonio Principe.jpg')">🏙️</button>
+            <img src="/img/Santo Antonio Principe.jpg" alt="سانتو أنطونيو" class="cite-img">
+            <span class="name">سانتو أنطونيو – Santo António</span>
+            <p class="info">عاصمة جزيرة برينسيب الاستوائية النائية.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+        <div class="cite" data-name="نيفيش – Neves" data-img="/img/Neves Sao Tome.jpg"
+            data-desc="بلدة ساحلية شمالية غربية تحيط بها مزارع الكاكاو التاريخية، وتشتهر بمناظرها الجبلية الخضراء المطلة على المحيط الأطلسي."
+            data-historic="🌱 روسا مونتي كافي – Roça Monte Café | 🏞️ سفوح كاو غراندي – Cão Grande Foothills | 🏝️ شاطئ نيفيش – Neves Beach"
+            data-restaurants="🍖 مطعم نيفيش – Neves Restaurant"
+            data-cafes="☕ مقهى الكاكاو – Cacao Cafe"
+            data-events="🌱 روسا مونتي كافي | 🏞️ سفوح كاو غراندي | 🏝️ شاطئ نيفيش" onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'saotomeprincipe_neves', 'نيفيش – Neves', '/img/Neves Sao Tome.jpg')">🏙️</button>
+            <img src="/img/Neves Sao Tome.jpg" alt="نيفيش" class="cite-img">
+            <span class="name">نيفيش – Neves</span>
+            <p class="info">بلدة مزارع الكاكاو التاريخية الساحلية.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+        <div class="cite" data-name="ترينداد – Trindade" data-img="/img/Trindade Sao Tome.jpg"
+            data-desc="بلدة داخلية جبلية قريبة من العاصمة، بوابة رئيسية لاستكشاف الغابات المطيرة الاستوائية وقمم جزيرة ساو تومي الشاهقة."
+            data-historic="⛰️ قمة بيكو كاو غراندي – Pico Cão Grande | 🥾 مسارات الغابة المطيرة – Rainforest Trails"
+            data-restaurants="🍖 مطعم ترينداد – Trindade Restaurant"
+            data-cafes="☕ مقهى الجبل – Mountain Cafe"
+            data-events="⛰️ قمة بيكو كاو غراندي | 🥾 مسارات الغابة المطيرة" onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'saotomeprincipe_trindade', 'ترينداد – Trindade', '/img/Trindade Sao Tome.jpg')">🏙️</button>
+            <img src="/img/Trindade Sao Tome.jpg" alt="ترينداد" class="cite-img">
+            <span class="name">ترينداد – Trindade</span>
+            <p class="info">بوابة استكشاف قمم الجزيرة والغابات المطيرة.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+        <div class="cite" data-name="سانتانا – Santana" data-img="/img/Santana Sao Tome.jpg"
+            data-desc="قرية صيد ساحلية هادئة على الساحل الشرقي، تشتهر بقواربها التقليدية الملونة وشواطئها الرملية الهادئة المطلة على المحيط."
+            data-historic="🎣 ميناء الصيادين – Santana Fishing Port | 🏝️ شاطئ سانتانا – Santana Beach"
+            data-restaurants="🍖 مطعم بلاف – Blaff Restaurant"
+            data-cafes="☕ مقهى الصيادين – Fishermen's Cafe"
+            data-events="🎣 ميناء الصيادين | 🏝️ شاطئ سانتانا" onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'saotomeprincipe_santana', 'سانتانا – Santana', '/img/Santana Sao Tome.jpg')">🏙️</button>
+            <img src="/img/Santana Sao Tome.jpg" alt="سانتانا" class="cite-img">
+            <span class="name">سانتانا – Santana</span>
+            <p class="info">قرية صيد تقليدية بقوارب ملونة وشواطئ هادئة.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+        <div class="cite" data-name="غوادالوپي – Guadalupe" data-img="/img/Guadalupe Sao Tome.jpg"
+            data-desc="بلدة زراعية شمالية هادئة محاطة بمزارع الكاكاو والقهوة، تجمع بين الحياة الريفية البسيطة والطبيعة الاستوائية الخضراء."
+            data-historic="🌱 روسا أغوا إيزيه – Roça Água Izé | 🏞️ حقول الكاكاو – Cocoa Fields"
+            data-restaurants="🍖 مطعم غوادالوپي – Guadalupe Restaurant"
+            data-cafes="☕ مقهى الريف – Countryside Cafe"
+            data-events="🌱 روسا أغوا إيزيه | 🏞️ حقول الكاكاو" onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'saotomeprincipe_guadalupe', 'غوادالوپي – Guadalupe', '/img/Guadalupe Sao Tome.jpg')">🏙️</button>
+            <img src="/img/Guadalupe Sao Tome.jpg" alt="غوادالوپي" class="cite-img">
+            <span class="name">غوادالوپي – Guadalupe</span>
+            <p class="info">بلدة زراعية بمزارع الكاكاو والقهوة الخضراء.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+    </section>
+
+    <div class="main-foods">
+        <h1>الماكولات</h1>
+    </div>
+    <section class="foods-grid">
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=calulu'">
+            <img src="/img/Calulu.jpg" alt="كالولو" class="foods-img">
+            <span class="name-foods">كالولو – Calulu</span>
+            <div class="food-info">يخنة سمك وخضار تقليدية أساس المطبخ المحلي.</div>
+            <a href="/recipes/recipes.html?recipe=calulu" class="for-more-btn"
+                onclick="event.stopPropagation()">الوصفة</a>
+        </div>
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=arroz-de-coco'">
+            <img src="/img/Arroz de Coco.jpg" alt="أرز جوز الهند" class="foods-img">
+            <span class="name-foods">أرز جوز الهند – Arroz de Coco</span>
+            <div class="food-info">أرز مطهو بحليب جوز الهند الطازج.</div>
+            <a href="/recipes/recipes.html?recipe=arroz-de-coco" class="for-more-btn"
+                onclick="event.stopPropagation()">الوصفة</a>
+        </div>
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=blaff-de-peixe'">
+            <img src="/img/Blaff de Peixe.jpg" alt="بلاف السمك" class="foods-img">
+            <span class="name-foods">بلاف السمك – Blaff de Peixe</span>
+            <div class="food-info">سمك مطهو بصلصة الليمون والفلفل الحار.</div>
+            <a href="/recipes/recipes.html?recipe=blaff-de-peixe" class="for-more-btn"
+                onclick="event.stopPropagation()">الوصفة</a>
+        </div>
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=banana-frita'">
+            <img src="/img/Banana Frita.jpg" alt="موز مقلي" class="foods-img">
+            <span class="name-foods">موز مقلي – Banana Frita</span>
+            <div class="food-info">شرائح موز مقلية ذهبية تُقدم كطبق جانبي.</div>
+            <a href="/recipes/recipes.html?recipe=banana-frita" class="for-more-btn"
+                onclick="event.stopPropagation()">الوصفة</a>
+        </div>
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=feijao-oleo-palma'">
+            <img src="/img/Feijao Oleo Palma.jpg" alt="فاصولياء بزيت النخيل" class="foods-img">
+            <span class="name-foods">فاصولياء بزيت النخيل – Feijão com Óleo de Palma</span>
+            <div class="food-info">فاصولياء مطهوة بزيت النخيل الأحمر الغني.</div>
+            <a href="/recipes/recipes.html?recipe=feijao-oleo-palma" class="for-more-btn"
+                onclick="event.stopPropagation()">الوصفة</a>
+        </div>
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=bolo-fruta-pao'">
+            <img src="/img/Bolo Fruta Pao.jpg" alt="كعكة فاكهة الخبز" class="foods-img">
+            <span class="name-foods">كعكة فاكهة الخبز – Bolo de Fruta-pão</span>
+            <div class="food-info">كعكة حلوة من فاكهة الخبز الاستوائية.</div>
+            <a href="/recipes/recipes.html?recipe=bolo-fruta-pao" class="for-more-btn"
+                onclick="event.stopPropagation()">الوصفة</a>
+        </div>
+    </section>
+
+    <div class="events-main">
+        <h1>الفعاليات</h1>
+    </div>
+    <section class="events-grid">
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=PicoCaoGrandeSaoTome'">
+            <img src="/img/Pico Cao Grande.jpg" alt="قمة بيكو كاو غراندي" class="event-img">
+            <span class="name-event">قمة بيكو كاو غراندي – Pico Cão Grande</span>
+            <div class="event-info">عمود صخري بركاني شاهق يخترق الغابة المطيرة.</div>
+            <a href="/events/events.html?event=PicoCaoGrandeSaoTome" class="event-btn"
+                onclick="event.stopPropagation()">اكتشف</a>
+        </div>
+
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=OboParkSaoTome'">
+            <img src="/img/Obo Natural Park.jpg" alt="محمية أوبو الطبيعية" class="event-img">
+            <span class="name-event">محمية أوبو الطبيعية – Obô Natural Park</span>
+            <div class="event-info">محمية غابات مطيرة نادرة تغطي معظم الأرخبيل.</div>
+            <a href="/events/events.html?event=OboParkSaoTome" class="event-btn"
+                onclick="event.stopPropagation()">اكتشف</a>
+        </div>
+
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=BocaDoInfernoSaoTome'">
+            <img src="/img/Boca do Inferno.jpg" alt="بوكا دو إنفيرنو" class="event-img">
+            <span class="name-event">بوكا دو إنفيرنو – Boca do Inferno</span>
+            <div class="event-info">فوهة بحرية صخرية تقذف المياه بقوة مذهلة.</div>
+            <a href="/events/events.html?event=BocaDoInfernoSaoTome" class="event-btn"
+                onclick="event.stopPropagation()">اكتشف</a>
+        </div>
+
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=LagoaAzulSaoTome'">
+            <img src="/img/Lagoa Azul.jpg" alt="لاغوا آزول" class="event-img">
+            <span class="name-event">لاغوا آزول – Lagoa Azul</span>
+            <div class="event-info">بحيرة بحرية زرقاء صافية مثالية للسباحة والغطس.</div>
+            <a href="/events/events.html?event=LagoaAzulSaoTome" class="event-btn"
+                onclick="event.stopPropagation()">اكتشف</a>
+        </div>
+
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=IlheuRolasSaoTome'">
+            <img src="/img/Ilheu das Rolas.jpg" alt="جزيرة رولاس" class="event-img">
+            <span class="name-event">جزيرة رولاس – Ilhéu das Rolas</span>
+            <div class="event-info">جزيرة صغيرة يمر خط الاستواء عبر شواطئها مباشرة.</div>
+            <a href="/events/events.html?event=IlheuRolasSaoTome" class="event-btn"
+                onclick="event.stopPropagation()">اكتشف</a>
+        </div>
+
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=RocaSaoJoaoSaoTome'">
+            <img src="/img/Roca Sao Joao.jpg" alt="روسا ساو جواو دوس أنغولاريس" class="event-img">
+            <span class="name-event">روسا ساو جواو دوس أنغولاريس – Roça São João dos Angolares</span>
+            <div class="event-info">مزرعة كاكاو استعمارية تاريخية محولة لمتحف ثقافي.</div>
+            <a href="/events/events.html?event=RocaSaoJoaoSaoTome" class="event-btn"
+                onclick="event.stopPropagation()">اكتشف</a>
+        </div>
+    </section>
+
+    <div id="cityModal" class="modal" onclick="closeCityModal(event)">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeCityModal(event)">×</button>
+            <div class="modal-top">
+                <img id="modalCityImg" src="" alt="" />
+                <div class="modal-top-info">
+                    <h2 id="modalCityName"></h2>
+                    <span class="modal-top-badge">✦ تفاصيل المدينة</span>
+                </div>
+            </div>
+            <div class="modal-body">
+                <p id="modalCityDesc" class="event-desc"></p>
+                <h4>🏛️ أفضل الأماكن التاريخية</h4>
+                <div id="modalCityHistoric" class="ingredients-tags"></div>
+                <h4>🍽️ أفضل المطاعم</h4>
+                <div id="modalCityRestaurants" class="ingredients-tags"></div>
+                <h4>☕ أفضل المقاهي</h4>
+                <div id="modalCityCafes" class="ingredients-tags"></div>
+                <h4>🎉 فعاليات المدينة</h4>
+                <div id="modalCityEvents" class="ingredients-tags"></div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h2 class="footer-logo">سفرة</h2>
+                <p>وجهتك للسفر والطعام حول العالم</p>
+            </div>
+            <div class="footer-links">
+                <h4>روابط سريعة</h4>
+                <ul>
+                    <li><a href="/index/index.html">الرئيسية</a></li>
+                    <li><a href="/countries/countries.html">الدول</a></li>
+                    <li><a href="/events/events.html">الفعاليات</a></li>
+                    <li><a href="/recipes/recipes.html">الوصفات</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>تواصل معنا</h4>
+                <ul>
+                    <li>📧 <a href="mailto:Sofrh.info@gmail.com" target="_blank">Sofrh.info@gmail.com</a></li>
+                    <li>📧 <a href="mailto:Sofrh.support@gmail.com" target="_blank">Sofrh.support@gmail.com</a></li>
+                    <li>🐦 <a href="https://twitter.com/sofrah_sa" target="_blank">X (Twitter)</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 سفرة — جميع الحقوق محفوظة</p>
+            <p>صُنع بواسطة فريق شفرة</p>
+            <p>📧 <a href="mailto:Sofrh.info@gmail.com" style="color: #D2A673;">Sofrh.info@gmail.com</a></p>
+        </div>
+    </footer>
+
+    <script src="/countries/countries.js"></script>
+    <script src="/auth/auth.js"></script>
+</body>
+
+</html>

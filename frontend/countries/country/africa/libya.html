@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سفرة</title>
+    <link rel="stylesheet" href="/countries/countries.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@500;600&display=swap');
+    </style>
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="hamburger" id="menu-btn">☰</div>
+        <div class="auth-buttons" id="authButtons">
+            <a href="/auth/login.html" class="login">تسجيل دخول</a>
+            <a href="/auth/signup.html" class="signup">إنشاء حساب</a>
+        </div>
+        <div class="user-menu" id="userMenu">
+            <img id="userAvatar" src="/img/avater-icon.jpeg" alt="المستخدم">
+            <span class="user-name" id="userName"></span>
+            <div class="user-dropdown">
+                <a href="/profile/profile.html">الملف الشخصي</a>
+                <a href="/index/index.html" id="logoutBtn">تسجيل الخروج</a>
+            </div>
+        </div>
+        <ul class="nav-list">
+            <li><a href="/index/index.html">الرئيسية</a></li>
+            <li><a href="/countries/countries.html">الدول</a></li>
+            <li><a href="/events/events.html">الفعاليات</a></li>
+            <li><a href="/recipes/recipes.html">الوصفات</a></li>
+            <li><a href="/plan/plan.html" class="active">خطتي</a></li>
+        </ul>
+        <div class="logo">
+            <a href="/index/index.html"><img src="/img/logo3.JPG" alt="سفرة"></a>
+        </div>
+    </header>
+
+    <nav class="side-menu" id="side-menu">
+        <span class="close-btn" id="close-btn">✖</span>
+        <span class="side-menu-kicker">استكشف</span>
+        <ul>
+            <li><a href="/index/index.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M3 11.5 12 4l9 7.5" />
+                        <path
+                            d="M5.5 10v9a1 1 0 0 0 1 1H9a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h2.5a1 1 0 0 0 1-1v-9" />
+                    </svg>
+                    <span>الرئيسية</span>
+                </a></li>
+            <li><a href="/countries/countries.html" class="active">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M12 21s7-6.6 7-12a7 7 0 1 0-14 0c0 5.4 7 12 7 12Z" />
+                        <circle cx="12" cy="9" r="2.3" />
+                    </svg>
+                    <span>الدول</span>
+                </a></li>
+            <li><a href="/events/events.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <rect x="3.5" y="5" width="17" height="16" rx="2.5" />
+                        <path d="M8 3v4M16 3v4M3.5 10h17" />
+                        <circle cx="12" cy="15" r="1.4" fill="currentColor" stroke="none" />
+                    </svg>
+                    <span>الفعاليات</span>
+                </a></li>
+            <li><a href="/recipes/recipes.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M7 2v8a2 2 0 0 0 2 2v10M5 2v6M9 2v6M14 2c-1.5 2-1.5 7 0 9 .6.6 1 1.3 1 2v9" />
+                    </svg>
+                    <span>الوصفات</span>
+                </a></li>
+            <li><a href="/plan/plan.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="9" />
+                        <path d="M14.8 9.2 13 13l-3.8 1.8L11 11l3.8-1.8Z" />
+                    </svg>
+                    <span>خطتي</span>
+                </a></li>
+        </ul>
+    </nav>
+
+    <div class="country-name">
+        <h1>ليبيا</h1>
+        <p>أرض الآثار الرومانية العريقة وسواحل المتوسط الزرقاء ورمال الصحراء الذهبية الممتدة.</p>
+    </div>
+
+    <div class="main-cites">
+        <h1>المدن</h1>
+    </div>
+    <section class="cities-grid">
+
+        <div class="cite" data-name="طرابلس – Tripoli" data-img="/img/Tripoli.jpg"
+            data-desc="عاصمة ليبيا الساحلية على البحر المتوسط، مدينة عريقة تجمع بين البلدة القديمة العثمانية والقصور الرومانية والأسواق الصاخبة."
+            data-historic="🏰 قصر السرايا الحمراء – Red Castle Museum | 🕌 جامع أحمد باشا القره مانلي – Ahmad Pasha Karamanli Mosque | 🛍️ سوق طرابلس القديم – Old Tripoli Market"
+            data-restaurants="🍖 مطعم الأصالة – Al Asala Restaurant | 🌿 مطعم البحر الأزرق – Blue Sea Restaurant"
+            data-cafes="☕ مقهى المدينة القديمة – Old Medina Cafe"
+            data-events="🏰 قصر السرايا الحمراء | 🕌 جامع أحمد باشا القره مانلي | 🛍️ سوق طرابلس القديم" onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'libya_tripoli', 'طرابلس – Tripoli', '/img/Tripoli.jpg')">🏙️</button>
+            <img src="/img/Tripoli.jpg" alt="طرابلس" class="cite-img">
+            <span class="name">طرابلس – Tripoli</span>
+            <p class="info">العاصمة الساحلية بأسواقها العثمانية العريقة.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+        <div class="cite" data-name="بنغازي – Benghazi" data-img="/img/Benghazi.jpg"
+            data-desc="ثاني أكبر مدن ليبيا على ساحل المتوسط الشرقي، مركز ثقافي وتجاري يشتهر بكورنيشه الساحلي وأسواقه التقليدية."
+            data-historic="🏛️ متحف بنغازي – Benghazi Museum | 🕌 جامع عثمان باشا – Uthman Pasha Mosque | 🛍️ سوق الحشان – Al Hashan Market"
+            data-restaurants="🍖 مطعم الكورنيش – Corniche Restaurant | 🌿 مطعم بنغازي القديم – Old Benghazi Restaurant"
+            data-cafes="☕ مقهى الكورنيش – Corniche Cafe"
+            data-events="🏛️ متحف بنغازي | 🕌 جامع عثمان باشا | 🛍️ سوق الحشان" onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'libya_benghazi', 'بنغازي – Benghazi', '/img/Benghazi.jpg')">🏙️</button>
+            <img src="/img/Benghazi.jpg" alt="بنغازي" class="cite-img">
+            <span class="name">بنغازي – Benghazi</span>
+            <p class="info">مدينة ساحلية بكورنيش وأسواق عريقة.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+        <div class="cite" data-name="مصراتة – Misrata" data-img="/img/Misrata.jpg"
+            data-desc="مدينة ساحلية صناعية وتجارية نشطة، تشتهر بميناءها الكبير ومصانعها الحديثة وأسواقها التقليدية العامرة."
+            data-historic="🕌 جامع مصراتة الكبير – Great Mosque of Misrata | 🛍️ سوق مصراتة القديم – Old Misrata Market"
+            data-restaurants="🍖 مطعم بحر مصراتة – Misrata Sea Restaurant"
+            data-cafes="☕ مقهى الميناء – Port Cafe"
+            data-events="🕌 جامع مصراتة الكبير | 🛍️ سوق مصراتة القديم" onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'libya_misrata', 'مصراتة – Misrata', '/img/Misrata.jpg')">🏙️</button>
+            <img src="/img/Misrata.jpg" alt="مصراتة" class="cite-img">
+            <span class="name">مصراتة – Misrata</span>
+            <p class="info">مدينة صناعية بميناء تجاري نشط.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+        <div class="cite" data-name="غدامس – Ghadames" data-img="/img/Ghadames.jpg"
+            data-desc="بلدة صحراوية قديمة مدرجة في التراث العالمي لليونسكو، تعرف بواحتها الغناء وبيوتها الطينية المتشابكة المكيفة طبيعياً."
+            data-historic="🏛️ البلدة القديمة – Old Town of Ghadames | 🌴 واحة غدامس – Ghadames Oasis | 🛍️ سوق غدامس – Ghadames Market"
+            data-restaurants="🍖 مطعم الواحة الصحراوي – Oasis Desert Restaurant"
+            data-cafes="☕ مقهى غدامس القديم – Old Ghadames Cafe"
+            data-events="🏛️ البلدة القديمة | 🌴 واحة غدامس | 🛍️ سوق غدامس" onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'libya_ghadames', 'غدامس – Ghadames', '/img/Ghadames.jpg')">🏙️</button>
+            <img src="/img/Ghadames.jpg" alt="غدامس" class="cite-img">
+            <span class="name">غدامس – Ghadames</span>
+            <p class="info">بلدة صحراوية طينية مدرجة عالمياً.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+        <div class="cite" data-name="سبها – Sabha" data-img="/img/Sabha.jpg"
+            data-desc="عاصمة الجنوب الليبي وبوابة الصحراء الكبرى، مدينة واحية تجمع بين قوافل التجارة القديمة والمناظر الصحراوية الشاسعة."
+            data-historic="🏰 قلعة سبها – Sabha Castle | 🌴 واحات سبها – Sabha Oases"
+            data-restaurants="🍖 مطعم الصحراء الكبرى – Sahara Restaurant"
+            data-cafes="☕ مقهى سبها – Sabha Cafe"
+            data-events="🏰 قلعة سبها | 🌴 واحات سبها" onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'libya_sabha', 'سبها – Sabha', '/img/Sabha.jpg')">🏙️</button>
+            <img src="/img/Sabha.jpg" alt="سبها" class="cite-img">
+            <span class="name">سبها – Sabha</span>
+            <p class="info">بوابة الصحراء الكبرى الجنوبية.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+        <div class="cite" data-name="طبرق – Tobruk" data-img="/img/Tobruk.jpg"
+            data-desc="مدينة ساحلية شرقية على خليج طبيعي عميق، تشتهر بشواطئها الصافية وتاريخها العسكري خلال الحرب العالمية الثانية."
+            data-historic="🌊 خليج طبرق – Tobruk Bay | ⚔️ مقابر الحرب العالمية الثانية – WWII War Cemeteries"
+            data-restaurants="🍖 مطعم الخليج – Bay Restaurant"
+            data-cafes="☕ مقهى طبرق – Tobruk Cafe"
+            data-events="🌊 خليج طبرق | ⚔️ مقابر الحرب العالمية" onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'libya_tobruk', 'طبرق – Tobruk', '/img/Tobruk.jpg')">🏙️</button>
+            <img src="/img/Tobruk.jpg" alt="طبرق" class="cite-img">
+            <span class="name">طبرق – Tobruk</span>
+            <p class="info">خليج طبيعي عميق وتاريخ عسكري.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+    </section>
+
+    <div class="main-foods">
+        <h1>الماكولات</h1>
+    </div>
+    <section class="foods-grid">
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=bazin-libya'">
+            <img src="/img/Bazin.jpg" alt="بازين" class="foods-img">
+            <span class="name-foods">بازين – Bazin</span>
+            <div class="food-info">عجينة الشعير المطبوخة تقدم مع صلصة اللحم والبيض.</div>
+            <a href="/recipes/recipes.html?recipe=bazin-libya" class="for-more-btn"
+                onclick="event.stopPropagation()">الوصفة</a>
+        </div>
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=couscous-libi-libya'">
+            <img src="/img/Couscous Libi.jpg" alt="كسكسي ليبي" class="foods-img">
+            <span class="name-foods">كسكسي ليبي – Couscous Libi</span>
+            <div class="food-info">كسكسي بصلصة اللحم والخضار الغنية بالتوابل الليبية.</div>
+            <a href="/recipes/recipes.html?recipe=couscous-libi-libya" class="for-more-btn"
+                onclick="event.stopPropagation()">الوصفة</a>
+        </div>
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=sharba-libiya-libya'">
+            <img src="/img/Sharba Libiya.jpg" alt="شوربة ليبية" class="foods-img">
+            <span class="name-foods">شوربة ليبية – Sharba Libiya</span>
+            <div class="food-info">شوربة حارة بالطماطم واللحم والنعناع المجفف.</div>
+            <a href="/recipes/recipes.html?recipe=sharba-libiya-libya" class="for-more-btn"
+                onclick="event.stopPropagation()">الوصفة</a>
+        </div>
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=asida-libya'">
+            <img src="/img/Asida.jpg" alt="عصيدة" class="foods-img">
+            <span class="name-foods">عصيدة – Asida</span>
+            <div class="food-info">عجينة دقيق ناعمة تقدم مع السمن والعسل.</div>
+            <a href="/recipes/recipes.html?recipe=asida-libya" class="for-more-btn"
+                onclick="event.stopPropagation()">الوصفة</a>
+        </div>
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=mbakbaka-libya'">
+            <img src="/img/Mbakbaka.jpg" alt="مبكبكة" class="foods-img">
+            <span class="name-foods">مبكبكة – Mbakbaka</span>
+            <div class="food-info">معكرونة مطبوخة بصلصة اللحم الحارة والحمص.</div>
+            <a href="/recipes/recipes.html?recipe=mbakbaka-libya" class="for-more-btn"
+                onclick="event.stopPropagation()">الوصفة</a>
+        </div>
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=usban-libya'">
+            <img src="/img/Usban.jpg" alt="أسبان" class="foods-img">
+            <span class="name-foods">أسبان – Usban</span>
+            <div class="food-info">أمعاء محشوة بالأرز واللحم والتوابل، طبق احتفالي.</div>
+            <a href="/recipes/recipes.html?recipe=usban-libya" class="for-more-btn"
+                onclick="event.stopPropagation()">الوصفة</a>
+        </div>
+    </section>
+
+    <div class="events-main">
+        <h1>الفعاليات</h1>
+    </div>
+    <section class="events-grid">
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=LeptisMagnaLibya'">
+            <img src="/img/Leptis Magna.jpg" alt="لبدة الكبرى" class="event-img">
+            <span class="name-event">لبدة الكبرى – Leptis Magna</span>
+            <div class="event-info">أطلال رومانية شاسعة مدرجة في التراث العالمي.</div>
+            <a href="/events/events.html?event=LeptisMagnaLibya" class="event-btn"
+                onclick="event.stopPropagation()">اكتشف</a>
+        </div>
+
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=SabrathaRuinsLibya'">
+            <img src="/img/Sabratha Ruins.jpg" alt="آثار صبراتة" class="event-img">
+            <span class="name-event">آثار صبراتة – Sabratha Ruins</span>
+            <div class="event-info">مدينة أثرية فينيقية رومانية على شاطئ المتوسط.</div>
+            <a href="/events/events.html?event=SabrathaRuinsLibya" class="event-btn"
+                onclick="event.stopPropagation()">اكتشف</a>
+        </div>
+
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=GhadamesOldTownLibya'">
+            <img src="/img/Ghadames Old Town.jpg" alt="بلدة غدامس القديمة" class="event-img">
+            <span class="name-event">بلدة غدامس القديمة – Ghadames Old Town</span>
+            <div class="event-info">مدينة صحراوية طينية فريدة مدرجة عالمياً.</div>
+            <a href="/events/events.html?event=GhadamesOldTownLibya" class="event-btn"
+                onclick="event.stopPropagation()">اكتشف</a>
+        </div>
+
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=AcacusMountainsLibya'">
+            <img src="/img/Acacus Mountains.jpg" alt="جبال أكاكوس" class="event-img">
+            <span class="name-event">جبال أكاكوس – Acacus Mountains</span>
+            <div class="event-info">فنون صخرية قديمة ومناظر صحراوية أخاذة.</div>
+            <a href="/events/events.html?event=AcacusMountainsLibya" class="event-btn"
+                onclick="event.stopPropagation()">اكتشف</a>
+        </div>
+
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=RedCastleMuseumLibya'">
+            <img src="/img/Red Castle Museum.jpg" alt="متحف السرايا الحمراء" class="event-img">
+            <span class="name-event">متحف السرايا الحمراء – Red Castle Museum</span>
+            <div class="event-info">قلعة تاريخية تضم كنوز التاريخ الليبي.</div>
+            <a href="/events/events.html?event=RedCastleMuseumLibya" class="event-btn"
+                onclick="event.stopPropagation()">اكتشف</a>
+        </div>
+
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=WawAnNamusLibya'">
+            <img src="/img/Waw an Namus.jpg" alt="واو النموس" class="event-img">
+            <span class="name-event">واو النموس – Waw an Namus</span>
+            <div class="event-info">فوهة بركانية نائية بثلاث بحيرات ملونة في الصحراء.</div>
+            <a href="/events/events.html?event=WawAnNamusLibya" class="event-btn"
+                onclick="event.stopPropagation()">اكتشف</a>
+        </div>
+    </section>
+
+    <div id="cityModal" class="modal" onclick="closeCityModal(event)">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeCityModal(event)">×</button>
+            <div class="modal-top">
+                <img id="modalCityImg" src="" alt="" />
+                <div class="modal-top-info">
+                    <h2 id="modalCityName"></h2>
+                    <span class="modal-top-badge">✦ تفاصيل المدينة</span>
+                </div>
+            </div>
+            <div class="modal-body">
+                <p id="modalCityDesc" class="event-desc"></p>
+                <h4>🏛️ أفضل الأماكن التاريخية</h4>
+                <div id="modalCityHistoric" class="ingredients-tags"></div>
+                <h4>🍽️ أفضل المطاعم</h4>
+                <div id="modalCityRestaurants" class="ingredients-tags"></div>
+                <h4>☕ أفضل المقاهي</h4>
+                <div id="modalCityCafes" class="ingredients-tags"></div>
+                <h4>🎉 فعاليات المدينة</h4>
+                <div id="modalCityEvents" class="ingredients-tags"></div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h2 class="footer-logo">سفرة</h2>
+                <p>وجهتك للسفر والطعام حول العالم</p>
+            </div>
+            <div class="footer-links">
+                <h4>روابط سريعة</h4>
+                <ul>
+                    <li><a href="/index/index.html">الرئيسية</a></li>
+                    <li><a href="/countries/countries.html">الدول</a></li>
+                    <li><a href="/events/events.html">الفعاليات</a></li>
+                    <li><a href="/recipes/recipes.html">الوصفات</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>تواصل معنا</h4>
+                <ul>
+                    <li>📧 <a href="mailto:Sofrh.info@gmail.com" target="_blank">Sofrh.info@gmail.com</a></li>
+                    <li>📧 <a href="mailto:Sofrh.support@gmail.com" target="_blank">Sofrh.support@gmail.com</a></li>
+                    <li>🐦 <a href="https://twitter.com/sofrah_sa" target="_blank">X (Twitter)</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 سفرة — جميع الحقوق محفوظة</p>
+            <p>صُنع بواسطة فريق شفرة</p>
+            <p>📧 <a href="mailto:Sofrh.info@gmail.com" style="color: #D2A673;">Sofrh.info@gmail.com</a></p>
+        </div>
+    </footer>
+
+    <script src="/countries/countries.js"></script>
+    <script src="/auth/auth.js"></script>
+</body>
+
+</html>

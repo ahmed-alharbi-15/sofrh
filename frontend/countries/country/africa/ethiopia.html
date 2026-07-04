@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سفرة</title>
+    <link rel="stylesheet" href="/countries/countries.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@500;600&display=swap');
+    </style>
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="hamburger" id="menu-btn">☰</div>
+        <div class="auth-buttons" id="authButtons">
+            <a href="/auth/login.html" class="login">تسجيل دخول</a>
+            <a href="/auth/signup.html" class="signup">إنشاء حساب</a>
+        </div>
+        <div class="user-menu" id="userMenu">
+            <img id="userAvatar" src="/img/avater-icon.jpeg" alt="المستخدم">
+            <span class="user-name" id="userName"></span>
+            <div class="user-dropdown">
+                <a href="/profile/profile.html">الملف الشخصي</a>
+                <a href="/index/index.html" id="logoutBtn">تسجيل الخروج</a>
+            </div>
+        </div>
+        <ul class="nav-list">
+            <li><a href="/index/index.html">الرئيسية</a></li>
+            <li><a href="/countries/countries.html">الدول</a></li>
+            <li><a href="/events/events.html">الفعاليات</a></li>
+            <li><a href="/recipes/recipes.html">الوصفات</a></li>
+            <li><a href="/plan/plan.html" class="active">خطتي</a></li>
+        </ul>
+        <div class="logo">
+            <a href="/index/index.html"><img src="/img/logo3.JPG" alt="سفرة"></a>
+        </div>
+    </header>
+
+    <nav class="side-menu" id="side-menu">
+        <span class="close-btn" id="close-btn">✖</span>
+        <span class="side-menu-kicker">استكشف</span>
+        <ul>
+            <li><a href="/index/index.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M3 11.5 12 4l9 7.5" />
+                        <path
+                            d="M5.5 10v9a1 1 0 0 0 1 1H9a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h2.5a1 1 0 0 0 1-1v-9" />
+                    </svg>
+                    <span>الرئيسية</span>
+                </a></li>
+            <li><a href="/countries/countries.html" class="active">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M12 21s7-6.6 7-12a7 7 0 1 0-14 0c0 5.4 7 12 7 12Z" />
+                        <circle cx="12" cy="9" r="2.3" />
+                    </svg>
+                    <span>الدول</span>
+                </a></li>
+            <li><a href="/events/events.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <rect x="3.5" y="5" width="17" height="16" rx="2.5" />
+                        <path d="M8 3v4M16 3v4M3.5 10h17" />
+                        <circle cx="12" cy="15" r="1.4" fill="currentColor" stroke="none" />
+                    </svg>
+                    <span>الفعاليات</span>
+                </a></li>
+            <li><a href="/recipes/recipes.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M7 2v8a2 2 0 0 0 2 2v10M5 2v6M9 2v6M14 2c-1.5 2-1.5 7 0 9 .6.6 1 1.3 1 2v9" />
+                    </svg>
+                    <span>الوصفات</span>
+                </a></li>
+            <li><a href="/plan/plan.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="9" />
+                        <path d="M14.8 9.2 13 13l-3.8 1.8L11 11l3.8-1.8Z" />
+                    </svg>
+                    <span>خطتي</span>
+                </a></li>
+        </ul>
+    </nav>
+
+    <div class="country-name">
+        <h1>إثيوبيا</h1>
+        <p>أرض المرتفعات الخضراء والكنائس المنحوتة في الصخر ومنابع النيل الأزرق الأسطورية.</p>
+    </div>
+
+    <div class="main-cites">
+        <h1>المدن</h1>
+    </div>
+    <section class="cities-grid">
+
+        <div class="cite" data-name="أديس أبابا – Addis Ababa" data-img="/img/Addis Ababa.jpg"
+            data-desc="عاصمة إثيوبيا النابضة بالحياة فوق هضبة مرتفعة، تجمع بين المتاحف الأثرية والأسواق الشعبية الصاخبة وأجواء دبلوماسية باعتبارها مقر الاتحاد الأفريقي."
+            data-historic="🏛️ المتحف الوطني الإثيوبي – Ethiopian National Museum | ⛰️ جبل إنتوتو – Entoto Mountain | 🛍️ سوق ميركاتو – Merkato Market"
+            data-restaurants="🍖 مطعم يود أبيسينيا – Yod Abyssinia | 🌿 مطعم توتوت التقليدي – Totot Traditional Restaurant"
+            data-cafes="☕ مقهى توموكا للبن – Tomoca Coffee"
+            data-events="🏛️ المتحف الوطني | ⛰️ جبل إنتوتو | 🛍️ سوق ميركاتو" onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'ethiopia_addis-ababa', 'أديس أبابا – Addis Ababa', '/img/Addis Ababa.jpg')">🏙️</button>
+            <img src="/img/Addis Ababa.jpg" alt="أديس أبابا" class="cite-img">
+            <span class="name">أديس أبابا – Addis Ababa</span>
+            <p class="info">العاصمة النابضة فوق هضبة إثيوبيا المرتفعة.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+        <div class="cite" data-name="لاليبيلا – Lalibela" data-img="/img/Lalibela.jpg"
+            data-desc="مدينة الحج المقدسة في جبال إثيوبيا الشمالية، تشتهر بكنائسها المنحوتة بالكامل من الصخر الصلب في القرن الثاني عشر وتُعد من عجائب العالم المعمارية."
+            data-historic="⛰️ كنائس لاليبيلا المنحوتة – Rock-Hewn Churches of Lalibela | 🏛️ كنيسة بيت جورجيس – Bete Giyorgis | 🛍️ سوق لاليبيلا المحلي – Lalibela Local Market"
+            data-restaurants="🍖 مطعم بن أبيبا – Ben Abeba | 🌿 مطعم سيفن أوليفز – Seven Olives"
+            data-cafes="☕ مقهى لاليبيلا التقليدي – Lalibela Traditional Cafe"
+            data-events="⛰️ كنائس لاليبيلا | 🏛️ كنيسة بيت جورجيس | 🛍️ سوق لاليبيلا" onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'ethiopia_lalibela', 'لاليبيلا – Lalibela', '/img/Lalibela.jpg')">🏙️</button>
+            <img src="/img/Lalibela.jpg" alt="لاليبيلا" class="cite-img">
+            <span class="name">لاليبيلا – Lalibela</span>
+            <p class="info">موطن الكنائس الصخرية الأثرية الفريدة.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+        <div class="cite" data-name="غوندار – Gondar" data-img="/img/Gondar.jpg"
+            data-desc="مدينة القصور الملكية القديمة الملقبة بكاميلوت أفريقيا، تحتضن قلاعاً حجرية من القرن السابع عشر وحماماً ملكياً محاطاً بالخنادق."
+            data-historic="🏰 قلعة فاسيل غيبي – Fasil Ghebbi | 🕌 حمام فاسيلاداس – Fasilides Bath | 🛍️ سوق غوندار المحلي – Gondar Market"
+            data-restaurants="🍖 مطعم فور سيسترز – Four Sisters Restaurant | 🌿 مطعم غوندار الملكي – Gondar Royal Restaurant"
+            data-cafes="☕ مقهى القلعة – Castle View Cafe"
+            data-events="🏰 قلعة فاسيل غيبي | 🕌 حمام فاسيلاداس | 🛍️ سوق غوندار" onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'ethiopia_gondar', 'غوندار – Gondar', '/img/Gondar.jpg')">🏙️</button>
+            <img src="/img/Gondar.jpg" alt="غوندار" class="cite-img">
+            <span class="name">غوندار – Gondar</span>
+            <p class="info">مدينة القصور الملكية الإثيوبية القديمة.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+        <div class="cite" data-name="أكسوم – Axum" data-img="/img/Axum.jpg"
+            data-desc="عاصمة مملكة أكسوم القديمة، مهد الحضارة الإثيوبية، تضم مسلات حجرية شاهقة عمرها آلاف السنين وكنيسة يُعتقد أنها تحفظ تابوت العهد."
+            data-historic="🏛️ مسلات أكسوم – Axum Obelisks | ⛪ كنيسة صهيون مريم – Church of Our Lady Mary of Zion | 🛍️ سوق أكسوم القديم – Axum Old Market"
+            data-restaurants="🍖 مطعم أفريكا هوتيل – Africa Hotel Restaurant | 🌿 مطعم أبريهاوت – Abrehawit Restaurant"
+            data-cafes="☕ مقهى أكسوم التقليدي – Axum Traditional Cafe"
+            data-events="🏛️ مسلات أكسوم | ⛪ كنيسة صهيون مريم | 🛍️ سوق أكسوم القديم" onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'ethiopia_axum', 'أكسوم – Axum', '/img/Axum.jpg')">🏙️</button>
+            <img src="/img/Axum.jpg" alt="أكسوم" class="cite-img">
+            <span class="name">أكسوم – Axum</span>
+            <p class="info">عاصمة مملكة أكسوم الأثرية القديمة.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+        <div class="cite" data-name="بحر دار – Bahir Dar" data-img="/img/Bahir Dar.jpg"
+            data-desc="مدينة خضراء تطل على بحيرة تانا أكبر بحيرات إثيوبيا، تضم أديرة جزرية قديمة وتُعد بوابة الوصول إلى شلالات النيل الأزرق القريبة."
+            data-historic="🌊 بحيرة تانا – Lake Tana | ⛪ أديرة بحيرة تانا – Lake Tana Monasteries | 🛍️ سوق بحر دار – Bahir Dar Market"
+            data-restaurants="🍖 مطعم كوريفتو ريزورت – Kuriftu Resort Restaurant | 🌿 مطعم بحر دار السمكي – Bahir Dar Fish Restaurant"
+            data-cafes="☕ مقهى بحر دار – Bahir Dar Cafe"
+            data-events="🌊 بحيرة تانا | ⛪ أديرة بحيرة تانا | 🛍️ سوق بحر دار" onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'ethiopia_bahir-dar', 'بحر دار – Bahir Dar', '/img/Bahir Dar.jpg')">🏙️</button>
+            <img src="/img/Bahir Dar.jpg" alt="بحر دار" class="cite-img">
+            <span class="name">بحر دار – Bahir Dar</span>
+            <p class="info">مدينة بحيرة تانا والأديرة الجزرية.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+        <div class="cite" data-name="هرر – Harar" data-img="/img/Harar.jpg"
+            data-desc="مدينة إسلامية تاريخية مسورة تضم مئات المساجد القديمة، وتشتهر بتقليد إطعام الضباع البرية ليلاً وأزقتها الضيقة الملونة."
+            data-historic="🕌 المدينة القديمة المسورة – Harar Jugol Old Walled City | 🕌 مسجد هرر الجامع – Harar Jamia Mosque | 🛍️ سوق هرر المسور – Harar Old Market"
+            data-restaurants="🍖 مطعم فريش تاتش – Fresh Touch Restaurant | 🌿 مطعم راشيدة – Rashida Restaurant"
+            data-cafes="☕ مقهى هرر للبن – Harar Coffee House"
+            data-events="🕌 المدينة القديمة المسورة | 🕌 مسجد هرر الجامع | 🛍️ سوق هرر المسور" onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'ethiopia_harar', 'هرر – Harar', '/img/Harar.jpg')">🏙️</button>
+            <img src="/img/Harar.jpg" alt="هرر" class="cite-img">
+            <span class="name">هرر – Harar</span>
+            <p class="info">مدينة الأسوار التاريخية وإطعام الضباع.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+    </section>
+
+    <div class="main-foods">
+        <h1>الماكولات</h1>
+    </div>
+    <section class="foods-grid">
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=doro-wat'">
+            <img src="/img/Doro Wat.jpg" alt="دورو وات" class="foods-img">
+            <span class="name-foods">دورو وات – Doro Wat</span>
+            <div class="food-info">يخنة دجاج حارة بالبربري، الأكلة الوطنية لإثيوبيا.</div>
+            <a href="/recipes/recipes.html?recipe=doro-wat" class="for-more-btn"
+                onclick="event.stopPropagation()">الوصفة</a>
+        </div>
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=tibs'">
+            <img src="/img/Tibs.jpg" alt="طيبس" class="foods-img">
+            <span class="name-foods">طيبس – Tibs</span>
+            <div class="food-info">لحم بقري أو ضأن مقلي مع البصل والفلفل.</div>
+            <a href="/recipes/recipes.html?recipe=tibs" class="for-more-btn"
+                onclick="event.stopPropagation()">الوصفة</a>
+        </div>
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=shiro-wat'">
+            <img src="/img/Shiro Wat.jpg" alt="شيرو وات" class="foods-img">
+            <span class="name-foods">شيرو وات – Shiro Wat</span>
+            <div class="food-info">يخنة دقيق الحمص الكثيفة، طبق نباتي شعبي.</div>
+            <a href="/recipes/recipes.html?recipe=shiro-wat" class="for-more-btn"
+                onclick="event.stopPropagation()">الوصفة</a>
+        </div>
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=kitfo'">
+            <img src="/img/Kitfo.jpg" alt="كيتفو" class="foods-img">
+            <span class="name-foods">كيتفو – Kitfo</span>
+            <div class="food-info">لحم بقري مفروم متبل بالمتميتا، يُقدم مطهواً جيداً.</div>
+            <a href="/recipes/recipes.html?recipe=kitfo" class="for-more-btn"
+                onclick="event.stopPropagation()">الوصفة</a>
+        </div>
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=gomen-wat'">
+            <img src="/img/Gomen Wat.jpg" alt="قومن وات" class="foods-img">
+            <span class="name-foods">قومن وات – Gomen Wat</span>
+            <div class="food-info">يخنة الكرنب الأخضر مع الثوم والزنجبيل.</div>
+            <a href="/recipes/recipes.html?recipe=gomen-wat" class="for-more-btn"
+                onclick="event.stopPropagation()">الوصفة</a>
+        </div>
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=injera'">
+            <img src="/img/Injera.jpg" alt="إنجيرا" class="foods-img">
+            <span class="name-foods">إنجيرا – Injera</span>
+            <div class="food-info">خبز مسطح مخمر من التيف، أساس كل وجبة إثيوبية.</div>
+            <a href="/recipes/recipes.html?recipe=injera" class="for-more-btn"
+                onclick="event.stopPropagation()">الوصفة</a>
+        </div>
+    </section>
+
+    <div class="events-main">
+        <h1>الفعاليات</h1>
+    </div>
+    <section class="events-grid">
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=LalibelaChurchesEthiopia'">
+            <img src="/img/Rock-Hewn Churches of Lalibela.jpg" alt="كنائس لاليبيلا المنحوتة" class="event-img">
+            <span class="name-event">كنائس لاليبيلا المنحوتة – Rock-Hewn Churches of Lalibela</span>
+            <div class="event-info">كنائس منحوتة بالكامل من الصخر الصلب.</div>
+            <a href="/events/events.html?event=LalibelaChurchesEthiopia" class="event-btn"
+                onclick="event.stopPropagation()">اكتشف</a>
+        </div>
+
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=SimienMountainsEthiopia'">
+            <img src="/img/Simien Mountains.jpg" alt="جبال سيمين" class="event-img">
+            <span class="name-event">جبال سيمين – Simien Mountains</span>
+            <div class="event-info">سلاسل جبلية شاهقة موطن الوعل النادر.</div>
+            <a href="/events/events.html?event=SimienMountainsEthiopia" class="event-btn"
+                onclick="event.stopPropagation()">اكتشف</a>
+        </div>
+
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=DanakilDepressionEthiopia'">
+            <img src="/img/Danakil Depression.jpg" alt="منخفض دناكل" class="event-img">
+            <span class="name-event">منخفض دناكل – Danakil Depression</span>
+            <div class="event-info">أرض بركانية ملحية من أشد الأماكن حرارة بالعالم.</div>
+            <a href="/events/events.html?event=DanakilDepressionEthiopia" class="event-btn"
+                onclick="event.stopPropagation()">اكتشف</a>
+        </div>
+
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=BlueNileFallsEthiopia'">
+            <img src="/img/Blue Nile Falls.jpg" alt="شلالات النيل الأزرق" class="event-img">
+            <span class="name-event">شلالات النيل الأزرق – Blue Nile Falls</span>
+            <div class="event-info">شلالات مهيبة يُطلق عليها الدخان المتصاعد.</div>
+            <a href="/events/events.html?event=BlueNileFallsEthiopia" class="event-btn"
+                onclick="event.stopPropagation()">اكتشف</a>
+        </div>
+
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=AxumObelisksEthiopia'">
+            <img src="/img/Axum Obelisks.jpg" alt="مسلات أكسوم" class="event-img">
+            <span class="name-event">مسلات أكسوم – Axum Obelisks</span>
+            <div class="event-info">مسلات حجرية أثرية من عصر مملكة أكسوم.</div>
+            <a href="/events/events.html?event=AxumObelisksEthiopia" class="event-btn"
+                onclick="event.stopPropagation()">اكتشف</a>
+        </div>
+
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=OmoValleyEthiopia'">
+            <img src="/img/Omo Valley.jpg" alt="وادي أومو" class="event-img">
+            <span class="name-event">وادي أومو – Omo Valley</span>
+            <div class="event-info">موطن قبائل أصيلة بتقاليد ثقافية فريدة.</div>
+            <a href="/events/events.html?event=OmoValleyEthiopia" class="event-btn"
+                onclick="event.stopPropagation()">اكتشف</a>
+        </div>
+    </section>
+
+    <div id="cityModal" class="modal" onclick="closeCityModal(event)">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeCityModal(event)">×</button>
+            <div class="modal-top">
+                <img id="modalCityImg" src="" alt="" />
+                <div class="modal-top-info">
+                    <h2 id="modalCityName"></h2>
+                    <span class="modal-top-badge">✦ تفاصيل المدينة</span>
+                </div>
+            </div>
+            <div class="modal-body">
+                <p id="modalCityDesc" class="event-desc"></p>
+                <h4>🏛️ أفضل الأماكن التاريخية</h4>
+                <div id="modalCityHistoric" class="ingredients-tags"></div>
+                <h4>🍽️ أفضل المطاعم</h4>
+                <div id="modalCityRestaurants" class="ingredients-tags"></div>
+                <h4>☕ أفضل المقاهي</h4>
+                <div id="modalCityCafes" class="ingredients-tags"></div>
+                <h4>🎉 فعاليات المدينة</h4>
+                <div id="modalCityEvents" class="ingredients-tags"></div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h2 class="footer-logo">سفرة</h2>
+                <p>وجهتك للسفر والطعام حول العالم</p>
+            </div>
+            <div class="footer-links">
+                <h4>روابط سريعة</h4>
+                <ul>
+                    <li><a href="/index/index.html">الرئيسية</a></li>
+                    <li><a href="/countries/countries.html">الدول</a></li>
+                    <li><a href="/events/events.html">الفعاليات</a></li>
+                    <li><a href="/recipes/recipes.html">الوصفات</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>تواصل معنا</h4>
+                <ul>
+                    <li>📧 <a href="mailto:Sofrh.info@gmail.com" target="_blank">Sofrh.info@gmail.com</a></li>
+                    <li>📧 <a href="mailto:Sofrh.support@gmail.com" target="_blank">Sofrh.support@gmail.com</a></li>
+                    <li>🐦 <a href="https://twitter.com/sofrah_sa" target="_blank">X (Twitter)</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 سفرة — جميع الحقوق محفوظة</p>
+            <p>صُنع بواسطة فريق شفرة</p>
+            <p>📧 <a href="mailto:Sofrh.info@gmail.com" style="color: #D2A673;">Sofrh.info@gmail.com</a></p>
+        </div>
+    </footer>
+
+    <script src="/countries/countries.js"></script>
+    <script src="/auth/auth.js"></script>
+</body>
+
+</html>

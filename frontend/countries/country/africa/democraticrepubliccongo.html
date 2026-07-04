@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سفرة</title>
+    <link rel="stylesheet" href="/countries/countries.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@500;600&display=swap');
+    </style>
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="hamburger" id="menu-btn">☰</div>
+        <div class="auth-buttons" id="authButtons">
+            <a href="/auth/login.html" class="login">تسجيل دخول</a>
+            <a href="/auth/signup.html" class="signup">إنشاء حساب</a>
+        </div>
+        <div class="user-menu" id="userMenu">
+            <img id="userAvatar" src="/img/avater-icon.jpeg" alt="المستخدم">
+            <span class="user-name" id="userName"></span>
+            <div class="user-dropdown">
+                <a href="/profile/profile.html">الملف الشخصي</a>
+                <a href="/index/index.html" id="logoutBtn">تسجيل الخروج</a>
+            </div>
+        </div>
+        <ul class="nav-list">
+            <li><a href="/index/index.html">الرئيسية</a></li>
+            <li><a href="/countries/countries.html">الدول</a></li>
+            <li><a href="/events/events.html">الفعاليات</a></li>
+            <li><a href="/recipes/recipes.html">الوصفات</a></li>
+            <li><a href="/plan/plan.html" class="active">خطتي</a></li>
+        </ul>
+        <div class="logo">
+            <a href="/index/index.html"><img src="/img/logo3.JPG" alt="سفرة"></a>
+        </div>
+    </header>
+
+    <nav class="side-menu" id="side-menu">
+        <span class="close-btn" id="close-btn">✖</span>
+        <span class="side-menu-kicker">استكشف</span>
+        <ul>
+            <li><a href="/index/index.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M3 11.5 12 4l9 7.5" />
+                        <path
+                            d="M5.5 10v9a1 1 0 0 0 1 1H9a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h2.5a1 1 0 0 0 1-1v-9" />
+                    </svg>
+                    <span>الرئيسية</span>
+                </a></li>
+            <li><a href="/countries/countries.html" class="active">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M12 21s7-6.6 7-12a7 7 0 1 0-14 0c0 5.4 7 12 7 12Z" />
+                        <circle cx="12" cy="9" r="2.3" />
+                    </svg>
+                    <span>الدول</span>
+                </a></li>
+            <li><a href="/events/events.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <rect x="3.5" y="5" width="17" height="16" rx="2.5" />
+                        <path d="M8 3v4M16 3v4M3.5 10h17" />
+                        <circle cx="12" cy="15" r="1.4" fill="currentColor" stroke="none" />
+                    </svg>
+                    <span>الفعاليات</span>
+                </a></li>
+            <li><a href="/recipes/recipes.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M7 2v8a2 2 0 0 0 2 2v10M5 2v6M9 2v6M14 2c-1.5 2-1.5 7 0 9 .6.6 1 1.3 1 2v9" />
+                    </svg>
+                    <span>الوصفات</span>
+                </a></li>
+            <li><a href="/plan/plan.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="9" />
+                        <path d="M14.8 9.2 13 13l-3.8 1.8L11 11l3.8-1.8Z" />
+                    </svg>
+                    <span>خطتي</span>
+                </a></li>
+        </ul>
+    </nav>
+
+    <div class="country-name">
+        <h1>جمهورية الكونغو الديمقراطية</h1>
+        <p>عملاق أفريقيا الأخضر حيث يتدفق نهر الكونغو عبر غابات مطيرة لا حدود لها.</p>
+    </div>
+
+    <div class="main-cites">
+        <h1>المدن</h1>
+    </div>
+    <section class="cities-grid">
+
+        <div class="cite" data-name="كينشاسا – Kinshasa" data-img="/img/Kinshasa.jpg"
+            data-desc="العاصمة الضخمة على ضفاف نهر الكونغو، مدينة نابضة بالموسيقى والحياة الليلية والأسواق الشعبية المزدحمة."
+            data-historic="🏛️ متحف الكونغو الوطني – National Museum of the DRC | 🌊 شلالات كينشاسا – Kinshasa Rapids | 🛍️ سوق مارشيه سنترال – Marché Central"
+            data-restaurants="🍖 مطعم لو غراند بلو – Le Grand Bleu | 🌿 مطعم لا كريفيت – La Crevette"
+            data-cafes="☕ مقهى مامبا – Mamba Cafe"
+            data-events="🏛️ متحف الكونغو الوطني | 🌊 شلالات كينشاسا | 🛍️ سوق مارشيه سنترال" onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'democraticrepubliccongo_kinshasa', 'كينشاسا – Kinshasa', '/img/Kinshasa.jpg')">🏙️</button>
+            <img src="/img/Kinshasa.jpg" alt="كينشاسا" class="cite-img">
+            <span class="name">كينشاسا – Kinshasa</span>
+            <p class="info">العاصمة النابضة على ضفاف نهر الكونغو.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+        <div class="cite" data-name="لوبومباشي – Lubumbashi" data-img="/img/Lubumbashi.jpg"
+            data-desc="عاصمة إقليم النحاس الجنوبي، مدينة استعمارية أنيقة تجمع بين المباني التاريخية والمناجم الصناعية الحديثة."
+            data-historic="🏛️ متحف لوبومباشي الوطني – Lubumbashi National Museum | 🛍️ سوق النحاس – Copper Market"
+            data-restaurants="🍖 مطعم لو كاتانغا – Le Katanga"
+            data-cafes="☕ مقهى لوبومباشي – Lubumbashi Cafe"
+            data-events="🏛️ متحف لوبومباشي الوطني | 🛍️ سوق النحاس" onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'democraticrepubliccongo_lubumbashi', 'لوبومباشي – Lubumbashi', '/img/Lubumbashi.jpg')">🏙️</button>
+            <img src="/img/Lubumbashi.jpg" alt="لوبومباشي" class="cite-img">
+            <span class="name">لوبومباشي – Lubumbashi</span>
+            <p class="info">مدينة النحاس الاستعمارية الأنيقة.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+        <div class="cite" data-name="غوما – Goma" data-img="/img/Goma.jpg"
+            data-desc="مدينة شرقية على ضفاف بحيرة كيفو وسفح بركان نييراغونغو، بوابة رئيسية لمحمية فيرونغا الشهيرة بالغوريلا."
+            data-historic="🌋 بركان نييراغونغو – Nyiragongo Volcano | 🌊 بحيرة كيفو – Lake Kivu"
+            data-restaurants="🍖 مطعم لو غورييه – Le Gorille Restaurant"
+            data-cafes="☕ مقهى كيفو – Kivu Cafe"
+            data-events="🌋 بركان نييراغونغو | 🌊 بحيرة كيفو" onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'democraticrepubliccongo_goma', 'غوما – Goma', '/img/Goma.jpg')">🏙️</button>
+            <img src="/img/Goma.jpg" alt="غوما" class="cite-img">
+            <span class="name">غوما – Goma</span>
+            <p class="info">بوابة بركان نييراغونغو وبحيرة كيفو.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+        <div class="cite" data-name="كيسانغاني – Kisangani" data-img="/img/Kisangani.jpg"
+            data-desc="مدينة تقع في قلب الغابات الاستوائية على منحنى نهر الكونغو الكبير، قريبة من شلالات بويوما الشهيرة."
+            data-historic="🌊 شلالات بويوما – Boyoma Falls | 🌳 غابات كيسانغاني المطيرة – Kisangani Rainforest"
+            data-restaurants="🍖 مطعم لو فليوف بلو – Le Fleuve Bleu"
+            data-cafes="☕ مقهى كيسانغاني – Kisangani Cafe"
+            data-events="🌊 شلالات بويوما | 🌳 غابات كيسانغاني" onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'democraticrepubliccongo_kisangani', 'كيسانغاني – Kisangani', '/img/Kisangani.jpg')">🏙️</button>
+            <img src="/img/Kisangani.jpg" alt="كيسانغاني" class="cite-img">
+            <span class="name">كيسانغاني – Kisangani</span>
+            <p class="info">قلب الغابات على منحنى نهر الكونغو.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+        <div class="cite" data-name="بوكافو – Bukavu" data-img="/img/Bukavu.jpg"
+            data-desc="مدينة جبلية خضراء على ضفاف بحيرة كيفو الجنوبية، تشتهر بمعمارها الاستعماري البلجيكي وقربها من محمية كاهوزي بييغا."
+            data-historic="🏛️ المعمار الاستعماري – Belgian Colonial Architecture | 🌳 محمية كاهوزي بييغا – Kahuzi-Biega Reserve"
+            data-restaurants="🍖 مطعم أورشيديه – Orchidée Restaurant"
+            data-cafes="☕ مقهى كيفو الجنوبي – South Kivu Cafe"
+            data-events="🏛️ المعمار الاستعماري | 🌳 محمية كاهوزي بييغا" onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'democraticrepubliccongo_bukavu', 'بوكافو – Bukavu', '/img/Bukavu.jpg')">🏙️</button>
+            <img src="/img/Bukavu.jpg" alt="بوكافو" class="cite-img">
+            <span class="name">بوكافو – Bukavu</span>
+            <p class="info">مدينة جبلية خضراء على بحيرة كيفو.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+        <div class="cite" data-name="مبوجي مايي – Mbuji-Mayi" data-img="/img/Mbuji Mayi.jpg"
+            data-desc="عاصمة إقليم كاساي الشرقية، أشهر مدن العالم بتعدين الماس، ومركز تجاري نابض بحياة اقتصادية نشطة."
+            data-historic="💎 مناجم الماس – Diamond Mines | 🛍️ سوق مبوجي مايي – Mbuji-Mayi Market"
+            data-restaurants="🍖 مطعم كاساي – Kasai Restaurant"
+            data-cafes="☕ مقهى مبوجي مايي – Mbuji-Mayi Cafe"
+            data-events="💎 مناجم الماس | 🛍️ سوق مبوجي مايي" onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'democraticrepubliccongo_mbuji-mayi', 'مبوجي مايي – Mbuji-Mayi', '/img/Mbuji Mayi.jpg')">🏙️</button>
+            <img src="/img/Mbuji Mayi.jpg" alt="مبوجي مايي" class="cite-img">
+            <span class="name">مبوجي مايي – Mbuji-Mayi</span>
+            <p class="info">عاصمة الماس التجارية النابضة.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+    </section>
+
+    <div class="main-foods">
+        <h1>الماكولات</h1>
+    </div>
+    <section class="foods-grid">
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=poulet-moambe-drc'">
+            <img src="/img/Poulet Moambe DRC.jpg" alt="بوليه مومبيه" class="foods-img">
+            <span class="name-foods">بوليه مومبيه – Poulet Moambé</span>
+            <div class="food-info">دجاج مطهو بصلصة جوز النخيل الحمراء الغنية، الطبق الوطني.</div>
+            <a href="/recipes/recipes.html?recipe=poulet-moambe-drc" class="for-more-btn"
+                onclick="event.stopPropagation()">الوصفة</a>
+        </div>
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=pondu-drc'">
+            <img src="/img/Pondu.jpg" alt="بوندو" class="foods-img">
+            <span class="name-foods">بوندو – Pondu</span>
+            <div class="food-info">أوراق الكسافا المطحونة المطهوة بزيت النخيل والفول السوداني.</div>
+            <a href="/recipes/recipes.html?recipe=pondu-drc" class="for-more-btn"
+                onclick="event.stopPropagation()">الوصفة</a>
+        </div>
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=fufu-drc'">
+            <img src="/img/Fufu DRC.jpg" alt="فوفو" class="foods-img">
+            <span class="name-foods">فوفو – Fufu</span>
+            <div class="food-info">عجينة الكسافا أو الذرة المرافقة لكل الأطباق الرئيسية.</div>
+            <a href="/recipes/recipes.html?recipe=fufu-drc" class="for-more-btn"
+                onclick="event.stopPropagation()">الوصفة</a>
+        </div>
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=liboke-drc'">
+            <img src="/img/Liboke ya Mbisi.jpg" alt="ليبوكيه يا مبيسي" class="foods-img">
+            <span class="name-foods">ليبوكيه يا مبيسي – Liboke ya Mbisi</span>
+            <div class="food-info">سمك متبل مطهو بالبخار داخل أوراق الموز.</div>
+            <a href="/recipes/recipes.html?recipe=liboke-drc" class="for-more-btn"
+                onclick="event.stopPropagation()">الوصفة</a>
+        </div>
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=chikwangue-drc'">
+            <img src="/img/Chikwangue.jpg" alt="شيكوانغي" class="foods-img">
+            <span class="name-foods">شيكوانغي – Chikwangue</span>
+            <div class="food-info">خبز الكسافا المخمر الملفوف بأوراق الموز.</div>
+            <a href="/recipes/recipes.html?recipe=chikwangue-drc" class="for-more-btn"
+                onclick="event.stopPropagation()">الوصفة</a>
+        </div>
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=mikate-drc'">
+            <img src="/img/Mikate.jpg" alt="ميكاتيه" class="foods-img">
+            <span class="name-foods">ميكاتيه – Mikate</span>
+            <div class="food-info">كرات عجين مقلية حلوة، وجبة إفطار شعبية.</div>
+            <a href="/recipes/recipes.html?recipe=mikate-drc" class="for-more-btn"
+                onclick="event.stopPropagation()">الوصفة</a>
+        </div>
+    </section>
+
+    <div class="events-main">
+        <h1>الفعاليات</h1>
+    </div>
+    <section class="events-grid">
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=CongoRiverDRCongo'">
+            <img src="/img/Congo River.jpg" alt="نهر الكونغو" class="event-img">
+            <span class="name-event">نهر الكونغو – Congo River</span>
+            <div class="event-info">ثاني أطول أنهار أفريقيا وشريان حياة البلاد.</div>
+            <a href="/events/events.html?event=CongoRiverDRCongo" class="event-btn"
+                onclick="event.stopPropagation()">اكتشف</a>
+        </div>
+
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=VirungaParkDRCongo'">
+            <img src="/img/Virunga National Park.jpg" alt="متنزه فيرونغا الوطني" class="event-img">
+            <span class="name-event">متنزه فيرونغا الوطني – Virunga National Park</span>
+            <div class="event-info">أقدم محمية طبيعية أفريقية وموطن الغوريلا الجبلية.</div>
+            <a href="/events/events.html?event=VirungaParkDRCongo" class="event-btn"
+                onclick="event.stopPropagation()">اكتشف</a>
+        </div>
+
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=NyiragongoVolcanoDRCongo'">
+            <img src="/img/Nyiragongo Volcano.jpg" alt="بركان نييراغونغو" class="event-img">
+            <span class="name-event">بركان نييراغونغو – Nyiragongo Volcano</span>
+            <div class="event-info">بركان نشط يضم أكبر بحيرة حمم في العالم.</div>
+            <a href="/events/events.html?event=NyiragongoVolcanoDRCongo" class="event-btn"
+                onclick="event.stopPropagation()">اكتشف</a>
+        </div>
+
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=KahuziBiegaDRCongo'">
+            <img src="/img/Kahuzi-Biega Park.jpg" alt="محمية كاهوزي بييغا" class="event-img">
+            <span class="name-event">محمية كاهوزي بييغا – Kahuzi-Biega Park</span>
+            <div class="event-info">موطن الغوريلا الشرقية السهلية المهددة بالانقراض.</div>
+            <a href="/events/events.html?event=KahuziBiegaDRCongo" class="event-btn"
+                onclick="event.stopPropagation()">اكتشف</a>
+        </div>
+
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=LolaYaBonoboDRCongo'">
+            <img src="/img/Lola ya Bonobo.jpg" alt="ملجأ لولا يا بونوبو" class="event-img">
+            <span class="name-event">ملجأ لولا يا بونوبو – Lola ya Bonobo</span>
+            <div class="event-info">أكبر ملجأ لقردة البونوبو النادرة في العالم.</div>
+            <a href="/events/events.html?event=LolaYaBonoboDRCongo" class="event-btn"
+                onclick="event.stopPropagation()">اكتشف</a>
+        </div>
+
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=BoyomaFallsDRCongo'">
+            <img src="/img/Boyoma Falls.jpg" alt="شلالات بويوما" class="event-img">
+            <span class="name-event">شلالات بويوما – Boyoma Falls</span>
+            <div class="event-info">أكبر شلالات العالم من حيث حجم المياه المتدفقة.</div>
+            <a href="/events/events.html?event=BoyomaFallsDRCongo" class="event-btn"
+                onclick="event.stopPropagation()">اكتشف</a>
+        </div>
+    </section>
+
+    <div id="cityModal" class="modal" onclick="closeCityModal(event)">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeCityModal(event)">×</button>
+            <div class="modal-top">
+                <img id="modalCityImg" src="" alt="" />
+                <div class="modal-top-info">
+                    <h2 id="modalCityName"></h2>
+                    <span class="modal-top-badge">✦ تفاصيل المدينة</span>
+                </div>
+            </div>
+            <div class="modal-body">
+                <p id="modalCityDesc" class="event-desc"></p>
+                <h4>🏛️ أفضل الأماكن التاريخية</h4>
+                <div id="modalCityHistoric" class="ingredients-tags"></div>
+                <h4>🍽️ أفضل المطاعم</h4>
+                <div id="modalCityRestaurants" class="ingredients-tags"></div>
+                <h4>☕ أفضل المقاهي</h4>
+                <div id="modalCityCafes" class="ingredients-tags"></div>
+                <h4>🎉 فعاليات المدينة</h4>
+                <div id="modalCityEvents" class="ingredients-tags"></div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h2 class="footer-logo">سفرة</h2>
+                <p>وجهتك للسفر والطعام حول العالم</p>
+            </div>
+            <div class="footer-links">
+                <h4>روابط سريعة</h4>
+                <ul>
+                    <li><a href="/index/index.html">الرئيسية</a></li>
+                    <li><a href="/countries/countries.html">الدول</a></li>
+                    <li><a href="/events/events.html">الفعاليات</a></li>
+                    <li><a href="/recipes/recipes.html">الوصفات</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>تواصل معنا</h4>
+                <ul>
+                    <li>📧 <a href="mailto:Sofrh.info@gmail.com" target="_blank">Sofrh.info@gmail.com</a></li>
+                    <li>📧 <a href="mailto:Sofrh.support@gmail.com" target="_blank">Sofrh.support@gmail.com</a></li>
+                    <li>🐦 <a href="https://twitter.com/sofrah_sa" target="_blank">X (Twitter)</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 سفرة — جميع الحقوق محفوظة</p>
+            <p>صُنع بواسطة فريق شفرة</p>
+            <p>📧 <a href="mailto:Sofrh.info@gmail.com" style="color: #D2A673;">Sofrh.info@gmail.com</a></p>
+        </div>
+    </footer>
+
+    <script src="/countries/countries.js"></script>
+    <script src="/auth/auth.js"></script>
+</body>
+
+</html>

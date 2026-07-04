@@ -1038,7 +1038,6 @@ document.addEventListener("DOMContentLoaded", () => {
                         },
                         {
                                 "id": "ethiopia",
-                                "ready": false,
                                 "nameAr": "إثيوبيا",
                                 "nameEn": "Ethiopia",
                                 "continent": "africa",
@@ -1057,7 +1056,6 @@ document.addEventListener("DOMContentLoaded", () => {
                         },
                         {
                                 "id": "namibia",
-                                "ready": false,
                                 "nameAr": "ناميبيا",
                                 "nameEn": "Namibia",
                                 "continent": "africa",
@@ -1077,7 +1075,6 @@ document.addEventListener("DOMContentLoaded", () => {
                         },
                         {
                                 "id": "uganda",
-                                "ready": false,
                                 "nameAr": "أوغندا",
                                 "nameEn": "Uganda",
                                 "continent": "africa",
@@ -1155,7 +1152,6 @@ document.addEventListener("DOMContentLoaded", () => {
                         },
                         {
                                 "id": "nigeria",
-                                "ready": false,
                                 "nameAr": "نيجيريا",
                                 "nameEn": "Nigeria",
                                 "continent": "africa",
@@ -1173,7 +1169,6 @@ document.addEventListener("DOMContentLoaded", () => {
                         },
                         {
                                 "id": "ghana",
-                                "ready": false,
                                 "nameAr": "غانا",
                                 "nameEn": "Ghana",
                                 "continent": "africa",
@@ -1192,7 +1187,6 @@ document.addEventListener("DOMContentLoaded", () => {
                         },
                         {
                                 "id": "senegal",
-                                "ready": false,
                                 "nameAr": "السنغال",
                                 "nameEn": "Senegal",
                                 "continent": "africa",
@@ -1211,7 +1205,6 @@ document.addEventListener("DOMContentLoaded", () => {
                         },
                         {
                                 "id": "ivorycoast",
-                                "ready": false,
                                 "nameAr": "ساحل العاج",
                                 "nameEn": "Ivory Coast",
                                 "continent": "africa",
@@ -1230,7 +1223,6 @@ document.addEventListener("DOMContentLoaded", () => {
                         },
                         {
                                 "id": "cameroon",
-                                "ready": false,
                                 "nameAr": "الكاميرون",
                                 "nameEn": "Cameroon",
                                 "continent": "africa",
@@ -1249,7 +1241,6 @@ document.addEventListener("DOMContentLoaded", () => {
                         },
                         {
                                 "id": "gabon",
-                                "ready": false,
                                 "nameAr": "الغابون",
                                 "nameEn": "Gabon",
                                 "continent": "africa",
@@ -1267,7 +1258,6 @@ document.addEventListener("DOMContentLoaded", () => {
                         },
                         {
                                 "id": "congo",
-                                "ready": false,
                                 "nameAr": "الكونغو",
                                 "nameEn": "Republic of Congo",
                                 "continent": "africa",
@@ -1285,7 +1275,6 @@ document.addEventListener("DOMContentLoaded", () => {
                         },
                         {
                                 "id": "zambia",
-                                "ready": false,
                                 "nameAr": "زامبيا",
                                 "nameEn": "Zambia",
                                 "continent": "africa",
@@ -1304,7 +1293,6 @@ document.addEventListener("DOMContentLoaded", () => {
                         },
                         {
                                 "id": "zimbabwe",
-                                "ready": false,
                                 "nameAr": "زيمبابوي",
                                 "nameEn": "Zimbabwe",
                                 "continent": "africa",
@@ -1324,7 +1312,6 @@ document.addEventListener("DOMContentLoaded", () => {
                         },
                         {
                                 "id": "botswana",
-                                "ready": false,
                                 "nameAr": "بوتسوانا",
                                 "nameEn": "Botswana",
                                 "continent": "africa",
@@ -1343,7 +1330,6 @@ document.addEventListener("DOMContentLoaded", () => {
                         },
                         {
                                 "id": "mozambique",
-                                "ready": false,
                                 "nameAr": "موزمبيق",
                                 "nameEn": "Mozambique",
                                 "continent": "africa",
@@ -1363,7 +1349,6 @@ document.addEventListener("DOMContentLoaded", () => {
                         },
                         {
                                 "id": "malawi",
-                                "ready": false,
                                 "nameAr": "مالاوي",
                                 "nameEn": "Malawi",
                                 "continent": "africa",
@@ -1420,7 +1405,6 @@ document.addEventListener("DOMContentLoaded", () => {
                         },
                         {
                                 "id": "capeverde",
-                                "ready": false,
                                 "nameAr": "الرأس الأخضر",
                                 "nameEn": "Cape Verde",
                                 "continent": "africa",
@@ -1441,7 +1425,6 @@ document.addEventListener("DOMContentLoaded", () => {
                         },
                         {
                                 "id": "gambia",
-                                "ready": false,
                                 "nameAr": "غامبيا",
                                 "nameEn": "Gambia",
                                 "continent": "africa",
@@ -1460,7 +1443,6 @@ document.addEventListener("DOMContentLoaded", () => {
                         },
                         {
                                 "id": "benin",
-                                "ready": false,
                                 "nameAr": "بنين",
                                 "nameEn": "Benin",
                                 "continent": "africa",
@@ -1478,7 +1460,6 @@ document.addEventListener("DOMContentLoaded", () => {
                         },
                         {
                                 "id": "togo",
-                                "ready": false,
                                 "nameAr": "توغو",
                                 "nameEn": "Togo",
                                 "continent": "africa",
@@ -1497,7 +1478,6 @@ document.addEventListener("DOMContentLoaded", () => {
                         },
                         {
                                 "id": "djibouti",
-                                "ready": false,
                                 "nameAr": "جيبوتي",
                                 "nameEn": "Djibouti",
                                 "continent": "africa",
@@ -1516,7 +1496,6 @@ document.addEventListener("DOMContentLoaded", () => {
                         },
                         {
                                 "id": "angola",
-                                "ready": false,
                                 "nameAr": "أنغولا",
                                 "nameEn": "Angola",
                                 "continent": "africa",
@@ -1535,7 +1514,6 @@ document.addEventListener("DOMContentLoaded", () => {
                         },
                         {
                                 "id": "mauritania",
-                                "ready": false,
                                 "nameAr": "موريتانيا",
                                 "nameEn": "Mauritania",
                                 "continent": "africa",
@@ -1554,7 +1532,6 @@ document.addEventListener("DOMContentLoaded", () => {
                         },
                         {
                                 "id": "guinea",
-                                "ready": false,
                                 "nameAr": "غينيا",
                                 "nameEn": "Guinea",
                                 "continent": "africa",
@@ -3262,7 +3239,6 @@ document.addEventListener("DOMContentLoaded", () => {
                         },
                         {
                                 "id": "burkinafaso",
-                                "ready": false,
                                 "nameAr": "بوركينا فاسو",
                                 "nameEn": "Burkina Faso",
                                 "continent": "africa",
@@ -3282,7 +3258,6 @@ document.addEventListener("DOMContentLoaded", () => {
                         },
                         {
                                 "id": "centralafricanrepublic",
-                                "ready": false,
                                 "nameAr": "إفريقيا الوسطى",
                                 "nameEn": "Central African Republic",
                                 "continent": "africa",
@@ -3301,7 +3276,6 @@ document.addEventListener("DOMContentLoaded", () => {
                         },
                         {
                                 "id": "chad",
-                                "ready": false,
                                 "nameAr": "تشاد",
                                 "nameEn": "Chad",
                                 "continent": "africa",
@@ -3321,7 +3295,6 @@ document.addEventListener("DOMContentLoaded", () => {
                         },
                         {
                                 "id": "democraticrepubliccongo",
-                                "ready": false,
                                 "nameAr": "الكونغو الديمقراطية",
                                 "nameEn": "Democratic Republic of the Congo",
                                 "continent": "africa",
@@ -3341,7 +3314,6 @@ document.addEventListener("DOMContentLoaded", () => {
                         },
                         {
                                 "id": "eritrea",
-                                "ready": false,
                                 "nameAr": "إريتريا",
                                 "nameEn": "Eritrea",
                                 "continent": "africa",
@@ -3402,7 +3374,6 @@ document.addEventListener("DOMContentLoaded", () => {
                         },
                         {
                                 "id": "libya",
-                                "ready": false,
                                 "nameAr": "ليبيا",
                                 "nameEn": "Libya",
                                 "continent": "africa",
@@ -3422,7 +3393,6 @@ document.addEventListener("DOMContentLoaded", () => {
                         },
                         {
                                 "id": "mali",
-                                "ready": false,
                                 "nameAr": "مالي",
                                 "nameEn": "Mali",
                                 "continent": "africa",
@@ -3442,7 +3412,6 @@ document.addEventListener("DOMContentLoaded", () => {
                         },
                         {
                                 "id": "niger",
-                                "ready": false,
                                 "nameAr": "النيجر",
                                 "nameEn": "Niger",
                                 "continent": "africa",
@@ -3482,7 +3451,6 @@ document.addEventListener("DOMContentLoaded", () => {
                         },
                         {
                                 "id": "somalia",
-                                "ready": false,
                                 "nameAr": "الصومال",
                                 "nameEn": "Somalia",
                                 "continent": "africa",
@@ -3502,7 +3470,6 @@ document.addEventListener("DOMContentLoaded", () => {
                         },
                         {
                                 "id": "southsudan",
-                                "ready": false,
                                 "nameAr": "جنوب السودان",
                                 "nameEn": "South Sudan",
                                 "continent": "africa",
@@ -3521,7 +3488,6 @@ document.addEventListener("DOMContentLoaded", () => {
                         },
                         {
                                 "id": "sudan",
-                                "ready": false,
                                 "nameAr": "السودان",
                                 "nameEn": "Sudan",
                                 "continent": "africa",
@@ -3665,7 +3631,6 @@ document.addEventListener("DOMContentLoaded", () => {
                         },
                         {
                                 "id": "burundi",
-                                "ready": false,
                                 "nameAr": "بوروندي",
                                 "nameEn": "Burundi",
                                 "continent": "africa",
@@ -3705,7 +3670,6 @@ document.addEventListener("DOMContentLoaded", () => {
                         },
                         {
                                 "id": "equatorialguinea",
-                                "ready": false,
                                 "nameAr": "غينيا الاستوائية",
                                 "nameEn": "Equatorial Guinea",
                                 "continent": "africa",
@@ -3724,7 +3688,6 @@ document.addEventListener("DOMContentLoaded", () => {
                         },
                         {
                                 "id": "eswatini",
-                                "ready": false,
                                 "nameAr": "إسواتيني",
                                 "nameEn": "Eswatini",
                                 "continent": "africa",
@@ -3765,7 +3728,6 @@ document.addEventListener("DOMContentLoaded", () => {
                         },
                         {
                                 "id": "guineabissau",
-                                "ready": false,
                                 "nameAr": "غينيا بيساو",
                                 "nameEn": "Guinea-Bissau",
                                 "continent": "africa",
@@ -3803,7 +3765,6 @@ document.addEventListener("DOMContentLoaded", () => {
                         },
                         {
                                 "id": "lesotho",
-                                "ready": false,
                                 "nameAr": "ليسوتو",
                                 "nameEn": "Lesotho",
                                 "continent": "africa",
@@ -3821,7 +3782,6 @@ document.addEventListener("DOMContentLoaded", () => {
                         },
                         {
                                 "id": "liberia",
-                                "ready": false,
                                 "nameAr": "ليبيريا",
                                 "nameEn": "Liberia",
                                 "continent": "africa",
@@ -3960,7 +3920,6 @@ document.addEventListener("DOMContentLoaded", () => {
                         },
                         {
                                 "id": "saotomeprincipe",
-                                "ready": false,
                                 "nameAr": "ساو تومي وبرينسيب",
                                 "nameEn": "Sao Tome and Principe",
                                 "continent": "africa",
@@ -3980,7 +3939,6 @@ document.addEventListener("DOMContentLoaded", () => {
                         },
                         {
                                 "id": "sierraleone",
-                                "ready": false,
                                 "nameAr": "سيراليون",
                                 "nameEn": "Sierra Leone",
                                 "continent": "africa",

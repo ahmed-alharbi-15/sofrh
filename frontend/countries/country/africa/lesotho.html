@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سفرة</title>
+    <link rel="stylesheet" href="/countries/countries.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@500;600&display=swap');
+    </style>
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="hamburger" id="menu-btn">☰</div>
+        <div class="auth-buttons" id="authButtons">
+            <a href="/auth/login.html" class="login">تسجيل دخول</a>
+            <a href="/auth/signup.html" class="signup">إنشاء حساب</a>
+        </div>
+        <div class="user-menu" id="userMenu">
+            <img id="userAvatar" src="/img/avater-icon.jpeg" alt="المستخدم">
+            <span class="user-name" id="userName"></span>
+            <div class="user-dropdown">
+                <a href="/profile/profile.html">الملف الشخصي</a>
+                <a href="/index/index.html" id="logoutBtn">تسجيل الخروج</a>
+            </div>
+        </div>
+        <ul class="nav-list">
+            <li><a href="/index/index.html">الرئيسية</a></li>
+            <li><a href="/countries/countries.html">الدول</a></li>
+            <li><a href="/events/events.html">الفعاليات</a></li>
+            <li><a href="/recipes/recipes.html">الوصفات</a></li>
+            <li><a href="/plan/plan.html" class="active">خطتي</a></li>
+        </ul>
+        <div class="logo">
+            <a href="/index/index.html"><img src="/img/logo3.JPG" alt="سفرة"></a>
+        </div>
+    </header>
+
+    <nav class="side-menu" id="side-menu">
+        <span class="close-btn" id="close-btn">✖</span>
+        <span class="side-menu-kicker">استكشف</span>
+        <ul>
+            <li><a href="/index/index.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M3 11.5 12 4l9 7.5" />
+                        <path
+                            d="M5.5 10v9a1 1 0 0 0 1 1H9a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h2.5a1 1 0 0 0 1-1v-9" />
+                    </svg>
+                    <span>الرئيسية</span>
+                </a></li>
+            <li><a href="/countries/countries.html" class="active">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M12 21s7-6.6 7-12a7 7 0 1 0-14 0c0 5.4 7 12 7 12Z" />
+                        <circle cx="12" cy="9" r="2.3" />
+                    </svg>
+                    <span>الدول</span>
+                </a></li>
+            <li><a href="/events/events.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <rect x="3.5" y="5" width="17" height="16" rx="2.5" />
+                        <path d="M8 3v4M16 3v4M3.5 10h17" />
+                        <circle cx="12" cy="15" r="1.4" fill="currentColor" stroke="none" />
+                    </svg>
+                    <span>الفعاليات</span>
+                </a></li>
+            <li><a href="/recipes/recipes.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M7 2v8a2 2 0 0 0 2 2v10M5 2v6M9 2v6M14 2c-1.5 2-1.5 7 0 9 .6.6 1 1.3 1 2v9" />
+                    </svg>
+                    <span>الوصفات</span>
+                </a></li>
+            <li><a href="/plan/plan.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="9" />
+                        <path d="M14.8 9.2 13 13l-3.8 1.8L11 11l3.8-1.8Z" />
+                    </svg>
+                    <span>خطتي</span>
+                </a></li>
+        </ul>
+    </nav>
+
+    <div class="country-name">
+        <h1>ليسوتو</h1>
+        <p>مملكة الجبال الشاهقة في قلب أفريقيا الجنوبية.</p>
+    </div>
+
+    <div class="main-cites">
+        <h1>المدن</h1>
+    </div>
+    <section class="cities-grid">
+
+        <div class="cite" data-name="ماسيرو – Maseru" data-img="/img/Maseru.jpg"
+            data-desc="عاصمة ليسوتو الوحيدة الواقعة على نهر كالدون، مدينة حيوية تمزج بين الأسواق الملونة والمباني الاستعمارية وسط سلسلة جبال ماد نبلني الشاهقة."
+            data-historic="🏛️ متحف موريا – Morija Museum | ⛪ كاتدرائية سيدة النصر – Our Lady of Victories Cathedral | 🛍️ سوق ماسيرو المركزي – Maseru Central Market | 🏰 قصر الملك – Royal Palace"
+            data-restaurants="🍖 مطعم ليتشا – Lechwe Restaurant | 🌿 مطعم كولدستون – Coldstone Kitchen | 🥘 مطعم بيغ سكاي – Big Sky Restaurant"
+            data-cafes="☕ مقهى نيوز كافيه – News Cafe | ☕ مقهى فيرغا – Firga Cafe"
+            data-events="🏛️ متحف موريا | 🛍️ سوق ماسيرو المركزي | 🏰 قصر الملك" onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'lesotho_maseru', 'ماسيرو – Maseru', '/img/Maseru.jpg')">🏙️</button>
+            <img src="/img/Maseru.jpg" alt="ماسيرو" class="cite-img">
+            <span class="name">ماسيرو – Maseru</span>
+            <p class="info">عاصمة حيوية على نهر كالدون وسط الجبال.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+        <div class="cite" data-name="تيياتيانينغ – Teyateyaneng" data-img="/img/Teyateyaneng.jpg"
+            data-desc="مدينة النسيج والحرف اليدوية الشهيرة في ليسوتو، تشتهر بسجاداتها الصوفية المنسوجة يدوياً وأسواقها التقليدية المحاطة بالتلال الخضراء."
+            data-historic="🧵 مركز هيلانغ للنسيج – Helang Basali Weavers | 🏞️ تلال TY – TY Hills | 🛍️ سوق الحرف اليدوية – Craft Market"
+            data-restaurants="🍖 مطعم بلو ماونتن – Blue Mountain Inn | 🌿 مطعم كايسي فيليدج – Kaycee Village"
+            data-cafes="☕ مقهى تي واي – TY Cafe"
+            data-events="🧵 مركز النسيج | 🛍️ سوق الحرف اليدوية | 🏞️ تلال TY" onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'lesotho_teyateyaneng', 'تيياتيانينغ – Teyateyaneng', '/img/Teyateyaneng.jpg')">🏙️</button>
+            <img src="/img/Teyateyaneng.jpg" alt="تيياتيانينغ" class="cite-img">
+            <span class="name">تيياتيانينغ – Teyateyaneng</span>
+            <p class="info">عاصمة الحرف اليدوية والسجاد الصوفي.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+        <div class="cite" data-name="مالياليا – Malealea" data-img="/img/Malealea.jpg"
+            data-desc="قرية جبلية نائية تُعرف ببوابة الفروسية الأصيلة، حيث تنطلق رحلات ركوب خيول الباسوتو عبر الوديان والقرى التقليدية النائية."
+            data-historic="🐴 مركز ركوب الخيل – Malealea Pony Trekking Centre | 🏞️ وادي غيتس أوف بارادايس – Gates of Paradise | 🎨 نقوش الكهوف الصخرية – Rock Art Caves"
+            data-restaurants="🍖 مطعم نزل مالياليا – Malealea Lodge Restaurant"
+            data-cafes="☕ مقهى النزل – Lodge Cafe"
+            data-events="🐴 ركوب خيول الباسوتو | 🏞️ غيتس أوف بارادايس | 🎨 نقوش الكهوف" onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'lesotho_malealea', 'مالياليا – Malealea', '/img/Malealea.jpg')">🏙️</button>
+            <img src="/img/Malealea.jpg" alt="مالياليا" class="cite-img">
+            <span class="name">مالياليا – Malealea</span>
+            <p class="info">بوابة رحلات ركوب خيول الباسوتو الأصيلة.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+        <div class="cite" data-name="سيمونكونغ – Semonkong" data-img="/img/Semonkong.jpg"
+            data-desc="بلدة جبلية هادئة تحتضن أعلى شلالات ليسوتو، وجهة مثالية لعشاق المشي لمسافات طويلة والطبيعة الجبلية الوعرة الساحرة."
+            data-historic="💦 شلالات ماليتسونيان – Maletsunyane Falls | 🥾 مسارات المشي الجبلية – Hiking Trails | 🐴 محطة ركوب الخيل – Semonkong Pony Station"
+            data-restaurants="🍖 مطعم نزل سيمونكونغ – Semonkong Lodge Restaurant"
+            data-cafes="☕ مقهى النزل الجبلي – Mountain Lodge Cafe"
+            data-events="💦 شلالات ماليتسونيان | 🥾 مسارات المشي | 🐴 محطة ركوب الخيل" onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'lesotho_semonkong', 'سيمونكونغ – Semonkong', '/img/Semonkong.jpg')">🏙️</button>
+            <img src="/img/Semonkong.jpg" alt="سيمونكونغ" class="cite-img">
+            <span class="name">سيمونكونغ – Semonkong</span>
+            <p class="info">بلدة جبلية موطن أعلى شلالات ليسوتو.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+        <div class="cite" data-name="موخوتلونغ – Mokhotlong" data-img="/img/Mokhotlong.jpg"
+            data-desc="أعلى بلدة في ليسوتو وبوابة ممر ساني الجبلي الشهير، تتميز بمناظر جبال دراكنسبرغ الخلابة وأجواء باردة على مدار العام."
+            data-historic="🏔️ ممر ساني – Sani Pass | ⛰️ جبال دراكنسبرغ – Drakensberg Mountains | 🐎 محمية سيلابثيبي – Sehlabathebe Park"
+            data-restaurants="🍖 مطعم ليتسينغ – Letseng Restaurant"
+            data-cafes="☕ مقهى موخوتلونغ – Mokhotlong Cafe"
+            data-events="🏔️ ممر ساني | ⛰️ جبال دراكنسبرغ | 🐎 محمية سيلابثيبي" onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'lesotho_mokhotlong', 'موخوتلونغ – Mokhotlong', '/img/Mokhotlong.jpg')">🏙️</button>
+            <img src="/img/Mokhotlong.jpg" alt="موخوتلونغ" class="cite-img">
+            <span class="name">موخوتلونغ – Mokhotlong</span>
+            <p class="info">أعلى بلدة وبوابة ممر ساني الجبلي.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+        <div class="cite" data-name="روما – Roma" data-img="/img/Roma Lesotho.jpg"
+            data-desc="مدينة جامعية هادئة تحتضن أقدم جامعة في ليسوتو، وتشتهر بآثار أقدام الديناصورات المتحجرة القريبة منها وسط طبيعة ريفية ساحرة."
+            data-historic="🎓 جامعة ليسوتو الوطنية – National University of Lesotho | 🦖 آثار أقدام الديناصورات – Dinosaur Footprints | ⛪ كاتدرائية روما – Roma Cathedral"
+            data-restaurants="🍖 مطعم روما – Roma Restaurant"
+            data-cafes="☕ مقهى الجامعة – University Cafe"
+            data-events="🎓 جامعة ليسوتو الوطنية | 🦖 آثار أقدام الديناصورات | ⛪ كاتدرائية روما" onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'lesotho_roma', 'روما – Roma', '/img/Roma Lesotho.jpg')">🏙️</button>
+            <img src="/img/Roma Lesotho.jpg" alt="روما" class="cite-img">
+            <span class="name">روما – Roma</span>
+            <p class="info">مدينة جامعية وآثار أقدام الديناصورات.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+    </section>
+
+    <div class="main-foods">
+        <h1>الماكولات</h1>
+    </div>
+    <section class="foods-grid">
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=papa-lesotho'">
+            <img src="/img/Papa Lesotho.jpg" alt="باپا" class="foods-img">
+            <span class="name-foods">باپا – Papa</span>
+            <div class="food-info">عجينة ذرة تقليدية أساسية في المائدة الباسوتوية.</div>
+            <a href="/recipes/recipes.html?recipe=papa-lesotho" class="for-more-btn"
+                onclick="event.stopPropagation()">الوصفة</a>
+        </div>
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=chakalaka-lesotho'">
+            <img src="/img/Chakalaka.jpg" alt="تشاكالاكا" class="foods-img">
+            <span class="name-foods">تشاكالاكا – Chakalaka</span>
+            <div class="food-info">سلطة خضار حارة تُقدم مع الأطباق الرئيسية.</div>
+            <a href="/recipes/recipes.html?recipe=chakalaka-lesotho" class="for-more-btn"
+                onclick="event.stopPropagation()">الوصفة</a>
+        </div>
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=moroho'">
+            <img src="/img/Moroho.jpg" alt="موروهو" class="foods-img">
+            <span class="name-foods">موروهو – Moroho</span>
+            <div class="food-info">خضار ورقية مطهوة بطريقة تقليدية بسيطة.</div>
+            <a href="/recipes/recipes.html?recipe=moroho" class="for-more-btn"
+                onclick="event.stopPropagation()">الوصفة</a>
+        </div>
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=nyekoe'">
+            <img src="/img/Nyekoe.jpg" alt="نيكوي" class="foods-img">
+            <span class="name-foods">نيكوي – Nyekoe</span>
+            <div class="food-info">طبق الذرة المجروشة والفاصولياء المغذي.</div>
+            <a href="/recipes/recipes.html?recipe=nyekoe" class="for-more-btn"
+                onclick="event.stopPropagation()">الوصفة</a>
+        </div>
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=seshebo'">
+            <img src="/img/Seshebo.jpg" alt="سيشيبو" class="foods-img">
+            <span class="name-foods">سيشيبو – Seshebo</span>
+            <div class="food-info">يخنة لحم بقري غنية بالتوابل المحلية.</div>
+            <a href="/recipes/recipes.html?recipe=seshebo" class="for-more-btn"
+                onclick="event.stopPropagation()">الوصفة</a>
+        </div>
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=makoenya'">
+            <img src="/img/Makoenya.jpg" alt="ماكوينيا" class="foods-img">
+            <span class="name-foods">ماكوينيا – Makoenya</span>
+            <div class="food-info">كرات عجين مقلية ذهبية تُقدم كوجبة خفيفة.</div>
+            <a href="/recipes/recipes.html?recipe=makoenya" class="for-more-btn"
+                onclick="event.stopPropagation()">الوصفة</a>
+        </div>
+    </section>
+
+    <div class="events-main">
+        <h1>الفعاليات</h1>
+    </div>
+    <section class="events-grid">
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=MaletsunyaneFallsLesotho'">
+            <img src="/img/Maletsunyane Falls.jpg" alt="شلالات ماليتسونيان" class="event-img">
+            <span class="name-event">شلالات ماليتسونيان – Maletsunyane Falls</span>
+            <div class="event-info">أعلى شلال في ليسوتو بمنظر جبلي أخّاذ.</div>
+            <a href="/events/events.html?event=MaletsunyaneFallsLesotho" class="event-btn"
+                onclick="event.stopPropagation()">اكتشف</a>
+        </div>
+
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=SaniPassLesotho'">
+            <img src="/img/Sani Pass.jpg" alt="ممر ساني" class="event-img">
+            <span class="name-event">ممر ساني – Sani Pass</span>
+            <div class="event-info">ممر جبلي وعر يربط ليسوتو بجنوب أفريقيا.</div>
+            <a href="/events/events.html?event=SaniPassLesotho" class="event-btn"
+                onclick="event.stopPropagation()">اكتشف</a>
+        </div>
+
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=ThabaBosiuLesotho'">
+            <img src="/img/Thaba Bosiu.jpg" alt="ثابا بوسيو" class="event-img">
+            <span class="name-event">ثابا بوسيو – Thaba Bosiu</span>
+            <div class="event-info">جبل تاريخي كان حصن مؤسس مملكة الباسوتو.</div>
+            <a href="/events/events.html?event=ThabaBosiuLesotho" class="event-btn"
+                onclick="event.stopPropagation()">اكتشف</a>
+        </div>
+
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=KatseDamLesotho'">
+            <img src="/img/Katse Dam.jpg" alt="سد كاتسي" class="event-img">
+            <span class="name-event">سد كاتسي – Katse Dam</span>
+            <div class="event-info">أحد أكبر السدود في أفريقيا وسط جبال شاهقة.</div>
+            <a href="/events/events.html?event=KatseDamLesotho" class="event-btn"
+                onclick="event.stopPropagation()">اكتشف</a>
+        </div>
+
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=AfriSkiLesotho'">
+            <img src="/img/Afriski Resort.jpg" alt="منتجع أفريسكي" class="event-img">
+            <span class="name-event">منتجع أفريسكي – Afriski Mountain Resort</span>
+            <div class="event-info">منتجع جبلي للتزلج على الثلج في أفريقيا الجنوبية.</div>
+            <a href="/events/events.html?event=AfriSkiLesotho" class="event-btn"
+                onclick="event.stopPropagation()">اكتشف</a>
+        </div>
+
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=BasothoVillageLesotho'">
+            <img src="/img/Basotho Cultural Village.jpg" alt="قرية باسوتو الثقافية" class="event-img">
+            <span class="name-event">قرية باسوتو الثقافية – Basotho Cultural Village</span>
+            <div class="event-info">قرية تراثية تعرض تقاليد وحياة شعب الباسوتو.</div>
+            <a href="/events/events.html?event=BasothoVillageLesotho" class="event-btn"
+                onclick="event.stopPropagation()">اكتشف</a>
+        </div>
+    </section>
+
+    <div id="cityModal" class="modal" onclick="closeCityModal(event)">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeCityModal(event)">×</button>
+            <div class="modal-top">
+                <img id="modalCityImg" src="" alt="" />
+                <div class="modal-top-info">
+                    <h2 id="modalCityName"></h2>
+                    <span class="modal-top-badge">✦ تفاصيل المدينة</span>
+                </div>
+            </div>
+            <div class="modal-body">
+                <p id="modalCityDesc" class="event-desc"></p>
+                <h4>🏛️ أفضل الأماكن التاريخية</h4>
+                <div id="modalCityHistoric" class="ingredients-tags"></div>
+                <h4>🍽️ أفضل المطاعم</h4>
+                <div id="modalCityRestaurants" class="ingredients-tags"></div>
+                <h4>☕ أفضل المقاهي</h4>
+                <div id="modalCityCafes" class="ingredients-tags"></div>
+                <h4>🎉 فعاليات المدينة</h4>
+                <div id="modalCityEvents" class="ingredients-tags"></div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h2 class="footer-logo">سفرة</h2>
+                <p>وجهتك للسفر والطعام حول العالم</p>
+            </div>
+            <div class="footer-links">
+                <h4>روابط سريعة</h4>
+                <ul>
+                    <li><a href="/index/index.html">الرئيسية</a></li>
+                    <li><a href="/countries/countries.html">الدول</a></li>
+                    <li><a href="/events/events.html">الفعاليات</a></li>
+                    <li><a href="/recipes/recipes.html">الوصفات</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>تواصل معنا</h4>
+                <ul>
+                    <li>📧 <a href="mailto:Sofrh.info@gmail.com" target="_blank">Sofrh.info@gmail.com</a></li>
+                    <li>📧 <a href="mailto:Sofrh.support@gmail.com" target="_blank">Sofrh.support@gmail.com</a></li>
+                    <li>🐦 <a href="https://twitter.com/sofrah_sa" target="_blank">X (Twitter)</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 سفرة — جميع الحقوق محفوظة</p>
+            <p>صُنع بواسطة فريق شفرة</p>
+            <p>📧 <a href="mailto:Sofrh.info@gmail.com" style="color: #D2A673;">Sofrh.info@gmail.com</a></p>
+        </div>
+    </footer>
+
+    <script src="/countries/countries.js"></script>
+    <script src="/auth/auth.js"></script>
+</body>
+
+</html>
