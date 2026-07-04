@@ -1038,10 +1038,10 @@ document.addEventListener("DOMContentLoaded", () => {
                         },
                         {
                                 "id": "ethiopia",
-                                "nameAr": "اثوبيا",
+                                "nameAr": "اثيوبيا",
                                 "nameEn": "Ethiopia",
                                 "continent": "africa",
-                                "img": "/img/coming-soon.jpg",
+                                "img": "/img/ethiopia-logo.jpg",
                                 "dailyCost": 95,
                                 "durationMin": 5,
                                 "durationMax": 9,
