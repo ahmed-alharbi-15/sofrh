@@ -962,7 +962,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                 "nameEn": "Kenya",
                                 "continent": "africa",
                                 "img": "/img/Kenya.jpg",
-                                "dailyCost": 820,
+                                "dailyCost": 460,
                                 "durationMin": 6,
                                 "durationMax": 10,
                                 "tripTypes": [
@@ -1022,7 +1022,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                 "nameEn": "Tanzania",
                                 "continent": "africa",
                                 "img": "/img/Tanzania.jpg",
-                                "dailyCost": 500,
+                                "dailyCost": 620,
                                 "durationMin": 6,
                                 "durationMax": 10,
                                 "tripTypes": [
