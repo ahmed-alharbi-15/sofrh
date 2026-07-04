@@ -1038,7 +1038,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         },
                         {
                                 "id": "ethiopia",
-                                "nameAr": "إثيوبيا",
+                                "nameAr": "اثوبيا",
                                 "nameEn": "Ethiopia",
                                 "continent": "africa",
                                 "img": "/img/coming-soon.jpg",
