@@ -1405,7 +1405,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         },
                         {
                                 "id": "capeverde",
-                                "nameAr": "الرأس الأخضر",
+                                "nameAr": " الراس الاخضر",
                                 "nameEn": "Cape Verde",
                                 "continent": "africa",
                                 "img": "/img/capeverde-logo.avif",
