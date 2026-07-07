@@ -1132,11 +1132,10 @@ document.addEventListener("DOMContentLoaded", () => {
                         },
                         {
                                 "id": "algeria",
-                                "ready": false,
                                 "nameAr": "الجزائر",
                                 "nameEn": "Algeria",
                                 "continent": "africa",
-                                "img": "/img/coming-soon.jpg",
+                                "img": "/img/algeria-logo.jpg",
                                 "dailyCost": 170,
                                 "durationMin": 5,
                                 "durationMax": 9,
