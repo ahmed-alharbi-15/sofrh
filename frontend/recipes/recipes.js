@@ -217,7 +217,7 @@ const countryMap = {
     'tunisian-tajine':'تونس', makroudh:'تونس',
     pilau:'كينيا', 'nyama-choma':'كينيا', chapati:'كينيا', mandazi:'كينيا',
     'pilau-rice':'تنزانيا', mishkaki:'تنزانيا', ugali:'تنزانيا',
-    'grilled-fish-tz':'تنزانيا', 'samosa-tz':'تنزانيا',
+    'grilled-fish-tz':'تنزانيا', 'samosa-tz':'تنزانيا', 'mandazi-tz':'تنزانيا',
     paella:'إسبانيا', gazpacho:'إسبانيا', tortilla:'إسبانيا',
     churros_esp:'إسبانيا', croquetas:'إسبانيا',
     croissant:'فرنسا', ratatouille:'فرنسا', 'coq-au-vin':'فرنسا',
