@@ -3767,7 +3767,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                 "nameAr": "ليسوتو",
                                 "nameEn": "Lesotho",
                                 "continent": "africa",
-                                "img": "/img/coming-soon.jpg",
+                                "img": "/img/lesotho-logo.jpg",
                                 "dailyCost": 250,
                                 "durationMin": 4,
                                 "durationMax": 7,
