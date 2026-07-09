@@ -3490,7 +3490,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                 "nameAr": "السودان",
                                 "nameEn": "Sudan",
                                 "continent": "africa",
-                                "img": "/img/coming-soon.jpg",
+                                "img": "/img/sudan-logo.jpg",
                                 "dailyCost": 100,
                                 "durationMin": 5,
                                 "durationMax": 9,
