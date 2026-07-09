@@ -3672,7 +3672,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                 "nameAr": "غينيا الاستوائية",
                                 "nameEn": "Equatorial Guinea",
                                 "continent": "africa",
-                                "img": "/img/coming-soon.jpg",
+                                "img": "/img/equatorialguinea-logo.jpg",
                                 "dailyCost": 450,
                                 "durationMin": 5,
                                 "durationMax": 8,
