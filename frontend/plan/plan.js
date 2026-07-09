@@ -3633,7 +3633,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                 "nameAr": "بوروندي",
                                 "nameEn": "Burundi",
                                 "continent": "africa",
-                                "img": "/img/coming-soon.jpg",
+                                "img": "/img/burundi-logo.jpg",
                                 "dailyCost": 180,
                                 "durationMin": 5,
                                 "durationMax": 8,
