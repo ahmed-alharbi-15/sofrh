@@ -100,7 +100,7 @@
         <div class="cite" data-name="نواكشوط – Nouakchott" data-img="/img/Nouakchott.jpg"
             data-desc="العاصمة الصحراوية الحديثة على ساحل الأطلسي، تشتهر بميناء الصيد التقليدي الصاخب وأسواقها الشعبية وسط الرمال الذهبية."
             data-historic="🕌 المسجد السعودي – Saudi Mosque | 🛍️ السوق الكبير – Marché Capitale | ⚓ ميناء الصيد – Port de Pêche"
-            data-restaurants="🍖 مطعم لا تيرّاس – La Terrasse | 🌿 مطعم شنقيط – Chinguetti Restaurant | 🐟 مطعم السمك الطازج – Fresh Fish House"
+            data-restaurants="🍖 مطعم لا تيرّاس – La Terrasse | 🌿 مطعم لكصر – Ksar Restaurant | 🐟 مطعم السمك الطازج – Fresh Fish House"
             data-cafes="☕ مقهى الساحل – Café du Sahel | ☕ مقهى نواكشوط الكبير – Grand Nouakchott Café | ☕ مقهى الواحة – Al Waha Café"
             data-events="🕌 المسجد السعودي | ⚓ ميناء الصيد | 🛍️ السوق الكبير" onclick="openCityModal(this)">
             <button class="save-btn"
@@ -168,6 +168,21 @@
             <img src="/img/Oualata.jpg" alt="والاتة" class="cite-img">
             <span class="name">والاتة – Oualata</span>
             <p class="info">مدينة أثرية بزخارف هندسية صحراوية فريدة.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+        <div class="cite" data-name="زويرات – Zouérat" data-img="/img/Zouerate.jpg"
+            data-desc="مدينة تعدين صحراوية في أقصى شمال موريتانيا، تشتهر بمنجم الحديد الضخم وقطار سنيم الأسطوري، أطول قطار في العالم يخترق الصحراء نحو ميناء نواذيبو."
+            data-historic="🚂 قطار سنيم للحديد – SNIM Iron Ore Train | ⛰️ جبل كديات إجيل – Kediet ej Jill Peak | ⛏️ منجم اجل الرين – Guelb El Rhein Mine"
+            data-restaurants="🍖 مطعم الكديه – Kedia Restaurant | 🌿 مطعم واحة الشمال – North Oasis Restaurant | 🍲 مطعم زويرات الشعبي – Zouerate Popular Restaurant"
+            data-cafes="☕ مقهى زويرات – Zouerate Café | ☕ مقهى القطار – Train Café | ☕ مقهى الكديه – Kedia Café"
+            data-events="🚂 ركوب قطار الحديد الأسطوري | ⛰️ تسلق جبل كديات إجيل | ⛏️ جولة في منجم الحديد" onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'mauritania_zouerate', 'زويرات – Zouérat', '/img/Zouerate.jpg')">🏙️</button>
+            <img src="/img/Zouerate.jpg" alt="زويرات" class="cite-img">
+            <span class="name">زويرات – Zouérat</span>
+            <p class="info">مدينة تعدين صحراوية وموطن أطول قطار في العالم.</p>
             <button class="cite-btn"
                 onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
         </div>

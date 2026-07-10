@@ -60,14 +60,10 @@ function openEventModal(btn) {
     document.getElementById("modalActivities").innerHTML = activitiesHTML;
 
     // إخفاء خانة السكن إذا المدة ساعات أو نصف يوم
-    const stay = (btn.dataset.stay || "").toLowerCase();
-    const hideHotel = stay.includes("ساعة") || stay.includes("ساعات") || stay.includes("نصف يوم");
+    const duration = (btn.dataset.duration || "").toLowerCase();
+    const hideHotel = duration.includes("ساعة") || duration.includes("ساعات") || duration.includes("نصف يوم");
 
     document.getElementById("modalBudget").innerHTML = `
-        <div class="budget-row">
-            <span>مدة الإقامة</span>
-            <span>${btn.dataset.stay || ""}</span>
-        </div>
         <div class="budget-row">
             <span>رسوم الفعاليات</span>
             <span>${btn.dataset.eventFee || ""}</span>
