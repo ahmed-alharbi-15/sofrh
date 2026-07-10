@@ -3784,7 +3784,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                 "nameAr": "ليبيريا",
                                 "nameEn": "Liberia",
                                 "continent": "africa",
-                                "img": "/img/coming-soon.jpg",
+                                "img": "/img/liberia-logo.jpg",
                                 "dailyCost": 280,
                                 "durationMin": 5,
                                 "durationMax": 8,
