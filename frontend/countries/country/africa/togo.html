@@ -13,20 +13,23 @@
 
 <body>
 
-    <header class="navbar">
+        <header class="navbar">
         <div class="hamburger" id="menu-btn">☰</div>
+
         <div class="auth-buttons" id="authButtons">
             <a href="/auth/login.html" class="login">تسجيل دخول</a>
             <a href="/auth/signup.html" class="signup">إنشاء حساب</a>
         </div>
+
         <div class="user-menu" id="userMenu">
-            <img id="userAvatar" src="/img/avater-icon.jpeg" alt="المستخدم">
+            <img id="userAvatar" src="" alt="">
             <span class="user-name" id="userName"></span>
             <div class="user-dropdown">
                 <a href="/profile/profile.html">الملف الشخصي</a>
-                <a href="/index/index.html" id="logoutBtn">تسجيل الخروج</a>
+                <a href="#" id="logoutBtn">تسجيل خروج</a>
             </div>
         </div>
+
         <ul class="nav-list">
             <li><a href="/index/index.html">الرئيسية</a></li>
             <li><a href="/countries/countries.html">الدول</a></li>
@@ -34,16 +37,18 @@
             <li><a href="/recipes/recipes.html">الوصفات</a></li>
             <li><a href="/plan/plan.html" class="active">خطتي</a></li>
         </ul>
+
         <div class="logo">
-            <a href="/index/index.html"><img src="/img/logo3.JPG" alt="سفرة"></a>
+            <a href="/index/index.html"><img src="/img/logo7.png" alt="سفرة"></a>
         </div>
     </header>
 
-    <nav class="side-menu" id="side-menu">
-        <span class="close-btn" id="close-btn">✖</span>
+    <!-- SIDE MENU -->
+    <div class="side-menu" id="side-menu">
+        <span class="close-btn" id="close-btn">×</span>
         <span class="side-menu-kicker">استكشف</span>
         <ul>
-            <li><a href="/index/index.html">
+            <li><a href="/index/index.html" class="active">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
                         stroke-linejoin="round">
                         <path d="M3 11.5 12 4l9 7.5" />
@@ -52,7 +57,7 @@
                     </svg>
                     <span>الرئيسية</span>
                 </a></li>
-            <li><a href="/countries/countries.html" class="active">
+            <li><a href="/countries/countries.html">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
                         stroke-linejoin="round">
                         <path d="M12 21s7-6.6 7-12a7 7 0 1 0-14 0c0 5.4 7 12 7 12Z" />
@@ -85,7 +90,7 @@
                     <span>خطتي</span>
                 </a></li>
         </ul>
-    </nav>
+    </div>
 
     <div class="country-name">
         <h1>توغو</h1>

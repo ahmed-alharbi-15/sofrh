@@ -1,3 +1,24 @@
+@font-face {
+    font-family: 'Dubai';
+    src: local('Dubai'), local('Dubai-Regular');
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Dubai';
+    src: local('Dubai Medium'), local('Dubai-Medium');
+    font-weight: 500;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Dubai';
+    src: local('Dubai Bold'), local('Dubai-Bold');
+    font-weight: 700;
+    font-display: swap;
+}
+
 /*********************************
      RESET
 *********************************/
@@ -7,9 +28,23 @@
     box-sizing: border-box;
 }
 
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 1.8rem;
+}
+
+small,
+.text-small {
+    font-size: 0.875rem;
+}
+
 body {
     background-color: #FAF5EB;
-    font-family: "Noto Sans Arabic", sans-serif;
+    font-family: 'Dubai', "Noto Sans Arabic", sans-serif;
+    font-size: 1rem;
     padding-top: 90px !important;
 }
 
@@ -35,7 +70,7 @@ body {
 }
 
 .logo img {
-    height: 70px;
+    height: 60px;
 }
 
 .nav-list {
@@ -404,7 +439,7 @@ body {
     cursor: pointer;
     padding: 0;
     display: block;
-    font-family: "Noto Sans Arabic", sans-serif;
+    font-family: 'Dubai', "Noto Sans Arabic", sans-serif;
 }
 
 /* الصورة */
@@ -467,7 +502,7 @@ body {
     font-size: 12px;
     padding: 3px 10px;
     border-radius: 999px;
-    font-family: "Noto Sans Arabic", sans-serif;
+    font-family: 'Dubai', "Noto Sans Arabic", sans-serif;
     display: none;
 }
 
