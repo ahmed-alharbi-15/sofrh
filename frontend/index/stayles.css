@@ -11,7 +11,7 @@
      BODY
 *********************************/
 body {
-    background-color: #FAF4E6;
+    background-color: #FAF5EB;
     font-family: "Noto Sans Arabic", sans-serif;
     padding-top: 90px !important;
 }
@@ -20,10 +20,10 @@ body {
      COLORS
 *********************************/
 :root {
-    --brown-dark: #4A2E1F;
-    --cream-light: #FAF4E6;
-    --cream-soft: #F3E8D2;
-    --caramel: #D2A673;
+    --brown-dark: #32127A;
+    --cream-light: #FAF5EB;
+    --cream-soft: #F0EBE0;
+    --caramel: #F28500;
 }
 
 /*********************************
@@ -162,7 +162,7 @@ body {
     width: 220px;
     height: 220px;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(210, 166, 115, .18) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(242, 133, 0, .18) 0%, transparent 70%);
     top: -60px;
     left: -70px;
     pointer-events: none;
@@ -223,7 +223,7 @@ body {
 }
 
 .side-menu a:hover {
-    background-color: rgba(210, 166, 115, .16);
+    background-color: rgba(242, 133, 0, .16);
     color: var(--caramel);
 }
 
@@ -256,7 +256,7 @@ body {
     top: 20px;
     left: 20px;
     font-size: 30px;
-    color: #FAF4E6;
+    color: #FAF5EB;
     cursor: pointer;
     padding: 5px 10px;
     border-radius: 8px;
@@ -265,8 +265,8 @@ body {
 }
 
 .close-btn:hover {
-    background-color: #D2A673;
-    color: #4A2E1F;
+    background-color: #F28500;
+    color: #FFFFFF;
     transform: rotate(90deg);
 }
 
@@ -301,7 +301,7 @@ body {
     top: 100%;
     right: 0;
     left: auto;
-    background: #FAF4E6;
+    background: #FAF5EB;
     border-radius: 12px;
     padding: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
@@ -316,7 +316,7 @@ body {
 .user-dropdown a {
     display: block;
     padding: 8px 12px;
-    color: #4A2E1F;
+    color: #32127A;
     text-decoration: none;
     font-size: 15px;
     border-radius: 8px;
@@ -324,7 +324,7 @@ body {
 }
 
 .user-dropdown a:hover {
-    background: #F3E8D2;
+    background: #F0EBE0;
 }
 
 /*********************************
@@ -592,7 +592,7 @@ body {
     justify-content: center;
     text-align: center;
     padding: 80px 20px 60px;
-    background: linear-gradient(160deg, #2c1a0e 0%, #3d2410 40%, #1a0f07 100%);
+    background: linear-gradient(160deg, #2A1060 0%, #3A1780 40%, #150A35 100%);
     position: relative;
     overflow: hidden;
 }
@@ -603,7 +603,7 @@ body {
     width: 600px;
     height: 600px;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(180, 110, 50, 0.15) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(242, 133, 0, 0.15) 0%, transparent 70%);
     top: -100px;
     left: 50%;
     transform: translateX(-50%);
@@ -612,9 +612,9 @@ body {
 
 .hero-badge {
     display: inline-block;
-    background: rgba(180, 110, 50, 0.2);
-    border: 1px solid rgba(180, 110, 50, 0.4);
-    color: #d4956a;
+    background: rgba(242, 133, 0, 0.2);
+    border: 1px solid rgba(242, 133, 0, 0.4);
+    color: #F28500;
     font-size: 13px;
     padding: 6px 18px;
     border-radius: 50px;
@@ -625,18 +625,18 @@ body {
 .hero-text h1 {
     font-size: clamp(2.5rem, 6vw, 4.5rem);
     font-weight: 700;
-    color: #f5ede0;
+    color: #FFFFFF;
     margin: 0 0 16px;
     line-height: 1.15;
 }
 
 .hero-accent {
-    color: #c8854a;
+    color: #F28500;
 }
 
 .hero-text p {
     font-size: 1.1rem;
-    color: rgba(245, 237, 224, 0.65);
+    color: rgba(255, 255, 255, 0.65);
     margin: 0 0 48px;
 }
 
@@ -660,12 +660,12 @@ body {
 .stat-num {
     font-size: 1.6rem;
     font-weight: 700;
-    color: #c8854a;
+    color: #F28500;
 }
 
 .stat-label {
     font-size: 13px;
-    color: rgba(245, 237, 224, 0.55);
+    color: rgba(255, 255, 255, 0.55);
 }
 
 .hero-stat-divider {
@@ -680,7 +680,7 @@ body {
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
     padding: 60px 40px;
-    background: #f5ede0;
+    background: #FAF5EB;
 }
 
 .card {
@@ -744,7 +744,7 @@ body {
 
 .card-body .section-btn {
     display: inline-block;
-    color: #c8854a;
+    color: #F28500;
     font-size: 14px;
     font-weight: 600;
     text-decoration: none;
@@ -767,8 +767,8 @@ body {
 }
 
 .site-footer {
-    background-color: #4A2E1F;
-    color: #FAF4E6;
+    background-color: #32127A;
+    color: #FFFFFF;
     padding: 50px 20px 20px;
     margin-top: 60px;
 }
@@ -784,18 +784,18 @@ body {
 
 .footer-logo {
     font-size: 2rem;
-    color: #D2A673;
+    color: #F28500;
     margin-bottom: 10px;
 }
 
 .footer-brand p {
-    color: #F3E8D2;
+    color: #FFFFFF;
     font-size: 0.9rem;
 }
 
 .footer-links h4,
 .footer-contact h4 {
-    color: #D2A673;
+    color: #F28500;
     margin-bottom: 15px;
     font-size: 1rem;
 }
@@ -811,7 +811,7 @@ body {
 
 .footer-links a,
 .footer-contact a {
-    color: #F3E8D2;
+    color: #FFFFFF;
     text-decoration: none;
     font-size: 0.9rem;
     transition: color 0.3s;
@@ -819,15 +819,15 @@ body {
 
 .footer-links a:hover,
 .footer-contact a:hover {
-    color: #D2A673;
+    color: #F28500;
 }
 
 .footer-bottom {
     text-align: center;
     margin-top: 40px;
     padding-top: 20px;
-    border-top: 1px solid rgba(242, 232, 210, 0.2);
-    color: #F3E8D2;
+    border-top: 1px solid rgba(240, 235, 224, 0.2);
+    color: #FFFFFF;
     font-size: 0.85rem;
 }
 

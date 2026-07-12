@@ -11,7 +11,7 @@
      BODY
 *********************************/
 body {
-    background-color: #FAF4E6;
+    background-color: #FAF5EB;
     font-family: "Noto Sans Arabic", sans-serif;
     padding-top: 90px !important;
     direction: rtl;
@@ -21,10 +21,10 @@ body {
      COLORS
 *********************************/
 :root {
-    --brown-dark: #4A2E1F;
-    --cream-light: #FAF4E6;
-    --cream-soft: #F3E8D2;
-    --caramel: #D2A673;
+    --brown-dark: #32127A;
+    --cream-light: #FAF5EB;
+    --cream-soft: #F0EBE0;
+    --caramel: #F28500;
 }
 
 /*********************************
@@ -164,7 +164,7 @@ body {
     width: 220px;
     height: 220px;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(210, 166, 115, .18) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(242, 133, 0, .18) 0%, transparent 70%);
     top: -60px;
     left: -70px;
     pointer-events: none;
@@ -225,7 +225,7 @@ body {
 }
 
 .side-menu a:hover {
-    background-color: rgba(210, 166, 115, .16);
+    background-color: rgba(242, 133, 0, .16);
     color: var(--caramel);
 }
 
@@ -258,7 +258,7 @@ body {
     top: 20px;
     left: 20px;
     font-size: 30px;
-    color: #FAF4E6;
+    color: #FAF5EB;
     cursor: pointer;
     padding: 5px 10px;
     border-radius: 8px;
@@ -267,8 +267,8 @@ body {
 }
 
 .close-btn:hover {
-    background-color: #D2A673;
-    color: #4A2E1F;
+    background-color: #F28500;
+    color: #FFFFFF;
     transform: rotate(90deg);
 }
 
@@ -303,7 +303,7 @@ body {
     top: 100%;
     right: 0;
     left: auto;
-    background: #FAF4E6;
+    background: #FAF5EB;
     border-radius: 12px;
     padding: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
@@ -318,7 +318,7 @@ body {
 .user-dropdown a {
     display: block;
     padding: 8px 12px;
-    color: #4A2E1F;
+    color: #32127A;
     text-decoration: none;
     font-size: 15px;
     border-radius: 8px;
@@ -326,7 +326,7 @@ body {
 }
 
 .user-dropdown a:hover {
-    background: #F3E8D2;
+    background: #F0EBE0;
 }
 
 /*********************************
@@ -480,7 +480,7 @@ body {
     letter-spacing: 2px;
     color: var(--caramel);
     background: var(--cream-soft);
-    border: 1px dashed rgba(74, 46, 31, .3);
+    border: 1px dashed rgba(50, 18, 122, .3);
     padding: 7px 16px;
     border-radius: 30px;
     margin-bottom: 20px;
@@ -610,7 +610,7 @@ body {
 .hero-stat-divider {
     width: 1px;
     height: 32px;
-    background: rgba(74, 46, 31, .15);
+    background: rgba(50, 18, 122, .15);
 }
 
 @media (max-width: 600px) {
@@ -660,7 +660,7 @@ body {
     align-items: stretch;
     background: #fff;
     border-radius: 22px;
-    box-shadow: 0 24px 60px rgba(74, 46, 31, .14);
+    box-shadow: 0 24px 60px rgba(50, 18, 122, .14);
     overflow: visible;
     position: relative;
 }
@@ -686,7 +686,7 @@ body {
     position: relative;
     width: 0;
     flex: 0 0 0;
-    border-right: 2px dashed rgba(74, 46, 31, .28);
+    border-right: 2px dashed rgba(50, 18, 122, .28);
     margin: 18px 0;
 }
 
@@ -777,7 +777,7 @@ body {
     flex-direction: column;
     gap: 2px;
     padding-bottom: 10px;
-    border-bottom: 1px dashed rgba(74, 46, 31, .18);
+    border-bottom: 1px dashed rgba(50, 18, 122, .18);
 }
 
 .stub-row:last-child {
@@ -878,7 +878,7 @@ body {
     border-radius: 50%;
     background: var(--ink);
     border: 4px solid var(--caramel);
-    box-shadow: 0 2px 8px rgba(74, 46, 31, .45);
+    box-shadow: 0 2px 8px rgba(50, 18, 122, .45);
     cursor: pointer;
     transition: transform .15s;
 }
@@ -905,7 +905,7 @@ body {
     border-radius: 50%;
     background: var(--ink);
     border: 4px solid var(--caramel);
-    box-shadow: 0 2px 8px rgba(74, 46, 31, .45);
+    box-shadow: 0 2px 8px rgba(50, 18, 122, .45);
     cursor: pointer;
 }
 
@@ -935,7 +935,7 @@ body {
 .counter-block {
     flex: 1;
     background: var(--cream-light);
-    border: 2px dashed rgba(74, 46, 31, .25);
+    border: 2px dashed rgba(50, 18, 122, .25);
     border-radius: 14px;
     padding: 20px 14px;
     text-align: center;
@@ -1017,7 +1017,7 @@ body {
     align-items: center;
     gap: 6px;
     padding: 20px 10px;
-    border: 2px dashed rgba(74, 46, 31, .3);
+    border: 2px dashed rgba(50, 18, 122, .3);
     border-radius: 14px;
     background: var(--cream-light);
     cursor: pointer;
@@ -1110,7 +1110,7 @@ body {
     align-items: center;
     gap: 8px;
     padding: 22px 10px;
-    border: 2px dashed rgba(74, 46, 31, .3);
+    border: 2px dashed rgba(50, 18, 122, .3);
     border-radius: 16px;
     background: var(--cream-light);
     cursor: pointer;
@@ -1155,7 +1155,7 @@ body {
 }
 
 .hotel-chip.active .hotel-price {
-    color: rgba(250, 244, 230, .7);
+    color: rgba(250, 245, 235, .7);
 }
 
 @media (max-width: 500px) {
@@ -1248,7 +1248,7 @@ body {
     align-items: center;
     gap: 6px;
     padding: 18px 8px 14px;
-    border: 2px dashed rgba(74, 46, 31, .25);
+    border: 2px dashed rgba(50, 18, 122, .25);
     border-radius: 14px;
     background: var(--cream-light);
     cursor: pointer;
@@ -1292,7 +1292,7 @@ body {
 }
 
 .activity-chip.active .act-sub {
-    color: rgba(250, 244, 230, .65);
+    color: rgba(250, 245, 235, .65);
 }
 
 @media (max-width: 600px) {
@@ -1310,7 +1310,7 @@ body {
     justify-content: space-between;
     margin-top: 32px;
     padding-top: 24px;
-    border-top: 1px dashed rgba(74, 46, 31, .2);
+    border-top: 1px dashed rgba(50, 18, 122, .2);
 }
 
 .skip-all-wrap {
@@ -1358,7 +1358,7 @@ body {
 
 .ticket-btn.ghost {
     background: transparent;
-    border: 2px dashed rgba(74, 46, 31, .3);
+    border: 2px dashed rgba(50, 18, 122, .3);
     color: var(--brown-dark);
 }
 
@@ -1416,7 +1416,7 @@ body {
     max-width: 360px;
     padding: 12px 20px;
     border-radius: 30px;
-    border: 2px dashed rgba(74, 46, 31, .3);
+    border: 2px dashed rgba(50, 18, 122, .3);
     background: #fff;
     font-family: inherit;
     font-size: 14px;
@@ -1432,7 +1432,7 @@ body {
 .results-search:focus {
     border-style: solid;
     border-color: var(--caramel);
-    box-shadow: 0 0 0 3px rgba(210, 166, 115, .2);
+    box-shadow: 0 0 0 3px rgba(242, 133, 0, .2);
 }
 
 .no-results {
@@ -1455,7 +1455,7 @@ body {
 .rcf-chip {
     padding: 8px 16px;
     border-radius: 30px;
-    border: 2px dashed rgba(74, 46, 31, .28);
+    border: 2px dashed rgba(50, 18, 122, .28);
     background: #fff;
     font-family: inherit;
     font-size: 13px;
@@ -1502,7 +1502,7 @@ body {
     background: #fff;
     border-radius: 18px;
     overflow: hidden;
-    box-shadow: 0 14px 34px rgba(74, 46, 31, .12);
+    box-shadow: 0 14px 34px rgba(50, 18, 122, .12);
     transition: transform .25s;
     display: flex;
     flex-direction: column;
@@ -1635,7 +1635,7 @@ body {
     justify-content: space-between;
     gap: 14px;
     padding: 8px 0;
-    border-bottom: 1px dashed rgba(74, 46, 31, .16);
+    border-bottom: 1px dashed rgba(50, 18, 122, .16);
 }
 
 .bp-field:last-child {
@@ -1683,7 +1683,7 @@ body {
 .bp-perf {
     position: relative;
     height: 0;
-    border-top: 2px dashed rgba(74, 46, 31, .25);
+    border-top: 2px dashed rgba(50, 18, 122, .25);
     margin: 0 18px;
 }
 
@@ -1754,8 +1754,8 @@ body {
 }
 /* ===== FOOTER ===== */
 .site-footer {
-    background-color: #4A2E1F;
-    color: #FAF4E6;
+    background-color: #32127A;
+    color: #FFFFFF;
     padding: 50px 20px 20px;
     margin-top: 60px;
 }
@@ -1771,18 +1771,18 @@ body {
 
 .footer-logo {
     font-size: 2rem;
-    color: #D2A673;
+    color: #F28500;
     margin-bottom: 10px;
 }
 
 .footer-brand p {
-    color: #F3E8D2;
+    color: #FFFFFF;
     font-size: 0.9rem;
 }
 
 .footer-links h4,
 .footer-contact h4 {
-    color: #D2A673;
+    color: #F28500;
     margin-bottom: 15px;
     font-size: 1rem;
 }
@@ -1798,7 +1798,7 @@ body {
 
 .footer-links a,
 .footer-contact a {
-    color: #F3E8D2;
+    color: #FFFFFF;
     text-decoration: none;
     font-size: 0.9rem;
     transition: color 0.3s;
@@ -1806,15 +1806,15 @@ body {
 
 .footer-links a:hover,
 .footer-contact a:hover {
-    color: #D2A673;
+    color: #F28500;
 }
 
 .footer-bottom {
     text-align: center;
     margin-top: 40px;
     padding-top: 20px;
-    border-top: 1px solid rgba(242, 232, 210, 0.2);
-    color: #F3E8D2;
+    border-top: 1px solid rgba(240, 235, 224, 0.2);
+    color: #FFFFFF;
     font-size: 0.85rem;
 }
 
@@ -1878,7 +1878,7 @@ body {
         width: auto;
         height: 0;
         border-right: none;
-        border-top: 2px dashed rgba(74, 46, 31, .28);
+        border-top: 2px dashed rgba(50, 18, 122, .28);
         margin: 0 18px;
     }
 

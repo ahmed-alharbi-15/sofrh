@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سفرة</title>
+    <link rel="stylesheet" href="/countries/countries.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@500;600&display=swap');
+    </style>
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="hamburger" id="menu-btn">☰</div>
+
+        <div class="auth-buttons" id="authButtons">
+            <a href="/auth/login.html" class="login">تسجيل دخول</a>
+            <a href="/auth/signup.html" class="signup">إنشاء حساب</a>
+        </div>
+
+        <div class="user-menu" id="userMenu">
+            <img id="userAvatar" src="" alt="">
+            <span class="user-name" id="userName"></span>
+            <div class="user-dropdown">
+                <a href="/profile/profile.html">الملف الشخصي</a>
+                <a href="#" id="logoutBtn">تسجيل خروج</a>
+            </div>
+        </div>
+
+        <ul class="nav-list">
+            <li><a href="/index/index.html">الرئيسية</a></li>
+            <li><a href="/countries/countries.html">الدول</a></li>
+            <li><a href="/events/events.html">الفعاليات</a></li>
+            <li><a href="/recipes/recipes.html">الوصفات</a></li>
+            <li><a href="/plan/plan.html" class="active">خطتي</a></li>
+        </ul>
+
+        <div class="logo">
+            <a href="/index/index.html"><img src="/img/logo3.JPG" alt="سفرة"></a>
+        </div>
+    </header>
+
+    <!-- SIDE MENU -->
+    <div class="side-menu" id="side-menu">
+        <span class="close-btn" id="close-btn">×</span>
+        <span class="side-menu-kicker">استكشف</span>
+        <ul>
+            <li><a href="/index/index.html" class="active">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M3 11.5 12 4l9 7.5" />
+                        <path
+                            d="M5.5 10v9a1 1 0 0 0 1 1H9a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h2.5a1 1 0 0 0 1-1v-9" />
+                    </svg>
+                    <span>الرئيسية</span>
+                </a></li>
+            <li><a href="/countries/countries.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M12 21s7-6.6 7-12a7 7 0 1 0-14 0c0 5.4 7 12 7 12Z" />
+                        <circle cx="12" cy="9" r="2.3" />
+                    </svg>
+                    <span>الدول</span>
+                </a></li>
+            <li><a href="/events/events.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <rect x="3.5" y="5" width="17" height="16" rx="2.5" />
+                        <path d="M8 3v4M16 3v4M3.5 10h17" />
+                        <circle cx="12" cy="15" r="1.4" fill="currentColor" stroke="none" />
+                    </svg>
+                    <span>الفعاليات</span>
+                </a></li>
+            <li><a href="/recipes/recipes.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M7 2v8a2 2 0 0 0 2 2v10M5 2v6M9 2v6M14 2c-1.5 2-1.5 7 0 9 .6.6 1 1.3 1 2v9" />
+                    </svg>
+                    <span>الوصفات</span>
+                </a></li>
+            <li><a href="/plan/plan.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="9" />
+                        <path d="M14.8 9.2 13 13l-3.8 1.8L11 11l3.8-1.8Z" />
+                    </svg>
+                    <span>خطتي</span>
+                </a></li>
+        </ul>
+    </div>
+    <header>
+        <a href="/countries/countries.html" class="back-btn">رجوع</a>
+    </header>
+
+    <div class="country-name">
+        <h1>فرنسا</h1>
+        <p>أناقة باريسية وقصور ملكية وسواحل ريفييرا الفاتنة</p>
+    </div>
+
+    <div class="main-cites">
+        <h1>المدن</h1>
+    </div>
+    <section class="cities-grid">
+
+        <div class="cite" data-name="باريس – Paris" data-img="/img/Paris.jpg"
+            data-desc="عاصمة النور والأزياء العالمية، مدينة تتصدر قوائم الوجهات الأكثر زيارة في العالم بمعالمها الأيقونية وشوارعها الأنيقة على ضفاف نهر السين."
+            data-historic="🗼 برج إيفل – Eiffel Tower | 🖼️ متحف اللوفر – Louvre Museum | ⛪ كاتدرائية نوتردام – Notre-Dame Cathedral | 🛤️ شارع الشانزليزيه – Champs-Élysées | 🎨 كنيسة القلب المقدس – Sacré-Cœur"
+            data-restaurants="🥙 مطعم Chez Omar | 🍗 مطعم Bafo Paris | 🍛 مطعم Le Pharaon | 🥘 مطعم Bosphore | 🌿 مطعم Al Ajami"
+            data-cafes="☕ مقهى Café de Flore | ☕ مقهى Les Deux Magots | ☕ مقهى Angelina | ☕ مقهى Café Kitsuné | ☕ مقهى La Caféothèque"
+            data-events="🗼 صعود برج إيفل – Eiffel Tower Visit | 🖼️ جولة متحف اللوفر – Louvre Museum Tour | 🚤 جولة نهر السين – Seine River Cruise | ⛪ زيارة نوتردام – Notre-Dame Visit | 🛍️ تسوق الشانزليزيه – Champs-Élysées Shopping"
+            onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'france_paris', 'باريس – Paris', '/img/Paris.jpg')">🏙️</button>
+            <img src="/img/Paris.jpg" alt="باريس" class="cite-img">
+            <span class="name">باريس – Paris</span>
+            <p class="info">عاصمة النور والأزياء بمعالمها الأيقونية العالمية.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+        <div class="cite" data-name="نيس – Nice" data-img="/img/Nice.jpg"
+            data-desc="لؤلؤة الريفييرا الفرنسية على البحر المتوسط، مدينة ساحلية مشمسة تجمع بين الشواطئ الفيروزية والعمارة الملونة وممشى الإنجليز الشهير."
+            data-historic="🏖️ ممشى الإنجليز – Promenade des Anglais | 🏘️ البلدة القديمة – Vieux Nice | ⛰️ تلة القلعة – Colline du Château | 🏛️ ميدان ماسينا – Place Masséna | 🎨 متحف ماتيس – Matisse Museum"
+            data-restaurants="🥙 مطعم Le Petit Marrakech | 🍗 مطعم Bosphore Nice | 🍛 مطعم Beyrouth Nice | 🥘 مطعم Le Sultan | 🌿 مطعم Al Ajami Nice"
+            data-cafes="☕ مقهى Café de Turin | ☕ مقهى Fenocchio | ☕ مقهى Malongo Coffee | ☕ مقهى La Part des Anges | ☕ مقهى Cafe Marché"
+            data-events="🏖️ نزهة ممشى الإنجليز – Promenade des Anglais Walk | ⛰️ صعود تلة القلعة – Colline du Château Hike | 🏘️ جولة البلدة القديمة – Vieux Nice Old Town | 🎨 متحف ماتيس الفني – Matisse Museum Visit | 🏛️ ميدان ماسينا الملون – Place Masséna Visit"
+            onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'france_nice', 'نيس – Nice', '/img/Nice.jpg')">🏙️</button>
+            <img src="/img/Nice.jpg" alt="نيس" class="cite-img">
+            <span class="name">نيس – Nice</span>
+            <p class="info">لؤلؤة الريفييرا الفرنسية بشواطئها الفيروزية المشمسة.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+        <div class="cite" data-name="ليون – Lyon" data-img="/img/Lyon.jpg"
+            data-desc="عاصمة فرنسا للفنون الطهي، مدينة تراث عالمي عند ملتقى نهري الرون والسون، تشتهر بأزقتها التاريخية المعروفة باسم الترابول وأجوائها الثقافية الغنية."
+            data-historic="⛪ كاتدرائية فورفيير – Notre-Dame de Fourvière | 🏘️ الحي القديم – Vieux Lyon | 🎭 المسرح الروماني القديم – Roman Amphitheatre | 🏛️ ساحة بلكور – Place Bellecour | 🌉 جسور نهر الرون – Rhône River Bridges"
+            data-restaurants="🥙 مطعم Le Sultan Lyon | 🍗 مطعم Beyrouth Lyon | 🍛 مطعم Bosphore Lyon | 🥘 مطعم Al Sham Lyon | 🌿 مطعم Cedars Lyon"
+            data-cafes="☕ مقهى Café des Fédérations | ☕ مقهى La Part-Dieu Coffee | ☕ مقهى Comptoir Léon | ☕ مقهى Slake Coffee | ☕ مقهى Mokxa Café"
+            data-events="⛪ زيارة كاتدرائية فورفيير – Fourvière Basilica Visit | 🏘️ جولة الحي القديم بالممرات السرية – Vieux Lyon Traboules | 🎭 المسرح الروماني القديم – Roman Amphitheatre Tour | 🚡 تلفريك فورفيير – Fourvière Funicular | 🌉 نزهة على ضفاف الرون – Rhône Riverside Walk"
+            onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'france_lyon', 'ليون – Lyon', '/img/Lyon.jpg')">🏙️</button>
+            <img src="/img/Lyon.jpg" alt="ليون" class="cite-img">
+            <span class="name">ليون – Lyon</span>
+            <p class="info">عاصمة الطهي الفرنسي عند ملتقى نهرين تاريخيين.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+        <div class="cite" data-name="مرسيليا – Marseille" data-img="/img/Marseille.jpg"
+            data-desc="أقدم مدينة في فرنسا وأكبر ميناء على البحر المتوسط، مدينة متعددة الثقافات بأجواء نابضة وميناء تاريخي محاط بالمقاهي والمطاعم البحرية."
+            data-historic="⛪ كاتدرائية نوتردام دو لا غارد – Notre-Dame de la Garde | 🚢 الميناء القديم – Vieux-Port | 🏰 قلعة إيف – Château d'If | 🏘️ حي لو بانييه – Le Panier | 🎨 متحف MuCEM – MuCEM Museum"
+            data-restaurants="🥙 مطعم Le Marrakech Marseille | 🍗 مطعم Bosphore Marseille | 🍛 مطعم Al Sultan Marseille | 🥘 مطعم Beyrouth Marseille | 🌿 مطعم Cedars Marseille"
+            data-cafes="☕ مقهى La Caravelle | ☕ مقهى Coffee Time Marseille | ☕ مقهى Vintage Café | ☕ مقهى Cup of Tea | ☕ مقهى Le Vieux-Port Café"
+            data-events="⛪ زيارة نوتردام دو لا غارد – Notre-Dame de la Garde Visit | 🚢 جولة الميناء القديم – Vieux-Port Tour | 🏰 قارب إلى قلعة إيف – Château d'If Boat Trip | 🏘️ جولة حي لو بانييه – Le Panier Walking Tour | 🎨 متحف MuCEM المتوسطي – MuCEM Museum Visit"
+            onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'france_marseille', 'مرسيليا – Marseille', '/img/Marseille.jpg')">🏙️</button>
+            <img src="/img/Marseille.jpg" alt="مرسيليا" class="cite-img">
+            <span class="name">مرسيليا – Marseille</span>
+            <p class="info">أقدم مدن فرنسا وأكبر موانئها المتوسطية النابضة.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+        <div class="cite" data-name="ستراسبورغ – Strasbourg" data-img="/img/Strasbourg.jpg"
+            data-desc="عاصمة إقليم الألزاس عند الحدود مع ألمانيا، مدينة تراث عالمي بطابع نصف خشبي فريد وقنوات مائية ساحرة تجمع بين الثقافتين الفرنسية والألمانية."
+            data-historic="⛪ كاتدرائية ستراسبورغ – Strasbourg Cathedral | 🏘️ حي البتيت فرانس – Petite France | 🏛️ القصر الرووهان – Palais Rohan | 🌉 الجسور المغطاة – Ponts Couverts | 🏰 حي الأوروبي – European Quarter"
+            data-restaurants="🥙 مطعم Le Sultan Strasbourg | 🍗 مطعم Beyrouth Strasbourg | 🍛 مطعم Al Sham Strasbourg | 🥘 مطعم Bosphore Strasbourg | 🌿 مطعم Anatolia Strasbourg"
+            data-cafes="☕ مقهى Christian Café | ☕ مقهى La Meuh Café | ☕ مقهى Cafe Ambre | ☕ مقهى Kaffeehaus Strasbourg | ☕ مقهى Cafe Rohan"
+            data-events="⛪ صعود كاتدرائية ستراسبورغ – Strasbourg Cathedral Tower | 🏘️ جولة حي البتيت فرانس – Petite France Walking Tour | 🚤 جولة القنوات المائية – Canal Boat Tour | 🌉 الجسور المغطاة التاريخية – Ponts Couverts Walk | 🏰 جولة الحي الأوروبي – European Quarter Tour"
+            onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'france_strasbourg', 'ستراسبورغ – Strasbourg', '/img/Strasbourg.jpg')">🏙️</button>
+            <img src="/img/Strasbourg.jpg" alt="ستراسبورغ" class="cite-img">
+            <span class="name">ستراسبورغ – Strasbourg</span>
+            <p class="info">مدينة الألزاس ذات الطابع النصف خشبي والقنوات الساحرة.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+        <div class="cite" data-name="بوردو – Bordeaux" data-img="/img/Bordeaux.jpg"
+            data-desc="مدينة تراث عالمي جنوب غرب فرنسا، تشتهر بعمارتها الكلاسيكية الأنيقة على ضفاف نهر الجارون وميدان البورس العاكس الشهير."
+            data-historic="🏛️ ميدان البورس – Place de la Bourse | ⛪ كاتدرائية القديس أندريه – Saint-André Cathedral | 🗼 برج بي دو سان ميشيل – Tour Pey-Berland | 🌉 جسر الحجر – Pont de Pierre | 🏘️ الحي القديم سان بيير – Saint-Pierre District"
+            data-restaurants="🥙 مطعم Le Sultan Bordeaux | 🍗 مطعم Beyrouth Bordeaux | 🍛 مطعم Bosphore Bordeaux | 🥘 مطعم Al Sham Bordeaux | 🌿 مطعم Cedars Bordeaux"
+            data-cafes="☕ مقهى Café Utopia | ☕ مقهى Comptoir des Familles | ☕ مقهى Black List Coffee | ☕ مقهى Le Café Français | ☕ مقهى Cafe Régent"
+            data-events="🏛️ إطلالة ميدان البورس العاكس – Place de la Bourse Visit | ⛪ صعود برج بي دو سان ميشيل – Tour Pey-Berland Climb | 🌉 نزهة على جسر الحجر – Pont de Pierre Walk | 🏘️ جولة حي سان بيير القديم – Saint-Pierre District Tour | 🚤 جولة نهر الجارون – Garonne River Cruise"
+            onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'france_bordeaux', 'بوردو – Bordeaux', '/img/Bordeaux.jpg')">🏙️</button>
+            <img src="/img/Bordeaux.jpg" alt="بوردو" class="cite-img">
+            <span class="name">بوردو – Bordeaux</span>
+            <p class="info">عمارة كلاسيكية أنيقة على ضفاف نهر الجارون.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+    </section>
+
+    <div class="main-foods">
+        <h1>الماكولات</h1>
+    </div>
+    <section class="foods-grid">
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=ratatouille'">
+            <img src="/img/Ratatouille.jpg" alt="" class="foods-img">
+            <span class="name-foods">راتاتوي – Ratatouille</span>
+            <div class="food-info">طاجن خضار متوسطي غني بالكوسا والباذنجان والفلفل.</div>
+            <a href="/recipes/recipes.html?recipe=ratatouille" class="for-more-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=coq-au-vin'">
+            <img src="/img/Coq-au-Vin.jpg" alt="" class="foods-img">
+            <span class="name-foods">دجاج مطهو بالمرق الفرنسي – Coq au Vin</span>
+            <div class="food-info">دجاج مطهو ببطء مع الفطر والخضار في مرق غني.</div>
+            <a href="/recipes/recipes.html?recipe=coq-au-vin" class="for-more-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=croissant-francais'">
+            <img src="/img/Croissant-Francais.jpg" alt="" class="foods-img">
+            <span class="name-foods">كرواسون فرنسي – Croissant Français</span>
+            <div class="food-info">معجنات مقرمشة بطبقات زبدة ذهبية.</div>
+            <a href="/recipes/recipes.html?recipe=croissant-francais" class="for-more-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=creme-brulee'">
+            <img src="/img/Creme-Brulee.jpg" alt="" class="foods-img">
+            <span class="name-foods">كريم بروليه – Crème Brûlée</span>
+            <div class="food-info">كاسترد فانيليا كريمي بطبقة كراميل مقرمشة.</div>
+            <a href="/recipes/recipes.html?recipe=creme-brulee" class="for-more-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=bouillabaisse'">
+            <img src="/img/Bouillabaisse.jpg" alt="" class="foods-img">
+            <span class="name-foods">بويابيس – Bouillabaisse</span>
+            <div class="food-info">شوربة سمك مرسيلية غنية بالزعفران والأعشاب.</div>
+            <a href="/recipes/recipes.html?recipe=bouillabaisse" class="for-more-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=quiche-lorraine'">
+            <img src="/img/Quiche-Lorraine.jpg" alt="" class="foods-img">
+            <span class="name-foods">كيش لورين – Quiche Lorraine</span>
+            <div class="food-info">فطيرة مالحة بحشوة البيض والكريمة والجبن.</div>
+            <a href="/recipes/recipes.html?recipe=quiche-lorraine" class="for-more-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+    </section>
+
+    <div class="events-main">
+        <h1>الفعاليات</h1>
+    </div>
+    <section class="events-grid">
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=EiffelTowerLouvre'">
+            <img src="/img/Eiffel-Tower-Louvre.jpg" alt="" class="event-img">
+            <span class="name-event">برج إيفل ومتحف اللوفر – Eiffel Tower & Louvre</span>
+            <div class="event-info">يوم كامل بين أيقونة باريس الحديدية وأكبر متاحف الفن.</div>
+            <a href="/events/events.html?event=EiffelTowerLouvre" class="event-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=VersaillesPalaceTour'">
+            <img src="/img/Versailles-Palace-Tour.jpg" alt="" class="event-img">
+            <span class="name-event">قصر فرساي – Versailles Palace Tour</span>
+            <div class="event-info">جولة داخل أفخم القصور الملكية وحدائقه الهندسية.</div>
+            <a href="/events/events.html?event=VersaillesPalaceTour" class="event-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=FrenchRivieraBeachDay'">
+            <img src="/img/French-Riviera-Beach-Day.jpg" alt="" class="event-img">
+            <span class="name-event">يوم شاطئي في ريفييرا – French Riviera Beach Day</span>
+            <div class="event-info">استرخاء على شواطئ نيس الفيروزية المشمسة.</div>
+            <a href="/events/events.html?event=FrenchRivieraBeachDay" class="event-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=MontSaintMichelTour'">
+            <img src="/img/Mont-Saint-Michel-Tour.jpg" alt="" class="event-img">
+            <span class="name-event">جزيرة مون سان ميشيل – Mont Saint-Michel Tour</span>
+            <div class="event-info">دير جزري ساحر يظهر ويختفي مع حركة المد والجزر.</div>
+            <a href="/events/events.html?event=MontSaintMichelTour" class="event-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=LoireValleyCastleTour'">
+            <img src="/img/Loire-Valley-Castle-Tour.jpg" alt="" class="event-img">
+            <span class="name-event">قلاع وادي اللوار – Loire Valley Castle Tour</span>
+            <div class="event-info">جولة بين أفخم القلاع الملكية الفرنسية التاريخية.</div>
+            <a href="/events/events.html?event=LoireValleyCastleTour" class="event-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=ParisSeineCruise'">
+            <img src="/img/Paris-Seine-Cruise.jpg" alt="" class="event-img">
+            <span class="name-event">جولة نهر السين – Paris Seine Cruise</span>
+            <div class="event-info">إبحار مسائي هادئ بين معالم باريس المضيئة.</div>
+            <a href="/events/events.html?event=ParisSeineCruise" class="event-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+    </section>
+
+    <div id="cityModal" class="modal" onclick="closeCityModal(event)">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeCityModal(event)">×</button>
+            <div class="modal-top">
+                <img id="modalCityImg" src="" alt="" />
+                <div class="modal-top-info">
+                    <h2 id="modalCityName"></h2>
+                    <span class="modal-top-badge">✦ تفاصيل المدينة</span>
+                </div>
+            </div>
+            <div class="modal-body">
+                <p id="modalCityDesc" class="event-desc"></p>
+                <h4>🏛️ أفضل الأماكن التاريخية</h4>
+                <div id="modalCityHistoric" class="ingredients-tags"></div>
+                <h4>🍽️ أفضل المطاعم</h4>
+                <div id="modalCityRestaurants" class="ingredients-tags"></div>
+                <h4>☕ أفضل المقاهي</h4>
+                <div id="modalCityCafes" class="ingredients-tags"></div>
+                <h4>🎉 فعاليات المدينة</h4>
+                <div id="modalCityEvents" class="ingredients-tags"></div>
+            </div>
+        </div>
+    </div>
+    <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h2 class="footer-logo">سفرة</h2>
+        <p>وجهتك للسفر والطعام حول العالم</p>
+      </div>
+
+        <div class="footer-links">
+                <h4>روابط سريعة</h4>
+                <ul>
+                    <li><a href="/index/index.html">الرئيسية</a></li>
+                    <li><a href="/countries/countries.html">الدول</a></li>
+                    <li><a href="/events/events.html">الفعاليات</a></li>
+                    <li><a href="/recipes/recipes.html">الوصفات</a></li>
+                    <li><a href="/plan/plan.html">خطتي</a></li>
+                </ul>
+            </div>
+
+      <div class="footer-contact">
+        <h4>تواصل معنا</h4>
+        <ul>
+          <li>📧 <a href="mailto:Sofrh.info@gmail.com" target="_blank">Sofrh.info@gmail.com</a></li>
+          <li>📧 <a href="mailto:Sofrh.support@gmail.com" target="_blank">Sofrh.support@gmail.com</a></li>
+          <li>🐦 <a href="https://twitter.com/sofrah_sa" target="_blank">X (Twitter)</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 سفرة — جميع الحقوق محفوظة</p>
+      <p>صُنع بواسطة فريق شفرة</p>
+      <p>📧 <a href="mailto:hello@safra.com" style="color: #F28500;">hello@safra.com</a></p>
+    </div>
+  </footer>
+    <script src="/countries/countries.js"></script>
+    <script src="/auth/auth.js"></script>
+</body>
+
+</html>

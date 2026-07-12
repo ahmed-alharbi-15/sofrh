@@ -5,7 +5,7 @@
 }
 
 body {
-    background-color: #FAF4E6;
+    background-color: #FAF5EB;
     font-family: "Noto Sans Arabic", sans-serif;
     min-height: 100vh;
 }
@@ -16,7 +16,7 @@ body {
     align-items: center;
     justify-content: center;
     padding: 20px;
-    background: linear-gradient(135deg, #FAF4E6 0%, #F3E8D2 100%);
+    background: linear-gradient(135deg, #FAF5EB 0%, #F0EBE0 100%);
 }
 
 .auth-card {
@@ -25,7 +25,7 @@ body {
     padding: 40px;
     width: 100%;
     max-width: 420px;
-    box-shadow: 0 20px 60px rgba(74, 46, 31, 0.12);
+    box-shadow: 0 20px 60px rgba(50, 18, 122, 0.12);
     text-align: center;
 }
 
@@ -36,7 +36,7 @@ body {
 
 .auth-card h1 {
     font-size: 28px;
-    color: #4A2E1F;
+    color: #32127A;
     margin-bottom: 8px;
 }
 
@@ -62,24 +62,24 @@ body {
 .input-group label {
     font-size: 15px;
     font-weight: 600;
-    color: #4A2E1F;
+    color: #32127A;
 }
 
 .input-group input {
     padding: 12px 16px;
     border-radius: 12px;
-    border: 2px solid #F3E8D2;
+    border: 2px solid #F0EBE0;
     font-size: 15px;
     font-family: "Noto Sans Arabic", sans-serif;
     background: #FDFAF5;
-    color: #4A2E1F;
+    color: #32127A;
     transition: .3s;
     outline: none;
     text-align: right;
 }
 
 .input-group input:focus {
-    border-color: #D2A673;
+    border-color: #F28500;
     background: #fff;
 }
 
@@ -88,8 +88,8 @@ body {
     padding: 14px;
     border-radius: 14px;
     border: none;
-    background: #4A2E1F;
-    color: #FAF4E6;
+    background: #32127A;
+    color: #FFFFFF;
     font-size: 17px;
     font-weight: 700;
     font-family: "Noto Sans Arabic", sans-serif;
@@ -98,8 +98,8 @@ body {
 }
 
 .auth-btn:hover {
-    background: #D2A673;
-    color: #4A2E1F;
+    background: #F28500;
+    color: #FFFFFF;
     transform: translateY(-2px);
 }
 
@@ -110,13 +110,13 @@ body {
 }
 
 .auth-switch a {
-    color: #D2A673;
+    color: #F28500;
     font-weight: 700;
     text-decoration: none;
 }
 
 .auth-switch a:hover {
-    color: #4A2E1F;
+    color: #32127A;
 }
 
 @media (max-width: 480px) {
@@ -152,7 +152,7 @@ body {
     position: absolute;
     top: 100%;
     left: 0;
-    background: #FAF4E6;
+    background: #FAF5EB;
     border-radius: 12px;
     padding: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
@@ -167,14 +167,14 @@ body {
 .user-dropdown a {
     display: block;
     padding: 8px 12px;
-    color: #4A2E1F;
+    color: #32127A;
     text-decoration: none;
     font-size: 15px;
     border-radius: 8px;
 }
 
 .user-dropdown a:hover {
-    background: #F3E8D2;
+    background: #F0EBE0;
 }
 
 @keyframes pulse {

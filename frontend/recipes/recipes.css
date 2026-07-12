@@ -8,16 +8,16 @@
 }
 
 body {
-    background-color: #FAF4E6;
+    background-color: #FAF5EB;
     font-family: "Noto Sans Arabic", sans-serif;
     padding-top: 90px !important;
 }
 
 :root {
-    --brown-dark: #4A2E1F;
-    --cream-light: #FAF4E6;
-    --cream-soft: #F3E8D2;
-    --caramel: #D2A673;
+    --brown-dark: #32127A;
+    --cream-light: #FAF5EB;
+    --cream-soft: #F0EBE0;
+    --caramel: #F28500;
 }
 
 .navbar {
@@ -138,7 +138,7 @@ body {
     width: 220px;
     height: 220px;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(210, 166, 115, .18) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(242, 133, 0, .18) 0%, transparent 70%);
     top: -60px;
     left: -70px;
     pointer-events: none;
@@ -199,7 +199,7 @@ body {
 }
 
 .side-menu a:hover {
-    background-color: rgba(210, 166, 115, .16);
+    background-color: rgba(242, 133, 0, .16);
     color: var(--caramel);
 }
 
@@ -232,7 +232,7 @@ body {
     top: 20px;
     left: 20px;
     font-size: 30px;
-    color: #FAF4E6;
+    color: #FAF5EB;
     cursor: pointer;
     padding: 5px 10px;
     border-radius: 8px;
@@ -241,8 +241,8 @@ body {
 }
 
 .close-btn:hover {
-    background-color: #D2A673;
-    color: #4A2E1F;
+    background-color: #F28500;
+    color: #FFFFFF;
     transform: rotate(90deg);
 }
 
@@ -270,7 +270,7 @@ body {
     justify-content: center;
     text-align: center;
     padding: 60px 20px 50px;
-    background: linear-gradient(160deg, #2c1a0e 0%, #3d2410 40%, #1a0f07 100%);
+    background: linear-gradient(160deg, #2A1060 0%, #3A1780 40%, #150A35 100%);
     position: relative;
     overflow: hidden;
 }
@@ -281,7 +281,7 @@ body {
     width: 600px;
     height: 600px;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(180, 110, 50, 0.15) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(242, 133, 0, 0.15) 0%, transparent 70%);
     top: -100px;
     left: 50%;
     transform: translateX(-50%);
@@ -291,14 +291,14 @@ body {
 .hero-text h1 {
     font-size: clamp(2.2rem, 5vw, 4rem);
     font-weight: 700;
-    color: #f5ede0;
+    color: #FFFFFF;
     margin: 0 0 12px;
     line-height: 1.15;
 }
 
 .hero-text p {
     font-size: 1rem;
-    color: rgba(245, 237, 224, 0.6);
+    color: rgba(255, 255, 255, 0.6);
     margin: 0;
     line-height: 1.8;
 }
@@ -324,7 +324,7 @@ body {
 
 .search-box:focus {
     border-color: var(--caramel);
-    box-shadow: 0 0 0 3px rgba(210, 166, 115, .25);
+    box-shadow: 0 0 0 3px rgba(242, 133, 0, .25);
 }
 
 .filter-buttons {
@@ -375,7 +375,7 @@ body {
     position: relative;
     border-radius: 16px;
     overflow: hidden;
-    background: #1a0f07;
+    background: #150A35;
     border: none;
     box-shadow: none;
     cursor: pointer;
@@ -434,7 +434,7 @@ body {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, rgba(20, 8, 2, 0.90) 0%, rgba(20, 8, 2, 0.25) 55%, transparent 100%);
+    background: linear-gradient(to top, rgba(18, 8, 42, 0.90) 0%, rgba(18, 8, 42, 0.25) 55%, transparent 100%);
     pointer-events: none;
 }
 
@@ -494,7 +494,7 @@ body {
 }
 
 .save-btn:hover {
-    background: rgba(210, 166, 115, 0.8);
+    background: rgba(242, 133, 0, 0.8);
     transform: scale(1.1);
 }
 
@@ -544,11 +544,11 @@ body {
     max-width: 780px;
     width: 100%;
     margin: 40px auto;
-    background: #1e1008;
+    background: #1C0F47;
     border-radius: 20px;
     overflow: hidden;
     position: relative;
-    border: 1px solid rgba(200, 133, 74, 0.2);
+    border: 1px solid rgba(242, 133, 0, 0.2);
     box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
 }
 
@@ -563,7 +563,7 @@ body {
     cursor: pointer;
     font-size: 18px;
     background: rgba(255, 255, 255, 0.08);
-    color: #f5ede0;
+    color: #FFFFFF;
     line-height: 1;
     z-index: 10;
     transition: background 0.2s;
@@ -573,7 +573,7 @@ body {
 }
 
 .modal-close:hover {
-    background: rgba(200, 133, 74, 0.4);
+    background: rgba(242, 133, 0, 0.4);
 }
 
 .modal-top {
@@ -596,18 +596,18 @@ body {
 
 .modal-top-info {
     flex: 1;
-    background: linear-gradient(135deg, #2c1a0e 0%, #1e1008 100%);
+    background: linear-gradient(135deg, #2A1060 0%, #1C0F47 100%);
     padding: 24px 20px 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 8px;
-    border-bottom: 1px solid rgba(200, 133, 74, 0.15);
+    border-bottom: 1px solid rgba(242, 133, 0, 0.15);
 }
 
 .modal-top h2 {
     margin: 0;
-    color: #f5ede0;
+    color: #FFFFFF;
     font-size: 1.4rem;
     font-weight: 700;
     line-height: 1.2;
@@ -616,7 +616,7 @@ body {
 .modal-country-badge {
     display: inline-block;
     font-size: 12px;
-    color: rgba(245, 237, 224, 0.7);
+    color: rgba(255, 255, 255, 0.7);
     background: rgba(255, 255, 255, 0.08);
     padding: 3px 12px;
     border-radius: 999px;
@@ -626,14 +626,14 @@ body {
 
 .modal-body {
     padding: 22px 26px 28px;
-    color: #e8ddd0;
+    color: #F0EBE0;
     line-height: 1.9;
-    background: #1e1008;
+    background: #1C0F47;
 }
 
 .modal-body h4 {
     margin: 20px 0 10px;
-    color: #c8854a;
+    color: #F28500;
     font-size: 0.95rem;
     font-weight: 600;
 }
@@ -654,19 +654,19 @@ body {
     padding: 5px 14px;
     border-radius: 999px;
     font-size: 13px;
-    color: #e8ddd0;
+    color: #F0EBE0;
     transition: background 0.2s;
 }
 
 .ingredients-tags span:hover {
-    background: rgba(200, 133, 74, 0.2);
-    border-color: rgba(200, 133, 74, 0.4);
+    background: rgba(242, 133, 0, 0.2);
+    border-color: rgba(242, 133, 0, 0.4);
 }
 
 .steps-list {
     padding-right: 18px;
     margin: 0;
-    color: rgba(245, 237, 224, 0.8);
+    color: rgba(255, 255, 255, 0.8);
 }
 
 @media (max-width: 650px) {
@@ -695,14 +695,14 @@ body {
     gap: 12px;
     margin-bottom: 16px;
     background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(210, 166, 115, 0.3);
+    border: 1px solid rgba(242, 133, 0, 0.3);
     border-radius: 50px;
     padding: 8px 16px;
     width: fit-content;
 }
 
 .servings-box span:first-child {
-    color: #D2A673;
+    color: #F28500;
     font-weight: 600;
     font-size: 0.9rem;
 }
@@ -712,7 +712,7 @@ body {
     text-align: center;
     font-weight: 700;
     font-size: 1rem;
-    color: #FAF4E6;
+    color: #FAF5EB;
 }
 
 .serv-minus,
@@ -720,9 +720,9 @@ body {
     width: 28px;
     height: 28px;
     border-radius: 50%;
-    border: 1px solid rgba(210, 166, 115, 0.5);
-    background: rgba(210, 166, 115, 0.15);
-    color: #D2A673;
+    border: 1px solid rgba(242, 133, 0, 0.5);
+    background: rgba(242, 133, 0, 0.15);
+    color: #F28500;
     font-size: 1.1rem;
     cursor: pointer;
     display: flex;
@@ -733,8 +733,8 @@ body {
 
 .serv-minus:hover,
 .serv-plus:hover {
-    background: #D2A673;
-    color: #4A2E1F;
+    background: #F28500;
+    color: #FFFFFF;
 }
 
 @media (max-width: 650px) {
@@ -815,7 +815,7 @@ body {
     top: 100%;
     right: 0;
     left: auto;
-    background: #FAF4E6;
+    background: #FAF5EB;
     border-radius: 12px;
     padding: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
@@ -830,7 +830,7 @@ body {
 .user-dropdown a {
     display: block;
     padding: 8px 12px;
-    color: #4A2E1F;
+    color: #32127A;
     text-decoration: none;
     font-size: 15px;
     border-radius: 8px;
@@ -838,7 +838,7 @@ body {
 }
 
 .user-dropdown a:hover {
-    background: #F3E8D2;
+    background: #F0EBE0;
 }
 
 @media (max-width: 480px) {
@@ -898,8 +898,8 @@ body {
 }
 
 .site-footer {
-    background-color: #4A2E1F;
-    color: #FAF4E6;
+    background-color: #32127A;
+    color: #FFFFFF;
     padding: 50px 20px 20px;
     margin-top: 60px;
 }
@@ -915,18 +915,18 @@ body {
 
 .footer-logo {
     font-size: 2rem;
-    color: #D2A673;
+    color: #F28500;
     margin-bottom: 10px;
 }
 
 .footer-brand p {
-    color: #F3E8D2;
+    color: #FFFFFF;
     font-size: 0.9rem;
 }
 
 .footer-links h4,
 .footer-contact h4 {
-    color: #D2A673;
+    color: #F28500;
     margin-bottom: 15px;
     font-size: 1rem;
 }
@@ -942,7 +942,7 @@ body {
 
 .footer-links a,
 .footer-contact a {
-    color: #F3E8D2;
+    color: #FFFFFF;
     text-decoration: none;
     font-size: 0.9rem;
     transition: color 0.3s;
@@ -950,15 +950,15 @@ body {
 
 .footer-links a:hover,
 .footer-contact a:hover {
-    color: #D2A673;
+    color: #F28500;
 }
 
 .footer-bottom {
     text-align: center;
     margin-top: 40px;
     padding-top: 20px;
-    border-top: 1px solid rgba(242, 232, 210, 0.2);
-    color: #F3E8D2;
+    border-top: 1px solid rgba(240, 235, 224, 0.2);
+    color: #FFFFFF;
     font-size: 0.85rem;
 }
 

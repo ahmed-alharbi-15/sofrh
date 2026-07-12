@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سفرة</title>
+    <link rel="stylesheet" href="/countries/countries.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@500;600&display=swap');
+    </style>
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="hamburger" id="menu-btn">☰</div>
+
+        <div class="auth-buttons" id="authButtons">
+            <a href="/auth/login.html" class="login">تسجيل دخول</a>
+            <a href="/auth/signup.html" class="signup">إنشاء حساب</a>
+        </div>
+
+        <div class="user-menu" id="userMenu">
+            <img id="userAvatar" src="" alt="">
+            <span class="user-name" id="userName"></span>
+            <div class="user-dropdown">
+                <a href="/profile/profile.html">الملف الشخصي</a>
+                <a href="#" id="logoutBtn">تسجيل خروج</a>
+            </div>
+        </div>
+
+        <ul class="nav-list">
+            <li><a href="/index/index.html">الرئيسية</a></li>
+            <li><a href="/countries/countries.html">الدول</a></li>
+            <li><a href="/events/events.html">الفعاليات</a></li>
+            <li><a href="/recipes/recipes.html">الوصفات</a></li>
+            <li><a href="/plan/plan.html" class="active">خطتي</a></li>
+        </ul>
+
+        <div class="logo">
+            <a href="/index/index.html"><img src="/img/logo3.JPG" alt="سفرة"></a>
+        </div>
+    </header>
+
+    <!-- SIDE MENU -->
+    <div class="side-menu" id="side-menu">
+        <span class="close-btn" id="close-btn">×</span>
+        <span class="side-menu-kicker">استكشف</span>
+        <ul>
+            <li><a href="/index/index.html" class="active">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M3 11.5 12 4l9 7.5" />
+                        <path
+                            d="M5.5 10v9a1 1 0 0 0 1 1H9a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h2.5a1 1 0 0 0 1-1v-9" />
+                    </svg>
+                    <span>الرئيسية</span>
+                </a></li>
+            <li><a href="/countries/countries.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M12 21s7-6.6 7-12a7 7 0 1 0-14 0c0 5.4 7 12 7 12Z" />
+                        <circle cx="12" cy="9" r="2.3" />
+                    </svg>
+                    <span>الدول</span>
+                </a></li>
+            <li><a href="/events/events.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <rect x="3.5" y="5" width="17" height="16" rx="2.5" />
+                        <path d="M8 3v4M16 3v4M3.5 10h17" />
+                        <circle cx="12" cy="15" r="1.4" fill="currentColor" stroke="none" />
+                    </svg>
+                    <span>الفعاليات</span>
+                </a></li>
+            <li><a href="/recipes/recipes.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M7 2v8a2 2 0 0 0 2 2v10M5 2v6M9 2v6M14 2c-1.5 2-1.5 7 0 9 .6.6 1 1.3 1 2v9" />
+                    </svg>
+                    <span>الوصفات</span>
+                </a></li>
+            <li><a href="/plan/plan.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="9" />
+                        <path d="M14.8 9.2 13 13l-3.8 1.8L11 11l3.8-1.8Z" />
+                    </svg>
+                    <span>خطتي</span>
+                </a></li>
+        </ul>
+    </div>
+    <header>
+        <a href="/countries/countries.html" class="back-btn">رجوع</a>
+    </header>
+
+    <div class="country-name">
+        <h1>إستونيا</h1>
+        <p>جوهرة البلطيق الرقمية بين البلدات القروسطية والغابات الهادئة</p>
+    </div>
+
+    <div class="main-cites">
+        <h1>المدن</h1>
+    </div>
+    <section class="cities-grid">
+
+        <div class="cite" data-name="تالين – Tallinn" data-img="/img/tallinn-oldtown.jpg"
+            data-desc="عاصمة إستونيا الساحرة على بحر البلطيق، تجمع بين بلدتها القديمة المدرجة ضمن مواقع اليونسكو وأبراجها القروسطية وأجوائها الرقمية الحديثة كواحدة من أكثر عواصم أوروبا تطوراً تقنياً."
+            data-historic="🏰 قلعة توومبيا – Toompea Castle | ⛪ كاتدرائية القديس ألكسندر نيفسكي – Alexander Nevsky Cathedral | 🗼 برج كيك إن دي كوك – Kiek in de Kök Tower | ⛲ ساحة راييكودا – Tallinn Town Hall Square | 🚪 بوابة فيرو – Viru Gate"
+            data-restaurants="🍲 مطعم Leib Resto | 🥘 مطعم Rataskaevu 16 | 🐟 مطعم Kaerajaan | 🍖 مطعم Vanaema Juures | 🥙 مطعم NOA Chef's Hall"
+            data-cafes="☕ مقهى Maiasmokk | ☕ مقهى Kehrwieder | ☕ مقهى Reval Café | ☕ مقهى Must Puudel | ☕ مقهى Chocolats de Pierre"
+            data-events="🎶 مهرجان الأغنية في تالين – Tallinn Song Festival | 🏘️ جولة البلدة القديمة – Old Town Walking Tour | 🎄 سوق الميلاد في ساحة راييكودا – Town Hall Square Christmas Market | 🌳 حديقة كادرييورغ – Kadriorg Park | 🌊 نزهة على الواجهة البحرية – Seaside Promenade Walk"
+            onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'estonia_tallinn', 'تالين – Tallinn', '/img/tallinn-oldtown.jpg')">🏙️</button>
+            <img src="/img/tallinn-oldtown.jpg" alt="تالين" class="cite-img">
+            <span class="name">تالين – Tallinn</span>
+            <p class="info">العاصمة الساحرة ببلدتها القديمة القروسطية وأجوائها الرقمية الحديثة.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+        <div class="cite" data-name="تارتو – Tartu" data-img="/img/tartu-townhall.jpg"
+            data-desc="مدينة الجامعات والعلم في إستونيا، مركز فكري وثقافي عريق يقع على ضفاف نهر إيمايوغي، تشتهر بحرمها الجامعي التاريخي وأجوائها الشبابية النابضة بالحياة."
+            data-historic="🏛️ مبنى جامعة تارتو الرئيسي – University of Tartu Main Building | 🌉 جسر الملائكة – Angel's Bridge | 🏰 أطلال كاتدرائية تارتو – Tartu Cathedral Ruins | 🗼 تل توومي – Toome Hill | ⛲ ساحة تارتو للبلدية – Tartu Town Hall Square"
+            data-restaurants="🍲 مطعم Fellin | 🥘 مطعم Pierre | 🐟 مطعم La Dolce Vita | 🍖 مطعم Vilde | 🥙 مطعم Vanaema Juures Tartu"
+            data-cafes="☕ مقهى Werner | ☕ مقهى Crepp | ☕ مقهى Kohvik Ester | ☕ مقهى Truffe | ☕ مقهى Kivi Kohvik"
+            data-events="🎓 جولة حرم جامعة تارتو – University Campus Tour | 🌉 عبور جسر الملائكة – Angel's Bridge Walk | 🏰 زيارة أطلال الكاتدرائية – Cathedral Ruins Visit | 🛶 تجديف على نهر إيمايوغي – Emajõgi River Canoeing | 🎨 جولة فنون الشوارع – Street Art Walking Tour"
+            onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'estonia_tartu', 'تارتو – Tartu', '/img/tartu-townhall.jpg')">🏙️</button>
+            <img src="/img/tartu-townhall.jpg" alt="تارتو" class="cite-img">
+            <span class="name">تارتو – Tartu</span>
+            <p class="info">مدينة الجامعات والعلم على ضفاف نهر إيمايوغي.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+        <div class="cite" data-name="بارنو – Pärnu" data-img="/img/parnu-beach.jpg"
+            data-desc="العاصمة الصيفية لإستونيا، مدينة منتجعية ساحلية تشتهر بشواطئها الرملية الذهبية وينابيعها العلاجية وأجوائها الاسترخائية على خليج ريغا."
+            data-historic="⛪ كنيسة القديسة إليزابيث – St. Elizabeth's Church | 🚪 بوابة تالين – Tallinn Gate | 🏛️ متحف بارنو – Pärnu Museum | 🗼 البرج الأحمر – Red Tower | 🏘️ حي الفلل القديم – Old Town Villas Quarter"
+            data-restaurants="🐟 مطعم Ranna | 🍲 مطعم Georg | 🥘 مطعم Konsulaadi | 🍖 مطعم Steamboat | 🥙 مطعم Villa Wesset"
+            data-cafes="☕ مقهى Rannahoone | ☕ مقهى Supelsaksad | ☕ مقهى Cafe Konsulaadi | ☕ مقهى Maiasmokk Pärnu | ☕ مقهى Sepa Maja"
+            data-events="🏖️ يوم على شاطئ بارنو – Pärnu Beach Day | ♨️ زيارة السبا العلاجي – Health Spa Visit | 🚲 ركوب الدراجات على الواجهة البحرية – Beachfront Cycling | 🎪 مهرجان بارنو الصيفي – Pärnu Summer Festival | 🌳 نزهة في حديقة رانا بارك – Rannapark Walk"
+            onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'estonia_parnu', 'بارنو – Pärnu', '/img/parnu-beach.jpg')">🏙️</button>
+            <img src="/img/parnu-beach.jpg" alt="بارنو" class="cite-img">
+            <span class="name">بارنو – Pärnu</span>
+            <p class="info">العاصمة الصيفية الهادئة بشواطئها الذهبية وينابيعها العلاجية.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+        <div class="cite" data-name="نارفا – Narva" data-img="/img/narva-castle.jpg"
+            data-desc="أقصى مدن إستونيا شرقاً على الحدود مع روسيا، تشتهر بقلعتها الحجرية الشاهقة المطلة على نهر نارفا، وتراثها الصناعي المتحول إلى مساحات إبداعية عصرية."
+            data-historic="🏰 قلعة هيرمان – Narva Hermann Castle | 🌉 جسر الصداقة – Friendship Bridge | 🏛️ قاعة مدينة نارفا الباروكية – Narva Town Hall | 🗼 برج القلعة الطويل – Long Herman Tower | 🏘️ حي كرينهولم الصناعي – Kreenholm Manufacturing District"
+            data-restaurants="🍲 مطعم Muinasjutt | 🥘 مطعم Vahtra | 🐟 مطعم Petrovi | 🍖 مطعم Enterprise Chodakovski | 🥙 مطعم Tempest"
+            data-cafes="☕ مقهى Kohvik Pika Herman | ☕ مقهى Muhu Kohvik | ☕ مقهى Peetri Pizza Café | ☕ مقهى Hermanni Kohvik | ☕ مقهى Ivangorod View Café"
+            data-events="🏰 جولة قلعة هيرمان – Hermann Castle Tour | 🌉 عبور جسر الصداقة – Friendship Bridge Walk | 🏭 جولة حي كرينهولم الإبداعي – Kreenholm Creative District Tour | 🎨 مهرجان نارفا الثقافي – Narva Cultural Festival | 🌊 نزهة على نهر نارفا – Narva River Walk"
+            onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'estonia_narva', 'نارفا – Narva', '/img/narva-castle.jpg')">🏙️</button>
+            <img src="/img/narva-castle.jpg" alt="نارفا" class="cite-img">
+            <span class="name">نارفا – Narva</span>
+            <p class="info">مدينة الحدود الشرقية بقلعتها الحجرية الشاهقة على النهر.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+        <div class="cite" data-name="هابسالو – Haapsalu" data-img="/img/haapsalu-castle.jpg"
+            data-desc="بلدة منتجع ساحلية هادئة ذات طابع فيكتوري رومانسي، اشتهرت تاريخياً كمصحة علاجية للطبقة الأرستقراطية الروسية، وتحتضن قلعة أسقفية من العصور الوسطى."
+            data-historic="🏰 قلعة هابسالو الأسقفية – Haapsalu Episcopal Castle | ⛪ كاتدرائية هابسالو الأسقفية – Haapsalu Dome Church | 🚂 محطة سكة حديد هابسالو التاريخية – Haapsalu Railway Station | 🌉 كورنيش الإمبراطورة – Empress Promenade | 🗼 برج المياه القديم – Old Water Tower"
+            data-restaurants="🐟 مطعم Kutter Bistro | 🍲 مطعم Muusiku | 🥘 مطعم Central | 🍖 مطعم Wäike Klaus | 🥙 مطعم Fra Mare"
+            data-cafes="☕ مقهى Müüri Kohvipood | ☕ مقهى Werneri Kohvik | ☕ مقهى Ammende Villa Café | ☕ مقهى Rannahoov | ☕ مقهى Kohvik Kongo"
+            data-events="🏰 جولة قلعة هابسالو الأسقفية – Episcopal Castle Tour | 🌕 أمسية أسطورة السيدة البيضاء – White Lady Legend Night | 🌉 نزهة على كورنيش الإمبراطورة – Empress Promenade Walk | ♨️ زيارة سبا الطين العلاجي – Mud Spa Visit | 🚂 جولة محطة السكة الحديد التراثية – Heritage Railway Station Tour"
+            onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'estonia_haapsalu', 'هابسالو – Haapsalu', '/img/haapsalu-castle.jpg')">🏙️</button>
+            <img src="/img/haapsalu-castle.jpg" alt="هابسالو" class="cite-img">
+            <span class="name">هابسالو – Haapsalu</span>
+            <p class="info">بلدة منتجع رومانسية هادئة بقلعتها الأسقفية القديمة.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+        <div class="cite" data-name="كوريساري – Kuressaare" data-img="/img/kuressaare-castle.jpg"
+            data-desc="عاصمة جزيرة ساريما الأكبر في إستونيا، بلدة هادئة تحيط بها الطواحين الهوائية التقليدية وقلعتها الأسقفية شبه المحصنة بالكامل والمطلة على البحر."
+            data-historic="🏰 قلعة كوريساري الأسقفية – Kuressaare Episcopal Castle | ⛪ كنيسة القديس لوران – St. Lawrence Church | 🌬️ طواحين أنغلا الهوائية – Angla Windmills | 🗿 فوهة كالي النيزكية – Kaali Meteorite Crater | 🏛️ متحف ساريما – Saaremaa Museum"
+            data-restaurants="🐟 مطعم Vaekoja | 🍲 مطعم Kuursaal | 🥘 مطعم Georg Ots | 🍖 مطعم Saaremaa Veskiveski | 🥙 مطعم Cafe Muhu"
+            data-cafes="☕ مقهى Vanalinna Kohvik | ☕ مقهى Book's Cafe | ☕ مقهى Robert's Coffee Kuressaare | ☕ مقهى Saaremaa Kohvipood | ☕ مقهى Loona Kohvik"
+            data-events="🏰 جولة قلعة كوريساري الأسقفية – Episcopal Castle Tour | 🌬️ زيارة طواحين أنغلا – Angla Windmills Visit | 🗿 مشاهدة فوهة كالي النيزكية – Kaali Crater Visit | 🚴 ركوب الدراجات في جزيرة ساريما – Saaremaa Island Cycling | ♨️ زيارة سبا ساريما العلاجي – Saaremaa Spa Visit"
+            onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'estonia_kuressaare', 'كوريساري – Kuressaare', '/img/kuressaare-castle.jpg')">🏙️</button>
+            <img src="/img/kuressaare-castle.jpg" alt="كوريساري" class="cite-img">
+            <span class="name">كوريساري – Kuressaare</span>
+            <p class="info">عاصمة جزيرة ساريما بطواحينها الهوائية وقلعتها الأسقفية.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+    </section>
+
+    <div class="main-foods">
+        <h1>الماكولات</h1>
+    </div>
+    <section class="foods-grid">
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=mulgikapsad-estonia'">
+            <img src="/img/estonia-mulgikapsad.jpg" alt="" class="foods-img">
+            <span class="name-foods">مولغيكابساد – Mulgikapsad</span>
+            <div class="food-info">يخنة مخلل الملفوف مع اللحم البقري والشعير.</div>
+            <a href="/recipes/recipes.html?recipe=mulgikapsad-estonia" class="for-more-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=rosolje-estonia'">
+            <img src="/img/estonia-rosolje.jpg" alt="" class="foods-img">
+            <span class="name-foods">روسوليه – Rosolje</span>
+            <div class="food-info">سلطة الشمندر والبطاطس والرنجة الكريمية.</div>
+            <a href="/recipes/recipes.html?recipe=rosolje-estonia" class="for-more-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=kama-estonia'">
+            <img src="/img/estonia-kama.jpg" alt="" class="foods-img">
+            <span class="name-foods">كاما – Kama</span>
+            <div class="food-info">حلوى طحين الحبوب المحمص مع اللبن الرائب والعسل.</div>
+            <a href="/recipes/recipes.html?recipe=kama-estonia" class="for-more-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=sult-estonia'">
+            <img src="/img/estonia-sult.jpg" alt="" class="foods-img">
+            <span class="name-foods">سولت – Sült</span>
+            <div class="food-info">جيلي دجاج بارد مع الجزر يقدّم مع الخردل.</div>
+            <a href="/recipes/recipes.html?recipe=sult-estonia" class="for-more-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=kohuupiimakook-estonia'">
+            <img src="/img/estonia-kohuupiimakook.jpg" alt="" class="foods-img">
+            <span class="name-foods">كوهوبييماكوك – Kohuupiimakook</span>
+            <div class="food-info">كيك الجبنة الكوارك بنكهة الليمون والفانيليا.</div>
+            <a href="/recipes/recipes.html?recipe=kohuupiimakook-estonia" class="for-more-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=leib-estonia'">
+            <img src="/img/estonia-leib.jpg" alt="" class="foods-img">
+            <span class="name-foods">ليب – Eesti Leib</span>
+            <div class="food-info">خبز الجاودار الأسود التقليدي بنكهة الكمون.</div>
+            <a href="/recipes/recipes.html?recipe=leib-estonia" class="for-more-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+    </section>
+
+    <div class="events-main">
+        <h1>الفعاليات</h1>
+    </div>
+    <section class="events-grid">
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=TallinnSongFestivalGrounds'">
+            <img src="/img/estonia-tallinn-song-festival.jpg" alt="" class="event-img">
+            <span class="name-event">مهرجان الأغنية في تالين – Tallinn Song Festival</span>
+            <div class="event-info">تجمع غنائي ضخم يشارك فيه عشرات الآلاف من المنشدين.</div>
+            <a href="/events/events.html?event=TallinnSongFestivalGrounds" class="event-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=TallinnOldTownWalk'">
+            <img src="/img/estonia-tallinn-oldtown.jpg" alt="" class="event-img">
+            <span class="name-event">جولة البلدة القديمة في تالين – Tallinn Old Town Walk</span>
+            <div class="event-info">مشي استكشافي وسط الأبراج القروسطية والساحات التاريخية.</div>
+            <a href="/events/events.html?event=TallinnOldTownWalk" class="event-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=LahemaaNationalParkTrip'">
+            <img src="/img/estonia-lahemaa.jpg" alt="" class="event-img">
+            <span class="name-event">حديقة لاهيما الوطنية – Lahemaa National Park</span>
+            <div class="event-info">أكبر حديقة وطنية في إستونيا بين الغابات والمستنقعات.</div>
+            <a href="/events/events.html?event=LahemaaNationalParkTrip" class="event-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=ParnuBeachDay'">
+            <img src="/img/estonia-parnu-beach.jpg" alt="" class="event-img">
+            <span class="name-event">شاطئ بارنو – Pärnu Beach</span>
+            <div class="event-info">يوم استرخاء على الشاطئ الرملي الذهبي للعاصمة الصيفية.</div>
+            <a href="/events/events.html?event=ParnuBeachDay" class="event-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=KuressaareCastleTour'">
+            <img src="/img/estonia-kuressaare-castle.jpg" alt="" class="event-img">
+            <span class="name-event">قلعة كوريساري – Kuressaare Episcopal Castle</span>
+            <div class="event-info">القلعة الأسقفية الأفضل حفظاً في دول البلطيق.</div>
+            <a href="/events/events.html?event=KuressaareCastleTour" class="event-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=TallinnChristmasMarketVisit'">
+            <img src="/img/estonia-tallinn-christmas-market.jpg" alt="" class="event-img">
+            <span class="name-event">سوق الميلاد في تالين – Tallinn Christmas Market</span>
+            <div class="event-info">سوق شتوي ساحر بأكشاك الحرف اليدوية والمأكولات الدافئة.</div>
+            <a href="/events/events.html?event=TallinnChristmasMarketVisit" class="event-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+    </section>
+
+    <div id="cityModal" class="modal" onclick="closeCityModal(event)">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeCityModal(event)">×</button>
+            <div class="modal-top">
+                <img id="modalCityImg" src="" alt="" />
+                <div class="modal-top-info">
+                    <h2 id="modalCityName"></h2>
+                    <span class="modal-top-badge">✦ تفاصيل المدينة</span>
+                </div>
+            </div>
+            <div class="modal-body">
+                <p id="modalCityDesc" class="event-desc"></p>
+                <h4>🏛️ أفضل الأماكن التاريخية</h4>
+                <div id="modalCityHistoric" class="ingredients-tags"></div>
+                <h4>🍽️ أفضل المطاعم</h4>
+                <div id="modalCityRestaurants" class="ingredients-tags"></div>
+                <h4>☕ أفضل المقاهي</h4>
+                <div id="modalCityCafes" class="ingredients-tags"></div>
+                <h4>🎉 فعاليات المدينة</h4>
+                <div id="modalCityEvents" class="ingredients-tags"></div>
+            </div>
+        </div>
+    </div>
+    <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h2 class="footer-logo">سفرة</h2>
+        <p>وجهتك للسفر والطعام حول العالم</p>
+      </div>
+
+        <div class="footer-links">
+                <h4>روابط سريعة</h4>
+                <ul>
+                    <li><a href="/index/index.html">الرئيسية</a></li>
+                    <li><a href="/countries/countries.html">الدول</a></li>
+                    <li><a href="/events/events.html">الفعاليات</a></li>
+                    <li><a href="/recipes/recipes.html">الوصفات</a></li>
+                    <li><a href="/plan/plan.html">خطتي</a></li>
+                </ul>
+            </div>
+
+      <div class="footer-contact">
+        <h4>تواصل معنا</h4>
+        <ul>
+          <li>📧 <a href="mailto:Sofrh.info@gmail.com" target="_blank">Sofrh.info@gmail.com</a></li>
+          <li>📧 <a href="mailto:Sofrh.support@gmail.com" target="_blank">Sofrh.support@gmail.com</a></li>
+          <li>🐦 <a href="https://twitter.com/sofrah_sa" target="_blank">X (Twitter)</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 سفرة — جميع الحقوق محفوظة</p>
+      <p>صُنع بواسطة فريق شفرة</p>
+      <p>📧 <a href="mailto:hello@safra.com" style="color: #F28500;">hello@safra.com</a></p>
+    </div>
+  </footer>
+    <script src="/countries/countries.js"></script>
+    <script src="/auth/auth.js"></script>
+</body>
+
+</html>

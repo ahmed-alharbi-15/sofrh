@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سفرة</title>
+    <link rel="stylesheet" href="/countries/countries.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@500;600&display=swap');
+    </style>
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="hamburger" id="menu-btn">☰</div>
+
+        <div class="auth-buttons" id="authButtons">
+            <a href="/auth/login.html" class="login">تسجيل دخول</a>
+            <a href="/auth/signup.html" class="signup">إنشاء حساب</a>
+        </div>
+
+        <div class="user-menu" id="userMenu">
+            <img id="userAvatar" src="" alt="">
+            <span class="user-name" id="userName"></span>
+            <div class="user-dropdown">
+                <a href="/profile/profile.html">الملف الشخصي</a>
+                <a href="#" id="logoutBtn">تسجيل خروج</a>
+            </div>
+        </div>
+
+        <ul class="nav-list">
+            <li><a href="/index/index.html">الرئيسية</a></li>
+            <li><a href="/countries/countries.html">الدول</a></li>
+            <li><a href="/events/events.html">الفعاليات</a></li>
+            <li><a href="/recipes/recipes.html">الوصفات</a></li>
+            <li><a href="/plan/plan.html" class="active">خطتي</a></li>
+        </ul>
+
+        <div class="logo">
+            <a href="/index/index.html"><img src="/img/logo3.JPG" alt="سفرة"></a>
+        </div>
+    </header>
+
+    <!-- SIDE MENU -->
+    <div class="side-menu" id="side-menu">
+        <span class="close-btn" id="close-btn">×</span>
+        <span class="side-menu-kicker">استكشف</span>
+        <ul>
+            <li><a href="/index/index.html" class="active">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M3 11.5 12 4l9 7.5" />
+                        <path
+                            d="M5.5 10v9a1 1 0 0 0 1 1H9a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h2.5a1 1 0 0 0 1-1v-9" />
+                    </svg>
+                    <span>الرئيسية</span>
+                </a></li>
+            <li><a href="/countries/countries.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M12 21s7-6.6 7-12a7 7 0 1 0-14 0c0 5.4 7 12 7 12Z" />
+                        <circle cx="12" cy="9" r="2.3" />
+                    </svg>
+                    <span>الدول</span>
+                </a></li>
+            <li><a href="/events/events.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <rect x="3.5" y="5" width="17" height="16" rx="2.5" />
+                        <path d="M8 3v4M16 3v4M3.5 10h17" />
+                        <circle cx="12" cy="15" r="1.4" fill="currentColor" stroke="none" />
+                    </svg>
+                    <span>الفعاليات</span>
+                </a></li>
+            <li><a href="/recipes/recipes.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M7 2v8a2 2 0 0 0 2 2v10M5 2v6M9 2v6M14 2c-1.5 2-1.5 7 0 9 .6.6 1 1.3 1 2v9" />
+                    </svg>
+                    <span>الوصفات</span>
+                </a></li>
+            <li><a href="/plan/plan.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="9" />
+                        <path d="M14.8 9.2 13 13l-3.8 1.8L11 11l3.8-1.8Z" />
+                    </svg>
+                    <span>خطتي</span>
+                </a></li>
+        </ul>
+    </div>
+    <header>
+        <a href="/countries/countries.html" class="back-btn">رجوع</a>
+    </header>
+
+    <div class="country-name">
+        <h1>بلجيكا</h1>
+        <p>بلد الشوكولاتة والقلاع القوطية والميادين الذهبية</p>
+    </div>
+
+    <div class="main-cites">
+        <h1>المدن</h1>
+    </div>
+    <section class="cities-grid">
+
+        <div class="cite" data-name="بروكسل – Brussels" data-img="/img/Brussels.jpg"
+            data-desc="عاصمة بلجيكا ومقر الاتحاد الأوروبي، مدينة تجمع بين العمارة القوطية الفخمة وأجواء عالمية صاخبة، وتشتهر بميدانها الذهبي وصناعة الشوكولاتة الفاخرة."
+            data-historic="🏛️ الغراند بلاس – Grand Place | ⚛️ الأتوميوم – Atomium | 🗿 تمثال مانيكين بيس – Manneken Pis | ⛪ كاتدرائية القديسين ميشيل وغودولا – St. Michael Cathedral | 🎨 متحف الفنون الجميلة – Royal Museums of Fine Arts"
+            data-restaurants="🥙 مطعم Zenne Kebab | 🍗 مطعم Al Cham | 🍛 مطعم Al Nakheel Grill | 🥘 مطعم Le Bosphore | 🌿 مطعم Anatolia Restaurant"
+            data-cafes="☕ مقهى Comptoir Florian | ☕ مقهى Belga Café | ☕ مقهى Mokafé | ☕ مقهى Peck 47 | ☕ مقهى Coffee Break"
+            data-events="🏛️ زيارة الغراند بلاس – Grand Place | ⚛️ الأتوميوم – Atomium | 🍫 ورشة صناعة الشوكولاتة – Chocolate Workshop | 🖼️ متحف الفن البلجيكي – Fine Arts Museum | 🚶 جولة سيرًا في الحي القديم – Old Town Walk"
+            onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'belgium_brussels', 'بروكسل – Brussels', '/img/Brussels.jpg')">🏙️</button>
+            <img src="/img/Brussels.jpg" alt="بروكسل" class="cite-img">
+            <span class="name">بروكسل – Brussels</span>
+            <p class="info">العاصمة الأوروبية النابضة بالعمارة القوطية والشوكولاتة الفاخرة.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+        <div class="cite" data-name="بروج – Bruges" data-img="/img/Bruges.jpg"
+            data-desc="مدينة القنوات المائية الساحرة في شمال بلجيكا، تحتفظ بطابعها القروسطي بالكامل بشوارعها المرصوفة وبيوتها التاريخية، وتُلقّب بفينيسيا الشمال."
+            data-historic="🏰 برج بلفري – Belfry of Bruges | ⛪ كنيسة السيدة العذراء – Church of Our Lady | 🌉 جسر الحب – Lovers' Bridge | 🏛️ ساحة السوق الكبرى – Markt Square | 🖼️ متحف غرونينغ – Groeninge Museum"
+            data-restaurants="🥙 مطعم Kebab Bruges Center | 🍗 مطعم Damla Restaurant | 🍛 مطعم Le Med | 🥘 مطعم Sultan Bruges | 🌿 مطعم Restaurant Marina"
+            data-cafes="☕ مقهى Café Rose Red | ☕ مقهى Chocolaterie De Proefkeuken | ☕ مقهى Republiek | ☕ مقهى Blend Coffee Lounge | ☕ مقهى Meesteren Koffie"
+            data-events="🚤 جولة بالقوارب في القنوات – Canal Boat Tour | 🏰 برج بلفري التاريخي – Belfry Tower Climb | 🖼️ متحف غرونينغ للفنون – Groeninge Museum | 🚲 جولة بالدراجة حول المدينة – City Bike Tour | 🕰️ ساحة السوق التاريخية – Markt Square Visit"
+            onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'belgium_bruges', 'بروج – Bruges', '/img/Bruges.jpg')">🏙️</button>
+            <img src="/img/Bruges.jpg" alt="بروج" class="cite-img">
+            <span class="name">بروج – Bruges</span>
+            <p class="info">مدينة القنوات القروسطية الساحرة، فينيسيا الشمال.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+        <div class="cite" data-name="غنت – Ghent" data-img="/img/Ghent.jpg"
+            data-desc="مدينة جامعية نابضة بالحياة تجمع بين تاريخ عريق وروح شبابية معاصرة، تشتهر بقلعتها القروسطية المهيبة وواجهاتها النهرية الملونة على طول نهر ليس."
+            data-historic="🏰 قلعة غرافنستين – Gravensteen Castle | ⛪ كاتدرائية القديس بافو – St. Bavo's Cathedral | 🏘️ ميناء غراسلي – Graslei Waterfront | 🗼 برج الجرس – Belfry of Ghent | 🖼️ متحف الفنون الجميلة – MSK Ghent"
+            data-restaurants="🥙 مطعم Ghent Kebab House | 🍗 مطعم Al Amir | 🍛 مطعم Mezze Palace | 🥘 مطعم Restaurant Amadeus | 🌿 مطعم Souley"
+            data-cafes="☕ مقهى Mokabon | ☕ مقهى Vooruit Café | ☕ مقهى Simon Says | ☕ مقهى Coffeelabs | ☕ مقهى Julie's House"
+            data-events="🏰 جولة قلعة غرافنستين – Gravensteen Castle Tour | 🚤 جولة نهرية في ليس – Leie River Cruise | 🎨 حي غراسلي التاريخي – Graslei District | 🗼 صعود برج الجرس – Belfry Climb | 🎭 مهرجان غنت الثقافي – Ghent Festivities"
+            onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'belgium_ghent', 'غنت – Ghent', '/img/Ghent.jpg')">🏙️</button>
+            <img src="/img/Ghent.jpg" alt="غنت" class="cite-img">
+            <span class="name">غنت – Ghent</span>
+            <p class="info">مدينة جامعية بروح شبابية وقلعة قروسطية مهيبة.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+        <div class="cite" data-name="أنتويرب – Antwerp" data-img="/img/Antwerp.jpg"
+            data-desc="عاصمة بلجيكا الاقتصادية ومركز تجارة الألماس العالمي، مدينة أنيقة تمزج بين ناطحات السحاب الحديثة والعمارة الباروكية الفاخرة على ضفاف نهر شيلدت."
+            data-historic="⛪ كاتدرائية سيدة أنتويرب – Cathedral of Our Lady | 🏛️ محطة أنتويرب المركزية – Antwerp Central Station | 🏘️ بيت روبنس – Rubens House | 💎 حي الألماس – Diamond District | 🏰 قلعة ستين – Steen Castle"
+            data-restaurants="🥙 مطعم Antwerp Kebab Palace | 🍗 مطعم Marrakech Restaurant | 🍛 مطعم Efendi | 🥘 مطعم Beiroet | 🌿 مطعم Levant Grill"
+            data-cafes="☕ مقهى Normo Coffee | ☕ مقهى Kolonel Koffie | ☕ مقهى Caffènation | ☕ مقهى Elzenveld | ☕ مقهى De Studio"
+            data-events="💎 جولة حي الألماس – Diamond District Tour | ⛪ زيارة كاتدرائية سيدة أنتويرب – Cathedral Visit | 🏛️ محطة القطار التاريخية – Central Station Tour | 🖼️ بيت روبنس الفني – Rubens House Visit | 🛍️ تسوق شارع مير – Meir Shopping Street"
+            onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'belgium_antwerp', 'أنتويرب – Antwerp', '/img/Antwerp.jpg')">🏙️</button>
+            <img src="/img/Antwerp.jpg" alt="أنتويرب" class="cite-img">
+            <span class="name">أنتويرب – Antwerp</span>
+            <p class="info">مركز تجارة الألماس، أناقة باروكية على نهر شيلدت.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+        <div class="cite" data-name="لوفان – Leuven" data-img="/img/Leuven.jpg"
+            data-desc="مدينة جامعية عريقة تأسست جامعتها عام 1425، تتميز بمبنى بلدية قوطي مزخرف بشكل استثنائي وأجواء طلابية حيوية في قلب مقاطعة فلامان برابانت."
+            data-historic="🏛️ مبنى بلدية لوفان – Leuven Town Hall | ⛪ كنيسة القديس بطرس – St. Peter's Church | 🏫 المكتبة الجامعية القديمة – Old University Library | 🏘️ حديقة السقاية الكبرى – Groot Begijnhof | 🗼 برج جامعة لوفان – University Tower"
+            data-restaurants="🥙 مطعم Istanbul Grill Leuven | 🍗 مطعم Al Salam | 🍛 مطعم Damascus Palace | 🥘 مطعم Anatolia Leuven | 🌿 مطعم Beiruti"
+            data-cafes="☕ مقهى Domus Koffie | ☕ مقهى C-Mine Café | ☕ مقهى Capital Coffee | ☕ مقهى De Blauwe Zaal | ☕ مقهى Koffie & Thee Huis"
+            data-events="🏛️ جولة مبنى البلدية القوطي – Town Hall Tour | 🏫 المكتبة الجامعية التاريخية – Old Library Visit | 🏘️ حديقة السقاية الكبرى – Begijnhof Garden | 🎓 جولة الحرم الجامعي القديم – University Campus Walk | 🚲 جولة بالدراجة في المدينة – City Cycling Tour"
+            onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'belgium_leuven', 'لوفان – Leuven', '/img/Leuven.jpg')">🏙️</button>
+            <img src="/img/Leuven.jpg" alt="لوفان" class="cite-img">
+            <span class="name">لوفان – Leuven</span>
+            <p class="info">مدينة جامعية عريقة بمبنى بلدية قوطي مذهل.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+        <div class="cite" data-name="لييج – Liège" data-img="/img/Liege.jpg"
+            data-desc="مدينة صناعية وثقافية على ضفاف نهر ميوز في شرق بلجيكا، تشتهر بسوقها الشعبي الأحد وعمارتها التي تمزج بين الطراز القديم والحداثة الجريئة."
+            data-historic="⛪ كاتدرائية القديس بولس – St. Paul's Cathedral | 🏛️ قصر الأمراء الأساقفة – Prince-Bishops' Palace | 🚉 محطة لييج غييمان – Liège-Guillemins Station | 🏘️ حي أوت ريڤ – Outremeuse District | 🗿 درج البوريتاج – Montagne de Bueren Stairs"
+            data-restaurants="🥙 مطعم Liège Kebab House | 🍗 مطعم Le Damas | 🍛 مطعم Anatolia Liège | 🥘 مطعم Al Machwi | 🌿 مطعم Cedar Grill"
+            data-cafes="☕ مقهى Café Lezard | ☕ مقهى Comptoir des Arts | ☕ مقهى Kafei | ☕ مقهى Le Tricycle | ☕ مقهى Zenobe Café"
+            data-events="🚉 محطة القطار المعمارية – Liège-Guillemins Station Visit | 🏛️ قصر الأمراء الأساقفة – Prince-Bishops' Palace Tour | 🗿 صعود درج البوريتاج – Montagne de Bueren Climb | 🛍️ سوق لا باتيه الشعبي – La Batte Sunday Market | 🚤 جولة نهرية في ميوز – Meuse River Cruise"
+            onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'belgium_liege', 'لييج – Liège', '/img/Liege.jpg')">🏙️</button>
+            <img src="/img/Liege.jpg" alt="لييج" class="cite-img">
+            <span class="name">لييج – Liège</span>
+            <p class="info">مدينة نهرية بمعمار جريء وسوق شعبي أصيل.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+    </section>
+
+    <div class="main-foods">
+        <h1>الماكولات</h1>
+    </div>
+    <section class="foods-grid">
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=moules-frites'">
+            <img src="/img/Moules-Frites.jpg" alt="" class="foods-img">
+            <span class="name-foods">بلح البحر مع البطاطس – Moules-Frites</span>
+            <div class="food-info">بلح البحر المطهو مع البطاطس المقلية الذهبية.</div>
+            <a href="/recipes/recipes.html?recipe=moules-frites" class="for-more-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=gaufres-belges'">
+            <img src="/img/Gaufres-Belges.jpg" alt="" class="foods-img">
+            <span class="name-foods">وافل بلجيكي – Gaufres Belges</span>
+            <div class="food-info">وافل ذهبي مقرمش يقدم مع الفواكه والعسل.</div>
+            <a href="/recipes/recipes.html?recipe=gaufres-belges" class="for-more-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=stoofvlees'">
+            <img src="/img/Stoofvlees.jpg" alt="" class="foods-img">
+            <span class="name-foods">يخنة اللحم البلجيكية – Stoofvlees</span>
+            <div class="food-info">يخنة لحم بقري غنية تقدم مع البطاطس.</div>
+            <a href="/recipes/recipes.html?recipe=stoofvlees" class="for-more-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=speculoos'">
+            <img src="/img/Speculoos.jpg" alt="" class="foods-img">
+            <span class="name-foods">بسكويت سبيكولووس – Speculoos</span>
+            <div class="food-info">بسكويت مقرمش بنكهة القرفة والتوابل.</div>
+            <a href="/recipes/recipes.html?recipe=speculoos" class="for-more-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=croquettes-crevettes'">
+            <img src="/img/Croquettes-Crevettes.jpg" alt="" class="foods-img">
+            <span class="name-foods">كروكيت الجمبري – Croquettes de Crevettes</span>
+            <div class="food-info">كرات مقرمشة محشوة بالجمبري الكريمي.</div>
+            <a href="/recipes/recipes.html?recipe=croquettes-crevettes" class="for-more-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=chicons-gratin'">
+            <img src="/img/Chicons-Gratin.jpg" alt="" class="foods-img">
+            <span class="name-foods">شيكون بالجبن – Chicons au Gratin</span>
+            <div class="food-info">إندب ملفوف باللحم ومغطى بصوص الجبن.</div>
+            <a href="/recipes/recipes.html?recipe=chicons-gratin" class="for-more-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+    </section>
+
+    <div class="events-main">
+        <h1>الفعاليات</h1>
+    </div>
+    <section class="events-grid">
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=GrandPlaceLightShow'">
+            <img src="/img/Grand-Place-Light-Show.jpg" alt="" class="event-img">
+            <span class="name-event">عرض أضواء الغراند بلاس – Grand Place Light Show</span>
+            <div class="event-info">عرض إضاءة وصوت مبهر فوق ساحة الغراند بلاس.</div>
+            <a href="/events/events.html?event=GrandPlaceLightShow" class="event-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=BrugesCanalTour'">
+            <img src="/img/Bruges-Canal-Tour.jpg" alt="" class="event-img">
+            <span class="name-event">جولة قنوات بروج – Bruges Canal Tour</span>
+            <div class="event-info">جولة بالقارب بين القنوات القروسطية الساحرة.</div>
+            <a href="/events/events.html?event=BrugesCanalTour" class="event-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=AtomiumVisit'">
+            <img src="/img/Atomium-Visit.jpg" alt="" class="event-img">
+            <span class="name-event">زيارة الأتوميوم – Atomium Visit</span>
+            <div class="event-info">تحفة معمارية فريدة بإطلالة بانورامية على بروكسل.</div>
+            <a href="/events/events.html?event=AtomiumVisit" class="event-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=ChocolateWorkshop'">
+            <img src="/img/Chocolate-Workshop.jpg" alt="" class="event-img">
+            <span class="name-event">ورشة صناعة الشوكولاتة – Chocolate Workshop</span>
+            <div class="event-info">تعلم صناعة الشوكولاتة البلجيكية الأصيلة بيديك.</div>
+            <a href="/events/events.html?event=ChocolateWorkshop" class="event-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=GhentCastleTour'">
+            <img src="/img/Ghent-Castle-Tour.jpg" alt="" class="event-img">
+            <span class="name-event">قلعة غرافنستين القروسطية – Ghent Castle Tour</span>
+            <div class="event-info">جولة داخل قلعة حجرية عريقة تعود لعصور القرون الوسطى.</div>
+            <a href="/events/events.html?event=GhentCastleTour" class="event-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=AntwerpDiamondQuarter'">
+            <img src="/img/Antwerp-Diamond-Quarter.jpg" alt="" class="event-img">
+            <span class="name-event">حي الألماس في أنتويرب – Antwerp Diamond Quarter</span>
+            <div class="event-info">جولة في أكبر أسواق الألماس العالمية وأناقة معمارية باروكية.</div>
+            <a href="/events/events.html?event=AntwerpDiamondQuarter" class="event-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+    </section>
+
+    <div id="cityModal" class="modal" onclick="closeCityModal(event)">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeCityModal(event)">×</button>
+            <div class="modal-top">
+                <img id="modalCityImg" src="" alt="" />
+                <div class="modal-top-info">
+                    <h2 id="modalCityName"></h2>
+                    <span class="modal-top-badge">✦ تفاصيل المدينة</span>
+                </div>
+            </div>
+            <div class="modal-body">
+                <p id="modalCityDesc" class="event-desc"></p>
+                <h4>🏛️ أفضل الأماكن التاريخية</h4>
+                <div id="modalCityHistoric" class="ingredients-tags"></div>
+                <h4>🍽️ أفضل المطاعم</h4>
+                <div id="modalCityRestaurants" class="ingredients-tags"></div>
+                <h4>☕ أفضل المقاهي</h4>
+                <div id="modalCityCafes" class="ingredients-tags"></div>
+                <h4>🎉 فعاليات المدينة</h4>
+                <div id="modalCityEvents" class="ingredients-tags"></div>
+            </div>
+        </div>
+    </div>
+    <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h2 class="footer-logo">سفرة</h2>
+        <p>وجهتك للسفر والطعام حول العالم</p>
+      </div>
+
+        <div class="footer-links">
+                <h4>روابط سريعة</h4>
+                <ul>
+                    <li><a href="/index/index.html">الرئيسية</a></li>
+                    <li><a href="/countries/countries.html">الدول</a></li>
+                    <li><a href="/events/events.html">الفعاليات</a></li>
+                    <li><a href="/recipes/recipes.html">الوصفات</a></li>
+                    <li><a href="/plan/plan.html">خطتي</a></li>
+                </ul>
+            </div>
+
+      <div class="footer-contact">
+        <h4>تواصل معنا</h4>
+        <ul>
+          <li>📧 <a href="mailto:Sofrh.info@gmail.com" target="_blank">Sofrh.info@gmail.com</a></li>
+          <li>📧 <a href="mailto:Sofrh.support@gmail.com" target="_blank">Sofrh.support@gmail.com</a></li>
+          <li>🐦 <a href="https://twitter.com/sofrah_sa" target="_blank">X (Twitter)</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 سفرة — جميع الحقوق محفوظة</p>
+      <p>صُنع بواسطة فريق شفرة</p>
+      <p>📧 <a href="mailto:hello@safra.com" style="color: #F28500;">hello@safra.com</a></p>
+    </div>
+  </footer>
+    <script src="/countries/countries.js"></script>
+    <script src="/auth/auth.js"></script>
+</body>
+
+</html>

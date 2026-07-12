@@ -1,8 +1,8 @@
 :root {
-    --brown-dark: #4A2E1F;
-    --cream-light: #FAF4E6;
-    --cream-soft: #F3E8D2;
-    --caramel: #D2A673;
+    --brown-dark: #32127A;
+    --cream-light: #FAF5EB;
+    --cream-soft: #F0EBE0;
+    --caramel: #F28500;
 }
 
 /* ================================
@@ -11,7 +11,7 @@
 .profile-page {
     display: flex;
     min-height: 100vh;
-    background: #FAF4E6;
+    background: #FAF5EB;
 }
 
 /* ================================
@@ -26,13 +26,13 @@
     right: 0;
     height: calc(100% - 90px);
     z-index: 100;
-    border-left: 1px solid rgba(200,133,74,0.15);
+    border-left: 1px solid rgba(242,133,0,0.15);
 }
 
 .profile-avatar-section {
     text-align: center;
     padding: 24px 20px;
-    border-bottom: 1px solid rgba(200,133,74,0.2);
+    border-bottom: 1px solid rgba(242,133,0,0.2);
     margin-bottom: 20px;
 }
 
@@ -47,14 +47,14 @@
     height: 90px;
     border-radius: 50%;
     object-fit: cover;
-    border: 3px solid rgba(200,133,74,0.6);
+    border: 3px solid rgba(242,133,0,0.6);
 }
 
 .avatar-edit {
     position: absolute;
     bottom: 0;
     left: 0;
-    background: rgba(200,133,74,0.8);
+    background: rgba(242,133,0,0.8);
     border-radius: 50%;
     width: 26px;
     height: 26px;
@@ -66,17 +66,17 @@
     transition: .3s;
 }
 
-.avatar-edit:hover { background: #c8854a; }
+.avatar-edit:hover { background: #F28500; }
 
 .profile-avatar-section h2 {
     font-size: 17px;
-    color: #f5ede0;
+    color: #FFFFFF;
     margin-bottom: 4px;
 }
 
 .profile-avatar-section p {
     font-size: 12px;
-    color: rgba(245,237,224,0.5);
+    color: rgba(255,255,255,0.5);
 }
 
 .profile-nav {
@@ -95,20 +95,20 @@
     text-decoration: none;
     font-size: 15px;
     font-weight: 600;
-    color: rgba(245,237,224,0.65);
+    color: rgba(255,255,255,0.65);
     transition: .3s;
     font-family: "Noto Sans Arabic", sans-serif;
 }
 
 .profile-nav li a:hover {
     background: rgba(255,255,255,0.07);
-    color: #f5ede0;
+    color: #FFFFFF;
 }
 
 .profile-nav li a.active {
-    background: rgba(200,133,74,0.25);
-    color: #f5ede0;
-    border: 1px solid rgba(200,133,74,0.35);
+    background: rgba(242,133,0,0.25);
+    color: #FFFFFF;
+    border: 1px solid rgba(242,133,0,0.35);
 }
 
 /* ================================
@@ -118,7 +118,7 @@
     margin-right: 260px;
     padding: 40px;
     width: 100%;
-    background: #FAF4E6;
+    background: #FAF5EB;
 }
 
 .fav-section { display: none; }
@@ -126,7 +126,7 @@
 
 .fav-title {
     font-size: 24px;
-    color: #4A2E1F;
+    color: #32127A;
     margin-bottom: 24px;
     padding-bottom: 12px;
     border-bottom: 3px solid var(--caramel);
@@ -145,7 +145,7 @@
     position: relative;
     border-radius: 16px;
     overflow: hidden;
-    background: #1a0f07;
+    background: #150A35;
     height: 220px;
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -170,7 +170,7 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, rgba(20,8,2,0.88) 0%, rgba(20,8,2,0.15) 55%, transparent 100%);
+    background: linear-gradient(to top, rgba(18,8,42,0.88) 0%, rgba(18,8,42,0.15) 55%, transparent 100%);
     pointer-events: none;
 }
 
@@ -247,10 +247,10 @@
 
 .settings-group h3 {
     font-size: 17px;
-    color: #4A2E1F;
+    color: #32127A;
     margin-bottom: 20px;
     padding-bottom: 10px;
-    border-bottom: 2px solid #F3E8D2;
+    border-bottom: 2px solid #F0EBE0;
 }
 
 .input-group {
@@ -264,24 +264,24 @@
 .input-group label {
     font-size: 14px;
     font-weight: 600;
-    color: #4A2E1F;
+    color: #32127A;
 }
 
 .input-group input {
     padding: 11px 16px;
     border-radius: 12px;
-    border: 2px solid #F3E8D2;
+    border: 2px solid #F0EBE0;
     font-size: 15px;
     font-family: "Noto Sans Arabic", sans-serif;
     background: #FDFAF5;
-    color: #4A2E1F;
+    color: #32127A;
     transition: .3s;
     outline: none;
     text-align: right;
 }
 
 .input-group input:focus {
-    border-color: #D2A673;
+    border-color: #F28500;
     background: #fff;
 }
 
@@ -289,8 +289,8 @@
     padding: 11px 24px;
     border-radius: 12px;
     border: none;
-    background: #4A2E1F;
-    color: #FAF4E6;
+    background: #32127A;
+    color: #FFFFFF;
     font-size: 15px;
     font-weight: 700;
     font-family: "Noto Sans Arabic", sans-serif;
@@ -299,8 +299,8 @@
 }
 
 .settings-btn:hover {
-    background: #D2A673;
-    color: #4A2E1F;
+    background: #F28500;
+    color: #FFFFFF;
 }
 
 /* ================================
@@ -319,8 +319,8 @@
         overflow-x: auto;
         gap: 8px;
         padding: 12px 16px;
-        background: #2c1a0e;
-        border-bottom: 1px solid rgba(200,133,74,0.2);
+        background: #2A1060;
+        border-bottom: 1px solid rgba(242,133,0,0.2);
     }
 
     .profile-mobile-nav a {
@@ -330,7 +330,7 @@
         text-decoration: none;
         font-size: 13px;
         font-weight: 600;
-        color: rgba(245,237,224,0.65);
+        color: rgba(255,255,255,0.65);
         background: rgba(255,255,255,0.07);
         border: 1px solid rgba(255,255,255,0.1);
         transition: .3s;
@@ -338,9 +338,9 @@
     }
 
     .profile-mobile-nav a.active {
-        background: rgba(200,133,74,0.3);
-        color: #f5ede0;
-        border-color: rgba(200,133,74,0.4);
+        background: rgba(242,133,0,0.3);
+        color: #FFFFFF;
+        border-color: rgba(242,133,0,0.4);
     }
 
     .profile-content {
@@ -360,8 +360,8 @@
     .profile-content { padding: 14px; }
 }
 .site-footer {
-  background-color: #4A2E1F;
-  color: #FAF4E6;
+  background-color: #32127A;
+  color: #FFFFFF;
   padding: 50px 20px 20px;
   margin-top: 60px;
 }
@@ -377,18 +377,18 @@
 
 .footer-logo {
   font-size: 2rem;
-  color: #D2A673;
+  color: #F28500;
   margin-bottom: 10px;
 }
 
 .footer-brand p {
-  color: #F3E8D2;
+  color: #FFFFFF;
   font-size: 0.9rem;
 }
 
 .footer-links h4,
 .footer-contact h4 {
-  color: #D2A673;
+  color: #F28500;
   margin-bottom: 15px;
   font-size: 1rem;
 }
@@ -404,7 +404,7 @@
 
 .footer-links a,
 .footer-contact a {
-  color: #F3E8D2;
+  color: #FFFFFF;
   text-decoration: none;
   font-size: 0.9rem;
   transition: color 0.3s;
@@ -412,15 +412,15 @@
 
 .footer-links a:hover,
 .footer-contact a:hover {
-  color: #D2A673;
+  color: #F28500;
 }
 
 .footer-bottom {
   text-align: center;
   margin-top: 40px;
   padding-top: 20px;
-  border-top: 1px solid rgba(242, 232, 210, 0.2);
-  color: #F3E8D2;
+  border-top: 1px solid rgba(240, 235, 224, 0.2);
+  color: #FFFFFF;
   font-size: 0.85rem;
 }
 
