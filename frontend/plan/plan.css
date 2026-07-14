@@ -90,8 +90,6 @@ body {
      NAVBAR
 *********************************/
 .navbar {
-    opacity: var(--navbar-opacity, 0);
-    transition: opacity 0.1s;
     background-color: var(--brown-dark);
     padding: 0 20px;
     display: flex;
