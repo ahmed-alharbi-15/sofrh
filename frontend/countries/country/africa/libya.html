@@ -12,6 +12,8 @@
         const user = JSON.parse(localStorage.getItem('safraUser') || 'null');
         if (user) {
             document.documentElement.classList.add('user-logged-in');
+            document.documentElement.setAttribute('data-username', user.name || '');
+            document.documentElement.setAttribute('data-avatar', user.avatar || localStorage.getItem('safraAvatar') || '');
         } else {
             document.documentElement.classList.add('user-logged-out');
         }

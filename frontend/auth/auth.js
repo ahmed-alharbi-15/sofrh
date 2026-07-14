@@ -89,10 +89,9 @@ function checkAuth() {
     if (user) {
         document.documentElement.classList.remove('user-logged-out');
         document.documentElement.classList.add('user-logged-in');
-        if (userName) userName.textContent = user.name;
+        if (userName) userName.textContent = document.documentElement.getAttribute('data-username');
         if (userAvatar) {
-            const savedAvatar = localStorage.getItem("safraAvatar");
-            const src = user.avatar || savedAvatar || null;
+            const src = document.documentElement.getAttribute('data-avatar');
             if (src) userAvatar.src = src;
         }
     } else {
