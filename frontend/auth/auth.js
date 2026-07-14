@@ -101,6 +101,9 @@ function checkAuth() {
         if (authButtons) authButtons.style.display = "flex";
         if (userMenu) userMenu.style.display = "none";
     }
+
+    const navbar = document.querySelector('.navbar');
+    if (navbar) navbar.classList.add('loaded');
 }
 
 // --- 4. تسجيل الخروج ---
