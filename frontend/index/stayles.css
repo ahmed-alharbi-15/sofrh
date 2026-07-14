@@ -62,7 +62,7 @@ html {
 
 body {
     background-color: #FAF5EB;
-    font-family: 'Dubai', "Noto Sans Arabic", sans-serif;
+    font-family: 'Dubai', 'Dubai Regular', sans-serif;
     font-size: 1rem;
     padding-top: 90px !important;
     overflow-x: hidden;
@@ -113,7 +113,7 @@ body {
 
 .nav-list a {
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 400;
     font-size: 20px;
     color: var(--cream-light);
     position: relative;
@@ -161,7 +161,7 @@ html.logged-in .user-menu {
     text-decoration: none;
     font-size: 20px;
     padding: 8px 20px;
-    font-weight: bold;
+    font-weight: 400;
     border-radius: 20px;
     white-space: nowrap;
 }
@@ -345,7 +345,7 @@ html.logged-in .user-menu {
 .user-name {
     color: var(--cream-light);
     font-size: 16px;
-    font-weight: bold;
+    font-weight: 400;
 }
 
 #userAvatar {
@@ -988,3 +988,27 @@ html.user-logged-out .user-menu { display: none !important; }
 html.user-logged-out .auth-buttons { display: flex !important; }
 html.user-logged-in .auth-buttons { display: none !important; }
 html.user-logged-in .user-menu { display: flex !important; }
+
+/* اللوغو */
+.logo img { height: 55px; width: auto; }
+
+/* الخطوط */
+:root {
+    --font-xs: 12px;
+    --font-sm: 14px;
+    --font-md: 16px;
+    --font-lg: 18px;
+    --font-xl: 22px;
+    --font-2xl: 28px;
+    --font-3xl: 36px;
+}
+
+/* الـ navbar */
+.nav-list a { font-size: var(--font-lg); }
+.auth-buttons a { font-size: var(--font-md); }
+.user-name { font-size: var(--font-md); }
+
+/* الجوال */
+@media (max-width: 480px) {
+    .logo img { height: 42px; }
+}
