@@ -37,9 +37,16 @@ html {
     scroll-behavior: smooth;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+@view-transition {
+    navigation: auto;
+}
+
+::view-transition-old(root) {
+    animation: none;
+}
+
+::view-transition-new(root) {
+    animation: none;
 }
 
 body {
@@ -49,7 +56,6 @@ body {
     min-height: 100vh;
     padding-top: 90px !important;
     overflow-x: hidden;
-    animation: fadeIn 0.2s ease-in;
 }
 
 small,

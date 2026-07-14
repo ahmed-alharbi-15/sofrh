@@ -2,13 +2,16 @@
 <html lang="ar" dir="rtl">
 
 <head>
+    <script>(function(){try{document.documentElement.classList.add(localStorage.getItem('safraUser')?'logged-in':'logged-out')}catch(e){}})();</script>
+    <style>
+        .auth-buttons { display: none; }
+        .user-menu { display: none; }
+    </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>سفره</title>
     <link rel="stylesheet" href="/index/stayles.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@500;600&display=swap');
-    </style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@500;600&display=swap">
     <title>سفرة | دليلك للسفر والطعام حول العالم</title>
 
     <meta charset="UTF-8">
@@ -226,7 +229,6 @@
             <p>📧 <a href="mailto:Sofrh.info@gmail.com" style="color: #F28500;">Sofrh.info@gmail.com</a></p>
         </div>
     </footer>
-    <script src="/index/index.js"></script>
     <script src="/auth/auth.js"></script>
 
 </body>

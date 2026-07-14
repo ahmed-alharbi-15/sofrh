@@ -2,15 +2,18 @@
 <html lang="ar" dir="rtl">
 
 <head>
+    <script>(function(){try{document.documentElement.classList.add(localStorage.getItem('safraUser')?'logged-in':'logged-out')}catch(e){}})();</script>
+    <style>
+        .auth-buttons { display: none; }
+        .user-menu { display: none; }
+    </style>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>سفرة - الملف الشخصي</title>
   <link rel="stylesheet" href="/countries/countries.css" />
   <link rel="stylesheet" href="/auth/auth.css" />
   <link rel="stylesheet" href="/profile/profile.css" />
-  <style>
-    @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@500;600&display=swap");
-  </style>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@500;600&display=swap">
     <meta property="og:image" content="https://sofrh.vercel.app/img/logo6.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">

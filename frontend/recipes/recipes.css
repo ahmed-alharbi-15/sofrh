@@ -45,9 +45,16 @@ html {
     scroll-behavior: smooth;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+@view-transition {
+    navigation: auto;
+}
+
+::view-transition-old(root) {
+    animation: none;
+}
+
+::view-transition-new(root) {
+    animation: none;
 }
 
 body {
@@ -56,7 +63,6 @@ body {
     font-size: 1rem;
     padding-top: 90px !important;
     overflow-x: hidden;
-    animation: fadeIn 0.2s ease-in;
 }
 
 :root {
@@ -116,6 +122,15 @@ body {
 
 .nav-list a:hover {
     color: var(--caramel);
+}
+
+/* Prevent auth-state flash (FOUC) before auth.js runs */
+html.logged-in .auth-buttons {
+    display: none;
+}
+
+html.logged-in .user-menu {
+    display: flex;
 }
 
 .auth-buttons {
@@ -941,6 +956,28 @@ body {
         padding: 10px 30px;
     }
 
+}
+
+@media (min-width: 480px) and (max-width: 767px) {
+    body {
+        padding-top: 75px !important;
+    }
+
+    .navbar {
+        height: 75px;
+        padding: 0 15px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    body {
+        padding-top: 85px !important;
+    }
+
+    .navbar {
+        height: 85px;
+        padding: 0 15px;
+    }
 }
 
 .site-footer {
