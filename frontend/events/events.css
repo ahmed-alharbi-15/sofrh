@@ -356,9 +356,13 @@ html.logged-in .user-menu {
     line-height: 1.15;
 }
 
+.hero-accent {
+    color: #FFFFFF;
+}
+
 .hero-text p {
     font-size: 1rem;
-    color: rgba(255, 255, 255, 0.6);
+    color: rgba(255, 255, 255, 0.7);
     margin: 0;
     line-height: 1.8;
 }
