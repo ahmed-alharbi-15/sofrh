@@ -293,3 +293,23 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
+// --- حفظ آخر فلتر قارة ---
+document.querySelectorAll('.filter-buttons button').forEach(btn => {
+    btn.addEventListener('click', () => {
+        sessionStorage.setItem('lastContinent', btn.getAttribute('data-filter'));
+    });
+});
+
+// --- استرجاع آخر فلتر قارة عند تحميل الصفحة ---
+document.addEventListener('DOMContentLoaded', () => {
+    const lastContinent = sessionStorage.getItem('lastContinent');
+    if (lastContinent) {
+        const btn = document.querySelector(`.filter-buttons button[data-filter="${lastContinent}"]`);
+        if (btn) {
+            btn.click();
+            const section = document.getElementById(lastContinent);
+            if (section) section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    }
+});
+
