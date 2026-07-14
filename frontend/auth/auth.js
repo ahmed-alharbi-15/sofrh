@@ -105,9 +105,10 @@ function checkAuth() {
     if (user) {
         document.documentElement.classList.remove('user-logged-out');
         document.documentElement.classList.add('user-logged-in');
-        if (userName) userName.textContent = document.documentElement.getAttribute('data-username');
+        if (userName) userName.textContent = user.name || '';
         if (userAvatar) {
-            const src = document.documentElement.getAttribute('data-avatar');
+            const savedAvatar = localStorage.getItem("safraAvatar");
+            const src = user.avatar || savedAvatar || null;
             if (src) userAvatar.src = src;
         }
     } else {
