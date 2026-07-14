@@ -13,12 +13,15 @@
         var av=localStorage.getItem('safraAvatar')||'';
         document.documentElement.className+=u?' user-logged-in':' user-logged-out';
         if(u){
-            document.addEventListener('DOMContentLoaded',function(){
+            var t=setInterval(function(){
                 var n=document.getElementById('userName');
                 var a=document.getElementById('userAvatar');
-                if(n) n.textContent=u.name||'';
-                if(a&&(u.avatar||av)) a.src=u.avatar||av;
-            });
+                if(n){
+                    n.textContent=u.name||'';
+                    if(a&&(u.avatar||av)) a.src=u.avatar||av;
+                    clearInterval(t);
+                }
+            },1);
         }
     })();
     </script>
