@@ -1127,6 +1127,18 @@ html.logged-in .user-menu {
     transform: rotate(-1.5deg);
 }
 
+/* الكرت المختار - trip-card فقط */
+.trip-card.active {
+    border-color: #F28500;
+    background: rgba(242, 133, 0, 0.1);
+    color: #32127A;
+}
+
+/* الكرت hover - trip-card فقط */
+.trip-card:hover {
+    border-color: #F28500;
+}
+
 .trip-card.active .trip-code {
     color: var(--caramel);
 }
@@ -1408,19 +1420,19 @@ html.logged-in .user-menu {
 }
 
 .ticket-btn.solid {
-    background: var(--ink);
-    color: var(--cream-light);
+    background: #32127A;
+    color: #FAF5EB;
 }
 
 .ticket-btn.solid:hover:not(:disabled) {
-    background: var(--caramel);
-    color: var(--brown-dark);
+    background: #F28500;
+    color: #FAF5EB;
 }
 
 .ticket-btn.ghost {
     background: transparent;
-    border: 2px dashed rgba(50, 18, 122, .3);
-    color: var(--brown-dark);
+    border: 2px solid #32127A;
+    color: #32127A;
 }
 
 .ticket-btn.ghost:hover:not(:disabled) {
