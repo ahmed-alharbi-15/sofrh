@@ -600,3 +600,10 @@ html.user-logged-in .user-menu { display: flex !important; }
 @media (max-width: 480px) {
     .logo img { height: 42px; }
 }
+
+.nav-list a.active {
+    color: #F28500;
+}
+.nav-list a.active::after {
+    width: 100%;
+}

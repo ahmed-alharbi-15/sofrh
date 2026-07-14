@@ -563,3 +563,10 @@ html.user-logged-in .user-menu { display: flex !important; }
 }
 
 .navbar .auth-buttons a { font-size: var(--font-md); }
+
+.nav-list a.active {
+    color: #F28500;
+}
+.nav-list a.active::after {
+    width: 100%;
+}
