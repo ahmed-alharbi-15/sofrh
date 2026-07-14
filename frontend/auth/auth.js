@@ -2,15 +2,13 @@
     const user = JSON.parse(localStorage.getItem('safraUser') || 'null');
     if (user) {
         document.documentElement.classList.add('user-logged-in');
-        document.addEventListener('DOMContentLoaded', function() {
-            const userName = document.getElementById('userName');
-            const userAvatar = document.getElementById('userAvatar');
-            if (userName) userName.textContent = user.name || '';
-            if (userAvatar) {
-                const src = user.avatar || localStorage.getItem('safraAvatar') || '';
-                if (src) userAvatar.src = src;
-            }
-        });
+        const userName = document.getElementById('userName');
+        const userAvatar = document.getElementById('userAvatar');
+        if (userName) userName.textContent = user.name || '';
+        if (userAvatar) {
+            const src = user.avatar || localStorage.getItem('safraAvatar') || '';
+            if (src) userAvatar.src = src;
+        }
     } else {
         document.documentElement.classList.add('user-logged-out');
     }
