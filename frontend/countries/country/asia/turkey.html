@@ -9,8 +9,17 @@
   <meta charset="UTF-8" />
     <script>
     (function(){
-        var u=localStorage.getItem('safraUser');
+        var u=JSON.parse(localStorage.getItem('safraUser')||'null');
+        var av=localStorage.getItem('safraAvatar')||'';
         document.documentElement.className+=u?' user-logged-in':' user-logged-out';
+        if(u){
+            document.addEventListener('DOMContentLoaded',function(){
+                var n=document.getElementById('userName');
+                var a=document.getElementById('userAvatar');
+                if(n) n.textContent=u.name||'';
+                if(a&&(u.avatar||av)) a.src=u.avatar||av;
+            });
+        }
     })();
     </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
