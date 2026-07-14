@@ -83,14 +83,12 @@ if (loginBtn) {
 // --- 3. التحقق من الجلسة ---
 function checkAuth() {
     const user = JSON.parse(localStorage.getItem("safraUser"));
-    const authButtons = document.getElementById("authButtons");
-    const userMenu = document.getElementById("userMenu");
     const userName = document.getElementById("userName");
     const userAvatar = document.getElementById("userAvatar");
 
     if (user) {
-        if (authButtons) authButtons.style.display = "none";
-        if (userMenu) userMenu.style.display = "flex";
+        document.documentElement.classList.remove('user-logged-out');
+        document.documentElement.classList.add('user-logged-in');
         if (userName) userName.textContent = user.name;
         if (userAvatar) {
             const savedAvatar = localStorage.getItem("safraAvatar");
@@ -98,8 +96,8 @@ function checkAuth() {
             if (src) userAvatar.src = src;
         }
     } else {
-        if (authButtons) authButtons.style.display = "flex";
-        if (userMenu) userMenu.style.display = "none";
+        document.documentElement.classList.remove('user-logged-in');
+        document.documentElement.classList.add('user-logged-out');
     }
 }
 
