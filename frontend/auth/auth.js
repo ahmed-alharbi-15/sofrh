@@ -104,6 +104,8 @@ function checkAuth() {
 
     const navbar = document.querySelector('.navbar');
     if (navbar) navbar.classList.add('loaded');
+
+    document.querySelectorAll('.auth-buttons, .user-menu').forEach(el => el.style.visibility = 'visible');
 }
 
 // --- 4. تسجيل الخروج ---
