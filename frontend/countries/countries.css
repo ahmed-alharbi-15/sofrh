@@ -41,24 +41,23 @@ small,
     font-size: 0.875rem;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
 body {
     background-color: #FAF5EB;
     font-family: 'Dubai', "Noto Sans Arabic", sans-serif;
     font-size: 1rem;
-    padding-top: 90px;
-}
-
-:root {
-    --brown-dark: #32127A;
-    --cream-light: #FAF5EB;
-    --cream-soft: #F0EBE0;
-    --caramel: #F28500;
-}
-body {
-    background-color: #FAF5EB;
-    font-family: 'Dubai', "Noto Sans Arabic", sans-serif;
     padding-top: 90px !important;
     direction: rtl;
+    animation: fadeIn 0.2s ease-in;
+    overflow-x: hidden;
 }
 
 /*********************************

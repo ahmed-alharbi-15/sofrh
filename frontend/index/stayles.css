@@ -44,11 +44,22 @@ small,
 /*********************************
      BODY
 *********************************/
+html {
+    scroll-behavior: smooth;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
 body {
     background-color: #FAF5EB;
     font-family: 'Dubai', "Noto Sans Arabic", sans-serif;
     font-size: 1rem;
     padding-top: 90px !important;
+    animation: fadeIn 0.2s ease-in;
+    overflow-x: hidden;
 }
 
 /*********************************
