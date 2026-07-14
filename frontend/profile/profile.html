@@ -7,18 +7,6 @@
         .user-menu { display: none; }
     </style>
   <meta charset="UTF-8" />
-    <script>
-    (function() {
-        const user = JSON.parse(localStorage.getItem('safraUser') || 'null');
-        if (user) {
-            document.documentElement.classList.add('user-logged-in');
-            document.documentElement.setAttribute('data-username', user.name || '');
-            document.documentElement.setAttribute('data-avatar', user.avatar || localStorage.getItem('safraAvatar') || '');
-        } else {
-            document.documentElement.classList.add('user-logged-out');
-        }
-    })();
-    </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>سفرة - الملف الشخصي</title>
   <link rel="stylesheet" href="/countries/countries.css" />
