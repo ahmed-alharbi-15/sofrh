@@ -1,3 +1,5 @@
+document.documentElement.style.setProperty('--navbar-opacity', '0');
+
 // --- 1. وظيفة إنشاء الحساب ---
 
 const signupBtn = document.getElementById('signupBtn');
@@ -106,6 +108,8 @@ function checkAuth() {
     if (navbar) navbar.classList.add('loaded');
 
     document.querySelectorAll('.auth-buttons, .user-menu').forEach(el => el.style.visibility = 'visible');
+
+    document.documentElement.style.setProperty('--navbar-opacity', '1');
 }
 
 // --- 4. تسجيل الخروج ---
