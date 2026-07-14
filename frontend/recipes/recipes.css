@@ -1136,3 +1136,8 @@ html.logged-in .user-menu {
         max-width: 240px;
     }
 }
+
+html.user-logged-out .user-menu { display: none !important; }
+html.user-logged-out .auth-buttons { display: flex !important; }
+html.user-logged-in .auth-buttons { display: none !important; }
+html.user-logged-in .user-menu { display: flex !important; }

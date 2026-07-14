@@ -8,6 +8,16 @@
         .user-menu { display: none; }
     </style>
   <meta charset="UTF-8" />
+    <script>
+    (function() {
+        const user = JSON.parse(localStorage.getItem('safraUser') || 'null');
+        if (user) {
+            document.documentElement.classList.add('user-logged-in');
+        } else {
+            document.documentElement.classList.add('user-logged-out');
+        }
+    })();
+    </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>سفرة - الفعاليات</title>
   <link rel="stylesheet" href="events.css" />
