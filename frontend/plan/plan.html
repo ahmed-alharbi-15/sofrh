@@ -7,6 +7,12 @@
         .user-menu { display: none; }
     </style>
     <meta charset="UTF-8">
+    <script>
+    (function(){
+        var u=localStorage.getItem('safraUser');
+        document.documentElement.className+=u?' user-logged-in':' user-logged-out';
+    })();
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>سفرة - خطتي</title>
     <link rel="stylesheet" href="plan.css">
