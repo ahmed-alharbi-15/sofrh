@@ -1049,6 +1049,31 @@ html[data-theme="dark"] a {
     color: #E0E0E0;
 }
 
+/* الـ hero يحتفظ بألوانه وتصميمه الأصلي حتى في الوضع الليلي */
+html[data-theme="dark"] .hero-badge {
+    color: #F28500;
+}
+
+html[data-theme="dark"] .hero-text h1 {
+    color: #FFFFFF;
+}
+
+html[data-theme="dark"] .hero-accent {
+    color: #F28500;
+}
+
+html[data-theme="dark"] .hero-text p {
+    color: rgba(255, 255, 255, 0.65);
+}
+
+html[data-theme="dark"] .stat-num {
+    color: #F28500;
+}
+
+html[data-theme="dark"] .stat-label {
+    color: rgba(255, 255, 255, 0.55);
+}
+
 html[data-theme="dark"] button,
 html[data-theme="dark"] .filter-buttons button,
 html[data-theme="dark"] .wizard-btn {
