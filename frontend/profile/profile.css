@@ -610,11 +610,77 @@ html.user-logged-in .user-menu { display: flex !important; }
 
 /*********************************
      الوضع الليلي (Dark Mode)
-     يتغيّر فقط لون خلفية الصفحة (body). كل شيء آخر — الكروت
-     (.country-card / .event-card / .foods-card / .card)، الصور، اللوغو،
-     الأفتار، والألوان الأصلية (navbar #32127A، البرتقالي #F28500،
-     النصوص البيضاء #FFFFFF) — يبقى بدون أي تغيير.
 *********************************/
 html[data-theme="dark"] body {
     background-color: #0B0933;
+}
+
+html[data-theme="dark"] .country-card,
+html[data-theme="dark"] .event-card,
+html[data-theme="dark"] .foods-card,
+html[data-theme="dark"] .card {
+    background: #1a1040;
+    border-color: rgba(242,133,0,0.3);
+}
+
+html[data-theme="dark"] img {
+    filter: none !important;
+}
+
+html[data-theme="dark"] h1,
+html[data-theme="dark"] h2,
+html[data-theme="dark"] h3,
+html[data-theme="dark"] p,
+html[data-theme="dark"] span,
+html[data-theme="dark"] label,
+html[data-theme="dark"] a {
+    color: #E0E0E0;
+}
+
+html[data-theme="dark"] button,
+html[data-theme="dark"] .filter-buttons button,
+html[data-theme="dark"] .wizard-btn {
+    background: #1a1040;
+    color: #E0E0E0;
+    border-color: rgba(242,133,0,0.3);
+}
+
+html[data-theme="dark"] button.active,
+html[data-theme="dark"] button:active,
+html[data-theme="dark"] .filter-buttons button.active,
+html[data-theme="dark"] .wizard-btn.primary {
+    background: #F28500;
+    color: #32127A;
+    border-color: #F28500;
+}
+
+html[data-theme="dark"] .search-box {
+    background: #1a1040;
+    color: #E0E0E0;
+    border-color: rgba(242,133,0,0.3);
+}
+
+html[data-theme="dark"] .modal-content,
+html[data-theme="dark"] .auth-card,
+html[data-theme="dark"] .wizard {
+    background: #1a1040;
+    color: #E0E0E0;
+}
+
+html[data-theme="dark"] input {
+    background: #2a1f5e;
+    color: #E0E0E0;
+    border-color: rgba(242,133,0,0.3);
+}
+
+html[data-theme="dark"] .card-body,
+html[data-theme="dark"] .card-img + div,
+html[data-theme="dark"] .sections-preview,
+html[data-theme="dark"] .card {
+    background: #0B0933 !important;
+}
+
+html[data-theme="dark"] body,
+html[data-theme="dark"] .sections-preview {
+    background-color: #0B0933 !important;
 }

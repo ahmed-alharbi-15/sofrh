@@ -7,9 +7,11 @@
         .user-menu { display: none; }
     </style>
   <meta charset="UTF-8" />
+<style id="theme-style"></style>
 <script>
 (function(){
     if(localStorage.getItem('theme')==='dark'){
+        document.getElementById('theme-style').textContent='html{background:#0B0933}body{background:#0B0933!important}';
         document.documentElement.setAttribute('data-theme','dark');
     }
 })();
