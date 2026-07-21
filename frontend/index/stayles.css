@@ -735,22 +735,24 @@ html.logged-in .user-menu {
     background: rgba(255, 255, 255, 0.12);
 }
 
-/* ===== CARDS ===== */
+/* ===== CARDS (magazine layout) ===== */
 .sections-preview {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-    padding: 60px 40px;
-    background: #FAF5EB;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    padding: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 .card {
+    position: relative;
     display: block;
     text-decoration: none;
     border-radius: 16px;
     overflow: hidden;
-    background: #fff;
     border: 1px solid rgba(0, 0, 0, 0.07);
+    box-shadow: 0 8px 30px rgba(50, 18, 122, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
 }
@@ -762,6 +764,7 @@ html.logged-in .user-menu {
 
 .card-img {
     position: relative;
+    width: 100%;
     height: 420px;
     overflow: hidden;
 }
@@ -770,6 +773,7 @@ html.logged-in .user-menu {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    display: block;
     transition: transform 0.5s ease;
 }
 
@@ -780,30 +784,41 @@ html.logged-in .user-menu {
 .card-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, rgba(44, 26, 14, 0.6) 0%, transparent 60%);
+    background: linear-gradient(to top, rgba(20, 10, 5, 0.9) 0%, rgba(20, 10, 5, 0.35) 45%, transparent 75%);
 }
 
-.card-label {
+.card-content {
     position: absolute;
-    bottom: 14px;
-    right: 16px;
+    inset: auto 0 0 0;
+    padding: 20px 22px;
+    z-index: 2;
+}
+
+.card-content .card-label {
+    display: block;
     color: #fff;
-    font-size: 1.1rem;
-    font-weight: 600;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 6px;
 }
 
-.card-body {
-    padding: 18px 20px;
+.card-featured .card-content .card-label {
+    font-size: 2rem;
 }
 
-.card-body .text {
+.card-content .text {
     font-size: 14px;
-    color: #6b4c30;
-    margin: 0 0 14px;
-    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.85);
+    margin: 0 0 12px;
+    line-height: 1.6;
 }
 
-.card-body .section-btn {
+.card-featured .card-content .text {
+    font-size: 15px;
+    max-width: 60%;
+}
+
+.card-content .section-btn {
     display: inline-block;
     color: #F28500;
     font-size: 14px;
@@ -815,10 +830,73 @@ html.logged-in .user-menu {
     text-decoration: underline;
 }
 
+.card-img > .card-label {
+    position: absolute;
+    inset: auto 0 0 0;
+    z-index: 2;
+    padding: 14px 18px;
+    display: block;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.card-body {
+    padding: 18px 20px;
+    background: #FAF5EB;
+}
+
+.card-body .text {
+    color: #32127A;
+    font-size: 14px;
+    line-height: 1.7;
+    margin: 0 0 14px;
+}
+
+.card-body .section-btn {
+    display: inline-block;
+    color: #F28500;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.card:hover .card-body .section-btn {
+    text-decoration: underline;
+}
+
+.card-content-inside {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    padding: 20px;
+    z-index: 2;
+}
+
+.card-text-inside {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 13px;
+    margin: 6px 0 10px;
+}
+
+.card-content-inside .section-btn {
+    color: #F28500;
+    font-size: 14px;
+    font-weight: 600;
+}
+
 @media (max-width: 768px) {
     .sections-preview {
         grid-template-columns: 1fr;
-        padding: 30px 20px;
+    }
+
+    .card-img {
+        height: 280px;
+    }
+
+    .card-featured .card-content .text {
+        max-width: 100%;
     }
 
     .hero-stats {
@@ -1120,4 +1198,13 @@ html[data-theme="dark"] .card {
 html[data-theme="dark"] body,
 html[data-theme="dark"] .sections-preview {
     background-color: #0B0933 !important;
+}
+
+html[data-theme="dark"] .card-body {
+    background: #FAF5EB !important;
+    color: #32127A !important;
+}
+
+html[data-theme="dark"] .card-body .text {
+    color: #32127A !important;
 }

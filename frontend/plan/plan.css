@@ -550,9 +550,14 @@ html.logged-in .user-menu {
 .hero-open h1 {
     font-size: clamp(2.6rem, 6vw, 3.6rem);
     font-weight: 700;
-    color: var(--brown-dark);
+    color: #F28500 !important;
     margin: 0 0 20px;
     line-height: 1.1;
+}
+
+/* .plan-hero غير موجود في plan.html — العنوان الحقيقي هو .hero-open h1 أعلاه */
+.plan-hero h1 {
+    color: #F28500 !important;
 }
 
 .hero-flightpath {
@@ -736,7 +741,7 @@ html.logged-in .user-menu {
 
 .ticket-stub {
     flex: 0 0 220px;
-    background: var(--cream-soft);
+    background: #32127A;
     padding: 30px 22px;
     display: flex;
     flex-direction: column;
@@ -987,6 +992,76 @@ html.logged-in .user-menu {
     color: #b8a895;
 }
 
+/* ===== WIZARD COLOR LOCKS (dark-mode safe) ===== */
+.wizard {
+    background: #fff !important;
+    color: #32127A !important;
+}
+
+.wizard-step h2 {
+    color: #32127A !important;
+}
+
+.step-hint, .range-labels {
+    color: #6b5544 !important;
+}
+
+.budget-value {
+    color: #F28500 !important;
+}
+
+.wizard-btn.primary {
+    background: #32127A !important;
+    color: #fff !important;
+}
+
+.wizard-btn.secondary {
+    background: #FAF5EB !important;
+    border: 2px solid #32127A !important;
+    color: #32127A !important;
+}
+
+/* .dot-num/.step-dot غير موجودة في plan.html (لا يوجد مؤشر خطوات بنقاط بهذه الصفحة،
+   المؤشر الحقيقي هو نص .ticket-step-code مثل "STEP 01/05") — كود ميت للتوثيق فقط */
+.dot-num {
+    background: #F0EBE0 !important;
+    color: #32127A !important;
+}
+
+.step-dot.active .dot-num,
+.step-dot.done .dot-num {
+    background: #F28500 !important;
+    color: #fff !important;
+}
+
+/* الأصناف الفعلية المستخدمة في هذه الصفحة (.wizard/.wizard-btn غير موجودة في plan.html) */
+.ticket-card {
+    background: #fff !important;
+    color: #32127A !important;
+}
+
+.ticket-btn.solid {
+    background: #32127A !important;
+    color: #fff !important;
+}
+
+.ticket-btn.ghost {
+    background: #FAF5EB !important;
+    border: 2px solid #32127A !important;
+    color: #32127A !important;
+}
+
+/* .range-labels/.budget-value يحتويان على <span> بدون كلاس، وقاعدة الدارك مود
+   العامة (span{color:#E0E0E0}) تطبّق مباشرة على هالسبانات وتتجاوز أي !important
+   على العنصر الأب — لازم نستهدف السبان نفسه */
+.range-labels span {
+    color: #6b5544 !important;
+}
+
+.budget-value span {
+    color: #F28500 !important;
+}
+
 /* travelers counter */
 .dual-counter {
     display: flex;
@@ -1048,6 +1123,7 @@ html.logged-in .user-menu {
 
 .counter-btn:hover {
     background: var(--caramel);
+    color: #fff;
 }
 
 .counter-btn:active {
@@ -1087,6 +1163,11 @@ html.logged-in .user-menu {
     font-size: 14px;
     color: var(--brown-dark);
     transition: all .2s;
+}
+
+.trip-card,
+.continent-chip {
+    border-color: #F0EBE0;
 }
 
 .trip-icon {
@@ -1141,6 +1222,13 @@ html.logged-in .user-menu {
 
 .trip-card.active .trip-code {
     color: var(--caramel);
+}
+
+/* الشريحة المختارة - continent-chip فقط */
+.continent-chip.active {
+    background: #F28500;
+    border-color: #F28500;
+    color: #fff;
 }
 
 @media (max-width: 500px) {
@@ -1421,16 +1509,16 @@ html.logged-in .user-menu {
 
 .ticket-btn.solid {
     background: #32127A;
-    color: #FAF5EB;
+    color: #fff;
 }
 
 .ticket-btn.solid:hover:not(:disabled) {
     background: #F28500;
-    color: #FAF5EB;
+    color: #fff;
 }
 
 .ticket-btn.ghost {
-    background: transparent;
+    background: #FAF5EB;
     border: 2px solid #32127A;
     color: #32127A;
 }
@@ -1776,12 +1864,17 @@ html.logged-in .user-menu {
 
 /* الستب السفلي */
 .bp-stub {
-    background: var(--cream-soft);
+    background: #FAF5EB;
     padding: 16px 18px 18px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 10px;
+}
+
+html[data-theme="dark"] .bp-stub {
+    background: #1a1040 !important;
+    color: #E0E0E0 !important;
 }
 
 .bp-seat-label {
@@ -2193,4 +2286,208 @@ html[data-theme="dark"] .card {
 html[data-theme="dark"] body,
 html[data-theme="dark"] .sections-preview {
     background-color: #0B0933 !important;
+}
+
+html[data-theme="dark"] .wizard {
+    background: #1a1040 !important;
+    color: #E0E0E0 !important;
+}
+
+html[data-theme="dark"] .wizard-step h2 {
+    color: #E0E0E0 !important;
+}
+
+html[data-theme="dark"] .step-hint {
+    color: rgba(224,224,224,0.6) !important;
+}
+
+html[data-theme="dark"] .range-labels {
+    color: rgba(224,224,224,0.5) !important;
+}
+
+html[data-theme="dark"] .wizard-btn.secondary {
+    background: transparent !important;
+    border: 2px solid #F28500 !important;
+    color: #F28500 !important;
+}
+
+html[data-theme="dark"] .dot-num {
+    background: #2a1f5e !important;
+    color: #E0E0E0 !important;
+}
+
+html[data-theme="dark"] .step-dot.active .dot-num,
+html[data-theme="dark"] .step-dot.done .dot-num {
+    background: #F28500 !important;
+    color: #fff !important;
+}
+
+/* لا يوجد .wizard/.wizard-btn/.dot-num/.step-dot فعلياً في plan.html —
+   هذي نسخ حقيقية بنفس القواعد أعلاه للأصناف المستخدمة فعلاً بالصفحة */
+html[data-theme="dark"] .ticket-card {
+    background: #1a1040 !important;
+    color: #E0E0E0 !important;
+}
+
+html[data-theme="dark"] .range-labels span {
+    color: rgba(224,224,224,0.5) !important;
+}
+
+html[data-theme="dark"] .ticket-btn.ghost {
+    background: transparent !important;
+    border: 2px solid #F28500 !important;
+    color: #F28500 !important;
+}
+
+html[data-theme="dark"] .bp-stub {
+    background: #1a1040 !important;
+    color: #E0E0E0 !important;
+    border-color: rgba(242,133,0,0.3) !important;
+}
+
+html[data-theme="dark"] .bp-k {
+    color: rgba(224,224,224,0.6) !important;
+}
+
+html[data-theme="dark"] .bp-v {
+    color: #E0E0E0 !important;
+}
+
+html[data-theme="dark"] .bp-seat-label {
+    color: rgba(224,224,224,0.5) !important;
+}
+
+html[data-theme="dark"] .bp-seat-num {
+    color: #E0E0E0 !important;
+}
+
+html[data-theme="dark"] .bp-stub .bp-seat-label,
+html[data-theme="dark"] .bp-stub .bp-seat-num {
+    color: #E0E0E0 !important;
+}
+
+html[data-theme="dark"] .bp-link {
+    color: #F28500 !important;
+}
+
+html[data-theme="dark"] .bp-stub .bp-link {
+    color: #F28500 !important;
+}
+
+html[data-theme="dark"] .bp-card,
+html[data-theme="dark"] .bp-main,
+html[data-theme="dark"] .bp-stub { background: #1a1040 !important; color: #E0E0E0 !important; }
+
+html[data-theme="dark"] .bp-title { color: #E0E0E0 !important; }
+html[data-theme="dark"] .bp-title small { color: rgba(224,224,224,0.6) !important; }
+html[data-theme="dark"] .bp-route { color: rgba(224,224,224,0.6) !important; }
+html[data-theme="dark"] .bp-arrow { color: #F28500 !important; }
+html[data-theme="dark"] .bp-field { border-color: rgba(242,133,0,0.2) !important; }
+html[data-theme="dark"] .bp-tag { background: #F28500 !important; color: #fff !important; }
+html[data-theme="dark"] .bp-advisory { background: rgba(242,133,0,0.2) !important; color: #F28500 !important; }
+html[data-theme="dark"] .bp-ready { background: rgba(34,197,94,0.2) !important; color: #4ade80 !important; }
+html[data-theme="dark"] .bp-not-ready { background: rgba(100,100,100,0.3) !important; color: rgba(224,224,224,0.6) !important; }
+html[data-theme="dark"] .bp-perf { background: #0B0933 !important; }
+html[data-theme="dark"] .bp-barcode { filter: invert(1) !important; }
+
+html[data-theme="dark"] .continent-chip {
+    background: #1a1040 !important;
+    border-color: rgba(242,133,0,0.3) !important;
+    color: #E0E0E0 !important;
+}
+html[data-theme="dark"] .continent-chip.active {
+    background: #F28500 !important;
+    color: #fff !important;
+}
+
+html[data-theme="dark"] .trip-card {
+    background: #1a1040 !important;
+    border-color: rgba(242,133,0,0.3) !important;
+    color: #E0E0E0 !important;
+}
+html[data-theme="dark"] .trip-card.active {
+    background: rgba(242,133,0,0.15) !important;
+    border-color: #F28500 !important;
+}
+
+html[data-theme="dark"] .activity-chip {
+    background: #1a1040 !important;
+    border-color: rgba(242,133,0,0.3) !important;
+    color: #E0E0E0 !important;
+}
+html[data-theme="dark"] .activity-chip.active {
+    background: #F28500 !important;
+    border-color: #F28500 !important;
+    color: #fff !important;
+}
+
+html[data-theme="dark"] .counter-btn {
+    background: #2a1f5e !important;
+    color: #E0E0E0 !important;
+}
+html[data-theme="dark"] .counter-display { color: #E0E0E0 !important; }
+html[data-theme="dark"] .counter-block {
+    background: #1a1040 !important;
+    border-color: rgba(242,133,0,0.3) !important;
+}
+html[data-theme="dark"] .counter-block-label,
+html[data-theme="dark"] .counter-block-label small { color: rgba(224,224,224,0.7) !important; }
+
+html[data-theme="dark"] .results-header h2 { color: #E0E0E0 !important; }
+html[data-theme="dark"] .results-subtitle { color: rgba(224,224,224,0.6) !important; }
+
+html[data-theme="dark"] .bp-note.ok {
+    background: rgba(34,197,94,0.1) !important;
+    border-color: rgba(34,197,94,0.3) !important;
+    color: #4ade80 !important;
+}
+html[data-theme="dark"] .bp-note.warn {
+    background: rgba(242,133,0,0.1) !important;
+    border-color: rgba(242,133,0,0.3) !important;
+    color: #F28500 !important;
+}
+
+html[data-theme="dark"] .plan-hero p {
+    color: rgba(224,224,224,0.8) !important;
+}
+
+html[data-theme="dark"] .plan-hero .hero-stats,
+html[data-theme="dark"] .plan-hero .stat-num {
+    color: #F28500 !important;
+}
+
+html[data-theme="dark"] .plan-hero .stat-label {
+    color: rgba(224,224,224,0.6) !important;
+}
+
+html[data-theme="dark"] .fp-line-full {
+    background-image: repeating-linear-gradient(to right, #F28500 0 6px, transparent 6px 11px) !important;
+}
+
+html[data-theme="dark"] .progress-steps .dot-label {
+    color: rgba(224,224,224,0.7) !important;
+}
+
+html[data-theme="dark"] .step-line {
+    background: rgba(255,255,255,0.1) !important;
+}
+
+html[data-theme="dark"] .budget-value {
+    color: #F28500 !important;
+}
+
+/* .plan-hero/.stat-num/.stat-label/.progress-steps/.dot-label/.step-line غير
+   موجودين في plan.html — هذي الأصناف الحقيقية المقابلة على هذه الصفحة:
+   .hero-open (بدل .plan-hero)، .hero-stat-num/.hero-stat-label (بدل .stat-num/.stat-label)
+   ولا يوجد عداد خطوات بنقاط (progress-steps/step-line) أصلاً بهذه الصفحة */
+html[data-theme="dark"] .hero-open p {
+    color: rgba(224,224,224,0.8) !important;
+}
+
+html[data-theme="dark"] .hero-stat-num {
+    color: #F28500 !important;
+}
+
+html[data-theme="dark"] .hero-stat-label {
+    color: rgba(224,224,224,0.6) !important;
 }
