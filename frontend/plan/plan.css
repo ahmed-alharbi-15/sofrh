@@ -798,7 +798,7 @@ html.logged-in .user-menu {
     font-size: 12px;
     letter-spacing: .5px;
     color: var(--ink);
-    background: var(--cream-soft);
+    background: #F28500;
     padding: 6px 13px;
     border-radius: 7px;
     white-space: nowrap;
