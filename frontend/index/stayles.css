@@ -735,41 +735,34 @@ html.logged-in .user-menu {
     background: rgba(255, 255, 255, 0.12);
 }
 
-/* ===== CARDS (magazine layout) ===== */
+/* ===== CARDS ===== */
 .sections-preview {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 16px;
-    padding: 40px;
-    max-width: 1400px;
-    margin: 0 auto;
+    gap: 24px;
+    padding: 60px 40px;
+    background: #FAF5EB;
 }
 
 .card {
     position: relative;
     display: block;
-    text-decoration: none;
     border-radius: 16px;
     overflow: hidden;
-    border: 1px solid rgba(0, 0, 0, 0.07);
-    box-shadow: 0 8px 30px rgba(50, 18, 122, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
+    background: #150A35;
+    height: 420px;
+    text-decoration: none;
+    text-align: right;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
 .card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 20px 40px rgba(44, 26, 14, 0.15);
+    transform: translateY(-5px) scale(1.01);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
 }
 
-.card-img {
-    position: relative;
-    width: 100%;
-    height: 420px;
-    overflow: hidden;
-}
-
-.card-img img {
+.card img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -777,126 +770,62 @@ html.logged-in .user-menu {
     transition: transform 0.5s ease;
 }
 
-.card:hover .card-img img {
+.card:hover img {
     transform: scale(1.06);
 }
 
 .card-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, rgba(20, 10, 5, 0.9) 0%, rgba(20, 10, 5, 0.35) 45%, transparent 75%);
+    background: linear-gradient(to top, rgba(18, 8, 42, 0.88) 0%, rgba(18, 8, 42, 0.2) 50%, transparent 100%);
+    pointer-events: none;
 }
 
 .card-content {
     position: absolute;
-    inset: auto 0 0 0;
-    padding: 20px 22px;
-    z-index: 2;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    padding: 20px 20px 18px;
 }
 
 .card-content .card-label {
-    display: block;
-    color: #fff;
-    font-size: 1.2rem;
+    font-size: clamp(1.1rem, 2.5vw, 1.6rem);
     font-weight: 700;
-    margin-bottom: 6px;
-}
-
-.card-featured .card-content .card-label {
-    font-size: 2rem;
+    color: #fff;
+    margin: 0 0 6px;
+    line-height: 1.2;
 }
 
 .card-content .text {
-    font-size: 14px;
-    color: rgba(255, 255, 255, 0.85);
-    margin: 0 0 12px;
-    line-height: 1.6;
-}
-
-.card-featured .card-content .text {
-    font-size: 15px;
-    max-width: 60%;
+    font-size: clamp(0.75rem, 1.2vw, 0.9rem);
+    color: rgba(255, 255, 255, 0.65);
+    font-weight: 400;
+    margin: 0 0 14px;
+    line-height: 1.5;
 }
 
 .card-content .section-btn {
     display: inline-block;
-    color: #F28500;
-    font-size: 14px;
+    padding: 8px 22px;
+    background: rgba(242, 133, 0, 0.9);
+    color: #fff;
+    border-radius: 50px;
+    font-size: 13px;
     font-weight: 600;
     text-decoration: none;
+    transition: background 0.25s;
 }
 
 .card:hover .section-btn {
-    text-decoration: underline;
-}
-
-.card-img > .card-label {
-    position: absolute;
-    inset: auto 0 0 0;
-    z-index: 2;
-    padding: 14px 18px;
-    display: block;
+    background: #F28500;
     color: #fff;
-    font-size: 1.2rem;
-    font-weight: 700;
-}
-
-.card-body {
-    padding: 18px 20px;
-    background: #FAF5EB;
-}
-
-.card-body .text {
-    color: #32127A;
-    font-size: 14px;
-    line-height: 1.7;
-    margin: 0 0 14px;
-}
-
-.card-body .section-btn {
-    display: inline-block;
-    color: #F28500;
-    font-size: 14px;
-    font-weight: 600;
-    text-decoration: none;
-}
-
-.card:hover .card-body .section-btn {
-    text-decoration: underline;
-}
-
-.card-content-inside {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    padding: 20px;
-    z-index: 2;
-}
-
-.card-text-inside {
-    color: rgba(255, 255, 255, 0.85);
-    font-size: 13px;
-    margin: 6px 0 10px;
-}
-
-.card-content-inside .section-btn {
-    color: #F28500;
-    font-size: 14px;
-    font-weight: 600;
 }
 
 @media (max-width: 768px) {
     .sections-preview {
         grid-template-columns: 1fr;
-    }
-
-    .card-img {
-        height: 280px;
-    }
-
-    .card-featured .card-content .text {
-        max-width: 100%;
+        padding: 30px 20px;
     }
 
     .hero-stats {
@@ -1188,8 +1117,6 @@ html[data-theme="dark"] input {
     border-color: rgba(242,133,0,0.3);
 }
 
-html[data-theme="dark"] .card-body,
-html[data-theme="dark"] .card-img + div,
 html[data-theme="dark"] .sections-preview,
 html[data-theme="dark"] .card {
     background: #0B0933 !important;
@@ -1198,13 +1125,4 @@ html[data-theme="dark"] .card {
 html[data-theme="dark"] body,
 html[data-theme="dark"] .sections-preview {
     background-color: #0B0933 !important;
-}
-
-html[data-theme="dark"] .card-body {
-    background: #FAF5EB !important;
-    color: #32127A !important;
-}
-
-html[data-theme="dark"] .card-body .text {
-    color: #32127A !important;
 }
