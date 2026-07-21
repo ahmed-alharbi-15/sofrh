@@ -708,15 +708,12 @@ html[data-theme="dark"] .profile-nav a.active {
     color: #ffffff !important;
 }
 
-html[data-theme="dark"] .fav-section {
-    background: #0B0933 !important;
-}
-
 html[data-theme="dark"] .fav-card {
     background: #1a1040 !important;
     border-color: rgba(242,133,0,0.3) !important;
     color: #E0E0E0 !important;
 }
+
 
 html[data-theme="dark"] .fav-card-info span {
     color: #E0E0E0 !important;
