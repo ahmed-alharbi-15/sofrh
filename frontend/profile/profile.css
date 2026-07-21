@@ -612,7 +612,7 @@ html.user-logged-in .user-menu { display: flex !important; }
      الوضع الليلي (Dark Mode)
 *********************************/
 html[data-theme="dark"] body {
-    background-color: #0B0933;
+    background: #0B0933 !important;
 }
 
 html[data-theme="dark"] .country-card,
@@ -683,4 +683,175 @@ html[data-theme="dark"] .card {
 html[data-theme="dark"] body,
 html[data-theme="dark"] .sections-preview {
     background-color: #0B0933 !important;
+}
+
+/* ملاحظة: .profile-container و.settings-section غير موجودين فعلياً في profile.html —
+   نضيفهم هنا كما وردت حرفياً، مع تفعيل نفس القواعد على الأصناف الحقيقية المستخدمة بالصفحة
+   (.profile-page/.profile-content و.settings-group و#profileName/#profileEmail) */
+html[data-theme="dark"] .profile-page,
+html[data-theme="dark"] .profile-container {
+    background: #0B0933 !important;
+    color: #E0E0E0 !important;
+}
+
+html[data-theme="dark"] .profile-sidebar {
+    background: #1a1040 !important;
+    color: #E0E0E0 !important;
+}
+
+html[data-theme="dark"] .profile-nav a {
+    color: #E0E0E0 !important;
+}
+
+html[data-theme="dark"] .profile-nav a.active {
+    background: #F28500 !important;
+    color: #ffffff !important;
+}
+
+html[data-theme="dark"] .fav-section {
+    background: #0B0933 !important;
+}
+
+html[data-theme="dark"] .fav-card {
+    background: #1a1040 !important;
+    border-color: rgba(242,133,0,0.3) !important;
+    color: #E0E0E0 !important;
+}
+
+html[data-theme="dark"] .fav-card-info span {
+    color: #E0E0E0 !important;
+}
+
+html[data-theme="dark"] .settings-section,
+html[data-theme="dark"] .settings-group {
+    background: #1a1040 !important;
+    border-color: rgba(242,133,0,0.3) !important;
+    color: #E0E0E0 !important;
+}
+
+html[data-theme="dark"] .settings-section input,
+html[data-theme="dark"] .input-group input {
+    background: #2a1f5e !important;
+    color: #E0E0E0 !important;
+    border-color: rgba(242,133,0,0.3) !important;
+}
+
+html[data-theme="dark"] .profile-name,
+html[data-theme="dark"] .profile-email,
+html[data-theme="dark"] #profileName,
+html[data-theme="dark"] #profileEmail {
+    color: #E0E0E0 !important;
+}
+
+html[data-theme="dark"] .profile-content {
+    background: #0B0933 !important;
+}
+
+html[data-theme="dark"] .profile-avatar-section h2 {
+    color: #E0E0E0 !important;
+}
+
+html[data-theme="dark"] .profile-avatar-section p {
+    color: rgba(224,224,224,0.6) !important;
+}
+
+html[data-theme="dark"] .fav-title {
+    color: #E0E0E0 !important;
+    border-bottom-color: #F28500 !important;
+}
+
+html[data-theme="dark"] .fav-empty {
+    background: #1a1040 !important;
+    color: #E0E0E0 !important;
+    border-color: rgba(242,133,0,0.3) !important;
+}
+
+html[data-theme="dark"] .settings-group h3 {
+    color: #E0E0E0 !important;
+    border-bottom-color: rgba(242,133,0,0.3) !important;
+}
+
+html[data-theme="dark"] .input-group label {
+    color: #E0E0E0 !important;
+}
+
+html[data-theme="dark"] .input-group input:focus {
+    background: #2a1f5e !important;
+    border-color: #F28500 !important;
+}
+
+/* الخلفية */
+html[data-theme="dark"] body {
+    background: #0B0933 !important;
+}
+
+/* السايدبار */
+html[data-theme="dark"] .profile-sidebar {
+    background: #1a1040 !important;
+    color: #E0E0E0 !important;
+}
+
+/* النافبار الداخلي */
+html[data-theme="dark"] .profile-nav a {
+    color: #E0E0E0 !important;
+}
+
+html[data-theme="dark"] .profile-nav a.active {
+    background: #F28500 !important;
+    color: #ffffff !important;
+}
+
+/* الكروت */
+html[data-theme="dark"] .fav-card {
+    background: #1a1040 !important;
+    border-color: rgba(242,133,0,0.3) !important;
+}
+
+html[data-theme="dark"] .fav-card img {
+    filter: none !important;
+}
+
+html[data-theme="dark"] .fav-card-info span {
+    color: #E0E0E0 !important;
+}
+
+/* الإعدادات */
+/* ملاحظة: .settings-section و.profile-stats و<select> غير موجودين فعليًا في profile.html
+   (الصنف الحقيقي هو .settings-group ولا يوجد عنصر select بالصفحة) —
+   نضيفهم هنا كما وردوا حرفياً، مع تفعيل نفس الخلفية على .profile-content الحقيقي */
+html[data-theme="dark"] .settings-section,
+html[data-theme="dark"] .profile-content {
+    background: #1a1040 !important;
+    color: #E0E0E0 !important;
+}
+
+html[data-theme="dark"] .settings-section input,
+html[data-theme="dark"] .settings-section select {
+    background: #2a1f5e !important;
+    color: #E0E0E0 !important;
+    border-color: rgba(242,133,0,0.3) !important;
+}
+
+/* الخطوط */
+html[data-theme="dark"] .profile-name,
+html[data-theme="dark"] .profile-email,
+html[data-theme="dark"] .profile-stats span,
+html[data-theme="dark"] h1,
+html[data-theme="dark"] h2,
+html[data-theme="dark"] h3,
+html[data-theme="dark"] p,
+html[data-theme="dark"] label {
+    color: #E0E0E0 !important;
+}
+
+/* الفلاتر */
+html[data-theme="dark"] .profile-mobile-nav a {
+    background: #1a1040 !important;
+    color: #E0E0E0 !important;
+    border-color: rgba(242,133,0,0.3) !important;
+}
+
+html[data-theme="dark"] .profile-mobile-nav a.active {
+    background: #F28500 !important;
+    color: #ffffff !important;
 }
