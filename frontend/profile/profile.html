@@ -227,17 +227,26 @@
 
           <div class="settings-group">
             <h3>تغيير كلمة المرور</h3>
-            <div class="input-group">
+            <div class="input-group password-group">
               <label>كلمة المرور الحالية</label>
-              <input type="password" id="currentPassword" placeholder="••••••••" />
+              <div class="password-wrapper">
+                <input type="password" id="currentPassword" placeholder="••••••••" />
+                <button type="button" class="toggle-password" onclick="this.previousElementSibling.type = this.previousElementSibling.type === 'password' ? 'text' : 'password'; this.textContent = this.previousElementSibling.type === 'password' ? '👁️' : '🙈'">👁️</button>
+              </div>
             </div>
-            <div class="input-group">
+            <div class="input-group password-group">
               <label>كلمة المرور الجديدة</label>
-              <input type="password" id="newPassword" placeholder="••••••••" />
+              <div class="password-wrapper">
+                <input type="password" id="newPassword" placeholder="••••••••" />
+                <button type="button" class="toggle-password" onclick="this.previousElementSibling.type = this.previousElementSibling.type === 'password' ? 'text' : 'password'; this.textContent = this.previousElementSibling.type === 'password' ? '👁️' : '🙈'">👁️</button>
+              </div>
             </div>
-            <div class="input-group">
+            <div class="input-group password-group">
               <label>تأكيد كلمة المرور الجديدة</label>
-              <input type="password" id="confirmPassword" placeholder="••••••••" />
+              <div class="password-wrapper">
+                <input type="password" id="confirmPassword" placeholder="••••••••" />
+                <button type="button" class="toggle-password" onclick="this.previousElementSibling.type = this.previousElementSibling.type === 'password' ? 'text' : 'password'; this.textContent = this.previousElementSibling.type === 'password' ? '👁️' : '🙈'">👁️</button>
+              </div>
             </div>
             <button type="button" class="settings-btn" id="changePasswordBtn">
               🔒 تغيير كلمة المرور

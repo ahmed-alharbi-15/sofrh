@@ -125,13 +125,19 @@
                     <label>رقم الجوال (اختياري)</label>
                     <input type="tel" id="phone" placeholder="05xxxxxxxx">
                 </div>
-                <div class="input-group">
+                <div class="input-group password-group">
                     <label>كلمة المرور (تبدأ بحرف كبير ورقم)</label>
-                    <input type="password" id="password" placeholder="••••••••" required>
+                    <div class="password-wrapper">
+                        <input type="password" id="password" placeholder="••••••••" required>
+                        <button type="button" class="toggle-password" onclick="this.previousElementSibling.type = this.previousElementSibling.type === 'password' ? 'text' : 'password'; this.textContent = this.previousElementSibling.type === 'password' ? '👁️' : '🙈'">👁️</button>
+                    </div>
                 </div>
-                <div class="input-group">
+                <div class="input-group password-group">
                     <label>تأكيد كلمة المرور</label>
-                    <input type="password" id="confirmPassword" placeholder="••••••••" required>
+                    <div class="password-wrapper">
+                        <input type="password" id="confirmPassword" placeholder="••••••••" required>
+                        <button type="button" class="toggle-password" onclick="this.previousElementSibling.type = this.previousElementSibling.type === 'password' ? 'text' : 'password'; this.textContent = this.previousElementSibling.type === 'password' ? '👁️' : '🙈'">👁️</button>
+                    </div>
                 </div>
                 <button type="button" id="signupBtn" class="auth-btn">إنشاء الحساب</button>
             </form>

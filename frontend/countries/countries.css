@@ -1645,3 +1645,18 @@ html[data-theme="dark"] body,
 html[data-theme="dark"] .sections-preview {
     background-color: #0B0933 !important;
 }
+
+html[data-theme="dark"] .user-dropdown {
+    background: #1a1040 !important;
+    border-color: rgba(242,133,0,0.2) !important;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4) !important;
+}
+
+html[data-theme="dark"] .user-dropdown a {
+    color: #E0E0E0 !important;
+}
+
+html[data-theme="dark"] .user-dropdown a:hover {
+    background: rgba(242,133,0,0.15) !important;
+    color: #F28500 !important;
+}
