@@ -731,7 +731,7 @@ html.logged-in .user-menu {
     position: relative;
 }
 
-.ticket-main {
+.ticket-main { 
     flex: 1 1 66%;
     min-width: 0;
     padding: 36px 38px;
@@ -741,7 +741,7 @@ html.logged-in .user-menu {
 
 .ticket-stub {
     flex: 0 0 220px;
-    background: #32127A;
+    background: var(--cream-light);
     padding: 30px 22px;
     display: flex;
     flex-direction: column;
@@ -1166,7 +1166,8 @@ html.logged-in .user-menu {
 }
 
 .trip-card,
-.continent-chip {
+.continent-chip,
+.activity-chip {
     border-color: #F0EBE0;
 }
 
@@ -1661,6 +1662,7 @@ html.logged-in .user-menu {
 /* بطاقة الصعود — عمودية بنمط Apple-Wallet */
 .bp-card {
     background: #fff;
+    color: #32127A;
     border-radius: 18px;
     overflow: hidden;
     box-shadow: 0 14px 34px rgba(50, 18, 122, .12);
@@ -1685,6 +1687,7 @@ html.logged-in .user-menu {
 }
 
 .bp-main {
+    background: #ffffff;
     padding: 0 0 18px;
     flex: 1;
     display: flex;
@@ -1807,7 +1810,7 @@ html.logged-in .user-menu {
     font-family: var(--mono);
     font-size: 9px;
     letter-spacing: 1.5px;
-    color: #9a8670;
+    color: rgba(50, 18, 122, 0.5);
     white-space: nowrap;
     flex-shrink: 0;
 }
@@ -1865,6 +1868,7 @@ html.logged-in .user-menu {
 /* الستب السفلي */
 .bp-stub {
     background: #FAF5EB;
+    color: #32127A;
     padding: 16px 18px 18px;
     display: flex;
     align-items: center;
@@ -1881,7 +1885,7 @@ html[data-theme="dark"] .bp-stub {
     font-family: var(--mono);
     font-size: 8px;
     letter-spacing: 1.5px;
-    color: #9a8670;
+    color: rgba(50, 18, 122, 0.5);
     display: block;
 }
 
@@ -1908,7 +1912,7 @@ html[data-theme="dark"] .bp-stub {
     flex-shrink: 0;
     font-weight: 700;
     font-size: 13px;
-    color: var(--brown-dark);
+    color: #F28500;
     text-decoration: none;
     border-bottom: 2px solid var(--caramel);
     padding-bottom: 2px;
@@ -2329,6 +2333,23 @@ html[data-theme="dark"] .ticket-card {
     color: #E0E0E0 !important;
 }
 
+html[data-theme="dark"] .ticket-stub {
+    background: #1a1040 !important;
+    color: #E0E0E0 !important;
+}
+
+html[data-theme="dark"] .stub-label {
+    color: rgba(224,224,224,0.6) !important;
+}
+
+html[data-theme="dark"] .ticket-perforation {
+    border-color: rgba(242,133,0,0.4) !important;
+}
+
+html[data-theme="dark"] .stub-barcode {
+    filter: invert(1) brightness(0.8) !important;
+}
+
 html[data-theme="dark"] .range-labels span {
     color: rgba(224,224,224,0.5) !important;
 }
@@ -2346,7 +2367,7 @@ html[data-theme="dark"] .bp-stub {
 }
 
 html[data-theme="dark"] .bp-k {
-    color: rgba(224,224,224,0.6) !important;
+    color: rgba(224,224,224,0.5) !important;
 }
 
 html[data-theme="dark"] .bp-v {
@@ -2375,8 +2396,7 @@ html[data-theme="dark"] .bp-stub .bp-link {
 }
 
 html[data-theme="dark"] .bp-card,
-html[data-theme="dark"] .bp-main,
-html[data-theme="dark"] .bp-stub { background: #1a1040 !important; color: #E0E0E0 !important; }
+html[data-theme="dark"] .bp-main { background: #1a1040 !important; color: #E0E0E0 !important; }
 
 html[data-theme="dark"] .bp-title { color: #E0E0E0 !important; }
 html[data-theme="dark"] .bp-title small { color: rgba(224,224,224,0.6) !important; }
@@ -2387,8 +2407,15 @@ html[data-theme="dark"] .bp-tag { background: #F28500 !important; color: #fff !i
 html[data-theme="dark"] .bp-advisory { background: rgba(242,133,0,0.2) !important; color: #F28500 !important; }
 html[data-theme="dark"] .bp-ready { background: rgba(34,197,94,0.2) !important; color: #4ade80 !important; }
 html[data-theme="dark"] .bp-not-ready { background: rgba(100,100,100,0.3) !important; color: rgba(224,224,224,0.6) !important; }
-html[data-theme="dark"] .bp-perf { background: #0B0933 !important; }
-html[data-theme="dark"] .bp-barcode { filter: invert(1) !important; }
+html[data-theme="dark"] .bp-perf {
+    border-top-color: rgba(242,133,0,0.4) !important;
+}
+
+html[data-theme="dark"] .bp-perf::before,
+html[data-theme="dark"] .bp-perf::after {
+    background: #0B0933 !important;
+}
+html[data-theme="dark"] .bp-barcode { filter: invert(1) brightness(0.8) !important; }
 
 html[data-theme="dark"] .continent-chip {
     background: #1a1040 !important;
