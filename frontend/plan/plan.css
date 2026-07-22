@@ -2518,3 +2518,18 @@ html[data-theme="dark"] .hero-stat-num {
 html[data-theme="dark"] .hero-stat-label {
     color: rgba(224,224,224,0.6) !important;
 }
+
+/* ملاحظة: عناصر صفحات auth (.auth-page/.auth-sub/.auth-switch/.toggle-password...) غير
+   موجودة فعلياً في plan.html — نضيفها هنا كما وردت حرفياً لتطابق باقي ملفات CSS */
+html[data-theme="dark"] .auth-page { background: #0B0933 !important; }
+html[data-theme="dark"] .auth-card { background: #1a1040 !important; color: #E0E0E0 !important; border-color: rgba(242,133,0,0.2) !important; }
+html[data-theme="dark"] .auth-card h1 { color: #E0E0E0 !important; }
+html[data-theme="dark"] .auth-sub { color: rgba(224,224,224,0.7) !important; }
+html[data-theme="dark"] .input-group label { color: #E0E0E0 !important; }
+html[data-theme="dark"] .input-group input { background: #2a1f5e !important; color: #E0E0E0 !important; border-color: rgba(242,133,0,0.3) !important; }
+html[data-theme="dark"] .input-group input::placeholder { color: rgba(224,224,224,0.4) !important; }
+html[data-theme="dark"] .auth-btn { background: #32127A !important; color: #ffffff !important; }
+html[data-theme="dark"] .auth-btn:hover { background: #F28500 !important; }
+html[data-theme="dark"] .auth-switch { color: rgba(224,224,224,0.7) !important; }
+html[data-theme="dark"] .auth-switch a { color: #F28500 !important; }
+html[data-theme="dark"] .toggle-password { color: #E0E0E0 !important; }

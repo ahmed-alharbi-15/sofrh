@@ -723,3 +723,7 @@ html[data-theme="dark"] .auth-switch {
 html[data-theme="dark"] .auth-switch a {
     color: #F28500 !important;
 }
+
+html[data-theme="dark"] .toggle-password {
+    color: #E0E0E0 !important;
+}
