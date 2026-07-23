@@ -58,7 +58,8 @@ html {
 }
 
 body {
-    background-color: #FAF5EB;
+    background: var(--bg);
+    color: var(--text);
     font-family: 'Dubai', 'Dubai Regular', sans-serif;
     font-size: 1rem;
     padding-top: 90px !important;
@@ -1197,4 +1198,16 @@ html.user-logged-in .user-menu { display: flex !important; }
 }
 .nav-list a.active::after {
     width: 100%;
+}
+
+/* ملاحظة: .card/.fav-card/.wizard/.auth-card وinput العام غير موجودين فعلياً في recipes.html —
+   نضيفهم هنا كما وردوا حرفياً لتطابق باقي ملفات CSS (الصنف الحقيقي هنا .foods-card وله تنسيقه الخاص) */
+.card, .fav-card, .wizard, .auth-card {
+    background: var(--card-bg);
+}
+
+input {
+    background: var(--input-bg);
+    color: var(--text);
+    border-color: var(--border);
 }

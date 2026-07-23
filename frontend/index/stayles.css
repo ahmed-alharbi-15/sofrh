@@ -61,7 +61,8 @@ html {
 }
 
 body {
-    background-color: #FAF5EB;
+    background: var(--bg);
+    color: var(--text);
     font-family: 'Dubai', 'Dubai Regular', sans-serif;
     font-size: 1rem;
     padding-top: 90px !important;
@@ -744,6 +745,7 @@ html.logged-in .user-menu {
     background: #FAF5EB;
 }
 
+/* ملاحظة: .card تُبقي خلفيتها الداكنة الثابتة #150A35 عمداً (شفافة الصورة خلفها بغض النظر عن الثيم) — لا تُستبدل بـ var(--card-bg) لتفادي كسر تصميم كروت الدول */
 .card {
     position: relative;
     display: block;
@@ -1047,4 +1049,16 @@ html.user-logged-in .user-menu { display: flex !important; }
 }
 .nav-list a.active::after {
     width: 100%;
+}
+
+/* ملاحظة: .fav-card/.wizard/.auth-card وinput العام غير موجودين فعلياً في index.html —
+   نضيفهم هنا كما وردوا حرفياً لتطابق باقي ملفات CSS */
+.fav-card, .wizard, .auth-card {
+    background: var(--card-bg);
+}
+
+input {
+    background: var(--input-bg);
+    color: var(--text);
+    border-color: var(--border);
 }

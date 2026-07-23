@@ -1,3 +1,20 @@
+/* ==================== متغيرات الوضع الليلي / النهاري (CSS Variables) ==================== */
+:root {
+    --bg: #FAF5EB;
+    --text: #32127A;
+    --card-bg: #ffffff;
+    --input-bg: #ffffff;
+    --border: rgba(50,18,122,0.1);
+}
+
+html[data-theme="dark"] {
+    --bg: #0B0933;
+    --text: #E0E0E0;
+    --card-bg: #1a1040;
+    --input-bg: #2a1f5e;
+    --border: rgba(242,133,0,0.3);
+}
+
 /* ==================== auth/auth.css ==================== */
 
 /*********************************

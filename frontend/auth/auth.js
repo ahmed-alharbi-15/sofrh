@@ -270,9 +270,8 @@ if (menuBtn && sideMenu && closeBtn) {
 // هذا الكود هنا مسؤول فقط عن: تبديل السمة (data-theme)، الحفظ في
 // localStorage، وزر التبديل نفسه (شكل الزر مستقل عن باقي الصفحة).
 (function() {
-    const THEME_KEY = "safraTheme";
-    const isDark = localStorage.getItem(THEME_KEY) === "dark";
-    if (isDark) document.documentElement.setAttribute("data-theme", "dark");
+    const THEME_KEY = "theme";
+    const isDark = document.documentElement.getAttribute("data-theme") === "dark";
 
     const style = document.createElement("style");
     style.id = "safra-dark-mode-style";
@@ -308,16 +307,10 @@ if (menuBtn && sideMenu && closeBtn) {
     toggleBtn.textContent = isDark ? "☀️" : "🌙";
 
     toggleBtn.addEventListener("click", () => {
-        const nowDark = document.documentElement.getAttribute("data-theme") === "dark";
-        if (nowDark) {
-            document.documentElement.removeAttribute("data-theme");
-            localStorage.setItem(THEME_KEY, "light");
-            toggleBtn.textContent = "🌙";
-        } else {
-            document.documentElement.setAttribute("data-theme", "dark");
-            localStorage.setItem(THEME_KEY, "dark");
-            toggleBtn.textContent = "☀️";
-        }
+        const isDark = document.documentElement.getAttribute("data-theme") !== "dark";
+        document.documentElement.setAttribute("data-theme", isDark ? "dark" : "light");
+        localStorage.setItem(THEME_KEY, isDark ? "dark" : "light");
+        toggleBtn.textContent = isDark ? "☀️" : "🌙";
     });
 
     document.body.appendChild(toggleBtn);

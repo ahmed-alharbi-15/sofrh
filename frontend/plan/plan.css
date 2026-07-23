@@ -61,7 +61,8 @@ html {
 }
 
 body {
-    background-color: #FAF5EB;
+    background: var(--bg);
+    color: var(--text);
     font-family: 'Dubai', 'Dubai Regular', sans-serif;
     font-size: 1rem;
     padding-top: 90px !important;
@@ -994,7 +995,7 @@ html.logged-in .user-menu {
 
 /* ===== WIZARD COLOR LOCKS (dark-mode safe) ===== */
 .wizard {
-    background: #fff !important;
+    background: var(--card-bg) !important;
     color: #32127A !important;
 }
 
@@ -2229,4 +2230,16 @@ html.user-logged-in .user-menu { display: flex !important; }
 }
 .nav-list a.active::after {
     width: 100%;
+}
+
+/* ملاحظة: .card/.fav-card/.auth-card وinput العام غير موجودين فعلياً في plan.html —
+   نضيفهم هنا كما وردوا حرفياً لتطابق باقي ملفات CSS (.wizard الحقيقي تم تحديثه فوق) */
+.card, .fav-card, .auth-card {
+    background: var(--card-bg);
+}
+
+input {
+    background: var(--input-bg);
+    color: var(--text);
+    border-color: var(--border);
 }

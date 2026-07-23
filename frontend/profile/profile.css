@@ -56,6 +56,8 @@ html {
 }
 
 body {
+    background: var(--bg);
+    color: var(--text);
     font-family: 'Dubai', 'Dubai Regular', sans-serif;
     font-size: 1rem;
     overflow-x: hidden;
@@ -197,6 +199,7 @@ body {
     gap: 16px;
 }
 
+/* ملاحظة: .fav-card تُبقي خلفيتها الداكنة الثابتة #150A35 عمداً (شفافة الصورة خلفها بغض النظر عن الثيم) — لا تُستبدل بـ var(--card-bg) لتفادي كسر تصميم كروت المفضلة */
 .fav-card {
     position: relative;
     border-radius: 16px;
@@ -326,11 +329,11 @@ body {
 .input-group input {
     padding: 11px 16px;
     border-radius: 12px;
-    border: 2px solid #F0EBE0;
+    border: 2px solid var(--border);
     font-size: 15px;
     font-family: 'Dubai', 'Dubai Regular', sans-serif;
-    background: #FDFAF5;
-    color: #32127A;
+    background: var(--input-bg);
+    color: var(--text);
     transition: .3s;
     outline: none;
     text-align: right;
@@ -628,4 +631,16 @@ html.user-logged-in .user-menu { display: flex !important; }
 }
 .nav-list a.active::after {
     width: 100%;
+}
+
+/* ملاحظة: .card/.wizard/.auth-card وinput العام غير موجودين فعلياً في profile.html —
+   نضيفهم هنا كما وردوا حرفياً لتطابق باقي ملفات CSS (.input-group input الحقيقي تم تحديثه فوق) */
+.card, .wizard, .auth-card {
+    background: var(--card-bg);
+}
+
+input {
+    background: var(--input-bg);
+    color: var(--text);
+    border-color: var(--border);
 }
