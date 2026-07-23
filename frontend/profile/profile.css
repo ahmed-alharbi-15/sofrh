@@ -893,3 +893,8 @@ html[data-theme="dark"] .auth-btn:hover { background: #F28500 !important; }
 html[data-theme="dark"] .auth-switch { color: rgba(224,224,224,0.7) !important; }
 html[data-theme="dark"] .auth-switch a { color: #F28500 !important; }
 html[data-theme="dark"] .toggle-password { color: #E0E0E0 !important; }
+
+/* ملاحظة: .hero-eyebrow غير موجود فعلياً في profile.html — نضيفه هنا كما ورد حرفياً لتطابق باقي ملفات CSS */
+html[data-theme="dark"] .hero-eyebrow {
+    color: #F28500 !important;
+}

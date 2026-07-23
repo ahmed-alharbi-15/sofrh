@@ -2545,6 +2545,10 @@ html[data-theme="dark"] .hero-stat-label {
     color: rgba(224,224,224,0.6) !important;
 }
 
+html[data-theme="dark"] .hero-eyebrow {
+    color: #F28500 !important;
+}
+
 /* ملاحظة: عناصر صفحات auth (.auth-page/.auth-sub/.auth-switch/.toggle-password...) غير
    موجودة فعلياً في plan.html — نضيفها هنا كما وردت حرفياً لتطابق باقي ملفات CSS */
 html[data-theme="dark"] .auth-page { background: #0B0933 !important; }

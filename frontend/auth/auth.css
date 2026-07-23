@@ -727,3 +727,8 @@ html[data-theme="dark"] .auth-switch a {
 html[data-theme="dark"] .toggle-password {
     color: #E0E0E0 !important;
 }
+
+/* ملاحظة: .hero-eyebrow غير موجود فعلياً في صفحات auth — نضيفه هنا كما ورد حرفياً لتطابق باقي ملفات CSS */
+html[data-theme="dark"] .hero-eyebrow {
+    color: #F28500 !important;
+}
