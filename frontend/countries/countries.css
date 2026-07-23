@@ -1381,11 +1381,14 @@ body>header:not(.navbar) {
     color: #FFFFFF;
     padding: 50px 20px 20px;
     margin-top: 60px;
+    text-align: center;
 }
 
+/* الشاشات الكبيرة - نفس الشكل القديم */
 .footer-container {
     display: flex;
     justify-content: space-between;
+    align-items: flex-start;
     gap: 40px;
     max-width: 1200px;
     margin: 0 auto;
@@ -1394,10 +1397,29 @@ body>header:not(.navbar) {
     text-align: right;
 }
 
+.footer-brand,
+.footer-links,
+.footer-contact {
+    text-align: right;
+}
+
 .footer-logo {
     font-size: 2rem;
     color: #F28500;
     margin-bottom: 10px;
+}
+
+/* لون كلمة سفرة */
+.footer-logo {
+    color: #F28500;
+}
+
+.footer-logo {
+    color: #F28500 !important;
+}
+
+html[data-theme="dark"] .footer-logo {
+    color: #F28500 !important;
 }
 
 .footer-brand p {
@@ -1444,12 +1466,19 @@ body>header:not(.navbar) {
 }
 
 /* تابلت */
+/* الجوال والتابلت - في المنتصف */
 @media (max-width: 768px) {
     .footer-container {
         flex-direction: column;
         align-items: center;
         text-align: center;
         gap: 30px;
+    }
+
+    .footer-brand,
+    .footer-links,
+    .footer-contact {
+        text-align: center;
     }
 
     .footer-links ul,
@@ -1491,10 +1520,7 @@ body>header:not(.navbar) {
 
 @media (max-width: 480px) {
     .footer-container {
-        flex-direction: column;
-        align-items: flex-end;
-        text-align: right;
-        gap: 24px;
+        gap: 20px;
         padding: 0 16px;
     }
     .footer-logo { font-size: 1.6rem; }
