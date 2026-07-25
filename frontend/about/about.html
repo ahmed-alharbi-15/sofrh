@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+<script>
+(() => {
+  const theme = localStorage.getItem("theme");
+  document.documentElement.setAttribute("data-theme", theme === "dark" ? "dark" : "light");
+})();
+</script>
+    <style>
+        .auth-buttons { display: none; }
+        .user-menu { display: none; }
+    </style>
+    <meta charset="UTF-8">
+<script>
+    (function(){
+        var u=JSON.parse(localStorage.getItem('safraUser')||'null');
+        var av=localStorage.getItem('safraAvatar')||'';
+        document.documentElement.className+=u?' user-logged-in':' user-logged-out';
+        if(u){
+            var t=setInterval(function(){
+                var n=document.getElementById('userName');
+                var a=document.getElementById('userAvatar');
+                if(n){
+                    n.textContent=u.name||'';
+                    if(a&&(u.avatar||av)) a.src=u.avatar||av;
+                    clearInterval(t);
+                }
+            },1);
+        }
+    })();
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عن سفرة</title>
+    <link rel="stylesheet" href="/about/about.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@500;600&display=swap">
+    <link rel="stylesheet" href="/dark-mode.css">
+    <title>سفرة | من نحن</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="تعرف على سفرة، منصتك العربية لاستكشاف الوجهات السياحية، وتخطيط رحلاتك، وتذوق أشهى المأكولات حول العالم.">
+
+    <meta name="keywords"
+        content="سفرة، عن سفرة، سفر، سياحة، دول، مدن، فعاليات، أكلات، وصفات، مطاعم، مقاهي، رحلات، تخطيط سفر">
+
+    <meta name="author" content="سفرة">
+
+    <meta property="og:title" content="سفرة — عن المنصة">
+
+    <meta property="og:description"
+        content="تعرف على سفرة، منصتك العربية لاستكشاف الوجهات السياحية، وتخطيط رحلاتك، وتذوق أشهى المأكولات حول العالم.">
+
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ar_SA">
+
+    <meta property="og:url" content="https://sofrh.vercel.app/about/about.html">
+
+    <meta property="og:image" content="https://sofrh.vercel.app/img/logo6.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <meta property="og:site_name" content="سفرة">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="سفرة — عن المنصة">
+    <meta name="twitter:description" content="تعرف على سفرة، منصتك العربية لاستكشاف الوجهات السياحية، وتخطيط رحلاتك، وتذوق أشهى المأكولات حول العالم.">
+    <meta name="twitter:image" content="https://sofrh.vercel.app/img/logo6.png">
+
+    <link rel="canonical" href="https://sofrh.vercel.app/about/about.html">
+
+    <script src="/auth/auth.js" defer></script>
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="hamburger" id="menu-btn">☰</div>
+
+        <div class="auth-buttons" id="authButtons">
+            <a href="/auth/login.html" class="login">تسجيل دخول</a>
+            <a href="/auth/signup.html" class="signup">إنشاء حساب</a>
+        </div>
+
+        <div class="user-menu" id="userMenu">
+            <img id="userAvatar" src="" alt="">
+            <span class="user-name" id="userName"></span>
+            <div class="user-dropdown">
+                <a href="/profile/profile.html">الملف الشخصي</a>
+                <a href="#" id="logoutBtn">تسجيل خروج</a>
+            </div>
+        </div>
+
+        <ul class="nav-list">
+            <li><a href="/index/index.html">الرئيسية</a></li>
+            <li><a href="/countries/countries.html">الدول</a></li>
+            <li><a href="/events/events.html">الفعاليات</a></li>
+            <li><a href="/recipes/recipes.html">الوصفات</a></li>
+            <li><a href="/plan/plan.html">خطتي</a></li>
+            <li><a href="/about/about.html" class="active">عن سفرة</a></li>
+        </ul>
+
+        <div class="logo">
+            <a href="/index/index.html"><img src="/img/logo7.png" alt="سفرة"></a>
+        </div>
+    </header>
+
+    <!-- SIDE MENU -->
+    <div class="side-menu" id="side-menu">
+        <span class="close-btn" id="close-btn">×</span>
+        <span class="side-menu-kicker">استكشف</span>
+        <ul>
+            <li><a href="/index/index.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M3 11.5 12 4l9 7.5" />
+                        <path
+                            d="M5.5 10v9a1 1 0 0 0 1 1H9a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h2.5a1 1 0 0 0 1-1v-9" />
+                    </svg>
+                    <span>الرئيسية</span>
+                </a></li>
+            <li><a href="/countries/countries.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M12 21s7-6.6 7-12a7 7 0 1 0-14 0c0 5.4 7 12 7 12Z" />
+                        <circle cx="12" cy="9" r="2.3" />
+                    </svg>
+                    <span>الدول</span>
+                </a></li>
+            <li><a href="/events/events.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <rect x="3.5" y="5" width="17" height="16" rx="2.5" />
+                        <path d="M8 3v4M16 3v4M3.5 10h17" />
+                        <circle cx="12" cy="15" r="1.4" fill="currentColor" stroke="none" />
+                    </svg>
+                    <span>الفعاليات</span>
+                </a></li>
+            <li><a href="/recipes/recipes.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M7 2v8a2 2 0 0 0 2 2v10M5 2v6M9 2v6M14 2c-1.5 2-1.5 7 0 9 .6.6 1 1.3 1 2v9" />
+                    </svg>
+                    <span>الوصفات</span>
+                </a></li>
+            <li><a href="/plan/plan.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="9" />
+                        <path d="M14.8 9.2 13 13l-3.8 1.8L11 11l3.8-1.8Z" />
+                    </svg>
+                    <span>خطتي</span>
+                </a></li>
+            <li><a href="/about/about.html" class="active">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="9" />
+                        <path d="M12 8h.01M11 11.5h1v5.5h1" />
+                    </svg>
+                    <span>عن سفرة</span>
+                </a></li>
+        </ul>
+    </div>
+
+    <section class="about-hero">
+        <span class="about-eyebrow">تعرف علينا</span>
+        <h1>نحن <span class="hero-accent">سفرة</span></h1>
+        <p>منصتك العربية الشاملة لاستكشاف العالم، وتخطيط رحلاتك، وتذوق أشهى المأكولات المحلية.</p>
+    </section>
+
+    <section class="about-intro">
+        <span class="about-badge">نبذة عنا</span>
+        <h2 class="section-title">من نحن</h2>
+        <div class="section-line"></div>
+        <p class="section-text">
+            <strong>سفرة</strong> منصة عربية متكاملة ولدت من شغف حقيقي بالسفر والطعام، لتكون رفيقك
+            الموثوق من أول لحظة تفكر فيها بالسفر وحتى تعود مثقلًا بالذكريات. نجمع لك في مكان واحد
+            أجمل الوجهات السياحية، وأشهر المدن، وألذ المأكولات المحلية، وأبرز الفعاليات الموسمية،
+            مع مخطط ذكي يساعدك على اختيار وجهتك المناسبة وفق ميزانيتك واهتماماتك — لنجعل رحلتك
+            القادمة أكثر وضوحًا ومتعة.
+        </p>
+    </section>
+
+    <section class="about-features">
+        <h2 class="section-title">مميزات المنصة</h2>
+        <div class="section-line"></div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🧭</div>
+                <h3>اكتشف</h3>
+                <p>استكشف أكثر من ١٩٠ دولة حول العالم، بمعلومات دقيقة عن مدنها وأجوائها ومعالمها.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🗺️</div>
+                <h3>خطط</h3>
+                <p>خطط رحلتك المثالية حسب ميزانيتك ونوع رحلتك المفضل، عبر مخطط "خطتي" الذكي.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🍽️</div>
+                <h3>تذوق</h3>
+                <p>تذوق أشهى الأطباق المحلية من مختلف ثقافات العالم عبر وصفات سهلة وواضحة.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-steps">
+        <h2 class="section-title">كيف تخطط لرحلتك؟</h2>
+        <div class="section-line"></div>
+        <div class="steps-grid">
+            <div class="step-card">
+                <span class="step-num">01</span>
+                <h3>اختر وجهتك</h3>
+                <p>تصفح الدول والمدن، واكتشف الوجهة التي تناسب ذوقك وميزانيتك.</p>
+            </div>
+            <div class="step-card">
+                <span class="step-num">02</span>
+                <h3>حدد ميزانيتك واهتماماتك</h3>
+                <p>استخدم "خطتي" لمطابقة أفضل الوجهات مع ميزانيتك ونوع رحلتك المفضل.</p>
+            </div>
+            <div class="step-card">
+                <span class="step-num">03</span>
+                <h3>استمتع برحلتك</h3>
+                <p>احفظ مفضلاتك من الأماكن والوصفات والفعاليات، وابدأ رحلتك بكل ثقة.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-stats">
+        <div class="stat-box">
+            <span class="stat-num">١٩٠+</span>
+            <span class="stat-label">دولة</span>
+        </div>
+        <div class="stat-box">
+            <span class="stat-num">٧٠٠+</span>
+            <span class="stat-label">فعالية</span>
+        </div>
+        <div class="stat-box">
+            <span class="stat-num">٢٠٠+</span>
+            <span class="stat-label">وصفة</span>
+        </div>
+        <div class="stat-box">
+            <span class="stat-num">٦</span>
+            <span class="stat-label">قارات</span>
+        </div>
+    </section>
+
+    <section class="about-vision">
+        <h2 class="section-title">رؤيتنا ورسالتنا</h2>
+        <div class="section-line"></div>
+        <div class="vision-mission-grid">
+            <div class="vm-card">
+                <h3>🌍 رؤيتنا</h3>
+                <p>أن نكون الوجهة العربية الأولى والأكثر ثقة لكل من يبحث عن السفر والطعام حول العالم.</p>
+            </div>
+            <div class="vm-card">
+                <h3>🎯 رسالتنا</h3>
+                <p>تقديم تجربة سفر وتذوق سلسة وموثوقة، عبر محتوى دقيق وأدوات تخطيط ذكية تناسب كل مسافر.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-faq">
+        <h2 class="section-title">أسئلة شائعة</h2>
+        <div class="section-line"></div>
+        <div class="faq-list">
+            <details class="faq-item">
+                <summary>هل استخدام سفرة مجاني؟</summary>
+                <p>نعم، جميع خدمات سفرة من استكشاف الدول والوصفات والفعاليات وتخطيط الرحلات مجانية بالكامل.</p>
+            </details>
+            <details class="faq-item">
+                <summary>هل أحتاج إلى حساب لاستخدام سفرة؟</summary>
+                <p>يمكنك تصفح المحتوى دون تسجيل، لكن إنشاء حساب يتيح لك حفظ مفضلاتك من الدول والوصفات والفعاليات.</p>
+            </details>
+            <details class="faq-item">
+                <summary>كيف يساعدني مخطط "خطتي"؟</summary>
+                <p>يطرح عليك بعض الأسئلة عن ميزانيتك واهتماماتك، ثم يقترح عليك أفضل الوجهات المناسبة لك.</p>
+            </details>
+            <details class="faq-item">
+                <summary>هل جميع الوصفات والمطاعم حلال؟</summary>
+                <p>نعم، جميع المحتويات المتعلقة بالمطاعم والمقاهي والوصفات في سفرة متوافقة مع الضوابط الحلال.</p>
+            </details>
+            <details class="faq-item">
+                <summary>كيف أتواصل مع فريق سفرة؟</summary>
+                <p>يمكنك التواصل معنا عبر البريد الإلكتروني أو حسابنا على منصة X الموضحين في قسم التواصل أدناه.</p>
+            </details>
+        </div>
+    </section>
+
+    <section class="about-contact">
+        <h2 class="section-title">تواصل معنا</h2>
+        <div class="section-line"></div>
+        <div class="contact-links">
+            <a href="https://twitter.com/sofrah_sa" target="_blank" class="contact-btn">🐦 X (Twitter) — ‎@sofrah_sa</a>
+            <a href="mailto:Sofrh.info@gmail.com" class="contact-btn">📧 Sofrh.info@gmail.com</a>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h2 class="footer-logo">سفرة</h2>
+                <p>وجهتك للسفر والطعام حول العالم</p>
+            </div>
+
+            <div class="footer-links">
+                <h4>روابط سريعة</h4>
+                <ul>
+                    <li><a href="/index/index.html">الرئيسية</a></li>
+                    <li><a href="/countries/countries.html">الدول</a></li>
+                    <li><a href="/events/events.html">الفعاليات</a></li>
+                    <li><a href="/recipes/recipes.html">الوصفات</a></li>
+                    <li><a href="/plan/plan.html">خطتي</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h4>تواصل معنا</h4>
+                <ul>
+                    <li>📧 <a href="mailto:Sofrh.info@gmail.com" target="_blank">Sofrh.info@gmail.com</a></li>
+                    <li>📧 <a href="mailto:Sofrh.support@gmail.com" target="_blank">Sofrh.support@gmail.com</a></li>
+                    <li>🐦 <a href="https://twitter.com/sofrah_sa" target="_blank">X (Twitter)</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2025 سفرة — جميع الحقوق محفوظة</p>
+            <p>صُنع بواسطة فريق سفرة</p>
+            <p>📧 <a href="mailto:Sofrh.info@gmail.com" style="color: #F28500;">Sofrh.info@gmail.com</a></p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
