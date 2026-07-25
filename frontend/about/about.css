@@ -30,6 +30,16 @@
 }
 
 /*********************************
+     COLORS (منسوخة حرفياً من countries.css لضبط الـ navbar)
+*********************************/
+:root {
+    --brown-dark: #32127A;
+    --cream-light: #FAF5EB;
+    --cream-soft: #F0EBE0;
+    --caramel: #F28500;
+}
+
+/*********************************
      RESET
 *********************************/
 * {
@@ -60,18 +70,17 @@ body {
 }
 
 /*********************************
-     اللوغو
+     LOGO
 *********************************/
 .logo img {
-    height: 55px;
-    width: auto;
+    height: 60px;
 }
 
 /*********************************
      NAVBAR
 *********************************/
 .navbar {
-    background-color: var(--primary);
+    background-color: var(--brown-dark);
     padding: 0 20px;
     display: flex;
     align-items: center;
@@ -82,19 +91,23 @@ body {
     width: 100%;
     z-index: 999;
     height: 90px;
+    direction: rtl;
 }
 
+/*********************************
+     NAV LINKS
+*********************************/
 .nav-list {
     display: flex;
-    gap: 60px;
+    gap: 90px;
     list-style: none;
 }
 
 .nav-list a {
     text-decoration: none;
     font-weight: 400;
-    font-size: 18px;
-    color: var(--bg);
+    font-size: 20px;
+    color: var(--cream-light);
     position: relative;
     transition: .3s ease;
 }
@@ -106,39 +119,35 @@ body {
     right: 0;
     width: 0%;
     height: 3px;
-    background-color: var(--accent);
+    background-color: var(--caramel);
     transition: width .3s ease;
 }
 
-.nav-list a:hover::after,
-.nav-list a.active::after {
+.nav-list a:hover::after {
     width: 100%;
 }
 
-.nav-list a:hover,
-.nav-list a.active {
-    color: var(--accent);
+.nav-list a:hover {
+    color: var(--caramel);
 }
 
-/*********************************
-     أزرار الدخول
-*********************************/
-html.logged-in .auth-buttons { display: none; }
-html.logged-in .user-menu { display: flex; }
-html.user-logged-out .user-menu { display: none !important; }
-html.user-logged-out .auth-buttons { display: flex !important; }
-html.user-logged-in .auth-buttons { display: none !important; }
-html.user-logged-in .user-menu { display: flex !important; }
+/* Prevent auth-state flash (FOUC) before auth.js runs */
+html.logged-in .auth-buttons {
+    display: none;
+}
+
+html.logged-in .user-menu {
+    display: flex;
+}
 
 .auth-buttons {
     display: flex;
     gap: 15px;
-    align-items: center;
 }
 
 .auth-buttons a {
     text-decoration: none;
-    font-size: 16px;
+    font-size: 20px;
     padding: 8px 20px;
     font-weight: 400;
     border-radius: 20px;
@@ -147,8 +156,7 @@ html.user-logged-in .user-menu { display: flex !important; }
 
 .login {
     background-color: var(--cream-soft);
-    color: var(--primary);
-    transition: .3s;
+    color: var(--brown-dark);
 }
 
 .login:hover {
@@ -159,22 +167,18 @@ html.user-logged-in .user-menu { display: flex !important; }
     background: transparent;
     border: 2px solid var(--cream-soft);
     color: var(--cream-soft);
-    transition: .3s;
 }
 
 .signup:hover {
     background-color: var(--cream-soft);
-    color: var(--primary);
+    color: var(--brown-dark);
     transform: translateY(-2px);
 }
 
-/*********************************
-     HAMBURGER
-*********************************/
 .hamburger {
     display: none;
     font-size: 32px;
-    color: var(--bg);
+    color: var(--cream-light);
     cursor: pointer;
     user-select: none;
 }
@@ -189,7 +193,7 @@ html.user-logged-in .user-menu { display: flex !important; }
     right: -260px;
     width: 260px;
     height: 100%;
-    background-color: var(--primary);
+    background-color: var(--brown-dark);
     padding-top: 100px;
     transition: right 0.4s ease;
     z-index: 9999;
@@ -210,7 +214,7 @@ html.user-logged-in .user-menu { display: flex !important; }
 
 .side-menu-kicker {
     display: block;
-    color: var(--accent);
+    color: var(--caramel);
     font-size: 12px;
     font-weight: 700;
     letter-spacing: 3px;
@@ -240,7 +244,6 @@ html.user-logged-in .user-menu { display: flex !important; }
 .side-menu.menu-open li:nth-child(3) { transition-delay: .15s; }
 .side-menu.menu-open li:nth-child(4) { transition-delay: .2s; }
 .side-menu.menu-open li:nth-child(5) { transition-delay: .25s; }
-.side-menu.menu-open li:nth-child(6) { transition-delay: .3s; }
 
 .side-menu a {
     display: flex;
@@ -248,7 +251,7 @@ html.user-logged-in .user-menu { display: flex !important; }
     gap: 14px;
     padding: 14px 16px;
     border-radius: 14px;
-    color: var(--bg);
+    color: var(--cream-light);
     font-size: 19px;
     font-weight: 600;
     text-decoration: none;
@@ -265,7 +268,7 @@ html.user-logged-in .user-menu { display: flex !important; }
 
 .side-menu a:hover {
     background-color: rgba(242, 133, 0, .16);
-    color: var(--accent);
+    color: var(--caramel);
 }
 
 .side-menu a:hover svg {
@@ -274,23 +277,30 @@ html.user-logged-in .user-menu { display: flex !important; }
 }
 
 .side-menu a.active {
-    background-color: var(--accent);
-    color: var(--primary);
+    background-color: var(--caramel);
+    color: var(--brown-dark);
 }
 
 .side-menu a.active svg {
     opacity: 1;
 }
 
+@media (max-width: 480px) {
+    .side-menu {
+        width: 78vw;
+        max-width: 300px;
+    }
+}
+
 /*********************************
-     زر الإغلاق
+     CLOSE BUTTON
 *********************************/
 .close-btn {
     position: absolute;
     top: 20px;
     left: 20px;
     font-size: 30px;
-    color: var(--bg);
+    color: #FAF5EB;
     cursor: pointer;
     padding: 5px 10px;
     border-radius: 8px;
@@ -299,66 +309,9 @@ html.user-logged-in .user-menu { display: flex !important; }
 }
 
 .close-btn:hover {
-    background-color: var(--accent);
+    background-color: #F28500;
     color: #FFFFFF;
     transform: rotate(90deg);
-}
-
-/*********************************
-     قائمة المستخدم
-*********************************/
-.user-menu {
-    display: none;
-    align-items: center;
-    gap: 10px;
-    cursor: pointer;
-    position: relative;
-}
-
-.user-name {
-    color: var(--bg);
-    font-size: 16px;
-    font-weight: 400;
-}
-
-#userAvatar {
-    width: 38px;
-    height: 38px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid var(--accent);
-}
-
-.user-dropdown {
-    display: none;
-    position: absolute;
-    top: 100%;
-    right: 0;
-    left: auto;
-    background: var(--cream-soft);
-    border-radius: 12px;
-    padding: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-    min-width: 160px;
-    z-index: 9999;
-}
-
-.user-menu:hover .user-dropdown {
-    display: block;
-}
-
-.user-dropdown a {
-    display: block;
-    padding: 8px 12px;
-    color: var(--primary);
-    text-decoration: none;
-    font-size: 15px;
-    border-radius: 8px;
-    white-space: nowrap;
-}
-
-.user-dropdown a:hover {
-    background: #F0EBE0;
 }
 
 /*********************************
@@ -714,6 +667,63 @@ html.user-logged-in .user-menu { display: flex !important; }
 }
 
 /*********************************
+     قائمة المستخدم (منسوخة حرفياً من countries.css)
+*********************************/
+.user-menu {
+    display: none;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    position: relative;
+}
+
+.user-name {
+    color: var(--cream-light);
+    font-size: 16px;
+    font-weight: 400;
+}
+
+#userAvatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--caramel);
+}
+
+.user-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: auto;
+    background: #FAF5EB;
+    border-radius: 12px;
+    padding: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    min-width: 160px;
+    z-index: 9999;
+}
+
+.user-menu:hover .user-dropdown {
+    display: block;
+}
+
+.user-dropdown a {
+    display: block;
+    padding: 8px 12px;
+    color: #32127A;
+    text-decoration: none;
+    font-size: 15px;
+    border-radius: 8px;
+    white-space: nowrap;
+}
+
+.user-dropdown a:hover {
+    background: #F0EBE0;
+}
+
+/*********************************
      الفوتر
 *********************************/
 .site-footer {
@@ -836,7 +846,7 @@ html[data-theme="dark"] .contact-btn:hover {
 }
 
 /*********************************
-     الاستجابة (Responsive)
+     الاستجابة (Responsive) — منسوخة حرفياً من countries.css لقسم الـ navbar
 *********************************/
 @media (max-width: 900px) {
     .nav-list {
@@ -852,6 +862,64 @@ html[data-theme="dark"] .contact-btn:hover {
     }
 }
 
+@media (max-width: 767px) {
+    .auth-buttons a {
+        font-size: 13px;
+        padding: 6px 12px;
+        border-radius: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding-top: 70px !important;
+    }
+
+    .navbar {
+        height: 70px;
+        padding: 0 12px;
+    }
+
+    .logo img {
+        height: 50px;
+    }
+
+    .hamburger {
+        font-size: 28px;
+    }
+
+    .auth-buttons a {
+        font-size: 11px;
+        padding: 5px 8px;
+        border-radius: 12px;
+    }
+}
+
+@media (min-width: 480px) and (max-width: 767px) {
+    body {
+        padding-top: 75px !important;
+    }
+
+    .navbar {
+        height: 75px;
+        padding: 0 15px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    body {
+        padding-top: 85px !important;
+    }
+
+    .navbar {
+        height: 85px;
+        padding: 0 15px;
+    }
+}
+
+/*********************************
+     تجاوب صفحة "عن سفرة" (المحتوى الخاص بالصفحة فقط)
+*********************************/
 @media (max-width: 768px) {
     .features-grid,
     .steps-grid {
@@ -888,28 +956,6 @@ html[data-theme="dark"] .contact-btn:hover {
 }
 
 @media (max-width: 480px) {
-    body {
-        padding-top: 70px !important;
-    }
-
-    .navbar {
-        height: 70px;
-        padding: 0 12px;
-    }
-
-    .logo img {
-        height: 42px;
-    }
-
-    .hamburger {
-        font-size: 28px;
-    }
-
-    .side-menu {
-        width: 78vw;
-        max-width: 280px;
-    }
-
     .about-stats {
         gap: 24px;
         padding: 24px 20px;
@@ -922,4 +968,61 @@ html[data-theme="dark"] .contact-btn:hover {
     .footer-logo {
         font-size: clamp(1.4rem, 5vw, 1.8rem);
     }
+}
+
+@media (max-width: 480px) {
+    .side-menu {
+        width: 80vw;
+        max-width: 280px;
+    }
+}
+
+@media (max-width: 480px) {
+    .side-menu {
+        width: 80vw;
+        max-width: 260px;
+    }
+}
+
+@media (max-width: 320px) {
+    .side-menu {
+        width: 90vw;
+        max-width: 240px;
+    }
+}
+
+html.user-logged-out .user-menu { display: none !important; }
+html.user-logged-out .auth-buttons { display: flex !important; }
+html.user-logged-in .auth-buttons { display: none !important; }
+html.user-logged-in .user-menu { display: flex !important; }
+
+/* اللوغو */
+.logo img { height: 55px; width: auto; }
+
+/* الخطوط */
+:root {
+    --font-xs: 12px;
+    --font-sm: 14px;
+    --font-md: 16px;
+    --font-lg: 18px;
+    --font-xl: 22px;
+    --font-2xl: 28px;
+    --font-3xl: 36px;
+}
+
+/* الـ navbar */
+.nav-list a { font-size: var(--font-lg); }
+.auth-buttons a { font-size: var(--font-md); }
+.user-name { font-size: var(--font-md); }
+
+/* الجوال */
+@media (max-width: 480px) {
+    .logo img { height: 42px; }
+}
+
+.nav-list a.active {
+    color: #F28500;
+}
+.nav-list a.active::after {
+    width: 100%;
 }
