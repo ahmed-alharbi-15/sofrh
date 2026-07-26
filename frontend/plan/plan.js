@@ -4369,6 +4369,15 @@ document.addEventListener("DOMContentLoaded", () => {
                         ? '<span class="bp-not-ready">🚧 قريباً</span>'
                         : '<span class="bp-ready">✅ متاح</span>';
 
+                // زر حفظ الخطة — يظهر فقط في نتائج الخطة الحقيقية (مو في وضع تصفح كل الدول)
+                const saveBtnHtml = skipMode
+                        ? ""
+                        : `
+                <button type="button" class="bp-save-plan"
+                        data-id="${country.id}"
+                        data-name="${country.nameAr}"
+                        data-img="${country.img}">💾 احفظ هذه الخطة</button>`;
+
                 return `
         <div class="bp-card${featuredClass}">
             <div class="bp-main">
@@ -4385,6 +4394,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 <div class="bp-fields">${fieldsHtml}
                 </div>
                 ${noteHtml}
+                ${saveBtnHtml}
             </div>
             <div class="bp-perf" aria-hidden="true"></div>
             <div class="bp-stub">
@@ -4397,6 +4407,25 @@ document.addEventListener("DOMContentLoaded", () => {
             </div>
         </div>`;
         }
+        // ===== حفظ الخطة في المفضلة =====
+        // planId  = id الدولة + تاريخ اليوم
+        // planName = اسم الدولة + الميزانية + عدد الأيام
+        resultsGrid?.addEventListener("click", (e) => {
+                const btn = e.target.closest(".bp-save-plan");
+                if (!btn) return;
+
+                const countryId = btn.dataset.id;
+                const countryName = btn.dataset.name;
+                const countryImg = btn.dataset.img;
+
+                const today = new Date().toISOString().slice(0, 10);
+                const planId = `${countryId}-${today}`;
+                const dayWord = state.duration === 1 ? "يوم" : "أيام";
+                const planName = `${countryName} – ${formatNumber(state.budget)} ريال – ${arabicDigits(state.duration)} ${dayWord}`;
+
+                saveItem("plan", planId, planName, countryImg);
+        });
+
         // ===== منع تكرار نفس الدولة مرتين متتاليتين بالاختيار العشوائي =====
         function pickRandomCountry() {
                 const lastId = localStorage.getItem("sofrhLastRandomCountry");

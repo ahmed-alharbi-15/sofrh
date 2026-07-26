@@ -195,8 +195,20 @@ body {
 ================================ */
 .fav-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 16px;
+}
+
+@media (max-width: 768px) {
+    .fav-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .fav-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* ملاحظة: .fav-card تُبقي خلفيتها الداكنة الثابتة #150A35 عمداً (شفافة الصورة خلفها بغض النظر عن الثيم) — لا تُستبدل بـ var(--card-bg) لتفادي كسر تصميم كروت المفضلة */
@@ -253,6 +265,32 @@ body {
     line-height: 1.3;
     flex: 1;
     padding-left: 8px;
+}
+
+/* حاوية نص الكرت — تحمل flex/padding بدل الـ span عشان تدعم أكثر من سطر (كرت الخطة) */
+.fav-card-text {
+    flex: 1;
+    padding-left: 8px;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.fav-card-text span {
+    flex: none;
+    padding-left: 0;
+}
+
+/* كرت "خططي": اسم الدولة + الميزانية + عدد الأيام */
+.fav-card-plan .plan-country {
+    font-size: 15px;
+}
+
+.fav-card-plan .plan-meta {
+    font-size: 12px;
+    font-weight: 600;
+    opacity: 0.92;
 }
 
 .fav-remove {
@@ -406,12 +444,11 @@ body {
         margin-right: 0;
         padding: 20px;
     }
-
-    .fav-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
+/* ملاحظة: أعمدة .fav-grid تُدار الآن من الكتلة الـ responsive أعلى الملف
+   (auto-fill ← 768px: عمودين ← 480px: عمود واحد) — أُزيلت من هنا لتفادي التعارض */
 @media (max-width: 600px) {
-    .fav-grid { grid-template-columns: 1fr; }
     .fav-card { height: 200px; }
 }
 

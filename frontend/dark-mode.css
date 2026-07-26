@@ -684,6 +684,18 @@ html[data-theme="dark"] .ticket-btn.ghost {
     color: #F28500 !important;
 }
 
+/* زر "احفظ هذه الخطة" — يحتاج !important لتجاوز قاعدة button العامة أعلاه */
+html[data-theme="dark"] .bp-save-plan {
+    background: transparent !important;
+    border: 2px solid #F28500 !important;
+    color: #F28500 !important;
+}
+
+html[data-theme="dark"] .bp-save-plan:hover {
+    background: #F28500 !important;
+    color: #fff !important;
+}
+
 html[data-theme="dark"] .bp-stub {
     background: #1a1040 !important;
     color: #E0E0E0 !important;

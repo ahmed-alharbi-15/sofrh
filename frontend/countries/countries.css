@@ -1602,3 +1602,23 @@ input {
     color: var(--text);
     border-color: var(--border);
 }
+
+/* ملاحظة: .fav-grid غير موجود فعلياً في countries.html (شبكة المفضلة تخص profile.html فقط) —
+   نضيفه هنا كما ورد حرفياً لتطابق profile.css */
+.fav-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+}
+
+@media (max-width: 768px) {
+    .fav-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .fav-grid {
+        grid-template-columns: 1fr;
+    }
+}

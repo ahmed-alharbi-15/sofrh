@@ -145,10 +145,11 @@
 
   <!-- قائمة الجوال -->
   <div class="profile-mobile-nav">
-    <a href="#" class="active" data-section="events">⭐ الفعاليات</a>
-    <a href="#" data-section="recipes">🍽️ الوصفات</a>
+    <a href="#" class="active" data-section="plans">✈️ خططي</a>
     <a href="#" data-section="countries">🌍 الدول</a>
     <a href="#" data-section="cities">🏙️ المدن</a>
+    <a href="#" data-section="events">⭐ الفعاليات</a>
+    <a href="#" data-section="recipes">🍽️ الوصفات</a>
     <a href="#" data-section="settings">⚙️ الإعدادات</a>
   </div>
 
@@ -167,31 +168,22 @@
       </div>
       <ul class="profile-nav">
         <li>
-          <a href="#" class="active" data-section="events">⭐ الفعاليات</a>
+          <a href="#" class="active" data-section="plans">✈️ خططي</a>
         </li>
-        <li><a href="#" data-section="recipes">🍽️ الوصفات</a></li>
         <li><a href="#" data-section="countries">🌍 الدول</a></li>
         <li><a href="#" data-section="cities">🏙️ المدن</a></li>
+        <li><a href="#" data-section="events">⭐ الفعاليات</a></li>
+        <li><a href="#" data-section="recipes">🍽️ الوصفات</a></li>
         <li><a href="#" data-section="settings">⚙️ إعدادات الحساب</a></li>
       </ul>
     </aside>
 
     <!-- المحتوى -->
     <div class="profile-content">
-      <div class="fav-section active" id="section-events">
-        <h2 class="fav-title">⭐ الفعاليات المفضلة</h2>
-        <div class="fav-grid" id="favEvents"></div>
-        <p class="fav-empty" id="emptyEvents" style="display: none">
-          ما أضفت أي فعاليات بعد
-        </p>
-      </div>
-
-      <div class="fav-section" id="section-recipes">
-        <h2 class="fav-title">🍽️ الوصفات المفضلة</h2>
-        <div class="fav-grid" id="favRecipes"></div>
-        <p class="fav-empty" id="emptyRecipes" style="display: none">
-          ما أضفت أي وصفات بعد
-        </p>
+      <div class="fav-section active" id="section-plans">
+        <h2 class="fav-title">✈️ خططي</h2>
+        <div class="fav-grid" id="favPlans"></div>
+        <p class="fav-empty" id="emptyPlans" style="display:none">ما خططت لأي رحلة بعد</p>
       </div>
 
       <div class="fav-section" id="section-countries">
@@ -207,6 +199,22 @@
         <div class="fav-grid" id="favCities"></div>
         <p class="fav-empty" id="emptyCity" style="display: none">
           ما أضفت أي مدن بعد
+        </p>
+      </div>
+
+      <div class="fav-section" id="section-events">
+        <h2 class="fav-title">⭐ الفعاليات المفضلة</h2>
+        <div class="fav-grid" id="favEvents"></div>
+        <p class="fav-empty" id="emptyEvents" style="display: none">
+          ما أضفت أي فعاليات بعد
+        </p>
+      </div>
+
+      <div class="fav-section" id="section-recipes">
+        <h2 class="fav-title">🍽️ الوصفات المفضلة</h2>
+        <div class="fav-grid" id="favRecipes"></div>
+        <p class="fav-empty" id="emptyRecipes" style="display: none">
+          ما أضفت أي وصفات بعد
         </p>
       </div>
 

@@ -112,6 +112,8 @@ const typeLinks = {
         const countryId = item.id.split('_')[0];
         return getCountryLink(countryId) + `?city=${item.id}`;
     },
+    // planId = id الدولة + تاريخ الحفظ (YYYY-MM-DD) — نشيل التاريخ ونرجع لصفحة الدولة
+    plan: (item) => getCountryLink(item.id.replace(/-\d{4}-\d{2}-\d{2}$/, '')),
 };
 
 // عرض المفضلة من السيرفر
@@ -129,10 +131,11 @@ async function renderFavorites() {
     }
 
     const types = [
-        { key: "event", gridId: "favEvents", emptyId: "emptyEvents" },
-        { key: "recipe", gridId: "favRecipes", emptyId: "emptyRecipes" },
+        { key: "plan", gridId: "favPlans", emptyId: "emptyPlans" },
         { key: "country", gridId: "favCountries", emptyId: "emptyCountries" },
         { key: "city", gridId: "favCities", emptyId: "emptyCity" },
+        { key: "event", gridId: "favEvents", emptyId: "emptyEvents" },
+        { key: "recipe", gridId: "favRecipes", emptyId: "emptyRecipes" },
     ];
 
     types.forEach(({ key, gridId, emptyId }) => {
@@ -145,12 +148,23 @@ async function renderFavorites() {
         empty.style.display = "none";
         items.forEach(item => {
             const card = document.createElement("div");
-            card.className = "fav-card";
+            card.className = key === "plan" ? "fav-card fav-card-plan" : "fav-card";
             const link = typeLinks[key] ? typeLinks[key](item) : '#';
+
+            // كرت الخطة: الاسم مخزّن كـ "اسم الدولة – الميزانية ريال – عدد الأيام"
+            let infoHtml = `<span>${item.name}</span>`;
+            if (key === "plan") {
+                const [countryName, budget, days] = item.name.split(" – ");
+                infoHtml = `
+                    <span class="plan-country">${countryName || item.name}</span>
+                    ${budget ? `<span class="plan-meta">💰 ${budget}</span>` : ""}
+                    ${days ? `<span class="plan-meta">📅 ${days}</span>` : ""}`;
+            }
+
             card.innerHTML = `
                 <img src="${item.img}" alt="${item.name}">
                 <div class="fav-card-info">
-                    <span>${item.name}</span>
+                    <div class="fav-card-text">${infoHtml}</div>
                     <button class="fav-remove" data-type="${key}" data-id="${item.id}" title="حذف">🗑️</button>
                 </div>
             `;

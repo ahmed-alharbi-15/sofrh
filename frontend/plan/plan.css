@@ -1843,6 +1843,28 @@ html.logged-in .user-menu {
     flex-shrink: 0;
 }
 
+/* زر حفظ الخطة في المفضلة */
+.bp-save-plan {
+    display: block;
+    width: calc(100% - 36px);
+    margin: 0 18px 14px;
+    padding: 10px 14px;
+    border: 2px solid #F28500;
+    border-radius: 10px;
+    background: transparent;
+    color: #F28500;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .25s;
+}
+
+.bp-save-plan:hover {
+    background: #F28500;
+    color: #fff;
+}
+
 /* الخط المثقّب الأفقي بين جسم البطاقة والستب */
 .bp-perf {
     position: relative;
