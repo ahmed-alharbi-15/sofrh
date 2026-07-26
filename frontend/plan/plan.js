@@ -1,3 +1,8 @@
+const planUser = JSON.parse(localStorage.getItem('safraUser'));
+if (!planUser) {
+    window.location.href = '/auth/login.html';
+}
+
 document.addEventListener("DOMContentLoaded", () => {
 
         // ===== القائمة الجانبية =====

@@ -1329,3 +1329,13 @@ html[data-theme="dark"] .hero-eyebrow {
     color: #F28500 !important;
 }
 
+html[data-theme="dark"] .auth-buttons .login {
+    color: #E0E0E0 !important;
+    background: rgba(224,224,224,0.1) !important;
+}
+
+html[data-theme="dark"] .auth-buttons .signup {
+    color: #E0E0E0 !important;
+    border-color: #E0E0E0 !important;
+}
+
