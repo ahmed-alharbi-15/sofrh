@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+<script>
+(() => {
+  const theme = localStorage.getItem("theme");
+  document.documentElement.setAttribute("data-theme", theme === "dark" ? "dark" : "light");
+})();
+</script>
+    <style>
+        .auth-buttons { display: none; }
+        .user-menu { display: none; }
+    </style>
+    <meta charset="UTF-8">
+<script>
+    (function(){
+        var u=JSON.parse(localStorage.getItem('safraUser')||'null');
+        var av=localStorage.getItem('safraAvatar')||'';
+        document.documentElement.className+=u?' user-logged-in':' user-logged-out';
+        if(u){
+            var t=setInterval(function(){
+                var n=document.getElementById('userName');
+                var a=document.getElementById('userAvatar');
+                if(n){
+                    n.textContent=u.name||'';
+                    if(a&&(u.avatar||av)) a.src=u.avatar||av;
+                    clearInterval(t);
+                }
+            },1);
+        }
+    })();
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سفرة</title>
+    <link rel="stylesheet" href="/countries/countries.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@500;600&display=swap">
+    <link rel="stylesheet" href="/dark-mode.css">
+    <meta property="og:image" content="https://sofrh.vercel.app/img/logo6.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:title" content="سفرة — سافر وتذوق">
+    <meta property="og:description" content="اكتشف وجهات وماكولات من مختلف أنحاء العالم">
+    <meta property="og:url" content="https://sofrh.vercel.app">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ar_SA">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://sofrh.vercel.app/img/logo6.png">
+    <meta name="twitter:title" content="سفرة — سافر وتذوق">
+    <meta name="twitter:description" content="اكتشف وجهات وماكولات من مختلف أنحاء العالم">
+    <script src="/auth/auth.js" defer></script>
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="hamburger" id="menu-btn">☰</div>
+
+        <div class="auth-buttons" id="authButtons">
+            <a href="/auth/login.html" class="login">تسجيل دخول</a>
+            <a href="/auth/signup.html" class="signup">إنشاء حساب</a>
+        </div>
+
+        <div class="user-menu" id="userMenu">
+            <img id="userAvatar" src="" alt="">
+            <span class="user-name" id="userName"></span>
+            <div class="user-dropdown">
+                <a href="/profile/profile.html">الملف الشخصي</a>
+                <a href="#" id="logoutBtn">تسجيل خروج</a>
+            </div>
+        </div>
+
+        <ul class="nav-list">
+            <li><a href="/index/index.html">الرئيسية</a></li>
+            <li><a href="/countries/countries.html" class="active">الدول</a></li>
+            <li><a href="/events/events.html">الفعاليات</a></li>
+            <li><a href="/recipes/recipes.html">الوصفات</a></li>
+            <li><a href="/plan/plan.html">خطتي</a></li>
+            <li><a href="/about/about.html">عن سفرة</a></li>
+        </ul>
+
+        <div class="logo">
+            <a href="/index/index.html"><img src="/img/logo7.png" alt="سفرة"></a>
+        </div>
+    </header>
+
+    <!-- SIDE MENU -->
+    <div class="side-menu" id="side-menu">
+        <span class="close-btn" id="close-btn">×</span>
+        <span class="side-menu-kicker">استكشف</span>
+        <ul>
+            <li><a href="/index/index.html" class="active">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M3 11.5 12 4l9 7.5" />
+                        <path
+                            d="M5.5 10v9a1 1 0 0 0 1 1H9a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h2.5a1 1 0 0 0 1-1v-9" />
+                    </svg>
+                    <span>الرئيسية</span>
+                </a></li>
+            <li><a href="/countries/countries.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M12 21s7-6.6 7-12a7 7 0 1 0-14 0c0 5.4 7 12 7 12Z" />
+                        <circle cx="12" cy="9" r="2.3" />
+                    </svg>
+                    <span>الدول</span>
+                </a></li>
+            <li><a href="/events/events.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <rect x="3.5" y="5" width="17" height="16" rx="2.5" />
+                        <path d="M8 3v4M16 3v4M3.5 10h17" />
+                        <circle cx="12" cy="15" r="1.4" fill="currentColor" stroke="none" />
+                    </svg>
+                    <span>الفعاليات</span>
+                </a></li>
+            <li><a href="/recipes/recipes.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M7 2v8a2 2 0 0 0 2 2v10M5 2v6M9 2v6M14 2c-1.5 2-1.5 7 0 9 .6.6 1 1.3 1 2v9" />
+                    </svg>
+                    <span>الوصفات</span>
+                </a></li>
+            <li><a href="/plan/plan.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="9" />
+                        <path d="M14.8 9.2 13 13l-3.8 1.8L11 11l3.8-1.8Z" />
+                    </svg>
+                    <span>خطتي</span>
+                </a></li>
+            <li><a href="/about/about.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="9" />
+                        <path d="M12 8h.01M11 11.5h1v5.5h1" />
+                    </svg>
+                    <span>عن سفرة</span>
+                </a></li>
+        </ul>
+    </div>
+    <header>
+        <a href="/countries/countries.html" class="back-btn">رجوع</a>
+    </header>
+
+    <div class="country-name">
+        <h1>الفاتيكان</h1>
+        <p>أصغر دولة في العالم وكنز روحي وفني لا مثيل له</p>
+    </div>
+
+    <div class="main-cites">
+        <h1>المناطق والمعالم</h1>
+    </div>
+    <section class="cities-grid">
+
+        <div class="cite" data-name="ساحة القديس بطرس – St. Peter's Square" data-img="/img/vaticancity-stpeters-square.jpg"
+            data-desc="الساحة الكبرى المحاطة بأعمدة برنيني الشهيرة، قلب الفاتيكان الرئيسي ومركز التجمعات الدينية الكبرى، تستوعب أكثر من ٣٠٠ ألف شخص وتضم المسلة المصرية والنافورتين الشهيرتين."
+            data-historic="🏛️ عمود برنيني – Bernini Colonnade | 🗿 المسلة الفاتيكانية – Vatican Obelisk | ⛲ نافورة مادرنو – Maderno Fountain | 🏟️ ساحة القديس بطرس الكاملة"
+            data-restaurants="🍝 مطعم Il Sorpasso | 🌿 مطعم Osteria dell'Angelo | 🍕 مطعم Pizzarium Bonci"
+            data-cafes="☕ مقهى Caffè San Pietro | ☕ مقهى Bar San Calisto | ☕ مقهى Antico Caffè del Brasile"
+            data-events="🏛️ جولة الأعمدة الشهيرة | 📸 التصوير والتأمل | 🌅 مشاهدة شروق الشمس"
+            onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'vaticancity_square', 'ساحة القديس بطرس', '/img/vaticancity-stpeters-square.jpg')">🏙️</button>
+            <img src="/img/vaticancity-stpeters-square.jpg" alt="ساحة القديس بطرس" class="cite-img">
+            <span class="name">ساحة القديس بطرس – St. Peter's Square</span>
+            <p class="info">قلب الفاتيكان والساحة الكبرى بأعمدة برنيني الشهيرة.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+        <div class="cite" data-name="كنيسة القديس بطرس – St. Peter's Basilica" data-img="/img/vaticancity-basilica.jpg"
+            data-desc="أعظم كنيسة في العالم وتحفة معمارية استغرق بناؤها أكثر من ١٢٠ عاماً، يعلوها قبة ميكيل أنجلو الشهيرة التي يبلغ ارتفاعها ١٣٦ متراً، وتزخر بكنوز فنية لا تُقدَّر."
+            data-historic="⛪ القبة العظيمة – Michelangelo Dome | 🎨 منحوتة بيتا – Pietà | 🏛️ الكرسي الرسولي – Papal Altar | 🗝️ خزينة الكنيسة – Treasury"
+            data-restaurants="🍝 مطعم Ristorante Settimio all'Arancio | 🌿 مطعم Osteria Barberini | 🍕 مطعم Da Enzo al 29"
+            data-cafes="☕ مقهى Caffè Farnese | ☕ مقهى Tazza d'Oro | ☕ مقهى Sant'Eustachio"
+            data-events="🏛️ صعود القبة – Dome Climb | 🕌 جولة المقبرة – Necropolis | 🎭 عرض الضوء والصوت"
+            onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'vaticancity_basilica', 'كنيسة القديس بطرس', '/img/vaticancity-basilica.jpg')">🏙️</button>
+            <img src="/img/vaticancity-basilica.jpg" alt="كنيسة القديس بطرس" class="cite-img">
+            <span class="name">كنيسة القديس بطرس – St. Peter's Basilica</span>
+            <p class="info">أعظم كنيسة في العالم بقبة ميكيل أنجلو الشاهقة.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+        <div class="cite" data-name="متاحف الفاتيكان – Vatican Museums" data-img="/img/vaticancity-museums.jpg"
+            data-desc="مجمع متاحف ضخم يُعدّ من أغنى متاحف العالم بالتحف الفنية، يضم أكثر من ٧٠ ألف قطعة أثرية وفنية، أُسست عام ١٥٠٦ وتجذب ملايين الزوار سنوياً."
+            data-historic="🎨 صالة رافائيل – Raphael Rooms | 🏺 مجموعة التماثيل الكلاسيكية – Classical Sculptures | 🗺️ قاعة الخرائط الجغرافية – Gallery of Maps | 🖼️ معرض الصور – Picture Gallery"
+            data-restaurants="🍝 مطعم داخل المتاحف | 🥗 مطعم Caffetteria dei Musei | 🌿 مطعم Ristorante Vaticano"
+            data-cafes="☕ مقهى متاحف الفاتيكان | ☕ مقهى Il Sorpasso | ☕ مقهى Antico Caffè Greco"
+            data-events="🎨 جولة المتاحف الموجهة | 🏛️ عرض الفن الإيطالي | 📚 زيارة المكتبة الرسولية"
+            onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'vaticancity_museums', 'متاحف الفاتيكان', '/img/vaticancity-museums.jpg')">🏙️</button>
+            <img src="/img/vaticancity-museums.jpg" alt="متاحف الفاتيكان" class="cite-img">
+            <span class="name">متاحف الفاتيكان – Vatican Museums</span>
+            <p class="info">من أغنى متاحف العالم بالتحف الفنية والأثرية.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+        <div class="cite" data-name="الكابيلا سيستينا – Sistine Chapel" data-img="/img/vaticancity-sistine.jpg"
+            data-desc="التحفة الفنية الأشهر في التاريخ، زيّن ميكيل أنجلو سقفها بلوحة خلق آدم ومشاهد من سفر التكوين بين عامي ١٥٠٨ و١٥١٢، وتُعدّ من أعظم الإنجازات الفنية في تاريخ البشرية."
+            data-historic="🎨 لوحة خلق آدم – Creation of Adam | 🖼️ لوحة يوم القيامة – The Last Judgment | 🏛️ الكابيلا الكاملة – Full Chapel | 🎭 الفن الرناساني – Renaissance Art"
+            data-restaurants="🍝 مطعم Osteria Barberini | 🌿 مطعم Campo de' Fiori | 🍕 مطعم Pizzarium"
+            data-cafes="☕ مقهى Caffè Vaticano | ☕ مقهى La Caffetteria | ☕ مقهى Antico"
+            data-events="🎨 مشاهدة اللوحات التاريخية | 📖 جولة فنية مع مرشد | 🌟 التأمل في عبقرية ميكيل أنجلو"
+            onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'vaticancity_sistine', 'الكابيلا سيستينا', '/img/vaticancity-sistine.jpg')">🏙️</button>
+            <img src="/img/vaticancity-sistine.jpg" alt="الكابيلا سيستينا" class="cite-img">
+            <span class="name">الكابيلا سيستينا – Sistine Chapel</span>
+            <p class="info">سقف ميكيل أنجلو الأسطوري وأعظم تحفة فنية في التاريخ.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+        <div class="cite" data-name="حدائق الفاتيكان – Vatican Gardens" data-img="/img/vaticancity-gardens.jpg"
+            data-desc="حدائق خضراء ساحرة تمتد على نصف مساحة الفاتيكان، تضم نباتات نادرة ونافورات جميلة وممرات هادئة، شُكّلت على مدى قرون وتعكس أرقى تقاليد فن الحدائق الإيطالية."
+            data-historic="🌿 الحديقة الإيطالية الكلاسيكية – Italian Garden | ⛲ نافورة صخرة الأقداس – Grotto of Lourdes | 🌹 حديقة الورود – Rose Garden | 🏡 مبنى البث الراديوي – Vatican Radio"
+            data-restaurants="🍝 مطعم داخل الفاتيكان | 🌿 مطعم Antico Arco | 🍕 مطعم Pizzarium Bonci"
+            data-cafes="☕ مقهى حدائق الفاتيكان | ☕ مقهى Caffe San Pietro | ☕ مقهى La Terrazza"
+            data-events="🌺 جولة الحدائق الموجهة | 📸 جلسة تصوير طبيعية | 🏡 التجول بين النباتات النادرة"
+            onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'vaticancity_gardens', 'حدائق الفاتيكان', '/img/vaticancity-gardens.jpg')">🏙️</button>
+            <img src="/img/vaticancity-gardens.jpg" alt="حدائق الفاتيكان" class="cite-img">
+            <span class="name">حدائق الفاتيكان – Vatican Gardens</span>
+            <p class="info">حدائق خضراء ساحرة تمتد على نصف مساحة الفاتيكان.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+        <div class="cite" data-name="القصر الرسولي – Apostolic Palace" data-img="/img/vaticancity-palace.jpg"
+            data-desc="المقر الرسمي للبابا والمركز الإداري للكنيسة الكاثوليكية، يضم مكتبة الفاتيكان الشهيرة التي تحتوي على مخطوطات نادرة، وتحيط به القصور والأجنحة التاريخية الفخمة."
+            data-historic="📚 مكتبة الفاتيكان – Vatican Library | 🏛️ قصر بابوي – Papal Quarters | 🗝️ الجناح الرسولي – Apostolic Apartments | 🛡️ حرس سويسري – Swiss Guard"
+            data-restaurants="🍝 مطعم La Pergola | 🌿 مطعم Il Convivio Troiani | 🍕 مطعم Roscioli"
+            data-cafes="☕ مقهى Caffe della Pace | ☕ مقهى Caffè Sant'Eustachio | ☕ مقهى Tazza d'Oro"
+            data-events="📚 زيارة المكتبة الرسولية | 🛡️ مشاهدة تغيير الحرس السويسري | 🏛️ جولة القصور التاريخية"
+            onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'vaticancity_palace', 'القصر الرسولي', '/img/vaticancity-palace.jpg')">🏙️</button>
+            <img src="/img/vaticancity-palace.jpg" alt="القصر الرسولي" class="cite-img">
+            <span class="name">القصر الرسولي – Apostolic Palace</span>
+            <p class="info">المقر الرسمي للبابا ومكتبة الفاتيكان الشهيرة.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+    </section>
+
+    <div class="main-foods">
+        <h1>الماكولات</h1>
+    </div>
+    <section class="foods-grid">
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=vaticancity-suppli'">
+            <img src="/img/vaticancity-suppli.jpg" alt="" class="foods-img">
+            <span class="name-foods">سوبلي – Supplì</span>
+            <div class="food-info">كرات أرز مقلية محشوة بالجبن والصوص.</div>
+            <a href="/recipes/recipes.html?recipe=vaticancity-suppli" class="for-more-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=vaticancity-cacio-e-pepe'">
+            <img src="/img/vaticancity-cacio-e-pepe.jpg" alt="" class="foods-img">
+            <span class="name-foods">كاتشيو إي بيبي – Cacio e Pepe</span>
+            <div class="food-info">معكرونة رومانية بالجبن والفلفل الأسود.</div>
+            <a href="/recipes/recipes.html?recipe=vaticancity-cacio-e-pepe" class="for-more-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=vaticancity-saltimbocca'">
+            <img src="/img/vaticancity-saltimbocca.jpg" alt="" class="foods-img">
+            <span class="name-foods">سالتيمبوكا – Saltimbocca</span>
+            <div class="food-info">شرائح الدجاج بالحكيم والزيت.</div>
+            <a href="/recipes/recipes.html?recipe=vaticancity-saltimbocca" class="for-more-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=vaticancity-tiramisu'">
+            <img src="/img/vaticancity-tiramisu.jpg" alt="" class="foods-img">
+            <span class="name-foods">تيراميسو – Tiramisù</span>
+            <div class="food-info">حلوى إيطالية شهيرة بالقهوة والكريمة.</div>
+            <a href="/recipes/recipes.html?recipe=vaticancity-tiramisu" class="for-more-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=vaticancity-pizza-al-taglio'">
+            <img src="/img/vaticancity-pizza-taglio.jpg" alt="" class="foods-img">
+            <span class="name-foods">بيتزا بالقطعة – Pizza al Taglio</span>
+            <div class="food-info">بيتزا رومانية مستطيلة تُباع بالقطعة.</div>
+            <a href="/recipes/recipes.html?recipe=vaticancity-pizza-al-taglio" class="for-more-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=vaticancity-gelato'">
+            <img src="/img/vaticancity-gelato.jpg" alt="" class="foods-img">
+            <span class="name-foods">جيلاتو – Gelato</span>
+            <div class="food-info">مثلجات إيطالية كريمية بنكهات متنوعة.</div>
+            <a href="/recipes/recipes.html?recipe=vaticancity-gelato" class="for-more-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+    </section>
+
+    <div class="events-main">
+        <h1>الفعاليات</h1>
+    </div>
+    <section class="events-grid">
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=VaticanMuseumsTour'">
+            <img src="/img/vaticancity-museums.jpg" alt="" class="event-img">
+            <span class="name-event">جولة متاحف الفاتيكان – Vatican Museums Tour</span>
+            <div class="event-info">استكشاف سبعة آلاف سنة من الفن والحضارة في أغنى متاحف العالم.</div>
+            <a href="/events/events.html?event=VaticanMuseumsTour" class="event-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=SistineChapelVisit'">
+            <img src="/img/vaticancity-sistine.jpg" alt="" class="event-img">
+            <span class="name-event">زيارة الكابيلا سيستينا – Sistine Chapel</span>
+            <div class="event-info">التأمل في لوحات ميكيل أنجلو الخالدة على السقف الشهير.</div>
+            <a href="/events/events.html?event=SistineChapelVisit" class="event-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=StPetersBasilicaTour'">
+            <img src="/img/vaticancity-basilica.jpg" alt="" class="event-img">
+            <span class="name-event">جولة كنيسة القديس بطرس – St. Peter's Basilica</span>
+            <div class="event-info">صعود القبة العظيمة والاستمتاع بإطلالة بانورامية فريدة على روما.</div>
+            <a href="/events/events.html?event=StPetersBasilicaTour" class="event-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=VaticanGardensWalk'">
+            <img src="/img/vaticancity-gardens.jpg" alt="" class="event-img">
+            <span class="name-event">التجول في حدائق الفاتيكان – Vatican Gardens Walk</span>
+            <div class="event-info">استكشاف الحدائق الخضراء السرية التي لا تُفتح إلا بجولات مجدولة.</div>
+            <a href="/events/events.html?event=VaticanGardensWalk" class="event-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=PiazzaSanPietroTour'">
+            <img src="/img/vaticancity-stpeters-square.jpg" alt="" class="event-img">
+            <span class="name-event">ساحة القديس بطرس – Piazza San Pietro</span>
+            <div class="event-info">التجول في الساحة الأيقونية المحاطة بأعمدة برنيني الشهيرة.</div>
+            <a href="/events/events.html?event=PiazzaSanPietroTour" class="event-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=CastelSantAngeloVisit'">
+            <img src="/img/vaticancity-castel.jpg" alt="" class="event-img">
+            <span class="name-event">قلعة سانت أنجيلو – Castel Sant'Angelo</span>
+            <div class="event-info">استكشاف القلعة التاريخية المجاورة للفاتيكان وإطلالتها على نهر التيبر.</div>
+            <a href="/events/events.html?event=CastelSantAngeloVisit" class="event-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+    </section>
+
+    <div id="cityModal" class="modal" onclick="closeCityModal(event)">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeCityModal(event)">×</button>
+            <div class="modal-top">
+                <img id="modalCityImg" src="" alt="" />
+                <div class="modal-top-info">
+                    <h2 id="modalCityName"></h2>
+                    <span class="modal-top-badge">✦ تفاصيل المدينة</span>
+                </div>
+            </div>
+            <div class="modal-body">
+                <p id="modalCityDesc" class="event-desc"></p>
+                <h4>🏛️ أفضل الأماكن التاريخية</h4>
+                <div id="modalCityHistoric" class="ingredients-tags"></div>
+                <h4>🍽️ أفضل المطاعم</h4>
+                <div id="modalCityRestaurants" class="ingredients-tags"></div>
+                <h4>☕ أفضل المقاهي</h4>
+                <div id="modalCityCafes" class="ingredients-tags"></div>
+                <h4>🎉 فعاليات المدينة</h4>
+                <div id="modalCityEvents" class="ingredients-tags"></div>
+            </div>
+        </div>
+    </div>
+    <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h2 class="footer-logo">سفرة</h2>
+        <p>وجهتك للسفر والطعام حول العالم</p>
+      </div>
+
+        <div class="footer-links">
+                <h4>روابط سريعة</h4>
+                <ul>
+                    <li><a href="/index/index.html">الرئيسية</a></li>
+                    <li><a href="/countries/countries.html">الدول</a></li>
+                    <li><a href="/events/events.html">الفعاليات</a></li>
+                    <li><a href="/recipes/recipes.html">الوصفات</a></li>
+                    <li><a href="/plan/plan.html">خطتي</a></li>
+                </ul>
+            </div>
+
+      <div class="footer-contact">
+        <h4>تواصل معنا</h4>
+        <ul>
+          <li>📧 <a href="mailto:Sofrh.info@gmail.com" target="_blank">Sofrh.info@gmail.com</a></li>
+          <li>📧 <a href="mailto:Sofrh.support@gmail.com" target="_blank">Sofrh.support@gmail.com</a></li>
+          <li>🐦 <a href="https://twitter.com/sofrah_sa" target="_blank">X (Twitter)</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 سفرة — جميع الحقوق محفوظة</p>
+      <p>صُنع بواسطة فريق سفرة</p>
+      <p>📧 <a href="mailto:Sofrh.info@gmail.com" style="color: #F28500;">Sofrh.info@gmail.com</a></p>
+    </div>
+  </footer>
+    <script src="/countries/countries.js"></script>
+</body>

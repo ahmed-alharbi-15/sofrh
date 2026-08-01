@@ -1573,7 +1573,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         },
                         {
                                 "id": "uk",
-                                "ready": false,
+
                                 "nameAr": "بريطانيا",
                                 "nameEn": "United Kingdom",
                                 "continent": "europe",
@@ -1946,7 +1946,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         },
                         {
                                 "id": "russia",
-                                "ready": false,
+
                                 "nameAr": "روسيا",
                                 "nameEn": "Russia",
                                 "continent": "europe",
@@ -1966,7 +1966,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         },
                         {
                                 "id": "ukraine",
-                                "ready": false,
+
                                 "nameAr": "أوكرانيا",
                                 "nameEn": "Ukraine",
                                 "continent": "europe",
@@ -2039,7 +2039,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         },
                         {
                                 "id": "monaco",
-                                "ready": false,
+
                                 "nameAr": "موناكو",
                                 "nameEn": "Monaco",
                                 "continent": "europe",
@@ -2059,7 +2059,6 @@ document.addEventListener("DOMContentLoaded", () => {
                         },
                         {
                                 "id": "andorra",
-                                "ready": false,
                                 "nameAr": "أندورا",
                                 "nameEn": "Andorra",
                                 "continent": "europe",
@@ -2078,7 +2077,6 @@ document.addEventListener("DOMContentLoaded", () => {
                         },
                         {
                                 "id": "liechtenstein",
-                                "ready": false,
                                 "nameAr": "ليختنشتاين",
                                 "nameEn": "Liechtenstein",
                                 "continent": "europe",
@@ -2286,7 +2284,6 @@ document.addEventListener("DOMContentLoaded", () => {
                         },
                         {
                                 "id": "moldova",
-                                "ready": false,
                                 "nameAr": "مولدوفا",
                                 "nameEn": "Moldova",
                                 "continent": "europe",
@@ -2304,7 +2301,6 @@ document.addEventListener("DOMContentLoaded", () => {
                         },
                         {
                                 "id": "belarus",
-                                "ready": false,
                                 "nameAr": "بيلاروسيا",
                                 "nameEn": "Belarus",
                                 "continent": "europe",
@@ -2376,7 +2372,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         },
                         {
                                 "id": "sanmarino",
-                                "ready": false,
+
                                 "nameAr": "سان مارينو",
                                 "nameEn": "San Marino",
                                 "continent": "europe",
@@ -2394,7 +2390,6 @@ document.addEventListener("DOMContentLoaded", () => {
                         },
                         {
                                 "id": "kosovo",
-                                "ready": false,
                                 "nameAr": "كوسوفو",
                                 "nameEn": "Kosovo",
                                 "continent": "europe",
@@ -3561,7 +3556,6 @@ document.addEventListener("DOMContentLoaded", () => {
                         },
                         {
                                 "id": "vaticancity",
-                                "ready": false,
                                 "nameAr": "الفاتيكان",
                                 "nameEn": "Vatican City",
                                 "continent": "europe",

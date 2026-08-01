@@ -10,7 +10,7 @@ const countryContinent = {
     france: 'europe', germany: 'europe', italy: 'europe', spain: 'europe', portugal: 'europe', uk: 'europe', ireland: 'europe', netherlands: 'europe',
     belgium: 'europe', luxembourg: 'europe', switzerland: 'europe', austria: 'europe', liechtenstein: 'europe', monaco: 'europe', andorra: 'europe',
     sweden: 'europe', norway: 'europe', denmark: 'europe', finland: 'europe', iceland: 'europe', estonia: 'europe', latvia: 'europe', lithuania: 'europe',
-    greece: 'europe', croatia: 'europe', slovenia: 'europe', serbia: 'europe', bosnia: 'europe', montenegro: 'europe', albania: 'europe', north_macedonia: 'europe', northmacedonia: 'europe', malta: 'europe', cyprus: 'europe', san_marino: 'europe', vatican: 'europe',
+    greece: 'europe', croatia: 'europe', kosovo: 'europe', slovenia: 'europe', serbia: 'europe', bosnia: 'europe', montenegro: 'europe', albania: 'europe', north_macedonia: 'europe', northmacedonia: 'europe', malta: 'europe', cyprus: 'europe', san_marino: 'europe', sanmarino: 'europe', vatican: 'europe', vaticancity: 'europe',
     poland: 'europe', czechia: 'europe', czechrepublic: 'europe', slovakia: 'europe', hungary: 'europe', romania: 'europe', bulgaria: 'europe', moldova: 'europe', ukraine: 'europe', belarus: 'europe', russia: 'europe',
     egypt: 'africa', moroco: 'africa', tunisia: 'africa', algeria: 'africa', libya: 'africa', sudan: 'africa', mauritania: 'africa',
     ethiopia: 'africa', kenya: 'africa', tanzania: 'africa', uganda: 'africa', rwanda: 'africa', burundi: 'africa', somalia: 'africa', djibouti: 'africa', eritrea: 'africa', south_sudan: 'africa', madagascar: 'africa', mozambique: 'africa', zimbabwe: 'africa', zambia: 'africa', malawi: 'africa',
