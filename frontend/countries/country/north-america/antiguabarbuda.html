@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<script>
+(() => {
+  const theme = localStorage.getItem("theme");
+  document.documentElement.setAttribute("data-theme", theme === "dark" ? "dark" : "light");
+})();
+</script>
+    <style>
+        .auth-buttons { display: none; }
+        .user-menu { display: none; }
+    </style>
+    <meta charset="UTF-8">
+<script>
+    (function(){
+        var u=JSON.parse(localStorage.getItem('safraUser')||'null');
+        var av=localStorage.getItem('safraAvatar')||'';
+        document.documentElement.className+=u?' user-logged-in':' user-logged-out';
+        if(u){
+            var t=setInterval(function(){
+                var n=document.getElementById('userName');
+                var a=document.getElementById('userAvatar');
+                if(n){
+                    n.textContent=u.name||'';
+                    if(a&&(u.avatar||av)) a.src=u.avatar||av;
+                    clearInterval(t);
+                }
+            },1);
+        }
+    })();
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سفرة</title>
+    <link rel="stylesheet" href="/countries/countries.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@500;600&display=swap">
+    <link rel="stylesheet" href="/dark-mode.css">
+    <meta property="og:image" content="https://sofrh.vercel.app/img/logo6.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:title" content="سفرة — سافر وتذوق">
+    <meta property="og:description" content="اكتشف وجهات وماكولات من مختلف أنحاء العالم">
+    <meta property="og:url" content="https://sofrh.vercel.app">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ar_SA">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://sofrh.vercel.app/img/logo6.png">
+    <meta name="twitter:title" content="سفرة — سافر وتذوق">
+    <meta name="twitter:description" content="اكتشف وجهات وماكولات من مختلف أنحاء العالم">
+    <script src="/auth/auth.js" defer></script>
+</head>
+<body>
+    <header class="navbar">
+        <div class="hamburger" id="menu-btn">☰</div>
+        <div class="auth-buttons" id="authButtons">
+            <a href="/auth/login.html" class="login">تسجيل دخول</a>
+            <a href="/auth/signup.html" class="signup">إنشاء حساب</a>
+        </div>
+        <div class="user-menu" id="userMenu">
+            <img id="userAvatar" src="" alt="">
+            <span class="user-name" id="userName"></span>
+            <div class="user-dropdown">
+                <a href="/profile/profile.html">الملف الشخصي</a>
+                <a href="#" id="logoutBtn">تسجيل خروج</a>
+            </div>
+        </div>
+        <ul class="nav-list">
+            <li><a href="/index/index.html">الرئيسية</a></li>
+            <li><a href="/countries/countries.html" class="active">الدول</a></li>
+            <li><a href="/events/events.html">الفعاليات</a></li>
+            <li><a href="/recipes/recipes.html">الوصفات</a></li>
+            <li><a href="/plan/plan.html">خطتي</a></li>
+            <li><a href="/about/about.html">عن سفرة</a></li>
+        </ul>
+        <div class="logo">
+            <a href="/index/index.html"><img src="/img/logo7.png" alt="سفرة"></a>
+        </div>
+    </header>
+    <div class="side-menu" id="side-menu">
+        <span class="close-btn" id="close-btn">×</span>
+        <span class="side-menu-kicker">استكشف</span>
+        <ul>
+            <li><a href="/index/index.html" class="active">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 10v9a1 1 0 0 0 1 1H9a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h2.5a1 1 0 0 0 1-1v-9"/>
+                </svg><span>الرئيسية</span></a></li>
+            <li><a href="/countries/countries.html">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 21s7-6.6 7-12a7 7 0 1 0-14 0c0 5.4 7 12 7 12Z"/><circle cx="12" cy="9" r="2.3"/>
+                </svg><span>الدول</span></a></li>
+            <li><a href="/events/events.html">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3.5" y="5" width="17" height="16" rx="2.5"/><path d="M8 3v4M16 3v4M3.5 10h17"/><circle cx="12" cy="15" r="1.4" fill="currentColor" stroke="none"/>
+                </svg><span>الفعاليات</span></a></li>
+            <li><a href="/recipes/recipes.html">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M7 2v8a2 2 0 0 0 2 2v10M5 2v6M9 2v6M14 2c-1.5 2-1.5 7 0 9 .6.6 1 1.3 1 2v9"/>
+                </svg><span>الوصفات</span></a></li>
+            <li><a href="/plan/plan.html">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="9"/><path d="M14.8 9.2 13 13l-3.8 1.8L11 11l3.8-1.8Z"/>
+                </svg><span>خطتي</span></a></li>
+            <li><a href="/about/about.html">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 11.5h1v5.5h1"/>
+                </svg><span>عن سفرة</span></a></li>
+        </ul>
+    </div>
+    <header>
+        <a href="/countries/countries.html" class="back-btn">رجوع</a>
+    </header>
+
+    <div class="country-name">
+        <h1>أنتيغوا وبربودا</h1>
+        <p>جزيرتان كاريبيتان بـ365 شاطئاً وتاريخ بحري أصيل</p>
+    </div>
+
+    <div class="main-cites">
+        <h1>المدن</h1>
+    </div>
+    <section class="cities-grid">
+
+        <div class="cite" data-name="سانت جونز – St. John's" data-img="/img/antigua-stjohns.jpg"
+            data-desc="عاصمة أنتيغوا الحيوية بمرساها الجميل وسوقها التاريخي وكاتدرائيتها القديمة وأسواقها التقليدية الملونة."
+            data-historic="⛪ كاتدرائية سانت جونز – Cathedral of St. John | 🏛️ متحف أنتيغوا – Museum of Antigua | 🛍️ سوق هيريتاج كواي | 🚢 ميناء سانت جونز"
+            data-restaurants="🍽️ مطعم Sheer Rocks | 🌿 مطعم Big Banana | 🥘 مطعم C&C Wine House"
+            data-cafes="☕ مقهى Café Napoleon | ☕ مقهى Island Café | ☕ مقهى The Epicurean"
+            data-events="🛍️ سوق هيريتاج كواي | ⛪ الكاتدرائية التاريخية | 🚢 جولة الميناء"
+            onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'antigua_stjohns', 'سانت جونز', '/img/antigua-stjohns.jpg')">🏙️</button>
+            <img src="/img/antigua-stjohns.jpg" alt="سانت جونز" class="cite-img">
+            <span class="name">سانت جونز – St. John's</span>
+            <p class="info">عاصمة جزيرة أنتيغوا بمرسى ساحر وسوق تاريخي.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+        <div class="cite" data-name="الميناء الإنجليزي – English Harbour" data-img="/img/antigua-englishharbour.jpg"
+            data-desc="موقع تاريخي بارز يضم حوض السفن الملكي البريطاني القديم نلسونز دوكيارد المحفوظ بحالته الأصلية من القرن الثامن عشر."
+            data-historic="⚓ نلسونز دوكيارد – Nelson's Dockyard | 🏰 قلعة شيرلي هايتس | 🌊 خليج فالمووث | 🛥️ مرسى العصر الحديث"
+            data-restaurants="🍽️ مطعم Copper and Lumber Store | 🌿 مطعم Pillars Restaurant | 🥘 مطعم Abracadabra"
+            data-cafes="☕ مقهى Dockyard Café | ☕ مقهى HQ Restaurant | ☕ مقهى Grace before Meals"
+            data-events="⚓ جولة نلسونز دوكيارد | 🏰 قلعة شيرلي هايتس | 🌅 غروب الأحد"
+            onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'antigua_englishharbour', 'الميناء الإنجليزي', '/img/antigua-englishharbour.jpg')">🏙️</button>
+            <img src="/img/antigua-englishharbour.jpg" alt="الميناء الإنجليزي" class="cite-img">
+            <span class="name">الميناء الإنجليزي – English Harbour</span>
+            <p class="info">أشهر حوض بحري تاريخي في الكاريبي من عهد الإمبراطورية.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+        <div class="cite" data-name="شاطئ ديكنسون – Dickenson Bay" data-img="/img/antigua-dickenson.jpg"
+            data-desc="أكثر شواطئ أنتيغوا شهرة برماله الذهبية ومياهه الهادئة الفيروزية وخيارات الرياضات المائية المتنوعة لكل الأعمار."
+            data-historic="🏖️ شاطئ ديكنسون – Dickenson Bay | 🤿 الغوص والسنوركل | 🚤 رحلات القوارب | 🏄 التزلج على الماء"
+            data-restaurants="🍽️ مطعم Coconut Grove | 🌿 مطعم Sandals Grande | 🥘 مطعم Cecile's"
+            data-cafes="☕ مقهى Bay House Bar | ☕ مقهى Beachcomber Bar | ☕ مقهى Sunset Café"
+            data-events="🏖️ شاطئ ديكنسون | 🤿 الغوص والسنوركل | 🚤 رحلة قارب"
+            onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'antigua_dickenson', 'شاطئ ديكنسون', '/img/antigua-dickenson.jpg')">🏙️</button>
+            <img src="/img/antigua-dickenson.jpg" alt="شاطئ ديكنسون" class="cite-img">
+            <span class="name">شاطئ ديكنسون – Dickenson Bay</span>
+            <p class="info">الشاطئ الذهبي الأشهر في أنتيغوا بمياه هادئة رائعة.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+        <div class="cite" data-name="فالمووث – Falmouth" data-img="/img/antigua-falmouth.jpg"
+            data-desc="قرية ساحلية هادئة بإطلالة ساحرة على خليج فالمووث ومنطلق رحلات الإبحار حول الجزيرة."
+            data-historic="⛵ خليج فالمووث – Falmouth Harbour | 🏰 بلاك بيان كاسيل – Blackpineapple Castle | 🌿 مسار فيغ تري درايف | 🌊 شعاب مرجانية"
+            data-restaurants="🍽️ مطعم The Galleon | 🌿 مطعم Café Arawak | 🥘 مطعم Brother B's"
+            data-cafes="☕ مقهى Harbour View | ☕ مقهى Yachties Welcome | ☕ مقهى Last Lemur"
+            data-events="⛵ رحلة إبحار حول الجزيرة | 🤿 الغوص | 🌊 اكتشاف الشعاب"
+            onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'antigua_falmouth', 'فالمووث', '/img/antigua-falmouth.jpg')">🏙️</button>
+            <img src="/img/antigua-falmouth.jpg" alt="فالمووث" class="cite-img">
+            <span class="name">فالمووث – Falmouth</span>
+            <p class="info">ميناء الإبحار الرئيسي ومنطلق المغامرات البحرية.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+        <div class="cite" data-name="شاطئ نصف القمر – Half Moon Bay" data-img="/img/antigua-halfmoon.jpg"
+            data-desc="شاطئ متوحش وبكر بشكله الهلالي المميز ومياهه الزرقاء الصافية، محمي بحديقة وطنية، يُعدّ من أجمل شواطئ الكاريبي."
+            data-historic="🏖️ شاطئ نصف القمر – Half Moon Bay | 🌊 أمواج التصفح | 🐠 حياة بحرية غنية | 🌿 المسار الطبيعي"
+            data-restaurants="🍽️ مطعم Half Moon Bay Hotel | 🌿 مطعم The Seaside Café | 🥘 مطعم Coconut Shell"
+            data-cafes="☕ مقهى Bay View | ☕ مقهى Seabreeze | ☕ مقهى Sunset Snack"
+            data-events="🏖️ شاطئ نصف القمر | 🏄 ركوب الأمواج | 🐠 السنوركل"
+            onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'antigua_halfmoon', 'شاطئ نصف القمر', '/img/antigua-halfmoon.jpg')">🏙️</button>
+            <img src="/img/antigua-halfmoon.jpg" alt="شاطئ نصف القمر" class="cite-img">
+            <span class="name">شاطئ نصف القمر – Half Moon Bay</span>
+            <p class="info">الشاطئ البكر الأجمل في الكاريبي بشكله الهلالي الفريد.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+        <div class="cite" data-name="بربودا – Barbuda" data-img="/img/antigua-barbuda.jpg"
+            data-desc="جزيرة النظيرة الهادئة الملاصقة لأنتيغوا، موطن أكبر مستعمرة عُش الغَاق في العالم وشواطئ وردية اللون لا تُصدَّق."
+            data-historic="🐦 مستعمرة عُش الغَاق – Frigate Bird Colony | 🏖️ شاطئ الرمل الوردي – Pink Sand Beach | 🌿 حديقة بربودا الوطنية | 🏰 قلعة هايغورث"
+            data-restaurants="🍽️ مطعم Uncle Roddy's | 🌿 مطعم Palm Tree Restaurant | 🥘 مطعم Wa'omoni"
+            data-cafes="☕ مقهى Barbuda Café | ☕ مقهى Cocobay | ☕ مقهى Sea View"
+            data-events="🐦 مشاهدة مستعمرة عُش الغَاق | 🏖️ الشاطئ الوردي | 🚤 رحلة بحرية"
+            onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'antigua_barbuda', 'بربودا', '/img/antigua-barbuda.jpg')">🏙️</button>
+            <img src="/img/antigua-barbuda.jpg" alt="بربودا" class="cite-img">
+            <span class="name">بربودا – Barbuda</span>
+            <p class="info">الجزيرة البكر بشواطئها الوردية والطيور النادرة.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+    </section>
+
+    <div class="main-foods">
+        <h1>الماكولات</h1>
+    </div>
+    <section class="foods-grid">
+
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=antigua-fungee-pepperpot'">
+            <img src="/img/antigua-fungee-pepperpot.jpg" alt="" class="foods-img">
+            <span class="name-foods">فونجي وبيبربوت – Fungee and Pepperpot</span>
+            <div class="food-info">عصيدة دقيق الذرة مع يخنة الخضروات الحارة، الطبق الوطني لأنتيغوا.</div>
+            <a href="/recipes/recipes.html?recipe=antigua-fungee-pepperpot" class="for-more-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=antigua-ducana'">
+            <img src="/img/antigua-ducana.jpg" alt="" class="foods-img">
+            <span class="name-foods">دوكانا – Ducana</span>
+            <div class="food-info">فطائر البطاطا الحلوة المحلاة بجوز الهند، ملفوفة بأوراق الموز ومطهوة بالبخار.</div>
+            <a href="/recipes/recipes.html?recipe=antigua-ducana" class="for-more-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=antigua-saltfish-fritters'">
+            <img src="/img/antigua-saltfish-fritters.jpg" alt="" class="foods-img">
+            <span class="name-foods">عجة السمك المملح – Saltfish Fritters</span>
+            <div class="food-info">قطع سمك مملح هشة مقلية مع الفلفل والبصل، من أشهر المقبلات.</div>
+            <a href="/recipes/recipes.html?recipe=antigua-saltfish-fritters" class="for-more-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=antigua-pepperpot-stew'">
+            <img src="/img/antigua-pepperpot-stew.jpg" alt="" class="foods-img">
+            <span class="name-foods">يخنة البيبربوت – Pepperpot Stew</span>
+            <div class="food-info">يخنة أوراق الجوت واللحم مع التوابل الكاريبية الأصيلة.</div>
+            <a href="/recipes/recipes.html?recipe=antigua-pepperpot-stew" class="for-more-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=antigua-banana-fritters'">
+            <img src="/img/antigua-banana-fritters.jpg" alt="" class="foods-img">
+            <span class="name-foods">قطائف الموز – Banana Fritters</span>
+            <div class="food-info">شرائح الموز الناضج المقلية بعجينة خفيفة مع الغبار السكري.</div>
+            <a href="/recipes/recipes.html?recipe=antigua-banana-fritters" class="for-more-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=antigua-coconut-tart'">
+            <img src="/img/antigua-coconut-tart.jpg" alt="" class="foods-img">
+            <span class="name-foods">تارت جوز الهند – Coconut Tart</span>
+            <div class="food-info">فطيرة جوز الهند الحلوة المقرمشة، حلوى كاريبية أصيلة.</div>
+            <a href="/recipes/recipes.html?recipe=antigua-coconut-tart" class="for-more-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+    </section>
+
+    <div class="events-main">
+        <h1>الفعاليات</h1>
+    </div>
+    <section class="events-grid">
+
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=NelsonsDockyard'">
+            <img src="/img/antigua-nelsons-dockyard.jpg" alt="" class="event-img">
+            <span class="name-event">نلسونز دوكيارد – Nelson's Dockyard</span>
+            <div class="event-info">أقدم حوض بحري عامل في الكاريبي وموقع تراث عالمي من القرن الثامن عشر.</div>
+            <a href="/events/events.html?event=NelsonsDockyard" class="event-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=ShirleyHeightsAntigua'">
+            <img src="/img/antigua-shirley-heights.jpg" alt="" class="event-img">
+            <span class="name-event">قلعة شيرلي هايتس – Shirley Heights</span>
+            <div class="event-info">قلعة تاريخية بإطلالة بانورامية ساحرة على الميناء الإنجليزي.</div>
+            <a href="/events/events.html?event=ShirleyHeightsAntigua" class="event-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=EnglishHarbourSailing'">
+            <img src="/img/antigua-sailing.jpg" alt="" class="event-img">
+            <span class="name-event">إبحار الميناء الإنجليزي – English Harbour Sailing</span>
+            <div class="event-info">تجربة الإبحار في أجمل ميناء تاريخي في الكاريبي.</div>
+            <a href="/events/events.html?event=EnglishHarbourSailing" class="event-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=AntiguaBeachHop'">
+            <img src="/img/antigua-beach.jpg" alt="" class="event-img">
+            <span class="name-event">جولة شواطئ أنتيغوا – Antigua Beach Hop</span>
+            <div class="event-info">اكتشف أجمل شواطئ أنتيغوا الـ365 الواحد لكل يوم في السنة.</div>
+            <a href="/events/events.html?event=AntiguaBeachHop" class="event-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=BarbudaFrigateColony'">
+            <img src="/img/antigua-frigate.jpg" alt="" class="event-img">
+            <span class="name-event">مستعمرة الطيور في بربودا – Barbuda Frigate Colony</span>
+            <div class="event-info">أكبر مستعمرة طيور عُش الغَاق في العالم في جزيرة بربودا.</div>
+            <a href="/events/events.html?event=BarbudaFrigateColony" class="event-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=AntiguaSailingWeek'">
+            <img src="/img/antigua-sailing-week.jpg" alt="" class="event-img">
+            <span class="name-event">أسبوع الإبحار الأنتيغوي – Antigua Sailing Week</span>
+            <div class="event-info">أشهر مهرجان إبحار في الكاريبي يُقام سنوياً في أبريل.</div>
+            <a href="/events/events.html?event=AntiguaSailingWeek" class="event-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+    </section>
+
+    <div id="cityModal" class="modal" onclick="closeCityModal(event)">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeCityModal(event)">×</button>
+            <div class="modal-top">
+                <img id="modalCityImg" src="" alt="" />
+                <div class="modal-top-info">
+                    <h2 id="modalCityName"></h2>
+                    <span class="modal-top-badge">✦ تفاصيل المدينة</span>
+                </div>
+            </div>
+            <div class="modal-body">
+                <p id="modalCityDesc" class="event-desc"></p>
+                <h4>🏛️ أفضل الأماكن التاريخية</h4>
+                <div id="modalCityHistoric" class="ingredients-tags"></div>
+                <h4>🍽️ أفضل المطاعم</h4>
+                <div id="modalCityRestaurants" class="ingredients-tags"></div>
+                <h4>☕ أفضل المقاهي</h4>
+                <div id="modalCityCafes" class="ingredients-tags"></div>
+                <h4>🎉 فعاليات المدينة</h4>
+                <div id="modalCityEvents" class="ingredients-tags"></div>
+            </div>
+        </div>
+    </div>
+    <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h2 class="footer-logo">سفرة</h2>
+        <p>وجهتك للسفر والطعام حول العالم</p>
+      </div>
+      <div class="footer-links">
+        <h4>روابط سريعة</h4>
+        <ul>
+          <li><a href="/index/index.html">الرئيسية</a></li>
+          <li><a href="/countries/countries.html">الدول</a></li>
+          <li><a href="/events/events.html">الفعاليات</a></li>
+          <li><a href="/recipes/recipes.html">الوصفات</a></li>
+          <li><a href="/plan/plan.html">خطتي</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>تواصل معنا</h4>
+        <ul>
+          <li>📧 <a href="mailto:Sofrh.info@gmail.com" target="_blank">Sofrh.info@gmail.com</a></li>
+          <li>📧 <a href="mailto:Sofrh.support@gmail.com" target="_blank">Sofrh.support@gmail.com</a></li>
+          <li>🐦 <a href="https://twitter.com/sofrah_sa" target="_blank">X (Twitter)</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 سفرة — جميع الحقوق محفوظة</p>
+      <p>صُنع بواسطة فريق سفرة</p>
+      <p>📧 <a href="mailto:Sofrh.info@gmail.com" style="color: #F28500;">Sofrh.info@gmail.com</a></p>
+    </div>
+  </footer>
+    <script src="/countries/countries.js"></script>
+</body>
+</html>
