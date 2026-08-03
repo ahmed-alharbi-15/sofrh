@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>بنغلاديش – Bangladesh</title>
+  <link rel="stylesheet" href="/countries/countries.css" />
+  <link rel="stylesheet" href="/index/index.css" />
+  <link rel="icon" href="/img/logo.png" />
+</head>
+<body>
+<header>
+  <div class="nav">
+    <a href="/index/index.html"><img src="/img/logo.png" class="logo" alt="سفرة"/></a>
+    <nav class="links">
+      <a href="/index/index.html">الرئيسية</a>
+      <a href="/countries/countries.html">الدول</a>
+      <a href="/events/events.html">الفعاليات</a>
+      <a href="/recipes/recipes.html">الوصفات</a>
+      <a href="/plan/plan.html">خطط رحلتك</a>
+    </nav>
+    <div class="auth-btns">
+      <button id="menu-btn">☰</button>
+    </div>
+  </div>
+</header>
+<div id="side-menu">
+  <button id="close-btn">×</button>
+  <a href="/index/index.html">الرئيسية</a>
+  <a href="/countries/countries.html">الدول</a>
+  <a href="/events/events.html">الفعاليات</a>
+  <a href="/recipes/recipes.html">الوصفات</a>
+  <a href="/plan/plan.html">خطط رحلتك</a>
+  <a href="/profile/profile.html">الملف الشخصي</a>
+  <a href="/auth/login.html" id="login-link">تسجيل الدخول</a>
+  <a href="#" id="logout-link" style="display:none">تسجيل الخروج</a>
+</div>
+
+<section class="country-name">
+  <h1>بنغلاديش – Bangladesh</h1>
+  <p>أرض الأنهار والدلتا حيث الطبيعة الخضراء تلتقي بالتراث الفني البديع</p>
+</section>
+
+<section class="cities-section">
+  <h2 class="section-title">المدن</h2>
+  <div class="cities-grid">
+
+    <div class="cite" data-name="دكا – Dhaka"
+        data-img="/img/bangladesh-dhaka.jpg"
+        data-desc="عاصمة بنغلاديش وأكبر مدنها، مدينة حيوية مكتظة تجمع بين المساجد العتيقة والأسواق الشعبية وناطحات السحاب الحديثة."
+        data-historic="مسجد ستة القباب العثماني|قلعة لالباغ|مسجد تارا|متحف بنغلاديش الوطني|أسواق صدرغات القديمة|منطقة بوريشال التاريخية"
+        data-restaurants="مطعم ستار كباب|مطعم رضا|مطعم بنغالي كيتشن|مطعم سوتاي|مطعم ذا كورنر|مطعم باجار"
+        data-cafes="كافيه بيلا|ستاربكس دكا|كافيه زيرو ديغري|نورث إند كافيه|كافيه ذا بريو|موكا كافيه"
+        data-events="جولة في أسواق صدرغات|زيارة قلعة لالباغ|جولة بالريكشا في المدينة القديمة|سوق دكا الشعبي|جولة في نهر بوريغانغا|متحف التحرير"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'bangladesh_dhaka', 'دكا', '/img/bangladesh-dhaka.jpg')">🏙️</button>
+        <img src="/img/bangladesh-dhaka.jpg" alt="دكا" class="cite-img">
+        <span class="name">دكا – Dhaka</span>
+        <p class="info">عاصمة بنغلاديش النابضة بالحياة</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="تشيتاغونغ – Chittagong"
+        data-img="/img/bangladesh-chittagong.jpg"
+        data-desc="ثاني أكبر مدن بنغلاديش وميناؤها الرئيسي على خليج البنغال، مدينة تجارية عريقة وجسر بين البحر والجبال."
+        data-historic="تلة بطريريس|مسجد كورتالي|الحديقة النباتية|قلعة أنداركيلا|برج المياه القديم|متحف تشيتاغونغ"
+        data-restaurants="مطعم سيفود تشيتاغونغ|مطعم مزبان|مطعم رويال|مطعم سيتي براست|مطعم الأفق|مطعم نيلاتشال"
+        data-cafes="كافيه نيلاتشال|ذا كافيه بوينت|كافيه سيتي|بريمو كافيه|كافيه المرسى|بريغو كافيه"
+        data-events="زيارة كسرة السفن في شيتاغبور|ميناء تشيتاغونغ|تلال كابتاي|شاطئ بتيا بيتش|متحف العسكري|جولة في المنطقة القديمة"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'bangladesh_chittagong', 'تشيتاغونغ', '/img/bangladesh-chittagong.jpg')">🏙️</button>
+        <img src="/img/bangladesh-chittagong.jpg" alt="تشيتاغونغ" class="cite-img">
+        <span class="name">تشيتاغونغ – Chittagong</span>
+        <p class="info">الميناء الكبير على خليج البنغال</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="كوكس بازار – Cox's Bazar"
+        data-img="/img/bangladesh-coxsbazar.jpg"
+        data-desc="أطول شاطئ طبيعي في العالم بامتداد 120 كم، وجهة سياحية بنغلاديشية ساحرة على ساحل خليج البنغال."
+        data-historic="شاطئ لابوني|صخرة هيمتشوري|جزيرة سانت مارتن المرجانية|شاطئ إناني|سوق رامو|مسجد أبو جافر"
+        data-restaurants="مطعم بيتش بيرل|مطعم سيفود كوكس|مطعم هيلتون|مطعم الشاطئ الأزرق|مطعم ميرا|مطعم سانت مارتن"
+        data-cafes="كافيه الشاطئ|كافيه سنرايز|ذا بيتش بار كافيه|كافيه بلو وايف|كافيه سيساييد|كافيه لابوني"
+        data-events="المشي على الشاطئ الأطول|الغوص في جزيرة سانت مارتن|زيارة شاطئ إناني|استكشاف صخرة هيمتشوري|ركوب قارب في البحر|سوق الأسماك الصباحي"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'bangladesh_coxsbazar', 'كوكس بازار', '/img/bangladesh-coxsbazar.jpg')">🏙️</button>
+        <img src="/img/bangladesh-coxsbazar.jpg" alt="كوكس بازار" class="cite-img">
+        <span class="name">كوكس بازار – Cox's Bazar</span>
+        <p class="info">أطول شاطئ طبيعي في العالم</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="سيليت – Sylhet"
+        data-img="/img/bangladesh-sylhet.jpg"
+        data-desc="مدينة الشاي والخضرة في شمال شرق بنغلاديش، محاطة بمزارع الشاي الخضراء والتلال الجميلة."
+        data-historic="مزارع الشاي في مالنيتشيرا|ضريح حضرت شاه جلال|منتزه راتارغول|ينابيع جافلونغ|جسر الصداقة|حديقة شاهبانو"
+        data-restaurants="مطعم ذا رزق|مطعم سيليت كيتشن|مطعم بانيان ري|مطعم شاهجلال|مطعم ذا تي جاردن|مطعم الزمرد"
+        data-cafes="كافيه تي لفيز|كافيه جافلونغ|ستاربكس سيليت|كافيه ذا هيلز|بريو كافيه|كافيه راتارغول"
+        data-events="جولة مزارع الشاي|زيارة ينابيع جافلونغ|ضريح شاه جلال|رحلة في منتزه راتارغول|بحيرة بيوال|مزرعة شاي الجنة"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'bangladesh_sylhet', 'سيليت', '/img/bangladesh-sylhet.jpg')">🏙️</button>
+        <img src="/img/bangladesh-sylhet.jpg" alt="سيليت" class="cite-img">
+        <span class="name">سيليت – Sylhet</span>
+        <p class="info">مدينة الشاي والطبيعة الخضراء</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="خولنا – Khulna"
+        data-img="/img/bangladesh-khulna.jpg"
+        data-desc="بوابة الدخول إلى غابة السوند رباند، أكبر دلتا مانغروف في العالم والموطن الأصلي لنمر البنغال."
+        data-historic="حديقة سوندرباند الوطنية|معبد خان جهان علي|قبر خان جهان|متحف خولنا|بحيرة بغيرهات|جسر دينا"
+        data-restaurants="مطعم ذا سوندرز|مطعم هيرون|مطعم المانغروف|مطعم روياليتي|مطعم سيتي شوارما|مطعم بنغال فود"
+        data-cafes="كافيه تايغر|كافيه دلتا|كافيه هيرون بيتش|كافيه ذا مانغروف|ذا ريفر كافيه|كافيه سوندر"
+        data-events="جولة سوندرباند لمشاهدة النمور|رحلة قارب في الدلتا|زيارة مسجد بغيرهات|مزارع الجمبري|غابة المانغروف|بحيرة قزبيتالا"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'bangladesh_khulna', 'خولنا', '/img/bangladesh-khulna.jpg')">🏙️</button>
+        <img src="/img/bangladesh-khulna.jpg" alt="خولنا" class="cite-img">
+        <span class="name">خولنا – Khulna</span>
+        <p class="info">بوابة غابة سوندرباند العجيبة</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="راجشاهي – Rajshahi"
+        data-img="/img/bangladesh-rajshahi.jpg"
+        data-desc="مدينة الحرير والمانغو في غرب بنغلاديش، مشهورة بإنتاج الحرير الطبيعي وأجود أصناف المانغو."
+        data-historic="قلعة باهار بور التاريخية|متحف الحرير|منتزه ماهانندا|مسجد باكيرحات|حديقة بادما|جامعة راجشاهي"
+        data-restaurants="مطعم باهار الحرير|مطعم ماهانندا|مطعم روياليتي راجشاهي|مطعم ذا مانغو|مطعم نيو كيتشن|مطعم الشهد"
+        data-cafes="كافيه سيلك|كافيه ماهانندا|كافيه ذا مانغو|بريمو كافيه راجشاهي|كافيه الحرير|ذا ريفر سايد كافيه"
+        data-events="جولة مزارع المانغو|ورشة الحرير التقليدية|قلعة باهار بور|نهر بادما|سوق الحرير المحلي|حديقة فاروخ"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'bangladesh_rajshahi', 'راجشاهي', '/img/bangladesh-rajshahi.jpg')">🏙️</button>
+        <img src="/img/bangladesh-rajshahi.jpg" alt="راجشاهي" class="cite-img">
+        <span class="name">راجشاهي – Rajshahi</span>
+        <p class="info">عاصمة الحرير والمانغو البنغالي</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+  </div>
+</section>
+
+<section class="foods-section">
+  <h2 class="section-title">الأكلات الشعبية</h2>
+  <div class="foods-grid">
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=bangladesh-hilsa'">
+      <img src="/img/bangladesh-hilsa.jpg" alt="سمك الهيلسا" class="foods-img">
+      <span class="name-foods">سمك الهيلسا – Hilsa Fish</span>
+      <div class="food-info">سمك الهيلسا المطبوخ بالخردل والكركم، رمز المطبخ البنغالي وأشهر أطباق بنغلاديش</div>
+      <a href="/recipes/recipes.html?recipe=bangladesh-hilsa" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=bangladesh-biryani'">
+      <img src="/img/bangladesh-biryani.jpg" alt="بريياني دكا" class="foods-img">
+      <span class="name-foods">بريياني دكا – Dhaka Biryani</span>
+      <div class="food-info">برياني دكا الشهير بلحم الضأن والأرز البسمتي والتوابل العطرية، طعم لا مثيل له</div>
+      <a href="/recipes/recipes.html?recipe=bangladesh-biryani" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=bangladesh-pitha'">
+      <img src="/img/bangladesh-pitha.jpg" alt="بيثا" class="foods-img">
+      <span class="name-foods">بيثا – Pitha</span>
+      <div class="food-info">كعك الأرز البنغالي التقليدي محشو بجوز الهند والنخيل، حلوى موروثة من الأجداد</div>
+      <a href="/recipes/recipes.html?recipe=bangladesh-pitha" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=bangladesh-mishti-doi'">
+      <img src="/img/bangladesh-mishti-doi.jpg" alt="ميشتي دوي" class="foods-img">
+      <span class="name-foods">ميشتي دوي – Mishti Doi</span>
+      <div class="food-info">الزبادي المُحلّى البنغالي المطبوخ في أفران الطين برائحة الكراميل الدافئة</div>
+      <a href="/recipes/recipes.html?recipe=bangladesh-mishti-doi" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=bangladesh-fuchka'">
+      <img src="/img/bangladesh-fuchka.jpg" alt="فوتشكا" class="foods-img">
+      <span class="name-foods">فوتشكا – Fuchka</span>
+      <div class="food-info">كرات العجين المقرمشة المحشوة بالبطاطس والحمص وصلصة التمر، وجبة شعبية في كل شوارع بنغلاديش</div>
+      <a href="/recipes/recipes.html?recipe=bangladesh-fuchka" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=bangladesh-fish-curry'">
+      <img src="/img/bangladesh-fish-curry.jpg" alt="كاري السمك البنغالي" class="foods-img">
+      <span class="name-foods">كاري السمك البنغالي – Fish Curry</span>
+      <div class="food-info">كاري السمك الطازج بالكركم والكمون والفلفل الحار، الطبق اليومي على كل مائدة بنغالية</div>
+      <a href="/recipes/recipes.html?recipe=bangladesh-fish-curry" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+  </div>
+</section>
+
+<section class="events-section">
+  <h2 class="section-title">الفعاليات والأماكن</h2>
+  <div class="events-grid">
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=BangladeshSundarbans'">
+      <img src="/img/bangladesh-sundarbans.jpg" alt="غابة سوندرباند" class="event-img">
+      <span class="name-event">غابة سوندرباند – Sundarbans</span>
+      <div class="event-info">أكبر غابة مانغروف في العالم وموطن نمر البنغال الملكي</div>
+      <a href="/events/events.html?event=BangladeshSundarbans" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=BangladeshCoxsBazar'">
+      <img src="/img/bangladesh-coxsbazar.jpg" alt="شاطئ كوكس بازار" class="event-img">
+      <span class="name-event">شاطئ كوكس بازار – Cox's Bazar Beach</span>
+      <div class="event-info">أطول شاطئ طبيعي في العالم بامتداد 120 كيلومتراً</div>
+      <a href="/events/events.html?event=BangladeshCoxsBazar" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=BangladeshSylhet'">
+      <img src="/img/bangladesh-sylhet.jpg" alt="مزارع شاي سيليت" class="event-img">
+      <span class="name-event">مزارع شاي سيليت – Sylhet Tea Gardens</span>
+      <div class="event-info">تلال خضراء لا نهاية لها من مزارع الشاي في سيليت الجميلة</div>
+      <a href="/events/events.html?event=BangladeshSylhet" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=BangladeshOldDhaka'">
+      <img src="/img/bangladesh-dhaka.jpg" alt="دكا القديمة" class="event-img">
+      <span class="name-event">دكا القديمة – Old Dhaka</span>
+      <div class="event-info">أزقة تاريخية ومساجد عثمانية وأسواق شعبية في قلب العاصمة</div>
+      <a href="/events/events.html?event=BangladeshOldDhaka" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=BangladeshBagerhat'">
+      <img src="/img/bangladesh-bagerhat.jpg" alt="مساجد بغيرهات" class="event-img">
+      <span class="name-event">مساجد بغيرهات – Bagerhat Mosques</span>
+      <div class="event-info">مدينة المساجد التاريخية المدرجة في اليونسكو مع 360 مسجداً</div>
+      <a href="/events/events.html?event=BangladeshBagerhat" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=BangladeshSaintMartin'">
+      <img src="/img/bangladesh-saint-martin.jpg" alt="جزيرة سانت مارتن" class="event-img">
+      <span class="name-event">جزيرة سانت مارتن – Saint Martin Island</span>
+      <div class="event-info">الجزيرة المرجانية الوحيدة في بنغلاديش بمياه فيروزية شفافة</div>
+      <a href="/events/events.html?event=BangladeshSaintMartin" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+  </div>
+</section>
+
+<div id="cityModal" class="modal" onclick="closeCityModal(event)">
+  <div class="modal-content">
+    <button class="modal-close" onclick="closeCityModal(event)">×</button>
+    <img id="modal-city-img" src="" alt="">
+    <h2 id="modal-city-name"></h2>
+    <p id="modal-city-desc"></p>
+    <div class="modal-section"><h3>المعالم التاريخية</h3><ul id="modal-city-historic"></ul></div>
+    <div class="modal-section"><h3>المطاعم</h3><ul id="modal-city-restaurants"></ul></div>
+    <div class="modal-section"><h3>المقاهي</h3><ul id="modal-city-cafes"></ul></div>
+    <div class="modal-section"><h3>الفعاليات</h3><ul id="modal-city-events"></ul></div>
+  </div>
+</div>
+
+<footer>
+  <p>© 2025 سفرة. جميع الحقوق محفوظة.</p>
+</footer>
+<script src="/countries/countries.js"></script>
+<script src="/auth/auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>تيمور الشرقية – Timor-Leste</title>
+  <link rel="stylesheet" href="/countries/countries.css" />
+  <link rel="stylesheet" href="/index/index.css" />
+  <link rel="icon" href="/img/logo.png" />
+</head>
+<body>
+<header>
+  <div class="nav">
+    <a href="/index/index.html"><img src="/img/logo.png" class="logo" alt="سفرة"/></a>
+    <nav class="links">
+      <a href="/index/index.html">الرئيسية</a>
+      <a href="/countries/countries.html">الدول</a>
+      <a href="/events/events.html">الفعاليات</a>
+      <a href="/recipes/recipes.html">الوصفات</a>
+      <a href="/plan/plan.html">خطط رحلتك</a>
+    </nav>
+    <div class="auth-btns">
+      <button id="menu-btn">☰</button>
+    </div>
+  </div>
+</header>
+<div id="side-menu">
+  <button id="close-btn">×</button>
+  <a href="/index/index.html">الرئيسية</a>
+  <a href="/countries/countries.html">الدول</a>
+  <a href="/events/events.html">الفعاليات</a>
+  <a href="/recipes/recipes.html">الوصفات</a>
+  <a href="/plan/plan.html">خطط رحلتك</a>
+  <a href="/profile/profile.html">الملف الشخصي</a>
+  <a href="/auth/login.html" id="login-link">تسجيل الدخول</a>
+  <a href="#" id="logout-link" style="display:none">تسجيل الخروج</a>
+</div>
+
+<section class="country-name">
+  <h1>تيمور الشرقية – Timor-Leste</h1>
+  <p>أصغر دول آسيا وأحدثها استقلالاً، جزيرة استوائية بشعاب مرجانية نقية وثقافة تيمورية أصيلة</p>
+</section>
+
+<section class="cities-section">
+  <h2 class="section-title">المدن</h2>
+  <div class="cities-grid">
+
+    <div class="cite" data-name="ديلي – Dili"
+        data-img="/img/timorleste-dili.jpg"
+        data-desc="عاصمة تيمور الشرقية على ساحل البحر، مدينة صغيرة دافئة بإطلالة رائعة على الجبال والبحر الأزرق الصافي."
+        data-historic="تمثال المسيح الملك|متحف المقاومة|شاطئ ديلي|مسجد نور|برج ديلي|حديقة خليج ديلي"
+        data-restaurants="مطعم ذا جارديم|مطعم ديلي بيتش|مطعم إيكو بيتش|مطعم الكابيتال|مطعم سيفود ديلي|مطعم ذا ريف"
+        data-cafes="كافيه ديلي|كافيه الشاطئ|كافيه تيمور|كافيه ذا كوف|ذا هاربر كافيه|كافيه بيتش واك"
+        data-events="تمثال المسيح الملك|متحف المقاومة|شاطئ ديلي|خليج ديلي الأزرق|سوق تايبيسي|مرفأ ديلي"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'timorleste_dili', 'ديلي', '/img/timorleste-dili.jpg')">🏙️</button>
+        <img src="/img/timorleste-dili.jpg" alt="ديلي" class="cite-img">
+        <span class="name">ديلي – Dili</span>
+        <p class="info">عاصمة تيمور على ساحل البحر</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="باوكاو – Baucau"
+        data-img="/img/timorleste-baucau.jpg"
+        data-desc="ثاني أكبر مدن تيمور الشرقية بمبانيها البرتغالية الكولونيالية وشواطئها البكر وحمام سباحة طبيعي من عهد الاستعمار."
+        data-historic="حمام سباحة بوسانو|كنيسة باوكاو|سوق باوكاو|مغارة باوكاو|ميناء باوكاو|مبانٍ بوليسية قديمة"
+        data-restaurants="مطعم باوكاو|مطعم ذا كلوني|مطعم ريستاورانتي لوكال|مطعم الجبل|مطعم مونتي|مطعم ذا ولد تاون"
+        data-cafes="كافيه كلوني|كافيه باوكاو|كافيه الميناء|ذا كلاسيك كافيه|كافيه ذا مارك|كافيه ذا تاون"
+        data-events="حمام السباحة الطبيعي|المباني الكولونيالية|شاطئ باوكاو البكر|متحف التراث|كهوف منطقة باوكاو|جبال تيمور"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'timorleste_baucau', 'باوكاو', '/img/timorleste-baucau.jpg')">🏙️</button>
+        <img src="/img/timorleste-baucau.jpg" alt="باوكاو" class="cite-img">
+        <span class="name">باوكاو – Baucau</span>
+        <p class="info">مدينة الإرث الكولونيالي والشواطئ</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="جزيرة أتاورو – Atauro Island"
+        data-img="/img/timorleste-atauro.jpg"
+        data-desc="جزيرة صغيرة شمال ديلي تعتبر من أغنى أماكن الغوص في العالم، شعاب مرجانية بكر وتنوع بحري مذهل."
+        data-historic="قرى أتاورو التقليدية|شعاب بريا مبلي المرجانية|قرية بيلو هوريزونتي|سوق الحرف اليدوية|جبل أتاورو|معبد محلي"
+        data-restaurants="مطعم جزيرة أتاورو|مطعم ديف سايت|مطعم ذا بيتش شاك|مطعم ذا فيش|مطعم كوراليكا|مطعم ذا آيلاند"
+        data-cafes="كافيه أتاورو|كافيه الغوص|ذا ديفرز كافيه|كافيه ذا ريف|كافيه مارين|كافيه آيلاند لايف"
+        data-events="الغوص في الشعاب المرجانية|مراقبة الدلافين|تسلق جبل أتاورو|قرى محلية تقليدية|شواطئ بكر|صيد أسماك ملونة"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'timorleste_atauro', 'جزيرة أتاورو', '/img/timorleste-atauro.jpg')">🏙️</button>
+        <img src="/img/timorleste-atauro.jpg" alt="جزيرة أتاورو" class="cite-img">
+        <span class="name">جزيرة أتاورو – Atauro</span>
+        <p class="info">من أفضل مواقع الغوص في العالم</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="سواي – Suai"
+        data-img="/img/timorleste-suai.jpg"
+        data-desc="مدينة ساحلية في جنوب تيمور الشرقية، منطقة إنتاج نفطي وغاز مع شواطئ هادئة وطبيعة استوائية."
+        data-historic="كاتدرائية سواي|شاطئ كامار|مزارع جوز الهند|سوق سواي|منطقة باياس|ميناء سواي"
+        data-restaurants="مطعم سواي|مطعم الشاطئ الجنوبي|مطعم الأسماك|مطعم هيدروكاربون|مطعم المدينة|مطعم نخيل"
+        data-cafes="كافيه سواي|كافيه الجنوب|كافيه البحر|ذا ساوث كافيه|كافيه كوكو|كافيه ذا غلف"
+        data-events="كاتدرائية سواي|شاطئ كامار الهادئ|حقول جوز الهند|جولة الطبيعة الاستوائية|غروب الجنوب|صيد الأسماك التقليدي"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'timorleste_suai', 'سواي', '/img/timorleste-suai.jpg')">🏙️</button>
+        <img src="/img/timorleste-suai.jpg" alt="سواي" class="cite-img">
+        <span class="name">سواي – Suai</span>
+        <p class="info">ميناء الجنوب والشواطئ الهادئة</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="لوسباليوس – Lospalos"
+        data-img="/img/timorleste-lospalos.jpg"
+        data-desc="مدينة في الشرق الأقصى لتيمور تشتهر بالحرف التقليدية والتمساح المقدس في ثقافة الفاتالوكو."
+        data-historic="منتزه نينو كونيس سانتانا|سهل تيمور الشرقي|قرى فاتالوكو|حرف التمساح المقدس|شاطئ كوم|بحيرة إيراي"
+        data-restaurants="مطعم لوسباليوس|مطعم ذا إيست|مطعم فاتالوكو|مطعم الشاطئ الشرقي|مطعم الحرف|مطعم ذا إيست بوينت"
+        data-cafes="كافيه إيست تيمور|كافيه لوسباليوس|كافيه الطبيعة|ذا لاست كافيه|كافيه فاتالوكو|كافيه شرق"
+        data-events="منتزه نينو كونيس سانتانا|جولة قرى فاتالوكو|التماسيح المقدسة|شاطئ كوم|بحيرة إيراي|غروب الشمس الشرقي"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'timorleste_lospalos', 'لوسباليوس', '/img/timorleste-lospalos.jpg')">🏙️</button>
+        <img src="/img/timorleste-lospalos.jpg" alt="لوسباليوس" class="cite-img">
+        <span class="name">لوسباليوس – Lospalos</span>
+        <p class="info">أقصى شرق تيمور والتراث الفاتالوكو</span>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="مالياناه – Maliana"
+        data-img="/img/timorleste-maliana.jpg"
+        data-desc="مدينة في المرتفعات الغربية لتيمور الشرقية، بيئة معتدلة وتراث ثقافي أصيل وجبال خضراء جميلة."
+        data-historic="جبال بوبونارو|شلالات مالياناه|قرى مالياناه التقليدية|سوق المرتفعات|حقول الأرز|مزارع البن"
+        data-restaurants="مطعم مالياناه|مطعم الجبل|مطعم المرتفعات|مطعم أرز|مطعم قرية|مطعم ذا هيل"
+        data-cafes="كافيه البن|كافيه مالياناه|كافيه الجبل|ذا هايلاندز كافيه|كافيه ذا فيلدز|كافيه فريش"
+        data-events="شلالات مالياناه|جبال بوبونارو|حقول الأرز|زراعة البن التيموري|قرى تقليدية|مشي جبلي"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'timorleste_maliana', 'مالياناه', '/img/timorleste-maliana.jpg')">🏙️</button>
+        <img src="/img/timorleste-maliana.jpg" alt="مالياناه" class="cite-img">
+        <span class="name">مالياناه – Maliana</span>
+        <p class="info">مرتفعات تيمور الخضراء الباردة</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+  </div>
+</section>
+
+<section class="foods-section">
+  <h2 class="section-title">الأكلات الشعبية</h2>
+  <div class="foods-grid">
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=timorleste-ikan-pepes'">
+      <img src="/img/timorleste-ikan-pepes.jpg" alt="إيكان بيبيس" class="foods-img">
+      <span class="name-foods">إيكان بيبيس – Ikan Pepes</span>
+      <div class="food-info">سمك تيمور المشوي ملفوفاً بأوراق الموز مع التوابل العطرية والأعشاب المحلية</div>
+      <a href="/recipes/recipes.html?recipe=timorleste-ikan-pepes" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=timorleste-chicken-rice'">
+      <img src="/img/timorleste-chicken-rice.jpg" alt="الدجاج والأرز التيموري" class="foods-img">
+      <span class="name-foods">الدجاج والأرز – Timorese Chicken</span>
+      <div class="food-info">الدجاج المطبوخ مع الكركم والزنجبيل والأعشاب التيمورية المحلية فوق أرز طازج</div>
+      <a href="/recipes/recipes.html?recipe=timorleste-chicken-rice" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=timorleste-saboko'">
+      <img src="/img/timorleste-saboko.jpg" alt="سمك صابوكو" class="foods-img">
+      <span class="name-foods">سمك صابوكو – Ikan Saboko</span>
+      <div class="food-info">سمك البحر المقلي مع صلصة جوز الهند الحارة، الطبق الأكثر شعبية على السواحل التيمورية</div>
+      <a href="/recipes/recipes.html?recipe=timorleste-saboko" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=timorleste-tapai'">
+      <img src="/img/timorleste-tapai.jpg" alt="تاباي" class="foods-img">
+      <span class="name-foods">تاباي – Tapai</span>
+      <div class="food-info">الأرز اللزج المخمر التقليدي مع جوز الهند، حلوى تيمورية تقدم في المناسبات</div>
+      <a href="/recipes/recipes.html?recipe=timorleste-tapai" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=timorleste-batar-daan'">
+      <img src="/img/timorleste-batar-daan.jpg" alt="باتار داان" class="foods-img">
+      <span class="name-foods">باتار داان – Batar Daan</span>
+      <div class="food-info">شوربة الذرة مع الفول وجوز الهند، الطبق الريفي التيموري الأكثر انتشاراً في القرى</div>
+      <a href="/recipes/recipes.html?recipe=timorleste-batar-daan" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=timorleste-caldo'">
+      <img src="/img/timorleste-caldo.jpg" alt="كالدو" class="foods-img">
+      <span class="name-foods">كالدو – Caldo</span>
+      <div class="food-info">شوربة دجاج تيمورية بالأرز والخضار المحلية، إرث الطبخ البرتغالي المتمازج مع النكهات الآسيوية</div>
+      <a href="/recipes/recipes.html?recipe=timorleste-caldo" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+  </div>
+</section>
+
+<section class="events-section">
+  <h2 class="section-title">الفعاليات والأماكن</h2>
+  <div class="events-grid">
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=TimorCristoRei'">
+      <img src="/img/timorleste-dili.jpg" alt="تمثال المسيح الملك" class="event-img">
+      <span class="name-event">تمثال المسيح الملك – Cristo Rei</span>
+      <div class="event-info">تمثال ضخم على تلة مشرفة على خليج ديلي الأزرق الساحر</div>
+      <a href="/events/events.html?event=TimorCristoRei" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=TimorAtauro'">
+      <img src="/img/timorleste-atauro.jpg" alt="غوص أتاورو" class="event-img">
+      <span class="name-event">غوص أتاورو – Atauro Diving</span>
+      <div class="event-info">من أغنى مواقع الغوص في العالم بشعاب مرجانية بكر وأسماك نادرة</div>
+      <a href="/events/events.html?event=TimorAtauro" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=TimorNinoKonis'">
+      <img src="/img/timorleste-lospalos.jpg" alt="منتزه نينو كونيس سانتانا" class="event-img">
+      <span class="name-event">منتزه نينو كونيس – Nino Konis Santana</span>
+      <div class="event-info">المتنزه الوطني الاستوائي بغاباته الكثيفة وبحيراته وطيوره النادرة</div>
+      <a href="/events/events.html?event=TimorNinoKonis" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=TimorResistanceMuseum'">
+      <img src="/img/timorleste-dili.jpg" alt="متحف المقاومة" class="event-img">
+      <span class="name-event">متحف المقاومة – Resistance Museum</span>
+      <div class="event-info">قصة استقلال تيمور الشرقية المثيرة معروضة في متحف ديلي التاريخي</div>
+      <a href="/events/events.html?event=TimorResistanceMuseum" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=TimorBaucau'">
+      <img src="/img/timorleste-baucau.jpg" alt="باوكاو الكولونيالية" class="event-img">
+      <span class="name-event">باوكاو الكولونيالية – Colonial Baucau</span>
+      <div class="event-info">مباني بوليسية وبرتغالية قديمة وحمام سباحة طبيعي من عهد الاستعمار</div>
+      <a href="/events/events.html?event=TimorBaucau" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=TimorBeach'">
+      <img src="/img/timorleste-dili.jpg" alt="شاطئ ديلي" class="event-img">
+      <span class="name-event">شاطئ ديلي – Dili Beach</span>
+      <div class="event-info">شاطئ ديلي النظيف الهادئ مع غروب شمس استوائي لا يُنسى</div>
+      <a href="/events/events.html?event=TimorBeach" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+  </div>
+</section>
+
+<div id="cityModal" class="modal" onclick="closeCityModal(event)">
+  <div class="modal-content">
+    <button class="modal-close" onclick="closeCityModal(event)">×</button>
+    <img id="modal-city-img" src="" alt="">
+    <h2 id="modal-city-name"></h2>
+    <p id="modal-city-desc"></p>
+    <div class="modal-section"><h3>المعالم التاريخية</h3><ul id="modal-city-historic"></ul></div>
+    <div class="modal-section"><h3>المطاعم</h3><ul id="modal-city-restaurants"></ul></div>
+    <div class="modal-section"><h3>المقاهي</h3><ul id="modal-city-cafes"></ul></div>
+    <div class="modal-section"><h3>الفعاليات</h3><ul id="modal-city-events"></ul></div>
+  </div>
+</div>
+
+<footer>
+  <p>© 2025 سفرة. جميع الحقوق محفوظة.</p>
+</footer>
+<script src="/countries/countries.js"></script>
+<script src="/auth/auth.js"></script>
+</body>
+</html>

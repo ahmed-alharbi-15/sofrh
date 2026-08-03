@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>إيران – Iran</title>
+  <link rel="stylesheet" href="/countries/countries.css" />
+  <link rel="stylesheet" href="/index/index.css" />
+  <link rel="icon" href="/img/logo.png" />
+</head>
+<body>
+<header>
+  <div class="nav">
+    <a href="/index/index.html"><img src="/img/logo.png" class="logo" alt="سفرة"/></a>
+    <nav class="links">
+      <a href="/index/index.html">الرئيسية</a>
+      <a href="/countries/countries.html">الدول</a>
+      <a href="/events/events.html">الفعاليات</a>
+      <a href="/recipes/recipes.html">الوصفات</a>
+      <a href="/plan/plan.html">خطط رحلتك</a>
+    </nav>
+    <div class="auth-btns">
+      <button id="menu-btn">☰</button>
+    </div>
+  </div>
+</header>
+<div id="side-menu">
+  <button id="close-btn">×</button>
+  <a href="/index/index.html">الرئيسية</a>
+  <a href="/countries/countries.html">الدول</a>
+  <a href="/events/events.html">الفعاليات</a>
+  <a href="/recipes/recipes.html">الوصفات</a>
+  <a href="/plan/plan.html">خطط رحلتك</a>
+  <a href="/profile/profile.html">الملف الشخصي</a>
+  <a href="/auth/login.html" id="login-link">تسجيل الدخول</a>
+  <a href="#" id="logout-link" style="display:none">تسجيل الخروج</a>
+</div>
+
+<section class="country-name">
+  <h1>إيران – Iran</h1>
+  <p>بلاد فارس العريقة حيث الحضارة الآلفية تتجلى في المساجد المكسوة بالفسيفساء والبساتين الساحرة</p>
+</section>
+
+<section class="cities-section">
+  <h2 class="section-title">المدن</h2>
+  <div class="cities-grid">
+
+    <div class="cite" data-name="طهران – Tehran"
+        data-img="/img/iran-tehran.jpg"
+        data-desc="العاصمة الإيرانية الكبرى المحاطة بجبال البرز الثلجية، مدينة بين التقليد والحداثة بمتاحفها ومطاعمها وأسواقها العريقة."
+        data-historic="قصر غولستان التاريخي|متحف الجواهر الإيرانية|برج ميلاد|قصر سعد آباد|سوق تهران الكبير|متحف النفط الإيراني"
+        data-restaurants="مطعم ديزي|مطعم تهران كباب|مطعم شيراز|مطعم داروغه|مطعم ذا بازار|مطعم قائم"
+        data-cafes="كافيه نادري التاريخي|كافيه البرز|كافيه فرهنگ|كافيه الشمال|ذا تهران كافيه|كافيه ميرداماد"
+        data-events="قصر غولستان مدرج في اليونسكو|متحف الجواهر الملكية|برج ميلاد الرائع|سوق بازار كبير|جبال البرز الثلجية|منتجع تشالوس الجبلي"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'iran_tehran', 'طهران', '/img/iran-tehran.jpg')">🏙️</button>
+        <img src="/img/iran-tehran.jpg" alt="طهران" class="cite-img">
+        <span class="name">طهران – Tehran</span>
+        <p class="info">عاصمة إيران بين الجبال والتاريخ</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="أصفهان – Isfahan"
+        data-img="/img/iran-isfahan.jpg"
+        data-desc="نصف جهان كما يقول الإيرانيون، مدينة الفسيفساء والمساجد الكسوة بالأزرق، ميدان نقش جهان من أعظم الميادين في التاريخ."
+        data-historic="ميدان نقش جهان|مسجد الشيخ لطف الله|مسجد الإمام|جسر سيوسه بول|قصر علي قابو|متحف جلفا"
+        data-restaurants="مطعم شهرزاد|مطعم جولها|مطعم أصفهان كلاب|مطعم ايوان|مطعم ذا بريدج|مطعم دالبند"
+        data-cafes="كافيه ذا باغ|كافيه الميدان|كافيه جسر سيوسه|كافيه آرتيست|كافيه بازار|كافيه قيصريه"
+        data-events="ميدان نقش جهان مدرج في اليونسكو|مسجد الشيخ لطف الله الأزرق|جسر سيوسه بول التاريخي|سوق القيصريه|قصر علي قابو|حي جلفا الأرمني"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'iran_isfahan', 'أصفهان', '/img/iran-isfahan.jpg')">🏙️</button>
+        <img src="/img/iran-isfahan.jpg" alt="أصفهان" class="cite-img">
+        <span class="name">أصفهان – Isfahan</span>
+        <p class="info">نصف الدنيا وعاصمة الفسيفساء</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="شيراز – Shiraz"
+        data-img="/img/iran-shiraz.jpg"
+        data-desc="مدينة الشعر والورود والحضارة الفارسية العريقة، موطن برسيبوليس عاصمة الأخمينيين وقبور حافظ وسعدي الشاعرَين الخالدَين."
+        data-historic="برسيبوليس الأخمينية|مسجد نصير الملك الوردي|ضريح حافظ|ضريح سعدي|بازار وكيل|قلعة كريم خاني"
+        data-restaurants="مطعم هفت خوان|مطعم سراي موزه|مطعم شيراز كلاسيك|مطعم خانه باغ|مطعم دلگشاي|مطعم الشاعر"
+        data-cafes="كافيه باغ الورد|كافيه حافظ|كافيه شيراز|ذا بوييتري كافيه|كافيه ناران|كافيه وكيل"
+        data-events="برسيبوليس الأثرية|مسجد نصير الملك الوردي الساحر|ضريح حافظ الشاعر|قلعة كريم خاني|بازار وكيل|باغ أرام الجميل"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'iran_shiraz', 'شيراز', '/img/iran-shiraz.jpg')">🏙️</button>
+        <img src="/img/iran-shiraz.jpg" alt="شيراز" class="cite-img">
+        <span class="name">شيراز – Shiraz</span>
+        <p class="info">مدينة الشعر والورود وبرسيبوليس</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="مشهد – Mashhad"
+        data-img="/img/iran-mashhad.jpg"
+        data-desc="المدينة الدينية الكبرى وأكثر مدن إيران زيارةً، تضم حرم الإمام الرضا الضخم بقبته الذهبية الشامخة."
+        data-historic="حرم الإمام الرضا|مسجد گوهرشاد|متحف القدس|باغ ملي مشهد|برج خورشيد|متحف رضوي"
+        data-restaurants="مطعم حريم|مطعم مشهد الكبير|مطعم كباب رضوي|مطعم ذا شرين|مطعم الحرم|مطعم قدس"
+        data-cafes="كافيه آستانه|كافيه مشهد|كافيه الذهبي|ذا دومي كافيه|كافيه رضوي|كافيه ملي"
+        data-events="حرم الإمام الرضا المهيب|مسجد گوهرشاد التاريخي|سوق رضا الكبير|باغ ملي الجميل|جبال هزار مسجد|منتجع طوس"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'iran_mashhad', 'مشهد', '/img/iran-mashhad.jpg')">🏙️</button>
+        <img src="/img/iran-mashhad.jpg" alt="مشهد" class="cite-img">
+        <span class="name">مشهد – Mashhad</span>
+        <p class="info">المدينة الدينية بالقبة الذهبية</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="تبريز – Tabriz"
+        data-img="/img/iran-tabriz.jpg"
+        data-desc="بوابة إيران الشمالية الغربية، مدينة عريقة على طريق الحرير تشتهر بسوقها التاريخي الأكبر في العالم المسقوف."
+        data-historic="سوق تبريز المسقوف مدرج في اليونسكو|قلعة ربع رشيدي|مسجد الكبود الأزرق|متحف الدستور|عمارة ذو العمارتين|بحيرة أرومية"
+        data-restaurants="مطعم تبريز كباب|مطعم ذا غرب|مطعم ساموار|مطعم دالما|مطعم كوفته تبريز|مطعم أصيل"
+        data-cafes="كافيه السوق|كافيه تبريز|كافيه ذا بلو|كافيه آرتيست تبريز|كافيه بازار|ذا شمال كافيه"
+        data-events="سوق تبريز المسقوف الأضخم في العالم|مسجد الكبود التاريخي|بحيرة أرومية الوردية|متحف الدستور|قرى جبل سهند|منطقة قنداب"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'iran_tabriz', 'تبريز', '/img/iran-tabriz.jpg')">🏙️</button>
+        <img src="/img/iran-tabriz.jpg" alt="تبريز" class="cite-img">
+        <span class="name">تبريز – Tabriz</span>
+        <p class="info">سوق الحرير ودرة الشمال</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="يزد – Yazd"
+        data-img="/img/iran-yazd.jpg"
+        data-desc="مدينة إيرانية من الطين المدرجة في اليونسكو، مدينة الزرادشتيين بأبراج الصمت ونظام القنوات الجوفية القديم."
+        data-historic="مدينة يزد التاريخية الطينية|برج الصمت الزرادشتي|مسجد الجامع يزد|باغ دولت آباد|نظام قنوات القنات|سوق يزد"
+        data-restaurants="مطعم يزد الأصيل|مطعم دالبند يزد|مطعم ذا كوير|مطعم خان|مطعم مير|مطعم آتشكده"
+        data-cafes="كافيه الطين|كافيه يزد|كافيه الصحراء|ذا وايند تاور كافيه|كافيه هوم|كافيه باغ"
+        data-events="التجول في الأزقة الطينية المدرجة في اليونسكو|برج الصمت الزرادشتي|معبد النار المقدسة|باغ دولت آباد|صحراء دشت كوير|قنوات القنات الجوفية"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'iran_yazd', 'يزد', '/img/iran-yazd.jpg')">🏙️</button>
+        <img src="/img/iran-yazd.jpg" alt="يزد" class="cite-img">
+        <span class="name">يزد – Yazd</span>
+        <p class="info">مدينة الطين والزرادشتيين</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+  </div>
+</section>
+
+<section class="foods-section">
+  <h2 class="section-title">الأكلات الشعبية</h2>
+  <div class="foods-grid">
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=iran-ghormeh-sabzi'">
+      <img src="/img/iran-ghormeh-sabzi.jpg" alt="غورمه سبزي" class="foods-img">
+      <span class="name-foods">غورمه سبزي – Ghormeh Sabzi</span>
+      <div class="food-info">يخنة الأعشاب الإيرانية بالفاصولياء الحمراء واللحم والليمون المجفف، الطبق الوطني الأول لإيران</div>
+      <a href="/recipes/recipes.html?recipe=iran-ghormeh-sabzi" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=iran-kebab-kubideh'">
+      <img src="/img/iran-kebab-kubideh.jpg" alt="كباب كوبيده" class="foods-img">
+      <span class="name-foods">كباب كوبيده – Kebab Kubideh</span>
+      <div class="food-info">كباب اللحم المفروم المتبل بالبصل والزعفران على الفحم، أشهر كباب في إيران وأكثره انتشاراً</div>
+      <a href="/recipes/recipes.html?recipe=iran-kebab-kubideh" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=iran-ash-reshteh'">
+      <img src="/img/iran-ash-reshteh.jpg" alt="آش رشته" class="foods-img">
+      <span class="name-foods">آش رشته – Ash Reshteh</span>
+      <div class="food-info">شوربة إيرانية ثرية بالأعشاب والمعكرونة والبقوليات والزبادي، طبق تقليدي لمناسبة رأس السنة الفارسية</div>
+      <a href="/recipes/recipes.html?recipe=iran-ash-reshteh" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=iran-tahdig'">
+      <img src="/img/iran-tahdig.jpg" alt="طه ديگ" class="foods-img">
+      <span class="name-foods">طه ديگ – Tahdig</span>
+      <div class="food-info">القاع المقرمش الذهبي للأرز الإيراني، الجزء الأكثر طلباً على المائدة الإيرانية بقرمشته الفريدة</div>
+      <a href="/recipes/recipes.html?recipe=iran-tahdig" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=iran-zereshk-polo'">
+      <img src="/img/iran-zereshk-polo.jpg" alt="زرشك بلو" class="foods-img">
+      <span class="name-foods">زرشك بلو – Zereshk Polo</span>
+      <div class="food-info">أرز الزعفران مع التوت البري الحامض وصدور الدجاج، طبق إيراني فاخر لا يغيب عن موائد الأعياد</div>
+      <a href="/recipes/recipes.html?recipe=iran-zereshk-polo" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=iran-fesenjan'">
+      <img src="/img/iran-fesenjan.jpg" alt="فسنجان" class="foods-img">
+      <span class="name-foods">فسنجان – Fesenjan</span>
+      <div class="food-info">يخنة الجوز والرمان مع الدجاج، نكهة حلوة حامضة عميقة لا مثيل لها في المطابخ العالمية</div>
+      <a href="/recipes/recipes.html?recipe=iran-fesenjan" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+  </div>
+</section>
+
+<section class="events-section">
+  <h2 class="section-title">الفعاليات والأماكن</h2>
+  <div class="events-grid">
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=IranPersepolis'">
+      <img src="/img/iran-persepolis.jpg" alt="برسيبوليس" class="event-img">
+      <span class="name-event">برسيبوليس – Persepolis</span>
+      <div class="event-info">عاصمة الإمبراطورية الأخمينية مدرجة في اليونسكو من أعظم المواقع الأثرية في التاريخ</div>
+      <a href="/events/events.html?event=IranPersepolis" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=IranIsfahanSquare'">
+      <img src="/img/iran-isfahan.jpg" alt="ميدان نقش جهان" class="event-img">
+      <span class="name-event">ميدان نقش جهان – Isfahan Square</span>
+      <div class="event-info">من أكبر الميادين في العالم محاط بالمساجد والقصور ومدرج في اليونسكو</div>
+      <a href="/events/events.html?event=IranIsfahanSquare" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=IranNasirMosque'">
+      <img src="/img/iran-shiraz.jpg" alt="مسجد نصير الملك" class="event-img">
+      <span class="name-event">مسجد نصير الملك – Pink Mosque</span>
+      <div class="event-info">مسجد شيراز الوردي الذي تتحول فيه أشعة الشمس إلى ألوان قوس قزح داخل القاعة</div>
+      <a href="/events/events.html?event=IranNasirMosque" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=IranYazd'">
+      <img src="/img/iran-yazd.jpg" alt="مدينة يزد الطينية" class="event-img">
+      <span class="name-event">مدينة يزد الطينية – Yazd Old City</span>
+      <div class="event-info">مدينة كاملة من الطين مدرجة في اليونسكو مع أبراج الهواء وقنوات القنات</div>
+      <a href="/events/events.html?event=IranYazd" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=IranTabrizBazaar'">
+      <img src="/img/iran-tabriz.jpg" alt="سوق تبريز المسقوف" class="event-img">
+      <span class="name-event">سوق تبريز المسقوف – Tabriz Bazaar</span>
+      <div class="event-info">أكبر سوق مسقوف في العالم على طريق الحرير مدرج في اليونسكو</div>
+      <a href="/events/events.html?event=IranTabrizBazaar" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=IranNowruz'">
+      <img src="/img/iran-tehran.jpg" alt="احتفالات النوروز" class="event-img">
+      <span class="name-event">احتفالات النوروز – Nowruz Festival</span>
+      <div class="event-info">رأس السنة الفارسية بألوانها وأسواقها وزيارات الأسر، أكبر احتفالات إيران</div>
+      <a href="/events/events.html?event=IranNowruz" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+  </div>
+</section>
+
+<div id="cityModal" class="modal" onclick="closeCityModal(event)">
+  <div class="modal-content">
+    <button class="modal-close" onclick="closeCityModal(event)">×</button>
+    <img id="modal-city-img" src="" alt="">
+    <h2 id="modal-city-name"></h2>
+    <p id="modal-city-desc"></p>
+    <div class="modal-section"><h3>المعالم التاريخية</h3><ul id="modal-city-historic"></ul></div>
+    <div class="modal-section"><h3>المطاعم</h3><ul id="modal-city-restaurants"></ul></div>
+    <div class="modal-section"><h3>المقاهي</h3><ul id="modal-city-cafes"></ul></div>
+    <div class="modal-section"><h3>الفعاليات</h3><ul id="modal-city-events"></ul></div>
+  </div>
+</div>
+
+<footer>
+  <p>© 2025 سفرة. جميع الحقوق محفوظة.</p>
+</footer>
+<script src="/countries/countries.js"></script>
+<script src="/auth/auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>بروناي – Brunei</title>
+  <link rel="stylesheet" href="/countries/countries.css" />
+  <link rel="stylesheet" href="/index/index.css" />
+  <link rel="icon" href="/img/logo.png" />
+</head>
+<body>
+<header>
+  <div class="nav">
+    <a href="/index/index.html"><img src="/img/logo.png" class="logo" alt="سفرة"/></a>
+    <nav class="links">
+      <a href="/index/index.html">الرئيسية</a>
+      <a href="/countries/countries.html">الدول</a>
+      <a href="/events/events.html">الفعاليات</a>
+      <a href="/recipes/recipes.html">الوصفات</a>
+      <a href="/plan/plan.html">خطط رحلتك</a>
+    </nav>
+    <div class="auth-btns">
+      <button id="menu-btn">☰</button>
+    </div>
+  </div>
+</header>
+<div id="side-menu">
+  <button id="close-btn">×</button>
+  <a href="/index/index.html">الرئيسية</a>
+  <a href="/countries/countries.html">الدول</a>
+  <a href="/events/events.html">الفعاليات</a>
+  <a href="/recipes/recipes.html">الوصفات</a>
+  <a href="/plan/plan.html">خطط رحلتك</a>
+  <a href="/profile/profile.html">الملف الشخصي</a>
+  <a href="/auth/login.html" id="login-link">تسجيل الدخول</a>
+  <a href="#" id="logout-link" style="display:none">تسجيل الخروج</a>
+</div>
+
+<section class="country-name">
+  <h1>بروناي – Brunei</h1>
+  <p>سلطنة الإسلام الراقية بين الغابات المطيرة والقصور الذهبية</p>
+</section>
+
+<section class="cities-section">
+  <h2 class="section-title">المدن</h2>
+  <div class="cities-grid">
+
+    <div class="cite" data-name="بندر سيري بيغاوان – Bandar Seri Begawan"
+        data-img="/img/brunei-bsb.jpg"
+        data-desc="عاصمة بروناي المتوجة بمساجد ذهبية فارهة، مدينة هادئة نظيفة تجمع بين الثراء النفطي والهوية الإسلامية الراسخة."
+        data-historic="مسجد عمر علي سيف الدين|متحف التاريخ الملكي|قرية كامبونغ آير|مسجد جامع عصر حسانيل بلقيه|قصر إستانا نورول إيمان|متحف شعب بروناي"
+        data-restaurants="مطعم ذا ستار لودج|مطعم تمبونان|مطعم أمبيوس|مطعم الخليج|مطعم روياليتي|مطعم ذا ووتر فرونت"
+        data-cafes="كافيه إنديغو|كافيه رويال|كافيه ذا بروم|كافيه سلطان|كافيه نورول إيمان|كافيه الأمير"
+        data-events="مسجد عمر علي سيف الدين|قرية كامبونغ آير|متحف التاريخ الملكي|جولة في البازار|مهرجان رمضان|قصر بروناي الملكي"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'brunei_bsb', 'بندر سيري بيغاوان', '/img/brunei-bsb.jpg')">🏙️</button>
+        <img src="/img/brunei-bsb.jpg" alt="بندر سيري بيغاوان" class="cite-img">
+        <span class="name">بندر سيري بيغاوان – BSB</span>
+        <p class="info">عاصمة الذهب والمساجد</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="كوالا بيلايت – Kuala Belait"
+        data-img="/img/brunei-kuala-belait.jpg"
+        data-desc="المدينة النفطية الكبرى في جنوب غرب بروناي، قلب صناعة النفط والغاز في السلطنة وموطن المجتمعات الغنية."
+        data-historic="حقول نفط بيلايت|متحف الطاقة|شاطئ كوالا بيلايت|مسجد كوالا بيلايت|حديقة المياه|جسر بيلايت"
+        data-restaurants="مطعم بيلايت|مطعم ذا بيتش|مطعم ريفر فيو|مطعم النفط|مطعم ذا كريك|مطعم سيتي هول"
+        data-cafes="كافيه بيلايت|كافيه شور|ذا أويل كافيه|كافيه ساحل|كافيه ذا ليغون|كافيه بيتش"
+        data-events="جولة حقول النفط|شاطئ كوالا بيلايت|متحف بيلايت التاريخي|نهر بيلايت|سوق الأسماك|فنار بيلايت"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'brunei_kuala_belait', 'كوالا بيلايت', '/img/brunei-kuala-belait.jpg')">🏙️</button>
+        <img src="/img/brunei-kuala-belait.jpg" alt="كوالا بيلايت" class="cite-img">
+        <span class="name">كوالا بيلايت – Kuala Belait</span>
+        <p class="info">مدينة النفط والصناعة</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="سيريا – Seria"
+        data-img="/img/brunei-seria.jpg"
+        data-desc="المدينة النفطية التاريخية حيث حُفر أول بئر نفط في بروناي عام 1929، مشعل النفط الأبدي يضيء ليالي المدينة."
+        data-historic="مشعل النفط الأبدي|حقل نفط سيريا|متحف النفط الوطني|مسجد سيريا|حديقة البترول|جامعة بروناي"
+        data-restaurants="مطعم سيريا|مطعم ذا فليم|مطعم كلاسيك|مطعم هارموني|مطعم الغاز|مطعم ذا ستاندرد"
+        data-cafes="كافيه سيريا|كافيه النفط|كافيه ذا فلير|ذا وايت سموك كافيه|كافيه ميدتاون|كافيه ذا ويل"
+        data-events="مشعل النفط الأبدي|متحف النفط|شاطئ سيريا|المشي في الغابة المطيرة|حديقة البترول الوطنية|معرض الطاقة"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'brunei_seria', 'سيريا', '/img/brunei-seria.jpg')">🏙️</button>
+        <img src="/img/brunei-seria.jpg" alt="سيريا" class="cite-img">
+        <span class="name">سيريا – Seria</span>
+        <p class="info">مدينة النفط الأول في بروناي</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="تيمبورونغ – Temburong"
+        data-img="/img/brunei-temburong.jpg"
+        data-desc="قلب بروناي البكر، منطقة الغابات المطيرة المعزولة يُصل إليها بالزوارق، ملاذ المغامرين وعشاق الطبيعة الخالصة."
+        data-historic="متنزه أولو تيمبورونغ الوطني|محمية بتانغ آي|شلالات تيمبورونغ|مخيم بيتالونغ|غابة أولو|جسر تيمبورونغ"
+        data-restaurants="مطعم تيمبورونغ|مطعم الغابة|مطعم أولو|مطعم النهر|مطعم ذا جانغل|مطعم إيكو"
+        data-cafes="كافيه جانغل|كافيه شلالات|ذا ريين فورست كافيه|كافيه أولو|كافيه الطبيعة|كافيه إيكو"
+        data-events="جولة منتزه أولو تيمبورونغ|المشي في الغابة المطيرة|شلالات عجيبة|الطوف في النهر|مراقبة الحياة البرية|قوارب الخيزران"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'brunei_temburong', 'تيمبورونغ', '/img/brunei-temburong.jpg')">🏙️</button>
+        <img src="/img/brunei-temburong.jpg" alt="تيمبورونغ" class="cite-img">
+        <span class="name">تيمبورونغ – Temburong</span>
+        <p class="info">الغابة المطيرة البكر في بروناي</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="تيتونغ – Tutong"
+        data-img="/img/brunei-tutong.jpg"
+        data-desc="مدينة زراعية هادئة على ضفاف نهر تيتونغ، تشتهر بمزارع الأناناس وبحيرة تاسيك ميريمبون الساحرة."
+        data-historic="بحيرة تاسيك ميريمبون|شاطئ تيتونغ|حديقة كيرانا|مسجد تيتونغ|مزارع الأناناس|نهر تيتونغ"
+        data-restaurants="مطعم تيتونغ|مطعم الشاطئ|مطعم البحيرة|مطعم ذا قارون|مطعم ريفر سايد|مطعم النخيل"
+        data-cafes="كافيه ميريمبون|كافيه تيتونغ|كافيه الأناناس|كافيه البحيرة|ذا ريفر كافيه|كافيه ذا بيتش"
+        data-events="بحيرة تاسيك ميريمبون|شاطئ تيتونغ الرملي|جولة مزارع الأناناس|نهر تيتونغ|حديقة كيرانا|صيد السمك"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'brunei_tutong', 'تيتونغ', '/img/brunei-tutong.jpg')">🏙️</button>
+        <img src="/img/brunei-tutong.jpg" alt="تيتونغ" class="cite-img">
+        <span class="name">تيتونغ – Tutong</span>
+        <p class="info">بحيرة ميريمبون والطبيعة الزراعية</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="بانغار – Bangar"
+        data-img="/img/brunei-bangar.jpg"
+        data-desc="عاصمة منطقة تيمبورونغ، نقطة الانطلاق للقوارب نحو الغابات البكر، مدينة صغيرة هادئة محاطة بطبيعة مذهلة."
+        data-historic="بوابة أولو تيمبورونغ|نهر تيمبورونغ|مسجد بانغار|قرية ماليث|محمية البتانغ|منتزه تيمبورونغ"
+        data-restaurants="مطعم بانغار|مطعم ذا بيت|مطعم إيكو بانغار|مطعم الطبيعة|مطعم ذا ريفر لودج|مطعم هارموني"
+        data-cafes="كافيه بانغار|كافيه الغابة|كافيه النهر|ذا جانغل كافيه|كافيه أولو|كافيه ذا ستيشن"
+        data-events="محطة قوارب بانغار|مدخل أولو تيمبورونغ|جولة نهرية|مراقبة الطيور|قرية ماليث التقليدية|الليل في الغابة"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'brunei_bangar', 'بانغار', '/img/brunei-bangar.jpg')">🏙️</button>
+        <img src="/img/brunei-bangar.jpg" alt="بانغار" class="cite-img">
+        <span class="name">بانغار – Bangar</span>
+        <p class="info">بوابة الغابة المطيرة البكر</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+  </div>
+</section>
+
+<section class="foods-section">
+  <h2 class="section-title">الأكلات الشعبية</h2>
+  <div class="foods-grid">
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=brunei-ambuyat'">
+      <img src="/img/brunei-ambuyat.jpg" alt="أمبيوات" class="foods-img">
+      <span class="name-foods">أمبيوات – Ambuyat</span>
+      <div class="food-info">الطبق الوطني لبروناي من نشا ساغو اللزج يُغمس في صلصات عطرية، تجربة أكل بعيدان خاصة</div>
+      <a href="/recipes/recipes.html?recipe=brunei-ambuyat" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=brunei-nasi-katok'">
+      <img src="/img/brunei-nasi-katok.jpg" alt="ناسي كاتوك" class="foods-img">
+      <span class="name-foods">ناسي كاتوك – Nasi Katok</span>
+      <div class="food-info">وجبة بروناي الشعبية بسعر رخيص: أرز مع دجاج مقلي وسمبال حار، متوفرة في كل مكان</div>
+      <a href="/recipes/recipes.html?recipe=brunei-nasi-katok" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=brunei-beef-rendang'">
+      <img src="/img/brunei-rendang.jpg" alt="رندانغ اللحم" class="foods-img">
+      <span class="name-foods">رندانغ اللحم – Beef Rendang</span>
+      <div class="food-info">لحم البقر المطبوخ ببطء بجوز الهند والتوابل العطرية حتى يتشرب المرق، طبق أعياد في بروناي</div>
+      <a href="/recipes/recipes.html?recipe=brunei-beef-rendang" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=brunei-laksa'">
+      <img src="/img/brunei-laksa.jpg" alt="لاكسا بروناي" class="foods-img">
+      <span class="name-foods">لاكسا بروناي – Brunei Laksa</span>
+      <div class="food-info">شوربة المعكرونة بجوز الهند الكريمية مع الجمبري والدجاج والأعشاب، إفطار بروناي المفضل</div>
+      <a href="/recipes/recipes.html?recipe=brunei-laksa" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=brunei-satay'">
+      <img src="/img/brunei-satay.jpg" alt="ساتاي بروناي" class="foods-img">
+      <span class="name-foods">ساتاي بروناي – Brunei Satay</span>
+      <div class="food-info">أسياخ الدجاج والضأن المشوية مع صلصة الفول السوداني، وجبة مساء بروناي الأشهر</div>
+      <a href="/recipes/recipes.html?recipe=brunei-satay" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=brunei-kueh'">
+      <img src="/img/brunei-kueh.jpg" alt="كويه" class="foods-img">
+      <span class="name-foods">كويه – Kueh</span>
+      <div class="food-info">حلويات بروناي التقليدية الملونة من الأرز وجوز الهند والبانداس، منوعة ومبهجة</div>
+      <a href="/recipes/recipes.html?recipe=brunei-kueh" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+  </div>
+</section>
+
+<section class="events-section">
+  <h2 class="section-title">الفعاليات والأماكن</h2>
+  <div class="events-grid">
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=BruneiOmarMosque'">
+      <img src="/img/brunei-bsb.jpg" alt="مسجد عمر علي سيف الدين" class="event-img">
+      <span class="name-event">مسجد عمر علي سيف الدين – Omar Ali Mosque</span>
+      <div class="event-info">من أجمل مساجد آسيا بقبابه الذهبية الساطعة على بحيرة اصطناعية</div>
+      <a href="/events/events.html?event=BruneiOmarMosque" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=BruneiKampongAyer'">
+      <img src="/img/brunei-bsb.jpg" alt="قرية كامبونغ آير" class="event-img">
+      <span class="name-event">قرية كامبونغ آير – Kampong Ayer</span>
+      <div class="event-info">أكبر قرية على الماء في العالم مبنية فوق نهر بروناي منذ قرون</div>
+      <a href="/events/events.html?event=BruneiKampongAyer" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=BruneiTemburong'">
+      <img src="/img/brunei-temburong.jpg" alt="متنزه تيمبورونغ" class="event-img">
+      <span class="name-event">متنزه تيمبورونغ – Temburong Park</span>
+      <div class="event-info">غابة استوائية بكر مع شلالات وجسور تحلق فوق قمم الأشجار</div>
+      <a href="/events/events.html?event=BruneiTemburong" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=BruneiJameAsr'">
+      <img src="/img/brunei-bsb.jpg" alt="مسجد جامع عصر" class="event-img">
+      <span class="name-event">مسجد جامع عصر – Jame Asr Mosque</span>
+      <div class="event-info">أكبر مساجد بروناي بـ 29 قبة ذهبية يتوهج ليلاً بالإضاءة</div>
+      <a href="/events/events.html?event=BruneiJameAsr" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=BruneiRoyalRegalia'">
+      <img src="/img/brunei-bsb.jpg" alt="متحف الرمز الملكي" class="event-img">
+      <span class="name-event">متحف الرمز الملكي – Royal Regalia Museum</span>
+      <div class="event-info">متحف يعرض كنوز السلطنة الملكية والهدايا والمقتنيات البروناوية</div>
+      <a href="/events/events.html?event=BruneiRoyalRegalia" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=BruneiRamadan'">
+      <img src="/img/brunei-bsb.jpg" alt="سوق رمضان بروناي" class="event-img">
+      <span class="name-event">سوق رمضان – Ramadan Market</span>
+      <div class="event-info">سوق الإفطار الرمضاني الأشهر في بروناي بأطباق تقليدية لا تُقاوم</div>
+      <a href="/events/events.html?event=BruneiRamadan" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+  </div>
+</section>
+
+<div id="cityModal" class="modal" onclick="closeCityModal(event)">
+  <div class="modal-content">
+    <button class="modal-close" onclick="closeCityModal(event)">×</button>
+    <img id="modal-city-img" src="" alt="">
+    <h2 id="modal-city-name"></h2>
+    <p id="modal-city-desc"></p>
+    <div class="modal-section"><h3>المعالم التاريخية</h3><ul id="modal-city-historic"></ul></div>
+    <div class="modal-section"><h3>المطاعم</h3><ul id="modal-city-restaurants"></ul></div>
+    <div class="modal-section"><h3>المقاهي</h3><ul id="modal-city-cafes"></ul></div>
+    <div class="modal-section"><h3>الفعاليات</h3><ul id="modal-city-events"></ul></div>
+  </div>
+</div>
+
+<footer>
+  <p>© 2025 سفرة. جميع الحقوق محفوظة.</p>
+</footer>
+<script src="/countries/countries.js"></script>
+<script src="/auth/auth.js"></script>
+</body>
+</html>

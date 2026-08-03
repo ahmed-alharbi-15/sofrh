@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>بوتان – Bhutan</title>
+  <link rel="stylesheet" href="/countries/countries.css" />
+  <link rel="stylesheet" href="/index/index.css" />
+  <link rel="icon" href="/img/logo.png" />
+</head>
+<body>
+<header>
+  <div class="nav">
+    <a href="/index/index.html"><img src="/img/logo.png" class="logo" alt="سفرة"/></a>
+    <nav class="links">
+      <a href="/index/index.html">الرئيسية</a>
+      <a href="/countries/countries.html">الدول</a>
+      <a href="/events/events.html">الفعاليات</a>
+      <a href="/recipes/recipes.html">الوصفات</a>
+      <a href="/plan/plan.html">خطط رحلتك</a>
+    </nav>
+    <div class="auth-btns">
+      <button id="menu-btn">☰</button>
+    </div>
+  </div>
+</header>
+<div id="side-menu">
+  <button id="close-btn">×</button>
+  <a href="/index/index.html">الرئيسية</a>
+  <a href="/countries/countries.html">الدول</a>
+  <a href="/events/events.html">الفعاليات</a>
+  <a href="/recipes/recipes.html">الوصفات</a>
+  <a href="/plan/plan.html">خطط رحلتك</a>
+  <a href="/profile/profile.html">الملف الشخصي</a>
+  <a href="/auth/login.html" id="login-link">تسجيل الدخول</a>
+  <a href="#" id="logout-link" style="display:none">تسجيل الخروج</a>
+</div>
+
+<section class="country-name">
+  <h1>بوتان – Bhutan</h1>
+  <p>مملكة السعادة بين الجبال حيث الطبيعة والروحانية يلتقيان في تناغم فريد</p>
+</section>
+
+<section class="cities-section">
+  <h2 class="section-title">المدن</h2>
+  <div class="cities-grid">
+
+    <div class="cite" data-name="تيمفو – Thimphu"
+        data-img="/img/bhutan-thimphu.jpg"
+        data-desc="عاصمة بوتان الهادئة المتواضعة التي لا تعرف إشارات المرور، محاطة بالجبال وتمزج بين المباني التقليدية والحياة الحديثة."
+        data-historic="قلعة تاشيتشو دزونغ|بوذا دورديما العملاق|متحف التاريخ الوطني|المتحف الفني|مدرسة ميثوف ثانبزام|سوق زيمتوكها"
+        data-restaurants="مطعم ذا زوم|مطعم سيزن ريستوران|مطعم لوني|مطعم أرايا|مطعم ذا هارمونيزر|مطعم ذا فارم"
+        data-cafes="كافيه آرت كافيه|كافيه بيبلز|كافيه الملكية|كافيه تيمفو|ذا شيليز كافيه|كافيه ذا كورنر"
+        data-events="قلعة تاشيتشو دزونغ|تمثال بوذا العملاق|متحف التاريخ|جولة الأسواق المحلية|مهرجان تيمفو تشيشو|حديقة الحيوانات الملكية"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'bhutan_thimphu', 'تيمفو', '/img/bhutan-thimphu.jpg')">🏙️</button>
+        <img src="/img/bhutan-thimphu.jpg" alt="تيمفو" class="cite-img">
+        <span class="name">تيمفو – Thimphu</span>
+        <p class="info">عاصمة بوتان في قلب الجبال</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="بارو – Paro"
+        data-img="/img/bhutan-paro.jpg"
+        data-desc="وادٍ ساحر يضم وكر النمر الأشهر في بوتان، مدرج واحد في الجبل الوحيد في المملكة، قلعة بارو دزونغ الجميلة."
+        data-historic="دير تاكتسانغ وكر النمر|قلعة بارو دزونغ|متحف الفن الوطني|قلعة درولجي دزونغ|مزارع الكيتشو لهاخانغ|جسر بارو الخشبي"
+        data-restaurants="مطعم ذا ماين ستريت|مطعم خاروتشو|مطعم فارمر|مطعم كيلا|مطعم ذا بارو ريزورت|مطعم لوكال فيوور"
+        data-cafes="كافيه ذا ريفر|كافيه بارو|كافيه ذا هارمونيزر|كافيه بلو بوبي|كافيه ذا فالي|بيمبي كافيه"
+        data-events="تسلق دير وكر النمر|قلعة بارو دزونغ|متحف الفن الوطني|مهرجان بارو تسيتشو|المشي في وادي بارو|نهر بارو تشو"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'bhutan_paro', 'بارو', '/img/bhutan-paro.jpg')">🏙️</button>
+        <img src="/img/bhutan-paro.jpg" alt="بارو" class="cite-img">
+        <span class="name">بارو – Paro</span>
+        <p class="info">وادي وكر النمر الأسطوري</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="بوناخا – Punakha"
+        data-img="/img/bhutan-punakha.jpg"
+        data-desc="عاصمة بوتان القديمة حيث قلعة بوناخا دزونغ عروس الجسور، تقع بين نهرين في وادٍ دافئ تنمو فيه أشجار الجهانمول."
+        data-historic="قلعة بوناخا دزونغ|معبد كيمالانغ|جسر رامتانغكا|حقول الأرز الخضراء|معبد تشيمي لهاخانغ|متحف الوادي"
+        data-restaurants="مطعم ذا ريفرسايد|مطعم بوناخا|مطعم أراك|مطعم الوادي الدافئ|مطعم ذا ليستينغ|مطعم سيزنز"
+        data-cafes="كافيه بوناخا|كافيه ذا موبارا|كافيه النهرين|كافيه ذا فيلدز|كافيه وادي|كافيه الأزهار"
+        data-events="قلعة بوناخا دزونغ|معبد تشيمي لهاخانغ|جولة حقول الأرز|نهر مو تشو|مهرجان بوناخا|جسر رامتانغكا"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'bhutan_punakha', 'بوناخا', '/img/bhutan-punakha.jpg')">🏙️</button>
+        <img src="/img/bhutan-punakha.jpg" alt="بوناخا" class="cite-img">
+        <span class="name">بوناخا – Punakha</span>
+        <p class="info">عاصمة بوتان القديمة بين النهرين</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="وانغدي فودرانغ – Wangdue"
+        data-img="/img/bhutan-wangdue.jpg"
+        data-desc="مدينة بوتانية هادئة تعلو على تلة تشرف على التقاء نهرين، تحتضن قلعة وانغدي دزونغ التاريخية المعلقة فوق الجبل."
+        data-historic="قلعة وانغدي دزونغ|قرية ريبسا التقليدية|مصنع الورق النباتي|معبد تانتر دزونغ|سوق اليد العاملة|جسر بانيتسانغ"
+        data-restaurants="مطعم وانغدي|مطعم ذا كليف|مطعم جادا|مطعم ذا تاون|مطعم سيزنز وانغدي|مطعم هيلسايد"
+        data-cafes="كافيه وانغدي|كافيه الجبل|كافيه ذا ريفر|كافيه الطبيعة|ذا تيرس كافيه|كافيه دزونغ"
+        data-events="قلعة وانغدي دزونغ|قرية ريبسا التقليدية|رحلة في الغابة|مهرجان وانغدي|زيارة مصنع الورق|التلال الخضراء"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'bhutan_wangdue', 'وانغدي', '/img/bhutan-wangdue.jpg')">🏙️</button>
+        <img src="/img/bhutan-wangdue.jpg" alt="وانغدي" class="cite-img">
+        <span class="name">وانغدي – Wangdue</span>
+        <p class="info">قلعة المدينة فوق ملتقى النهرين</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="بومتانغ – Bumthang"
+        data-img="/img/bhutan-bumthang.jpg"
+        data-desc="المنطقة الروحية لبوتان المعروفة بـ سويسرا بوتان، تضم أقدم المعابد ومصانع الجبن والعسل وبساتين التفاح."
+        data-historic="معبد كيتشو لهاخانغ|معبد جامبي|قلعة تارغا دزونغ|مزارع التفاح|مصنع جبن بومتانغ|حديقة الزهور"
+        data-restaurants="مطعم بومتانغ|مطعم ذا بيك|مطعم أورشين|مطعم ذا فالي|مطعم هايلاندز|مطعم ذا تريل"
+        data-cafes="كافيه سويس|كافيه بومتانغ|كافيه ذا ميدو|كافيه التفاح|ذا ألباين كافيه|كافيه جبل"
+        data-events="معبد جامبي الأثري|جولة بساتين التفاح|مصنع الجبن|تسلق جبال بومتانغ|مهرجان بومتانغ جامبي|نهر بومتانغ تشو"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'bhutan_bumthang', 'بومتانغ', '/img/bhutan-bumthang.jpg')">🏙️</button>
+        <img src="/img/bhutan-bumthang.jpg" alt="بومتانغ" class="cite-img">
+        <span class="name">بومتانغ – Bumthang</span>
+        <p class="info">سويسرا بوتان الروحية والخضراء</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="فونتشولينغ – Phuentsholing"
+        data-img="/img/bhutan-phuentsholing.jpg"
+        data-desc="بوابة بوتان البرية على الحدود مع الهند، مدينة تجارية نشطة تجمع الثقافتين البوتانية والهندية في مكان واحد."
+        data-historic="معبد زانغطو بيلري|بوابة بوتان الحدودية|حديقة تمساح فونتشولينغ|منتزه تورسا|بازار الحدود|مسجد فونتشولينغ"
+        data-restaurants="مطعم ذا بوردر|مطعم ريال دريم|مطعم فونتشولينغ|مطعم الهلال|مطعم هندوستاني|مطعم ذا كروسينغ"
+        data-cafes="كافيه البوابة|كافيه الحدود|ذا كروسينغ كافيه|كافيه ريفرفيو|كافيه ميتا|كافيه ذا تاون"
+        data-events="بوابة الحدود المميزة|جولة في الأسواق|حديقة تمساح|معبد زانغتو بيلري|ملتقى الثقافتين|قناة تورسا"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'bhutan_phuentsholing', 'فونتشولينغ', '/img/bhutan-phuentsholing.jpg')">🏙️</button>
+        <img src="/img/bhutan-phuentsholing.jpg" alt="فونتشولينغ" class="cite-img">
+        <span class="name">فونتشولينغ – Phuentsholing</span>
+        <p class="info">بوابة بوتان على الحدود الهندية</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+  </div>
+</section>
+
+<section class="foods-section">
+  <h2 class="section-title">الأكلات الشعبية</h2>
+  <div class="foods-grid">
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=bhutan-ema-datshi'">
+      <img src="/img/bhutan-ema-datshi.jpg" alt="إيما داتشي" class="foods-img">
+      <span class="name-foods">إيما داتشي – Ema Datshi</span>
+      <div class="food-info">الفلفل الحار المطبوخ مع الجبن البوتاني، الطبق الوطني لبوتان الذي يجمع بين الحرارة والدسم</div>
+      <a href="/recipes/recipes.html?recipe=bhutan-ema-datshi" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=bhutan-jasha-maru'">
+      <img src="/img/bhutan-jasha-maru.jpg" alt="جاشا مارو" class="foods-img">
+      <span class="name-foods">جاشا مارو – Jasha Maru</span>
+      <div class="food-info">يخنة الدجاج البوتانية بالفلفل الأحمر والزنجبيل والثوم، نكهة دافئة تناسب أجواء الجبال الباردة</div>
+      <a href="/recipes/recipes.html?recipe=bhutan-jasha-maru" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=bhutan-red-rice'">
+      <img src="/img/bhutan-red-rice.jpg" alt="الأرز الأحمر البوتاني" class="foods-img">
+      <span class="name-foods">الأرز الأحمر – Red Rice</span>
+      <div class="food-info">أرز بوتان الأحمر المزروع في حقول المرتفعات، قوام مميز وطعم غني بالمعادن والقيم الغذائية</div>
+      <a href="/recipes/recipes.html?recipe=bhutan-red-rice" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=bhutan-momos'">
+      <img src="/img/bhutan-momos.jpg" alt="موموز" class="foods-img">
+      <span class="name-foods">موموز – Momos</span>
+      <div class="food-info">الزلابية البوتانية المطبوخة بالبخار المحشوة بالدجاج والجبن والخضار، سنك تحبه الجميع</div>
+      <a href="/recipes/recipes.html?recipe=bhutan-momos" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=bhutan-buckwheat-pancakes'">
+      <img src="/img/bhutan-buckwheat.jpg" alt="فطائر الحنطة السوداء" class="foods-img">
+      <span class="name-foods">فطائر الحنطة السوداء – Buckwheat Pancakes</span>
+      <div class="food-info">فطائر الحنطة السوداء البوتانية مع مربى التفاح المحلي، إفطار تقليدي في قرى بومتانغ</div>
+      <a href="/recipes/recipes.html?recipe=bhutan-buckwheat-pancakes" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=bhutan-kewa-datshi'">
+      <img src="/img/bhutan-kewa-datshi.jpg" alt="كيوا داتشي" class="foods-img">
+      <span class="name-foods">كيوا داتشي – Kewa Datshi</span>
+      <div class="food-info">البطاطس مطبوخة مع الجبن البوتاني والفلفل الحار، طبق بسيط وشبعان في نفس الوقت</div>
+      <a href="/recipes/recipes.html?recipe=bhutan-kewa-datshi" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+  </div>
+</section>
+
+<section class="events-section">
+  <h2 class="section-title">الفعاليات والأماكن</h2>
+  <div class="events-grid">
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=BhutanTigersNest'">
+      <img src="/img/bhutan-paro.jpg" alt="وكر النمر" class="event-img">
+      <span class="name-event">وكر النمر – Tiger's Nest</span>
+      <div class="event-info">دير تاكتسانغ المعلق على الجرف فوق وادي بارو، أيقونة بوتان المقدسة</div>
+      <a href="/events/events.html?event=BhutanTigersNest" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=BhutanPunakhaDzong'">
+      <img src="/img/bhutan-punakha.jpg" alt="قلعة بوناخا دزونغ" class="event-img">
+      <span class="name-event">قلعة بوناخا دزونغ – Punakha Dzong</span>
+      <div class="event-info">عروس القلاع البوتانية بين نهرين ومحاطة بأشجار الجهانمول الزرقاء</div>
+      <a href="/events/events.html?event=BhutanPunakhaDzong" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=BhutanDochulaPass'">
+      <img src="/img/bhutan-thimphu.jpg" alt="ممر دوتشولا" class="event-img">
+      <span class="name-event">ممر دوتشولا – Dochula Pass</span>
+      <div class="event-info">108 قبة بوذية على الممر الجبلي مع مشهد الهيمالايا الساحر</div>
+      <a href="/events/events.html?event=BhutanDochulaPass" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=BhutanFestival'">
+      <img src="/img/bhutan-bumthang.jpg" alt="مهرجان تشيشو" class="event-img">
+      <span class="name-event">مهرجان تشيشو – Tshechu Festival</span>
+      <div class="event-info">مهرجانات الرقص الديني بالأقنعة في القلاع البوتانية، احتفالات روحية لا تُنسى</div>
+      <a href="/events/events.html?event=BhutanFestival" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=BhutanHiking'">
+      <img src="/img/bhutan-wangdue.jpg" alt="المشي في الجبال" class="event-img">
+      <span class="name-event">المشي في الجبال – Mountain Hiking</span>
+      <div class="event-info">مسارات المشي في جبال بوتان الهيمالايا بين المعابد والغابات البكر</div>
+      <a href="/events/events.html?event=BhutanHiking" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=BhutanBuddha'">
+      <img src="/img/bhutan-thimphu.jpg" alt="تمثال بوذا العملاق" class="event-img">
+      <span class="name-event">تمثال بوذا الكبير – Buddha Dordenma</span>
+      <div class="event-info">أضخم تمثال بوذا في العالم يطل على تيمفو من الجبل الشامخ</div>
+      <a href="/events/events.html?event=BhutanBuddha" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+  </div>
+</section>
+
+<div id="cityModal" class="modal" onclick="closeCityModal(event)">
+  <div class="modal-content">
+    <button class="modal-close" onclick="closeCityModal(event)">×</button>
+    <img id="modal-city-img" src="" alt="">
+    <h2 id="modal-city-name"></h2>
+    <p id="modal-city-desc"></p>
+    <div class="modal-section"><h3>المعالم التاريخية</h3><ul id="modal-city-historic"></ul></div>
+    <div class="modal-section"><h3>المطاعم</h3><ul id="modal-city-restaurants"></ul></div>
+    <div class="modal-section"><h3>المقاهي</h3><ul id="modal-city-cafes"></ul></div>
+    <div class="modal-section"><h3>الفعاليات</h3><ul id="modal-city-events"></ul></div>
+  </div>
+</div>
+
+<footer>
+  <p>© 2025 سفرة. جميع الحقوق محفوظة.</p>
+</footer>
+<script src="/countries/countries.js"></script>
+<script src="/auth/auth.js"></script>
+</body>
+</html>
