@@ -2,39 +2,45 @@
 <html lang="ar" dir="rtl">
 
 <head>
-<script>
-(() => {
-  const theme = localStorage.getItem("theme");
-  document.documentElement.setAttribute("data-theme", theme === "dark" ? "dark" : "light");
-})();
-</script>
+    <script>
+        (() => {
+            const theme = localStorage.getItem("theme");
+            document.documentElement.setAttribute("data-theme", theme === "dark" ? "dark" : "light");
+        })();
+    </script>
     <style>
-        .auth-buttons { display: none; }
-        .user-menu { display: none; }
+        .auth-buttons {
+            display: none;
+        }
+
+        .user-menu {
+            display: none;
+        }
     </style>
     <meta charset="UTF-8">
-<script>
-    (function(){
-        var u=JSON.parse(localStorage.getItem('safraUser')||'null');
-        var av=localStorage.getItem('safraAvatar')||'';
-        document.documentElement.className+=u?' user-logged-in':' user-logged-out';
-        if(u){
-            var t=setInterval(function(){
-                var n=document.getElementById('userName');
-                var a=document.getElementById('userAvatar');
-                if(n){
-                    n.textContent=u.name||'';
-                    if(a&&(u.avatar||av)) a.src=u.avatar||av;
-                    clearInterval(t);
-                }
-            },1);
-        }
-    })();
+    <script>
+        (function () {
+            var u = JSON.parse(localStorage.getItem('safraUser') || 'null');
+            var av = localStorage.getItem('safraAvatar') || '';
+            document.documentElement.className += u ? ' user-logged-in' : ' user-logged-out';
+            if (u) {
+                var t = setInterval(function () {
+                    var n = document.getElementById('userName');
+                    var a = document.getElementById('userAvatar');
+                    if (n) {
+                        n.textContent = u.name || '';
+                        if (a && (u.avatar || av)) a.src = u.avatar || av;
+                        clearInterval(t);
+                    }
+                }, 1);
+            }
+        })();
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>سفرة - الدول</title>
     <link rel="stylesheet" href="/countries/countries.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="/dark-mode.css">
     <meta property="og:image" content="https://sofrh.vercel.app/img/logo6.png">
     <meta property="og:image:width" content="1200">
@@ -150,11 +156,11 @@
 
     <input type="text" id="searchInput" placeholder="ابحث عن دولة ...." class="search-box">
     <div class="filter-buttons">
-        <button data-filter="all" class="active">الكل (142)</button>
-        <button data-filter="asia">اسيا (17)</button>
+        <button data-filter="all" class="active">الكل (156)</button>
+        <button data-filter="asia">اسيا (22)</button>
         <button data-filter="europe">اوروبا (46)</button>
         <button data-filter="africa">افريقيا (54)</button>
-        <button data-filter="south-america">امريكا الجنوبية (3)</button>
+        <button data-filter="south-america">امريكا الجنوبية (12)</button>
         <button data-filter="north-america">امريكا الشمالية (22)</button>
     </div>
 
@@ -1479,7 +1485,203 @@
             </div>
         </div>
 
+        <div class="country-card" data-region="south-america"
+            onclick="window.location.href='/countries/country/south-america/argentina.html'">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('country', 'argentina', 'الأرجنتين', '/img/argentina-logo.jpg')">📌</button>
+            <img src="/img/argentina-logo.jpg" alt="الأرجنتين">
+            <div class="card-overlay-mag"></div>
+            <div class="card-content-mag">
+                <h1>الأرجنتين</h1>
+                <h2>أرض التانغو والبامبا والجليد الباتاغوني الأبدي</h2>
+                <a href="/countries/country/south-america/argentina.html" class="Section-btn"
+                    onclick="event.stopPropagation()">استكشف</a>
+            </div>
+        </div>
+
+        <div class="country-card" data-region="south-america"
+            onclick="window.location.href='/countries/country/south-america/chile.html'">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('country', 'chile', 'تشيلي', '/img/chile-logo.jpg')">📌</button>
+            <img src="/img/chile-logo.jpg" alt="تشيلي">
+            <div class="card-overlay-mag"></div>
+            <div class="card-content-mag">
+                <h1>تشيلي</h1>
+                <h2>خيط الأرض الممتد بين الأنديز والمحيط الهادئ</h2>
+                <a href="/countries/country/south-america/chile.html" class="Section-btn"
+                    onclick="event.stopPropagation()">استكشف</a>
+            </div>
+        </div>
+
+        <div class="country-card" data-region="south-america"
+            onclick="window.location.href='/countries/country/south-america/ecuador.html'">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('country', 'ecuador', 'الإكوادور', '/img/ecuador-logo.jpg')">📌</button>
+            <img src="/img/ecuador-logo.jpg" alt="الإكوادور">
+            <div class="card-overlay-mag"></div>
+            <div class="card-content-mag">
+                <h1>الإكوادور</h1>
+                <h2>قلب خط الاستواء بين الأمازون وجزر غالاباغوس الفريدة</h2>
+                <a href="/countries/country/south-america/ecuador.html" class="Section-btn"
+                    onclick="event.stopPropagation()">استكشف</a>
+            </div>
+        </div>
+
+        <div class="country-card" data-region="south-america"
+            onclick="window.location.href='/countries/country/south-america/bolivia.html'">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('country', 'bolivia', 'بوليفيا', '/img/bolivia-logo.jpg')">📌</button>
+            <img src="/img/bolivia-logo.jpg" alt="بوليفيا">
+            <div class="card-overlay-mag"></div>
+            <div class="card-content-mag">
+                <h1>بوليفيا</h1>
+                <h2>مرايا الملح والأنديز الشامخة في قلب أمريكا الجنوبية</h2>
+                <a href="/countries/country/south-america/bolivia.html" class="Section-btn"
+                    onclick="event.stopPropagation()">استكشف</a>
+            </div>
+        </div>
+
+        <div class="country-card" data-region="south-america"
+            onclick="window.location.href='/countries/country/south-america/uruguay.html'">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('country', 'uruguay', 'أوروغواي', '/img/uruguay-logo.jpg')">📌</button>
+            <img src="/img/uruguay-logo.jpg" alt="أوروغواي">
+            <div class="card-overlay-mag"></div>
+            <div class="card-content-mag">
+                <h1>أوروغواي</h1>
+                <h2>أصغر ديمقراطيات أمريكا الجنوبية وأكثرها هدوءاً وأماناً</h2>
+                <a href="/countries/country/south-america/uruguay.html" class="Section-btn"
+                    onclick="event.stopPropagation()">استكشف</a>
+            </div>
+        </div>
+
+        <div class="country-card" data-region="africa" <div class="country-card" data-region="south-america"
+            onclick="window.location.href='/countries/country/south-america/venezuela.html'">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('country', 'venezuela', 'فنزويلا', '/img/venezuela-logo.jpg')">📌</button>
+            <img src="/img/venezuela-logo.jpg" alt="فنزويلا">
+            <div class="card-overlay-mag"></div>
+            <div class="card-content-mag">
+                <h1>فنزويلا – Venezuela</h1>
+                <h2>أعلى شلال في العالم وسهول وغابات استوائية رائعة</h2>
+                <a href="/countries/country/south-america/venezuela.html" class="Section-btn"
+                    onclick="event.stopPropagation()">استكشف</a>
+            </div>
+        </div>
+
+        <div class="country-card" data-region="south-america"
+            onclick="window.location.href='/countries/country/south-america/paraguay.html'">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('country', 'paraguay', 'باراغواي', '/img/paraguay-logo.jpg')">📌</button>
+            <img src="/img/paraguay-logo.jpg" alt="باراغواي">
+            <div class="card-overlay-mag"></div>
+            <div class="card-content-mag">
+                <h1>باراغواي – Paraguay</h1>
+                <h2>قلب أمريكا الجنوبية بين الغابات والأنهار والتراث اليسوعي</h2>
+                <a href="/countries/country/south-america/paraguay.html" class="Section-btn"
+                    onclick="event.stopPropagation()">استكشف</a>
+            </div>
+        </div>
+
+        <div class="country-card" data-region="south-america"
+            onclick="window.location.href='/countries/country/south-america/guyana.html'">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('country', 'guyana', 'غيانا', '/img/guyana-logo.jpg')">📌</button>
+            <img src="/img/guyana-logo.jpg" alt="غيانا">
+            <div class="card-overlay-mag"></div>
+            <div class="card-content-mag">
+                <h1>غيانا – Guyana</h1>
+                <h2>جواهر طبيعية خفية بين غابات بكر وشلالات عملاقة</h2>
+                <a href="/countries/country/south-america/guyana.html" class="Section-btn"
+                    onclick="event.stopPropagation()">استكشف</a>
+            </div>
+        </div>
+
+        <div class="country-card" data-region="south-america"
+            onclick="window.location.href='/countries/country/south-america/suriname.html'">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('country', 'suriname', 'سورينام', '/img/suriname-logo.jpg')">📌</button>
+            <img src="/img/suriname-logo.jpg" alt="سورينام">
+            <div class="card-overlay-mag"></div>
+            <div class="card-content-mag">
+                <h1>سورينام – Suriname</h1>
+                <h2>تنوع ثقافي استثنائي بين غابات استوائية وميراث هولندي</h2>
+                <a href="/countries/country/south-america/suriname.html" class="Section-btn"
+                    onclick="event.stopPropagation()">استكشف</a>
+            </div>
+        </div>
+
         <div class="country-card" data-region="africa"
+        <div class="country-card" data-region="asia"
+            onclick="window.location.href='/countries/country/asia/bahrain.html'">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('country', 'bahrain', 'البحرين', '/img/bahrain-logo.jpg')">📌</button>
+            <img src="/img/bahrain-logo.jpg" alt="البحرين">
+            <div class="card-overlay-mag"></div>
+            <div class="card-content-mag">
+                <h1>البحرين – Bahrain</h1>
+                <h2>لؤلؤة الخليج بين قلاع التاريخ وسباق الفورمولا 1</h2>
+                <a href="/countries/country/asia/bahrain.html" class="Section-btn"
+                    onclick="event.stopPropagation()">استكشف</a>
+            </div>
+        </div>
+
+        <div class="country-card" data-region="asia"
+            onclick="window.location.href='/countries/country/asia/oman.html'">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('country', 'oman', 'عمان', '/img/oman-logo.jpg')">📌</button>
+            <img src="/img/oman-logo.jpg" alt="عمان">
+            <div class="card-overlay-mag"></div>
+            <div class="card-content-mag">
+                <h1>عمان – Oman</h1>
+                <h2>فيورد مسندم والجبل الأخضر وأعرق أسواق الشرق</h2>
+                <a href="/countries/country/asia/oman.html" class="Section-btn"
+                    onclick="event.stopPropagation()">استكشف</a>
+            </div>
+        </div>
+
+        <div class="country-card" data-region="asia"
+            onclick="window.location.href='/countries/country/asia/jordan.html'">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('country', 'jordan', 'الأردن', '/img/jordan-logo.jpg')">📌</button>
+            <img src="/img/jordan-logo.jpg" alt="الأردن">
+            <div class="card-overlay-mag"></div>
+            <div class="card-content-mag">
+                <h1>الأردن – Jordan</h1>
+                <h2>البتراء الوردية ووادي رم وفسيفساء الحضارات</h2>
+                <a href="/countries/country/asia/jordan.html" class="Section-btn"
+                    onclick="event.stopPropagation()">استكشف</a>
+            </div>
+        </div>
+
+        <div class="country-card" data-region="asia"
+            onclick="window.location.href='/countries/country/asia/nepal.html'">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('country', 'nepal', 'نيبال', '/img/nepal-logo.jpg')">📌</button>
+            <img src="/img/nepal-logo.jpg" alt="نيبال">
+            <div class="card-overlay-mag"></div>
+            <div class="card-content-mag">
+                <h1>نيبال – Nepal</h1>
+                <h2>قمة إيفرست ومعابد كاتماندو وجنة الهيمالايا</h2>
+                <a href="/countries/country/asia/nepal.html" class="Section-btn"
+                    onclick="event.stopPropagation()">استكشف</a>
+            </div>
+        </div>
+
+        <div class="country-card" data-region="asia"
+            onclick="window.location.href='/countries/country/asia/georgia.html'">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('country', 'georgia', 'جورجيا', '/img/georgia-logo.jpg')">📌</button>
+            <img src="/img/georgia-logo.jpg" alt="جورجيا">
+            <div class="card-overlay-mag"></div>
+            <div class="card-content-mag">
+                <h1>جورجيا – Georgia</h1>
+                <h2>كنائس القوقاز والخينكالي وجبال كازبيك الثلجية</h2>
+                <a href="/countries/country/asia/georgia.html" class="Section-btn"
+                    onclick="event.stopPropagation()">استكشف</a>
+            </div>
+        </div>
+
             onclick="window.location.href='/countries/country/africa/mauritius.html'">
             <button class="save-btn"
                 onclick="event.stopPropagation(); saveItem('country', 'mauritius', 'موريشيوس', '/img/mauritius-logo.jpg')">📌</button>
@@ -1491,7 +1693,6 @@
                 <a href="/countries/country/africa/mauritius.html" class="Section-btn"
                     onclick="event.stopPropagation()">استكشف</a>
             </div>
-
         </div>
 
         <div class="country-card" data-region="africa"
