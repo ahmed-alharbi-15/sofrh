@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>منغوليا – Mongolia</title>
+  <link rel="stylesheet" href="/countries/countries.css" />
+  <link rel="stylesheet" href="/index/index.css" />
+  <link rel="icon" href="/img/logo.png" />
+</head>
+<body>
+<header>
+  <div class="nav">
+    <a href="/index/index.html"><img src="/img/logo.png" class="logo" alt="سفرة"/></a>
+    <nav class="links">
+      <a href="/index/index.html">الرئيسية</a>
+      <a href="/countries/countries.html">الدول</a>
+      <a href="/events/events.html">الفعاليات</a>
+      <a href="/recipes/recipes.html">الوصفات</a>
+      <a href="/plan/plan.html">خطط رحلتك</a>
+    </nav>
+    <div class="auth-btns">
+      <button id="menu-btn">☰</button>
+    </div>
+  </div>
+</header>
+<div id="side-menu">
+  <button id="close-btn">×</button>
+  <a href="/index/index.html">الرئيسية</a>
+  <a href="/countries/countries.html">الدول</a>
+  <a href="/events/events.html">الفعاليات</a>
+  <a href="/recipes/recipes.html">الوصفات</a>
+  <a href="/plan/plan.html">خطط رحلتك</a>
+  <a href="/profile/profile.html">الملف الشخصي</a>
+  <a href="/auth/login.html" id="login-link">تسجيل الدخول</a>
+  <a href="#" id="logout-link" style="display:none">تسجيل الخروج</a>
+</div>
+
+<section class="country-name">
+  <h1>منغوليا – Mongolia</h1>
+  <p>أرض جنكيز خان والسهول اللانهائية حيث البدو يعيشون في الغير وسط الطبيعة البكر</p>
+</section>
+
+<section class="cities-section">
+  <h2 class="section-title">المدن</h2>
+  <div class="cities-grid">
+
+    <div class="cite" data-name="أولان باتور – Ulaanbaatar"
+        data-img="/img/mongolia-ulaanbaatar.jpg"
+        data-desc="عاصمة منغوليا ومركزها الحضاري والاقتصادي، مدينة تجمع بين الحداثة والتراث المنغولي العميق، تحيط بها الجبال وتشتهر بمتاحفها ومنتجعاتها البدوية القريبة."
+        data-historic="قصر الأوغدي خان التاريخي|متحف منغوليا الوطني|دير غاندان البوذي|ساحة سوخباتار|متحف الديناصورات الطبيعي|برج القرن الجديد"
+        data-restaurants="مطعم مينج أوردو|مطعم جنكيز المنغولي|مطعم يورت كيتشن|مطعم البدو الأصيل|مطعم غوبي|مطعم تيمور"
+        data-cafes="كافيه أولان باتور|كافيه السهول|ذا ستيب كافيه|كافيه غاندان|كافيه جنكيز|كافيه المنغولي"
+        data-events="دير غاندان البوذي الكبير|متحف منغوليا الوطني|قصر الأوغدي خان|متحف الديناصورات|ساحة سوخباتار|مهرجان النادام الوطني"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'mongolia_ulaanbaatar', 'أولان باتور', '/img/mongolia-ulaanbaatar.jpg')">🏙️</button>
+        <img src="/img/mongolia-ulaanbaatar.jpg" alt="أولان باتور" class="cite-img">
+        <span class="name">أولان باتور – Ulaanbaatar</span>
+        <p class="info">عاصمة أرض جنكيز خان</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="قراقورم – Karakorum"
+        data-img="/img/mongolia-karakorum.jpg"
+        data-desc="العاصمة التاريخية للإمبراطورية المنغولية في عهد جنكيز خان وأوغتاي خان، يحتضن اليوم دير إيردينيزو البوذي العظيم المبني على أنقاض المدينة العريقة."
+        data-historic="دير إيردينيزو البوذي|آثار القصر الإمبراطوري|متحف قراقورم|نصب تمثال جنكيز خان|مجمع خاركورين التاريخي|حجر السلحفاة الأثري"
+        data-restaurants="مطعم إمبراطورية المنغول|مطعم أوغتاي|مطعم قراقورم الأثري|مطعم التاريخ|مطعم جنكيز|مطعم اورخون"
+        data-cafes="كافيه قراقورم|كافيه إيردينيزو|ذا إمبايار كافيه|كافيه أوغتاي|كافيه السهل|كافيه المنغول"
+        data-events="دير إيردينيزو البوذي المدرج في اليونسكو|متحف قراقورم التاريخي|آثار القصر الإمبراطوري المنغولي|وادي اورخون المقدس|نصب جنكيز خان العملاق|مهرجان قراقورم السنوي"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'mongolia_karakorum', 'قراقورم', '/img/mongolia-karakorum.jpg')">🏙️</button>
+        <img src="/img/mongolia-karakorum.jpg" alt="قراقورم" class="cite-img">
+        <span class="name">قراقورم – Karakorum</span>
+        <p class="info">عاصمة الإمبراطورية المنغولية الخالدة</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="خوفسغول – Khövsgöl"
+        data-img="/img/mongolia-khuvsgul.jpg"
+        data-desc="منطقة بحيرة خوفسغول في أقصى شمال منغوليا المعروفة ببحرها المنغولي، محاطة بغابات الصنوبر الكثيفة والجبال الثلجية موطن قبيلة التساتان البائدة."
+        data-historic="بحيرة خوفسغول الوطنية المحمية|مخيمات قبيلة التساتان|متحف الطبيعة الشمالي|دير خاتغال البوذي|نصب الحجارة الأثرية|مضمار الغزلان المحفور"
+        data-restaurants="مطعم بحيرة خوفسغول|مطعم الشمال المنغولي|مطعم خاتغال|مطعم التساتان|مطعم الصنوبر|مطعم البحيرة الزرقاء"
+        data-cafes="كافيه خوفسغول|كافيه البحيرة الزرقاء|ذا ليك كافيه|كافيه الصنوبر|كافيه الشمال|كافيه خاتغال"
+        data-events="بحيرة خوفسغول السماوية البكر|لقاء قبيلة التساتان الرعاة|رحلات الكيازاك على البحيرة|غابات الصنوبر الشمالية|جبال سايان المنغولية|مهرجان الجليد الشتوي"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'mongolia_khuvsgul', 'خوفسغول', '/img/mongolia-khuvsgul.jpg')">🏙️</button>
+        <img src="/img/mongolia-khuvsgul.jpg" alt="خوفسغول" class="cite-img">
+        <span class="name">خوفسغول – Khövsgöl</span>
+        <p class="info">البحر المنغولي في الشمال البكر</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="دالانزدغاد – Dalanzadgad"
+        data-img="/img/mongolia-dalanzadgad.jpg"
+        data-desc="بوابة صحراء غوبي الشهيرة في جنوب منغوليا، أقرب مدينة للكثبان الرملية الذهبية والأودية الصخرية وكهوف الديناصورات التي تجعل غوبي وجهة فريدة في العالم."
+        data-historic="متحف غوبي الطبيعي|مواقع حفريات الديناصورات|جبال غرفانيت غوبي|خندق بايانزاغ الأحمر|دير أونغت|موقع نيمغت الأثري"
+        data-restaurants="مطعم غوبي الأصيل|مطعم الصحراء الجنوبية|مطعم الجمل الذهبي|مطعم دالانزدغاد|مطعم الكثبان|مطعم صحراء غوبي"
+        data-cafes="كافيه غوبي|كافيه الصحراء|ذا ديزرت كافيه|كافيه الرمال|كافيه الجمل|كافيه الجنوب المنغولي"
+        data-events="كثبان خونغورين إيلز الرملية الضخمة|خندق بايانزاغ الأحمر للديناصورات|صحراء غوبي اللانهائية|تسلق الكثبان الذهبية|جبال غرفانيت الصخرية|ليالي غوبي تحت النجوم"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'mongolia_dalanzadgad', 'دالانزدغاد', '/img/mongolia-dalanzadgad.jpg')">🏙️</button>
+        <img src="/img/mongolia-dalanzadgad.jpg" alt="دالانزدغاد" class="cite-img">
+        <span class="name">دالانزدغاد – Dalanzadgad</span>
+        <p class="info">بوابة صحراء غوبي الأسطورية</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="مورون – Mörön"
+        data-img="/img/mongolia-moron.jpg"
+        data-desc="مدينة الشمال المنغولي وعاصمة مقاطعة خوفسغول، نقطة الانطلاق لمغامرات الشمال نحو البحيرة الكبرى والغابات المنغولية الكثيفة بطبيعتها البكر المذهلة."
+        data-historic="متحف مقاطعة خوفسغول|مسجد مورون الإسلامي|دير منغولي تقليدي|سوق مورون الأسبوعي|منطقة دالاي خوفسغول|آثار الإمبراطورية القديمة"
+        data-restaurants="مطعم مورون الشمالي|مطعم خوفسغول أصيل|مطعم الغابة|مطعم الشيف المنغولي|مطعم الشمال البعيد|مطعم اليورت"
+        data-cafes="كافيه مورون|كافيه الشمال|ذا نورث كافيه|كافيه خوفسغول|كافيه الغابة|كافيه الجبل الشمالي"
+        data-events="السوق الشعبي الأسبوعي في مورون|طريق البحيرة نحو خوفسغول|غابات الشمال المنغولية|نهر إيدر البكر|مهرجان الجمل والخيل|مخيمات اليورت التقليدية"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'mongolia_moron', 'مورون', '/img/mongolia-moron.jpg')">🏙️</button>
+        <img src="/img/mongolia-moron.jpg" alt="مورون" class="cite-img">
+        <span class="name">مورون – Mörön</span>
+        <p class="info">بوابة الشمال المنغولي البكر</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="تسيتسيرليغ – Tsetserleg"
+        data-img="/img/mongolia-tsetserleg.jpg"
+        data-desc="المدينة الجبلية الساحرة في وسط منغوليا المعروفة بجمالها الطبيعي النادر، تحيط بها القمم الخضراء والأديرة البوذية القديمة ومتحفها المنغولي المميز."
+        data-historic="دير بولغان تسيتسيرليغ|متحف أرخانغاي الإقليمي|تلال تسيتسيرليغ الجميلة|موقع خارخورين القريب|دير زايان خورة القديم|آثار الأتراك الأوائل"
+        data-restaurants="مطعم تسيتسيرليغ الوسطى|مطعم الجبل الوسطي|مطعم البودا|مطعم أرخانغاي|مطعم المنغولي الأصيل|مطعم الدير القديم"
+        data-cafes="كافيه تسيتسيرليغ|كافيه الجبال الوسطى|ذا سنتر كافيه|كافيه البودا|كافيه أرخانغاي|كافيه السهل الأخضر"
+        data-events="دير بولغان البوذي التاريخي|تلال تسيتسيرليغ الخضراء|متحف الإقليم الوسطي|بحيرة تيرخين تساغان|وادي خارخورين القريب|مرعى البدو المنغوليين التقليدي"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'mongolia_tsetserleg', 'تسيتسيرليغ', '/img/mongolia-tsetserleg.jpg')">🏙️</button>
+        <img src="/img/mongolia-tsetserleg.jpg" alt="تسيتسيرليغ" class="cite-img">
+        <span class="name">تسيتسيرليغ – Tsetserleg</span>
+        <p class="info">جوهرة منغوليا الوسطى الجبلية</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+  </div>
+</section>
+
+<section class="foods-section">
+  <h2 class="section-title">الأكلات الشعبية</h2>
+  <div class="foods-grid">
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=mongolia-buuz'">
+      <img src="/img/mongolia-buuz.jpg" alt="بووز" class="foods-img">
+      <span class="name-foods">بووز – Buuz</span>
+      <div class="food-info">الزلابية المنغولية المطهوة على البخار محشوة بلحم الضأن والبصل والثوم، طبق العيد الوطني في مهرجان تساغان سار</div>
+      <a href="/recipes/recipes.html?recipe=mongolia-buuz" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=mongolia-khuushuur'">
+      <img src="/img/mongolia-khuushuur.jpg" alt="خوشور" class="foods-img">
+      <span class="name-foods">خوشور – Khuushuur</span>
+      <div class="food-info">فطيرة اللحم المنغولية المقلية المقرمشة المحشوة بلحم الضأن المتبل، الوجبة الأشهر في مهرجان النادام</div>
+      <a href="/recipes/recipes.html?recipe=mongolia-khuushuur" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=mongolia-tsuivan'">
+      <img src="/img/mongolia-tsuivan.jpg" alt="تسووان" class="foods-img">
+      <span class="name-foods">تسووان – Tsuivan</span>
+      <div class="food-info">المعكرونة المنغولية اليدوية المقلية مع لحم الضأن والخضروات، الطبق اليومي في البيوت المنغولية</div>
+      <a href="/recipes/recipes.html?recipe=mongolia-tsuivan" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=mongolia-boodog'">
+      <img src="/img/mongolia-boodog.jpg" alt="بودوغ" class="foods-img">
+      <span class="name-foods">بودوغ – Boodog</span>
+      <div class="food-info">لحم الضأن المطهو بالحجارة الساخنة داخل جلد الحيوان نفسه، أسلوب الطهي البدوي المنغولي الأقدم والأفريد</div>
+      <a href="/recipes/recipes.html?recipe=mongolia-boodog" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=mongolia-guriltai-shul'">
+      <img src="/img/mongolia-guriltai-shul.jpg" alt="شوربة غوريلتاي" class="foods-img">
+      <span class="name-foods">شوربة غوريلتاي – Guriltai Shul</span>
+      <div class="food-info">شوربة المعكرونة واللحم المنغولية الدافئة، وجبة البدو في ليالي السهول الباردة التي تُعطي الدفء والقوة</div>
+      <a href="/recipes/recipes.html?recipe=mongolia-guriltai-shul" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=mongolia-airag-tea'">
+      <img src="/img/mongolia-airag-tea.jpg" alt="شاي الزبدة المنغولي" class="foods-img">
+      <span class="name-foods">شاي الزبدة المنغولي – Mongolian Butter Tea</span>
+      <div class="food-info">شاي الضيافة المنغولي باللبن والزبدة والملح المحلي، يُقدم لكل ضيف يدخل خيمة الغير تقليداً عريقاً</div>
+      <a href="/recipes/recipes.html?recipe=mongolia-airag-tea" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+  </div>
+</section>
+
+<section class="events-section">
+  <h2 class="section-title">الفعاليات والأماكن</h2>
+  <div class="events-grid">
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=MongoliaGobi'">
+      <img src="/img/mongolia-gobi.jpg" alt="صحراء غوبي" class="event-img">
+      <span class="name-event">صحراء غوبي – Gobi Desert</span>
+      <div class="event-info">إحدى أكبر الصحاري في العالم بكثبانها الذهبية وكهوف الديناصورات وليالي النجوم التي لا مثيل لها</div>
+      <a href="/events/events.html?event=MongoliaGobi" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=MongoliaKhuvsgul'">
+      <img src="/img/mongolia-khuvsgul.jpg" alt="بحيرة خوفسغول" class="event-img">
+      <span class="name-event">بحيرة خوفسغول – Khuvsgul Lake</span>
+      <div class="event-info">بحيرة المياه العذبة المعروفة بالبحر المنغولي، محاطة بغابات الصنوبر والجبال بمياه شفافة كالكريستال</div>
+      <a href="/events/events.html?event=MongoliaKhuvsgul" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=MongoliaNaadam'">
+      <img src="/img/mongolia-naadam.jpg" alt="مهرجان النادام" class="event-img">
+      <span class="name-event">مهرجان النادام – Naadam Festival</span>
+      <div class="event-info">المهرجان الوطني المنغولي الأكبر بالألعاب الثلاثة التقليدية: المصارعة وسباق الخيل والرماية بالقوس</div>
+      <a href="/events/events.html?event=MongoliaNaadam" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=MongoliaKarakorum'">
+      <img src="/img/mongolia-karakorum.jpg" alt="قراقورم التاريخية" class="event-img">
+      <span class="name-event">قراقورم التاريخية – Karakorum</span>
+      <div class="event-info">عاصمة الإمبراطورية المنغولية مع دير إيردينيزو البوذي المدرج في اليونسكو ومتحف الحضارة المنغولية</div>
+      <a href="/events/events.html?event=MongoliaKarakorum" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=MongoliaEagle'">
+      <img src="/img/mongolia-eagle.jpg" alt="مهرجان صيد النسور" class="event-img">
+      <span class="name-event">مهرجان صيد النسور – Eagle Festival</span>
+      <div class="event-info">المهرجان الأسطوري لصيادي النسور في غرب منغوليا حيث الصقاريون الكازاخ يستعرضون فن الصيد القديم</div>
+      <a href="/events/events.html?event=MongoliaEagle" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=MongoliaSteppe'">
+      <img src="/img/mongolia-steppe.jpg" alt="سهول المنغول" class="event-img">
+      <span class="name-event">سهول المنغول – Mongolian Steppe</span>
+      <div class="event-info">تجربة الإقامة في خيام الغير البدوية وسط السهول مع الرعاة ومشاهدة غروب الشمس على الأفق اللانهائي</div>
+      <a href="/events/events.html?event=MongoliaSteppe" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+  </div>
+</section>
+
+<div id="cityModal" class="modal" onclick="closeCityModal(event)">
+  <div class="modal-content">
+    <button class="modal-close" onclick="closeCityModal(event)">×</button>
+    <img id="modal-city-img" src="" alt="">
+    <h2 id="modal-city-name"></h2>
+    <p id="modal-city-desc"></p>
+    <div class="modal-section"><h3>المعالم التاريخية</h3><ul id="modal-city-historic"></ul></div>
+    <div class="modal-section"><h3>المطاعم</h3><ul id="modal-city-restaurants"></ul></div>
+    <div class="modal-section"><h3>المقاهي</h3><ul id="modal-city-cafes"></ul></div>
+    <div class="modal-section"><h3>الفعاليات</h3><ul id="modal-city-events"></ul></div>
+  </div>
+</div>
+
+<footer>
+  <p>© 2025 سفرة. جميع الحقوق محفوظة.</p>
+</footer>
+<script src="/countries/countries.js"></script>
+<script src="/auth/auth.js"></script>
+</body>
+</html>

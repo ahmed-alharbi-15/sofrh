@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>تركمانستان – Turkmenistan</title>
+  <link rel="stylesheet" href="/countries/countries.css" />
+  <link rel="stylesheet" href="/index/index.css" />
+  <link rel="icon" href="/img/logo.png" />
+</head>
+<body>
+<header>
+  <div class="nav">
+    <a href="/index/index.html"><img src="/img/logo.png" class="logo" alt="سفرة"/></a>
+    <nav class="links">
+      <a href="/index/index.html">الرئيسية</a>
+      <a href="/countries/countries.html">الدول</a>
+      <a href="/events/events.html">الفعاليات</a>
+      <a href="/recipes/recipes.html">الوصفات</a>
+      <a href="/plan/plan.html">خطط رحلتك</a>
+    </nav>
+    <div class="auth-btns">
+      <button id="menu-btn">☰</button>
+    </div>
+  </div>
+</header>
+<div id="side-menu">
+  <button id="close-btn">×</button>
+  <a href="/index/index.html">الرئيسية</a>
+  <a href="/countries/countries.html">الدول</a>
+  <a href="/events/events.html">الفعاليات</a>
+  <a href="/recipes/recipes.html">الوصفات</a>
+  <a href="/plan/plan.html">خطط رحلتك</a>
+  <a href="/profile/profile.html">الملف الشخصي</a>
+  <a href="/auth/login.html" id="login-link">تسجيل الدخول</a>
+  <a href="#" id="logout-link" style="display:none">تسجيل الخروج</a>
+</div>
+
+<section class="country-name">
+  <h1>تركمانستان – Turkmenistan</h1>
+  <p>بلد الذهب الأبيض والصحراء الكبرى حيث حضارة طريق الحرير تتجلى في مدن الرخام الساحرة</p>
+</section>
+
+<section class="cities-section">
+  <h2 class="section-title">المدن</h2>
+  <div class="cities-grid">
+
+    <div class="cite" data-name="عشق آباد – Ashgabat"
+        data-img="/img/turkmenistan-ashgabat.jpg"
+        data-desc="عاصمة الرخام الأبيض الوحيدة في العالم المدرجة في موسوعة غينيس، مدينة فارهة بمبانيها البيضاء المتلألئة ومساجدها الضخمة وفنواراتها الرخامية الفاخرة المذهلة."
+        data-historic="مسجد تركمانباشي الروحي|قصر نيازوف الرئاسي|متحف الفنون الجميلة|نصب رقيمة الذهبية|قوس المحايدة|متحف الجذور الوطني"
+        data-restaurants="مطعم عشق آباد الكبير|مطعم رخام المدينة|مطعم تركمانستان|مطعم الذهب الأبيض|مطعم المسجد الكبير|مطعم الاستقلال"
+        data-cafes="كافيه عشق آباد|كافيه الرخام|ذا وايت ماربل كافيه|كافيه الفوارة|كافيه المدينة البيضاء|كافيه الروحي"
+        data-events="مدينة الرخام الأبيض المدرجة في غينيس|مسجد تركمانباشي الروحي الأسطوري|قوس المحايدة الشاهق|فنوارات عشق آباد الضخمة|جولة المباني الرخامية المتلألئة|متحف الجذور الوطني التركماني"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'turkmenistan_ashgabat', 'عشق آباد', '/img/turkmenistan-ashgabat.jpg')">🏙️</button>
+        <img src="/img/turkmenistan-ashgabat.jpg" alt="عشق آباد" class="cite-img">
+        <span class="name">عشق آباد – Ashgabat</span>
+        <p class="info">عاصمة الرخام الأبيض المدرجة في غينيس</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="مرو – Merv"
+        data-img="/img/turkmenistan-merv.jpg"
+        data-desc="إحدى أعظم مدن العالم الإسلامي القديم على طريق الحرير، كانت يوماً من أكبر مدن الأرض وعاصمة العلم والثقافة في العهد السلجوقي، مدرجة في اليونسكو."
+        data-historic="قلعة إيرك قلعة القديمة|ضريح السلطان سنجر|مسجد محمد بن زيد|أسوار مدينة مرو القديمة|منطقة أبو مسلم الأثرية|متحف مرو الوطني"
+        data-restaurants="مطعم مرو التاريخي|مطعم السلطان سنجر|مطعم طريق الحرير|مطعم مرو الأثري|مطعم واحة مرغاب|مطعم الصحراء الكبرى"
+        data-cafes="كافيه مرو|كافيه السلطان|ذا سيلك رود كافيه|كافيه الأثري|كافيه الواحة|كافيه الصحراء"
+        data-events="آثار مرو مدرجة في اليونسكو|ضريح السلطان سنجر السلجوقي|قلعة إيرك قلعة من 2500 سنة|جولة المدينة الإسلامية القديمة|متحف مرو بمقتنياتها السلجوقية|غروب الشمس في الصحراء الكبرى"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'turkmenistan_merv', 'مرو', '/img/turkmenistan-merv.jpg')">🏙️</button>
+        <img src="/img/turkmenistan-merv.jpg" alt="مرو" class="cite-img">
+        <span class="name">مرو – Merv</span>
+        <p class="info">جوهرة طريق الحرير المدرجة في اليونسكو</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="كونيا أورغنج – Konye-Urgench"
+        data-img="/img/turkmenistan-konye-urgench.jpg"
+        data-desc="عاصمة الخوارزميين القديمة بمآذنها الشاهقة وأضرحتها الفيروزية المدرجة في اليونسكو، موطن العلامة البيروني وإرث حضاري استثنائي على طريق الحرير القديم."
+        data-historic="ضريح نجم الدين كبرى|مئذنة كونيا أورغنج|ضريح فخر الدين رازي|قبة ضريح الخوارزميين|متحف كونيا أورغنج|آثار عاصمة الخوارزم"
+        data-restaurants="مطعم كونيا أورغنج|مطعم الخوارزم|مطعم المئذنة|مطعم البيروني|مطعم آمو دريا|مطعم طريق الحرير"
+        data-cafes="كافيه كونيا أورغنج|كافيه الخوارزم|ذا أورغنج كافيه|كافيه المئذنة|كافيه البيروني|كافيه النهر"
+        data-events="أضرحة وآثار كونيا أورغنج اليونسكو|مئذنة كونيا أورغنج الأسطورية|ضريح نجم الدين كبرى الصوفي|آثار عاصمة الخوارزميين|جولة المباني الفيروزية القديمة|نهر آمو دريا التاريخي"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'turkmenistan_konyeurgench', 'كونيا أورغنج', '/img/turkmenistan-konye-urgench.jpg')">🏙️</button>
+        <img src="/img/turkmenistan-konye-urgench.jpg" alt="كونيا أورغنج" class="cite-img">
+        <span class="name">كونيا أورغنج – Konye-Urgench</span>
+        <p class="info">عاصمة الخوارزميين على اليونسكو</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="تركمانباشي – Turkmenbashi"
+        data-img="/img/turkmenistan-turkmenbashi.jpg"
+        data-desc="ميناء بحر قزوين الرئيسي في تركمانستان، مدينة ساحلية هادئة بشواطئها الجميلة وغروبها الذهبي على البحر الداخلي الأكبر في العالم."
+        data-historic="ميناء تركمانباشي التاريخي|شواطئ بحر قزوين|متحف المدينة المحلي|حديقة قزوين الكبرى|ساحة الاستقلال|منطقة النفط التاريخية"
+        data-restaurants="مطعم قزوين البحري|مطعم تركمانباشي|مطعم الميناء|مطعم الخليج|مطعم الشاطئ|مطعم غروب قزوين"
+        data-cafes="كافيه تركمانباشي|كافيه قزوين|ذا كاسبيان كافيه|كافيه الميناء|كافيه الشاطئ|كافيه الغروب"
+        data-events="شواطئ بحر قزوين الرملية الهادئة|غروب الشمس الذهبي على قزوين|ميناء تركمانباشي التاريخي|رحلة قارب على البحر الداخلي|سوق السمك الطازج المحلي|مشاهدة أكبر بحيرة داخلية في العالم"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'turkmenistan_turkmenbashi', 'تركمانباشي', '/img/turkmenistan-turkmenbashi.jpg')">🏙️</button>
+        <img src="/img/turkmenistan-turkmenbashi.jpg" alt="تركمانباشي" class="cite-img">
+        <span class="name">تركمانباشي – Turkmenbashi</span>
+        <p class="info">ميناء بحر قزوين الذهبي</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="ماري – Mary"
+        data-img="/img/turkmenistan-mary.jpg"
+        data-desc="المدينة التركمانية الثانية بالقرب من آثار مرو الأسطورية، مركز إداري حيوي في جنوب تركمانستان يجمع بين الحداثة والتراث على نهر مرغاب الخلاب."
+        data-historic="متحف ماري الإقليمي|ساحة استقلال ماري|حديقة ماري الوطنية|آثار مرو القريبة|نهر مرغاب|مسجد ماري الكبير"
+        data-restaurants="مطعم ماري الكبير|مطعم مرغاب|مطعم الجنوب التركماني|مطعم الواحة|مطعم مرو القريبة|مطعم النهر"
+        data-cafes="كافيه ماري|كافيه مرغاب|ذا ماري كافيه|كافيه الواحة|كافيه النهر|كافيه الجنوب"
+        data-events="متحف ماري الإقليمي بالكنوز المرغابية|بوابة آثار مرو اليونسكو القريبة|نهر مرغاب الخلاب|ساحة استقلال ماري|حديقة الجنوب التركماني|سوق ماري الشعبي التركماني"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'turkmenistan_mary', 'ماري', '/img/turkmenistan-mary.jpg')">🏙️</button>
+        <img src="/img/turkmenistan-mary.jpg" alt="ماري" class="cite-img">
+        <span class="name">ماري – Mary</span>
+        <p class="info">بوابة آثار مرو اليونسكو الأسطورية</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="دارفازا – Darvaza"
+        data-img="/img/turkmenistan-darvaza.jpg"
+        data-desc="موقع حفرة نار الجهنم الشهيرة في قلب صحراء قراقوم، ثقب ناري ضخم يحترق منذ عقود في منتصف صحراء بيضاء لا نهاية لها في مشهد درامي ليلي استثنائي."
+        data-historic="حفرة نار الجهنم|صحراء قراقوم الكبرى|مخيمات البدو التركمانية|حفرة الغاز الثانية|حفرة الماء المجاورة|جولة قبيلة تيكه التركمانية"
+        data-restaurants="مطعم دارفازا البدوي|مطعم الصحراء|مطعم النار الأبدية|مطعم قراقوم|مطعم البدو التركمان|مطعم الليل الصحراوي"
+        data-cafes="كافيه دارفازا|كافيه النار|ذا فايرس كافيه|كافيه الصحراء|كافيه البدو|كافيه قراقوم"
+        data-events="حفرة نار الجهنم الذائعة الصيت عالمياً|تخييم ليلي بجانب الحفرة النارية|صحراء قراقوم البيضاء اللانهائية|رحلة جيب 4x4 في الصحراء|لقاء قبائل التركمان البدوية|مشاهدة النجوم في الصحراء الصافية"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'turkmenistan_darvaza', 'دارفازا', '/img/turkmenistan-darvaza.jpg')">🏙️</button>
+        <img src="/img/turkmenistan-darvaza.jpg" alt="دارفازا" class="cite-img">
+        <span class="name">دارفازا – Darvaza</span>
+        <p class="info">موقع حفرة نار الجهنم الأسطورية</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+  </div>
+</section>
+
+<section class="foods-section">
+  <h2 class="section-title">الأكلات الشعبية</h2>
+  <div class="foods-grid">
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=turkmenistan-plov'">
+      <img src="/img/turkmenistan-plov.jpg" alt="بلو تركماني" class="foods-img">
+      <span class="name-foods">بلو تركماني – Turkmen Plov</span>
+      <div class="food-info">الطبق الوطني التركماني، أرز مطبوخ بسمن ذيل الضأن مع الجزر الأصفر واللحم والزعفران، يُعد في مرجل ضخم في المناسبات الكبرى</div>
+      <a href="/recipes/recipes.html?recipe=turkmenistan-plov" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=turkmenistan-shurpa'">
+      <img src="/img/turkmenistan-shurpa.jpg" alt="شوربا" class="foods-img">
+      <span class="name-foods">شوربا – Shurpa</span>
+      <div class="food-info">الحساء التركماني الغني من لحم الضأن مع الخضروات والحمص والبهارات الطازجة، المرجع الأساسي لوجبات الطاقة في مناخ الصحراء القاسي</div>
+      <a href="/recipes/recipes.html?recipe=turkmenistan-shurpa" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=turkmenistan-manty'">
+      <img src="/img/turkmenistan-manty.jpg" alt="مانتي" class="foods-img">
+      <span class="name-foods">مانتي – Manty</span>
+      <div class="food-info">الزلابية التركمانية الكبيرة المحشوة باللحم والبصل والبهارات والمطبوخة على البخار، طبق العيد والاحتفالات في كل بيت تركماني</div>
+      <a href="/recipes/recipes.html?recipe=turkmenistan-manty" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=turkmenistan-gutap'">
+      <img src="/img/turkmenistan-gutap.jpg" alt="قوتاب" class="foods-img">
+      <span class="name-foods">قوتاب – Gutap</span>
+      <div class="food-info">فطيرة رقيقة تركمانية مقلية محشوة بالخضروات أو اللحم المفروم، وجبة الفطور الشعبية التي تُقدم مع اللبن وزيت الزيتون</div>
+      <a href="/recipes/recipes.html?recipe=turkmenistan-gutap" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=turkmenistan-dograma'">
+      <img src="/img/turkmenistan-dograma.jpg" alt="دوغراما" class="foods-img">
+      <span class="name-foods">دوغراما – Dograma</span>
+      <div class="food-info">الطبق الوطني التقليدي للاحتفالات الكبرى، خبز مفتت مع مرق اللحم والبصل المقلي، يُعد في الهواء الطلق ويوزع على الجموع</div>
+      <a href="/recipes/recipes.html?recipe=turkmenistan-dograma" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=turkmenistan-chorba'">
+      <img src="/img/turkmenistan-chorba.jpg" alt="شوربة الطماطم" class="foods-img">
+      <span class="name-foods">شوربة الطماطم – Chorba</span>
+      <div class="food-info">شوربة الطماطم التركمانية بالخضروات الموسمية واللحم والبهارات، شوربة اليومية التي يبدأ بها أهل تركمانستان نهارهم في كل فصول السنة</div>
+      <a href="/recipes/recipes.html?recipe=turkmenistan-chorba" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+  </div>
+</section>
+
+<section class="events-section">
+  <h2 class="section-title">الفعاليات والأماكن</h2>
+  <div class="events-grid">
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=TurkmenDarvaza'">
+      <img src="/img/turkmenistan-darvaza.jpg" alt="حفرة نار الجهنم" class="event-img">
+      <span class="name-event">حفرة نار الجهنم – Darvaza Crater</span>
+      <div class="event-info">أشهر موقع في تركمانستان وواحد من أغرب مشاهد الأرض، حفرة نارية تضطرم في صحراء قراقوم البيضاء منذ عقود بمشهد ليلي استثنائي</div>
+      <a href="/events/events.html?event=TurkmenDarvaza" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=TurkmenMerv'">
+      <img src="/img/turkmenistan-merv.jpg" alt="آثار مرو" class="event-img">
+      <span class="name-event">آثار مرو – Ancient Merv</span>
+      <div class="event-info">إحدى أعظم مدن العالم الإسلامي القديم مدرجة في اليونسكو بأسوارها وأضرحتها السلجوقية الرائعة على طريق الحرير التاريخي</div>
+      <a href="/events/events.html?event=TurkmenMerv" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=TurkmenAshgabat'">
+      <img src="/img/turkmenistan-ashgabat.jpg" alt="عشق آباد البيضاء" class="event-img">
+      <span class="name-event">عشق آباد البيضاء – White Ashgabat</span>
+      <div class="event-info">عاصمة الرخام الأبيض الوحيدة في العالم المدرجة في غينيس بمبانيها المذهلة وفنواراتها وأحجامها المعمارية الفريدة من نوعها</div>
+      <a href="/events/events.html?event=TurkmenAshgabat" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=TurkmenKonyeUrgench'">
+      <img src="/img/turkmenistan-konye-urgench.jpg" alt="كونيا أورغنج" class="event-img">
+      <span class="name-event">كونيا أورغنج – Konye-Urgench</span>
+      <div class="event-info">مآذن وأضرحة الخوارزميين الشاهقة المدرجة في اليونسكو في عاصمتهم الأثرية القديمة التي شهدت ذروة الحضارة الإسلامية في آسيا الوسطى</div>
+      <a href="/events/events.html?event=TurkmenKonyeUrgench" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=TurkmenCaspian'">
+      <img src="/img/turkmenistan-turkmenbashi.jpg" alt="بحر قزوين" class="event-img">
+      <span class="name-event">بحر قزوين – Caspian Sea</span>
+      <div class="event-info">شواطئ بحر قزوين التركمانية الهادئة الرملية وغروبها الذهبي الرائع على أكبر بحيرة مياه مالحة داخلية في العالم</div>
+      <a href="/events/events.html?event=TurkmenCaspian" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=TurkmenNowruz'">
+      <img src="/img/turkmenistan-nowruz.jpg" alt="نوروز تركماني" class="event-img">
+      <span class="name-event">نوروز تركماني – Turkmen Nowruz</span>
+      <div class="event-info">احتفالات رأس السنة الفارسية في تركمانستان بالألعاب الشعبية وسباقات الخيل والموسيقى التقليدية والأزياء التركمانية الزاهية المطرزة بالذهب</div>
+      <a href="/events/events.html?event=TurkmenNowruz" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+  </div>
+</section>
+
+<div id="cityModal" class="modal" onclick="closeCityModal(event)">
+  <div class="modal-content">
+    <button class="modal-close" onclick="closeCityModal(event)">×</button>
+    <img id="modal-city-img" src="" alt="">
+    <h2 id="modal-city-name"></h2>
+    <p id="modal-city-desc"></p>
+    <div class="modal-section"><h3>المعالم التاريخية</h3><ul id="modal-city-historic"></ul></div>
+    <div class="modal-section"><h3>المطاعم</h3><ul id="modal-city-restaurants"></ul></div>
+    <div class="modal-section"><h3>المقاهي</h3><ul id="modal-city-cafes"></ul></div>
+    <div class="modal-section"><h3>الفعاليات</h3><ul id="modal-city-events"></ul></div>
+  </div>
+</div>
+
+<footer>
+  <p>© 2025 سفرة. جميع الحقوق محفوظة.</p>
+</footer>
+<script src="/countries/countries.js"></script>
+<script src="/auth/auth.js"></script>
+</body>
+</html>

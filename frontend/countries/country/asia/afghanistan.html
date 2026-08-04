@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>أفغانستان – Afghanistan</title>
+  <link rel="stylesheet" href="/countries/countries.css" />
+  <link rel="stylesheet" href="/index/index.css" />
+  <link rel="icon" href="/img/logo.png" />
+</head>
+<body>
+<header>
+  <div class="nav">
+    <a href="/index/index.html"><img src="/img/logo.png" class="logo" alt="سفرة"/></a>
+    <nav class="links">
+      <a href="/index/index.html">الرئيسية</a>
+      <a href="/countries/countries.html">الدول</a>
+      <a href="/events/events.html">الفعاليات</a>
+      <a href="/recipes/recipes.html">الوصفات</a>
+      <a href="/plan/plan.html">خطط رحلتك</a>
+    </nav>
+    <div class="auth-btns">
+      <button id="menu-btn">☰</button>
+    </div>
+  </div>
+</header>
+<div id="side-menu">
+  <button id="close-btn">×</button>
+  <a href="/index/index.html">الرئيسية</a>
+  <a href="/countries/countries.html">الدول</a>
+  <a href="/events/events.html">الفعاليات</a>
+  <a href="/recipes/recipes.html">الوصفات</a>
+  <a href="/plan/plan.html">خطط رحلتك</a>
+  <a href="/profile/profile.html">الملف الشخصي</a>
+  <a href="/auth/login.html" id="login-link">تسجيل الدخول</a>
+  <a href="#" id="logout-link" style="display:none">تسجيل الخروج</a>
+</div>
+
+<section class="country-name">
+  <h1>أفغانستان – Afghanistan</h1>
+  <p>قلب آسيا وملتقى الحضارات حيث بلخ وهرات وكابول تحكيان عن مجد الشعر الفارسي والحرير</p>
+</section>
+
+<section class="cities-section">
+  <h2 class="section-title">المدن</h2>
+  <div class="cities-grid">
+
+    <div class="cite" data-name="كابول – Kabul"
+        data-img="/img/afghanistan-kabul.jpg"
+        data-desc="العاصمة الأفغانية المتربعة في وادٍ جبلي على ارتفاع 1800 متر، مدينة عريقة في التاريخ الإسلامي بضريح بابر المغولي وأسواقها التقليدية وجبالها المحيطة الخلابة."
+        data-historic="ضريح بابر المغولي|قلعة بالا حصار|متحف كابول الوطني|سوق كابول القديم|مسجد شاه دو شمشيرة|حديقة بابر"
+        data-restaurants="مطعم كابول الأفغاني|مطعم ضريح بابر|مطعم القلعة|مطعم الأفغان الكبير|مطعم البلخي|مطعم كابول الجبلي"
+        data-cafes="كافيه كابول|كافيه بابر|ذا غاردن كافيه|كافيه الجبل|كافيه الوادي|كافيه أفغانستان"
+        data-events="ضريح بابر مؤسس الإمبراطورية المغولية|حديقة بابر التاريخية الخضراء|قلعة بالا حصار فوق التل|متحف كابول الوطني بكنوز الحضارة|سوق كابول الشعبي المتنوع|مشاهدة جبال هندوكوش المحيطة"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'afghanistan_kabul', 'كابول', '/img/afghanistan-kabul.jpg')">🏙️</button>
+        <img src="/img/afghanistan-kabul.jpg" alt="كابول" class="cite-img">
+        <span class="name">كابول – Kabul</span>
+        <p class="info">العاصمة في وادي جبال هندوكوش</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="هرات – Herat"
+        data-img="/img/afghanistan-herat.jpg"
+        data-desc="جوهرة خراسان وعاصمة الحضارة الإسلامية في أفغانستان، مدينة الشعر والفن والمعمار بمسجد الجمعة الكبير ومئذناته الخمس الشاهقة وقلعتها التيمورية الأسطورية."
+        data-historic="مسجد الجمعة الكبير|قلعة هرات التيمورية|المئذنات الخمس التيمورية|ضريح خواجة عبدالله أنصاري|متحف هرات الوطني|سوق هرات العتيق"
+        data-restaurants="مطعم هرات الكبير|مطعم التيموريين|مطعم المئذنات|مطعم الجمعة|مطعم خراسان|مطعم الحرير"
+        data-cafes="كافيه هرات|كافيه التيموريين|ذا هيرات كافيه|كافيه المئذنات|كافيه الجمعة|كافيه خراسان"
+        data-events="مسجد الجمعة الكبير تحفة العمارة الإسلامية|المئذنات الخمس التيمورية الشاهقة|قلعة هرات التيمورية العتيقة|ضريح خواجة عبدالله أنصاري|سوق هرات التقليدي|مهرجان هرات الثقافي السنوي"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'afghanistan_herat', 'هرات', '/img/afghanistan-herat.jpg')">🏙️</button>
+        <img src="/img/afghanistan-herat.jpg" alt="هرات" class="cite-img">
+        <span class="name">هرات – Herat</span>
+        <p class="info">جوهرة خراسان وعاصمة الحضارة</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="بلخ – Balkh"
+        data-img="/img/afghanistan-balkh.jpg"
+        data-desc="أم المدن وإحدى أقدم المدن في التاريخ البشري، مهد الزردشتية والبوذية والإسلام على التوالي، مدينة المتنبي الخراساني جلال الدين الرومي الذي وُلد قريباً منها."
+        data-historic="مسجد نه كنبد التسعة قباب|ضريح رابعة البلخية|تل بلخ الأثري|متحف بلخ|حديقة بلخ|مقبرة السلاطين"
+        data-restaurants="مطعم بلخ القديم|مطعم أم المدن|مطعم الرومي|مطعم خراسان الشمالي|مطعم التسعة قباب|مطعم السهل"
+        data-cafes="كافيه بلخ|كافيه الرومي|ذا أنسينت سيتي كافيه|كافيه أم المدن|كافيه التسعة قباب|كافيه الزردشت"
+        data-events="مسجد نه كنبد أقدم مسجد في أفغانستان|تل بلخ الأثري من 4000 سنة|ضريح رابعة البلخية الشاعرة|مدينة الرومي العظيم|سهل بلخ الشاسع بأثاره|جولة المواقع البوذية والإسلامية القديمة"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'afghanistan_balkh', 'بلخ', '/img/afghanistan-balkh.jpg')">🏙️</button>
+        <img src="/img/afghanistan-balkh.jpg" alt="بلخ" class="cite-img">
+        <span class="name">بلخ – Balkh</span>
+        <p class="info">أم المدن وأقدم حضارة أفغانستان</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="بامیان – Bamiyan"
+        data-img="/img/afghanistan-bamiyan.jpg"
+        data-desc="وادي بامیان مدرج في اليونسكو بطبيعته الجبلية الخلابة وبحيراته الفيروزية بند أمير المذهلة والنقوش التاريخية الضخمة في الجبال الحمراء البيضاء."
+        data-historic="بحيرات بند أمير الفيروزية|صخور باميان المنقوشة|متحف باميان الأثري|قلعة ضهك البيضاء|جبال هندوكوش المحيطة|قرى هازاره التقليدية"
+        data-restaurants="مطعم بامیان الجبلي|مطعم بند أمير|مطعم هندوكوش|مطعم هازاره|مطعم الجبال الحمراء|مطعم وادي بامیان"
+        data-cafes="كافيه بامیان|كافيه بند أمير|ذا باميان كافيه|كافيه هندوكوش|كافيه الجبال|كافيه الوادي"
+        data-events="بحيرات بند أمير الفيروزية الساحرة|طبيعة وادي بامیان الجبلية الخلابة|قلعة ضهك البيضاء التاريخية|جبال هندوكوش الضخمة|قرى هازاره التقليدية|مشاهدة غروب الشمس على الوادي"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'afghanistan_bamiyan', 'بامیان', '/img/afghanistan-bamiyan.jpg')">🏙️</button>
+        <img src="/img/afghanistan-bamiyan.jpg" alt="بامیان" class="cite-img">
+        <span class="name">بامیان – Bamiyan</span>
+        <p class="info">وادي بحيرات بند أمير الفيروزية</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="قندهار – Kandahar"
+        data-img="/img/afghanistan-kandahar.jpg"
+        data-desc="ثاني أكبر مدن أفغانستان وعاصمتها التاريخية الأولى قبل كابول، مدينة الفاكهة والبستان على ضفاف نهر الأرغنداب بتاريخها العميق والرمانها الشهير."
+        data-historic="ضريح أحمد شاه درانى|مسجد خرقة المبارك|قلعة قندهار القديمة|حديقة بابر قندهار|سوق قندهار التاريخي|متحف قندهار"
+        data-restaurants="مطعم قندهار الدراني|مطعم الأرغنداب|مطعم الرمانة|مطعم البستان|مطعم الجنوب الأفغاني|مطعم درانى"
+        data-cafes="كافيه قندهار|كافيه الأرغنداب|ذا كاندهار كافيه|كافيه البستان|كافيه الرمانة|كافيه الجنوب"
+        data-events="ضريح أحمد شاه درانى مؤسس الدولة الأفغانية|مسجد خرقة النبي المبارك|سوق قندهار وحلويات الرمان|حدائق وبساتين الأرغنداب|قلعة قندهار التاريخية|رمانة قندهار الشهيرة بأسواق الفاكهة"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'afghanistan_kandahar', 'قندهار', '/img/afghanistan-kandahar.jpg')">🏙️</button>
+        <img src="/img/afghanistan-kandahar.jpg" alt="قندهار" class="cite-img">
+        <span class="name">قندهار – Kandahar</span>
+        <p class="info">العاصمة التاريخية الأولى لأفغانستان</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="مزار شريف – Mazar-i-Sharif"
+        data-img="/img/afghanistan-mazar.jpg"
+        data-desc="المدينة المقدسة الشمالية بضريح علي بن أبي طالب الأزرق المذهل كروح السماء المنعكسة على الأرض، حمامها الأبيض وزهور التيوليب الربيعية تزيدها سحراً."
+        data-historic="ضريح الإمام علي بن أبي طالب|مسجد الروضة الزرقاء|حمام الروضة الأبيض|متحف مزار شريف|ساحة المدينة|بازار مزار"
+        data-restaurants="مطعم مزار الشريف|مطعم الروضة الزرقاء|مطعم الإمام علي|مطعم الحمامة البيضاء|مطعم الشمال الأفغاني|مطعم بازار مزار"
+        data-cafes="كافيه مزار|كافيه الروضة|ذا بلو موسك كافيه|كافيه الحمامة|كافيه الشمال|كافيه التيوليب"
+        data-events="ضريح الإمام علي الأزرق الساحر|حمام الروضة الأبيض المقدس|مهرجان نوروز وتيوليب مزار|موسم تيوليب الربيع الخلاب|بازار مزار الشعبي|جولة المدينة المقدسة"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'afghanistan_mazar', 'مزار شريف', '/img/afghanistan-mazar.jpg')">🏙️</button>
+        <img src="/img/afghanistan-mazar.jpg" alt="مزار شريف" class="cite-img">
+        <span class="name">مزار شريف – Mazar-i-Sharif</span>
+        <p class="info">المدينة المقدسة بضريح الإمام الأزرق</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+  </div>
+</section>
+
+<section class="foods-section">
+  <h2 class="section-title">الأكلات الشعبية</h2>
+  <div class="foods-grid">
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=afghanistan-qabuli-plow'">
+      <img src="/img/afghanistan-qabuli-plow.jpg" alt="قابلي بلو" class="foods-img">
+      <span class="name-foods">قابلي بلو – Qabuli Plow</span>
+      <div class="food-info">الطبق الوطني الأفغاني ملك طعام الضيافة، أرز طويل باللحم الطري والجزر المكرمل والزبيب والمكسرات والبهارات الأفغانية الرائعة</div>
+      <a href="/recipes/recipes.html?recipe=afghanistan-qabuli-plow" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=afghanistan-bolani'">
+      <img src="/img/afghanistan-bolani.jpg" alt="بولاني" class="foods-img">
+      <span class="name-foods">بولاني – Bolani</span>
+      <div class="food-info">الفطيرة الأفغانية المقلية المحشوة بالبطاطا والبصل الأخضر أو العدس، وجبة الأسواق الشعبية التي تُؤكل مع اللبن أو الصلصة الحمراء</div>
+      <a href="/recipes/recipes.html?recipe=afghanistan-bolani" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=afghanistan-mantu'">
+      <img src="/img/afghanistan-mantu.jpg" alt="مانتو" class="foods-img">
+      <span class="name-foods">مانتو – Mantu</span>
+      <div class="food-info">الزلابية البخارية الأفغانية الكبيرة المحشوة بالبصل واللحم تُقدم فوق صلصة الطماطم واللبن الثقيل والثوم والنعنع، طبق العيد الأفغاني</div>
+      <a href="/recipes/recipes.html?recipe=afghanistan-mantu" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=afghanistan-shorwa'">
+      <img src="/img/afghanistan-shorwa.jpg" alt="شورواي" class="foods-img">
+      <span class="name-foods">شورواي – Shorwa</span>
+      <div class="food-info">الحساء الأفغاني الثقيل من لحم الضأن مع الخضروات والحمص والبهارات، وجبة التغذية الكاملة في الشتاء الأفغاني الجبلي القاسي</div>
+      <a href="/recipes/recipes.html?recipe=afghanistan-shorwa" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=afghanistan-ashak'">
+      <img src="/img/afghanistan-ashak.jpg" alt="أشك" class="foods-img">
+      <span class="name-foods">أشك – Ashak</span>
+      <div class="food-info">الزلابية الأفغانية المحشوة بالكراث الأخضر المسلوقة وتُقدم فوق صلصة اللحم والطماطم واللبن الثقيل مع الكزبرة والنعنع المجفف</div>
+      <a href="/recipes/recipes.html?recipe=afghanistan-ashak" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=afghanistan-firni'">
+      <img src="/img/afghanistan-firni.jpg" alt="فيرني" class="foods-img">
+      <span class="name-foods">فيرني – Firni</span>
+      <div class="food-info">حلوى الأرز الأفغانية الكريمية بنكهة الهيل وماء الورد والفستق، تُقدم في أطباق فخارية فردية وتُزيَّن بالفستق المطحون ومسحوق القرفة</div>
+      <a href="/recipes/recipes.html?recipe=afghanistan-firni" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+  </div>
+</section>
+
+<section class="events-section">
+  <h2 class="section-title">الفعاليات والأماكن</h2>
+  <div class="events-grid">
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=AfghanBandAmir'">
+      <img src="/img/afghanistan-bamiyan.jpg" alt="بحيرات بند أمير" class="event-img">
+      <span class="name-event">بند أمير – Band-e Amir Lakes</span>
+      <div class="event-info">بحيرات أفغانستان الفيروزية السحرية في قلب جبال هندوكوش، المياه الكربونية تحتجز خلف سدود طبيعية في مشهد يُخيّل أنه من كوكب آخر</div>
+      <a href="/events/events.html?event=AfghanBandAmir" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=AfghanHerat'">
+      <img src="/img/afghanistan-herat.jpg" alt="هرات التاريخية" class="event-img">
+      <span class="name-event">هرات التاريخية – Historic Herat</span>
+      <div class="event-info">مسجد الجمعة الكبير والمئذنات الخمس التيمورية وقلعة هرات في عاصمة الحضارة الفارسية الإسلامية التاريخية على طريق الحرير</div>
+      <a href="/events/events.html?event=AfghanHerat" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=AfghanMazar'">
+      <img src="/img/afghanistan-mazar.jpg" alt="ضريح مزار شريف" class="event-img">
+      <span class="name-event">ضريح مزار شريف – Blue Mosque</span>
+      <div class="event-info">الروضة الزرقاء في مزار شريف بقببها الفيروزية الخلابة وحمامها الأبيض المقدس ومهرجان نوروز وموسم تيوليب الربيع الساحر</div>
+      <a href="/events/events.html?event=AfghanMazar" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=AfghanKabul'">
+      <img src="/img/afghanistan-kabul.jpg" alt="كابول التاريخية" class="event-img">
+      <span class="name-event">كابول التاريخية – Historic Kabul</span>
+      <div class="event-info">حديقة بابر وضريح المغولي العظيم وقلعة بالا حصار وأسواق كابول الشعبية في العاصمة الجبلية بين قمم هندوكوش الشاهقة</div>
+      <a href="/events/events.html?event=AfghanKabul" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=AfghanBuzkashi'">
+      <img src="/img/afghanistan-buzkashi.jpg" alt="بوزكاشي" class="event-img">
+      <span class="name-event">بوزكاشي – Buzkashi</span>
+      <div class="event-info">الرياضة القومية الأفغانية الأسطورية لركوب الخيل بين المتنافسين على تمرير جثة الماعز، متجذرة في ثقافة الفروسية الأفغانية منذ ألف عام</div>
+      <a href="/events/events.html?event=AfghanBuzkashi" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=AfghanNowruz'">
+      <img src="/img/afghanistan-nowruz.jpg" alt="نوروز أفغانستان" class="event-img">
+      <span class="name-event">نوروز أفغانستان – Afghan Nowruz</span>
+      <div class="event-info">الاحتفال الكبير برأس السنة الفارسية في مزار شريف وكابول وهرات بالعلَم الأبيض ومهرجان التيوليب والموسيقى الأفغانية والأزياء الزاهية</div>
+      <a href="/events/events.html?event=AfghanNowruz" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+  </div>
+</section>
+
+<div id="cityModal" class="modal" onclick="closeCityModal(event)">
+  <div class="modal-content">
+    <button class="modal-close" onclick="closeCityModal(event)">×</button>
+    <img id="modal-city-img" src="" alt="">
+    <h2 id="modal-city-name"></h2>
+    <p id="modal-city-desc"></p>
+    <div class="modal-section"><h3>المعالم التاريخية</h3><ul id="modal-city-historic"></ul></div>
+    <div class="modal-section"><h3>المطاعم</h3><ul id="modal-city-restaurants"></ul></div>
+    <div class="modal-section"><h3>المقاهي</h3><ul id="modal-city-cafes"></ul></div>
+    <div class="modal-section"><h3>الفعاليات</h3><ul id="modal-city-events"></ul></div>
+  </div>
+</div>
+
+<footer>
+  <p>© 2025 سفرة. جميع الحقوق محفوظة.</p>
+</footer>
+<script src="/countries/countries.js"></script>
+<script src="/auth/auth.js"></script>
+</body>
+</html>

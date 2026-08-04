@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>العراق – Iraq</title>
+  <link rel="stylesheet" href="/countries/countries.css" />
+  <link rel="stylesheet" href="/index/index.css" />
+  <link rel="icon" href="/img/logo.png" />
+</head>
+<body>
+<header>
+  <div class="nav">
+    <a href="/index/index.html"><img src="/img/logo.png" class="logo" alt="سفرة"/></a>
+    <nav class="links">
+      <a href="/index/index.html">الرئيسية</a>
+      <a href="/countries/countries.html">الدول</a>
+      <a href="/events/events.html">الفعاليات</a>
+      <a href="/recipes/recipes.html">الوصفات</a>
+      <a href="/plan/plan.html">خطط رحلتك</a>
+    </nav>
+    <div class="auth-btns">
+      <button id="menu-btn">☰</button>
+    </div>
+  </div>
+</header>
+<div id="side-menu">
+  <button id="close-btn">×</button>
+  <a href="/index/index.html">الرئيسية</a>
+  <a href="/countries/countries.html">الدول</a>
+  <a href="/events/events.html">الفعاليات</a>
+  <a href="/recipes/recipes.html">الوصفات</a>
+  <a href="/plan/plan.html">خطط رحلتك</a>
+  <a href="/profile/profile.html">الملف الشخصي</a>
+  <a href="/auth/login.html" id="login-link">تسجيل الدخول</a>
+  <a href="#" id="logout-link" style="display:none">تسجيل الخروج</a>
+</div>
+
+<section class="country-name">
+  <h1>العراق – Iraq</h1>
+  <p>أرض الرافدين حيث الحضارة البشرية الأولى وُلدت بين دجلة والفرات</p>
+</section>
+
+<section class="cities-section">
+  <h2 class="section-title">المدن</h2>
+  <div class="cities-grid">
+
+    <div class="cite" data-name="بغداد – Baghdad"
+        data-img="/img/iraq-baghdad.jpg"
+        data-desc="عاصمة العراق وأكبر مدنه، مدينة ألف ليلة وليلة التي كانت عاصمة الخلافة العباسية في ذروة الحضارة الإسلامية، تجمع بين التراث العريق والحياة المعاصرة."
+        data-historic="المتحف العراقي الوطني|منطقة الكرخ التاريخية|ساحة التحرير|جامع الرحمن الكبير|قوس النصر|شارع المتنبي للكتب"
+        data-restaurants="مطعم أبو نواس|مطعم بغداد كلاسيك|مطعم الرافدين|مطعم دجلة للمشاوي|مطعم البيت العراقي|مطعم السدير"
+        data-cafes="مقهى الشابندر التاريخي|مقهى زهاوي|مقهى البرلمان|مقهى دجلة|مقهى المتنبي|كافيه بغداد مودرن"
+        data-events="المتحف العراقي الوطني الأثري|شارع المتنبي يوم الجمعة|نهر دجلة ورحلات القوارب|ساحة التحرير|سوق الشورجة الكبير|منطقة الكرادة الثقافية"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'iraq_baghdad', 'بغداد', '/img/iraq-baghdad.jpg')">🏙️</button>
+        <img src="/img/iraq-baghdad.jpg" alt="بغداد" class="cite-img">
+        <span class="name">بغداد – Baghdad</span>
+        <p class="info">عاصمة ألف ليلة وليلة على نهر دجلة</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="النجف – Najaf"
+        data-img="/img/iraq-najaf.jpg"
+        data-desc="المدينة المقدسة ذات الأهمية الدينية والتاريخية العظيمة، موطن مرقد الإمام علي بن أبي طالب بقبته الذهبية الشامخة التي تستقطب الزوار من كل أنحاء العالم."
+        data-historic="مرقد الإمام علي بن أبي طالب|وادي السلام أكبر مقبرة في العالم|الصحن الحيدري|بازار النجف التاريخي|متحف النجف|حي الحويش القديم"
+        data-restaurants="مطعم الحيدري|مطعم النجف الكبير|مطعم الزيتون|مطعم أبو علي|مطعم الروضة|مطعم الكوفة"
+        data-cafes="مقهى الصحن|مقهى النجف|مقهى الزوار|كافيه الحيدري|مقهى القبلة|كافيه الروضة"
+        data-events="زيارة مرقد الإمام علي المهيب|وادي السلام الأكبر تاريخياً|الصحن الحيدري المعماري|سوق الحويش التقليدي|الكوفة التاريخية القريبة|مهرجان الزيارات الدينية"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'iraq_najaf', 'النجف', '/img/iraq-najaf.jpg')">🏙️</button>
+        <img src="/img/iraq-najaf.jpg" alt="النجف" class="cite-img">
+        <span class="name">النجف – Najaf</span>
+        <p class="info">المدينة المقدسة بالقبة الذهبية</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="أربيل – Erbil"
+        data-img="/img/iraq-erbil.jpg"
+        data-desc="عاصمة إقليم كردستان العراق، مدينة عريقة يعود تاريخها لأكثر من ستة آلاف سنة، تتوسطها قلعة أربيل الشامخة المدرجة في اليونسكو وسط سهولها الخضراء."
+        data-historic="قلعة أربيل مدرجة في اليونسكو|متحف أربيل الحضاري|سوق قيصري التاريخي|حي عنكاوا|مسجد جلال الكبير|متحف النسيج الكردي"
+        data-restaurants="مطعم أربيل شيش|مطعم القلعة|مطعم كردستان|مطعم الشيف سيروان|مطعم دهوك للمشاوي|مطعم ناز"
+        data-cafes="كافيه القلعة|كافيه أربيل مودرن|مقهى السوق|كافيه كردستان|كافيه زيتون|ذا هيل كافيه"
+        data-events="قلعة أربيل الأثرية المدرجة في اليونسكو|سوق قيصري التقليدي|المدينة القديمة تحت القلعة|منطقة شقلاوة الجبلية|بحيرة دوكان|مهرجان نوروز الكردي"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'iraq_erbil', 'أربيل', '/img/iraq-erbil.jpg')">🏙️</button>
+        <img src="/img/iraq-erbil.jpg" alt="أربيل" class="cite-img">
+        <span class="name">أربيل – Erbil</span>
+        <p class="info">عاصمة كردستان وقلعتها الأثرية</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="كربلاء – Karbala"
+        data-img="/img/iraq-karbala.jpg"
+        data-desc="المدينة المقدسة التي تحتضن مراقد آل بيت النبوي، يزورها الملايين سنوياً، تشتهر بأسواقها الشعبية ومعمارها الإسلامي الفريد ومضيافيتها الأسطورية."
+        data-historic="مرقد الإمام الحسين|مرقد العباس بن علي|الصحن العباسي|سوق كربلاء القديم|متحف كربلاء|شارع الإمام الحسين"
+        data-restaurants="مطعم كربلاء الكبير|مطعم الحسيني|مطعم العباسية|مطعم أبو حسين|مطعم الروضة|مطعم الزائر"
+        data-cafes="مقهى الصحن العباسي|مقهى كربلاء|كافيه الزيارة|مقهى الطريق|كافيه المقام|مقهى النور"
+        data-events="مرقد الإمام الحسين المعماري الرائع|مرقد العباس والقبة الذهبية|سوق كربلاء الشعبي|الصحن العباسي الفسيح|مهرجان الأربعينية|ليالي كربلاء الروحانية"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'iraq_karbala', 'كربلاء', '/img/iraq-karbala.jpg')">🏙️</button>
+        <img src="/img/iraq-karbala.jpg" alt="كربلاء" class="cite-img">
+        <span class="name">كربلاء – Karbala</span>
+        <p class="info">المدينة المقدسة بالمراقد الذهبية</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="البصرة – Basra"
+        data-img="/img/iraq-basra.jpg"
+        data-desc="عروس جنوب العراق على شط العرب، مدينة النخيل والماء التي تمزج بين الموروث السومري والعربي، بوابة العراق على الخليج العربي وعاصمة النفط."
+        data-historic="قصر الأمير التاريخي|متحف البصرة للتاريخ الطبيعي|شط العرب الجميل|سوق العشار الكبير|برج البصرة|حي العشار القديم"
+        data-restaurants="مطعم شط العرب|مطعم البصرة للأسماك|مطعم النخيل|مطعم الخليج|مطعم السندباد|مطعم جنوب العراق"
+        data-cafes="مقهى شط العرب|كافيه النخيل|مقهى البصرة القديم|كافيه الخليج|مقهى الميناء|كافيه العشار"
+        data-events="رحلة على شط العرب النهرية|غابات النخيل الشاسعة|متحف البصرة التاريخي|سوق العشار الشعبي|المتحف الأثري|جسر شط العرب"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'iraq_basra', 'البصرة', '/img/iraq-basra.jpg')">🏙️</button>
+        <img src="/img/iraq-basra.jpg" alt="البصرة" class="cite-img">
+        <span class="name">البصرة – Basra</span>
+        <p class="info">عروس جنوب العراق على شط العرب</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="الموصل – Mosul"
+        data-img="/img/iraq-mosul.jpg"
+        data-desc="المدينة الحضارية العريقة على الضفة اليسرى لنهر دجلة، إحدى أعرق مدن الحضارة الإسلامية وموطن آثار نينوى الأشورية العظيمة التي تعود لآلاف السنين."
+        data-historic="آثار نينوى الأشورية|متحف الموصل المُعاد افتتاحه|الجامع النوري الكبير|جسر الموصل القديم|تل قوينجق الأثري|حي المياسة التاريخي"
+        data-restaurants="مطعم الموصل الكبير|مطعم النوري|مطعم دجلة للمشاوي|مطعم الشمال|مطعم الحضارة|مطعم نينوى"
+        data-cafes="مقهى الموصل|كافيه النوري|مقهى دجلة|كافيه الشمال|مقهى نينوى|كافيه الحضارة"
+        data-events="موقع نينوى الأثري الأشوري|متحف الموصل التاريخي|الجامع النوري المُرمَّم|تل قوينجق الأثري|جسر الحضارة|سوق الموصل القديم"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'iraq_mosul', 'الموصل', '/img/iraq-mosul.jpg')">🏙️</button>
+        <img src="/img/iraq-mosul.jpg" alt="الموصل" class="cite-img">
+        <span class="name">الموصل – Mosul</span>
+        <p class="info">درة الشمال وحاضرة نينوى الأثرية</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+  </div>
+</section>
+
+<section class="foods-section">
+  <h2 class="section-title">الأكلات الشعبية</h2>
+  <div class="foods-grid">
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=iraq-masgouf'">
+      <img src="/img/iraq-masgouf.jpg" alt="سمك المسگوف" class="foods-img">
+      <span class="name-foods">سمك المسگوف – Masgouf</span>
+      <div class="food-info">الطبق الوطني العراقي، سمكة شبوط مفتوحة تُشوى ببطء على نار حطب البغداديين على ضفاف دجلة</div>
+      <a href="/recipes/recipes.html?recipe=iraq-masgouf" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=iraq-quzi'">
+      <img src="/img/iraq-quzi.jpg" alt="القوزي" class="foods-img">
+      <span class="name-foods">القوزي – Quzi</span>
+      <div class="food-info">خروف كامل محشو بالأرز والمكسرات والزبيب يُطهى ببطء حتى يتساقط اللحم، ملك الموائد العراقية الكبيرة</div>
+      <a href="/recipes/recipes.html?recipe=iraq-quzi" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=iraq-kleicha'">
+      <img src="/img/iraq-kleicha.jpg" alt="الكليجة" class="foods-img">
+      <span class="name-foods">الكليجة – Kleicha</span>
+      <div class="food-info">حلوى العراق الوطنية، بسكويت محشو بالتمر أو الجوز أو جوز الهند، لا عيد عراقي بدونها</div>
+      <a href="/recipes/recipes.html?recipe=iraq-kleicha" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=iraq-tashreeb'">
+      <img src="/img/iraq-tashreeb.jpg" alt="التشريب" class="foods-img">
+      <span class="name-foods">التشريب – Tashreeb</span>
+      <div class="food-info">طبق الدجاج أو اللحم مع المرق الثقيل يُسكب فوق رقاق الخبز العراقي، طبق الصيف والشتاء</div>
+      <a href="/recipes/recipes.html?recipe=iraq-tashreeb" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=iraq-falafel'">
+      <img src="/img/iraq-falafel.jpg" alt="الفلافل العراقي" class="foods-img">
+      <span class="name-foods">الفلافل العراقي – Iraqi Falafel</span>
+      <div class="food-info">فلافل بغداد الشهير المقرمش من الحمص المطحون بالأعشاب، يُؤكل بالصمون العراقي في وجبة الإفطار</div>
+      <a href="/recipes/recipes.html?recipe=iraq-falafel" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=iraq-dolma'">
+      <img src="/img/iraq-dolma.jpg" alt="الدولمة" class="foods-img">
+      <span class="name-foods">الدولمة – Dolma</span>
+      <div class="food-info">ورق العنب والخضروات المحشوة بالأرز واللحم والبهارات العراقية، طبق الأعياد والمناسبات العائلية</div>
+      <a href="/recipes/recipes.html?recipe=iraq-dolma" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+  </div>
+</section>
+
+<section class="events-section">
+  <h2 class="section-title">الفعاليات والأماكن</h2>
+  <div class="events-grid">
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=IraqBabylon'">
+      <img src="/img/iraq-babylon.jpg" alt="بابل الأثرية" class="event-img">
+      <span class="name-event">بابل الأثرية – Babylon</span>
+      <div class="event-info">موقع حضارة بابل العظيمة مدرج في اليونسكو، حيث بنى نبوخذنصر أروع عجائب الدنيا السبع</div>
+      <a href="/events/events.html?event=IraqBabylon" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=IraqNajaf'">
+      <img src="/img/iraq-najaf.jpg" alt="النجف الأشرف" class="event-img">
+      <span class="name-event">النجف الأشرف – Najaf</span>
+      <div class="event-info">مرقد الإمام علي وأسواق النجف التاريخية ووادي السلام أكبر مقبرة في التاريخ</div>
+      <a href="/events/events.html?event=IraqNajaf" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=IraqErbil'">
+      <img src="/img/iraq-erbil.jpg" alt="قلعة أربيل" class="event-img">
+      <span class="name-event">قلعة أربيل – Erbil Citadel</span>
+      <div class="event-info">قلعة أربيل المدرجة في اليونسكو من أقدم المواقع المأهولة في العالم منذ ستة آلاف سنة</div>
+      <a href="/events/events.html?event=IraqErbil" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=IraqMashhad'">
+      <img src="/img/iraq-karbala.jpg" alt="كربلاء المقدسة" class="event-img">
+      <span class="name-event">كربلاء المقدسة – Karbala</span>
+      <div class="event-info">مراقد آل بيت النبوي الشريف بقبابها الذهبية وأسواقها الشعبية العريقة</div>
+      <a href="/events/events.html?event=IraqMashhad" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=IraqBasra'">
+      <img src="/img/iraq-basra.jpg" alt="شط العرب" class="event-img">
+      <span class="name-event">شط العرب – Shatt al-Arab</span>
+      <div class="event-info">رحلات نهرية على شط العرب بين غابات النخيل وأحياء البصرة التاريخية بجمالها الفريد</div>
+      <a href="/events/events.html?event=IraqBasra" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=IraqUr'">
+      <img src="/img/iraq-ur.jpg" alt="مدينة أور" class="event-img">
+      <span class="name-event">مدينة أور – Ur</span>
+      <div class="event-info">الزقورة السومرية العملاقة في مدينة أور الأثرية من أعرق الحضارات البشرية على وجه الأرض</div>
+      <a href="/events/events.html?event=IraqUr" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+  </div>
+</section>
+
+<div id="cityModal" class="modal" onclick="closeCityModal(event)">
+  <div class="modal-content">
+    <button class="modal-close" onclick="closeCityModal(event)">×</button>
+    <img id="modal-city-img" src="" alt="">
+    <h2 id="modal-city-name"></h2>
+    <p id="modal-city-desc"></p>
+    <div class="modal-section"><h3>المعالم التاريخية</h3><ul id="modal-city-historic"></ul></div>
+    <div class="modal-section"><h3>المطاعم</h3><ul id="modal-city-restaurants"></ul></div>
+    <div class="modal-section"><h3>المقاهي</h3><ul id="modal-city-cafes"></ul></div>
+    <div class="modal-section"><h3>الفعاليات</h3><ul id="modal-city-events"></ul></div>
+  </div>
+</div>
+
+<footer>
+  <p>© 2025 سفرة. جميع الحقوق محفوظة.</p>
+</footer>
+<script src="/countries/countries.js"></script>
+<script src="/auth/auth.js"></script>
+</body>
+</html>

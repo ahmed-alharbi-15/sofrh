@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>كازاخستان – Kazakhstan</title>
+  <link rel="stylesheet" href="/countries/countries.css" />
+  <link rel="stylesheet" href="/index/index.css" />
+  <link rel="icon" href="/img/logo.png" />
+</head>
+<body>
+<header>
+  <div class="nav">
+    <a href="/index/index.html"><img src="/img/logo.png" class="logo" alt="سفرة"/></a>
+    <nav class="links">
+      <a href="/index/index.html">الرئيسية</a>
+      <a href="/countries/countries.html">الدول</a>
+      <a href="/events/events.html">الفعاليات</a>
+      <a href="/recipes/recipes.html">الوصفات</a>
+      <a href="/plan/plan.html">خطط رحلتك</a>
+    </nav>
+    <div class="auth-btns">
+      <button id="menu-btn">☰</button>
+    </div>
+  </div>
+</header>
+<div id="side-menu">
+  <button id="close-btn">×</button>
+  <a href="/index/index.html">الرئيسية</a>
+  <a href="/countries/countries.html">الدول</a>
+  <a href="/events/events.html">الفعاليات</a>
+  <a href="/recipes/recipes.html">الوصفات</a>
+  <a href="/plan/plan.html">خطط رحلتك</a>
+  <a href="/profile/profile.html">الملف الشخصي</a>
+  <a href="/auth/login.html" id="login-link">تسجيل الدخول</a>
+  <a href="#" id="logout-link" style="display:none">تسجيل الخروج</a>
+</div>
+
+<section class="country-name">
+  <h1>كازاخستان – Kazakhstan</h1>
+  <p>أكبر دولة لا ساحل لها في العالم بالسهول الشاسعة والمدن الحديثة الرائعة</p>
+</section>
+
+<section class="cities-section">
+  <h2 class="section-title">المدن</h2>
+  <div class="cities-grid">
+
+    <div class="cite" data-name="أستانا – Astana"
+        data-img="/img/kazakhstan-astana.jpg"
+        data-desc="العاصمة الكازاخستانية الحديثة المتميزة بمعمارها المستقبلي الجريء وسط السهول الواسعة، مدينة بُنيت من الصفر لتكون رمزاً لنهضة كازاخستان في الألفية الثالثة."
+        data-historic="برج بايتيريك الرمزي|قصر السلام والمصالحة الهرمي|مركز الفنون الحديثة|نصب تذكاري كاز يرت|متحف أستانا الوطني|مجمع نور عالم"
+        data-restaurants="مطعم باي تيريك|مطعم كازاخ أصيل|مطعم أستانا كلاسيك|مطعم دلا بلا|مطعم سارقا|مطعم النور"
+        data-cafes="كافيه برج بايتيريك|كافيه أستانا مودرن|ذا ستيب كافيه|كافيه النور|كافيه المستقبل|كافيه خان شاتير"
+        data-events="برج بايتيريك المعماري|هرم السلام والمصالحة|خان شاتير مركز الترفيه|نهر إيسيم في الشتاء|متحف أستانا الوطني|مهرجان أستانا الثقافي"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'kazakhstan_astana', 'أستانا', '/img/kazakhstan-astana.jpg')">🏙️</button>
+        <img src="/img/kazakhstan-astana.jpg" alt="أستانا" class="cite-img">
+        <span class="name">أستانا – Astana</span>
+        <p class="info">عاصمة المستقبل بمعمارها الجريء</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="ألماتي – Almaty"
+        data-img="/img/kazakhstan-almaty.jpg"
+        data-desc="المدينة الكبرى والاقتصادية الأولى في كازاخستان، تقع عند سفح جبال تيان شان الثلجية الشاهقة، تمزج بين التراث السوفيتي والحداثة والطبيعة الجبلية الخلابة."
+        data-historic="ساحة الجمهورية التاريخية|متحف كازاخستان المركزي|مسجد الحاج أحمد يساوي|كاتدرائية الصعود|سوق الخضار المركزي|متحف الموسيقى الشعبية"
+        data-restaurants="مطعم العائلة الكازاخية|مطعم ألماتي أصيل|مطعم شوراك|مطعم يورتا|مطعم آلاتاو|مطعم دستارخان"
+        data-cafes="كافيه ألماتي الجبلية|كافيه تيان شان|ذا ماونتن كافيه|كافيه أبي|كافيه الجبال|كافيه زيليوني"
+        data-events="منتجع شيمبولاق الجبلي للتزلج|حديقة الزيتون المركزية|بحيرة بيغ ألماتي الجبلية|ساحة الجمهورية|سوق الخضار التاريخي|طريق جبال تيان شان"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'kazakhstan_almaty', 'ألماتي', '/img/kazakhstan-almaty.jpg')">🏙️</button>
+        <img src="/img/kazakhstan-almaty.jpg" alt="ألماتي" class="cite-img">
+        <span class="name">ألماتي – Almaty</span>
+        <p class="info">درة كازاخستان عند سفح تيان شان</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="شيمكنت – Shymkent"
+        data-img="/img/kazakhstan-shymkent.jpg"
+        data-desc="المدينة الجنوبية الثالثة في كازاخستان على طريق الحرير العريق، تجمع بين التراث الكازاخي والأوزبكي وتشتهر بأسواقها الشعبية ومطبخها الأصيل الغني."
+        data-historic="أطلال قلعة شيمكنت القديمة|متحف المدينة الإقليمي|مسجد أوردا التاريخي|سوق أورطالق|حديقة غاني مختاروف|تل من التاريخ القديم"
+        data-restaurants="مطعم شيمكنت أصيل|مطعم الجنوب الكازاخي|مطعم أورطا|مطعم دستارخان شيمكنت|مطعم أكساي|مطعم نهر سيردريا"
+        data-cafes="كافيه الجنوب|كافيه شيمكنت|ذا سيلك رود كافيه|كافيه قزاق|كافيه الواحة|كافيه أورطا"
+        data-events="سوق أورطالق الشعبي|طريق الحرير التاريخي|مسجد أوردا|أطلال سيغناق القريبة|وادي نهر أريس|متحف الإقليم الجنوبي"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'kazakhstan_shymkent', 'شيمكنت', '/img/kazakhstan-shymkent.jpg')">🏙️</button>
+        <img src="/img/kazakhstan-shymkent.jpg" alt="شيمكنت" class="cite-img">
+        <span class="name">شيمكنت – Shymkent</span>
+        <p class="info">مدينة الجنوب على طريق الحرير</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="قراغاندي – Karaganda"
+        data-img="/img/kazakhstan-karaganda.jpg"
+        data-desc="المدينة الصناعية الكبرى في وسط كازاخستان ذات التاريخ المميز، تشتهر بمتحفها الضخم وحدائقها الواسعة وموقعها الاستراتيجي في قلب السهول الكازاخستانية."
+        data-historic="متحف قراغاندي الإقليمي|حديقة الثقافة المركزية|مسجد نور أستانا|النصب التذكاري للحرب|بحيرة بوختارما|متحف ضحايا التوتاليتارية"
+        data-restaurants="مطعم قراغاندي أصيل|مطعم وسط السهول|مطعم آنا|مطعم داريغا|مطعم أكتوبي|مطعم ميخايلوف"
+        data-cafes="كافيه قراغاندي|كافيه البحيرة|ذا سنترال كافيه|كافيه الحديقة|كافيه نور|كافيه الشتاء"
+        data-events="متحف قراغاندي الإقليمي الكبير|حديقة الثقافة المركزية|بحيرة بوخارجول|منطقة يميل التاريخية|مهرجان قراغاندي الفني|سهول كازاخستان الوسطى"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'kazakhstan_karaganda', 'قراغاندي', '/img/kazakhstan-karaganda.jpg')">🏙️</button>
+        <img src="/img/kazakhstan-karaganda.jpg" alt="قراغاندي" class="cite-img">
+        <span class="name">قراغاندي – Karaganda</span>
+        <p class="info">قلب السهول الكازاخستانية الواسعة</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="أكتاو – Aktau"
+        data-img="/img/kazakhstan-aktau.jpg"
+        data-desc="مدينة الميناء الكازاخستانية على شاطئ بحر قزوين، تجمع بين الطبيعة الساحلية الفريدة والتنوع الثقافي، بوابة كازاخستان على العالم من الغرب."
+        data-historic="كورنيش بحر قزوين|متحف أكتاو الإقليمي|حديقة المدينة المركزية|ميناء أكتاو التاريخي|منطقة يوغاندي|معبد بوذي قديم"
+        data-restaurants="مطعم قزوين للأسماك|مطعم أكتاو الساحلي|مطعم الميناء|مطعم كازاخ أكتاو|مطعم البحر|مطعم سيفود قزوين"
+        data-cafes="كافيه الشاطئ|كافيه قزوين|ذا كاسبيان كافيه|كافيه المينا|كافيه الغروب|كافيه أكتاو مودرن"
+        data-events="شواطئ بحر قزوين الرملية|كورنيش أكتاو المميز|جزر قزوين القريبة|حديقة أكتاو المركزية|ميناء قزوين التاريخي|مهرجان البحر السنوي"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'kazakhstan_aktau', 'أكتاو', '/img/kazakhstan-aktau.jpg')">🏙️</button>
+        <img src="/img/kazakhstan-aktau.jpg" alt="أكتاو" class="cite-img">
+        <span class="name">أكتاو – Aktau</span>
+        <p class="info">ميناء كازاخستان على بحر قزوين</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="تراز – Taraz"
+        data-img="/img/kazakhstan-taraz.jpg"
+        data-desc="إحدى أعرق مدن آسيا الوسطى على طريق الحرير، يعود تاريخها لأكثر من ألفي سنة، تحتضن آثار حضارات متعددة وتشتهر بضريح أحمد يساوي القريب منها."
+        data-historic="ضريح كارخان التاريخي|مسجد تراز القديم|متحف تراز الإقليمي|ضريح أيشا بيبي|مئذنة بابا أطاس|آثار طريق الحرير"
+        data-restaurants="مطعم تراز الأصيل|مطعم طريق الحرير|مطعم ليلى|مطعم قزاق تراز|مطعم الجنوب|مطعم يساوي"
+        data-cafes="كافيه تراز|كافيه الحرير|ذا أنشيانت كافيه|كافيه ليلى|كافيه الآثار|كافيه يساوي"
+        data-events="ضريح أيشا بيبي الفريد|آثار طريق الحرير الكازاخي|متحف تراز الإقليمي|ضريح كارخان التاريخي|مهرجان تراز الثقافي|أسواق المدينة التقليدية"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'kazakhstan_taraz', 'تراز', '/img/kazakhstan-taraz.jpg')">🏙️</button>
+        <img src="/img/kazakhstan-taraz.jpg" alt="تراز" class="cite-img">
+        <span class="name">تراز – Taraz</span>
+        <p class="info">درة طريق الحرير الكازاخستاني</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+  </div>
+</section>
+
+<section class="foods-section">
+  <h2 class="section-title">الأكلات الشعبية</h2>
+  <div class="foods-grid">
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=kazakhstan-beshbarmak'">
+      <img src="/img/kazakhstan-beshbarmak.jpg" alt="بيشبارماق" class="foods-img">
+      <span class="name-foods">بيشبارماق – Beshbarmak</span>
+      <div class="food-info">الطبق الوطني الكازاخستاني، لحم الضأن المسلوق مع مربعات العجين والبصل، يعني بالكازاخية خمسة أصابع</div>
+      <a href="/recipes/recipes.html?recipe=kazakhstan-beshbarmak" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=kazakhstan-kumiss'">
+      <img src="/img/kazakhstan-kumiss.jpg" alt="شاي اللبن الكازاخستاني" class="foods-img">
+      <span class="name-foods">شاي اللبن الكازاخستاني – Kazakh Milk Tea</span>
+      <div class="food-info">شاي الضيافة الكازاخستاني باللبن والزبدة والملح، المشروب التقليدي في خيام البدو عبر آلاف السنين</div>
+      <a href="/recipes/recipes.html?recipe=kazakhstan-kumiss" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=kazakhstan-baursak'">
+      <img src="/img/kazakhstan-baursak.jpg" alt="باورساق" class="foods-img">
+      <span class="name-foods">باورساق – Baursak</span>
+      <div class="food-info">خبز العجين المقلي الكازاخستاني الذهبي، يُقدَّم في كل المناسبات والأعياد وموائد الضيافة التقليدية</div>
+      <a href="/recipes/recipes.html?recipe=kazakhstan-baursak" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=kazakhstan-shashlik'">
+      <img src="/img/kazakhstan-shashlik.jpg" alt="شاشليك" class="foods-img">
+      <span class="name-foods">شاشليك – Shashlik</span>
+      <div class="food-info">شواء اللحم المتبل الكازاخستاني على الفحم، لحم الضأن المنقوع في الكفير والبهارات وشواؤه على أسياخ</div>
+      <a href="/recipes/recipes.html?recipe=kazakhstan-shashlik" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=kazakhstan-kurt'">
+      <img src="/img/kazakhstan-kurt.jpg" alt="كيرت" class="foods-img">
+      <span class="name-foods">كيرت – Kurt</span>
+      <div class="food-info">كرات الجبن الكازاخستانية المجففة المالحة، غذاء البدو الذي يصمد شهوراً في السهول ويُؤكل كوجبة خفيفة</div>
+      <a href="/recipes/recipes.html?recipe=kazakhstan-kurt" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=kazakhstan-lagman'">
+      <img src="/img/kazakhstan-lagman.jpg" alt="لغمان" class="foods-img">
+      <span class="name-foods">لغمان – Lagman</span>
+      <div class="food-info">شوربة المعكرونة اليدوية الكازاخستانية مع اللحم والخضروات، طبق يجمع تأثيرات طريق الحرير الصيني والوسط آسيوي</div>
+      <a href="/recipes/recipes.html?recipe=kazakhstan-lagman" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+  </div>
+</section>
+
+<section class="events-section">
+  <h2 class="section-title">الفعاليات والأماكن</h2>
+  <div class="events-grid">
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=KazakhAstana'">
+      <img src="/img/kazakhstan-astana.jpg" alt="أستانا الحديثة" class="event-img">
+      <span class="name-event">أستانا الحديثة – Astana City</span>
+      <div class="event-info">جولة في عاصمة المستقبل بمعمارها الاستثنائي وبرج بايتيريك وهرم السلام الشامخ</div>
+      <a href="/events/events.html?event=KazakhAstana" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=KazakhAlmaty'">
+      <img src="/img/kazakhstan-almaty.jpg" alt="ألماتي الخضراء" class="event-img">
+      <span class="name-event">ألماتي الخضراء – Almaty</span>
+      <div class="event-info">مدينة الجبال والحدائق عند سفح تيان شان مع منتجع شيمبولاق للتزلج وبحيرة بيغ ألماتي</div>
+      <a href="/events/events.html?event=KazakhAlmaty" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=KazakhCharyn'">
+      <img src="/img/kazakhstan-charyn.jpg" alt="كانيون شارين" class="event-img">
+      <span class="name-event">كانيون شارين – Charyn Canyon</span>
+      <div class="event-info">وادي شارين الرائع المعروف بوادي القلاع لتشكيلاته الصخرية الحمراء الأسطورية الشبيهة بالغراند كانيون</div>
+      <a href="/events/events.html?event=KazakhCharyn" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=KazakhBalkash'">
+      <img src="/img/kazakhstan-balkash.jpg" alt="بحيرة بلخاش" class="event-img">
+      <span class="name-event">بحيرة بلخاش – Balkash Lake</span>
+      <div class="event-info">البحيرة العملاقة الفريدة التي نصفها الغربي عذب ونصفها الشرقي مالح، من أكبر بحيرات آسيا الوسطى</div>
+      <a href="/events/events.html?event=KazakhBalkash" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=KazakhSteppe'">
+      <img src="/img/kazakhstan-steppe.jpg" alt="سهول الستيب" class="event-img">
+      <span class="name-event">سهول الستيب – Steppe</span>
+      <div class="event-info">السهول الكازاخستانية اللانهائية حيث العشب الأخضر وقطعان الخيول البرية وخيام البدو الكازاخيين</div>
+      <a href="/events/events.html?event=KazakhSteppe" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=KazakhNomad'">
+      <img src="/img/kazakhstan-nomad.jpg" alt="مهرجان البدو" class="event-img">
+      <span class="name-event">مهرجان البدو – Nomad Festival</span>
+      <div class="event-info">المهرجان الثقافي الكازاخستاني الكبير بالألعاب التقليدية وسباقات الخيل وفنون الصيد بالنسور</div>
+      <a href="/events/events.html?event=KazakhNomad" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+  </div>
+</section>
+
+<div id="cityModal" class="modal" onclick="closeCityModal(event)">
+  <div class="modal-content">
+    <button class="modal-close" onclick="closeCityModal(event)">×</button>
+    <img id="modal-city-img" src="" alt="">
+    <h2 id="modal-city-name"></h2>
+    <p id="modal-city-desc"></p>
+    <div class="modal-section"><h3>المعالم التاريخية</h3><ul id="modal-city-historic"></ul></div>
+    <div class="modal-section"><h3>المطاعم</h3><ul id="modal-city-restaurants"></ul></div>
+    <div class="modal-section"><h3>المقاهي</h3><ul id="modal-city-cafes"></ul></div>
+    <div class="modal-section"><h3>الفعاليات</h3><ul id="modal-city-events"></ul></div>
+  </div>
+</div>
+
+<footer>
+  <p>© 2025 سفرة. جميع الحقوق محفوظة.</p>
+</footer>
+<script src="/countries/countries.js"></script>
+<script src="/auth/auth.js"></script>
+</body>
+</html>

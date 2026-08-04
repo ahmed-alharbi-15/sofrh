@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>أوزبكستان – Uzbekistan</title>
+  <link rel="stylesheet" href="/countries/countries.css" />
+  <link rel="stylesheet" href="/index/index.css" />
+  <link rel="icon" href="/img/logo.png" />
+</head>
+<body>
+<header>
+  <div class="nav">
+    <a href="/index/index.html"><img src="/img/logo.png" class="logo" alt="سفرة"/></a>
+    <nav class="links">
+      <a href="/index/index.html">الرئيسية</a>
+      <a href="/countries/countries.html">الدول</a>
+      <a href="/events/events.html">الفعاليات</a>
+      <a href="/recipes/recipes.html">الوصفات</a>
+      <a href="/plan/plan.html">خطط رحلتك</a>
+    </nav>
+    <div class="auth-btns">
+      <button id="menu-btn">☰</button>
+    </div>
+  </div>
+</header>
+<div id="side-menu">
+  <button id="close-btn">×</button>
+  <a href="/index/index.html">الرئيسية</a>
+  <a href="/countries/countries.html">الدول</a>
+  <a href="/events/events.html">الفعاليات</a>
+  <a href="/recipes/recipes.html">الوصفات</a>
+  <a href="/plan/plan.html">خطط رحلتك</a>
+  <a href="/profile/profile.html">الملف الشخصي</a>
+  <a href="/auth/login.html" id="login-link">تسجيل الدخول</a>
+  <a href="#" id="logout-link" style="display:none">تسجيل الخروج</a>
+</div>
+
+<section class="country-name">
+  <h1>أوزبكستان – Uzbekistan</h1>
+  <p>جوهرة طريق الحرير حيث سمرقند وبخارى وخيوة تحكيان عن مجد الحضارة الإسلامية الأسطوري</p>
+</section>
+
+<section class="cities-section">
+  <h2 class="section-title">المدن</h2>
+  <div class="cities-grid">
+
+    <div class="cite" data-name="سمرقند – Samarkand"
+        data-img="/img/uzbekistan-samarkand.jpg"
+        data-desc="جوهرة الشرق الأسطورية وعاصمة تيمور الكبير، مدينة الأزرق الفيروزي بقببها ومآذنها ومدارسها الرائعة المدرجة في اليونسكو، واحدة من أجمل مدن العالم على الإطلاق."
+        data-historic="ميدان ريغستان الفريد|ضريح تيمور كور الغنباز|مسجد بيبي خانم|مقبرة شاه زندا|مرصد الغ بيك|مسجد حضرت خضر"
+        data-restaurants="مطعم سمرقند الكلاسيكي|مطعم ريغستان|مطعم تيمور|مطعم أوش الأصيل|مطعم الفيروزي|مطعم طريق الحرير"
+        data-cafes="كافيه سمرقند|كافيه ريغستان|ذا سيلك رود كافيه|كافيه الفيروزي|كافيه تيمور|كافيه الفيروز"
+        data-events="ميدان ريغستان تحفة العمارة الإسلامية في اليونسكو|ضريح تيمور كور الغنباز الفيروزي|شاه زندا شارع الأضرحة الرائعة|مسجد بيبي خانم الضخم|مرصد الغ بيك العلمي|مهرجان شرق تراننا السنوي"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'uzbekistan_samarkand', 'سمرقند', '/img/uzbekistan-samarkand.jpg')">🏙️</button>
+        <img src="/img/uzbekistan-samarkand.jpg" alt="سمرقند" class="cite-img">
+        <span class="name">سمرقند – Samarkand</span>
+        <p class="info">جوهرة الشرق وعاصمة تيمور الأسطورية</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="بخارى – Bukhara"
+        data-img="/img/uzbekistan-bukhara.jpg"
+        data-desc="مدينة الألف مئذنة ومهد العلماء الإسلاميين العظماء كابن سينا والبخاري، كاملة الحفاظ في اليونسكو بأسواقها المسقوفة ومساجدها ومدارسها القرآنية الرائعة."
+        data-historic="مئذنة كلان|مدرسة مير عرب|قلعة أرك البخارية|مسجد بلند خانم|سوق بخارى المسقوف|ضريح إسماعيل الساماني"
+        data-restaurants="مطعم بخارى القديم|مطعم ميناره|مطعم كلان|مطعم التراث|مطعم الساماني|مطعم قلعة أرك"
+        data-cafes="كافيه بخارى|كافيه المئذنة|ذا بولو هاوز كافيه|كافيه الساماني|كافيه السوق|كافيه كلان"
+        data-events="مئذنة كلان المهيبة تحت النجوم|قلعة أرك البخارية التاريخية|مدرسة مير عرب الفيروزية|سوق بخارى المسقوف اليونسكو|ضريح إسماعيل الساماني|مهرجان بخارى الثقافي السنوي"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'uzbekistan_bukhara', 'بخارى', '/img/uzbekistan-bukhara.jpg')">🏙️</button>
+        <img src="/img/uzbekistan-bukhara.jpg" alt="بخارى" class="cite-img">
+        <span class="name">بخارى – Bukhara</span>
+        <p class="info">مدينة الألف مئذنة على اليونسكو</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="خيوة – Khiva"
+        data-img="/img/uzbekistan-khiva.jpg"
+        data-desc="المدينة المسوّرة الكاملة المدرجة في اليونسكو، متحف مفتوح تحت السماء بمآذنها وقصورها ومساجدها الفيروزية الكاملة الحفاظ كأنها توقفت في الزمن."
+        data-historic="مئذنة كالتا مينار|قصر توشخولي|مسجد جوما|متحف خان|بوابة أتا دروازا|مدرسة محمد رحيم خان"
+        data-restaurants="مطعم خيوة القديمة|مطعم إيشان قلعة|مطعم المئذنة الفيروزية|مطعم قصر الخان|مطعم خوارزم|مطعم المدينة المسورة"
+        data-cafes="كافيه خيوة|كافيه القلعة|ذا إيتشان كالا كافيه|كافيه المئذنة|كافيه الخان|كافيه الحرير"
+        data-events="إيتشان قلعة المدينة المسورة اليونسكو|مئذنة كالتا مينار المزخرفة الفيروزية|قصر توشخولي الملكي|مسجد جوما من 212 عمود|بوابات المدينة القديمة الأربع|مهرجان مادنياتي أوزبكستان"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'uzbekistan_khiva', 'خيوة', '/img/uzbekistan-khiva.jpg')">🏙️</button>
+        <img src="/img/uzbekistan-khiva.jpg" alt="خيوة" class="cite-img">
+        <span class="name">خيوة – Khiva</span>
+        <p class="info">المدينة المسوّرة الكاملة على اليونسكو</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="طشقند – Tashkent"
+        data-img="/img/uzbekistan-tashkent.jpg"
+        data-desc="العاصمة الأوزبكية الحديثة أكبر مدن آسيا الوسطى بمزيجها الرائع من العمارة السوفيتية والإسلامية والحدائق الشاسعة والمتاحف الغنية والحياة المدنية النابضة."
+        data-historic="مسجد تيله شيخ|متحف الفنون الجميلة|ساحة الاستقلال|ميدان أمير تيمور|سوق تشورسو العتيق|مسجد الجامعة الإسلامية"
+        data-restaurants="مطعم طشقند الكبير|مطعم تشورسو|مطعم الاستقلال|مطعم الفردوس|مطعم تيمور|مطعم آسيا الوسطى"
+        data-cafes="كافيه طشقند|كافيه الاستقلال|ذا ميتروبول كافيه|كافيه تيمور|كافيه الحرير|كافيه الجامعة"
+        data-events="سوق تشورسو الشعبي الضخم|مسجد تيله شيخ بالمصحف العثماني|ميدان أمير تيمور الكبير|متحف الفنون الجميلة بكنوز آسيا|حديقة الصداقة الخضراء|مهرجان ناوروز الأوزبكي الكبير"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'uzbekistan_tashkent', 'طشقند', '/img/uzbekistan-tashkent.jpg')">🏙️</button>
+        <img src="/img/uzbekistan-tashkent.jpg" alt="طشقند" class="cite-img">
+        <span class="name">طشقند – Tashkent</span>
+        <p class="info">أكبر عواصم آسيا الوسطى الحديثة</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="فرغانة – Fergana"
+        data-img="/img/uzbekistan-fergana.jpg"
+        data-desc="مركز وادي فرغانة الخصيب وعاصمة صناعة الحرير الأوزبكية الشهيرة، مدينة خضراء بستانية يُصنع فيها الحرير الإيقات الفريد المدرج في اليونسكو."
+        data-historic="سوق الحرير فرغانة|مصانع الحرير الإيقات|متحج فرغانة الإقليمي|مرغيلان مدينة الحرير|ضريح شاه مردان|جبال آلاي|"
+        data-restaurants="مطعم فرغانة الحرير|مطعم وادي فرغانة|مطعم الإيقات|مطعم مرغيلان|مطعم الحرير الذهبي|مطعم البستان"
+        data-cafes="كافيه فرغانة|كافيه الحرير|ذا سيلك كافيه|كافيه وادي فرغانة|كافيه الإيقات|كافيه مرغيلان"
+        data-events="مصانع حرير الإيقات المدرجة في اليونسكو|سوق فرغانة للحرير والمنسوجات|مدينة مرغيلان عاصمة الحرير الأوزبكي|وادي فرغانة الخصيب الأخضر|جبال آلاي في الجنوب|مهرجان الحرير الأوزبكي السنوي"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'uzbekistan_fergana', 'فرغانة', '/img/uzbekistan-fergana.jpg')">🏙️</button>
+        <img src="/img/uzbekistan-fergana.jpg" alt="فرغانة" class="cite-img">
+        <span class="name">فرغانة – Fergana</span>
+        <p class="info">عاصمة حرير الإيقات الأوزبكي الشهير</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="شخريسبز – Shahrisabz"
+        data-img="/img/uzbekistan-shahrisabz.jpg"
+        data-desc="مدينة خضراء الحجارة مسقط رأس المغول الأعظم تيمور لنك وعاصمة جذوره مدرجة في اليونسكو، تضم أطلال قصره الضخم ومسجده ومقابر أجداده الأسطورية."
+        data-historic="أطلال قصر آق سراي|قبة دوروس سيادات|مسجد كوك غمبز|مزار حضرت إمام|ساحة ميدان شخريسبز|متحف تيمور المحلي"
+        data-restaurants="مطعم شخريسبز الخضراء|مطعم آق سراي|مطعم تيمور الكبير|مطعم مسقط الرأس|مطعم كوك غمبز|مطعم الزعفران"
+        data-cafes="كافيه شخريسبز|كافيه آق سراي|ذا غرين سيتي كافيه|كافيه تيمور|كافيه كوك غمبز|كافيه المسقط"
+        data-events="أطلال قصر آق سراي ضخامتها تخيّل|مسجد كوك غمبز الفيروزي الرائع|مزار حضرت إمام المقدس|مدينة خضراء تيمور في اليونسكو|متحف تيمور التاريخي|جولة ميادين وأزقة شخريسبز القديمة"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'uzbekistan_shahrisabz', 'شخريسبز', '/img/uzbekistan-shahrisabz.jpg')">🏙️</button>
+        <img src="/img/uzbekistan-shahrisabz.jpg" alt="شخريسبز" class="cite-img">
+        <span class="name">شخريسبز – Shahrisabz</span>
+        <p class="info">مسقط رأس تيمور المدرجة في اليونسكو</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+  </div>
+</section>
+
+<section class="foods-section">
+  <h2 class="section-title">الأكلات الشعبية</h2>
+  <div class="foods-grid">
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=uzbekistan-plov'">
+      <img src="/img/uzbekistan-plov.jpg" alt="أوش" class="foods-img">
+      <span class="name-foods">أوش – Uzbek Plov</span>
+      <div class="food-info">ملك طعام آسيا الوسطى والطبق الوطني الأوزبكي، أرز سمرقندي بالجزر الأصفر والأحمر ولحم الضأن وزيت القطن والثوم، مدرج في اليونسكو</div>
+      <a href="/recipes/recipes.html?recipe=uzbekistan-plov" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=uzbekistan-samsa'">
+      <img src="/img/uzbekistan-samsa.jpg" alt="سمسا أوزبكية" class="foods-img">
+      <span class="name-foods">سمسا – Uzbek Samsa</span>
+      <div class="food-info">فطيرة التنور الأوزبكية المحشوة باللحم والبصل والكمون، مخبوزة في التنور الطيني الخاص حتى تتقمش من الخارج وتبقى طرية من الداخل</div>
+      <a href="/recipes/recipes.html?recipe=uzbekistan-samsa" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=uzbekistan-lagman'">
+      <img src="/img/uzbekistan-lagman.jpg" alt="لغمان أوزبكي" class="foods-img">
+      <span class="name-foods">لغمان أوزبكي – Uzbek Lagman</span>
+      <div class="food-info">شوربة المعكرونة اليدوية الممدودة مع لحم الضأن والخضروات والطماطم والبهارات، طبق طريق الحرير الجامع بين آسيا الوسطى والصين</div>
+      <a href="/recipes/recipes.html?recipe=uzbekistan-lagman" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=uzbekistan-manti'">
+      <img src="/img/uzbekistan-manti.jpg" alt="مانتي أوزبكية" class="foods-img">
+      <span class="name-foods">مانتي – Uzbek Manti</span>
+      <div class="food-info">الزلابية الأوزبكية البخارية الكبيرة بحشوة اللحم والبصل والقرع، تُقدم مع اللبن والبصل الأخضر في احتفالات الأسرة</div>
+      <a href="/recipes/recipes.html?recipe=uzbekistan-manti" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=uzbekistan-shashlik'">
+      <img src="/img/uzbekistan-shashlik.jpg" alt="شاشليك أوزبكي" class="foods-img">
+      <span class="name-foods">شاشليك أوزبكي – Uzbek Shashlik</span>
+      <div class="food-info">الكباب الأوزبكي المشوي على الفحم بتتبيلة البصل والخل الخاصة، يُقدم في أسواق سمرقند وبخارى على مشاوٍ خشبية مع الخبز الطازج</div>
+      <a href="/recipes/recipes.html?recipe=uzbekistan-shashlik" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=uzbekistan-non'">
+      <img src="/img/uzbekistan-non.jpg" alt="نون أوزبكي" class="foods-img">
+      <span class="name-foods">نون أوزبكي – Uzbek Non</span>
+      <div class="food-info">خبز التنور الأوزبكي الدائري المزخرف بختم خاص ومخبوز على جدار التنور، أقدس طعام في الثقافة الأوزبكية ويُمنع كسره بالسكين</div>
+      <a href="/recipes/recipes.html?recipe=uzbekistan-non" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+  </div>
+</section>
+
+<section class="events-section">
+  <h2 class="section-title">الفعاليات والأماكن</h2>
+  <div class="events-grid">
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=UzbekRegistan'">
+      <img src="/img/uzbekistan-samarkand.jpg" alt="ريغستان سمرقند" class="event-img">
+      <span class="name-event">ريغستان سمرقند – Registan Square</span>
+      <div class="event-info">أعظم ميادين العالم الإسلامي بمدارسه الثلاث الرائعة وفسيفساءها الفيروزية الذهبية في سمرقند، تحفة معمارية مدرجة في اليونسكو</div>
+      <a href="/events/events.html?event=UzbekRegistan" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=UzbekBukhara'">
+      <img src="/img/uzbekistan-bukhara.jpg" alt="بخارى القديمة" class="event-img">
+      <span class="name-event">بخارى القديمة – Old Bukhara</span>
+      <div class="event-info">مدينة الألف مئذنة الكاملة الحفاظ في اليونسكو بمدرسة مير عرب وقلعة أرك وسوقها المسقوف في رحلة عبر الزمن الإسلامي الذهبي</div>
+      <a href="/events/events.html?event=UzbekBukhara" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=UzbekKhiva'">
+      <img src="/img/uzbekistan-khiva.jpg" alt="خيوة المسوّرة" class="event-img">
+      <span class="name-event">خيوة المسوّرة – Walled Khiva</span>
+      <div class="event-info">المدينة المسوّرة الكاملة الأنيقة مدرجة في اليونسكو بمآذنها وقصورها وأبوابها الفيروزية المذهلة المحفوظة منذ قرون</div>
+      <a href="/events/events.html?event=UzbekKhiva" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=UzbekTimurTomb'">
+      <img src="/img/uzbekistan-timur.jpg" alt="ضريح تيمور" class="event-img">
+      <span class="name-event">ضريح تيمور – Gur-e-Amir</span>
+      <div class="event-info">ضريح أمير تيمور الكبير بقبته الفيروزية الأسطورية في سمرقند، أحد أجمل وأعظم المباني الإسلامية في التاريخ على الإطلاق</div>
+      <a href="/events/events.html?event=UzbekTimurTomb" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=UzbekSilkRoad'">
+      <img src="/img/uzbekistan-silkroad.jpg" alt="طريق الحرير" class="event-img">
+      <span class="name-event">طريق الحرير – Silk Road Tour</span>
+      <div class="event-info">جولة طريق الحرير الأشهر في العالم عبر سمرقند وبخارى وخيوة وطشقند مع أسواق التوابل والحرير والمنسوجات والمقاهي العريقة</div>
+      <a href="/events/events.html?event=UzbekSilkRoad" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=UzbekNowruz'">
+      <img src="/img/uzbekistan-nowruz.jpg" alt="نوروز أوزبكستان" class="event-img">
+      <span class="name-event">نوروز أوزبكستان – Uzbek Nowruz</span>
+      <div class="event-info">الاحتفال الأكبر في آسيا الوسطى برأس السنة الفارسية في سمرقند ببخارى بالموسيقى والرقص وطبق السوماناك وسباقات الخيل</div>
+      <a href="/events/events.html?event=UzbekNowruz" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+  </div>
+</section>
+
+<div id="cityModal" class="modal" onclick="closeCityModal(event)">
+  <div class="modal-content">
+    <button class="modal-close" onclick="closeCityModal(event)">×</button>
+    <img id="modal-city-img" src="" alt="">
+    <h2 id="modal-city-name"></h2>
+    <p id="modal-city-desc"></p>
+    <div class="modal-section"><h3>المعالم التاريخية</h3><ul id="modal-city-historic"></ul></div>
+    <div class="modal-section"><h3>المطاعم</h3><ul id="modal-city-restaurants"></ul></div>
+    <div class="modal-section"><h3>المقاهي</h3><ul id="modal-city-cafes"></ul></div>
+    <div class="modal-section"><h3>الفعاليات</h3><ul id="modal-city-events"></ul></div>
+  </div>
+</div>
+
+<footer>
+  <p>© 2025 سفرة. جميع الحقوق محفوظة.</p>
+</footer>
+<script src="/countries/countries.js"></script>
+<script src="/auth/auth.js"></script>
+</body>
+</html>

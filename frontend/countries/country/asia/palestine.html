@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>فلسطين – Palestine</title>
+  <link rel="stylesheet" href="/countries/countries.css" />
+  <link rel="stylesheet" href="/index/index.css" />
+  <link rel="icon" href="/img/logo.png" />
+</head>
+<body>
+<header>
+  <div class="nav">
+    <a href="/index/index.html"><img src="/img/logo.png" class="logo" alt="سفرة"/></a>
+    <nav class="links">
+      <a href="/index/index.html">الرئيسية</a>
+      <a href="/countries/countries.html">الدول</a>
+      <a href="/events/events.html">الفعاليات</a>
+      <a href="/recipes/recipes.html">الوصفات</a>
+      <a href="/plan/plan.html">خطط رحلتك</a>
+    </nav>
+    <div class="auth-btns">
+      <button id="menu-btn">☰</button>
+    </div>
+  </div>
+</header>
+<div id="side-menu">
+  <button id="close-btn">×</button>
+  <a href="/index/index.html">الرئيسية</a>
+  <a href="/countries/countries.html">الدول</a>
+  <a href="/events/events.html">الفعاليات</a>
+  <a href="/recipes/recipes.html">الوصفات</a>
+  <a href="/plan/plan.html">خطط رحلتك</a>
+  <a href="/profile/profile.html">الملف الشخصي</a>
+  <a href="/auth/login.html" id="login-link">تسجيل الدخول</a>
+  <a href="#" id="logout-link" style="display:none">تسجيل الخروج</a>
+</div>
+
+<section class="country-name">
+  <h1>فلسطين – Palestine</h1>
+  <p>أرض الأنبياء والرسالات حيث القدس الشريف قلب العالم الإسلامي النابض منذ فجر التاريخ</p>
+</section>
+
+<section class="cities-section">
+  <h2 class="section-title">المدن</h2>
+  <div class="cities-grid">
+
+    <div class="cite" data-name="القدس – Jerusalem"
+        data-img="/img/palestine-jerusalem.jpg"
+        data-desc="أم المدائن وقبلة القلوب، المدينة المقدسة التي تحضن المسجد الأقصى المبارك وقبة الصخرة الذهبية والأحياء التاريخية العريقة، قدس الأقداس في الوجدان الإسلامي."
+        data-historic="المسجد الأقصى المبارك|قبة الصخرة الذهبية|حارة المسلمين التاريخية|باب العامود|سوق القدس العتيق|متحف الآثار الإسلامية"
+        data-restaurants="مطعم أبو شكري للحمص|مطعم الزيتونة|مطعم جفرا|مطعم الأمير|مطعم البستان|مطعم القدس القديم"
+        data-cafes="كافيه القدس|كافيه باب العامود|ذا أولد سيتي كافيه|كافيه الأقصى|كافيه الزيتون|كافيه المدينة المقدسة"
+        data-events="المسجد الأقصى المبارك وقبة الصخرة الذهبية|حارة المسلمين بأزقتها التاريخية|باب العامود والأسواق العتيقة|قبة الصخرة التحفة المعمارية الإسلامية|الرواق الإسلامي وبرك سليمان|مهرجان القدس الثقافي السنوي"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'palestine_jerusalem', 'القدس', '/img/palestine-jerusalem.jpg')">🏙️</button>
+        <img src="/img/palestine-jerusalem.jpg" alt="القدس" class="cite-img">
+        <span class="name">القدس – Jerusalem</span>
+        <p class="info">أم المدائن وقلب العالم الإسلامي</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="نابلس – Nablus"
+        data-img="/img/palestine-nablus.jpg"
+        data-desc="عاصمة الجبال الفلسطينية ومهد الكنافة النابلسية العالمية الشهيرة، مدينة عريقة بأسواقها التاريخية وصابونها الزيتي الأصيل وإرثها العمراني الكنعاني الروماني الإسلامي."
+        data-historic="سوق القيصرية التاريخي|مسجد النصر العثماني|جبل جرزيم المقدس|مصنع الصابون القديم|قلعة نابلس العثمانية|متحف نابلس الأثري"
+        data-restaurants="مطعم الكنافة النابلسية|مطعم الجبل|مطعم الزيتون|مطعم البيدر|مطعم نابلس الأصيل|مطعم الكرم"
+        data-cafes="كافيه نابلس|كافيه الجبال|ذا هيريتيج كافيه|كافيه الزيتون|كافيه الصابون|كافيه السوق"
+        data-events="سوق القيصرية التاريخي العريق|مصانع الكنافة النابلسية الأصيلة|مصنع الصابون القديم بزيت الزيتون|جبل جرزيم وآثاره الكنعانية|الحمامات الحمامية العثمانية|محلات الحلويات في سوق نابلس"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'palestine_nablus', 'نابلس', '/img/palestine-nablus.jpg')">🏙️</button>
+        <img src="/img/palestine-nablus.jpg" alt="نابلس" class="cite-img">
+        <span class="name">نابلس – Nablus</span>
+        <p class="info">عاصمة الجبال ومهد الكنافة العالمية</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="الخليل – Hebron"
+        data-img="/img/palestine-hebron.jpg"
+        data-desc="مدينة الأجداد الموطن التاريخي لسيدنا إبراهيم الخليل عليه السلام، تضم الحرم الإبراهيمي المقدس والأسواق الشعبية العتيقة وصناعات الزجاج والفخار والمنسوجات الأصيلة."
+        data-historic="الحرم الإبراهيمي المقدس|سوق الخليل العتيق|قصبة الخليل الأثرية|مصنع زجاج الخليل|ضريح إبراهيم الخليل|متحف الخليل الوطني"
+        data-restaurants="مطعم الخليل التراثي|مطعم إبراهيم الخليل|مطعم الحرم|مطعم القصبة|مطعم الزجاج|مطعم المدينة القديمة"
+        data-cafes="كافيه الخليل|كافيه الحرم|ذا أبراهام كافيه|كافيه القصبة|كافيه الزجاج|كافيه العنب"
+        data-events="الحرم الإبراهيمي موضع دفن الأنبياء|قصبة الخليل الأثرية القديمة|مصنع زجاج الخليل النفخ اليدوي|سوق الخليل بمنتجاته الأصيلة|مهرجان العنب في وادي الخليل|جولة المدينة القديمة المدرجة في اليونسكو"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'palestine_hebron', 'الخليل', '/img/palestine-hebron.jpg')">🏙️</button>
+        <img src="/img/palestine-hebron.jpg" alt="الخليل" class="cite-img">
+        <span class="name">الخليل – Hebron</span>
+        <p class="info">موطن إبراهيم الخليل وأرض الأجداد</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="بيت لحم – Bethlehem"
+        data-img="/img/palestine-bethlehem.jpg"
+        data-desc="مدينة المهد التاريخية على تلال الخليل، مدينة ذات إرث ديني عميق تضم أسواقها العتيقة والكنائس الأثرية والبيوت الحجرية الفلسطينية ذات الطراز العمراني الأصيل."
+        data-historic="كنيسة المهد مدرجة في اليونسكو|ميدان المهد التاريخي|سوق بيت لحم العتيق|مخيم الدهيشة|متحف بيت لحم الثقافي|برج ساعة بيت لحم"
+        data-restaurants="مطعم بيت لحم التراثي|مطعم ميدان المهد|مطعم الراعي|مطعم الزيتون الفلسطيني|مطعم الجبال|مطعم الميدان"
+        data-cafes="كافيه بيت لحم|كافيه المهد|ذا ناتيفيتي كافيه|كافيه الحجر|كافيه الزيتون|كافيه الميدان"
+        data-events="كنيسة المهد الأثرية مدرجة في اليونسكو|ميدان المهد التاريخي الرائع|سوق بيت لحم بمشغولات العاج والزيتون|بيوت بيت لحم الحجرية الأصيلة|مهرجان بيت لحم السنوي|جولة أحياء المدينة التراثية"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'palestine_bethlehem', 'بيت لحم', '/img/palestine-bethlehem.jpg')">🏙️</button>
+        <img src="/img/palestine-bethlehem.jpg" alt="بيت لحم" class="cite-img">
+        <span class="name">بيت لحم – Bethlehem</span>
+        <p class="info">مدينة المهد التاريخية على تلال الخليل</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="رام الله – Ramallah"
+        data-img="/img/palestine-ramallah.jpg"
+        data-desc="المدينة الفلسطينية الحيوية في قلب الضفة الغربية، عاصمة الحياة الثقافية والسياسية الفلسطينية المعاصرة بمقاهيها الأنيقة ومتاحفها ومراكزها الثقافية النابضة."
+        data-historic="ضريح ياسر عرفات|متحف محمود درويش|قصر رام الله الثقافي|برج الساعة المركزي|متحف فلسطين الحديث|حديقة الساحة المركزية"
+        data-restaurants="مطعم رام الله الأصيل|مطعم الزيتونة|مطعم الخان|مطعم البلد الفلسطيني|مطعم الجبال|مطعم العاصمة"
+        data-cafes="كافيه رام الله|كافيه الساحة|ذا كالتشرال كافيه|كافيه الحرية|كافيه الزيتون|كافيه فلسطين"
+        data-events="متحف محمود درويش شاعر فلسطين|ضريح ياسر عرفات التاريخي|مهرجان رام الله الثقافي السنوي|قصر رام الله للثقافة والفنون|جولة مراكز الفن الفلسطيني المعاصر|سوق البلدة وأسواق الخضروات الشعبية"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'palestine_ramallah', 'رام الله', '/img/palestine-ramallah.jpg')">🏙️</button>
+        <img src="/img/palestine-ramallah.jpg" alt="رام الله" class="cite-img">
+        <span class="name">رام الله – Ramallah</span>
+        <p class="info">قلب الحياة الثقافية الفلسطينية المعاصرة</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="أريحا – Jericho"
+        data-img="/img/palestine-jericho.jpg"
+        data-desc="أقدم مدينة مسكونة في التاريخ البشري على وجه الأرض، تقع في واحة غنية على ضفاف نهر الأردن تحت مستوى سطح البحر بمنتجعاتها ونخيلها وآثارها الكنعانية النادرة."
+        data-historic="تل السلطان أقدم المدن|مقام موسى عليه السلام|دير القرنطل الجبلي|أشجار النخيل الأثرية|متحف أريحا المحلي|قصر هشام الأموي"
+        data-restaurants="مطعم أريحا النخيل|مطعم نهر الأردن|مطعم الواحة|مطعم السلطان|مطعم الزيتون|مطعم البحر الميت"
+        data-cafes="كافيه أريحا|كافيه النخيل|ذا أولدست كافيه|كافيه الواحة|كافيه الأردن|كافيه التمر"
+        data-events="تل السلطان أقدم موقع حضاري في العالم|قصر هشام الأموي الرائع|دير القرنطل المعلق على الجبل|غاباتالنخيل وبساتين الموز|المنتجع الحراري قرب البحر الميت|قناة تلفريك جبل القرنطل"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'palestine_jericho', 'أريحا', '/img/palestine-jericho.jpg')">🏙️</button>
+        <img src="/img/palestine-jericho.jpg" alt="أريحا" class="cite-img">
+        <span class="name">أريحا – Jericho</span>
+        <p class="info">أقدم مدينة مسكونة في تاريخ البشرية</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+  </div>
+</section>
+
+<section class="foods-section">
+  <h2 class="section-title">الأكلات الشعبية</h2>
+  <div class="foods-grid">
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=palestine-musakhan'">
+      <img src="/img/palestine-musakhan.jpg" alt="مسخن" class="foods-img">
+      <span class="name-foods">مسخن – Musakhan</span>
+      <div class="food-info">الطبق الوطني الفلسطيني من الدجاج المحمر بزيت الزيتون والبصل المكرمل والبهارات والصنوبر على خبز الطابون، رمز المطبخ الفلسطيني</div>
+      <a href="/recipes/recipes.html?recipe=palestine-musakhan" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=palestine-maqluba'">
+      <img src="/img/palestine-maqluba.jpg" alt="مقلوبة" class="foods-img">
+      <span class="name-foods">مقلوبة – Maqluba</span>
+      <div class="food-info">طبق الأرز المقلوب الفلسطيني بالدجاج أو اللحم والخضروات المقلية، يُقدم مقلوباً رأساً على عقب كالفن وسط إعجاب الضيوف</div>
+      <a href="/recipes/recipes.html?recipe=palestine-maqluba" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=palestine-knafeh'">
+      <img src="/img/palestine-knafeh.jpg" alt="كنافة نابلسية" class="foods-img">
+      <span class="name-foods">كنافة نابلسية – Knafeh</span>
+      <div class="food-info">ملكة الحلويات الشرقية وأشهر حلوى فلسطينية عالمياً، خيوط الكنافة المحمرة فوق جبن نابلس الطازج وقطر السكر والفستق</div>
+      <a href="/recipes/recipes.html?recipe=palestine-knafeh" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=palestine-hummus'">
+      <img src="/img/palestine-hummus.jpg" alt="حمص فلسطيني" class="foods-img">
+      <span class="name-foods">حمص فلسطيني – Palestinian Hummus</span>
+      <div class="food-info">الحمص الفلسطيني الكريمي الطازج بالطحينة وعصير الليمون وزيت الزيتون البكر، يُقدم دافئاً مع الفلافل والخبز العربي الطازج</div>
+      <a href="/recipes/recipes.html?recipe=palestine-hummus" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=palestine-falafel'">
+      <img src="/img/palestine-falafel.jpg" alt="فلافل" class="foods-img">
+      <span class="name-foods">فلافل – Falafel</span>
+      <div class="food-info">كرات الحمص المقلية الهشة من الخارج الطرية من الداخل مع الكزبرة والكمون، تُحشى في خبز عربي مع الطحينة والخضروات الطازجة</div>
+      <a href="/recipes/recipes.html?recipe=palestine-falafel" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=palestine-mansaf'">
+      <img src="/img/palestine-mansaf.jpg" alt="منسف" class="foods-img">
+      <span class="name-foods">منسف – Mansaf</span>
+      <div class="food-info">طبق العيد والكرم الفلسطيني الأردني، خروف كامل فوق الأرز المبهر ومنقوع بصلصة الجميد الحامضة وزبدة السمن ومزيَّن بالمكسرات</div>
+      <a href="/recipes/recipes.html?recipe=palestine-mansaf" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+  </div>
+</section>
+
+<section class="events-section">
+  <h2 class="section-title">الفعاليات والأماكن</h2>
+  <div class="events-grid">
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=PalestineAlAqsa'">
+      <img src="/img/palestine-jerusalem.jpg" alt="المسجد الأقصى" class="event-img">
+      <span class="name-event">المسجد الأقصى – Al-Aqsa Mosque</span>
+      <div class="event-info">المسجد الأقصى المبارك وقبة الصخرة الذهبية في القدس الشريف، ثالث الحرمين الشريفين ومهوى أفئدة المسلمين في كل أصقاع الأرض</div>
+      <a href="/events/events.html?event=PalestineAlAqsa" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=PalestineOldCity'">
+      <img src="/img/palestine-oldcity.jpg" alt="القدس القديمة" class="event-img">
+      <span class="name-event">القدس القديمة – Old City Jerusalem</span>
+      <div class="event-info">الأحياء التاريخية الأربعة في القدس مدرجة في اليونسكو بأسواقها وكنائسها ومساجدها وأزقتها الحجرية التي تحكي آلاف السنين</div>
+      <a href="/events/events.html?event=PalestineOldCity" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=PalestineNablus'">
+      <img src="/img/palestine-nablus.jpg" alt="نابلس التاريخية" class="event-img">
+      <span class="name-event">نابلس التاريخية – Historic Nablus</span>
+      <div class="event-info">سوق القيصرية العتيق ومصانع الكنافة الأصيلة وصابون الزيتون الشهير ومراحيض الحمام العثمانية في مدينة عريقة بالتراث</div>
+      <a href="/events/events.html?event=PalestineNablus" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=PalestineJericho'">
+      <img src="/img/palestine-jericho.jpg" alt="أريحا التاريخية" class="event-img">
+      <span class="name-event">أريحا التاريخية – Ancient Jericho</span>
+      <div class="event-info">تل السلطان أقدم مدينة في العالم وقصر هشام الأموي الرائع ودير القرنطل المعلق في جبل الأربعين بإطلالته الخلابة</div>
+      <a href="/events/events.html?event=PalestineJericho" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=PalestineHebron'">
+      <img src="/img/palestine-hebron.jpg" alt="الخليل التاريخية" class="event-img">
+      <span class="name-event">الخليل التاريخية – Historic Hebron</span>
+      <div class="event-info">الحرم الإبراهيمي المقدس وقصبة الخليل القديمة المدرجة في اليونسكو ومصانع الزجاج النفخي الأصيلة والأسواق العتيقة</div>
+      <a href="/events/events.html?event=PalestineHebron" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=PalestineOliveHarvest'">
+      <img src="/img/palestine-olive.jpg" alt="موسم قطاف الزيتون" class="event-img">
+      <span class="name-event">موسم الزيتون – Olive Harvest</span>
+      <div class="event-info">موسم قطاف الزيتون الفلسطيني في أكتوبر وأجمل تقليد شعبي فلسطيني بالتحضير اليدوي لزيت الزيتون البكر الذهبي الذي يُصدَّر للعالم</div>
+      <a href="/events/events.html?event=PalestineOliveHarvest" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+  </div>
+</section>
+
+<div id="cityModal" class="modal" onclick="closeCityModal(event)">
+  <div class="modal-content">
+    <button class="modal-close" onclick="closeCityModal(event)">×</button>
+    <img id="modal-city-img" src="" alt="">
+    <h2 id="modal-city-name"></h2>
+    <p id="modal-city-desc"></p>
+    <div class="modal-section"><h3>المعالم التاريخية</h3><ul id="modal-city-historic"></ul></div>
+    <div class="modal-section"><h3>المطاعم</h3><ul id="modal-city-restaurants"></ul></div>
+    <div class="modal-section"><h3>المقاهي</h3><ul id="modal-city-cafes"></ul></div>
+    <div class="modal-section"><h3>الفعاليات</h3><ul id="modal-city-events"></ul></div>
+  </div>
+</div>
+
+<footer>
+  <p>© 2025 سفرة. جميع الحقوق محفوظة.</p>
+</footer>
+<script src="/countries/countries.js"></script>
+<script src="/auth/auth.js"></script>
+</body>
+</html>

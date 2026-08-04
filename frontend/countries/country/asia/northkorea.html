@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>كوريا الشمالية – North Korea</title>
+  <link rel="stylesheet" href="/countries/countries.css" />
+  <link rel="stylesheet" href="/index/index.css" />
+  <link rel="icon" href="/img/logo.png" />
+</head>
+<body>
+<header>
+  <div class="nav">
+    <a href="/index/index.html"><img src="/img/logo.png" class="logo" alt="سفرة"/></a>
+    <nav class="links">
+      <a href="/index/index.html">الرئيسية</a>
+      <a href="/countries/countries.html">الدول</a>
+      <a href="/events/events.html">الفعاليات</a>
+      <a href="/recipes/recipes.html">الوصفات</a>
+      <a href="/plan/plan.html">خطط رحلتك</a>
+    </nav>
+    <div class="auth-btns">
+      <button id="menu-btn">☰</button>
+    </div>
+  </div>
+</header>
+<div id="side-menu">
+  <button id="close-btn">×</button>
+  <a href="/index/index.html">الرئيسية</a>
+  <a href="/countries/countries.html">الدول</a>
+  <a href="/events/events.html">الفعاليات</a>
+  <a href="/recipes/recipes.html">الوصفات</a>
+  <a href="/plan/plan.html">خطط رحلتك</a>
+  <a href="/profile/profile.html">الملف الشخصي</a>
+  <a href="/auth/login.html" id="login-link">تسجيل الدخول</a>
+  <a href="#" id="logout-link" style="display:none">تسجيل الخروج</a>
+</div>
+
+<section class="country-name">
+  <h1>كوريا الشمالية – North Korea</h1>
+  <p>البلد الأكثر غموضاً في العالم حيث تتشابك الحضارة الكورية العريقة مع الطبيعة الجبلية الخلابة</p>
+</section>
+
+<section class="cities-section">
+  <h2 class="section-title">المدن</h2>
+  <div class="cities-grid">
+
+    <div class="cite" data-name="بيونغيانغ – Pyongyang"
+        data-img="/img/northkorea-pyongyang.jpg"
+        data-desc="العاصمة المصممة بدقة متناهية على ضفاف نهر تيدونغ، تجمع الساحات الشاسعة والنصب التذكارية الضخمة والمباني الضخمة ذات الطراز المعماري الفريد الذي لا مثيل له في العالم."
+        data-historic="ساحة كيم إيل سونغ|نصب مانسودا الكبير|معبد بوذيه ريونغتونغ|قصر السماء|قوس الانتصار|متحف كوريا المركزي"
+        data-restaurants="مطعم بيونغيانغ الكبير|مطعم نهر تيدونغ|مطعم أوكريوغان|مطعم تشونغلويول|مطعم بيبيكان|مطعم هايانغ"
+        data-cafes="كافيه تيدونغ|كافيه بيونغيانغ|ذا ريور كافيه|كافيه المدينة|كافيه الضيافة|كافيه الساحة"
+        data-events="ساحة كيم إيل سونغ التاريخية الشاسعة|نصب مانسودا المهيب|قوس الانتصار الأضخم في العالم|مترو بيونغيانغ الفني المذهل|قصر الثقافة الكبير|جولة نهر تيدونغ بالقارب"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'northkorea_pyongyang', 'بيونغيانغ', '/img/northkorea-pyongyang.jpg')">🏙️</button>
+        <img src="/img/northkorea-pyongyang.jpg" alt="بيونغيانغ" class="cite-img">
+        <span class="name">بيونغيانغ – Pyongyang</span>
+        <p class="info">العاصمة الغامضة على نهر تيدونغ</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="كيسونغ – Kaesong"
+        data-img="/img/northkorea-kaesong.jpg"
+        data-desc="المدينة التاريخية العريقة على الحدود الكورية، عاصمة مملكة كوريو الأسطورية قبل ألف عام، تضم أبراجها الحجرية القديمة ومداخلها الحجرية الرائعة ومتحف كوريو الكبير."
+        data-historic="متحف كوريو الوطني|مقابر ملوك كوريو|بوابة نامدايمون التاريخية|معبد سونغيونغوان|أكاديمية كوريو العلمية|ضريح وانغ كيون مؤسس كوريو"
+        data-restaurants="مطعم كيسونغ التراثي|مطعم كوريو الكلاسيكي|مطعم الحدود الكورية|مطعم سونغيونغوان|مطعم المدينة القديمة|مطعم تراث كوريو"
+        data-cafes="كافيه كيسونغ|كافيه كوريو|ذا هيريتيج كافيه|كافيه المدينة التاريخية|كافيه الملوك|كافيه الأكاديمية"
+        data-events="متحف كوريو بمقتنيات مملكة كوريو الأثرية|مقابر ملوك كوريو المدرجة في اليونسكو|بوابة نامدايمون الحجرية القديمة|جولة الحي التاريخي لمدينة كيسونغ|أكاديمية كوريو العلمية القديمة|الحياة اليومية في المدينة الكورية العريقة"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'northkorea_kaesong', 'كيسونغ', '/img/northkorea-kaesong.jpg')">🏙️</button>
+        <img src="/img/northkorea-kaesong.jpg" alt="كيسونغ" class="cite-img">
+        <span class="name">كيسونغ – Kaesong</span>
+        <p class="info">عاصمة مملكة كوريو الأسطورية القديمة</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="وونسان – Wonsan"
+        data-img="/img/northkorea-wonsan.jpg"
+        data-desc="ميناء البحر الأصفر الجميل المعروف بشواطئه الرملية الناعمة ومنتجعاته البحرية على خليج وونسان الساحر، وجهة الاسترخاء والترفيه الطبيعي على الساحل الكوري."
+        data-historic="شاطئ وونسان الكبير|خليج وونسان الطبيعي|معبد سينيونغسا البوذي|محطة وونسان التاريخية|ميناء وونسان القديم|منتزه كومغانغ الجبلي"
+        data-restaurants="مطعم وونسان للمأكولات البحرية|مطعم خليج كوريا|مطعم الميناء|مطعم الشاطئ الكبير|مطعم كومغانغ|مطعم البحر الأصفر"
+        data-cafes="كافيه وونسان|كافيه الشاطئ|ذا بيتش كافيه|كافيه الخليج|كافيه البحر|كافيه الميناء"
+        data-events="شاطئ وونسان البكر على خليج كوريا|جبال كومغانغ الخلابة|المنتجع البحري الكبير|جولة الخليج بالقارب|الشعاب المرجانية والغطس البحري|مشاهدة غروب الشمس على البحر الأصفر"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'northkorea_wonsan', 'وونسان', '/img/northkorea-wonsan.jpg')">🏙️</button>
+        <img src="/img/northkorea-wonsan.jpg" alt="وونسان" class="cite-img">
+        <span class="name">وونسان – Wonsan</span>
+        <p class="info">جوهرة الساحل الكوري الشمالي</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="هامهونغ – Hamhung"
+        data-img="/img/northkorea-hamhung.jpg"
+        data-desc="ثاني أكبر مدن كوريا الشمالية وعاصمة مقاطعة جنوب هامغيونغ الصناعية، مدينة تاريخية على نهر سونغتشون تجمع المعالم الكورية الكلاسيكية والطبيعة الجبلية الرائعة."
+        data-historic="قصر هامهونغ الملكي الأثري|معبد تشيونغتشونغ البوذي|متحف هامهونغ المحلي|ساحة المدينة الكبرى|نهر سونغتشون|حديقة هامهونغ العامة"
+        data-restaurants="مطعم هامهونغ الكبير|مطعم سونغتشون|مطعم مقاطعة هامغيونغ|مطعم جبال الشمال|مطعم الكلاسيكي الكوري|مطعم المدينة"
+        data-cafes="كافيه هامهونغ|كافيه نهر سونغتشون|ذا ريفر كافيه|كافيه مقاطعة هامغيونغ|كافيه الجبال|كافيه المدينة الثانية"
+        data-events="قصر هامهونغ الملكي الأثري القديم|جبال هامغيونغ الشمالية الخلابة|نهر سونغتشون للاسترخاء|الحي التاريخي القديم في هامهونغ|معبد تشيونغتشونغ البوذي|ساحة المدينة الثانية الكبرى"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'northkorea_hamhung', 'هامهونغ', '/img/northkorea-hamhung.jpg')">🏙️</button>
+        <img src="/img/northkorea-hamhung.jpg" alt="هامهونغ" class="cite-img">
+        <span class="name">هامهونغ – Hamhung</span>
+        <p class="info">المدينة الثانية على نهر سونغتشون</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="تشوندزو – Chongjin"
+        data-img="/img/northkorea-chongjin.jpg"
+        data-desc="ميناء بحر اليابان الكبير في أقصى الشمال الشرقي لكوريا الشمالية، مدينة ذات طابع بحري صناعي تاريخي مع مناظر طبيعية لجبال هامغيونغ الثلجية الشامخة."
+        data-historic="ميناء تشونغجين التاريخي|جبال هامغيونغ الشمالية|متحف تشونغجين المحلي|ساحل بحر اليابان|حديقة المدينة الشمالية|برج الوحدة الكورية"
+        data-restaurants="مطعم تشونغجين البحري|مطعم بحر اليابان|مطعم هامغيونغ الشمالي|مطعم الميناء الشمالي|مطعم الجبال الثلجية|مطعم الساحل"
+        data-cafes="كافيه تشونغجين|كافيه الشمال الكوري|ذا نورث كافيه|كافيه بحر اليابان|كافيه الجبال|كافيه الميناء"
+        data-events="ميناء تشونغجين على بحر اليابان|جبال هامغيونغ الشمالية الثلجية|ساحل بحر اليابان البكر|الطبيعة الجبلية الوحشية في أقصى الشمال|مشاهدة أفواج الطيور المهاجرة|غروب الشمس على بحر اليابان"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'northkorea_chongjin', 'تشونغجين', '/img/northkorea-chongjin.jpg')">🏙️</button>
+        <img src="/img/northkorea-chongjin.jpg" alt="تشونغجين" class="cite-img">
+        <span class="name">تشونغجين – Chongjin</span>
+        <p class="info">ميناء بحر اليابان في أقصى الشمال</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="جبل باكتو – Paektu Mountain"
+        data-img="/img/northkorea-paektu.jpg"
+        data-desc="أعلى قمة في شبه الجزيرة الكورية ومقدسها الوطني الأول، يحتضن في قمته بحيرة تشون المقدسة الفيروزية المذهلة في فوهة البركان المكسوة بالثلج على ارتفاع 2744 متراً."
+        data-historic="بحيرة تشون المقدسة في قمة البركان|فوهة البركان الضخمة|منحدرات الثلج الأبدي|متحف جبل باكتو الوطني|كهوف الجليد الطبيعية|مسار التسلق الكوري الوطني"
+        data-restaurants="مطعم باكتو الجبلي|مطعم القمة الكورية|مطعم البحيرة المقدسة|مطعم الجليد والثلج|مطعم التسلق الكبير|مطعم الوطن الكوري"
+        data-cafes="كافيه باكتو|كافيه قمة الجبل|ذا سوميت كافيه|كافيه بحيرة تشون|كافيه الثلج|كافيه الوطني"
+        data-events="بحيرة تشون الفيروزية على قمة البركان|المشي في الثلج الأبدي على القمة|التسلق الوطني الكوري لقمة باكتو|فوهة البركان الضخمة المثيرة|مشاهدة شروق الشمس على القمة|كهوف الجليد الطبيعية المدهشة"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'northkorea_paektu', 'جبل باكتو', '/img/northkorea-paektu.jpg')">🏙️</button>
+        <img src="/img/northkorea-paektu.jpg" alt="جبل باكتو" class="cite-img">
+        <span class="name">جبل باكتو – Paektu Mountain</span>
+        <p class="info">أعلى قمة في الجزيرة الكورية وأقدسها</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+  </div>
+</section>
+
+<section class="foods-section">
+  <h2 class="section-title">الأكلات الشعبية</h2>
+  <div class="foods-grid">
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=northkorea-naengmyeon'">
+      <img src="/img/northkorea-naengmyeon.jpg" alt="نانغمايون" class="foods-img">
+      <span class="name-foods">نانغمايون – Naengmyeon</span>
+      <div class="food-info">الطبق الوطني لكوريا الشمالية، شعيرية الحنطة السوداء الباردة في مرق اللحم البارد المنعش، يُقدم في بيونغيانغ منذ قرون</div>
+      <a href="/recipes/recipes.html?recipe=northkorea-naengmyeon" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=northkorea-sinsollo'">
+      <img src="/img/northkorea-sinsollo.jpg" alt="سينسولو" class="foods-img">
+      <span class="name-foods">سينسولو – Sinsollo</span>
+      <div class="food-info">طاجين الطعام الملكي الكوري الفاخر بالخضروات واللحم والبيض في إناء نحاسي خاص، طبق المناسبات الملكية عبر التاريخ</div>
+      <a href="/recipes/recipes.html?recipe=northkorea-sinsollo" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=northkorea-tteok'">
+      <img src="/img/northkorea-tteok.jpg" alt="تيوك" class="foods-img">
+      <span class="name-foods">تيوك – Tteok</span>
+      <div class="food-info">كعك الأرز الكوري التقليدي بأشكاله المتعددة الحلوة والمالحة، يُقدم في الأعياد والمناسبات الكورية الكبيرة منذ آلاف السنين</div>
+      <a href="/recipes/recipes.html?recipe=northkorea-tteok" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=northkorea-jeon'">
+      <img src="/img/northkorea-jeon.jpg" alt="جيون" class="foods-img">
+      <span class="name-foods">جيون – Jeon</span>
+      <div class="food-info">الفطائر الكورية المقلية بالخضروات والبصل الأخضر والكوسة، طبق شعبي يُعد في أيام المطر وعلى موائد الأعياد الكورية</div>
+      <a href="/recipes/recipes.html?recipe=northkorea-jeon" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=northkorea-kimchi'">
+      <img src="/img/northkorea-kimchi.jpg" alt="كيمتشي" class="foods-img">
+      <span class="name-foods">كيمتشي – Kimchi</span>
+      <div class="food-info">الملفوف الكوري المخمر بالفلفل الأحمر والثوم والزنجبيل، ركيزة المطبخ الكوري منذ ألف عام وجانب ضروري على كل مائدة</div>
+      <a href="/recipes/recipes.html?recipe=northkorea-kimchi" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=northkorea-seolleongtang'">
+      <img src="/img/northkorea-seolleongtang.jpg" alt="سيولونغتانغ" class="foods-img">
+      <span class="name-foods">سيولونغتانغ – Seolleongtang</span>
+      <div class="food-info">شوربة اللحم الكورية البيضاء الكثيفة من عظام البقر المطبوخة ساعات طويلة حتى تصبح حليبية اللون، طبق الإفطار الكلاسيكي</div>
+      <a href="/recipes/recipes.html?recipe=northkorea-seolleongtang" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+  </div>
+</section>
+
+<section class="events-section">
+  <h2 class="section-title">الفعاليات والأماكن</h2>
+  <div class="events-grid">
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=NKPyongyang'">
+      <img src="/img/northkorea-pyongyang.jpg" alt="بيونغيانغ" class="event-img">
+      <span class="name-event">بيونغيانغ – Pyongyang</span>
+      <div class="event-info">العاصمة الفريدة بساحاتها الشاسعة ونصبها التذكارية الضخمة ومبانيها المعمارية الأسطورية على ضفاف نهر تيدونغ</div>
+      <a href="/events/events.html?event=NKPyongyang" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=NKArirang'">
+      <img src="/img/northkorea-arirang.jpg" alt="مهرجان أريرانغ" class="event-img">
+      <span class="name-event">مهرجان أريرانغ – Arirang Festival</span>
+      <div class="event-info">أضخم مهرجان للجمباز والفنون الجماعية في العالم بمشاركة مئة ألف شخص في عروض متزامنة مذهلة داخل ملعب رانغنادو الكبير</div>
+      <a href="/events/events.html?event=NKArirang" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=NKMetro'">
+      <img src="/img/northkorea-metro.jpg" alt="مترو بيونغيانغ" class="event-img">
+      <span class="name-event">مترو بيونغيانغ – Pyongyang Metro</span>
+      <div class="event-info">أعمق مترو في العالم المزيَّن بالثريات الفاخرة واللوحات الجدارية والتماثيل الرخامية، تحفة معمارية فريدة تحت الأرض</div>
+      <a href="/events/events.html?event=NKMetro" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=NKPaektu'">
+      <img src="/img/northkorea-paektu.jpg" alt="جبل باكتو" class="event-img">
+      <span class="name-event">جبل باكتو – Paektu Mountain</span>
+      <div class="event-info">أعلى قمة كورية بفوهتها البركانية وبحيرة تشون الفيروزية الساحرة، المقدس الوطني الأول والوجهة الطبيعية الأرقى</div>
+      <a href="/events/events.html?event=NKPaektu" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=NKKaesong'">
+      <img src="/img/northkorea-kaesong.jpg" alt="كيسونغ التاريخية" class="event-img">
+      <span class="name-event">كيسونغ التاريخية – Historic Kaesong</span>
+      <div class="event-info">مواقع كوريو المدرجة في اليونسكو مع قصور وأبراج ومقابر مملكة كوريو التي حكمت شبه الجزيرة الكورية ألف عام</div>
+      <a href="/events/events.html?event=NKKaesong" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=NKMansudae'">
+      <img src="/img/northkorea-mansudae.jpg" alt="تل مانسودا" class="event-img">
+      <span class="name-event">تل مانسودا – Mansudae Hill</span>
+      <div class="event-info">التل التاريخي في بيونغيانغ بنصبه التذكارية البرونزية الضخمة والمتحف الوطني الكبير وأجمل إطلالة بانورامية على العاصمة</div>
+      <a href="/events/events.html?event=NKMansudae" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+  </div>
+</section>
+
+<div id="cityModal" class="modal" onclick="closeCityModal(event)">
+  <div class="modal-content">
+    <button class="modal-close" onclick="closeCityModal(event)">×</button>
+    <img id="modal-city-img" src="" alt="">
+    <h2 id="modal-city-name"></h2>
+    <p id="modal-city-desc"></p>
+    <div class="modal-section"><h3>المعالم التاريخية</h3><ul id="modal-city-historic"></ul></div>
+    <div class="modal-section"><h3>المطاعم</h3><ul id="modal-city-restaurants"></ul></div>
+    <div class="modal-section"><h3>المقاهي</h3><ul id="modal-city-cafes"></ul></div>
+    <div class="modal-section"><h3>الفعاليات</h3><ul id="modal-city-events"></ul></div>
+  </div>
+</div>
+
+<footer>
+  <p>© 2025 سفرة. جميع الحقوق محفوظة.</p>
+</footer>
+<script src="/countries/countries.js"></script>
+<script src="/auth/auth.js"></script>
+</body>
+</html>

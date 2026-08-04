@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>قرغيزستان – Kyrgyzstan</title>
+  <link rel="stylesheet" href="/countries/countries.css" />
+  <link rel="stylesheet" href="/index/index.css" />
+  <link rel="icon" href="/img/logo.png" />
+</head>
+<body>
+<header>
+  <div class="nav">
+    <a href="/index/index.html"><img src="/img/logo.png" class="logo" alt="سفرة"/></a>
+    <nav class="links">
+      <a href="/index/index.html">الرئيسية</a>
+      <a href="/countries/countries.html">الدول</a>
+      <a href="/events/events.html">الفعاليات</a>
+      <a href="/recipes/recipes.html">الوصفات</a>
+      <a href="/plan/plan.html">خطط رحلتك</a>
+    </nav>
+    <div class="auth-btns">
+      <button id="menu-btn">☰</button>
+    </div>
+  </div>
+</header>
+<div id="side-menu">
+  <button id="close-btn">×</button>
+  <a href="/index/index.html">الرئيسية</a>
+  <a href="/countries/countries.html">الدول</a>
+  <a href="/events/events.html">الفعاليات</a>
+  <a href="/recipes/recipes.html">الوصفات</a>
+  <a href="/plan/plan.html">خطط رحلتك</a>
+  <a href="/profile/profile.html">الملف الشخصي</a>
+  <a href="/auth/login.html" id="login-link">تسجيل الدخول</a>
+  <a href="#" id="logout-link" style="display:none">تسجيل الخروج</a>
+</div>
+
+<section class="country-name">
+  <h1>قرغيزستان – Kyrgyzstan</h1>
+  <p>جبال تيان شان الساحرة حيث تعيش الشعوب البدوية في خيام الآق أوي التقليدية</p>
+</section>
+
+<section class="cities-section">
+  <h2 class="section-title">المدن</h2>
+  <div class="cities-grid">
+
+    <div class="cite" data-name="بيشكيك – Bishkek"
+        data-img="/img/kyrgyzstan-bishkek.jpg"
+        data-desc="عاصمة قرغيزستان الخضراء المنتشرة في السهول عند أطراف جبال تيان شان، مدينة حديثة تحتفظ بطابعها السوفيتي وتمزجه بالهوية القرغيزية الأصيلة."
+        data-historic="ساحة آلا تو المركزية|متحف قرغيزستان الوطني|متحف مانس الملحمي|برلمان جوغورقو كيينيش|حديقة أوردو|تمثال مانس البطل"
+        data-restaurants="مطعم فاتيانكا|مطعم بيشكيك أصيل|مطعم قرغيز يورت|مطعم كولينار|مطعم آلاتاو|مطعم ذا نوماد"
+        data-cafes="كافيه ساحة آلا تو|كافيه بيشكيك مودرن|ذا ماونتن كافيه|كافيه مانس|كافيه تيان شان|كافيه الجبل الأخضر"
+        data-events="ساحة آلا تو المركزية|متحف الملحمة الوطنية مانس|حديقة بيشكيك الكبيرة|سوق أوش الشعبي|جبال تيان شان على مشارف المدينة|متحف الفنون الجميلة"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'kyrgyzstan_bishkek', 'بيشكيك', '/img/kyrgyzstan-bishkek.jpg')">🏙️</button>
+        <img src="/img/kyrgyzstan-bishkek.jpg" alt="بيشكيك" class="cite-img">
+        <span class="name">بيشكيك – Bishkek</span>
+        <p class="info">عاصمة الجبال الخضراء</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="أوش – Osh"
+        data-img="/img/kyrgyzstan-osh.jpg"
+        data-desc="ثاني أكبر مدن قرغيزستان وعاصمتها الجنوبية، مدينة عريقة يزيد عمرها عن ثلاثة آلاف سنة على طريق الحرير، مدينة السليمان المعروف بجبل المقدس."
+        data-historic="جبل سليمان طو المقدس مدرج في اليونسكو|مسجد رابيا سلطانيم|سوق أوش العريق|قلعة كوز كورباش|متحف أوش الإقليمي|منطقة جيال باي التاريخية"
+        data-restaurants="مطعم أوش الجنوبي|مطعم الحرير|مطعم فرغانة|مطعم سليمان|مطعم القرغيزي|مطعم الأصيل"
+        data-cafes="كافيه جبل سليمان|كافيه أوش|ذا سيلك كافيه|كافيه الجنوب|كافيه فرغانة|كافيه السوق القديم"
+        data-events="جبل سليمان المقدس مدرج في اليونسكو|سوق أوش التاريخي الكبير|مسجد رابيا سلطانيم|الحي الإسلامي القديم|بازار كوكوم التقليدي|متحف المدينة الإقليمي"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'kyrgyzstan_osh', 'أوش', '/img/kyrgyzstan-osh.jpg')">🏙️</button>
+        <img src="/img/kyrgyzstan-osh.jpg" alt="أوش" class="cite-img">
+        <span class="name">أوش – Osh</span>
+        <p class="info">مدينة الجبل المقدس على طريق الحرير</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="كاراكول – Karakol"
+        data-img="/img/kyrgyzstan-karakol.jpg"
+        data-desc="مدينة الجبال القرغيزية في أقصى شرق البلاد عند شاطئ بحيرة إيسيك كول، بوابة المغامرات الجبلية إلى أعمق الوادين القرغيزيين وقمم تيان شان."
+        data-historic="كنيسة الصعود الخشبية|مسجد دونغان المميز|متحف نيكولاي برجيوالسكي|سوق كاراكول الحيواني|حديقة المدينة|ضريح برجيوالسكي"
+        data-restaurants="مطعم كاراكول الجبلي|مطعم إيسيك كول|مطعم الشيف كول|مطعم آلتين أراشان|مطعم الجبال|مطعم كاراكول أصيل"
+        data-cafes="كافيه إيسيك كول|كافيه الجبل|ذا ليك كافيه|كافيه كاراكول|كافيه آلتين|كافيه المغامرة"
+        data-events="بحيرة إيسيك كول السماوية|وادي جيتي أوغوز الملون|منتجع آلتين أراشان الجبلي|طريق كارافان السرة التاريخي|قمم خان تنغري الجليدية|سوق كاراكول الحيواني"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'kyrgyzstan_karakol', 'كاراكول', '/img/kyrgyzstan-karakol.jpg')">🏙️</button>
+        <img src="/img/kyrgyzstan-karakol.jpg" alt="كاراكول" class="cite-img">
+        <span class="name">كاراكول – Karakol</span>
+        <p class="info">بوابة جبال تيان شان وإيسيك كول</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="نارين – Naryn"
+        data-img="/img/kyrgyzstan-naryn.jpg"
+        data-desc="مدينة قرغيزستان الجبلية في العمق، عاصمة إقليم نارين وسط السلاسل الجبلية الشاهقة، تتميز بثلوجها في الشتاء ومراعيها الخضراء المذهلة صيفاً."
+        data-historic="قلعة كوشوي قورغان|متحف نارين الإقليمي|مسجد نارين الكبير|جسر نارين التاريخي|منطقة أت باشي الأثرية|آثار كارا خانيد"
+        data-restaurants="مطعم نارين الجبلي|مطعم البدو الأصيل|مطعم يورت نارين|مطعم آت باشي|مطعم الجبال الوسطى|مطعم كيكيمورا"
+        data-cafes="كافيه نارين|كافيه الجبل الأبيض|ذا هاي ألتيتيود كافيه|كافيه البدو|كافيه الثلج|كافيه طريق الحرير"
+        data-events="قلعة كوشوي قورغان الأثرية|سهول توسون كول البديعة|طريق طوروغارت للصين|منطقة أت باشي الجبلية|مخيمات اليورت البدوية|مهرجان نارين الجبلي"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'kyrgyzstan_naryn', 'نارين', '/img/kyrgyzstan-naryn.jpg')">🏙️</button>
+        <img src="/img/kyrgyzstan-naryn.jpg" alt="نارين" class="cite-img">
+        <span class="name">نارين – Naryn</span>
+        <p class="info">مدينة الجبال والمراعي الخضراء</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="تالاس – Talas"
+        data-img="/img/kyrgyzstan-talas.jpg"
+        data-desc="مدينة ملحمة مانس القرغيزية وعاصمة إقليم تالاس في شمال غرب قرغيزستان، مدينة البطولة والتراث الشعبي حيث وُلد البطل القرغيزي الأسطوري مانس."
+        data-historic="ضريح مانس التاريخي|متحف مانس الملحمي|مقبرة مانس القديمة|ساحة مانس الكبرى|متحف تالاس الإقليمي|موقع معركة نهر تالاس"
+        data-restaurants="مطعم مانس الأسطوري|مطعم تالاس أصيل|مطعم الجبل الشمالي|مطعم البطل|مطعم كيرتشو|مطعم يورت الكبير"
+        data-cafes="كافيه مانس|كافيه تالاس|ذا هيرو كافيه|كافيه الملحمة|كافيه الجبل|كافيه التراث"
+        data-events="ضريح مانس البطل القومي|موقع معركة تالاس التاريخية|مهرجان مانس الثقافي الكبير|متحف الملحمة الشعبية|جبال تالاس الخضراء|وادي تالاس الجميل"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'kyrgyzstan_talas', 'تالاس', '/img/kyrgyzstan-talas.jpg')">🏙️</button>
+        <img src="/img/kyrgyzstan-talas.jpg" alt="تالاس" class="cite-img">
+        <span class="name">تالاس – Talas</span>
+        <p class="info">مدينة ملحمة البطل مانس القرغيزي</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="جلال آباد – Jalal-Abad"
+        data-img="/img/kyrgyzstan-jalalabad.jpg"
+        data-desc="المدينة الجنوبية الجميلة في وادي فرغانة بمياهها المعدنية الشهيرة ومنتجعاتها الطبيعية، مدينة تحيط بها الجبال والبساتين والينابيع العلاجية النادرة."
+        data-historic="ينابيع جلال آباد المعدنية|متحف المدينة|مسجد جلال آباد|منتجع أربا وسط الطبيعة|حديقة المدينة المركزية|موقع كارا باور الأثري"
+        data-restaurants="مطعم جلال آباد الجنوبي|مطعم الينابيع|مطعم وادي فرغانة|مطعم آربا|مطعم البستان|مطعم القرغيزي الجنوبي"
+        data-cafes="كافيه الينابيع|كافيه جلال آباد|ذا سبرينغ كافيه|كافيه البستان|كافيه فرغانة|كافيه الطبيعة"
+        data-events="ينابيع جلال آباد العلاجية|منتجع أربا الطبيعي|غابة أرسلان بوب بالجوز|بحيرة سارى شيليك|سوق جلال آباد الأسبوعي|وادي فرغانة الخصيب"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'kyrgyzstan_jalalabad', 'جلال آباد', '/img/kyrgyzstan-jalalabad.jpg')">🏙️</button>
+        <img src="/img/kyrgyzstan-jalalabad.jpg" alt="جلال آباد" class="cite-img">
+        <span class="name">جلال آباد – Jalal-Abad</span>
+        <p class="info">مدينة الينابيع المعدنية والبساتين</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+  </div>
+</section>
+
+<section class="foods-section">
+  <h2 class="section-title">الأكلات الشعبية</h2>
+  <div class="foods-grid">
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=kyrgyz-beshbarmak'">
+      <img src="/img/kyrgyz-beshbarmak.jpg" alt="بيشبارماق" class="foods-img">
+      <span class="name-foods">بيشبارماق – Beshbarmak</span>
+      <div class="food-info">الطبق الوطني القرغيزي، لحم الضأن أو الحصان المسلوق مع صفائح العجين والمرق، يُؤكل باليد في موائد البدو</div>
+      <a href="/recipes/recipes.html?recipe=kyrgyz-beshbarmak" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=kyrgyz-manti'">
+      <img src="/img/kyrgyz-manti.jpg" alt="مانتي" class="foods-img">
+      <span class="name-foods">مانتي – Manti</span>
+      <div class="food-info">الزلابية القرغيزية المطهوة على البخار محشوة بلحم الضأن المفروم والبصل، تُقدم مع اللبن والثوم</div>
+      <a href="/recipes/recipes.html?recipe=kyrgyz-manti" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=kyrgyz-samsa'">
+      <img src="/img/kyrgyz-samsa.jpg" alt="سمسا" class="foods-img">
+      <span class="name-foods">سمسا – Samsa</span>
+      <div class="food-info">فطيرة العجين المحشوة باللحم والبصل والكراوية، مثلثة الشكل تُخبز في الفرن حتى تصبح ذهبية مقرمشة</div>
+      <a href="/recipes/recipes.html?recipe=kyrgyz-samsa" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=kyrgyz-lagman'">
+      <img src="/img/kyrgyz-lagman.jpg" alt="لغمان" class="foods-img">
+      <span class="name-foods">لغمان – Lagman</span>
+      <div class="food-info">المعكرونة اليدوية الممطوطة القرغيزية مع مرق اللحم والخضروات، طبق طريق الحرير الأشهر في المنطقة</div>
+      <a href="/recipes/recipes.html?recipe=kyrgyz-lagman" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=kyrgyz-shorpo'">
+      <img src="/img/kyrgyz-shorpo.jpg" alt="شوربو" class="foods-img">
+      <span class="name-foods">شوربو – Shorpo</span>
+      <div class="food-info">شوربة اللحم القرغيزية البسيطة بالبطاطا والجزر والبصل، الطبق اليومي في خيام البدو عبر الجبال</div>
+      <a href="/recipes/recipes.html?recipe=kyrgyz-shorpo" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=kyrgyz-boorsok'">
+      <img src="/img/kyrgyz-boorsok.jpg" alt="بورسوق" class="foods-img">
+      <span class="name-foods">بورسوق – Boorsok</span>
+      <div class="food-info">الخبز القرغيزي المقلي المربع الشكل، يُصنع من عجينة بسيطة ويُقلى بالزيت حتى يصبح ذهبياً هشاً</div>
+      <a href="/recipes/recipes.html?recipe=kyrgyz-boorsok" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+  </div>
+</section>
+
+<section class="events-section">
+  <h2 class="section-title">الفعاليات والأماكن</h2>
+  <div class="events-grid">
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=KyrgyzIssykKul'">
+      <img src="/img/kyrgyzstan-issykkul.jpg" alt="بحيرة إيسيك كول" class="event-img">
+      <span class="name-event">بحيرة إيسيك كول – Issyk-Kul</span>
+      <div class="event-info">ثاني أكبر بحيرة جبلية في العالم المحاطة بقمم تيان شان الثلجية الشاهقة ومياهها الزرقاء الساحرة</div>
+      <a href="/events/events.html?event=KyrgyzIssykKul" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=KyrgyzAlaArcha'">
+      <img src="/img/kyrgyzstan-ala-archa.jpg" alt="منتزه آلا آرشا" class="event-img">
+      <span class="name-event">منتزه آلا آرشا – Ala-Archa</span>
+      <div class="event-info">المنتزه الوطني الرائع على بعد ثلاثين كيلومتراً من بيشكيك بمساراته الجبلية وأنهاره الجليدية المتدفقة</div>
+      <a href="/events/events.html?event=KyrgyzAlaArcha" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=KyrgyzSongKol'">
+      <img src="/img/kyrgyzstan-songkol.jpg" alt="بحيرة سونغ كول" class="event-img">
+      <span class="name-event">بحيرة سونغ كول – Song-Kol</span>
+      <div class="event-info">البحيرة الجبلية العذراء على ارتفاع ثلاثة آلاف متر وسط المراعي الخضراء حيث تعيش خيام البدو صيفاً</div>
+      <a href="/events/events.html?event=KyrgyzSongKol" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=KyrgyzOsh'">
+      <img src="/img/kyrgyzstan-osh.jpg" alt="مدينة أوش" class="event-img">
+      <span class="name-event">مدينة أوش – Osh</span>
+      <div class="event-info">جبل سليمان المقدس المدرج في اليونسكو وسوق أوش التاريخي على طريق الحرير منذ ثلاثة آلاف سنة</div>
+      <a href="/events/events.html?event=KyrgyzOsh" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=KyrgyzNomadGames'">
+      <img src="/img/kyrgyzstan-nomadgames.jpg" alt="ألعاب البدو العالمية" class="event-img">
+      <span class="name-event">ألعاب البدو العالمية – World Nomad Games</span>
+      <div class="event-info">المهرجان الدولي الكبير لألعاب شعوب آسيا الوسطى البدوية من رماية ومصارعة وفروسية وصيد بالنسور</div>
+      <a href="/events/events.html?event=KyrgyzNomadGames" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=KyrgyzYurt'">
+      <img src="/img/kyrgyzstan-yurt.jpg" alt="خيمة الآق أوي" class="event-img">
+      <span class="name-event">خيمة الآق أوي – Yurt Stay</span>
+      <div class="event-info">تجربة الإقامة في الخيمة القرغيزية التقليدية وسط الجبال مع البدو وتذوق المطبخ البدوي الأصيل</div>
+      <a href="/events/events.html?event=KyrgyzYurt" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+  </div>
+</section>
+
+<div id="cityModal" class="modal" onclick="closeCityModal(event)">
+  <div class="modal-content">
+    <button class="modal-close" onclick="closeCityModal(event)">×</button>
+    <img id="modal-city-img" src="" alt="">
+    <h2 id="modal-city-name"></h2>
+    <p id="modal-city-desc"></p>
+    <div class="modal-section"><h3>المعالم التاريخية</h3><ul id="modal-city-historic"></ul></div>
+    <div class="modal-section"><h3>المطاعم</h3><ul id="modal-city-restaurants"></ul></div>
+    <div class="modal-section"><h3>المقاهي</h3><ul id="modal-city-cafes"></ul></div>
+    <div class="modal-section"><h3>الفعاليات</h3><ul id="modal-city-events"></ul></div>
+  </div>
+</div>
+
+<footer>
+  <p>© 2025 سفرة. جميع الحقوق محفوظة.</p>
+</footer>
+<script src="/countries/countries.js"></script>
+<script src="/auth/auth.js"></script>
+</body>
+</html>

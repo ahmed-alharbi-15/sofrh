@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>طاجيكستان – Tajikistan</title>
+  <link rel="stylesheet" href="/countries/countries.css" />
+  <link rel="stylesheet" href="/index/index.css" />
+  <link rel="icon" href="/img/logo.png" />
+</head>
+<body>
+<header>
+  <div class="nav">
+    <a href="/index/index.html"><img src="/img/logo.png" class="logo" alt="سفرة"/></a>
+    <nav class="links">
+      <a href="/index/index.html">الرئيسية</a>
+      <a href="/countries/countries.html">الدول</a>
+      <a href="/events/events.html">الفعاليات</a>
+      <a href="/recipes/recipes.html">الوصفات</a>
+      <a href="/plan/plan.html">خطط رحلتك</a>
+    </nav>
+    <div class="auth-btns">
+      <button id="menu-btn">☰</button>
+    </div>
+  </div>
+</header>
+<div id="side-menu">
+  <button id="close-btn">×</button>
+  <a href="/index/index.html">الرئيسية</a>
+  <a href="/countries/countries.html">الدول</a>
+  <a href="/events/events.html">الفعاليات</a>
+  <a href="/recipes/recipes.html">الوصفات</a>
+  <a href="/plan/plan.html">خطط رحلتك</a>
+  <a href="/profile/profile.html">الملف الشخصي</a>
+  <a href="/auth/login.html" id="login-link">تسجيل الدخول</a>
+  <a href="#" id="logout-link" style="display:none">تسجيل الخروج</a>
+</div>
+
+<section class="country-name">
+  <h1>طاجيكستان – Tajikistan</h1>
+  <p>سقف العالم وجنة الجبال الفيروزية حيث طريق الحرير القديم يمر بين قمم البامير الشاهقة</p>
+</section>
+
+<section class="cities-section">
+  <h2 class="section-title">المدن</h2>
+  <div class="cities-grid">
+
+    <div class="cite" data-name="دوشنبه – Dushanbe"
+        data-img="/img/tajikistan-dushanbe.jpg"
+        data-desc="العاصمة الطاجيكية الهادئة على ضفاف نهر واربزة بين الجبال الخضراء، مدينة حديثة بشوارعها الواسعة المشجرة ومتاحفها الوطنية وتمثال أحمد شاه الشهير الذي يرقب العاصمة."
+        data-historic="متحف الآثار الوطني|تمثال أبو علي ابن سينا|الجامع الكبير المركزي|برج دوشنبه التلفزيوني|مبنى البرلمان الطاجيكي|حديقة ردكي الوطنية"
+        data-restaurants="مطعم دوشنبه الكبير|مطعم أوش التقليدي|مطعم الجبال الطاجيكية|مطعم واربزة|مطعم البامير|مطعم طريق الحرير"
+        data-cafes="كافيه دوشنبه|كافيه الجبال|ذا سيلك رود كافيه|كافيه واربزة|كافيه البامير|كافيه الشاي الطاجيكي"
+        data-events="متحف الآثار الوطني بكنوز سمرقند|الجامع الكبير الذي يتسع لعشرة آلاف|تمثال رودكي شاعر الفارسية|حديقة ردكي الوطنية الخضراء|جولة أحياء دوشنبه|مهرجان نوروز في العاصمة"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'tajikistan_dushanbe', 'دوشنبه', '/img/tajikistan-dushanbe.jpg')">🏙️</button>
+        <img src="/img/tajikistan-dushanbe.jpg" alt="دوشنبه" class="cite-img">
+        <span class="name">دوشنبه – Dushanbe</span>
+        <p class="info">العاصمة الهادئة بين الجبال الخضراء</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="خجند – Khujand"
+        data-img="/img/tajikistan-khujand.jpg"
+        data-desc="ثاني أكبر مدن طاجيكستان وإحدى أعرق مدن آسيا الوسطى التي أسسها الإسكندر المقدوني على ضفاف نهر سيحون، بازارها المسقوف الشهير وقلعتها التاريخية تشهدان على آلاف السنين."
+        data-historic="قلعة خجند التاريخية|بازار بانجشانبه المسقوف|متحف خجند الإقليمي|مسجد الشيخ الجامع|نهر سيردريا|جسر خجند القديم"
+        data-restaurants="مطعم خجند الأصيل|مطعم سيردريا|مطعم الإسكندر|مطعم البازار الكبير|مطعم الشمال الطاجيكي|مطعم قلعة خجند"
+        data-cafes="كافيه خجند|كافيه سيردريا|ذا فيرغانا كافيه|كافيه القلعة|كافيه البازار|كافيه نهر سيحون"
+        data-events="بازار بانجشانبه من أكبر أسواق آسيا الوسطى|قلعة خجند الأثرية التاريخية|نهر سيردريا الكبير|متحف خجند بتحف من إمبراطورية اليونان|جولة المدينة القديمة التي أسسها الإسكندر|مهرجان الفاكهة والثمار في الخريف"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'tajikistan_khujand', 'خجند', '/img/tajikistan-khujand.jpg')">🏙️</button>
+        <img src="/img/tajikistan-khujand.jpg" alt="خجند" class="cite-img">
+        <span class="name">خجند – Khujand</span>
+        <p class="info">مدينة الإسكندر على ضفاف سيحون</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="بنجكنت – Penjikent"
+        data-img="/img/tajikistan-penjikent.jpg"
+        data-desc="مدينة السُّغد القديمة الأسطورية على طريق الحرير بين سمرقند وخراسان، تضم أحد أعظم مواقع الحضارة السُّغدية الفارسية بجداريات ملونة بقيت 1500 عام في الجبال."
+        data-historic="آثار بنجكنت السُّغدية|متحف رودكي|جداريات القصور السُّغدية|نهر زرفشان|مرتفعات فان الجبلية|ضريح رودكي شاعر الفارسية"
+        data-restaurants="مطعم بنجكنت السُّغدي|مطعم زرفشان|مطعم رودكي|مطعم طريق الحرير|مطعم الجبال|مطعم الحضارة الفارسية"
+        data-cafes="كافيه بنجكنت|كافيه زرفشان|ذا سوغديان كافيه|كافيه رودكي|كافيه الجبال|كافيه الحرير"
+        data-events="آثار بنجكنت السُّغدية الأثرية النادرة|جداريات القصور بألوان زاهية من 1500 عام|متحف رودكي بمخطوطات نادرة|جبال فان بالبحيرات الفيروزية|نهر زرفشان الخلاب|طريق الحرير القديم عبر بنجكنت"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'tajikistan_penjikent', 'بنجكنت', '/img/tajikistan-penjikent.jpg')">🏙️</button>
+        <img src="/img/tajikistan-penjikent.jpg" alt="بنجكنت" class="cite-img">
+        <span class="name">بنجكنت – Penjikent</span>
+        <p class="info">مدينة الحضارة السُّغدية على طريق الحرير</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="خوروغ – Khorog"
+        data-img="/img/tajikistan-khorog.jpg"
+        data-desc="عاصمة إقليم غورنو-بدخشان في قلب جبال البامير، مدينة صغيرة محاطة بالقمم الجليدية على ضفاف نهر بنج تستقطب عشاق الجبال والمغامرة من كل أنحاء العالم."
+        data-historic="متحف بدخشان الإقليمي|حديقة نباتات خوروغ|معبد السُّغديين القديم|جسر خوروغ عبر بنج|جبال البامير الشاهقة|طريق بامير الكبير"
+        data-restaurants="مطعم خوروغ الجبلي|مطعم البامير|مطعم بنج|مطعم الأعالي|مطعم بدخشان|مطعم الجبل الأزرق"
+        data-cafes="كافيه خوروغ|كافيه البامير|ذا بامير كافيه|كافيه الجبال|كافيه بنج|كافيه الأعالي"
+        data-events="طريق بامير الكبير أجمل الطرق الجبلية في العالم|جبال البامير الشاهقة المثيرة|حديقة نباتات خوروغ الفريدة|نهر بنج الحدودي مع أفغانستان|الإقليم الإسماعيلي ببناه التقليدية|مشاهدة النجوم في سماء البامير الصافية"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'tajikistan_khorog', 'خوروغ', '/img/tajikistan-khorog.jpg')">🏙️</button>
+        <img src="/img/tajikistan-khorog.jpg" alt="خوروغ" class="cite-img">
+        <span class="name">خوروغ – Khorog</span>
+        <p class="info">بوابة جبال البامير الأسطورية</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="قولوب – Kulob"
+        data-img="/img/tajikistan-kulob.jpg"
+        data-desc="إحدى أعرق مدن طاجيكستان جنوباً بتاريخها الممتد آلاف السنين على ضفاف نهر بنج، موطن أمير تيمور في طفولته تضم ضريح مير سيد علي همداني الصوفي المقدس."
+        data-historic="ضريح مير سيد علي همداني|مسجد قولوب الكبير|متحف قولوب الإقليمي|قلعة قولوب القديمة|نهر بنج الحدودي|سوق قولوب الشعبي"
+        data-restaurants="مطعم قولوب التقليدي|مطعم جنوب طاجيكستان|مطعم الضريح|مطعم نهر بنج|مطعم الأصالة|مطعم الجبال الجنوبية"
+        data-cafes="كافيه قولوب|كافيه الضريح|ذا سافيد كافيه|كافيه الجنوب|كافيه نهر بنج|كافيه الصوفيين"
+        data-events="ضريح مير سيد علي همداني الصوفي المقدس|مسجد قولوب الكبير|سوق قولوب الشعبي الصاخب|جبال الجنوب الطاجيكي الخلابة|نهر بنج على الحدود الأفغانية|مهرجان قولوب الثقافي السنوي"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'tajikistan_kulob', 'قولوب', '/img/tajikistan-kulob.jpg')">🏙️</button>
+        <img src="/img/tajikistan-kulob.jpg" alt="قولوب" class="cite-img">
+        <span class="name">قولوب – Kulob</span>
+        <p class="info">المدينة العريقة جنوب طاجيكستان</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="إيسترافشان – Istaravshan"
+        data-img="/img/tajikistan-istaravshan.jpg"
+        data-desc="إحدى أقدم مدن آسيا الوسطى بتاريخ يمتد 2500 عام على طريق الحرير، مدينة الحرف اليدوية والمساجد الملونة والأسواق العتيقة التي رسمها الأمير كورش الأخميني يوماً ما."
+        data-historic="قلعة إيسترافشان الأثرية|مسجد كوك غمبز الأزرق|متحف الحرف الطاجيكية|سوق المدينة القديم|ضريح الشيخ مصلح|حمام القيصر التاريخي"
+        data-restaurants="مطعم إيسترافشان|مطعم كورش الأخميني|مطعم السوق القديم|مطعم كوك غمبز|مطعم طريق الحرير|مطعم الحرف"
+        data-cafes="كافيه إيسترافشان|كافيه القلعة|ذا أنسينت كافيه|كافيه الحرف|كافيه المسجد الأزرق|كافيه القيصر"
+        data-events="مسجد كوك غمبز بقبته الفيروزية الرائعة|قلعة إيسترافشان الأثرية من 2500 سنة|سوق المدينة القديم بالحرف اليدوية|ورش الخشب المنحوت وصياغة الفضة|جولة المساجد المزخرفة بالفسيفساء|مهرجان الحرف التقليدية الطاجيكية"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'tajikistan_istaravshan', 'إيسترافشان', '/img/tajikistan-istaravshan.jpg')">🏙️</button>
+        <img src="/img/tajikistan-istaravshan.jpg" alt="إيسترافشان" class="cite-img">
+        <span class="name">إيسترافشان – Istaravshan</span>
+        <p class="info">مدينة طريق الحرير من 2500 سنة</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+  </div>
+</section>
+
+<section class="foods-section">
+  <h2 class="section-title">الأكلات الشعبية</h2>
+  <div class="foods-grid">
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=tajikistan-osh'">
+      <img src="/img/tajikistan-osh.jpg" alt="أوش" class="foods-img">
+      <span class="name-foods">أوش – Osh (Plov)</span>
+      <div class="food-info">الطبق الوطني لطاجيكستان وآسيا الوسطى، أرز مطبوخ بزيت القطن والجزر والبصل واللحم، يُعدّ في مرجل حديدي ضخم ويُقدم في المناسبات</div>
+      <a href="/recipes/recipes.html?recipe=tajikistan-osh" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=tajikistan-qurutob'">
+      <img src="/img/tajikistan-qurutob.jpg" alt="قوروتوب" class="foods-img">
+      <span class="name-foods">قوروتوب – Qurutob</span>
+      <div class="food-info">الطبق التقليدي الطاجيكي الخاص، خبز الفطير المبلل بصلصة الجبن المخمر المجفف مع البصل والزيت، يُقدم في طبق خشبي مشترك</div>
+      <a href="/recipes/recipes.html?recipe=tajikistan-qurutob" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=tajikistan-shashlik'">
+      <img src="/img/tajikistan-shashlik.jpg" alt="شاشليك" class="foods-img">
+      <span class="name-foods">شاشليك – Shashlik</span>
+      <div class="food-info">الكباب الطاجيكي المشوي على الفحم من لحم الضأن المتبل بالبهارات والبصل والخل، طبق المناسبات والسفرات في طبيعة الجبال</div>
+      <a href="/recipes/recipes.html?recipe=tajikistan-shashlik" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=tajikistan-samsa'">
+      <img src="/img/tajikistan-samsa.jpg" alt="سمسه" class="foods-img">
+      <span class="name-foods">سمسه – Samsa</span>
+      <div class="food-info">فطيرة العجين المحشوة باللحم والبصل المطبوخة في التنور الطيني الساخن، تُباع في كل أسواق طاجيكستان وآسيا الوسطى طوال اليوم</div>
+      <a href="/recipes/recipes.html?recipe=tajikistan-samsa" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=tajikistan-lagman'">
+      <img src="/img/tajikistan-lagman.jpg" alt="لغمان" class="foods-img">
+      <span class="name-foods">لغمان – Lagman</span>
+      <div class="food-info">شوربة المعكرونة السميكة اليدوية مع اللحم والخضروات والبهارات، طبق طريق الحرير القادم من الصين عبر آسيا الوسطى</div>
+      <a href="/recipes/recipes.html?recipe=tajikistan-lagman" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=tajikistan-shirchoy'">
+      <img src="/img/tajikistan-shirchoy.jpg" alt="شيرتشاي" class="foods-img">
+      <span class="name-foods">شيرتشاي – Shirchoy</span>
+      <div class="food-info">الشاي الطاجيكي باللبن والملح والزبدة، المشروب الوطني الدافئ الذي يشربه أهل الجبال كل يوم لمقاومة برد البامير القارص</div>
+      <a href="/recipes/recipes.html?recipe=tajikistan-shirchoy" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+  </div>
+</section>
+
+<section class="events-section">
+  <h2 class="section-title">الفعاليات والأماكن</h2>
+  <div class="events-grid">
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=TajikPamir'">
+      <img src="/img/tajikistan-pamir.jpg" alt="طريق البامير" class="event-img">
+      <span class="name-event">طريق البامير – Pamir Highway</span>
+      <div class="event-info">أحد أجمل وأشهر الطرق الجبلية في العالم عبر سقف الأرض في جبال البامير بين الانحدارات الدرامية والبحيرات الفيروزية</div>
+      <a href="/events/events.html?event=TajikPamir" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=TajikFann'">
+      <img src="/img/tajikistan-fann.jpg" alt="جبال فان" class="event-img">
+      <span class="name-event">جبال فان – Fann Mountains</span>
+      <div class="event-info">البحيرات الفيروزية الساحرة كإسكاندركول في جبال فان بين القمم الثلجية، من أجمل وجهات التنزه والتخييم في آسيا الوسطى</div>
+      <a href="/events/events.html?event=TajikFann" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=TajikNowruz'">
+      <img src="/img/tajikistan-nowruz.jpg" alt="مهرجان نوروز" class="event-img">
+      <span class="name-event">مهرجان نوروز – Nowruz Festival</span>
+      <div class="event-info">رأس السنة الفارسية في 21 مارس بألعابه الشعبية والموسيقى التقليدية وأطباق الربيع الطاجيكية وألوان الأزياء الزاهية في الساحات</div>
+      <a href="/events/events.html?event=TajikNowruz" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=TajikPenjikent'">
+      <img src="/img/tajikistan-penjikent.jpg" alt="آثار بنجكنت" class="event-img">
+      <span class="name-event">آثار بنجكنت – Penjikent Ruins</span>
+      <div class="event-info">المدينة السُّغدية الأثرية الرائعة بجداريات ألوانها لا تزال زاهية بعد 1500 عام، من أندر مواقع الحضارة الفارسية السُّغدية في آسيا</div>
+      <a href="/events/events.html?event=TajikPenjikent" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=TajikKhujand'">
+      <img src="/img/tajikistan-khujand.jpg" alt="خجند التاريخية" class="event-img">
+      <span class="name-event">خجند التاريخية – Historic Khujand</span>
+      <div class="event-info">بازار بانجشانبه الضخم المسقوف وقلعة خجند الأثرية في المدينة التي أسسها الإسكندر المقدوني على ضفاف نهر سيحون</div>
+      <a href="/events/events.html?event=TajikKhujand" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=TajikKhorog'">
+      <img src="/img/tajikistan-khorog.jpg" alt="خوروغ والبامير" class="event-img">
+      <span class="name-event">خوروغ والبامير – Khorog & Pamir</span>
+      <div class="event-info">عاصمة إقليم بدخشان في قلب البامير ببحيرة سريزكول والقمم الجليدية الشاهقة وحديقة النباتات الجبلية الفريدة في سقف العالم</div>
+      <a href="/events/events.html?event=TajikKhorog" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+  </div>
+</section>
+
+<div id="cityModal" class="modal" onclick="closeCityModal(event)">
+  <div class="modal-content">
+    <button class="modal-close" onclick="closeCityModal(event)">×</button>
+    <img id="modal-city-img" src="" alt="">
+    <h2 id="modal-city-name"></h2>
+    <p id="modal-city-desc"></p>
+    <div class="modal-section"><h3>المعالم التاريخية</h3><ul id="modal-city-historic"></ul></div>
+    <div class="modal-section"><h3>المطاعم</h3><ul id="modal-city-restaurants"></ul></div>
+    <div class="modal-section"><h3>المقاهي</h3><ul id="modal-city-cafes"></ul></div>
+    <div class="modal-section"><h3>الفعاليات</h3><ul id="modal-city-events"></ul></div>
+  </div>
+</div>
+
+<footer>
+  <p>© 2025 سفرة. جميع الحقوق محفوظة.</p>
+</footer>
+<script src="/countries/countries.js"></script>
+<script src="/auth/auth.js"></script>
+</body>
+</html>

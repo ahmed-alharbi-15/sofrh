@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ميانمار – Myanmar</title>
+  <link rel="stylesheet" href="/countries/countries.css" />
+  <link rel="stylesheet" href="/index/index.css" />
+  <link rel="icon" href="/img/logo.png" />
+</head>
+<body>
+<header>
+  <div class="nav">
+    <a href="/index/index.html"><img src="/img/logo.png" class="logo" alt="سفرة"/></a>
+    <nav class="links">
+      <a href="/index/index.html">الرئيسية</a>
+      <a href="/countries/countries.html">الدول</a>
+      <a href="/events/events.html">الفعاليات</a>
+      <a href="/recipes/recipes.html">الوصفات</a>
+      <a href="/plan/plan.html">خطط رحلتك</a>
+    </nav>
+    <div class="auth-btns">
+      <button id="menu-btn">☰</button>
+    </div>
+  </div>
+</header>
+<div id="side-menu">
+  <button id="close-btn">×</button>
+  <a href="/index/index.html">الرئيسية</a>
+  <a href="/countries/countries.html">الدول</a>
+  <a href="/events/events.html">الفعاليات</a>
+  <a href="/recipes/recipes.html">الوصفات</a>
+  <a href="/plan/plan.html">خطط رحلتك</a>
+  <a href="/profile/profile.html">الملف الشخصي</a>
+  <a href="/auth/login.html" id="login-link">تسجيل الدخول</a>
+  <a href="#" id="logout-link" style="display:none">تسجيل الخروج</a>
+</div>
+
+<section class="country-name">
+  <h1>ميانمار – Myanmar</h1>
+  <p>أرض المعابد الذهبية الآلاف حيث تقاليد عريقة تلتقي بالطبيعة الاستوائية الساحرة</p>
+</section>
+
+<section class="cities-section">
+  <h2 class="section-title">المدن</h2>
+  <div class="cities-grid">
+
+    <div class="cite" data-name="يانغون – Yangon"
+        data-img="/img/myanmar-yangon.jpg"
+        data-desc="المدينة الكبرى والعاصمة السابقة لميانمار تجمع المعابد البوذية الذهبية الشامخة مع المباني الكولونيالية البريطانية الفخمة في مشهد بصري فريد على ضفاف نهر يانغون."
+        data-historic="معبد شيودغون الذهبي|ميدان مهابانديولا التاريخي|المبنى البريطاني القديم لمحكمة يانغون|بحيرة إينيا|سوق بوغيوكي الكبير|متحف الجواهر الوطني"
+        data-restaurants="مطعم بيرل يانغون|مطعم ذا هاوس|مطعم ميانمار كيتشن|مطعم لويس|مطعم قمة نهر يانغون|مطعم شيودغون"
+        data-cafes="كافيه شيودغون|كافيه بحيرة إينيا|ذا ريفر كافيه|كافيه يانغون مودرن|كافيه المعبد|كافيه ذهبي يانغون"
+        data-events="معبد شيودغون الذهبي الأسطوري|بحيرة إينيا الهادئة|سوق بوغيوكي التاريخي|الحي الكولونيالي البريطاني|رحلة نهر يانغون|حديقة المدينة المركزية"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'myanmar_yangon', 'يانغون', '/img/myanmar-yangon.jpg')">🏙️</button>
+        <img src="/img/myanmar-yangon.jpg" alt="يانغون" class="cite-img">
+        <span class="name">يانغون – Yangon</span>
+        <p class="info">عاصمة المعابد الذهبية والتاريخ</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="باغان – Bagan"
+        data-img="/img/myanmar-bagan.jpg"
+        data-desc="مدينة المعابد الأسطورية في ميانمار حيث تنتشر أكثر من ألفي معبد وباغودا على السهل الرملي، من أعظم المواقع الأثرية البوذية في العالم المدرجة في اليونسكو."
+        data-historic="معبد آناندا الذهبي|معبد تاتبينيو الشاهق|معبد دهامايانغي الضخم|متحف باغان الأثري|قلعة باغان|تل شيزايون المقدس"
+        data-restaurants="مطعم باغان لاند|مطعم المعابد الذهبية|مطعم ذا تيمبل|مطعم إيراوادي بيتش|مطعم ريفر سايد باغان|مطعم بوبا"
+        data-cafes="كافيه باغان|كافيه المعابد|ذا تيمبل كافيه|كافيه إيراوادي|كافيه الغروب|كافيه آناندا"
+        data-events="معابد باغان مدرجة في اليونسكو|ركوب البالون فوق المعابد الألفية|غروب الشمس على نهر إيراوادي|جولة بالعربة بين المعابد|متحف باغان الأثري|جبل بوبا المقدس القريب"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'myanmar_bagan', 'باغان', '/img/myanmar-bagan.jpg')">🏙️</button>
+        <img src="/img/myanmar-bagan.jpg" alt="باغان" class="cite-img">
+        <span class="name">باغان – Bagan</span>
+        <p class="info">مدينة ألفي معبد على السهل الذهبي</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="ماندالاي – Mandalay"
+        data-img="/img/myanmar-mandalay.jpg"
+        data-desc="العاصمة الثقافية والدينية لميانمار ومركز الحضارة البورمية العريقة، موطن آخر ملوك بورما مع قصورها الخشبية الرائعة وآلاف المعابد والأديرة البوذية."
+        data-historic="قصر ماندالاي الملكي|تل ماندالاي المشرف|معبد ماهاموني الذهبي|جسر أوو باين الخشبي|منطقة سياغيان للحرف|متحف ماندالاي الوطني"
+        data-restaurants="مطعم ماندالاي هيل|مطعم ريستورانت 999|مطعم ذا كاسل|مطعم يادانابون|مطعم روبي ماندالاي|مطعم إيراوادي"
+        data-cafes="كافيه ماندالاي|كافيه القصر الملكي|ذا هيل كافيه|كافيه أوو باين|كافيه الذهبي|كافيه الحضارة البورمية"
+        data-events="قصر ماندالاي الملكي المذهل|جسر أوو باين الخشبي على البحيرة|معبد ماهاموني الذهبي|تل ماندالاي بالمناظر البانورامية|ورش الحرف اليدوية التقليدية|مهرجان ماندالاي الشتوي"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'myanmar_mandalay', 'ماندالاي', '/img/myanmar-mandalay.jpg')">🏙️</button>
+        <img src="/img/myanmar-mandalay.jpg" alt="ماندالاي" class="cite-img">
+        <span class="name">ماندالاي – Mandalay</span>
+        <p class="info">قلب الحضارة البورمية العريقة</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="إنلي – Inle"
+        data-img="/img/myanmar-inle.jpg"
+        data-desc="بحيرة إنلي الساحرة في هضبة الشان، حيث يعيش الصيادون على منازل خشبية فوق الماء ويتجولون بقوارب خاصة وتنتشر الحدائق العائمة في مشهد بصري لا يُنسى."
+        data-historic="منازل إنلي العائمة|سوق إنلي الأسبوعي الدوار|معبد بهاو داو|ورش الحرير الشعبية|حدائق الطماطم العائمة|متحف بحيرة إنلي"
+        data-restaurants="مطعم إنلي ليك|مطعم شعب الإنثا|مطعم فوق الماء|مطعم بهاو داو|مطعم الحديقة العائمة|مطعم الصياد"
+        data-cafes="كافيه إنلي|كافيه البحيرة العائمة|ذا ليك كافيه|كافيه الصياد|كافيه الشان|كافيه الحرير"
+        data-events="جولة القارب على بحيرة إنلي|سوق البحيرة الأسبوعي الدوار|مشاهدة الصيادين ذوي الأرجل|الحدائق العائمة الفريدة|ورش نسيج الحرير الشعبية|قرى الإنثا التقليدية فوق الماء"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'myanmar_inle', 'إنلي', '/img/myanmar-inle.jpg')">🏙️</button>
+        <img src="/img/myanmar-inle.jpg" alt="إنلي" class="cite-img">
+        <span class="name">إنلي – Inle</span>
+        <p class="info">بحيرة الحياة فوق الماء الساحرة</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="نيبيداو – Naypyidaw"
+        data-img="/img/myanmar-naypyidaw.jpg"
+        data-desc="العاصمة الرسمية الحديثة لميانمار المبنية في الصحراء خصيصاً، مدينة الشوارع الواسعة الخالية والمعالم الضخمة والمنتزهات الفسيحة بطابع استثنائي فريد."
+        data-historic="برلمان ميانمار الوطني|متحف جواهر الجنادرية|تمثال ثلاثة ملوك الكبير|معبد أوبالي ثاندي|حديقة نيبيداو الحيوانية|منتزه المياه الكبير"
+        data-restaurants="مطعم نيبيداو الملكي|مطعم العاصمة الكبير|مطعم الجواهر|مطعم الحديقة الوطنية|مطعم البورمي الأصيل|مطعم الملوك الثلاثة"
+        data-cafes="كافيه نيبيداو|كافيه العاصمة|ذا كابيتال كافيه|كافيه الحديقة|كافيه الملكي|كافيه المنتزه"
+        data-events="متحف الجواهر الوطني الكبير|تمثال الملوك الثلاثة الضخم|معبد أوبالي ثاندي الذهبي|منتزه المياه الكبير|حدائق نيبيداو الفسيحة|سباق سيارات الغولف في الصحراء"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'myanmar_naypyidaw', 'نيبيداو', '/img/myanmar-naypyidaw.jpg')">🏙️</button>
+        <img src="/img/myanmar-naypyidaw.jpg" alt="نيبيداو" class="cite-img">
+        <span class="name">نيبيداو – Naypyidaw</span>
+        <p class="info">العاصمة الحديثة الأسطورية الفسيحة</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="مولميين – Mawlamyine"
+        data-img="/img/myanmar-mawlamyine.jpg"
+        data-desc="أول عاصمة بورمية في العهد البريطاني تشرف على مصب نهر سالوين بمعابدها البوذية المتوجة للتلال ومطبخها البحري الثري والموروث المعماري الكولونيالي النادر."
+        data-historic="معبد كيوك ثلان المتوج للتل|معبد ماهاموني مولميين|ميناء مولميين التاريخي|كنيسة سانت ماتياس|سجن مولميين الكولونيالي|متحف مون الوطني"
+        data-restaurants="مطعم سالوين للأسماك|مطعم مون الأصيل|مطعم المدينة البريطانية|مطعم الميناء|مطعم بحر أندامان|مطعم مولميين الكولونيالي"
+        data-cafes="كافيه مولميين|كافيه سالوين|ذا ريفر كافيه|كافيه مون|كافيه الميناء|كافيه التل"
+        data-events="معبد كيوك ثلان فوق التل بمناظر بانورامية|الحي الكولونيالي البريطاني الأصيل|رحلة نهر سالوين الطويل|سوق مولميين الشعبي البحري|جزيرة بيلو القريبة|غروب الشمس على خليج مرتبان"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'myanmar_mawlamyine', 'مولميين', '/img/myanmar-mawlamyine.jpg')">🏙️</button>
+        <img src="/img/myanmar-mawlamyine.jpg" alt="مولميين" class="cite-img">
+        <span class="name">مولميين – Mawlamyine</span>
+        <p class="info">جوهرة جنوب ميانمار التاريخية</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+  </div>
+</section>
+
+<section class="foods-section">
+  <h2 class="section-title">الأكلات الشعبية</h2>
+  <div class="foods-grid">
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=myanmar-mohinga'">
+      <img src="/img/myanmar-mohinga.jpg" alt="موهينغا" class="foods-img">
+      <span class="name-foods">موهينغا – Mohinga</span>
+      <div class="food-info">الطبق الوطني لميانمار، شوربة سمك الكباسي مع المعكرونة الأرزية والبصل المقلي والكزبرة، وجبة الإفطار الأولى</div>
+      <a href="/recipes/recipes.html?recipe=myanmar-mohinga" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=myanmar-laphet'">
+      <img src="/img/myanmar-laphet.jpg" alt="لاباي" class="foods-img">
+      <span class="name-foods">لاباي – Laphet</span>
+      <div class="food-info">سلطة أوراق الشاي المخمرة الحلال مع المكسرات والطماطم والثوم، طبق بورمي فريد لا نظير له في العالم</div>
+      <a href="/recipes/recipes.html?recipe=myanmar-laphet" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=myanmar-ohn-no-khao-swe'">
+      <img src="/img/myanmar-ohn-no-khao-swe.jpg" alt="أون نو ختاو سوي" class="foods-img">
+      <span class="name-foods">أون نو ختاو سوي – Ohn No Khao Swe</span>
+      <div class="food-info">شوربة المعكرونة البورمية بحليب جوز الهند والدجاج والبصل المقلي، طبق فاخر للمناسبات العائلية الكبيرة</div>
+      <a href="/recipes/recipes.html?recipe=myanmar-ohn-no-khao-swe" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=myanmar-nan-gyi-thoke'">
+      <img src="/img/myanmar-nan-gyi-thoke.jpg" alt="نان جيي ثوك" class="foods-img">
+      <span class="name-foods">نان جيي ثوك – Nan Gyi Thoke</span>
+      <div class="food-info">سلطة المعكرونة السميكة البورمية مع صلصة الدجاج والبيض المسلوق وزيت الحمص، طبق الأسواق الشعبية</div>
+      <a href="/recipes/recipes.html?recipe=myanmar-nan-gyi-thoke" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=myanmar-samusa'">
+      <img src="/img/myanmar-samusa.jpg" alt="سموسة ميانمار" class="foods-img">
+      <span class="name-foods">سموسة ميانمار – Myanmar Samusa</span>
+      <div class="food-info">السمبوسة البورمية الكبيرة المحشوة بالخضروات والبطاطا المتبلة، تُقدم مع شوربة العدس الدافئة الشهية</div>
+      <a href="/recipes/recipes.html?recipe=myanmar-samusa" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=myanmar-htamin-jin'">
+      <img src="/img/myanmar-htamin-jin.jpg" alt="أرز حامض" class="foods-img">
+      <span class="name-foods">أرز حامض – Htamin Jin</span>
+      <div class="food-info">أرز الخل البورمي المضغوط يُقدم مع السمك المجفف والكزبرة والفلفل الحار، طعام الشمال البورمي الفريد</div>
+      <a href="/recipes/recipes.html?recipe=myanmar-htamin-jin" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+  </div>
+</section>
+
+<section class="events-section">
+  <h2 class="section-title">الفعاليات والأماكن</h2>
+  <div class="events-grid">
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=MyanmarBagan'">
+      <img src="/img/myanmar-bagan.jpg" alt="معابد باغان" class="event-img">
+      <span class="name-event">معابد باغان – Bagan Temples</span>
+      <div class="event-info">أكثر من ألفي معبد وباغودا في سهل واحد مدرج في اليونسكو، من أروع المشاهد الأثرية البوذية في التاريخ</div>
+      <a href="/events/events.html?event=MyanmarBagan" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=MyanmarShwedagon'">
+      <img src="/img/myanmar-shwedagon.jpg" alt="شيودغون الذهبية" class="event-img">
+      <span class="name-event">شيودغون الذهبية – Shwedagon Pagoda</span>
+      <div class="event-info">الباغودا الذهبية الأسطورية في يانغون المغطاة بالذهب الحقيقي والجواهر، أقدس موقع بوذي في ميانمار</div>
+      <a href="/events/events.html?event=MyanmarShwedagon" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=MyanmarInleLake'">
+      <img src="/img/myanmar-inle.jpg" alt="بحيرة إنلي" class="event-img">
+      <span class="name-event">بحيرة إنلي – Inle Lake</span>
+      <div class="event-info">البحيرة الساحرة مع صيادي الأرجل الأسطوريين والمنازل العائمة والحدائق المائية في مشهد لا يُصدق</div>
+      <a href="/events/events.html?event=MyanmarInleLake" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=MyanmarMandalay'">
+      <img src="/img/myanmar-mandalay.jpg" alt="ماندالاي التاريخية" class="event-img">
+      <span class="name-event">ماندالاي التاريخية – Mandalay</span>
+      <div class="event-info">قصر الملوك الخشبي وجسر أوو باين والمعابد الذهبية في العاصمة الثقافية الأولى لحضارة بورما</div>
+      <a href="/events/events.html?event=MyanmarMandalay" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=MyanmarGoldenRock'">
+      <img src="/img/myanmar-goldenrock.jpg" alt="صخرة الذهب" class="event-img">
+      <span class="name-event">صخرة الذهب – Golden Rock</span>
+      <div class="event-info">الصخرة الذهبية المعلقة على حافة الجبل بمعجزة التوازن المذهل، أقدس المواقع البوذية الثلاثة في ميانمار</div>
+      <a href="/events/events.html?event=MyanmarGoldenRock" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=MyanmarWaterFestival'">
+      <img src="/img/myanmar-waterfestival.jpg" alt="مهرجان الماء" class="event-img">
+      <span class="name-event">مهرجان الماء – Water Festival</span>
+      <div class="event-info">مهرجان ثينغيان أو رأس السنة البورمية في أبريل، حيث يتراشق الجميع بالماء احتفالاً بالتطهر والبداية الجديدة</div>
+      <a href="/events/events.html?event=MyanmarWaterFestival" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+  </div>
+</section>
+
+<div id="cityModal" class="modal" onclick="closeCityModal(event)">
+  <div class="modal-content">
+    <button class="modal-close" onclick="closeCityModal(event)">×</button>
+    <img id="modal-city-img" src="" alt="">
+    <h2 id="modal-city-name"></h2>
+    <p id="modal-city-desc"></p>
+    <div class="modal-section"><h3>المعالم التاريخية</h3><ul id="modal-city-historic"></ul></div>
+    <div class="modal-section"><h3>المطاعم</h3><ul id="modal-city-restaurants"></ul></div>
+    <div class="modal-section"><h3>المقاهي</h3><ul id="modal-city-cafes"></ul></div>
+    <div class="modal-section"><h3>الفعاليات</h3><ul id="modal-city-events"></ul></div>
+  </div>
+</div>
+
+<footer>
+  <p>© 2025 سفرة. جميع الحقوق محفوظة.</p>
+</footer>
+<script src="/countries/countries.js"></script>
+<script src="/auth/auth.js"></script>
+</body>
+</html>

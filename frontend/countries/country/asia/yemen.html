@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>اليمن – Yemen</title>
+  <link rel="stylesheet" href="/countries/countries.css" />
+  <link rel="stylesheet" href="/index/index.css" />
+  <link rel="icon" href="/img/logo.png" />
+</head>
+<body>
+<header>
+  <div class="nav">
+    <a href="/index/index.html"><img src="/img/logo.png" class="logo" alt="سفرة"/></a>
+    <nav class="links">
+      <a href="/index/index.html">الرئيسية</a>
+      <a href="/countries/countries.html">الدول</a>
+      <a href="/events/events.html">الفعاليات</a>
+      <a href="/recipes/recipes.html">الوصفات</a>
+      <a href="/plan/plan.html">خطط رحلتك</a>
+    </nav>
+    <div class="auth-btns">
+      <button id="menu-btn">☰</button>
+    </div>
+  </div>
+</header>
+<div id="side-menu">
+  <button id="close-btn">×</button>
+  <a href="/index/index.html">الرئيسية</a>
+  <a href="/countries/countries.html">الدول</a>
+  <a href="/events/events.html">الفعاليات</a>
+  <a href="/recipes/recipes.html">الوصفات</a>
+  <a href="/plan/plan.html">خطط رحلتك</a>
+  <a href="/profile/profile.html">الملف الشخصي</a>
+  <a href="/auth/login.html" id="login-link">تسجيل الدخول</a>
+  <a href="#" id="logout-link" style="display:none">تسجيل الخروج</a>
+</div>
+
+<section class="country-name">
+  <h1>اليمن – Yemen</h1>
+  <p>اليمن السعيد بلد ناطحات السحاب الطينية وجزيرة سقطرى العجيبة وعطر البن اليمني الأصيل</p>
+</section>
+
+<section class="cities-section">
+  <h2 class="section-title">المدن</h2>
+  <div class="cities-grid">
+
+    <div class="cite" data-name="صنعاء – Sana'a"
+        data-img="/img/yemen-sanaa.jpg"
+        data-desc="عاصمة اليمن القديمة المدرجة في اليونسكو، واحدة من أقدم المدن المسكونة في العالم بناطحات سحابها الطينية الملونة وقصورها العتيقة وجامعها الكبير الأسطوري."
+        data-historic="الجامع الكبير صنعاء|سوق القات التاريخي|باب اليمن الشهير|قلعة غمدان|متحف صنعاء الوطني|حارة اليهود القديمة"
+        data-restaurants="مطعم صنعاء الأصيل|مطعم باب اليمن|مطعم الهضبة|مطعم المندي اليمني|مطعم اللحوح|مطعم البن اليمني"
+        data-cafes="كافيه صنعاء|كافيه باب اليمن|ذا أولد سيتي كافيه|كافيه البن اليمني|كافيه الجامع|كافيه القديمة"
+        data-events="صنعاء القديمة مدرجة في اليونسكو|باب اليمن البوابة الأسطورية|الجامع الكبير التاريخي|ناطحات السحاب الطينية المتلونة|سوق صنعاء الشعبي|متحف صنعاء الوطني"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'yemen_sanaa', 'صنعاء', '/img/yemen-sanaa.jpg')">🏙️</button>
+        <img src="/img/yemen-sanaa.jpg" alt="صنعاء" class="cite-img">
+        <span class="name">صنعاء – Sana'a</span>
+        <p class="info">أقدم ناطحات السحاب الطينية في العالم</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="شبام – Shibam"
+        data-img="/img/yemen-shibam.jpg"
+        data-desc="مانهاتن الصحراء ومدينة ناطحات السحاب الطينية الأكثر شهرة في العالم المدرجة في اليونسكو، ناطحات بالغة 30 متراً شُيِّدت من الطين منذ 2000 عام."
+        data-historic="ناطحات السحاب الطينية|سور شبام التاريخي|أسواق شبام القديمة|متحف شبام المحلي|وادي حضرموت الخلاب|جبال حضرموت"
+        data-restaurants="مطعم شبام الطيني|مطعم وادي حضرموت|مطعم ناطحات السحاب|مطعم الطين|مطعم العسل اليمني|مطعم الحجر"
+        data-cafes="كافيه شبام|كافيه وادي حضرموت|ذا سكايسكريبر كافيه|كافيه الطين|كافيه الوادي|كافيه البن"
+        data-events="ناطحات السحاب الطينية مدرجة في اليونسكو|جولة المدينة الطينية العريقة|وادي حضرموت الخلاب الشاسع|جبال حضرموت الحمراء|سوق الجمعة الشعبي|مشاهدة الغروب على المدينة الطينية"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'yemen_shibam', 'شبام', '/img/yemen-shibam.jpg')">🏙️</button>
+        <img src="/img/yemen-shibam.jpg" alt="شبام" class="cite-img">
+        <span class="name">شبام – Shibam</span>
+        <p class="info">مانهاتن الصحراء المدرجة في اليونسكو</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="سقطرى – Socotra"
+        data-img="/img/yemen-socotra.jpg"
+        data-desc="جزيرة الدم والدراكو جوهرة بحر العرب المدرجة في اليونسكو، تضم 37% من نباتاتها لا توجد إلا فيها كشجرة دم الأخوين الحمراء الأسطورية في أجمل بيئة طبيعية."
+        data-historic="شجرة دم الأخوين النادرة|جبال هاجهير|شاطئ ريسوط|بحيرة ديهامري|كهوف هوق|قرى سقطرى التقليدية"
+        data-restaurants="مطعم سقطرى البحري|مطعم جزيرة الدراكو|مطعم دم الأخوين|مطعم بحر العرب|مطعم شاطئ ريسوط|مطعم الطبيعة"
+        data-cafes="كافيه سقطرى|كافيه الجزيرة|ذا دراغن بلود كافيه|كافيه بحر العرب|كافيه الطبيعة|كافيه الغابة"
+        data-events="أشجار دم الأخوين الفريدة عالمياً في اليونسكو|شواطئ سقطرى البكر البيضاء|كهوف هوق الأسطورية|جبال هاجهير|النباتات الفريدة التي لا توجد في أي مكان|الغوص في مياه بحر العرب الصافية"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'yemen_socotra', 'سقطرى', '/img/yemen-socotra.jpg')">🏙️</button>
+        <img src="/img/yemen-socotra.jpg" alt="سقطرى" class="cite-img">
+        <span class="name">سقطرى – Socotra</span>
+        <p class="info">جزيرة الدراكو الأسطورية في اليونسكو</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="عدن – Aden"
+        data-img="/img/yemen-aden.jpg"
+        data-desc="الميناء التاريخي الشهير في جنوب اليمن على خليج عدن، بوابة التجارة العالمية قديماً بجغرافيتها البركانية الاستثنائية وصهاريجها التاريخية ومناخها المعتدل."
+        data-historic="صهاريج عدن التاريخية|متحف عدن الوطني|جبل شمسان|ميناء عدن القديم|حارة كريتر|مسجد عيدروس"
+        data-restaurants="مطعم عدن البحري|مطعم خليج عدن|مطعم السمك الطازج|مطعم الميناء|مطعم جبل شمسان|مطعم كريتر"
+        data-cafes="كافيه عدن|كافيه الميناء|ذا أدن كافيه|كافيه خليج عدن|كافيه الجبل|كافيه البحر"
+        data-events="صهاريج عدن المائية الأثرية التاريخية|ميناء عدن القديم على خليج عدن|جبل شمسان البركاني بالمناظر البانورامية|حارة كريتر الشعبية|متحف عدن الوطني|شواطئ عدن على البحر العربي"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'yemen_aden', 'عدن', '/img/yemen-aden.jpg')">🏙️</button>
+        <img src="/img/yemen-aden.jpg" alt="عدن" class="cite-img">
+        <span class="name">عدن – Aden</span>
+        <p class="info">بوابة التجارة العالمية التاريخية</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="تريم – Tarim"
+        data-img="/img/yemen-tarim.jpg"
+        data-desc="مدينة وادي حضرموت العلمية التاريخية بمسجد العيدروس الشهير ومآذنها اليمنية الفريدة، مركز إشعاع علمي ديني يضم مئات المساجد والأضرحة."
+        data-historic="مسجد العيدروس تريم|مكتبة الأحقاف|ضريح النبي هود|متحف تريم الأثري|مئذنة مسجد الميهدار|أحياء تريم التاريخية"
+        data-restaurants="مطعم تريم العلمي|مطعم وادي حضرموت|مطعم الأحقاف|مطعم الضريح|مطعم النبي هود|مطعم العيدروس"
+        data-cafes="كافيه تريم|كافيه الأحقاف|ذا إسلاميك سيتي كافيه|كافيه العيدروس|كافيه المكتبة|كافيه الوادي"
+        data-events="مسجد العيدروس تريم المميز بهندسته|مكتبة الأحقاف بمخطوطاتها النادرة|ضريح النبي هود عليه السلام|مئذنة الميهدار الشاهقة|جولة مساجد تريم التاريخية|وادي حضرموت من الأعلى"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'yemen_tarim', 'تريم', '/img/yemen-tarim.jpg')">🏙️</button>
+        <img src="/img/yemen-tarim.jpg" alt="تريم" class="cite-img">
+        <span class="name">تريم – Tarim</span>
+        <p class="info">مدينة العلم والمآذن في حضرموت</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="المحويت – Al-Mahwit"
+        data-img="/img/yemen-mahwit.jpg"
+        data-desc="مدينة الجبال اليمنية الخضراء المعلقة بين السحاب والضباب، منطقة الطبيعة اليمنية الخلابة بمدرجاتها الزراعية على الجبال وبن المحويت الذائع الصيت."
+        data-historic="مدرجات المحويت الزراعية|جبال المحويت الخضراء|مزارع بن اليمن|قلعة المحويت الحجرية|سوق المدينة الأسبوعي|ينابيع المياه الطبيعية"
+        data-restaurants="مطعم المحويت الجبلي|مطعم البن اليمني|مطعم المدرجات|مطعم الجبال الخضراء|مطعم الضباب|مطعم ينابيع المياه"
+        data-cafes="كافيه المحويت|كافيه البن|ذا ماونتن كافيه|كافيه المدرجات|كافيه الجبال|كافيه الضباب"
+        data-events="مدرجات المحويت الزراعية الخلابة|مزارع بن اليمن الأصيل|الجبال الخضراء المكسوة بالضباب|قلعة المحويت الحجرية|سوق المحويت الأسبوعي التقليدي|جني القهوة اليمنية وتجفيفها"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'yemen_mahwit', 'المحويت', '/img/yemen-mahwit.jpg')">🏙️</button>
+        <img src="/img/yemen-mahwit.jpg" alt="المحويت" class="cite-img">
+        <span class="name">المحويت – Al-Mahwit</span>
+        <p class="info">جبال البن اليمني الخضراء المعلقة</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+  </div>
+</section>
+
+<section class="foods-section">
+  <h2 class="section-title">الأكلات الشعبية</h2>
+  <div class="foods-grid">
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=yemen-mandi'">
+      <img src="/img/yemen-mandi.jpg" alt="مندي يمني" class="foods-img">
+      <span class="name-foods">مندي يمني – Yemeni Mandi</span>
+      <div class="food-info">ملك المائدة اليمنية وأشهر طبق في شبه الجزيرة العربية، لحم الضأن أو الدجاج المطبوخ في التنور مع الأرز المبهر والمرق والصلصة الحمراء</div>
+      <a href="/recipes/recipes.html?recipe=yemen-mandi" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=yemen-saltah'">
+      <img src="/img/yemen-saltah.jpg" alt="سلتة" class="foods-img">
+      <span class="name-foods">سلتة – Saltah</span>
+      <div class="food-info">الطبق الوطني اليمني، مرق اللحم مع الحلبة الخضراء المخفوقة والخضروات، يُطبخ ويُقدم في إناء حجري حار يضجّ بالفقاعات</div>
+      <a href="/recipes/recipes.html?recipe=yemen-saltah" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=yemen-lahoh'">
+      <img src="/img/yemen-lahoh.jpg" alt="لحوح" class="foods-img">
+      <span class="name-foods">لحوح – Lahoh</span>
+      <div class="food-info">الخبز الإسفنجي اليمني المسامي المصنوع من الذرة أو القمح، يُؤكل مع العسل اليمني والسمن والجبن في وجبة الإفطار التقليدية</div>
+      <a href="/recipes/recipes.html?recipe=yemen-lahoh" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=yemen-fahsa'">
+      <img src="/img/yemen-fahsa.jpg" alt="فحسة" class="foods-img">
+      <span class="name-foods">فحسة – Fahsa</span>
+      <div class="food-info">شوربة اللحم اليمنية الثقيلة في إناء الحجر الساخن مع الحلبة والكراث والكراوية، تُقدم فائرة مع خبز الرغيف اليمني للتغميس</div>
+      <a href="/recipes/recipes.html?recipe=yemen-fahsa" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=yemen-zurbian'">
+      <img src="/img/yemen-zurbian.jpg" alt="زربيان" class="foods-img">
+      <span class="name-foods">زربيان – Zurbian</span>
+      <div class="food-info">البيريانى اليمنية الحضرمية بالأرز والدجاج والبزار اليمني وزبيب والمكسرات والبصل المقلي، طبق الأعياد والمناسبات الكبرى</div>
+      <a href="/recipes/recipes.html?recipe=yemen-zurbian" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=yemen-bint-alsahn'">
+      <img src="/img/yemen-bint-alsahn.jpg" alt="بنت الصحن" class="foods-img">
+      <span class="name-foods">بنت الصحن – Bint Al-Sahn</span>
+      <div class="food-info">الحلوى اليمنية الملكية من طبقات العجين الرقيق بالسمن المذوَّب والعسل اليمني الأصيل، حلوى الضيافة والكرم في البيوت اليمنية</div>
+      <a href="/recipes/recipes.html?recipe=yemen-bint-alsahn" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+  </div>
+</section>
+
+<section class="events-section">
+  <h2 class="section-title">الفعاليات والأماكن</h2>
+  <div class="events-grid">
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=YemenSanaaOld'">
+      <img src="/img/yemen-sanaa.jpg" alt="صنعاء القديمة" class="event-img">
+      <span class="name-event">صنعاء القديمة – Old Sana'a</span>
+      <div class="event-info">ناطحات السحاب الطينية الملونة وباب اليمن والجامع الكبير في واحدة من أقدم المدن المسكونة في العالم المدرجة في اليونسكو</div>
+      <a href="/events/events.html?event=YemenSanaaOld" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=YemenSocotra'">
+      <img src="/img/yemen-socotra.jpg" alt="جزيرة سقطرى" class="event-img">
+      <span class="name-event">جزيرة سقطرى – Socotra Island</span>
+      <div class="event-info">جزيرة دم الأخوين الأسطورية مدرجة في اليونسكو بنباتاتها الفريدة وشواطئها البكر وجبالها الخلابة، واحدة من أغرب بيئات الأرض</div>
+      <a href="/events/events.html?event=YemenSocotra" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=YemenShibam'">
+      <img src="/img/yemen-shibam.jpg" alt="مانهاتن الصحراء" class="event-img">
+      <span class="name-event">مانهاتن الصحراء – Shibam</span>
+      <div class="event-info">ناطحات السحاب الطينية في مدينة شبام المدرجة في اليونسكو، مبانٍ من 500 سنة ارتفاعها 30 متراً من الطين في صحراء حضرموت</div>
+      <a href="/events/events.html?event=YemenShibam" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=YemenWadiHadramut'">
+      <img src="/img/yemen-shibam.jpg" alt="وادي حضرموت" class="event-img">
+      <span class="name-event">وادي حضرموت – Wadi Hadramut</span>
+      <div class="event-info">الوادي اليمني الأسطوري بمدنه الطينية ونخيله الشاهق ومزارعه الخصبة وجباله الحمراء الضخمة، من أجمل الأودية في شبه الجزيرة العربية</div>
+      <a href="/events/events.html?event=YemenWadiHadramut" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=YemenCoffee'">
+      <img src="/img/yemen-mahwit.jpg" alt="بن اليمن" class="event-img">
+      <span class="name-event">بن اليمن – Yemeni Coffee</span>
+      <div class="event-info">موطن القهوة الأول في العالم بمزارعها على الجبال اليمنية المعلقة بالسحاب والمحويت والجراحي وتجربة جني القهوة والمعالجة التقليدية</div>
+      <a href="/events/events.html?event=YemenCoffee" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=YemenTarim'">
+      <img src="/img/yemen-tarim.jpg" alt="تريم حضرموت" class="event-img">
+      <span class="name-event">تريم حضرموت – Tarim</span>
+      <div class="event-info">مدينة المآذن الأكثر كثافة في العالم مع مسجد العيدروس ومكتبة الأحقاف النادرة وضريح النبي هود وعلماء الإسلام الكبار</div>
+      <a href="/events/events.html?event=YemenTarim" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+  </div>
+</section>
+
+<div id="cityModal" class="modal" onclick="closeCityModal(event)">
+  <div class="modal-content">
+    <button class="modal-close" onclick="closeCityModal(event)">×</button>
+    <img id="modal-city-img" src="" alt="">
+    <h2 id="modal-city-name"></h2>
+    <p id="modal-city-desc"></p>
+    <div class="modal-section"><h3>المعالم التاريخية</h3><ul id="modal-city-historic"></ul></div>
+    <div class="modal-section"><h3>المطاعم</h3><ul id="modal-city-restaurants"></ul></div>
+    <div class="modal-section"><h3>المقاهي</h3><ul id="modal-city-cafes"></ul></div>
+    <div class="modal-section"><h3>الفعاليات</h3><ul id="modal-city-events"></ul></div>
+  </div>
+</div>
+
+<footer>
+  <p>© 2025 سفرة. جميع الحقوق محفوظة.</p>
+</footer>
+<script src="/countries/countries.js"></script>
+<script src="/auth/auth.js"></script>
+</body>
+</html>
