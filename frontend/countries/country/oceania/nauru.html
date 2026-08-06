@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+<script>
+(() => {
+  const theme = localStorage.getItem("theme");
+  document.documentElement.setAttribute("data-theme", theme === "dark" ? "dark" : "light");
+})();
+</script>
+    <style>
+        .auth-buttons { display: none; }
+        .user-menu { display: none; }
+    </style>
+    <meta charset="UTF-8">
+<script>
+    (function(){
+        var u=JSON.parse(localStorage.getItem('safraUser')||'null');
+        var av=localStorage.getItem('safraAvatar')||'';
+        document.documentElement.className+=u?' user-logged-in':' user-logged-out';
+        if(u){
+            var t=setInterval(function(){
+                var n=document.getElementById('userName');
+                var a=document.getElementById('userAvatar');
+                if(n){
+                    n.textContent=u.name||'';
+                    if(a&&(u.avatar||av)) a.src=u.avatar||av;
+                    clearInterval(t);
+                }
+            },1);
+        }
+    })();
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سفرة</title>
+    <link rel="stylesheet" href="/countries/countries.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@500;600&display=swap">
+    <link rel="stylesheet" href="/dark-mode.css">
+    <meta property="og:image" content="https://sofrh.vercel.app/img/logo6.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:title" content="سفرة — سافر وتذوق">
+    <meta property="og:description" content="اكتشف وجهات وماكولات من مختلف أنحاء العالم">
+    <meta property="og:url" content="https://sofrh.vercel.app">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ar_SA">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://sofrh.vercel.app/img/logo6.png">
+    <meta name="twitter:title" content="سفرة — سافر وتذوق">
+    <meta name="twitter:description" content="اكتشف وجهات وماكولات من مختلف أنحاء العالم">
+    <script src="/auth/auth.js" defer></script>
+</head>
+<body>
+  
+        <header class="navbar">
+        <div class="hamburger" id="menu-btn">☰</div>
+
+        <div class="auth-buttons" id="authButtons">
+            <a href="/auth/login.html" class="login">تسجيل دخول</a>
+            <a href="/auth/signup.html" class="signup">إنشاء حساب</a>
+        </div>
+
+        <div class="user-menu" id="userMenu">
+            <img id="userAvatar" src="" alt="">
+            <span class="user-name" id="userName"></span>
+            <div class="user-dropdown">
+                <a href="/profile/profile.html">الملف الشخصي</a>
+                <a href="#" id="logoutBtn">تسجيل خروج</a>
+            </div>
+        </div>
+
+        <ul class="nav-list">
+            <li><a href="/index/index.html">الرئيسية</a></li>
+            <li><a href="/countries/countries.html" class="active">الدول</a></li>
+            <li><a href="/events/events.html">الفعاليات</a></li>
+            <li><a href="/recipes/recipes.html">الوصفات</a></li>
+            <li><a href="/plan/plan.html">خطتي</a></li>
+            <li><a href="/about/about.html">عن سفرة</a></li>
+        </ul>
+
+        <div class="logo">
+            <a href="/index/index.html"><img src="/img/logo7.png" alt="سفرة"></a>
+        </div>
+    </header>
+  
+    <!-- SIDE MENU -->
+    <div class="side-menu" id="side-menu">
+        <span class="close-btn" id="close-btn">×</span>
+        <span class="side-menu-kicker">استكشف</span>
+        <ul>
+            <li><a href="/index/index.html" class="active">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M3 11.5 12 4l9 7.5" />
+                        <path
+                            d="M5.5 10v9a1 1 0 0 0 1 1H9a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h2.5a1 1 0 0 0 1-1v-9" />
+                    </svg>
+                    <span>الرئيسية</span>
+                </a></li>
+            <li><a href="/countries/countries.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M12 21s7-6.6 7-12a7 7 0 1 0-14 0c0 5.4 7 12 7 12Z" />
+                        <circle cx="12" cy="9" r="2.3" />
+                    </svg>
+                    <span>الدول</span>
+                </a></li>
+            <li><a href="/events/events.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <rect x="3.5" y="5" width="17" height="16" rx="2.5" />
+                        <path d="M8 3v4M16 3v4M3.5 10h17" />
+                        <circle cx="12" cy="15" r="1.4" fill="currentColor" stroke="none" />
+                    </svg>
+                    <span>الفعاليات</span>
+                </a></li>
+            <li><a href="/recipes/recipes.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M7 2v8a2 2 0 0 0 2 2v10M5 2v6M9 2v6M14 2c-1.5 2-1.5 7 0 9 .6.6 1 1.3 1 2v9" />
+                    </svg>
+                    <span>الوصفات</span>
+                </a></li>
+            <li><a href="/plan/plan.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="9" />
+                        <path d="M14.8 9.2 13 13l-3.8 1.8L11 11l3.8-1.8Z" />
+                    </svg>
+                    <span>خطتي</span>
+                </a></li>
+            <li><a href="/about/about.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="9" />
+                        <path d="M12 8h.01M11 11.5h1v5.5h1" />
+                    </svg>
+                    <span>عن سفرة</span>
+                </a></li>
+        </ul>
+    </div>
+
+
+  <section class="country-name">
+    <h1>ناورو</h1>
+    <p>أصغر جمهورية في العالم في وسط المحيط الهادئ</p>
+  </section>
+
+  <section class="cities-section">
+    <h2 class="section-title">المدن والجزر</h2>
+    <div class="cities-grid">
+      <div class="cite" data-name="يارين – Yaren" data-img="/img/nauru-logo.jpg"
+        data-desc="العاصمة غير الرسمية لناورو ومقر حكومتها على الساحل الجنوبي، شريط ساحلي بمبانٍ حكومية وميناء صغير ومطار الجزيرة الوحيد على بعد خطوات من البحر"
+        data-historic="المبنى الحكومي|مطار ناورو الدولي|ميناء ناورو|شاطئ يارين|متحف ناورو|المسجد الرئيسي"
+        data-restaurants="مطعم Civic|مطعم Menen Hotel|مطعم Island Breeze|مطعم Nauru|مطعم Shore|مطعم Bay"
+        data-cafes="كافيه Yaren|كافيه Menen|كافيه Shore|كافيه Island|كافيه Government|كافيه Local"
+        data-events="البرلمان النائوري|ميناء ناورو الصغير|شاطئ يارين الهادئ|مطار ناورو الجزيري|السوق المحلي|الحياة اليومية في أصغر جمهورية"
+        onclick="openCityModal(this)">
+        <button class="save-btn"
+          onclick="event.stopPropagation(); saveItem('city', 'nauru_yaren', 'يارين', '/img/nauru-logo.jpg')">🏙️</button>
+        <img src="/img/nauru-logo.jpg" alt="يارين" class="cite-img">
+        <span class="name">يارين – Yaren</span>
+        <p class="info">مقر الحكومة في أصغر جمهورية</p>
+        <button class="cite-btn"
+          onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+      </div>
+      <div class="cite" data-name="آيوو – Aiwo" data-img="/img/nauru-logo.jpg"
+        data-desc="الحي الساحلي حيث تشاهد بقايا آليات التعدين القديمة وناقلات الفوسفات الصدئة عند الشاطئ، شاهد صامت على ثروة ناورو الضائعة"
+        data-historic="مصنع الفوسفات القديم|الناقلات الصدئة|شاطئ آيوو|الحي التاريخي|منطقة التعدين|الساحل الصخري"
+        data-restaurants="مطعم Aiwo|مطعم Phosphate|مطعم Shore|مطعم Local|مطعم Island|مطعم Bay"
+        data-cafes="كافيه Aiwo|كافيه Shore|كافيه Local|كافيه Island|كافيه Bay|كافيه Historic"
+        data-events="آثار تعدين الفوسفات التاريخية|الناقلات الصدئة عند الشاطئ|الشعاب المرجانية الساحلية|تاريخ الثروة الضائعة|شاطئ آيوو|الحياة البحرية"
+        onclick="openCityModal(this)">
+        <button class="save-btn"
+          onclick="event.stopPropagation(); saveItem('city', 'nauru_aiwo', 'آيوو', '/img/nauru-logo.jpg')">🏙️</button>
+        <img src="/img/nauru-logo.jpg" alt="آيوو" class="cite-img">
+        <span class="name">آيوو – Aiwo</span>
+        <p class="info">الحي التاريخي وكيماوي الفوسفات</p>
+        <button class="cite-btn"
+          onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+      </div>
+      <div class="cite" data-name="بوادا – Buada" data-img="/img/nauru-logo.jpg"
+        data-desc="المنطقة الداخلية الوحيدة في ناورو بمعالمها الطبيعية، موطن بحيرة بوادا العذبة الوحيدة في الجزيرة المحاطة بالغابة الاستوائية"
+        data-historic="بحيرة بوادا|الغابة الاستوائية الداخلية|منطقة الطيور|المزارع التقليدية|التضاريس المرجانية|المخيم الداخلي"
+        data-restaurants="مطعم Buada|مطعم Lagoon|مطعم Local|مطعم Island|مطعم Nature|مطعم Traditional"
+        data-cafes="كافيه Buada|كافيه Lagoon|كافيه Nature|كافيه Local|كافيه Island|كافيه Village"
+        data-events="بحيرة بوادا العذبة النادرة|الغابة الاستوائية الداخلية|مشاهدة الطيور|التضاريس المرجانية|المزارع التقليدية|الهدوء الداخلي"
+        onclick="openCityModal(this)">
+        <button class="save-btn"
+          onclick="event.stopPropagation(); saveItem('city', 'nauru_buada', 'بوادا', '/img/nauru-logo.jpg')">🏙️</button>
+        <img src="/img/nauru-logo.jpg" alt="بوادا" class="cite-img">
+        <span class="name">بوادا – Buada</span>
+        <p class="info">البحيرة الوحيدة في الجزيرة</p>
+        <button class="cite-btn"
+          onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+      </div>
+      <div class="cite" data-name="أنابار – Anabar" data-img="/img/nauru-logo.jpg"
+        data-desc="حي أنابار الشمالي بخليجه الساحلي الجميل ولاغونه الضحل بمياهه الدافئة الصافية حيث يمارس السكان الصيد التقليدي"
+        data-historic="خليج أنابار|لاغون أنابار|الشعاب المرجانية|شاطئ الحي الشمالي|ميناء الصيادين|الغابة الساحلية"
+        data-restaurants="مطعم Anabar|مطعم North Shore|مطعم Lagoon|مطعم Local|مطعم Bay|مطعم Island"
+        data-cafes="كافيه Anabar|كافيه North|كافيه Lagoon|كافيه Shore|كافيه Bay|كافيه Local"
+        data-events="لاغون أنابار الضحل الدافئ|الشعاب المرجانية الشمالية|الصيد التقليدي|خليج أنابار|الغابة الساحلية|السكون الطبيعي"
+        onclick="openCityModal(this)">
+        <button class="save-btn"
+          onclick="event.stopPropagation(); saveItem('city', 'nauru_anabar', 'أنابار', '/img/nauru-logo.jpg')">🏙️</button>
+        <img src="/img/nauru-logo.jpg" alt="أنابار" class="cite-img">
+        <span class="name">أنابار – Anabar</span>
+        <p class="info">الحي الشمالي وخليج اللاغون</p>
+        <button class="cite-btn"
+          onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+      </div>
+      <div class="cite" data-name="دينيغومودو – Denigomodu" data-img="/img/nauru-logo.jpg"
+        data-desc="الحي الأكثر اكتظاظاً بالسكان في ناورو حيث تجد السوق المركزية والخدمات اليومية والحياة الاجتماعية الأكثر نشاطاً في الجزيرة"
+        data-historic="السوق المركزي|مدرسة دينيغومودو|مركز الخدمات|ملعب ناورو|شارع التسوق|المركز الصحي"
+        data-restaurants="مطعم Central|مطعم Market|مطعم Local|مطعم Island|مطعم Community|مطعم Shore"
+        data-cafes="كافيه Central|كافيه Market|كافيه Community|كافيه Local|كافيه Island|كافيه Shop"
+        data-events="السوق المركزي الحيوي|الحياة اليومية النائورية|المجتمع الجزيري الودود|ملعب ناورو|التسوق المحلي|لقاء السكان الأصليين"
+        onclick="openCityModal(this)">
+        <button class="save-btn"
+          onclick="event.stopPropagation(); saveItem('city', 'nauru_denigomodu', 'دينيغومودو', '/img/nauru-logo.jpg')">🏙️</button>
+        <img src="/img/nauru-logo.jpg" alt="دينيغومودو" class="cite-img">
+        <span class="name">دينيغومودو – Denigomodu</span>
+        <p class="info">الحي الأكثر كثافة سكانية</p>
+        <button class="cite-btn"
+          onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+      </div>
+      <div class="cite" data-name="أنيبار – Anibare" data-img="/img/nauru-logo.jpg"
+        data-desc="خليج أنيبار الجميل على الساحل الشرقي أجمل بقع ناورو الطبيعية بمياهه الزرقاء الصافية ورماله البيضاء، الملجأ المفضل للسباحة"
+        data-historic="شاطئ خليج أنيبار|المياه الزرقاء الصافية|الشعاب المرجانية|نقطة الغروب|صخور أنيبار|الغابة الساحلية"
+        data-restaurants="مطعم Anibare|مطعم Bay View|مطعم Shore|مطعم Sunset|مطعم Island|مطعم Reef"
+        data-cafes="كافيه Anibare|كافيه Bay|كافيه Sunset|كافيه Shore|كافيه Reef|كافيه Local"
+        data-events="خليج أنيبار الأجمل في ناورو|الشعاب المرجانية|السباحة في المياه الصافية|غروب الشمس|الحياة البحرية|شاطئ الاسترخاء"
+        onclick="openCityModal(this)">
+        <button class="save-btn"
+          onclick="event.stopPropagation(); saveItem('city', 'nauru_anibare', 'أنيبار', '/img/nauru-logo.jpg')">🏙️</button>
+        <img src="/img/nauru-logo.jpg" alt="أنيبار" class="cite-img">
+        <span class="name">أنيبار – Anibare</span>
+        <p class="info">أجمل خليج في ناورو</p>
+        <button class="cite-btn"
+          onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="foods-section">
+    <h2 class="section-title">أبرز الأكلات</h2>
+    <div class="foods-grid">
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=nauru-coconutfish'">
+      <img src="/img/nauru-logo.jpg" alt="سمك جوز الهند" class="foods-img">
+      <span class="name-foods">سمك جوز الهند – Coconut Fish</span>
+      <div class="food-info">السمك الطازج المطبوخ بحليب جوز الهند الكريمي مع البصل والثوم والزنجبيل، الطبق اليومي الأساسي في ناورو</div>
+      <a href="/recipes/recipes.html?recipe=nauru-coconutfish" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=nauru-friedfish'">
+      <img src="/img/nauru-logo.jpg" alt="سمك مقلي ناورو" class="foods-img">
+      <span class="name-foods">سمك مقلي ناورو – Nauru Fried Fish</span>
+      <div class="food-info">السمك الطازج من المحيط المقلي بالزيت مع الليمون والملح البحري والبهارات، أسرع وأشهر وجبة في مطابخ ناورو</div>
+      <a href="/recipes/recipes.html?recipe=nauru-friedfish" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=nauru-taro'">
+      <img src="/img/nauru-logo.jpg" alt="قلقاس ناورو" class="foods-img">
+      <span class="name-foods">قلقاس ناورو – Nauru Taro</span>
+      <div class="food-info">قلقاس التارو المسلوق أو المشوي مع حليب جوز الهند والملح، الغذاء التقليدي الأساسي الذي رافق سكان ناورو قبل اكتشاف الفوسفات</div>
+      <a href="/recipes/recipes.html?recipe=nauru-taro" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=nauru-breadfruit'">
+      <img src="/img/nauru-logo.jpg" alt="خبز الجزيرة" class="foods-img">
+      <span class="name-foods">خبز الجزيرة – Island Breadfruit</span>
+      <div class="food-info">فاكهة الخبز الطازجة المشوية على الفحم أو المسلوقة مع حليب الجوز، بديل الخبز التقليدي لدى سكان ناورو منذ أجيال</div>
+      <a href="/recipes/recipes.html?recipe=nauru-breadfruit" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=nauru-coconutcrab'">
+      <img src="/img/nauru-logo.jpg" alt="سلطعون ناورو" class="foods-img">
+      <span class="name-foods">سلطعون ناورو – Nauru Coconut Crab</span>
+      <div class="food-info">سلطعون جوز الهند العملاق يُصطاد من نخيل الجزيرة ويُطهى مشوياً أو مسلوقاً، طعام الأعياد والمناسبات الخاصة</div>
+      <a href="/recipes/recipes.html?recipe=nauru-coconutcrab" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=nauru-pawpaw'">
+      <img src="/img/nauru-logo.jpg" alt="بابايا ناورو" class="foods-img">
+      <span class="name-foods">بابايا ناورو – Nauru Papaya</span>
+      <div class="food-info">البابايا الطازجة المحلية يُؤكل منها الفاكهة أو يُعمل سلطة بالليمون والملح، حلوى طبيعية منعشة في الحرارة المدارية</div>
+      <a href="/recipes/recipes.html?recipe=nauru-pawpaw" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    </div>
+  </section>
+
+  <section class="events-section">
+    <h2 class="section-title">الفعاليات والمعالم</h2>
+    <div class="events-grid">
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=NAURPhosphate'">
+      <img src="/img/nauru-logo.jpg" alt="تراث الفوسفات" class="event-img">
+      <span class="name-event">تراث الفوسفات – Phosphate Heritage</span>
+      <div class="event-info">آثار ومعدات تعدين الفوسفات المتروكة في ناورو شاهد على ثروة ضاعت، جزيرة حُفر نصفها وتحولت من أغنى دول العالم إلى الفقر خلال جيل واحد</div>
+      <a href="/events/events.html?event=NAURPhosphate" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=NAURAnibareBeach'">
+      <img src="/img/nauru-logo.jpg" alt="خليج أنيبار" class="event-img">
+      <span class="name-event">خليج أنيبار – Anibare Bay</span>
+      <div class="event-info">خليج أنيبار أجمل ساحل في ناورو بمياهه الزرقاء الصافية ورماله البيضاء، السباحة والاسترخاء في أحد أهدأ وأنقى شواطئ المحيط الهادئ</div>
+      <a href="/events/events.html?event=NAURAnibareBeach" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=NAURDiving'">
+      <img src="/img/nauru-logo.jpg" alt="الغوص النائوري" class="event-img">
+      <span class="name-event">الغوص النائوري – Nauru Diving</span>
+      <div class="event-info">الغوص حول شعاب ناورو المرجانية البكر بعيداً عن أي سياحة كثيفة، مياه صافية وحياة بحرية استثنائية في وسط المحيط الهادئ</div>
+      <a href="/events/events.html?event=NAURDiving" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=NAURBuadaLagoon'">
+      <img src="/img/nauru-logo.jpg" alt="بحيرة بوادا" class="event-img">
+      <span class="name-event">بحيرة بوادا – Buada Lagoon</span>
+      <div class="event-info">بحيرة بوادا المياه العذبة الوحيدة في الجزيرة محاطة بالغابة الاستوائية، ملاذ هادئ للطيور والطبيعة في قلب الجزيرة الصغيرة</div>
+      <a href="/events/events.html?event=NAURBuadaLagoon" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=NAURWWIIHistory'">
+      <img src="/img/nauru-logo.jpg" alt="تاريخ الحرب العالمية" class="event-img">
+      <span class="name-event">تاريخ الحرب العالمية – WWII Nauru</span>
+      <div class="event-info">ناورو احتُلت خلال الحرب العالمية الثانية وبقيت آثار من تلك الحقبة، قصة احتلال صعب لجزيرة صغيرة في وسط المحيط الهادئ</div>
+      <a href="/events/events.html?event=NAURWWIIHistory" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=NAURFishing'">
+      <img src="/img/nauru-logo.jpg" alt="الصيد النائوري" class="event-img">
+      <span class="name-event">الصيد النائوري – Nauru Fishing</span>
+      <div class="event-info">الصيد التقليدي حول شعاب ناورو مع الصيادين المحليين في زوارقهم الصغيرة، اصطياد التونا والسمك الطائر في مياه المحيط البكر</div>
+      <a href="/events/events.html?event=NAURFishing" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    </div>
+  </section>
+
+  <div id="cityModal" class="modal" style="display:none">
+    <div class="modal-content">
+      <button class="close-modal" onclick="document.getElementById('cityModal').style.display='none'">✕</button>
+      <img id="modalImg" src="" alt="">
+      <h2 id="modalName"></h2>
+      <p id="modalDesc"></p>
+      <div id="modalHistoric"></div>
+      <div id="modalRestaurants"></div>
+      <div id="modalCafes"></div>
+      <div id="modalEvents"></div>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 سفرة – Sofrah</p>
+  </footer>
+  <script src="/countries/countries.js"></script>
+  <script src="/auth/auth.js"></script>
+</body>
+</html>

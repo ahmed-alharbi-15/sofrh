@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+<script>
+(() => {
+  const theme = localStorage.getItem("theme");
+  document.documentElement.setAttribute("data-theme", theme === "dark" ? "dark" : "light");
+})();
+</script>
+    <style>
+        .auth-buttons { display: none; }
+        .user-menu { display: none; }
+    </style>
+    <meta charset="UTF-8">
+<script>
+    (function(){
+        var u=JSON.parse(localStorage.getItem('safraUser')||'null');
+        var av=localStorage.getItem('safraAvatar')||'';
+        document.documentElement.className+=u?' user-logged-in':' user-logged-out';
+        if(u){
+            var t=setInterval(function(){
+                var n=document.getElementById('userName');
+                var a=document.getElementById('userAvatar');
+                if(n){
+                    n.textContent=u.name||'';
+                    if(a&&(u.avatar||av)) a.src=u.avatar||av;
+                    clearInterval(t);
+                }
+            },1);
+        }
+    })();
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سفرة</title>
+    <link rel="stylesheet" href="/countries/countries.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@500;600&display=swap">
+    <link rel="stylesheet" href="/dark-mode.css">
+    <meta property="og:image" content="https://sofrh.vercel.app/img/logo6.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:title" content="سفرة — سافر وتذوق">
+    <meta property="og:description" content="اكتشف وجهات وماكولات من مختلف أنحاء العالم">
+    <meta property="og:url" content="https://sofrh.vercel.app">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ar_SA">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://sofrh.vercel.app/img/logo6.png">
+    <meta name="twitter:title" content="سفرة — سافر وتذوق">
+    <meta name="twitter:description" content="اكتشف وجهات وماكولات من مختلف أنحاء العالم">
+    <script src="/auth/auth.js" defer></script>
+</head>
+<body>
+  
+        <header class="navbar">
+        <div class="hamburger" id="menu-btn">☰</div>
+
+        <div class="auth-buttons" id="authButtons">
+            <a href="/auth/login.html" class="login">تسجيل دخول</a>
+            <a href="/auth/signup.html" class="signup">إنشاء حساب</a>
+        </div>
+
+        <div class="user-menu" id="userMenu">
+            <img id="userAvatar" src="" alt="">
+            <span class="user-name" id="userName"></span>
+            <div class="user-dropdown">
+                <a href="/profile/profile.html">الملف الشخصي</a>
+                <a href="#" id="logoutBtn">تسجيل خروج</a>
+            </div>
+        </div>
+
+        <ul class="nav-list">
+            <li><a href="/index/index.html">الرئيسية</a></li>
+            <li><a href="/countries/countries.html" class="active">الدول</a></li>
+            <li><a href="/events/events.html">الفعاليات</a></li>
+            <li><a href="/recipes/recipes.html">الوصفات</a></li>
+            <li><a href="/plan/plan.html">خطتي</a></li>
+            <li><a href="/about/about.html">عن سفرة</a></li>
+        </ul>
+
+        <div class="logo">
+            <a href="/index/index.html"><img src="/img/logo7.png" alt="سفرة"></a>
+        </div>
+    </header>
+  
+    <!-- SIDE MENU -->
+    <div class="side-menu" id="side-menu">
+        <span class="close-btn" id="close-btn">×</span>
+        <span class="side-menu-kicker">استكشف</span>
+        <ul>
+            <li><a href="/index/index.html" class="active">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M3 11.5 12 4l9 7.5" />
+                        <path
+                            d="M5.5 10v9a1 1 0 0 0 1 1H9a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h2.5a1 1 0 0 0 1-1v-9" />
+                    </svg>
+                    <span>الرئيسية</span>
+                </a></li>
+            <li><a href="/countries/countries.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M12 21s7-6.6 7-12a7 7 0 1 0-14 0c0 5.4 7 12 7 12Z" />
+                        <circle cx="12" cy="9" r="2.3" />
+                    </svg>
+                    <span>الدول</span>
+                </a></li>
+            <li><a href="/events/events.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <rect x="3.5" y="5" width="17" height="16" rx="2.5" />
+                        <path d="M8 3v4M16 3v4M3.5 10h17" />
+                        <circle cx="12" cy="15" r="1.4" fill="currentColor" stroke="none" />
+                    </svg>
+                    <span>الفعاليات</span>
+                </a></li>
+            <li><a href="/recipes/recipes.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M7 2v8a2 2 0 0 0 2 2v10M5 2v6M9 2v6M14 2c-1.5 2-1.5 7 0 9 .6.6 1 1.3 1 2v9" />
+                    </svg>
+                    <span>الوصفات</span>
+                </a></li>
+            <li><a href="/plan/plan.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="9" />
+                        <path d="M14.8 9.2 13 13l-3.8 1.8L11 11l3.8-1.8Z" />
+                    </svg>
+                    <span>خطتي</span>
+                </a></li>
+            <li><a href="/about/about.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="9" />
+                        <path d="M12 8h.01M11 11.5h1v5.5h1" />
+                    </svg>
+                    <span>عن سفرة</span>
+                </a></li>
+        </ul>
+    </div>
+
+
+  <section class="country-name">
+    <h1>جزر مارشال</h1>
+    <p>أتولات الكاليفورنيا النووية وأعمق لاغونات الكرة الأرضية</p>
+  </section>
+
+  <section class="cities-section">
+    <h2 class="section-title">المدن والجزر</h2>
+    <div class="cities-grid">
+      <div class="cite" data-name="ماجورو – Majuro" data-img="/img/marshallislands-logo.jpg"
+        data-desc="عاصمة جزر مارشال على أتول ماجورو الرفيع شريط ضيق بين المحيط ولاغونه الشاسع، مركز التجارة والسياسة والثقافة المارشالية"
+        data-historic="سوق ماجورو|ميناء ماجورو|متحف ألورو|الشارع التجاري|ميدان المدينة|شاطئ ماجورو"
+        data-restaurants="مطعم Tide Table|مطعم Enra|مطعم Robert Reimers|مطعم Marshall Islands|مطعم Bay|مطعم Local"
+        data-cafes="كافيه Majuro|كافيه Lagoon|كافيه Shore|كافيه Market|كافيه Bay|كافيه Local"
+        data-events="سوق ماجورو التجاري|ميناء ماجورو|متحف ألورو الوطني|لاغون ماجورو الشاسع|شاطئ الأتول|الحياة اليومية المارشالية"
+        onclick="openCityModal(this)">
+        <button class="save-btn"
+          onclick="event.stopPropagation(); saveItem('city', 'marshallislands_majuro', 'ماجورو', '/img/marshallislands-logo.jpg')">🏙️</button>
+        <img src="/img/marshallislands-logo.jpg" alt="ماجورو" class="cite-img">
+        <span class="name">ماجورو – Majuro</span>
+        <p class="info">عاصمة أتول ماجورو الرفيعة في وسط المحيط</p>
+        <button class="cite-btn"
+          onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+      </div>
+      <div class="cite" data-name="إبيي – Ebeye" data-img="/img/marshallislands-logo.jpg"
+        data-desc="إبيي في أتول كواجلين من أكثر الجزر المأهولة اكتظاظاً في العالم بسكانها الكثيرين على مساحة ضيقة جداً"
+        data-historic="مجتمع إبيي|ميناء إبيي|مدارس إبيي|ملاعب إبيي|المركز الصحي|الشاطئ المحلي"
+        data-restaurants="مطعم Ebeye|مطعم Kwajalein|مطعم Local|مطعم Shore|مطعم Island|مطعم Bay"
+        data-cafes="كافيه Ebeye|كافيه Local|كافيه Shore|كافيه Bay|كافيه Island|كافيه Community"
+        data-events="الحياة في أكثر جزر المحيط اكتظاظاً|مجتمع إبيي التعاوني|شاطئ إبيي|الثقافة المارشالية|السوق المحلي|التضامن الجماعي"
+        onclick="openCityModal(this)">
+        <button class="save-btn"
+          onclick="event.stopPropagation(); saveItem('city', 'marshallislands_ebeye', 'إبيي', '/img/marshallislands-logo.jpg')">🏙️</button>
+        <img src="/img/marshallislands-logo.jpg" alt="إبيي" class="cite-img">
+        <span class="name">إبيي – Ebeye</span>
+        <p class="info">الجزيرة الأكثر اكتظاظاً في المحيط الهادئ</p>
+        <button class="cite-btn"
+          onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+      </div>
+      <div class="cite" data-name="كواجلين – Kwajalein Atoll" data-img="/img/marshallislands-logo.jpg"
+        data-desc="أتول كواجلين موطن أكبر لاغون في العالم 2174 كم² من المياه الزرقاء المحاطة بالأتولات ومواقع التاريخ العسكري"
+        data-historic="لاغون كواجلين الضخم|القاعدة العسكرية التاريخية|مواقع الحرب العالمية|شواطئ الأتول|الغوص في اللاغون|التاريخ العسكري"
+        data-restaurants="مطعم Kwajalein|مطعم Lagoon|مطعم Atoll|مطعم Bay|مطعم Shore|مطعم Island"
+        data-cafes="كافيه Kwajalein|كافيه Lagoon|كافيه Atoll|كافيه Shore|كافيه Bay|كافيه Island"
+        data-events="لاغون كواجلين الأكبر في العالم|التاريخ العسكري|مواقع الحرب العالمية الثانية|الغوص في اللاغون|شواطئ الأتول|الطبيعة البكر"
+        onclick="openCityModal(this)">
+        <button class="save-btn"
+          onclick="event.stopPropagation(); saveItem('city', 'marshallislands_kwajalein', 'كواجلين', '/img/marshallislands-logo.jpg')">🏙️</button>
+        <img src="/img/marshallislands-logo.jpg" alt="كواجلين" class="cite-img">
+        <span class="name">كواجلين – Kwajalein Atoll</span>
+        <p class="info">أكبر لاغون في العالم والتاريخ العسكري</p>
+        <button class="cite-btn"
+          onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+      </div>
+      <div class="cite" data-name="بيكيني – Bikini Atoll" data-img="/img/marshallislands-logo.jpg"
+        data-desc="أتول بيكيني الشهير موقع الاختبارات النووية الأمريكية 1946-1958 وهو اليوم تراث عالمي يونسكو ومحمية بحرية بشعاب مرجانية استثنائية"
+        data-historic="حطام السفن النووية|شعاب بيكيني البكر|التراث العالمي|النصب التذكاري|الغوص التاريخي|مخيم التوثيق"
+        data-restaurants="مطعم Bikini|مطعم Atoll|مطعم Nuclear Heritage|مطعم Shore|مطعم Island|مطعم Bay"
+        data-cafes="كافيه Bikini|كافيه Atoll|كافيه Shore|كافيه Island|كافيه Bay|كافيه Heritage"
+        data-events="حطام السفن النووية تحت البحر|الشعاب المرجانية البكر|التراث العالمي اليونسكو|التاريخ النووي|النصب التذكاري|الغوص الأسطوري"
+        onclick="openCityModal(this)">
+        <button class="save-btn"
+          onclick="event.stopPropagation(); saveItem('city', 'marshallislands_bikini', 'بيكيني', '/img/marshallislands-logo.jpg')">🏙️</button>
+        <img src="/img/marshallislands-logo.jpg" alt="بيكيني" class="cite-img">
+        <span class="name">بيكيني – Bikini Atoll</span>
+        <p class="info">أتول الاختبارات النووية والتراث العالمي</p>
+        <button class="cite-btn"
+          onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+      </div>
+      <div class="cite" data-name="جالويت – Jaluit Atoll" data-img="/img/marshallislands-logo.jpg"
+        data-desc="مقر الحكومة الاستعمارية الألمانية في جزر مارشال ابتداءً من 1885، آثار المباني الألمانية والتاريخ الياباني وقصص الحرب العالمية"
+        data-historic="آثار المباني الألمانية|الطاحونة التاريخية|شواطئ جالويت|لاغون جالويت|مواقع الحرب العالمية|قرى المارشاليين"
+        data-restaurants="مطعم Jaluit|مطعم Colonial|مطعم Shore|مطعم Local|مطعم Bay|مطعم Lagoon"
+        data-cafes="كافيه Jaluit|كافيه Colonial|كافيه Shore|كافيه Local|كافيه Bay|كافيه Lagoon"
+        data-events="التاريخ الاستعماري الألماني|الآثار التاريخية|مواقع الحرب العالمية|لاغون جالويت|شواطئ الأتول|الثقافة المارشالية"
+        onclick="openCityModal(this)">
+        <button class="save-btn"
+          onclick="event.stopPropagation(); saveItem('city', 'marshallislands_jaluit', 'جالويت', '/img/marshallislands-logo.jpg')">🏙️</button>
+        <img src="/img/marshallislands-logo.jpg" alt="جالويت" class="cite-img">
+        <span class="name">جالويت – Jaluit Atoll</span>
+        <p class="info">عاصمة ألمانيا السابقة في المحيط</p>
+        <button class="cite-btn"
+          onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+      </div>
+      <div class="cite" data-name="أرنو – Arno Atoll" data-img="/img/marshallislands-logo.jpg"
+        data-desc="أقرب أتول للعاصمة ماجورو ومن أجمل مواقع الغوص في جزر مارشال بشعابه المرجانية الاستثنائية ولاغونه الصافي"
+        data-historic="لاغون أرنو البكر|الشعاب المرجانية|شاطئ أرنو|قرية أرنو|الصيد التقليدي|محمية السلاحف"
+        data-restaurants="مطعم Arno|مطعم Lagoon|مطعم Shore|مطعم Village|مطعم Local|مطعم Island"
+        data-cafes="كافيه Arno|كافيه Lagoon|كافيه Shore|كافيه Village|كافيه Local|كافيه Island"
+        data-events="الشعاب المرجانية البكر|لاغون أرنو الصافي|الغوص الاستثنائي|شاطئ أرنو|محمية السلاحف|الصيد التقليدي"
+        onclick="openCityModal(this)">
+        <button class="save-btn"
+          onclick="event.stopPropagation(); saveItem('city', 'marshallislands_arno', 'أرنو', '/img/marshallislands-logo.jpg')">🏙️</button>
+        <img src="/img/marshallislands-logo.jpg" alt="أرنو" class="cite-img">
+        <span class="name">أرنو – Arno Atoll</span>
+        <p class="info">أتول الغوص البكر قرب ماجورو</p>
+        <button class="cite-btn"
+          onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="foods-section">
+    <h2 class="section-title">أبرز الأكلات</h2>
+    <div class="foods-grid">
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=marshallislands-coconutrice'">
+      <img src="/img/marshallislands-logo.jpg" alt="أرز جوز الهند المارشالي" class="foods-img">
+      <span class="name-foods">أرز جوز الهند المارشالي – Marshall Coconut Rice</span>
+      <div class="food-info">الأرز المطبوخ بحليب جوز الهند الكريمي مع ملح البحر، الطبق الأساسي اليومي الذي يصاحب كل وجبة مارشالية</div>
+      <a href="/recipes/recipes.html?recipe=marshallislands-coconutrice" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=marshallislands-tuna'">
+      <img src="/img/marshallislands-logo.jpg" alt="تونا مارشال الطازجة" class="foods-img">
+      <span class="name-foods">تونا مارشال الطازجة – Marshall Fresh Tuna</span>
+      <div class="food-info">سمك التونا الطازج من مياه مارشال العميقة مشوياً على الفحم مع الليمون والملح البحري، أشهر وأشهى طبق في المطبخ المارشالي</div>
+      <a href="/recipes/recipes.html?recipe=marshallislands-tuna" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=marshallislands-breadfruit'">
+      <img src="/img/marshallislands-logo.jpg" alt="خبز الجزر المارشالي" class="foods-img">
+      <span class="name-foods">خبز الجزر المارشالي – Marshall Breadfruit</span>
+      <div class="food-info">فاكهة الخبز المشوية أو المسلوقة مع حليب جوز الهند، المحصول الغذائي الأول في جزر مارشال قبل الأرز المستورد</div>
+      <a href="/recipes/recipes.html?recipe=marshallislands-breadfruit" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=marshallislands-coconutcrab'">
+      <img src="/img/marshallislands-logo.jpg" alt="سلطعون مارشال" class="foods-img">
+      <span class="name-foods">سلطعون مارشال – Marshall Coconut Crab</span>
+      <div class="food-info">سلطعون جوز الهند الضخم يُصطاد من نخيل الأتولات ليلاً ويُطهى مشوياً مع زيت الجوز والثوم والليمون في وجبة الأعياد</div>
+      <a href="/recipes/recipes.html?recipe=marshallislands-coconutcrab" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=marshallislands-fishsoup'">
+      <img src="/img/marshallislands-logo.jpg" alt="مرق السمك المارشالي" class="foods-img">
+      <span class="name-foods">مرق السمك المارشالي – Marshall Fish Broth</span>
+      <div class="food-info">مرق السمك الطازج مع حليب جوز الهند والزنجبيل والبصل وأوراق التارو، الحساء اليومي الدافئ في البيوت المارشالية</div>
+      <a href="/recipes/recipes.html?recipe=marshallislands-fishsoup" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=marshallislands-pawpaw'">
+      <img src="/img/marshallislands-logo.jpg" alt="بابايا مارشال" class="foods-img">
+      <span class="name-foods">بابايا مارشال – Marshall Papaya</span>
+      <div class="food-info">البابايا الطازجة من بساتين الأتولات تُؤكل ناضجة مع الليمون أو خضراء كسلطة منعشة، الفاكهة المفضلة في الجزر المارشالية</div>
+      <a href="/recipes/recipes.html?recipe=marshallislands-pawpaw" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    </div>
+  </section>
+
+  <section class="events-section">
+    <h2 class="section-title">الفعاليات والمعالم</h2>
+    <div class="events-grid">
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=MARBikiniAtoll'">
+      <img src="/img/marshallislands-logo.jpg" alt="أتول بيكيني" class="event-img">
+      <span class="name-event">أتول بيكيني – Bikini Atoll UNESCO</span>
+      <div class="event-info">أتول بيكيني التراث العالمي اليونسكو بحطام سفنه النووية الغارقة والشعاب البكر، غوص أسطوري في تاريخ الحرب الباردة</div>
+      <a href="/events/events.html?event=MARBikiniAtoll" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=MARDiving'">
+      <img src="/img/marshallislands-logo.jpg" alt="غوص مارشال" class="event-img">
+      <span class="name-event">غوص مارشال – Marshall Islands Diving</span>
+      <div class="event-info">الغوص في بحار جزر مارشال البكر بحطام سفن الحرب العالمية الثانية والشعاب المرجانية الاستثنائية في مياه نقية صافية</div>
+      <a href="/events/events.html?event=MARDiving" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=MARKwajaleinLagoon'">
+      <img src="/img/marshallislands-logo.jpg" alt="لاغون كواجلين" class="event-img">
+      <span class="name-event">لاغون كواجلين – Kwajalein Lagoon</span>
+      <div class="event-info">أكبر لاغون في العالم بمساحة 2174 كم² من المياه الزرقاء الصافية، الكاياك والصيد والغوص في عمق لاغون لا مثيل له</div>
+      <a href="/events/events.html?event=MARKwajaleinLagoon" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=MARMajuro'">
+      <img src="/img/marshallislands-logo.jpg" alt="ماجورو العاصمة" class="event-img">
+      <span class="name-event">ماجورو العاصمة – Majuro City Life</span>
+      <div class="event-info">الحياة في عاصمة الأتول الرفيعة بين المحيط ولاغونه، سوق ماجورو ومتحفه ومينائه وشواطئه على شريط ضيق وسط المحيط</div>
+      <a href="/events/events.html?event=MARMajuro" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=MARNavigation'">
+      <img src="/img/marshallislands-logo.jpg" alt="الملاحة التقليدية" class="event-img">
+      <span class="name-event">الملاحة التقليدية – Traditional Navigation</span>
+      <div class="event-info">تعلم فن الملاحة النجمية وخرائط العيدان المارشالية الفريدة التي استخدمها أسلاف المارشاليين لآلاف السنين في المحيط</div>
+      <a href="/events/events.html?event=MARNavigation" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=MARFishing'">
+      <img src="/img/marshallislands-logo.jpg" alt="صيد مارشال" class="event-img">
+      <span class="name-event">صيد مارشال – Marshall Fishing</span>
+      <div class="event-info">الصيد التقليدي مع صيادي جزر مارشال في زوارقهم التقليدية، اصطياد التونا والسمك الطائر في مياه المحيط الهادئ العميقة</div>
+      <a href="/events/events.html?event=MARFishing" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    </div>
+  </section>
+
+  <div id="cityModal" class="modal" style="display:none">
+    <div class="modal-content">
+      <button class="close-modal" onclick="document.getElementById('cityModal').style.display='none'">✕</button>
+      <img id="modalImg" src="" alt="">
+      <h2 id="modalName"></h2>
+      <p id="modalDesc"></p>
+      <div id="modalHistoric"></div>
+      <div id="modalRestaurants"></div>
+      <div id="modalCafes"></div>
+      <div id="modalEvents"></div>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 سفرة – Sofrah</p>
+  </footer>
+  <script src="/countries/countries.js"></script>
+  <script src="/auth/auth.js"></script>
+</body>
+</html>

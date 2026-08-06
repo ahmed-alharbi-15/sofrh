@@ -22,7 +22,7 @@ const countryContinent = {
     honduras: 'north-america', el_salvador: 'north-america', elsalvador: 'north-america', nicaragua: 'north-america', belize: 'north-america', trinidad: 'north-america', bahamas: 'north-america', barbados: 'north-america', antiguabarbuda: 'north-america', dominica: 'north-america', dominican: 'north-america', grenada: 'north-america', stkittsnevis: 'north-america', stlucia: 'north-america', stvincentgrenadines: 'north-america',
     brazil: 'south-america', argentina: 'south-america', colombia: 'south-america', peru: 'south-america', chile: 'south-america', venezuela: 'south-america',
     ecuador: 'south-america', bolivia: 'south-america', uruguay: 'south-america', paraguay: 'south-america', guyana: 'south-america', suriname: 'south-america',
-    australia: 'oceania', newzealand: 'oceania', fiji: 'oceania', papua_new_guinea: 'oceania', solomon_islands: 'oceania', vanuatu: 'oceania', samoa: 'oceania', tonga: 'oceania', kiribati: 'oceania',
+    australia: 'oceania', newzealand: 'oceania', fiji: 'oceania', papuanewguinea: 'oceania', solomonislands: 'oceania', vanuatu: 'oceania', samoa: 'oceania', tonga: 'oceania', kiribati: 'oceania', tuvalu: 'oceania', nauru: 'oceania', palau: 'oceania', micronesia: 'oceania', marshallislands: 'oceania',
     'sri-lanka': 'asia',
 };
 

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+<script>
+(() => {
+  const theme = localStorage.getItem("theme");
+  document.documentElement.setAttribute("data-theme", theme === "dark" ? "dark" : "light");
+})();
+</script>
+    <style>
+        .auth-buttons { display: none; }
+        .user-menu { display: none; }
+    </style>
+    <meta charset="UTF-8">
+<script>
+    (function(){
+        var u=JSON.parse(localStorage.getItem('safraUser')||'null');
+        var av=localStorage.getItem('safraAvatar')||'';
+        document.documentElement.className+=u?' user-logged-in':' user-logged-out';
+        if(u){
+            var t=setInterval(function(){
+                var n=document.getElementById('userName');
+                var a=document.getElementById('userAvatar');
+                if(n){
+                    n.textContent=u.name||'';
+                    if(a&&(u.avatar||av)) a.src=u.avatar||av;
+                    clearInterval(t);
+                }
+            },1);
+        }
+    })();
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سفرة</title>
+    <link rel="stylesheet" href="/countries/countries.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@500;600&display=swap">
+    <link rel="stylesheet" href="/dark-mode.css">
+    <meta property="og:image" content="https://sofrh.vercel.app/img/logo6.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:title" content="سفرة — سافر وتذوق">
+    <meta property="og:description" content="اكتشف وجهات وماكولات من مختلف أنحاء العالم">
+    <meta property="og:url" content="https://sofrh.vercel.app">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ar_SA">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://sofrh.vercel.app/img/logo6.png">
+    <meta name="twitter:title" content="سفرة — سافر وتذوق">
+    <meta name="twitter:description" content="اكتشف وجهات وماكولات من مختلف أنحاء العالم">
+    <script src="/auth/auth.js" defer></script>
+</head>
+<body>
+
+        <header class="navbar">
+        <div class="hamburger" id="menu-btn">☰</div>
+
+        <div class="auth-buttons" id="authButtons">
+            <a href="/auth/login.html" class="login">تسجيل دخول</a>
+            <a href="/auth/signup.html" class="signup">إنشاء حساب</a>
+        </div>
+
+        <div class="user-menu" id="userMenu">
+            <img id="userAvatar" src="" alt="">
+            <span class="user-name" id="userName"></span>
+            <div class="user-dropdown">
+                <a href="/profile/profile.html">الملف الشخصي</a>
+                <a href="#" id="logoutBtn">تسجيل خروج</a>
+            </div>
+        </div>
+
+        <ul class="nav-list">
+            <li><a href="/index/index.html">الرئيسية</a></li>
+            <li><a href="/countries/countries.html" class="active">الدول</a></li>
+            <li><a href="/events/events.html">الفعاليات</a></li>
+            <li><a href="/recipes/recipes.html">الوصفات</a></li>
+            <li><a href="/plan/plan.html">خطتي</a></li>
+            <li><a href="/about/about.html">عن سفرة</a></li>
+        </ul>
+
+        <div class="logo">
+            <a href="/index/index.html"><img src="/img/logo7.png" alt="سفرة"></a>
+        </div>
+    </header>
+
+    <!-- SIDE MENU -->
+    <div class="side-menu" id="side-menu">
+        <span class="close-btn" id="close-btn">×</span>
+        <span class="side-menu-kicker">استكشف</span>
+        <ul>
+            <li><a href="/index/index.html" class="active">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M3 11.5 12 4l9 7.5" />
+                        <path
+                            d="M5.5 10v9a1 1 0 0 0 1 1H9a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h2.5a1 1 0 0 0 1-1v-9" />
+                    </svg>
+                    <span>الرئيسية</span>
+                </a></li>
+            <li><a href="/countries/countries.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M12 21s7-6.6 7-12a7 7 0 1 0-14 0c0 5.4 7 12 7 12Z" />
+                        <circle cx="12" cy="9" r="2.3" />
+                    </svg>
+                    <span>الدول</span>
+                </a></li>
+            <li><a href="/events/events.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <rect x="3.5" y="5" width="17" height="16" rx="2.5" />
+                        <path d="M8 3v4M16 3v4M3.5 10h17" />
+                        <circle cx="12" cy="15" r="1.4" fill="currentColor" stroke="none" />
+                    </svg>
+                    <span>الفعاليات</span>
+                </a></li>
+            <li><a href="/recipes/recipes.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M7 2v8a2 2 0 0 0 2 2v10M5 2v6M9 2v6M14 2c-1.5 2-1.5 7 0 9 .6.6 1 1.3 1 2v9" />
+                    </svg>
+                    <span>الوصفات</span>
+                </a></li>
+            <li><a href="/plan/plan.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="9" />
+                        <path d="M14.8 9.2 13 13l-3.8 1.8L11 11l3.8-1.8Z" />
+                    </svg>
+                    <span>خطتي</span>
+                </a></li>
+            <li><a href="/about/about.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="9" />
+                        <path d="M12 8h.01M11 11.5h1v5.5h1" />
+                    </svg>
+                    <span>عن سفرة</span>
+                </a></li>
+        </ul>
+    </div>
+
+<section class="country-name">
+  <h1>تونغا</h1>
+  <p>مملكة البولونيزيا الوحيدة بحيتانها الحدباء وبوابة هاأمونغا الحجرية وجزر فافاو الخلابة</p>
+</section>
+<section class="cities-section">
+  <h2 class="section-title">المدن</h2>
+  <div class="cities-grid">
+    <div class="cite" data-name="نوكوألوفا – Nuku'alofa"
+        data-img="/img/tonga-logo.jpg"
+        data-desc="عاصمة المملكة التونغية على الجزيرة الرئيسية تونغاتابو، مدينة صغيرة هادئة تمزج الثقافة الميلانيزية الملكية بالحياة المعاصرة مع القصر الملكي والكاتدرائية الكاثوليكية الضخمة."
+        data-historic="القصر الملكي التونغي|كاتدرائية بازيليكا|شواطئ نوكوألوفا|سوق تالاومتو|ميناء الملكة سالوتي|متحف تونغا الوطني"
+        data-restaurants="مطعم Little Italy|مطعم Yacht Club|مطعم Big Mama's|مطعم Waterfront Cafe|مطعم Taufa'ahau|مطعم Dancing Rooster"
+        data-cafes="كافيه Friends Cafe|كافيه Waterfront|كافيه Yacht|كافيه Royal|كافيه Market|كافيه Polynesian"
+        data-events="القصر الملكي التونغي التاريخي|سوق تالاومتو ومنتجاته|كاتدرائية بازيليكا الضخمة|ميناء الملكة وغروب الشمس|مهرجان هيكولي المائي|المحيط وشواطئ تونغاتابو"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'tonga_nukualofa', 'نوكوألوفا', '/img/tonga-logo.jpg')">🏙️</button>
+        <img src="/img/tonga-logo.jpg" alt="نوكوألوفا" class="cite-img">
+        <span class="name">نوكوألوفا – Nuku'alofa</span>
+        <p class="info">عاصمة مملكة تونغا على جزيرة تونغاتابو</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+    <div class="cite" data-name="فافاو – Vava'u"
+        data-img="/img/tonga-logo.jpg"
+        data-desc="مجموعة جزر فافاو الشمالية الأكثر شهرة في تونغا بخلجانها الخضراء العميقة وشواطئها البيضاء ومياهها الهادئة، مكان مثالي للإبحار ومشاهدة الحيتان الحدباء."
+        data-historic="ميناء نيافو|كهف مارينر|خليج أنكوراج|جزيرة أوتا|شواطئ فافاو|مزارع المرجان"
+        data-restaurants="مطعم Cafe Tropicana|مطعم The Aquarium|مطعم Bounty Bar|مطعم Mango|مطعم Dancing Rooster|مطعم Sailing Club"
+        data-cafes="كافيه Cafe Vavau|كافيه Tropicana|كافيه Bay|كافيه Mango|كافيه Anchor|كافيه Island"
+        data-events="مشاهدة الحيتان الحدباء في الموسم|كهف مارينر الطبيعي المذهل|الإبحار بين جزر فافاو|غوص الشعاب المرجانية|شواطئ فافاو البكر|خلجان المياه الهادئة الزرقاء"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'tonga_vavau', 'فافاو', '/img/tonga-logo.jpg')">🏙️</button>
+        <img src="/img/tonga-logo.jpg" alt="فافاو" class="cite-img">
+        <span class="name">فافاو – Vava'u</span>
+        <p class="info">مجموعة الجزر الأجمل في تونغا</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+    <div class="cite" data-name="هاأباي – Ha'apai"
+        data-img="/img/tonga-logo.jpg"
+        data-desc="مجموعة جزر هاأباي الوسطى الأقل زيارة في تونغا رغم جمالها الاستثنائي، شواطئها البيضاء وشعابها المرجانية البكر وهدوؤها المطلق يجذب من يبحث عن الهروب التام."
+        data-historic="جزيرة فوفوآ|شاطئ هيكوهو البيض|الشعاب المرجانية البكر|كهوف هاأباي|جزيرة ليفوكا|غابات النخيل"
+        data-restaurants="مطعم Sandy Beach|مطعم Ha'apai Beach|مطعم Fonua Lodge|مطعم Island|مطعم Reef View|مطعم Coral"
+        data-cafes="كافيه Ha'apai|كافيه Sandy|كافيه Beach|كافيه Reef|كافيه Island|كافيه Coral"
+        data-events="شواطئ هاأباي البيضاء المعزولة|الشعاب المرجانية البكر النادرة|مشاهدة الحيتان الحدباء|السكن في جزيرة فيفيتا الهادئة|الغوص والسنوركل البكر|التأمل في الهدوء المطلق"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'tonga_haapai', 'هاأباي', '/img/tonga-logo.jpg')">🏙️</button>
+        <img src="/img/tonga-logo.jpg" alt="هاأباي" class="cite-img">
+        <span class="name">هاأباي – Ha'apai</span>
+        <p class="info">جزر هاأباي المعزولة البكر</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+    <div class="cite" data-name="نيواس – Niuas"
+        data-img="/img/tonga-logo.jpg"
+        data-desc="مجموعة الجزر الأبعد شمالاً في تونغا قريبة من ساموا، تُعدّ من أكثر مناطق المحيط الهادئ عزلةً وتحافظ على نمط الحياة التونغي القديم بعيداً عن السياحة."
+        data-historic="بركان لاتي|شاطئ نياوتوبوتابو|قرى نيواس|الشعاب المرجانية الشمالية|غابات نيواس|محمية الطيور"
+        data-restaurants="مطعم Niuafo'ou|مطعم Northern|مطعم Island|مطعم Traditional|مطعم Village|مطعم Shore"
+        data-cafes="كافيه Niuas|كافيه North|كافيه Island|كافيه Village|كافيه Shore|كافيه Local"
+        data-events="بركان لاتي في نياوفوأو|الجزر المعزولة تماماً|نمط الحياة التونغي القديم|الشعاب المرجانية الشمالية البكر|مشاهدة الطيور النادرة|الهدوء المطلق"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'tonga_niuas', 'نيواس', '/img/tonga-logo.jpg')">🏙️</button>
+        <img src="/img/tonga-logo.jpg" alt="نيواس" class="cite-img">
+        <span class="name">نيواس – Niuas</span>
+        <p class="info">أقصى جزر تونغا الشمالية</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+    <div class="cite" data-name="أووا – 'Eua"
+        data-img="/img/tonga-logo.jpg"
+        data-desc="الجزيرة الأقدم جيولوجياً في تونغا بمنتزهها الوطني الوحيد وغابة البكر الكثيفة والكهوف العميقة وأحياء الطيور النادرة التي لا توجد إلا هنا."
+        data-historic="منتزه أووا الوطني|كهف أنافو|مرتفعات أووا|محمية الطيور|شواطئ أووا الشرقية|غابة المطر"
+        data-restaurants="مطعم Hideaway Lodge|مطعم Eua Lodge|مطعم National Park|مطعم Island|مطعم Forest|مطعم Shore"
+        data-cafes="كافيه Eua|كافيه Hideaway|كافيه Park|كافيه Forest|كافيه Island|كافيه Shore"
+        data-events="منتزه أووا الوطني بغاباته البكر|كهف أنافو الضخم الغامض|مشاهدة الببغاء الأحمر الرئوي النادر|ترامبولين الشعاب المرجانية|شواطئ أووا الشرقية|الرحلات الجبلية"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'tonga_eua', 'أووا', '/img/tonga-logo.jpg')">🏙️</button>
+        <img src="/img/tonga-logo.jpg" alt="أووا" class="cite-img">
+        <span class="name">أووا – 'Eua</span>
+        <p class="info">جزيرة الغابة البكر الوحيدة في تونغا</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+    <div class="cite" data-name="تونغاتابو – Tongatapu"
+        data-img="/img/tonga-logo.jpg"
+        data-desc="الجزيرة الرئيسية والأكبر في تونغا موطن معظم السكان، حيث بوابة الحجر الغامضة هاأمونغا-أ-ماوي ومجمع القبور الملكية ومواقع الآثار البولونيزية الرائعة."
+        data-historic="بوابة هاأمونغا الحجرية|مجمع الملاحد الملكية|معبد Mapu'a Vaea|شاطئ Keleti|خليج Blow Holes|حديقة نباتية"
+        data-restaurants="مطعم Seaview|مطعم Big Mama|مطعم Taufa|مطعم Ha'amo|مطعم Tongatapu|مطعم Reef"
+        data-cafes="كافيه Tongatapu|كافيه Stone Gate|كافيه Royal|كافيه Island|كافيه Market|كافيه Shore"
+        data-events="بوابة هاأمونغا الحجرية أسرار تونغا|مجمع الملاحد الملكية التاريخي|نوافير بلو هولز الطبيعية الرائعة|شاطئ كيليتي البيضاء|الغوص في شعاب تونغاتابو|مواقع الآثار البولونيزية"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'tonga_tongatapu', 'تونغاتابو', '/img/tonga-logo.jpg')">🏙️</button>
+        <img src="/img/tonga-logo.jpg" alt="تونغاتابو" class="cite-img">
+        <span class="name">تونغاتابو – Tongatapu</span>
+        <p class="info">الجزيرة الرئيسية موطن أعجوبة هاأمونغا</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+  </div>
+</section>
+<section class="foods-section">
+  <h2 class="section-title">الأكلات الشعبية</h2>
+  <div class="foods-grid">
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=tonga-lumealofa'">
+      <img src="/img/tonga-logo.jpg" alt="لومي إلوفا" class="foods-img">
+      <span class="name-foods">لومي إلوفا – Lu Me Alofa</span>
+      <div class="food-info">الطبق الوطني التونغي، ورق التارو المحشو باللحم أو السمك وحليب جوز الهند المطهو في أوكا الفرن الأرضي بالحجارة الساخنة لساعات</div>
+      <a href="/recipes/recipes.html?recipe=tonga-lumealofa" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=tonga-kapisi'">
+      <img src="/img/tonga-logo.jpg" alt="كابيسي" class="foods-img">
+      <span class="name-foods">كابيسي – Kapisi Pulu</span>
+      <div class="food-info">لحم البقر المطهو في حليب جوز الهند مع الخضروات في ورق الملفوف، طبق التونغيين المفضل في المناسبات والولائم العائلية الكبيرة</div>
+      <a href="/recipes/recipes.html?recipe=tonga-kapisi" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=tonga-otaika'">
+      <img src="/img/tonga-logo.jpg" alt="أوتا إيكا" class="foods-img">
+      <span class="name-foods">أوتا إيكا – Ota Ika</span>
+      <div class="food-info">سمك تونغا النيء الطازج منقوع في عصير الليمون الحامض مع حليب جوز الهند الكريمي والخضروات الطازجة، النسخة التونغية من طبق السيفيتشي الأوقياني</div>
+      <a href="/recipes/recipes.html?recipe=tonga-roastedpig" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=tonga-tofukofe'">
+      <img src="/img/tonga-logo.jpg" alt="توفو كوفي" class="foods-img">
+      <span class="name-foods">توفو كوفي – Tofu Kofe</span>
+      <div class="food-info">اليام المطهو ببطء في حليب جوز الهند مع العسل والقرفة حتى يصبح طرياً ذائباً ذا نكهة كريمية مذهلة، حلوى تونغا التقليدية في المناسبات</div>
+      <a href="/recipes/recipes.html?recipe=tonga-tofukofe" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=tonga-octopus'">
+      <img src="/img/tonga-logo.jpg" alt="أخطبوط مشوي" class="foods-img">
+      <span class="name-foods">أخطبوط مشوي – Grilled Octopus</span>
+      <div class="food-info">الأخطبوط الطازج المنقوع بالليمون والثوم والملح ثم المشوي على الجمر حتى يصبح طرياً ومدخناً، طبق صيادي تونغا اليومي الشهير</div>
+      <a href="/recipes/recipes.html?recipe=tonga-octopus" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=tonga-vakalolo'">
+      <img src="/img/tonga-logo.jpg" alt="فاكالولو" class="foods-img">
+      <span class="name-foods">فاكالولو – Vakalolo</span>
+      <div class="food-info">حلوى القلقاس المبشور المخلوط بعصير جوز الهند والسكر البني والقرفة والهيل ثم المطهو على نار هادئة، حلوى التونغيين في الأعياد</div>
+      <a href="/recipes/recipes.html?recipe=tonga-vakalolo" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+  </div>
+</section>
+<section class="events-section">
+  <h2 class="section-title">الفعاليات والأماكن</h2>
+  <div class="events-grid">
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=TONHumpbackWhales'">
+      <img src="/img/tonga-logo.jpg" alt="حيتان تونغا" class="event-img">
+      <span class="name-event">حيتان تونغا – Tonga Humpback Whales</span>
+      <div class="event-info">تونغا من أفضل دول العالم لمشاهدة الحيتان الحدباء وربما السباحة معها من يوليو لأكتوبر حين تأتي للتكاثر في المياه الهادئة الدافئة</div>
+      <a href="/events/events.html?event=TONHumpbackWhales" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=TONHaamongas'">
+      <img src="/img/tonga-logo.jpg" alt="بوابة هاأمونغا" class="event-img">
+      <span class="name-event">بوابة هاأمونغا – Ha'amonga Stone Gate</span>
+      <div class="event-info">بوابة الحجارة الغامضة من العصر الحجري في تونغاتابو التي لا يزال الباحثون يتجادلون حول غرضها، أحد أعجب مواقع المحيط الهادئ التاريخية</div>
+      <a href="/events/events.html?event=TONHaamongas" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=TONVavauSailing'">
+      <img src="/img/tonga-logo.jpg" alt="إبحار فافاو" class="event-img">
+      <span class="name-event">إبحار فافاو – Vava'u Sailing</span>
+      <div class="event-info">خلجان فافاو المحمية هي من أفضل مواقع الإبحار في العالم بمياهها الهادئة وجزرها الخضراء وريحها الملائمة طوال العام</div>
+      <a href="/events/events.html?event=TONVavauSailing" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=TONHeofeva'">
+      <img src="/img/tonga-logo.jpg" alt="مهرجان هيوفيفا" class="event-img">
+      <span class="name-event">مهرجان هيوفيفا – Heilala Festival</span>
+      <div class="event-info">المهرجان الوطني التونغي في يوليو بعروض الرقص التقليدي والموسيقى والولائم الملكية وتتويج ملكة الجمال التونغية في احتفالية بهيجة</div>
+      <a href="/events/events.html?event=TONHeofeva" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=TONBlowHoles'">
+      <img src="/img/tonga-logo.jpg" alt="نوافير تونغاتابو" class="event-img">
+      <span class="name-event">نوافير تونغاتابو – Mapu'a Blow Holes</span>
+      <div class="event-info">200 نافورة طبيعية تتفجر من الشعاب البازلتية على ساحل تونغاتابو الجنوبي بارتفاع يصل 20 متراً في مشهد طبيعي لا مثيل له</div>
+      <a href="/events/events.html?event=TONBlowHoles" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=TONRoyalPalace'">
+      <img src="/img/tonga-logo.jpg" alt="القصر الملكي" class="event-img">
+      <span class="name-event">القصر الملكي – Royal Palace Nuku'alofa</span>
+      <div class="event-info">القصر الملكي التونغي الخشبي المطلي بالأبيض من عام 1867 وأضرحة الملاحد الملكية والسياق الملكي الفريد في المملكة الوحيدة في البولونيزيا</div>
+      <a href="/events/events.html?event=TONRoyalPalace" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+  </div>
+</section>
+<div id="cityModal" class="modal" onclick="closeCityModal(event)">
+  <div class="modal-content">
+    <button class="modal-close" onclick="closeCityModal(event)">×</button>
+    <img id="modal-city-img" src="" alt="">
+    <h2 id="modal-city-name"></h2>
+    <p id="modal-city-desc"></p>
+    <div class="modal-section"><h3>المعالم التاريخية</h3><ul id="modal-city-historic"></ul></div>
+    <div class="modal-section"><h3>المطاعم</h3><ul id="modal-city-restaurants"></ul></div>
+    <div class="modal-section"><h3>المقاهي</h3><ul id="modal-city-cafes"></ul></div>
+    <div class="modal-section"><h3>الفعاليات</h3><ul id="modal-city-events"></ul></div>
+  </div>
+</div>
+<footer>
+  <p>© 2025 سفرة. جميع الحقوق محفوظة.</p>
+</footer>
+<script src="/countries/countries.js"></script>
+<script src="/auth/auth.js"></script>
+</body>
+</html>

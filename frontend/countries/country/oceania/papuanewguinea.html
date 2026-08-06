@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+<script>
+(() => {
+  const theme = localStorage.getItem("theme");
+  document.documentElement.setAttribute("data-theme", theme === "dark" ? "dark" : "light");
+})();
+</script>
+    <style>
+        .auth-buttons { display: none; }
+        .user-menu { display: none; }
+    </style>
+    <meta charset="UTF-8">
+<script>
+    (function(){
+        var u=JSON.parse(localStorage.getItem('safraUser')||'null');
+        var av=localStorage.getItem('safraAvatar')||'';
+        document.documentElement.className+=u?' user-logged-in':' user-logged-out';
+        if(u){
+            var t=setInterval(function(){
+                var n=document.getElementById('userName');
+                var a=document.getElementById('userAvatar');
+                if(n){
+                    n.textContent=u.name||'';
+                    if(a&&(u.avatar||av)) a.src=u.avatar||av;
+                    clearInterval(t);
+                }
+            },1);
+        }
+    })();
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سفرة</title>
+    <link rel="stylesheet" href="/countries/countries.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@500;600&display=swap">
+    <link rel="stylesheet" href="/dark-mode.css">
+    <meta property="og:image" content="https://sofrh.vercel.app/img/logo6.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:title" content="سفرة — سافر وتذوق">
+    <meta property="og:description" content="اكتشف وجهات وماكولات من مختلف أنحاء العالم">
+    <meta property="og:url" content="https://sofrh.vercel.app">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ar_SA">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://sofrh.vercel.app/img/logo6.png">
+    <meta name="twitter:title" content="سفرة — سافر وتذوق">
+    <meta name="twitter:description" content="اكتشف وجهات وماكولات من مختلف أنحاء العالم">
+    <script src="/auth/auth.js" defer></script>
+</head>
+<body>
+
+        <header class="navbar">
+        <div class="hamburger" id="menu-btn">☰</div>
+
+        <div class="auth-buttons" id="authButtons">
+            <a href="/auth/login.html" class="login">تسجيل دخول</a>
+            <a href="/auth/signup.html" class="signup">إنشاء حساب</a>
+        </div>
+
+        <div class="user-menu" id="userMenu">
+            <img id="userAvatar" src="" alt="">
+            <span class="user-name" id="userName"></span>
+            <div class="user-dropdown">
+                <a href="/profile/profile.html">الملف الشخصي</a>
+                <a href="#" id="logoutBtn">تسجيل خروج</a>
+            </div>
+        </div>
+
+        <ul class="nav-list">
+            <li><a href="/index/index.html">الرئيسية</a></li>
+            <li><a href="/countries/countries.html" class="active">الدول</a></li>
+            <li><a href="/events/events.html">الفعاليات</a></li>
+            <li><a href="/recipes/recipes.html">الوصفات</a></li>
+            <li><a href="/plan/plan.html">خطتي</a></li>
+            <li><a href="/about/about.html">عن سفرة</a></li>
+        </ul>
+
+        <div class="logo">
+            <a href="/index/index.html"><img src="/img/logo7.png" alt="سفرة"></a>
+        </div>
+    </header>
+
+    <!-- SIDE MENU -->
+    <div class="side-menu" id="side-menu">
+        <span class="close-btn" id="close-btn">×</span>
+        <span class="side-menu-kicker">استكشف</span>
+        <ul>
+            <li><a href="/index/index.html" class="active">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M3 11.5 12 4l9 7.5" />
+                        <path
+                            d="M5.5 10v9a1 1 0 0 0 1 1H9a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h2.5a1 1 0 0 0 1-1v-9" />
+                    </svg>
+                    <span>الرئيسية</span>
+                </a></li>
+            <li><a href="/countries/countries.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M12 21s7-6.6 7-12a7 7 0 1 0-14 0c0 5.4 7 12 7 12Z" />
+                        <circle cx="12" cy="9" r="2.3" />
+                    </svg>
+                    <span>الدول</span>
+                </a></li>
+            <li><a href="/events/events.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <rect x="3.5" y="5" width="17" height="16" rx="2.5" />
+                        <path d="M8 3v4M16 3v4M3.5 10h17" />
+                        <circle cx="12" cy="15" r="1.4" fill="currentColor" stroke="none" />
+                    </svg>
+                    <span>الفعاليات</span>
+                </a></li>
+            <li><a href="/recipes/recipes.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M7 2v8a2 2 0 0 0 2 2v10M5 2v6M9 2v6M14 2c-1.5 2-1.5 7 0 9 .6.6 1 1.3 1 2v9" />
+                    </svg>
+                    <span>الوصفات</span>
+                </a></li>
+            <li><a href="/plan/plan.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="9" />
+                        <path d="M14.8 9.2 13 13l-3.8 1.8L11 11l3.8-1.8Z" />
+                    </svg>
+                    <span>خطتي</span>
+                </a></li>
+            <li><a href="/about/about.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="9" />
+                        <path d="M12 8h.01M11 11.5h1v5.5h1" />
+                    </svg>
+                    <span>عن سفرة</span>
+                </a></li>
+        </ul>
+    </div>
+
+
+<section class="country-name">
+  <h1>بابوا غينيا الجديدة</h1>
+  <p>أكثر دول العالم تنوعاً لغوياً وثقافياً بين طيور الجنة وغابات المطر والشعاب البكر</p>
+</section>
+
+<section class="cities-section">
+  <h2 class="section-title">المدن</h2>
+  <div class="cities-grid">
+
+    <div class="cite" data-name="بورت مورسبي – Port Moresby"
+        data-img="/img/papuanewguinea-logo.jpg"
+        data-desc="عاصمة بابوا غينيا الجديدة على ساحل المحيط الهادئ، مدينة نابضة متنوعة عرقياً بأكثر من 800 لغة ومجموعة قبلية، تضم حدائقها الوطنية وشعاب مرجانية بكر."
+        data-historic="متحف بورت مورسبي الوطني|حدائق Varirata الوطنية|مرسى Ela Beach|حديقة نباتات لاي|منطقة Hanuabada|معبد سيكانا"
+        data-restaurants="مطعم Dynasty|مطعم Duffy's|مطعم Crowne Plaza|مطعم Aviat Club|مطعم Top Town|مطعم Rapala"
+        data-cafes="كافيه Heritage|كافيه Airways Hotel|كافيه Vision City|كافيه Ela Beach|كافيه Koki Market|كافيه Boroko"
+        data-events="متحف بورت مورسبي الوطني|شعاب ليور المرجانية|حدائق Varirata الوطنية|سوق كوكي الشعبي|شاطئ إيلا بيتش|مهرجان فلاكس الثقافي"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'papuanewguinea_portmoresby', 'بورت مورسبي', '/img/papuanewguinea-logo.jpg')">🏙️</button>
+        <img src="/img/papuanewguinea-logo.jpg" alt="بورت مورسبي" class="cite-img">
+        <span class="name">بورت مورسبي – Port Moresby</span>
+        <p class="info">عاصمة الطيور النادرة وغابات المطر</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="لاي – Lae"
+        data-img="/img/papuanewguinea-logo.jpg"
+        data-desc="ثانية كبرى مدن البلاد على الساحل الشمالي، مدينة صناعية وتجارية مع حدائق نباتية شهيرة ووفرة في التنوع البيولوجي للغابات الاستوائية المحيطة بها."
+        data-historic="حديقة نباتات لاي الوطنية|متحف لاي الإقليمي|نهر بوتا|ساحل بوتا البحري|حصن لاي الحربية|متنزه Lae Water Front"
+        data-restaurants="مطعم Lae International|مطعم The Boat Club|مطعم Pacific Hotel|مطعم Melanesian Hotel|مطعم Lae Rugby|مطعم The Blue Orchid"
+        data-cafes="كافيه Lae City|كافيه Pacific|كافيه Melanesian|كافيه Boat Club|كافيه The Hut|كافيه Garden City"
+        data-events="حديقة نباتات لاي الوطنية|الشعاب المرجانية في خليج هوون|سوق بوتا الشعبي|الغابة الاستوائية المحيطة|نهر بوتا ورحلاته|مهرجان لاي الثقافي"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'papuanewguinea_lae', 'لاي', '/img/papuanewguinea-logo.jpg')">🏙️</button>
+        <img src="/img/papuanewguinea-logo.jpg" alt="لاي" class="cite-img">
+        <span class="name">لاي – Lae</span>
+        <p class="info">المدينة الصناعية على خليج هوون</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="جبل هاجن – Mount Hagen"
+        data-img="/img/papuanewguinea-logo.jpg"
+        data-desc="مدينة المرتفعات في قلب الجزيرة الرئيسية بين الجبال المضببة وأراضي القبائل المتنوعة، تشتهر بمهرجان Mount Hagen الثقافي الاستثنائي الذي يجمع مئات القبائل."
+        data-historic="متحف المرتفعات الثقافي|قرية القبائل التقليدية|مرتفعات المناطق الجبلية|سوق هاجن الشعبي|نهر واغي|مهرجان هاجن الشهير"
+        data-restaurants="مطعم Mount Hagen Club|مطعم Highlander Hotel|مطعم The Beacon|مطعم Highlands|مطعم Garden City|مطعم Mt Hagen Lodge"
+        data-cafes="كافيه Highlander|كافيه The Beacon|كافيه Mount Hagen|كافيه Tribal|كافيه Waghi|كافيه Summit"
+        data-events="مهرجان Mount Hagen الثقافي الضخم|قرى القبائل التقليدية|غابات المرتفعات المضببة|زراعة القهوة الجبلية|الرقصات القبلية التقليدية|سوق هاجن اليومي"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'papuanewguinea_mounthagen', 'جبل هاجن', '/img/papuanewguinea-logo.jpg')">🏙️</button>
+        <img src="/img/papuanewguinea-logo.jpg" alt="جبل هاجن" class="cite-img">
+        <span class="name">جبل هاجن – Mount Hagen</span>
+        <p class="info">مدينة المرتفعات وقلب الثقافات القبلية</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="رابول – Rabaul"
+        data-img="/img/papuanewguinea-logo.jpg"
+        data-desc="مدينة تاريخية على جزيرة نيو بريتن محاطة بفوهات بركانية نشطة، دُمرت عام 1994 من ثوران البركان وأُعيد بناؤها، تحيط بها شعاب مرجانية بديعة ومواقع الحرب العالمية الثانية."
+        data-historic="متحف رابول الحربي|فوهة توبيلال البركانية|تونل اليابانيين|شاطئ بلانش باي|مدينة كوكوبو|قاعدة ياماموتو الجوية"
+        data-restaurants="مطعم Rabaul Hotel|مطعم The Hamamas|مطعم Kokopo Beach|مطعم Gazelle Peninsula|مطعم Kaivuna|مطعم The Volcano"
+        data-cafes="كافيه Rabaul|كافيه Volcano View|كافيه Blanche Bay|كافيه Hamamas|كافيه Heritage|كافيه Kokopo"
+        data-events="مواقع الحرب العالمية الثانية|الغوص في المحيط الهادئ|فوهة توبيلال البركانية|شعاب مرجانية نادرة|تونلات اليابانيين التاريخية|مهرجان رقص المحاربين"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'papuanewguinea_rabaul', 'رابول', '/img/papuanewguinea-logo.jpg')">🏙️</button>
+        <img src="/img/papuanewguinea-logo.jpg" alt="رابول" class="cite-img">
+        <span class="name">رابول – Rabaul</span>
+        <p class="info">مدينة البراكين في قلب المحيط</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="مادانغ – Madang"
+        data-img="/img/papuanewguinea-logo.jpg"
+        data-desc="مدينة ساحلية خلابة تُعدّ من أجمل موانئ العالم الطبيعية، محاطة بجزر صغيرة وشعاب مرجانية رائعة تجذب هواة الغوص من أنحاء العالم."
+        data-historic="متحف مادانغ|ميناء مادانغ الطبيعي|غابة مادانغ|الجزر المرجانية|كاتدرائية مادانغ|سوق مادانغ الشعبي"
+        data-restaurants="مطعم Madang Resort|مطعم Coastwatchers|مطعم Jais Aben|مطعم PNG Country Club|مطعم The Harbour|مطعم Smugglers Inn"
+        data-cafes="كافيه Madang|كافيه Harbour View|كافيه Resort|كافيه Coastwatchers|كافيه Island|كافيه Tropical"
+        data-events="الغوص في الشعاب المرجانية|ميناء مادانغ الطبيعي الخلاب|جزر اللاغون الصافية|رحلات الكايا البحرية|مشاهدة طيور الجنة|المهرجان الثقافي السنوي"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'papuanewguinea_madang', 'مادانغ', '/img/papuanewguinea-logo.jpg')">🏙️</button>
+        <img src="/img/papuanewguinea-logo.jpg" alt="مادانغ" class="cite-img">
+        <span class="name">مادانغ – Madang</span>
+        <p class="info">جنة الغوص على المحيط الهادئ</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="ويواك – Wewak"
+        data-img="/img/papuanewguinea-logo.jpg"
+        data-desc="مدينة ساحلية في محافظة سيبيك، بوابة نهر سيبيك الأسطوري طويل العريق بالتنوع الثقافي وفن النحت الجزيري، تحيط بها شواطئ هادئة وجزر صغيرة."
+        data-historic="نهر سيبيك الأسطوري|شاطئ ويواك|مخيم ماوندسيبيك|قرى سيبيك التقليدية|جزيرة كاريرو|متحف محافظة سيبيك"
+        data-restaurants="مطعم Sepik|مطعم Wewak Beach|مطعم Windjammer|مطعم Karawari Lodge|مطعم River View|مطعم Tropical"
+        data-cafes="كافيه Wewak|كافيه Sepik|كافيه Beach|كافيه River|كافيه Palm|كافيه Tropical Sun"
+        data-events="رحلات نهر سيبيك الأسطوري|قرى الفن التقليدي|الغوص في جزر سيبيك|شواطئ ويواك البكر|مهرجان فن سيبيك|مشاهدة طيور الجنة النادرة"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'papuanewguinea_wewak', 'ويواك', '/img/papuanewguinea-logo.jpg')">🏙️</button>
+        <img src="/img/papuanewguinea-logo.jpg" alt="ويواك" class="cite-img">
+        <span class="name">ويواك – Wewak</span>
+        <p class="info">بوابة سيبيك والشواطئ الاستوائية</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+  </div>
+</section>
+
+<section class="foods-section">
+  <h2 class="section-title">الأكلات الشعبية</h2>
+  <div class="foods-grid">
+
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=papuanewguinea-mumu'">
+      <img src="/img/papuanewguinea-logo.jpg" alt="موموه" class="foods-img">
+      <span class="name-foods">موموه – Mumu</span>
+      <div class="food-info">وليمة الطهي الأرضي التقليدية لشعوب بابوا غينيا، لحم الخنزير البري والدجاج والبطاطا الحلوة وورق الموز تُدفن في حفرة مع حجارة ساخنة وتُطهى ببخار الأرض لساعات طويلة</div>
+      <a href="/recipes/recipes.html?recipe=papuanewguinea-mumu" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=papuanewguinea-kaukau'">
+      <img src="/img/papuanewguinea-logo.jpg" alt="كاوكاو" class="foods-img">
+      <span class="name-foods">كاوكاو – Kaukau</span>
+      <div class="food-info">البطاطا الحلوة الأرجوانية والبرتقالية الغذاء الأساسي لشعوب المرتفعات في بابوا غينيا، تُشوى في الجمر أو تُطهى في الموموه، ركيزة لا تخلو منها وجبة في المرتفعات</div>
+      <a href="/recipes/recipes.html?recipe=papuanewguinea-kaukau" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=papuanewguinea-saksak'">
+      <img src="/img/papuanewguinea-logo.jpg" alt="ساكساك" class="foods-img">
+      <span class="name-foods">ساكساك – Saksak</span>
+      <div class="food-info">خبز نشا الساغو التقليدي المصنوع من نخلة الساغو، يُشوى فوق الجمر ليصبح قرصاً هشاً من الخارج ناعماً من الداخل، مصدر النشويات الأساسي لشعوب السهول</div>
+      <a href="/recipes/recipes.html?recipe=papuanewguinea-saksak" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=papuanewguinea-kokoda'">
+      <img src="/img/papuanewguinea-logo.jpg" alt="كوكودا" class="foods-img">
+      <span class="name-foods">كوكودا – Kokoda</span>
+      <div class="food-info">السيفيتشي الأوقياني التقليدي، فيليه السمك الطازج المنقوع في عصير الليمون حتى ينضج كيميائياً ثم يُخلط بحليب جوز الهند والبصل والفلفل الحار، طعم المحيط النقي</div>
+      <a href="/recipes/recipes.html?recipe=papuanewguinea-kokoda" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=papuanewguinea-pitpit'">
+      <img src="/img/papuanewguinea-logo.jpg" alt="بيتبيت" class="foods-img">
+      <span class="name-foods">بيتبيت – Pitpit</span>
+      <div class="food-info">براعم النخيل الشبابة الطرية المطبوخة بجوز الهند والثوم، نبات استوائي محلي يُقطع ويُطهى كالخضار أو يُحشى باللحم، خضار الغابة الاستوائية المميز في بابوا غينيا</div>
+      <a href="/recipes/recipes.html?recipe=papuanewguinea-pitpit" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=papuanewguinea-tapioca'">
+      <img src="/img/papuanewguinea-logo.jpg" alt="بودنج التابيوكا" class="foods-img">
+      <span class="name-foods">بودنج التابيوكا – Tapioca Pudding</span>
+      <div class="food-info">حلوى الكاسافا الكريمية المطبوخة بحليب جوز الهند والسكر البني وقشر الليمون، تُقدم دافئة أو باردة كحلوى احتفالية في المناسبات والأعياد التقليدية</div>
+      <a href="/recipes/recipes.html?recipe=papuanewguinea-tapioca" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+
+  </div>
+</section>
+
+<section class="events-section">
+  <h2 class="section-title">الفعاليات والأماكن</h2>
+  <div class="events-grid">
+
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=PNGMtHagenFest'">
+      <img src="/img/papuanewguinea-logo.jpg" alt="مهرجان جبل هاجن" class="event-img">
+      <span class="name-event">مهرجان جبل هاجن – Mt Hagen Cultural Show</span>
+      <div class="event-info">أكبر مهرجان ثقافي في المحيط الهادئ يجمع مئات القبائل بأزياء الريش الملونة ورقصات الحرب التقليدية في عرض بصري مذهل في أغسطس</div>
+      <a href="/events/events.html?event=PNGMtHagenFest" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=PNGDiving'">
+      <img src="/img/papuanewguinea-logo.jpg" alt="غوص المحيط الهادئ" class="event-img">
+      <span class="name-event">غوص المحيط الهادئ – Pacific Diving</span>
+      <div class="event-info">من أفضل مواقع الغوص في العالم بحطام سفن الحرب العالمية الثانية والشعاب المرجانية البكر في ملانيزيا والتنوع البيولوجي البحري المذهل</div>
+      <a href="/events/events.html?event=PNGDiving" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=PNGBirdsOfParadise'">
+      <img src="/img/papuanewguinea-logo.jpg" alt="طيور الجنة" class="event-img">
+      <span class="name-event">طيور الجنة – Birds of Paradise</span>
+      <div class="event-info">موطن أكثر من 700 نوع من الطيور منها 38 نوعاً من طيور الجنة الفريدة بريشها الملون الأسطوري، رحلات المراقبة عبر الغابات الاستوائية البكر</div>
+      <a href="/events/events.html?event=PNGBirdsOfParadise" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=PNGSepikRiver'">
+      <img src="/img/papuanewguinea-logo.jpg" alt="نهر سيبيك" class="event-img">
+      <span class="name-event">نهر سيبيك – Sepik River</span>
+      <div class="event-info">أطول أنهار المحيط الهادئ يخترق غابات بدائية بقرى نائية وحياة برية نادرة وفن النحت الجزيري الرائع المنحوت من أشجار الغابة</div>
+      <a href="/events/events.html?event=PNGSepikRiver" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=PNGKokodaTrack'">
+      <img src="/img/papuanewguinea-logo.jpg" alt="مسار كوكودا" class="event-img">
+      <span class="name-event">مسار كوكودا – Kokoda Track</span>
+      <div class="event-info">المسار التاريخي عبر جبال أوين ستانلي الذي شهد أحداث الحرب العالمية الثانية، رحلة مشي ملحمية عبر الغابات البدائية والقرى الجبلية</div>
+      <a href="/events/events.html?event=PNGKokodaTrack" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=PNGVolcanoes'">
+      <img src="/img/papuanewguinea-logo.jpg" alt="براكين رابول" class="event-img">
+      <span class="name-event">براكين رابول – Rabaul Volcanoes</span>
+      <div class="event-info">مشاهدة البراكين النشطة من قرب في خليج رابول البركاني مع الغوص في المياه الدافئة حول سفن الحرب الغارقة والشعاب المرجانية النادرة</div>
+      <a href="/events/events.html?event=PNGVolcanoes" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+
+  </div>
+</section>
+
+<div id="cityModal" class="modal" onclick="closeCityModal(event)">
+  <div class="modal-content">
+    <button class="modal-close" onclick="closeCityModal(event)">×</button>
+    <img id="modal-city-img" src="" alt="">
+    <h2 id="modal-city-name"></h2>
+    <p id="modal-city-desc"></p>
+    <div class="modal-section"><h3>المعالم التاريخية</h3><ul id="modal-city-historic"></ul></div>
+    <div class="modal-section"><h3>المطاعم</h3><ul id="modal-city-restaurants"></ul></div>
+    <div class="modal-section"><h3>المقاهي</h3><ul id="modal-city-cafes"></ul></div>
+    <div class="modal-section"><h3>الفعاليات</h3><ul id="modal-city-events"></ul></div>
+  </div>
+</div>
+
+<footer>
+  <p>© 2025 سفرة. جميع الحقوق محفوظة.</p>
+</footer>
+<script src="/countries/countries.js"></script>
+<script src="/auth/auth.js"></script>
+</body>
+</html>

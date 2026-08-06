@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+<script>
+(() => {
+  const theme = localStorage.getItem("theme");
+  document.documentElement.setAttribute("data-theme", theme === "dark" ? "dark" : "light");
+})();
+</script>
+    <style>
+        .auth-buttons { display: none; }
+        .user-menu { display: none; }
+    </style>
+    <meta charset="UTF-8">
+<script>
+    (function(){
+        var u=JSON.parse(localStorage.getItem('safraUser')||'null');
+        var av=localStorage.getItem('safraAvatar')||'';
+        document.documentElement.className+=u?' user-logged-in':' user-logged-out';
+        if(u){
+            var t=setInterval(function(){
+                var n=document.getElementById('userName');
+                var a=document.getElementById('userAvatar');
+                if(n){
+                    n.textContent=u.name||'';
+                    if(a&&(u.avatar||av)) a.src=u.avatar||av;
+                    clearInterval(t);
+                }
+            },1);
+        }
+    })();
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سفرة</title>
+    <link rel="stylesheet" href="/countries/countries.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@500;600&display=swap">
+    <link rel="stylesheet" href="/dark-mode.css">
+    <meta property="og:image" content="https://sofrh.vercel.app/img/logo6.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:title" content="سفرة — سافر وتذوق">
+    <meta property="og:description" content="اكتشف وجهات وماكولات من مختلف أنحاء العالم">
+    <meta property="og:url" content="https://sofrh.vercel.app">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ar_SA">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://sofrh.vercel.app/img/logo6.png">
+    <meta name="twitter:title" content="سفرة — سافر وتذوق">
+    <meta name="twitter:description" content="اكتشف وجهات وماكولات من مختلف أنحاء العالم">
+    <script src="/auth/auth.js" defer></script>
+</head>
+<body>
+
+        <header class="navbar">
+        <div class="hamburger" id="menu-btn">☰</div>
+
+        <div class="auth-buttons" id="authButtons">
+            <a href="/auth/login.html" class="login">تسجيل دخول</a>
+            <a href="/auth/signup.html" class="signup">إنشاء حساب</a>
+        </div>
+
+        <div class="user-menu" id="userMenu">
+            <img id="userAvatar" src="" alt="">
+            <span class="user-name" id="userName"></span>
+            <div class="user-dropdown">
+                <a href="/profile/profile.html">الملف الشخصي</a>
+                <a href="#" id="logoutBtn">تسجيل خروج</a>
+            </div>
+        </div>
+
+        <ul class="nav-list">
+            <li><a href="/index/index.html">الرئيسية</a></li>
+            <li><a href="/countries/countries.html" class="active">الدول</a></li>
+            <li><a href="/events/events.html">الفعاليات</a></li>
+            <li><a href="/recipes/recipes.html">الوصفات</a></li>
+            <li><a href="/plan/plan.html">خطتي</a></li>
+            <li><a href="/about/about.html">عن سفرة</a></li>
+        </ul>
+
+        <div class="logo">
+            <a href="/index/index.html"><img src="/img/logo7.png" alt="سفرة"></a>
+        </div>
+    </header>
+
+    <!-- SIDE MENU -->
+    <div class="side-menu" id="side-menu">
+        <span class="close-btn" id="close-btn">×</span>
+        <span class="side-menu-kicker">استكشف</span>
+        <ul>
+            <li><a href="/index/index.html" class="active">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M3 11.5 12 4l9 7.5" />
+                        <path
+                            d="M5.5 10v9a1 1 0 0 0 1 1H9a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h2.5a1 1 0 0 0 1-1v-9" />
+                    </svg>
+                    <span>الرئيسية</span>
+                </a></li>
+            <li><a href="/countries/countries.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M12 21s7-6.6 7-12a7 7 0 1 0-14 0c0 5.4 7 12 7 12Z" />
+                        <circle cx="12" cy="9" r="2.3" />
+                    </svg>
+                    <span>الدول</span>
+                </a></li>
+            <li><a href="/events/events.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <rect x="3.5" y="5" width="17" height="16" rx="2.5" />
+                        <path d="M8 3v4M16 3v4M3.5 10h17" />
+                        <circle cx="12" cy="15" r="1.4" fill="currentColor" stroke="none" />
+                    </svg>
+                    <span>الفعاليات</span>
+                </a></li>
+            <li><a href="/recipes/recipes.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M7 2v8a2 2 0 0 0 2 2v10M5 2v6M9 2v6M14 2c-1.5 2-1.5 7 0 9 .6.6 1 1.3 1 2v9" />
+                    </svg>
+                    <span>الوصفات</span>
+                </a></li>
+            <li><a href="/plan/plan.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="9" />
+                        <path d="M14.8 9.2 13 13l-3.8 1.8L11 11l3.8-1.8Z" />
+                    </svg>
+                    <span>خطتي</span>
+                </a></li>
+            <li><a href="/about/about.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="9" />
+                        <path d="M12 8h.01M11 11.5h1v5.5h1" />
+                    </svg>
+                    <span>عن سفرة</span>
+                </a></li>
+        </ul>
+    </div>
+
+<section class="country-name">
+  <h1>توفالو</h1>
+  <p>أصغر دول العالم وأكثرها تهديداً بالغرق في الأتولات الفيروزية المنخفضة وسط المحيط</p>
+</section>
+<section class="cities-section">
+  <h2 class="section-title">المدن</h2>
+  <div class="cities-grid">
+    <div class="cite" data-name="فوناهوتي – Funafuti"
+        data-img="/img/tuvalu-logo.jpg"
+        data-desc="عاصمة توفالو على أتول فوناهوتي الرفيع وأكبر مجمع سكاني في البلاد، شريط رملي لا يتجاوز عرضه بضعة مئات من الأمتار وسط لاغون فيروزي شاسع."
+        data-historic="لاغون فوناهوتي|مطار توفالو|سوق فوناهوتي|البرلمان التوفالي|شاطئ الأتول|مباني حكومية"
+        data-restaurants="مطعم Filamona|مطعم Vaiaku Lagi Hotel|مطعم Funafuti|مطعم Island|مطعم Shore|مطعم Lagoon"
+        data-cafes="كافيه Tuvalu|كافيه Funafuti|كافيه Lagoon|كافيه Shore|كافيه Atoll|كافيه Local"
+        data-events="لاغون فوناهوتي الفيروزي|غروب الشمس على الأتول|الشعاب المرجانية البكر|الحياة اليومية التوفالية|البرلمان الصغير على الأتول|شواطئ الأتول الضيقة"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'tuvalu_funafuti', 'فوناهوتي', '/img/tuvalu-logo.jpg')">🏙️</button>
+        <img src="/img/tuvalu-logo.jpg" alt="فوناهوتي" class="cite-img">
+        <span class="name">فوناهوتي – Funafuti</span>
+        <p class="info">عاصمة أصغر دول العالم في قلب المحيط</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+    <div class="cite" data-name="نانوميا – Nanumea"
+        data-img="/img/tuvalu-logo.jpg"
+        data-desc="أتول نانوميا الشمالي الأبعد من بقية الجزر التوفالية بسكانه القليلين وحياته الأصيلة بعيداً عن عاصمة فوناهوتي تماماً، لاغونه البكر من أندر البيئات البحرية."
+        data-historic="لاغون نانوميا|قرية نانوميا|الشعاب المرجانية|شاطئ الأتول|مزارع جوز الهند|محمية السلاحف"
+        data-restaurants="مطعم Nanumea|مطعم Village|مطعم Shore|مطعم Lagoon|مطعم Local|مطعم Coconut"
+        data-cafes="كافيه Nanumea|كافيه Lagoon|كافيه Shore|كافيه Village|كافيه Atoll|كافيه Local"
+        data-events="لاغون نانوميا البكر النادر|الحياة القروية التوفالية الحقيقية|الشعاب المرجانية المعزولة|العيش بسرعة المحيط|محمية السلاحف البحرية|النجوم في السماء الصافية"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'tuvalu_nanumea', 'نانوميا', '/img/tuvalu-logo.jpg')">🏙️</button>
+        <img src="/img/tuvalu-logo.jpg" alt="نانوميا" class="cite-img">
+        <span class="name">نانوميا – Nanumea</span>
+        <p class="info">الأتول الشمالي الأكثر عزلة</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+    <div class="cite" data-name="نانومانغا – Nanumanga"
+        data-img="/img/tuvalu-logo.jpg"
+        data-desc="أتول دائري مثالي الشكل في شمال توفالو بلاغون هادئ وشعاب بكر وقرية واحدة تضم سكانه الذين يعيشون على الصيد وزراعة جوز الهند."
+        data-historic="لاغون نانومانغا|قرية نانومانغا|شعاب مرجانية بكر|مزارع الجوز|شاطئ الأتول|غابة النخيل"
+        data-restaurants="مطعم Island|مطعم Village|مطعم Shore|مطعم Lagoon|مطعم Local|مطعم Coconut"
+        data-cafes="كافيه Nanumanga|كافيه Lagoon|كافيه Shore|كافيه Village|كافيه Island|كافيه Coconut"
+        data-events="اللاغون الدائري المثالي|الشعاب المرجانية البكر|الغوص في مياه صافية|الحياة القروية البسيطة|مزارع جوز الهند|الصيد التقليدي"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'tuvalu_nanumanga', 'نانومانغا', '/img/tuvalu-logo.jpg')">🏙️</button>
+        <img src="/img/tuvalu-logo.jpg" alt="نانومانغا" class="cite-img">
+        <span class="name">نانومانغا – Nanumanga</span>
+        <p class="info">الأتول الدائري الأجمل</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+    <div class="cite" data-name="نوي – Nui"
+        data-img="/img/tuvalu-logo.jpg"
+        data-desc="أتول نوي بتنوعه الثقافي الاستثنائي حيث تمزجت الثقافة التوفالية بالميكرونيزية على مر القرون، لاغونه الواسع من أكبر لاغونات توفالو."
+        data-historic="لاغون نوي الواسع|قرية نوي|الشعاب المرجانية|شاطئ نوي|مزارع جوز الهند|غابات الأتول"
+        data-restaurants="مطعم Nui|مطعم Village|مطعم Shore|مطعم Lagoon|مطعم Island|مطعم Local"
+        data-cafes="كافيه Nui|كافيه Lagoon|كافيه Shore|كافيه Village|كافيه Island|كافيه Local"
+        data-events="لاغون نوي الواسع المذهل|التنوع الثقافي التوفالي الميكرونيزي|الشعاب المرجانية البكر|الحياة القروية الأصيلة|صيد السمك الأخطبوط التقليدي|شواطئ نوي الهادئة"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'tuvalu_nui', 'نوي', '/img/tuvalu-logo.jpg')">🏙️</button>
+        <img src="/img/tuvalu-logo.jpg" alt="نوي" class="cite-img">
+        <span class="name">نوي – Nui</span>
+        <p class="info">الأتول الجليلي متعدد الثقافات</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+    <div class="cite" data-name="فايتوبو – Vaitupu"
+        data-img="/img/tuvalu-logo.jpg"
+        data-desc="أكبر جزر توفالو وأكثرها سكاناً بعد فوناهوتي، موطن المدرسة الثانوية الوطنية الوحيدة في البلاد ومنتزه شعابها المرجانية الخلاب."
+        data-historic="مدرسة موتيفوا الثانوية|شعاب فايتوبو|لاغون فايتوبو|قرية أساو|شاطئ الأتول|مزارع الجوز"
+        data-restaurants="مطعم Vaitupu|مطعم Village|مطعم Shore|مطعم School|مطعم Lagoon|مطعم Atoll"
+        data-cafes="كافيه Vaitupu|كافيه Village|كافيه Shore|كافيه School|كافيه Lagoon|كافيه Atoll"
+        data-events="شعاب فايتوبو المرجانية|اللاغون الصافي|الحياة القروية الأكبر|المدرسة الثانوية الوطنية|الصيد التقليدي|غروب الشمس التوفالي"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'tuvalu_vaitupu', 'فايتوبو', '/img/tuvalu-logo.jpg')">🏙️</button>
+        <img src="/img/tuvalu-logo.jpg" alt="فايتوبو" class="cite-img">
+        <span class="name">فايتوبو – Vaitupu</span>
+        <p class="info">أكبر جزر توفالو بالسكان والأرض</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+    <div class="cite" data-name="نوكولائيلائي – Nukulaelae"
+        data-img="/img/tuvalu-logo.jpg"
+        data-desc="الأتول الجنوبي في توفالو بلاغونه الضيق المحاط بخصلة من الجزر الصغيرة المتصلة، من أكثر البيئات البحرية سلامة في توفالو بحياة بحرية استثنائية."
+        data-historic="لاغون نوكولائيلائي|الشعاب المرجانية|قرية فياميا|شاطئ الأتول الجنوبي|مزارع الجوز|محمية البحر"
+        data-restaurants="مطعم Nukulaelae|مطعم Village|مطعم Shore|مطعم Lagoon|مطعم South|مطعم Island"
+        data-cafes="كافيه Nukulaelae|كافيه Village|كافيه Shore|كافيه Lagoon|كافيه South|كافيه Island"
+        data-events="اللاغون الضيق الاستثنائي|الشعاب المرجانية البكر|الحياة القروية الهادئة|محمية البحر التوفالية|صيد الأسماك التقليدي|الكون في أقصى عزلة ممكنة"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'tuvalu_nukulaelae', 'نوكولائيلائي', '/img/tuvalu-logo.jpg')">🏙️</button>
+        <img src="/img/tuvalu-logo.jpg" alt="نوكولائيلائي" class="cite-img">
+        <span class="name">نوكولائيلائي – Nukulaelae</span>
+        <p class="info">الأتول الجنوبي الهادئ</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+  </div>
+</section>
+<section class="foods-section">
+  <h2 class="section-title">الأكلات الشعبية</h2>
+  <div class="foods-grid">
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=tuvalu-pulaka'">
+      <img src="/img/tuvalu-logo.jpg" alt="بولاكا" class="foods-img">
+      <span class="name-foods">بولاكا – Pulaka</span>
+      <div class="food-info">القلقاس التوفالي المزروع في حفر التربة تحت سطح الأرض لسنوات، الغذاء الأساسي التقليدي في توفالو يُطهى بالبخار ويُقدم في كل وجبة</div>
+      <a href="/recipes/recipes.html?recipe=tuvalu-pulaka" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=tuvalu-coconutcrab'">
+      <img src="/img/tuvalu-logo.jpg" alt="سلطعون الجوز" class="foods-img">
+      <span class="name-foods">سلطعون الجوز – Tuvalu Coconut Crab</span>
+      <div class="food-info">سلطعون جوز الهند العملاق يُصطاد ليلاً من النخيل ويُطهى مشوياً أو مسلوقاً، لحمه ذو نكهة جوز الهند الفريدة طعام التوفاليين المفضل</div>
+      <a href="/recipes/recipes.html?recipe=tuvalu-coconutcrab" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=tuvalu-fish'">
+      <img src="/img/tuvalu-logo.jpg" alt="سمك التوفالي" class="foods-img">
+      <span class="name-foods">سمك التوفالي – Tuvalu Fish</span>
+      <div class="food-info">التونا والماهيماهي الطازجين المشويين على الجمر مع الليمون والملح البحري، أبسط طبق وأشهاه في جزر توفالو المعزولة</div>
+      <a href="/recipes/recipes.html?recipe=tuvalu-fish" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=tuvalu-breadfruit'">
+      <img src="/img/tuvalu-logo.jpg" alt="فاكهة الخبز المشوية" class="foods-img">
+      <span class="name-foods">فاكهة الخبز المشوية – Tuvalu Breadfruit</span>
+      <div class="food-info">ثمرة الخبز الخضراء مشوية مباشرة على الجمر حتى تتفحم من الخارج وتصبح من الداخل كريمية نشوية مثل خبز الأرز، صنف مهم في موسم الجفاف</div>
+      <a href="/recipes/recipes.html?recipe=tuvalu-breadfruit" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=tuvalu-coconutmilk'">
+      <img src="/img/tuvalu-logo.jpg" alt="حليب الجوز التوفالي" class="foods-img">
+      <span class="name-foods">حليب الجوز التوفالي – Coconut Milk Dishes</span>
+      <div class="food-info">أطباق بحليب جوز الهند الكريمي مع السمك أو القلقاس أو البطاطا الحلوة، الأساس الكريمي اللذيذ لمطبخ توفالو البسيط والغني في آن واحد</div>
+      <a href="/recipes/recipes.html?recipe=tuvalu-coconutmilk" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=tuvalu-pawpaw'">
+      <img src="/img/tuvalu-logo.jpg" alt="بابايا مشكلة" class="foods-img">
+      <span class="name-foods">بابايا مشكلة – Tuvalu Papaya Salad</span>
+      <div class="food-info">البابايا الخضراء الصغيرة المبشورة مع عصير الليمون والملح البحري والفلفل الحار وجوز الهند المبشور، سلطة التوفاليين المنعشة في الحرارة</div>
+      <a href="/recipes/recipes.html?recipe=tuvalu-pawpaw" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+  </div>
+</section>
+<section class="events-section">
+  <h2 class="section-title">الفعاليات والأماكن</h2>
+  <div class="events-grid">
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=TUVFunafutiAtoll'">
+      <img src="/img/tuvalu-logo.jpg" alt="أتول فوناهوتي" class="event-img">
+      <span class="name-event">أتول فوناهوتي – Funafuti Atoll</span>
+      <div class="event-info">المحمية البحرية لأتول فوناهوتي من أندر وأجمل البيئات البحرية في العالم بحياة بحرية استثنائية في لاغون فيروزي بكر</div>
+      <a href="/events/events.html?event=TUVFunafutiAtoll" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=TUVSinking'">
+      <img src="/img/tuvalu-logo.jpg" alt="الجزيرة الغارقة" class="event-img">
+      <span class="name-event">الجزيرة الغارقة – Sinking Island</span>
+      <div class="event-info">توفالو على قائمة أول دول العالم المهددة بالغرق بسبب ارتفاع مستوى البحر، زيارة وثيقة التوثيق لواحدة من أهم قضايا المناخ في العالم</div>
+      <a href="/events/events.html?event=TUVSinking" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=TUVCulture'">
+      <img src="/img/tuvalu-logo.jpg" alt="الثقافة التوفالية" class="event-img">
+      <span class="name-event">الثقافة التوفالية – Tuvalu Culture</span>
+      <div class="event-info">الفاكاالي رقصة توفالو التقليدية الجماعية بالإيقاع والغناء المتناسق، ثقافة الصيادين المحيطيين الأصيلة في جزر نائية وسط المحيط</div>
+      <a href="/events/events.html?event=TUVCulture" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=TUVDiving'">
+      <img src="/img/tuvalu-logo.jpg" alt="غوص توفالو" class="event-img">
+      <span class="name-event">غوص توفالو – Tuvalu Diving</span>
+      <div class="event-info">من أبكر وأندر مواقع الغوص في العالم بشعاب مرجانية لم تُمس وأسماك ملونة في مياه فيروزية صافية في لاغونات توفالو المعزولة</div>
+      <a href="/events/events.html?event=TUVDiving" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=TUVFishing'">
+      <img src="/img/tuvalu-logo.jpg" alt="صيد المحيط" class="event-img">
+      <span class="name-event">صيد المحيط – Ocean Fishing Tuvalu</span>
+      <div class="event-info">رحلات صيد أعالي البحار مع الصيادين التوفاليين في زوارقهم التقليدية في مياه من أغنى محيطات العالم بالتونا والماهيماهي</div>
+      <a href="/events/events.html?event=TUVFishing" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=TUVStargazing'">
+      <img src="/img/tuvalu-logo.jpg" alt="رصد النجوم" class="event-img">
+      <span class="name-event">رصد النجوم – Stargazing Tuvalu</span>
+      <div class="event-info">سماء توفالو من أنقى سموات العالم بعيداً عن أي تلوث ضوئي، رصد النجوم فوق الأتول في الهدوء المطلق تجربة روحية لا تُنسى</div>
+      <a href="/events/events.html?event=TUVStargazing" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+  </div>
+</section>
+<div id="cityModal" class="modal" onclick="closeCityModal(event)">
+  <div class="modal-content">
+    <button class="modal-close" onclick="closeCityModal(event)">×</button>
+    <img id="modal-city-img" src="" alt="">
+    <h2 id="modal-city-name"></h2>
+    <p id="modal-city-desc"></p>
+    <div class="modal-section"><h3>المعالم التاريخية</h3><ul id="modal-city-historic"></ul></div>
+    <div class="modal-section"><h3>المطاعم</h3><ul id="modal-city-restaurants"></ul></div>
+    <div class="modal-section"><h3>المقاهي</h3><ul id="modal-city-cafes"></ul></div>
+    <div class="modal-section"><h3>الفعاليات</h3><ul id="modal-city-events"></ul></div>
+  </div>
+</div>
+<footer>
+  <p>© 2025 سفرة. جميع الحقوق محفوظة.</p>
+</footer>
+<script src="/countries/countries.js"></script>
+<script src="/auth/auth.js"></script>
+</body>
+</html>
