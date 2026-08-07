@@ -139,21 +139,16 @@
                 </a></li>
         </ul>
     </div>
-  <header>
-    <a href="/countries/countries.html" class="back-btn">رجوع</a>
-  </header>
 
 
-
-  <div class="country-name">
+  <section class="country-name">
     <h1>جزر مارشال</h1>
     <p>أتولات الكاليفورنيا النووية وأعمق لاغونات الكرة الأرضية</p>
-  </div>
+  </section>
 
-  <div class="main-cites">
-    <h1>المدن</h1>
-  </div>
-  <section class="cities-grid">
+  <section class="cities-section">
+    <h2 class="section-title">المدن والجزر</h2>
+    <div class="cities-grid">
       <div class="cite" data-name="ماجورو – Majuro" data-img="/img/marshallislands-logo.jpg"
         data-desc="عاصمة جزر مارشال على أتول ماجورو الرفيع شريط ضيق بين المحيط ولاغونه الشاسع، مركز التجارة والسياسة والثقافة المارشالية"
         data-historic="سوق ماجورو|ميناء ماجورو|متحف ألورو|الشارع التجاري|ميدان المدينة|شاطئ ماجورو"
@@ -244,12 +239,12 @@
         <button class="cite-btn"
           onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
       </div>
+    </div>
   </section>
 
-  <div class="main-foods">
-    <h1>الماكولات</h1>
-  </div>
-  <section class="foods-grid">
+  <section class="foods-section">
+    <h2 class="section-title">أبرز الأكلات</h2>
+    <div class="foods-grid">
     <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=marshallislands-coconutrice'">
       <img src="/img/marshallislands-logo.jpg" alt="أرز جوز الهند المارشالي" class="foods-img">
       <span class="name-foods">أرز جوز الهند المارشالي – Marshall Coconut Rice</span>
@@ -286,110 +281,68 @@
       <div class="food-info">البابايا الطازجة من بساتين الأتولات تُؤكل ناضجة مع الليمون أو خضراء كسلطة منعشة، الفاكهة المفضلة في الجزر المارشالية</div>
       <a href="/recipes/recipes.html?recipe=marshallislands-pawpaw" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
     </div>
+    </div>
   </section>
 
-  <div class="events-main">
-    <h1>الفعاليات</h1>
-  </div>
-  <section class="events-grid">
+  <section class="events-section">
+    <h2 class="section-title">الفعاليات والمعالم</h2>
+    <div class="events-grid">
     <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=MARBikiniAtoll'">
       <img src="/img/marshallislands-logo.jpg" alt="أتول بيكيني" class="event-img">
       <span class="name-event">أتول بيكيني – Bikini Atoll UNESCO</span>
-      <div class="event-info">أتول بيكيني التراث العالمي اليونسكو بحطام سفنه النووية الغارقة والشعاب البكر، غوص أسطوري في تاريخ الحرب الباردة</div>
+      <div class="event-info">أتول بيكيني بحطام سفن نووية غارقة.</div>
       <a href="/events/events.html?event=MARBikiniAtoll" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
     </div>
     <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=MARDiving'">
       <img src="/img/marshallislands-logo.jpg" alt="غوص مارشال" class="event-img">
       <span class="name-event">غوص مارشال – Marshall Islands Diving</span>
-      <div class="event-info">الغوص في بحار جزر مارشال البكر بحطام سفن الحرب العالمية الثانية والشعاب المرجانية الاستثنائية في مياه نقية صافية</div>
+      <div class="event-info">غوص في حطام الحرب العالمية الثانية.</div>
       <a href="/events/events.html?event=MARDiving" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
     </div>
     <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=MARKwajaleinLagoon'">
       <img src="/img/marshallislands-logo.jpg" alt="لاغون كواجلين" class="event-img">
       <span class="name-event">لاغون كواجلين – Kwajalein Lagoon</span>
-      <div class="event-info">أكبر لاغون في العالم بمساحة 2174 كم² من المياه الزرقاء الصافية، الكاياك والصيد والغوص في عمق لاغون لا مثيل له</div>
+      <div class="event-info">أكبر لاغون في العالم للغوص والكاياك.</div>
       <a href="/events/events.html?event=MARKwajaleinLagoon" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
     </div>
     <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=MARMajuro'">
       <img src="/img/marshallislands-logo.jpg" alt="ماجورو العاصمة" class="event-img">
       <span class="name-event">ماجورو العاصمة – Majuro City Life</span>
-      <div class="event-info">الحياة في عاصمة الأتول الرفيعة بين المحيط ولاغونه، سوق ماجورو ومتحفه ومينائه وشواطئه على شريط ضيق وسط المحيط</div>
+      <div class="event-info">عاصمة أتول على شريط ضيق وسط المحيط.</div>
       <a href="/events/events.html?event=MARMajuro" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
     </div>
     <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=MARNavigation'">
       <img src="/img/marshallislands-logo.jpg" alt="الملاحة التقليدية" class="event-img">
       <span class="name-event">الملاحة التقليدية – Traditional Navigation</span>
-      <div class="event-info">تعلم فن الملاحة النجمية وخرائط العيدان المارشالية الفريدة التي استخدمها أسلاف المارشاليين لآلاف السنين في المحيط</div>
+      <div class="event-info">تعلم الملاحة النجمية وخرائط العيدان.</div>
       <a href="/events/events.html?event=MARNavigation" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
     </div>
     <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=MARFishing'">
       <img src="/img/marshallislands-logo.jpg" alt="صيد مارشال" class="event-img">
       <span class="name-event">صيد مارشال – Marshall Fishing</span>
-      <div class="event-info">الصيد التقليدي مع صيادي جزر مارشال في زوارقهم التقليدية، اصطياد التونا والسمك الطائر في مياه المحيط الهادئ العميقة</div>
+      <div class="event-info">صيد تونا وسمك طائر مع صيادين محليين.</div>
       <a href="/events/events.html?event=MARFishing" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
     </div>
   </section>
 
-    <div id="cityModal" class="modal" onclick="closeCityModal(event)">
+  <div id="cityModal" class="modal" style="display:none">
     <div class="modal-content">
-      <button class="modal-close" onclick="closeCityModal(event)">×</button>
-      <div class="modal-top">
-        <img id="modalCityImg" src="" alt="" />
-        <div class="modal-top-info">
-          <h2 id="modalCityName"></h2>
-          <span class="modal-top-badge">✦ تفاصيل المدينة</span>
-        </div>
-      </div>
-      <div class="modal-body">
-        <p id="modalCityDesc" class="event-desc"></p>
-        <h4>🏛️ أفضل الأماكن التاريخية</h4>
-        <div id="modalCityHistoric" class="ingredients-tags"></div>
-        <h4>🍽️ أفضل المطاعم</h4>
-        <div id="modalCityRestaurants" class="ingredients-tags"></div>
-        <h4>☕ أفضل المقاهي</h4>
-        <div id="modalCityCafes" class="ingredients-tags"></div>
-        <h4>🎉 فعاليات المدينة</h4>
-        <div id="modalCityEvents" class="ingredients-tags"></div>
-      </div>
+      <button class="close-modal" onclick="document.getElementById('cityModal').style.display='none'">✕</button>
+      <img id="modalImg" src="" alt="">
+      <h2 id="modalName"></h2>
+      <p id="modalDesc"></p>
+      <div id="modalHistoric"></div>
+      <div id="modalRestaurants"></div>
+      <div id="modalCafes"></div>
+      <div id="modalEvents"></div>
     </div>
   </div>
-  </div>
 
-  
- <footer class="site-footer">
-    <div class="footer-container">
-      <div class="footer-brand">
-        <h2 class="footer-logo">سفرة</h2>
-        <p>وجهتك للسفر والطعام حول العالم</p>
-      </div>
-
-        <div class="footer-links">
-                <h4>روابط سريعة</h4>
-                <ul>
-                    <li><a href="/index/index.html">الرئيسية</a></li>
-                    <li><a href="/countries/countries.html">الدول</a></li>
-                    <li><a href="/events/events.html">الفعاليات</a></li>
-                    <li><a href="/recipes/recipes.html">الوصفات</a></li>
-                    <li><a href="/plan/plan.html">خطتي</a></li>
-                </ul>
-            </div>
-
-      <div class="footer-contact">
-        <h4>تواصل معنا</h4>
-        <ul>
-          <li>📧 <a href="mailto:Sofrh.info@gmail.com" target="_blank">Sofrh.info@gmail.com</a></li>
-          <li>📧 <a href="mailto:Sofrh.support@gmail.com" target="_blank">Sofrh.support@gmail.com</a></li>
-          <li>🐦 <a href="https://twitter.com/sofrah_sa" target="_blank">X (Twitter)</a></li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="footer-bottom">
-      <p>© 2025 سفرة — جميع الحقوق محفوظة</p>
-      <p>صُنع بواسطة فريق سفرة</p>
-      <p>📧 <a href="mailto:Sofrh.info@gmail.com" style="color: #F28500;">Sofrh.info@gmail.com</a></p>
-    </div>
+  <footer>
+    <p>© 2025 سفرة – Sofrah</p>
   </footer>
   <script src="/countries/countries.js"></script>
+  <script src="/auth/auth.js"></script>
 </body>
 </html>
