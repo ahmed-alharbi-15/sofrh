@@ -139,16 +139,21 @@
                 </a></li>
         </ul>
     </div>
+  <header>
+    <a href="/countries/countries.html" class="back-btn">رجوع</a>
+  </header>
 
 
-<section class="country-name">
+
+<div class="country-name">
   <h1>جزر سليمان</h1>
   <p>جزر الملانيزيا الأصيلة بذاكرة الحرب العالمية الثانية وغابات المطر والثقافة القبلية العريقة</p>
-</section>
+</div>
 
-<section class="cities-section">
-  <h2 class="section-title">المدن</h2>
-  <div class="cities-grid">
+<div class="main-cites">
+    <h1>المدن</h1>
+  </div>
+  <section class="cities-grid">
 
     <div class="cite" data-name="هونيارا – Honiara"
         data-img="/img/solomonislands-logo.jpg"
@@ -239,13 +244,12 @@
         <p class="info">عاصمة ماكيرا الهادئة على الجانب الشرقي</p>
         <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
     </div>
+  </section>
 
+<div class="main-foods">
+    <h1>الماكولات</h1>
   </div>
-</section>
-
-<section class="foods-section">
-  <h2 class="section-title">الأكلات الشعبية</h2>
-  <div class="foods-grid">
+  <section class="foods-grid">
 
     <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=solomonislands-fishcurry'">
       <img src="/img/solomonislands-logo.jpg" alt="كاري السمك" class="foods-img">
@@ -288,13 +292,12 @@
       <div class="food-info">الأرز المطبوخ بحليب جوز الهند بدلاً من الماء مع رشة ملح وورق الباندان، يعطيه نكهة كريمية طبيعية لطيفة يُقدم جانباً مع كل الأطباق الرئيسية في سليمان</div>
       <a href="/recipes/recipes.html?recipe=solomonislands-coconutrice" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
     </div>
+  </section>
 
+<div class="events-main">
+    <h1>الفعاليات</h1>
   </div>
-</section>
-
-<section class="events-section">
-  <h2 class="section-title">الفعاليات والأماكن</h2>
-  <div class="events-grid">
+  <section class="events-grid">
 
     <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=SOLWWIISites'">
       <img src="/img/solomonislands-logo.jpg" alt="مواقع الحرب العالمية الثانية" class="event-img">
@@ -337,27 +340,67 @@
       <div class="event-info">غابات مطيرة بدائية تغطي 80% من جزر سليمان بتنوع بيولوجي فائق وطيور نادرة لا توجد إلا هنا، تجربة استكشاف الطبيعة البكر غير المطروقة</div>
       <a href="/events/events.html?event=SOLRainforest" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
     </div>
+  </section>
 
-  </div>
-</section>
-
-<div id="cityModal" class="modal" onclick="closeCityModal(event)">
-  <div class="modal-content">
-    <button class="modal-close" onclick="closeCityModal(event)">×</button>
-    <img id="modal-city-img" src="" alt="">
-    <h2 id="modal-city-name"></h2>
-    <p id="modal-city-desc"></p>
-    <div class="modal-section"><h3>المعالم التاريخية</h3><ul id="modal-city-historic"></ul></div>
-    <div class="modal-section"><h3>المطاعم</h3><ul id="modal-city-restaurants"></ul></div>
-    <div class="modal-section"><h3>المقاهي</h3><ul id="modal-city-cafes"></ul></div>
-    <div class="modal-section"><h3>الفعاليات</h3><ul id="modal-city-events"></ul></div>
+  <div id="cityModal" class="modal" onclick="closeCityModal(event)">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeCityModal(event)">×</button>
+      <div class="modal-top">
+        <img id="modalCityImg" src="" alt="" />
+        <div class="modal-top-info">
+          <h2 id="modalCityName"></h2>
+          <span class="modal-top-badge">✦ تفاصيل المدينة</span>
+        </div>
+      </div>
+      <div class="modal-body">
+        <p id="modalCityDesc" class="event-desc"></p>
+        <h4>🏛️ أفضل الأماكن التاريخية</h4>
+        <div id="modalCityHistoric" class="ingredients-tags"></div>
+        <h4>🍽️ أفضل المطاعم</h4>
+        <div id="modalCityRestaurants" class="ingredients-tags"></div>
+        <h4>☕ أفضل المقاهي</h4>
+        <div id="modalCityCafes" class="ingredients-tags"></div>
+        <h4>🎉 فعاليات المدينة</h4>
+        <div id="modalCityEvents" class="ingredients-tags"></div>
+      </div>
+    </div>
   </div>
 </div>
 
-<footer>
-  <p>© 2025 سفرة. جميع الحقوق محفوظة.</p>
-</footer>
+ <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h2 class="footer-logo">سفرة</h2>
+        <p>وجهتك للسفر والطعام حول العالم</p>
+      </div>
+
+        <div class="footer-links">
+                <h4>روابط سريعة</h4>
+                <ul>
+                    <li><a href="/index/index.html">الرئيسية</a></li>
+                    <li><a href="/countries/countries.html">الدول</a></li>
+                    <li><a href="/events/events.html">الفعاليات</a></li>
+                    <li><a href="/recipes/recipes.html">الوصفات</a></li>
+                    <li><a href="/plan/plan.html">خطتي</a></li>
+                </ul>
+            </div>
+
+      <div class="footer-contact">
+        <h4>تواصل معنا</h4>
+        <ul>
+          <li>📧 <a href="mailto:Sofrh.info@gmail.com" target="_blank">Sofrh.info@gmail.com</a></li>
+          <li>📧 <a href="mailto:Sofrh.support@gmail.com" target="_blank">Sofrh.support@gmail.com</a></li>
+          <li>🐦 <a href="https://twitter.com/sofrah_sa" target="_blank">X (Twitter)</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 سفرة — جميع الحقوق محفوظة</p>
+      <p>صُنع بواسطة فريق سفرة</p>
+      <p>📧 <a href="mailto:Sofrh.info@gmail.com" style="color: #F28500;">Sofrh.info@gmail.com</a></p>
+    </div>
+  </footer>
 <script src="/countries/countries.js"></script>
-<script src="/auth/auth.js"></script>
 </body>
 </html>
