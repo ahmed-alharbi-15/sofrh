@@ -433,8 +433,8 @@ html.logged-in .user-menu {
     margin: 30px auto 60px;
     padding: 0 20px;
     display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    gap: 14px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
 }
 
 .foods-card {
@@ -450,8 +450,15 @@ html.logged-in .user-menu {
 
 /* أحجام الكروت - متساوية */
 .foods-card {
-    grid-column: span 4;
     height: 300px;
+    min-height: 300px;
+}
+
+.foods-card img,
+.recipes-head img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .foods-card:hover {
@@ -572,26 +579,17 @@ html.logged-in .user-menu {
 /* ================================
    RESPONSIVE
 ================================ */
-@media (max-width: 900px) {
+@media (max-width: 768px) {
     .foods-grid {
         grid-template-columns: repeat(2, 1fr);
         max-width: 95%;
         margin: 20px auto 40px;
     }
-
-    .foods-card:nth-child(n) {
-        grid-column: span 1 !important;
-        height: 240px !important;
-    }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 480px) {
     .foods-grid {
         grid-template-columns: 1fr;
-    }
-
-    .foods-card:nth-child(n) {
-        height: 220px !important;
     }
 }
 
@@ -1210,4 +1208,36 @@ input {
     background: var(--input-bg);
     color: var(--text);
     border-color: var(--border);
+}
+
+/* ================================
+   UNIFIED GRID — FOODS
+================================ */
+.foods-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.foods-card {
+    height: 300px;
+    min-height: 300px;
+}
+
+.foods-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media (max-width: 768px) {
+    .foods-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .foods-grid {
+        grid-template-columns: 1fr;
+    }
 }
