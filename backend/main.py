@@ -58,6 +58,8 @@ class ChangePassword(BaseModel):
     email: str
 
 class FavoriteItem(BaseModel):
+    # type: نوع العنصر المحفوظ — 'plan' | 'country' | 'city' | 'event' | 'recipe'
+    # (الحقل نصي حر بدون قائمة مغلقة، فأي نوع جديد مدعوم تلقائياً)
     email: str
     type: str
     id: str
