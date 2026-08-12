@@ -120,118 +120,162 @@ class _MainScreenState extends State<MainScreen> {
 class _HomeTab extends StatelessWidget {
   const _HomeTab();
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: bgColor,
-      appBar: AppBar(
-        backgroundColor: primary,
-        title: const Text('سفرة',
-            style: TextStyle(color: accent, fontSize: 26, fontWeight: FontWeight.bold)),
-        centerTitle: false,
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.person_rounded, color: Colors.white),
-            onPressed: () => Navigator.push(context, MaterialPageRoute(
-              builder: (_) => ProfileScreen(onLogout: () async {
-                final prefs = await SharedPreferences.getInstance();
-                await prefs.clear();
-                if (!context.mounted) return;
-                Navigator.pushAndRemoveUntil(context,
-                  MaterialPageRoute(builder: (_) => const Directionality(
-                    textDirection: TextDirection.rtl, child: LoginScreen())),
-                  (_) => false);
-              }),
-            )),
-          ),
-        ],
-      ),
-      body: SingleChildScrollView(
-        child: Column(children: [
-          _HeroBanner(),
-          Padding(
-            padding: const EdgeInsets.all(16),
-            child: GridView.count(
-              shrinkWrap: true,
-              physics: const NeverScrollableScrollPhysics(),
-              crossAxisCount: 2,
-              crossAxisSpacing: 12, mainAxisSpacing: 12,
-              childAspectRatio: 1.1,
-              children: [
-                _QuickCard(
-                  title: 'الدول', desc: 'اكتشف أجمل الوجهات',
-                  icon: Icons.public_rounded,
-                  onTap: () => _jumpTo(context, 1),
-                ),
-                _QuickCard(
-                  title: 'الفعاليات', desc: 'فعاليات عالمية مميزة',
-                  icon: Icons.event_rounded,
-                  onTap: () => _jumpTo(context, 2),
-                ),
-                _QuickCard(
-                  title: 'الوصفات', desc: 'نكهات من كل العالم',
-                  icon: Icons.restaurant_menu_rounded,
-                  onTap: () => _jumpTo(context, 3),
-                ),
-                _QuickCard(
-                  title: 'خطتي', desc: 'خطط رحلتك المثالية',
-                  icon: Icons.map_rounded,
-                  onTap: () => _jumpTo(context, 4),
-                ),
-              ],
-            ),
-          ),
-        ]),
-      ),
-    );
-  }
-
   void _jumpTo(BuildContext context, int index) {
     final state = context.findAncestorStateOfType<_MainScreenState>();
     state?.setState(() => state._index = index);
   }
-}
 
-class _HeroBanner extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      padding: const EdgeInsets.fromLTRB(24, 32, 24, 32),
-      decoration: const BoxDecoration(
-        gradient: LinearGradient(
-          colors: [primary, Color(0xFF32127A)],
-          begin: Alignment.topRight,
-          end: Alignment.bottomLeft,
+    return Directionality(
+      textDirection: TextDirection.rtl,
+      child: Scaffold(
+        backgroundColor: bgColor,
+        appBar: AppBar(
+          backgroundColor: primary,
+          title: const Text(
+            'سفرة',
+            style: TextStyle(
+              color: accent,
+              fontSize: 28,
+              fontWeight: FontWeight.bold,
+              fontFamily: 'NotoSansArabic',
+            ),
+          ),
+          centerTitle: false,
+          actions: [
+            IconButton(
+              icon: const Icon(Icons.person_rounded, color: Colors.white),
+              onPressed: () => Navigator.push(context, MaterialPageRoute(
+                builder: (_) => ProfileScreen(onLogout: () async {
+                  final prefs = await SharedPreferences.getInstance();
+                  await prefs.clear();
+                  if (!context.mounted) return;
+                  Navigator.pushAndRemoveUntil(
+                    context,
+                    MaterialPageRoute(builder: (_) => const Directionality(
+                      textDirection: TextDirection.rtl,
+                      child: LoginScreen(),
+                    )),
+                    (_) => false,
+                  );
+                }),
+              )),
+            ),
+          ],
+        ),
+        body: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              // ── Hero ──
+              Container(
+                width: double.infinity,
+                padding: const EdgeInsets.fromLTRB(24, 36, 24, 36),
+                decoration: const BoxDecoration(
+                  gradient: LinearGradient(
+                    colors: [primary, Color(0xFF1a0f2e)],
+                    begin: Alignment.topRight,
+                    end: Alignment.bottomLeft,
+                  ),
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    const Text(
+                      'سافر وتذوّق',
+                      textAlign: TextAlign.right,
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 36,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: 'NotoSansArabic',
+                      ),
+                    ),
+                    const SizedBox(height: 10),
+                    Text(
+                      'اكتشف وجهات وماكولات من مختلف أنحاء العالم',
+                      textAlign: TextAlign.right,
+                      style: TextStyle(
+                        color: Colors.white.withOpacity(0.72),
+                        fontSize: 14,
+                        fontFamily: 'NotoSansArabic',
+                      ),
+                    ),
+                    const SizedBox(height: 28),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        _stat('+190', 'دولة'),
+                        const SizedBox(width: 32),
+                        _stat('+700', 'فعالية'),
+                        const SizedBox(width: 32),
+                        _stat('+300', 'وصفة'),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+              // ── Cards ──
+              Padding(
+                padding: const EdgeInsets.all(16),
+                child: GridView.count(
+                  shrinkWrap: true,
+                  physics: const NeverScrollableScrollPhysics(),
+                  crossAxisCount: 2,
+                  crossAxisSpacing: 12,
+                  mainAxisSpacing: 12,
+                  childAspectRatio: 1.1,
+                  children: [
+                    _QuickCard(
+                      title: 'الدول',
+                      desc: 'اكتشف أجمل الوجهات',
+                      icon: Icons.public,
+                      onTap: () => _jumpTo(context, 1),
+                    ),
+                    _QuickCard(
+                      title: 'الفعاليات',
+                      desc: 'فعاليات عالمية مميزة',
+                      icon: Icons.event,
+                      onTap: () => _jumpTo(context, 2),
+                    ),
+                    _QuickCard(
+                      title: 'الوصفات',
+                      desc: 'نكهات من كل العالم',
+                      icon: Icons.restaurant,
+                      onTap: () => _jumpTo(context, 3),
+                    ),
+                    _QuickCard(
+                      title: 'خطتي',
+                      desc: 'خطط رحلتك المثالية',
+                      icon: Icons.map,
+                      onTap: () => _jumpTo(context, 4),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
       ),
-      child: Column(crossAxisAlignment: CrossAxisAlignment.end, children: [
-        const Text('سافر وتذوّق 🌍',
-            style: TextStyle(color: Colors.white, fontSize: 32, fontWeight: FontWeight.bold,
-                fontFamily: 'NotoSansArabic')),
-        const SizedBox(height: 8),
-        Text('اكتشف وجهات وماكولات من مختلف أنحاء العالم',
-            textAlign: TextAlign.right,
-            style: TextStyle(color: Colors.white.withOpacity(0.75), fontSize: 14,
-                fontFamily: 'NotoSansArabic')),
-        const SizedBox(height: 24),
-        Row(mainAxisAlignment: MainAxisAlignment.end, children: [
-          _stat('+190', 'دولة'),
-          const SizedBox(width: 28),
-          _stat('+700', 'فعالية'),
-          const SizedBox(width: 28),
-          _stat('+300', 'وصفة'),
-        ]),
-      ]),
     );
   }
 
-  Widget _stat(String n, String l) => Column(children: [
-    Text(n, style: const TextStyle(color: accent, fontSize: 20, fontWeight: FontWeight.bold)),
-    Text(l, style: TextStyle(color: Colors.white.withOpacity(0.65), fontSize: 12,
-        fontFamily: 'NotoSansArabic')),
-  ]);
+  Widget _stat(String number, String label) => Column(
+    children: [
+      Text(number,
+          style: const TextStyle(
+              color: accent, fontSize: 22, fontWeight: FontWeight.bold)),
+      const SizedBox(height: 2),
+      Text(label,
+          style: TextStyle(
+              color: Colors.white.withOpacity(0.65),
+              fontSize: 12,
+              fontFamily: 'NotoSansArabic')),
+    ],
+  );
 }
+
 
 class _QuickCard extends StatelessWidget {
   final String title, desc;
