@@ -8,11 +8,8 @@ import 'screens/recipes_screen.dart';
 import 'screens/plan_screen.dart';
 import 'screens/profile_screen.dart';
 
-void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  final prefs = await SharedPreferences.getInstance();
-  final isLoggedIn = prefs.getString('sofrah_email') != null;
-  runApp(SofrahApp(isLoggedIn: isLoggedIn));
+void main() {
+  runApp(const SofrahApp());
 }
 
 const String baseUrl = 'https://sofrh-1.onrender.com';
@@ -21,8 +18,7 @@ const Color accent  = Color(0xFFF28500);
 const Color bgColor = Color(0xFFFAF5EB);
 
 class SofrahApp extends StatelessWidget {
-  final bool isLoggedIn;
-  const SofrahApp({super.key, required this.isLoggedIn});
+  const SofrahApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -54,9 +50,9 @@ class SofrahApp extends StatelessWidget {
         ),
         fontFamily: 'NotoSansArabic',
       ),
-      home: Directionality(
+      home: const Directionality(
         textDirection: TextDirection.rtl,
-        child: isLoggedIn ? const MainScreen() : const LoginScreen(),
+        child: MainScreen(),
       ),
     );
   }
