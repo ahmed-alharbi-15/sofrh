@@ -4,10 +4,12 @@ import psycopg2
 from passlib.context import CryptContext
 from fastapi.middleware.cors import CORSMiddleware
 import re
-from typing import Optional
+from typing import Optional, List, Dict, Any
 import os
+import glob
 import cloudinary
 import cloudinary.uploader
+from bs4 import BeautifulSoup
 
 app = FastAPI()
 
@@ -309,3 +311,216 @@ def get_avatar(email: str):
     finally:
         cur.close()
         conn.close()
+
+
+# ─────────────────────────────────────────
+# مسار ملفات frontend
+# ─────────────────────────────────────────
+FRONTEND_DIR = os.path.join(os.path.dirname(__file__), "..", "frontend")
+
+
+def _parse_pipe(val: str) -> List[str]:
+    """يقسّم النص المفصول بـ | إلى قائمة نظيفة"""
+    return [x.strip() for x in val.split("|") if x.strip()] if val else []
+
+
+# ─────────────────────────────────────────
+# GET /countries  — قائمة الدول
+# ─────────────────────────────────────────
+@app.get("/countries")
+def get_countries() -> List[Dict[str, Any]]:
+    countries_html = os.path.join(FRONTEND_DIR, "countries", "countries.html")
+    if not os.path.exists(countries_html):
+        raise HTTPException(status_code=404, detail="countries.html غير موجود")
+
+    with open(countries_html, encoding="utf-8") as f:
+        soup = BeautifulSoup(f.read(), "html.parser")
+
+    results = []
+    for card in soup.select(".country-card"):
+        onclick = card.get("onclick", "")
+        href_match = re.search(r"/countries/country/(\w+)/(\w+)\.html", onclick)
+        continent = href_match.group(1) if href_match else ""
+        country_id = href_match.group(2) if href_match else ""
+
+        img_tag = card.find("img")
+        img = img_tag.get("src", "") if img_tag else ""
+
+        h1 = card.find("h1")
+        name = h1.get_text(strip=True) if h1 else ""
+
+        h2 = card.find("h2")
+        description = h2.get_text(strip=True) if h2 else ""
+
+        results.append({
+            "id": country_id,
+            "continent": continent,
+            "name": name,
+            "description": description,
+            "img": img,
+            "url": f"/countries/country/{continent}/{country_id}.html",
+        })
+
+    return results
+
+
+# ─────────────────────────────────────────
+# GET /countries/{id}  — تفاصيل دولة
+# ─────────────────────────────────────────
+@app.get("/countries/{country_id}")
+def get_country(country_id: str) -> Dict[str, Any]:
+    pattern = os.path.join(FRONTEND_DIR, "countries", "country", "**", f"{country_id}.html")
+    matches = glob.glob(pattern, recursive=True)
+    if not matches:
+        raise HTTPException(status_code=404, detail=f"الدولة '{country_id}' غير موجودة")
+
+    with open(matches[0], encoding="utf-8") as f:
+        soup = BeautifulSoup(f.read(), "html.parser")
+
+    # اسم الدولة
+    name_div = soup.find("div", class_="country-name")
+    name = name_div.find("h1").get_text(strip=True) if name_div and name_div.find("h1") else country_id
+    tagline = name_div.find("p").get_text(strip=True) if name_div and name_div.find("p") else ""
+
+    # المدن
+    cities = []
+    for cite in soup.select(".cite"):
+        cities.append({
+            "name": cite.get("data-name", ""),
+            "img": cite.get("data-img", ""),
+            "desc": cite.get("data-desc", ""),
+            "historic": _parse_pipe(cite.get("data-historic", "")),
+            "restaurants": _parse_pipe(cite.get("data-restaurants", "")),
+            "cafes": _parse_pipe(cite.get("data-cafes", "")),
+            "events": _parse_pipe(cite.get("data-events", "")),
+        })
+
+    # الأكلات
+    foods = []
+    for food in soup.select(".foods"):
+        onclick = food.get("onclick", "")
+        recipe_match = re.search(r"\?recipe=([^'\"]+)", onclick)
+        recipe_id = recipe_match.group(1) if recipe_match else ""
+        img_tag = food.find("img", class_="foods-img")
+        span = food.find("span", class_="name-foods")
+        info = food.find("div", class_="food-info")
+        foods.append({
+            "recipe_id": recipe_id,
+            "name": span.get_text(strip=True) if span else "",
+            "img": img_tag.get("src", "") if img_tag else "",
+            "info": info.get_text(strip=True) if info else "",
+        })
+
+    # الفعاليات
+    events = []
+    for ev in soup.select(".event"):
+        onclick = ev.get("onclick", "")
+        event_match = re.search(r"\?event=([^'\"]+)", onclick)
+        event_id = event_match.group(1) if event_match else ""
+        img_tag = ev.find("img", class_="event-img")
+        span = ev.find("span", class_="name-event")
+        info = ev.find("div", class_="event-info")
+        events.append({
+            "event_id": event_id,
+            "name": span.get_text(strip=True) if span else "",
+            "img": img_tag.get("src", "") if img_tag else "",
+            "info": info.get_text(strip=True) if info else "",
+        })
+
+    return {
+        "id": country_id,
+        "name": name,
+        "tagline": tagline,
+        "cities": cities,
+        "foods": foods,
+        "events": events,
+    }
+
+
+# ─────────────────────────────────────────
+# GET /events  — قائمة الفعاليات
+# ─────────────────────────────────────────
+@app.get("/events")
+def get_events(filter: str = "all", q: str = "") -> List[Dict[str, Any]]:
+    events_html = os.path.join(FRONTEND_DIR, "events", "events.html")
+    if not os.path.exists(events_html):
+        raise HTTPException(status_code=404, detail="events.html غير موجود")
+
+    with open(events_html, encoding="utf-8") as f:
+        soup = BeautifulSoup(f.read(), "html.parser")
+
+    results = []
+    for card in soup.select(".event-card"):
+        region = card.get("data-region", "all")
+        if filter != "all" and region != filter:
+            continue
+
+        btn = card.find("button", class_="event-item")
+        if not btn:
+            continue
+
+        name = btn.get("data-title", "")
+        if q and q.lower() not in name.lower():
+            continue
+
+        results.append({
+            "id": card.get("id", ""),
+            "name": name,
+            "img": btn.get("data-img", ""),
+            "country": btn.get("data-country", ""),
+            "date": btn.get("data-date", ""),
+            "desc": btn.get("data-desc", ""),
+            "location": btn.get("data-location", ""),
+            "duration": btn.get("data-duration", ""),
+            "weather": btn.get("data-weather", ""),
+            "airport": btn.get("data-airport", ""),
+            "activities": _parse_pipe(btn.get("data-activities", "")),
+            "stay": btn.get("data-stay", ""),
+            "hotel_price": btn.get("data-hotel-price", ""),
+            "event_fee": btn.get("data-event-fee", ""),
+            "total": btn.get("data-total", ""),
+            "region": region,
+        })
+
+    return results
+
+
+# ─────────────────────────────────────────
+# GET /recipes  — قائمة الوصفات
+# ─────────────────────────────────────────
+@app.get("/recipes")
+def get_recipes(filter: str = "all", q: str = "") -> List[Dict[str, Any]]:
+    recipes_html = os.path.join(FRONTEND_DIR, "recipes", "recipes.html")
+    if not os.path.exists(recipes_html):
+        raise HTTPException(status_code=404, detail="recipes.html غير موجود")
+
+    with open(recipes_html, encoding="utf-8") as f:
+        soup = BeautifulSoup(f.read(), "html.parser")
+
+    results = []
+    for card in soup.select(".foods-card"):
+        region = card.get("data-region", "all")
+        if filter != "all" and region != filter:
+            continue
+
+        btn = card.find("button", class_="recipes-item")
+        if not btn:
+            continue
+
+        name = btn.get("data-title", "")
+        if q and q.lower() not in name.lower():
+            continue
+
+        results.append({
+            "id": card.get("id", ""),
+            "name": name,
+            "img": btn.get("data-img", ""),
+            "country": card.get("data-country", ""),
+            "region": region,
+            "ingredients": _parse_pipe(btn.get("data-ingredients", "")),
+            "spices": _parse_pipe(btn.get("data-spices", "")),
+            "sauces": _parse_pipe(btn.get("data-sauces", "")),
+            "steps": _parse_pipe(btn.get("data-steps", "")),
+        })
+
+    return results
