@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import '../theme_notifier.dart';
+import '../widgets/sofrah_appbar.dart';
 import 'profile_screen.dart';
-import 'login_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 // ── Colours ────────────────────────────────────────────────────────────────
@@ -46,101 +46,6 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  void _openLogin(BuildContext ctx) {
-    Navigator.push(
-      ctx,
-      MaterialPageRoute(
-        builder: (_) => const Directionality(
-          textDirection: TextDirection.rtl,
-          child: LoginScreen(),
-        ),
-      ),
-    );
-  }
-
-  // ── Custom AppBar ───────────────────────────────────────────────────────
-  /// Logo (left, tappable → home) ▸ theme toggle + avatar/login (right)
-  PreferredSizeWidget _buildAppBar(BuildContext ctx) {
-    return PreferredSize(
-      preferredSize: const Size.fromHeight(64),
-      child: Builder(builder: (context) {
-        return AppBar(
-          backgroundColor: primary,
-          automaticallyImplyLeading: false,
-          titleSpacing: 0,
-          toolbarHeight: 64,
-          flexibleSpace: SafeArea(
-            child: Directionality(
-              textDirection: TextDirection.ltr,
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
-                child: Row(children: [
-                  // ── LEFT: Logo (tap → home) ─────────────────────────────
-                  GestureDetector(
-                    onTap: () => jumpTo(0),
-                    child: Image.asset('assets/logo7.png', height: 40),
-                  ),
-                  const Spacer(),
-
-                  // ── RIGHT: Theme toggle + user avatar / login ───────────
-                  const ThemeToggleBtn(),
-                  const SizedBox(width: 2),
-                  ValueListenableBuilder<String>(
-                    valueListenable: usernameNotifier,
-                    builder: (_, uname, __) {
-                      if (uname.isEmpty) {
-                        return GestureDetector(
-                          onTap: () => _openLogin(ctx),
-                          child: Container(
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: 10, vertical: 5),
-                            decoration: BoxDecoration(
-                              border: Border.all(
-                                  color: Colors.white54, width: 1.2),
-                              borderRadius: BorderRadius.circular(20),
-                            ),
-                            child: const Text('دخول',
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 12,
-                                    fontFamily: 'NotoSansArabic')),
-                          ),
-                        );
-                      }
-                      return GestureDetector(
-                        onTap: () => _openProfile(ctx),
-                        child: Row(children: [
-                          Text(uname,
-                              style: const TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 12,
-                                  fontFamily: 'NotoSansArabic')),
-                          const SizedBox(width: 6),
-                          CircleAvatar(
-                            radius: 17,
-                            backgroundColor: accent,
-                            child: Text(
-                              uname[0].toUpperCase(),
-                              style: const TextStyle(
-                                  color: primary,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 14),
-                            ),
-                          ),
-                        ]),
-                      );
-                    },
-                  ),
-                  const SizedBox(width: 4),
-                ]),
-              ),
-            ),
-          ),
-        );
-      }),
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     final isDark     = Theme.of(context).brightness == Brightness.dark;
@@ -148,13 +53,15 @@ class HomeScreen extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: sectionsBg,
-      appBar: _buildAppBar(context),
+      appBar: SofrahAppBar(
+        onAvatarTap: () => _openProfile(context),
+      ),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             // 1. Hero
-            _HeroSection(),
+            _HeroSection(onStart: () => jumpTo(1)),
             // 2. Section cards 2×2
             _SectionsGrid(jumpTo: jumpTo, isDark: isDark),
             // 3. About "عن سفرة"
@@ -168,100 +75,111 @@ class HomeScreen extends StatelessWidget {
 
 // ─────────────────────────────── HERO ─────────────────────────────────────
 class _HeroSection extends StatelessWidget {
+  final VoidCallback? onStart;
+  const _HeroSection({this.onStart});
+
   @override
   Widget build(BuildContext context) {
+    final screenH  = MediaQuery.of(context).size.height;
+    final statusH  = MediaQuery.of(context).padding.top;
+    final heroH    = screenH - kToolbarHeight - statusH;
+
     return Container(
       width: double.infinity,
+      height: heroH,
       decoration: const BoxDecoration(
         gradient: LinearGradient(
-          colors: [Color(0xFF2A1060), Color(0xFF3A1780), Color(0xFF150A35)],
-          stops: [0.0, 0.4, 1.0],
-          begin: Alignment.topRight,
-          end: Alignment.bottomLeft,
+          colors: [Color(0xFF32127A), Color(0xFF1a0f2e)],
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
         ),
       ),
-      child: Stack(children: [
-        // Radial orange glow (matches .hero::before)
-        Positioned(
-          top: -60, left: 0, right: 0,
-          child: Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          // ── العنوان ──────────────────────────────────────────────
+          RichText(
+            textAlign: TextAlign.center,
+            text: const TextSpan(
+              style: TextStyle(
+                fontSize: 46,
+                fontWeight: FontWeight.bold,
+                fontFamily: 'NotoSansArabic',
+                color: Colors.white,
+                height: 1.2,
+              ),
+              children: [
+                TextSpan(text: 'سافر '),
+                TextSpan(
+                  text: 'وتذوق',
+                  style: TextStyle(color: accent),
+                ),
+              ],
+            ),
+          ),
+          const SizedBox(height: 16),
+
+          // ── الوصف ────────────────────────────────────────────────
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 36),
+            child: Text(
+              'اكتشف وجهات وأكلات من مختلف أنحاء العالم',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                color: Colors.white.withValues(alpha: 0.65),
+                fontSize: 14,
+                fontFamily: 'NotoSansArabic',
+                height: 1.6,
+              ),
+            ),
+          ),
+          const SizedBox(height: 44),
+
+          // ── الإحصائيات ───────────────────────────────────────────
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: const [
+              _Stat(number: '+190', label: 'دولة'),
+              _StatDivider(),
+              _Stat(number: '+700', label: 'فعالية'),
+              _StatDivider(),
+              _Stat(number: '+300', label: 'وصفة'),
+            ],
+          ),
+          const SizedBox(height: 48),
+
+          // ── زر ابدأ رحلتك ─────────────────────────────────────────
+          GestureDetector(
+            onTap: onStart,
             child: Container(
-              width: 340, height: 340,
+              padding: const EdgeInsets.symmetric(
+                  horizontal: 40, vertical: 15),
               decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                gradient: RadialGradient(
-                  colors: [
-                    const Color(0xFFF28500).withOpacity(0.15),
-                    Colors.transparent,
-                  ],
-                  stops: const [0.0, 0.7],
+                color: accent,
+                borderRadius: BorderRadius.circular(50),
+                boxShadow: [
+                  BoxShadow(
+                    color: accent.withValues(alpha: 0.4),
+                    blurRadius: 24,
+                    offset: const Offset(0, 8),
+                  ),
+                ],
+              ),
+              child: const Text(
+                'ابدأ رحلتك',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: 'NotoSansArabic',
+                  letterSpacing: 0.5,
                 ),
               ),
             ),
           ),
-        ),
-
-        Padding(
-          padding: const EdgeInsets.fromLTRB(20, 56, 20, 48),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              // Title
-              RichText(
-                textAlign: TextAlign.center,
-                text: const TextSpan(
-                  style: TextStyle(
-                    fontSize: 40,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: 'NotoSansArabic',
-                    color: Colors.white,
-                    height: 1.15,
-                  ),
-                  children: [
-                    TextSpan(text: 'سافر'),
-                    TextSpan(
-                        text: ' وتذوق',
-                        style: TextStyle(color: accent)),
-                  ],
-                ),
-              ),
-              const SizedBox(height: 14),
-              // Sub-title
-              Text(
-                'اكتشف وجهات وماكولات من مختلف أنحاء العالم',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  color: Colors.white.withOpacity(0.65),
-                  fontSize: 14,
-                  fontFamily: 'NotoSansArabic',
-                ),
-              ),
-              const SizedBox(height: 36),
-              // Stats glass container
-              Container(
-                padding: const EdgeInsets.symmetric(
-                    vertical: 18, horizontal: 24),
-                decoration: BoxDecoration(
-                  color: Colors.white.withOpacity(0.05),
-                  border: Border.all(
-                      color: Colors.white.withOpacity(0.1), width: 1),
-                  borderRadius: BorderRadius.circular(16),
-                ),
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    _Stat(number: '١٩٠+',  label: 'دولة'),
-                    _StatDivider(),
-                    _Stat(number: '١١٥٠+', label: 'وصفة'),
-                    _StatDivider(),
-                    _Stat(number: '١٢٠٠+', label: 'فعالية'),
-                  ],
-                ),
-              ),
-            ],
-          ),
-        ),
-      ]),
+        ],
+      ),
     );
   }
 }
@@ -273,27 +191,39 @@ class _Stat extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
+      padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Column(children: [
-        Text(number,
-            style: const TextStyle(
-                color: accent, fontSize: 22, fontWeight: FontWeight.bold)),
+        Text(
+          number,
+          style: const TextStyle(
+            color: accent,
+            fontSize: 26,
+            fontWeight: FontWeight.bold,
+            fontFamily: 'NotoSansArabic',
+          ),
+        ),
         const SizedBox(height: 4),
-        Text(label,
-            style: TextStyle(
-                color: Colors.white.withOpacity(0.55),
-                fontSize: 12,
-                fontFamily: 'NotoSansArabic')),
+        Text(
+          label,
+          style: TextStyle(
+            color: Colors.white.withValues(alpha: 0.6),
+            fontSize: 12,
+            fontFamily: 'NotoSansArabic',
+          ),
+        ),
       ]),
     );
   }
 }
 
 class _StatDivider extends StatelessWidget {
+  const _StatDivider();
+
   @override
   Widget build(BuildContext context) => Container(
-        width: 1, height: 40,
-        color: Colors.white.withOpacity(0.12),
+        width: 1,
+        height: 44,
+        color: Colors.white.withValues(alpha: 0.15),
       );
 }
 

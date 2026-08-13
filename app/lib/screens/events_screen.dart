@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import '../services/api_service.dart';
 import '../theme_notifier.dart';
+import '../widgets/sofrah_appbar.dart';
 
 const Color primary   = Color(0xFF32127A);
 const Color accent    = Color(0xFFF28500);
@@ -175,28 +176,38 @@ class _EventCardState extends State<_EventCard> {
 
   @override
   Widget build(BuildContext context) {
-    final isDark  = Theme.of(context).brightness == Brightness.dark;
-    final cardBg  = isDark ? darkCard : Colors.white;
-    final textClr = isDark ? Colors.white : Colors.black87;
-    final subClr  = isDark ? Colors.white60 : Colors.grey[600]!;
-    final img = 'https://sofrh.vercel.app${widget.event['img'] ?? ''}';
+    final img     = 'https://sofrh.vercel.app${widget.event['img'] ?? ''}';
+    final name    = (widget.event['name']    ?? '') as String;
+    final country = (widget.event['country'] ?? '') as String;
+    final date    = (widget.event['date']    ?? '') as String;
 
     return GestureDetector(
       onTap: _showModal,
       child: Card(
-        margin: const EdgeInsets.only(bottom: 12),
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+        margin: const EdgeInsets.only(bottom: 14),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(18)),
         clipBehavior: Clip.antiAlias,
-        color: cardBg,
-        child: Column(crossAxisAlignment: CrossAxisAlignment.end, children: [
-          // Image + bookmark overlay
-          Stack(children: [
+        child: SizedBox(
+          height: 220,
+          child: Stack(fit: StackFit.expand, children: [
+            // ── Full cover image ────────────────────────────────
             CachedNetworkImage(
-              imageUrl: img, height: 180, width: double.infinity, fit: BoxFit.cover,
-              errorWidget: (_, __, ___) =>
-                  Container(height: 180, color: isDark ? darkCard : Colors.grey[300]),
+              imageUrl: img,
+              fit: BoxFit.cover,
+              errorWidget: (_, __, ___) => Container(color: darkCard),
             ),
-            // Bookmark
+            // ── Gradient overlay ────────────────────────────────
+            Container(
+              decoration: const BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: [Colors.transparent, Color(0xCC000000)],
+                  stops: [0.3, 1.0],
+                ),
+              ),
+            ),
+            // ── 🎫 Save button — top-left ───────────────────────
             Positioned(
               top: 10, left: 10,
               child: GestureDetector(
@@ -204,68 +215,74 @@ class _EventCardState extends State<_EventCard> {
                 child: Container(
                   padding: const EdgeInsets.all(7),
                   decoration: BoxDecoration(
-                    color: Colors.black.withOpacity(0.45),
-                    borderRadius: BorderRadius.circular(8),
+                    color: _saved
+                        ? accent.withOpacity(0.9)
+                        : Colors.black.withOpacity(0.45),
+                    borderRadius: BorderRadius.circular(10),
                   ),
-                  child: Icon(
-                    _saved ? Icons.bookmark : Icons.bookmark_border,
-                    color: _saved ? accent : Colors.white,
-                    size: 20,
-                  ),
+                  child: const Text('🎫',
+                      style: TextStyle(fontSize: 18)),
                 ),
               ),
             ),
-            // "اكتشف" hint
+            // ── Bottom: name + country/date badges ──────────────
             Positioned(
-              bottom: 10, left: 10,
-              child: Container(
-                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
-                decoration: BoxDecoration(
-                  color: accent,
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                child: const Text('التفاصيل',
-                    style: TextStyle(color: Colors.white, fontSize: 12,
+              bottom: 0, right: 0, left: 0,
+              child: Padding(
+                padding: const EdgeInsets.fromLTRB(12, 0, 12, 14),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text(
+                      name,
+                      textAlign: TextAlign.right,
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                      style: const TextStyle(
+                        color: Colors.white,
                         fontWeight: FontWeight.bold,
-                        fontFamily: 'NotoSansArabic')),
+                        fontSize: 16,
+                        fontFamily: 'NotoSansArabic',
+                        height: 1.3,
+                      ),
+                    ),
+                    const SizedBox(height: 7),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        if (date.isNotEmpty) _badge('📅 $date'),
+                        if (date.isNotEmpty && country.isNotEmpty)
+                          const SizedBox(width: 6),
+                        if (country.isNotEmpty) _badge('📍 $country'),
+                      ],
+                    ),
+                  ],
+                ),
               ),
             ),
           ]),
-          Padding(
-            padding: const EdgeInsets.all(12),
-            child: Column(crossAxisAlignment: CrossAxisAlignment.end, children: [
-              Text(widget.event['name'] ?? '', textAlign: TextAlign.right,
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16,
-                      fontFamily: 'NotoSansArabic', color: textClr)),
-              const SizedBox(height: 4),
-              Row(mainAxisAlignment: MainAxisAlignment.end, children: [
-                if ((widget.event['date'] ?? '').isNotEmpty)
-                  Text('📅 ${widget.event['date']}',
-                      style: TextStyle(color: subClr, fontSize: 12)),
-                const SizedBox(width: 10),
-                if ((widget.event['country'] ?? '').isNotEmpty)
-                  Text('📍 ${widget.event['country']}',
-                      style: TextStyle(color: subClr, fontSize: 12)),
-              ]),
-              if ((widget.event['desc'] ?? '').isNotEmpty) ...[
-                const SizedBox(height: 6),
-                Text(widget.event['desc'], textAlign: TextAlign.right, maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
-                    style: TextStyle(color: isDark ? Colors.white70 : Colors.grey[700],
-                        fontSize: 13)),
-              ],
-              if ((widget.event['total'] ?? '').isNotEmpty) ...[
-                const SizedBox(height: 6),
-                Text('💰 ${widget.event['total']}',
-                    style: TextStyle(color: accent, fontWeight: FontWeight.bold,
-                        fontSize: 13, fontFamily: 'NotoSansArabic')),
-              ],
-            ]),
-          ),
-        ]),
+        ),
       ),
     );
   }
+
+  Widget _badge(String text) => Container(
+    padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+    decoration: BoxDecoration(
+      color: Colors.black.withOpacity(0.50),
+      borderRadius: BorderRadius.circular(8),
+      border: Border.all(color: Colors.white24, width: 0.8),
+    ),
+    child: Text(
+      text,
+      style: const TextStyle(
+        color: Colors.white,
+        fontSize: 11,
+        fontFamily: 'NotoSansArabic',
+      ),
+    ),
+  );
 }
 
 // ─────────────────────────── EVENT MODAL SHEET ──────────────────────────

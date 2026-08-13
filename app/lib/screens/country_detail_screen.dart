@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import '../services/api_service.dart';
 import '../theme_notifier.dart';
+import '../widgets/sofrah_appbar.dart';
 
 const Color primary  = Color(0xFF32127A);
 const Color accent   = Color(0xFFF28500);

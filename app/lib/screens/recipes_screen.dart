@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import '../services/api_service.dart';
 import '../theme_notifier.dart';
+import '../widgets/sofrah_appbar.dart';
 
 const Color primary   = Color(0xFF32127A);
 const Color accent    = Color(0xFFF28500);
@@ -118,118 +119,19 @@ class _RecipesScreenState extends State<RecipesScreen> {
   }
 
   void _showDetail(BuildContext context, dynamic recipe) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-    final sheetBg = isDark ? darkCard : lightBg;
-    final img = 'https://sofrh.vercel.app${recipe['img'] ?? ''}';
-    final ingredients = List<String>.from(recipe['ingredients'] ?? []);
-    final steps = List<String>.from(recipe['steps'] ?? []);
-    final spices = List<String>.from(recipe['spices'] ?? []);
-
     showModalBottomSheet(
       context: context,
       isScrollControlled: true,
       backgroundColor: Colors.transparent,
       builder: (_) => DraggableScrollableSheet(
-        initialChildSize: 0.85,
-        maxChildSize: 0.95,
+        initialChildSize: 0.88,
+        maxChildSize: 0.97,
         minChildSize: 0.5,
-        builder: (_, ctrl) => Container(
-          decoration: BoxDecoration(
-            color: sheetBg,
-            borderRadius: const BorderRadius.vertical(top: Radius.circular(24)),
-          ),
-          child: ListView(controller: ctrl, padding: EdgeInsets.zero, children: [
-            ClipRRect(
-              borderRadius: const BorderRadius.vertical(top: Radius.circular(24)),
-              child: CachedNetworkImage(
-                imageUrl: img, height: 220, width: double.infinity, fit: BoxFit.cover,
-                errorWidget: (_, __, ___) => Container(
-                    height: 220, color: isDark ? darkCard : Colors.grey[300]),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(16),
-              child: Column(crossAxisAlignment: CrossAxisAlignment.end, children: [
-                Text(recipe['name'] ?? '', textAlign: TextAlign.right,
-                    style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold,
-                        fontFamily: 'NotoSansArabic', color: primary)),
-                if ((recipe['country'] ?? '').isNotEmpty) ...[
-                  const SizedBox(height: 4),
-                  Text(recipe['country'],
-                      style: TextStyle(
-                          color: isDark ? Colors.white60 : Colors.grey[600],
-                          fontSize: 13)),
-                ],
-                if (ingredients.isNotEmpty) ...[
-                  const SizedBox(height: 16),
-                  _sectionTitle('🥘 المكونات'),
-                  const SizedBox(height: 8),
-                  Wrap(
-                    alignment: WrapAlignment.end, spacing: 6, runSpacing: 6,
-                    children: ingredients.map((ing) => Chip(
-                      label: Text(ing,
-                          style: const TextStyle(fontSize: 11, fontFamily: 'NotoSansArabic')),
-                      backgroundColor: const Color(0xFFF3E8D2),
-                      padding: EdgeInsets.zero,
-                      materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                    )).toList(),
-                  ),
-                ],
-                if (spices.isNotEmpty) ...[
-                  const SizedBox(height: 12),
-                  _sectionTitle('🌶️ التوابل'),
-                  const SizedBox(height: 8),
-                  Wrap(
-                    alignment: WrapAlignment.end, spacing: 6, runSpacing: 6,
-                    children: spices.map((s) => Chip(
-                      label: Text(s,
-                          style: const TextStyle(fontSize: 11, fontFamily: 'NotoSansArabic')),
-                      backgroundColor: const Color(0xFFFFE8D2),
-                      padding: EdgeInsets.zero,
-                      materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                    )).toList(),
-                  ),
-                ],
-                if (steps.isNotEmpty) ...[
-                  const SizedBox(height: 16),
-                  _sectionTitle('📋 طريقة التحضير'),
-                  const SizedBox(height: 8),
-                  ...steps.asMap().entries.map((e) => Padding(
-                    padding: const EdgeInsets.only(bottom: 8),
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        Expanded(
-                          child: Text(e.value, textAlign: TextAlign.right,
-                              style: TextStyle(
-                                  fontSize: 13,
-                                  color: isDark ? Colors.white70 : Colors.grey[800],
-                                  fontFamily: 'NotoSansArabic')),
-                        ),
-                        const SizedBox(width: 8),
-                        CircleAvatar(
-                          radius: 12, backgroundColor: primary,
-                          child: Text('${e.key + 1}',
-                              style: const TextStyle(color: Colors.white, fontSize: 11)),
-                        ),
-                      ],
-                    ),
-                  )),
-                ],
-                const SizedBox(height: 24),
-              ]),
-            ),
-          ]),
-        ),
+        builder: (_, ctrl) => _RecipeDetailSheet(
+            recipe: recipe, scrollCtrl: ctrl),
       ),
     );
   }
-
-  Widget _sectionTitle(String t) => Text(t,
-      style: const TextStyle(
-          fontWeight: FontWeight.bold, fontSize: 15,
-          fontFamily: 'NotoSansArabic', color: primary));
 }
 
 class _RecipeCard extends StatefulWidget {
@@ -241,6 +143,317 @@ class _RecipeCard extends StatefulWidget {
   State<_RecipeCard> createState() => _RecipeCardState();
 }
 
+// ─────────────────────── RECIPE DETAIL SHEET ───────────────────────────────
+class _RecipeDetailSheet extends StatefulWidget {
+  final dynamic recipe;
+  final ScrollController scrollCtrl;
+  const _RecipeDetailSheet({required this.recipe, required this.scrollCtrl});
+  @override
+  State<_RecipeDetailSheet> createState() => _RecipeDetailSheetState();
+}
+
+class _RecipeDetailSheetState extends State<_RecipeDetailSheet> {
+  int _qty = 1;
+
+  /// Parse a list of raw strings into (name, baseQty, unit) maps.
+  /// Handles "name|qty|unit" triplets or plain "name" strings.
+  List<Map<String, dynamic>> _parseItems(List<String> raw) {
+    final result = <Map<String, dynamic>>[];
+    for (final item in raw) {
+      final parts = item.split('|');
+      if (parts.length >= 2) {
+        result.add({
+          'name': parts[0].trim(),
+          'qty':  double.tryParse(parts[1].trim()) ?? 0.0,
+          'unit': parts.length >= 3 ? parts[2].trim() : '',
+        });
+      } else if (item.trim().isNotEmpty) {
+        result.add({'name': item.trim(), 'qty': 0.0, 'unit': ''});
+      }
+    }
+    return result;
+  }
+
+  String _fmtQty(double base, int multiplier) {
+    final v = base * multiplier;
+    return v == v.truncateToDouble() ? v.toInt().toString() : v.toStringAsFixed(1);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final isDark  = Theme.of(context).brightness == Brightness.dark;
+    final sheetBg = isDark ? darkCard : Colors.white;
+    final textClr = isDark ? const Color(0xFFE0E0E0) : Colors.black87;
+    final subClr  = isDark ? Colors.white60 : const Color(0xFF9b7a5e);
+    final chipBg  = isDark ? darkInput : const Color(0xFFF3E8D2);
+    final img     = 'https://sofrh.vercel.app${widget.recipe['img'] ?? ''}';
+
+    final ingredients = _parseItems(
+        List<String>.from(widget.recipe['ingredients'] ?? []));
+    final spices = _parseItems(
+        List<String>.from(widget.recipe['spices'] ?? []));
+    final steps = List<String>.from(widget.recipe['steps'] ?? []);
+
+    return ClipRRect(
+      borderRadius: const BorderRadius.vertical(top: Radius.circular(24)),
+      child: Container(
+        color: sheetBg,
+        child: ListView(
+          controller: widget.scrollCtrl,
+          padding: EdgeInsets.zero,
+          children: [
+            // ── Image header ───────────────────────────────────────
+            Stack(children: [
+              CachedNetworkImage(
+                imageUrl: img,
+                height: 240,
+                width: double.infinity,
+                fit: BoxFit.cover,
+                errorWidget: (_, __, ___) =>
+                    Container(height: 240, color: primary),
+              ),
+              Container(
+                height: 240,
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    colors: [Colors.transparent,
+                      Colors.black.withOpacity(0.72)],
+                  ),
+                ),
+              ),
+              // Close button
+              Positioned(
+                top: 12, right: 12,
+                child: GestureDetector(
+                  onTap: () => Navigator.pop(context),
+                  child: Container(
+                    padding: const EdgeInsets.all(6),
+                    decoration: BoxDecoration(
+                        color: Colors.black.withOpacity(0.45),
+                        shape: BoxShape.circle),
+                    child: const Icon(Icons.close,
+                        color: Colors.white, size: 20),
+                  ),
+                ),
+              ),
+              // Recipe name + country on image
+              Positioned(
+                bottom: 14, right: 16, left: 16,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    Text(
+                      widget.recipe['name'] ?? '',
+                      textAlign: TextAlign.right,
+                      style: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 22,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: 'NotoSansArabic',
+                      ),
+                    ),
+                    if ((widget.recipe['country'] ?? '').isNotEmpty)
+                      Text(
+                        widget.recipe['country'],
+                        style: TextStyle(
+                            color: Colors.white.withOpacity(0.8),
+                            fontSize: 13,
+                            fontFamily: 'NotoSansArabic'),
+                      ),
+                  ],
+                ),
+              ),
+            ]),
+
+            Padding(
+              padding: const EdgeInsets.all(16),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  // ── Quantity counter ─────────────────────────────
+                  Container(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 16, vertical: 10),
+                    decoration: BoxDecoration(
+                      color: isDark ? darkInput : const Color(0xFFF3E8D2),
+                      borderRadius: BorderRadius.circular(14),
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        // Increase
+                        _qtyBtn(Icons.add, () {
+                          if (_qty < 20) setState(() => _qty++);
+                        }),
+                        // Count display
+                        Column(children: [
+                          Text('$_qty',
+                              style: TextStyle(
+                                  fontSize: 22,
+                                  fontWeight: FontWeight.bold,
+                                  color: isDark ? Colors.white : primary)),
+                          Text('الكمية',
+                              style: TextStyle(
+                                  fontSize: 11,
+                                  color: subClr,
+                                  fontFamily: 'NotoSansArabic')),
+                        ]),
+                        // Decrease
+                        _qtyBtn(Icons.remove, () {
+                          if (_qty > 1) setState(() => _qty--);
+                        }),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(height: 18),
+
+                  // ── Ingredients ──────────────────────────────────
+                  if (ingredients.isNotEmpty) ...[
+                    _sectionTitle('🥘 المكونات', isDark),
+                    const SizedBox(height: 10),
+                    ...ingredients.map((ing) {
+                      final hasQty = (ing['qty'] as double) > 0;
+                      final qtyStr = hasQty
+                          ? '${_fmtQty(ing['qty'] as double, _qty)} ${ing['unit']}'
+                          : '';
+                      return Padding(
+                        padding: const EdgeInsets.only(bottom: 8),
+                        child: Row(
+                          textDirection: TextDirection.rtl,
+                          children: [
+                            Container(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 10, vertical: 6),
+                              decoration: BoxDecoration(
+                                color: chipBg,
+                                borderRadius: BorderRadius.circular(8),
+                              ),
+                              child: Text(
+                                ing['name'] as String,
+                                style: TextStyle(
+                                    fontSize: 13,
+                                    fontFamily: 'NotoSansArabic',
+                                    color: textClr),
+                              ),
+                            ),
+                            if (hasQty) ...[
+                              const SizedBox(width: 8),
+                              Container(
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: 8, vertical: 6),
+                                decoration: BoxDecoration(
+                                  color: accent.withOpacity(0.15),
+                                  borderRadius: BorderRadius.circular(8),
+                                ),
+                                child: Text(
+                                  qtyStr,
+                                  style: TextStyle(
+                                      fontSize: 12,
+                                      fontFamily: 'NotoSansArabic',
+                                      color: accent,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                              ),
+                            ],
+                          ],
+                        ),
+                      );
+                    }),
+                    const SizedBox(height: 6),
+                  ],
+
+                  // ── Spices ───────────────────────────────────────
+                  if (spices.isNotEmpty) ...[
+                    _sectionTitle('🌶️ التوابل', isDark),
+                    const SizedBox(height: 10),
+                    Wrap(
+                      alignment: WrapAlignment.end,
+                      spacing: 6,
+                      runSpacing: 6,
+                      children: spices.map((s) {
+                        final hasQty = (s['qty'] as double) > 0;
+                        final label = hasQty
+                            ? '${s['name']} — ${_fmtQty(s['qty'] as double, _qty)} ${s['unit']}'
+                            : s['name'] as String;
+                        return Chip(
+                          label: Text(label,
+                              style: const TextStyle(
+                                  fontSize: 11,
+                                  fontFamily: 'NotoSansArabic')),
+                          backgroundColor: const Color(0xFFFFE8D2),
+                          padding: EdgeInsets.zero,
+                          materialTapTargetSize:
+                              MaterialTapTargetSize.shrinkWrap,
+                        );
+                      }).toList(),
+                    ),
+                    const SizedBox(height: 16),
+                  ],
+
+                  // ── Steps ────────────────────────────────────────
+                  if (steps.isNotEmpty) ...[
+                    _sectionTitle('📋 طريقة التحضير', isDark),
+                    const SizedBox(height: 10),
+                    ...steps.asMap().entries.map((e) => Padding(
+                      padding: const EdgeInsets.only(bottom: 12),
+                      child: Row(
+                        textDirection: TextDirection.rtl,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          CircleAvatar(
+                            radius: 13,
+                            backgroundColor: primary,
+                            child: Text('${e.key + 1}',
+                                style: const TextStyle(
+                                    color: Colors.white, fontSize: 11)),
+                          ),
+                          const SizedBox(width: 10),
+                          Expanded(
+                            child: Text(
+                              e.value,
+                              textAlign: TextAlign.right,
+                              style: TextStyle(
+                                  fontSize: 13,
+                                  color: textClr,
+                                  fontFamily: 'NotoSansArabic',
+                                  height: 1.55),
+                            ),
+                          ),
+                        ],
+                      ),
+                    )),
+                  ],
+                  const SizedBox(height: 24),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _sectionTitle(String t, bool isDark) => Text(t,
+      style: TextStyle(
+          fontWeight: FontWeight.bold,
+          fontSize: 15,
+          fontFamily: 'NotoSansArabic',
+          color: isDark ? Colors.white : primary));
+
+  Widget _qtyBtn(IconData icon, VoidCallback onPressed) => GestureDetector(
+    onTap: onPressed,
+    child: Container(
+      width: 36, height: 36,
+      decoration: BoxDecoration(
+          color: primary, borderRadius: BorderRadius.circular(10)),
+      child: Icon(icon, color: Colors.white, size: 20),
+    ),
+  );
+}
+
+// ─────────────────────────── RECIPE CARD ────────────────────────────────────
 class _RecipeCardState extends State<_RecipeCard> {
   bool _saved = false;
 
@@ -294,7 +507,7 @@ class _RecipeCardState extends State<_RecipeCard> {
               begin: Alignment.topCenter, end: Alignment.bottomCenter,
               colors: [Colors.transparent, Colors.black.withOpacity(0.75)]),
           )),
-          // Bookmark button — top-left corner
+          // 🍽️ Save button — top-left corner
           Positioned(
             top: 8, left: 8,
             child: GestureDetector(
@@ -302,14 +515,13 @@ class _RecipeCardState extends State<_RecipeCard> {
               child: Container(
                 padding: const EdgeInsets.all(6),
                 decoration: BoxDecoration(
-                  color: Colors.black.withOpacity(0.45),
+                  color: _saved
+                      ? accent.withOpacity(0.9)
+                      : Colors.black.withOpacity(0.45),
                   borderRadius: BorderRadius.circular(8),
                 ),
-                child: Icon(
-                  _saved ? Icons.bookmark : Icons.bookmark_border,
-                  color: _saved ? accent : Colors.white,
-                  size: 18,
-                ),
+                child: const Text('🍽️',
+                    style: TextStyle(fontSize: 16)),
               ),
             ),
           ),

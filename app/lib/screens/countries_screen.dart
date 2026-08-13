@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import '../services/api_service.dart';
 import '../theme_notifier.dart';
+import '../widgets/sofrah_appbar.dart';
 
 const Color primary   = Color(0xFF32127A);
 const Color accent    = Color(0xFFF28500);
@@ -211,7 +212,7 @@ class _CountryCardState extends State<_CountryCard> {
               begin: Alignment.topCenter, end: Alignment.bottomCenter,
               colors: [Colors.transparent, Colors.black.withOpacity(0.75)]),
           )),
-          // Bookmark button — top-left corner
+          // 📌 Save button — top-left corner
           Positioned(
             top: 8, left: 8,
             child: GestureDetector(
@@ -219,14 +220,13 @@ class _CountryCardState extends State<_CountryCard> {
               child: Container(
                 padding: const EdgeInsets.all(6),
                 decoration: BoxDecoration(
-                  color: Colors.black.withOpacity(0.45),
+                  color: _saved
+                      ? accent.withOpacity(0.9)
+                      : Colors.black.withOpacity(0.45),
                   borderRadius: BorderRadius.circular(8),
                 ),
-                child: Icon(
-                  _saved ? Icons.bookmark : Icons.bookmark_border,
-                  color: _saved ? accent : Colors.white,
-                  size: 20,
-                ),
+                child: const Text('📌',
+                    style: TextStyle(fontSize: 18)),
               ),
             ),
           ),
