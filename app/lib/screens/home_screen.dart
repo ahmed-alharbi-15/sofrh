@@ -61,7 +61,7 @@ class HomeScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             // 1. Hero
-            const _HeroSection(),
+            _HeroSection(onStart: () => jumpTo(1)),
             // 2. Section cards 2×2
             _SectionsGrid(jumpTo: jumpTo, isDark: isDark),
             // 3. About "عن سفرة"
@@ -74,124 +74,116 @@ class HomeScreen extends StatelessWidget {
 }
 
 // ─────────────────────────────── HERO ─────────────────────────────────────
-/// يطابق تصميم .hero في stayles.css:
-/// gradient(160deg, #2A1060 → #3A1780 → #150A35) + radial glow برتقالي
-/// + نصوص في المنتصف + stats داخل حاوية زجاجية
 class _HeroSection extends StatelessWidget {
-  const _HeroSection();
+  final VoidCallback? onStart;
+  const _HeroSection({this.onStart});
 
   @override
   Widget build(BuildContext context) {
-    final screenH = MediaQuery.of(context).size.height;
-    final statusH = MediaQuery.of(context).padding.top;
-    final heroH   = (screenH - kToolbarHeight - statusH) * 0.80;
+    final screenH  = MediaQuery.of(context).size.height;
+    final statusH  = MediaQuery.of(context).padding.top;
+    final heroH    = screenH - kToolbarHeight - statusH;
 
     return Container(
       width: double.infinity,
       height: heroH,
       decoration: const BoxDecoration(
-        // linear-gradient(160deg, #2A1060 0%, #3A1780 40%, #150A35 100%)
         gradient: LinearGradient(
-          begin: Alignment(-0.6, -1),
-          end: Alignment(0.6, 1),
-          colors: [Color(0xFF2A1060), Color(0xFF3A1780), Color(0xFF150A35)],
-          stops: [0.0, 0.4, 1.0],
+          colors: [Color(0xFF32127A), Color(0xFF1a0f2e)],
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
         ),
       ),
-      child: Stack(children: [
-        // ── radial glow برتقالي في الأعلى (.hero::before) ─────────────
-        Positioned(
-          top: -100,
-          child: Container(
-            width: 600,
-            height: 600,
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              gradient: RadialGradient(
-                colors: [
-                  accent.withValues(alpha: 0.15),
-                  accent.withValues(alpha: 0.0),
-                ],
-                stops: const [0.0, 0.7],
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          // ── العنوان ──────────────────────────────────────────────
+          RichText(
+            textAlign: TextAlign.center,
+            text: const TextSpan(
+              style: TextStyle(
+                fontSize: 46,
+                fontWeight: FontWeight.bold,
+                fontFamily: 'NotoSansArabic',
+                color: Colors.white,
+                height: 1.2,
+              ),
+              children: [
+                TextSpan(text: 'سافر '),
+                TextSpan(
+                  text: 'وتذوق',
+                  style: TextStyle(color: accent),
+                ),
+              ],
+            ),
+          ),
+          const SizedBox(height: 16),
+
+          // ── الوصف ────────────────────────────────────────────────
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 36),
+            child: Text(
+              'اكتشف وجهات وأكلات من مختلف أنحاء العالم',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                color: Colors.white.withValues(alpha: 0.65),
+                fontSize: 14,
+                fontFamily: 'NotoSansArabic',
+                height: 1.6,
               ),
             ),
           ),
-        ),
+          const SizedBox(height: 44),
 
-        // ── المحتوى — محاذاة مركز أفقياً وعمودياً ─────────────────────
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 32),
-          child: Column(
+          // ── الإحصائيات ───────────────────────────────────────────
+          Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              // العنوان  (.hero-text h1 + .hero-accent)
-              RichText(
-                textAlign: TextAlign.center,
-                text: const TextSpan(
-                  style: TextStyle(
-                    fontSize: 42,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: 'NotoSansArabic',
-                    color: Colors.white,
-                    height: 1.15,
-                  ),
-                  children: [
-                    TextSpan(text: 'سافر'),
-                    TextSpan(
-                      text: ' وتذوق',
-                      style: TextStyle(color: accent),
-                    ),
-                  ],
-                ),
-              ),
-              const SizedBox(height: 16),
-
-              // الوصف  (.hero-text p)
-              Text(
-                'اكتشف وجهات وماكولات من مختلف أنحاء العالم',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  color: Colors.white.withValues(alpha: 0.65),
-                  fontSize: 14,
-                  fontFamily: 'NotoSansArabic',
-                  height: 1.6,
-                ),
-              ),
-              const SizedBox(height: 44),
-
-              // الإحصائيات داخل حاوية زجاجية  (.hero-stats)
-              Container(
-                padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 20),
-                decoration: BoxDecoration(
-                  color: Colors.white.withValues(alpha: 0.05),
-                  borderRadius: BorderRadius.circular(16),
-                  border: Border.all(color: Colors.white.withValues(alpha: 0.1)),
-                ),
-                child: FittedBox(
-                  fit: BoxFit.scaleDown,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: const [
-                      _Stat(number: '+190',  label: 'دولة'),
-                      _StatDivider(),
-                      _Stat(number: '+1150', label: 'وصفة'),
-                      _StatDivider(),
-                      _Stat(number: '+1200', label: 'فعالية'),
-                    ],
-                  ),
-                ),
-              ),
-              const SizedBox(height: 48),
+            children: const [
+              _Stat(number: '+190', label: 'دولة'),
+              _StatDivider(),
+              _Stat(number: '+700', label: 'فعالية'),
+              _StatDivider(),
+              _Stat(number: '+300', label: 'وصفة'),
             ],
           ),
-        ),
-      ]),
+          const SizedBox(height: 48),
+
+          // ── زر ابدأ رحلتك ─────────────────────────────────────────
+          GestureDetector(
+            onTap: onStart,
+            child: Container(
+              padding: const EdgeInsets.symmetric(
+                  horizontal: 40, vertical: 15),
+              decoration: BoxDecoration(
+                color: accent,
+                borderRadius: BorderRadius.circular(50),
+                boxShadow: [
+                  BoxShadow(
+                    color: accent.withValues(alpha: 0.4),
+                    blurRadius: 24,
+                    offset: const Offset(0, 8),
+                  ),
+                ],
+              ),
+              child: const Text(
+                'ابدأ رحلتك',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: 'NotoSansArabic',
+                  letterSpacing: 0.5,
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
 
-/// .hero-stat
 class _Stat extends StatelessWidget {
   final String number, label;
   const _Stat({required this.number, required this.label});
@@ -199,9 +191,8 @@ class _Stat extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
+      padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Column(children: [
-        // .stat-num  — font-size: 1.6rem ≈ 26px
         Text(
           number,
           style: const TextStyle(
@@ -212,12 +203,11 @@ class _Stat extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 4),
-        // .stat-label
         Text(
           label,
           style: TextStyle(
-            color: Colors.white.withValues(alpha: 0.55),
-            fontSize: 13,
+            color: Colors.white.withValues(alpha: 0.6),
+            fontSize: 12,
             fontFamily: 'NotoSansArabic',
           ),
         ),
@@ -226,15 +216,14 @@ class _Stat extends StatelessWidget {
   }
 }
 
-/// .hero-stat-divider — width:1px height:40px
 class _StatDivider extends StatelessWidget {
   const _StatDivider();
 
   @override
   Widget build(BuildContext context) => Container(
         width: 1,
-        height: 40,
-        color: Colors.white.withValues(alpha: 0.12),
+        height: 44,
+        color: Colors.white.withValues(alpha: 0.15),
       );
 }
 
@@ -313,24 +302,26 @@ class _SectionCard extends StatelessWidget {
       child: ClipRRect(
         borderRadius: BorderRadius.circular(16),
         child: Stack(fit: StackFit.expand, children: [
-          // صورة واضحة كاملة بدون تغميق
+          // Background image — .card background: #150A35
           CachedNetworkImage(
             imageUrl: imgUrl,
             fit: BoxFit.cover,
+            color: const Color(0xFF150A35),
+            colorBlendMode: BlendMode.multiply,
             errorWidget: (_, __, ___) =>
                 Container(color: const Color(0xFF150A35)),
           ),
-          // overlay خفيف بالأسفل فقط عشان الكلام يبان — بحد أقصى 0.4
+          // Gradient overlay — matches .card-overlay
           Container(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               gradient: LinearGradient(
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
                 colors: [
                   Colors.transparent,
-                  Colors.black.withValues(alpha: 0.4),
+                  Color(0xE112082A),
                 ],
-                stops: const [0.55, 1.0],
+                stops: [0.2, 1.0],
               ),
             ),
           ),
