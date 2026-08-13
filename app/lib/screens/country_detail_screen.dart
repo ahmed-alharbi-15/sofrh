@@ -154,6 +154,57 @@ class _ModalSection extends StatelessWidget {
   }
 }
 
+class _EventsChipsSection extends StatelessWidget {
+  final String icon, title;
+  final List<String> items;
+  final bool isDark;
+  const _EventsChipsSection(
+      {required this.icon,
+      required this.title,
+      required this.items,
+      required this.isDark});
+
+  @override
+  Widget build(BuildContext context) {
+    if (items.isEmpty) return const SizedBox.shrink();
+    final chipBg =
+        isDark ? accent.withValues(alpha: 0.18) : const Color(0xFFF3E8D2);
+    final chipTxt = isDark ? Colors.white70 : primary;
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 16),
+      child: Column(crossAxisAlignment: CrossAxisAlignment.end, children: [
+        Row(mainAxisAlignment: MainAxisAlignment.end, children: [
+          Text('$icon  $title',
+              style: TextStyle(
+                  fontSize: 15,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: 'NotoSansArabic',
+                  color: isDark ? Colors.white : primary)),
+        ]),
+        const SizedBox(height: 8),
+        Wrap(
+          alignment: WrapAlignment.end,
+          spacing: 6,
+          runSpacing: 6,
+          children: items
+              .map((item) => ActionChip(
+                    label: Text(item,
+                        style: TextStyle(
+                            fontSize: 12,
+                            fontFamily: 'NotoSansArabic',
+                            color: chipTxt)),
+                    backgroundColor: chipBg,
+                    padding: EdgeInsets.zero,
+                    materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                    onPressed: () => _openEventByName(context, item, isDark),
+                  ))
+              .toList(),
+        ),
+      ]),
+    );
+  }
+}
+
 class _ModalSteps extends StatelessWidget {
   final List<String> steps;
   final bool isDark;
@@ -405,7 +456,7 @@ void _showCityModal(BuildContext context, dynamic city, bool isDark) {
                         title: 'المقاهي',
                         items: List<String>.from(city['cafes'] ?? []),
                         isDark: isDark),
-                    _ModalSection(
+                    _EventsChipsSection(
                         icon: '📅',
                         title: 'الفعاليات',
                         items: List<String>.from(city['events'] ?? []),
@@ -638,6 +689,16 @@ void _showEventModal(BuildContext context, dynamic event, bool isDark) {
       ),
     ),
   );
+}
+
+Future<void> _openEventByName(
+    BuildContext context, String name, bool isDark) async {
+  try {
+    final results = await ApiService.getEvents(q: name);
+    if (results.isNotEmpty && context.mounted) {
+      _showEventModal(context, results.first, isDark);
+    }
+  } catch (_) {}
 }
 
 // ═══════════════════════════════════════════════════════════════════════════
