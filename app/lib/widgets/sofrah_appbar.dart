@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import '../theme_notifier.dart';
 import '../screens/login_screen.dart';
+import '../screens/profile_screen.dart';
 
 const Color _kPrimary = Color(0xFF32127A);
 const Color _kAccent  = Color(0xFFF28500);
@@ -37,6 +39,36 @@ class SofrahAppBar extends StatelessWidget implements PreferredSizeWidget {
         builder: (_) => const Directionality(
           textDirection: TextDirection.rtl,
           child: LoginScreen(),
+        ),
+      ),
+    );
+  }
+
+  void _openProfileDefault(BuildContext ctx) {
+    Navigator.push(
+      ctx,
+      MaterialPageRoute(
+        builder: (_) => Directionality(
+          textDirection: TextDirection.rtl,
+          child: ProfileScreen(
+            onLogout: () async {
+              final prefs = await SharedPreferences.getInstance();
+              await prefs.clear();
+              usernameNotifier.value = '';
+              emailNotifier.value    = '';
+              if (ctx.mounted) {
+                Navigator.of(ctx).pushAndRemoveUntil(
+                  MaterialPageRoute(
+                    builder: (_) => const Directionality(
+                      textDirection: TextDirection.rtl,
+                      child: LoginScreen(),
+                    ),
+                  ),
+                  (_) => false,
+                );
+              }
+            },
+          ),
         ),
       ),
     );
@@ -95,7 +127,7 @@ class SofrahAppBar extends StatelessWidget implements PreferredSizeWidget {
                   }
                   // اسم المستخدم + أفتار
                   return GestureDetector(
-                    onTap: onAvatarTap,
+                    onTap: onAvatarTap ?? () => _openProfileDefault(context),
                     child: Row(children: [
                       Text(
                         uname,
