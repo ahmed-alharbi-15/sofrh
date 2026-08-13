@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import '../services/api_service.dart';
+import '../theme_notifier.dart';
 
-const Color primary = Color(0xFF32127A);
-const Color accent  = Color(0xFFF28500);
-const Color bgColor = Color(0xFFFAF5EB);
+const Color primary  = Color(0xFF32127A);
+const Color accent   = Color(0xFFF28500);
+const Color bgColor  = Color(0xFFFAF5EB);
+const Color darkBg   = Color(0xFF0B0933);
+const Color darkCard = Color(0xFF1a1040);
 
 class CountryDetailScreen extends StatefulWidget {
   final String countryId;
@@ -38,13 +41,10 @@ class _CountryDetailScreenState extends State<CountryDetailScreen>
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     return Scaffold(
-      backgroundColor: bgColor,
-      appBar: AppBar(
-        backgroundColor: primary,
-        title: Text(widget.countryName,
-            style: const TextStyle(color: Colors.white, fontFamily: 'NotoSansArabic')),
-        centerTitle: true,
+      backgroundColor: isDark ? darkBg : bgColor,
+      appBar: SofrahAppBar(
         bottom: TabBar(
           controller: _tabs,
           labelColor: accent,
@@ -77,6 +77,10 @@ class _CitiesTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final cardBg  = isDark ? darkCard : Colors.white;
+    final textClr = isDark ? Colors.white : Colors.black87;
+    final subClr  = isDark ? Colors.white60 : Colors.grey[700]!;
     if (cities.isEmpty) return const Center(child: Text('لا توجد مدن'));
     return ListView.builder(
       padding: const EdgeInsets.all(12),
@@ -86,24 +90,25 @@ class _CitiesTab extends StatelessWidget {
         final img = 'https://sofrh.vercel.app${c['img'] ?? ''}';
         return Card(
           margin: const EdgeInsets.only(bottom: 12),
+          color: cardBg,
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
           clipBehavior: Clip.antiAlias,
           child: Column(crossAxisAlignment: CrossAxisAlignment.end, children: [
             CachedNetworkImage(imageUrl: img, height: 160, width: double.infinity,
-              fit: BoxFit.cover, errorWidget: (_, __, ___) => Container(height: 160, color: Colors.grey[300])),
+              fit: BoxFit.cover, errorWidget: (_, __, ___) => Container(height: 160, color: primary.withOpacity(0.3))),
             Padding(
               padding: const EdgeInsets.all(12),
               child: Column(crossAxisAlignment: CrossAxisAlignment.end, children: [
                 Text(c['name'] ?? '', textAlign: TextAlign.right,
-                    style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16, fontFamily: 'NotoSansArabic')),
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16, fontFamily: 'NotoSansArabic', color: textClr)),
                 const SizedBox(height: 4),
                 Text(c['desc'] ?? '', textAlign: TextAlign.right, maxLines: 2,
                     overflow: TextOverflow.ellipsis,
-                    style: TextStyle(color: Colors.grey[700], fontSize: 13)),
+                    style: TextStyle(color: subClr, fontSize: 13)),
                 const SizedBox(height: 8),
-                _TagRow(label: '🏛️ المعالم', items: List<String>.from(c['historic'] ?? [])),
-                _TagRow(label: '🍽️ المطاعم', items: List<String>.from(c['restaurants'] ?? [])),
-                _TagRow(label: '☕ المقاهي',  items: List<String>.from(c['cafes'] ?? [])),
+                _TagRow(label: '🏛️ المعالم', items: List<String>.from(c['historic'] ?? []), isDark: isDark),
+                _TagRow(label: '🍽️ المطاعم', items: List<String>.from(c['restaurants'] ?? []), isDark: isDark),
+                _TagRow(label: '☕ المقاهي',  items: List<String>.from(c['cafes'] ?? []), isDark: isDark),
               ]),
             ),
           ]),
@@ -116,19 +121,23 @@ class _CitiesTab extends StatelessWidget {
 class _TagRow extends StatelessWidget {
   final String label;
   final List<String> items;
-  const _TagRow({required this.label, required this.items});
+  final bool isDark;
+  const _TagRow({required this.label, required this.items, this.isDark = false});
 
   @override
   Widget build(BuildContext context) {
     if (items.isEmpty) return const SizedBox.shrink();
+    final chipBg  = isDark ? accent.withOpacity(0.15) : const Color(0xFFF3E8D2);
+    final chipTxt = isDark ? Colors.white70 : primary;
     return Padding(
       padding: const EdgeInsets.only(bottom: 6),
       child: Column(crossAxisAlignment: CrossAxisAlignment.end, children: [
-        Text(label, style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 13, fontFamily: 'NotoSansArabic')),
+        Text(label, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 13,
+            fontFamily: 'NotoSansArabic', color: isDark ? Colors.white : Colors.black87)),
         const SizedBox(height: 4),
         Wrap(alignment: WrapAlignment.end, spacing: 6, runSpacing: 4, children: items.map((t) =>
-          Chip(label: Text(t, style: const TextStyle(fontSize: 11, fontFamily: 'NotoSansArabic')),
-            backgroundColor: const Color(0xFFF3E8D2), padding: EdgeInsets.zero,
+          Chip(label: Text(t, style: TextStyle(fontSize: 11, fontFamily: 'NotoSansArabic', color: chipTxt)),
+            backgroundColor: chipBg, padding: EdgeInsets.zero,
             materialTapTargetSize: MaterialTapTargetSize.shrinkWrap),
         ).toList()),
       ]),
@@ -186,6 +195,10 @@ class _EventsTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final cardBg  = isDark ? darkCard : Colors.white;
+    final textClr = isDark ? Colors.white : Colors.black87;
+    final subClr  = isDark ? Colors.white60 : Colors.grey[600]!;
     if (events.isEmpty) return const Center(child: Text('لا توجد فعاليات'));
     return ListView.builder(
       padding: const EdgeInsets.all(12),
@@ -195,19 +208,21 @@ class _EventsTab extends StatelessWidget {
         final img = 'https://sofrh.vercel.app${e['img'] ?? ''}';
         return Card(
           margin: const EdgeInsets.only(bottom: 10),
+          color: cardBg,
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
           clipBehavior: Clip.antiAlias,
           child: Row(children: [
             CachedNetworkImage(imageUrl: img, width: 90, height: 80, fit: BoxFit.cover,
-              errorWidget: (_, __, ___) => Container(width: 90, height: 80, color: Colors.grey[300])),
+              errorWidget: (_, __, ___) => Container(width: 90, height: 80, color: primary.withOpacity(0.3))),
             Expanded(child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
               child: Column(crossAxisAlignment: CrossAxisAlignment.end, children: [
                 Text(e['name'] ?? '', textAlign: TextAlign.right,
-                    style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 13, fontFamily: 'NotoSansArabic')),
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 13,
+                        fontFamily: 'NotoSansArabic', color: textClr)),
                 if ((e['info'] ?? '').isNotEmpty)
                   Text(e['info'], textAlign: TextAlign.right, maxLines: 2,
-                    style: TextStyle(color: Colors.grey[600], fontSize: 12)),
+                    style: TextStyle(color: subClr, fontSize: 12)),
               ]),
             )),
           ]),
