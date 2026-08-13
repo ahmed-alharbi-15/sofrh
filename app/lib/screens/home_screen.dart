@@ -92,28 +92,27 @@ class _HeroSection extends StatelessWidget {
       decoration: const BoxDecoration(
         // linear-gradient(160deg, #2A1060 0%, #3A1780 40%, #150A35 100%)
         gradient: LinearGradient(
+          begin: Alignment(-0.6, -1),
+          end: Alignment(0.6, 1),
           colors: [Color(0xFF2A1060), Color(0xFF3A1780), Color(0xFF150A35)],
           stops: [0.0, 0.4, 1.0],
-          begin: Alignment.topRight,
-          end: Alignment.bottomLeft,
         ),
       ),
       child: Stack(children: [
         // ── radial glow برتقالي في الأعلى (.hero::before) ─────────────
         Positioned(
-          top: -80, left: 0, right: 0,
-          child: Center(
-            child: Container(
-              width: 400, height: 400,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                gradient: RadialGradient(
-                  colors: [
-                    const Color(0xFFF28500).withValues(alpha: 0.15),
-                    Colors.transparent,
-                  ],
-                  stops: const [0.0, 0.70],
-                ),
+          top: -100,
+          child: Container(
+            width: 600,
+            height: 600,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              gradient: RadialGradient(
+                colors: [
+                  accent.withValues(alpha: 0.15),
+                  accent.withValues(alpha: 0.0),
+                ],
+                stops: const [0.0, 0.7],
               ),
             ),
           ),
@@ -159,34 +158,31 @@ class _HeroSection extends StatelessWidget {
                   height: 1.6,
                 ),
               ),
-              const SizedBox(height: 24),
+              const SizedBox(height: 44),
 
               // الإحصائيات داخل حاوية زجاجية  (.hero-stats)
-              FittedBox(
-                fit: BoxFit.scaleDown,
-                child: Container(
-                padding: const EdgeInsets.symmetric(
-                    vertical: 20, horizontal: 32),
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 20),
                 decoration: BoxDecoration(
                   color: Colors.white.withValues(alpha: 0.05),
-                  border: Border.all(
-                    color: Colors.white.withValues(alpha: 0.10),
-                    width: 1,
-                  ),
                   borderRadius: BorderRadius.circular(16),
+                  border: Border.all(color: Colors.white.withValues(alpha: 0.1)),
                 ),
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: const [
-                    _Stat(number: '١٩٠+',  label: 'دولة'),
-                    _StatDivider(),
-                    _Stat(number: '١١٥٠+', label: 'وصفة'),
-                    _StatDivider(),
-                    _Stat(number: '١٢٠٠+', label: 'فعالية'),
-                  ],
+                child: FittedBox(
+                  fit: BoxFit.scaleDown,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: const [
+                      _Stat(number: '+190',  label: 'دولة'),
+                      _StatDivider(),
+                      _Stat(number: '+1150', label: 'وصفة'),
+                      _StatDivider(),
+                      _Stat(number: '+1200', label: 'فعالية'),
+                    ],
+                  ),
                 ),
               ),
-              ),
+              const SizedBox(height: 48),
             ],
           ),
         ),
@@ -324,7 +320,7 @@ class _SectionCard extends StatelessWidget {
             errorWidget: (_, __, ___) =>
                 Container(color: const Color(0xFF150A35)),
           ),
-          // overlay خفيف في الأسفل فقط لتبان النصوص (≤ 0.38 opacity)
+          // overlay خفيف بالأسفل فقط عشان الكلام يبان — بحد أقصى 0.4
           Container(
             decoration: BoxDecoration(
               gradient: LinearGradient(
@@ -332,9 +328,9 @@ class _SectionCard extends StatelessWidget {
                 end: Alignment.bottomCenter,
                 colors: [
                   Colors.transparent,
-                  Colors.black.withValues(alpha: 0.38),
+                  Colors.black.withValues(alpha: 0.4),
                 ],
-                stops: const [0.45, 1.0],
+                stops: const [0.55, 1.0],
               ),
             ),
           ),
