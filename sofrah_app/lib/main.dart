@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'app_colors.dart';
+import 'home_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -41,14 +42,10 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       themeMode: ThemeMode.system,
-      home: const Scaffold(
-        body: Center(
-          child: MyToggleButton(),
-        ),
-      ),
-    );
+      home: const HomeScreen(),
+        );
+     }
   }
-}
 
 class MyToggleButton extends StatefulWidget {
   const MyToggleButton({super.key});
