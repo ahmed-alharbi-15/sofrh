@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+<script>
+(() => {
+  const theme = localStorage.getItem("theme");
+  document.documentElement.setAttribute("data-theme", theme === "dark" ? "dark" : "light");
+})();
+</script>
+    <style>
+        .auth-buttons { display: none; }
+        .user-menu { display: none; }
+    </style>
+    <meta charset="UTF-8">
+<script>
+    (function(){
+        var u=JSON.parse(localStorage.getItem('safraUser')||'null');
+        var av=localStorage.getItem('safraAvatar')||'';
+        document.documentElement.className+=u?' user-logged-in':' user-logged-out';
+        if(u){
+            var t=setInterval(function(){
+                var n=document.getElementById('userName');
+                var a=document.getElementById('userAvatar');
+                if(n){
+                    n.textContent=u.name||'';
+                    if(a&&(u.avatar||av)) a.src=u.avatar||av;
+                    clearInterval(t);
+                }
+            },1);
+        }
+    })();
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سفرة</title>
+    <link rel="stylesheet" href="/countries/countries.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@500;600&display=swap">
+    <link rel="stylesheet" href="/dark-mode.css">
+    <meta property="og:image" content="https://sofrh.vercel.app/img/logo6.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:title" content="سفرة — سافر وتذوق">
+    <meta property="og:description" content="اكتشف وجهات وماكولات من مختلف أنحاء العالم">
+    <meta property="og:url" content="https://sofrh.vercel.app">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ar_SA">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://sofrh.vercel.app/img/logo6.png">
+    <meta name="twitter:title" content="سفرة — سافر وتذوق">
+    <meta name="twitter:description" content="اكتشف وجهات وماكولات من مختلف أنحاء العالم">
+    <script src="/auth/auth.js" defer></script>
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="hamburger" id="menu-btn">☰</div>
+
+        <div class="auth-buttons" id="authButtons">
+            <a href="/auth/login.html" class="login">تسجيل دخول</a>
+            <a href="/auth/signup.html" class="signup">إنشاء حساب</a>
+        </div>
+
+        <div class="user-menu" id="userMenu">
+            <img id="userAvatar" src="" alt="">
+            <span class="user-name" id="userName"></span>
+            <div class="user-dropdown">
+                <a href="/profile/profile.html">الملف الشخصي</a>
+                <a href="#" id="logoutBtn">تسجيل خروج</a>
+            </div>
+        </div>
+
+        <ul class="nav-list">
+            <li><a href="/index/index.html">الرئيسية</a></li>
+            <li><a href="/countries/countries.html" class="active">الدول</a></li>
+            <li><a href="/events/events.html">الفعاليات</a></li>
+            <li><a href="/recipes/recipes.html">الوصفات</a></li>
+            <li><a href="/plan/plan.html">خطتي</a></li>
+            <li><a href="/about/about.html">عن سفرة</a></li>
+        </ul>
+
+        <div class="logo">
+            <a href="/index/index.html"><img src="/img/logo7.png" alt="سفرة"></a>
+        </div>
+    </header>
+
+    <!-- SIDE MENU -->
+    <div class="side-menu" id="side-menu">
+        <span class="close-btn" id="close-btn">×</span>
+        <span class="side-menu-kicker">استكشف</span>
+        <ul>
+            <li><a href="/index/index.html" class="active">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M3 11.5 12 4l9 7.5" />
+                        <path
+                            d="M5.5 10v9a1 1 0 0 0 1 1H9a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h2.5a1 1 0 0 0 1-1v-9" />
+                    </svg>
+                    <span>الرئيسية</span>
+                </a></li>
+            <li><a href="/countries/countries.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M12 21s7-6.6 7-12a7 7 0 1 0-14 0c0 5.4 7 12 7 12Z" />
+                        <circle cx="12" cy="9" r="2.3" />
+                    </svg>
+                    <span>الدول</span>
+                </a></li>
+            <li><a href="/events/events.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <rect x="3.5" y="5" width="17" height="16" rx="2.5" />
+                        <path d="M8 3v4M16 3v4M3.5 10h17" />
+                        <circle cx="12" cy="15" r="1.4" fill="currentColor" stroke="none" />
+                    </svg>
+                    <span>الفعاليات</span>
+                </a></li>
+            <li><a href="/recipes/recipes.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M7 2v8a2 2 0 0 0 2 2v10M5 2v6M9 2v6M14 2c-1.5 2-1.5 7 0 9 .6.6 1 1.3 1 2v9" />
+                    </svg>
+                    <span>الوصفات</span>
+                </a></li>
+            <li><a href="/plan/plan.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="9" />
+                        <path d="M14.8 9.2 13 13l-3.8 1.8L11 11l3.8-1.8Z" />
+                    </svg>
+                    <span>خطتي</span>
+                </a></li>
+            <li><a href="/about/about.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="9" />
+                        <path d="M12 8h.01M11 11.5h1v5.5h1" />
+                    </svg>
+                    <span>عن سفرة</span>
+                </a></li>
+        </ul>
+    </div>
+    <header>
+        <a href="/countries/countries.html" class="back-btn">رجوع</a>
+    </header>
+
+    <div class="country-name">
+        <h1>النمسا</h1>
+        <p>موسيقى كلاسيكية وقصور إمبراطورية وسط جبال الألب</p>
+    </div>
+
+    <div class="main-cites">
+        <h1>المدن</h1>
+    </div>
+    <section class="cities-grid">
+
+        <div class="cite" data-name="فيينا – Vienna" data-img="/img/Vienna.jpg"
+            data-desc="عاصمة النمسا وعاصمة الموسيقى الكلاسيكية العالمية، مدينة إمبراطورية أنيقة تجمع بين القصور الفخمة والمقاهي التاريخية والحدائق الواسعة على ضفاف نهر الدانوب."
+            data-historic="🏰 قصر شونبرون – Schönbrunn Palace | 🏛️ قصر هوفبورغ – Hofburg Palace | ⛪ كاتدرائية القديس ستيفان – St. Stephen's Cathedral | 🎭 دار أوبرا فيينا – Vienna State Opera | 🎡 عجلة برايتر الدوارة – Prater Wheel"
+            data-restaurants="🥙 مطعم Habibi & Hawara | 🍗 مطعم Kent Restaurant | 🍛 مطعم Beyti | 🥘 مطعم Levante | 🌿 مطعم Anatolia Vienna"
+            data-cafes="☕ مقهى Café Central | ☕ مقهى Demel | ☕ مقهى Café Sperl | ☕ مقهى Café Landtmann | ☕ مقهى Kleines Café"
+            data-events="🏰 جولة قصر شونبرون – Schönbrunn Palace Tour | 🎭 جولة دار أوبرا فيينا – State Opera Tour | ⛪ كاتدرائية القديس ستيفان – St. Stephen's Cathedral | 🎡 عجلة برايتر التاريخية – Prater Wheel Ride | 🖼️ متحف تاريخ الفن – Kunsthistorisches Museum"
+            onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'austria_vienna', 'فيينا – Vienna', '/img/Vienna.jpg')">🏙️</button>
+            <img src="/img/Vienna.jpg" alt="فيينا" class="cite-img">
+            <span class="name">فيينا – Vienna</span>
+            <p class="info">عاصمة الموسيقى الكلاسيكية والقصور الإمبراطورية الفخمة.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+        <div class="cite" data-name="سالزبورغ – Salzburg" data-img="/img/Salzburg.jpg"
+            data-desc="مسقط رأس الموسيقار موزارت، مدينة باروكية ساحرة محاطة بجبال الألب النمساوية، تشتهر بقلعتها المطلة على المدينة وحديقتها الشهيرة التي صُوّر فيها فيلم صوت الموسيقى."
+            data-historic="🏰 قلعة هوهنسالزبورغ – Hohensalzburg Fortress | 🎼 بيت مولد موزارت – Mozart's Birthplace | 🌳 حدائق ميرابل – Mirabell Gardens | ⛪ كاتدرائية سالزبورغ – Salzburg Cathedral | 🏘️ شارع غيتريدغاسه – Getreidegasse"
+            data-restaurants="🥙 مطعم Sinnopoli | 🍗 مطعم Efendi Salzburg | 🍛 مطعم Damaskus | 🥘 مطعم Orient Grill | 🌿 مطعم Kervan Kebap"
+            data-cafes="☕ مقهى Café Tomaselli | ☕ مقهى Café Fürst | ☕ مقهى Café Bazar | ☕ مقهى 220 Grad | ☕ مقهى Café Konditorei Schatz"
+            data-events="🏰 جولة قلعة هوهنسالزبورغ – Hohensalzburg Fortress Tour | 🌳 حدائق ميرابل الشهيرة – Mirabell Gardens Walk | 🎼 بيت مولد موزارت – Mozart's Birthplace Visit | 🏘️ التسوق في غيتريدغاسه – Getreidegasse Shopping | ⛰️ جولة جبال الألب المحيطة – Alpine Surroundings Tour"
+            onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'austria_salzburg', 'سالزبورغ – Salzburg', '/img/Salzburg.jpg')">🏙️</button>
+            <img src="/img/Salzburg.jpg" alt="سالزبورغ" class="cite-img">
+            <span class="name">سالزبورغ – Salzburg</span>
+            <p class="info">مسقط رأس موزارت، مدينة باروكية وسط جبال الألب.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+        <div class="cite" data-name="إنسبروك – Innsbruck" data-img="/img/Innsbruck.jpg"
+            data-desc="عاصمة إقليم تيرول وعاصمة الرياضات الشتوية، مدينة جبلية ساحرة استضافت أولمبياد الشتاء مرتين، تحيط بها قمم الألب الشاهقة من كل جانب."
+            data-historic="🏛️ السقف الذهبي الصغير – Golden Roof | 🏰 قصر هوفبورغ إنسبروك – Innsbruck Hofburg | ⛪ كاتدرائية القديس يعقوب – St. James Cathedral | 🗼 برج القفز بيرغيزل – Bergisel Ski Jump | 🚡 تلفريك نوردكيته – Nordkette Cable Car"
+            data-restaurants="🥙 مطعم Sultan Innsbruck | 🍗 مطعم Aluna | 🍛 مطعم Hafis | 🥘 مطعم Anatolia Innsbruck | 🌿 مطعم Cedars Grill"
+            data-cafes="☕ مقهى Café Central Innsbruck | ☕ مقهى Bäckerei Ruetz | ☕ مقهى Konditorei Munding | ☕ مقهى Café Katzung | ☕ مقهى Cafe Sacher Innsbruck"
+            data-events="🚡 تلفريك نوردكيته الجبلي – Nordkette Cable Car | 🗼 برج القفز بيرغيزل – Bergisel Ski Jump Tower | 🏛️ السقف الذهبي التاريخي – Golden Roof Visit | ⛷️ رحلة تزلج يومية – Ski Day Trip | 🏘️ جولة البلدة القديمة – Old Town Walking Tour"
+            onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'austria_innsbruck', 'إنسبروك – Innsbruck', '/img/Innsbruck.jpg')">🏙️</button>
+            <img src="/img/Innsbruck.jpg" alt="إنسبروك" class="cite-img">
+            <span class="name">إنسبروك – Innsbruck</span>
+            <p class="info">عاصمة تيرول والرياضات الشتوية وسط قمم الألب.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+        <div class="cite" data-name="غراتس – Graz" data-img="/img/Graz.jpg"
+            data-desc="ثاني أكبر مدن النمسا ومدينة تراث عالمي لليونسكو، تمزج بين البلدة القديمة ذات الطراز الإيطالي والعمارة المعاصرة الجريئة مثل متحف كونستهاوس."
+            data-historic="🗼 برج الساعة – Schlossberg Clock Tower | 🏛️ قلعة غراتس – Schlossberg Fortress | 🎨 متحف كونستهاوس – Kunsthaus Graz | ⛪ كاتدرائية غراتس – Graz Cathedral | 🏘️ ساحة هاوبتبلاتس – Hauptplatz"
+            data-restaurants="🥙 مطعم Osman Grill | 🍗 مطعم Ali Baba Graz | 🍛 مطعم Beirut Graz | 🥘 مطعم Cazbah | 🌿 مطعم Yalla"
+            data-cafes="☕ مقهى Tribeka Coffee | ☕ مقهى Kaiserfeld Café | ☕ مقهى Operncafé | ☕ مقهى Der Steirer | ☕ مقهى Cafe Wienerwald"
+            data-events="🗼 صعود برج الساعة – Clock Tower Climb | 🎨 متحف كونستهاوس الحديث – Kunsthaus Graz Visit | 🏛️ قلعة شلوسبيرغ – Schlossberg Fortress Tour | 🚡 تلفريك شلوسبيرغ – Schlossberg Funicular | 🏘️ جولة البلدة القديمة – Old Town Heritage Walk"
+            onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'austria_graz', 'غراتس – Graz', '/img/Graz.jpg')">🏙️</button>
+            <img src="/img/Graz.jpg" alt="غراتس" class="cite-img">
+            <span class="name">غراتس – Graz</span>
+            <p class="info">مدينة تراث عالمي تمزج بين القديم والمعاصر الجريء.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+        <div class="cite" data-name="هالشتات – Hallstatt" data-img="/img/Hallstatt.jpg"
+            data-desc="قرية جبلية خلابة مدرجة ضمن تراث اليونسكو العالمي، تقع على ضفاف بحيرة هالشتات الفيروزية وسط جبال الألب النمساوية، وتُعد من أجمل القرى في العالم."
+            data-historic="⛪ كنيسة هالشتات الإنجيلية – Evangelical Church | 🧂 منجم الملح القديم – Hallstatt Salt Mine | 💀 دار الجماجم – Beinhaus Charnel House | 🏘️ ساحة السوق – Marktplatz | 🌉 جسر هالشتات الخشبي – Hallstatt Skywalk"
+            data-restaurants="🥙 مطعم Restaurant Rudolfsturm | 🍗 مطعم Simony Terrasse | 🍛 مطعم Gasthof Zauner | 🥘 مطعم Seehotel Grüner Baum | 🌿 مطعم Bräugasthof"
+            data-cafes="☕ مقهى Café Derflinger | ☕ مقهى Kaffeehaus Hallstatt | ☕ مقهى Cafe am See | ☕ مقهى Alpenkonditorei | ☕ مقهى Marktplatz Café"
+            data-events="🚡 تلفريك جبل سالزبيرغ – Salzberg Cable Car | 🧂 جولة منجم الملح الأثري – Salt Mine Tour | 🌉 جسر هالشتات المعلق – Hallstatt Skywalk | 🚤 جولة بحيرة هالشتات – Lake Hallstatt Boat Tour | 🏘️ جولة القرية التراثية – Village Heritage Walk"
+            onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'austria_hallstatt', 'هالشتات – Hallstatt', '/img/Hallstatt.jpg')">🏙️</button>
+            <img src="/img/Hallstatt.jpg" alt="هالشتات" class="cite-img">
+            <span class="name">هالشتات – Hallstatt</span>
+            <p class="info">قرية تراث عالمي على بحيرة فيروزية وسط الألب.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+        <div class="cite" data-name="لينز – Linz" data-img="/img/Linz.jpg"
+            data-desc="عاصمة إقليم النمسا العليا الواقعة على نهر الدانوب، مدينة صناعية تحولت إلى مركز ثقافي مبتكر يجمع بين التراث الباروكي والفن الرقمي المعاصر."
+            data-historic="⛪ كاتدرائية لينز الجديدة – New Cathedral Linz | 🏰 قلعة لينز – Linz Castle | 🏛️ ساحة الرئيسية – Hauptplatz Linz | 🎨 متحف آرس إلكترونيكا – Ars Electronica Center | 🌉 جسر نيبيلونغن – Nibelungen Bridge"
+            data-restaurants="🥙 مطعم Efes Linz | 🍗 مطعم Damaskus Grill | 🍛 مطعم Anatolia Linz | 🥘 مطعم Beirut Restaurant | 🌿 مطعم Cedar House"
+            data-cafes="☕ مقهى Cafe Traxlmayr | ☕ مقهى Jindrak | ☕ مقهى Cafe Meier | ☕ مقهى Kolarik Café | ☕ مقهى Cafe Central Linz"
+            data-events="🎨 متحف آرس إلكترونيكا التفاعلي – Ars Electronica Center | 🏰 جولة قلعة لينز – Linz Castle Tour | 🚤 جولة نهر الدانوب – Danube River Cruise | ⛪ كاتدرائية لينز الجديدة – New Cathedral Visit | 🌉 جسر نيبيلونغن التاريخي – Nibelungen Bridge Walk"
+            onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'austria_linz', 'لينز – Linz', '/img/Linz.jpg')">🏙️</button>
+            <img src="/img/Linz.jpg" alt="لينز" class="cite-img">
+            <span class="name">لينز – Linz</span>
+            <p class="info">مدينة الفن الرقمي والتراث الباروكي على نهر الدانوب.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+    </section>
+
+    <div class="main-foods">
+        <h1>الماكولات</h1>
+    </div>
+    <section class="foods-grid">
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=wiener-schnitzel'">
+            <img src="/img/Wiener-Schnitzel.jpg" alt="" class="foods-img">
+            <span class="name-foods">شنيتزل فيينا – Wiener Schnitzel</span>
+            <div class="food-info">شريحة لحم مقرمشة بالبقسماط، طبق النمسا الوطني.</div>
+            <a href="/recipes/recipes.html?recipe=wiener-schnitzel" class="for-more-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=kaiserschmarrn'">
+            <img src="/img/Kaiserschmarrn.jpg" alt="" class="foods-img">
+            <span class="name-foods">كايزرشمارن – Kaiserschmarrn</span>
+            <div class="food-info">فطيرة محلاة مقطعة تقدم مع مربى البرقوق.</div>
+            <a href="/recipes/recipes.html?recipe=kaiserschmarrn" class="for-more-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=apfelstrudel'">
+            <img src="/img/Apfelstrudel.jpg" alt="" class="foods-img">
+            <span class="name-foods">شتروديل التفاح – Apfelstrudel</span>
+            <div class="food-info">عجينة رقيقة ملفوفة بحشوة التفاح والقرفة.</div>
+            <a href="/recipes/recipes.html?recipe=apfelstrudel" class="for-more-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=tafelspitz'">
+            <img src="/img/Tafelspitz.jpg" alt="" class="foods-img">
+            <span class="name-foods">تافلشبيتس – Tafelspitz</span>
+            <div class="food-info">لحم بقري مسلوق ببطء مع الخضار والمرق.</div>
+            <a href="/recipes/recipes.html?recipe=tafelspitz" class="for-more-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=sachertorte'">
+            <img src="/img/Sachertorte.jpg" alt="" class="foods-img">
+            <span class="name-foods">تورتة زاخر – Sachertorte</span>
+            <div class="food-info">كيك شوكولاتة فيينية شهيرة بحشوة المشمش.</div>
+            <a href="/recipes/recipes.html?recipe=sachertorte" class="for-more-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=leberkase-semmel'">
+            <img src="/img/Leberkase-Semmel.jpg" alt="" class="foods-img">
+            <span class="name-foods">لحم مطحون بالخبز – Leberkäse Semmel</span>
+            <div class="food-info">سناك نمساوي شعبي من اللحم المشوي.</div>
+            <a href="/recipes/recipes.html?recipe=leberkase-semmel" class="for-more-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+    </section>
+
+    <div class="events-main">
+        <h1>الفعاليات</h1>
+    </div>
+    <section class="events-grid">
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=SchonbrunnPalaceTour'">
+            <img src="/img/Schonbrunn-Palace-Tour.jpg" alt="" class="event-img">
+            <span class="name-event">قصر شونبرون – Schönbrunn Palace Tour</span>
+            <div class="event-info">جولة داخل القصر الإمبراطوري الصيفي وحدائقه الواسعة.</div>
+            <a href="/events/events.html?event=SchonbrunnPalaceTour" class="event-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=HallstattCableCar'">
+            <img src="/img/Hallstatt-Cable-Car.jpg" alt="" class="event-img">
+            <span class="name-event">تلفريك هالشتات الجبلي – Hallstatt Cable Car</span>
+            <div class="event-info">صعود بتلفريك يطل على البحيرة الفيروزية وجبال الألب.</div>
+            <a href="/events/events.html?event=HallstattCableCar" class="event-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=ViennaOperaTour'">
+            <img src="/img/Vienna-Opera-Tour.jpg" alt="" class="event-img">
+            <span class="name-event">جولة دار أوبرا فيينا – Vienna Opera Tour</span>
+            <div class="event-info">جولة إرشادية داخل واحدة من أشهر دور.</div>
+            <a href="/events/events.html?event=ViennaOperaTour" class="event-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=HallstattLakeVillage'">
+            <img src="/img/Hallstatt-Lake-Village.jpg" alt="" class="event-img">
+            <span class="name-event">قرية هالشتات على البحيرة – Hallstatt Lake Village</span>
+            <div class="event-info">استكشاف واحدة من أجمل القرى في العالم.</div>
+            <a href="/events/events.html?event=HallstattLakeVillage" class="event-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=SkiResortDayTrip'">
+            <img src="/img/Ski-Resort-Day-Trip.jpg" alt="" class="event-img">
+            <span class="name-event">رحلة منتجع تزلج – Ski Resort Day Trip</span>
+            <div class="event-info">يوم كامل للتزلج والاستمتاع بمناظر جبال الألب النمساوية.</div>
+            <a href="/events/events.html?event=SkiResortDayTrip" class="event-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=SalzburgOldTownTour'">
+            <img src="/img/Salzburg-Old-Town-Tour.jpg" alt="" class="event-img">
+            <span class="name-event">جولة بلدة سالزبورغ القديمة – Salzburg Old Town Tour</span>
+            <div class="event-info">تجول في مسقط رأس موزارت وأزقتها الباروكية العريقة.</div>
+            <a href="/events/events.html?event=SalzburgOldTownTour" class="event-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+    </section>
+
+    <div id="cityModal" class="modal" onclick="closeCityModal(event)">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeCityModal(event)">×</button>
+            <div class="modal-top">
+                <img id="modalCityImg" src="" alt="" />
+                <div class="modal-top-info">
+                    <h2 id="modalCityName"></h2>
+                    <span class="modal-top-badge">✦ تفاصيل المدينة</span>
+                </div>
+            </div>
+            <div class="modal-body">
+                <p id="modalCityDesc" class="event-desc"></p>
+                <h4>🏛️ أفضل الأماكن التاريخية</h4>
+                <div id="modalCityHistoric" class="ingredients-tags"></div>
+                <h4>🍽️ أفضل المطاعم</h4>
+                <div id="modalCityRestaurants" class="ingredients-tags"></div>
+                <h4>☕ أفضل المقاهي</h4>
+                <div id="modalCityCafes" class="ingredients-tags"></div>
+                <h4>🎉 فعاليات المدينة</h4>
+                <div id="modalCityEvents" class="ingredients-tags"></div>
+            </div>
+        </div>
+    </div>
+    <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h2 class="footer-logo">سفرة</h2>
+        <p>وجهتك للسفر والطعام حول العالم</p>
+      </div>
+
+        <div class="footer-links">
+                <h4>روابط سريعة</h4>
+                <ul>
+                    <li><a href="/index/index.html">الرئيسية</a></li>
+                    <li><a href="/countries/countries.html">الدول</a></li>
+                    <li><a href="/events/events.html">الفعاليات</a></li>
+                    <li><a href="/recipes/recipes.html">الوصفات</a></li>
+                    <li><a href="/plan/plan.html">خطتي</a></li>
+                </ul>
+            </div>
+
+      <div class="footer-contact">
+        <h4>تواصل معنا</h4>
+        <ul>
+          <li>📧 <a href="mailto:Sofrh.info@gmail.com" target="_blank">Sofrh.info@gmail.com</a></li>
+          <li>📧 <a href="mailto:Sofrh.support@gmail.com" target="_blank">Sofrh.support@gmail.com</a></li>
+          <li>🐦 <a href="https://twitter.com/sofrah_sa" target="_blank">X (Twitter)</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 سفرة — جميع الحقوق محفوظة</p>
+      <p>صُنع بواسطة فريق سفرة</p>
+      <p>📧 <a href="mailto:Sofrh.info@gmail.com" style="color: #F28500;">Sofrh.info@gmail.com</a></p>
+    </div>
+  </footer>
+    <script src="/countries/countries.js"></script>
+</body>
+
+</html>

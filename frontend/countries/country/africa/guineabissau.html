@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+<script>
+(() => {
+  const theme = localStorage.getItem("theme");
+  document.documentElement.setAttribute("data-theme", theme === "dark" ? "dark" : "light");
+})();
+</script>
+    <style>
+        .auth-buttons { display: none; }
+        .user-menu { display: none; }
+    </style>
+    <meta charset="UTF-8">
+<script>
+    (function(){
+        var u=JSON.parse(localStorage.getItem('safraUser')||'null');
+        var av=localStorage.getItem('safraAvatar')||'';
+        document.documentElement.className+=u?' user-logged-in':' user-logged-out';
+        if(u){
+            var t=setInterval(function(){
+                var n=document.getElementById('userName');
+                var a=document.getElementById('userAvatar');
+                if(n){
+                    n.textContent=u.name||'';
+                    if(a&&(u.avatar||av)) a.src=u.avatar||av;
+                    clearInterval(t);
+                }
+            },1);
+        }
+    })();
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سفرة - غينيا بيساو</title>
+    <link rel="stylesheet" href="/countries/countries.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@500;600&display=swap">
+    <link rel="stylesheet" href="/dark-mode.css">
+    <meta property="og:image" content="https://sofrh.vercel.app/img/logo6.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:title" content="سفرة — سافر وتذوق">
+    <meta property="og:description" content="اكتشف وجهات وماكولات من مختلف أنحاء العالم">
+    <meta property="og:url" content="https://sofrh.vercel.app">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ar_SA">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://sofrh.vercel.app/img/logo6.png">
+    <meta name="twitter:title" content="سفرة — سافر وتذوق">
+    <meta name="twitter:description" content="اكتشف وجهات وماكولات من مختلف أنحاء العالم">
+    <script src="/auth/auth.js" defer></script>
+</head>
+
+<body>
+
+        <header class="navbar">
+        <div class="hamburger" id="menu-btn">☰</div>
+
+        <div class="auth-buttons" id="authButtons">
+            <a href="/auth/login.html" class="login">تسجيل دخول</a>
+            <a href="/auth/signup.html" class="signup">إنشاء حساب</a>
+        </div>
+
+        <div class="user-menu" id="userMenu">
+            <img id="userAvatar" src="" alt="">
+            <span class="user-name" id="userName"></span>
+            <div class="user-dropdown">
+                <a href="/profile/profile.html">الملف الشخصي</a>
+                <a href="#" id="logoutBtn">تسجيل خروج</a>
+            </div>
+        </div>
+
+        <ul class="nav-list">
+            <li><a href="/index/index.html">الرئيسية</a></li>
+            <li><a href="/countries/countries.html" class="active">الدول</a></li>
+            <li><a href="/events/events.html">الفعاليات</a></li>
+            <li><a href="/recipes/recipes.html">الوصفات</a></li>
+            <li><a href="/plan/plan.html">خطتي</a></li>
+            <li><a href="/about/about.html">عن سفرة</a></li>
+        </ul>
+
+        <div class="logo">
+            <a href="/index/index.html"><img src="/img/logo7.png" alt="سفرة"></a>
+        </div>
+    </header>
+
+    <!-- SIDE MENU -->
+    <div class="side-menu" id="side-menu">
+        <span class="close-btn" id="close-btn">×</span>
+        <span class="side-menu-kicker">استكشف</span>
+        <ul>
+            <li><a href="/index/index.html" class="active">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M3 11.5 12 4l9 7.5" />
+                        <path
+                            d="M5.5 10v9a1 1 0 0 0 1 1H9a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h2.5a1 1 0 0 0 1-1v-9" />
+                    </svg>
+                    <span>الرئيسية</span>
+                </a></li>
+            <li><a href="/countries/countries.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M12 21s7-6.6 7-12a7 7 0 1 0-14 0c0 5.4 7 12 7 12Z" />
+                        <circle cx="12" cy="9" r="2.3" />
+                    </svg>
+                    <span>الدول</span>
+                </a></li>
+            <li><a href="/events/events.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <rect x="3.5" y="5" width="17" height="16" rx="2.5" />
+                        <path d="M8 3v4M16 3v4M3.5 10h17" />
+                        <circle cx="12" cy="15" r="1.4" fill="currentColor" stroke="none" />
+                    </svg>
+                    <span>الفعاليات</span>
+                </a></li>
+            <li><a href="/recipes/recipes.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M7 2v8a2 2 0 0 0 2 2v10M5 2v6M9 2v6M14 2c-1.5 2-1.5 7 0 9 .6.6 1 1.3 1 2v9" />
+                    </svg>
+                    <span>الوصفات</span>
+                </a></li>
+            <li><a href="/plan/plan.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="9" />
+                        <path d="M14.8 9.2 13 13l-3.8 1.8L11 11l3.8-1.8Z" />
+                    </svg>
+                    <span>خطتي</span>
+                </a></li>
+            <li><a href="/about/about.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="9" />
+                        <path d="M12 8h.01M11 11.5h1v5.5h1" />
+                    </svg>
+                    <span>عن سفرة</span>
+                </a></li>
+        </ul>
+    </div>
+
+    <div class="country-name">
+        <h1>غينيا بيساو</h1>
+        <p>أرخبيل ساحلي غرب أفريقي يجمع بين جزر بيجاغوس البكر والتاريخ الاستعماري العريق.</p>
+    </div>
+
+    <div class="main-cites">
+        <h1>المدن</h1>
+    </div>
+    <section class="cities-grid">
+
+        <div class="cite" data-name="بيساو – Bissau" data-img="/img/Bissau.jpg"
+            data-desc="عاصمة غينيا بيساو الساحلية على مصب نهر جيبا، تجمع بين العمارة الاستعمارية البرتغالية والأسواق الشعبية الصاخبة وحياة ساحلية نابضة."
+            data-historic="🏰 قلعة بيساو القديمة – Fortaleza d'Amura | ⛪ كاتدرائية بيساو – Bissau Cathedral | 🛍️ سوق باندين – Bandim Market"
+            data-restaurants="🍖 مطعم لاغون – Restaurante Laguna | 🌿 مطعم بيساو ماركت – Mar Azul | 🥘 مطعم دون بيبي – Dom Pepe"
+            data-cafes="☕ مقهى بانتري بيساو – Pantry Bissau | ☕ مقهى بيسيلا – Bicicla Cafe | ☕ مقهى بيسا لاونج – Bissau Lounge Cafe"
+            data-events="🏰 قلعة بيساو القديمة | 🛍️ سوق باندين | ⛪ كاتدرائية بيساو" onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'guineabissau_bissau', 'بيساو – Bissau', '/img/Bissau.jpg')">🏙️</button>
+            <img src="/img/Bissau.jpg" alt="بيساو" class="cite-img">
+            <span class="name">بيساو – Bissau</span>
+            <p class="info">العاصمة الساحلية بعمارة استعمارية عريقة.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+        <div class="cite" data-name="بافاتا – Bafatá" data-img="/img/Bafata.jpg"
+            data-desc="ثاني أكبر مدن البلاد على ضفاف نهر جيبا، مدينة تاريخية عريقة اشتهرت كمركز تجاري قديم ومسقط رأس المفكر أميلكار كابرال."
+            data-historic="🏛️ منزل أميلكار كابرال – Amílcar Cabral House | 🌊 نهر جيبا – Geba River | 🕌 مسجد بافاتا القديم – Old Bafatá Mosque"
+            data-restaurants="🍖 مطعم ريو جيبا – Rio Geba Restaurant | 🌿 مطعم بافاتا غريل – Bafatá Grill | 🍲 مطعم كابرال – Cabral Restaurant"
+            data-cafes="☕ مقهى سنترال بافاتا – Central Bafatá Cafe | ☕ مقهى ريفر سايد – Riverside Cafe | ☕ مقهى بلازا بافاتا – Plaza Bafatá Cafe"
+            data-events="🌊 نهر جيبا | 🏛️ منزل أميلكار كابرال | 🕌 مسجد بافاتا القديم" onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'guineabissau_bafata', 'بافاتا – Bafatá', '/img/Bafata.jpg')">🏙️</button>
+            <img src="/img/Bafata.jpg" alt="بافاتا" class="cite-img">
+            <span class="name">بافاتا – Bafatá</span>
+            <p class="info">مدينة تاريخية على ضفاف نهر جيبا.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+        <div class="cite" data-name="غابو – Gabú" data-img="/img/Gabu.jpg"
+            data-desc="مدينة شرقية تقع في قلب منطقة زراعية خصبة، عاصمة سلطنة غابو التاريخية القديمة وموطن مجتمعات الفولاني والماندينكا المتنوعة."
+            data-historic="🏘️ آثار سلطنة غابو – Gabú Kingdom Ruins | 🌾 حقول الأرز والقطن – Rice and Cotton Fields | 🕌 مسجد غابو الكبير – Gabú Grand Mosque"
+            data-restaurants="🍖 مطعم سافانا – Savana Restaurant | 🌿 مطعم غابو غريل – Gabú Grill | 🍲 مطعم الفولاني – Fulani Restaurant"
+            data-cafes="☕ مقهى إيست بوينت – East Point Cafe | ☕ مقهى ماندينكا – Mandinka Cafe | ☕ مقهى غابو سنتر – Gabú Center Cafe"
+            data-events="🏘️ آثار سلطنة غابو | 🌾 حقول الأرز والقطن | 🕌 مسجد غابو الكبير" onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'guineabissau_gabu', 'غابو – Gabú', '/img/Gabu.jpg')">🏙️</button>
+            <img src="/img/Gabu.jpg" alt="غابو" class="cite-img">
+            <span class="name">غابو – Gabú</span>
+            <p class="info">مدينة سلطنة تاريخية وسط حقول خصبة.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+        <div class="cite" data-name="بولاما – Bolama" data-img="/img/Bolama.jpg"
+            data-desc="جزيرة تاريخية كانت العاصمة الاستعمارية الأولى للبلاد، تحتفظ بمبانٍ برتغالية أثرية مهجورة وسط طبيعة جزيرة هادئة قرب أرخبيل بيجاغوس."
+            data-historic="🏛️ مبنى الحاكم القديم – Old Governor's Palace | ⛪ كاتدرائية بولاما – Bolama Cathedral | 🏝️ شواطئ بولاما – Bolama Beaches"
+            data-restaurants="🍖 مطعم بولاما بيتش – Bolama Beach Restaurant | 🌿 مطعم إيلها فيردي – Ilha Verde | 🍲 مطعم بيجاغوس – Bijagós Restaurant"
+            data-cafes="☕ مقهى بورتو فيلهو – Porto Velho Cafe | ☕ مقهى الجزيرة – Island Cafe | ☕ مقهى بولاما سنتر – Bolama Center Cafe"
+            data-events="🏛️ مبنى الحاكم القديم | 🏝️ شواطئ بولاما | ⛪ كاتدرائية بولاما" onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'guineabissau_bolama', 'بولاما – Bolama', '/img/Bolama.jpg')">🏙️</button>
+            <img src="/img/Bolama.jpg" alt="بولاما" class="cite-img">
+            <span class="name">بولاما – Bolama</span>
+            <p class="info">جزيرة العاصمة الاستعمارية القديمة.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+        <div class="cite" data-name="كاشيو – Cacheu" data-img="/img/Cacheu.jpg"
+            data-desc="بلدة ساحلية شمالية عريقة تُعد من أقدم المستوطنات الأوروبية في غرب أفريقيا، تحتفظ بحصن تاريخي مطل على نهر كاشيو الساحر."
+            data-historic="🏰 حصن كاشيو – Cacheu Fort | 🌊 نهر كاشيو – Cacheu River | 🌳 محمية غابات كاشيو – Cacheu Mangroves Natural Park"
+            data-restaurants="🍖 مطعم فورت كاشيو – Fort Cacheu Restaurant | 🌿 مطعم ريو كاشيو – Rio Cacheu | 🍲 مطعم مانغروف – Mangrove Restaurant"
+            data-cafes="☕ مقهى مانغروف – Mangrove Cafe | ☕ مقهى النهر – River Cafe | ☕ مقهى كاشيو سنتر – Cacheu Center Cafe"
+            data-events="🏰 حصن كاشيو | 🌳 محمية غابات كاشيو | 🌊 نهر كاشيو" onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'guineabissau_cacheu', 'كاشيو – Cacheu', '/img/Cacheu.jpg')">🏙️</button>
+            <img src="/img/Cacheu.jpg" alt="كاشيو" class="cite-img">
+            <span class="name">كاشيو – Cacheu</span>
+            <p class="info">أقدم مستوطنة أوروبية بحصن تاريخي.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+        <div class="cite" data-name="بيسورا – Bissorã" data-img="/img/Bissora.jpg"
+            data-desc="بلدة داخلية هادئة تشتهر بحقول الأرز الشاسعة وأسواقها الأسبوعية النابضة، تمثل نافذة على الحياة الريفية التقليدية في البلاد."
+            data-historic="🌾 حقول الأرز التقليدية – Traditional Rice Paddies | 🛍️ سوق بيسورا الأسبوعي – Bissorã Weekly Market"
+            data-restaurants="🍖 مطعم بيسورا سنتر – Bissorã Center Restaurant | 🌿 مطعم كامبو فيردي – Campo Verde | 🍲 مطعم حقول الأرز – Rice Fields Restaurant"
+            data-cafes="☕ مقهى فيلاج – Village Cafe | ☕ مقهى السوق – Market Cafe | ☕ مقهى بيسورا سنتر – Bissorã Center Cafe"
+            data-events="🌾 حقول الأرز التقليدية | 🛍️ سوق بيسورا الأسبوعي | 🎉 مهرجان الحصاد المحلي" onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'guineabissau_bissora', 'بيسورا – Bissorã', '/img/Bissora.jpg')">🏙️</button>
+            <img src="/img/Bissora.jpg" alt="بيسورا" class="cite-img">
+            <span class="name">بيسورا – Bissorã</span>
+            <p class="info">حقول أرز شاسعة وأسواق ريفية تقليدية.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+    </section>
+
+    <div class="main-foods">
+        <h1>الماكولات</h1>
+    </div>
+    <section class="foods-grid">
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=caldo-de-mancarra'">
+            <img src="/img/Caldo de Mancarra.jpg" alt="كالدو دي مانكارا" class="foods-img">
+            <span class="name-foods">كالدو دي مانكارا – Caldo de Mancarra</span>
+            <div class="food-info">يخنة الفول السوداني الغنية باللحم أو الدجاج.</div>
+            <a href="/recipes/recipes.html?recipe=caldo-de-mancarra" class="for-more-btn"
+                onclick="event.stopPropagation()">الوصفة</a>
+        </div>
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=jollof-rice-bissau'">
+            <img src="/img/Jollof Rice Bissau.jpg" alt="أرز جولوف" class="foods-img">
+            <span class="name-foods">أرز جولوف – Jollof Rice</span>
+            <div class="food-info">أرز حار بالطماطم والتوابل الغرب أفريقية.</div>
+            <a href="/recipes/recipes.html?recipe=jollof-rice-bissau" class="for-more-btn"
+                onclick="event.stopPropagation()">الوصفة</a>
+        </div>
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=xerem-gb'">
+            <img src="/img/Xerem.jpg" alt="كسيريم" class="foods-img">
+            <span class="name-foods">كسيريم – Xerém</span>
+            <div class="food-info">كسكس الذرة المطهو مع السمك أو الخضار.</div>
+            <a href="/recipes/recipes.html?recipe=xerem-gb" class="for-more-btn"
+                onclick="event.stopPropagation()">الوصفة</a>
+        </div>
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=cachupa-bissau'">
+            <img src="/img/Cachupa Bissau.jpg" alt="كاشوبا" class="foods-img">
+            <span class="name-foods">كاشوبا – Cachupa</span>
+            <div class="food-info">طبق الذرة والفاصولياء المطهو ببطء مع الخضار.</div>
+            <a href="/recipes/recipes.html?recipe=cachupa-bissau" class="for-more-btn"
+                onclick="event.stopPropagation()">الوصفة</a>
+        </div>
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=caldeirada-de-peixe'">
+            <img src="/img/Caldeirada de Peixe.jpg" alt="كالديرادا دي بيشي" class="foods-img">
+            <span class="name-foods">كالديرادا دي بيشي – Caldeirada de Peixe</span>
+            <div class="food-info">يخنة سمك ساحلية غنية بالخضار والتوابل.</div>
+            <a href="/recipes/recipes.html?recipe=caldeirada-de-peixe" class="for-more-btn"
+                onclick="event.stopPropagation()">الوصفة</a>
+        </div>
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=cuscuz-de-mancarra'">
+            <img src="/img/Cuscuz de Mancarra.jpg" alt="كسكس دي مانكارا" class="foods-img">
+            <span class="name-foods">كسكس دي مانكارا – Cuscuz de Mancarra</span>
+            <div class="food-info">كسكس محلي بصلصة الفول السوداني الكريمية.</div>
+            <a href="/recipes/recipes.html?recipe=cuscuz-de-mancarra" class="for-more-btn"
+                onclick="event.stopPropagation()">الوصفة</a>
+        </div>
+    </section>
+
+    <div class="events-main">
+        <h1>الفعاليات</h1>
+    </div>
+    <section class="events-grid">
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=BijagosArchipelagoGuineaBissau'">
+            <img src="/img/Bijagos Archipelago.jpg" alt="أرخبيل بيجاغوس" class="event-img">
+            <span class="name-event">أرخبيل بيجاغوس – Bijagós Archipelago</span>
+            <div class="event-info">محمية محيط حيوي عالمية بجزر بكر وحياة.</div>
+            <a href="/events/events.html?event=BijagosArchipelagoGuineaBissau" class="event-btn"
+                onclick="event.stopPropagation()">اكتشف</a>
+        </div>
+
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=BolamaTownGuineaBissau'">
+            <img src="/img/Bolama Historic Town.jpg" alt="مدينة بولاما التاريخية" class="event-img">
+            <span class="name-event">مدينة بولاما التاريخية – Bolama Historic Town</span>
+            <div class="event-info">عاصمة استعمارية سابقة بمبانٍ برتغالية أثرية.</div>
+            <a href="/events/events.html?event=BolamaTownGuineaBissau" class="event-btn"
+                onclick="event.stopPropagation()">اكتشف</a>
+        </div>
+
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=CacheuFortGuineaBissau'">
+            <img src="/img/Cacheu Fort.jpg" alt="حصن كاشيو" class="event-img">
+            <span class="name-event">حصن كاشيو – Cacheu Fort</span>
+            <div class="event-info">قلعة تاريخية من أقدم المعالم الاستعمارية بالمنطقة.</div>
+            <a href="/events/events.html?event=CacheuFortGuineaBissau" class="event-btn"
+                onclick="event.stopPropagation()">اكتشف</a>
+        </div>
+
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=OrangoIslandsParkGuineaBissau'">
+            <img src="/img/Orango Islands National Park.jpg" alt="منتزه جزر أورانغو الوطني" class="event-img">
+            <span class="name-event">منتزه جزر أورانغو – Orango Islands National Park</span>
+            <div class="event-info">موطن فرس النهر البحري النادر والشواطئ البكر.</div>
+            <a href="/events/events.html?event=OrangoIslandsParkGuineaBissau" class="event-btn"
+                onclick="event.stopPropagation()">اكتشف</a>
+        </div>
+
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=BissauCarnivalGuineaBissau'">
+            <img src="/img/Bissau Carnival.jpg" alt="كرنفال بيساو" class="event-img">
+            <span class="name-event">كرنفال بيساو – Bissau Carnival</span>
+            <div class="event-info">احتفال ملون بالأزياء التقليدية والموسيقى والرقص.</div>
+            <a href="/events/events.html?event=BissauCarnivalGuineaBissau" class="event-btn"
+                onclick="event.stopPropagation()">اكتشف</a>
+        </div>
+
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=CantanhezForestParkGuineaBissau'">
+            <img src="/img/Cantanhez Forest National Park.jpg" alt="منتزه غابة كانتانيز الوطني" class="event-img">
+            <span class="name-event">غابة كانتانيز – Cantanhez Forest National Park</span>
+            <div class="event-info">غابات استوائية موطن الشمبانزي الغربي النادر.</div>
+            <a href="/events/events.html?event=CantanhezForestParkGuineaBissau" class="event-btn"
+                onclick="event.stopPropagation()">اكتشف</a>
+        </div>
+    </section>
+
+    <div id="cityModal" class="modal" onclick="closeCityModal(event)">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeCityModal(event)">×</button>
+            <div class="modal-top">
+                <img id="modalCityImg" src="" alt="" />
+                <div class="modal-top-info">
+                    <h2 id="modalCityName"></h2>
+                    <span class="modal-top-badge">✦ تفاصيل المدينة</span>
+                </div>
+            </div>
+            <div class="modal-body">
+                <p id="modalCityDesc" class="event-desc"></p>
+                <h4>🏛️ أفضل الأماكن التاريخية</h4>
+                <div id="modalCityHistoric" class="ingredients-tags"></div>
+                <h4>🍽️ أفضل المطاعم</h4>
+                <div id="modalCityRestaurants" class="ingredients-tags"></div>
+                <h4>☕ أفضل المقاهي</h4>
+                <div id="modalCityCafes" class="ingredients-tags"></div>
+                <h4>🎉 فعاليات المدينة</h4>
+                <div id="modalCityEvents" class="ingredients-tags"></div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h2 class="footer-logo">سفرة</h2>
+                <p>وجهتك للسفر والطعام حول العالم</p>
+            </div>
+            <div class="footer-links">
+                <h4>روابط سريعة</h4>
+                <ul>
+                    <li><a href="/index/index.html">الرئيسية</a></li>
+                    <li><a href="/countries/countries.html">الدول</a></li>
+                    <li><a href="/events/events.html">الفعاليات</a></li>
+                    <li><a href="/recipes/recipes.html">الوصفات</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>تواصل معنا</h4>
+                <ul>
+                    <li>📧 <a href="mailto:Sofrh.info@gmail.com" target="_blank">Sofrh.info@gmail.com</a></li>
+                    <li>📧 <a href="mailto:Sofrh.support@gmail.com" target="_blank">Sofrh.support@gmail.com</a></li>
+                    <li>🐦 <a href="https://twitter.com/sofrah_sa" target="_blank">X (Twitter)</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 سفرة — جميع الحقوق محفوظة</p>
+            <p>صُنع بواسطة فريق سفرة</p>
+            <p>📧 <a href="mailto:Sofrh.info@gmail.com" style="color: #F28500;">Sofrh.info@gmail.com</a></p>
+        </div>
+    </footer>
+
+    <script src="/countries/countries.js"></script>
+</body>
+
+</html>

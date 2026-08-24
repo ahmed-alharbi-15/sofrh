@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+<script>
+(() => {
+  const theme = localStorage.getItem("theme");
+  document.documentElement.setAttribute("data-theme", theme === "dark" ? "dark" : "light");
+})();
+</script>
+    <style>
+        .auth-buttons { display: none; }
+        .user-menu { display: none; }
+    </style>
+    <meta charset="UTF-8">
+<script>
+    (function(){
+        var u=JSON.parse(localStorage.getItem('safraUser')||'null');
+        var av=localStorage.getItem('safraAvatar')||'';
+        document.documentElement.className+=u?' user-logged-in':' user-logged-out';
+        if(u){
+            var t=setInterval(function(){
+                var n=document.getElementById('userName');
+                var a=document.getElementById('userAvatar');
+                if(n){
+                    n.textContent=u.name||'';
+                    if(a&&(u.avatar||av)) a.src=u.avatar||av;
+                    clearInterval(t);
+                }
+            },1);
+        }
+    })();
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سفرة</title>
+    <link rel="stylesheet" href="/countries/countries.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@500;600&display=swap">
+    <link rel="stylesheet" href="/dark-mode.css">
+    <meta property="og:image" content="https://sofrh.vercel.app/img/logo6.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:title" content="سفرة — سافر وتذوق">
+    <meta property="og:description" content="اكتشف وجهات وماكولات من مختلف أنحاء العالم">
+    <meta property="og:url" content="https://sofrh.vercel.app">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ar_SA">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://sofrh.vercel.app/img/logo6.png">
+    <meta name="twitter:title" content="سفرة — سافر وتذوق">
+    <meta name="twitter:description" content="اكتشف وجهات وماكولات من مختلف أنحاء العالم">
+    <script src="/auth/auth.js" defer></script>
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="hamburger" id="menu-btn">☰</div>
+
+        <div class="auth-buttons" id="authButtons">
+            <a href="/auth/login.html" class="login">تسجيل دخول</a>
+            <a href="/auth/signup.html" class="signup">إنشاء حساب</a>
+        </div>
+
+        <div class="user-menu" id="userMenu">
+            <img id="userAvatar" src="" alt="">
+            <span class="user-name" id="userName"></span>
+            <div class="user-dropdown">
+                <a href="/profile/profile.html">الملف الشخصي</a>
+                <a href="#" id="logoutBtn">تسجيل خروج</a>
+            </div>
+        </div>
+
+        <ul class="nav-list">
+            <li><a href="/index/index.html">الرئيسية</a></li>
+            <li><a href="/countries/countries.html" class="active">الدول</a></li>
+            <li><a href="/events/events.html">الفعاليات</a></li>
+            <li><a href="/recipes/recipes.html">الوصفات</a></li>
+            <li><a href="/plan/plan.html">خطتي</a></li>
+            <li><a href="/about/about.html">عن سفرة</a></li>
+        </ul>
+
+        <div class="logo">
+            <a href="/index/index.html"><img src="/img/logo7.png" alt="سفرة"></a>
+        </div>
+    </header>
+
+    <!-- SIDE MENU -->
+    <div class="side-menu" id="side-menu">
+        <span class="close-btn" id="close-btn">×</span>
+        <span class="side-menu-kicker">استكشف</span>
+        <ul>
+            <li><a href="/index/index.html" class="active">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M3 11.5 12 4l9 7.5" />
+                        <path
+                            d="M5.5 10v9a1 1 0 0 0 1 1H9a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h2.5a1 1 0 0 0 1-1v-9" />
+                    </svg>
+                    <span>الرئيسية</span>
+                </a></li>
+            <li><a href="/countries/countries.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M12 21s7-6.6 7-12a7 7 0 1 0-14 0c0 5.4 7 12 7 12Z" />
+                        <circle cx="12" cy="9" r="2.3" />
+                    </svg>
+                    <span>الدول</span>
+                </a></li>
+            <li><a href="/events/events.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <rect x="3.5" y="5" width="17" height="16" rx="2.5" />
+                        <path d="M8 3v4M16 3v4M3.5 10h17" />
+                        <circle cx="12" cy="15" r="1.4" fill="currentColor" stroke="none" />
+                    </svg>
+                    <span>الفعاليات</span>
+                </a></li>
+            <li><a href="/recipes/recipes.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M7 2v8a2 2 0 0 0 2 2v10M5 2v6M9 2v6M14 2c-1.5 2-1.5 7 0 9 .6.6 1 1.3 1 2v9" />
+                    </svg>
+                    <span>الوصفات</span>
+                </a></li>
+            <li><a href="/plan/plan.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="9" />
+                        <path d="M14.8 9.2 13 13l-3.8 1.8L11 11l3.8-1.8Z" />
+                    </svg>
+                    <span>خطتي</span>
+                </a></li>
+            <li><a href="/about/about.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="9" />
+                        <path d="M12 8h.01M11 11.5h1v5.5h1" />
+                    </svg>
+                    <span>عن سفرة</span>
+                </a></li>
+        </ul>
+    </div>
+    <header>
+        <a href="/countries/countries.html" class="back-btn">رجوع</a>
+    </header>
+
+    <div class="country-name">
+        <h1>التشيك</h1>
+        <p>مدينة الأبراج الذهبية المائة وقلاع قروسطية محفوظة</p>
+    </div>
+
+    <div class="main-cites">
+        <h1>المدن</h1>
+    </div>
+    <section class="cities-grid">
+
+        <div class="cite" data-name="براغ – Prague" data-img="/img/Prague.jpg"
+            data-desc="عاصمة التشيك ومدينة الأبراج الذهبية المائة، تنساب عبرها نهر فلتافا وسط جسور حجرية عريقة وأحياء قوطية وباروكية محفوظة بالكامل، من أكثر عواصم أوروبا الوسطى سحراً وعراقة."
+            data-historic="🏰 قلعة براغ – Prague Castle | 🌉 جسر تشارلز – Charles Bridge | 🕰️ الساعة الفلكية القديمة – Astronomical Clock | ⛪ كاتدرائية القديس فيتوس – St. Vitus Cathedral | 🏘️ الحي اليهودي القديم – Josefov Jewish Quarter"
+            data-restaurants="🍽️ مطعم Lokál Dlouhááá | 🥘 مطعم U Modré Kachničky | 🥗 مطعم Field Restaurant | 🍢 مطعم Kalina | 🐟 مطعم Café Savoy"
+            data-cafes="☕ مقهى Café Louvre | ☕ مقهى Grand Café Orient | ☕ مقهى Café Slavia | ☕ مقهى Kavárna Obecní Dům | ☕ مقهى Můj Šálek Kávy"
+            data-events="🏰 جولة قلعة براغ – Prague Castle Tour | 🌉 عبور جسر تشارلز التاريخي – Charles Bridge Walk | 🕰️ مشاهدة الساعة الفلكية – Astronomical Clock Show | 🚢 رحلة نهرية في فلتافا – Vltava River Cruise | 🏘️ جولة الحي اليهودي القديم – Josefov Quarter Tour"
+            onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'czechrepublic_prague', 'براغ - Prague', '/img/Prague.jpg')">🏙️</button>
+            <img src="/img/Prague.jpg" alt="براغ" class="cite-img">
+            <span class="name">براغ – Prague</span>
+            <p class="info">مدينة الأبراج الذهبية المائة على ضفاف نهر فلتافا.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+        <div class="cite" data-name="تشيسكي كروملوف – Český Krumlov" data-img="/img/Cesky Krumlov.jpg"
+            data-desc="بلدة قروسطية خيالية تتلوى حولها نهر فلتافا بانحناءة كاملة، قلعتها الضخمة الملونة تطل على سقوف حمراء متراصة وأزقة حجرية ضيقة محفوظة كما كانت قبل قرون."
+            data-historic="🏰 قلعة تشيسكي كروملوف – Český Krumlov Castle | 🎭 مسرح القلعة الباروكي الدوار – Baroque Revolving Theatre | ⛪ كنيسة القديس فيتوس – St. Vitus Church | 🌉 جسر الحديقة الملون – Cloak Bridge | 🏛️ متحف إيغون شيله – Egon Schiele Art Centrum"
+            data-restaurants="🍽️ مطعم Krčma v Šatlavské | 🥘 مطعم Papa's Living Restaurant | 🥗 مطعم Nonna Gina | 🍢 مطعم U Dwau Maryí | 🐟 مطعم Laibon"
+            data-cafes="☕ مقهى Café Cesty | ☕ مقهى U Dvou Marek Café | ☕ مقهى Ipanema Café | ☕ مقهى Cikánská Jizba Café | ☕ مقهى Dobrá Čajovna"
+            data-events="🏰 جولة قلعة تشيسكي كروملوف – Castle Tour | 🚣 التجديف في نهر فلتافا حول البلدة – Vltava River Canoeing | 🎭 زيارة المسرح الدوار الباروكي – Revolving Theatre Visit | 🏘️ التجول في الأزقة القروسطية – Medieval Alleys Walk | 📸 مشاهدة البلدة من نقطة إطلالة القلعة – Castle Viewpoint Photo Stop"
+            onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'czechrepublic_ceskykrumlov', 'تشيسكي كروملوف - Český Krumlov', '/img/Cesky Krumlov.jpg')">🏙️</button>
+            <img src="/img/Cesky Krumlov.jpg" alt="تشيسكي كروملوف" class="cite-img">
+            <span class="name">تشيسكي كروملوف – Český Krumlov</span>
+            <p class="info">بلدة قروسطية خيالية تحيط بها نهر فلتافا بانحناءة كاملة.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+        <div class="cite" data-name="كارلوفي فاري – Karlovy Vary" data-img="/img/Karlovy Vary.jpg"
+            data-desc="مدينة العيون الحرارية الشهيرة عالمياً، تحيط بها تلال خضراء كثيفة وواجهات مباني ملونة بأسلوب القرن التاسع عشر على ضفاف نهر تيبلا، وجهة استجمام كلاسيكية أنيقة."
+            data-historic="♨️ نبع فريدلاند الحراري – Vřídlo Hot Spring | 🏛️ ممشى العيون الحرارية – Mlýnská Colonnade | ⛪ كنيسة القديسة مريم مجدلية – Church of St. Mary Magdalene | 🚡 برج ديانا المطل – Diana Lookout Tower | 🏰 قلعة لوكيت – Loket Castle"
+            data-restaurants="🍽️ مطعم Grandrestaurant Pupp | 🥘 مطعم Embassy Restaurant | 🥗 مطعم Karel IV Café Restaurant | 🍢 مطعم Zátiší Restaurant | 🐟 مطعم Promenáda"
+            data-cafes="☕ مقهى Café Elefant | ☕ مقهى Alžbětiny Lázně Café | ☕ مقهى Goethe Café | ☕ مقهى Café Pupp | ☕ مقهى Lázeňská Kavárna"
+            data-events="♨️ التجول في ممشى العيون الحرارية – Hot Spring Colonnade Walk | 🚡 صعود برج ديانا المطل – Diana Tower Ascent | 🏰 زيارة قلعة لوكيت القريبة – Loket Castle Visit | 🚶 نزهة على ضفاف نهر تيبلا – Teplá Riverside Walk | 🎬 جولة مبنى مهرجان السينما – Film Festival Building Tour"
+            onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'czechrepublic_karlovyvary', 'كارلوفي فاري - Karlovy Vary', '/img/Karlovy Vary.jpg')">🏙️</button>
+            <img src="/img/Karlovy Vary.jpg" alt="كارلوفي فاري" class="cite-img">
+            <span class="name">كارلوفي فاري – Karlovy Vary</span>
+            <p class="info">مدينة العيون الحرارية الشهيرة وواجهات القرن التاسع عشر الملونة.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+        <div class="cite" data-name="كوتنا هورا – Kutná Hora" data-img="/img/Kutna Hora.jpg"
+            data-desc="مدينة الفضة القروسطية التي كانت يوماً من أغنى مدن أوروبا، تشتهر بكاتدرائيتها القوطية المهيبة وكنيستها العظمية الفريدة المزينة بالكامل بعظام بشرية مرتبة بدقة فنية."
+            data-historic="⛪ كاتدرائية القديسة بربارة – St. Barbara's Cathedral | 💀 الكنيسة العظمية سيدلك – Sedlec Ossuary | 🏛️ متحف الفضة والمسكوكات – Czech Silver Museum | 🏰 قصر هرادك – Hrádek Castle | ⛪ كنيسة السيدة العذراء في سيدلك – Church of Our Lady at Sedlec"
+            data-restaurants="🍽️ مطعم Dačický | 🥘 مطعم V Ruthardce | 🥗 مطعم Piazza Navona | 🍢 مطعم Harmonica | 🐟 مطعم U Šneka Pomaleji"
+            data-cafes="☕ مقهى Café Blues | ☕ مقهى Kavárna U Barborky | ☕ مقهى Dobrá Čajovna Kutná Hora | ☕ مقهى Café Ossuary | ☕ مقهى Pod Barborkou"
+            data-events="⛪ جولة كاتدرائية القديسة بربارة – St. Barbara's Cathedral Tour | 💀 زيارة الكنيسة العظمية – Sedlec Ossuary Visit | 🏛️ جولة متحف الفضة والمسكوكات – Silver Museum Tour | 🚶 نزهة في البلدة القديمة القروسطية – Medieval Old Town Walk | 📸 تصوير واجهات المباني القوطية – Gothic Facades Photo Walk"
+            onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'czechrepublic_kutnahora', 'كوتنا هورا - Kutná Hora', '/img/Kutna Hora.jpg')">🏙️</button>
+            <img src="/img/Kutna Hora.jpg" alt="كوتنا هورا" class="cite-img">
+            <span class="name">كوتنا هورا – Kutná Hora</span>
+            <p class="info">مدينة الفضة القروسطية وكنيستها العظمية الفريدة.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+        <div class="cite" data-name="برنو – Brno" data-img="/img/Brno.jpg"
+            data-desc="ثاني أكبر مدن التشيك ومركزها العلمي والجامعي، مدينة عصرية نابضة بالحياة تحيط بها قلعة شبيلبرك التاريخية وسط تلال مورافيا الخضراء الهادئة."
+            data-historic="🏰 قلعة شبيلبرك – Špilberk Castle | ⛪ كاتدرائية القديسين بطرس وبولس – Cathedral of Saints Peter and Paul | 🕳️ نفق كوستنيتسا العظمي – Brno Ossuary | 🏛️ فيلا توغندهات – Villa Tugendhat | ⛲ ميدان الحرية – Freedom Square"
+            data-restaurants="🍽️ مطعم Super Panda Circus | 🥘 مطعم Borgo Agnese | 🥗 مطعم Vegspace | 🍢 مطعم Rebel Restaurant | 🐟 مطعم Turnovský"
+            data-cafes="☕ مقهى Café Podnebí | ☕ مقهى Skøgen Café | ☕ مقهى La Bohème Café | ☕ مقهى Konírna Café | ☕ مقهى Era Café"
+            data-events="🏰 جولة قلعة شبيلبرك – Špilberk Castle Tour | 🕳️ زيارة نفق كوستنيتسا العظمي – Brno Ossuary Visit | 🏛️ جولة فيلا توغندهات الحداثية – Villa Tugendhat Tour | ⛲ نزهة في ميدان الحرية – Freedom Square Stroll | 🚶 التجول في الأنفاق تحت الأرضية – Underground Passages Walk"
+            onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'czechrepublic_brno', 'برنو - Brno', '/img/Brno.jpg')">🏙️</button>
+            <img src="/img/Brno.jpg" alt="برنو" class="cite-img">
+            <span class="name">برنو – Brno</span>
+            <p class="info">مركز التشيك العلمي والجامعي وسط تلال مورافيا الخضراء.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+        <div class="cite" data-name="تيلتش – Telč" data-img="/img/Telc.jpg"
+            data-desc="بلدة صغيرة محفوظة بالكامل تتوسطها ساحة رئيسية محاطة بواجهات منازل ملونة بطراز عصر النهضة، تنعكس صورتها بالكامل على بحيرة صناعية هادئة تحيط بالبلدة من جميع الجهات."
+            data-historic="🏰 قصر تيلتش – Telč Chateau | ⛲ ساحة زخاريا من هرادتس – Zachariah of Hradec Square | ⛪ برج كنيسة القديس يعقوب – St. James Church Tower | 🏞️ بحيرة أوليتسكي ريبنيك – Ulický Rybník Lake | 🏛️ متحف تيلتش المحلي – Telč Regional Museum"
+            data-restaurants="🍽️ مطعم Švejk Restaurant Telč | 🥘 مطعم Černý Orel | 🥗 مطعم U Marušky | 🍢 مطعم Steakhouse Telč | 🐟 مطعم Kasárna"
+            data-cafes="☕ مقهى Kavárna Antré | ☕ مقهى Café U Zachariáše | ☕ مقهى Cukrárna Telč | ☕ مقهى Švejk Café | ☕ مقهى Chateau Café Telč"
+            data-events="⛲ التجول في ساحة زخاريا الملونة – Zachariah Square Walk | 🏰 جولة قصر تيلتش – Telč Chateau Tour | ⛪ صعود برج كنيسة القديس يعقوب – St. James Tower Climb | 🏞️ نزهة حول بحيرة أوليتسكي ريبنيك – Lake Walk | 📸 تصوير انعكاس الواجهات على البحيرة – Reflection Photo Stop"
+            onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'czechrepublic_telc', 'تيلتش - Telč', '/img/Telc.jpg')">🏙️</button>
+            <img src="/img/Telc.jpg" alt="تيلتش" class="cite-img">
+            <span class="name">تيلتش – Telč</span>
+            <p class="info">ساحة عصر النهضة الملونة تنعكس على بحيرة صناعية هادئة.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+    </section>
+
+    <div class="main-foods">
+        <h1>الماكولات</h1>
+    </div>
+    <section class="foods-grid">
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=czech-svickova'">
+            <img src="/img/Svickova.jpg" alt="" class="foods-img">
+            <span class="name-foods">سفيتشكوفا – Svíčková</span>
+            <div class="food-info">لحم بقري بصوص خضار كريمي وكرات عجين.</div>
+            <a href="/recipes/recipes.html?recipe=czech-svickova" class="for-more-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=czech-trdelnik'">
+            <img src="/img/Trdelnik.jpg" alt="" class="foods-img">
+            <span class="name-foods">تردلنيك – Trdelník</span>
+            <div class="food-info">عجين ملفوف مشوي بالسكر والقرفة.</div>
+            <a href="/recipes/recipes.html?recipe=czech-trdelnik" class="for-more-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=czech-gulas'">
+            <img src="/img/Gulas.jpg" alt="" class="foods-img">
+            <span class="name-foods">جولاش – Guláš</span>
+            <div class="food-info">يخنة لحم بقري غنية بالبابريكا.</div>
+            <a href="/recipes/recipes.html?recipe=czech-gulas" class="for-more-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=czech-bramboraky'">
+            <img src="/img/Bramboraky.jpg" alt="" class="foods-img">
+            <span class="name-foods">براموراكي – Bramboráky</span>
+            <div class="food-info">فطائر بطاطس مقرمشة بالثوم.</div>
+            <a href="/recipes/recipes.html?recipe=czech-bramboraky" class="for-more-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=czech-kolace'">
+            <img src="/img/Kolace.jpg" alt="" class="foods-img">
+            <span class="name-foods">كولاتشه – Koláče</span>
+            <div class="food-info">كعك محشو بمربى المشمش والخوخ.</div>
+            <a href="/recipes/recipes.html?recipe=czech-kolace" class="for-more-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=czech-knedliky'">
+            <img src="/img/Kynute Knedliky.jpg" alt="" class="foods-img">
+            <span class="name-foods">كنيدليكي محشوة – Kynuté Knedlíky</span>
+            <div class="food-info">كرات عجين مطهوة بالبخار محشوة بالفواكه.</div>
+            <a href="/recipes/recipes.html?recipe=czech-knedliky" class="for-more-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+    </section>
+
+    <div class="events-main">
+        <h1>الفعاليات</h1>
+    </div>
+    <section class="events-grid">
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=PragueCastleCharlesBridge'">
+            <img src="/img/Prague Castle Charles Bridge.jpg" alt="" class="event-img">
+            <span class="name-event">قلعة براغ وجسر تشارلز – Prague Castle & Charles Bridge</span>
+            <div class="event-info">أيقونتا براغ التاريخيتان على ضفاف نهر فلتافا.</div>
+            <a href="/events/events.html?event=PragueCastleCharlesBridge" class="event-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=AstronomicalClockOldTown'">
+            <img src="/img/Astronomical Clock Old Town.jpg" alt="" class="event-img">
+            <span class="name-event">الساعة الفلكية والبلدة القديمة – Astronomical Clock</span>
+            <div class="event-info">أقدم ساعة فلكية عاملة في العالم لا.</div>
+            <a href="/events/events.html?event=AstronomicalClockOldTown" class="event-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=CeskyKrumlovDayTrip'">
+            <img src="/img/Cesky Krumlov Day Trip.jpg" alt="" class="event-img">
+            <span class="name-event">رحلة تشيسكي كروملوف – Český Krumlov Day Trip</span>
+            <div class="event-info">بلدة قروسطية محفوظة تحيط بها انحناءة نهرية كاملة.</div>
+            <a href="/events/events.html?event=CeskyKrumlovDayTrip" class="event-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=KarlstejnCastleVisit'">
+            <img src="/img/Karlstejn Castle.jpg" alt="" class="event-img">
+            <span class="name-event">قلعة كارلشتاين – Karlštejn Castle</span>
+            <div class="event-info">قلعة قروسطية شاهقة فوق تلة حرجية قرب براغ.</div>
+            <a href="/events/events.html?event=KarlstejnCastleVisit" class="event-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=VltavaRiverCruise'">
+            <img src="/img/Vltava River Cruise.jpg" alt="" class="event-img">
+            <span class="name-event">رحلة نهر فلتافا – Vltava River Cruise</span>
+            <div class="event-info">جولة مسائية بالقارب بين جسور براغ المضيئة.</div>
+            <a href="/events/events.html?event=VltavaRiverCruise" class="event-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=KutnaHoraSilverTour'">
+            <img src="/img/Kutna Hora Silver Tour.jpg" alt="" class="event-img">
+            <span class="name-event">جولة كوتنا هورا الفضية – Kutná Hora Silver Tour</span>
+            <div class="event-info">كاتدرائية قوطية مهيبة وكنيسة عظمية فريدة.</div>
+            <a href="/events/events.html?event=KutnaHoraSilverTour" class="event-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+    </section>
+
+    <div id="cityModal" class="modal" onclick="closeCityModal(event)">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeCityModal(event)">×</button>
+            <div class="modal-top">
+                <img id="modalCityImg" src="" alt="" />
+                <div class="modal-top-info">
+                    <h2 id="modalCityName"></h2>
+                    <span class="modal-top-badge">✦ تفاصيل المدينة</span>
+                </div>
+            </div>
+            <div class="modal-body">
+                <p id="modalCityDesc" class="event-desc"></p>
+                <h4>🏛️ أفضل الأماكن التاريخية</h4>
+                <div id="modalCityHistoric" class="ingredients-tags"></div>
+                <h4>🍽️ أفضل المطاعم</h4>
+                <div id="modalCityRestaurants" class="ingredients-tags"></div>
+                <h4>☕ أفضل المقاهي</h4>
+                <div id="modalCityCafes" class="ingredients-tags"></div>
+                <h4>🎉 فعاليات المدينة</h4>
+                <div id="modalCityEvents" class="ingredients-tags"></div>
+            </div>
+        </div>
+    </div>
+    <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h2 class="footer-logo">سفرة</h2>
+        <p>وجهتك للسفر والطعام حول العالم</p>
+      </div>
+
+        <div class="footer-links">
+                <h4>روابط سريعة</h4>
+                <ul>
+                    <li><a href="/index/index.html">الرئيسية</a></li>
+                    <li><a href="/countries/countries.html">الدول</a></li>
+                    <li><a href="/events/events.html">الفعاليات</a></li>
+                    <li><a href="/recipes/recipes.html">الوصفات</a></li>
+                    <li><a href="/plan/plan.html">خطتي</a></li>
+                </ul>
+            </div>
+
+      <div class="footer-contact">
+        <h4>تواصل معنا</h4>
+        <ul>
+          <li>📧 <a href="mailto:Sofrh.info@gmail.com" target="_blank">Sofrh.info@gmail.com</a></li>
+          <li>📧 <a href="mailto:Sofrh.support@gmail.com" target="_blank">Sofrh.support@gmail.com</a></li>
+          <li>🐦 <a href="https://twitter.com/sofrah_sa" target="_blank">X (Twitter)</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 سفرة — جميع الحقوق محفوظة</p>
+      <p>صُنع بواسطة فريق سفرة</p>
+      <p>📧 <a href="mailto:Sofrh.info@gmail.com" style="color: #F28500;">Sofrh.info@gmail.com</a></p>
+    </div>
+  </footer>
+    <script src="/countries/countries.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<script>
+(() => {
+  const theme = localStorage.getItem("theme");
+  document.documentElement.setAttribute("data-theme", theme === "dark" ? "dark" : "light");
+})();
+</script>
+    <style>
+        .auth-buttons { display: none; }
+        .user-menu { display: none; }
+    </style>
+    <meta charset="UTF-8">
+<script>
+    (function(){
+        var u=JSON.parse(localStorage.getItem('safraUser')||'null');
+        var av=localStorage.getItem('safraAvatar')||'';
+        document.documentElement.className+=u?' user-logged-in':' user-logged-out';
+        if(u){
+            var t=setInterval(function(){
+                var n=document.getElementById('userName');
+                var a=document.getElementById('userAvatar');
+                if(n){
+                    n.textContent=u.name||'';
+                    if(a&&(u.avatar||av)) a.src=u.avatar||av;
+                    clearInterval(t);
+                }
+            },1);
+        }
+    })();
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سفرة</title>
+    <link rel="stylesheet" href="/countries/countries.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@500;600&display=swap">
+    <link rel="stylesheet" href="/dark-mode.css">
+    <meta property="og:image" content="https://sofrh.vercel.app/img/logo6.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:title" content="سفرة — سافر وتذوق">
+    <meta property="og:description" content="اكتشف وجهات وماكولات من مختلف أنحاء العالم">
+    <meta property="og:url" content="https://sofrh.vercel.app">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ar_SA">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://sofrh.vercel.app/img/logo6.png">
+    <meta name="twitter:title" content="سفرة — سافر وتذوق">
+    <meta name="twitter:description" content="اكتشف وجهات وماكولات من مختلف أنحاء العالم">
+    <script src="/auth/auth.js" defer></script>
+</head>
+<body>
+        <header class="navbar">
+        <div class="hamburger" id="menu-btn">☰</div>
+
+        <div class="auth-buttons" id="authButtons">
+            <a href="/auth/login.html" class="login">تسجيل دخول</a>
+            <a href="/auth/signup.html" class="signup">إنشاء حساب</a>
+        </div>
+
+        <div class="user-menu" id="userMenu">
+            <img id="userAvatar" src="" alt="">
+            <span class="user-name" id="userName"></span>
+            <div class="user-dropdown">
+                <a href="/profile/profile.html">الملف الشخصي</a>
+                <a href="#" id="logoutBtn">تسجيل خروج</a>
+            </div>
+        </div>
+
+        <ul class="nav-list">
+            <li><a href="/index/index.html">الرئيسية</a></li>
+            <li><a href="/countries/countries.html" class="active">الدول</a></li>
+            <li><a href="/events/events.html">الفعاليات</a></li>
+            <li><a href="/recipes/recipes.html">الوصفات</a></li>
+            <li><a href="/plan/plan.html">خطتي</a></li>
+            <li><a href="/about/about.html">عن سفرة</a></li>
+        </ul>
+
+        <div class="logo">
+            <a href="/index/index.html"><img src="/img/logo7.png" alt="سفرة"></a>
+        </div>
+    </header>
+    <!-- SIDE MENU -->
+    <div class="side-menu" id="side-menu">
+        <span class="close-btn" id="close-btn">×</span>
+        <span class="side-menu-kicker">استكشف</span>
+        <ul>
+            <li><a href="/index/index.html" class="active">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M3 11.5 12 4l9 7.5" />
+                        <path
+                            d="M5.5 10v9a1 1 0 0 0 1 1H9a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h2.5a1 1 0 0 0 1-1v-9" />
+                    </svg>
+                    <span>الرئيسية</span>
+                </a></li>
+            <li><a href="/countries/countries.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M12 21s7-6.6 7-12a7 7 0 1 0-14 0c0 5.4 7 12 7 12Z" />
+                        <circle cx="12" cy="9" r="2.3" />
+                    </svg>
+                    <span>الدول</span>
+                </a></li>
+            <li><a href="/events/events.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <rect x="3.5" y="5" width="17" height="16" rx="2.5" />
+                        <path d="M8 3v4M16 3v4M3.5 10h17" />
+                        <circle cx="12" cy="15" r="1.4" fill="currentColor" stroke="none" />
+                    </svg>
+                    <span>الفعاليات</span>
+                </a></li>
+            <li><a href="/recipes/recipes.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M7 2v8a2 2 0 0 0 2 2v10M5 2v6M9 2v6M14 2c-1.5 2-1.5 7 0 9 .6.6 1 1.3 1 2v9" />
+                    </svg>
+                    <span>الوصفات</span>
+                </a></li>
+            <li><a href="/plan/plan.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="9" />
+                        <path d="M14.8 9.2 13 13l-3.8 1.8L11 11l3.8-1.8Z" />
+                    </svg>
+                    <span>خطتي</span>
+                </a></li>
+            <li><a href="/about/about.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="9" />
+                        <path d="M12 8h.01M11 11.5h1v5.5h1" />
+                    </svg>
+                    <span>عن سفرة</span>
+                </a></li>
+        </ul>
+    </div>
+    <header>
+        <a href="/countries/countries.html" class="back-btn">رجوع</a>
+    </header>
+
+    <div class="country-name">
+        <h1>كوبا</h1>
+        <p>حيث الموسيقى والألوان والتاريخ يجتمعون في جزيرة البحر الكاريبي</p>
+    </div>
+
+    <div class="main-cites">
+        <h1>المدن</h1>
+    </div>
+    <section class="cities-grid">
+
+        <div class="cite" data-name="هافانا – Havana" data-img="/img/cuba-havana.jpg"
+            data-desc="عاصمة كوبا الخلابة بشوارعها الاستعمارية الملونة وسياراتها الكلاسيكية القديمة وموسيقاها التي لا تهدأ في الليل والنهار."
+            data-historic="🏛️ هافانا القديمة – La Habana Vieja | 🎶 كلوب موسيقى | 🏰 قلعة الموررو – El Morro | 🌅 مالكون – Malecón"
+            data-restaurants="🍽️ مطعم La Guarida | 🌿 مطعم El del Frente | 🥘 مطعم San Cristobal"
+            data-cafes="☕ مقهى Café El Escorial | ☕ مقهى Cafetería La Rampa | ☕ مقهى Café Habana"
+            data-events="🏛️ جولة هافانا القديمة | 🎶 حفلة الموسيقى الكوبية | 🚗 جولة السيارات الكلاسيكية"
+            onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'cuba_havana', 'هافانا', '/img/cuba-havana.jpg')">🏙️</button>
+            <img src="/img/cuba-havana.jpg" alt="هافانا" class="cite-img">
+            <span class="name">هافانا – Havana</span>
+            <p class="info">عاصمة الألوان والموسيقى والتاريخ الاستعماري الكوبي.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+        <div class="cite" data-name="فينياليس – Viñales" data-img="/img/cuba-vinales.jpg"
+            data-desc="وادٍ خلاب في محافظة بينار ديل ريو بتضاريسه الصخرية المثيرة (موغوتيس) ومزارعه الخضراء وثقافة المزارعين الكوبيين."
+            data-historic="🌿 وادي فينياليس – Viñales Valley | 🧱 موغوتيس الصخرية – Mogotes | 🌱 مزارع التبغ | 🕯️ كهف الإنديو – Cueva del Indio"
+            data-restaurants="🍽️ مطعم El Olivo | 🌿 مطعم Casa Don Tomás | 🥘 مطعم La Casa de Don Tomás"
+            data-cafes="☕ مقهى Café Viñales | ☕ مقهى El Portón | ☕ مقهى Sabor de Cuba"
+            data-events="🌿 جولة وادي فينياليس | 🧱 تسلق الموغوتيس | 🕯️ كهف الإنديو"
+            onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'cuba_viñales', 'فينياليس', '/img/cuba-vinales.jpg')">🏙️</button>
+            <img src="/img/cuba-vinales.jpg" alt="فينياليس" class="cite-img">
+            <span class="name">فينياليس – Viñales</span>
+            <p class="info">الوادي الخلاب بصخوره الاستثنائية ومزارع الطبيعة الكوبية.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+        <div class="cite" data-name="ترينيداد – Trinidad" data-img="/img/cuba-trinidad.jpg"
+            data-desc="مدينة استعمارية مثالية الحفظ تعود للقرن السادس عشر، شوارعها المبلطة بالحجر وكنائسها ومتاحفها تنقلك لقرون مضت."
+            data-historic="🏛️ ساحة مايور – Plaza Mayor | ⛪ كنيسة سانتيسيما ترينيداد | 🏛️ متحف التاريخ – Museo Histórico | 🌊 وادي لوس إنجينيوس"
+            data-restaurants="🍽️ مطعم Vista Gourmet | 🌿 مطعم La Redacción | 🥘 مطعم Taberna La Canchánchara"
+            data-cafes="☕ مقهى Café Trinidad | ☕ مقهى La Vieja Trinidad | ☕ مقهى El Dorado"
+            data-events="🏛️ ساحة مايور | 🎶 الموسيقى الحية | 🌊 رحلة وادي إنجينيوس"
+            onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'cuba_trinidad', 'ترينيداد', '/img/cuba-trinidad.jpg')">🏙️</button>
+            <img src="/img/cuba-trinidad.jpg" alt="ترينيداد" class="cite-img">
+            <span class="name">ترينيداد – Trinidad</span>
+            <p class="info">المدينة الاستعمارية الأجمل في كوبا محفوظة منذ القرن السادس عشر.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+        <div class="cite" data-name="كايو كوكو – Cayo Coco" data-img="/img/cuba-cayococo.jpg"
+            data-desc="جزيرة كاريبية بكر تشتهر بشواطئ رمالها البيضاء الناصعة ومياهها الفيروزية الصافية وحياتها البرية المتنوعة."
+            data-historic="🏖️ شاطئ بيلاروس – Playa Las Coloradas | 🌊 شعاب مرجانية كاريبية | 🦩 مستعمرة فلامنغو | 🌿 غابة منغروف"
+            data-restaurants="🍽️ مطعم Meliá Cayo Coco | 🌿 مطعم Las Dunas | 🥘 مطعم Ranchón Playa"
+            data-cafes="☕ مقهى Cayo Café | ☕ مقهى Laguna Café | ☕ مقهى Playa Azul"
+            data-events="🏖️ شاطئ بيلاروس | 🦩 مشاهدة الفلامنغو | 🤿 الغوص"
+            onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'cuba_cayococo', 'كايو كوكو', '/img/cuba-cayococo.jpg')">🏙️</button>
+            <img src="/img/cuba-cayococo.jpg" alt="كايو كوكو" class="cite-img">
+            <span class="name">كايو كوكو – Cayo Coco</span>
+            <p class="info">الجزيرة البكر بأبيض الشواطئ وأجمل مياه الكاريبي.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+        <div class="cite" data-name="سيينفويغوس – Cienfuegos" data-img="/img/cuba-cienfuegos.jpg"
+            data-desc="مدينة ذات طابع فرنسي فريد على خليج جميل في جنوب كوبا، تجمع الأرصفة الأنيقة والمعمار الكلاسيكي مع روح البحر الكاريبي."
+            data-historic="🏛️ باسيو ديل براد – Paseo del Prado | 🌊 ميناء سيينفويغوس | 🏛️ متحف غيئون – Museo Paleontológico | 🌿 حديقة النباتات"
+            data-restaurants="🍽️ مطعم El Palatino | 🌿 مطعم La Verja | 🥘 مطعم Finca El Paraíso"
+            data-cafes="☕ مقهى Café Cienfuegos | ☕ مقهى El Benny | ☕ مقهى Café Paris"
+            data-events="🏛️ بافيو ديل براد | 🌊 جولة الميناء | 🌿 الحديقة النباتية"
+            onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'cuba_cienfuegos', 'سيينفويغوس', '/img/cuba-cienfuegos.jpg')">🏙️</button>
+            <img src="/img/cuba-cienfuegos.jpg" alt="سيينفويغوس" class="cite-img">
+            <span class="name">سيينفويغوس – Cienfuegos</span>
+            <p class="info">لؤلؤة الجنوب ذات الطابع الفرنسي على خليج كوبا الجميل.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+        <div class="cite" data-name="سانتياغو دي كوبا – Santiago de Cuba" data-img="/img/cuba-santiago.jpg"
+            data-desc="المدينة الثانية في كوبا وعاصمة الثقافة والموسيقى والتاريخ النضالي، مهد موسيقى السون والثقافة الأفرو-كوبية."
+            data-historic="🏰 قلعة سان بيدرو دي لا روكا | 🎶 موسيقى السون الأصيلة | 🏛️ ساحة سيسبيديس | ⛪ كاتدرائية سانتياغو"
+            data-restaurants="🍽️ مطعم Santiago 1900 | 🌿 مطعم El Morro | 🥘 مطعم Zun Zun"
+            data-cafes="☕ مقهى Café Oriente | ☕ مقهى El Tablao | ☕ مقهى La Isabelica"
+            data-events="🏰 جولة القلعة الضخمة | 🎶 ليلة موسيقى السون | 🏛️ ساحة سيسبيديس"
+            onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'cuba_santiagodecuba', 'سانتياغو دي كوبا', '/img/cuba-santiago.jpg')">🏙️</button>
+            <img src="/img/cuba-santiago.jpg" alt="سانتياغو دي كوبا" class="cite-img">
+            <span class="name">سانتياغو دي كوبا – Santiago de Cuba</span>
+            <p class="info">عاصمة الثقافة الكوبية والموسيقى الأصيلة والتاريخ الغني.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+    </section>
+
+    <div class="main-foods">
+        <h1>الماكولات</h1>
+    </div>
+    <section class="foods-grid">
+
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=cuba-congri'">
+            <img src="/img/cuba-congri.jpg" alt="" class="foods-img">
+            <span class="name-foods">كونغري – Congrí</span>
+            <div class="food-info">أرز مطبوخ مع الفاصوليا السوداء المتناغمة.</div>
+            <a href="/recipes/recipes.html?recipe=cuba-congri" class="for-more-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=cuba-ropa-vieja-pollo'">
+            <img src="/img/cuba-ropa-vieja-pollo.jpg" alt="" class="foods-img">
+            <span class="name-foods">روبا فييخا بالدجاج – Ropa Vieja de Pollo</span>
+            <div class="food-info">دجاج مفتت بصلصة الطماطم الحمراء والفلفل الملون.</div>
+            <a href="/recipes/recipes.html?recipe=cuba-ropa-vieja-pollo" class="for-more-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=cuba-tostones'">
+            <img src="/img/cuba-tostones.jpg" alt="" class="foods-img">
+            <span class="name-foods">توستونيس – Tostones</span>
+            <div class="food-info">شرائح الموز الأخضر المقلية مرتين لتصبح مقرمشة ومسطحة.</div>
+            <a href="/recipes/recipes.html?recipe=cuba-tostones" class="for-more-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=cuba-yuca-mojo'">
+            <img src="/img/cuba-yuca-mojo.jpg" alt="" class="foods-img">
+            <span class="name-foods">يوكا مع موخو – Yuca con Mojo</span>
+            <div class="food-info">يوكا مسلوقة مع صلصة موخو من الثوم.</div>
+            <a href="/recipes/recipes.html?recipe=cuba-yuca-mojo" class="for-more-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=cuba-picadillo-pollo'">
+            <img src="/img/cuba-picadillo-pollo.jpg" alt="" class="foods-img">
+            <span class="name-foods">بيكاديو الدجاج – Picadillo de Pollo</span>
+            <div class="food-info">دجاج مفروم بالزيتون والبهارات والطماطم، طبق شعبي يومي.</div>
+            <a href="/recipes/recipes.html?recipe=cuba-picadillo-pollo" class="for-more-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=cuba-arroz-con-leche'">
+            <img src="/img/cuba-arroz-con-leche.jpg" alt="" class="foods-img">
+            <span class="name-foods">أرز بالحليب كوبي – Arroz con Leche Cubano</span>
+            <div class="food-info">حلوى الأرز الكريمية بالقرفة والسكر، حلوى كوبا المفضلة.</div>
+            <a href="/recipes/recipes.html?recipe=cuba-arroz-con-leche" class="for-more-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+    </section>
+
+    <div class="events-main">
+        <h1>الفعاليات</h1>
+    </div>
+    <section class="events-grid">
+
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=HavanaCityTour'">
+            <img src="/img/cuba-havana-old.jpg" alt="" class="event-img">
+            <span class="name-event">جولة هافانا – Havana City Tour</span>
+            <div class="event-info">استكشف هافانا القديمة وسياراتها الكلاسيكية وموسيقاها المميزة.</div>
+            <a href="/events/events.html?event=HavanaCityTour" class="event-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=VinalesValley'">
+            <img src="/img/cuba-vinales-valley.jpg" alt="" class="event-img">
+            <span class="name-event">وادي فينياليس – Viñales Valley</span>
+            <div class="event-info">وادي فينياليس بتضاريسه ومزارعه الخلابة.</div>
+            <a href="/events/events.html?event=VinalesValley" class="event-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=TrinidadColonial'">
+            <img src="/img/cuba-trinidad-colonial.jpg" alt="" class="event-img">
+            <span class="name-event">ترينيداد الاستعمارية – Trinidad Colonial</span>
+            <div class="event-info">أجمل مدينة استعمارية محفوظة في كوبا.</div>
+            <a href="/events/events.html?event=TrinidadColonial" class="event-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=CayoCocoCuba'">
+            <img src="/img/cuba-cayo-coco.jpg" alt="" class="event-img">
+            <span class="name-event">كايو كوكو – Cayo Coco Cuba</span>
+            <div class="event-info">استمتع بأجمل شواطئ الكاريبي البيضاء في الجزيرة البكر.</div>
+            <a href="/events/events.html?event=CayoCocoCuba" class="event-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=CienfuegosCity'">
+            <img src="/img/cuba-cienfuegos-city.jpg" alt="" class="event-img">
+            <span class="name-event">مدينة سيينفويغوس – Cienfuegos City</span>
+            <div class="event-info">لؤلؤة الجنوب الكوبي بطابع فرنسي.</div>
+            <a href="/events/events.html?event=CienfuegosCity" class="event-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=SantiagoSon'">
+            <img src="/img/cuba-son-music.jpg" alt="" class="event-img">
+            <span class="name-event">موسيقى سون سانتياغو – Santiago Son Music</span>
+            <div class="event-info">موسيقى السون الكوبية في سانتياغو.</div>
+            <a href="/events/events.html?event=SantiagoSon" class="event-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+    </section>
+
+    <div id="cityModal" class="modal" onclick="closeCityModal(event)">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeCityModal(event)">×</button>
+            <div class="modal-top">
+                <img id="modalCityImg" src="" alt="" />
+                <div class="modal-top-info">
+                    <h2 id="modalCityName"></h2>
+                    <span class="modal-top-badge">✦ تفاصيل المدينة</span>
+                </div>
+            </div>
+            <div class="modal-body">
+                <p id="modalCityDesc" class="event-desc"></p>
+                <h4>🏛️ أفضل الأماكن التاريخية</h4>
+                <div id="modalCityHistoric" class="ingredients-tags"></div>
+                <h4>🍽️ أفضل المطاعم</h4>
+                <div id="modalCityRestaurants" class="ingredients-tags"></div>
+                <h4>☕ أفضل المقاهي</h4>
+                <div id="modalCityCafes" class="ingredients-tags"></div>
+                <h4>🎉 فعاليات المدينة</h4>
+                <div id="modalCityEvents" class="ingredients-tags"></div>
+            </div>
+        </div>
+    </div>
+    <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h2 class="footer-logo">سفرة</h2>
+        <p>وجهتك للسفر والطعام حول العالم</p>
+      </div>
+      <div class="footer-links">
+        <h4>روابط سريعة</h4>
+        <ul>
+          <li><a href="/index/index.html">الرئيسية</a></li>
+          <li><a href="/countries/countries.html">الدول</a></li>
+          <li><a href="/events/events.html">الفعاليات</a></li>
+          <li><a href="/recipes/recipes.html">الوصفات</a></li>
+          <li><a href="/plan/plan.html">خطتي</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>تواصل معنا</h4>
+        <ul>
+          <li>📧 <a href="mailto:Sofrh.info@gmail.com" target="_blank">Sofrh.info@gmail.com</a></li>
+          <li>📧 <a href="mailto:Sofrh.support@gmail.com" target="_blank">Sofrh.support@gmail.com</a></li>
+          <li>🐦 <a href="https://twitter.com/sofrah_sa" target="_blank">X (Twitter)</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 سفرة — جميع الحقوق محفوظة</p>
+      <p>صُنع بواسطة فريق سفرة</p>
+      <p>📧 <a href="mailto:Sofrh.info@gmail.com" style="color: #F28500;">Sofrh.info@gmail.com</a></p>
+    </div>
+  </footer>
+    <script src="/countries/countries.js"></script>
+</body>
+</html>

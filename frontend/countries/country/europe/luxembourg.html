@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+<script>
+(() => {
+  const theme = localStorage.getItem("theme");
+  document.documentElement.setAttribute("data-theme", theme === "dark" ? "dark" : "light");
+})();
+</script>
+    <style>
+        .auth-buttons { display: none; }
+        .user-menu { display: none; }
+    </style>
+    <meta charset="UTF-8">
+<script>
+    (function(){
+        var u=JSON.parse(localStorage.getItem('safraUser')||'null');
+        var av=localStorage.getItem('safraAvatar')||'';
+        document.documentElement.className+=u?' user-logged-in':' user-logged-out';
+        if(u){
+            var t=setInterval(function(){
+                var n=document.getElementById('userName');
+                var a=document.getElementById('userAvatar');
+                if(n){
+                    n.textContent=u.name||'';
+                    if(a&&(u.avatar||av)) a.src=u.avatar||av;
+                    clearInterval(t);
+                }
+            },1);
+        }
+    })();
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سفرة</title>
+    <link rel="stylesheet" href="/countries/countries.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@500;600&display=swap">
+    <link rel="stylesheet" href="/dark-mode.css">
+    <meta property="og:image" content="https://sofrh.vercel.app/img/logo6.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:title" content="سفرة — سافر وتذوق">
+    <meta property="og:description" content="اكتشف وجهات وماكولات من مختلف أنحاء العالم">
+    <meta property="og:url" content="https://sofrh.vercel.app">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ar_SA">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://sofrh.vercel.app/img/logo6.png">
+    <meta name="twitter:title" content="سفرة — سافر وتذوق">
+    <meta name="twitter:description" content="اكتشف وجهات وماكولات من مختلف أنحاء العالم">
+    <script src="/auth/auth.js" defer></script>
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="hamburger" id="menu-btn">☰</div>
+
+        <div class="auth-buttons" id="authButtons">
+            <a href="/auth/login.html" class="login">تسجيل دخول</a>
+            <a href="/auth/signup.html" class="signup">إنشاء حساب</a>
+        </div>
+
+        <div class="user-menu" id="userMenu">
+            <img id="userAvatar" src="" alt="">
+            <span class="user-name" id="userName"></span>
+            <div class="user-dropdown">
+                <a href="/profile/profile.html">الملف الشخصي</a>
+                <a href="#" id="logoutBtn">تسجيل خروج</a>
+            </div>
+        </div>
+
+        <ul class="nav-list">
+            <li><a href="/index/index.html">الرئيسية</a></li>
+            <li><a href="/countries/countries.html" class="active">الدول</a></li>
+            <li><a href="/events/events.html">الفعاليات</a></li>
+            <li><a href="/recipes/recipes.html">الوصفات</a></li>
+            <li><a href="/plan/plan.html">خطتي</a></li>
+            <li><a href="/about/about.html">عن سفرة</a></li>
+        </ul>
+
+        <div class="logo">
+            <a href="/index/index.html"><img src="/img/logo7.png" alt="سفرة"></a>
+        </div>
+    </header>
+
+    <!-- SIDE MENU -->
+    <div class="side-menu" id="side-menu">
+        <span class="close-btn" id="close-btn">×</span>
+        <span class="side-menu-kicker">استكشف</span>
+        <ul>
+            <li><a href="/index/index.html" class="active">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M3 11.5 12 4l9 7.5" />
+                        <path
+                            d="M5.5 10v9a1 1 0 0 0 1 1H9a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h2.5a1 1 0 0 0 1-1v-9" />
+                    </svg>
+                    <span>الرئيسية</span>
+                </a></li>
+            <li><a href="/countries/countries.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M12 21s7-6.6 7-12a7 7 0 1 0-14 0c0 5.4 7 12 7 12Z" />
+                        <circle cx="12" cy="9" r="2.3" />
+                    </svg>
+                    <span>الدول</span>
+                </a></li>
+            <li><a href="/events/events.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <rect x="3.5" y="5" width="17" height="16" rx="2.5" />
+                        <path d="M8 3v4M16 3v4M3.5 10h17" />
+                        <circle cx="12" cy="15" r="1.4" fill="currentColor" stroke="none" />
+                    </svg>
+                    <span>الفعاليات</span>
+                </a></li>
+            <li><a href="/recipes/recipes.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M7 2v8a2 2 0 0 0 2 2v10M5 2v6M9 2v6M14 2c-1.5 2-1.5 7 0 9 .6.6 1 1.3 1 2v9" />
+                    </svg>
+                    <span>الوصفات</span>
+                </a></li>
+            <li><a href="/plan/plan.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="9" />
+                        <path d="M14.8 9.2 13 13l-3.8 1.8L11 11l3.8-1.8Z" />
+                    </svg>
+                    <span>خطتي</span>
+                </a></li>
+            <li><a href="/about/about.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="9" />
+                        <path d="M12 8h.01M11 11.5h1v5.5h1" />
+                    </svg>
+                    <span>عن سفرة</span>
+                </a></li>
+        </ul>
+    </div>
+    <header>
+        <a href="/countries/countries.html" class="back-btn">رجوع</a>
+    </header>
+
+    <div class="country-name">
+        <h1>لوكسمبورغ</h1>
+        <p>دوقية القلاع الصغيرة والأودية الخضراء وسط قلب أوروبا</p>
+    </div>
+
+    <div class="main-cites">
+        <h1>المدن</h1>
+    </div>
+    <section class="cities-grid">
+
+        <div class="cite" data-name="مدينة لوكسمبورغ – Luxembourg City" data-img="/img/luxembourg-city-grund.jpg"
+            data-desc="عاصمة دوقية لوكسمبورغ الكبرى، مدينة حصينة تاريخية تجمع بين أسوارها الدفاعية القديمة المدرجة ضمن اليونسكو وأحياء الغروند الرومانسية الواقعة في الوادي العميق."
+            data-historic="🏰 قصر الدوق الكبير – Grand Ducal Palace | ⛪ كاتدرائية نوتردام – Notre-Dame Cathedral | 🌉 جسر أدولف – Adolphe Bridge | 🏘️ حي الغروند – The Grund Quarter | 🗼 حصن بوك القديم – Bock Casemates"
+            data-restaurants="🍲 مطعم Am Tiirmschen | 🥘 مطعم Mosconi | 🐟 مطعم Um Plateau | 🍖 مطعم Brasserie Guillaume | 🥙 مطعم Cafe Ubuntu Luxembourg"
+            data-cafes="☕ مقهى Oberweis | ☕ مقهى Kaffi Beim Nail | ☕ مقهى Café Konrad | ☕ مقهى Fischer Bakery Café | ☕ مقهى La Duchesse"
+            data-events="🏰 جولة حصن بوك القديم – Bock Casemates Tour | 🌉 عبور جسر أدولف – Adolphe Bridge Walk | 🏘️ نزهة في حي الغروند – Grund Quarter Walk | ⛪ زيارة كاتدرائية نوتردام – Notre-Dame Cathedral Visit | 🎪 مهرجان شويبرفوير – Schueberfouer Festival"
+            onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'luxembourg_luxembourgcity', 'مدينة لوكسمبورغ – Luxembourg City', '/img/luxembourg-city-grund.jpg')">🏙️</button>
+            <img src="/img/luxembourg-city-grund.jpg" alt="مدينة لوكسمبورغ" class="cite-img">
+            <span class="name">مدينة لوكسمبورغ – Luxembourg City</span>
+            <p class="info">العاصمة الحصينة بأسوارها القديمة وحي الغروند الرومانسي.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+        <div class="cite" data-name="إش سور الزيت – Esch-sur-Alzette" data-img="/img/esch-sur-alzette.jpg"
+            data-desc="ثاني أكبر مدن لوكسمبورغ، مركز صناعي سابق تحوّل إلى وجهة ثقافية نابضة بفنون الشوارع ومساحات إبداعية على أطلال مصانع الحديد والصلب."
+            data-historic="🏛️ متحف الحديد والصلب – National Steel Industry Museum | 🌳 حديقة غالغبيرغ – Galgebierg Park | ⛪ كنيسة القديس يوسف – St. Joseph Church | 🏘️ حي بيلفال الصناعي – Belval Industrial District | 🗼 برج الفرن العالي – Blast Furnace Tower"
+            data-restaurants="🍲 مطعم Bamhaus | 🥘 مطعم La Meridiana | 🐟 مطعم La Table Esch | 🍖 مطعم Um Bock Esch | 🥙 مطعم Chalet Esch"
+            data-cafes="☕ مقهى Cafe Belval | ☕ مقهى Kaffistuff Esch | ☕ مقهى Konrad Esch | ☕ مقهى Bamhaus Café | ☕ مقهى Aalt Stadhaus Café"
+            data-events="🏭 جولة حي بيلفال الصناعي – Belval District Tour | 🎨 جولة فنون الشوارع في إش – Esch Street Art Walk | 🏛️ زيارة متحف الحديد والصلب – Steel Industry Museum Visit | 🌳 نزهة في حديقة غالغبيرغ – Galgebierg Park Walk | 🎭 مهرجان إش الثقافي – Esch Cultural Festival"
+            onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'luxembourg_esch', 'إش سور الزيت – Esch-sur-Alzette', '/img/esch-sur-alzette.jpg')">🏙️</button>
+            <img src="/img/esch-sur-alzette.jpg" alt="إش سور الزيت" class="cite-img">
+            <span class="name">إش سور الزيت – Esch-sur-Alzette</span>
+            <p class="info">مدينة صناعية سابقة تحوّلت لوجهة ثقافية نابضة بالفنون.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+        <div class="cite" data-name="فياندن – Vianden" data-img="/img/vianden-castle.jpg"
+            data-desc="بلدة صغيرة رومانسية في وادي أور، تهيمن عليها قلعة فياندن الشاهقة على قمة تل، من أجمل القلاع الإقطاعية المحفوظة في أوروبا الغربية."
+            data-historic="🏰 قلعة فياندن – Vianden Castle | 🚡 تلفريك فياندن – Vianden Chairlift | 🌉 جسر فياندن القديم – Old Vianden Bridge | 🏛️ منزل فيكتور هوغو – Victor Hugo House | ⛪ كنيسة الثالوث – Trinitarian Church"
+            data-restaurants="🍲 مطعم Heintz | 🥘 مطعم Auberge du Château | 🐟 مطعم Le Châtelain | 🍖 مطعم Um Schlass | 🥙 مطعم Victor Hugo Café Restaurant"
+            data-cafes="☕ مقهى Café am Nidderpuert | ☕ مقهى Kaffistuff Vianden | ☕ مقهى Victor Hugo Café | ☕ مقهى Our Valley Café | ☕ مقهى Schlassblack Café"
+            data-events="🏰 جولة قلعة فياندن – Vianden Castle Tour | 🚡 ركوب التلفريك فوق الوادي – Chairlift Ride | 🏛️ زيارة منزل فيكتور هوغو – Victor Hugo House Visit | 🥾 مشي في وادي أور – Our Valley Hike | 🎪 مهرجان النرجس في فياندن – Vianden Narcissus Festival"
+            onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'luxembourg_vianden', 'فياندن – Vianden', '/img/vianden-castle.jpg')">🏙️</button>
+            <img src="/img/vianden-castle.jpg" alt="فياندن" class="cite-img">
+            <span class="name">فياندن – Vianden</span>
+            <p class="info">بلدة رومانسية تهيمن عليها قلعة شاهقة فوق تل.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+        <div class="cite" data-name="إشترناخ – Echternach" data-img="/img/echternach-abbey.jpg"
+            data-desc="أقدم بلدة في لوكسمبورغ، تحتضن ديراً بنديكتينياً عريقاً تأسس في القرن السابع، ومحاطة بغابات منطقة 'سويسرا الصغيرة' الصخرية الساحرة."
+            data-historic="⛪ دير إشترناخ البنديكتيني – Echternach Abbey | 🏛️ قصر بلدية إشترناخ – Echternach Town Hall | 🌉 جسر إشترناخ الحدودي – Echternach Border Bridge | 🗿 صخور منطقة مولرتال – Mullerthal Rock Formations | 🏘️ أسوار إشترناخ القديمة – Old Town Ramparts"
+            data-restaurants="🍲 مطعم Le Bouquet Garni | 🥘 مطعم Simmona | 🐟 مطعم Alenteju | 🍖 مطعم Hostellerie du Vieux Moulin | 🥙 مطعم Zum Alen Tuurm"
+            data-cafes="☕ مقهى Konrad Echternach | ☕ مقهى Op der Gare | ☕ مقهى Abbaye Café | ☕ مقهى Mullerthal Café | ☕ مقهى Kaffistuff Echternach"
+            data-events="⛪ زيارة دير إشترناخ – Echternach Abbey Visit | 🥾 مشي في منطقة سويسرا الصغيرة – Mullerthal Trail Hike | 🌉 نزهة على البحيرة الاصطناعية – Echternach Lake Walk | 🏘️ جولة الأسوار القديمة – Old Ramparts Walk | 💃 موكب الرقص القفزي التقليدي – Traditional Hopping Procession"
+            onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'luxembourg_echternach', 'إشترناخ – Echternach', '/img/echternach-abbey.jpg')">🏙️</button>
+            <img src="/img/echternach-abbey.jpg" alt="إشترناخ" class="cite-img">
+            <span class="name">إشترناخ – Echternach</span>
+            <p class="info">أقدم بلدة في لوكسمبورغ بديرها البنديكتيني العريق.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+        <div class="cite" data-name="ديكيرش – Diekirch" data-img="/img/diekirch-townhall.jpg"
+            data-desc="بلدة تاريخية هادئة على ضفاف نهر سور، تشتهر بمتحفها العسكري المخصص لمعركة الأردين وفسيفسائها الرومانية القديمة."
+            data-historic="🏛️ متحف معركة الأردين – National Museum of Military History | ⛪ كنيسة القديس لوران – St. Laurent Church | 🗿 الفسيفساء الرومانية – Diekirch Roman Mosaic | 🌉 جسر ديكيرش على نهر سور – Diekirch Sauer Bridge | 🏘️ ساحة البلدية القديمة – Diekirch Town Hall Square"
+            data-restaurants="🍲 مطعم Hostellerie Du Parc | 🥘 مطعم Aal Munzen | 🐟 مطعم Op der Musel | 🍖 مطعم Beim Nesser | 🥙 مطعم Café des Artistes Diekirch"
+            data-cafes="☕ مقهى Kaffistuff Diekirch | ☕ مقهى Konrad Diekirch | ☕ مقهى Al Seeërei Café | ☕ مقهى Sauer Café | ☕ مقهى Vieille Ville Café"
+            data-events="🏛️ جولة متحف معركة الأردين – Military History Museum Tour | 🗿 زيارة الفسيفساء الرومانية – Roman Mosaic Visit | 🌉 نزهة على نهر سور – Sauer Riverside Walk | 🎉 مهرجان ديكيرش الشعبي – Diekirch Popular Festival | 🚴 ركوب الدراجات في الوادي – Sauer Valley Cycling"
+            onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'luxembourg_diekirch', 'ديكيرش – Diekirch', '/img/diekirch-townhall.jpg')">🏙️</button>
+            <img src="/img/diekirch-townhall.jpg" alt="ديكيرش" class="cite-img">
+            <span class="name">ديكيرش – Diekirch</span>
+            <p class="info">بلدة هادئة على نهر سور بمتحفها العسكري وفسيفسائها الرومانية.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+        <div class="cite" data-name="كليرفو – Clervaux" data-img="/img/clervaux-castle.jpg"
+            data-desc="بلدة جبلية صغيرة محاطة بالغابات في أقصى شمال لوكسمبورغ، تشتهر بقلعتها البيضاء المهيبة ودير كليرفو البنديكتيني على أحد التلال المطلة."
+            data-historic="🏰 قلعة كليرفو – Clervaux Castle | ⛪ دير كليرفو البنديكتيني – Clervaux Abbey | 🏛️ معرض نماذج القلاع – Model Castle Exhibition | 🗿 نصب معركة الأردين التذكاري – Battle of the Bulge Monument | 🌳 غابات وادي كليرفو – Clervaux Valley Forests"
+            data-restaurants="🍲 مطعم Koener | 🥘 مطعم International Clervaux | 🐟 مطعم Cinqfontaines | 🍖 مطعم Beim Josy | 🥙 مطعم Abbaye Café Restaurant"
+            data-cafes="☕ مقهى Kaffistuff Clervaux | ☕ مقهى Konrad Clervaux | ☕ مقهى Abbaye de Clervaux Café | ☕ مقهى Vallée Café | ☕ مقهى Rue de la Gare Café"
+            data-events="🏰 جولة قلعة كليرفو – Clervaux Castle Tour | ⛪ زيارة دير كليرفو البنديكتيني – Clervaux Abbey Visit | 🖼️ جولة معرض 'أسرة الإنسان' الفوتوغرافي – Family of Man Exhibition Tour | 🥾 مشي في غابات الوادي – Valley Forest Hike | 🗿 زيارة نصب معركة الأردين – Battle of the Bulge Monument Visit"
+            onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'luxembourg_clervaux', 'كليرفو – Clervaux', '/img/clervaux-castle.jpg')">🏙️</button>
+            <img src="/img/clervaux-castle.jpg" alt="كليرفو" class="cite-img">
+            <span class="name">كليرفو – Clervaux</span>
+            <p class="info">بلدة جبلية بقلعتها البيضاء المهيبة ودير كليرفو العريق.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+    </section>
+
+    <div class="main-foods">
+        <h1>الماكولات</h1>
+    </div>
+    <section class="foods-grid">
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=luxembourg-juddgaardebounen'">
+            <img src="/img/luxembourg-juddgaardebounen.jpg" alt="" class="foods-img">
+            <span class="name-foods">جود مات غاردبونن – Judd mat Gaardebounen</span>
+            <div class="food-info">لحم بقري مدخن مطهو ببطء يقدّم.</div>
+            <a href="/recipes/recipes.html?recipe=luxembourg-juddgaardebounen" class="for-more-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=luxembourg-bouneschlupp'">
+            <img src="/img/luxembourg-bouneschlupp.jpg" alt="" class="foods-img">
+            <span class="name-foods">بونشلوب – Bouneschlupp</span>
+            <div class="food-info">شوربة الفاصولياء الخضراء مع البطاطس واللحم البقري المدخن.</div>
+            <a href="/recipes/recipes.html?recipe=luxembourg-bouneschlupp" class="for-more-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=luxembourg-kachkeis'">
+            <img src="/img/luxembourg-kachkeis.jpg" alt="" class="foods-img">
+            <span class="name-foods">كاشكييس – Kachkéis</span>
+            <div class="food-info">جبنة مطبوخة كريمية تُمد على الخبز بنكهة الكمون.</div>
+            <a href="/recipes/recipes.html?recipe=luxembourg-kachkeis" class="for-more-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=luxembourg-gromperekichelcher'">
+            <img src="/img/luxembourg-gromperekichelcher.jpg" alt="" class="foods-img">
+            <span class="name-foods">غرومبيريكيشيلشر – Gromperekichelcher</span>
+            <div class="food-info">فطائر بطاطس مقلية مقرمشة بالبصل والبقدونس.</div>
+            <a href="/recipes/recipes.html?recipe=luxembourg-gromperekichelcher" class="for-more-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=luxembourg-quetschentaart'">
+            <img src="/img/luxembourg-quetschentaart.jpg" alt="" class="foods-img">
+            <span class="name-foods">كويتشنتارت – Quetschentaart</span>
+            <div class="food-info">فطيرة البرقوق التقليدية بنكهة القرفة.</div>
+            <a href="/recipes/recipes.html?recipe=luxembourg-quetschentaart" class="for-more-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=luxembourg-verwurelter'">
+            <img src="/img/luxembourg-verwurelter.jpg" alt="" class="foods-img">
+            <span class="name-foods">فيرفورلتر – Verwurelter</span>
+            <div class="food-info">كرولر معقود مقلي مرشوش بسكر البودرة.</div>
+            <a href="/recipes/recipes.html?recipe=luxembourg-verwurelter" class="for-more-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+    </section>
+
+    <div class="events-main">
+        <h1>الفعاليات</h1>
+    </div>
+    <section class="events-grid">
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=LuxembourgOldTownWalk'">
+            <img src="/img/luxembourg-oldtown-walk.jpg" alt="" class="event-img">
+            <span class="name-event">جولة العاصمة القديمة – Luxembourg Old Town Walk</span>
+            <div class="event-info">مشي استكشافي بين أسوار العاصمة الدفاعية وحي الغروند.</div>
+            <a href="/events/events.html?event=LuxembourgOldTownWalk" class="event-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=SchueberfouerFestival'">
+            <img src="/img/luxembourg-schueberfouer.jpg" alt="" class="event-img">
+            <span class="name-event">مهرجان شويبرفوير – Schueberfouer Festival</span>
+            <div class="event-info">أشهر مهرجان شعبي في لوكسمبورغ منذ أكثر.</div>
+            <a href="/events/events.html?event=SchueberfouerFestival" class="event-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=VianderCastleTour'">
+            <img src="/img/luxembourg-vianden-castle.jpg" alt="" class="event-img">
+            <span class="name-event">قلعة فياندن – Vianden Castle</span>
+            <div class="event-info">إحدى أجمل القلاع الإقطاعية المحفوظة في أوروبا الغربية.</div>
+            <a href="/events/events.html?event=VianderCastleTour" class="event-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=MullerthalTrailHike'">
+            <img src="/img/luxembourg-mullerthal.jpg" alt="" class="event-img">
+            <span class="name-event">مسار مولرتال – Mullerthal Trail Hike</span>
+            <div class="event-info">مشي عبر منطقة سويسرا الصغيرة بصخورها الرملية الغريبة.</div>
+            <a href="/events/events.html?event=MullerthalTrailHike" class="event-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=EchternachLakeDay'">
+            <img src="/img/luxembourg-echternach-lake.jpg" alt="" class="event-img">
+            <span class="name-event">بحيرة إشترناخ – Echternach Lake</span>
+            <div class="event-info">بحيرة اصطناعية هادئة مثالية للأنشطة المائية العائلية.</div>
+            <a href="/events/events.html?event=EchternachLakeDay" class="event-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=LuxembourgChristmasMarketVisit'">
+            <img src="/img/luxembourg-christmas-market.jpg" alt="" class="event-img">
+            <span class="name-event">سوق الميلاد في لوكسمبورغ – Luxembourg Christmas Market</span>
+            <div class="event-info">سوق شتوي أنيق في ساحة الدستور بالعاصمة.</div>
+            <a href="/events/events.html?event=LuxembourgChristmasMarketVisit" class="event-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+    </section>
+
+    <div id="cityModal" class="modal" onclick="closeCityModal(event)">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeCityModal(event)">×</button>
+            <div class="modal-top">
+                <img id="modalCityImg" src="" alt="" />
+                <div class="modal-top-info">
+                    <h2 id="modalCityName"></h2>
+                    <span class="modal-top-badge">✦ تفاصيل المدينة</span>
+                </div>
+            </div>
+            <div class="modal-body">
+                <p id="modalCityDesc" class="event-desc"></p>
+                <h4>🏛️ أفضل الأماكن التاريخية</h4>
+                <div id="modalCityHistoric" class="ingredients-tags"></div>
+                <h4>🍽️ أفضل المطاعم</h4>
+                <div id="modalCityRestaurants" class="ingredients-tags"></div>
+                <h4>☕ أفضل المقاهي</h4>
+                <div id="modalCityCafes" class="ingredients-tags"></div>
+                <h4>🎉 فعاليات المدينة</h4>
+                <div id="modalCityEvents" class="ingredients-tags"></div>
+            </div>
+        </div>
+    </div>
+    <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h2 class="footer-logo">سفرة</h2>
+        <p>وجهتك للسفر والطعام حول العالم</p>
+      </div>
+
+        <div class="footer-links">
+                <h4>روابط سريعة</h4>
+                <ul>
+                    <li><a href="/index/index.html">الرئيسية</a></li>
+                    <li><a href="/countries/countries.html">الدول</a></li>
+                    <li><a href="/events/events.html">الفعاليات</a></li>
+                    <li><a href="/recipes/recipes.html">الوصفات</a></li>
+                    <li><a href="/plan/plan.html">خطتي</a></li>
+                </ul>
+            </div>
+
+      <div class="footer-contact">
+        <h4>تواصل معنا</h4>
+        <ul>
+          <li>📧 <a href="mailto:Sofrh.info@gmail.com" target="_blank">Sofrh.info@gmail.com</a></li>
+          <li>📧 <a href="mailto:Sofrh.support@gmail.com" target="_blank">Sofrh.support@gmail.com</a></li>
+          <li>🐦 <a href="https://twitter.com/sofrah_sa" target="_blank">X (Twitter)</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 سفرة — جميع الحقوق محفوظة</p>
+      <p>صُنع بواسطة فريق سفرة</p>
+      <p>📧 <a href="mailto:Sofrh.info@gmail.com" style="color: #F28500;">Sofrh.info@gmail.com</a></p>
+    </div>
+  </footer>
+    <script src="/countries/countries.js"></script>
+</body>
+
+</html>

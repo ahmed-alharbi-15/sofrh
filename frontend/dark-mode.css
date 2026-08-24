@@ -1,0 +1,1353 @@
+/* ==================== متغيرات الوضع الليلي / النهاري (CSS Variables) ==================== */
+:root {
+    --bg: #FAF5EB;
+    --text: #32127A;
+    --card-bg: #ffffff;
+    --input-bg: #ffffff;
+    --border: rgba(50,18,122,0.1);
+}
+
+html[data-theme="dark"] {
+    --bg: #0B0933;
+    --text: #E0E0E0;
+    --card-bg: #1a1040;
+    --input-bg: #2a1f5e;
+    --border: rgba(242,133,0,0.3);
+}
+
+/* ==================== auth/auth.css ==================== */
+
+/*********************************
+     الوضع الليلي (Dark Mode)
+*********************************/
+
+html[data-theme="dark"] body {
+    background-color: #0B0933;
+}
+
+html[data-theme="dark"] .country-card,
+html[data-theme="dark"] .event-card,
+html[data-theme="dark"] .foods-card,
+html[data-theme="dark"] .card {
+    background: #1a1040;
+    border-color: rgba(242,133,0,0.3);
+}
+
+html[data-theme="dark"] img {
+    filter: none !important;
+}
+
+html[data-theme="dark"] h1,
+html[data-theme="dark"] h2,
+html[data-theme="dark"] h3,
+html[data-theme="dark"] p,
+html[data-theme="dark"] span,
+html[data-theme="dark"] label,
+html[data-theme="dark"] a {
+    color: #E0E0E0;
+}
+
+html[data-theme="dark"] button,
+html[data-theme="dark"] .filter-buttons button,
+html[data-theme="dark"] .wizard-btn {
+    background: #1a1040;
+    color: #E0E0E0;
+    border-color: rgba(242,133,0,0.3);
+}
+
+html[data-theme="dark"] button.active,
+html[data-theme="dark"] button:active,
+html[data-theme="dark"] .filter-buttons button.active,
+html[data-theme="dark"] .wizard-btn.primary {
+    background: #F28500;
+    color: #32127A;
+    border-color: #F28500;
+}
+
+html[data-theme="dark"] .search-box {
+    background: #1a1040;
+    color: #E0E0E0;
+    border-color: rgba(242,133,0,0.3);
+}
+
+html[data-theme="dark"] .modal-content,
+html[data-theme="dark"] .auth-card,
+html[data-theme="dark"] .wizard {
+    background: #1a1040;
+    color: #E0E0E0;
+}
+
+html[data-theme="dark"] input {
+    background: #2a1f5e;
+    color: #E0E0E0;
+    border-color: rgba(242,133,0,0.3);
+}
+
+html[data-theme="dark"] .card-body,
+html[data-theme="dark"] .card-img + div,
+html[data-theme="dark"] .sections-preview,
+html[data-theme="dark"] .card {
+    background: #0B0933 !important;
+}
+
+html[data-theme="dark"] body,
+html[data-theme="dark"] .sections-preview {
+    background-color: #0B0933 !important;
+}
+
+/* صفحات تسجيل الدخول وإنشاء الحساب */
+
+html[data-theme="dark"] .auth-page {
+    background: #0B0933 !important;
+}
+
+html[data-theme="dark"] .auth-card {
+    background: #1a1040 !important;
+    color: #E0E0E0 !important;
+    border-color: rgba(242,133,0,0.2) !important;
+}
+
+html[data-theme="dark"] .auth-card h1 {
+    color: #E0E0E0 !important;
+}
+
+html[data-theme="dark"] .auth-sub {
+    color: rgba(224,224,224,0.7) !important;
+}
+
+html[data-theme="dark"] .input-group label {
+    color: #E0E0E0 !important;
+}
+
+html[data-theme="dark"] .input-group input {
+    background: #2a1f5e !important;
+    color: #E0E0E0 !important;
+    border-color: rgba(242,133,0,0.3) !important;
+}
+
+html[data-theme="dark"] .input-group input::placeholder {
+    color: rgba(224,224,224,0.4) !important;
+}
+
+html[data-theme="dark"] .auth-btn {
+    background: #32127A !important;
+    color: #ffffff !important;
+}
+
+html[data-theme="dark"] .auth-btn:hover {
+    background: #F28500 !important;
+}
+
+html[data-theme="dark"] .auth-switch {
+    color: rgba(224,224,224,0.7) !important;
+}
+
+html[data-theme="dark"] .auth-switch a {
+    color: #F28500 !important;
+}
+
+html[data-theme="dark"] .toggle-password {
+    color: #E0E0E0 !important;
+}
+
+/* ملاحظة: .hero-eyebrow غير موجود فعلياً في صفحات auth — نضيفه هنا كما ورد حرفياً لتطابق باقي ملفات CSS */
+
+html[data-theme="dark"] .hero-eyebrow {
+    color: #F28500 !important;
+}
+
+
+/* ==================== countries/countries.css ==================== */
+
+html[data-theme="dark"] .footer-logo {
+    color: #F28500 !important;
+}
+
+/*********************************
+     الوضع الليلي (Dark Mode)
+*********************************/
+
+html[data-theme="dark"] body {
+    background-color: #0B0933;
+}
+
+html[data-theme="dark"] .country-card,
+html[data-theme="dark"] .event-card,
+html[data-theme="dark"] .foods-card,
+html[data-theme="dark"] .card {
+    background: #1a1040;
+    border-color: rgba(242,133,0,0.3);
+}
+
+html[data-theme="dark"] img {
+    filter: none !important;
+}
+
+html[data-theme="dark"] h1,
+html[data-theme="dark"] h2,
+html[data-theme="dark"] h3,
+html[data-theme="dark"] p,
+html[data-theme="dark"] span,
+html[data-theme="dark"] label,
+html[data-theme="dark"] a {
+    color: #E0E0E0;
+}
+
+html[data-theme="dark"] button,
+html[data-theme="dark"] .filter-buttons button,
+html[data-theme="dark"] .wizard-btn {
+    background: #1a1040;
+    color: #E0E0E0;
+    border-color: rgba(242,133,0,0.3);
+}
+
+html[data-theme="dark"] button.active,
+html[data-theme="dark"] button:active,
+html[data-theme="dark"] .filter-buttons button.active,
+html[data-theme="dark"] .wizard-btn.primary {
+    background: #F28500;
+    color: #32127A;
+    border-color: #F28500;
+}
+
+html[data-theme="dark"] .search-box {
+    background: #1a1040;
+    color: #E0E0E0;
+    border-color: rgba(242,133,0,0.3);
+}
+
+html[data-theme="dark"] .modal-content,
+html[data-theme="dark"] .auth-card,
+html[data-theme="dark"] .wizard {
+    background: #1a1040;
+    color: #E0E0E0;
+}
+
+html[data-theme="dark"] input {
+    background: #2a1f5e;
+    color: #E0E0E0;
+    border-color: rgba(242,133,0,0.3);
+}
+
+html[data-theme="dark"] .card-body,
+html[data-theme="dark"] .card-img + div,
+html[data-theme="dark"] .sections-preview,
+html[data-theme="dark"] .card {
+    background: #0B0933 !important;
+}
+
+html[data-theme="dark"] body,
+html[data-theme="dark"] .sections-preview {
+    background-color: #0B0933 !important;
+}
+
+html[data-theme="dark"] .user-dropdown {
+    background: #1a1040 !important;
+    border-color: rgba(242,133,0,0.2) !important;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4) !important;
+}
+
+html[data-theme="dark"] .user-dropdown a {
+    color: #E0E0E0 !important;
+}
+
+html[data-theme="dark"] .user-dropdown a:hover {
+    background: rgba(242,133,0,0.15) !important;
+    color: #F28500 !important;
+}
+
+/* ملاحظة: عناصر صفحات auth (.auth-page/.auth-sub/.auth-switch/.toggle-password...) غير
+   موجودة فعلياً في countries.html — نضيفها هنا كما وردت حرفياً لتطابق باقي ملفات CSS */
+
+html[data-theme="dark"] .auth-page { background: #0B0933 !important; }
+
+html[data-theme="dark"] .auth-card { background: #1a1040 !important; color: #E0E0E0 !important; border-color: rgba(242,133,0,0.2) !important; }
+
+html[data-theme="dark"] .auth-card h1 { color: #E0E0E0 !important; }
+
+html[data-theme="dark"] .auth-sub { color: rgba(224,224,224,0.7) !important; }
+
+html[data-theme="dark"] .input-group label { color: #E0E0E0 !important; }
+
+html[data-theme="dark"] .input-group input { background: #2a1f5e !important; color: #E0E0E0 !important; border-color: rgba(242,133,0,0.3) !important; }
+
+html[data-theme="dark"] .input-group input::placeholder { color: rgba(224,224,224,0.4) !important; }
+
+html[data-theme="dark"] .auth-btn { background: #32127A !important; color: #ffffff !important; }
+
+html[data-theme="dark"] .auth-btn:hover { background: #F28500 !important; }
+
+html[data-theme="dark"] .auth-switch { color: rgba(224,224,224,0.7) !important; }
+
+html[data-theme="dark"] .auth-switch a { color: #F28500 !important; }
+
+html[data-theme="dark"] .toggle-password { color: #E0E0E0 !important; }
+
+/* ملاحظة: .hero-eyebrow غير موجود فعلياً في countries.html — نضيفه هنا كما ورد حرفياً لتطابق باقي ملفات CSS */
+
+html[data-theme="dark"] .hero-eyebrow {
+    color: #F28500 !important;
+}
+
+
+/* ==================== events/events.css ==================== */
+
+html[data-theme="dark"] .footer-logo {
+    color: #F28500 !important;
+}
+
+/*********************************
+     الوضع الليلي (Dark Mode)
+*********************************/
+
+html[data-theme="dark"] body {
+    background-color: #0B0933;
+}
+
+html[data-theme="dark"] .country-card,
+html[data-theme="dark"] .event-card,
+html[data-theme="dark"] .foods-card,
+html[data-theme="dark"] .card {
+    background: #1a1040;
+    border-color: rgba(242,133,0,0.3);
+}
+
+html[data-theme="dark"] img {
+    filter: none !important;
+}
+
+html[data-theme="dark"] h1,
+html[data-theme="dark"] h2,
+html[data-theme="dark"] h3,
+html[data-theme="dark"] p,
+html[data-theme="dark"] span,
+html[data-theme="dark"] label,
+html[data-theme="dark"] a {
+    color: #E0E0E0;
+}
+
+html[data-theme="dark"] button,
+html[data-theme="dark"] .filter-buttons button,
+html[data-theme="dark"] .wizard-btn {
+    background: #1a1040;
+    color: #E0E0E0;
+    border-color: rgba(242,133,0,0.3);
+}
+
+html[data-theme="dark"] button.active,
+html[data-theme="dark"] button:active,
+html[data-theme="dark"] .filter-buttons button.active,
+html[data-theme="dark"] .wizard-btn.primary {
+    background: #F28500;
+    color: #32127A;
+    border-color: #F28500;
+}
+
+html[data-theme="dark"] .search-box {
+    background: #1a1040;
+    color: #E0E0E0;
+    border-color: rgba(242,133,0,0.3);
+}
+
+html[data-theme="dark"] .modal-content,
+html[data-theme="dark"] .auth-card,
+html[data-theme="dark"] .wizard {
+    background: #1a1040;
+    color: #E0E0E0;
+}
+
+html[data-theme="dark"] input {
+    background: #2a1f5e;
+    color: #E0E0E0;
+    border-color: rgba(242,133,0,0.3);
+}
+
+html[data-theme="dark"] .card-body,
+html[data-theme="dark"] .card-img + div,
+html[data-theme="dark"] .sections-preview,
+html[data-theme="dark"] .card {
+    background: #0B0933 !important;
+}
+
+html[data-theme="dark"] body,
+html[data-theme="dark"] .sections-preview {
+    background-color: #0B0933 !important;
+}
+
+/* ملاحظة: عناصر صفحات auth (.auth-page/.auth-sub/.auth-switch/.toggle-password...) غير
+   موجودة فعلياً في events.html — نضيفها هنا كما وردت حرفياً لتطابق باقي ملفات CSS */
+
+html[data-theme="dark"] .auth-page { background: #0B0933 !important; }
+
+html[data-theme="dark"] .auth-card { background: #1a1040 !important; color: #E0E0E0 !important; border-color: rgba(242,133,0,0.2) !important; }
+
+html[data-theme="dark"] .auth-card h1 { color: #E0E0E0 !important; }
+
+html[data-theme="dark"] .auth-sub { color: rgba(224,224,224,0.7) !important; }
+
+html[data-theme="dark"] .input-group label { color: #E0E0E0 !important; }
+
+html[data-theme="dark"] .input-group input { background: #2a1f5e !important; color: #E0E0E0 !important; border-color: rgba(242,133,0,0.3) !important; }
+
+html[data-theme="dark"] .input-group input::placeholder { color: rgba(224,224,224,0.4) !important; }
+
+html[data-theme="dark"] .auth-btn { background: #32127A !important; color: #ffffff !important; }
+
+html[data-theme="dark"] .auth-btn:hover { background: #F28500 !important; }
+
+html[data-theme="dark"] .auth-switch { color: rgba(224,224,224,0.7) !important; }
+
+html[data-theme="dark"] .auth-switch a { color: #F28500 !important; }
+
+html[data-theme="dark"] .toggle-password { color: #E0E0E0 !important; }
+
+/* ملاحظة: .hero-eyebrow غير موجود فعلياً في events.html — نضيفه هنا كما ورد حرفياً لتطابق باقي ملفات CSS */
+
+html[data-theme="dark"] .hero-eyebrow {
+    color: #F28500 !important;
+}
+
+
+/* ==================== recipes/recipes.css ==================== */
+
+html[data-theme="dark"] .footer-logo {
+    color: #F28500 !important;
+}
+
+/*********************************
+     الوضع الليلي (Dark Mode)
+*********************************/
+
+html[data-theme="dark"] body {
+    background-color: #0B0933;
+}
+
+html[data-theme="dark"] .country-card,
+html[data-theme="dark"] .event-card,
+html[data-theme="dark"] .foods-card,
+html[data-theme="dark"] .card {
+    background: #1a1040;
+    border-color: rgba(242,133,0,0.3);
+}
+
+html[data-theme="dark"] img {
+    filter: none !important;
+}
+
+html[data-theme="dark"] h1,
+html[data-theme="dark"] h2,
+html[data-theme="dark"] h3,
+html[data-theme="dark"] p,
+html[data-theme="dark"] span,
+html[data-theme="dark"] label,
+html[data-theme="dark"] a {
+    color: #E0E0E0;
+}
+
+html[data-theme="dark"] button,
+html[data-theme="dark"] .filter-buttons button,
+html[data-theme="dark"] .wizard-btn {
+    background: #1a1040;
+    color: #E0E0E0;
+    border-color: rgba(242,133,0,0.3);
+}
+
+html[data-theme="dark"] button.active,
+html[data-theme="dark"] button:active,
+html[data-theme="dark"] .filter-buttons button.active,
+html[data-theme="dark"] .wizard-btn.primary {
+    background: #F28500;
+    color: #32127A;
+    border-color: #F28500;
+}
+
+html[data-theme="dark"] .search-box {
+    background: #1a1040;
+    color: #E0E0E0;
+    border-color: rgba(242,133,0,0.3);
+}
+
+html[data-theme="dark"] .modal-content,
+html[data-theme="dark"] .auth-card,
+html[data-theme="dark"] .wizard {
+    background: #1a1040;
+    color: #E0E0E0;
+}
+
+html[data-theme="dark"] input {
+    background: #2a1f5e;
+    color: #E0E0E0;
+    border-color: rgba(242,133,0,0.3);
+}
+
+html[data-theme="dark"] .card-body,
+html[data-theme="dark"] .card-img + div,
+html[data-theme="dark"] .sections-preview,
+html[data-theme="dark"] .card {
+    background: #0B0933 !important;
+}
+
+html[data-theme="dark"] body,
+html[data-theme="dark"] .sections-preview {
+    background-color: #0B0933 !important;
+}
+
+/* ملاحظة: عناصر صفحات auth (.auth-page/.auth-sub/.auth-switch/.toggle-password...) غير
+   موجودة فعلياً في recipes.html — نضيفها هنا كما وردت حرفياً لتطابق باقي ملفات CSS */
+
+html[data-theme="dark"] .auth-page { background: #0B0933 !important; }
+
+html[data-theme="dark"] .auth-card { background: #1a1040 !important; color: #E0E0E0 !important; border-color: rgba(242,133,0,0.2) !important; }
+
+html[data-theme="dark"] .auth-card h1 { color: #E0E0E0 !important; }
+
+html[data-theme="dark"] .auth-sub { color: rgba(224,224,224,0.7) !important; }
+
+html[data-theme="dark"] .input-group label { color: #E0E0E0 !important; }
+
+html[data-theme="dark"] .input-group input { background: #2a1f5e !important; color: #E0E0E0 !important; border-color: rgba(242,133,0,0.3) !important; }
+
+html[data-theme="dark"] .input-group input::placeholder { color: rgba(224,224,224,0.4) !important; }
+
+html[data-theme="dark"] .auth-btn { background: #32127A !important; color: #ffffff !important; }
+
+html[data-theme="dark"] .auth-btn:hover { background: #F28500 !important; }
+
+html[data-theme="dark"] .auth-switch { color: rgba(224,224,224,0.7) !important; }
+
+html[data-theme="dark"] .auth-switch a { color: #F28500 !important; }
+
+html[data-theme="dark"] .toggle-password { color: #E0E0E0 !important; }
+
+/* ملاحظة: .hero-eyebrow غير موجود فعلياً في recipes.html — نضيفه هنا كما ورد حرفياً لتطابق باقي ملفات CSS */
+
+html[data-theme="dark"] .hero-eyebrow {
+    color: #F28500 !important;
+}
+
+
+/* ==================== plan/plan.css ==================== */
+
+html[data-theme="dark"] .bp-stub {
+    background: #1a1040 !important;
+    color: #E0E0E0 !important;
+}
+
+html[data-theme="dark"] .footer-logo {
+    color: #F28500 !important;
+}
+
+/*********************************
+     الوضع الليلي (Dark Mode)
+*********************************/
+
+html[data-theme="dark"] body {
+    background-color: #0B0933;
+}
+
+html[data-theme="dark"] .country-card,
+html[data-theme="dark"] .event-card,
+html[data-theme="dark"] .foods-card,
+html[data-theme="dark"] .card {
+    background: #1a1040;
+    border-color: rgba(242,133,0,0.3);
+}
+
+html[data-theme="dark"] img {
+    filter: none !important;
+}
+
+html[data-theme="dark"] h1,
+html[data-theme="dark"] h2,
+html[data-theme="dark"] h3,
+html[data-theme="dark"] p,
+html[data-theme="dark"] span,
+html[data-theme="dark"] label,
+html[data-theme="dark"] a {
+    color: #E0E0E0;
+}
+
+html[data-theme="dark"] button,
+html[data-theme="dark"] .filter-buttons button,
+html[data-theme="dark"] .wizard-btn {
+    background: #1a1040;
+    color: #E0E0E0;
+    border-color: rgba(242,133,0,0.3);
+}
+
+html[data-theme="dark"] button.active,
+html[data-theme="dark"] button:active,
+html[data-theme="dark"] .filter-buttons button.active,
+html[data-theme="dark"] .wizard-btn.primary {
+    background: #F28500;
+    color: #32127A;
+    border-color: #F28500;
+}
+
+html[data-theme="dark"] .search-box {
+    background: #1a1040;
+    color: #E0E0E0;
+    border-color: rgba(242,133,0,0.3);
+}
+
+html[data-theme="dark"] .modal-content,
+html[data-theme="dark"] .auth-card,
+html[data-theme="dark"] .wizard {
+    background: #1a1040;
+    color: #E0E0E0;
+}
+
+html[data-theme="dark"] input {
+    background: #2a1f5e;
+    color: #E0E0E0;
+    border-color: rgba(242,133,0,0.3);
+}
+
+html[data-theme="dark"] .card-body,
+html[data-theme="dark"] .card-img + div,
+html[data-theme="dark"] .sections-preview,
+html[data-theme="dark"] .card {
+    background: #0B0933 !important;
+}
+
+html[data-theme="dark"] body,
+html[data-theme="dark"] .sections-preview {
+    background-color: #0B0933 !important;
+}
+
+html[data-theme="dark"] .wizard {
+    background: #1a1040 !important;
+    color: #E0E0E0 !important;
+}
+
+html[data-theme="dark"] .wizard-step h2 {
+    color: #E0E0E0 !important;
+}
+
+html[data-theme="dark"] .step-hint {
+    color: rgba(224,224,224,0.6) !important;
+}
+
+html[data-theme="dark"] .range-labels {
+    color: rgba(224,224,224,0.5) !important;
+}
+
+html[data-theme="dark"] .wizard-btn.secondary {
+    background: transparent !important;
+    border: 2px solid #F28500 !important;
+    color: #F28500 !important;
+}
+
+html[data-theme="dark"] .dot-num {
+    background: #2a1f5e !important;
+    color: #E0E0E0 !important;
+}
+
+html[data-theme="dark"] .step-dot.active .dot-num,
+html[data-theme="dark"] .step-dot.done .dot-num {
+    background: #F28500 !important;
+    color: #fff !important;
+}
+
+/* لا يوجد .wizard/.wizard-btn/.dot-num/.step-dot فعلياً في plan.html —
+   هذي نسخ حقيقية بنفس القواعد أعلاه للأصناف المستخدمة فعلاً بالصفحة */
+
+html[data-theme="dark"] .ticket-card {
+    background: #1a1040 !important;
+    color: #E0E0E0 !important;
+}
+
+html[data-theme="dark"] .ticket-stub {
+    background: #1a1040 !important;
+    color: #E0E0E0 !important;
+}
+
+html[data-theme="dark"] .stub-label {
+    color: rgba(224,224,224,0.6) !important;
+}
+
+html[data-theme="dark"] .ticket-perforation {
+    border-color: rgba(242,133,0,0.4) !important;
+}
+
+html[data-theme="dark"] .stub-barcode {
+    filter: invert(1) brightness(0.8) !important;
+}
+
+html[data-theme="dark"] .range-labels span {
+    color: rgba(224,224,224,0.5) !important;
+}
+
+html[data-theme="dark"] .ticket-btn.ghost {
+    background: transparent !important;
+    border: 2px solid #F28500 !important;
+    color: #F28500 !important;
+}
+
+/* زر "احفظ هذه الخطة" — يحتاج !important لتجاوز قاعدة button العامة أعلاه */
+html[data-theme="dark"] .bp-save-plan {
+    background: transparent !important;
+    border: 2px solid #F28500 !important;
+    color: #F28500 !important;
+}
+
+html[data-theme="dark"] .bp-save-plan:hover {
+    background: #F28500 !important;
+    color: #fff !important;
+}
+
+html[data-theme="dark"] .bp-stub {
+    background: #1a1040 !important;
+    color: #E0E0E0 !important;
+    border-color: rgba(242,133,0,0.3) !important;
+}
+
+html[data-theme="dark"] .bp-k {
+    color: rgba(224,224,224,0.5) !important;
+}
+
+html[data-theme="dark"] .bp-v {
+    color: #E0E0E0 !important;
+}
+
+html[data-theme="dark"] .bp-seat-label {
+    color: rgba(224,224,224,0.5) !important;
+}
+
+html[data-theme="dark"] .bp-seat-num {
+    color: #E0E0E0 !important;
+}
+
+html[data-theme="dark"] .bp-stub .bp-seat-label,
+html[data-theme="dark"] .bp-stub .bp-seat-num {
+    color: #E0E0E0 !important;
+}
+
+html[data-theme="dark"] .bp-link {
+    color: #F28500 !important;
+}
+
+html[data-theme="dark"] .bp-stub .bp-link {
+    color: #F28500 !important;
+}
+
+html[data-theme="dark"] .bp-card,
+html[data-theme="dark"] .bp-main { background: #1a1040 !important; color: #E0E0E0 !important; }
+
+html[data-theme="dark"] .bp-title { color: #E0E0E0 !important; }
+
+html[data-theme="dark"] .bp-title small { color: rgba(224,224,224,0.6) !important; }
+
+html[data-theme="dark"] .bp-route { color: rgba(224,224,224,0.6) !important; }
+
+html[data-theme="dark"] .bp-arrow { color: #F28500 !important; }
+
+html[data-theme="dark"] .bp-field { border-color: rgba(242,133,0,0.2) !important; }
+
+html[data-theme="dark"] .bp-tag { background: #F28500 !important; color: #fff !important; }
+
+html[data-theme="dark"] .bp-advisory { background: rgba(242,133,0,0.2) !important; color: #F28500 !important; }
+
+html[data-theme="dark"] .bp-ready { background: rgba(34,197,94,0.2) !important; color: #4ade80 !important; }
+
+html[data-theme="dark"] .bp-not-ready { background: rgba(100,100,100,0.3) !important; color: rgba(224,224,224,0.6) !important; }
+
+html[data-theme="dark"] .bp-perf {
+    border-top-color: rgba(242,133,0,0.4) !important;
+}
+
+html[data-theme="dark"] .bp-perf::before,
+html[data-theme="dark"] .bp-perf::after {
+    background: #0B0933 !important;
+}
+
+html[data-theme="dark"] .bp-barcode { filter: invert(1) brightness(0.8) !important; }
+
+html[data-theme="dark"] .continent-chip {
+    background: #1a1040 !important;
+    border-color: rgba(242,133,0,0.3) !important;
+    color: #E0E0E0 !important;
+}
+
+html[data-theme="dark"] .continent-chip.active {
+    background: #F28500 !important;
+    color: #fff !important;
+}
+
+html[data-theme="dark"] .trip-card {
+    background: #1a1040 !important;
+    border-color: rgba(242,133,0,0.3) !important;
+    color: #E0E0E0 !important;
+}
+
+html[data-theme="dark"] .trip-card.active {
+    background: rgba(242,133,0,0.15) !important;
+    border-color: #F28500 !important;
+}
+
+html[data-theme="dark"] .activity-chip {
+    background: #1a1040 !important;
+    border-color: rgba(242,133,0,0.3) !important;
+    color: #E0E0E0 !important;
+}
+
+html[data-theme="dark"] .activity-chip.active {
+    background: #F28500 !important;
+    border-color: #F28500 !important;
+    color: #fff !important;
+}
+
+html[data-theme="dark"] .counter-btn {
+    background: #2a1f5e !important;
+    color: #E0E0E0 !important;
+}
+
+html[data-theme="dark"] .counter-display { color: #E0E0E0 !important; }
+
+html[data-theme="dark"] .counter-block {
+    background: #1a1040 !important;
+    border-color: rgba(242,133,0,0.3) !important;
+}
+
+html[data-theme="dark"] .counter-block-label,
+html[data-theme="dark"] .counter-block-label small { color: rgba(224,224,224,0.7) !important; }
+
+html[data-theme="dark"] .results-header h2 { color: #E0E0E0 !important; }
+
+html[data-theme="dark"] .results-subtitle { color: rgba(224,224,224,0.6) !important; }
+
+html[data-theme="dark"] .bp-note.ok {
+    background: rgba(34,197,94,0.1) !important;
+    border-color: rgba(34,197,94,0.3) !important;
+    color: #4ade80 !important;
+}
+
+html[data-theme="dark"] .bp-note.warn {
+    background: rgba(242,133,0,0.1) !important;
+    border-color: rgba(242,133,0,0.3) !important;
+    color: #F28500 !important;
+}
+
+html[data-theme="dark"] .plan-hero p {
+    color: rgba(224,224,224,0.8) !important;
+}
+
+html[data-theme="dark"] .plan-hero .hero-stats,
+html[data-theme="dark"] .plan-hero .stat-num {
+    color: #F28500 !important;
+}
+
+html[data-theme="dark"] .plan-hero .stat-label {
+    color: rgba(224,224,224,0.6) !important;
+}
+
+html[data-theme="dark"] .fp-line-full {
+    background-image: repeating-linear-gradient(to right, #F28500 0 6px, transparent 6px 11px) !important;
+}
+
+html[data-theme="dark"] .progress-steps .dot-label {
+    color: rgba(224,224,224,0.7) !important;
+}
+
+html[data-theme="dark"] .step-line {
+    background: rgba(255,255,255,0.1) !important;
+}
+
+html[data-theme="dark"] .budget-value {
+    color: #F28500 !important;
+}
+
+/* .plan-hero/.stat-num/.stat-label/.progress-steps/.dot-label/.step-line غير
+   موجودين في plan.html — هذي الأصناف الحقيقية المقابلة على هذه الصفحة:
+   .hero-open (بدل .plan-hero)، .hero-stat-num/.hero-stat-label (بدل .stat-num/.stat-label)
+   ولا يوجد عداد خطوات بنقاط (progress-steps/step-line) أصلاً بهذه الصفحة */
+
+html[data-theme="dark"] .hero-open p {
+    color: rgba(224,224,224,0.8) !important;
+}
+
+html[data-theme="dark"] .hero-stat-num {
+    color: #F28500 !important;
+}
+
+html[data-theme="dark"] .hero-stat-label {
+    color: rgba(224,224,224,0.6) !important;
+}
+
+html[data-theme="dark"] .hero-eyebrow {
+    color: #F28500 !important;
+}
+
+/* ملاحظة: عناصر صفحات auth (.auth-page/.auth-sub/.auth-switch/.toggle-password...) غير
+   موجودة فعلياً في plan.html — نضيفها هنا كما وردت حرفياً لتطابق باقي ملفات CSS */
+
+html[data-theme="dark"] .auth-page { background: #0B0933 !important; }
+
+html[data-theme="dark"] .auth-card { background: #1a1040 !important; color: #E0E0E0 !important; border-color: rgba(242,133,0,0.2) !important; }
+
+html[data-theme="dark"] .auth-card h1 { color: #E0E0E0 !important; }
+
+html[data-theme="dark"] .auth-sub { color: rgba(224,224,224,0.7) !important; }
+
+html[data-theme="dark"] .input-group label { color: #E0E0E0 !important; }
+
+html[data-theme="dark"] .input-group input { background: #2a1f5e !important; color: #E0E0E0 !important; border-color: rgba(242,133,0,0.3) !important; }
+
+html[data-theme="dark"] .input-group input::placeholder { color: rgba(224,224,224,0.4) !important; }
+
+html[data-theme="dark"] .auth-btn { background: #32127A !important; color: #ffffff !important; }
+
+html[data-theme="dark"] .auth-btn:hover { background: #F28500 !important; }
+
+html[data-theme="dark"] .auth-switch { color: rgba(224,224,224,0.7) !important; }
+
+html[data-theme="dark"] .auth-switch a { color: #F28500 !important; }
+
+html[data-theme="dark"] .toggle-password { color: #E0E0E0 !important; }
+
+
+/* ==================== profile/profile.css ==================== */
+
+html[data-theme="dark"] .footer-logo {
+  color: #F28500 !important;
+}
+
+/*********************************
+     الوضع الليلي (Dark Mode)
+*********************************/
+
+html[data-theme="dark"] body {
+    background: #0B0933 !important;
+}
+
+html[data-theme="dark"] .country-card,
+html[data-theme="dark"] .event-card,
+html[data-theme="dark"] .foods-card,
+html[data-theme="dark"] .card {
+    background: #1a1040;
+    border-color: rgba(242,133,0,0.3);
+}
+
+html[data-theme="dark"] img {
+    filter: none !important;
+}
+
+html[data-theme="dark"] h1,
+html[data-theme="dark"] h2,
+html[data-theme="dark"] h3,
+html[data-theme="dark"] p,
+html[data-theme="dark"] span,
+html[data-theme="dark"] label,
+html[data-theme="dark"] a {
+    color: #E0E0E0;
+}
+
+html[data-theme="dark"] button,
+html[data-theme="dark"] .filter-buttons button,
+html[data-theme="dark"] .wizard-btn {
+    background: #1a1040;
+    color: #E0E0E0;
+    border-color: rgba(242,133,0,0.3);
+}
+
+html[data-theme="dark"] button.active,
+html[data-theme="dark"] button:active,
+html[data-theme="dark"] .filter-buttons button.active,
+html[data-theme="dark"] .wizard-btn.primary {
+    background: #F28500;
+    color: #32127A;
+    border-color: #F28500;
+}
+
+html[data-theme="dark"] .search-box {
+    background: #1a1040;
+    color: #E0E0E0;
+    border-color: rgba(242,133,0,0.3);
+}
+
+html[data-theme="dark"] .modal-content,
+html[data-theme="dark"] .auth-card,
+html[data-theme="dark"] .wizard {
+    background: #1a1040;
+    color: #E0E0E0;
+}
+
+html[data-theme="dark"] input {
+    background: #2a1f5e;
+    color: #E0E0E0;
+    border-color: rgba(242,133,0,0.3);
+}
+
+html[data-theme="dark"] .card-body,
+html[data-theme="dark"] .card-img + div,
+html[data-theme="dark"] .sections-preview,
+html[data-theme="dark"] .card {
+    background: #0B0933 !important;
+}
+
+html[data-theme="dark"] body,
+html[data-theme="dark"] .sections-preview {
+    background-color: #0B0933 !important;
+}
+
+/* ملاحظة: .profile-container و.settings-section غير موجودين فعلياً في profile.html —
+   نضيفهم هنا كما وردت حرفياً، مع تفعيل نفس القواعد على الأصناف الحقيقية المستخدمة بالصفحة
+   (.profile-page/.profile-content و.settings-group و#profileName/#profileEmail) */
+
+html[data-theme="dark"] .profile-page,
+html[data-theme="dark"] .profile-container {
+    background: #0B0933 !important;
+    color: #E0E0E0 !important;
+}
+
+html[data-theme="dark"] .profile-sidebar {
+    background: #1a1040 !important;
+    color: #E0E0E0 !important;
+}
+
+html[data-theme="dark"] .profile-nav a {
+    color: #E0E0E0 !important;
+}
+
+html[data-theme="dark"] .profile-nav a.active {
+    background: #F28500 !important;
+    color: #ffffff !important;
+}
+
+html[data-theme="dark"] .fav-card {
+    background: #1a1040 !important;
+    border-color: rgba(242,133,0,0.3) !important;
+    color: #E0E0E0 !important;
+}
+
+html[data-theme="dark"] .fav-card-info span {
+    color: #E0E0E0 !important;
+}
+
+html[data-theme="dark"] .settings-section,
+html[data-theme="dark"] .settings-group {
+    background: #1a1040 !important;
+    border-color: rgba(242,133,0,0.3) !important;
+    color: #E0E0E0 !important;
+}
+
+html[data-theme="dark"] .settings-section input,
+html[data-theme="dark"] .input-group input {
+    background: #2a1f5e !important;
+    color: #E0E0E0 !important;
+    border-color: rgba(242,133,0,0.3) !important;
+}
+
+html[data-theme="dark"] .profile-name,
+html[data-theme="dark"] .profile-email,
+html[data-theme="dark"] #profileName,
+html[data-theme="dark"] #profileEmail {
+    color: #E0E0E0 !important;
+}
+
+html[data-theme="dark"] .profile-content {
+    background: #0B0933 !important;
+}
+
+html[data-theme="dark"] .profile-avatar-section h2 {
+    color: #E0E0E0 !important;
+}
+
+html[data-theme="dark"] .profile-avatar-section p {
+    color: rgba(224,224,224,0.6) !important;
+}
+
+html[data-theme="dark"] .fav-title {
+    color: #E0E0E0 !important;
+    border-bottom-color: #F28500 !important;
+}
+
+html[data-theme="dark"] .fav-empty {
+    background: #1a1040 !important;
+    color: #E0E0E0 !important;
+    border-color: rgba(242,133,0,0.3) !important;
+}
+
+html[data-theme="dark"] .settings-group h3 {
+    color: #E0E0E0 !important;
+    border-bottom-color: rgba(242,133,0,0.3) !important;
+}
+
+html[data-theme="dark"] .input-group label {
+    color: #E0E0E0 !important;
+}
+
+html[data-theme="dark"] .input-group input:focus {
+    background: #2a1f5e !important;
+    border-color: #F28500 !important;
+}
+
+/* الخلفية */
+
+html[data-theme="dark"] body {
+    background: #0B0933 !important;
+}
+
+/* السايدبار */
+
+html[data-theme="dark"] .profile-sidebar {
+    background: #1a1040 !important;
+    color: #E0E0E0 !important;
+}
+
+/* النافبار الداخلي */
+
+html[data-theme="dark"] .profile-nav a {
+    color: #E0E0E0 !important;
+}
+
+html[data-theme="dark"] .profile-nav a.active {
+    background: #F28500 !important;
+    color: #ffffff !important;
+}
+
+/* الكروت */
+
+html[data-theme="dark"] .fav-card {
+    background: #1a1040 !important;
+    border-color: rgba(242,133,0,0.3) !important;
+}
+
+html[data-theme="dark"] .fav-card img {
+    filter: none !important;
+}
+
+html[data-theme="dark"] .fav-card-info span {
+    color: #E0E0E0 !important;
+}
+
+/* الإعدادات */
+
+/* ملاحظة: .settings-section و.profile-stats و<select> غير موجودين فعليًا في profile.html
+   (الصنف الحقيقي هو .settings-group ولا يوجد عنصر select بالصفحة) —
+   نضيفهم هنا كما وردوا حرفياً، مع تفعيل نفس الخلفية على .profile-content الحقيقي */
+
+html[data-theme="dark"] .settings-section,
+html[data-theme="dark"] .profile-content {
+    background: #1a1040 !important;
+    color: #E0E0E0 !important;
+}
+
+html[data-theme="dark"] .settings-section input,
+html[data-theme="dark"] .settings-section select {
+    background: #2a1f5e !important;
+    color: #E0E0E0 !important;
+    border-color: rgba(242,133,0,0.3) !important;
+}
+
+/* الخطوط */
+
+html[data-theme="dark"] .profile-name,
+html[data-theme="dark"] .profile-email,
+html[data-theme="dark"] .profile-stats span,
+html[data-theme="dark"] h1,
+html[data-theme="dark"] h2,
+html[data-theme="dark"] h3,
+html[data-theme="dark"] p,
+html[data-theme="dark"] label {
+    color: #E0E0E0 !important;
+}
+
+/* الفلاتر */
+
+html[data-theme="dark"] .profile-mobile-nav a {
+    background: #1a1040 !important;
+    color: #E0E0E0 !important;
+    border-color: rgba(242,133,0,0.3) !important;
+}
+
+html[data-theme="dark"] .profile-mobile-nav a.active {
+    background: #F28500 !important;
+    color: #ffffff !important;
+}
+
+/* ملاحظة: .auth-page/.auth-sub/.auth-switch غير موجودين فعلياً في profile.html —
+   نضيفهم هنا كما وردوا حرفياً؛ .toggle-password موجود فعلياً بحقول كلمة المرور بهذه الصفحة */
+
+html[data-theme="dark"] .auth-page { background: #0B0933 !important; }
+
+html[data-theme="dark"] .auth-card { background: #1a1040 !important; color: #E0E0E0 !important; border-color: rgba(242,133,0,0.2) !important; }
+
+html[data-theme="dark"] .auth-card h1 { color: #E0E0E0 !important; }
+
+html[data-theme="dark"] .auth-sub { color: rgba(224,224,224,0.7) !important; }
+
+html[data-theme="dark"] .input-group label { color: #E0E0E0 !important; }
+
+html[data-theme="dark"] .input-group input { background: #2a1f5e !important; color: #E0E0E0 !important; border-color: rgba(242,133,0,0.3) !important; }
+
+html[data-theme="dark"] .input-group input::placeholder { color: rgba(224,224,224,0.4) !important; }
+
+html[data-theme="dark"] .auth-btn { background: #32127A !important; color: #ffffff !important; }
+
+html[data-theme="dark"] .auth-btn:hover { background: #F28500 !important; }
+
+html[data-theme="dark"] .auth-switch { color: rgba(224,224,224,0.7) !important; }
+
+html[data-theme="dark"] .auth-switch a { color: #F28500 !important; }
+
+html[data-theme="dark"] .toggle-password { color: #E0E0E0 !important; }
+
+/* ملاحظة: .hero-eyebrow غير موجود فعلياً في profile.html — نضيفه هنا كما ورد حرفياً لتطابق باقي ملفات CSS */
+
+html[data-theme="dark"] .hero-eyebrow {
+    color: #F28500 !important;
+}
+
+
+/* ==================== index/stayles.css ==================== */
+
+html[data-theme="dark"] .footer-logo {
+    color: #F28500 !important;
+}
+
+/*********************************
+     الوضع الليلي (Dark Mode)
+*********************************/
+
+html[data-theme="dark"] body {
+    background-color: #0B0933;
+}
+
+html[data-theme="dark"] .country-card,
+html[data-theme="dark"] .event-card,
+html[data-theme="dark"] .foods-card,
+html[data-theme="dark"] .card {
+    background: #1a1040;
+    border-color: rgba(242,133,0,0.3);
+}
+
+html[data-theme="dark"] img {
+    filter: none !important;
+}
+
+html[data-theme="dark"] h1,
+html[data-theme="dark"] h2,
+html[data-theme="dark"] h3,
+html[data-theme="dark"] p,
+html[data-theme="dark"] span,
+html[data-theme="dark"] label,
+html[data-theme="dark"] a {
+    color: #E0E0E0;
+}
+
+/* الـ hero يحتفظ بألوانه وتصميمه الأصلي حتى في الوضع الليلي */
+
+html[data-theme="dark"] .hero-badge {
+    color: #F28500;
+}
+
+html[data-theme="dark"] .hero-text h1 {
+    color: #FFFFFF;
+}
+
+html[data-theme="dark"] .hero-accent {
+    color: #F28500;
+}
+
+html[data-theme="dark"] .hero-text p {
+    color: rgba(255, 255, 255, 0.65);
+}
+
+html[data-theme="dark"] .stat-num {
+    color: #F28500;
+}
+
+html[data-theme="dark"] .stat-label {
+    color: rgba(255, 255, 255, 0.55);
+}
+
+html[data-theme="dark"] button,
+html[data-theme="dark"] .filter-buttons button,
+html[data-theme="dark"] .wizard-btn {
+    background: #1a1040;
+    color: #E0E0E0;
+    border-color: rgba(242,133,0,0.3);
+}
+
+html[data-theme="dark"] button.active,
+html[data-theme="dark"] button:active,
+html[data-theme="dark"] .filter-buttons button.active,
+html[data-theme="dark"] .wizard-btn.primary {
+    background: #F28500;
+    color: #32127A;
+    border-color: #F28500;
+}
+
+html[data-theme="dark"] .search-box {
+    background: #1a1040;
+    color: #E0E0E0;
+    border-color: rgba(242,133,0,0.3);
+}
+
+html[data-theme="dark"] .modal-content,
+html[data-theme="dark"] .auth-card,
+html[data-theme="dark"] .wizard {
+    background: #1a1040;
+    color: #E0E0E0;
+}
+
+html[data-theme="dark"] input {
+    background: #2a1f5e;
+    color: #E0E0E0;
+    border-color: rgba(242,133,0,0.3);
+}
+
+html[data-theme="dark"] .sections-preview,
+html[data-theme="dark"] .card {
+    background: #0B0933 !important;
+}
+
+html[data-theme="dark"] body,
+html[data-theme="dark"] .sections-preview {
+    background-color: #0B0933 !important;
+}
+
+/* ملاحظة: عناصر صفحات auth (.auth-page/.auth-sub/.auth-switch/.toggle-password...) غير
+   موجودة فعلياً في index.html — نضيفها هنا كما وردت حرفياً لتطابق باقي ملفات CSS */
+
+html[data-theme="dark"] .auth-page { background: #0B0933 !important; }
+
+html[data-theme="dark"] .auth-card { background: #1a1040 !important; color: #E0E0E0 !important; border-color: rgba(242,133,0,0.2) !important; }
+
+html[data-theme="dark"] .auth-card h1 { color: #E0E0E0 !important; }
+
+html[data-theme="dark"] .auth-sub { color: rgba(224,224,224,0.7) !important; }
+
+html[data-theme="dark"] .input-group label { color: #E0E0E0 !important; }
+
+html[data-theme="dark"] .input-group input { background: #2a1f5e !important; color: #E0E0E0 !important; border-color: rgba(242,133,0,0.3) !important; }
+
+html[data-theme="dark"] .input-group input::placeholder { color: rgba(224,224,224,0.4) !important; }
+
+html[data-theme="dark"] .auth-btn { background: #32127A !important; color: #ffffff !important; }
+
+html[data-theme="dark"] .auth-btn:hover { background: #F28500 !important; }
+
+html[data-theme="dark"] .auth-switch { color: rgba(224,224,224,0.7) !important; }
+
+html[data-theme="dark"] .auth-switch a { color: #F28500 !important; }
+
+html[data-theme="dark"] .toggle-password { color: #E0E0E0 !important; }
+
+/* ملاحظة: .hero-eyebrow غير موجود فعلياً في index.html — نضيفه هنا كما ورد حرفياً لتطابق باقي ملفات CSS */
+
+html[data-theme="dark"] .hero-eyebrow {
+    color: #F28500 !important;
+}
+
+html[data-theme="dark"] .auth-buttons .login {
+    color: #E0E0E0 !important;
+    background: rgba(224,224,224,0.1) !important;
+}
+
+html[data-theme="dark"] .auth-buttons .signup {
+    color: #E0E0E0 !important;
+    border-color: #E0E0E0 !important;
+}
+

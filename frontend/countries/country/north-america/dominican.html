@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<script>
+(() => {
+  const theme = localStorage.getItem("theme");
+  document.documentElement.setAttribute("data-theme", theme === "dark" ? "dark" : "light");
+})();
+</script>
+    <style>
+        .auth-buttons { display: none; }
+        .user-menu { display: none; }
+    </style>
+    <meta charset="UTF-8">
+<script>
+    (function(){
+        var u=JSON.parse(localStorage.getItem('safraUser')||'null');
+        var av=localStorage.getItem('safraAvatar')||'';
+        document.documentElement.className+=u?' user-logged-in':' user-logged-out';
+        if(u){
+            var t=setInterval(function(){
+                var n=document.getElementById('userName');
+                var a=document.getElementById('userAvatar');
+                if(n){
+                    n.textContent=u.name||'';
+                    if(a&&(u.avatar||av)) a.src=u.avatar||av;
+                    clearInterval(t);
+                }
+            },1);
+        }
+    })();
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سفرة</title>
+    <link rel="stylesheet" href="/countries/countries.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@500;600&display=swap">
+    <link rel="stylesheet" href="/dark-mode.css">
+    <meta property="og:image" content="https://sofrh.vercel.app/img/logo6.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:title" content="سفرة — سافر وتذوق">
+    <meta property="og:description" content="اكتشف وجهات وماكولات من مختلف أنحاء العالم">
+    <meta property="og:url" content="https://sofrh.vercel.app">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ar_SA">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://sofrh.vercel.app/img/logo6.png">
+    <meta name="twitter:title" content="سفرة — سافر وتذوق">
+    <meta name="twitter:description" content="اكتشف وجهات وماكولات من مختلف أنحاء العالم">
+    <script src="/auth/auth.js" defer></script>
+</head>
+<body>
+        <header class="navbar">
+        <div class="hamburger" id="menu-btn">☰</div>
+
+        <div class="auth-buttons" id="authButtons">
+            <a href="/auth/login.html" class="login">تسجيل دخول</a>
+            <a href="/auth/signup.html" class="signup">إنشاء حساب</a>
+        </div>
+
+        <div class="user-menu" id="userMenu">
+            <img id="userAvatar" src="" alt="">
+            <span class="user-name" id="userName"></span>
+            <div class="user-dropdown">
+                <a href="/profile/profile.html">الملف الشخصي</a>
+                <a href="#" id="logoutBtn">تسجيل خروج</a>
+            </div>
+        </div>
+
+        <ul class="nav-list">
+            <li><a href="/index/index.html">الرئيسية</a></li>
+            <li><a href="/countries/countries.html" class="active">الدول</a></li>
+            <li><a href="/events/events.html">الفعاليات</a></li>
+            <li><a href="/recipes/recipes.html">الوصفات</a></li>
+            <li><a href="/plan/plan.html">خطتي</a></li>
+            <li><a href="/about/about.html">عن سفرة</a></li>
+        </ul>
+
+        <div class="logo">
+            <a href="/index/index.html"><img src="/img/logo7.png" alt="سفرة"></a>
+        </div>
+    </header>
+    <!-- SIDE MENU -->
+    <div class="side-menu" id="side-menu">
+        <span class="close-btn" id="close-btn">×</span>
+        <span class="side-menu-kicker">استكشف</span>
+        <ul>
+            <li><a href="/index/index.html" class="active">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M3 11.5 12 4l9 7.5" />
+                        <path
+                            d="M5.5 10v9a1 1 0 0 0 1 1H9a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h2.5a1 1 0 0 0 1-1v-9" />
+                    </svg>
+                    <span>الرئيسية</span>
+                </a></li>
+            <li><a href="/countries/countries.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M12 21s7-6.6 7-12a7 7 0 1 0-14 0c0 5.4 7 12 7 12Z" />
+                        <circle cx="12" cy="9" r="2.3" />
+                    </svg>
+                    <span>الدول</span>
+                </a></li>
+            <li><a href="/events/events.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <rect x="3.5" y="5" width="17" height="16" rx="2.5" />
+                        <path d="M8 3v4M16 3v4M3.5 10h17" />
+                        <circle cx="12" cy="15" r="1.4" fill="currentColor" stroke="none" />
+                    </svg>
+                    <span>الفعاليات</span>
+                </a></li>
+            <li><a href="/recipes/recipes.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M7 2v8a2 2 0 0 0 2 2v10M5 2v6M9 2v6M14 2c-1.5 2-1.5 7 0 9 .6.6 1 1.3 1 2v9" />
+                    </svg>
+                    <span>الوصفات</span>
+                </a></li>
+            <li><a href="/plan/plan.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="9" />
+                        <path d="M14.8 9.2 13 13l-3.8 1.8L11 11l3.8-1.8Z" />
+                    </svg>
+                    <span>خطتي</span>
+                </a></li>
+            <li><a href="/about/about.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="9" />
+                        <path d="M12 8h.01M11 11.5h1v5.5h1" />
+                    </svg>
+                    <span>عن سفرة</span>
+                </a></li>
+        </ul>
+    </div>
+    <header>
+        <a href="/countries/countries.html" class="back-btn">رجوع</a>
+    </header>
+
+    <div class="country-name">
+        <h1>جمهورية الدومينيكان</h1>
+        <p>شواطئ بونتا كانا والتراث الكولونيالي</p>
+    </div>
+
+    <div class="main-cites">
+        <h1>المدن</h1>
+    </div>
+    <section class="cities-grid">
+
+        <div class="cite" data-name="سانتو دومينغو – Santo Domingo" data-img="/img/dominican-santo-domingo.jpg"
+            data-desc="العاصمة الحيوية لجمهورية الدومينيكان وأقدم مدينة أوروبية في الأمريكيتين، تزخر بمنطقتها الاستعمارية المدرجة على قائمة التراث العالمي لليونسكو."
+            data-historic="🏛️ المنطقة الاستعمارية – Zona Colonial | 🏰 قلعة أوزاما | ⛪ كاتدرائية سانتا ماريا لا مينور | 🌊 نهر أوزاما"
+            data-restaurants="🍽️ مطعم Meson de la Cava | 🥘 مطعم La Residence | 🌿 مطعم Adrian Tropical"
+            data-cafes="☕ مقهى Café Colonial | ☕ مقهى Palacio del Café | ☕ مقهى Santo Brew"
+            data-events="🏛️ جولة المنطقة الاستعمارية | 🏰 قلعة أوزاما التاريخية | ⛪ الكاتدرائية العريقة"
+            onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'dominican_santodomingo', 'سانتو دومينغو', '/img/dominican-santo-domingo.jpg')">🏙️</button>
+            <img src="/img/dominican-santo-domingo.jpg" alt="سانتو دومينغو" class="cite-img">
+            <span class="name">سانتو دومينغو – Santo Domingo</span>
+            <p class="info">أقدم مدينة أوروبية في الأمريكيتين وعاصمة الكاريبي التاريخية.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+        <div class="cite" data-name="بونتا كانا – Punta Cana" data-img="/img/dominican-punta-cana.jpg"
+            data-desc="عاصمة المنتجعات الكاريبية وواحدة من أشهر الوجهات السياحية في العالم، تمتد شواطئها البيضاء الناصعة ومنتجعاتها الفاخرة على امتداد ساحل شرق الجزيرة."
+            data-historic="🏖️ شاطئ بونتا كانا – Punta Cana Beach | 🌊 خليج البيساوير | 🌴 بساتين النخيل | 🐚 الشعاب المرجانية"
+            data-restaurants="🍽️ مطعم Jellyfish Restaurant | 🥘 مطعم La Yola | 🌿 مطعم Cana Bay"
+            data-cafes="☕ مقهى Playa Blanca Café | ☕ مقهى Tropical Sip | ☕ مقهى Sunrise Beach Bar"
+            data-events="🏖️ شواطئ بونتا كانا الفاخرة | 🤿 الغوص في الشعاب المرجانية | 🌊 رياضات مائية"
+            onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'dominican_puntacana', 'بونتا كانا', '/img/dominican-punta-cana.jpg')">🏙️</button>
+            <img src="/img/dominican-punta-cana.jpg" alt="بونتا كانا" class="cite-img">
+            <span class="name">بونتا كانا – Punta Cana</span>
+            <p class="info">عاصمة المنتجعات الكاريبية وجنة الشواطئ البيضاء الفاخرة.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+        <div class="cite" data-name="بابارو – Bávaro" data-img="/img/dominican-bavaro.jpg"
+            data-desc="شاطئ بابارو المتواصل الشهير بامتداده الرملي الأبيض اللانهائي على ساحل بونتا كانا، يُعدّ من أجمل شواطئ الكاريبي ويضم أفخم المنتجعات العالمية."
+            data-historic="🏖️ شاطئ بابارو اللانهائي | 🌊 حاجز المرجان الطبيعي | 🌴 غابات النخيل الساحلية | 🐠 عالم بحري متنوع"
+            data-restaurants="🍽️ مطعم Cana Bay Bavaro | 🥘 مطعم Balicana | 🌿 مطعم El Pulpo"
+            data-cafes="☕ مقهى Bavaro Beach Club | ☕ مقهى Palm Breeze | ☕ مقهى Arena Blanca"
+            data-events="🏖️ شاطئ بابارو البيضاء | 🌊 ركوب الأمواج وسباحة | 🐠 رحلة الشعاب المرجانية"
+            onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'dominican_bavaro', 'بابارو', '/img/dominican-bavaro.jpg')">🏙️</button>
+            <img src="/img/dominican-bavaro.jpg" alt="بابارو" class="cite-img">
+            <span class="name">بابارو – Bávaro</span>
+            <p class="info">شاطئ رملي أبيض لا نهاية له يضم أفخم المنتجعات الكاريبية.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+        <div class="cite" data-name="لاس تيراناس – Las Terrenas" data-img="/img/dominican-las-terrenas.jpg"
+            data-desc="بلدة ساحلية ذات طابع أوروبي فريد في شبه جزيرة سمانا، تمزج الجمال الطبيعي الكاريبي بحيوية ثقافية متعددة الجنسيات وشواطئ هادئة نظيفة."
+            data-historic="🏖️ شاطئ بلايا بوبون | 🌊 شلال الشيباو – El Limón | 🌴 الغابة الاستوائية | 🎨 قرية الفنانين"
+            data-restaurants="🍽️ مطعم La Terrasse | 🥘 مطعم Paco Cabana | 🌿 مطعم El Cayuco"
+            data-cafes="☕ مقهى Café de Paris | ☕ مقهى Beach Garden | ☕ مقهى Sunset Terrace"
+            data-events="🏖️ شواطئ لاس تيراناس | 🌊 جولة شلال الشيباو | 🎨 سوق الحرف اليدوية"
+            onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'dominican_lasterrenas', 'لاس تيراناس', '/img/dominican-las-terrenas.jpg')">🏙️</button>
+            <img src="/img/dominican-las-terrenas.jpg" alt="لاس تيراناس" class="cite-img">
+            <span class="name">لاس تيراناس – Las Terrenas</span>
+            <p class="info">بلدة ساحلية أوروبية الطابع بشواطئ بكر وروح كاريبية دافئة.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+        <div class="cite" data-name="سمانا – Samaná" data-img="/img/dominican-samana.jpg"
+            data-desc="خليج سمانا الساحر يُعدّ وجهة عالمية لمشاهدة الحيتان الحدباء بين يناير ومارس، ويحوي غابات استوائية مذهلة وشلالات عذراء وشواطئ بكر."
+            data-historic="🐋 مشاهدة الحيتان الحدباء | 🌿 شلال الشيباو – El Limón | 🏝️ جزيرة كايو ليفانتادو | 🌊 خليج سمانا الجميل"
+            data-restaurants="🍽️ مطعم El Gran Bahia Principe | 🥘 مطعم La Mata Rosada | 🌿 مطعم Casa Marina"
+            data-cafes="☕ مقهى Bay View Café | ☕ مقهى Whale Watch Point | ☕ مقهى Samana Sunrise"
+            data-events="🐋 جولة مشاهدة الحيتان | 🌿 رحلة شلال الشيباو | 🏝️ جزيرة باكشيور"
+            onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'dominican_samana', 'سمانا', '/img/dominican-samana.jpg')">🏙️</button>
+            <img src="/img/dominican-samana.jpg" alt="سمانا" class="cite-img">
+            <span class="name">سمانا – Samaná</span>
+            <p class="info">خليج الحيتان الحدباء وجنة الطبيعة البكر في الدومينيكان.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+        <div class="cite" data-name="سانتياغو – Santiago" data-img="/img/dominican-santiago.jpg"
+            data-desc="المدينة الثانية في جمهورية الدومينيكان وعاصمتها الثقافية والصناعية، تشتهر بنصب الأبطال الشامخ وسيجار التبغ الشهير ومهرجان الكارنيفال السنوي."
+            data-historic="🏛️ نصب الأبطال – Monumento a los Héroes | 🎨 مركز ليون خيمنيز الثقافي | 🌿 متحف التبغ الدومينيكاني | 🎭 مسرح المدينة"
+            data-restaurants="🍽️ مطعم Kukara Macara | 🥘 مطعم Brasserie de la Plaine | 🌿 مطعم Rancho Camp David"
+            data-cafes="☕ مقهى Café Santiago | ☕ مقهى El Tabaco | ☕ مقهى Plaza Central"
+            data-events="🏛️ نصب الأبطال التاريخي | 🎨 مركز ليون الثقافي | 🎭 كارنيفال سانتياغو"
+            onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'dominican_santiago', 'سانتياغو', '/img/dominican-santiago.jpg')">🏙️</button>
+            <img src="/img/dominican-santiago.jpg" alt="سانتياغو" class="cite-img">
+            <span class="name">سانتياغو – Santiago</span>
+            <p class="info">المدينة الثانية والعاصمة الثقافية والصناعية للدومينيكان.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+    </section>
+
+    <div class="main-foods">
+        <h1>الماكولات</h1>
+    </div>
+    <section class="foods-grid">
+
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=dominican-sancocho'">
+            <img src="/img/dominican-sancocho.jpg" alt="" class="foods-img">
+            <span class="name-foods">سانكوتشو – Sancocho</span>
+            <div class="food-info">يخنة الدجاج الغنية بالخضروات الجذرية والتوابل.</div>
+            <a href="/recipes/recipes.html?recipe=dominican-sancocho" class="for-more-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=dominican-mangu'">
+            <img src="/img/dominican-mangu.jpg" alt="" class="foods-img">
+            <span class="name-foods">مانغو – Mangú</span>
+            <div class="food-info">هريس الموز الأخضر المطبوخ مع الزيت والبصل المقلي.</div>
+            <a href="/recipes/recipes.html?recipe=dominican-mangu" class="for-more-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=dominican-arroz-habichuelas'">
+            <img src="/img/dominican-arroz-habichuelas.jpg" alt="" class="foods-img">
+            <span class="name-foods">أرز وفاصوليا – Arroz y Habichuelas</span>
+            <div class="food-info">أرز أبيض مع الفاصوليا الحمراء المطبوخة بالتوابل والثوم.</div>
+            <a href="/recipes/recipes.html?recipe=dominican-arroz-habichuelas" class="for-more-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=dominican-pollo-guisado'">
+            <img src="/img/dominican-pollo-guisado.jpg" alt="" class="foods-img">
+            <span class="name-foods">بويو غيسادو – Pollo Guisado</span>
+            <div class="food-info">دجاج مطبوخ ببطء بصلصة الطماطم والبهارات الكاريبية.</div>
+            <a href="/recipes/recipes.html?recipe=dominican-pollo-guisado" class="for-more-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=dominican-tostones-dominicanos'">
+            <img src="/img/dominican-tostones-dominicanos.jpg" alt="" class="foods-img">
+            <span class="name-foods">توستونيس دومينيكاني – Tostones Dominicanos</span>
+            <div class="food-info">شرائح الموز الأخضر المقلية مرتين والمقرمشة.</div>
+            <a href="/recipes/recipes.html?recipe=dominican-tostones-dominicanos" class="for-more-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=dominican-flan-dominicano'">
+            <img src="/img/dominican-flan-dominicano.jpg" alt="" class="foods-img">
+            <span class="name-foods">فلان دومينيكاني – Flan Dominicano</span>
+            <div class="food-info">حلوى الفلان الكريمية بالكراميل والفانيليا وجوز الهند.</div>
+            <a href="/recipes/recipes.html?recipe=dominican-flan-dominicano" class="for-more-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+
+    </section>
+
+    <div class="events-main">
+        <h1>الفعاليات</h1>
+    </div>
+    <section class="events-grid">
+
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=PuntaCanaBeach'">
+            <img src="/img/dominican-punta-cana.jpg" alt="" class="event-img">
+            <span class="name-event">شواطئ بونتا كانا – Punta Cana Beach</span>
+            <div class="event-info">شواطئ بيضاء في منتجعات بونتا كانا.</div>
+            <a href="/events/events.html?event=PuntaCanaBeach" class="event-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=SantoDomingoColonial'">
+            <img src="/img/dominican-santo-domingo.jpg" alt="" class="event-img">
+            <span class="name-event">سانتو دومينغو الاستعمارية – Santo Domingo Colonial</span>
+            <div class="event-info">أقدم مدينة أوروبية في الأمريكيتين.</div>
+            <a href="/events/events.html?event=SantoDomingoColonial" class="event-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=SamanaWhaleWatching'">
+            <img src="/img/dominican-samana.jpg" alt="" class="event-img">
+            <span class="name-event">مشاهدة الحيتان في سمانا – Samana Whale Watching</span>
+            <div class="event-info">مشاهدة الحيتان الحدباء في خليج سمانا.</div>
+            <a href="/events/events.html?event=SamanaWhaleWatching" class="event-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=MerengueCarnaval'">
+            <img src="/img/dominican-santiago.jpg" alt="" class="event-img">
+            <span class="name-event">كارنيفال ميرينغي – Merengue Carnaval</span>
+            <div class="event-info">كارنيفال بموسيقى الميرينغ والرقصات الشعبية.</div>
+            <a href="/events/events.html?event=MerengueCarnaval" class="event-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=LosHaitisesBoat'">
+            <img src="/img/dominican-las-terrenas.jpg" alt="" class="event-img">
+            <span class="name-event">قوارب لوس هايتيسيس – Los Haitises Boat</span>
+            <div class="event-info">حديقة وطنية بمغارات ومانغروف مذهل.</div>
+            <a href="/events/events.html?event=LosHaitisesBoat" class="event-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=ZoshanBeachClub'">
+            <img src="/img/dominican-bavaro.jpg" alt="" class="event-img">
+            <span class="name-event">زوشان بيتش كلوب – Zoshan Beach Club</span>
+            <div class="event-info">رياضات مائية وأجواء كاريبية راقية.</div>
+            <a href="/events/events.html?event=ZoshanBeachClub" class="event-btn"
+                onclick="event.stopPropagation()">المزيد</a>
+        </div>
+
+    </section>
+
+    <div id="cityModal" class="modal" onclick="closeCityModal(event)">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeCityModal(event)">×</button>
+            <div class="modal-top">
+                <img id="modalCityImg" src="" alt="" />
+                <div class="modal-top-info">
+                    <h2 id="modalCityName"></h2>
+                    <span class="modal-top-badge">✦ تفاصيل المدينة</span>
+                </div>
+            </div>
+            <div class="modal-body">
+                <p id="modalCityDesc" class="event-desc"></p>
+                <h4>🏛️ أفضل الأماكن التاريخية</h4>
+                <div id="modalCityHistoric" class="ingredients-tags"></div>
+                <h4>🍽️ أفضل المطاعم</h4>
+                <div id="modalCityRestaurants" class="ingredients-tags"></div>
+                <h4>☕ أفضل المقاهي</h4>
+                <div id="modalCityCafes" class="ingredients-tags"></div>
+                <h4>🎉 فعاليات المدينة</h4>
+                <div id="modalCityEvents" class="ingredients-tags"></div>
+            </div>
+        </div>
+    </div>
+    <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h2 class="footer-logo">سفرة</h2>
+        <p>وجهتك للسفر والطعام حول العالم</p>
+      </div>
+      <div class="footer-links">
+        <h4>روابط سريعة</h4>
+        <ul>
+          <li><a href="/index/index.html">الرئيسية</a></li>
+          <li><a href="/countries/countries.html">الدول</a></li>
+          <li><a href="/events/events.html">الفعاليات</a></li>
+          <li><a href="/recipes/recipes.html">الوصفات</a></li>
+          <li><a href="/plan/plan.html">خطتي</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>تواصل معنا</h4>
+        <ul>
+          <li>📧 <a href="mailto:Sofrh.info@gmail.com" target="_blank">Sofrh.info@gmail.com</a></li>
+          <li>📧 <a href="mailto:Sofrh.support@gmail.com" target="_blank">Sofrh.support@gmail.com</a></li>
+          <li>🐦 <a href="https://twitter.com/sofrah_sa" target="_blank">X (Twitter)</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 سفرة — جميع الحقوق محفوظة</p>
+      <p>صُنع بواسطة فريق سفرة</p>
+      <p>📧 <a href="mailto:Sofrh.info@gmail.com" style="color: #F28500;">Sofrh.info@gmail.com</a></p>
+    </div>
+  </footer>
+    <script src="/countries/countries.js"></script>
+</body>
+</html>

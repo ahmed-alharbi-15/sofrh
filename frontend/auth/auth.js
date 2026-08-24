@@ -1,3 +1,19 @@
+(function() {
+    const user = JSON.parse(localStorage.getItem('safraUser') || 'null');
+    if (user) {
+        document.documentElement.classList.add('user-logged-in');
+        const userName = document.getElementById('userName');
+        const userAvatar = document.getElementById('userAvatar');
+        if (userName) userName.textContent = user.name || '';
+        if (userAvatar) {
+            const src = user.avatar || localStorage.getItem('safraAvatar') || '';
+            if (src) userAvatar.src = src;
+        }
+    } else {
+        document.documentElement.classList.add('user-logged-out');
+    }
+})();
+
 // --- 1. وظيفة إنشاء الحساب ---
 
 const signupBtn = document.getElementById('signupBtn');
@@ -83,23 +99,21 @@ if (loginBtn) {
 // --- 3. التحقق من الجلسة ---
 function checkAuth() {
     const user = JSON.parse(localStorage.getItem("safraUser"));
-    const authButtons = document.getElementById("authButtons");
-    const userMenu = document.getElementById("userMenu");
     const userName = document.getElementById("userName");
     const userAvatar = document.getElementById("userAvatar");
 
     if (user) {
-        if (authButtons) authButtons.style.display = "none";
-        if (userMenu) userMenu.style.display = "flex";
-        if (userName) userName.textContent = user.name;
+        document.documentElement.classList.remove('user-logged-out');
+        document.documentElement.classList.add('user-logged-in');
+        if (userName) userName.textContent = user.name || '';
         if (userAvatar) {
             const savedAvatar = localStorage.getItem("safraAvatar");
             const src = user.avatar || savedAvatar || null;
             if (src) userAvatar.src = src;
         }
     } else {
-        if (authButtons) authButtons.style.display = "flex";
-        if (userMenu) userMenu.style.display = "none";
+        document.documentElement.classList.remove('user-logged-in');
+        document.documentElement.classList.add('user-logged-out');
     }
 }
 
@@ -231,11 +245,73 @@ if (typeof menuBtn === 'undefined') {
 }
 
 if (menuBtn && sideMenu && closeBtn) {
-    menuBtn.addEventListener("click", () => { sideMenu.style.right = "0px"; });
-    closeBtn.addEventListener("click", () => { sideMenu.style.right = "-260px"; });
+    menuBtn.addEventListener("click", () => {
+        sideMenu.style.right = "0px";
+        sideMenu.classList.add("menu-open");
+    });
+    closeBtn.addEventListener("click", () => {
+        sideMenu.style.right = "-260px";
+        sideMenu.classList.remove("menu-open");
+    });
     document.addEventListener("click", (e) => {
         if (!sideMenu.contains(e.target) && !menuBtn.contains(e.target)) {
             sideMenu.style.right = "-260px";
+            sideMenu.classList.remove("menu-open");
         }
     });
 }
+
+// --- 10. الوضع الليلي (Dark Mode) ---
+// ملاحظة: التلوين الفعلي محصور في كل ملف CSS بقاعدة واحدة فقط:
+// html[data-theme="dark"] body { background-color: #0B0933; }
+// يعني الوضع الليلي يغيّر خلفية الصفحة فقط، وما يمس الكروت
+// (.country-card/.event-card/.foods-card/.card) ولا الصور ولا اللوغو
+// ولا الأفتار ولا الألوان الأصلية (navbar/البرتقالي/النصوص البيضاء).
+// هذا الكود هنا مسؤول فقط عن: تبديل السمة (data-theme)، الحفظ في
+// localStorage، وزر التبديل نفسه (شكل الزر مستقل عن باقي الصفحة).
+(function() {
+    const THEME_KEY = "theme";
+    const isDark = document.documentElement.getAttribute("data-theme") === "dark";
+
+    const style = document.createElement("style");
+    style.id = "safra-dark-mode-style";
+    style.textContent = `
+        html[data-theme="dark"] { color-scheme: dark; }
+        #dark-mode-toggle {
+            position: fixed;
+            bottom: 22px;
+            left: 22px;
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            background: #32127A;
+            color: #FAF5EB;
+            border: none;
+            font-size: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 18px rgba(0,0,0,.35);
+            z-index: 99998;
+            transition: transform .2s ease;
+        }
+        #dark-mode-toggle:hover { transform: scale(1.08); }
+    `;
+    document.head.appendChild(style);
+
+    const toggleBtn = document.createElement("button");
+    toggleBtn.id = "dark-mode-toggle";
+    toggleBtn.type = "button";
+    toggleBtn.setAttribute("aria-label", "تبديل الوضع الليلي");
+    toggleBtn.textContent = isDark ? "☀️" : "🌙";
+
+    toggleBtn.addEventListener("click", () => {
+        const isDark = document.documentElement.getAttribute("data-theme") !== "dark";
+        document.documentElement.setAttribute("data-theme", isDark ? "dark" : "light");
+        localStorage.setItem(THEME_KEY, isDark ? "dark" : "light");
+        toggleBtn.textContent = isDark ? "☀️" : "🌙";
+    });
+
+    document.body.appendChild(toggleBtn);
+})();

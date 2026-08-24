@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+<script>
+(() => {
+  const theme = localStorage.getItem("theme");
+  document.documentElement.setAttribute("data-theme", theme === "dark" ? "dark" : "light");
+})();
+</script>
+    <style>
+        .auth-buttons { display: none; }
+        .user-menu { display: none; }
+    </style>
+    <meta charset="UTF-8">
+<script>
+    (function(){
+        var u=JSON.parse(localStorage.getItem('safraUser')||'null');
+        var av=localStorage.getItem('safraAvatar')||'';
+        document.documentElement.className+=u?' user-logged-in':' user-logged-out';
+        if(u){
+            var t=setInterval(function(){
+                var n=document.getElementById('userName');
+                var a=document.getElementById('userAvatar');
+                if(n){
+                    n.textContent=u.name||'';
+                    if(a&&(u.avatar||av)) a.src=u.avatar||av;
+                    clearInterval(t);
+                }
+            },1);
+        }
+    })();
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سفرة</title>
+    <link rel="stylesheet" href="/countries/countries.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@500;600&display=swap">
+    <link rel="stylesheet" href="/dark-mode.css">
+    <meta property="og:image" content="https://sofrh.vercel.app/img/logo6.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:title" content="سفرة — سافر وتذوق">
+    <meta property="og:description" content="اكتشف وجهات وماكولات من مختلف أنحاء العالم">
+    <meta property="og:url" content="https://sofrh.vercel.app">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ar_SA">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://sofrh.vercel.app/img/logo6.png">
+    <meta name="twitter:title" content="سفرة — سافر وتذوق">
+    <meta name="twitter:description" content="اكتشف وجهات وماكولات من مختلف أنحاء العالم">
+    <script src="/auth/auth.js" defer></script>
+</head>
+<body>
+
+        <header class="navbar">
+        <div class="hamburger" id="menu-btn">☰</div>
+
+        <div class="auth-buttons" id="authButtons">
+            <a href="/auth/login.html" class="login">تسجيل دخول</a>
+            <a href="/auth/signup.html" class="signup">إنشاء حساب</a>
+        </div>
+
+        <div class="user-menu" id="userMenu">
+            <img id="userAvatar" src="" alt="">
+            <span class="user-name" id="userName"></span>
+            <div class="user-dropdown">
+                <a href="/profile/profile.html">الملف الشخصي</a>
+                <a href="#" id="logoutBtn">تسجيل خروج</a>
+            </div>
+        </div>
+
+        <ul class="nav-list">
+            <li><a href="/index/index.html">الرئيسية</a></li>
+            <li><a href="/countries/countries.html" class="active">الدول</a></li>
+            <li><a href="/events/events.html">الفعاليات</a></li>
+            <li><a href="/recipes/recipes.html">الوصفات</a></li>
+            <li><a href="/plan/plan.html">خطتي</a></li>
+            <li><a href="/about/about.html">عن سفرة</a></li>
+        </ul>
+
+        <div class="logo">
+            <a href="/index/index.html"><img src="/img/logo7.png" alt="سفرة"></a>
+        </div>
+    </header>
+
+    <!-- SIDE MENU -->
+    <div class="side-menu" id="side-menu">
+        <span class="close-btn" id="close-btn">×</span>
+        <span class="side-menu-kicker">استكشف</span>
+        <ul>
+            <li><a href="/index/index.html" class="active">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M3 11.5 12 4l9 7.5" />
+                        <path
+                            d="M5.5 10v9a1 1 0 0 0 1 1H9a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h2.5a1 1 0 0 0 1-1v-9" />
+                    </svg>
+                    <span>الرئيسية</span>
+                </a></li>
+            <li><a href="/countries/countries.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M12 21s7-6.6 7-12a7 7 0 1 0-14 0c0 5.4 7 12 7 12Z" />
+                        <circle cx="12" cy="9" r="2.3" />
+                    </svg>
+                    <span>الدول</span>
+                </a></li>
+            <li><a href="/events/events.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <rect x="3.5" y="5" width="17" height="16" rx="2.5" />
+                        <path d="M8 3v4M16 3v4M3.5 10h17" />
+                        <circle cx="12" cy="15" r="1.4" fill="currentColor" stroke="none" />
+                    </svg>
+                    <span>الفعاليات</span>
+                </a></li>
+            <li><a href="/recipes/recipes.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M7 2v8a2 2 0 0 0 2 2v10M5 2v6M9 2v6M14 2c-1.5 2-1.5 7 0 9 .6.6 1 1.3 1 2v9" />
+                    </svg>
+                    <span>الوصفات</span>
+                </a></li>
+            <li><a href="/plan/plan.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="9" />
+                        <path d="M14.8 9.2 13 13l-3.8 1.8L11 11l3.8-1.8Z" />
+                    </svg>
+                    <span>خطتي</span>
+                </a></li>
+            <li><a href="/about/about.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="9" />
+                        <path d="M12 8h.01M11 11.5h1v5.5h1" />
+                    </svg>
+                    <span>عن سفرة</span>
+                </a></li>
+        </ul>
+    </div>
+
+
+<div class="country-name">
+  <h1>تيمور الشرقية</h1>
+  <p>أصغر دول آسيا وأحدثها استقلالاً، جزيرة استوائية بشعاب مرجانية نقية وثقافة تيمورية أصيلة</p>
+</div>
+
+<div class="main-cites">
+  <h1>المدن</h1>
+</div>
+
+<section class="cities-grid">
+ 
+
+    <div class="cite" data-name="ديلي – Dili"
+        data-img="/img/timorleste-dili.jpg"
+        data-desc="عاصمة تيمور الشرقية على ساحل البحر، مدينة صغيرة دافئة بإطلالة رائعة على الجبال والبحر الأزرق الصافي."
+        data-historic="تمثال المسيح الملك|متحف المقاومة|شاطئ ديلي|مسجد نور|برج ديلي|حديقة خليج ديلي"
+        data-restaurants="مطعم ذا جارديم|مطعم ديلي بيتش|مطعم إيكو بيتش|مطعم الكابيتال|مطعم سيفود ديلي|مطعم ذا ريف"
+        data-cafes="كافيه ديلي|كافيه الشاطئ|كافيه تيمور|كافيه ذا كوف|ذا هاربر كافيه|كافيه بيتش واك"
+        data-events="تمثال المسيح الملك|متحف المقاومة|شاطئ ديلي|خليج ديلي الأزرق|سوق تايبيسي|مرفأ ديلي"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'timorleste_dili', 'ديلي', '/img/timorleste-dili.jpg')">🏙️</button>
+        <img src="/img/timorleste-dili.jpg" alt="ديلي" class="cite-img">
+        <span class="name">ديلي – Dili</span>
+        <p class="info">عاصمة تيمور على ساحل البحر</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="باوكاو – Baucau"
+        data-img="/img/timorleste-baucau.jpg"
+        data-desc="ثاني أكبر مدن تيمور الشرقية بمبانيها البرتغالية الكولونيالية وشواطئها البكر وحمام سباحة طبيعي من عهد الاستعمار."
+        data-historic="حمام سباحة بوسانو|كنيسة باوكاو|سوق باوكاو|مغارة باوكاو|ميناء باوكاو|مبانٍ بوليسية قديمة"
+        data-restaurants="مطعم باوكاو|مطعم ذا كلوني|مطعم ريستاورانتي لوكال|مطعم الجبل|مطعم مونتي|مطعم ذا ولد تاون"
+        data-cafes="كافيه كلوني|كافيه باوكاو|كافيه الميناء|ذا كلاسيك كافيه|كافيه ذا مارك|كافيه ذا تاون"
+        data-events="حمام السباحة الطبيعي|المباني الكولونيالية|شاطئ باوكاو البكر|متحف التراث|كهوف منطقة باوكاو|جبال تيمور"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'timorleste_baucau', 'باوكاو', '/img/timorleste-baucau.jpg')">🏙️</button>
+        <img src="/img/timorleste-baucau.jpg" alt="باوكاو" class="cite-img">
+        <span class="name">باوكاو – Baucau</span>
+        <p class="info">مدينة الإرث الكولونيالي والشواطئ</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="جزيرة أتاورو – Atauro Island"
+        data-img="/img/timorleste-atauro.jpg"
+        data-desc="جزيرة صغيرة شمال ديلي تعتبر من أغنى أماكن الغوص في العالم، شعاب مرجانية بكر وتنوع بحري مذهل."
+        data-historic="قرى أتاورو التقليدية|شعاب بريا مبلي المرجانية|قرية بيلو هوريزونتي|سوق الحرف اليدوية|جبل أتاورو|معبد محلي"
+        data-restaurants="مطعم جزيرة أتاورو|مطعم ديف سايت|مطعم ذا بيتش شاك|مطعم ذا فيش|مطعم كوراليكا|مطعم ذا آيلاند"
+        data-cafes="كافيه أتاورو|كافيه الغوص|ذا ديفرز كافيه|كافيه ذا ريف|كافيه مارين|كافيه آيلاند لايف"
+        data-events="الغوص في الشعاب المرجانية|مراقبة الدلافين|تسلق جبل أتاورو|قرى محلية تقليدية|شواطئ بكر|صيد أسماك ملونة"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'timorleste_atauro', 'جزيرة أتاورو', '/img/timorleste-atauro.jpg')">🏙️</button>
+        <img src="/img/timorleste-atauro.jpg" alt="جزيرة أتاورو" class="cite-img">
+        <span class="name">جزيرة أتاورو – Atauro</span>
+        <p class="info">من أفضل مواقع الغوص في العالم</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="سواي – Suai"
+        data-img="/img/timorleste-suai.jpg"
+        data-desc="مدينة ساحلية في جنوب تيمور الشرقية، منطقة إنتاج نفطي وغاز مع شواطئ هادئة وطبيعة استوائية."
+        data-historic="كاتدرائية سواي|شاطئ كامار|مزارع جوز الهند|سوق سواي|منطقة باياس|ميناء سواي"
+        data-restaurants="مطعم سواي|مطعم الشاطئ الجنوبي|مطعم الأسماك|مطعم هيدروكاربون|مطعم المدينة|مطعم نخيل"
+        data-cafes="كافيه سواي|كافيه الجنوب|كافيه البحر|ذا ساوث كافيه|كافيه كوكو|كافيه ذا غلف"
+        data-events="كاتدرائية سواي|شاطئ كامار الهادئ|حقول جوز الهند|جولة الطبيعة الاستوائية|غروب الجنوب|صيد الأسماك التقليدي"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'timorleste_suai', 'سواي', '/img/timorleste-suai.jpg')">🏙️</button>
+        <img src="/img/timorleste-suai.jpg" alt="سواي" class="cite-img">
+        <span class="name">سواي – Suai</span>
+        <p class="info">ميناء الجنوب والشواطئ الهادئة</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="لوسباليوس – Lospalos"
+        data-img="/img/timorleste-lospalos.jpg"
+        data-desc="مدينة في الشرق الأقصى لتيمور تشتهر بالحرف التقليدية والتمساح المقدس في ثقافة الفاتالوكو."
+        data-historic="منتزه نينو كونيس سانتانا|سهل تيمور الشرقي|قرى فاتالوكو|حرف التمساح المقدس|شاطئ كوم|بحيرة إيراي"
+        data-restaurants="مطعم لوسباليوس|مطعم ذا إيست|مطعم فاتالوكو|مطعم الشاطئ الشرقي|مطعم الحرف|مطعم ذا إيست بوينت"
+        data-cafes="كافيه إيست تيمور|كافيه لوسباليوس|كافيه الطبيعة|ذا لاست كافيه|كافيه فاتالوكو|كافيه شرق"
+        data-events="منتزه نينو كونيس سانتانا|جولة قرى فاتالوكو|التماسيح المقدسة|شاطئ كوم|بحيرة إيراي|غروب الشمس الشرقي"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'timorleste_lospalos', 'لوسباليوس', '/img/timorleste-lospalos.jpg')">🏙️</button>
+        <img src="/img/timorleste-lospalos.jpg" alt="لوسباليوس" class="cite-img">
+        <span class="name">لوسباليوس – Lospalos</span>
+        <p class="info">أقصى شرق تيمور والتراث الفاتالوكو</span>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="مالياناه – Maliana"
+        data-img="/img/timorleste-maliana.jpg"
+        data-desc="مدينة في المرتفعات الغربية لتيمور الشرقية، بيئة معتدلة وتراث ثقافي أصيل وجبال خضراء جميلة."
+        data-historic="جبال بوبونارو|شلالات مالياناه|قرى مالياناه التقليدية|سوق المرتفعات|حقول الأرز|مزارع البن"
+        data-restaurants="مطعم مالياناه|مطعم الجبل|مطعم المرتفعات|مطعم أرز|مطعم قرية|مطعم ذا هيل"
+        data-cafes="كافيه البن|كافيه مالياناه|كافيه الجبل|ذا هايلاندز كافيه|كافيه ذا فيلدز|كافيه فريش"
+        data-events="شلالات مالياناه|جبال بوبونارو|حقول الأرز|زراعة البن التيموري|قرى تقليدية|مشي جبلي"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'timorleste_maliana', 'مالياناه', '/img/timorleste-maliana.jpg')">🏙️</button>
+        <img src="/img/timorleste-maliana.jpg" alt="مالياناه" class="cite-img">
+        <span class="name">مالياناه – Maliana</span>
+        <p class="info">مرتفعات تيمور الخضراء الباردة</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+  </div>
+</section>
+
+<div class="main-foods">
+  <h1>الماكولات</h1>
+</div>
+<section class="foods-grid">
+  
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=timorleste-ikan-pepes'">
+      <img src="/img/timorleste-ikan-pepes.jpg" alt="إيكان بيبيس" class="foods-img">
+      <span class="name-foods">إيكان بيبيس – Ikan Pepes</span>
+      <div class="food-info">سمك تيمور المشوي ملفوفاً بأوراق الموز.</div>
+      <a href="/recipes/recipes.html?recipe=timorleste-ikan-pepes" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=timorleste-chicken-rice'">
+      <img src="/img/timorleste-chicken-rice.jpg" alt="الدجاج والأرز التيموري" class="foods-img">
+      <span class="name-foods">الدجاج والأرز – Timorese Chicken</span>
+      <div class="food-info">الدجاج المطبوخ مع الكركم والزنجبيل والأعشاب التيمورية.</div>
+      <a href="/recipes/recipes.html?recipe=timorleste-chicken-rice" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=timorleste-saboko'">
+      <img src="/img/timorleste-saboko.jpg" alt="سمك صابوكو" class="foods-img">
+      <span class="name-foods">سمك صابوكو – Ikan Saboko</span>
+      <div class="food-info">سمك البحر المقلي مع صلصة جوز الهند الحارة.</div>
+      <a href="/recipes/recipes.html?recipe=timorleste-saboko" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=timorleste-tapai'">
+      <img src="/img/timorleste-tapai.jpg" alt="تاباي" class="foods-img">
+      <span class="name-foods">تاباي – Tapai</span>
+      <div class="food-info">الأرز اللزج المخمر التقليدي مع جوز الهند.</div>
+      <a href="/recipes/recipes.html?recipe=timorleste-tapai" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=timorleste-batar-daan'">
+      <img src="/img/timorleste-batar-daan.jpg" alt="باتار داان" class="foods-img">
+      <span class="name-foods">باتار داان – Batar Daan</span>
+      <div class="food-info">شوربة الذرة مع الفول وجوز الهند.</div>
+      <a href="/recipes/recipes.html?recipe=timorleste-batar-daan" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=timorleste-caldo'">
+      <img src="/img/timorleste-caldo.jpg" alt="كالدو" class="foods-img">
+      <span class="name-foods">كالدو – Caldo</span>
+      <div class="food-info">شوربة دجاج تيمورية بالأرز والخضار المحلية.</div>
+      <a href="/recipes/recipes.html?recipe=timorleste-caldo" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+  </div>
+</section>
+
+<div class="events-main">
+  <h1>الفعاليات</h1>
+</div>
+
+<section class="events-grid">
+  
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=TimorCristoRei'">
+      <img src="/img/timorleste-dili.jpg" alt="تمثال المسيح الملك" class="event-img">
+      <span class="name-event">تمثال المسيح الملك – Cristo Rei</span>
+      <div class="event-info">تمثال ضخم مشرف على خليج ديلي.</div>
+      <a href="/events/events.html?event=TimorCristoRei" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=TimorAtauro'">
+      <img src="/img/timorleste-atauro.jpg" alt="غوص أتاورو" class="event-img">
+      <span class="name-event">غوص أتاورو – Atauro Diving</span>
+      <div class="event-info">غوص في شعاب مرجانية بكر ونادرة.</div>
+      <a href="/events/events.html?event=TimorAtauro" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=TimorNinoKonis'">
+      <img src="/img/timorleste-lospalos.jpg" alt="منتزه نينو كونيس سانتانا" class="event-img">
+      <span class="name-event">منتزه نينو كونيس – Nino Konis Santana</span>
+      <div class="event-info">المتنزه الوطني الاستوائي بغاباته الكثيفة وبحيراته وطيوره النادرة</div>
+      <a href="/events/events.html?event=TimorNinoKonis" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=TimorResistanceMuseum'">
+      <img src="/img/timorleste-dili.jpg" alt="متحف المقاومة" class="event-img">
+      <span class="name-event">متحف المقاومة – Resistance Museum</span>
+      <div class="event-info">متحف ديلي التاريخي وقصة الاستقلال.</div>
+      <a href="/events/events.html?event=TimorResistanceMuseum" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=TimorBaucau'">
+      <img src="/img/timorleste-baucau.jpg" alt="باوكاو الكولونيالية" class="event-img">
+      <span class="name-event">باوكاو الكولونيالية – Colonial Baucau</span>
+      <div class="event-info">مبانٍ استعمارية قديمة وحمام سباحة طبيعي.</div>
+      <a href="/events/events.html?event=TimorBaucau" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=TimorBeach'">
+      <img src="/img/timorleste-dili.jpg" alt="شاطئ ديلي" class="event-img">
+      <span class="name-event">شاطئ ديلي – Dili Beach</span>
+      <div class="event-info">شاطئ ديلي مع غروب شمس استوائي.</div>
+      <a href="/events/events.html?event=TimorBeach" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+  </div>
+</section>
+
+<div id="cityModal" class="modal" onclick="closeCityModal(event)">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeCityModal(event)">×</button>
+      <div class="modal-top">
+        <img id="modalCityImg" src="" alt="" />
+        <div class="modal-top-info">
+          <h2 id="modalCityName"></h2>
+          <span class="modal-top-badge">✦ تفاصيل المدينة</span>
+        </div>
+      </div>
+      <div class="modal-body">
+        <p id="modalCityDesc" class="event-desc"></p>
+        <h4>🏛️ أفضل الأماكن التاريخية</h4>
+        <div id="modalCityHistoric" class="ingredients-tags"></div>
+        <h4>🍽️ أفضل المطاعم</h4>
+        <div id="modalCityRestaurants" class="ingredients-tags"></div>
+        <h4>☕ أفضل المقاهي</h4>
+        <div id="modalCityCafes" class="ingredients-tags"></div>
+        <h4>🎉 فعاليات المدينة</h4>
+        <div id="modalCityEvents" class="ingredients-tags"></div>
+      </div>
+    </div>
+  </div>
+ <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h2 class="footer-logo">سفرة</h2>
+        <p>وجهتك للسفر والطعام حول العالم</p>
+      </div>
+
+        <div class="footer-links">
+                <h4>روابط سريعة</h4>
+                <ul>
+                    <li><a href="/index/index.html">الرئيسية</a></li>
+                    <li><a href="/countries/countries.html">الدول</a></li>
+                    <li><a href="/events/events.html">الفعاليات</a></li>
+                    <li><a href="/recipes/recipes.html">الوصفات</a></li>
+                    <li><a href="/plan/plan.html">خطتي</a></li>
+                </ul>
+            </div>
+
+      <div class="footer-contact">
+        <h4>تواصل معنا</h4>
+        <ul>
+          <li>📧 <a href="mailto:Sofrh.info@gmail.com" target="_blank">Sofrh.info@gmail.com</a></li>
+          <li>📧 <a href="mailto:Sofrh.support@gmail.com" target="_blank">Sofrh.support@gmail.com</a></li>
+          <li>🐦 <a href="https://twitter.com/sofrah_sa" target="_blank">X (Twitter)</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 سفرة — جميع الحقوق محفوظة</p>
+      <p>صُنع بواسطة فريق سفرة</p>
+      <p>📧 <a href="mailto:Sofrh.info@gmail.com" style="color: #F28500;">Sofrh.info@gmail.com</a></p>
+    </div>
+  </footer>
+<script src="/countries/countries.js"></script>
+<script src="/auth/auth.js"></script>
+</body>
+</html>

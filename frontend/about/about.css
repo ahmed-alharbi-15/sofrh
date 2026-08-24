@@ -1,0 +1,1028 @@
+@font-face {
+    font-family: 'Dubai';
+    src: local('Dubai'), local('Dubai-Regular');
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Dubai';
+    src: local('Dubai Medium'), local('Dubai-Medium');
+    font-weight: 500;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Dubai';
+    src: local('Dubai Bold'), local('Dubai-Bold');
+    font-weight: 700;
+    font-display: swap;
+}
+
+/*********************************
+     ألوان الموقع
+*********************************/
+:root {
+    --primary: #32127A;
+    --accent: #F28500;
+    --bg: #FAF5EB;
+    --cream-soft: #F0EBE0;
+}
+
+/*********************************
+     COLORS (منسوخة حرفياً من countries.css لضبط الـ navbar)
+*********************************/
+:root {
+    --brown-dark: #32127A;
+    --cream-light: #FAF5EB;
+    --cream-soft: #F0EBE0;
+    --caramel: #F28500;
+}
+
+/*********************************
+     RESET
+*********************************/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 1.8rem;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Dubai', 'Dubai Regular', sans-serif;
+    font-size: 1rem;
+    padding-top: 90px !important;
+    overflow-x: hidden;
+}
+
+/*********************************
+     LOGO
+*********************************/
+.logo img {
+    height: 60px;
+}
+
+/*********************************
+     NAVBAR
+*********************************/
+.navbar {
+    background-color: var(--brown-dark);
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    z-index: 999;
+    height: 90px;
+    direction: rtl;
+}
+
+/*********************************
+     NAV LINKS
+*********************************/
+.nav-list {
+    display: flex;
+    gap: 90px;
+    list-style: none;
+}
+
+.nav-list a {
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 20px;
+    color: var(--cream-light);
+    position: relative;
+    transition: .3s ease;
+}
+
+.nav-list a::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    right: 0;
+    width: 0%;
+    height: 3px;
+    background-color: var(--caramel);
+    transition: width .3s ease;
+}
+
+.nav-list a:hover::after {
+    width: 100%;
+}
+
+.nav-list a:hover {
+    color: var(--caramel);
+}
+
+/* Prevent auth-state flash (FOUC) before auth.js runs */
+html.logged-in .auth-buttons {
+    display: none;
+}
+
+html.logged-in .user-menu {
+    display: flex;
+}
+
+.auth-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.auth-buttons a {
+    text-decoration: none;
+    font-size: 20px;
+    padding: 8px 20px;
+    font-weight: 400;
+    border-radius: 20px;
+    white-space: nowrap;
+}
+
+.login {
+    background-color: var(--cream-soft);
+    color: var(--brown-dark);
+}
+
+.login:hover {
+    transform: translateY(-2px);
+}
+
+.signup {
+    background: transparent;
+    border: 2px solid var(--cream-soft);
+    color: var(--cream-soft);
+}
+
+.signup:hover {
+    background-color: var(--cream-soft);
+    color: var(--brown-dark);
+    transform: translateY(-2px);
+}
+
+.hamburger {
+    display: none;
+    font-size: 32px;
+    color: var(--cream-light);
+    cursor: pointer;
+    user-select: none;
+}
+
+/*********************************
+     SIDE MENU
+*********************************/
+.side-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: -260px;
+    width: 260px;
+    height: 100%;
+    background-color: var(--brown-dark);
+    padding-top: 100px;
+    transition: right 0.4s ease;
+    z-index: 9999;
+    overflow: hidden;
+}
+
+.side-menu::before {
+    content: "";
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(242, 133, 0, .18) 0%, transparent 70%);
+    top: -60px;
+    left: -70px;
+    pointer-events: none;
+}
+
+.side-menu-kicker {
+    display: block;
+    color: var(--caramel);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin: 0 24px 18px;
+    opacity: .8;
+}
+
+.side-menu ul {
+    list-style: none;
+    padding: 0 12px;
+}
+
+.side-menu li {
+    margin: 4px 0;
+    opacity: 0;
+    transform: translateX(18px);
+    transition: opacity .35s ease, transform .35s ease;
+}
+
+.side-menu.menu-open li {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.side-menu.menu-open li:nth-child(1) { transition-delay: .05s; }
+.side-menu.menu-open li:nth-child(2) { transition-delay: .1s; }
+.side-menu.menu-open li:nth-child(3) { transition-delay: .15s; }
+.side-menu.menu-open li:nth-child(4) { transition-delay: .2s; }
+.side-menu.menu-open li:nth-child(5) { transition-delay: .25s; }
+
+.side-menu a {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 16px;
+    border-radius: 14px;
+    color: var(--cream-light);
+    font-size: 19px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background .25s, color .25s;
+}
+
+.side-menu a svg {
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+    opacity: .75;
+    transition: opacity .25s, transform .25s;
+}
+
+.side-menu a:hover {
+    background-color: rgba(242, 133, 0, .16);
+    color: var(--caramel);
+}
+
+.side-menu a:hover svg {
+    opacity: 1;
+    transform: scale(1.08);
+}
+
+.side-menu a.active {
+    background-color: var(--caramel);
+    color: var(--brown-dark);
+}
+
+.side-menu a.active svg {
+    opacity: 1;
+}
+
+@media (max-width: 480px) {
+    .side-menu {
+        width: 78vw;
+        max-width: 300px;
+    }
+}
+
+/*********************************
+     CLOSE BUTTON
+*********************************/
+.close-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 30px;
+    color: #FAF5EB;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 8px;
+    transition: background-color .2s, color .2s, transform .3s;
+    z-index: 1;
+}
+
+.close-btn:hover {
+    background-color: #F28500;
+    color: #FFFFFF;
+    transform: rotate(90deg);
+}
+
+/*********************************
+     قسم المقدمة (Hero)
+*********************************/
+.about-hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 90px 20px 70px;
+    background: linear-gradient(160deg, #2A1060 0%, #3A1780 40%, #150A35 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.about-hero::before {
+    content: '';
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(242, 133, 0, 0.15) 0%, transparent 70%);
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    pointer-events: none;
+}
+
+.about-eyebrow {
+    display: inline-block;
+    background: rgba(242, 133, 0, 0.2);
+    border: 1px solid rgba(242, 133, 0, 0.4);
+    color: var(--accent);
+    font-size: 13px;
+    padding: 6px 18px;
+    border-radius: 50px;
+    margin-bottom: 24px;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+.about-hero h1 {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 700;
+    color: #FFFFFF;
+    margin: 0 0 16px;
+    line-height: 1.15;
+    position: relative;
+}
+
+.hero-accent {
+    color: var(--accent);
+}
+
+.about-hero p {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.7);
+    max-width: 640px;
+    margin: 0 auto;
+    line-height: 1.9;
+    position: relative;
+}
+
+/*********************************
+     عناوين الأقسام المشتركة
+*********************************/
+.about-intro,
+.about-features,
+.about-steps,
+.about-vision,
+.about-faq,
+.about-contact {
+    max-width: 1000px;
+    margin: 100px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.about-badge {
+    display: inline-block;
+    padding: 8px 18px;
+    border-radius: 50px;
+    background: rgba(242, 133, 0, .12);
+    color: var(--accent);
+    font-size: .9rem;
+    font-weight: 600;
+    letter-spacing: .5px;
+    margin-bottom: 18px;
+}
+
+.section-title {
+    margin: 6px 0 0;
+    font-size: 2.6rem;
+    font-weight: 900;
+    color: var(--primary);
+    line-height: 1.2;
+}
+
+.section-line {
+    width: 90px;
+    height: 5px;
+    margin: 22px auto 35px;
+    border-radius: 10px;
+    background: var(--accent);
+}
+
+.section-text {
+    color: #4a3f6b;
+    font-size: 1.15rem;
+    line-height: 2.2;
+    max-width: 780px;
+    margin: auto;
+}
+
+.section-text strong {
+    color: var(--accent);
+}
+
+/*********************************
+     مميزات المنصة
+*********************************/
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 20px;
+}
+
+.feature-card {
+    background: var(--card-bg, #fff);
+    border: 1px solid rgba(50, 18, 122, 0.08);
+    border-radius: 18px;
+    padding: 36px 24px;
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(50, 18, 122, 0.12);
+}
+
+.feature-icon {
+    font-size: 2.6rem;
+    margin-bottom: 14px;
+}
+
+.feature-card h3 {
+    color: var(--primary);
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.feature-card p {
+    color: #4a3f6b;
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+/*********************************
+     كيف تخطط لرحلتك
+*********************************/
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 20px;
+}
+
+.step-card {
+    position: relative;
+    background: var(--card-bg, #fff);
+    border-radius: 18px;
+    padding: 40px 24px 30px;
+    text-align: center;
+    border: 1px solid rgba(50, 18, 122, 0.08);
+}
+
+.step-num {
+    display: inline-block;
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: #fff;
+    background: var(--accent);
+    width: 42px;
+    height: 42px;
+    line-height: 42px;
+    border-radius: 50%;
+    margin-bottom: 16px;
+}
+
+.step-card h3 {
+    color: var(--primary);
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+}
+
+.step-card p {
+    color: #4a3f6b;
+    font-size: .95rem;
+    line-height: 1.8;
+}
+
+/*********************************
+     أرقام المنصة
+*********************************/
+.about-stats {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    max-width: 900px;
+    margin: 0 auto 100px;
+    padding: 30px 40px;
+    background: linear-gradient(160deg, #2A1060 0%, #3A1780 60%, #150A35 100%);
+    border-radius: 20px;
+}
+
+.stat-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    min-width: 100px;
+}
+
+.stat-box .stat-num {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--accent);
+}
+
+.stat-box .stat-label {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/*********************************
+     رؤيتنا ورسالتنا
+*********************************/
+.vision-mission-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-top: 20px;
+    text-align: right;
+}
+
+.vm-card {
+    background: var(--card-bg, #fff);
+    border-radius: 18px;
+    padding: 32px 28px;
+    border: 1px solid rgba(50, 18, 122, 0.08);
+}
+
+.vm-card h3 {
+    color: var(--primary);
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+}
+
+.vm-card p {
+    color: #4a3f6b;
+    font-size: 1rem;
+    line-height: 1.9;
+}
+
+/*********************************
+     الأسئلة الشائعة
+*********************************/
+.faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 20px;
+    text-align: right;
+}
+
+.faq-item {
+    background: var(--card-bg, #fff);
+    border: 1px solid rgba(50, 18, 122, 0.08);
+    border-radius: 14px;
+    padding: 18px 22px;
+}
+
+.faq-item summary {
+    cursor: pointer;
+    font-weight: 700;
+    color: var(--primary);
+    font-size: 1.05rem;
+    list-style: none;
+    position: relative;
+    padding-left: 28px;
+}
+
+.faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-item summary::before {
+    content: '+';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--accent);
+    font-size: 1.3rem;
+    font-weight: 700;
+    transition: transform .25s ease;
+}
+
+.faq-item[open] summary::before {
+    content: '−';
+}
+
+.faq-item p {
+    margin-top: 12px;
+    color: #4a3f6b;
+    font-size: .95rem;
+    line-height: 1.8;
+}
+
+/*********************************
+     وسائل التواصل
+*********************************/
+.contact-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 24px;
+}
+
+.contact-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 28px;
+    border-radius: 50px;
+    background: var(--primary);
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: transform .25s ease, background .25s ease;
+}
+
+.contact-btn:hover {
+    background: var(--accent);
+    transform: translateY(-3px);
+}
+
+/*********************************
+     قائمة المستخدم (منسوخة حرفياً من countries.css)
+*********************************/
+.user-menu {
+    display: none;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    position: relative;
+}
+
+.user-name {
+    color: var(--cream-light);
+    font-size: 16px;
+    font-weight: 400;
+}
+
+#userAvatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--caramel);
+}
+
+.user-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: auto;
+    background: #FAF5EB;
+    border-radius: 12px;
+    padding: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    min-width: 160px;
+    z-index: 9999;
+}
+
+.user-menu:hover .user-dropdown {
+    display: block;
+}
+
+.user-dropdown a {
+    display: block;
+    padding: 8px 12px;
+    color: #32127A;
+    text-decoration: none;
+    font-size: 15px;
+    border-radius: 8px;
+    white-space: nowrap;
+}
+
+.user-dropdown a:hover {
+    background: #F0EBE0;
+}
+
+/*********************************
+     الفوتر
+*********************************/
+.site-footer {
+    background-color: var(--primary);
+    color: #FFFFFF;
+    padding: 50px 20px 20px;
+    margin-top: 60px;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    direction: rtl;
+    text-align: right;
+}
+
+.footer-brand,
+.footer-links,
+.footer-contact {
+    text-align: right;
+}
+
+.footer-logo {
+    font-size: 2rem;
+    color: var(--accent) !important;
+    margin-bottom: 10px;
+}
+
+.footer-brand p {
+    color: #FFFFFF;
+    font-size: 0.9rem;
+}
+
+.footer-links h4,
+.footer-contact h4 {
+    color: var(--accent);
+    margin-bottom: 15px;
+    font-size: 1rem;
+}
+
+.footer-links ul,
+.footer-contact ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-links a,
+.footer-contact a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover,
+.footer-contact a:hover {
+    color: var(--accent);
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(240, 235, 224, 0.2);
+    color: #FFFFFF;
+    font-size: 0.85rem;
+}
+
+/*********************************
+     الوضع الليلي (Dark Mode)
+*********************************/
+html[data-theme="dark"] .about-eyebrow {
+    background: rgba(242, 133, 0, 0.15);
+}
+
+html[data-theme="dark"] .section-title {
+    color: #E0E0E0;
+}
+
+html[data-theme="dark"] .section-text,
+html[data-theme="dark"] .feature-card p,
+html[data-theme="dark"] .step-card p,
+html[data-theme="dark"] .vm-card p,
+html[data-theme="dark"] .faq-item p {
+    color: #d8d8d8;
+}
+
+html[data-theme="dark"] .feature-card,
+html[data-theme="dark"] .step-card,
+html[data-theme="dark"] .vm-card,
+html[data-theme="dark"] .faq-item {
+    background: var(--card-bg);
+    border-color: var(--border);
+}
+
+html[data-theme="dark"] .feature-card h3,
+html[data-theme="dark"] .step-card h3,
+html[data-theme="dark"] .vm-card h3,
+html[data-theme="dark"] .faq-item summary {
+    color: #E0E0E0;
+}
+
+html[data-theme="dark"] .contact-btn {
+    background: var(--card-bg);
+    color: #E0E0E0;
+}
+
+html[data-theme="dark"] .contact-btn:hover {
+    background: var(--accent);
+    color: #fff;
+}
+
+/*********************************
+     الاستجابة (Responsive) — منسوخة حرفياً من countries.css لقسم الـ navbar
+*********************************/
+@media (max-width: 900px) {
+    .nav-list {
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .side-menu {
+        display: block;
+    }
+}
+
+@media (max-width: 767px) {
+    .auth-buttons a {
+        font-size: 13px;
+        padding: 6px 12px;
+        border-radius: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding-top: 70px !important;
+    }
+
+    .navbar {
+        height: 70px;
+        padding: 0 12px;
+    }
+
+    .logo img {
+        height: 50px;
+    }
+
+    .hamburger {
+        font-size: 28px;
+    }
+
+    .auth-buttons a {
+        font-size: 11px;
+        padding: 5px 8px;
+        border-radius: 12px;
+    }
+}
+
+@media (min-width: 480px) and (max-width: 767px) {
+    body {
+        padding-top: 75px !important;
+    }
+
+    .navbar {
+        height: 75px;
+        padding: 0 15px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    body {
+        padding-top: 85px !important;
+    }
+
+    .navbar {
+        height: 85px;
+        padding: 0 15px;
+    }
+}
+
+/*********************************
+     تجاوب صفحة "عن سفرة" (المحتوى الخاص بالصفحة فقط)
+*********************************/
+@media (max-width: 768px) {
+    .features-grid,
+    .steps-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .vision-mission-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .footer-brand,
+    .footer-links,
+    .footer-contact {
+        text-align: center;
+    }
+
+    .footer-links ul,
+    .footer-contact ul {
+        align-items: center;
+    }
+}
+
+@media (max-width: 650px) {
+    .auth-buttons {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-stats {
+        gap: 24px;
+        padding: 24px 20px;
+    }
+
+    .site-footer {
+        padding: 40px 15px 15px;
+    }
+
+    .footer-logo {
+        font-size: clamp(1.4rem, 5vw, 1.8rem);
+    }
+}
+
+@media (max-width: 480px) {
+    .side-menu {
+        width: 80vw;
+        max-width: 280px;
+    }
+}
+
+@media (max-width: 480px) {
+    .side-menu {
+        width: 80vw;
+        max-width: 260px;
+    }
+}
+
+@media (max-width: 320px) {
+    .side-menu {
+        width: 90vw;
+        max-width: 240px;
+    }
+}
+
+html.user-logged-out .user-menu { display: none !important; }
+html.user-logged-out .auth-buttons { display: flex !important; }
+html.user-logged-in .auth-buttons { display: none !important; }
+html.user-logged-in .user-menu { display: flex !important; }
+
+/* اللوغو */
+.logo img { height: 55px; width: auto; }
+
+/* الخطوط */
+:root {
+    --font-xs: 12px;
+    --font-sm: 14px;
+    --font-md: 16px;
+    --font-lg: 18px;
+    --font-xl: 22px;
+    --font-2xl: 28px;
+    --font-3xl: 36px;
+}
+
+/* الـ navbar */
+.nav-list a { font-size: var(--font-lg); }
+.auth-buttons a { font-size: var(--font-md); }
+.user-name { font-size: var(--font-md); }
+
+/* الجوال */
+@media (max-width: 480px) {
+    .logo img { height: 42px; }
+}
+
+.nav-list a.active {
+    color: #F28500;
+}
+.nav-list a.active::after {
+    width: 100%;
+}

@@ -1,0 +1,2267 @@
+@font-face {
+    font-family: 'Dubai';
+    src: local('Dubai'), local('Dubai-Regular');
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Dubai';
+    src: local('Dubai Medium'), local('Dubai-Medium');
+    font-weight: 500;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Dubai';
+    src: local('Dubai Bold'), local('Dubai-Bold');
+    font-weight: 700;
+    font-display: swap;
+}
+
+/*********************************
+     RESET
+*********************************/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 1.8rem;
+}
+
+small,
+.text-small {
+    font-size: 0.875rem;
+}
+
+/*********************************
+     BODY
+*********************************/
+html {
+    scroll-behavior: smooth;
+}
+
+@view-transition {
+    navigation: auto;
+}
+
+::view-transition-old(root) {
+    animation: none;
+}
+
+::view-transition-new(root) {
+    animation: none;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Dubai', 'Dubai Regular', sans-serif;
+    font-size: 1rem;
+    padding-top: 90px !important;
+    direction: rtl;
+    overflow-x: hidden;
+}
+
+/*********************************
+     COLORS
+*********************************/
+:root {
+    --brown-dark: #32127A;
+    --cream-light: #FAF5EB;
+    --cream-soft: #F0EBE0;
+    --caramel: #F28500;
+}
+
+/*********************************
+     LOGO
+*********************************/
+.logo img {
+    height: 60px;
+}
+
+/*********************************
+     NAVBAR
+*********************************/
+.navbar {
+    background-color: var(--brown-dark);
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    z-index: 999;
+    height: 90px;
+    direction: rtl;
+}
+
+/*********************************
+     NAV LINKS
+*********************************/
+.nav-list {
+    display: flex;
+    gap: 90px;
+    list-style: none;
+}
+
+.nav-list a {
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 20px;
+    color: var(--cream-light);
+    position: relative;
+    transition: .3s ease;
+}
+
+.nav-list a::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    right: 0;
+    width: 0%;
+    height: 3px;
+    background-color: var(--caramel);
+    transition: width .3s ease;
+}
+
+.nav-list a:hover::after {
+    width: 100%;
+}
+
+.nav-list a:hover {
+    color: var(--caramel);
+}
+
+/*********************************
+     AUTH BUTTONS
+*********************************/
+/* Prevent auth-state flash (FOUC) before auth.js runs */
+html.logged-in .auth-buttons {
+    display: none;
+}
+
+html.logged-in .user-menu {
+    display: flex;
+}
+
+.auth-buttons {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.auth-buttons a {
+    text-decoration: none;
+    font-size: 20px;
+    padding: 8px 20px;
+    font-weight: 400;
+    border-radius: 20px;
+    white-space: nowrap;
+}
+
+.login {
+    background-color: var(--cream-soft);
+    color: var(--brown-dark);
+    transition: .3s;
+}
+
+.login:hover {
+    transform: translateY(-2px);
+}
+
+.signup {
+    background: transparent;
+    border: 2px solid var(--cream-soft);
+    color: var(--cream-soft);
+    transition: .3s;
+}
+
+.signup:hover {
+    background-color: var(--cream-soft);
+    color: var(--brown-dark);
+    transform: translateY(-2px);
+}
+
+/*********************************
+     HAMBURGER
+*********************************/
+.hamburger {
+    display: none;
+    font-size: 32px;
+    color: var(--cream-light);
+    cursor: pointer;
+    user-select: none;
+}
+
+/*********************************
+     SIDE MENU
+*********************************/
+.side-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: -260px;
+    width: 260px;
+    height: 100%;
+    background-color: var(--brown-dark);
+    padding-top: 100px;
+    transition: right 0.4s ease;
+    z-index: 9999;
+    overflow: hidden;
+}
+
+.side-menu::before {
+    content: "";
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(242, 133, 0, .18) 0%, transparent 70%);
+    top: -60px;
+    left: -70px;
+    pointer-events: none;
+}
+
+.side-menu-kicker {
+    display: block;
+    color: var(--caramel);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin: 0 24px 18px;
+    opacity: .8;
+}
+
+.side-menu ul {
+    list-style: none;
+    padding: 0 12px;
+}
+
+.side-menu li {
+    margin: 4px 0;
+    opacity: 0;
+    transform: translateX(18px);
+    transition: opacity .35s ease, transform .35s ease;
+}
+
+.side-menu.menu-open li {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.side-menu.menu-open li:nth-child(1) { transition-delay: .05s; }
+.side-menu.menu-open li:nth-child(2) { transition-delay: .1s; }
+.side-menu.menu-open li:nth-child(3) { transition-delay: .15s; }
+.side-menu.menu-open li:nth-child(4) { transition-delay: .2s; }
+.side-menu.menu-open li:nth-child(5) { transition-delay: .25s; }
+
+.side-menu a {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 16px;
+    border-radius: 14px;
+    color: var(--cream-light);
+    font-size: 19px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background .25s, color .25s;
+}
+
+.side-menu a svg {
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+    opacity: .75;
+    transition: opacity .25s, transform .25s;
+}
+
+.side-menu a:hover {
+    background-color: rgba(242, 133, 0, .16);
+    color: var(--caramel);
+}
+
+.side-menu a:hover svg {
+    opacity: 1;
+    transform: scale(1.08);
+}
+
+.side-menu a.active {
+    background-color: var(--caramel);
+    color: var(--brown-dark);
+}
+
+.side-menu a.active svg {
+    opacity: 1;
+}
+
+@media (max-width: 480px) {
+    .side-menu {
+        width: 78vw;
+        max-width: 300px;
+    }
+}
+
+/*********************************
+     CLOSE BUTTON
+*********************************/
+.close-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 30px;
+    color: #FAF5EB;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 8px;
+    transition: background-color .2s, color .2s, transform .3s;
+    z-index: 1;
+}
+
+.close-btn:hover {
+    background-color: #F28500;
+    color: #FFFFFF;
+    transform: rotate(90deg);
+}
+
+/*********************************
+     USER MENU
+*********************************/
+.user-menu {
+    display: none;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    position: relative;
+}
+
+.user-name {
+    color: var(--cream-light);
+    font-size: 16px;
+    font-weight: 400;
+}
+
+#userAvatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--caramel);
+}
+
+.user-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: auto;
+    background: #FAF5EB;
+    border-radius: 12px;
+    padding: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    min-width: 160px;
+    z-index: 9999;
+}
+
+.user-menu:hover .user-dropdown {
+    display: block;
+}
+
+.user-dropdown a {
+    display: block;
+    padding: 8px 12px;
+    color: #32127A;
+    text-decoration: none;
+    font-size: 15px;
+    border-radius: 8px;
+    white-space: nowrap;
+}
+
+.user-dropdown a:hover {
+    background: #F0EBE0;
+}
+
+/*********************************
+     RESPONSIVE NAVBAR — أقل من 900px
+*********************************/
+@media (max-width: 900px) {
+    .nav-list {
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .side-menu {
+        display: block;
+    }
+}
+
+/*********************************
+     RESPONSIVE NAVBAR — الجوال (أقل من 480px)
+*********************************/
+@media (max-width: 480px) {
+    body {
+        padding-top: 70px !important;
+    }
+
+    .navbar {
+        height: 70px;
+        padding: 0 12px;
+    }
+
+    .logo img {
+        height: 50px;
+    }
+
+    .hamburger {
+        font-size: 28px;
+    }
+
+    .auth-buttons a {
+        font-size: 11px;
+        padding: 5px 8px;
+        border-radius: 12px;
+    }
+}
+
+/*********************************
+     RESPONSIVE NAVBAR — الجوال الكبير (480px – 767px)
+*********************************/
+@media (min-width: 480px) and (max-width: 767px) {
+    body {
+        padding-top: 75px !important;
+    }
+
+    .navbar {
+        height: 75px;
+        padding: 0 15px;
+    }
+
+    .logo img {
+        height: 55px;
+    }
+
+    .auth-buttons a {
+        font-size: 11px;
+        padding: 5px 8px;
+        border-radius: 12px;
+    }
+}
+
+/*********************************
+     RESPONSIVE NAVBAR — الأيباد (768px – 1024px)
+*********************************/
+@media (min-width: 768px) and (max-width: 1024px) {
+    body {
+        padding-top: 85px !important;
+    }
+
+    .navbar {
+        height: 85px;
+        padding: 0 15px;
+    }
+
+    .logo img {
+        height: 75px;
+    }
+
+    .nav-list {
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .side-menu {
+        display: block;
+    }
+}
+
+/*********************************
+     RESPONSIVE NAVBAR — اللابتوب الصغير (1025px – 1280px)
+*********************************/
+@media (min-width: 1025px) and (max-width: 1280px) {
+    .nav-list {
+        gap: 40px;
+    }
+
+    .nav-list a {
+        font-size: 17px;
+    }
+}
+
+/*********************************
+     RESPONSIVE NAVBAR — اللابتوب الكبير (1281px – 1600px)
+*********************************/
+@media (min-width: 1281px) and (max-width: 1600px) {
+    .nav-list {
+        gap: 60px;
+    }
+}
+
+@media (max-width: 650px) {
+    .auth-buttons {
+        display: none;
+    }
+}
+
+/* =====================================================
+   من هنا تصميم قسم "خطتي" — مفهوم بطاقة الصعود (Boarding Pass)
+===================================================== */
+
+:root {
+    --ink: #2c1a0e;
+    --mono: 'Space Mono', monospace;
+}
+
+/* ===== HERO — مفتوح وملفت بخط مسار طيران ===== */
+.hero-open {
+    text-align: center;
+    padding: 58px 20px 32px;
+}
+
+.hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: var(--caramel);
+    background: var(--cream-soft);
+    border: 1px dashed rgba(50, 18, 122, .3);
+    padding: 7px 16px;
+    border-radius: 30px;
+    margin-bottom: 20px;
+}
+
+.hero-open h1 {
+    font-size: clamp(2.6rem, 6vw, 3.6rem);
+    font-weight: 700;
+    color: #F28500 !important;
+    margin: 0 0 20px;
+    line-height: 1.1;
+}
+
+/* .plan-hero غير موجود في plan.html — العنوان الحقيقي هو .hero-open h1 أعلاه */
+.plan-hero h1 {
+    color: #F28500 !important;
+}
+
+.hero-flightpath {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 0 auto 22px;
+}
+
+.fp-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--caramel);
+    flex-shrink: 0;
+}
+
+.fp-track {
+    --travel: 160px;
+    position: relative;
+    width: var(--travel);
+    height: 16px;
+    flex-shrink: 0;
+}
+
+.fp-line-full {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    width: 100%;
+    height: 2px;
+    background-image: repeating-linear-gradient(to right, var(--caramel) 0 6px, transparent 6px 11px);
+}
+
+.fp-plane {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    font-size: 16px;
+    line-height: 1;
+    filter: grayscale(1) brightness(.35) sepia(1) hue-rotate(-10deg) saturate(2);
+    animation: flyRoute 3.5s ease-in-out infinite;
+    will-change: transform, opacity;
+}
+
+@keyframes flyRoute {
+    0% {
+        transform: translate(calc(-1 * var(--travel) - 50%), -50%);
+        opacity: 0;
+    }
+
+    12% {
+        opacity: 1;
+    }
+
+    88% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(50%, -50%);
+        opacity: 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .fp-plane {
+        animation: none;
+        transform: translate(0, -50%);
+        opacity: 1;
+        right: 50%;
+        margin-right: -8px;
+    }
+}
+
+.hero-open p {
+    font-size: 16px;
+    color: #6b5544;
+    max-width: 460px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+/* شريط إحصائيات حية أسفل الهيرو */
+.hero-stats {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 34px;
+    flex-wrap: wrap;
+}
+
+.hero-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.hero-stat-num {
+    font-family: var(--mono);
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--caramel);
+}
+
+.hero-stat-label {
+    font-size: 12px;
+    color: #8a7763;
+    white-space: nowrap;
+}
+
+.hero-stat-divider {
+    width: 1px;
+    height: 32px;
+    background: rgba(50, 18, 122, .15);
+}
+
+@media (max-width: 600px) {
+    .hero-open {
+        padding: 42px 20px 26px;
+    }
+
+    .hero-open h1 {
+        font-size: 32px;
+    }
+
+    .hero-open p {
+        font-size: 14.5px;
+    }
+
+    .fp-track {
+        --travel: 110px;
+    }
+
+    .hero-stats {
+        gap: 18px;
+        margin-top: 26px;
+    }
+
+    .hero-stat-num {
+        font-size: 19px;
+    }
+
+    .hero-stat-label {
+        font-size: 10.5px;
+    }
+
+    .hero-stat-divider {
+        height: 24px;
+    }
+}
+
+/* ===== TICKET WIZARD SHELL ===== */
+.ticket-wizard {
+    max-width: 920px;
+    margin: 0 auto 70px;
+    padding: 0 20px;
+}
+
+.ticket-card {
+    display: flex;
+    align-items: stretch;
+    background: #fff;
+    border-radius: 22px;
+    box-shadow: 0 24px 60px rgba(50, 18, 122, .14);
+    overflow: visible;
+    position: relative;
+}
+
+.ticket-main { 
+    flex: 1 1 66%;
+    min-width: 0;
+    padding: 36px 38px;
+    border-radius: 22px 0 0 22px;
+    overflow: hidden;
+}
+
+.ticket-stub {
+    flex: 0 0 220px;
+    background: var(--cream-light);
+    padding: 30px 22px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0 22px 22px 0;
+}
+
+.ticket-perforation {
+    position: relative;
+    width: 0;
+    flex: 0 0 0;
+    border-right: 2px dashed rgba(50, 18, 122, .28);
+    margin: 18px 0;
+}
+
+.ticket-perforation::before,
+.ticket-perforation::after {
+    content: "";
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    background: var(--cream-light);
+    border-radius: 50%;
+    right: -13px;
+}
+
+.ticket-perforation::before { top: -18px; }
+.ticket-perforation::after { bottom: -18px; }
+
+/* topline */
+.ticket-topline {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.ticket-brand {
+    font-weight: 700;
+    color: var(--brown-dark);
+    font-size: 16px;
+}
+
+.ticket-brand-sub {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: var(--caramel);
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+.ticket-step-code {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: .5px;
+    color: var(--ink);
+    background: #F28500;
+    padding: 6px 13px;
+    border-radius: 7px;
+    white-space: nowrap;
+}
+
+.ticket-steps-rule {
+    height: 4px;
+    background: var(--cream-soft);
+    border-radius: 3px;
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+
+.ticket-steps-fill {
+    display: block;
+    height: 100%;
+    background: var(--caramel);
+    border-radius: 3px;
+    transition: width .4s ease;
+    width: 20%;
+}
+
+/* ===== STUB (مينياتشور البطاقة الحية) ===== */
+.stub-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: var(--caramel);
+    margin-bottom: 16px;
+    display: block;
+}
+
+.stub-fields {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.stub-row {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed rgba(50, 18, 122, .18);
+}
+
+.stub-row:last-child {
+    border-bottom: none;
+}
+
+.stub-k {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    color: #9a8670;
+}
+
+.stub-v {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--brown-dark);
+}
+
+.stub-barcode {
+    height: 38px;
+    margin-top: 18px;
+    border-radius: 3px;
+    opacity: .8;
+    background: repeating-linear-gradient(90deg,
+        var(--ink) 0px, var(--ink) 2px,
+        transparent 2px, transparent 4px,
+        var(--ink) 4px, var(--ink) 7px,
+        transparent 7px, transparent 9px,
+        var(--ink) 9px, var(--ink) 10px,
+        transparent 10px, transparent 13px);
+}
+
+/* ===== WIZARD STEPS ===== */
+.wizard-step {
+    display: none;
+}
+
+.wizard-step.active {
+    display: block;
+    animation: stampIn .32s ease;
+}
+
+@keyframes stampIn {
+    from {
+        opacity: 0;
+        transform: scale(.97) translateY(6px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.wizard-step h2 {
+    font-size: 22px;
+    margin-bottom: 6px;
+    color: var(--brown-dark);
+}
+
+.step-hint {
+    color: #8a7763;
+    font-size: 13.5px;
+    margin-bottom: 26px;
+}
+
+/* budget slider */
+.budget-slider-wrap {
+    padding: 10px 0;
+}
+
+#budgetRange {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 8px;
+    border-radius: 6px;
+    outline: none;
+    cursor: pointer;
+    /* إصلاح خلل اللمس بمتصفحات الجوال (خصوصاً iOS Safari) مع input range داخل صفحة RTL */
+    direction: ltr;
+    transform: scaleX(-1);
+    touch-action: pan-y;
+    background: linear-gradient(to right, var(--caramel) 0%, var(--caramel) 0%, var(--cream-soft) 0%, var(--cream-soft) 100%);
+}
+
+#budgetRange::-webkit-slider-runnable-track {
+    height: 8px;
+    border-radius: 6px;
+    background: transparent;
+}
+
+#budgetRange::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 26px;
+    height: 26px;
+    margin-top: -9px;
+    border-radius: 50%;
+    background: var(--ink);
+    border: 4px solid var(--caramel);
+    box-shadow: 0 2px 8px rgba(50, 18, 122, .45);
+    cursor: pointer;
+    transition: transform .15s;
+}
+
+#budgetRange::-webkit-slider-thumb:active {
+    transform: scale(1.15);
+}
+
+#budgetRange::-moz-range-track {
+    height: 8px;
+    border-radius: 6px;
+    background: var(--cream-soft);
+}
+
+#budgetRange::-moz-range-progress {
+    height: 8px;
+    border-radius: 6px;
+    background: var(--caramel);
+}
+
+#budgetRange::-moz-range-thumb {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: var(--ink);
+    border: 4px solid var(--caramel);
+    box-shadow: 0 2px 8px rgba(50, 18, 122, .45);
+    cursor: pointer;
+}
+
+.budget-value {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--caramel);
+    margin: 20px 0 6px;
+    font-family: var(--mono);
+}
+
+.range-labels {
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--mono);
+    font-size: 12px;
+    color: #b8a895;
+}
+
+/* ===== WIZARD COLOR LOCKS (dark-mode safe) ===== */
+.wizard {
+    background: var(--card-bg) !important;
+    color: #32127A !important;
+}
+
+.wizard-step h2 {
+    color: #32127A !important;
+}
+
+.step-hint, .range-labels {
+    color: #6b5544 !important;
+}
+
+.budget-value {
+    color: #F28500 !important;
+}
+
+.wizard-btn.primary {
+    background: #32127A !important;
+    color: #fff !important;
+}
+
+.wizard-btn.secondary {
+    background: #FAF5EB !important;
+    border: 2px solid #32127A !important;
+    color: #32127A !important;
+}
+
+/* .dot-num/.step-dot غير موجودة في plan.html (لا يوجد مؤشر خطوات بنقاط بهذه الصفحة،
+   المؤشر الحقيقي هو نص .ticket-step-code مثل "STEP 01/05") — كود ميت للتوثيق فقط */
+.dot-num {
+    background: #F0EBE0 !important;
+    color: #32127A !important;
+}
+
+.step-dot.active .dot-num,
+.step-dot.done .dot-num {
+    background: #F28500 !important;
+    color: #fff !important;
+}
+
+/* الأصناف الفعلية المستخدمة في هذه الصفحة (.wizard/.wizard-btn غير موجودة في plan.html) */
+.ticket-card {
+    background: #fff !important;
+    color: #32127A !important;
+}
+
+.ticket-btn.solid {
+    background: #32127A !important;
+    color: #fff !important;
+}
+
+.ticket-btn.ghost {
+    background: #FAF5EB !important;
+    border: 2px solid #32127A !important;
+    color: #32127A !important;
+}
+
+/* .range-labels/.budget-value يحتويان على <span> بدون كلاس، وقاعدة الدارك مود
+   العامة (span{color:#E0E0E0}) تطبّق مباشرة على هالسبانات وتتجاوز أي !important
+   على العنصر الأب — لازم نستهدف السبان نفسه */
+.range-labels span {
+    color: #6b5544 !important;
+}
+
+.budget-value span {
+    color: #F28500 !important;
+}
+
+/* travelers counter */
+.dual-counter {
+    display: flex;
+    gap: 22px;
+}
+
+.counter-block {
+    flex: 1;
+    background: var(--cream-light);
+    border: 2px dashed rgba(50, 18, 122, .25);
+    border-radius: 14px;
+    padding: 20px 14px;
+    text-align: center;
+}
+
+.counter-block-label {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--brown-dark);
+    margin-bottom: 14px;
+}
+
+.counter-block-label small {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    color: var(--caramel);
+    font-weight: 400;
+}
+
+@media (max-width: 500px) {
+    .dual-counter {
+        flex-direction: column;
+        gap: 14px;
+    }
+}
+
+.counter-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.counter-btn {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: none;
+    background: var(--ink);
+    color: var(--cream-light);
+    font-size: 19px;
+    cursor: pointer;
+    transition: background .2s, transform .15s;
+}
+
+.counter-btn:hover {
+    background: var(--caramel);
+    color: #fff;
+}
+
+.counter-btn:active {
+    transform: scale(.92);
+}
+
+.counter-display {
+    font-family: var(--mono);
+    font-size: 26px;
+    font-weight: 700;
+    min-width: 44px;
+    text-align: center;
+    color: var(--brown-dark);
+}
+
+/* trip type — stamp buttons */
+.trip-type-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+}
+
+.trip-card,
+.continent-chip,
+.activity-chip {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 20px 10px;
+    border: 2px dashed rgba(50, 18, 122, .3);
+    border-radius: 14px;
+    background: var(--cream-light);
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--brown-dark);
+    transition: all .2s;
+}
+
+.trip-card,
+.continent-chip,
+.activity-chip {
+    border-color: #F0EBE0;
+}
+
+.trip-icon {
+    font-size: 26px;
+}
+
+.continent-icon {
+    width: 34px;
+    height: 34px;
+    color: var(--brown-dark);
+    transition: color .2s;
+}
+
+.continent-chip.active .continent-icon {
+    color: var(--cream-light);
+}
+
+.trip-code {
+    font-family: var(--mono);
+    font-size: 8.5px;
+    letter-spacing: 1.5px;
+    color: #9a8670;
+}
+
+.trip-card:hover,
+.continent-chip:hover,
+.activity-chip:hover {
+    border-color: var(--caramel);
+}
+
+.trip-card.active,
+.continent-chip.active,
+.activity-chip.active {
+    border-style: solid;
+    border-color: var(--ink);
+    background: var(--ink);
+    color: var(--cream-light);
+    transform: rotate(-1.5deg);
+}
+
+/* الكرت المختار - trip-card فقط */
+.trip-card.active {
+    border-color: #F28500;
+    background: rgba(242, 133, 0, 0.1);
+    color: #32127A;
+}
+
+/* الكرت hover - trip-card فقط */
+.trip-card:hover {
+    border-color: #F28500;
+}
+
+.trip-card.active .trip-code {
+    color: var(--caramel);
+}
+
+/* الشريحة المختارة - continent-chip فقط */
+.continent-chip.active {
+    background: #F28500;
+    border-color: #F28500;
+    color: #fff;
+}
+
+@media (max-width: 500px) {
+    .trip-type-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* continent grid */
+.continent-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.continent-chip {
+    font-size: 13px;
+    padding: 16px 8px;
+}
+
+@media (max-width: 500px) {
+    .continent-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* random button — wildcard ticket */
+/* فنادق */
+.hotel-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-top: 8px;
+}
+
+.hotel-chip {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 22px 10px;
+    border: 2px dashed rgba(50, 18, 122, .3);
+    border-radius: 16px;
+    background: var(--cream-light);
+    cursor: pointer;
+    font-family: inherit;
+    color: var(--brown-dark);
+    transition: all .2s;
+}
+
+.hotel-chip:hover {
+    border-color: var(--caramel);
+}
+
+.hotel-chip.active {
+    border-style: solid;
+    border-color: var(--ink);
+    background: var(--ink);
+    color: var(--cream-light);
+    transform: rotate(-1deg);
+}
+
+.hotel-stars {
+    font-size: 18px;
+    color: var(--caramel);
+    letter-spacing: 2px;
+}
+
+.hotel-chip.active .hotel-stars {
+    color: #f0c060;
+}
+
+.hotel-name {
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.hotel-price {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: .5px;
+    color: #9a8670;
+    white-space: nowrap;
+}
+
+.hotel-chip.active .hotel-price {
+    color: rgba(250, 245, 235, .7);
+}
+
+@media (max-width: 500px) {
+    .hotel-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.random-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 16px;
+    border: 2px dashed var(--caramel);
+    border-radius: 14px;
+    background: #fff;
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 14.5px;
+    color: var(--brown-dark);
+    cursor: pointer;
+    transition: all .2s;
+}
+
+.random-icon {
+    font-size: 20px;
+}
+
+.random-btn:hover {
+    background: var(--cream-soft);
+}
+
+.random-btn.active {
+    background: var(--ink);
+    border-style: solid;
+    border-color: var(--ink);
+    color: var(--cream-light);
+}
+
+/* activities */
+/* زر "جميع ما سبق" — شريط عريض فوق الشبكة */
+.activity-chip-all {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    margin-bottom: 12px;
+    padding: 14px 20px;
+    border: 2px dashed var(--caramel);
+    border-radius: 14px;
+    background: #fff;
+    font-family: inherit;
+    font-size: 14.5px;
+    font-weight: 700;
+    color: var(--brown-dark);
+    cursor: pointer;
+    transition: all .2s;
+    letter-spacing: .2px;
+}
+
+.activity-chip-all:hover {
+    background: var(--cream-soft);
+}
+
+.act-all-icon { font-size: 18px; }
+.act-all-label { font-size: 14.5px; }
+
+.activity-chip-all.active {
+    border-style: solid;
+    border-color: var(--ink);
+    background: var(--ink);
+    color: var(--cream-light);
+    transform: none;
+}
+
+/* شبكة الفعاليات — ٤ أعمدة */
+.activities-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+/* كرت الفعالية */
+.activity-chip {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 18px 8px 14px;
+    border: 2px dashed rgba(50, 18, 122, .25);
+    border-radius: 14px;
+    background: var(--cream-light);
+    cursor: pointer;
+    font-family: inherit;
+    color: var(--brown-dark);
+    transition: all .2s;
+    text-align: center;
+}
+
+.activity-chip:hover {
+    border-color: var(--caramel);
+    background: #fff;
+    transform: translateY(-2px);
+}
+
+.activity-chip.active {
+    border-style: solid;
+    border-color: var(--ink);
+    background: var(--ink);
+    color: var(--cream-light);
+    transform: translateY(-2px);
+}
+
+.act-icon {
+    font-size: 28px;
+    line-height: 1;
+    display: block;
+}
+
+.act-name {
+    font-size: 13px;
+    font-weight: 700;
+    display: block;
+}
+
+.act-sub {
+    font-size: 10.5px;
+    color: #9a8670;
+    display: block;
+    line-height: 1.3;
+}
+
+.activity-chip.active .act-sub {
+    color: rgba(250, 245, 235, .65);
+}
+
+@media (max-width: 600px) {
+    .activities-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .act-icon { font-size: 24px; }
+    .act-name { font-size: 12.5px; }
+    .act-sub  { font-size: 10px; }
+}
+
+/* ticket nav buttons */
+.ticket-nav {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 1px dashed rgba(50, 18, 122, .2);
+}
+
+.skip-all-wrap {
+    text-align: center;
+    margin-top: 16px;
+}
+
+.skip-all-link {
+    background: none;
+    border: none;
+    font-family: inherit;
+    font-size: 12.5px;
+    font-weight: 600;
+    color: #9a8670;
+    cursor: pointer;
+    text-decoration: underline dashed;
+    text-underline-offset: 4px;
+    transition: color .2s;
+}
+
+.skip-all-link:hover {
+    color: var(--caramel);
+}
+
+.ticket-btn {
+    padding: 12px 28px;
+    border-radius: 10px;
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 14.5px;
+    cursor: pointer;
+    border: none;
+    transition: all .2s;
+}
+
+.ticket-btn.solid {
+    background: #32127A;
+    color: #fff;
+}
+
+.ticket-btn.solid:hover:not(:disabled) {
+    background: #F28500;
+    color: #fff;
+}
+
+.ticket-btn.ghost {
+    background: #FAF5EB;
+    border: 2px solid #32127A;
+    color: #32127A;
+}
+
+.ticket-btn.ghost:hover:not(:disabled) {
+    border-color: var(--caramel);
+    color: var(--caramel);
+}
+
+.ticket-btn:disabled {
+    opacity: .4;
+    cursor: not-allowed;
+}
+
+/* ===== RESULTS — كروت بطاقة الصعود ===== */
+.results-section {
+    display: none;
+    max-width: 1280px;
+    margin: 0 auto 70px;
+    padding: 0 20px;
+}
+
+.results-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 26px;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.results-header h2 {
+    font-size: 25px;
+    color: var(--brown-dark);
+}
+
+.results-subtitle {
+    color: #8a7763;
+    font-size: 13.5px;
+    margin-top: 6px;
+}
+
+.results-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* صندوق البحث */
+.results-search-wrap {
+    margin-bottom: 24px;
+}
+
+.results-search {
+    width: 100%;
+    max-width: 360px;
+    padding: 12px 20px;
+    border-radius: 30px;
+    border: 2px dashed rgba(50, 18, 122, .3);
+    background: #fff;
+    font-family: inherit;
+    font-size: 14px;
+    color: var(--brown-dark);
+    outline: none;
+    transition: border-color .2s, box-shadow .2s;
+}
+
+.results-search::placeholder {
+    color: #b8a895;
+}
+
+.results-search:focus {
+    border-style: solid;
+    border-color: var(--caramel);
+    box-shadow: 0 0 0 3px rgba(242, 133, 0, .2);
+}
+
+.no-results {
+    grid-column: 1 / -1;
+    text-align: center;
+    color: #9a8670;
+    font-size: 14px;
+    padding: 50px 20px;
+}
+
+/* فلتر القارات في صفحة النتائج */
+.results-continent-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+.rcf-chip {
+    padding: 8px 16px;
+    border-radius: 30px;
+    border: 2px dashed rgba(50, 18, 122, .28);
+    background: #fff;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--brown-dark);
+    cursor: pointer;
+    transition: all .2s;
+    white-space: nowrap;
+}
+
+.rcf-chip:hover {
+    border-color: var(--caramel);
+    color: var(--caramel);
+}
+
+.rcf-chip.active {
+    border-style: solid;
+    border-color: var(--ink);
+    background: var(--ink);
+    color: var(--cream-light);
+}
+
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 26px;
+    align-items: start;
+    grid-auto-rows: 1fr;
+}
+
+.results-grid.random-mode {
+    display: flex;
+    justify-content: center;
+    grid-auto-rows: unset;
+}
+
+.results-grid.random-mode .bp-card {
+    max-width: 360px;
+    width: 100%;
+}
+
+/* بطاقة الصعود — عمودية بنمط Apple-Wallet */
+.bp-card {
+    background: #fff;
+    color: #32127A;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 14px 34px rgba(50, 18, 122, .12);
+    transition: transform .25s;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.bp-card:hover {
+    transform: translateY(-5px);
+}
+
+.bp-card.featured {
+    grid-column: span 2;
+}
+
+@media (max-width: 680px) {
+    .bp-card.featured {
+        grid-column: span 1;
+    }
+}
+
+.bp-main {
+    background: #ffffff;
+    padding: 0 0 18px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.bp-fields {
+    display: flex;
+    flex-direction: column;
+    padding: 2px 18px 4px;
+    margin-bottom: 12px;
+    flex: 1;
+}
+
+.bp-note {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 11px 14px;
+    margin: auto 18px 14px;
+    border-radius: 10px;
+    font-size: 12.5px;
+    line-height: 1.6;
+}
+
+.bp-photo {
+    position: relative;
+    height: 170px;
+    overflow: hidden;
+}
+
+.bp-card.featured .bp-photo {
+    height: 260px;
+}
+
+.bp-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background: var(--cream-soft);
+    transition: transform .4s;
+}
+
+.bp-card:hover .bp-photo img {
+    transform: scale(1.05);
+}
+
+.bp-tag {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: var(--caramel);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 5px 12px;
+    border-radius: 20px;
+    z-index: 2;
+}
+
+.bp-advisory {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: #C1440E;
+    color: #fff;
+    font-size: 10.5px;
+    font-weight: 700;
+    padding: 5px 11px;
+    border-radius: 20px;
+    z-index: 2;
+}
+
+.bp-route {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    color: var(--caramel);
+    padding: 14px 18px 0;
+}
+
+.bp-arrow {
+    opacity: .6;
+}
+
+.bp-title {
+    padding: 6px 18px 12px;
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--brown-dark);
+}
+
+.bp-title small {
+    display: block;
+    font-size: 11px;
+    font-weight: 400;
+    color: #9a8670;
+    letter-spacing: 1px;
+    margin-top: 2px;
+}
+
+.bp-field {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    padding: 8px 0;
+    border-bottom: 1px dashed rgba(50, 18, 122, .16);
+}
+
+.bp-field:last-child {
+    border-bottom: none;
+}
+
+.bp-k {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    color: rgba(50, 18, 122, 0.5);
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.bp-v {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--brown-dark);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: left;
+}
+
+/* تنبيه الميزانية */
+.bp-note.warn {
+    background: #FBEAE0;
+    color: #8a4a1f;
+    border: 1px solid #EFC9A8;
+}
+
+.bp-note.ok {
+    background: #EAF3E5;
+    color: #355e2d;
+    border: 1px solid #C5E0B8;
+}
+
+.bp-note .note-icon {
+    font-size: 15px;
+    flex-shrink: 0;
+}
+
+/* زر حفظ الخطة في المفضلة */
+.bp-save-plan {
+    display: block;
+    width: calc(100% - 36px);
+    margin: 0 18px 14px;
+    padding: 10px 14px;
+    border: 2px solid #F28500;
+    border-radius: 10px;
+    background: transparent;
+    color: #F28500;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .25s;
+}
+
+.bp-save-plan:hover {
+    background: #F28500;
+    color: #fff;
+}
+
+/* الخط المثقّب الأفقي بين جسم البطاقة والستب */
+.bp-perf {
+    position: relative;
+    height: 0;
+    border-top: 2px dashed rgba(50, 18, 122, .25);
+    margin: 0 18px;
+}
+
+.bp-perf::before,
+.bp-perf::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: var(--cream-light);
+    border-radius: 50%;
+    top: -10px;
+}
+
+.bp-perf::before { right: -28px; }
+.bp-perf::after { left: -28px; }
+
+/* الستب السفلي */
+.bp-stub {
+    background: #FAF5EB;
+    color: #32127A;
+    padding: 16px 18px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.bp-seat-label {
+    font-family: var(--mono);
+    font-size: 8px;
+    letter-spacing: 1.5px;
+    color: rgba(50, 18, 122, 0.5);
+    display: block;
+}
+
+.bp-seat-num {
+    font-family: var(--mono);
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--brown-dark);
+}
+
+.bp-barcode {
+    flex: 1;
+    height: 30px;
+    margin: 0 14px;
+    opacity: .75;
+    background: repeating-linear-gradient(90deg,
+        var(--ink) 0px, var(--ink) 2px,
+        transparent 2px, transparent 4px,
+        var(--ink) 4px, var(--ink) 6px,
+        transparent 6px, transparent 9px);
+}
+
+.bp-link {
+    flex-shrink: 0;
+    font-weight: 700;
+    font-size: 13px;
+    color: #F28500;
+    text-decoration: none;
+    border-bottom: 2px solid var(--caramel);
+    padding-bottom: 2px;
+    white-space: nowrap;
+}
+
+.bp-link:hover {
+    color: var(--caramel);
+}
+/* ===== FOOTER ===== */
+.site-footer {
+    background-color: #32127A;
+    color: #FFFFFF;
+    padding: 50px 20px 20px;
+    margin-top: 60px;
+    text-align: center;
+}
+
+/* الشاشات الكبيرة - نفس الشكل القديم */
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    direction: rtl;
+    text-align: right;
+}
+
+.footer-logo {
+    font-size: 2rem;
+    color: #F28500;
+    margin-bottom: 10px;
+}
+
+/* لون كلمة سفرة */
+.footer-logo {
+    color: #F28500;
+}
+
+.footer-logo {
+    color: #F28500 !important;
+}
+
+.footer-brand,
+.footer-links,
+.footer-contact {
+    text-align: right;
+}
+
+.footer-brand p {
+    color: #FFFFFF;
+    font-size: 0.9rem;
+}
+
+.footer-links h4,
+.footer-contact h4 {
+    color: #F28500;
+    margin-bottom: 15px;
+    font-size: 1rem;
+}
+
+.footer-links ul,
+.footer-contact ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-links a,
+.footer-contact a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover,
+.footer-contact a:hover {
+    color: #F28500;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(240, 235, 224, 0.2);
+    color: #FFFFFF;
+    font-size: 0.85rem;
+}
+
+/* الجوال والتابلت - في المنتصف */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .footer-brand,
+    .footer-links,
+    .footer-contact {
+        text-align: center;
+    }
+
+    .footer-links ul,
+    .footer-contact ul {
+        align-items: center;
+    }
+
+    .footer-logo {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .site-footer {
+        padding: 40px 15px 15px;
+    }
+
+    .footer-logo {
+        font-size: clamp(1.4rem, 5vw, 1.8rem);
+    }
+
+    .footer-brand p,
+    .footer-links a,
+    .footer-contact a {
+        font-size: clamp(0.8rem, 3vw, 0.9rem);
+    }
+
+    .footer-links h4,
+    .footer-contact h4 {
+        font-size: clamp(0.9rem, 3.5vw, 1rem);
+    }
+
+    .footer-bottom {
+        font-size: clamp(0.75rem, 2.5vw, 0.85rem);
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-container {
+        gap: 20px;
+        padding: 0 16px;
+    }
+    .footer-logo { font-size: 1.6rem; }
+    .footer-brand p, .footer-links a, .footer-contact a { font-size: 0.85rem; }
+}
+
+@media (max-width: 380px) {
+    .footer-container { padding: 0 12px; gap: 20px; }
+    .footer-logo { font-size: 1.4rem; }
+    .footer-brand p, .footer-links a, .footer-contact a { font-size: 0.8rem; }
+}
+
+@media (max-width: 320px) {
+    .footer-container { padding: 0 10px; gap: 16px; }
+    .footer-logo { font-size: 1.2rem; }
+    .footer-brand p, .footer-links a, .footer-contact a { font-size: 0.75rem; }
+}
+
+/* ===== RESPONSIVE TICKET WIZARD ===== */
+@media (max-width: 760px) {
+    .ticket-card {
+        flex-direction: column;
+        border-radius: 20px;
+    }
+
+    .ticket-main {
+        border-radius: 20px 20px 0 0;
+        padding: 28px 22px;
+    }
+
+    .ticket-perforation {
+        width: auto;
+        height: 0;
+        border-right: none;
+        border-top: 2px dashed rgba(50, 18, 122, .28);
+        margin: 0 18px;
+    }
+
+    .ticket-perforation::before,
+    .ticket-perforation::after {
+        top: -13px;
+        right: auto;
+    }
+
+    .ticket-perforation::before { left: -13px; }
+    .ticket-perforation::after { right: -13px; }
+
+    .ticket-stub {
+        border-radius: 0 0 20px 20px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 10px 22px;
+    }
+
+    .stub-label {
+        width: 100%;
+        margin-bottom: 6px;
+    }
+
+    .stub-fields {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 10px 20px;
+    }
+
+    .stub-row {
+        border-bottom: none;
+        padding-bottom: 0;
+        min-width: 90px;
+    }
+
+    .stub-barcode {
+        width: 100%;
+        margin-top: 12px;
+    }
+}
+
+@media (max-width: 600px) {
+    .ticket-topline {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .ticket-nav {
+        flex-direction: column-reverse;
+        gap: 12px;
+    }
+
+    .ticket-btn {
+        width: 100%;
+    }
+}
+@media (max-width: 480px) {
+    .side-menu {
+        width: 80vw;
+        max-width: 280px;
+    }
+}
+
+@media (max-width: 480px) {
+    .side-menu {
+        width: 80vw;
+        max-width: 260px;
+    }
+}
+
+@media (max-width: 320px) {
+    .side-menu {
+        width: 90vw;
+        max-width: 240px;
+    }
+}
+.bp-ready {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: rgba(34, 197, 94, 0.85);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 999px;
+    backdrop-filter: blur(4px);
+}
+
+.bp-not-ready {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    background: rgba(100, 100, 100, 0.75);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 999px;
+    backdrop-filter: blur(4px);
+}
+
+html.user-logged-out .user-menu { display: none !important; }
+html.user-logged-out .auth-buttons { display: flex !important; }
+html.user-logged-in .auth-buttons { display: none !important; }
+html.user-logged-in .user-menu { display: flex !important; }
+
+/* اللوغو */
+.logo img { height: 55px; width: auto; }
+
+/* الخطوط */
+:root {
+    --font-xs: 12px;
+    --font-sm: 14px;
+    --font-md: 16px;
+    --font-lg: 18px;
+    --font-xl: 22px;
+    --font-2xl: 28px;
+    --font-3xl: 36px;
+}
+
+/* الـ navbar */
+.nav-list a { font-size: var(--font-lg); }
+.auth-buttons a { font-size: var(--font-md); }
+.user-name { font-size: var(--font-md); }
+
+/* الجوال */
+@media (max-width: 480px) {
+    .logo img { height: 42px; }
+}
+
+.nav-list a.active {
+    color: #F28500;
+}
+.nav-list a.active::after {
+    width: 100%;
+}
+
+/* ملاحظة: .card/.fav-card/.auth-card وinput العام غير موجودين فعلياً في plan.html —
+   نضيفهم هنا كما وردوا حرفياً لتطابق باقي ملفات CSS (.wizard الحقيقي تم تحديثه فوق) */
+.card, .fav-card, .auth-card {
+    background: var(--card-bg);
+}
+
+input {
+    background: var(--input-bg);
+    color: var(--text);
+    border-color: var(--border);
+}

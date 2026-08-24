@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+<script>
+(() => {
+  const theme = localStorage.getItem("theme");
+  document.documentElement.setAttribute("data-theme", theme === "dark" ? "dark" : "light");
+})();
+</script>
+    <style>
+        .auth-buttons { display: none; }
+        .user-menu { display: none; }
+    </style>
+    <meta charset="UTF-8">
+<script>
+    (function(){
+        var u=JSON.parse(localStorage.getItem('safraUser')||'null');
+        var av=localStorage.getItem('safraAvatar')||'';
+        document.documentElement.className+=u?' user-logged-in':' user-logged-out';
+        if(u){
+            var t=setInterval(function(){
+                var n=document.getElementById('userName');
+                var a=document.getElementById('userAvatar');
+                if(n){
+                    n.textContent=u.name||'';
+                    if(a&&(u.avatar||av)) a.src=u.avatar||av;
+                    clearInterval(t);
+                }
+            },1);
+        }
+    })();
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سفرة</title>
+    <link rel="stylesheet" href="/countries/countries.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@500;600&display=swap">
+    <link rel="stylesheet" href="/dark-mode.css">
+    <meta property="og:image" content="https://sofrh.vercel.app/img/logo6.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:title" content="سفرة — سافر وتذوق">
+    <meta property="og:description" content="اكتشف وجهات وماكولات من مختلف أنحاء العالم">
+    <meta property="og:url" content="https://sofrh.vercel.app">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ar_SA">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://sofrh.vercel.app/img/logo6.png">
+    <meta name="twitter:title" content="سفرة — سافر وتذوق">
+    <meta name="twitter:description" content="اكتشف وجهات وماكولات من مختلف أنحاء العالم">
+    <script src="/auth/auth.js" defer></script>
+</head>
+<body>
+
+        <header class="navbar">
+        <div class="hamburger" id="menu-btn">☰</div>
+
+        <div class="auth-buttons" id="authButtons">
+            <a href="/auth/login.html" class="login">تسجيل دخول</a>
+            <a href="/auth/signup.html" class="signup">إنشاء حساب</a>
+        </div>
+
+        <div class="user-menu" id="userMenu">
+            <img id="userAvatar" src="" alt="">
+            <span class="user-name" id="userName"></span>
+            <div class="user-dropdown">
+                <a href="/profile/profile.html">الملف الشخصي</a>
+                <a href="#" id="logoutBtn">تسجيل خروج</a>
+            </div>
+        </div>
+
+        <ul class="nav-list">
+            <li><a href="/index/index.html">الرئيسية</a></li>
+            <li><a href="/countries/countries.html" class="active">الدول</a></li>
+            <li><a href="/events/events.html">الفعاليات</a></li>
+            <li><a href="/recipes/recipes.html">الوصفات</a></li>
+            <li><a href="/plan/plan.html">خطتي</a></li>
+            <li><a href="/about/about.html">عن سفرة</a></li>
+        </ul>
+
+        <div class="logo">
+            <a href="/index/index.html"><img src="/img/logo7.png" alt="سفرة"></a>
+        </div>
+    </header>
+
+    <!-- SIDE MENU -->
+    <div class="side-menu" id="side-menu">
+        <span class="close-btn" id="close-btn">×</span>
+        <span class="side-menu-kicker">استكشف</span>
+        <ul>
+            <li><a href="/index/index.html" class="active">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M3 11.5 12 4l9 7.5" />
+                        <path
+                            d="M5.5 10v9a1 1 0 0 0 1 1H9a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h2.5a1 1 0 0 0 1-1v-9" />
+                    </svg>
+                    <span>الرئيسية</span>
+                </a></li>
+            <li><a href="/countries/countries.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M12 21s7-6.6 7-12a7 7 0 1 0-14 0c0 5.4 7 12 7 12Z" />
+                        <circle cx="12" cy="9" r="2.3" />
+                    </svg>
+                    <span>الدول</span>
+                </a></li>
+            <li><a href="/events/events.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <rect x="3.5" y="5" width="17" height="16" rx="2.5" />
+                        <path d="M8 3v4M16 3v4M3.5 10h17" />
+                        <circle cx="12" cy="15" r="1.4" fill="currentColor" stroke="none" />
+                    </svg>
+                    <span>الفعاليات</span>
+                </a></li>
+            <li><a href="/recipes/recipes.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M7 2v8a2 2 0 0 0 2 2v10M5 2v6M9 2v6M14 2c-1.5 2-1.5 7 0 9 .6.6 1 1.3 1 2v9" />
+                    </svg>
+                    <span>الوصفات</span>
+                </a></li>
+            <li><a href="/plan/plan.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="9" />
+                        <path d="M14.8 9.2 13 13l-3.8 1.8L11 11l3.8-1.8Z" />
+                    </svg>
+                    <span>خطتي</span>
+                </a></li>
+            <li><a href="/about/about.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="9" />
+                        <path d="M12 8h.01M11 11.5h1v5.5h1" />
+                    </svg>
+                    <span>عن سفرة</span>
+                </a></li>
+        </ul>
+    </div>
+
+
+<div class="country-name">
+  <h1>جزر سليمان</h1>
+  <p>جزر الملانيزيا الأصيلة بذاكرة الحرب العالمية الثانية وغابات المطر والثقافة القبلية العريقة</p>
+</div>
+
+<div class="main-cites">
+  <h1>المدن</h1>
+</div>
+
+<section class="cities-grid">
+
+    <div class="cite" data-name="هونيارا – Honiara"
+        data-img="/img/solomonislands-logo.jpg"
+        data-desc="عاصمة جزر سليمان على جزيرة غوادالكانال، مدينة صغيرة هادئة تحمل ذاكرة معارك الحرب العالمية الثانية الطاحنة مع متحف الحرب وكثير من مواقع المعركة المحفوظة."
+        data-historic="متحف جزر سليمان الوطني|نصب هيئة كومنولث الحرب|مقبرة Skyline|سوق Honiara المركزي|تل أوستن|ساحة هونيارا"
+        data-restaurants="مطعم Heritage Park Hotel|مطعم Lime Lounge|مطعم Lucky's|مطعم King Solomon Hotel|مطعم Breakwater|مطعم Honiara Yacht Club"
+        data-cafes="كافيه Heritage|كافيه Lime|كافيه Breakwater|كافيه Point Cruz|كافيه Gateway|كافيه City"
+        data-events="متحف جزر سليمان الوطني|مواقع معارك الحرب العالمية الثانية|ساحل هونيارا البحري|سوق هونيارا الشعبي|الشعاب المرجانية القريبة|مهرجان جزر سليمان"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'solomonislands_honiara', 'هونيارا', '/img/solomonislands-logo.jpg')">🏙️</button>
+        <img src="/img/solomonislands-logo.jpg" alt="هونيارا" class="cite-img">
+        <span class="name">هونيارا – Honiara</span>
+        <p class="info">عاصمة الأرخبيل الاستوائي الحربي</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="جيزو – Gizo"
+        data-img="/img/solomonislands-logo.jpg"
+        data-desc="مركز المحافظة الغربية بجزر سليمان على جزيرة غيزو الجميلة، واحدة من أفضل وجهات الغوص في المحيط الهادئ بمواقع الحرب العالمية الثانية الغارقة والمرجان البكر."
+        data-historic="حطام طائرة ميتسوبيشي اليابانية|شعاب مرجانية غيزو|جزيرة كيندو|تمثال JFK التذكاري|سوق غيزو|ميناء المحافظة الغربية"
+        data-restaurants="مطعم Gizo Hotel|مطعم Fatboys|مطعم Paradise Lodge|مطعم TBC|مطعم Sanbis|مطعم Rekona Lusong"
+        data-cafes="كافيه Gizo|كافيه Dive|كافيه Paradise|كافيه Market|كافيه Island|كافيه Western"
+        data-events="الغوص في حطام الحرب العالمية الثانية|الشعاب المرجانية البكر|جزيرة كيندو الهادئة|صيد السمك الاستوائي|مشاهدة أسماك القرش|ثقافة جزر سليمان التقليدية"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'solomonislands_gizo', 'جيزو', '/img/solomonislands-logo.jpg')">🏙️</button>
+        <img src="/img/solomonislands-logo.jpg" alt="جيزو" class="cite-img">
+        <span class="name">جيزو – Gizo</span>
+        <p class="info">مركز الغوص في المحيط الغربي</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="أوكي – Auki"
+        data-img="/img/solomonislands-logo.jpg"
+        data-desc="عاصمة مقاطعة مالايتا أكبر جزر سليمان سكاناً، مدينة هادئة مع قرى تقليدية تحافظ على الموروث القبلي وقرى العوائم التاريخية على المياه الضحلة."
+        data-historic="قرى المياه التقليدية|متحف مالايتا|سوق أوكي|ساحل لانغا لانغا|جزر المياه الاصطناعية|كنيسة القديسة مارغريت"
+        data-restaurants="مطعم Auki Lodge|مطعم Haus Blong Malata|مطعم Market|مطعم Seaside|مطعم Malu Hotel|مطعم Lodge View"
+        data-cafes="كافيه Auki|كافيه Market|كافيه Malata|كافيه Seaside|كافيه Lodge|كافيه Langa Langa"
+        data-events="قرى مالايتا العائمة التقليدية|بحيرة لانغا لانغا|غوص شعاب مالايتا|الثقافة القبلية الأصيلة|غابات مالايتا المطيرة|مهرجان مالايتا الثقافي"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'solomonislands_auki', 'أوكي', '/img/solomonislands-logo.jpg')">🏙️</button>
+        <img src="/img/solomonislands-logo.jpg" alt="أوكي" class="cite-img">
+        <span class="name">أوكي – Auki</span>
+        <p class="info">عاصمة مالايتا وقلب الجزر الشمالية</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="تولاغي – Tulagi"
+        data-img="/img/solomonislands-logo.jpg"
+        data-desc="الجزيرة الصغيرة التي كانت عاصمة جزر سليمان في الحقبة الاستعمارية البريطانية، غنية بتاريخ الحرب العالمية الثانية والغوص في الحطام وجمال الطبيعة الاستوائية."
+        data-historic="حطام الحرب العالمية الثانية|القاعدة البريطانية القديمة|جزيرة بوغاينفيل|مسجد تولاغي|ميناء فلوريدا|شعاب مرجانية تولاغي"
+        data-restaurants="مطعم Tulagi Hotel|مطعم Island View|مطعم Central Province|مطعم Harbour|مطعم Florida Islands|مطعم Wreck Dive"
+        data-cafes="كافيه Tulagi|كافيه Central|كافيه Harbour|كافيه Island|كافيه Historical|كافيه Dive"
+        data-events="الغوص في حطام تولاغي|التاريخ الاستعماري البريطاني|جزر فلوريدا القريبة|الشعاب المرجانية البكر|مشاهدة أسماك القرش|الطبيعة الاستوائية الهادئة"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'solomonislands_tulagi', 'تولاغي', '/img/solomonislands-logo.jpg')">🏙️</button>
+        <img src="/img/solomonislands-logo.jpg" alt="تولاغي" class="cite-img">
+        <span class="name">تولاغي – Tulagi</span>
+        <p class="info">العاصمة الاستعمارية السابقة في الجزر الوسطى</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="موندا – Munda"
+        data-img="/img/solomonislands-logo.jpg"
+        data-desc="بلدة صغيرة في المحافظة الغربية تُعدّ نقطة انطلاق لاستكشاف جزيرة نيو جورجيا وشعاب مرجانية استثنائية وغابات استوائية كثيفة وثقافة القبائل الغربية."
+        data-historic="سوق موندا|قلعة الحرب العالمية الثانية|جزيرة باراكو|شعاب مرجانية موندا|قرى نيو جورجيا|حطام طائرات الحرب"
+        data-restaurants="مطعم Agnes Lodge|مطعم Zipolo Habu|مطعم Munda Dive|مطعم Mbaeroko|مطعم Island|مطعم Western Province"
+        data-cafes="كافيه Munda|كافيه Agnes|كافيه Zipolo|كافيه Western|كافيه Island|كافيه Lagoon"
+        data-events="الغوص في شعاب موندا|جزيرة نيو جورجيا الكبرى|قرى القبائل التقليدية|حطام الطائرات في الغابة|بحيرة تيتوبو الملحية|مشاهدة المانتا راي"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'solomonislands_munda', 'موندا', '/img/solomonislands-logo.jpg')">🏙️</button>
+        <img src="/img/solomonislands-logo.jpg" alt="موندا" class="cite-img">
+        <span class="name">موندا – Munda</span>
+        <p class="info">بوابة جزر الروفياني الأسطورية</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+    <div class="cite" data-name="كيراكيرا – Kirakira"
+        data-img="/img/solomonislands-logo.jpg"
+        data-desc="عاصمة مقاطعة ماكيرا الشرقية على جزيرة سان كريستوبال، بلدة هادئة بشواطئ بكر وغابات استوائية كثيفة وثقافة قبلية أصيلة بعيدة عن طرق السياحة."
+        data-historic="سوق كيراكيرا|ميناء ماكيرا|قرى سان كريستوبال|شواطئ ماكيرا|غابات ماكيرا البدائية|مهرجان المقاطعة"
+        data-restaurants="مطعم Kirakira|مطعم Makira|مطعم San Cristobal|مطعم Beach|مطعم Harbour|مطعم Local"
+        data-cafes="كافيه Kirakira|كافيه Makira|كافيه Beach|كافيه Harbour|كافيه Eastern|كافيه Island"
+        data-events="شواطئ ماكيرا البكر|الغابات الاستوائية البدائية|الثقافة القبلية الأصيلة|الغوص في ماكيرا|مشاهدة الحيتان الموسمية|مهرجان ماكيرا الثقافي"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'solomonislands_kirakira', 'كيراكيرا', '/img/solomonislands-logo.jpg')">🏙️</button>
+        <img src="/img/solomonislands-logo.jpg" alt="كيراكيرا" class="cite-img">
+        <span class="name">كيراكيرا – Kirakira</span>
+        <p class="info">عاصمة ماكيرا الهادئة على الجانب الشرقي</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+  </div>
+</section>
+
+<div class="main-foods">
+  <h1>الماكولات</h1>
+</div>
+
+<section class="foods-grid">
+
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=solomonislands-fishcurry'">
+      <img src="/img/solomonislands-logo.jpg" alt="كاري السمك" class="foods-img">
+      <span class="name-foods">كاري السمك – Fish Curry</span>
+      <div class="food-info">الكاري الاستوائي الأحمر المطبوخ بسمك المحيط الهادئ.</div>
+      <a href="/recipes/recipes.html?recipe=solomonislands-fishcurry" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=solomonislands-sweetpotato'">
+      <img src="/img/solomonislands-logo.jpg" alt="بطاطا حلوة بجوز الهند" class="foods-img">
+      <span class="name-foods">بطاطا حلوة بجوز الهند – Sweet Potato Coconut</span>
+      <div class="food-info">البطاطا الحلوة الأرجوانية المطبوخة بحليب جوز الهند.</div>
+      <a href="/recipes/recipes.html?recipe=solomonislands-sweetpotato" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=solomonislands-tarostew'">
+      <img src="/img/solomonislands-logo.jpg" alt="يخنة القلقاس" class="foods-img">
+      <span class="name-foods">يخنة القلقاس – Taro Stew</span>
+      <div class="food-info">القلقاس المطبوخ ببطء مع الخضروات الاستوائية والتوابل.</div>
+      <a href="/recipes/recipes.html?recipe=solomonislands-tarostew" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=solomonislands-seafoodsoup'">
+      <img src="/img/solomonislands-logo.jpg" alt="شوربة مأكولات بحرية" class="foods-img">
+      <span class="name-foods">شوربة مأكولات بحرية – Seafood Soup</span>
+      <div class="food-info">شوربة المحيط الغنية بالروبيان والأخطبوط والجمبري وسمك.</div>
+      <a href="/recipes/recipes.html?recipe=solomonislands-seafoodsoup" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=solomonislands-cassava'">
+      <img src="/img/solomonislands-logo.jpg" alt="الكاسافا المطهية" class="foods-img">
+      <span class="name-foods">الكاسافا المطهية – Boiled Cassava</span>
+      <div class="food-info">جذر الكاسافا الأبيض النشوي المسلوق حتى ينضج.</div>
+      <a href="/recipes/recipes.html?recipe=solomonislands-cassava" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+
+    <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=solomonislands-coconutrice'">
+      <img src="/img/solomonislands-logo.jpg" alt="أرز بجوز الهند" class="foods-img">
+      <span class="name-foods">أرز بجوز الهند – Coconut Rice</span>
+      <div class="food-info">الأرز المطبوخ بحليب جوز الهند بدلاً.</div>
+      <a href="/recipes/recipes.html?recipe=solomonislands-coconutrice" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
+    </div>
+
+  </div>
+</section>
+
+<div class="events-main">
+  <h1>الفعاليات</h1>
+</div>
+
+<section class="events-grid">
+
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=SOLWWIISites'">
+      <img src="/img/solomonislands-logo.jpg" alt="مواقع الحرب العالمية الثانية" class="event-img">
+      <span class="name-event">مواقع الحرب العالمية الثانية – WWII Sites</span>
+      <div class="event-info">مسرح معارك عالمية وغوص في حطامها.</div>
+      <a href="/events/events.html?event=SOLWWIISites" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=SOLDiving'">
+      <img src="/img/solomonislands-logo.jpg" alt="غوص جزر سليمان" class="event-img">
+      <span class="name-event">غوص جزر سليمان – Solomon Diving</span>
+      <div class="event-info">غوص عالمي في شعاب بكر وحطام.</div>
+      <a href="/events/events.html?event=SOLDiving" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=SOLCulture'">
+      <img src="/img/solomonislands-logo.jpg" alt="الثقافة القبلية" class="event-img">
+      <span class="name-event">الثقافة القبلية – Tribal Culture</span>
+      <div class="event-info">ثقافة ملانيزيا أصيلة وفنون قبلية.</div>
+      <a href="/events/events.html?event=SOLCulture" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=SOLFloatVillage'">
+      <img src="/img/solomonislands-logo.jpg" alt="قرى المياه" class="event-img">
+      <span class="name-event">قرى المياه – Floating Villages</span>
+      <div class="event-info">قرى قديمة على ركائز فوق الشعاب.</div>
+      <a href="/events/events.html?event=SOLFloatVillage" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=SOLWhaleSafari'">
+      <img src="/img/solomonislands-logo.jpg" alt="مشاهدة الحيتان" class="event-img">
+      <span class="name-event">مشاهدة الحيتان – Whale Safari</span>
+      <div class="event-info">مشاهدة الحيتان الحدباء من يوليو لسبتمبر.</div>
+      <a href="/events/events.html?event=SOLWhaleSafari" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+
+    <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=SOLRainforest'">
+      <img src="/img/solomonislands-logo.jpg" alt="غابة سليمان المطيرة" class="event-img">
+      <span class="name-event">غابة سليمان المطيرة – Solomon Rainforest</span>
+      <div class="event-info">غابات بدائية بطيور نادرة لا تُطرق.</div>
+      <a href="/events/events.html?event=SOLRainforest" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+
+  </div>
+</section>
+
+<div id="cityModal" class="modal" onclick="closeCityModal(event)">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeCityModal(event)">×</button>
+      <div class="modal-top">
+        <img id="modalCityImg" src="" alt="" />
+        <div class="modal-top-info">
+          <h2 id="modalCityName"></h2>
+          <span class="modal-top-badge">✦ تفاصيل المدينة</span>
+        </div>
+      </div>
+      <div class="modal-body">
+        <p id="modalCityDesc" class="event-desc"></p>
+        <h4>🏛️ أفضل الأماكن التاريخية</h4>
+        <div id="modalCityHistoric" class="ingredients-tags"></div>
+        <h4>🍽️ أفضل المطاعم</h4>
+        <div id="modalCityRestaurants" class="ingredients-tags"></div>
+        <h4>☕ أفضل المقاهي</h4>
+        <div id="modalCityCafes" class="ingredients-tags"></div>
+        <h4>🎉 فعاليات المدينة</h4>
+        <div id="modalCityEvents" class="ingredients-tags"></div>
+      </div>
+    </div>
+  </div>
+ <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h2 class="footer-logo">سفرة</h2>
+        <p>وجهتك للسفر والطعام حول العالم</p>
+      </div>
+
+        <div class="footer-links">
+                <h4>روابط سريعة</h4>
+                <ul>
+                    <li><a href="/index/index.html">الرئيسية</a></li>
+                    <li><a href="/countries/countries.html">الدول</a></li>
+                    <li><a href="/events/events.html">الفعاليات</a></li>
+                    <li><a href="/recipes/recipes.html">الوصفات</a></li>
+                    <li><a href="/plan/plan.html">خطتي</a></li>
+                </ul>
+            </div>
+
+      <div class="footer-contact">
+        <h4>تواصل معنا</h4>
+        <ul>
+          <li>📧 <a href="mailto:Sofrh.info@gmail.com" target="_blank">Sofrh.info@gmail.com</a></li>
+          <li>📧 <a href="mailto:Sofrh.support@gmail.com" target="_blank">Sofrh.support@gmail.com</a></li>
+          <li>🐦 <a href="https://twitter.com/sofrah_sa" target="_blank">X (Twitter)</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 سفرة — جميع الحقوق محفوظة</p>
+      <p>صُنع بواسطة فريق سفرة</p>
+      <p>📧 <a href="mailto:Sofrh.info@gmail.com" style="color: #F28500;">Sofrh.info@gmail.com</a></p>
+    </div>
+  </footer>
+<script src="/countries/countries.js"></script>
+<script src="/auth/auth.js"></script>
+</body>
+</html>

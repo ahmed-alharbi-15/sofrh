@@ -106,18 +106,18 @@ function formatCups(value) {
 }
 
 const noCupsFor = [
-    "لحم","دجاج","سمك","سلمون","تونة","روبيان","جمبري","فيليه","ستيك","مفروم","كبدة",
-    "بصل","ثوم","طماطم","بطاطس","جزر","كوسة","باذنجان","فلفل","خيار","خس","سبانخ",
-    "بروكلي","قرنبيط","فطر","فاصوليا","بازلاء","ملفوف","ذرة","كرفس","شمندر","جرجير",
-    "تفاح","موز","برتقال","فراولة","عنب","مانجا","أناناس","رمان","كيوي","تمر","تين",
-    "خوخ","كمثرى","بطيخ","شمام","ليمون","نودلز","بيض","فطر","فول","بسكوت","عدس","حلبة","لوز","بلح","حبار","كزبرة","بط","سلطعون","ثلج","شعيرية"
+    "لحم", "دجاج", "سمك", "سلمون", "تونة", "روبيان", "جمبري", "فيليه", "ستيك", "مفروم", "كبدة",
+    "بصل", "ثوم", "طماطم", "بطاطس", "جزر", "كوسة", "باذنجان", "فلفل", "خيار", "خس", "سبانخ",
+    "بروكلي", "قرنبيط", "فطر", "فاصوليا", "بازلاء", "ملفوف", "ذرة", "كرفس", "شمندر", "جرجير",
+    "تفاح", "موز", "برتقال", "فراولة", "عنب", "مانجا", "أناناس", "رمان", "كيوي", "تمر", "تين",
+    "خوخ", "كمثرى", "بطيخ", "شمام", "ليمون", "نودلز", "بيض", "فطر", "فول", "بسكوت", "عدس", "حلبة", "لوز", "بلح", "حبار", "كزبرة", "بط", "سلطعون", "ثلج", "شعيرية"
 ];
 
 function isNoCupItem(name = "") {
     return noCupsFor.some(word => name.includes(word));
 }
 
-const noSpoonsFor = ["فطر","بيض","بصل","ثوم","حلبة","كزبرة"];
+const noSpoonsFor = ["فطر", "بيض", "بصل", "ثوم", "حلبة", "كزبرة"];
 
 function isNoSpoonItem(name = "") {
     return noSpoonsFor.some(word => name.includes(word));
@@ -263,19 +263,53 @@ window.openRecipeFromData = function (btn) {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
+    // فتح الوصفة من URL
     const params = new URLSearchParams(window.location.search);
     const recipeId = params.get("recipe");
-    if (!recipeId) return;
+    if (recipeId) {
+        const card = document.getElementById(recipeId);
+        if (card) {
+            card.style.display = "block";
+            const btn = card.querySelector(".recipes-item");
+            if (btn) {
+                card.scrollIntoView({ behavior: "smooth", block: "center" });
+                btn.click();
+            }
+        }
+    }
 
-    const card = document.getElementById(recipeId);
-    if (!card) return;
+    // فتح المدينة من URL
+    const cityId = params.get("city");
+    if (cityId) {
+        const cites = document.querySelectorAll(".cite");
+        cites.forEach(cite => {
+            const saveBtn = cite.querySelector(".save-btn");
+            const onclickAttr = saveBtn?.getAttribute("onclick") || "";
+            if (onclickAttr.includes(cityId)) {
+                openCityModal(cite);
+                cite.scrollIntoView({ behavior: "smooth", block: "center" });
+            }
+        });
+    }
+});
 
-    card.style.display = "block";
+// --- حفظ آخر فلتر قارة ---
+document.querySelectorAll('.filter-buttons button').forEach(btn => {
+    btn.addEventListener('click', () => {
+        sessionStorage.setItem('lastContinent', btn.getAttribute('data-filter'));
+    });
+});
 
-    const btn = card.querySelector(".recipes-item");
-    if (!btn) return;
-
-    card.scrollIntoView({ behavior: "smooth", block: "center" });
-    btn.click();
+// --- استرجاع آخر فلتر قارة عند تحميل الصفحة ---
+document.addEventListener('DOMContentLoaded', () => {
+    const lastContinent = sessionStorage.getItem('lastContinent');
+    if (lastContinent) {
+        const btn = document.querySelector(`.filter-buttons button[data-filter="${lastContinent}"]`);
+        if (btn) {
+            btn.click();
+            const section = document.getElementById(lastContinent);
+            if (section) section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    }
 });
 

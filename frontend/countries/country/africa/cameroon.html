@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+<script>
+(() => {
+  const theme = localStorage.getItem("theme");
+  document.documentElement.setAttribute("data-theme", theme === "dark" ? "dark" : "light");
+})();
+</script>
+    <style>
+        .auth-buttons { display: none; }
+        .user-menu { display: none; }
+    </style>
+    <meta charset="UTF-8">
+<script>
+    (function(){
+        var u=JSON.parse(localStorage.getItem('safraUser')||'null');
+        var av=localStorage.getItem('safraAvatar')||'';
+        document.documentElement.className+=u?' user-logged-in':' user-logged-out';
+        if(u){
+            var t=setInterval(function(){
+                var n=document.getElementById('userName');
+                var a=document.getElementById('userAvatar');
+                if(n){
+                    n.textContent=u.name||'';
+                    if(a&&(u.avatar||av)) a.src=u.avatar||av;
+                    clearInterval(t);
+                }
+            },1);
+        }
+    })();
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سفرة</title>
+    <link rel="stylesheet" href="/countries/countries.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@500;600&display=swap">
+    <link rel="stylesheet" href="/dark-mode.css">
+    <meta property="og:image" content="https://sofrh.vercel.app/img/logo6.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:title" content="سفرة — سافر وتذوق">
+    <meta property="og:description" content="اكتشف وجهات وماكولات من مختلف أنحاء العالم">
+    <meta property="og:url" content="https://sofrh.vercel.app">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ar_SA">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://sofrh.vercel.app/img/logo6.png">
+    <meta name="twitter:title" content="سفرة — سافر وتذوق">
+    <meta name="twitter:description" content="اكتشف وجهات وماكولات من مختلف أنحاء العالم">
+    <script src="/auth/auth.js" defer></script>
+</head>
+
+<body>
+
+        <header class="navbar">
+        <div class="hamburger" id="menu-btn">☰</div>
+
+        <div class="auth-buttons" id="authButtons">
+            <a href="/auth/login.html" class="login">تسجيل دخول</a>
+            <a href="/auth/signup.html" class="signup">إنشاء حساب</a>
+        </div>
+
+        <div class="user-menu" id="userMenu">
+            <img id="userAvatar" src="" alt="">
+            <span class="user-name" id="userName"></span>
+            <div class="user-dropdown">
+                <a href="/profile/profile.html">الملف الشخصي</a>
+                <a href="#" id="logoutBtn">تسجيل خروج</a>
+            </div>
+        </div>
+
+        <ul class="nav-list">
+            <li><a href="/index/index.html">الرئيسية</a></li>
+            <li><a href="/countries/countries.html" class="active">الدول</a></li>
+            <li><a href="/events/events.html">الفعاليات</a></li>
+            <li><a href="/recipes/recipes.html">الوصفات</a></li>
+            <li><a href="/plan/plan.html">خطتي</a></li>
+            <li><a href="/about/about.html">عن سفرة</a></li>
+        </ul>
+
+        <div class="logo">
+            <a href="/index/index.html"><img src="/img/logo7.png" alt="سفرة"></a>
+        </div>
+    </header>
+
+    <!-- SIDE MENU -->
+    <div class="side-menu" id="side-menu">
+        <span class="close-btn" id="close-btn">×</span>
+        <span class="side-menu-kicker">استكشف</span>
+        <ul>
+            <li><a href="/index/index.html" class="active">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M3 11.5 12 4l9 7.5" />
+                        <path
+                            d="M5.5 10v9a1 1 0 0 0 1 1H9a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h2.5a1 1 0 0 0 1-1v-9" />
+                    </svg>
+                    <span>الرئيسية</span>
+                </a></li>
+            <li><a href="/countries/countries.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M12 21s7-6.6 7-12a7 7 0 1 0-14 0c0 5.4 7 12 7 12Z" />
+                        <circle cx="12" cy="9" r="2.3" />
+                    </svg>
+                    <span>الدول</span>
+                </a></li>
+            <li><a href="/events/events.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <rect x="3.5" y="5" width="17" height="16" rx="2.5" />
+                        <path d="M8 3v4M16 3v4M3.5 10h17" />
+                        <circle cx="12" cy="15" r="1.4" fill="currentColor" stroke="none" />
+                    </svg>
+                    <span>الفعاليات</span>
+                </a></li>
+            <li><a href="/recipes/recipes.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M7 2v8a2 2 0 0 0 2 2v10M5 2v6M9 2v6M14 2c-1.5 2-1.5 7 0 9 .6.6 1 1.3 1 2v9" />
+                    </svg>
+                    <span>الوصفات</span>
+                </a></li>
+            <li><a href="/plan/plan.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="9" />
+                        <path d="M14.8 9.2 13 13l-3.8 1.8L11 11l3.8-1.8Z" />
+                    </svg>
+                    <span>خطتي</span>
+                </a></li>
+            <li><a href="/about/about.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="9" />
+                        <path d="M12 8h.01M11 11.5h1v5.5h1" />
+                    </svg>
+                    <span>عن سفرة</span>
+                </a></li>
+        </ul>
+    </div>
+
+    <div class="country-name">
+        <h1>الكاميرون</h1>
+        <p>أفريقيا في بلد واحد، حيث تلتقي الجبال البركانية بالسواحل وغابات المطر الكثيفة.</p>
+    </div>
+
+    <div class="main-cites">
+        <h1>المدن</h1>
+    </div>
+    <section class="cities-grid">
+
+        <div class="cite" data-name="ياوندي – Yaoundé" data-img="/img/Yaounde.jpg"
+            data-desc="العاصمة السياسية للكاميرون المبنية على سبع تلال خضراء، مدينة إدارية هادئة تجمع بين المباني الحكومية الحديثة والأحياء التقليدية النابضة."
+            data-historic="🏛️ نصب التوحيد – Reunification Monument | 🕌 مسجد ياوندي المركزي – Yaoundé Central Mosque | 🛍️ سوق مركزي ياوندي – Yaoundé Central Market"
+            data-restaurants="🍖 مطعم لو بروفانسال – Le Provençal | 🌿 مطعم شيز فانا – Chez Wanna | 🍲 مطعم لو جاردان – Le Jardin"
+            data-cafes="☕ مقهى دي سيت كولين – Café des Sept Collines | ☕ مقهى دو ميندي – Café du Monde | ☕ مقهى لو كولونيال – Le Colonial Café"
+            data-events="🏛️ نصب التوحيد | 🛍️ سوق مركزي ياوندي | 🕌 مسجد ياوندي المركزي" onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'cameroon_yaounde', 'ياوندي – Yaoundé', '/img/Yaounde.jpg')">🏙️</button>
+            <img src="/img/Yaounde.jpg" alt="ياوندي" class="cite-img">
+            <span class="name">ياوندي – Yaoundé</span>
+            <p class="info">العاصمة الخضراء ذات التلال السبع.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+        <div class="cite" data-name="دوالا – Douala" data-img="/img/Douala.jpg"
+            data-desc="العاصمة الاقتصادية للكاميرون وأكبر موانئها، مدينة ساحلية صاخبة تجمع بين الحياة التجارية النشطة وأسواقها الشعبية وحي أكوا التاريخي."
+            data-historic="⚓ ميناء دوالا – Port of Douala | 🏛️ متحف دوالا – Douala Museum | 🛍️ سوق مارشيه سنترال – Marché Central"
+            data-restaurants="🍖 مطعم لا فالي – La Vallée | 🌿 مطعم بيليبار – Bilili Bar | 🍲 مطعم أكوا بالاس – Akwa Palace Restaurant"
+            data-cafes="☕ مقهى دي لا بيه – Café de la Paix | ☕ مقهى بونابيري – Bonapriso Café | ☕ مقهى ذا وارف – The Wharf Café"
+            data-events="⚓ ميناء دوالا | 🛍️ سوق مارشيه سنترال | 🏛️ متحف دوالا" onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'cameroon_douala', 'دوالا – Douala', '/img/Douala.jpg')">🏙️</button>
+            <img src="/img/Douala.jpg" alt="دوالا" class="cite-img">
+            <span class="name">دوالا – Douala</span>
+            <p class="info">العاصمة الاقتصادية وأكبر موانئها.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+        <div class="cite" data-name="ليمبي – Limbe" data-img="/img/Limbe.jpg"
+            data-desc="مدينة ساحلية على المحيط الأطلسي عند سفح جبل الكاميرون، تشتهر بشواطئها الرملية السوداء البركانية ومركز إنقاذ الحياة البرية الشهير."
+            data-historic="🏖️ شاطئ ليمبي الأسود – Limbe Black Sand Beach | 🐒 مركز ليمبي للحياة البرية – Limbe Wildlife Centre | 🌿 الحديقة النباتية – Limbe Botanic Garden"
+            data-restaurants="🍖 مطعم أتلانتيك بيتش – Atlantic Beach | 🌿 مطعم فيكتوريا – Victoria Restaurant | 🍲 مطعم لو دولفين – Le Dolphin Restaurant"
+            data-cafes="☕ مقهى سي فيو – Sea View Café | ☕ مقهى ذا بيتش – The Beach Café | ☕ مقهى ماونتن فيو – Mountain View Café"
+            data-events="🏖️ شاطئ ليمبي الأسود | 🐒 مركز ليمبي للحياة البرية | 🌿 الحديقة النباتية" onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'cameroon_limbe', 'ليمبي – Limbe', '/img/Limbe.jpg')">🏙️</button>
+            <img src="/img/Limbe.jpg" alt="ليمبي" class="cite-img">
+            <span class="name">ليمبي – Limbe</span>
+            <p class="info">شواطئ بركانية سوداء وحياة برية.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+        <div class="cite" data-name="بافوسام – Bafoussam" data-img="/img/Bafoussam.jpg"
+            data-desc="عاصمة إقليم الغرب المرتفع وقلب ثقافة شعب البميليكي، تشتهر بقصورها التقليدية وحرفها اليدوية وتلالها الخصبة الخضراء."
+            data-historic="🏰 قصر السلطان بافوسام – Bafoussam Chief's Palace | 🛍️ سوق بافوسام – Bafoussam Market"
+            data-restaurants="🍖 مطعم لو ويست – Le West Restaurant | 🌿 مطعم شيز روز – Chez Rose | 🍲 مطعم بافوت – Bafout Restaurant"
+            data-cafes="☕ مقهى ديز أوت بلاتو – Café des Hauts Plateaux | ☕ مقهى لو بمبيليكي – Le Bamiléké Café | ☕ مقهى سنترال بافوسام – Bafoussam Central Café"
+            data-events="🏰 قصر السلطان بافوسام | 🛍️ سوق بافوسام | 🎭 مهرجان الفنون البميليكية" onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'cameroon_bafoussam', 'بافوسام – Bafoussam', '/img/Bafoussam.jpg')">🏙️</button>
+            <img src="/img/Bafoussam.jpg" alt="بافوسام" class="cite-img">
+            <span class="name">بافوسام – Bafoussam</span>
+            <p class="info">قلب ثقافة البميليكي التقليدية.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+        <div class="cite" data-name="غارووا – Garoua" data-img="/img/Garoua.jpg"
+            data-desc="المدينة الرئيسية في شمال الكاميرون على ضفاف نهر بنوي، بوابة لمحميات الحياة البرية الشاسعة وثقافة الفولاني التقليدية."
+            data-historic="🌊 نهر بنوي – Benoue River | 🦁 منتزه بنوي الوطني – Benoue National Park | 🛍️ سوق غارووا – Garoua Market"
+            data-restaurants="🍖 مطعم لو سافيل – Le Sahel Restaurant | 🌿 مطعم شيز عيسى – Chez Issa | 🍲 مطعم لو فولاني – Le Foulani Restaurant"
+            data-cafes="☕ مقهى دو نور – Café du Nord | ☕ مقهى بنوي – Benoue Café | ☕ مقهى سافانا – Savane Café"
+            data-events="🌊 نهر بنوي | 🦁 منتزه بنوي الوطني | 🛍️ سوق غارووا" onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'cameroon_garoua', 'غارووا – Garoua', '/img/Garoua.jpg')">🏙️</button>
+            <img src="/img/Garoua.jpg" alt="غارووا" class="cite-img">
+            <span class="name">غارووا – Garoua</span>
+            <p class="info">بوابة الشمال ومحميات الحياة البرية.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+        <div class="cite" data-name="فومبان – Foumban" data-img="/img/Foumban.jpg"
+            data-desc="المدينة الملكية لمملكة البامون العريقة، تشتهر بقصرها الملكي التاريخي ومتحفها الغني بالتحف الفنية وأسواق الحرف اليدوية النحاسية."
+            data-historic="🏰 القصر الملكي لسلطنة البامون – Bamoun Royal Palace | 🏛️ متحف الفنون البامونية – Bamoun Arts Museum | 🛍️ سوق الحرفيين – Artisans Market"
+            data-restaurants="🍖 مطعم لو رويال – Le Royal Restaurant | 🌿 مطعم شيز نجويا – Chez Njoya | 🍲 مطعم لو بامون – Le Bamoun Restaurant"
+            data-cafes="☕ مقهى القصر – Palace Café | ☕ مقهى الحرفيين – Artisans Café | ☕ مقهى فومبان – Foumban Café"
+            data-events="🏰 القصر الملكي لسلطنة البامون | 🏛️ متحف الفنون البامونية | 🛍️ سوق الحرفيين" onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'cameroon_foumban', 'فومبان – Foumban', '/img/Foumban.jpg')">🏙️</button>
+            <img src="/img/Foumban.jpg" alt="فومبان" class="cite-img">
+            <span class="name">فومبان – Foumban</span>
+            <p class="info">المدينة الملكية لمملكة البامون.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+    </section>
+
+    <div class="main-foods">
+        <h1>الماكولات</h1>
+    </div>
+    <section class="foods-grid">
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=ndole'">
+            <img src="/img/Ndole.jpg" alt="ندوليه" class="foods-img">
+            <span class="name-foods">ندوليه – Ndolé</span>
+            <div class="food-info">أوراق مرة مطهوة مع اللحم والفول السوداني.</div>
+            <a href="/recipes/recipes.html?recipe=ndole" class="for-more-btn"
+                onclick="event.stopPropagation()">الوصفة</a>
+        </div>
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=poulet-dg-cameroon'">
+            <img src="/img/Poulet DG Cameroon.jpg" alt="بوليه دي جي" class="foods-img">
+            <span class="name-foods">بوليه دي جي – Poulet DG</span>
+            <div class="food-info">دجاج مقلي مع الموز والخضار، طبق المناسبات الفاخر.</div>
+            <a href="/recipes/recipes.html?recipe=poulet-dg-cameroon" class="for-more-btn"
+                onclick="event.stopPropagation()">الوصفة</a>
+        </div>
+        <div class="foods" style="cursor:pointer"
+            onclick="window.location.href='/recipes/recipes.html?recipe=achu'">
+            <img src="/img/Achu.jpg" alt="أشو" class="foods-img">
+            <span class="name-foods">أشو – Achu</span>
+            <div class="food-info">عجينة القلقاس تقدم مع صلصة الفلفل الأصفر التقليدية.</div>
+            <a href="/recipes/recipes.html?recipe=achu" class="for-more-btn"
+                onclick="event.stopPropagation()">الوصفة</a>
+        </div>
+        <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=eru'">
+            <img src="/img/Eru.jpg" alt="إيرو" class="foods-img">
+            <span class="name-foods">إيرو – Eru</span>
+            <div class="food-info">أوراق خضراء مطهوة مع اللحم المجفف وزيت النخيل.</div>
+            <a href="/recipes/recipes.html?recipe=eru" class="for-more-btn"
+                onclick="event.stopPropagation()">الوصفة</a>
+        </div>
+        <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=koki'">
+            <img src="/img/Koki.jpg" alt="كوكي" class="foods-img">
+            <span class="name-foods">كوكي – Koki</span>
+            <div class="food-info">كعك الفاصوليا المطهو ببخار أوراق الموز.</div>
+            <a href="/recipes/recipes.html?recipe=koki" class="for-more-btn"
+                onclick="event.stopPropagation()">الوصفة</a>
+        </div>
+        <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=suya-cameroon'">
+            <img src="/img/Suya.jpg" alt="سويا" class="foods-img">
+            <span class="name-foods">سويا – Suya</span>
+            <div class="food-info">أسياخ لحم بقري مشوي متبل بالفلفل والفول السوداني.</div>
+            <a href="/recipes/recipes.html?recipe=suya-cameroon" class="for-more-btn"
+                onclick="event.stopPropagation()">الوصفة</a>
+        </div>
+    </section>
+
+    <div class="events-main">
+        <h1>الفعاليات</h1>
+    </div>
+    <section class="events-grid">
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=MountCameroonCameroon'">
+            <img src="/img/Mount Cameroon.jpg" alt="جبل الكاميرون" class="event-img">
+            <span class="name-event">جبل الكاميرون – Mount Cameroon</span>
+            <div class="event-info">أعلى قمة في غرب أفريقيا وبركان نشط.</div>
+            <a href="/events/events.html?event=MountCameroonCameroon" class="event-btn"
+                onclick="event.stopPropagation()">اكتشف</a>
+        </div>
+
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=WazaParkCameroon'">
+            <img src="/img/Waza National Park.jpg" alt="منتزه وازا الوطني" class="event-img">
+            <span class="name-event">منتزه وازا الوطني – Waza National Park</span>
+            <div class="event-info">محمية سافانا شهيرة بالفيلة والأسود.</div>
+            <a href="/events/events.html?event=WazaParkCameroon" class="event-btn"
+                onclick="event.stopPropagation()">اكتشف</a>
+        </div>
+
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=LimbeWildlifeCameroon'">
+            <img src="/img/Limbe Wildlife Centre.jpg" alt="مركز ليمبي للحياة البرية" class="event-img">
+            <span class="name-event">مركز ليمبي للحياة البرية – Limbe Wildlife Centre</span>
+            <div class="event-info">ملاذ لإنقاذ ورعاية القردة والشمبانزي.</div>
+            <a href="/events/events.html?event=LimbeWildlifeCameroon" class="event-btn"
+                onclick="event.stopPropagation()">اكتشف</a>
+        </div>
+
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=LobeFallsCameroon'">
+            <img src="/img/Lobe Falls.jpg" alt="شلالات لوبي" class="event-img">
+            <span class="name-event">شلالات لوبي – Lobé Falls</span>
+            <div class="event-info">شلال نادر يصب مباشرة في المحيط الأطلسي.</div>
+            <a href="/events/events.html?event=LobeFallsCameroon" class="event-btn"
+                onclick="event.stopPropagation()">اكتشف</a>
+        </div>
+
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=FoumbanPalaceCameroon'">
+            <img src="/img/Foumban Royal Palace.jpg" alt="القصر الملكي في فومبان" class="event-img">
+            <span class="name-event">القصر الملكي في فومبان – Foumban Royal Palace</span>
+            <div class="event-info">قصر تاريخي يحكي تراث مملكة البامون.</div>
+            <a href="/events/events.html?event=FoumbanPalaceCameroon" class="event-btn"
+                onclick="event.stopPropagation()">اكتشف</a>
+        </div>
+
+        <div class="event" style="cursor:pointer"
+            onclick="window.location.href='/events/events.html?event=RhumsikiPeakCameroon'">
+            <img src="/img/Rhumsiki Peak.jpg" alt="قمة رومسيكي" class="event-img">
+            <span class="name-event">قمة رومسيكي – Rhumsiki Peak</span>
+            <div class="event-info">تشكيلات صخرية بركانية آسرة في أقصى الشمال.</div>
+            <a href="/events/events.html?event=RhumsikiPeakCameroon" class="event-btn"
+                onclick="event.stopPropagation()">اكتشف</a>
+        </div>
+    </section>
+
+    <div id="cityModal" class="modal" onclick="closeCityModal(event)">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeCityModal(event)">×</button>
+            <div class="modal-top">
+                <img id="modalCityImg" src="" alt="" />
+                <div class="modal-top-info">
+                    <h2 id="modalCityName"></h2>
+                    <span class="modal-top-badge">✦ تفاصيل المدينة</span>
+                </div>
+            </div>
+            <div class="modal-body">
+                <p id="modalCityDesc" class="event-desc"></p>
+                <h4>🏛️ أفضل الأماكن التاريخية</h4>
+                <div id="modalCityHistoric" class="ingredients-tags"></div>
+                <h4>🍽️ أفضل المطاعم</h4>
+                <div id="modalCityRestaurants" class="ingredients-tags"></div>
+                <h4>☕ أفضل المقاهي</h4>
+                <div id="modalCityCafes" class="ingredients-tags"></div>
+                <h4>🎉 فعاليات المدينة</h4>
+                <div id="modalCityEvents" class="ingredients-tags"></div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h2 class="footer-logo">سفرة</h2>
+                <p>وجهتك للسفر والطعام حول العالم</p>
+            </div>
+            <div class="footer-links">
+                <h4>روابط سريعة</h4>
+                <ul>
+                    <li><a href="/index/index.html">الرئيسية</a></li>
+                    <li><a href="/countries/countries.html">الدول</a></li>
+                    <li><a href="/events/events.html">الفعاليات</a></li>
+                    <li><a href="/recipes/recipes.html">الوصفات</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>تواصل معنا</h4>
+                <ul>
+                    <li>📧 <a href="mailto:Sofrh.info@gmail.com" target="_blank">Sofrh.info@gmail.com</a></li>
+                    <li>📧 <a href="mailto:Sofrh.support@gmail.com" target="_blank">Sofrh.support@gmail.com</a></li>
+                    <li>🐦 <a href="https://twitter.com/sofrah_sa" target="_blank">X (Twitter)</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 سفرة — جميع الحقوق محفوظة</p>
+            <p>صُنع بواسطة فريق سفرة</p>
+            <p>📧 <a href="mailto:Sofrh.info@gmail.com" style="color: #F28500;">Sofrh.info@gmail.com</a></p>
+        </div>
+    </footer>
+
+    <script src="/countries/countries.js"></script>
+</body>
+
+</html>
