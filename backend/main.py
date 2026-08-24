@@ -10,6 +10,11 @@ from passlib.context import CryptContext
 import cloudinary
 import cloudinary.uploader
 from email_service import get_rendered_template, send_verification_email
+try:
+    from ai_chef import ask_chef_agent
+except ModuleNotFoundError:
+    from backend.ai_chef import ask_chef_agent
+
 
 app = FastAPI()
 
@@ -298,3 +303,15 @@ async def send_otp(email: str, background_tasks: BackgroundTasks):
 async def preview_email():
     rendered_html = get_rendered_template(code="849201")
     return HTMLResponse(content=rendered_html, status_code=200)
+
+# --- مسار الشيف الذكي (AI Agent) ---
+class ChatMessage(BaseModel):
+    message: str
+
+@app.post("/api/chat")
+def chat_with_chef(chat: ChatMessage):
+    try:
+        reply = ask_chef_agent(chat.message)
+        return {"status": "success", "reply": reply}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Chef error: {str(e)}")
