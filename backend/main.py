@@ -1,21 +1,23 @@
-from fastapi import FastAPI, HTTPException, UploadFile, File
+import os
+import re
+from typing import Optional
+from fastapi import FastAPI, HTTPException, UploadFile, File, BackgroundTasks
+from fastapi.responses import HTMLResponse
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import psycopg2
 from passlib.context import CryptContext
-from fastapi.middleware.cors import CORSMiddleware
-import re
-from typing import Optional
-import os
 import cloudinary
 import cloudinary.uploader
+from email_service import generate_email_html, get_rendered_template
 
 app = FastAPI()
 
-# إعدادات كلاوديناري - يسحبها تلقائياً من الـ Environment Variables في رندر
+# إعدادات Cloudinary
 cloudinary.config(
-    cloud_name = os.environ.get('CLOUDINARY_CLOUD_NAME'),
-    api_key = os.environ.get('CLOUDINARY_API_KEY'),
-    api_secret = os.environ.get('CLOUDINARY_API_SECRET')
+    cloud_name=os.environ.get('CLOUDINARY_CLOUD_NAME'),
+    api_key=os.environ.get('CLOUDINARY_API_KEY'),
+    api_secret=os.environ.get('CLOUDINARY_API_SECRET')
 )
 
 app.add_middleware(
@@ -29,12 +31,10 @@ app.add_middleware(
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
 def get_db_connection():
-    # يقرأ رابط الداتابيس السحابية من رندر، وإذا لم يجدها يستخدم الرابط الافتراضي
     db_url = os.environ.get('DATABASE_URL')
     if not db_url:
         db_url = "postgresql://prostorge:e2g1E1i4ySRy768iEyks7eD25RAhp6Qv@dpg-d7gj4lpkh4rs739a6ff0-a.oregon-postgres.render.com/sofrah_web"
     return psycopg2.connect(db_url)
-
 
 # --- النماذج (Models) ---
 class UserCreate(BaseModel):
@@ -69,8 +69,7 @@ class RemoveFavorite(BaseModel):
     type: str
     id: str
 
-
-# --- دالة فحص قوة كلمة المرور بالشروط الجديدة ---
+# --- فحص قوة كلمة المرور ---
 def check_password_strength(password: str):
     if len(password) < 8:
         raise HTTPException(status_code=400, detail="كلمة المرور يجب أن تكون 8 خانات على الأقل")
@@ -81,13 +80,11 @@ def check_password_strength(password: str):
     if not re.search(r'[0-9]', password):
         raise HTTPException(status_code=400, detail="كلمة المرور يجب أن تحتوي على رقم واحد على الأقل (0-9)")
 
-
-# --- إنشاء جدول المفضلة وتأكيد جدول المستخدمين عند التشغيل ---
+# --- تهيئة الجداول عند الإقلاع ---
 @app.on_event("startup")
 def create_tables():
     conn = get_db_connection()
     cur = conn.cursor()
-    # جدول المفضلة
     cur.execute("""
         CREATE TABLE IF NOT EXISTS favorites (
             id SERIAL PRIMARY KEY,
@@ -97,9 +94,8 @@ def create_tables():
             name TEXT NOT NULL,
             img TEXT NOT NULL,
             UNIQUE(email, type, item_id)
-        )
+        );
     """)
-    # التأكد من وجود عمود avatar_url في جدول المستخدمين
     cur.execute("""
         ALTER TABLE users ADD COLUMN IF NOT EXISTS avatar_url TEXT;
     """)
@@ -107,15 +103,12 @@ def create_tables():
     cur.close()
     conn.close()
 
-
-# --- العمليات (Endpoints) ---
-
+# --- الحسابات وتسجيل الدخول ---
 @app.post("/signup")
 def signup(user: UserCreate):
     if len(user.username) < 4:
         raise HTTPException(status_code=400, detail="اسم المستخدم يجب أن يكون 4 خانات على الأقل")
 
-    # تطبيق الفحص المطور الجديد (طول 8، كبير، صغير، رقم)
     check_password_strength(user.password)
 
     conn = get_db_connection()
@@ -136,16 +129,13 @@ def signup(user: UserCreate):
         )
         conn.commit()
         return {"status": "success", "message": "تم إنشاء الحساب بنجاح!"}
-
     except HTTPException as he:
-        # إعادة توجيه أخطاء الباسوورد لتصل للفرونت اند كـ detail
         raise he
     except Exception as e:
         raise HTTPException(status_code=500, detail="حدث خطأ في السيرفر: " + str(e))
     finally:
         cur.close()
         conn.close()
-
 
 @app.post("/login")
 def login(user: UserLogin):
@@ -168,7 +158,6 @@ def login(user: UserLogin):
         cur.close()
         conn.close()
 
-
 @app.post("/update-profile")
 def update_profile(data: UpdateProfile):
     conn = get_db_connection()
@@ -186,7 +175,6 @@ def update_profile(data: UpdateProfile):
         cur.close()
         conn.close()
 
-
 @app.post("/change-password")
 def change_password(data: ChangePassword):
     conn = get_db_connection()
@@ -201,7 +189,6 @@ def change_password(data: ChangePassword):
         if not pwd_context.verify(data.currentPassword, user_data[0]):
             raise HTTPException(status_code=401, detail="كلمة المرور الحالية غلط")
 
-        # تطبيق الفحص المطور الجديد عند تغيير الباسوورد أيضاً
         check_password_strength(data.newPassword)
 
         hashed_new = pwd_context.hash(data.newPassword)
@@ -214,33 +201,26 @@ def change_password(data: ChangePassword):
         cur.close()
         conn.close()
 
-
 @app.post("/upload-avatar")
 async def upload_avatar(username: str, file: UploadFile = File(...)):
     conn = None
     cur = None
     try:
-        # 1. رفع الصورة لـ Cloudinary في مجلد خاص
         upload_result = cloudinary.uploader.upload(file.file, folder="sofrah_avatars")
         image_url = upload_result.get("secure_url")
 
-        # 2. تحديث رابط الصورة في جدول الـ users
         conn = get_db_connection()
         cur = conn.cursor()
         cur.execute("UPDATE users SET avatar_url = %s WHERE username = %s", (image_url, username))
         conn.commit()
-
         return {"status": "success", "url": image_url}
-
     except Exception as e:
         return {"status": "error", "message": str(e)}
     finally:
         if cur: cur.close()
         if conn: conn.close()
 
-
 # --- المفضلة ---
-
 @app.post("/favorites/add")
 def add_favorite(item: FavoriteItem):
     conn = get_db_connection()
@@ -257,7 +237,6 @@ def add_favorite(item: FavoriteItem):
     finally:
         cur.close()
         conn.close()
-
 
 @app.get("/favorites/{email}")
 def get_favorites(email: str):
@@ -277,7 +256,6 @@ def get_favorites(email: str):
         cur.close()
         conn.close()
 
-
 @app.delete("/favorites/remove")
 def remove_favorite(item: RemoveFavorite):
     conn = get_db_connection()
@@ -293,9 +271,6 @@ def remove_favorite(item: RemoveFavorite):
         cur.close()
         conn.close()
 
-
-# --- الصورة الشخصية ---
-
 @app.get("/avatar/{email}")
 def get_avatar(email: str):
     conn = get_db_connection()
@@ -307,3 +282,24 @@ def get_avatar(email: str):
     finally:
         cur.close()
         conn.close()
+
+# --- خدمة البريد ومعاينة القالب ---
+@app.post("/api/send-otp")
+async def send_otp(email: str, background_tasks: BackgroundTasks):
+    verification_code = "849201"
+    email_html = generate_email_html(code=verification_code)
+    return {
+        "status": "success",
+        "message": f"تم تجهيز كود التحقق {verification_code} وسيتم إرساله إلى {email}"
+    }
+
+@app.get("/preview-email", response_class=HTMLResponse)
+async def preview_email():
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    template_path = os.path.join(base_dir, "email_template.html")
+    with open(template_path, "r", encoding="utf-8") as f:
+        html_content = f.read()
+    
+    test_code = "849201"
+    rendered_html = html_content.replace("{{ verification_code }}", test_code)
+    return HTMLResponse(content=rendered_html, status_code=200)
