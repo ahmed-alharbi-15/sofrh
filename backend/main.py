@@ -9,7 +9,7 @@ import psycopg2
 from passlib.context import CryptContext
 import cloudinary
 import cloudinary.uploader
-from email_service import generate_email_html, get_rendered_template
+from email_service import get_rendered_template, send_verification_email
 
 app = FastAPI()
 
@@ -287,19 +287,14 @@ def get_avatar(email: str):
 @app.post("/api/send-otp")
 async def send_otp(email: str, background_tasks: BackgroundTasks):
     verification_code = "849201"
-    email_html = generate_email_html(code=verification_code)
+    # استدعاء دالة الإرسال في الخلفية
+    background_tasks.add_task(send_verification_email, email, verification_code)
     return {
         "status": "success",
-        "message": f"تم تجهيز كود التحقق {verification_code} وسيتم إرساله إلى {email}"
+        "message": f"تم إرسال كود التحقق إلى {email}"
     }
 
 @app.get("/preview-email", response_class=HTMLResponse)
 async def preview_email():
-    base_dir = os.path.dirname(os.path.abspath(__file__))
-    template_path = os.path.join(base_dir, "email_template.html")
-    with open(template_path, "r", encoding="utf-8") as f:
-        html_content = f.read()
-    
-    test_code = "849201"
-    rendered_html = html_content.replace("{{ verification_code }}", test_code)
+    rendered_html = get_rendered_template(code="849201")
     return HTMLResponse(content=rendered_html, status_code=200)
