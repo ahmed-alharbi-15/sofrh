@@ -5,7 +5,7 @@ const BACKEND_URL = "https://sofrh-1.onrender.com";
 (function injectChefStyles() {
   const link = document.createElement("link");
   link.rel = "stylesheet";
-  link.href = "/aiChef/chef.css"; // أو ../aiChef/chef.css
+  link.href = "../aiChef/chef.css";
   document.head.appendChild(link);
 })();
 
@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
       <div class="chef-header">
         <div class="chef-info">
           <div class="chef-avatar-wrapper">
-            <img src="/img/chef-main.png" alt="Chef Avatar">
+            <img src="../img/chef-main.png" alt="Chef Avatar">
             <span class="online-indicator"></span>
           </div>
           <div>
@@ -32,17 +32,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
       <div class="chef-messages" id="chefMessages">
         <div class="msg-row bot-row">
-          <img src="/img/chef-thinking.png" class="msg-avatar" alt="Chef">
+          <img src="../img/chef-thinking.png" class="msg-avatar" alt="Chef">
           <div class="msg bot-msg">
             أهلاً بك يا بطل! 👋 أنا شيف سُفرة، علمني وش المكونات اللي عندك بالثلاجة أو وش ودك تطبخ اليوم وأنا أضبطك بأحلى وصفة! 🍽️
           </div>
         </div>
-      </div>
-
-      <div class="chef-quick-chips">
-        <button class="chip-btn" onclick="sendQuickPrompt('عندي دجاج ورز وش أطبخ؟')">🍗 دجاج ورز</button>
-        <button class="chip-btn" onclick="sendQuickPrompt('أبي حلا سريع وسهل')">🍰 حلا سريع</button>
-        <button class="chip-btn" onclick="sendQuickPrompt('وش الفعاليات الجاية؟')">🎉 الفعاليات</button>
       </div>
 
       <div class="chef-input-area">
@@ -58,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     <!-- الزر العائم -->
     <button class="chef-floating-btn" id="openChefBtn" title="تحدث مع شيف سُفرة">
-      <img src="/img/chef-main.png" alt="شيف سُفرة" class="chef-btn-icon">
+      <img src="../img/chef-main.png" alt="شيف سُفرة" class="chef-btn-icon">
       <span class="pulse-ring"></span>
     </button>
   `;
@@ -125,7 +119,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (sender === "bot") {
       row.innerHTML = `
-        <img src="/img/chef-thinking.png" class="msg-avatar" alt="Chef">
+        <img src="../img/chef-thinking.png" class="msg-avatar" alt="Chef">
         <div class="msg bot-msg">${text.replace(/\n/g, "<br>")}</div>
       `;
     } else {
@@ -142,8 +136,8 @@ document.addEventListener("DOMContentLoaded", () => {
     row.className = "msg-row bot-row";
     row.id = id;
     row.innerHTML = `
-      <img src="/img/chef-thinking.png" class="msg-avatar" style="animation: pulse-anim 1s infinite alternate;" alt="Chef">
-      <div class="msg bot-msg" style="color: #F28C28;">تحضير الرد . .</div>
+      <img src="../img/chef-thinking.png" class="msg-avatar" style="animation: pulse-anim 1s infinite alternate;" alt="Chef">
+      <div class="msg bot-msg" style="color: #F28C28;">جالس أفكر وأبحث لك بالوصفات... 🍳</div>
     `;
     chefMessages.appendChild(row);
     chefMessages.scrollTop = chefMessages.scrollHeight;
@@ -154,8 +148,4 @@ document.addEventListener("DOMContentLoaded", () => {
     const el = document.getElementById(id);
     if (el) el.remove();
   }
-
-  window.sendQuickPrompt = function (promptText) {
-    sendMessage(promptText);
-  };
 });
