@@ -11,6 +11,7 @@ import cloudinary
 import cloudinary.uploader
 from email_service import get_rendered_template, send_verification_email
 from ai_chef import ask_chef_agent
+from pydantic import BaseModel
 
 
 app = FastAPI()
@@ -29,6 +30,8 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
@@ -70,6 +73,7 @@ class RemoveFavorite(BaseModel):
     email: str
     type: str
     id: str
+
 
 # --- فحص قوة كلمة المرور ---
 def check_password_strength(password: str):
@@ -304,11 +308,12 @@ async def preview_email():
 # --- مسار الشيف الذكي (AI Agent) ---
 class ChatMessage(BaseModel):
     message: str
+    agent_type: str = "chef"  # chef | guide | traveler
 
 @app.post("/api/chat")
 def chat_with_chef(chat: ChatMessage):
     try:
-        reply = ask_chef_agent(chat.message)
+        reply = ask_chef_agent(chat.message, chat.agent_type)
         return {"status": "success", "reply": reply}
     except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Chef error: {str(e)}")
+        raise HTTPException(status_code=500, detail=f"Agent error: {str(e)}")
