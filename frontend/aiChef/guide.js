@@ -113,7 +113,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const row = document.createElement("div");
     row.className = "msg-row bot-row";
     row.id = id;
-    row.innerHTML = `<div class="msg bot-msg" style="color: #F28C28;">جاري استعراض الفعاليات وتجهيز الاقتراح... 🎟️</div>`;
+    row.innerHTML = `<div class="msg bot-msg" style="color: #F28C28;">كتابة .. 🎟️</div>`;
     messagesEl.appendChild(row);
     messagesEl.scrollTop = messagesEl.scrollHeight;
     return id;
