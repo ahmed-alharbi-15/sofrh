@@ -10,10 +10,7 @@ from passlib.context import CryptContext
 import cloudinary
 import cloudinary.uploader
 from email_service import get_rendered_template, send_verification_email
-try:
-    from ai_chef import ask_chef_agent
-except ModuleNotFoundError:
-    from backend.ai_chef import ask_chef_agent
+from ai_chef import ask_chef_agent
 
 
 app = FastAPI()

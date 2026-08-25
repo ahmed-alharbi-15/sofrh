@@ -1,0 +1,255 @@
+/* Container */
+.chef-widget-container {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 9999;
+  font-family: 'Cairo', sans-serif;
+  direction: rtl;
+}
+
+/* Floating Button */
+.chef-floating-btn {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #4B1D68, #2D0C4E);
+  border: 2px solid #F28C28;
+  box-shadow: 0 8px 25px rgba(242, 140, 40, 0.35);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.chef-floating-btn:hover {
+  transform: scale(1.08);
+}
+
+.chef-btn-icon {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.pulse-ring {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 2px solid #F28C28;
+  animation: chef-pulse 2s infinite ease-out;
+}
+
+@keyframes chef-pulse {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  100% { transform: scale(1.35); opacity: 0; }
+}
+
+/* Chat Box */
+.chef-chat-box {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  bottom: 85px;
+  right: 0;
+  width: 370px;
+  height: 540px;
+  background: #150928;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.55);
+  border: 1px solid rgba(242, 140, 40, 0.25);
+  transform-origin: bottom right;
+  animation: chef-pop 0.25s ease forwards;
+}
+
+@keyframes chef-pop {
+  from { opacity: 0; transform: scale(0.85); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Header */
+.chef-header {
+  background: #2D0C4E;
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.chef-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.chef-avatar-wrapper {
+  position: relative;
+  width: 42px;
+  height: 42px;
+}
+
+.chef-avatar-wrapper img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: #3e1666;
+  object-fit: cover;
+}
+
+.online-indicator {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 10px;
+  height: 10px;
+  background: #00E676;
+  border-radius: 50%;
+  border: 2px solid #2D0C4E;
+}
+
+.chef-header h4 {
+  margin: 0;
+  font-size: 15px;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.chef-header p {
+  margin: 0;
+  font-size: 11px;
+  color: #F28C28;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  color: #e0d0eb;
+  font-size: 26px;
+  cursor: pointer;
+  line-height: 1;
+}
+
+/* Messages */
+.chef-messages {
+  flex: 1;
+  padding: 15px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.msg-row {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  max-width: 88%;
+}
+
+.bot-row {
+  align-self: flex-start;
+}
+
+.user-row {
+  align-self: flex-end;
+  flex-direction: row-reverse;
+}
+
+.msg-avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #3e1666;
+  flex-shrink: 0;
+}
+
+.msg {
+  padding: 11px 15px;
+  border-radius: 16px;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.bot-msg {
+  background: #25123d;
+  color: #f1edf7;
+  border-bottom-right-radius: 3px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.user-msg {
+  background: #F28C28;
+  color: #ffffff;
+  border-bottom-left-radius: 3px;
+}
+
+/* Chips */
+.chef-quick-chips {
+  display: flex;
+  gap: 6px;
+  padding: 6px 14px;
+  overflow-x: auto;
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.chip-btn {
+  background: #281045;
+  border: 1px solid rgba(242, 140, 40, 0.3);
+  color: #eedff8;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 11.5px;
+  cursor: pointer;
+  white-space: nowrap;
+  font-family: inherit;
+  transition: background 0.2s;
+}
+
+.chip-btn:hover {
+  background: #F28C28;
+  color: #ffffff;
+}
+
+/* Input Area */
+.chef-input-area {
+  padding: 12px;
+  background: #1c0c33;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.chef-input-area input {
+  flex: 1;
+  background: #0e051a;
+  border: 1px solid rgba(242, 140, 40, 0.25);
+  padding: 10px 14px;
+  border-radius: 20px;
+  color: #ffffff;
+  outline: none;
+  font-size: 12.5px;
+  font-family: inherit;
+}
+
+.chef-input-area input:focus {
+  border-color: #F28C28;
+}
+
+.chef-input-area button {
+  background: #F28C28;
+  border: none;
+  color: #ffffff;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
