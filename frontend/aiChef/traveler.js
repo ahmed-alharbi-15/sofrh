@@ -171,7 +171,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const row = document.createElement("div");
     row.className = "msg-row bot-row";
     row.id = id;
-    row.innerHTML = `<div class="msg bot-msg" style="color: #F28C28;">جاري البحث واستكشاف الوجهات... 🧭🌍</div>`;
+    row.innerHTML = `<div class="msg bot-msg" style="color: #F28C28;">كتابة .. 🧭🌍</div>`;
     travelerMessages.appendChild(row);
     travelerMessages.scrollTop = travelerMessages.scrollHeight;
     return id;

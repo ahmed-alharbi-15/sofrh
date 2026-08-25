@@ -37,31 +37,33 @@
   z-index: 2;
 }
 
-/* Pulse Animation (تم إرجاع النبض للخارج) */
+/* Pulse Ring (متسنتر 100% في المركز) */
 .pulse-ring {
   position: absolute;
-  top: -6px;
-  left: -6px;
-  right: -6px;
-  bottom: -6px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
   border: 2px solid #F28C28;
-  animation: chefPulseOuter 2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+  box-sizing: border-box;
+  transform-origin: center center;
+  animation: chefPulseExact 2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
   pointer-events: none;
   z-index: 1;
 }
 
-@keyframes chefPulseOuter {
+@keyframes chefPulseExact {
   0% {
-    transform: scale(0.9);
-    opacity: 0.9;
+    transform: scale(1);
+    opacity: 0.85;
   }
   70% {
-    transform: scale(1.5);
+    transform: scale(1.55);
     opacity: 0;
   }
   100% {
-    transform: scale(1.5);
+    transform: scale(1.55);
     opacity: 0;
   }
 }
