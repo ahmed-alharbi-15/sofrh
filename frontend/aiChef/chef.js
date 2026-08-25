@@ -137,7 +137,7 @@ document.addEventListener("DOMContentLoaded", () => {
     row.id = id;
     row.innerHTML = `
       <img src="../img/chef-thinking.png" class="msg-avatar" style="animation: pulse-anim 1s infinite alternate;" alt="Chef">
-      <div class="msg bot-msg" style="color: #F28C28;">جالس أفكر وأبحث لك بالوصفات... 🍳</div>
+      <div class="msg bot-msg" style="color: #F28C28;">تحضير الرد . .</div>
     `;
     chefMessages.appendChild(row);
     chefMessages.scrollTop = chefMessages.scrollHeight;
