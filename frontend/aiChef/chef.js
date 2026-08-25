@@ -101,20 +101,28 @@ document.addEventListener("DOMContentLoaded", () => {
   const chefChatBox = document.getElementById("chefChatBox");
   const expandChefBtn = document.getElementById("expandChefBtn");
 
+  // حدث فتح وإغلاق الشات بالزر العائم
   openChefBtn.addEventListener("click", () => {
     chefChatBox.style.display = chefChatBox.style.display === "flex" ? "none" : "flex";
-    if (userEmail && chefChatBox.style.display === "flex") {
-      document.getElementById("chefInput").focus();
-    }
   });
 
+  // حدث إغلاق الشات بزر الإكس
   closeChefBtn.addEventListener("click", () => {
     chefChatBox.style.display = "none";
   });
 
+  // حدث زر التكبير والتصغير واستعادة الحجم
   if (expandChefBtn) {
     expandChefBtn.addEventListener("click", () => {
-      chefChatBox.classList.toggle("expanded");
+      const hasManualResize = chefChatBox.style.width || chefChatBox.style.height;
+
+      if (hasManualResize) {
+        chefChatBox.style.width = "";
+        chefChatBox.style.height = "";
+        chefChatBox.classList.remove("expanded");
+      } else {
+        chefChatBox.classList.toggle("expanded");
+      }
     });
   }
 

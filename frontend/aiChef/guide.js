@@ -113,7 +113,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (expandGuideBtn) {
     expandGuideBtn.addEventListener("click", () => {
-      guideChatBox.classList.toggle("expanded");
+      // التحقق هل تم سحب وتغيير الحجم يدوياً
+      const hasManualResize = guideChatBox.style.width || guideChatBox.style.height;
+
+      if (hasManualResize) {
+        guideChatBox.style.width = "";
+        guideChatBox.style.height = "";
+        guideChatBox.classList.remove("expanded");
+      } else {
+        guideChatBox.classList.toggle("expanded");
+      }
     });
   }
 

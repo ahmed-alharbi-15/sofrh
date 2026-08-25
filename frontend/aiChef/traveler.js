@@ -113,10 +113,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (expandTravelerBtn) {
     expandTravelerBtn.addEventListener("click", () => {
-      travelerChatBox.classList.toggle("expanded");
+      // التحقق هل تم سحب وتغيير الحجم يدوياً
+      const hasManualResize = travelerChatBox.style.width || travelerChatBox.style.height;
+
+      if (hasManualResize) {
+        travelerChatBox.style.width = "";
+        travelerChatBox.style.height = "";
+        travelerChatBox.classList.remove("expanded");
+      } else {
+        travelerChatBox.classList.toggle("expanded");
+      }
     });
   }
-
   if (!userEmail) return;
 
   const sendTravelerBtn = document.getElementById("sendTravelerBtn");
