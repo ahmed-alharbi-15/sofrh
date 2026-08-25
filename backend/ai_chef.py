@@ -2,7 +2,6 @@ import os
 import json
 import psycopg2
 from google import genai
-from google.genai import types
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -16,6 +15,7 @@ def get_db_connection():
     return psycopg2.connect(db_url)
 
 def search_recipes_by_ingredient(ingredient: str) -> str:
+    """ابحث عن الوصفات التي تحتوي على مكون معين أو كلمة مفتاحية."""
     conn = None
     cur = None
     try:
@@ -32,26 +32,21 @@ def search_recipes_by_ingredient(ingredient: str) -> str:
         rows = cur.fetchall()
         
         if not rows:
-            return json.dumps({"message": f"لم يتم العثور على وصفات تحتوي على {ingredient}"}, ensure_ascii=False)
+            return f"لم يتم العثور على وصفات تحتوي على {ingredient}"
         
         recipes_data = [
-            {
-                "id": r[0],
-                "name": r[1],
-                "country": r[2],
-                "description": r[3],
-                "prep_time": r[4]
-            }
+            {"id": r[0], "name": r[1], "country": r[2], "description": r[3], "prep_time": r[4]}
             for r in rows
         ]
         return json.dumps(recipes_data, ensure_ascii=False)
     except Exception as e:
-        return json.dumps({"error": str(e)}, ensure_ascii=False)
+        return f"Error: {str(e)}"
     finally:
         if cur: cur.close()
         if conn: conn.close()
 
 def get_upcoming_events() -> str:
+    """استخرج قائمة الفعاليات والمناسبات المتاحة وتفاصيلها."""
     conn = None
     cur = None
     try:
@@ -62,74 +57,37 @@ def get_upcoming_events() -> str:
         rows = cur.fetchall()
         
         if not rows:
-            return json.dumps({"message": "لا توجد فعاليات مسجلة حالياً"}, ensure_ascii=False)
+            return "لا توجد فعاليات مسجلة حالياً"
         
         events_data = [
-            {
-                "id": r[0],
-                "title": r[1],
-                "date": str(r[2]),
-                "location": r[3],
-                "price": r[4]
-            }
+            {"id": r[0], "title": r[1], "date": str(r[2]), "location": r[3], "price": r[4]}
             for r in rows
         ]
         return json.dumps(events_data, ensure_ascii=False)
     except Exception as e:
-        return json.dumps({"error": str(e)}, ensure_ascii=False)
+        return f"Error: {str(e)}"
     finally:
         if cur: cur.close()
         if conn: conn.close()
 
-tools_map = {
-    "search_recipes_by_ingredient": search_recipes_by_ingredient,
-    "get_upcoming_events": get_upcoming_events
-}
-
 def ask_chef_agent(user_message: str) -> str:
-    system_instruction = """
-    أنت 'شيف سُفرة'، المساعد الذكي الخبير بالطبخ العربي والعالمي والفعاليات في منصة سُفرة.
-    مهامك:
-    1. مساعدة المستخدم في إيجاد وصفات تناسب المكونات المتوفرة لديه عبر قاعدة البيانات.
-    2. إرشاد المستخدم إلى الفعاليات والمناسبات المناسبة لاهتماماته.
-    3. التحدث بأسلوب دافئ، مشجع، محترف وباللغة العربية.
-    إذا طلب المستخدم وصفات بمكونات محددة أو فعاليات، استخدم الأدوات المتاحة لجلب بيانات دقيقة من النظام.
-    """
-    
-    response = client.models.generate_content(
-        model="gemini-2.5-flash",
-        contents=user_message,
-        config=types.GenerateContentConfig(
-            system_instruction=system_instruction,
-            tools=[search_recipes_by_ingredient, get_upcoming_events],
-            temperature=0.7
-        )
+    system_instruction = (
+        "أنت 'شيف سُفرة'، المساعد الذكي الخبير بالطبخ العربي والعالمي والفعاليات في منصة سُفرة. "
+        "مهامك:\n"
+        "1. مساعدة المستخدم في إيجاد وصفات تناسب المكونات المتوفرة لديه عبر قاعدة البيانات.\n"
+        "2. إرشاد المستخدم إلى الفعاليات والمناسبات المتاحة.\n"
+        "3. التحدث بأسلوب دافئ، مشجع، محترف وباللغة العربية.\n"
+        "استخدم الأدوات المتاحة للبحث في قاعدة البيانات عند الحاجة."
     )
     
-    if response.function_calls:
-        function_call = response.function_calls[0]
-        tool_name = function_call.name
-        tool_args = function_call.args
-        
-        if tool_name in tools_map:
-            tool_output = tools_map[tool_name](**tool_args)
-            
-            final_response = client.models.generate_content(
-                model="gemini-2.5-flash",
-                contents=[
-                    types.Content(role="user", parts=[types.Part.from_text(text=user_message)]),
-                    types.Content(role="model", parts=[types.Part.from_function_call(name=tool_name, args=tool_args)]),
-                    types.Content(role="user", parts=[
-                        types.Part.from_function_response(
-                            name=tool_name,
-                            response={"result": tool_output}
-                        )
-                    ])
-                ],
-                config=types.GenerateContentConfig(
-                    system_instruction=system_instruction
-                )
-            )
-            return final_response.text
-
+    chat = client.chats.create(
+        model="gemini-2.5-flash",
+        config={
+            "system_instruction": system_instruction,
+            "tools": [search_recipes_by_ingredient, get_upcoming_events],
+            "temperature": 0.7,
+        }
+    )
+    
+    response = chat.send_message(user_message)
     return response.text
