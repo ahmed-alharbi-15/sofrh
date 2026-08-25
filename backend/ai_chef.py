@@ -6,59 +6,79 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-# تهيئة الاتصال بـ Gemini
-api_key = os.getenv("GEMINI_API_KEY")
-client = genai.Client(api_key=api_key) if api_key else None
-
 def get_db_connection():
     db_url = os.environ.get('DATABASE_URL')
     if not db_url:
         db_url = "postgresql://prostorge:e2g1E1i4ySRy768iEyks7eD25RAhp6Qv@dpg-d7gj4lpkh4rs739a6ff0-a.oregon-postgres.render.com/sofrah_web"
     return psycopg2.connect(db_url)
 
-def get_context_recipes(query_text: str) -> str:
-    """جلب سياق من الوصفات لدعم الشيف بالبيانات."""
+def fetch_db_recipes(query_text: str):
+    """البحث المباشر في قاعدة البيانات عن الوصفات المناسبة"""
     conn = None
     cur = None
     try:
         conn = get_db_connection()
         cur = conn.cursor()
+        
+        # استخراج عينة من الوصفات أو البحث بالكلمة
         sql = """
             SELECT name, country, description, prep_time 
             FROM recipes 
-            WHERE ingredients ILIKE %s OR name ILIKE %s 
-            LIMIT 4;
+            LIMIT 15;
         """
-        search = f"%{query_text}%"
-        cur.execute(sql, (search, search))
+        cur.execute(sql)
         rows = cur.fetchall()
+        
         if not rows:
-            return ""
-        return "\n".join([f"- وصفة {r[0]} ({r[1]}): {r[2]} (وقت التحضير: {r[3]})" for r in rows])
-    except Exception:
+            return "لا توجد وصفات مسجلة حالياً."
+            
+        recipes_list = []
+        for r in rows:
+            name = r[0] if len(r) > 0 else ""
+            country = r[1] if len(r) > 1 else ""
+            desc = r[2] if len(r) > 2 else ""
+            recipes_list.append(f"- وصفة: {name} (الدولة: {country}) | التفاصيل: {desc}")
+            
+        return "\n".join(recipes_list)
+    except Exception as e:
+        print(f"Database Error: {e}")
         return ""
     finally:
         if cur: cur.close()
         if conn: conn.close()
 
 def ask_chef_agent(user_message: str) -> str:
-    if not client:
-        return "عذراً، خدمة الذكاء الاصطناعي غير متصلة حالياً. يرجى التحقق من المفتاح."
+    api_key = os.getenv("GEMINI_API_KEY")
+    if not api_key:
+        return "المفتاح غير معرّف بالسيرفر."
     
-    # جلب سياق من قاعدة البيانات إن وجد
-    db_context = get_context_recipes(user_message)
-    context_note = f"\nمعلومات من قاعدة بيانات سُفرة قد تفيدك:\n{db_context}" if db_context else ""
-
+    # 1. الاتصال المباشر بقاعدة البيانات وجلب الوصفات الموجودة فيها
+    recipes_context = fetch_db_recipes(user_message)
+    
+    # 2. تجهيز العميل والموديل
+    client = genai.Client(api_key=api_key)
+    
     prompt = f"""
-    أنت 'شيف سُفرة' المساعد الذكي الخبير بالطبخ والفعاليات في منصة سُفرة.
-    تحدث بلهجة عربية دافئة، ودودة ومحترفة، واقترح أفكاراً شهية وسريعة.
-    {context_note}
+    أنت 'شيف سُفرة'، المساعد الذكي الخبير والمرح في منصة سُفرة.
+    مهمتك: مساعدة المستخدم واقتراح وصفات شهية تناسب سؤاله بالاعتماد على قاعدة بيانات سُفرة التالية:
 
-    سؤال المستخدم: {user_message}
+    قائمة وصفات سُفرة من قاعدة البيانات:
+    {recipes_context}
+
+    توجيهات الرد:
+    - تحدث بلهجة عربية لطيفة ودافئة كشيف محترف.
+    - إذا سأل عن وصفة أو مكونات، اقترح عليه من الوصفات الموجودة بالقائمة أعلاه واشرح له الفكرة.
+    - إذا كان كلامه عاماً أو ترحيباً (مثل: هلا، كيف حالك)، رحب به وعرّف بنفسك وما يمكنك مساعدته به.
+
+    رسالة المستخدم: {user_message}
     """
-
-    response = client.models.generate_content(
-        model="gemini-2.5-flash",
-        contents=prompt
-    )
-    return response.text
+    
+    try:
+        response = client.models.generate_content(
+            model="gemini-2.5-flash",
+            contents=prompt
+        )
+        return response.text
+    except Exception as e:
+        print(f"Gemini API Error: {e}")
+        return f"حصل خطأ أثناء استدعاء الذكاء الاصطناعي: {str(e)}"
