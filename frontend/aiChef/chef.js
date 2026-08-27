@@ -1,11 +1,15 @@
 const BACKEND_URL = "https://sofrh-1.onrender.com";
 
+const CHEF_IMG_MAIN = "../img/chef-main.png";
+const CHEF_IMG_THINKING = "../img/chef-thinking.png";
+const FALLBACK_ICON = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23F28C28'><path d='M12 2a5 5 0 0 0-5 5v1H6a3 3 0 0 0-3 3v2a3 3 0 0 0 3 3h12a3 3 0 0 0 3-3v-2a3 3 0 0 0-3-3h-1V7a5 5 0 0 0-5-5zm-3 16v2a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2v-2H9z'/></svg>";
+
 function getLoggedUserEmail() {
   const user = localStorage.getItem("safraUser");
   if (!user) return null;
   try {
     const parsed = JSON.parse(user);
-    return parsed.email;
+    return parsed.email || null;
   } catch (e) {
     return null;
   }
@@ -43,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
       </div>
       <button class="chef-floating-btn" id="openChefBtn" title="تحدث مع شيف سُفرة">
-        <img src="../img/chef-main.png" alt="شيف سُفرة" class="chef-btn-icon">
+        <img src="${CHEF_IMG_MAIN}" onerror="this.onerror=null; this.src='${FALLBACK_ICON}';" alt="شيف سُفرة" class="chef-btn-icon">
         <span class="pulse-ring"></span>
       </button>
     `;
@@ -53,7 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <div class="chef-header">
           <div class="chef-info">
             <div class="chef-avatar-wrapper">
-              <img src="../img/chef-main.png" alt="Chef Avatar">
+              <img src="${CHEF_IMG_MAIN}" onerror="this.onerror=null; this.src='${FALLBACK_ICON}';" alt="Chef Avatar">
               <span class="online-indicator"></span>
             </div>
             <div>
@@ -69,7 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         <div class="chef-messages" id="chefMessages">
           <div class="msg-row bot-row">
-            <img src="../img/chef-thinking.png" class="msg-avatar" alt="Chef">
+            <img src="${CHEF_IMG_THINKING}" onerror="this.onerror=null; this.src='${FALLBACK_ICON}';" class="msg-avatar" alt="Chef">
             <div class="msg bot-msg">
               أهلاً وسهلاً بك! 👋 أنا شيف سُفرة، علمني وش المكونات اللي عندك أو وش ودك تطبخ وأنا معك خطوة بخطوة! 🍽️
             </div>
@@ -88,7 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
       </div>
 
       <button class="chef-floating-btn" id="openChefBtn" title="تحدث مع شيف سُفرة">
-        <img src="../img/chef-main.png" alt="شيف سُفرة" class="chef-btn-icon">
+        <img src="${CHEF_IMG_MAIN}" onerror="this.onerror=null; this.src='${FALLBACK_ICON}';" alt="شيف سُفرة" class="chef-btn-icon">
         <span class="pulse-ring"></span>
       </button>
     `;
@@ -153,10 +157,10 @@ document.addEventListener("DOMContentLoaded", () => {
       const data = await response.json();
       removeLoadingIndicator(loadingId);
 
-      if (data.status === "success") {
+      if (data.reply) {
         appendMessage(data.reply, "bot");
       } else {
-        appendMessage(data.reply || "حصل خطأ بسيط في تحضير الرد!", "bot");
+        appendMessage("حصل خطأ بسيط في تحضير الرد!", "bot");
       }
     } catch (err) {
       removeLoadingIndicator(loadingId);
@@ -171,7 +175,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const row = document.createElement("div");
     row.className = `msg-row ${sender}-row`;
     if (sender === "bot") {
-      row.innerHTML = `<img src="../img/chef-thinking.png" class="msg-avatar" alt="Chef"><div class="msg bot-msg">${text.replace(/\n/g, "<br>")}</div>`;
+      row.innerHTML = `<img src="${CHEF_IMG_THINKING}" onerror="this.onerror=null; this.src='${FALLBACK_ICON}';" class="msg-avatar" alt="Chef"><div class="msg bot-msg">${text.replace(/\n/g, "<br>")}</div>`;
     } else {
       row.innerHTML = `<div class="msg user-msg">${text}</div>`;
     }
@@ -184,7 +188,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const row = document.createElement("div");
     row.className = "msg-row bot-row";
     row.id = id;
-    row.innerHTML = `<img src="../img/chef-thinking.png" class="msg-avatar" style="animation: pulse-anim 1s infinite alternate;" alt="Chef"><div class="msg bot-msg" style="color: #F28C28;">كتابة .. 🍳</div>`;
+    row.innerHTML = `<img src="${CHEF_IMG_THINKING}" onerror="this.onerror=null; this.src='${FALLBACK_ICON}';" class="msg-avatar" style="animation: pulse-anim 1s infinite alternate;" alt="Chef"><div class="msg bot-msg" style="color: #F28C28;">كتابة .. 🍳</div>`;
     chefMessages.appendChild(row);
     chefMessages.scrollTop = chefMessages.scrollHeight;
     return id;
