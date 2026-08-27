@@ -12,16 +12,6 @@ def get_db_connection():
         db_url = "postgresql://prostorge:e2g1E1i4ySRy768iEyks7eD25RAhp6Qv@dpg-d7gj4lpkh4rs739a6ff0-a.oregon-postgres.render.com/sofrah_web"
     return psycopg2.connect(db_url)
 
-def ask_chef_agent(user_message: str, agent_type: str = "chef", user_email: str = None) -> tuple[str, bool]:
-    user_info = get_user_profile(user_email)
-    
-    # إذا لم يكن مسجلاً بقاعدة البيانات نرفض الرد فوراً
-    if not user_info:
-        return ("عذراً، يجب عليك تسجيل الدخول بحساب مسجل لتتمكن من التحدث مع المساعد الذكي! 🔒", False)
-
-    username = user_info.get("username", "عزيزي")
-    # يكمل تجهيز الرد وينادي المستخدم باسمه...
-
 def get_user_profile(user_email: str):
     """التحقق من وجود المستخدم في قاعدة البيانات وجلب اسمه"""
     if not user_email:
@@ -31,7 +21,7 @@ def get_user_profile(user_email: str):
     try:
         conn = get_db_connection()
         cur = conn.cursor(cursor_factory=RealDictCursor)
-        cur.execute("SELECT id, username, email FROM users WHERE email = %s LIMIT 1;", (user_email,))
+        cur.execute("SELECT id, username, email FROM users WHERE LOWER(TRIM(email)) = LOWER(TRIM(%s)) LIMIT 1;", (user_email,))
         return cur.fetchone()
     except Exception as e:
         print(f"Auth verification error: {e}")
@@ -63,27 +53,37 @@ def fetch_table_data(table_name: str, limit: int = 15):
         if cur: cur.close()
         if conn: conn.close()
 
-def ask_chef_agent(user_message: str, agent_type: str = "chef") -> str:
+def ask_chef_agent(user_message: str, agent_type: str = "chef", user_email: str = None) -> tuple[str, bool]:
+    # 1. التحقق من تسجيل الدخول
+    user_info = get_user_profile(user_email)
+    if not user_info:
+        return ("عذراً، يجب عليك تسجيل الدخول بحساب مسجل لتتمكن من التحدث مع المساعد الذكي! 🔒", False)
+
+    username = user_info.get("username", "عزيزي")
+
+    # 2. فحص مفتاح الـ API
     api_key = os.getenv("GEMINI_API_KEY")
     if not api_key:
-        return "المفتاح غير معرّف بالسيرفر."
+        return ("المفتاح غير معرّف بالسيرفر.", True)
 
     client = genai.Client(api_key=api_key)
 
+    # 3. تحديد دور المساعد والسياق
     if agent_type == "guide":
         context_data = fetch_table_data("events", limit=15)
         system_role = (
-            "أنت 'مرشد سُفرة 🎟️'، المرشد السياحي والمنظم الخبير بكافة الفعاليات، التذاكر، والمناسبات في منصة سُفرة. "
+            f"أنت 'مرشد سُفرة 🎟️'، المرشد السياحي والمنظم الخبير بكافة الفعاليات، التذاكر، والمناسبات في منصة سُفرة.\n"
+            f"المستخدم الذي يتحدث معك اسمه: {username}. ناده باسمه ورحب به دائماً بأسلوب ودود.\n"
             "مهامك:\n"
             "1. مساعدة المستخدم في معرفة مواعيد وأماكن وأسعار الفعاليات.\n"
             "2. اقتراح فعاليات تناسب ميزانيته ووقته.\n"
             "3. التحدث بلهجة عربية حماسية ومرحبة كمرشد سياحي ممتع."
         )
     elif agent_type == "traveler":
-        # قراءة بيانات الدول والمدن
         context_data = fetch_table_data("countries", limit=20)
         system_role = (
-            "أنت 'رحّال سُفرة 🧭'، المستكشف والخبير بالدول، القارات، الثقافات، والمطابخ العالمية في منصة سُفرة. "
+            f"أنت 'رحّال سُفرة 🧭'، المستكشف والخبير بالدول، القارات، الثقافات، والمطابخ العالمية في منصة سُفرة.\n"
+            f"المستخدم الذي يتحدث معك اسمه: {username}. ناده باسمه ورحب به دائماً بأسلوب ودود.\n"
             "مهامك:\n"
             "1. إرشاد المستخدم عن عادات وتقاليد وأشهر معالم ومأكولات الدول والمدن.\n"
             "2. تقديم نصائح للسياحة الثقافية وتجربة نكهات العالم.\n"
@@ -92,7 +92,8 @@ def ask_chef_agent(user_message: str, agent_type: str = "chef") -> str:
     else:  # chef
         context_data = fetch_table_data("recipes", limit=15)
         system_role = (
-            "أنت 'شيف سُفرة 👨‍🍳'، المساعد الذكي الخبير بالطبخ ووصفات المطبخ في منصة سُفرة. "
+            f"أنت 'شيف سُفرة 👨‍🍳'، المساعد الذكي الخبير بالطبخ ووصفات المطبخ في منصة سُفرة.\n"
+            f"المستخدم الذي يتحدث معك اسمه: {username}. ناده باسمه ورحب به دائماً بأسلوب ودود.\n"
             "مهامك:\n"
             "1. مساعدة المستخدم في إيجاد وصفات بمكوناته المتوفرة.\n"
             "2. تقديم أسرار الطبخ وبدائل المكونات.\n"
@@ -100,19 +101,20 @@ def ask_chef_agent(user_message: str, agent_type: str = "chef") -> str:
         )
 
     prompt = f"""
-    {system_role}
+{system_role}
 
-    بيانات حية من منصة سُفرة للاستئناس بها:
-    {context_data}
+بيانات حية من منصة سُفرة للاستئناس بها:
+{context_data}
 
-    سؤال المستخدم: {user_message}
-    """
+سؤال المستخدم {username}: {user_message}
+"""
 
     try:
         response = client.models.generate_content(
-            model="gemini-3.6-flash",
+            model="gemini-2.5-flash",
             contents=prompt
         )
-        return response.text
+        return (response.text, True)
     except Exception as e:
-        return f"حصل خطأ أثناء تحضير الرد: {str(e)}"
+        print(f"Gemini API Error: {e}")
+        return ("حصل ضغط بسيط ، يرجى المحاولة بعد لحظات!", True)
