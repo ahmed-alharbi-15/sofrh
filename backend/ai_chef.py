@@ -12,6 +12,34 @@ def get_db_connection():
         db_url = "postgresql://prostorge:e2g1E1i4ySRy768iEyks7eD25RAhp6Qv@dpg-d7gj4lpkh4rs739a6ff0-a.oregon-postgres.render.com/sofrah_web"
     return psycopg2.connect(db_url)
 
+def ask_chef_agent(user_message: str, agent_type: str = "chef", user_email: str = None) -> tuple[str, bool]:
+    user_info = get_user_profile(user_email)
+    
+    # إذا لم يكن مسجلاً بقاعدة البيانات نرفض الرد فوراً
+    if not user_info:
+        return ("عذراً، يجب عليك تسجيل الدخول بحساب مسجل لتتمكن من التحدث مع المساعد الذكي! 🔒", False)
+
+    username = user_info.get("username", "عزيزي")
+    # يكمل تجهيز الرد وينادي المستخدم باسمه...
+
+def get_user_profile(user_email: str):
+    """التحقق من وجود المستخدم في قاعدة البيانات وجلب اسمه"""
+    if not user_email:
+        return None
+    conn = None
+    cur = None
+    try:
+        conn = get_db_connection()
+        cur = conn.cursor(cursor_factory=RealDictCursor)
+        cur.execute("SELECT id, username, email FROM users WHERE email = %s LIMIT 1;", (user_email,))
+        return cur.fetchone()
+    except Exception as e:
+        print(f"Auth verification error: {e}")
+        return None
+    finally:
+        if cur: cur.close()
+        if conn: conn.close()
+
 def fetch_table_data(table_name: str, limit: int = 15):
     """جلب بيانات أي جدول بأمان لتحميلها في سياق الذكاء الاصطناعي"""
     conn = None

@@ -305,15 +305,18 @@ async def preview_email():
     rendered_html = get_rendered_template(code="849201")
     return HTMLResponse(content=rendered_html, status_code=200)
 
-# --- مسار الشيف الذكي (AI Agent) ---
+# --- مسار المساعدين الذكيين (AI Agents) ---
 class ChatMessage(BaseModel):
     message: str
     agent_type: str = "chef"  # chef | guide | traveler
+    user_email: Optional[str] = None
 
 @app.post("/api/chat")
 def chat_with_chef(chat: ChatMessage):
     try:
-        reply = ask_chef_agent(chat.message, chat.agent_type)
+        reply, is_auth = ask_chef_agent(chat.message, chat.agent_type, chat.user_email)
+        if not is_auth:
+            return {"status": "unauthorized", "reply": reply}
         return {"status": "success", "reply": reply}
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Agent error: {str(e)}")
