@@ -111,7 +111,7 @@ def ask_chef_agent(user_message: str, agent_type: str = "chef", user_email: str 
 
     try:
         response = client.models.generate_content(
-            model="gemini-2.5-flash",
+            model="gemini-3.6-flash",
             contents=prompt
         )
         return (response.text, True)
