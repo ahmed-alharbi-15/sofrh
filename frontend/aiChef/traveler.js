@@ -125,6 +125,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
+
   if (!userEmail) return;
 
   const sendTravelerBtn = document.getElementById("sendTravelerBtn");
@@ -145,8 +146,8 @@ document.addEventListener("DOMContentLoaded", () => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ 
           message: text, 
-          agent_type: "traveler",
-          user_id: userEmail 
+          agent_type: "traveler", 
+          user_email: userEmail 
         }),
       });
       const data = await response.json();

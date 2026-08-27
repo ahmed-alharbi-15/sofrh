@@ -146,8 +146,8 @@ document.addEventListener("DOMContentLoaded", () => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ 
           message: text, 
-          agent_type: "chef",
-          user_id: userEmail 
+          agent_type: "chef", 
+          user_email: userEmail 
         }),
       });
       const data = await response.json();
