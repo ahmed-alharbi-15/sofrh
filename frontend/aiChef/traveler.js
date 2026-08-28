@@ -1,5 +1,8 @@
 const BACKEND_URL = "https://sofrh-1.onrender.com";
 
+const TRAVELER_IMG_MAIN = "../img/traveler-main.PNG";
+const TRAVELER_IMG_THINKING = "../img/traveler-thinking.PNG";
+
 function getLoggedUserEmail() {
   const user = localStorage.getItem("safraUser");
   if (!user) return null;
@@ -43,7 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
       </div>
       <button class="chef-floating-btn" id="openTravelerBtn" title="تحدث مع رحّال سُفرة">
-        <span style="font-size: 24px;">🧭</span>
+        <img src="${TRAVELER_IMG_MAIN}" alt="رحّال سُفرة" class="chef-btn-icon">
         <span class="pulse-ring"></span>
       </button>
     `;
@@ -53,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <div class="chef-header">
           <div class="chef-info">
             <div class="chef-avatar-wrapper">
-              <span style="font-size: 24px;">🧭</span>
+              <img src="${TRAVELER_IMG_MAIN}" alt="Traveler Avatar">
               <span class="online-indicator"></span>
             </div>
             <div>
@@ -69,6 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         <div class="chef-messages" id="travelerMessages">
           <div class="msg-row bot-row">
+            <img src="${TRAVELER_IMG_THINKING}" class="msg-avatar" alt="Traveler">
             <div class="msg bot-msg">
               يا هلا بالمستكشف! 🌍 أنا رحّال سُفرة.. ودك تسافر وين أو تتعرف على ثقافة وأكل أي دولة بالعالم؟ اسألني وجاهز آخذك في جولة! 🧭✨
             </div>
@@ -87,7 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
       </div>
 
       <button class="chef-floating-btn" id="openTravelerBtn" title="تحدث مع رحّال سُفرة">
-        <span style="font-size: 24px;">🧭</span>
+        <img src="${TRAVELER_IMG_MAIN}" alt="رحّال سُفرة" class="chef-btn-icon">
         <span class="pulse-ring"></span>
       </button>
     `;
@@ -170,7 +174,11 @@ document.addEventListener("DOMContentLoaded", () => {
   function appendMessage(text, sender) {
     const row = document.createElement("div");
     row.className = `msg-row ${sender}-row`;
-    row.innerHTML = `<div class="msg ${sender}-msg">${text.replace(/\n/g, "<br>")}</div>`;
+    if (sender === "bot") {
+      row.innerHTML = `<img src="${TRAVELER_IMG_THINKING}" class="msg-avatar" alt="Traveler"><div class="msg bot-msg">${text.replace(/\n/g, "<br>")}</div>`;
+    } else {
+      row.innerHTML = `<div class="msg user-msg">${text}</div>`;
+    }
     travelerMessages.appendChild(row);
     travelerMessages.scrollTop = travelerMessages.scrollHeight;
   }
@@ -180,7 +188,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const row = document.createElement("div");
     row.className = "msg-row bot-row";
     row.id = id;
-    row.innerHTML = `<div class="msg bot-msg" style="color: #F28C28;">كتابة .. 🧭🌍</div>`;
+    row.innerHTML = `<img src="${TRAVELER_IMG_THINKING}" class="msg-avatar" style="animation: pulse-anim 1s infinite alternate;" alt="Traveler"><div class="msg bot-msg" style="color: #F28C28;">كتابة .. 🧭🌍</div>`;
     travelerMessages.appendChild(row);
     travelerMessages.scrollTop = travelerMessages.scrollHeight;
     return id;
