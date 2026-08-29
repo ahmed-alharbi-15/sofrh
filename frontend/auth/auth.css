@@ -83,9 +83,30 @@ small,
     text-align: center;
 }
 
-.auth-logo img {
-    height: 80px;
+.auth-logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #250d59; /* خلفية بنفسجية متباينة وواضحة */
+    padding: 12px 18px;
+    border-radius: 20px; /* أطراف ناعمة */
+    border: 1.5px solid rgba(242, 133, 0, 0.35); /* إطار برتقالي خفيف ومتناسق */
+    box-shadow: 0 6px 20px rgba(37, 13, 89, 0.25);
     margin-bottom: 20px;
+    text-decoration: none;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.auth-logo:hover {
+    transform: scale(1.04);
+    box-shadow: 0 8px 25px rgba(242, 133, 0, 0.3);
+}
+
+.auth-logo img {
+    height: 70px;
+    width: auto;
+    object-fit: contain;
+    display: block;
 }
 
 .auth-card h1 {
