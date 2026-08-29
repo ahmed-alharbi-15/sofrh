@@ -408,7 +408,7 @@ small,
 .side-menu.menu-open li:nth-child(1) { transition-delay: .05s; }
 .side-menu.menu-open li:nth-child(2) { transition-delay: .1s; }
 .side-menu.menu-open li:nth-child(3) { transition-delay: .15s; }
-.side-menu.menu-open li:nth-child(4) { transition-delay: .2s; }
+.side-menu.menu-open li:nth-child(4) { transition-delay: .25s; }
 .side-menu.menu-open li:nth-child(5) { transition-delay: .25s; }
 
 .side-menu a {
@@ -609,4 +609,112 @@ input {
     background: var(--input-bg);
     color: var(--text);
     border-color: var(--border);
+}
+
+/* ==========================================
+   شاشة التحميل التفاعلية والمدار السياحي
+========================================== */
+.travel-loader-overlay {
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(circle at center, #1f0b4d 0%, #0d0422 100%);
+    z-index: 99999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+    backdrop-filter: blur(8px);
+}
+
+.travel-loader-wrapper {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* الشعار في المنتصف */
+.loader-logo-box {
+    width: 76px;
+    height: 76px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 25px rgba(242, 133, 0, 0.25);
+    z-index: 2;
+    animation: pulse-soft 2s ease-in-out infinite;
+}
+
+.loader-logo-box img {
+    width: 58px;
+    height: 58px;
+    object-fit: contain;
+}
+
+/* حلقة التحميل الدوارة */
+.loader-spinner-ring {
+    position: absolute;
+    width: 115px;
+    height: 115px;
+    border-radius: 50%;
+    border: 2.5px solid transparent;
+    border-top-color: #F28500;
+    border-right-color: rgba(242, 133, 0, 0.3);
+    animation: spin-clockwise 1.2s linear infinite;
+    z-index: 3;
+}
+
+/* مدار دوران الطائرة */
+.orbit-plane-track {
+    position: absolute;
+    width: 145px;
+    height: 145px;
+    border-radius: 50%;
+    border: 1.5px dashed rgba(250, 245, 235, 0.2);
+    animation: spin-clockwise 3.5s linear infinite;
+    z-index: 4;
+}
+
+/* مجسم الطائرة وموضعها على المدار */
+.travel-plane {
+    position: absolute;
+    top: -12px;
+    left: calc(50% - 12px);
+    width: 24px;
+    height: 24px;
+    color: #F28500;
+    filter: drop-shadow(0 0 8px #F28500) drop-shadow(-8px 0px 4px rgba(242, 133, 0, 0.4));
+    transform: rotate(90deg);
+}
+
+/* نص الانتظار */
+.travel-loader-text {
+    color: #FAF5EB;
+    font-family: 'Dubai', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    animation: blink-text 1.5s ease-in-out infinite;
+}
+
+/* Animations */
+@keyframes spin-clockwise {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes pulse-soft {
+    0%, 100% { transform: scale(1); box-shadow: 0 0 20px rgba(242, 133, 0, 0.2); }
+    50% { transform: scale(1.05); box-shadow: 0 0 35px rgba(242, 133, 0, 0.45); }
+}
+
+@keyframes blink-text {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
 }
