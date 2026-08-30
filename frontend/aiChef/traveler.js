@@ -1,7 +1,7 @@
 const BACKEND_URL = "https://sofrh-1.onrender.com";
 
-const TRAVELER_IMG_MAIN = "..https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/traveler-main.PNG";
-const TRAVELER_IMG_THINKING = "..https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/traveler-thinking.PNG";
+const TRAVELER_IMG_MAIN = "https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/traveler-main.PNG";
+const TRAVELER_IMG_THINKING = "https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/traveler-thinking.PNG";
 
 function getLoggedUserEmail() {
   const user = localStorage.getItem("safraUser");
