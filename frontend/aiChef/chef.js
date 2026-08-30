@@ -1,7 +1,7 @@
 const BACKEND_URL = "https://sofrh-1.onrender.com";
 
-const CHEF_IMG_MAIN = "../img/chef-main.PNG";
-const CHEF_IMG_THINKING = "../img/chef-thinking.PNG";
+const CHEF_IMG_MAIN = "..https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/chef-main.PNG";
+const CHEF_IMG_THINKING = "..https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/chef-thinking.PNG";
 const FALLBACK_ICON = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23F28C28'><path d='M12 2a5 5 0 0 0-5 5v1H6a3 3 0 0 0-3 3v2a3 3 0 0 0 3 3h12a3 3 0 0 0 3-3v-2a3 3 0 0 0-3-3h-1V7a5 5 0 0 0-5-5zm-3 16v2a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2v-2H9z'/></svg>";
 
 function getLoggedUserEmail() {

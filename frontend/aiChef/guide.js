@@ -1,7 +1,7 @@
 const BACKEND_URL = "https://sofrh-1.onrender.com";
 
-const GUIDE_IMG_MAIN = "../img/guide-main.PNG";
-const GUIDE_IMG_THINKING = "../img/guide-thinking.PNG";
+const GUIDE_IMG_MAIN = "..https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/guide-main.PNG";
+const GUIDE_IMG_THINKING = "..https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/guide-thinking.PNG";
 
 function getLoggedUserEmail() {
   const user = localStorage.getItem("safraUser");
