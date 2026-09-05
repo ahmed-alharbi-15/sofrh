@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 import 'app_colors.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget{
   const HomeScreen({super.key});
 
+  @override
+  State<HomeScreen> createstate() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen>{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -12,17 +17,17 @@ class HomeScreen extends StatelessWidget {
         foregroundColor: AppColors.textOnPrimary,
         title: const Text('سفرة'),
       ),
-      body: Padding(
+      body: padding(
         padding: const EdgeInsets.all(16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
               'وين نسافر اليوم؟',
-              style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                    color: AppColors.textOnBackground,
-                    fontWeight: FontWeight.bold,
-                  ),
+              style: Theme.of(context). textTheme.headLineSmall?.copywith(
+                color: AppColors.textOnBackground,
+                fontWeight: FontWeight.bold,
+              ),
             ),
             const SizedBox(height: 20),
             Expanded(
@@ -31,10 +36,10 @@ class HomeScreen extends StatelessWidget {
                 mainAxisSpacing: 16,
                 crossAxisSpacing: 16,
                 children: const [
-                  HomeCategoryCard(title: 'الدول', icon: Icons.public),
-                  HomeCategoryCard(title: 'الوصفات', icon: Icons.restaurant_menu),
-                  HomeCategoryCard(title: 'الفعاليات', icon: Icons.event),
-                  HomeCategoryCard(title: 'خطتي', icon: Icons.map),
+                  HomeCategoryCard(title:'الدول', icon: Icons.public),
+                  HomeCategoryCard(title:'الوصفات', icon: Icons.restaurant_menu),
+                  HomeCategoryCard(title:'الفعاليات', icon: Icons.event),
+                  HomeCategoryCard(title:'خطتي', icon: Icons.map),
                 ],
               ),
             ),
