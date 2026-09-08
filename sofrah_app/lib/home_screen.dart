@@ -12,11 +12,6 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: AppColors.primary,
-        foregroundColor: AppColors.textOnPrimary,
-        title: const Text('سفرة'),
-      ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -66,9 +61,9 @@ class _HomeScreenState extends State<HomeScreen> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: const [
-                    HeroStat(number: '+194', label: 'دولة'),
-                    HeroStat(number: '+1163', label: 'فعالية'),
-                    HeroStat(number: '+1150', label: 'وصفة'),
+                    HeroStat(number: '+١٩٠', label: 'دولة'),
+                    HeroStat(number: '+١٢٠٠', label: 'فعالية'),
+                    HeroStat(number: '+١١٥٠', label: 'وصفة'),
                   ],
                 ),
               ],
