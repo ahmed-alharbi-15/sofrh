@@ -3,7 +3,9 @@ import 'app_colors.dart';
 import 'home_screen.dart';
 
 class MainNavigation extends StatefulWidget {
-  const MainNavigation({super.key});
+  final VoidCallback onToggleTheme;
+
+  const MainNavigation({super.key, required this.onToggleTheme});
 
   @override
   State<MainNavigation> createState() => _MainNavigationState();
@@ -36,7 +38,7 @@ class _MainNavigationState extends State<MainNavigation> {
               icon: const Icon(Icons.notifications_outlined),
             ),
             IconButton(
-              onPressed: () {},
+              onPressed: widget.onToggleTheme,
               icon: const Icon(Icons.dark_mode_outlined),
             ),
           ],

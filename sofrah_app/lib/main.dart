@@ -1,14 +1,28 @@
 import 'package:flutter/material.dart';
 import 'app_colors.dart';
-import 'home_screen.dart';
 import 'main_navigation.dart';
 
 void main() {
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  ThemeMode _themeMode = ThemeMode.system;
+
+  void _toggleTheme() {
+    setState(() {
+      _themeMode = _themeMode == ThemeMode.dark
+          ? ThemeMode.light
+          : ThemeMode.dark;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -42,10 +56,10 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: AppColors.darkBackground,
         useMaterial3: true,
       ),
-      themeMode: ThemeMode.system,
-      home: const Directionality(
+      themeMode: _themeMode,
+      home: Directionality(
         textDirection: TextDirection.rtl,
-        child: MainNavigation(),
+        child: MainNavigation(onToggleTheme: _toggleTheme),
       ),
     );
   }
