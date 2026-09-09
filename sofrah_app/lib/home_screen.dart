@@ -150,7 +150,7 @@ class HomeCategoryCard extends StatelessWidget {
             left: 12,
             child: Text(
               title,
-              textAlign: TextAlign.center,
+              textAlign: TextAlign.right,
               style: const TextStyle(
                 color: Colors.white,
                 fontWeight: FontWeight.bold,

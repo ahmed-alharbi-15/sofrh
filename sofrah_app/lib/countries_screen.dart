@@ -247,7 +247,7 @@ class CountryCard extends StatelessWidget {
             left: 12,
             child: Text(
               country.name,
-              textAlign: TextAlign.center,
+              textAlign: TextAlign.right,
               style: const TextStyle(
                 color: Colors.white,
                 fontWeight: FontWeight.bold,
