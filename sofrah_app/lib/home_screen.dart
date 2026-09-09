@@ -181,7 +181,7 @@ class HeroStat extends StatelessWidget {
         Text(
           number,
           style: const TextStyle(
-            color: Colors.white,
+            color: AppColors.accent,
             fontSize: 20,
             fontWeight: FontWeight.bold,
           ),
