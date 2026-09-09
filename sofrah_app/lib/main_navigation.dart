@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'app_colors.dart';
 import 'home_screen.dart';
 import 'login_screen.dart';
+import 'countries_screen.dart';
 
 class MainNavigation extends StatefulWidget {
   final VoidCallback onToggleTheme;
@@ -15,12 +16,9 @@ class MainNavigation extends StatefulWidget {
 class _MainNavigationState extends State<MainNavigation> {
   int _currentIndex = 0;
 
-  final List<Widget> _screens = const [
-    HomeScreen(),
-    Center(child: Text('الدول')),
-    Center(child: Text('الفعاليات')),
-    Center(child: Text('الوصفات')),
-    Center(child: Text('خطتي')),
+final List<Widget> _screens = [
+    const HomeScreen(),
+    const CountriesScreen(),
   ];
 
   @override
