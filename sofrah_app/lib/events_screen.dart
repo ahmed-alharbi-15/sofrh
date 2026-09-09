@@ -39,11 +39,11 @@ class EventsScreen extends StatelessWidget {
                       ),
                       children: [
                         TextSpan(
-                          text: 'عيش ',
+                          text: 'فعاليات ',
                           style: TextStyle(color: Colors.white),
                         ),
                         TextSpan(
-                          text: 'اللحظة',
+                          text: 'لا تُنسى',
                           style: TextStyle(color: AppColors.accent),
                         ),
                       ],
@@ -51,7 +51,7 @@ class EventsScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: 8),
                   const Text(
-                    'اكتشف أبرز الفعاليات حول العالم',
+                    'اكتشف أفضل الفعاليات والتجارب الممتعة حول العالم',
                     style: TextStyle(
                       color: Colors.white70,
                       fontSize: 14,
