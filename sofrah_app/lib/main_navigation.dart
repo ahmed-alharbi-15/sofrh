@@ -47,12 +47,9 @@ class _MainNavigationState extends State<MainNavigation> {
           child: Icon(Icons.person, color: Colors.white, size: 20),
         ),
         actions: [
-          Row(
-            children: const [
-              Icon(Icons.travel_explore, size: 22),
-              SizedBox(width: 6),
-              Text('سفرة'),
-            ],
+          Image.network(
+            'https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/logo-img.PNG',
+            height: 28,
           ),
           const SizedBox(width: 12),
         ],
