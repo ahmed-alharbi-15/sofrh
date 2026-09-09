@@ -39,11 +39,11 @@ class RecipesScreen extends StatelessWidget {
                       ),
                       children: [
                         TextSpan(
-                          text: 'نكهات ',
+                          text: 'وصفات ',
                           style: TextStyle(color: Colors.white),
                         ),
                         TextSpan(
-                          text: 'من العالم',
+                          text: 'كل العالم',
                           style: TextStyle(color: AppColors.accent),
                         ),
                       ],
@@ -51,7 +51,7 @@ class RecipesScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: 8),
                   const Text(
-                    'وصفات حلال من مختلف الثقافات',
+                    'استمتع بنكهات ووصفات متنوعة من مختلف دول العالم',
                     style: TextStyle(
                       color: Colors.white70,
                       fontSize: 14,
