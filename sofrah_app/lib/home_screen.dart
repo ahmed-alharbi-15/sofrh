@@ -61,9 +61,9 @@ class _HomeScreenState extends State<HomeScreen> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: const [
-                    HeroStat(number: '+١٩٠', label: 'دولة'),
-                    HeroStat(number: '+١٢٠٠', label: 'فعالية'),
-                    HeroStat(number: '+١١٥٠', label: 'وصفة'),
+                    HeroStat(number: '+194', label: 'دولة'),
+                    HeroStat(number: '+1163', label: 'فعالية'),
+                    HeroStat(number: '+1150', label: 'وصفة'),
                   ],
                 ),
               ],
@@ -75,25 +75,29 @@ class _HomeScreenState extends State<HomeScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const SizedBox(height: 8),
-                  Text(
-                    'وين نسافر اليوم؟',
-                    style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                          color: AppColors.textOnBackground,
-                          fontWeight: FontWeight.bold,
-                        ),
-                  ),
-                  const SizedBox(height: 20),
+                 
                   Expanded(
                     child: GridView.count(
                       crossAxisCount: 2,
                       mainAxisSpacing: 16,
                       crossAxisSpacing: 16,
                       children: const [
-                        HomeCategoryCard(title: 'الدول', icon: Icons.public),
-                        HomeCategoryCard(title: 'الوصفات', icon: Icons.restaurant_menu),
-                        HomeCategoryCard(title: 'الفعاليات', icon: Icons.event),
-                        HomeCategoryCard(title: 'خطتي', icon: Icons.map),
+                        HomeCategoryCard(
+                          title: 'الدول',
+                          imageUrl: 'https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/Countries1.jpg',
+                        ),
+                        HomeCategoryCard(
+                          title: 'الوصفات',
+                          imageUrl: 'https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/food10.jpg',
+                        ),
+                        HomeCategoryCard(
+                          title: 'الفعاليات',
+                          imageUrl: 'https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/events1.jpg',
+                        ),
+                        HomeCategoryCard(
+                          title: 'خطتي',
+                          imageUrl: 'https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/plan.jpg',
+                        ),
                       ],
                     ),
                   ),
@@ -109,38 +113,49 @@ class _HomeScreenState extends State<HomeScreen> {
 
 class HomeCategoryCard extends StatelessWidget {
   final String title;
-  final IconData icon;
+  final String imageUrl;
 
   const HomeCategoryCard({
     super.key,
     required this.title,
-    required this.icon,
+    required this.imageUrl,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: AppColors.lightCard,
-        borderRadius: BorderRadius.circular(16),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withValues(alpha: 0.05),
-            blurRadius: 8,
-            offset: const Offset(0, 4),
-          ),
-        ],
-      ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(16),
+      child: Stack(
+        fit: StackFit.expand,
         children: [
-          Icon(icon, size: 36, color: AppColors.accent),
-          const SizedBox(height: 12),
-          Text(
-            title,
-            style: const TextStyle(
-              color: AppColors.textOnBackground,
-              fontWeight: FontWeight.w600,
+          Image.network(
+            imageUrl,
+            fit: BoxFit.cover,
+          ),
+          Container(
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [
+                  Colors.transparent,
+                  Colors.black.withValues(alpha: 0.6),
+                ],
+              ),
+            ),
+          ),
+          Positioned(
+            bottom: 12,
+            right: 12,
+            left: 12,
+            child: Text(
+              title,
+              textAlign: TextAlign.center,
+              style: const TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+                fontSize: 15,
+              ),
             ),
           ),
         ],
