@@ -289,6 +289,35 @@ def get_avatar(email: str):
         cur.close()
         conn.close()
 
+# --- الدول ---
+@app.get("/countries")
+def get_countries():
+    conn = get_db_connection()
+    cur = conn.cursor()
+    try:
+        cur.execute("""
+            SELECT c.id, c.name, c.description, c.image_url, c.slug,
+                   cont.name AS continent
+            FROM countries c
+            LEFT JOIN continents cont ON c.continent_id = cont.id
+            ORDER BY c.name
+        """)
+        rows = cur.fetchall()
+        return [
+            {
+                "id":          row[0],
+                "name":        row[1],
+                "description": row[2],
+                "image_url":   row[3],
+                "slug":        row[4],
+                "continent":   row[5],
+            }
+            for row in rows
+        ]
+    finally:
+        cur.close()
+        conn.close()
+
 # --- خدمة البريد ومعاينة القالب ---
 @app.post("/api/send-otp")
 async def send_otp(email: str, background_tasks: BackgroundTasks):
