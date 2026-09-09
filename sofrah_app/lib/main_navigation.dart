@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'app_colors.dart';
 import 'home_screen.dart';
+import 'login_screen.dart';
 
 class MainNavigation extends StatefulWidget {
   final VoidCallback onToggleTheme;
@@ -43,10 +44,18 @@ class _MainNavigationState extends State<MainNavigation> {
             ),
           ],
         ),
-        title: const CircleAvatar(
-          radius: 16,
-          backgroundColor: Colors.white24,
-          child: Icon(Icons.person, color: Colors.white, size: 20),
+        title: GestureDetector(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const LoginScreen()),
+            );
+          },
+          child: const CircleAvatar(
+            radius: 16,
+            backgroundColor: Colors.white24,
+            child: Icon(Icons.person, color: Colors.white, size: 20),
+          ),
         ),
         actions: [
           Image.network(
