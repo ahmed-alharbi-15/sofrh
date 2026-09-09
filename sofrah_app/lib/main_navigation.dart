@@ -3,6 +3,9 @@ import 'app_colors.dart';
 import 'home_screen.dart';
 import 'login_screen.dart';
 import 'countries_screen.dart';
+import 'events_screen.dart';
+import 'recipes_screen.dart';
+import 'trip_planner_screen.dart';
 
 class MainNavigation extends StatefulWidget {
   final VoidCallback onToggleTheme;
@@ -19,6 +22,9 @@ class _MainNavigationState extends State<MainNavigation> {
 final List<Widget> _screens = [
     const HomeScreen(),
     const CountriesScreen(),
+    const EventsScreen(),
+    const RecipesScreen(),
+    const TripPlannerScreen(),
   ];
 
   @override
