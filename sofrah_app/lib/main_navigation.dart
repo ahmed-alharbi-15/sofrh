@@ -65,8 +65,12 @@ class _MainNavigationState extends State<MainNavigation> {
           });
         },
         selectedItemColor: AppColors.accent,
-        unselectedItemColor: AppColors.textOnBackground,
-        backgroundColor: AppColors.lightCard,
+        unselectedItemColor: Theme.of(context).brightness == Brightness.dark
+            ? AppColors.darkText
+            : AppColors.textOnBackground,
+        backgroundColor: Theme.of(context).brightness == Brightness.dark
+            ? AppColors.darkCard
+            : AppColors.lightCard,
         type: BottomNavigationBarType.fixed,
         items: const [
           BottomNavigationBarItem(
