@@ -1,5 +1,17 @@
+import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 import 'app_colors.dart';
+
+
+String normalizeArabic(String text) {
+  return text
+      .replaceAll('أ', 'ا')
+      .replaceAll('إ', 'ا')
+      .replaceAll('آ', 'ا')
+      .replaceAll('ى', 'ا')
+      .replaceAll('ة', 'ه');
+}
 
 class Country {
   final String name;
@@ -11,6 +23,27 @@ class Country {
     required this.continent,
     required this.imageUrl,
   });
+
+  factory Country.fromJson(Map<String, dynamic> json) {
+    return Country(
+      name: json['name'] ?? '',
+      continent: json['continent'] ?? '',
+      imageUrl: 'https://sofrh.vercel.app${json['image_url'] ?? ''}',
+    );
+  }
+}
+
+Future<List<Country>> fetchCountries() async {
+  final response = await http.get(
+    Uri.parse('https://sofrh-1.onrender.com/countries'),
+  );
+
+  if (response.statusCode == 200) {
+    final List<dynamic> data = jsonDecode(utf8.decode(response.bodyBytes));
+    return data.map((item) => Country.fromJson(item)).toList();
+  } else {
+    throw Exception('فشل تحميل الدول');
+  }
 }
 
 class CountriesScreen extends StatefulWidget {
@@ -34,33 +67,13 @@ class _CountriesScreenState extends State<CountriesScreen> {
     'أوقيانوسيا',
   ];
 
-  final List<Country> _countries = const [
-    Country(
-      name: 'اليابان',
-      continent: 'آسيا',
-      imageUrl: 'https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/Countries1.jpg',
-    ),
-    Country(
-      name: 'مصر',
-      continent: 'أفريقيا',
-      imageUrl: 'https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/Countries1.jpg',
-    ),
-    Country(
-      name: 'فرنسا',
-      continent: 'أوروبا',
-      imageUrl: 'https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/Countries1.jpg',
-    ),
-    Country(
-      name: 'كندا',
-      continent: 'أمريكا الشمالية',
-      imageUrl: 'https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/Countries1.jpg',
-    ),
-    Country(
-      name: 'البرازيل',
-      continent: 'أمريكا الجنوبية',
-      imageUrl: 'https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/Countries1.jpg',
-    ),
-  ];
+  late Future<List<Country>> _countriesFuture;
+
+  @override
+  void initState() {
+    super.initState();
+    _countriesFuture = fetchCountries();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -68,13 +81,6 @@ class _CountriesScreenState extends State<CountriesScreen> {
     final bgColor = isDark ? AppColors.darkBackground : AppColors.lightBackground;
     final cardColor = isDark ? AppColors.darkCard : AppColors.lightCard;
     final textColor = isDark ? AppColors.darkText : AppColors.textOnBackground;
-
-    final filteredCountries = _countries.where((country) {
-      final matchesSearch = country.name.contains(_searchQuery);
-      final matchesContinent =
-          _selectedContinent == 'الكل' || country.continent == _selectedContinent;
-      return matchesSearch && matchesContinent;
-    }).toList();
 
     return Scaffold(
       backgroundColor: bgColor,
@@ -181,17 +187,51 @@ class _CountriesScreenState extends State<CountriesScreen> {
                   ),
                   const SizedBox(height: 16),
                   Expanded(
-                    child: GridView.builder(
-                      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 2,
-                        mainAxisSpacing: 16,
-                        crossAxisSpacing: 16,
-                        childAspectRatio: 0.8,
-                      ),
-                      itemCount: filteredCountries.length,
-                      itemBuilder: (context, index) {
-                        final country = filteredCountries[index];
-                        return CountryCard(country: country);
+                    child: FutureBuilder<List<Country>>(
+                      future: _countriesFuture,
+                      builder: (context, snapshot) {
+                        if (snapshot.connectionState == ConnectionState.waiting) {
+                          return const Center(child: CircularProgressIndicator());
+                        }
+                        if (snapshot.hasError) {
+                          return Center(
+                            child: Text(
+                              'حدث خطأ بتحميل الدول',
+                              style: TextStyle(color: textColor),
+                            ),
+                          );
+                        }
+
+                        final allCountries = snapshot.data ?? [];
+                        final filteredCountries = allCountries.where((country) {
+                          final matchesSearch = normalizeArabic(country.name)
+                              .contains(normalizeArabic(_searchQuery));
+                          final matchesContinent = _selectedContinent == 'الكل' ||
+                              country.continent == _selectedContinent;
+                          return matchesSearch && matchesContinent;
+                        }).toList();
+
+                        if (filteredCountries.isEmpty) {
+                          return Center(
+                            child: Text(
+                              'لا توجد نتائج',
+                              style: TextStyle(color: textColor),
+                            ),
+                          );
+                        }
+
+                        return GridView.builder(
+                          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: 2,
+                            mainAxisSpacing: 16,
+                            crossAxisSpacing: 16,
+                            childAspectRatio: 0.8,
+                          ),
+                          itemCount: filteredCountries.length,
+                          itemBuilder: (context, index) {
+                            return CountryCard(country: filteredCountries[index]);
+                          },
+                        );
                       },
                     ),
                   ),
@@ -220,6 +260,9 @@ class CountryCard extends StatelessWidget {
           Image.network(
             country.imageUrl,
             fit: BoxFit.cover,
+            errorBuilder: (context, error, stackTrace) {
+              return Container(color: AppColors.primary.withValues(alpha: 0.3));
+            },
           ),
           Container(
             decoration: BoxDecoration(
