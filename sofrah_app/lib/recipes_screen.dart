@@ -60,7 +60,12 @@ class _RecipesScreenState extends State<RecipesScreen> {
   String _searchQuery = '';
   String _selectedCategory = 'الكل';
 
-  final List<String> _categories = ['الكل', 'رئيسية', 'حلويات', 'سناكات'];
+  final Map<String, String> _categories = {
+    'الكل': 'الكل',
+    'رئيسية': 'main-foods',
+    'حلويات': 'sweets',
+    'سناكات': 'snacks',
+  };
 
   late Future<List<RecipeItem>> _recipesFuture;
 
@@ -161,14 +166,15 @@ class _RecipesScreenState extends State<RecipesScreen> {
                       itemCount: _categories.length,
                       separatorBuilder: (context, index) => const SizedBox(width: 8),
                       itemBuilder: (context, index) {
-                        final category = _categories[index];
-                        final isSelected = category == _selectedCategory;
+                        final label = _categories.keys.elementAt(index);
+                        final value = _categories.values.elementAt(index);
+                        final isSelected = value == _selectedCategory;
                         return ChoiceChip(
-                          label: Text(category),
+                          label: Text(label),
                           selected: isSelected,
                           onSelected: (_) {
                             setState(() {
-                              _selectedCategory = category;
+                              _selectedCategory = value;
                             });
                           },
                           selectedColor: AppColors.accent,
