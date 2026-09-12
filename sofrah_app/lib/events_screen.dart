@@ -66,15 +66,15 @@ class _EventsScreenState extends State<EventsScreen> {
   String _searchQuery = '';
   String _selectedCategory = 'الكل';
 
-  final List<String> _categories = [
-    'الكل',
-    'شواطئ وبحار',
-    'سفاري وجبال',
-    'فعاليات ومنتجعات',
-    'متاحف ومعالم',
-    'مهرجانات ثقافية',
-    'مطاعم ومقاهي',
-  ];
+  final Map<String, String> _categories = {
+    'الكل': 'الكل',
+    'شواطئ وبحار': 'Beaches&seas',
+    'سفاري وجبال': 'Safari&mountains',
+    'فعاليات ومنتجعات': 'evnents&resorts',
+    'متاحف ومعالم': 'Museums and landmarks',
+    'مهرجانات ثقافية': 'cultural',
+    'مطاعم ومقاهي': 'food&cafe',
+  };
 
   late Future<List<EventItem>> _eventsFuture;
 
@@ -175,14 +175,15 @@ class _EventsScreenState extends State<EventsScreen> {
                       itemCount: _categories.length,
                       separatorBuilder: (context, index) => const SizedBox(width: 8),
                       itemBuilder: (context, index) {
-                        final category = _categories[index];
-                        final isSelected = category == _selectedCategory;
+                        final label = _categories.keys.elementAt(index);
+                        final value = _categories.values.elementAt(index);
+                        final isSelected = value == _selectedCategory;
                         return ChoiceChip(
-                          label: Text(category),
+                          label: Text(label),
                           selected: isSelected,
                           onSelected: (_) {
                             setState(() {
-                              _selectedCategory = category;
+                              _selectedCategory = value;
                             });
                           },
                           selectedColor: AppColors.accent,
