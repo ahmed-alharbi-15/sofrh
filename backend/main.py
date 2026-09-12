@@ -318,6 +318,65 @@ def get_countries():
         cur.close()
         conn.close()
 
+# --- الفعاليات ---
+@app.get("/events")
+def get_events():
+    conn = get_db_connection()
+    cur = conn.cursor()
+    try:
+        cur.execute("""
+            SELECT e.id, e.title, e.category, e.description,
+                   e.date_info, e.image_url,
+                   c.name AS country
+            FROM events e
+            LEFT JOIN countries c ON e.country_id = c.id
+            ORDER BY e.title
+        """)
+        rows = cur.fetchall()
+        return [
+            {
+                "id":          row[0],
+                "title":       row[1],
+                "category":    row[2],
+                "description": row[3],
+                "date_info":   row[4],
+                "image_url":   row[5],
+                "country":     row[6],
+            }
+            for row in rows
+        ]
+    finally:
+        cur.close()
+        conn.close()
+
+# --- الوصفات ---
+@app.get("/recipes")
+def get_recipes():
+    conn = get_db_connection()
+    cur = conn.cursor()
+    try:
+        cur.execute("""
+            SELECT r.id, r.title, r.category, r.image_url,
+                   c.name AS country
+            FROM recipes r
+            LEFT JOIN countries c ON r.country_id = c.id
+            ORDER BY r.title
+        """)
+        rows = cur.fetchall()
+        return [
+            {
+                "id":       row[0],
+                "title":    row[1],
+                "category": row[2],
+                "image_url": row[3],
+                "country":  row[4],
+            }
+            for row in rows
+        ]
+    finally:
+        cur.close()
+        conn.close()
+
 # --- خدمة البريد ومعاينة القالب ---
 @app.post("/api/send-otp")
 async def send_otp(email: str, background_tasks: BackgroundTasks):
