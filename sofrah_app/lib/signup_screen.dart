@@ -79,7 +79,7 @@ class _SignupScreenState extends State<SignupScreen> {
     final cardColor = isDark ? AppColors.darkCard : AppColors.lightCard;
     final textColor = isDark ? AppColors.darkText : AppColors.textOnBackground;
 
-    return Scaffold(
+          return Scaffold(
       backgroundColor: bgColor,
       body: SafeArea(
         child: Padding(
