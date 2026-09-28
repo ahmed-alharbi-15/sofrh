@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'app_colors.dart';
 import 'signup_screen.dart';
+import 'user_session.dart';
+import 'remember_me.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -16,6 +18,24 @@ class _LoginScreenState extends State<LoginScreen> {
   final TextEditingController _passwordController = TextEditingController();
   bool _obscurePassword = true;
   bool _isLoading = false;
+  bool _rememberMe = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _loadRemembered();
+  }
+
+  Future<void> _loadRemembered() async {
+    final saved = await RememberMe.load();
+    if (saved != null && mounted) {
+      setState(() {
+        _emailController.text = saved['email']!;
+        _passwordController.text = saved['password']!;
+        _rememberMe = true;
+      });
+    }
+  }
 
   Future<void> _login() async {
     final email = _emailController.text.trim();
@@ -40,20 +60,52 @@ class _LoginScreenState extends State<LoginScreen> {
         }),
       );
 
+      if (!mounted) return;
       setState(() {
         _isLoading = false;
       });
 
       if (response.statusCode == 200) {
-        if (mounted) {
-          _showMessage('تم تسجيل الدخول بنجاح');
-          Navigator.pop(context);
+        String name = '';
+        try {
+          final data = jsonDecode(utf8.decode(response.bodyBytes));
+          if (data is Map) {
+            debugPrint('login response keys: ${data.keys}');
+            final user = data['user'];
+            name = (data['name'] ??
+                    data['username'] ??
+                    (user is Map ? (user['name'] ?? user['username']) : null) ??
+                    '')
+                .toString();
+          }
+        } catch (_) {}
+        if (name.isEmpty) {
+          name = email.split('@').first;
         }
+
+        await UserSession.saveUser(name: name, email: email);
+
+        if (_rememberMe) {
+          await RememberMe.save(email, password);
+        } else {
+          await RememberMe.clear();
+        }
+
+        if (!mounted) return;
+        _showMessage('تم تسجيل الدخول بنجاح');
+        Navigator.pop(context);
       } else {
-        final data = jsonDecode(utf8.decode(response.bodyBytes));
-        _showMessage(data['detail']?.toString() ?? 'بيانات الدخول غير صحيحة');
+        String message = 'بيانات الدخول غير صحيحة';
+        try {
+          final data = jsonDecode(utf8.decode(response.bodyBytes));
+          if (data is Map && data['detail'] != null) {
+            message = data['detail'].toString();
+          }
+        } catch (_) {}
+        _showMessage(message);
       }
     } catch (e) {
+      if (!mounted) return;
       setState(() {
         _isLoading = false;
       });
@@ -77,10 +129,9 @@ class _LoginScreenState extends State<LoginScreen> {
     return Scaffold(
       backgroundColor: bgColor,
       body: SafeArea(
-        child: Padding(
+        child: SingleChildScrollView(
           padding: const EdgeInsets.all(24),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Align(
@@ -167,7 +218,20 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                 ),
               ),
-              const SizedBox(height: 24),
+              const SizedBox(height: 8),
+              CheckboxListTile(
+                value: _rememberMe,
+                onChanged: (value) {
+                  setState(() {
+                    _rememberMe = value ?? false;
+                  });
+                },
+                title: Text('تذكرني', style: TextStyle(color: textColor)),
+                activeColor: AppColors.accent,
+                controlAffinity: ListTileControlAffinity.leading,
+                contentPadding: EdgeInsets.zero,
+              ),
+              const SizedBox(height: 8),
               ElevatedButton(
                 onPressed: _isLoading ? null : _login,
                 style: ElevatedButton.styleFrom(
