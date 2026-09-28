@@ -201,7 +201,7 @@ class _MainNavigationState extends State<MainNavigation>
                       ),
                       _menuTile(
                         icon: Icons.person_outline,
-                        label: 'البروفايل',
+                        label: 'الملف الشخصي',
                         iconColor: AppColors.accent,
                         textColor: textColor,
                         onTap: () => Navigator.pop(dialogContext, 'profile'),
