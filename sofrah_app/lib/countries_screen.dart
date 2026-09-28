@@ -1,8 +1,9 @@
 import 'dart:convert';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'app_colors.dart';
-
+import 'country_details_screen.dart';
 
 String normalizeArabic(String text) {
   return text
@@ -17,18 +18,24 @@ class Country {
   final String name;
   final String continent;
   final String imageUrl;
+  final String description;
+  final String slug;
 
   const Country({
     required this.name,
     required this.continent,
     required this.imageUrl,
+    this.description = '',
+    this.slug = '',
   });
 
   factory Country.fromJson(Map<String, dynamic> json) {
     return Country(
-      name: json['name'] ?? '',
-      continent: json['continent'] ?? '',
+      name: (json['name'] ?? '').toString(),
+      continent: (json['continent'] ?? '').toString(),
       imageUrl: 'https://sofrh.vercel.app${json['image_url'] ?? ''}',
+      description: (json['description'] ?? '').toString(),
+      slug: (json['slug'] ?? '').toString(),
     );
   }
 }
@@ -229,7 +236,19 @@ class _CountriesScreenState extends State<CountriesScreen> {
                           ),
                           itemCount: filteredCountries.length,
                           itemBuilder: (context, index) {
-                            return CountryCard(country: filteredCountries[index]);
+                            final country = filteredCountries[index];
+                            return CountryCard(
+                              country: country,
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) =>
+                                        CountryDetailsScreen(country: country),
+                                  ),
+                                );
+                              },
+                            );
                           },
                         );
                       },
@@ -247,58 +266,68 @@ class _CountriesScreenState extends State<CountriesScreen> {
 
 class CountryCard extends StatelessWidget {
   final Country country;
+  final VoidCallback? onTap;
 
-  const CountryCard({super.key, required this.country});
+  const CountryCard({super.key, required this.country, this.onTap});
 
   @override
   Widget build(BuildContext context) {
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(16),
-      child: Stack(
-        fit: StackFit.expand,
-        children: [
-          Image.network(
-            country.imageUrl,
-            fit: BoxFit.cover,
-            errorBuilder: (context, error, stackTrace) {
-              return Container(color: AppColors.primary.withValues(alpha: 0.3));
-            },
-          ),
-          Container(
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                colors: [
-                  Colors.transparent,
-                  Colors.black.withValues(alpha: 0.6),
-                ],
+    return GestureDetector(
+      onTap: onTap,
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(16),
+        child: Stack(
+          fit: StackFit.expand,
+          children: [
+            CachedNetworkImage(
+              imageUrl: country.imageUrl,
+              fit: BoxFit.cover,
+              placeholder: (context, url) => Container(
+                color: AppColors.primary.withValues(alpha: 0.15),
+                child: const Center(
+                  child: CircularProgressIndicator(strokeWidth: 2),
+                ),
+              ),
+              errorWidget: (context, url, error) {
+                return Container(color: AppColors.primary.withValues(alpha: 0.3));
+              },
+            ),
+            Container(
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: [
+                    Colors.transparent,
+                    Colors.black.withValues(alpha: 0.6),
+                  ],
+                ),
               ),
             ),
-          ),
-          Positioned(
-            top: 8,
-            left: 8,
-            child: IconButton(
-              onPressed: () {},
-              icon: const Icon(Icons.push_pin_outlined, color: Colors.white),
-            ),
-          ),
-          Positioned(
-            bottom: 12,
-            right: 12,
-            left: 12,
-            child: Text(
-              country.name,
-              textAlign: TextAlign.right,
-              style: const TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-                fontSize: 16,
+            Positioned(
+              top: 8,
+              left: 8,
+              child: IconButton(
+                onPressed: () {},
+                icon: const Icon(Icons.push_pin_outlined, color: Colors.white),
               ),
             ),
-          ),
-        ],
+            Positioned(
+              bottom: 12,
+              right: 12,
+              left: 12,
+              child: Text(
+                country.name,
+                textAlign: TextAlign.right,
+                style: const TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 16,
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
