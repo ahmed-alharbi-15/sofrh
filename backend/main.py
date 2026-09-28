@@ -318,6 +318,45 @@ def get_countries():
         cur.close()
         conn.close()
 
+# --- مدن الدولة ---
+@app.get("/countries/{slug}/cities")
+def get_cities_by_country(slug: str):
+    conn = get_db_connection()
+    cur = conn.cursor()
+    try:
+        # جلب الدولة بالـ slug
+        cur.execute("SELECT id FROM countries WHERE slug = %s", (slug,))
+        country_row = cur.fetchone()
+        if not country_row:
+            raise HTTPException(status_code=404, detail=f"الدولة '{slug}' غير موجودة")
+        country_id = country_row[0]
+
+        cur.execute("""
+            SELECT id, slug, name, image_url, description,
+                   historic, restaurants, cafes, events_list
+            FROM cities
+            WHERE country_id = %s
+            ORDER BY name
+        """, (country_id,))
+        rows = cur.fetchall()
+        return [
+            {
+                "id":          row[0],
+                "slug":        row[1],
+                "name":        row[2],
+                "image_url":   row[3],
+                "description": row[4],
+                "historic":    row[5] or "",
+                "restaurants": row[6] or "",
+                "cafes":       row[7] or "",
+                "events_list": row[8] or "",
+            }
+            for row in rows
+        ]
+    finally:
+        cur.close()
+        conn.close()
+
 # --- الفعاليات ---
 @app.get("/events")
 def get_events():

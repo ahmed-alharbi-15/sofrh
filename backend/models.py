@@ -40,7 +40,17 @@ class City(Base):
     __tablename__ = "cities"
 
     id = Column(Integer, primary_key=True, index=True)
-    name = Column(String(150), nullable=False) # مثل: الرياض، طوكيو، مراكش
+    name = Column(String(150), nullable=False)         # مثل: الرياض، طوكيو، مراكش
+    slug = Column(String(150), unique=True, nullable=True, index=True)
+    # slug مطابق لما يُمرَّر لـ saveItem('city', slug, ...) في HTML
+    # صيغته: {slug_الدولة}_{اسم_المدينة} مثل japan_tokyo أو saudi_anha
+
+    image_url   = Column(String(500), nullable=True)
+    description = Column(Text, nullable=True)
+    historic    = Column(Text, nullable=True)  # pipe-separated معالم تاريخية
+    restaurants = Column(Text, nullable=True)  # pipe-separated مطاعم
+    cafes       = Column(Text, nullable=True)  # pipe-separated مقاهي
+    events_list = Column(Text, nullable=True)  # pipe-separated أنشطة وفعاليات
 
     # المفتاح الأجنبي لربط المدينة بالدولة
     country_id = Column(Integer, ForeignKey("countries.id"), nullable=False)
