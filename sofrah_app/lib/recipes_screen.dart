@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:cached_network_image/cached_network_image.dart';
 import 'app_colors.dart';
+import 'image_url.dart';
 
 String normalizeArabicText(String text) {
   return text
@@ -11,13 +12,6 @@ String normalizeArabicText(String text) {
       .replaceAll(RegExp(r'[يىئ]'), 'ي')
       .replaceAll(RegExp(r'[ؤو]'), 'و')
       .replaceAll(RegExp(r'[\u064B-\u065F]'), '');
-}
-
-String _resolveImageUrl(dynamic raw) {
-  final path = (raw ?? '').toString();
-  if (path.isEmpty) return '';
-  if (path.startsWith('http')) return path;
-  return 'https://sofrh.vercel.app\$path';
 }
 
 class RecipeItem {
@@ -37,7 +31,7 @@ class RecipeItem {
     return RecipeItem(
       title: json['title'] ?? '',
       category: json['category'] ?? '',
-      imageUrl: _resolveImageUrl(json['image_url']),
+      imageUrl: resolveImageUrl((json['image_url'] ?? '').toString()),
       country: json['country'] ?? '',
     );
   }

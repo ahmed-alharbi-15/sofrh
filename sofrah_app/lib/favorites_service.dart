@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+import 'image_url.dart';
 
 class FavoriteItem {
   final String id;
@@ -20,13 +21,8 @@ class FavoriteItem {
     );
   }
 
-  /// الصور النسبية (مثل /img/...) تجي من الموقع، والروابط الكاملة تبقى زي ما هي.
-  String get imageUrl {
-    if (img.isEmpty) return '';
-    if (img.startsWith('http')) return img.replaceAll(' ', '%20');
-    final path = img.startsWith('/') ? img : '/$img';
-    return 'https://sofrh.vercel.app$path'.replaceAll(' ', '%20');
-  }
+  /// يحوّل مسار الصورة النسبي أو الكامل إلى رابط صالح لـ CachedNetworkImage.
+  String get imageUrl => resolveImageUrl(img);
 }
 
 class FavoritesService {

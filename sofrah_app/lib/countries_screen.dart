@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'app_colors.dart';
 import 'country_details_screen.dart';
+import 'image_url.dart';
 
 String normalizeArabic(String text) {
   return text
@@ -12,13 +13,6 @@ String normalizeArabic(String text) {
       .replaceAll(RegExp(r'[يىئ]'), 'ي')
       .replaceAll(RegExp(r'[ؤو]'), 'و')
       .replaceAll(RegExp(r'[\u064B-\u065F]'), '');
-}
-
-String _resolveImageUrl(dynamic raw) {
-  final path = (raw ?? '').toString();
-  if (path.isEmpty) return '';
-  if (path.startsWith('http')) return path;
-  return 'https://sofrh.vercel.app\$path';
 }
 
 class Country {
@@ -40,7 +34,7 @@ class Country {
     return Country(
       name: (json['name'] ?? '').toString(),
       continent: (json['continent'] ?? '').toString(),
-      imageUrl: _resolveImageUrl(json['image_url']),
+      imageUrl: resolveImageUrl((json['image_url'] ?? '').toString()),
       description: (json['description'] ?? '').toString(),
       slug: (json['slug'] ?? '').toString(),
     );
