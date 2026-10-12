@@ -6,11 +6,18 @@ import 'app_colors.dart';
 
 String normalizeArabicText(String text) {
   return text
-      .replaceAll('أ', 'ا')
-      .replaceAll('إ', 'ا')
-      .replaceAll('آ', 'ا')
-      .replaceAll('ى', 'ا')
-      .replaceAll('ة', 'ه');
+      .replaceAll(RegExp(r'[أإآا]'), 'ا')
+      .replaceAll(RegExp(r'[ةه]'), 'ه')
+      .replaceAll(RegExp(r'[يىئ]'), 'ي')
+      .replaceAll(RegExp(r'[ؤو]'), 'و')
+      .replaceAll(RegExp(r'[\u064B-\u065F]'), '');
+}
+
+String _resolveImageUrl(dynamic raw) {
+  final path = (raw ?? '').toString();
+  if (path.isEmpty) return '';
+  if (path.startsWith('http')) return path;
+  return 'https://sofrh.vercel.app\$path';
 }
 
 class RecipeItem {
@@ -30,7 +37,7 @@ class RecipeItem {
     return RecipeItem(
       title: json['title'] ?? '',
       category: json['category'] ?? '',
-      imageUrl: 'https://sofrh.vercel.app${json['image_url'] ?? ''}',
+      imageUrl: _resolveImageUrl(json['image_url']),
       country: json['country'] ?? '',
     );
   }
