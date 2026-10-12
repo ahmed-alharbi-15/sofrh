@@ -4,10 +4,20 @@ const cards = document.querySelectorAll(".event-card");
 
 let activeFilter = "all";
 
+function normalizeArabic(str) {
+    return str
+        .replace(/[أإآا]/g, 'ا')
+        .replace(/[ةه]/g, 'ه')
+        .replace(/[يىئ]/g, 'ي')
+        .replace(/[ؤو]/g, 'و')
+        .replace(/[\u064B-\u065F]/g, '')
+        .toLowerCase();
+}
+
 function applySearchAndFilter() {
-    const query = (searchInput?.value || "").toLowerCase().trim();
+    const query = normalizeArabic((searchInput?.value || "").trim());
     cards.forEach((card) => {
-        const name = (card.querySelector(".event-name")?.textContent || "").toLowerCase();
+        const name = normalizeArabic(card.querySelector(".event-name")?.textContent || "");
         const region = card.getAttribute("data-region") || "";
         const matchesSearch = name.includes(query);
         const matchesFilter = activeFilter === "all" || region === activeFilter;
