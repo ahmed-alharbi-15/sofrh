@@ -5,6 +5,8 @@ import 'package:http/http.dart' as http;
 import 'app_colors.dart';
 import 'country_details_screen.dart';
 import 'image_url.dart';
+import 'favorites_store.dart';
+import 'user_session.dart';
 
 String normalizeArabic(String text) {
   return text
@@ -271,65 +273,99 @@ class CountryCard extends StatelessWidget {
 
   const CountryCard({super.key, required this.country, this.onTap});
 
+  Future<void> _toggleFavorite(BuildContext context) async {
+    if (country.slug.isEmpty) return; // slug غير متاح في DB بعد
+    final loggedIn = await UserSession.isLoggedIn();
+    if (!context.mounted) return;
+    if (!loggedIn) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('سجّل دخولك أول عشان تحفظ')),
+      );
+      return;
+    }
+    final email = await UserSession.getUserEmail() ?? '';
+    final err = await FavoritesStore.instance.toggle(
+      type: 'country',
+      id: country.slug,
+      name: country.name,
+      img: country.imageUrl,
+      email: email,
+    );
+    if (err != null && context.mounted) {
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(err)));
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTap,
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(16),
-        child: Stack(
-          fit: StackFit.expand,
-          children: [
-            CachedNetworkImage(
-              imageUrl: country.imageUrl,
-              fit: BoxFit.cover,
-              placeholder: (context, url) => Container(
-                color: AppColors.primary.withValues(alpha: 0.15),
-                child: const Center(
-                  child: CircularProgressIndicator(strokeWidth: 2),
+    return AnimatedBuilder(
+      animation: FavoritesStore.instance,
+      builder: (ctx, _) {
+        final isFav =
+            FavoritesStore.instance.isFavorite('country', country.slug);
+        return GestureDetector(
+          onTap: onTap,
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(16),
+            child: Stack(
+              fit: StackFit.expand,
+              children: [
+                CachedNetworkImage(
+                  imageUrl: country.imageUrl,
+                  fit: BoxFit.cover,
+                  placeholder: (context, url) => Container(
+                    color: AppColors.primary.withValues(alpha: 0.15),
+                    child: const Center(
+                      child: CircularProgressIndicator(strokeWidth: 2),
+                    ),
+                  ),
+                  errorWidget: (context, url, error) {
+                    return Container(
+                        color: AppColors.primary.withValues(alpha: 0.3));
+                  },
                 ),
-              ),
-              errorWidget: (context, url, error) {
-                return Container(color: AppColors.primary.withValues(alpha: 0.3));
-              },
-            ),
-            Container(
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
-                  colors: [
-                    Colors.transparent,
-                    Colors.black.withValues(alpha: 0.6),
-                  ],
+                Container(
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                      colors: [
+                        Colors.transparent,
+                        Colors.black.withValues(alpha: 0.6),
+                      ],
+                    ),
+                  ),
                 ),
-              ),
-            ),
-            Positioned(
-              top: 8,
-              left: 8,
-              child: IconButton(
-                onPressed: () {},
-                icon: const Icon(Icons.push_pin_outlined, color: Colors.white),
-              ),
-            ),
-            Positioned(
-              bottom: 12,
-              right: 12,
-              left: 12,
-              child: Text(
-                country.name,
-                textAlign: TextAlign.right,
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 16,
+                Positioned(
+                  top: 4,
+                  left: 4,
+                  child: IconButton(
+                    onPressed: () => _toggleFavorite(ctx),
+                    icon: Icon(
+                      isFav ? Icons.favorite : Icons.favorite_border,
+                      color: isFav ? AppColors.accent : Colors.white,
+                    ),
+                  ),
                 ),
-              ),
+                Positioned(
+                  bottom: 12,
+                  right: 12,
+                  left: 12,
+                  child: Text(
+                    country.name,
+                    textAlign: TextAlign.right,
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16,
+                    ),
+                  ),
+                ),
+              ],
             ),
-          ],
-        ),
-      ),
+          ),
+        );
+      },
     );
   }
 }

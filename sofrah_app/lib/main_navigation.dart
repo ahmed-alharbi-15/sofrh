@@ -10,6 +10,7 @@ import 'user_session.dart';
 import 'avatar_service.dart';
 import 'account_avatar.dart';
 import 'profile_screen.dart';
+import 'favorites_store.dart';
 
 class _Account {
   final String name;
@@ -75,6 +76,7 @@ class _MainNavigationState extends State<MainNavigation>
     setState(() => _account = _Account(name, email, cachedAvatar));
 
     if (email.isEmpty) return;
+    FavoritesStore.instance.load(email); // ignore: discarded_futures
     final remoteAvatar = await AvatarService.fetchAvatar(email);
     if (remoteAvatar == null || !mounted) return;
     if (_account?.email != email) return;
@@ -250,6 +252,7 @@ class _MainNavigationState extends State<MainNavigation>
     } else if (value == 'logout') {
       final messenger = ScaffoldMessenger.of(context);
       await UserSession.clearUser();
+      FavoritesStore.instance.clear();
       if (!mounted) return;
       setState(() => _account = null);
       messenger.showSnackBar(

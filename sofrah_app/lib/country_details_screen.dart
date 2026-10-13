@@ -4,6 +4,8 @@ import 'app_colors.dart';
 import 'countries_screen.dart' show Country;
 import 'events_screen.dart' show EventItem, EventCard, fetchEvents;
 import 'recipes_screen.dart' show RecipeItem, RecipeCard, fetchRecipes;
+import 'favorites_store.dart';
+import 'user_session.dart';
 
 class CountryDetailsScreen extends StatefulWidget {
   final Country country;
@@ -89,6 +91,30 @@ class _CountryDetailsScreenState extends State<CountryDetailsScreen> {
     );
   }
 
+  Future<void> _toggleFavorite(BuildContext context) async {
+    final country = widget.country;
+    if (country.slug.isEmpty) return;
+    final loggedIn = await UserSession.isLoggedIn();
+    if (!context.mounted) return;
+    if (!loggedIn) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('سجّل دخولك أول عشان تحفظ')),
+      );
+      return;
+    }
+    final email = await UserSession.getUserEmail() ?? '';
+    final err = await FavoritesStore.instance.toggle(
+      type: 'country',
+      id: country.slug,
+      name: country.name,
+      img: country.imageUrl,
+      email: email,
+    );
+    if (err != null && context.mounted) {
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(err)));
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
@@ -109,6 +135,22 @@ class _CountryDetailsScreenState extends State<CountryDetailsScreen> {
               backgroundColor: AppColors.primary,
               foregroundColor: Colors.white,
               automaticallyImplyLeading: false,
+              actions: [
+                AnimatedBuilder(
+                  animation: FavoritesStore.instance,
+                  builder: (ctx, _) {
+                    final isFav = FavoritesStore.instance.isFavorite(
+                        'country', widget.country.slug);
+                    return IconButton(
+                      icon: Icon(
+                        isFav ? Icons.favorite : Icons.favorite_border,
+                        color: isFav ? AppColors.accent : Colors.white,
+                      ),
+                      onPressed: () => _toggleFavorite(ctx),
+                    );
+                  },
+                ),
+              ],
               leading: Padding(
                 padding: const EdgeInsets.all(8),
                 child: CircleAvatar(

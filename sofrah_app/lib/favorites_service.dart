@@ -56,6 +56,33 @@ class FavoritesService {
     }
   }
 
+  static Future<bool> add({
+    required String email,
+    required String type,
+    required String id,
+    required String name,
+    required String img,
+  }) async {
+    try {
+      final response = await http
+          .post(
+            Uri.parse('$_base/favorites/add'),
+            headers: {'Content-Type': 'application/json'},
+            body: jsonEncode({
+              'email': email,
+              'type': type,
+              'id': id,
+              'name': name,
+              'img': img,
+            }),
+          )
+          .timeout(const Duration(seconds: 30));
+      return response.statusCode >= 200 && response.statusCode < 300;
+    } catch (_) {
+      return false;
+    }
+  }
+
   static Future<bool> remove({
     required String email,
     required String type,

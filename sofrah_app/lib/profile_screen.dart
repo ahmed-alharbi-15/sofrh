@@ -5,6 +5,7 @@ import 'user_session.dart';
 import 'avatar_service.dart';
 import 'account_avatar.dart';
 import 'favorites_service.dart';
+import 'favorites_store.dart';
 import 'settings_screen.dart';
 
 class _FavTab {
@@ -128,6 +129,7 @@ class _ProfileScreenState extends State<ProfileScreen>
       _loadingFavorites = false;
       _favoritesFailed = false;
     });
+    FavoritesStore.instance.syncFromItems(result);
   }
 
   Future<void> _removeFavorite(String type, FavoriteItem item) async {
@@ -153,6 +155,7 @@ class _ProfileScreenState extends State<ProfileScreen>
 
   Future<void> _logout() async {
     await UserSession.clearUser();
+    FavoritesStore.instance.clear();
     if (mounted) {
       Navigator.pop(context);
     }
