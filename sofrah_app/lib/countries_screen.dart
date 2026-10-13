@@ -274,12 +274,19 @@ class CountryCard extends StatelessWidget {
   const CountryCard({super.key, required this.country, this.onTap});
 
   Future<void> _toggleFavorite(BuildContext context) async {
-    if (country.slug.isEmpty) return; // slug غير متاح في DB بعد
+    // ① تحقق من تسجيل الدخول أولاً
     final loggedIn = await UserSession.isLoggedIn();
     if (!context.mounted) return;
     if (!loggedIn) {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('سجّل دخولك أول عشان تحفظ')),
+      );
+      return;
+    }
+    // ② تحقق من وجود slug (يتعبّأ في قاعدة البيانات)
+    if (country.slug.isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('تعذر حفظ هذي الدولة')),
       );
       return;
     }

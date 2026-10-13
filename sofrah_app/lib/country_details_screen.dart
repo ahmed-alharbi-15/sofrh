@@ -93,12 +93,19 @@ class _CountryDetailsScreenState extends State<CountryDetailsScreen> {
 
   Future<void> _toggleFavorite(BuildContext context) async {
     final country = widget.country;
-    if (country.slug.isEmpty) return;
+    // ① تحقق من تسجيل الدخول أولاً
     final loggedIn = await UserSession.isLoggedIn();
     if (!context.mounted) return;
     if (!loggedIn) {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('سجّل دخولك أول عشان تحفظ')),
+      );
+      return;
+    }
+    // ② تحقق من وجود slug
+    if (country.slug.isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('تعذر حفظ هذي الدولة')),
       );
       return;
     }
