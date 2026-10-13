@@ -33,13 +33,27 @@ class Country {
   });
 
   factory Country.fromJson(Map<String, dynamic> json) {
+    final rawSlug = (json['slug'] ?? '').toString().trim();
+    final imageUrl = (json['image_url'] ?? '').toString();
     return Country(
       name: (json['name'] ?? '').toString(),
       continent: (json['continent'] ?? '').toString(),
-      imageUrl: resolveImageUrl((json['image_url'] ?? '').toString()),
+      imageUrl: resolveImageUrl(imageUrl),
       description: (json['description'] ?? '').toString(),
-      slug: (json['slug'] ?? '').toString(),
+      slug: rawSlug.isNotEmpty ? rawSlug : _slugFromImageUrl(imageUrl),
     );
+  }
+
+  static String _slugFromImageUrl(String imageUrl) {
+    if (imageUrl.isEmpty) return '';
+    final filename = imageUrl.split('/').last;
+    final noExt = filename.contains('.')
+        ? filename.substring(0, filename.lastIndexOf('.'))
+        : filename;
+    return noExt
+        .replaceAll(RegExp(r'[-_]?(flag|logo)$', caseSensitive: false), '')
+        .replaceAll(' ', '-')
+        .toLowerCase();
   }
 }
 
