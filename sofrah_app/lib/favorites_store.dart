@@ -58,7 +58,9 @@ class FavoritesStore extends ChangeNotifier {
     required String img,
     required String email,
   }) async {
-    if (id.isEmpty) return null; // slug غير متاح بعد — لا شيء
+    // [DEBUG TEMP] — مؤقت لتشخيص المشاكل، احذفه بعد التحقق
+    debugPrint('[FavStore] toggle ▶ type=$type  id="$id"');
+    if (id.isEmpty) return 'تعذر حفظ هذا العنصر'; // slug غير متاح بعد
     if (email.isEmpty) return 'سجّل دخولك أول عشان تحفظ';
 
     final set = _favIds.putIfAbsent(type, () => {});
@@ -81,6 +83,8 @@ class FavoritesStore extends ChangeNotifier {
           email: email, type: type, id: id, name: name, img: img);
     }
 
+    // [DEBUG TEMP] — مؤقت
+    debugPrint('[FavStore] toggle ◀ ok=$ok  wasFavorite=$wasFavorite');
     if (!ok) {
       // تراجع لو فشل الطلب
       if (wasFavorite) {

@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 import 'image_url.dart';
 
@@ -77,8 +78,11 @@ class FavoritesService {
             }),
           )
           .timeout(const Duration(seconds: 30));
+      // [DEBUG TEMP] — مؤقت لتشخيص المشاكل
+      debugPrint('[FavService] ADD ▶ status=\${response.statusCode} body=\${response.body}');
       return response.statusCode >= 200 && response.statusCode < 300;
-    } catch (_) {
+    } catch (e) {
+      debugPrint('[FavService] ADD ✗ error=\$e');
       return false;
     }
   }
@@ -96,8 +100,11 @@ class FavoritesService {
             body: jsonEncode({'email': email, 'type': type, 'id': id}),
           )
           .timeout(const Duration(seconds: 30));
+      // [DEBUG TEMP] — مؤقت لتشخيص المشاكل
+      debugPrint('[FavService] REMOVE ▶ status=\${response.statusCode} body=\${response.body}');
       return response.statusCode >= 200 && response.statusCode < 300;
-    } catch (_) {
+    } catch (e) {
+      debugPrint('[FavService] REMOVE ✗ error=\$e');
       return false;
     }
   }
