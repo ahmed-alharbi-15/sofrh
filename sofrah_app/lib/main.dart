@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'app_colors.dart';
 import 'main_navigation.dart';
+import 'splash_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -59,7 +60,9 @@ class _MyAppState extends State<MyApp> {
       themeMode: _themeMode,
       home: Directionality(
         textDirection: TextDirection.rtl,
-        child: MainNavigation(onToggleTheme: _toggleTheme),
+        child: SplashScreen(
+          next: MainNavigation(onToggleTheme: _toggleTheme),
+        ),
       ),
     );
   }
