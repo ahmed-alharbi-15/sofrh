@@ -6,6 +6,7 @@ import 'events_screen.dart' show EventItem, EventCard, fetchEvents;
 import 'recipes_screen.dart' show RecipeItem, RecipeCard, fetchRecipes;
 import 'favorites_store.dart';
 import 'user_session.dart';
+import 'city_details_screen.dart';
 
 class CountryDetailsScreen extends StatefulWidget {
   final Country country;
@@ -19,6 +20,9 @@ class CountryDetailsScreen extends StatefulWidget {
 class _CountryDetailsScreenState extends State<CountryDetailsScreen> {
   late final Future<List<EventItem>> _eventsFuture;
   late final Future<List<RecipeItem>> _recipesFuture;
+  late final ScrollController _scrollController;
+
+  static const double _expandedHeight = 340;
 
   @override
   void initState() {
@@ -28,6 +32,16 @@ class _CountryDetailsScreenState extends State<CountryDetailsScreen> {
         .then((all) => all.where((e) => e.country.trim() == name).toList());
     _recipesFuture = fetchRecipes()
         .then((all) => all.where((r) => r.country.trim() == name).toList());
+    _scrollController = ScrollController();
+    _scrollController.addListener(() {
+      if (mounted) setState(() {});
+    });
+  }
+
+  @override
+  void dispose() {
+    _scrollController.dispose();
+    super.dispose();
   }
 
   Widget _horizontalSection<T>({
@@ -126,22 +140,44 @@ class _CountryDetailsScreenState extends State<CountryDetailsScreen> {
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final bgColor = isDark ? AppColors.darkBackground : AppColors.lightBackground;
-    final cardColor = isDark ? AppColors.darkCard : AppColors.lightCard;
     final textColor = isDark ? AppColors.darkText : AppColors.textOnBackground;
     final country = widget.country;
+    final statusBarHeight = MediaQuery.of(context).padding.top;
+    final heroTextTop = statusBarHeight + kToolbarHeight + 8;
+
+    // حساب ظهور اسم الدولة في الشريط الثابت
+    final scrollOffset =
+        _scrollController.hasClients ? _scrollController.offset : 0.0;
+    final titleOpacity =
+        scrollOffset > (_expandedHeight - kToolbarHeight - 20) ? 1.0 : 0.0;
 
     return Directionality(
       textDirection: TextDirection.rtl,
       child: Scaffold(
         backgroundColor: bgColor,
         body: CustomScrollView(
+          controller: _scrollController,
           slivers: [
             SliverAppBar(
               pinned: true,
-              expandedHeight: 280,
+              expandedHeight: _expandedHeight,
               backgroundColor: AppColors.primary,
               foregroundColor: Colors.white,
               automaticallyImplyLeading: false,
+              centerTitle: true,
+              // الاسم في الشريط الثابت — مخفي في البداية، يظهر عند الطي
+              title: AnimatedOpacity(
+                opacity: titleOpacity,
+                duration: const Duration(milliseconds: 200),
+                child: Text(
+                  country.name,
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                  ),
+                ),
+              ),
               actions: [
                 AnimatedBuilder(
                   animation: FavoritesStore.instance,
@@ -170,22 +206,10 @@ class _CountryDetailsScreenState extends State<CountryDetailsScreen> {
                 ),
               ),
               flexibleSpace: FlexibleSpaceBar(
-                titlePadding: const EdgeInsetsDirectional.only(
-                  start: 64,
-                  end: 16,
-                  bottom: 16,
-                ),
-                title: Text(
-                  country.name,
-                  style: const TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 20,
-                  ),
-                ),
                 background: Stack(
                   fit: StackFit.expand,
                   children: [
+                    // صورة الدولة
                     CachedNetworkImage(
                       imageUrl: country.imageUrl,
                       fit: BoxFit.cover,
@@ -196,15 +220,62 @@ class _CountryDetailsScreenState extends State<CountryDetailsScreen> {
                         color: AppColors.primary.withValues(alpha: 0.5),
                       ),
                     ),
+                    // تدرج: غامق من فوق يخف تدريجياً للأسفل لوضوح النص
                     Container(
                       decoration: BoxDecoration(
                         gradient: LinearGradient(
                           begin: Alignment.topCenter,
                           end: Alignment.bottomCenter,
+                          stops: const [0.0, 0.55, 1.0],
                           colors: [
-                            Colors.black.withValues(alpha: 0.25),
+                            Colors.black.withValues(alpha: 0.65),
+                            Colors.black.withValues(alpha: 0.15),
                             Colors.transparent,
-                            Colors.black.withValues(alpha: 0.7),
+                          ],
+                        ),
+                      ),
+                    ),
+                    // الاسم والوصف تحت أزرار الرجوع والمفضلة مباشرة
+                    Positioned(
+                      top: heroTextTop,
+                      left: 0,
+                      right: 0,
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 28),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Text(
+                              country.name,
+                              textAlign: TextAlign.center,
+                              maxLines: 2,
+                              overflow: TextOverflow.ellipsis,
+                              style: const TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 28,
+                                shadows: [
+                                  Shadow(
+                                    blurRadius: 6,
+                                    color: Colors.black54,
+                                  ),
+                                ],
+                              ),
+                            ),
+                            if (country.description.isNotEmpty) ...[
+                              const SizedBox(height: 8),
+                              Text(
+                                country.description,
+                                textAlign: TextAlign.center,
+                                maxLines: 3,
+                                overflow: TextOverflow.ellipsis,
+                                style: TextStyle(
+                                  color: Colors.white.withValues(alpha: 0.9),
+                                  fontSize: 14,
+                                  height: 1.5,
+                                ),
+                              ),
+                            ],
                           ],
                         ),
                       ),
@@ -217,69 +288,40 @@ class _CountryDetailsScreenState extends State<CountryDetailsScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(16, 20, 16, 0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        if (country.continent.isNotEmpty)
-                          Container(
-                            padding: const EdgeInsets.symmetric(
-                              horizontal: 14,
-                              vertical: 6,
+                  // شريحة القارة
+                  if (country.continent.isNotEmpty)
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(16, 20, 16, 0),
+                      child: Container(
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 14,
+                          vertical: 6,
+                        ),
+                        decoration: BoxDecoration(
+                          color: AppColors.accent.withValues(alpha: 0.15),
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            const Icon(
+                              Icons.public,
+                              size: 16,
+                              color: AppColors.accent,
                             ),
-                            decoration: BoxDecoration(
-                              color: AppColors.accent.withValues(alpha: 0.15),
-                              borderRadius: BorderRadius.circular(20),
-                            ),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                const Icon(
-                                  Icons.public,
-                                  size: 16,
-                                  color: AppColors.accent,
-                                ),
-                                const SizedBox(width: 6),
-                                Text(
-                                  country.continent,
-                                  style: const TextStyle(
-                                    color: AppColors.accent,
-                                    fontWeight: FontWeight.w600,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        if (country.description.isNotEmpty) ...[
-                          const SizedBox(height: 16),
-                          Container(
-                            width: double.infinity,
-                            padding: const EdgeInsets.all(16),
-                            decoration: BoxDecoration(
-                              color: cardColor,
-                              borderRadius: BorderRadius.circular(16),
-                              boxShadow: [
-                                BoxShadow(
-                                  color: Colors.black.withValues(alpha: 0.05),
-                                  blurRadius: 8,
-                                  offset: const Offset(0, 3),
-                                ),
-                              ],
-                            ),
-                            child: Text(
-                              country.description,
-                              style: TextStyle(
-                                color: textColor,
-                                fontSize: 15,
-                                height: 1.7,
+                            const SizedBox(width: 6),
+                            Text(
+                              country.continent,
+                              style: const TextStyle(
+                                color: AppColors.accent,
+                                fontWeight: FontWeight.w600,
                               ),
                             ),
-                          ),
-                        ],
-                      ],
+                          ],
+                        ),
+                      ),
                     ),
-                  ),
+                  CitiesSection(countrySlug: country.slug),
                   _horizontalSection<EventItem>(
                     title: 'فعاليات في ${country.name}',
                     future: _eventsFuture,
