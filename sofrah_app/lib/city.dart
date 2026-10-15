@@ -89,7 +89,8 @@ Future<List<City>> fetchCities(String countrySlug) async {
   if (data is! List) throw Exception('رد غير متوقع');
 
   return data
-      .whereType<Map>()
-      .map((e) => City.fromJson(Map<String, dynamic>.from(e)))
-      .toList();
+    .whereType<Map>()
+    .map((e) => City.fromJson(Map<String, dynamic>.from(e)))
+    .where((c) => c.slug.isNotEmpty && c.imageUrl.isNotEmpty)
+    .toList();
 }
