@@ -230,7 +230,23 @@
                 onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
         </div>
 
-    </section>
+    
+    <div class="cite" data-name="غوياف – Gouyave"
+      data-img="/img/grenada-gouyave.jpg"
+      data-desc="مدينة الصيادين الساحلية تقع على الساحل الغربي لغرينادا، وتُعرف بمصانع جوز الطيب ومهرجان السمك الأسبوعي الشهير."
+      data-historic="🏭 مصنع جوز الطيب | 🎣 سوق السمك الليلي | ⛪ كنيسة سانت فرانسيس | 🌊 الشاطئ الغربي"
+      data-restaurants="🥘 مطعم Dolphin | 🍖 مطعم Telfor Bedeau | 🌮 مطعم Nutmeg"
+      data-cafes="☕ مقهى Carenage | ☕ مقهى Blanche | ☕ مقهى Westside"
+      data-events="🎣 مهرجان سمك الجمعة | 🏭 جولة مصنع جوز الطيب | 🌊 غروب الغرب"
+      onclick="openCityModal(this)">
+      <button class="save-btn"
+        onclick="event.stopPropagation(); saveItem('city', 'grenada_gouyave', 'غوياف', '/img/grenada-gouyave.jpg')">🏙️</button>
+      <img src="/img/grenada-gouyave.jpg" alt="غوياف" class="cite-img" />
+      <span class="name">غوياف – Gouyave</span>
+      <p class="info">عاصمة جوز الطيب ومركز صيد السمك في غرينادا.</p>
+      <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+  </section>
 
     <div class="main-foods">
         <h1>الماكولات</h1>

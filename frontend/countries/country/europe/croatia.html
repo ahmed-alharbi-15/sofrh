@@ -234,7 +234,23 @@
                 onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
         </div>
 
-    </section>
+    
+    <div class="cite" data-name="ريكا – Rijeka"
+      data-img="/img/croatia-rijeka.jpg"
+      data-desc="ثالث أكبر مدن كرواتيا وميناؤها الرئيسي على خليج كرنير، تشتهر بكرنفالها الشهير وتراثها المتعدد الثقافات."
+      data-historic="🚢 ميناء ريكا | 🏰 برج ترساط | 🎭 دار الأوبرا | 🛖 ساحة ريغاك"
+      data-restaurants="🥘 مطعم Konoba Feral | 🍖 مطعم Morska Vrata | 🌮 مطعم Trsatska Gradina"
+      data-cafes="☕ مقهى Caffe Bar Rio | ☕ مقهى Manon | ☕ مقهى Filodrammatica"
+      data-events="🎭 كرنفال ريكا | 🚢 جولة الميناء | 🏰 قلعة ترساط"
+      onclick="openCityModal(this)">
+      <button class="save-btn"
+        onclick="event.stopPropagation(); saveItem('city', 'croatia_rijeka', 'ريكا', '/img/croatia-rijeka.jpg')">🏙️</button>
+      <img src="/img/croatia-rijeka.jpg" alt="ريكا" class="cite-img" />
+      <span class="name">ريكا – Rijeka</span>
+      <p class="info">ميناء كرواتيا الرئيسي وعاصمة ثقافية ساحلية نابضة.</p>
+      <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+  </section>
 
     <div class="main-foods">
         <h1>الماكولات</h1>

@@ -234,7 +234,23 @@
       <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
     </div>
 
-  </section>
+  
+        <div class="cite" data-name="ماهديا – Mahdia"
+          data-img="/img/guyana-mahdia.jpg"
+          data-desc="مدينة ماهديا في قلب منطقة بوتارو الذهبية، مركز تعدين الذهب والماس في المناطق الداخلية."
+          data-historic="⛏️ مناجم الذهب | 🌳 غابة بوتارو | 🌊 نهر بوتارو | 🦅 طيور الغابة"
+          data-restaurants="🍽️ مطعم Mahdia | 🍽️ مطعم Miners | 🌮 مطعم Potaro"
+          data-cafes="☕ مقهى Goldfield | ☕ مقهى Central | ☕ مقهى Rainforest"
+          data-events="⛏️ جولة مناجم الذهب | 🌳 غابة بوتارو | 🌊 نهر بوتارو"
+          onclick="openCityModal(this)">
+          <button class="save-btn"
+            onclick="event.stopPropagation(); saveItem('city', 'guyana_mahdia', 'ماهديا', '/img/guyana-mahdia.jpg')">🏙️</button>
+          <img src="/img/guyana-mahdia.jpg" alt="ماهديا" class="cite-img">
+          <span class="name">ماهديا – Mahdia</span>
+          <p class="info">عاصمة منطقة التعدين الذهبي في قلب غيانا.</p>
+          <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+        </section>
 
   <div class="main-foods">
     <h1>الماكولات</h1>
@@ -319,13 +335,7 @@
       <a href="/events/events.html?event=MashramaniGY" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
     </div>
   
-    <div class="event" onclick="window.location.href='/events/events.html?event=KaieteurWaterfalls'" style="cursor:pointer">
-        <img alt="شلالات كايتور" class="event-img" src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/guyana-kaieteur.jpg"/>
-        <span class="name-event">شلالات كايتور – Kaieteur Falls</span>
-        <div class="event-info">أحد أضخم شلالات العالم تدفقاً في قلب غابات غيانا البكر.</div>
-        <a class="event-btn" href="/events/events.html?event=KaieteurWaterfalls" onclick="event.stopPropagation()">اكتشف</a>
-    </div>
-</section>
+    </section>
 <div id="cityModal" class="modal" onclick="closeCityModal(event)">
     <div class="modal-content">
       <button class="modal-close" onclick="closeCityModal(event)">×</button>

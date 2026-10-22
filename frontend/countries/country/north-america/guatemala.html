@@ -212,22 +212,39 @@
             <button class="cite-btn"
                 onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
         </div>
-        <div class="cite" data-name="سيموك تشامبي – Semuc Champey" data-img="/img/guatemala-semucchampey.jpg"
-            data-desc="أحد أجمل المعجزات الطبيعية في أمريكا الوسطى، سلسلة بركات حجرية طبيعية باللون الفيروزي تتدفق فيها المياه المتتالية في الغابة الاستوائية الكثيفة."
-            data-historic="🏊 البرك الحجرية الطبيعية – Natural Limestone Pools | 🌊 نهر كاهابون – Río Cahabón | 🌿 الغابة الاستوائية المحيطة | 🐠 مياه فيروزية صافية"
-            data-restaurants="🍽️ مطعم El Portal | 🌿 مطعم Green Guatemala | 🥩 مطعم La Cabaña"
-            data-cafes="☕ مقهى Finca Paraíso | ☕ مقهى Café Semuc | ☕ مقهى El Rancho"
-            data-events="🏊 السباحة في البرك الطبيعية | 🌿 مشي الغابة الاستوائية | 🌊 التجديف في النهر"
-            onclick="openCityModal(this)">
-            <button class="save-btn"
-                onclick="event.stopPropagation(); saveItem('city', 'guatemala_semucchampey', 'سيموك تشامبي', '/img/guatemala-semucchampey.jpg')">🏙️</button>
-            <img src="/img/guatemala-semucchampey.jpg" alt="سيموك تشامبي" class="cite-img">
-            <span class="name">سيموك تشامبي – Semuc Champey</span>
-            <p class="info">معجزة طبيعية ببرك فيروزية وسط الغابة الاستوائية.</p>
-            <button class="cite-btn"
-                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
-        </div>
-    </section>
+            
+    <div class="cite" data-name="كيتسالتينانغو – Quetzaltenango"
+      data-img="/img/guatemala-xela.jpg"
+      data-desc="ثاني أكبر مدن غواتيمالا وعاصمة المرتفعات، تقع عند سفح بركان سانتا ماريا وتُعرف بمعابدها الماية وأسواقها التقليدية."
+      data-historic="🌋 بركان سانتا ماريا | 🏛️ معبد ماينا | ⛪ كاتدرائية الأرواح القديسة | 🏘️ السوق المركزي"
+      data-restaurants="🥘 مطعم Sabor de India | 🍖 مطعم Royal Paris | 🌮 مطعم El Cuartito"
+      data-cafes="☕ مقهى Cafe Acropolis | ☕ مقهى Luna | ☕ مقهى Baviera"
+      data-events="🌋 تسلق بركان سانتا ماريا | 🛍️ السوق المركزي | 🎭 مهرجان المرتفعات"
+      onclick="openCityModal(this)">
+      <button class="save-btn"
+        onclick="event.stopPropagation(); saveItem('city', 'guatemala_quetzaltenango', 'كيتسالتينانغو', '/img/guatemala-xela.jpg')">🏙️</button>
+      <img src="/img/guatemala-xela.jpg" alt="كيتسالتينانغو" class="cite-img" />
+      <span class="name">كيتسالتينانغو – Quetzaltenango</span>
+      <p class="info">عاصمة مرتفعات غواتيمالا عند سفح البركان.</p>
+      <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+  
+    <div class="cite" data-name="كوبان – Cobán"
+      data-img="/img/guatemala-coban.jpg"
+      data-desc="عاصمة مقاطعة ألتا فيراباز تجلس في قلب الغابات المدارية الرطبة شمال غواتيمالا، اشتهرت بمزارع القهوة والطيور النادرة."
+      data-historic="🌿 غابات ألتا فيراباز | ☕ مزارع القهوة | 🐦 طائر الكيتسال | 🏞️ شلالات سيمسيم"
+      data-restaurants="🥘 مطعم Doña Vero | 🍖 مطعم Café Central | 🌮 مطعم Xkape"
+      data-cafes="☕ مقهى Babilonia | ☕ مقهى Café El Tirol | ☕ مقهى Las Victorias"
+      data-events="☕ جولة مزارع القهوة | 🐦 مراقبة الكيتسال | 🌊 شلالات سيمسيم"
+      onclick="openCityModal(this)">
+      <button class="save-btn"
+        onclick="event.stopPropagation(); saveItem('city', 'guatemala_coban', 'كوبان', '/img/guatemala-coban.jpg')">🏙️</button>
+      <img src="/img/guatemala-coban.jpg" alt="كوبان" class="cite-img" />
+      <span class="name">كوبان – Cobán</span>
+      <p class="info">عاصمة منطقة القهوة وطائر الكيتسال النادر في غواتيمالا.</p>
+      <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+  </section>
 
     <div class="main-foods">
         <h1>الماكولات</h1>
@@ -339,18 +356,7 @@
         </div>
     
 
-        <div class="event" onclick="window.location.href='/events/events.html?event=LakeAtitlanGuatemala'" style="cursor:pointer">
-
-            <img alt="بحيرة أتيتلان" class="event-img" src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/guatemala-atitlan.jpg"/>
-
-            <span class="name-event">بحيرة أتيتلان – Lake Atitlán</span>
-
-            <div class="event-info">واحدة من أجمل بحيرات العالم تحيط بها ثلاثة براكين وقرى أصلية.</div>
-
-            <a class="event-btn" href="/events/events.html?event=LakeAtitlanGuatemala" onclick="event.stopPropagation()">اكتشف</a>
-
-        </div>
-</section>
+        </section>
 
     <div id="cityModal" class="modal" onclick="closeCityModal(event)">
         <div class="modal-content">

@@ -214,7 +214,39 @@
                 onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
         </div>
 
-    </section>
+    
+    <div class="cite" data-name="بورتسموث – Portsmouth"
+      data-img="/img/dominica-portsmouth.jpg"
+      data-desc="ثاني مدن دومينيكا تقع شمالاً على خليج برنس روبرت، اشتهرت بجامعتها الطبية ونهر الهنود ذي الأشجار البدائية."
+      data-historic="🌿 نهر الهنود الهندي | 🏫 جامعة روس الطبية | ⛪ كنيسة سانت جون | 🌴 شاطئ البر الجنوبي"
+      data-restaurants="🥘 مطعم Tomato | 🍖 مطعم Purple Turtle | 🌮 مطعم Waitukubuli"
+      data-cafes="☕ مقهى Indian River | ☕ مقهى Fort Shirley | ☕ مقهى Cabrits"
+      data-events="🌿 جولة نهر الهنود | 🏖️ شاطئ شيف | 🦜 مراقبة الطيور"
+      onclick="openCityModal(this)">
+      <button class="save-btn"
+        onclick="event.stopPropagation(); saveItem('city', 'dominica_portsmouth', 'بورتسموث', '/img/dominica-portsmouth.jpg')">🏙️</button>
+      <img src="/img/dominica-portsmouth.jpg" alt="بورتسموث" class="cite-img" />
+      <span class="name">بورتسموث – Portsmouth</span>
+      <p class="info">ثاني مدن دومينيكا ومدخل نهر الهنود الأدغالي الرائع.</p>
+      <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+  
+    <div class="cite" data-name="لا بلاي – La Plaine"
+      data-img="/img/dominica-laplaine.jpg"
+      data-desc="مدينة لا بلاي الساحلية في جنوب شرق دومينيكا تنبع منها شلالات صوفريير وترتبط بطرق جبلية خلابة تمر بالغابات المطيرة."
+      data-historic="🌊 شلالات صوفريير | 🌺 حقول الموز | 🌿 الغابة المطيرة | 🐠 شعاب الشاطئ الجنوبي"
+      data-restaurants="🥘 مطعم La Plaine | 🍖 مطعم Savanna | 🌮 مطعم Boiling Lake Trail"
+      data-cafes="☕ مقهى Screw Bay | ☕ مقهى Rosalie | ☕ مقهى Rainforest"
+      data-events="🌊 شلالات صوفريير | 🥾 مسار بحيرة الغليان | 🌊 شاطئ لا بلاي"
+      onclick="openCityModal(this)">
+      <button class="save-btn"
+        onclick="event.stopPropagation(); saveItem('city', 'dominica_laplaine', 'لا بلاي', '/img/dominica-laplaine.jpg')">🏙️</button>
+      <img src="/img/dominica-laplaine.jpg" alt="لا بلاي" class="cite-img" />
+      <span class="name">لا بلاي – La Plaine</span>
+      <p class="info">بوابة شلالات صوفريير والمسارات الجبلية في جنوب دومينيكا.</p>
+      <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+  </section>
 
     <div class="main-foods">
         <h1>الماكولات</h1>
@@ -336,18 +368,7 @@
                 onclick="event.stopPropagation()">المزيد</a>
         </div>
 
-        <div class="event" onclick="window.location.href='/events/events.html?event=TrafalgarFallsDominica'" style="cursor:pointer">
-
-            <img alt="شلالات ترافالغار" class="event-img" src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/dominica-trafalgar.jpg"/>
-
-            <span class="name-event">شلالات ترافالغار – Trafalgar Falls</span>
-
-            <div class="event-info">شلالان توأمان يتدفقان من 40 متراً في غابة دومينيكا الاستوائية.</div>
-
-            <a class="event-btn" href="/events/events.html?event=TrafalgarFallsDominica" onclick="event.stopPropagation()">اكتشف</a>
-
-        </div>
-</section>
+        </section>
 
     <div id="cityModal" class="modal" onclick="closeCityModal(event)">
         <div class="modal-content">

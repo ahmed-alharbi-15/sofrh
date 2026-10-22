@@ -226,7 +226,23 @@
     </div>
 
   </div>
-</section>
+
+    <div class="cite" data-name="نامبو – Nampo"
+      data-img="/img/northkorea-nampo.jpg"
+      data-desc="ميناء نامبو هو البوابة البحرية لكوريا الشمالية على خليج غرب كوريا، وتشتهر بحاجز المياه الضخم والصناعات الثقيلة."
+      data-historic="🚢 ميناء نامبو | 🏗️ حاجز نامبو للمياه | 🏭 مجمع تشيل العمالي | 🏛️ متحف الميناء"
+      data-restaurants="🥘 مطعم البحر | 🍖 مطعم الميناء | 🌮 مطعم الشعب"
+      data-cafes="☕ مقهى الميناء | ☕ مقهى الطلاب | ☕ مقهى الربيع"
+      data-events="🚢 زيارة ميناء نامبو | 🏗️ حاجز نامبو | 🎭 مهرجان العمال"
+      onclick="openCityModal(this)">
+      <button class="save-btn"
+        onclick="event.stopPropagation(); saveItem('city', 'northkorea_nampo', 'نامبو', '/img/northkorea-nampo.jpg')">🏙️</button>
+      <img src="/img/northkorea-nampo.jpg" alt="نامبو" class="cite-img" />
+      <span class="name">نامبو – Nampo</span>
+      <p class="info">ميناء كوريا الشمالية البحري الرئيسي على الخليج الغربي.</p>
+      <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+  </section>
 
 <div class="main-foods">
   <h1>الماكولات</h1>
@@ -313,13 +329,7 @@
     </div>
   </div>
 
-    <div class="event" onclick="window.location.href='/events/events.html?event=NKPaektu'" style="cursor:pointer">
-        <img alt="جبل باكتو" class="event-img" src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/northkorea-paektu.jpg"/>
-        <span class="name-event">جبل باكتو – Paektu Mountain</span>
-        <div class="event-info">أعلى قمة في شبه الجزيرة الكورية تحتضن بحيرة تشون الفيروزية.</div>
-        <a class="event-btn" href="/events/events.html?event=NKPaektu" onclick="event.stopPropagation()">اكتشف</a>
-    </div>
-</section>
+    </section>
 
   <div id="cityModal" class="modal" onclick="closeCityModal(event)">
     <div class="modal-content">

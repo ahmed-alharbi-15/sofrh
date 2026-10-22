@@ -226,7 +226,23 @@
     </div>
 
   </div>
-</section>
+
+    <div class="cite" data-name="كويتا – Quetta"
+      data-img="/img/pakistan-quetta.jpg"
+      data-desc="عاصمة إقليم بلوشستان تجلس على ارتفاع 1680م فوق سطح البحر، وتُعرف بـ"باريس آسيا" لطقسها المعتدل وتفاحها الشهير."
+      data-historic="🏔️ جبل مردار | 🏰 قلعة مهرغر | 🕌 مسجد مير علي | 🌺 حدائق الزيتون"
+      data-restaurants="🥘 مطعم سريال | 🍖 مطعم صادق | 🌮 مطعم الكويتي"
+      data-cafes="☕ مقهى كيلا سيف | ☕ مقهى الجبل | ☕ مقهى البلوش"
+      data-events="🏔️ جبل مردار | 🛍️ سوق كيلا عبدالله | 🍎 موسم التفاح"
+      onclick="openCityModal(this)">
+      <button class="save-btn"
+        onclick="event.stopPropagation(); saveItem('city', 'pakistan_quetta', 'كويتا', '/img/pakistan-quetta.jpg')">🏙️</button>
+      <img src="/img/pakistan-quetta.jpg" alt="كويتا" class="cite-img" />
+      <span class="name">كويتا – Quetta</span>
+      <p class="info">عاصمة بلوشستان الباردة المشهورة بتفاحها وطقسها المعتدل.</p>
+      <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+  </section>
 
 <div class="main-foods">
   <h1>الماكولات</h1>
@@ -313,13 +329,7 @@
     </div>
   </div>
 
-    <div class="event" onclick="window.location.href='/events/events.html?event=PakistanHunza'" style="cursor:pointer">
-        <img alt="وادي هونزا" class="event-img" src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/pakistan-hunza.jpg"/>
-        <span class="name-event">وادي هونزا – Hunza Valley</span>
-        <div class="event-info">وادي الكاراكورام الساحر مع قمم الجبال الثلجية وقلعة بلتيت.</div>
-        <a class="event-btn" href="/events/events.html?event=PakistanHunza" onclick="event.stopPropagation()">اكتشف</a>
-    </div>
-</section>
+    </section>
 
   <div id="cityModal" class="modal" onclick="closeCityModal(event)">
     <div class="modal-content">

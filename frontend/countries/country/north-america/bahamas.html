@@ -226,7 +226,23 @@
             <button class="cite-btn"
                 onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
         </div>
-    </section>
+    
+    <div class="cite" data-name="هاربور آيلاند – Harbour Island"
+      data-img="/img/bahamas-harbourisland.jpg"
+      data-desc="جزيرة هاربور آيلاند الساحرة تشتهر بشاطئها الوردي الفريد "بينك ساند بيتش"، وبيوتها الملونة في حي دونمور التاريخي."
+      data-historic="🏖️ شاطئ الرمال الوردية | 🏘️ حي دونمور التاريخي | ⛪ كنيسة سانت جون | 🎣 ميناء الصيادين"
+      data-restaurants="🥘 مطعم Sip Sip | 🍖 مطعم Dunmore Beach | 🌮 مطعم Landing"
+      data-cafes="☕ مقهى Sugar Mill | ☕ مقهى Pink Sand | ☕ مقهى Rock House"
+      data-events="🏖️ شاطئ الرمال الوردية | 🚤 رحلة بحرية | 🎣 صيد السمك"
+      onclick="openCityModal(this)">
+      <button class="save-btn"
+        onclick="event.stopPropagation(); saveItem('city', 'bahamas_harbourisland', 'هاربور آيلاند', '/img/bahamas-harbourisland.jpg')">🏙️</button>
+      <img src="/img/bahamas-harbourisland.jpg" alt="هاربور آيلاند" class="cite-img" />
+      <span class="name">هاربور آيلاند – Harbour Island</span>
+      <p class="info">جزيرة الشاطئ الوردي الفريد والعمارة الاستعمارية الملونة.</p>
+      <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+  </section>
 
     <div class="main-foods">
         <h1>الماكولات</h1>

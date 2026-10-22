@@ -234,6 +234,22 @@
       <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
     </div>
 
+  
+    <div class="cite" data-name="الكرك – Karak"
+      data-img="/img/jordan-karak.jpg"
+      data-desc="مدينة الكرك التاريخية تتوسط الهضبة الأردنية، اشتهرت بقلعتها الصليبية الشامخة التي شهدت معارك القرون الوسطى."
+      data-historic="🏰 قلعة الكرك | 🕌 جامع الكرك الكبير | 🏛️ متحف الكرك الأثري | 🛖 الحي القديم"
+      data-restaurants="🥘 مطعم القلعة | 🍖 مطعم النديم | 🌮 مطعم الأمير"
+      data-cafes="☕ مقهى الكرك | ☕ مقهى الرمان | ☕ مقهى الهضبة"
+      data-events="🏰 جولة القلعة الصليبية | 🛍️ سوق الكرك الشعبي | 🌄 غروب الهضبة"
+      onclick="openCityModal(this)">
+      <button class="save-btn"
+        onclick="event.stopPropagation(); saveItem('city', 'jordan_karak', 'الكرك', '/img/jordan-karak.jpg')">🏙️</button>
+      <img src="/img/jordan-karak.jpg" alt="الكرك" class="cite-img" />
+      <span class="name">الكرك – Karak</span>
+      <p class="info">مدينة القلعة الصليبية الشامخة على هضبة الكرك الأردنية.</p>
+      <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
   </section>
 
   <div class="main-foods">
@@ -319,13 +335,7 @@
       <a href="/events/events.html?event=JordanMaain" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
     </div>
   
-    <div class="event" onclick="window.location.href='/events/events.html?event=JordanWadiRum'" style="cursor:pointer">
-        <img alt="وادي رم" class="event-img" src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/jordan-wadi-rum-sunset.jpg"/>
-        <span class="name-event">وادي رم – Wadi Rum</span>
-        <div class="event-info">صحراء المريخ الأردنية بتشكيلاتها الصخرية الحمراء الفريدة.</div>
-        <a class="event-btn" href="/events/events.html?event=JordanWadiRum" onclick="event.stopPropagation()">اكتشف</a>
-    </div>
-</section>
+    </section>
 <div id="cityModal" class="modal" onclick="closeCityModal(event)">
     <div class="modal-content">
       <button class="modal-close" onclick="closeCityModal(event)">×</button>

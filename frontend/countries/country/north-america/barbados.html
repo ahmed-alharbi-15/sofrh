@@ -226,7 +226,23 @@
                 onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
         </div>
 
-    </section>
+    
+    <div class="cite" data-name="سبيتستاون – Speightstown"
+      data-img="/img/barbados-speightstown.jpg"
+      data-desc="ثاني أكبر مدن باربادوس وأحد أجمل مواقع التراث الاستعماري في الكاريبي، يُعرف قديماً بـ"ليتل بريستول" لتجارته مع إنجلترا."
+      data-historic="🏰 قلعة اورانج | 🏛️ متحف آرلاين | ⛪ كنيسة سانت بيتر | 🛖 سوق سبيتستاون"
+      data-restaurants="🥘 مطعم Fishermans | 🍖 مطعم Lukes Steakhouse | 🌮 مطعم Mango Bay"
+      data-cafes="☕ مقهى Fisherpond | ☕ مقهى Cobbler Cove | ☕ مقهى Lone Star"
+      data-events="🏰 قلعة اورانج | 🛍️ سوق السمك | 🏖️ شاطئ الباخرة"
+      onclick="openCityModal(this)">
+      <button class="save-btn"
+        onclick="event.stopPropagation(); saveItem('city', 'barbados_speightstown', 'سبيتستاون', '/img/barbados-speightstown.jpg')">🏙️</button>
+      <img src="/img/barbados-speightstown.jpg" alt="سبيتستاون" class="cite-img" />
+      <span class="name">سبيتستاون – Speightstown</span>
+      <p class="info">ثاني أكبر مدن باربادوس وعاصمتها الاستعمارية القديمة.</p>
+      <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+  </section>
 
     <div class="main-foods">
         <h1>الماكولات</h1>
@@ -338,18 +354,7 @@
         </div>
     
 
-        <div class="event" onclick="window.location.href='/events/events.html?event=HarrisonCave'" style="cursor:pointer">
-
-            <img alt="كهف هاريسون" class="event-img" src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/barbados-harrison-cave.jpg"/>
-
-            <span class="name-event">كهف هاريسون – Harrison's Cave</span>
-
-            <div class="event-info">كهف جيري بديع داخل جزيرة بربادوس يملؤه الستلاكتيت والستالاغميت.</div>
-
-            <a class="event-btn" href="/events/events.html?event=HarrisonCave" onclick="event.stopPropagation()">اكتشف</a>
-
-        </div>
-</section>
+        </section>
 
     <div id="cityModal" class="modal" onclick="closeCityModal(event)">
         <div class="modal-content">
