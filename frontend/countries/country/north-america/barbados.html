@@ -225,21 +225,7 @@
             <button class="cite-btn"
                 onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
         </div>
-        <div class="cite" data-name="كهف هاريسون – Harrison's Cave" data-img="/img/barbados-harriscave.jpg"
-            data-desc="كهف بركاني مذهل بتشكيلاته الصخرية الكريستالية والشلالات تحت الأرض، موقع طبيعي لا مثيل له في الكاريبي."
-            data-historic="🕯️ كهف هاريسون – Harrison's Cave | 🌿 متنزه ويلدمان – Welchman Hall Gully | 🦋 حديقة الفراشات | 🌺 حدائق الأوركيدات"
-            data-restaurants="🍽️ مطعم Cave Restaurant | 🌿 مطعم Plantation Restaurant | 🥘 مطعم Earthworks Pottery"
-            data-cafes="☕ مقهى Cave Café | ☕ مقهى Orchid Garden | ☕ مقهى Garrison Café"
-            data-events="🕯️ جولة الكهف | 🌿 وادي ويلشمان هول | 🦋 حديقة الفراشات"
-            onclick="openCityModal(this)">
-            <button class="save-btn"
-                onclick="event.stopPropagation(); saveItem('city', 'barbados_harriscave', 'كهف هاريسون', '/img/barbados-harriscave.jpg')">🏙️</button>
-            <img src="/img/barbados-harriscave.jpg" alt="كهف هاريسون" class="cite-img">
-            <span class="name">كهف هاريسون – Harrison's Cave</span>
-            <p class="info">الكهف الكريستالي الأجمل في الكاريبي بشلالاته المذهلة.</p>
-            <button class="cite-btn"
-                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
-        </div>
+
     </section>
 
     <div class="main-foods">
@@ -350,7 +336,20 @@
             <a href="/events/events.html?event=AnimalFlowerCave" class="event-btn"
                 onclick="event.stopPropagation()">المزيد</a>
         </div>
-    </section>
+    
+
+        <div class="event" onclick="window.location.href='/events/events.html?event=HarrisonCave'" style="cursor:pointer">
+
+            <img alt="كهف هاريسون" class="event-img" src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/barbados-harrison-cave.jpg"/>
+
+            <span class="name-event">كهف هاريسون – Harrison's Cave</span>
+
+            <div class="event-info">كهف جيري بديع داخل جزيرة بربادوس يملؤه الستلاكتيت والستالاغميت.</div>
+
+            <a class="event-btn" href="/events/events.html?event=HarrisonCave" onclick="event.stopPropagation()">اكتشف</a>
+
+        </div>
+</section>
 
     <div id="cityModal" class="modal" onclick="closeCityModal(event)">
         <div class="modal-content">

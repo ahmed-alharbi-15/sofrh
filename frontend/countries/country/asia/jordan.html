@@ -144,7 +144,6 @@
     <a href="/countries/countries.html" class="back-btn">رجوع</a>
   </header>
 
-
   <div class="country-name">
     <h1>الأردن</h1>
     <p>البتراء الوردية ووادي رم وفسيفساء الحضارات</p>
@@ -184,22 +183,6 @@
       <img src="/img/jordan-petra.jpg" alt="البتراء" class="cite-img" />
       <span class="name">البتراء – Petra</span>
       <p class="info">عجيبة الدنيا السابعة، المدينة الوردية المنحوتة في ...</p>
-      <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
-    </div>
-
-    <div class="cite" data-name="وادي رم – Wadi Rum"
-      data-img="/img/jordan-wadi-rum.jpg"
-      data-desc="بحر الرمال المذهل وصحراء المريخ الأردنية، تشكيلات صخرية فريدة وليالي نجوم ساحرة في خيام البدو."
-      data-historic="🏜️ جسر أم فرود الطبيعي | 🌙 مخيمات البدو | 🚀 موقع تصوير فيلم المريخ | ⛰️ جبل رم"
-      data-restaurants="🥘 مطعم Rum Stars | 🍖 مطعم Bedouin Way | 🌮 مطعم Desert Camp"
-      data-cafes="☕ مقهى Wadi Rum Night | ☕ مقهى Rum Palace | ☕ مقهى Bedouin Tea"
-      data-events="🌙 مراقبة النجوم | 🚙 سفاري الجيب | 🏜️ تسلق الصخور"
-      onclick="openCityModal(this)">
-      <button class="save-btn"
-        onclick="event.stopPropagation(); saveItem('city', 'jordan_wadi_rum', 'وادي رم', '/img/jordan-wadi-rum.jpg')">🏙️</button>
-      <img src="/img/jordan-wadi-rum.jpg" alt="وادي رم" class="cite-img" />
-      <span class="name">وادي رم – Wadi Rum</span>
-      <p class="info">بحر الرمال المذهل وصحراء المريخ الأردنية، تشكيلات ...</p>
       <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
     </div>
 
@@ -335,7 +318,14 @@
       <div class="event-info">ينابيع حارة طبيعية في قلب الصحراء الأردنية.</div>
       <a href="/events/events.html?event=JordanMaain" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
     </div>
-  </section>
+  
+    <div class="event" onclick="window.location.href='/events/events.html?event=JordanWadiRum'" style="cursor:pointer">
+        <img alt="وادي رم" class="event-img" src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/jordan-wadi-rum-sunset.jpg"/>
+        <span class="name-event">وادي رم – Wadi Rum</span>
+        <div class="event-info">صحراء المريخ الأردنية بتشكيلاتها الصخرية الحمراء الفريدة.</div>
+        <a class="event-btn" href="/events/events.html?event=JordanWadiRum" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
+</section>
 <div id="cityModal" class="modal" onclick="closeCityModal(event)">
     <div class="modal-content">
       <button class="modal-close" onclick="closeCityModal(event)">×</button>

@@ -179,21 +179,7 @@
             <button class="cite-btn"
                 onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
         </div>
-        <div class="cite" data-name="ماراكاس باي – Maracas Bay" data-img="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/trinidad-maracas.jpg"
-            data-desc="الشاطئ الأشهر في ترينيداد وموطن شارك وبيك، الوجبة الشعبية الأكثر طلباً على الإطلاق."
-            data-historic="🏖️ شاطئ ماراكاس الطويل | 🐟 شارك وبيك الشهير | 🌴 نخيل الجبال | 🌊 أمواج جميلة"
-            data-restaurants="🍽️ مطعم شارك وبيك ماراكاس | 🌿 مطعم The Nest | 🥘 مطعم Richard's Bake & Shark"
-            data-cafes="☕ كافيه ماراكاس | ☕ مقهى الشاطئ الشمالي | ☕ مقهى الجبل"
-            data-events="🏖️ السباحة | 🐟 تذوق شارك وبيك | 🌴 المشي في الجبال"
-            onclick="openCityModal(this)">
-            <button class="save-btn"
-                onclick="event.stopPropagation(); saveItem('city', 'trinidad_maracas', 'ماراكاس باي', 'https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/trinidad-maracas.jpg')">🏙️</button>
-            <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/trinidad-maracas.jpg" alt="ماراكاس باي" class="cite-img">
-            <span class="name">ماراكاس باي – Maracas Bay</span>
-            <p class="info">الشاطئ الأشهر في ترينيداد وموطن شارك وبيك، الوجبة الشعبية ال...</p>
-            <button class="cite-btn"
-                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
-        </div>
+
         <div class="cite" data-name="أريما – Arima" data-img="/img/trinidad-arima.jpg"
             data-desc="مدينة الطيور والحياة البرية بحضنها الجبلي الأخضر ومحمياتها الطبيعية المذهلة."
             data-historic="🦜 محمية آسا رايت للطيور | 🌿 غابات الشمال | 🏔️ المرتفعات الشمالية | 🎭 ثقافة السكان الأصليين"
@@ -209,21 +195,7 @@
             <button class="cite-btn"
                 onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
         </div>
-        <div class="cite" data-name="بحيرة كارونيَ – Caroni Swamp" data-img="/img/trinidad-nanan.jpg"
-            data-desc="مستنقع المانغروف الساحر بالطيور النادرة والتماسيح وأسراب طيور الإيبيس القرمزية."
-            data-historic="🦩 أسراب الإيبيس القرمزية | 🐊 تماسيح كارونيَ | 🌿 غابة مانغروف | 🚤 جولة قوارب"
-            data-restaurants="🍽️ مطعم كارونيَ المحلي | 🌿 مطعم الطبيعة | 🥘 مطعم Nanan's Tours"
-            data-cafes="☕ كافيه البحيرة | ☕ مقهى كارونيَ | ☕ مقهى المستنقع"
-            data-events="🦩 مشاهدة الإيبيس | 🐊 مشاهدة التماسيح | 🚤 جولة قوارب"
-            onclick="openCityModal(this)">
-            <button class="save-btn"
-                onclick="event.stopPropagation(); saveItem('city', 'trinidad_nanan', 'بحيرة كارونيَ', '/img/trinidad-nanan.jpg')">🏙️</button>
-            <img src="/img/trinidad-nanan.jpg" alt="بحيرة كارونيَ" class="cite-img">
-            <span class="name">بحيرة كارونيَ – Caroni Swamp</span>
-            <p class="info">مستنقع المانغروف الساحر بالطيور النادرة والتماسيح وأسراب طيو...</p>
-            <button class="cite-btn"
-                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
-        </div>
+
         <div class="cite" data-name="مستنقع المانغروف – Caroni Mangrove" data-img="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/trinidad-caroni.jpg"
             data-desc="نظام بيئي متكامل يضم أكثر من 180 نوع من الطيور وحياة بحرية ثرية في المستنقعات."
             data-historic="🌿 غابة مانغروف خضراء | 🐠 أسماك المانغروف | 🦜 طيور نادرة | 🚤 جولات بيئية"
@@ -347,7 +319,21 @@
             <a href="/events/events.html?event=TobagoDivingReef" class="event-btn"
                 onclick="event.stopPropagation()">المزيد</a>
         </div>
-    </section>
+    
+        <div class="event" onclick="window.location.href='/events/events.html?event=MaracasBeach'" style="cursor:pointer">
+            <img alt="شاطئ ماراكاس" class="event-img" src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/trinidad-maracas.jpg"/>
+            <span class="name-event">شاطئ ماراكاس – Maracas Beach</span>
+            <div class="event-info">شاطئ ماراكاس الشهير، أبرز وجهة ترفيهية في ترينيداد.</div>
+            <a class="event-btn" href="/events/events.html?event=MaracasBeach" onclick="event.stopPropagation()">اكتشف</a>
+        </div>
+
+        <div class="event" onclick="window.location.href='/events/events.html?event=CaroniSwamp'" style="cursor:pointer">
+            <img alt="مستنقع كارونيَ" class="event-img" src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/trinidad-caroni.jpg"/>
+            <span class="name-event">مستنقع كارونيَ – Caroni Swamp</span>
+            <div class="event-info">جولة قارب في مستنقع المانغروف لمشاهدة آلاف طيور الإيبيس الأحمر.</div>
+            <a class="event-btn" href="/events/events.html?event=CaroniSwamp" onclick="event.stopPropagation()">اكتشف</a>
+        </div>
+</section>
 
     <div id="cityModal" class="modal" onclick="closeCityModal(event)">
         <div class="modal-content">

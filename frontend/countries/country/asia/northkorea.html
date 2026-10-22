@@ -140,7 +140,6 @@
         </ul>
     </div>
 
-
 <div class="country-name">
   <h1>كوريا الشمالية</h1>
   <p>البلد الأكثر غموضاً في العالم حيث تتشابك الحضارة الكورية العريقة مع الطبيعة الجبلية الخلابة</p>
@@ -223,21 +222,6 @@
         <img src="/img/northkorea-chongjin.jpg" alt="تشونغجين" class="cite-img">
         <span class="name">تشونغجين – Chongjin</span>
         <p class="info">ميناء بحر اليابان في أقصى الشمال</p>
-        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
-    </div>
-
-    <div class="cite" data-name="جبل باكتو – Paektu Mountain"
-        data-img="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/northkorea-paektu.jpg"
-        data-desc="أعلى قمة في شبه الجزيرة الكورية ومقدسها الوطني الأول، يحتضن في قمته بحيرة تشون المقدسة الفيروزية المذهلة في فوهة البركان المكسوة بالثلج على ارتفاع 2744 متراً."
-        data-historic="بحيرة تشون المقدسة في قمة البركان|فوهة البركان الضخمة|منحدرات الثلج الأبدي|متحف جبل باكتو الوطني|كهوف الجليد الطبيعية|مسار التسلق الكوري الوطني"
-        data-restaurants="مطعم باكتو الجبلي|مطعم القمة الكورية|مطعم البحيرة المقدسة|مطعم الجليد والثلج|مطعم التسلق الكبير|مطعم الوطن الكوري"
-        data-cafes="كافيه باكتو|كافيه قمة الجبل|ذا سوميت كافيه|كافيه بحيرة تشون|كافيه الثلج|كافيه الوطني"
-        data-events="بحيرة تشون الفيروزية على قمة البركان|المشي في الثلج الأبدي على القمة|التسلق الوطني الكوري لقمة باكتو|فوهة البركان الضخمة المثيرة|مشاهدة شروق الشمس على القمة|كهوف الجليد الطبيعية المدهشة"
-        onclick="openCityModal(this)">
-        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'northkorea_paektu', 'جبل باكتو', 'https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/northkorea-paektu.jpg')">🏙️</button>
-        <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/northkorea-paektu.jpg" alt="جبل باكتو" class="cite-img">
-        <span class="name">جبل باكتو – Paektu Mountain</span>
-        <p class="info">أعلى قمة في الجزيرة الكورية وأقدسها</p>
         <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
     </div>
 
@@ -328,6 +312,13 @@
       <a href="/events/events.html?event=NKMansudae" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
     </div>
   </div>
+
+    <div class="event" onclick="window.location.href='/events/events.html?event=NKPaektu'" style="cursor:pointer">
+        <img alt="جبل باكتو" class="event-img" src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/northkorea-paektu.jpg"/>
+        <span class="name-event">جبل باكتو – Paektu Mountain</span>
+        <div class="event-info">أعلى قمة في شبه الجزيرة الكورية تحتضن بحيرة تشون الفيروزية.</div>
+        <a class="event-btn" href="/events/events.html?event=NKPaektu" onclick="event.stopPropagation()">اكتشف</a>
+    </div>
 </section>
 
   <div id="cityModal" class="modal" onclick="closeCityModal(event)">
