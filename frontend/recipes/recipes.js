@@ -374,3 +374,33 @@ document.addEventListener("DOMContentLoaded", () => {
         allCards.forEach(card => grid.appendChild(card));
     }
 });
+
+
+// ── إخفاء وصفات دول ready: false ─────────────────────────────────────────────
+(async function hideNotReadyRecipes() {
+    if (!document.querySelector('.foods-card')) return;
+
+    try {
+        const res = await fetch('/plan/plan.js');
+        if (!res.ok) return;
+        const text = await res.text();
+
+        const arrMatch = text.match(/const\s+countries\s*=\s*(\[[\s\S]*?\]);/);
+        if (!arrMatch) return;
+        const countries = JSON.parse(arrMatch[1]);
+
+        // اجمع الأسماء العربية للدول غير الجاهزة
+        const notReadyNames = new Set(
+            countries.filter(c => c.ready === false).map(c => c.nameAr)
+        );
+        if (notReadyNames.size === 0) return;
+
+        document.querySelectorAll('.foods-card').forEach(card => {
+            const dataCountry = card.getAttribute('data-country') || '';
+            if (notReadyNames.has(dataCountry)) {
+                card.style.display = 'none';
+            }
+        });
+
+    } catch (_) { /* silent fail */ }
+})();

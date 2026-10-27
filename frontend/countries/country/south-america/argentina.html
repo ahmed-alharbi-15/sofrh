@@ -36,7 +36,7 @@
   <link rel="stylesheet" href="/countries/countries.css" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@500;600&display=swap">
   <link rel="stylesheet" href="/dark-mode.css">
-    <meta property="og:image" content="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/logo-img.PNG">
+    <meta property="og:image" content="https://sofrh.vercel.apphttps://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/logo6.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:title" content="سفرة — سافر وتذوق">
@@ -45,7 +45,7 @@
     <meta property="og:type" content="website">
     <meta property="og:locale" content="ar_SA">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/logo-img.PNG">
+    <meta name="twitter:image" content="https://sofrh.vercel.apphttps://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/logo6.png">
     <meta name="twitter:title" content="سفرة — سافر وتذوق">
     <meta name="twitter:description" content="اكتشف وجهات وماكولات من مختلف أنحاء العالم">
     <script src="/auth/auth.js" defer></script>
@@ -66,6 +66,7 @@
             <span class="user-name" id="userName"></span>
             <div class="user-dropdown">
                 <a href="/profile/profile.html">الملف الشخصي</a>
+                <a href="/admin/admin.html" class="admin-link" id="adminLink" style="display:none">⚙️ الإدارة</a>
                 <a href="#" id="logoutBtn">تسجيل خروج</a>
             </div>
         </div>
@@ -80,7 +81,7 @@
         </ul>
 
         <div class="logo">
-            <a href="/index/index.html"><img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/logo-img.PNG" alt="سفرة"></a>
+            <a href="/index/index.html"><img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/logo7.png" alt="سفرة"></a>
         </div>
     </header>
 
@@ -163,15 +164,15 @@
       data-events="💃 مهرجان التانغو | 🎪 كرنفال بوينس آيرس | 🎵 مهرجان Buenos Aires Jazz"
       onclick="openCityModal(this)">
       <button class="save-btn"
-        onclick="event.stopPropagation(); saveItem('city', 'argentina_buenos-aires', 'بوينس آيرس', 'https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/Buenos-Aires.png')">🏙️</button>
-      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/Buenos-Aires.png" alt="بوينس آيرس" class="cite-img" />
+        onclick="event.stopPropagation(); saveItem('city', 'argentina_buenos-aires', 'بوينس آيرس', '/img/argentina-buenos-aires.jpg')">🏙️</button>
+      <img src="/img/argentina-buenos-aires.jpg" alt="بوينس آيرس" class="cite-img" />
       <span class="name">بوينس آيرس – Buenos Aires</span>
       <p class="info">عاصمة الأرجنتين ومدينة التانغو والثقافة.</p>
       <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
     </div>
 
     <div class="cite" data-name="كوردوبا – Córdoba"
-      data-img="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/Cordoba.png"
+      data-img="/img/argentina-cordoba.jpg"
       data-desc="المدينة الجامعية الكبرى في الأرجنتين، تشتهر بمعمارها الكولونيالي ومناخها المعتدل ومطاعمها المتنوعة."
       data-historic="🏛️ كاثدرائية كوردوبا | 🏰 كانسيا خيسويتيكا | 🎨 متحف الفن الجميل | 🌿 حديقة جنرال سان مارتين"
       data-restaurants="🥩 مطعم La Nieta | 🍖 مطعم El Papagayo | 🥘 مطعم Novecento"
@@ -179,15 +180,15 @@
       data-events="🎪 مهرجان كوردوبا الموسيقي | 🎭 مهرجان المسرح | 🎵 مهرجان الفولكلور"
       onclick="openCityModal(this)">
       <button class="save-btn"
-        onclick="event.stopPropagation(); saveItem('city', 'argentina_cordoba', 'كوردوبا', 'https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/Cordoba.png')">🏙️</button>
-      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/Cordoba.png" alt="كوردوبا" class="cite-img" />
+        onclick="event.stopPropagation(); saveItem('city', 'argentina_cordoba', 'كوردوبا', '/img/argentina-cordoba.jpg')">🏙️</button>
+      <img src="/img/argentina-cordoba.jpg" alt="كوردوبا" class="cite-img" />
       <span class="name">كوردوبا – Córdoba</span>
       <p class="info">المدينة الجامعية بمعمار كولونيالي رائع.</p>
       <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
     </div>
 
     <div class="cite" data-name="ميندوسا – Mendoza"
-      data-img="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/Mendoza.png"
+      data-img="/img/argentina-mendoza.jpg"
       data-desc="عاصمة العنب والكروم في الأرجنتين، تحيطها جبال الأنديز وتشتهر بمهرجان العنب السنوي والمناظر الطبيعية الخلابة."
       data-historic="🏔️ جبل أكونكاغوا | 🍇 كروم لوخان دي كويو | 🌋 بركان توبونغاتو | 🏛️ متحف ميندوسا"
       data-restaurants="🥩 مطعم Azafrán | 🍖 مطعم La Marchigiana | 🥘 مطعم Francesco"
@@ -195,15 +196,15 @@
       data-events="🍇 مهرجان العنب | 🏔️ تسلق أكونكاغوا | 🎵 مهرجان الكروم"
       onclick="openCityModal(this)">
       <button class="save-btn"
-        onclick="event.stopPropagation(); saveItem('city', 'argentina_mendoza', 'ميندوسا', 'https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/Mendoza.png')">🏙️</button>
-      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/Mendoza.png" alt="ميندوسا" class="cite-img" />
+        onclick="event.stopPropagation(); saveItem('city', 'argentina_mendoza', 'ميندوسا', '/img/argentina-mendoza.jpg')">🏙️</button>
+      <img src="/img/argentina-mendoza.jpg" alt="ميندوسا" class="cite-img" />
       <span class="name">ميندوسا – Mendoza</span>
       <p class="info">عاصمة الكروم بسفح جبال الأنديز.</p>
       <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
     </div>
 
     <div class="cite" data-name="باريلوتشي – Bariloche"
-      data-img="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/Bariloche.png"
+      data-img="/img/argentina-bariloche.jpg"
       data-desc="مدينة الثلج والبحيرات في باتاغونيا، تشبه قرى الألب السويسرية بجمالها الطبيعي ومناخها البارد وممارسة الرياضات الشتوية."
       data-historic="🏔️ جبل كاتيدرال | 🏛️ متحف باتاغونيا | 🌊 بحيرة ناويل واي | 🌿 حديقة لاوهين"
       data-restaurants="🐟 مطعم El Boliche de Alberto | 🥩 مطعم Casita Suiza | 🥘 مطعم Kandahar"
@@ -211,15 +212,15 @@
       data-events="⛷️ بطولة التزلج | 🍫 مهرجان الشوكولاتة | 🚣 جولات البحيرات"
       onclick="openCityModal(this)">
       <button class="save-btn"
-        onclick="event.stopPropagation(); saveItem('city', 'argentina_bariloche', 'باريلوتشي', 'https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/Bariloche.png')">🏙️</button>
-      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/Bariloche.png" alt="باريلوتشي" class="cite-img" />
+        onclick="event.stopPropagation(); saveItem('city', 'argentina_bariloche', 'باريلوتشي', '/img/argentina-bariloche.jpg')">🏙️</button>
+      <img src="/img/argentina-bariloche.jpg" alt="باريلوتشي" class="cite-img" />
       <span class="name">باريلوتشي – Bariloche</span>
       <p class="info">مدينة الثلج والبحيرات في باتاغونيا.</p>
       <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
     </div>
 
     <div class="cite" data-name="سالتا – Salta"
-      data-img="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/Salta.png"
+      data-img="/img/argentina-salta.jpg"
       data-desc="جوهرة شمال الأرجنتين، مدينة بمعمار كولونيالي رائع ومناظر طبيعية من الجبال الملونة والوديان العميقة."
       data-historic="🏛️ كاتدرائية سالتا | 🏔️ وادي كيبرادا | 🎨 متحف الفنون | 🌵 صحراء بونا"
       data-restaurants="🥘 مطعم El Corredor de las Empanadas | 🍖 مطعم José Balcarce | 🥩 مطعم La Vieja Estación"
@@ -227,15 +228,15 @@
       data-events="🎪 مهرجان سالتا الثقافي | 🏔️ جولة الشمال | 🎵 مهرجان الفولكلور"
       onclick="openCityModal(this)">
       <button class="save-btn"
-        onclick="event.stopPropagation(); saveItem('city', 'argentina_salta', 'سالتا', 'https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/Salta.png')">🏙️</button>
-      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/Salta.png" alt="سالتا" class="cite-img" />
+        onclick="event.stopPropagation(); saveItem('city', 'argentina_salta', 'سالتا', '/img/argentina-salta.jpg')">🏙️</button>
+      <img src="/img/argentina-salta.jpg" alt="سالتا" class="cite-img" />
       <span class="name">سالتا – Salta</span>
       <p class="info">جوهرة شمال الأرجنتين بمعمار كولونيالي.</p>
       <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
     </div>
 
     <div class="cite" data-name="مار ديل بلاتا – Mar del Plata"
-      data-img="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/Mar-del-Plata.png"
+      data-img="/img/argentina-mardel.jpg"
       data-desc="عروس شواطئ الأرجنتين، وجهة صيفية شعبية تجمع بين الشواطئ الجميلة ومنتجعات الصيد وأجواء المدينة الساحلية."
       data-historic="🏖️ شاطئ برستول | 🏛️ متحف مار ديل بلاتا | 🐟 ميناء الصيد | 🏗️ الكازينو التاريخي"
       data-restaurants="🐟 مطعم La Marca | 🥩 مطعم Taberna Baska | 🥘 مطعم El Rancho"
@@ -243,8 +244,8 @@
       data-events="🏄 مهرجان ركوب الأمواج | 🎪 مهرجان مار ديل بلاتا السينمائي | 🎵 حفلات الصيف"
       onclick="openCityModal(this)">
       <button class="save-btn"
-        onclick="event.stopPropagation(); saveItem('city', 'argentina_mardel', 'مار ديل بلاتا', 'https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/Mar-del-Plata.png')">🏙️</button>
-      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/Mar-del-Plata.png" alt="مار ديل بلاتا" class="cite-img" />
+        onclick="event.stopPropagation(); saveItem('city', 'argentina_mardel', 'مار ديل بلاتا', '/img/argentina-mardel.jpg')">🏙️</button>
+      <img src="/img/argentina-mardel.jpg" alt="مار ديل بلاتا" class="cite-img" />
       <span class="name">مار ديل بلاتا – Mar del Plata</span>
       <p class="info">عروس شواطئ الأرجنتين ووجهة الصيف.</p>
       <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
@@ -257,37 +258,37 @@
   </div>
   <section class="foods-grid">
     <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=argentina-asado'">
-      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/Asado.png" alt="أساد" class="foods-img" />
+      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/argentina-asado.jpg" alt="أساد" class="foods-img" />
       <span class="name-foods">أساد – Asado</span>
       <div class="food-info">شواء أرجنتيني شهير من اللحوم والضلوع.</div>
       <a href="/recipes/recipes.html?recipe=argentina-asado" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
     </div>
     <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=argentina-empanadas'">
-      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/Empanadas.png" alt="إمبانادس" class="foods-img" />
+      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/argentina-empanadas.jpg" alt="إمبانادس" class="foods-img" />
       <span class="name-foods">إمبانادس – Empanadas</span>
       <div class="food-info">فطائر مقلية أو مخبوزة محشوة بالدجاج.</div>
       <a href="/recipes/recipes.html?recipe=argentina-empanadas" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
     </div>
     <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=argentina-milanesa'">
-      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/Milanesa.png" alt="ميلانيسا" class="foods-img" />
+      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/argentina-milanesa.jpg" alt="ميلانيسا" class="foods-img" />
       <span class="name-foods">ميلانيسا – Milanesa</span>
       <div class="food-info">شريحة لحم مغطاة ببقسماط ومقلية حتى تصبح.</div>
       <a href="/recipes/recipes.html?recipe=argentina-milanesa" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
     </div>
     <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=argentina-locro'">
-      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/Locro.png" alt="لوكرو" class="foods-img" />
+      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/argentina-locro.jpg" alt="لوكرو" class="foods-img" />
       <span class="name-foods">لوكرو – Locro</span>
       <div class="food-info">حساء دسم من الذرة والبقوليات واللحم.</div>
       <a href="/recipes/recipes.html?recipe=argentina-locro" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
     </div>
     <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=argentina-alfajores'">
-      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/Alfajores.png" alt="ألفاخوريس" class="foods-img" />
+      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/argentina-alfajores.jpg" alt="ألفاخوريس" class="foods-img" />
       <span class="name-foods">ألفاخوريس – Alfajores</span>
       <div class="food-info">بسكويت ناعم محشو بكريم دولسي دي ليتشي.</div>
       <a href="/recipes/recipes.html?recipe=argentina-alfajores" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
     </div>
     <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=argentina-dulce-de-leche'">
-      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/Dulce-de-Leche.png" alt="دولسي دي ليتشي" class="foods-img" />
+      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/argentina-dulce-de-leche.jpg" alt="دولسي دي ليتشي" class="foods-img" />
       <span class="name-foods">دولسي دي ليتشي – Dulce de Leche</span>
       <div class="food-info">كريم الحليب الأرجنتيني الأشهر.</div>
       <a href="/recipes/recipes.html?recipe=argentina-dulce-de-leche" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
@@ -299,37 +300,37 @@
   </div>
   <section class="events-grid">
     <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=ArgentinaTango'">
-      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/tango.png" alt="مهرجان التانغو" class="event-img" />
+      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/argentina-tango.jpg" alt="مهرجان التانغو" class="event-img" />
       <span class="name-event">مهرجان التانغو – Tango Festival</span>
       <div class="event-info">مهرجان التانغو العالمي في بوينس آيرس.</div>
       <a href="/events/events.html?event=ArgentinaTango" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
     </div>
     <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=IguazuFalls'">
-      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/iguazu.png" alt="شلالات إيغوازو" class="event-img" />
+      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/argentina-iguazu.jpg" alt="شلالات إيغوازو" class="event-img" />
       <span class="name-event">شلالات إيغوازو – Iguazú Falls</span>
       <div class="event-info">أعظم شلالات العالم على الحدود الأرجنتينية.</div>
       <a href="/events/events.html?event=IguazuFalls" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
     </div>
     <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=PeritoMoreno'">
-      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/perito-moreno.png" alt="جليد بيريتو مورينو" class="event-img" />
+      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/argentina-perito-moreno.jpg" alt="جليد بيريتو مورينو" class="event-img" />
       <span class="name-event">جليد بيريتو مورينو – Perito Moreno</span>
       <div class="event-info">نهر جليدي ضخم يمكن المشي عليه.</div>
       <a href="/events/events.html?event=PeritoMoreno" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
     </div>
     <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=MendozaWine'">
-      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/Mendoza-Harvest-Festival.png" alt="مهرجان العنب منودوسا" class="event-img" />
+      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/argentina-wine.jpg" alt="مهرجان العنب منودوسا" class="event-img" />
       <span class="name-event">مهرجان العنب – Mendoza Harvest Festival</span>
       <div class="event-info">مهرجان الكروم السنوي في ميندوسا.</div>
       <a href="/events/events.html?event=MendozaWine" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
     </div>
     <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=PatagoniaHike'">
-      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/patagonia.png" alt="مشي باتاغونيا" class="event-img" />
+      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/argentina-patagonia.jpg" alt="مشي باتاغونيا" class="event-img" />
       <span class="name-event">مشي باتاغونيا – Patagonia Trekking</span>
       <div class="event-info">مسارات مشي أسطورية في باتاغونيا.</div>
       <a href="/events/events.html?event=PatagoniaHike" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
     </div>
     <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=BuenosAiresCity'">
-      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/Buenos-Aires1.png" alt="جولة بوينس آيرس" class="event-img" />
+      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/argentina-bsas-city.jpg" alt="جولة بوينس آيرس" class="event-img" />
       <span class="name-event">جولة بوينس آيرس – Buenos Aires City Tour</span>
       <div class="event-info">أحياء بوينس آيرس بثقافتها وجدارياتها.</div>
       <a href="/events/events.html?event=BuenosAiresCity" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>

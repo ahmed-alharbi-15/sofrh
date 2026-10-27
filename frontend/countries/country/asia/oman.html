@@ -66,6 +66,7 @@
             <span class="user-name" id="userName"></span>
             <div class="user-dropdown">
                 <a href="/profile/profile.html">الملف الشخصي</a>
+                <a href="/admin/admin.html" class="admin-link" id="adminLink" style="display:none">⚙️ الإدارة</a>
                 <a href="#" id="logoutBtn">تسجيل خروج</a>
             </div>
         </div>
@@ -143,6 +144,7 @@
   <header>
     <a href="/countries/countries.html" class="back-btn">رجوع</a>
   </header>
+
 
   <div class="country-name">
     <h1>عمان</h1>
@@ -234,22 +236,22 @@
       <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
     </div>
 
-  
-    <div class="cite" data-name="البريمي – Al Buraimi"
-      data-img="/img/oman-buraimi.jpg"
-      data-desc="مدينة البريمي الحدودية تقع في قلب واحة خضراء على الحدود الأمارتية، وتشتهر بأسواقها التقليدية وفقاريها المائية العريقة."
-      data-historic="🏰 قلعة الحل | 🌴 واحة البريمي | 🕌 مسجد السلطان قابوس | 🛖 فلج الجبيل"
-      data-restaurants="🥘 مطعم البريمي السياحي | 🍖 مطعم الواحة | 🌮 مطعم حدود"
-      data-cafes="☕ مقهى الفلج | ☕ مقهى الواحة | ☕ مقهى التقليدي"
-      data-events="🏰 قلعة الحل | 🛍️ سوق البريمي | 🌴 جولة الواحة"
+    <div class="cite" data-name="الجبل الأخضر – Jebel Akhdar"
+      data-img="/img/oman-jebel-akhdar.jpg"
+      data-desc="جنة عُمان الخضراء على ارتفاع 2000م، تشتهر بوردها الجوري الفريد والرمان والخوخ وقرى التراث المعلقة في السحاب."
+      data-historic="🌹 حقول ورد الجوري | 🏡 قرية شبرا | 🌿 مزارع الرمان | 🏔️ مسارات الجبال الخضراء"
+      data-restaurants="🥘 مطعم Alila Jabal Akhdar | 🍖 مطعم Sama Al Jabal | 🌮 مطعم Mountain View"
+      data-cafes="☕ مقهى Rose Garden | ☕ مقهى Alila Terrace | ☕ مقهى Green Mountain"
+      data-events="🌹 موسم قطاف الورود | 🏡 جولة القرى التراثية | 🌄 شروق الشمس من القمة"
       onclick="openCityModal(this)">
       <button class="save-btn"
-        onclick="event.stopPropagation(); saveItem('city', 'oman_buraimi', 'البريمي', '/img/oman-buraimi.jpg')">🏙️</button>
-      <img src="/img/oman-buraimi.jpg" alt="البريمي" class="cite-img" />
-      <span class="name">البريمي – Al Buraimi</span>
-      <p class="info">مدينة الواحة الحدودية بين عُمان والإمارات.</p>
+        onclick="event.stopPropagation(); saveItem('city', 'oman_jebel_akhdar', 'الجبل الأخضر', '/img/oman-jebel-akhdar.jpg')">🏙️</button>
+      <img src="/img/oman-jebel-akhdar.jpg" alt="الجبل الأخضر" class="cite-img" />
+      <span class="name">الجبل الأخضر – Jebel Akhdar</span>
+      <p class="info">جنة عُمان الخضراء على ارتفاع 2000م، تشتهر بوردها ا...</p>
       <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
     </div>
+
   </section>
 
   <div class="main-foods">

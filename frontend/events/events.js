@@ -131,3 +131,37 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     allCards.forEach(card => grid.appendChild(card));
 });
+
+
+// ── إخفاء فعاليات دول ready: false ───────────────────────────────────────────
+(async function hideNotReadyEvents() {
+    if (!document.querySelector('.event-card')) return;
+
+    try {
+        const res = await fetch('/plan/plan.js');
+        if (!res.ok) return;
+        const text = await res.text();
+
+        const arrMatch = text.match(/const\s+countries\s*=\s*(\[[\s\S]*?\]);/);
+        if (!arrMatch) return;
+        const countries = JSON.parse(arrMatch[1]);
+
+        // اجمع الأسماء العربية للدول غير الجاهزة
+        const notReadyNames = new Set(
+            countries.filter(c => c.ready === false).map(c => c.nameAr)
+        );
+        if (notReadyNames.size === 0) return;
+
+        document.querySelectorAll('.event-card').forEach(card => {
+            const dataCountry = card.querySelector('.event-item')?.getAttribute('data-country') || '';
+            // data-country يحتوي على "🇸🇦 الاسم" — نتحقق بـ includes
+            for (const name of notReadyNames) {
+                if (dataCountry.includes(name)) {
+                    card.style.display = 'none';
+                    break;
+                }
+            }
+        });
+
+    } catch (_) { /* silent fail */ }
+})();

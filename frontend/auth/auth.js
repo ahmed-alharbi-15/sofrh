@@ -130,6 +130,26 @@ if (logoutBtn) {
 
 checkAuth();
 
+// --- 3b. فحص صلاحية الأدمن وإظهار رابط الإدارة ---
+(async function checkAdminLink() {
+    const user = JSON.parse(localStorage.getItem('safraUser') || 'null');
+    if (!user?.email) return;
+
+    try {
+        const res = await fetch('https://sofrh-1.onrender.com/admin/check', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email: user.email })
+        });
+        if (!res.ok) return;
+        const data = await res.json();
+        if (data.admin === true) {
+            const link = document.getElementById('adminLink');
+            if (link) link.style.display = 'inline-flex';
+        }
+    } catch (_) { /* silent fail — لا تأثير على بقية الصفحة */ }
+})();
+
 // --- 5. حفظ في المفضلة ---
 async function saveItem(type, id, name, img) {
     const user = JSON.parse(localStorage.getItem("safraUser"));

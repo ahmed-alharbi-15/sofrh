@@ -63,6 +63,7 @@
             <span class="user-name" id="userName"></span>
             <div class="user-dropdown">
                 <a href="/profile/profile.html">الملف الشخصي</a>
+                <a href="/admin/admin.html" class="admin-link" id="adminLink" style="display:none">⚙️ الإدارة</a>
                 <a href="#" id="logoutBtn">تسجيل خروج</a>
             </div>
         </div>
@@ -225,24 +226,22 @@
             <button class="cite-btn"
                 onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
         </div>
-
-    
-    <div class="cite" data-name="سبيتستاون – Speightstown"
-      data-img="/img/barbados-speightstown.jpg"
-      data-desc="ثاني أكبر مدن باربادوس وأحد أجمل مواقع التراث الاستعماري في الكاريبي، يُعرف قديماً بـ"ليتل بريستول" لتجارته مع إنجلترا."
-      data-historic="🏰 قلعة اورانج | 🏛️ متحف آرلاين | ⛪ كنيسة سانت بيتر | 🛖 سوق سبيتستاون"
-      data-restaurants="🥘 مطعم Fishermans | 🍖 مطعم Lukes Steakhouse | 🌮 مطعم Mango Bay"
-      data-cafes="☕ مقهى Fisherpond | ☕ مقهى Cobbler Cove | ☕ مقهى Lone Star"
-      data-events="🏰 قلعة اورانج | 🛍️ سوق السمك | 🏖️ شاطئ الباخرة"
-      onclick="openCityModal(this)">
-      <button class="save-btn"
-        onclick="event.stopPropagation(); saveItem('city', 'barbados_speightstown', 'سبيتستاون', '/img/barbados-speightstown.jpg')">🏙️</button>
-      <img src="/img/barbados-speightstown.jpg" alt="سبيتستاون" class="cite-img" />
-      <span class="name">سبيتستاون – Speightstown</span>
-      <p class="info">ثاني أكبر مدن باربادوس وعاصمتها الاستعمارية القديمة.</p>
-      <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
-    </div>
-  </section>
+        <div class="cite" data-name="كهف هاريسون – Harrison's Cave" data-img="/img/barbados-harriscave.jpg"
+            data-desc="كهف بركاني مذهل بتشكيلاته الصخرية الكريستالية والشلالات تحت الأرض، موقع طبيعي لا مثيل له في الكاريبي."
+            data-historic="🕯️ كهف هاريسون – Harrison's Cave | 🌿 متنزه ويلدمان – Welchman Hall Gully | 🦋 حديقة الفراشات | 🌺 حدائق الأوركيدات"
+            data-restaurants="🍽️ مطعم Cave Restaurant | 🌿 مطعم Plantation Restaurant | 🥘 مطعم Earthworks Pottery"
+            data-cafes="☕ مقهى Cave Café | ☕ مقهى Orchid Garden | ☕ مقهى Garrison Café"
+            data-events="🕯️ جولة الكهف | 🌿 وادي ويلشمان هول | 🦋 حديقة الفراشات"
+            onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'barbados_harriscave', 'كهف هاريسون', '/img/barbados-harriscave.jpg')">🏙️</button>
+            <img src="/img/barbados-harriscave.jpg" alt="كهف هاريسون" class="cite-img">
+            <span class="name">كهف هاريسون – Harrison's Cave</span>
+            <p class="info">الكهف الكريستالي الأجمل في الكاريبي بشلالاته المذهلة.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+    </section>
 
     <div class="main-foods">
         <h1>الماكولات</h1>
@@ -352,9 +351,7 @@
             <a href="/events/events.html?event=AnimalFlowerCave" class="event-btn"
                 onclick="event.stopPropagation()">المزيد</a>
         </div>
-    
-
-        </section>
+    </section>
 
     <div id="cityModal" class="modal" onclick="closeCityModal(event)">
         <div class="modal-content">

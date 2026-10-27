@@ -65,6 +65,7 @@
             <span class="user-name" id="userName"></span>
             <div class="user-dropdown">
                 <a href="/profile/profile.html">الملف الشخصي</a>
+                <a href="/admin/admin.html" class="admin-link" id="adminLink" style="display:none">⚙️ الإدارة</a>
                 <a href="#" id="logoutBtn">تسجيل خروج</a>
             </div>
         </div>
@@ -139,6 +140,7 @@
                 </a></li>
         </ul>
     </div>
+
 
 <div class="country-name">
   <h1>كوريا الشمالية</h1>
@@ -225,24 +227,23 @@
         <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
     </div>
 
-  </div>
-
-    <div class="cite" data-name="نامبو – Nampo"
-      data-img="/img/northkorea-nampo.jpg"
-      data-desc="ميناء نامبو هو البوابة البحرية لكوريا الشمالية على خليج غرب كوريا، وتشتهر بحاجز المياه الضخم والصناعات الثقيلة."
-      data-historic="🚢 ميناء نامبو | 🏗️ حاجز نامبو للمياه | 🏭 مجمع تشيل العمالي | 🏛️ متحف الميناء"
-      data-restaurants="🥘 مطعم البحر | 🍖 مطعم الميناء | 🌮 مطعم الشعب"
-      data-cafes="☕ مقهى الميناء | ☕ مقهى الطلاب | ☕ مقهى الربيع"
-      data-events="🚢 زيارة ميناء نامبو | 🏗️ حاجز نامبو | 🎭 مهرجان العمال"
-      onclick="openCityModal(this)">
-      <button class="save-btn"
-        onclick="event.stopPropagation(); saveItem('city', 'northkorea_nampo', 'نامبو', '/img/northkorea-nampo.jpg')">🏙️</button>
-      <img src="/img/northkorea-nampo.jpg" alt="نامبو" class="cite-img" />
-      <span class="name">نامبو – Nampo</span>
-      <p class="info">ميناء كوريا الشمالية البحري الرئيسي على الخليج الغربي.</p>
-      <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    <div class="cite" data-name="جبل باكتو – Paektu Mountain"
+        data-img="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/northkorea-paektu.jpg"
+        data-desc="أعلى قمة في شبه الجزيرة الكورية ومقدسها الوطني الأول، يحتضن في قمته بحيرة تشون المقدسة الفيروزية المذهلة في فوهة البركان المكسوة بالثلج على ارتفاع 2744 متراً."
+        data-historic="بحيرة تشون المقدسة في قمة البركان|فوهة البركان الضخمة|منحدرات الثلج الأبدي|متحف جبل باكتو الوطني|كهوف الجليد الطبيعية|مسار التسلق الكوري الوطني"
+        data-restaurants="مطعم باكتو الجبلي|مطعم القمة الكورية|مطعم البحيرة المقدسة|مطعم الجليد والثلج|مطعم التسلق الكبير|مطعم الوطن الكوري"
+        data-cafes="كافيه باكتو|كافيه قمة الجبل|ذا سوميت كافيه|كافيه بحيرة تشون|كافيه الثلج|كافيه الوطني"
+        data-events="بحيرة تشون الفيروزية على قمة البركان|المشي في الثلج الأبدي على القمة|التسلق الوطني الكوري لقمة باكتو|فوهة البركان الضخمة المثيرة|مشاهدة شروق الشمس على القمة|كهوف الجليد الطبيعية المدهشة"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'northkorea_paektu', 'جبل باكتو', 'https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/northkorea-paektu.jpg')">🏙️</button>
+        <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/northkorea-paektu.jpg" alt="جبل باكتو" class="cite-img">
+        <span class="name">جبل باكتو – Paektu Mountain</span>
+        <p class="info">أعلى قمة في الجزيرة الكورية وأقدسها</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
     </div>
-  </section>
+
+  </div>
+</section>
 
 <div class="main-foods">
   <h1>الماكولات</h1>
@@ -328,8 +329,7 @@
       <a href="/events/events.html?event=NKMansudae" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
     </div>
   </div>
-
-    </section>
+</section>
 
   <div id="cityModal" class="modal" onclick="closeCityModal(event)">
     <div class="modal-content">

@@ -63,6 +63,7 @@
             <span class="user-name" id="userName"></span>
             <div class="user-dropdown">
                 <a href="/profile/profile.html">الملف الشخصي</a>
+                <a href="/admin/admin.html" class="admin-link" id="adminLink" style="display:none">⚙️ الإدارة</a>
                 <a href="#" id="logoutBtn">تسجيل خروج</a>
             </div>
         </div>
@@ -180,7 +181,21 @@
             <button class="cite-btn"
                 onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
         </div>
-
+        <div class="cite" data-name="شاطئ ديكنسون – Dickenson Bay" data-img="/img/antigua-dickenson.jpg"
+            data-desc="أكثر شواطئ أنتيغوا شهرة برماله الذهبية ومياهه الهادئة الفيروزية وخيارات الرياضات المائية المتنوعة لكل الأعمار."
+            data-historic="🏖️ شاطئ ديكنسون – Dickenson Bay | 🤿 الغوص والسنوركل | 🚤 رحلات القوارب | 🏄 التزلج على الماء"
+            data-restaurants="🍽️ مطعم Coconut Grove | 🌿 مطعم Sandals Grande | 🥘 مطعم Cecile's"
+            data-cafes="☕ مقهى Bay House Bar | ☕ مقهى Beachcomber Bar | ☕ مقهى Sunset Café"
+            data-events="🏖️ شاطئ ديكنسون | 🤿 الغوص والسنوركل | 🚤 رحلة قارب"
+            onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'antigua_dickenson', 'شاطئ ديكنسون', '/img/antigua-dickenson.jpg')">🏙️</button>
+            <img src="/img/antigua-dickenson.jpg" alt="شاطئ ديكنسون" class="cite-img">
+            <span class="name">شاطئ ديكنسون – Dickenson Bay</span>
+            <p class="info">الشاطئ الذهبي الأشهر في أنتيغوا بمياه هادئة رائعة.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
         <div class="cite" data-name="فالمووث – Falmouth" data-img="/img/antigua-falmouth.jpg"
             data-desc="قرية ساحلية هادئة بإطلالة ساحرة على خليج فالمووث ومنطلق رحلات الإبحار حول الجزيرة."
             data-historic="⛵ خليج فالمووث – Falmouth Harbour | 🏰 بلاك بيان كاسيل – Blackpineapple Castle | 🌿 مسار فيغ تري درايف | 🌊 شعاب مرجانية"
@@ -196,7 +211,21 @@
             <button class="cite-btn"
                 onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
         </div>
-
+        <div class="cite" data-name="شاطئ نصف القمر – Half Moon Bay" data-img="/img/antigua-halfmoon.jpg"
+            data-desc="شاطئ متوحش وبكر بشكله الهلالي المميز ومياهه الزرقاء الصافية، محمي بحديقة وطنية، يُعدّ من أجمل شواطئ الكاريبي."
+            data-historic="🏖️ شاطئ نصف القمر – Half Moon Bay | 🌊 أمواج التصفح | 🐠 حياة بحرية غنية | 🌿 المسار الطبيعي"
+            data-restaurants="🍽️ مطعم Half Moon Bay Hotel | 🌿 مطعم The Seaside Café | 🥘 مطعم Coconut Shell"
+            data-cafes="☕ مقهى Bay View | ☕ مقهى Seabreeze | ☕ مقهى Sunset Snack"
+            data-events="🏖️ شاطئ نصف القمر | 🏄 ركوب الأمواج | 🐠 السنوركل"
+            onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'antigua_halfmoon', 'شاطئ نصف القمر', '/img/antigua-halfmoon.jpg')">🏙️</button>
+            <img src="/img/antigua-halfmoon.jpg" alt="شاطئ نصف القمر" class="cite-img">
+            <span class="name">شاطئ نصف القمر – Half Moon Bay</span>
+            <p class="info">الشاطئ البكر الأجمل في الكاريبي بشكله الهلالي الفريد.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
         <div class="cite" data-name="بربودا – Barbuda" data-img="/img/antigua-barbuda.jpg"
             data-desc="جزيرة النظيرة الهادئة الملاصقة لأنتيغوا، موطن أكبر مستعمرة عُش الغَاق في العالم وشواطئ وردية اللون لا تُصدَّق."
             data-historic="🐦 مستعمرة عُش الغَاق – Frigate Bird Colony | 🏖️ شاطئ الرمل الوردي – Pink Sand Beach | 🌿 حديقة بربودا الوطنية | 🏰 قلعة هايغورث"
@@ -212,39 +241,7 @@
             <button class="cite-btn"
                 onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
         </div>
-    
-    <div class="cite" data-name="كودرينغتون – Codrington"
-      data-img="/img/antigua-codrington.jpg"
-      data-desc="أكبر مستوطنات جزيرة باربودا وعاصمتها الفعلية، تحيط بها بحيرة الطيور الضخمة وأعشاش الفرقاطة المذهلة."
-      data-historic="🐦 بحيرة مستعمرة الفرقاطة | 🏖️ شواطئ باربودا | 🛖 قرية الصيد | 🌊 مرجان اللاغون"
-      data-restaurants="🥘 مطعم الفرقاطة | 🍖 مطعم البحر الهادئ | 🌮 مطعم لاغون"
-      data-cafes="☕ مقهى الجزيرة | ☕ مقهى باربودا | ☕ مقهى الصياد"
-      data-events="🐦 مراقبة طيور الفرقاطة | 🏖️ شاطئ بينكلي | 🚤 رحلة بحرية"
-      onclick="openCityModal(this)">
-      <button class="save-btn"
-        onclick="event.stopPropagation(); saveItem('city', 'antiguabarbuda_codrington', 'كودرينغتون', '/img/antigua-codrington.jpg')">🏙️</button>
-      <img src="/img/antigua-codrington.jpg" alt="كودرينغتون" class="cite-img" />
-      <span class="name">كودرينغتون – Codrington</span>
-      <p class="info">عاصمة جزيرة باربودا ومركز مستعمرة الفرقاطة الشهيرة.</p>
-      <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
-    </div>
-  
-    <div class="cite" data-name="أولد رود – Old Road"
-      data-img="/img/antigua-oldroad.jpg"
-      data-desc="أولى المستوطنات الأوروبية في أنتيغوا عام 1632، وتحيط بها مزارع السكر التاريخية وتلال خضراء ذات منظر بانورامي."
-      data-historic="🏛️ أولى المستوطنات الأوروبية | 🌿 مزارع السكر التاريخية | ⛪ كنيسة سانت جون | 🏔️ تل شيرلي"
-      data-restaurants="🥘 مطعم Harmony Hall | 🍖 مطعم Hemmingways | 🌮 مطعم Old Road Bay"
-      data-cafes="☕ مقهى Turner Beach | ☕ مقهى Jolly Harbour | ☕ مقهى Heritage"
-      data-events="🏛️ زيارة المستوطنة الأولى | 🌅 غروب الجبل | 🌊 شاطئ تيرنر"
-      onclick="openCityModal(this)">
-      <button class="save-btn"
-        onclick="event.stopPropagation(); saveItem('city', 'antiguabarbuda_oldroad', 'أولد رود', '/img/antigua-oldroad.jpg')">🏙️</button>
-      <img src="/img/antigua-oldroad.jpg" alt="أولد رود" class="cite-img" />
-      <span class="name">أولد رود – Old Road</span>
-      <p class="info">أقدم مستوطنة أوروبية في أنتيغوا ذات تاريخ زراعي عريق.</p>
-      <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
-    </div>
-  </section>
+    </section>
 
     <div class="main-foods">
         <h1>الماكولات</h1>

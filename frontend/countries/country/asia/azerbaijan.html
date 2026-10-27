@@ -66,6 +66,7 @@
             <span class="user-name" id="userName"></span>
             <div class="user-dropdown">
                 <a href="/profile/profile.html">الملف الشخصي</a>
+                <a href="/admin/admin.html" class="admin-link" id="adminLink" style="display:none">⚙️ الإدارة</a>
                 <a href="#" id="logoutBtn">تسجيل خروج</a>
             </div>
         </div>
@@ -149,92 +150,83 @@
   <div class="country-name"><h1>أذربيجان</h1><p>أبراج اللهب وقصر الخان وشواطئ بحر قزوين</p></div>
   <div class="main-cites"><h1>المدن</h1></div>
   <section class="cities-grid">
-    <div class="cite" data-name="باكو – Baku" data-img="https://res.cloudinary.com/dqe6mmkzz/image/upload/v1792599878/azerbaijan-logo.jpg" data-desc="عاصمة أذربيجان الساحرة على ضفاف بحر قزوين، تجمع بين مدينة قديمة مدرجة على اليونسكو وأبراج لهب عصرية." data-historic="🔥 أبراج اللهب | 🏰 مدينة باكو القديمة | 🏛️ متحف السجادة | 🕌 مسجد جمعة باكو" data-restaurants="🥘 مطعم Cay Bagi | 🍖 مطعم Firuze | 🌮 مطعم Mugam Club" data-cafes="☕ مقهى Ministry of Coffee | ☕ مقهى Balaca Café | ☕ مقهى Four Rooms" data-events="🔥 أبراج اللهب ليلاً | 🏰 جولة المدينة القديمة | 🎭 مهرجان باكو" onclick="openCityModal(this)">
-      <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'azerbaijan_baku', 'باكو', 'https://res.cloudinary.com/dqe6mmkzz/image/upload/v1792599878/azerbaijan-logo.jpg')">🏙️</button>
-      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/v1792599878/azerbaijan-logo.jpg" alt="باكو" class="cite-img" />
+    <div class="cite" data-name="باكو – Baku" data-img="/img/azerbaijan-baku.jpg" data-desc="عاصمة أذربيجان الساحرة على ضفاف بحر قزوين، تجمع بين مدينة قديمة مدرجة على اليونسكو وأبراج لهب عصرية." data-historic="🔥 أبراج اللهب | 🏰 مدينة باكو القديمة | 🏛️ متحف السجادة | 🕌 مسجد جمعة باكو" data-restaurants="🥘 مطعم Cay Bagi | 🍖 مطعم Firuze | 🌮 مطعم Mugam Club" data-cafes="☕ مقهى Ministry of Coffee | ☕ مقهى Balaca Café | ☕ مقهى Four Rooms" data-events="🔥 أبراج اللهب ليلاً | 🏰 جولة المدينة القديمة | 🎭 مهرجان باكو" onclick="openCityModal(this)">
+      <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'azerbaijan_baku', 'باكو', '/img/azerbaijan-baku.jpg')">🏙️</button>
+      <img src="/img/azerbaijan-baku.jpg" alt="باكو" class="cite-img" />
       <span class="name">باكو – Baku</span>
       <p class="info">عاصمة أذربيجان الساحرة على ضفاف بحر قزوين، تجمع بين مدي...</p>
       <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
     </div>
-    <div class="cite" data-name="شيكي – Sheki" data-img="https://res.cloudinary.com/dqe6mmkzz/image/upload/v1792684399/Sheki.jpg" data-desc="مدينة الحرير والكاروانسراي التاريخي في قلب جبال القوقاز، تشتهر بحلوى شكيربورا ومنسوجاتها الحريرية." data-historic="🏯 خان شيكي | 🕌 كاروانسراي ألباني | 🏛️ متحف شيكي | 🌿 غابات القوقاز" data-restaurants="🥘 مطعم Sheki Karvansaray | 🍖 مطعم Khan Palace | 🌮 مطعم Silk Road" data-cafes="☕ مقهى Heritage Inn | ☕ مقهى Sheki View | ☕ مقهى Caravanserai" data-events="🏯 قصر الخان | 🎨 ورشة الحلوى التقليدية | 🌿 رحلة الغابة" onclick="openCityModal(this)">
-      <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'azerbaijan_sheki', 'شيكي', 'https://res.cloudinary.com/dqe6mmkzz/image/upload/v1792684399/Sheki.jpg')">🏙️</button>
-      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/v1792684399/Sheki.jpg" alt="شيكي" class="cite-img" />
+    <div class="cite" data-name="شيكي – Sheki" data-img="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/azerbaijan-sheki.jpg" data-desc="مدينة الحرير والكاروانسراي التاريخي في قلب جبال القوقاز، تشتهر بحلوى شكيربورا ومنسوجاتها الحريرية." data-historic="🏯 خان شيكي | 🕌 كاروانسراي ألباني | 🏛️ متحف شيكي | 🌿 غابات القوقاز" data-restaurants="🥘 مطعم Sheki Karvansaray | 🍖 مطعم Khan Palace | 🌮 مطعم Silk Road" data-cafes="☕ مقهى Heritage Inn | ☕ مقهى Sheki View | ☕ مقهى Caravanserai" data-events="🏯 قصر الخان | 🎨 ورشة الحلوى التقليدية | 🌿 رحلة الغابة" onclick="openCityModal(this)">
+      <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'azerbaijan_sheki', 'شيكي', 'https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/azerbaijan-sheki.jpg')">🏙️</button>
+      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/azerbaijan-sheki.jpg" alt="شيكي" class="cite-img" />
       <span class="name">شيكي – Sheki</span>
       <p class="info">مدينة الحرير والكاروانسراي التاريخي في قلب جبال القوقاز...</p>
       <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
     </div>
-    <div class="cite" data-name="غبالا – Gabala" data-img="https://res.cloudinary.com/dqe6mmkzz/image/upload/v1792685945/gabala.jpg" data-desc="منتجع أذربيجان الجبلي بمياهه المعدنية وأدغاله الكثيفة وأنشطة الرياضة والمغامرة طوال العام." data-historic="⛷️ منتجع التزلج | 🌿 غابة غبالا | 🎡 ملاهي تيكان | 🌊 بحيرة ناهجيران" data-restaurants="🥘 مطعم Qafqaz Resort | 🍖 مطعم Gabala Inn | 🌮 مطعم Mountain View" data-cafes="☕ مقهى Forest Café | ☕ مقهى Highland | ☕ مقهى Qafqaz Coffee" data-events="⛷️ التزلج الشتوي | 🌿 رحلات الغابة | 🎡 ملاهي غبالا" onclick="openCityModal(this)">
-      <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'azerbaijan_gabala', 'غبالا', 'https://res.cloudinary.com/dqe6mmkzz/image/upload/v1792685945/gabala.jpg')">🏙️</button>
-      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/v1792685945/gabala.jpg" alt="غبالا" class="cite-img" />
+    <div class="cite" data-name="غبالا – Gabala" data-img="/img/azerbaijan-gabala.jpg" data-desc="منتجع أذربيجان الجبلي بمياهه المعدنية وأدغاله الكثيفة وأنشطة الرياضة والمغامرة طوال العام." data-historic="⛷️ منتجع التزلج | 🌿 غابة غبالا | 🎡 ملاهي تيكان | 🌊 بحيرة ناهجيران" data-restaurants="🥘 مطعم Qafqaz Resort | 🍖 مطعم Gabala Inn | 🌮 مطعم Mountain View" data-cafes="☕ مقهى Forest Café | ☕ مقهى Highland | ☕ مقهى Qafqaz Coffee" data-events="⛷️ التزلج الشتوي | 🌿 رحلات الغابة | 🎡 ملاهي غبالا" onclick="openCityModal(this)">
+      <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'azerbaijan_gabala', 'غبالا', '/img/azerbaijan-gabala.jpg')">🏙️</button>
+      <img src="/img/azerbaijan-gabala.jpg" alt="غبالا" class="cite-img" />
       <span class="name">غبالا – Gabala</span>
       <p class="info">منتجع أذربيجان الجبلي بمياهه المعدنية وأدغاله الكثيفة و...</p>
       <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
     </div>
-        <div class="cite" data-name="لنكران – Lankaran" data-img="https://res.cloudinary.com/dqe6mmkzz/image/upload/v1792686325/Lankaran.webp" data-desc="مدينة الشاي والحمضيات في أذربيجان الجنوبية، بمناخها الاستوائي الرطب وشواطئها على بحر قزوين." data-historic="🌿 حدائق الشاي | 🌊 شاطئ بحر قزوين | 🏛️ قلعة لنكران | 🍊 مزارع الحمضيات" data-restaurants="🥘 مطعم Lankaran Beach | 🍖 مطعم Hirkan | 🌮 مطعم Tea Garden" data-cafes="☕ مقهى Lankaran Tea | ☕ مقهى Citrus Grove | ☕ مقهى Caspian Breeze" data-events="🌿 جولة مزارع الشاي | 🌊 شاطئ قزوين | 🍊 مزارع الحمضيات" onclick="openCityModal(this)">
-      <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'azerbaijan_lankaran', 'لنكران', 'https://res.cloudinary.com/dqe6mmkzz/image/upload/v1792686325/Lankaran.webp')">🏙️</button>
-      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/v1792686325/Lankaran.webp" alt="لنكران" class="cite-img" />
+    <div class="cite" data-name="قوباستان – Gobustan" data-img="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/azerbaijan-gobustan.jpg" data-desc="موقع أثري فريد بنقوشه الصخرية البالغة 40,000 عام وبراكينه الطينية الغريبة وحصنه التاريخي." data-historic="🏛️ المحمية الأثرية | 🌋 براكين الطين | 🎨 نقوش صخرية عمرها 40 ألف عام | ⛺ مخيم الصحراء" data-restaurants="🥘 مطعم Gobustan Museum | 🍖 مطعم Mud Volcano | 🌮 مطعم Rock View" data-cafes="☕ مقهى Petroglyph | ☕ مقهى Ancient Arts | ☕ مقهى Desert Rose" data-events="🌋 براكين الطين الغريبة | 🏛️ النقوش الصخرية | ⛺ مخيم القوباستان" onclick="openCityModal(this)">
+      <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'azerbaijan_gobustan', 'قوباستان', 'https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/azerbaijan-gobustan.jpg')">🏙️</button>
+      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/azerbaijan-gobustan.jpg" alt="قوباستان" class="cite-img" />
+      <span class="name">قوباستان – Gobustan</span>
+      <p class="info">موقع أثري فريد بنقوشه الصخرية البالغة 40,000 عام وبراكي...</p>
+      <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+    <div class="cite" data-name="لنكران – Lankaran" data-img="/img/azerbaijan-lankaran.jpg" data-desc="مدينة الشاي والحمضيات في أذربيجان الجنوبية، بمناخها الاستوائي الرطب وشواطئها على بحر قزوين." data-historic="🌿 حدائق الشاي | 🌊 شاطئ بحر قزوين | 🏛️ قلعة لنكران | 🍊 مزارع الحمضيات" data-restaurants="🥘 مطعم Lankaran Beach | 🍖 مطعم Hirkan | 🌮 مطعم Tea Garden" data-cafes="☕ مقهى Lankaran Tea | ☕ مقهى Citrus Grove | ☕ مقهى Caspian Breeze" data-events="🌿 جولة مزارع الشاي | 🌊 شاطئ قزوين | 🍊 مزارع الحمضيات" onclick="openCityModal(this)">
+      <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'azerbaijan_lankaran', 'لنكران', '/img/azerbaijan-lankaran.jpg')">🏙️</button>
+      <img src="/img/azerbaijan-lankaran.jpg" alt="لنكران" class="cite-img" />
       <span class="name">لنكران – Lankaran</span>
       <p class="info">مدينة الشاي والحمضيات في أذربيجان الجنوبية، بمناخها الا...</p>
       <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
     </div>
-    <div class="cite" data-name="غنجة – Ganja" data-img="https://res.cloudinary.com/dqe6mmkzz/image/upload/v1792765941/ganja.jpg" data-desc="ثاني أكبر مدن أذربيجان ومدينة الشاعر نظامي الكنجوي، تزخر بالمساجد العثمانية والأسواق التاريخية." data-historic="🕌 مسجد شاه عباس | 🏛️ ضريح نظامي الكنجوي | 🏰 قلعة غنجة | 🎨 متحف التاريخ" data-restaurants="🥘 مطعم Nizami | 🍖 مطعم Ganja Bazaar | 🌮 مطعم Khan Saray" data-cafes="☕ مقهى Nizami Garden | ☕ مقهى Poetica | ☕ مقهى Old City Ganja" data-events="🕌 مسجد شاه عباس | 🏛️ ضريح الشاعر نظامي | 🛍️ سوق غنجة التاريخي" onclick="openCityModal(this)">
-      <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'azerbaijan_ganja', 'غنجة', 'https://res.cloudinary.com/dqe6mmkzz/image/upload/v1792765941/ganja.jpg')">🏙️</button>
-      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/v1792765941/ganja.jpg" alt="غنجة" class="cite-img" />
+    <div class="cite" data-name="غنجة – Ganja" data-img="/img/azerbaijan-ganja.jpg" data-desc="ثاني أكبر مدن أذربيجان ومدينة الشاعر نظامي الكنجوي، تزخر بالمساجد العثمانية والأسواق التاريخية." data-historic="🕌 مسجد شاه عباس | 🏛️ ضريح نظامي الكنجوي | 🏰 قلعة غنجة | 🎨 متحف التاريخ" data-restaurants="🥘 مطعم Nizami | 🍖 مطعم Ganja Bazaar | 🌮 مطعم Khan Saray" data-cafes="☕ مقهى Nizami Garden | ☕ مقهى Poetica | ☕ مقهى Old City Ganja" data-events="🕌 مسجد شاه عباس | 🏛️ ضريح الشاعر نظامي | 🛍️ سوق غنجة التاريخي" onclick="openCityModal(this)">
+      <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'azerbaijan_ganja', 'غنجة', '/img/azerbaijan-ganja.jpg')">🏙️</button>
+      <img src="/img/azerbaijan-ganja.jpg" alt="غنجة" class="cite-img" />
       <span class="name">غنجة – Ganja</span>
       <p class="info">ثاني أكبر مدن أذربيجان ومدينة الشاعر نظامي الكنجوي، تزخ...</p>
       <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
     </div>
-  
-    <div class="cite" data-name="قبة – Quba"
-      data-img="https://res.cloudinary.com/dqe6mmkzz/image/upload/v1792765949/Quba.jpg"
-      data-desc="مدينة قبة شمال أذربيجان تشتهر بتفاحها الشهير وجبالها الخضراء والحي اليهودي القديم الفريد من نوعه في المنطقة."
-      data-historic="🥧 حي قرياتي اليهودي | 🏰 قلعة قبة | 🌴 غابات القوقاز الشمالية | 🏛️ مسجد قبة الجامع"
-      data-restaurants="🍽️ مطعم Quba Resort | 🍽️ مطعم Apple Garden | 🌮 مطعم Caucasus Inn"
-      data-cafes="☕ مقهى Quba Hilton | ☕ مقهى Mountain Apple | ☕ مقهى Highland View"
-      data-events="🥧 حي يهود جبال القوقاز | 🍎 موسم قطف التفاح | 🏕️ مخيم الجبال الشمالية"
-      onclick="openCityModal(this)">
-      <button class="save-btn"
-        onclick="event.stopPropagation(); saveItem('city', 'azerbaijan_quba', 'قبة', 'https://res.cloudinary.com/dqe6mmkzz/image/upload/v1792765949/Quba.jpg')">🏙️</button>
-      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/v1792765949/Quba.jpg" alt="قبة" class="cite-img" />
-      <span class="name">قبة – Quba</span>
-      <p class="info">مدينة التفاح الشمالية بحيها اليهودي العريق وجبالها الخضراء.</p>
-      <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
-    </div>
-    </section>
+  </section>
   <div class="main-foods"><h1>الماكولات</h1></div>
   <section class="foods-grid">
     <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=azerbaijan-plov'">
-      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/v1792766248/Azerbaijani_Plov.jpg" alt="بلاف أذربيجاني" class="foods-img" />
+      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/azerbaijan-plov.jpg" alt="بلاف أذربيجاني" class="foods-img" />
       <span class="name-foods">بلاف أذربيجاني – Azerbaijani Plov</span>
       <div class="food-info">أرز بسمتي مطبوخ بالزعفران والفواكه المجففة والمكسرات.</div>
       <a href="/recipes/recipes.html?recipe=azerbaijan-plov" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
     </div>
     <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=azerbaijan-dolma'">
-      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/v1792844416/Azerbaijani_Dolma.jpg" alt="دولما أذربيجانية" class="foods-img" />
+      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/azerbaijan-dolma.jpg" alt="دولما أذربيجانية" class="foods-img" />
       <span class="name-foods">دولما أذربيجانية – Azerbaijani Dolma</span>
       <div class="food-info">محشي أذربيجاني بثلاثة أنواع: ورق كرم وفليفلة وطماطم.</div>
       <a href="/recipes/recipes.html?recipe=azerbaijan-dolma" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
     </div>
     <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=azerbaijan-lyulya-kebab'">
-      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/v1792844559/Lyulya_Kebab.jpg" alt="كباب لولة" class="foods-img" />
+      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/azerbaijan-lyulya-kebab.jpg" alt="كباب لولة" class="foods-img" />
       <span class="name-foods">كباب لولة – Lyulya Kebab</span>
       <div class="food-info">كباب اللحم المفروم الممزوج بالبصل والبقدونس يُشوى.</div>
       <a href="/recipes/recipes.html?recipe=azerbaijan-lyulya-kebab" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
     </div>
     <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=azerbaijan-gutab'">
-      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/v1792845146/Gutab_azerbaijan.jpg" alt="قوتاب" class="foods-img" />
+      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/azerbaijan-gutab.jpg" alt="قوتاب" class="foods-img" />
       <span class="name-foods">قوتاب – Gutab</span>
       <div class="food-info">فطيرة رقيقة محشوة باللحم المفروم أو الأعشاب الخضراء.</div>
       <a href="/recipes/recipes.html?recipe=azerbaijan-gutab" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
     </div>
     <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=azerbaijan-dushbara'">
-      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/v1792845777/Azerbaijani_Dushbara.jpg" alt="دوشبارا" class="foods-img" />
+      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/azerbaijan-dushbara.jpg" alt="دوشبارا" class="foods-img" />
       <span class="name-foods">دوشبارا – Dushbara</span>
       <div class="food-info">زلابية صغيرة جداً محشوة باللحم المفروم والثوم.</div>
       <a href="/recipes/recipes.html?recipe=azerbaijan-dushbara" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
     </div>
     <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=azerbaijan-baklava'">
-      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/v1792846085/Azerbaijani_Baklava.jpg" alt="باكلاوة أذربيجانية" class="foods-img" />
+      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/azerbaijan-baklava.jpg" alt="باكلاوة أذربيجانية" class="foods-img" />
       <span class="name-foods">باكلاوة أذربيجانية – Azerbaijani Baklava</span>
       <div class="food-info">حلوى عيد النوروز الأذربيجانية بعجينتها الرقيقة المحشوة.</div>
       <a href="/recipes/recipes.html?recipe=azerbaijan-baklava" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
@@ -243,37 +235,37 @@
   <div class="events-main"><h1>الفعاليات</h1></div>
   <section class="events-grid">
     <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=AzerbaijanFlame'">
-      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/v1792846434/Flame_Towers_Baku.jpg" alt="أبراج اللهب باكو" class="event-img" />
+      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/azerbaijan-flame-towers.jpg" alt="أبراج اللهب باكو" class="event-img" />
       <span class="name-event">أبراج اللهب باكو – Flame Towers Baku</span>
       <div class="event-info">ناطحات سحاب تحاكي اللهب في سماء باكو.</div>
       <a href="/events/events.html?event=AzerbaijanFlame" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
     </div>
     <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=AzerbaijanGobustan'">
-      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/v1792850530/Gobustan_Reserve.jpg" alt="محمية قوباستان" class="event-img" />
+      <img src="/img/azerbaijan-gobustan-site.jpg" alt="محمية قوباستان" class="event-img" />
       <span class="name-event">محمية قوباستان – Gobustan Reserve</span>
       <div class="event-info">نقوش صخرية وبراكين طين فريدة في أذربيجان.</div>
       <a href="/events/events.html?event=AzerbaijanGobustan" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
     </div>
     <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=AzerbaijanSheki'">
-      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/v1792850685/Sheki_Khan_Palace.jpg" alt="قصر خان شيكي" class="event-img" />
+      <img src="/img/azerbaijan-sheki-palace.jpg" alt="قصر خان شيكي" class="event-img" />
       <span class="name-event">قصر خان شيكي – Sheki Khan Palace</span>
       <div class="event-info">قصر أثري بفسيفساء رائعة من القرن الثامن عشر.</div>
       <a href="/events/events.html?event=AzerbaijanSheki" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
     </div>
     <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=AzerbaijanOldCity'">
-      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/v1792850860/Baku_Old_City.jpg" alt="مدينة باكو القديمة" class="event-img" />
+      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/azerbaijan-old-city.jpg" alt="مدينة باكو القديمة" class="event-img" />
       <span class="name-event">مدينة باكو القديمة – Baku Old City</span>
       <div class="event-info">مدينة عتيقة مسورة مدرجة في اليونسكو.</div>
       <a href="/events/events.html?event=AzerbaijanOldCity" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
     </div>
     <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=AzerbaijanLahij'">
-      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/v1792851950/Lahij_Village.jpg" alt="قرية لاهيج الحرفية" class="event-img" />
+      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/azerbaijan-lahij.jpg" alt="قرية لاهيج الحرفية" class="event-img" />
       <span class="name-event">قرية لاهيج الحرفية – Lahij Village</span>
       <div class="event-info">قرية جبلية تشتهر بصناعة النحاس اليدوي.</div>
       <a href="/events/events.html?event=AzerbaijanLahij" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
     </div>
     <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=AzerbaijanCaspian'">
-      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/v1792851667/Caspian_Sea_Beach.jpg" alt="شاطئ بحر قزوين" class="event-img" />
+      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/azerbaijan-caspian.jpg" alt="شاطئ بحر قزوين" class="event-img" />
       <span class="name-event">شاطئ بحر قزوين – Caspian Sea Beach</span>
       <div class="event-info">شواطئ باكو على أكبر بحيرة مالحة في العالم.</div>
       <a href="/events/events.html?event=AzerbaijanCaspian" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>

@@ -63,6 +63,7 @@
             <span class="user-name" id="userName"></span>
             <div class="user-dropdown">
                 <a href="/profile/profile.html">الملف الشخصي</a>
+                <a href="/admin/admin.html" class="admin-link" id="adminLink" style="display:none">⚙️ الإدارة</a>
                 <a href="#" id="logoutBtn">تسجيل خروج</a>
             </div>
         </div>
@@ -230,23 +231,23 @@
                 onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
         </div>
 
-    
-    <div class="cite" data-name="غوياف – Gouyave"
-      data-img="/img/grenada-gouyave.jpg"
-      data-desc="مدينة الصيادين الساحلية تقع على الساحل الغربي لغرينادا، وتُعرف بمصانع جوز الطيب ومهرجان السمك الأسبوعي الشهير."
-      data-historic="🏭 مصنع جوز الطيب | 🎣 سوق السمك الليلي | ⛪ كنيسة سانت فرانسيس | 🌊 الشاطئ الغربي"
-      data-restaurants="🥘 مطعم Dolphin | 🍖 مطعم Telfor Bedeau | 🌮 مطعم Nutmeg"
-      data-cafes="☕ مقهى Carenage | ☕ مقهى Blanche | ☕ مقهى Westside"
-      data-events="🎣 مهرجان سمك الجمعة | 🏭 جولة مصنع جوز الطيب | 🌊 غروب الغرب"
-      onclick="openCityModal(this)">
-      <button class="save-btn"
-        onclick="event.stopPropagation(); saveItem('city', 'grenada_gouyave', 'غوياف', '/img/grenada-gouyave.jpg')">🏙️</button>
-      <img src="/img/grenada-gouyave.jpg" alt="غوياف" class="cite-img" />
-      <span class="name">غوياف – Gouyave</span>
-      <p class="info">عاصمة جوز الطيب ومركز صيد السمك في غرينادا.</p>
-      <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
-    </div>
-  </section>
+        <div class="cite" data-name="بحيرة غراند إتانغ – Grand Étang" data-img="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/grenada-grand-etang.jpg"
+            data-desc="بحيرة بركانية ساحرة تقع في قلب غابة غرينادا الاستوائية على ارتفاع 530 متراً، محاطة بالنباتات الاستوائية الكثيفة وتُعدّ نقطة انطلاق لمسارات المشي الجبلي."
+            data-historic="🌋 البحيرة البركانية الطبيعية | 🌿 محمية الغابة الوطنية | 🦜 طيور الببغاء الخضراء المحلية | 🏔️ قمة مورن ديابلوتان"
+            data-restaurants="🍽️ مطعم Grand Etang Lake View | 🥘 مطعم Forest Retreat | 🌿 مطعم Rainforest Kitchen"
+            data-cafes="☕ مقهى Lake View Café | ☕ مقهى Forest Sip | ☕ مقهى Green Parrot Corner"
+            data-events="🌋 جولة البحيرة البركانية | 🌿 مسار مشي الغابة الاستوائية | 🦜 مشاهدة الببغاء الخضراء"
+            onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'grenada_grandetang', 'بحيرة غراند إتانغ', 'https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/grenada-grand-etang.jpg')">🏙️</button>
+            <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/grenada-grand-etang.jpg" alt="بحيرة غراند إتانغ" class="cite-img">
+            <span class="name">بحيرة غراند إتانغ – Grand Étang</span>
+            <p class="info">بحيرة بركانية وسط الغابة الاستوائية الخضراء الكثيفة.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+    </section>
 
     <div class="main-foods">
         <h1>الماكولات</h1>

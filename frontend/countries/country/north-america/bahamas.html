@@ -63,6 +63,7 @@
             <span class="user-name" id="userName"></span>
             <div class="user-dropdown">
                 <a href="/profile/profile.html">الملف الشخصي</a>
+                <a href="/admin/admin.html" class="admin-link" id="adminLink" style="display:none">⚙️ الإدارة</a>
                 <a href="#" id="logoutBtn">تسجيل خروج</a>
             </div>
         </div>
@@ -165,7 +166,21 @@
             <button class="cite-btn"
                 onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
         </div>
-
+        <div class="cite" data-name="جزيرة باراداييس – Paradise Island" data-img="/img/bahamas-paradise.jpg"
+            data-desc="جزيرة الأحلام المتصلة بناسو بجسرها الشهير، موقع منتجع أتلانتس الأسطوري وشواطئ بيضاء لا تُصدَّق."
+            data-historic="🏨 منتجع أتلانتس – Atlantis Resort | 🏖️ شاطئ كاوباي | 🐠 أكواريوم Aquaventure | 🌿 حدائق فيرسايل"
+            data-restaurants="🍽️ مطعم Nobu Paradise | 🌿 مطعم Mosaic | 🥘 مطعم Carmines"
+            data-cafes="☕ مقهى Starbucks Atlantis | ☕ مقهى The Dune Café | ☕ مقهى News Café"
+            data-events="🏨 استكشاف أتلانتس | 🏖️ شاطئ لاغون | 🐠 أكواريوم أتلانتس"
+            onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'bahamas_paradise', 'جزيرة باراداييس', '/img/bahamas-paradise.jpg')">🏙️</button>
+            <img src="/img/bahamas-paradise.jpg" alt="جزيرة باراداييس" class="cite-img">
+            <span class="name">جزيرة باراداييس – Paradise Island</span>
+            <p class="info">جزيرة الأحلام بمنتجع أتلانتس وشواطئها الأسطورية.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
         <div class="cite" data-name="إكزوما – Exuma" data-img="/img/bahamas-exuma.jpg"
             data-desc="أرخبيل أكزوما الخيالي بعدة مئات من الجزر المتناثرة وجزره الصغيرة ذات المياه الفيروزية، موطن خنازير الجزيرة السباحة الشهيرة."
             data-historic="🐷 جزيرة الخنازير السباحة – Pig Beach | 🌊 بركة المد الداكنة – Dark Blue Hole | 🏖️ شواطئ أكزوما | 🐠 شعاب مرجانية بكر"
@@ -226,23 +241,7 @@
             <button class="cite-btn"
                 onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
         </div>
-    
-    <div class="cite" data-name="هاربور آيلاند – Harbour Island"
-      data-img="/img/bahamas-harbourisland.jpg"
-      data-desc="جزيرة هاربور آيلاند الساحرة تشتهر بشاطئها الوردي الفريد "بينك ساند بيتش"، وبيوتها الملونة في حي دونمور التاريخي."
-      data-historic="🏖️ شاطئ الرمال الوردية | 🏘️ حي دونمور التاريخي | ⛪ كنيسة سانت جون | 🎣 ميناء الصيادين"
-      data-restaurants="🥘 مطعم Sip Sip | 🍖 مطعم Dunmore Beach | 🌮 مطعم Landing"
-      data-cafes="☕ مقهى Sugar Mill | ☕ مقهى Pink Sand | ☕ مقهى Rock House"
-      data-events="🏖️ شاطئ الرمال الوردية | 🚤 رحلة بحرية | 🎣 صيد السمك"
-      onclick="openCityModal(this)">
-      <button class="save-btn"
-        onclick="event.stopPropagation(); saveItem('city', 'bahamas_harbourisland', 'هاربور آيلاند', '/img/bahamas-harbourisland.jpg')">🏙️</button>
-      <img src="/img/bahamas-harbourisland.jpg" alt="هاربور آيلاند" class="cite-img" />
-      <span class="name">هاربور آيلاند – Harbour Island</span>
-      <p class="info">جزيرة الشاطئ الوردي الفريد والعمارة الاستعمارية الملونة.</p>
-      <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
-    </div>
-  </section>
+    </section>
 
     <div class="main-foods">
         <h1>الماكولات</h1>

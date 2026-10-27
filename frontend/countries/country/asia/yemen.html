@@ -65,6 +65,7 @@
             <span class="user-name" id="userName"></span>
             <div class="user-dropdown">
                 <a href="/profile/profile.html">الملف الشخصي</a>
+                <a href="/admin/admin.html" class="admin-link" id="adminLink" style="display:none">⚙️ الإدارة</a>
                 <a href="#" id="logoutBtn">تسجيل خروج</a>
             </div>
         </div>
@@ -249,37 +250,37 @@
 </div>
 <section class="foods-grid">
     <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=yemen-mandi'">
-      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/v1792071915/Yemeni_Mandi.jpg" alt="مندي يمني" class="foods-img">
+      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/yemen-mandi.jpg" alt="مندي يمني" class="foods-img">
       <span class="name-foods">مندي يمني – Yemeni Mandi</span>
       <div class="food-info">ملك المائدة اليمنية وأشهر طبق في شبه.</div>
       <a href="/recipes/recipes.html?recipe=yemen-mandi" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
     </div>
     <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=yemen-saltah'">
-      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/v1792073004/Saltah.jpg" alt="سلتة" class="foods-img">
+      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/yemen-saltah.jpg" alt="سلتة" class="foods-img">
       <span class="name-foods">سلتة – Saltah</span>
       <div class="food-info">الطبق الوطني اليمني، مرق اللحم مع الحلبة.</div>
       <a href="/recipes/recipes.html?recipe=yemen-saltah" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
     </div>
     <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=yemen-lahoh'">
-      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/v1792073536/Lahoh.jpg" alt="لحوح" class="foods-img">
-      <span class="name-foods">لحوح يمني Yemeni Lahoh</span>
+      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/yemen-lahoh.jpg" alt="لحوح" class="foods-img">
+      <span class="name-foods">لحوح – Lahoh</span>
       <div class="food-info">الخبز الإسفنجي اليمني المسامي المصنوع من الذرة.</div>
       <a href="/recipes/recipes.html?recipe=yemen-lahoh" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
     </div>
     <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=yemen-fahsa'">
-      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/v1792073671/Fahsa.jpg" alt="فحسة" class="foods-img">
+      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/yemen-fahsa.jpg" alt="فحسة" class="foods-img">
       <span class="name-foods">فحسة – Fahsa</span>
       <div class="food-info">شوربة اللحم اليمنية الثقيلة في إناء الحجر.</div>
       <a href="/recipes/recipes.html?recipe=yemen-fahsa" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
     </div>
     <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=yemen-zurbian'">
-      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/v1792073871/Zurbian.jpg" alt="زربيان" class="foods-img">
+      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/yemen-zurbian.jpg" alt="زربيان" class="foods-img">
       <span class="name-foods">زربيان – Zurbian</span>
       <div class="food-info">البيريانى اليمنية الحضرمية بالأرز والدجاج والبزار اليمني.</div>
       <a href="/recipes/recipes.html?recipe=yemen-zurbian" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
     </div>
     <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=yemen-bint-alsahn'">
-      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/v1792074069/Bint_Al-Sahn.jpg" alt="بنت الصحن" class="foods-img">
+      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/yemen-bint-alsahn.jpg" alt="بنت الصحن" class="foods-img">
       <span class="name-foods">بنت الصحن – Bint Al-Sahn</span>
       <div class="food-info">الحلوى اليمنية الملكية من طبقات العجين الرقيق.</div>
       <a href="/recipes/recipes.html?recipe=yemen-bint-alsahn" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
@@ -292,38 +293,38 @@
 </div>
 <section class="events-grid">
     <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=YemenSanaaOld'">
-      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/v1792334046/oldsanaa.jpg" alt="صنعاء القديمة" class="event-img">
+      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/yemen-sanaa.jpg" alt="صنعاء القديمة" class="event-img">
       <span class="name-event">صنعاء القديمة – Old Sana'a</span>
       <div class="event-info">صنعاء القديمة المدرجة باليونسكو وناطحاتها الطينية.</div>
       <a href="/events/events.html?event=YemenSanaaOld" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
     </div>
     <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=YemenSocotra'">
-      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/v1792334932/Socotra_Island.jpg" alt="جزيرة سقطرى" class="event-img">
+      <img src="/img/yemen-socotra.jpg" alt="جزيرة سقطرى" class="event-img">
       <span class="name-event">جزيرة سقطرى – Socotra Island</span>
       <div class="event-info">جزيرة سقطرى الأسطورية بنباتاتها الفريدة في العالم.</div>
       <a href="/events/events.html?event=YemenSocotra" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
     </div>
     <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=YemenShibam'">
-      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/v1792337280/shibam_old.png" alt="مانهاتن الصحراء" class="event-img">
-      <span class="name-event">مانهاتن الصحراء – Shibam </span>
+      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/yemen-shibam.jpg" alt="مانهاتن الصحراء" class="event-img">
+      <span class="name-event">مانهاتن الصحراء – Shibam</span>
       <div class="event-info">ناطحات شبام الطينية في صحراء حضرموت.</div>
       <a href="/events/events.html?event=YemenShibam" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
     </div>
     <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=YemenWadiHadramut'">
-      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/v1792337725/wadi_hadramut.jpg" alt="وادي حضرموت" class="event-img">
+      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/yemen-shibam.jpg" alt="وادي حضرموت" class="event-img">
       <span class="name-event">وادي حضرموت – Wadi Hadramut</span>
       <div class="event-info">وادي حضرموت الأسطوري بمدنه الطينية والنخيل.</div>
       <a href="/events/events.html?event=YemenWadiHadramut" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
     </div>
     <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=YemenCoffee'">
-      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/v1792338096/Yemen_Coffee_Festival.jpg" alt="بن اليمن" class="event-img">
-      <span class="name-event">مهرجان القهوة اليمنية – Yemen Coffee Festival</span>
+      <img src="/img/yemen-mahwit.jpg" alt="بن اليمن" class="event-img">
+      <span class="name-event">بن اليمن – Yemeni Coffee</span>
       <div class="event-info">موطن القهوة الأول ومزارعها في جبال اليمن.</div>
       <a href="/events/events.html?event=YemenCoffee" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
     </div>
     <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=YemenTarim'">
-      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/v1792338325/Tarim_City_of_Scholars.jpg" alt="تريم حضرموت" class="event-img">
-      <span class="name-event">تريم العلم والعلماء – Tarim City of Scholars</span>
+      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/yemen-tarim.jpg" alt="تريم حضرموت" class="event-img">
+      <span class="name-event">تريم حضرموت – Tarim</span>
       <div class="event-info">مدينة المآذن الأكثر كثافة في العالم.</div>
       <a href="/events/events.html?event=YemenTarim" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
     </div>

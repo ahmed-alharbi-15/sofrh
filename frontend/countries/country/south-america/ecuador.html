@@ -36,7 +36,7 @@
   <link rel="stylesheet" href="/countries/countries.css" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@500;600&display=swap">
   <link rel="stylesheet" href="/dark-mode.css">
-    <meta property="og:image" content="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/logo-img.PNG">
+    <meta property="og:image" content="https://sofrh.vercel.apphttps://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/logo6.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:title" content="سفرة — سافر وتذوق">
@@ -45,7 +45,7 @@
     <meta property="og:type" content="website">
     <meta property="og:locale" content="ar_SA">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/logo-img.PNG">
+    <meta name="twitter:image" content="https://sofrh.vercel.apphttps://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/logo6.png">
     <meta name="twitter:title" content="سفرة — سافر وتذوق">
     <meta name="twitter:description" content="اكتشف وجهات وماكولات من مختلف أنحاء العالم">
     <script src="/auth/auth.js" defer></script>
@@ -66,6 +66,7 @@
             <span class="user-name" id="userName"></span>
             <div class="user-dropdown">
                 <a href="/profile/profile.html">الملف الشخصي</a>
+                <a href="/admin/admin.html" class="admin-link" id="adminLink" style="display:none">⚙️ الإدارة</a>
                 <a href="#" id="logoutBtn">تسجيل خروج</a>
             </div>
         </div>
@@ -80,7 +81,7 @@
         </ul>
 
         <div class="logo">
-            <a href="/index/index.html"><img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/logo-img.PNG" alt="سفرة"></a>
+            <a href="/index/index.html"><img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/logo7.png" alt="سفرة"></a>
         </div>
     </header>
 
@@ -156,7 +157,7 @@
   <section class="cities-grid">
 
     <div class="cite" data-name="كيتو – Quito"
-      data-img="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/Quito.png"
+      data-img="/img/ecuador-quito.jpg"
       data-desc="عاصمة الإكوادور المبنية على ارتفاع 2850م، تمتلك مركزاً تاريخياً معلناً تراثاً عالمياً باليونسكو ومناظر خلابة."
       data-historic="🏛️ كاتدرائية متروبوليتان | ⛪ كنيسة لا كومبانيا | 🗼 تمثال العذراء | 🌋 بركان كوتوباكسي"
       data-restaurants="🥘 مطعم Zazu | 🍖 مطعم Urko | 🌮 مطعم Casa Gangotena"
@@ -164,15 +165,15 @@
       data-events="🎪 مهرجان كيتو | 🌋 رحلة بركان كوتوباكسي | 🎭 مهرجان الفنون"
       onclick="openCityModal(this)">
       <button class="save-btn"
-        onclick="event.stopPropagation(); saveItem('city', 'ecuador_quito', 'كيتو', 'https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/Quito.png')">🏙️</button>
-      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/Quito.png" alt="كيتو" class="cite-img" />
+        onclick="event.stopPropagation(); saveItem('city', 'ecuador_quito', 'كيتو', '/img/ecuador-quito.jpg')">🏙️</button>
+      <img src="/img/ecuador-quito.jpg" alt="كيتو" class="cite-img" />
       <span class="name">كيتو – Quito</span>
       <p class="info">عاصمة بمركز تاريخي تراث عالمي.</p>
       <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
     </div>
 
     <div class="cite" data-name="غواياكيل – Guayaquil"
-      data-img="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/Guayaquil.png"
+      data-img="/img/ecuador-guayaquil.jpg"
       data-desc="أكبر مدن الإكوادور وميناؤها الرئيسي على المحيط الهادئ، تشتهر بمالكون الجديد الجميل وأجواءها المدارية الدافئة."
       data-historic="🌉 مالكون 2000 | 🏛️ متحف أنثروبولوجيا | 🗺️ حي لاس بينياس | 🌊 ميناء غواياكيل"
       data-restaurants="🐟 مطعم Lo Nuestro | 🥘 مطعم Boca Valeria | 🍖 مطعم La Canoa"
@@ -180,31 +181,31 @@
       data-events="🎪 مهرجان غواياكيل | 🏖️ جولة الشاطئ | 🎵 مهرجان الموسيقى"
       onclick="openCityModal(this)">
       <button class="save-btn"
-        onclick="event.stopPropagation(); saveItem('city', 'ecuador_guayaquil', 'غواياكيل', 'https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/Guayaquil.png')">🏙️</button>
-      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/Guayaquil.png" alt="غواياكيل" class="cite-img" />
+        onclick="event.stopPropagation(); saveItem('city', 'ecuador_guayaquil', 'غواياكيل', '/img/ecuador-guayaquil.jpg')">🏙️</button>
+      <img src="/img/ecuador-guayaquil.jpg" alt="غواياكيل" class="cite-img" />
       <span class="name">غواياكيل – Guayaquil</span>
       <p class="info">الميناء الكبير بمالكون 2000 الجميل.</p>
       <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
     </div>
 
     <div class="cite" data-name="كوينكا – Cuenca"
-      data-img="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/Cuenca.png"
-      data-desc="أجمل مدينة استعمارية في الإكوادور، مبنية في وadٍ بين الجبال بأزقتها الحجرية وكنائسها ومياهها الأربعة."
+      data-img="/img/ecuador-cuenca.jpg"
+      data-desc="أجمل مدينة استعمارية في الإكوادور، مبنية في وادٍ بين الجبال بأزقتها الحجرية وكنائسها ومياهها الأربعة."
       data-historic="🏛️ كاتدرائية لا انماكولادا | 🌿 بومابونغو | 🎨 متحف ديل بانكو سنترال | 🌸 حدائق كالديرون"
       data-restaurants="🥘 مطعم Villa Rosa | 🍖 مطعم El Maíz | 🌮 مطعم Café Austria"
       data-cafes="☕ مقهى Wunderbar | ☕ مقهى Café del Museo | ☕ مقهى El Cafecito"
       data-events="🎪 مهرجان كوينكا الثقافي | 🌺 احتفال يوم الموتى | 🎭 مهرجان الموسيقى"
       onclick="openCityModal(this)">
       <button class="save-btn"
-        onclick="event.stopPropagation(); saveItem('city', 'ecuador_cuenca', 'كوينكا', 'https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/Cuenca.png')">🏙️</button>
-      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/Cuenca.png" alt="كوينكا" class="cite-img" />
+        onclick="event.stopPropagation(); saveItem('city', 'ecuador_cuenca', 'كوينكا', '/img/ecuador-cuenca.jpg')">🏙️</button>
+      <img src="/img/ecuador-cuenca.jpg" alt="كوينكا" class="cite-img" />
       <span class="name">كوينكا – Cuenca</span>
       <p class="info">أجمل مدينة استعمارية في الإكوادور.</p>
       <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
     </div>
 
     <div class="cite" data-name="بانيوس – Baños"
-      data-img="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/Banos.png"
+      data-img="/img/ecuador-banos.jpg"
       data-desc="مدينة المغامرة في سفح بركان تونغوراهوا، تشتهر بينابيع الحمام الحار والمشي والرياضات المائية الرائعة."
       data-historic="🌋 بركان تونغوراهوا | 💦 شلالات باياميلوو | 🌉 جسر الزجاج | 🏊 حمامات حارة"
       data-restaurants="🥘 مطعم La Abuela | 🍖 مطعم Le Petit Restaurant | 🌮 مطعم Mariane"
@@ -212,15 +213,15 @@
       data-events="🧗 رياضات المغامرة | 💦 رفتنج نهر باستازا | 🌋 جولة البركان"
       onclick="openCityModal(this)">
       <button class="save-btn"
-        onclick="event.stopPropagation(); saveItem('city', 'ecuador_banos', 'بانيوس', 'https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/Banos.png')">🏙️</button>
-      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/Banos.png" alt="بانيوس" class="cite-img" />
+        onclick="event.stopPropagation(); saveItem('city', 'ecuador_banos', 'بانيوس', '/img/ecuador-banos.jpg')">🏙️</button>
+      <img src="/img/ecuador-banos.jpg" alt="بانيوس" class="cite-img" />
       <span class="name">بانيوس – Baños</span>
       <p class="info">مدينة المغامرة عند سفح البركان.</p>
       <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
     </div>
 
     <div class="cite" data-name="أوتافالو – Otavalo"
-      data-img="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/Otavalo.png"
+      data-img="/img/ecuador-otavalo.jpg"
       data-desc="مدينة السوق الأكثر شهرة في أمريكا اللاتينية، تعيش فيها شعوب أصلية تبيع منسوجاتها الرائعة كل يوم سبت."
       data-historic="🏛️ سوق أوتافالو | 🌊 بحيرة سان بابلو | 🌋 بركان أمبيشو | 🌿 محمية طبيعية"
       data-restaurants="🥘 مطعم Peguche | 🍖 مطعم Doña Clorinda | 🌮 مطعم Sumak Life"
@@ -228,15 +229,15 @@
       data-events="🛍️ سوق السبت الشعبي | 🎶 مهرجان إنتي رايمي | 🌺 احتفالات الحصاد"
       onclick="openCityModal(this)">
       <button class="save-btn"
-        onclick="event.stopPropagation(); saveItem('city', 'ecuador_otavalo', 'أوتافالو', 'https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/Otavalo.png')">🏙️</button>
-      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/Otavalo.png" alt="أوتافالو" class="cite-img" />
+        onclick="event.stopPropagation(); saveItem('city', 'ecuador_otavalo', 'أوتافالو', '/img/ecuador-otavalo.jpg')">🏙️</button>
+      <img src="/img/ecuador-otavalo.jpg" alt="أوتافالو" class="cite-img" />
       <span class="name">أوتافالو – Otavalo</span>
       <p class="info">أشهر سوق تقليدي في أمريكا اللاتينية.</p>
       <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
     </div>
 
     <div class="cite" data-name="بويرتو أيورا – Puerto Ayora"
-      data-img="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/Galapagos.png"
+      data-img="/img/ecuador-galapagos.jpg"
       data-desc="بوابة جزر غالاباغوس الساحرة، حيث يمكن مشاهدة السلاحف العملاقة وطيور البوبي ذات القدم الزرقاء والشعاب المرجانية."
       data-historic="🐢 محطة تشارلز داروين | 🦈 شعاب كورديرو | 🦭 شاطئ الأسود البحرية | 🌊 بحيرة داروين"
       data-restaurants="🐟 مطعم El Descanso del Guía | 🥘 مطعم Hernán | 🌮 مطعم La Garrapata"
@@ -244,8 +245,8 @@
       data-events="🐢 جولة السلاحف العملاقة | 🤿 غوص الجزر | 🦅 مشاهدة الطيور النادرة"
       onclick="openCityModal(this)">
       <button class="save-btn"
-        onclick="event.stopPropagation(); saveItem('city', 'ecuador_galapagos', 'بويرتو أيورا', 'https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/Galapagos.png')">🏙️</button>
-      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/Galapagos.png" alt="بويرتو أيورا" class="cite-img" />
+        onclick="event.stopPropagation(); saveItem('city', 'ecuador_galapagos', 'بويرتو أيورا', '/img/ecuador-galapagos.jpg')">🏙️</button>
+      <img src="/img/ecuador-galapagos.jpg" alt="بويرتو أيورا" class="cite-img" />
       <span class="name">بويرتو أيورا – Puerto Ayora</span>
       <p class="info">بوابة جزر غالاباغوس الفريدة.</p>
       <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
@@ -258,37 +259,37 @@
   </div>
   <section class="foods-grid">
     <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=ecuador-seco-pollo'">
-      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/Seco-de-Pollo.png" alt="سيكو دي بويو" class="foods-img" />
+      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/ecuador-seco-pollo.jpg" alt="سيكو دي بويو" class="foods-img" />
       <span class="name-foods">سيكو دي بويو – Seco de Pollo</span>
       <div class="food-info">دجاج مطبوخ ببطء مع الطماطم والكزبرة وعصير البرتقال.</div>
       <a href="/recipes/recipes.html?recipe=ecuador-seco-pollo" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
     </div>
     <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=ecuador-llapingachos'">
-      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/Llapingachos.png" alt="لابينغاتشوس" class="foods-img" />
+      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/ecuador-llapingachos.jpg" alt="لابينغاتشوس" class="foods-img" />
       <span class="name-foods">لابينغاتشوس – Llapingachos</span>
       <div class="food-info">كيك بطاطس وجبن مقلي على الصاج.</div>
       <a href="/recipes/recipes.html?recipe=ecuador-llapingachos" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
     </div>
     <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=ecuador-fanesca'">
-      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/Fanesca.png" alt="فانيسكا" class="foods-img" />
+      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/ecuador-fanesca.jpg" alt="فانيسكا" class="foods-img" />
       <span class="name-foods">فانيسكا – Fanesca</span>
       <div class="food-info">حساء موسمي الفصح من 12 نوع بقوليات.</div>
       <a href="/recipes/recipes.html?recipe=ecuador-fanesca" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
     </div>
     <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=ecuador-ceviche-camaron'">
-      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/Ceviche-de-Camarón.png" alt="سيفيتشي روبيان" class="foods-img" />
+      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/ecuador-ceviche-camaron.jpg" alt="سيفيتشي روبيان" class="foods-img" />
       <span class="name-foods">سيفيتشي روبيان – Ceviche de Camarón</span>
       <div class="food-info">روبيان طازج مع عصير الليمون والطماطم والبصل والكزبرة.</div>
       <a href="/recipes/recipes.html?recipe=ecuador-ceviche-camaron" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
     </div>
     <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=ecuador-hornado'">
-      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/Hornado.png" alt="أورنادو" class="foods-img" />
+      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/ecuador-hornado.jpg" alt="أورنادو" class="foods-img" />
       <span class="name-foods">أورنادو – Hornado</span>
       <div class="food-info">خروف مشوي كامل في الفرن مع التوابل والليمون.</div>
       <a href="/recipes/recipes.html?recipe=ecuador-hornado" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
     </div>
     <div class="foods" style="cursor:pointer" onclick="window.location.href='/recipes/recipes.html?recipe=ecuador-bolonaise'">
-      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/Bolón-de-Verde.png" alt="بولون دي فيرد" class="foods-img" />
+      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/ecuador-bolonaise.jpg" alt="بولون دي فيرد" class="foods-img" />
       <span class="name-foods">بولون دي فيرد – Bolón de Verde</span>
       <div class="food-info">كرة من الموز الأخضر المهروس محشوة بالجبن.</div>
       <a href="/recipes/recipes.html?recipe=ecuador-bolonaise" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>
@@ -300,37 +301,37 @@
   </div>
   <section class="events-grid">
     <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=GalapagosIslands'">
-      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/Galápagos-Islands.png" alt="جزر غالاباغوس" class="event-img" />
+      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/ecuador-galapagos-event.jpg" alt="جزر غالاباغوس" class="event-img" />
       <span class="name-event">جزر غالاباغوس – Galápagos Islands</span>
       <div class="event-info">مملكة الحيوانات النادرة في المحيط الهادئ.</div>
       <a href="/events/events.html?event=GalapagosIslands" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
     </div>
     <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=AmazonEcuador'">
-      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/Amazon-Jungle.png" alt="أمازون الإكوادور" class="event-img" />
+      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/ecuador-amazon.jpg" alt="أمازون الإكوادور" class="event-img" />
       <span class="name-event">أمازون الإكوادور – Amazon Jungle</span>
       <div class="event-info">رحلة في الغابة بين القرى والحيوانات النادرة.</div>
       <a href="/events/events.html?event=AmazonEcuador" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
     </div>
     <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=QuilotoaLake'">
-      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/Quilotoa-Crater-Lake.png" alt="بحيرة كيلوتوا" class="event-img" />
+      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/ecuador-quilotoa.jpg" alt="بحيرة كيلوتوا" class="event-img" />
       <span class="name-event">بحيرة كيلوتوا – Quilotoa Crater Lake</span>
       <div class="event-info">بحيرة فيروزية داخل فوهة بركانية.</div>
       <a href="/events/events.html?event=QuilotoaLake" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
     </div>
     <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=OtavaloMarket'">
-      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/Otavalo-Market.png" alt="سوق أوتافالو" class="event-img" />
+      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/ecuador-otavalo-market.jpg" alt="سوق أوتافالو" class="event-img" />
       <span class="name-event">سوق أوتافالو – Otavalo Market</span>
       <div class="event-info">أشهر سوق تقليدي في أمريكا اللاتينية.</div>
       <a href="/events/events.html?event=OtavaloMarket" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
     </div>
     <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=IntiRaymi'">
-      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/Inti-Raymi-Festival.png" alt="مهرجان إنتي رايمي" class="event-img" />
+      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/ecuador-inti-raymi.jpg" alt="مهرجان إنتي رايمي" class="event-img" />
       <span class="name-event">إنتي رايمي – Inti Raymi Festival</span>
       <div class="event-info">مهرجان الشمس الإنكي برقصات تقليدية.</div>
       <a href="/events/events.html?event=IntiRaymi" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
     </div>
     <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=CotopaximiVolcano'">
-      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/Cotopaxi-Volcano.png" alt="بركان كوتوباكسي" class="event-img" />
+      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/ecuador-cotopaxi.jpg" alt="بركان كوتوباكسي" class="event-img" />
       <span class="name-event">بركان كوتوباكسي – Cotopaxi Volcano</span>
       <div class="event-info">تسلق أحد أعلى البراكين النشطة.</div>
       <a href="/events/events.html?event=CotopaximiVolcano" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>

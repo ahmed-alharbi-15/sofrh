@@ -63,6 +63,7 @@
             <span class="user-name" id="userName"></span>
             <div class="user-dropdown">
                 <a href="/profile/profile.html">الملف الشخصي</a>
+                <a href="/admin/admin.html" class="admin-link" id="adminLink" style="display:none">⚙️ الإدارة</a>
                 <a href="#" id="logoutBtn">تسجيل خروج</a>
             </div>
         </div>
@@ -194,7 +195,21 @@
             <button class="cite-btn"
                 onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
         </div>
-        
+        <div class="cite" data-name="شاطئ ريدوي – Reduit Beach" data-img="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/stlucia-reduit.jpg"
+            data-desc="أجمل شواطئ سانت لوسيا برماله الذهبي ومياهه الزرقاء وأنشطته المائية المتنوعة."
+            data-historic="🏖️ أجمل شاطئ في سانت لوسيا | 🤿 غوص ورياضات مائية | ⛵ رحلات إبحار | 🌅 غروب الشمس"
+            data-restaurants="🍽️ مطعم Spinnakers | 🌿 مطعم Boardwalk | 🥘 مطعم Razmataz"
+            data-cafes="☕ كافيه ريدوي الشاطئي | ☕ مقهى Bay View | ☕ مقهى Sandy Beach"
+            data-events="🏖️ السباحة | 🤿 الغوص | ⛵ الإبحار"
+            onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'stlucia_reduit', 'شاطئ ريدوي', 'https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/stlucia-reduit.jpg')">🏙️</button>
+            <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/stlucia-reduit.jpg" alt="شاطئ ريدوي" class="cite-img">
+            <span class="name">شاطئ ريدوي – Reduit Beach</span>
+            <p class="info">أجمل شواطئ سانت لوسيا برماله الذهبي ومياهه الزرقاء وأنشطته ا...</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
         <div class="cite" data-name="ماريغوت باي – Marigot Bay" data-img="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/stlucia-marigot.jpg"
             data-desc="خليج بحري رائع كالصورة يلتقي فيه البحر الكاريبي الأزرق مع أشجار النخيل والغابة الاستوائية."
             data-historic="⛵ مارينا الخليج الجميلة | 🌊 الخليج المخفي | 🌴 غابة النخيل | 🏖️ شاطئ الخليج الرملي"
@@ -210,39 +225,22 @@
             <button class="cite-btn"
                 onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
         </div>
-    
-        <div class="cite" data-name="فيو فورت – Vieux Fort"
-          data-img="/img/stlucia-vieuxfort.jpg"
-          data-desc="ثاني أكبر مدن سانت لوسيا في أقصى الجنوب عند المطار الدولي، مركز صناعي وتجاري حيوي."
-          data-historic="✈️ مطار سانت لوسيا | 🏖️ شاطئ المياه البيضاء | 🏛️ الميناء الصناعي | 🌊 رأس الجنوب"
-          data-restaurants="🍽️ مطعم Reef | 🍽️ مطعم Chak Chak | 🌮 مطعم Vieux Fort"
-          data-cafes="☕ مقهى Airport View | ☕ مقهى Southern | ☕ مقهى Harbour"
-          data-events="✈️ مطار سانت لوسيا | 🏖️ شاطئ المياه البيضاء | 🌊 رأس الجنوب"
-          onclick="openCityModal(this)">
-          <button class="save-btn"
-            onclick="event.stopPropagation(); saveItem('city', 'stlucia_vieuxfort', 'فيو فورت', '/img/stlucia-vieuxfort.jpg')">🏙️</button>
-          <img src="/img/stlucia-vieuxfort.jpg" alt="فيو فورت" class="cite-img">
-          <span class="name">فيو فورت – Vieux Fort</span>
-          <p class="info">ثاني أكبر مدن سانت لوسيا ومركزها الصناعي الجنوبي.</p>
-          <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        <div class="cite" data-name="فيو فورت – Vieux Fort" data-img="/img/stlucia-vieux-fort.jpg"
+            data-desc="ثاني أكبر مدن سانت لوسيا تقع في الجنوب عند ملتقى البحر الكاريبي والمحيط الأطلسي، تحتضن مطار سانت لوسيا الدولي."
+            data-historic="🌊 ملتقى البحر الكاريبي والأطلسي | 🏖️ شاطئ أوركس – Anse de Sables | 🦅 محمية طبيعية للطيور | 🏛️ حصن سيفتيد"
+            data-restaurants="🍽️ مطعم The Reef Beach Café | 🌿 مطعم Sandy Beach | 🥘 مطعم Juliette's"
+            data-cafes="☕ مقهى Vieux Fort Harbour | ☕ كافيه South Beach | ☕ مقهى The Junction"
+            data-events="🌊 السباحة عند ملتقى البحرين | 🦅 مراقبة الطيور في المحمية | 🏖️ شاطئ أوركس الرملي"
+            onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'stlucia_vieuxfort', 'فيو فورت', '/img/stlucia-vieux-fort.jpg')">🏙️</button>
+            <img src="/img/stlucia-vieux-fort.jpg" alt="فيو فورت" class="cite-img">
+            <span class="name">فيو فورت – Vieux Fort</span>
+            <p class="info">ثاني أكبر مدن سانت لوسيا عند ملتقى البحرين الكاريبي والأطلسي.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
         </div>
-        
-        <div class="cite" data-name="دينيري – Dennery"
-          data-img="/img/stlucia-dennery.jpg"
-          data-desc="قرية الصيد الساحلية على الساحل الشرقي لسانت لوسيا، رمال ذهبية وتلال خضراء."
-          data-historic="🎣 قرية الصيادين | 🌊 الساحل الشرقي | 🌴 النخيل الساحلي | 🌺 المناظر الريفية"
-          data-restaurants="🍽️ مطعم Dennery Bay | 🍽️ مطعم Fishermens | 🌮 مطعم Eastern Breeze"
-          data-cafes="☕ مقهى Dennery Village | ☕ مقهى Sunset | ☕ مقهى Coastal"
-          data-events="🎣 صيد السمك | 🌊 شاطئ دينيري | 🌺 الريف الأخضر"
-          onclick="openCityModal(this)">
-          <button class="save-btn"
-            onclick="event.stopPropagation(); saveItem('city', 'stlucia_dennery', 'دينيري', '/img/stlucia-dennery.jpg')">🏙️</button>
-          <img src="/img/stlucia-dennery.jpg" alt="دينيري" class="cite-img">
-          <span class="name">دينيري – Dennery</span>
-          <p class="info">قرية الصيد الخلابة على الساحل الشرقي لسانت لوسيا.</p>
-          <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
-        </div>
-        </section>
+    </section>
 
     <div class="main-foods">
         <h1>الماكولات</h1>

@@ -65,6 +65,7 @@
             <span class="user-name" id="userName"></span>
             <div class="user-dropdown">
                 <a href="/profile/profile.html">الملف الشخصي</a>
+                <a href="/admin/admin.html" class="admin-link" id="adminLink" style="display:none">⚙️ الإدارة</a>
                 <a href="#" id="logoutBtn">تسجيل خروج</a>
             </div>
         </div>
@@ -140,6 +141,7 @@
         </ul>
     </div>
 
+
 <div class="country-name">
   <h1>باكستان</h1>
   <p>بلد الحضارات العريقة والجبال الشاهقة حيث ثقافة إسلامية أصيلة تلتقي بقمم الكاراكورام</p>
@@ -210,6 +212,21 @@
         <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
     </div>
 
+    <div class="cite" data-name="وادي هونزا – Hunza Valley"
+        data-img="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/pakistan-hunza.jpg"
+        data-desc="الجنة الجبلية في شمال باكستان تحت ظلال قمم الكاراكورام الشاهقة، وادٍ خلاب تمتد فيه حقول المشمش والكرز ومزارع القمح والحصون الحجرية القديمة."
+        data-historic="قلعة ألتيت الأثرية|قلعة بلتيت التاريخية|وادي هونزا الخلاب|قمة راكابوشي الثلجية|جسر هونزا المعلق|متحف الكاراكورام"
+        data-restaurants="مطعم هونزا|مطعم الكاراكورام|مطعم وادي خنجراب|مطعم الجبال الشمالية|مطعم قلعة بلتيت|مطعم المشمش"
+        data-cafes="كافيه هونزا|كافيه الكاراكورام|ذا ماونتن كافيه|كافيه وادي هونزا|كافيه الجبال الثلجية|كافيه المشمش"
+        data-events="قلعة بلتيت المدرجة في اليونسكو|وادي هونزا الخلاب في الكاراكورام|قمة راكابوشي الثلجية الشاهقة|طريق قراقرم الكبير الأسطوري|مهرجان المشمش في الربيع|مشاهدة النجوم في السماء الصافية"
+        onclick="openCityModal(this)">
+        <button class="save-btn" onclick="event.stopPropagation(); saveItem('city', 'pakistan_hunza', 'وادي هونزا', 'https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/pakistan-hunza.jpg')">🏙️</button>
+        <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/pakistan-hunza.jpg" alt="وادي هونزا" class="cite-img">
+        <span class="name">وادي هونزا – Hunza Valley</span>
+        <p class="info">جنة الكاراكورام الجبلية الخلابة</p>
+        <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
     <div class="cite" data-name="ملتان – Multan"
         data-img="/img/pakistan-multan.jpg"
         data-desc="مدينة الأولياء والأضرحة العريقة في جنوب البنجاب، واحدة من أقدم مدن العالم الإسلامي بأضرحتها الفيروزية المزخرفة ومصنوعاتها الخزفية والبسط الشعبية الأصيلة."
@@ -226,23 +243,7 @@
     </div>
 
   </div>
-
-    <div class="cite" data-name="كويتا – Quetta"
-      data-img="/img/pakistan-quetta.jpg"
-      data-desc="عاصمة إقليم بلوشستان تجلس على ارتفاع 1680م فوق سطح البحر، وتُعرف بـ"باريس آسيا" لطقسها المعتدل وتفاحها الشهير."
-      data-historic="🏔️ جبل مردار | 🏰 قلعة مهرغر | 🕌 مسجد مير علي | 🌺 حدائق الزيتون"
-      data-restaurants="🥘 مطعم سريال | 🍖 مطعم صادق | 🌮 مطعم الكويتي"
-      data-cafes="☕ مقهى كيلا سيف | ☕ مقهى الجبل | ☕ مقهى البلوش"
-      data-events="🏔️ جبل مردار | 🛍️ سوق كيلا عبدالله | 🍎 موسم التفاح"
-      onclick="openCityModal(this)">
-      <button class="save-btn"
-        onclick="event.stopPropagation(); saveItem('city', 'pakistan_quetta', 'كويتا', '/img/pakistan-quetta.jpg')">🏙️</button>
-      <img src="/img/pakistan-quetta.jpg" alt="كويتا" class="cite-img" />
-      <span class="name">كويتا – Quetta</span>
-      <p class="info">عاصمة بلوشستان الباردة المشهورة بتفاحها وطقسها المعتدل.</p>
-      <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
-    </div>
-  </section>
+</section>
 
 <div class="main-foods">
   <h1>الماكولات</h1>
@@ -328,8 +329,7 @@
       <a href="/events/events.html?event=PakistanKhyber" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
     </div>
   </div>
-
-    </section>
+</section>
 
   <div id="cityModal" class="modal" onclick="closeCityModal(event)">
     <div class="modal-content">

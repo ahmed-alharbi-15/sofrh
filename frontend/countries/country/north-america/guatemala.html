@@ -64,6 +64,7 @@
             <span class="user-name" id="userName"></span>
             <div class="user-dropdown">
                 <a href="/profile/profile.html">الملف الشخصي</a>
+                <a href="/admin/admin.html" class="admin-link" id="adminLink" style="display:none">⚙️ الإدارة</a>
                 <a href="#" id="logoutBtn">تسجيل خروج</a>
             </div>
         </div>
@@ -181,7 +182,21 @@
             <button class="cite-btn"
                 onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
         </div>
-
+        <div class="cite" data-name="بحيرة أتيتلان – Lake Atitlán" data-img="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/guatemala-atitlan.jpg"
+            data-desc="واحدة من أجمل بحيرات العالم بالإجماع، بحيرة بركانية تحيط بها قرى مايا ملونة وثلاثة براكين شاهقة تعكس صورها في مياهها الفيروزية الصافية."
+            data-historic="🚤 قارب عبر البحيرة – Boat Crossing | 🏘️ قرية سانتياغو أتيتلان | 🌋 براكين البحيرة الثلاثة | 🎨 فنون وحرف المايا"
+            data-restaurants="🍽️ مطعم El Artesano | 🌿 مطعم Restaurante Uxlabil | 🥩 مطعم La Lancha"
+            data-cafes="☕ مقهى Café La Canoa | ☕ مقهى Blind Lemon | ☕ مقهى Clave de Sol"
+            data-events="🚤 جولة قارب البحيرة | 🏘️ زيارة قرى المايا | 🌋 مشاهدة البراكين"
+            onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'guatemala_atitlan', 'بحيرة أتيتلان', 'https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/guatemala-atitlan.jpg')">🏙️</button>
+            <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/guatemala-atitlan.jpg" alt="بحيرة أتيتلان" class="cite-img">
+            <span class="name">بحيرة أتيتلان – Lake Atitlán</span>
+            <p class="info">بحيرة بركانية خلابة مع قرى مايا وبراكين شاهقة.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
         <div class="cite" data-name="كيتسالتينانغو – Quetzaltenango" data-img="/img/guatemala-quetzaltenango.jpg"
             data-desc="المدينة الثانية في غواتيمالا ومركز ثقافة الشعوب الأصيلة، تحيط بها البراكين والغابات المطرية وينابيع الفوماروول الحارة في محيط طبيعي بديع."
             data-historic="⛪ كاتدرائية الشعانين – Catedral del Espíritu Santo | 🌋 بركان سانتاماريا – Santa María | ♨️ فوينتيس خيورخينا الحارة | 🏛️ القصر المدني التاريخي"
@@ -212,39 +227,22 @@
             <button class="cite-btn"
                 onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
         </div>
-            
-    <div class="cite" data-name="كيتسالتينانغو – Quetzaltenango"
-      data-img="/img/guatemala-xela.jpg"
-      data-desc="ثاني أكبر مدن غواتيمالا وعاصمة المرتفعات، تقع عند سفح بركان سانتا ماريا وتُعرف بمعابدها الماية وأسواقها التقليدية."
-      data-historic="🌋 بركان سانتا ماريا | 🏛️ معبد ماينا | ⛪ كاتدرائية الأرواح القديسة | 🏘️ السوق المركزي"
-      data-restaurants="🥘 مطعم Sabor de India | 🍖 مطعم Royal Paris | 🌮 مطعم El Cuartito"
-      data-cafes="☕ مقهى Cafe Acropolis | ☕ مقهى Luna | ☕ مقهى Baviera"
-      data-events="🌋 تسلق بركان سانتا ماريا | 🛍️ السوق المركزي | 🎭 مهرجان المرتفعات"
-      onclick="openCityModal(this)">
-      <button class="save-btn"
-        onclick="event.stopPropagation(); saveItem('city', 'guatemala_quetzaltenango', 'كيتسالتينانغو', '/img/guatemala-xela.jpg')">🏙️</button>
-      <img src="/img/guatemala-xela.jpg" alt="كيتسالتينانغو" class="cite-img" />
-      <span class="name">كيتسالتينانغو – Quetzaltenango</span>
-      <p class="info">عاصمة مرتفعات غواتيمالا عند سفح البركان.</p>
-      <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
-    </div>
-  
-    <div class="cite" data-name="كوبان – Cobán"
-      data-img="/img/guatemala-coban.jpg"
-      data-desc="عاصمة مقاطعة ألتا فيراباز تجلس في قلب الغابات المدارية الرطبة شمال غواتيمالا، اشتهرت بمزارع القهوة والطيور النادرة."
-      data-historic="🌿 غابات ألتا فيراباز | ☕ مزارع القهوة | 🐦 طائر الكيتسال | 🏞️ شلالات سيمسيم"
-      data-restaurants="🥘 مطعم Doña Vero | 🍖 مطعم Café Central | 🌮 مطعم Xkape"
-      data-cafes="☕ مقهى Babilonia | ☕ مقهى Café El Tirol | ☕ مقهى Las Victorias"
-      data-events="☕ جولة مزارع القهوة | 🐦 مراقبة الكيتسال | 🌊 شلالات سيمسيم"
-      onclick="openCityModal(this)">
-      <button class="save-btn"
-        onclick="event.stopPropagation(); saveItem('city', 'guatemala_coban', 'كوبان', '/img/guatemala-coban.jpg')">🏙️</button>
-      <img src="/img/guatemala-coban.jpg" alt="كوبان" class="cite-img" />
-      <span class="name">كوبان – Cobán</span>
-      <p class="info">عاصمة منطقة القهوة وطائر الكيتسال النادر في غواتيمالا.</p>
-      <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
-    </div>
-  </section>
+        <div class="cite" data-name="كوبان – Cobán" data-img="/img/guatemala-coban.jpg"
+            data-desc="عاصمة ولاية ألتا فيراباث وسط غواتيمالا، تعرف بمزارع القهوة الفاخرة وشلالاتها الفيروزية وتقاليد شعب الكيكتشي المايا."
+            data-historic="🏛️ كاتدرائية سانتو دومينغو | 🌊 شلالات سيمبوك – Semuc Champey | 🌿 مزارع قهوة ألتا فيراباث | 🎭 ثقافة الكيكتشي"
+            data-restaurants="🍽️ مطعم El Refugio | 🌿 مطعم Café El Tirol | 🥘 مطعم Xkape Kobán"
+            data-cafes="☕ مقهى Café La Posada | ☕ كافيه قهوة كوبان | ☕ مقهى Central Park"
+            data-events="🌊 زيارة شلالات المنطقة | 🌿 جولة مزارع القهوة | 🎭 مهرجانات الكيكتشي المايا"
+            onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'guatemala_coban', 'كوبان', '/img/guatemala-coban.jpg')">🏙️</button>
+            <img src="/img/guatemala-coban.jpg" alt="كوبان" class="cite-img">
+            <span class="name">كوبان – Cobán</span>
+            <p class="info">عاصمة ألتا فيراباث ومركز مزارع القهوة وثقافة المايا الكيكتشي.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+    </section>
 
     <div class="main-foods">
         <h1>الماكولات</h1>
@@ -354,9 +352,7 @@
             <a href="/events/events.html?event=SemucChampeyGuatemala" class="event-btn"
                 onclick="event.stopPropagation()">المزيد</a>
         </div>
-    
-
-        </section>
+    </section>
 
     <div id="cityModal" class="modal" onclick="closeCityModal(event)">
         <div class="modal-content">

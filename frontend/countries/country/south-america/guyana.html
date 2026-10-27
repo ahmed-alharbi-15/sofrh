@@ -66,6 +66,7 @@
             <span class="user-name" id="userName"></span>
             <div class="user-dropdown">
                 <a href="/profile/profile.html">الملف الشخصي</a>
+                <a href="/admin/admin.html" class="admin-link" id="adminLink" style="display:none">⚙️ الإدارة</a>
                 <a href="#" id="logoutBtn">تسجيل خروج</a>
             </div>
         </div>
@@ -144,6 +145,7 @@
     <a href="/countries/countries.html" class="back-btn">رجوع</a>
   </header>
 
+  
   <div class="country-name">
     <h1>غيانا</h1>
     <p>كنز الغابات الاستوائية وشلال كايتور الأسطوري</p>
@@ -234,23 +236,23 @@
       <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
     </div>
 
-  
-        <div class="cite" data-name="ماهديا – Mahdia"
-          data-img="/img/guyana-mahdia.jpg"
-          data-desc="مدينة ماهديا في قلب منطقة بوتارو الذهبية، مركز تعدين الذهب والماس في المناطق الداخلية."
-          data-historic="⛏️ مناجم الذهب | 🌳 غابة بوتارو | 🌊 نهر بوتارو | 🦅 طيور الغابة"
-          data-restaurants="🍽️ مطعم Mahdia | 🍽️ مطعم Miners | 🌮 مطعم Potaro"
-          data-cafes="☕ مقهى Goldfield | ☕ مقهى Central | ☕ مقهى Rainforest"
-          data-events="⛏️ جولة مناجم الذهب | 🌳 غابة بوتارو | 🌊 نهر بوتارو"
-          onclick="openCityModal(this)">
-          <button class="save-btn"
-            onclick="event.stopPropagation(); saveItem('city', 'guyana_mahdia', 'ماهديا', '/img/guyana-mahdia.jpg')">🏙️</button>
-          <img src="/img/guyana-mahdia.jpg" alt="ماهديا" class="cite-img">
-          <span class="name">ماهديا – Mahdia</span>
-          <p class="info">عاصمة منطقة التعدين الذهبي في قلب غيانا.</p>
-          <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
-        </div>
-        </section>
+    <div class="cite" data-name="كايتور – Kaieteur Falls Area"
+      data-img="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/guyana-kaieteur.jpg"
+      data-desc="أحد أكثر المناطق بدائية في العالم قرب شلال كايتور، كثافة الغابات الاستوائية ونقائها تجعلها تجربة فريدة."
+      data-historic="🌊 شلال كايتور | 🌿 هضبة باكيرياما | 🦜 طيور بروميليا | 🐸 ضفادع الذهب الزرقاء"
+      data-restaurants="🥘 محطة المشاة | 🍖 نزل الاستوائية | 🌮 مطبخ الحديقة الوطنية"
+      data-cafes="☕ Kaieteur Lodge | ☕ نزل الطبيعة | ☕ مخيم الغابة"
+      data-events="🌊 جولة شلالات كايتور | 🦜 مراقبة طيور تانيجارا | 🌿 مشي الغابة"
+      onclick="openCityModal(this)">
+      <button class="save-btn"
+        onclick="event.stopPropagation(); saveItem('city', 'guyana_kaieteur', 'كايتور', 'https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/guyana-kaieteur.jpg')">🏙️</button>
+      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/guyana-kaieteur.jpg" alt="كايتور" class="cite-img" />
+      <span class="name">كايتور – Kaieteur Falls Area</span>
+      <p class="info">قلب الغابات البكر قرب الشلال الأسطوري.</p>
+      <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+    </div>
+
+  </section>
 
   <div class="main-foods">
     <h1>الماكولات</h1>
@@ -334,8 +336,7 @@
       <div class="event-info">مهرجان الجمهورية بموسيقى كاليبسو وألوان.</div>
       <a href="/events/events.html?event=MashramaniGY" class="event-btn" onclick="event.stopPropagation()">اكتشف</a>
     </div>
-  
-    </section>
+  </section>
 <div id="cityModal" class="modal" onclick="closeCityModal(event)">
     <div class="modal-content">
       <button class="modal-close" onclick="closeCityModal(event)">×</button>

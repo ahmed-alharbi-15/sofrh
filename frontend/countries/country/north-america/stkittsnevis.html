@@ -63,6 +63,7 @@
             <span class="user-name" id="userName"></span>
             <div class="user-dropdown">
                 <a href="/profile/profile.html">الملف الشخصي</a>
+                <a href="/admin/admin.html" class="admin-link" id="adminLink" style="display:none">⚙️ الإدارة</a>
                 <a href="#" id="logoutBtn">تسجيل خروج</a>
             </div>
         </div>
@@ -179,72 +180,67 @@
             <button class="cite-btn"
                 onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
         </div>
-
-            
-        <div class="cite" data-name="ساندي بوينت – Sandy Point"
-          data-img="/img/stkitts-sandypoint.jpg"
-          data-desc="أولى مستوطنة أوروبية في سانت كيتس عام 1623، تقع شمال الجزيرة بشواطئها الهادئة."
-          data-historic="🏖️ شاطئ ساندي بوينت | 🏛️ الموقع الأوروبي الأول | ⚓ ميناء الصيادين | 🌊 المياه الفيروزية"
-          data-restaurants="🍽️ مطعم Sandy Beach | 🍽️ مطعم North End | 🌮 مطعم Sandy Point"
-          data-cafes="☕ مقهى الشاطئ | ☕ مقهى الشمال | ☕ مقهى الصياد"
-          data-events="🏖️ شاطئ ساندي بوينت | ⚓ ميناء الصيادين | 🌅 غروب الشمال"
-          onclick="openCityModal(this)">
-          <button class="save-btn"
-            onclick="event.stopPropagation(); saveItem('city', 'stkittsnevis_sandypoint', 'ساندي بوينت', '/img/stkitts-sandypoint.jpg')">🏙️</button>
-          <img src="/img/stkitts-sandypoint.jpg" alt="ساندي بوينت" class="cite-img">
-          <span class="name">ساندي بوينت – Sandy Point</span>
-          <p class="info">أقدم مستوطنة أوروبية في سانت كيتس وشواطئها الهادئة.</p>
-          <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        <div class="cite" data-name="شاطئ فريار – Frigate Bay" data-img="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/stkitts-frigate-bay.jpg"
+            data-desc="منطقة المنتجعات الرئيسية بشاطئين: أطلسي هادئ وكاريبي حيوي، مع أفضل المطاعم."
+            data-historic="🏖️ شاطئ فريار الكاريبي | 🌊 شاطئ فريار الأطلسي | 🎵 شارع المطاعم الشهير | 🌅 غروب الشمس"
+            data-restaurants="🍽️ مطعم Buddies Beach Hut | 🌿 مطعم Mr X Shiggidy Shack | 🥘 مطعم Reggae Beach Bar"
+            data-cafes="☕ مقهى فريار الشاطئي | ☕ كافيه شاطئ الأطلسي | ☕ مقهى The Strip"
+            data-events="🏖️ السباحة | 🌊 ركوب الأمواج | 🎵 الحياة الليلية الكاريبية"
+            onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'stkitts_frigate', 'شاطئ فريار', 'https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/stkitts-frigate-bay.jpg')">🏙️</button>
+            <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/stkitts-frigate-bay.jpg" alt="شاطئ فريار" class="cite-img">
+            <span class="name">شاطئ فريار – Frigate Bay</span>
+            <p class="info">منطقة المنتجعات الرئيسية بشاطئين: أطلسي هادئ وكاريبي حيوي، م...</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
         </div>
-        
-        <div class="cite" data-name="كيون – Cayon"
-          data-img="/img/stkitts-cayon.jpg"
-          data-desc="أكبر مدن ساحل سانت كيتس الشرقي، مركز زراعي بمزارع السكر التاريخية."
-          data-historic="🌿 مزارع قصب السكر | 🏘️ الحي التقليدي | 🌺 حدائق الزهور | ⛪ كنيسة كيون"
-          data-restaurants="🍽️ مطعم Cayon Village | 🍽️ مطعم Eastern | 🌮 مطعم Sugarcane"
-          data-cafes="☕ مقهى المزرعة | ☕ مقهى الشرق | ☕ مقهى الريف"
-          data-events="🌿 جولة مزارع السكر | 🌺 حدائق الجزيرة | 🎭 مهرجان الحصاد"
-          onclick="openCityModal(this)">
-          <button class="save-btn"
-            onclick="event.stopPropagation(); saveItem('city', 'stkittsnevis_cayon', 'كيون', '/img/stkitts-cayon.jpg')">🏙️</button>
-          <img src="/img/stkitts-cayon.jpg" alt="كيون" class="cite-img">
-          <span class="name">كيون – Cayon</span>
-          <p class="info">المدينة الزراعية على الساحل الشرقي لسانت كيتس.</p>
-          <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        <div class="cite" data-name="قلعة بريمستون هيل – Brimstone Hill" data-img="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/stkitts-brimstone.jpg"
+            data-desc="أعظم قلعة في الكاريبي وموقع تراث يونسكو تعلو 240 متراً فوق البحر بمنظر بانورامي مذهل."
+            data-historic="🏰 القلعة البريطانية التاريخية | 🏛️ متحف القلعة | 🌄 منظر بانورامي على الجزيرتين | 🐵 قردة السكر"
+            data-restaurants="🍽️ مطعم قلعة بريمستون | 🌿 مطعم Sugar Plantation | 🥘 مطعم Rawlins Plantation"
+            data-cafes="☕ مقهى قمة القلعة | ☕ كافيه هيل توب | ☕ مقهى التاريخ"
+            data-events="🏰 جولة القلعة التاريخية | 🌄 مشاهدة البانوراما | 🐵 مشاهدة القرود"
+            onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'stkitts_brimstone', 'قلعة بريمستون هيل', 'https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/stkitts-brimstone.jpg')">🏙️</button>
+            <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/stkitts-brimstone.jpg" alt="قلعة بريمستون هيل" class="cite-img">
+            <span class="name">قلعة بريمستون هيل – Brimstone Hill</span>
+            <p class="info">أعظم قلعة في الكاريبي وموقع تراث يونسكو تعلو 240 متراً فوق ا...</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
         </div>
-        
-        <div class="cite" data-name="ديب باي – Dieppe Bay Town"
-          data-img="/img/stkitts-dieppebay.jpg"
-          data-desc="أقصى الشمال في سانت كيتس بشاطئها البركانية السوداء الفريدة."
-          data-historic="🖤 شاطئ الرمال السوداء | 🌊 رأس الشمال | ⛪ كنيسة سانت توماس | 🌿 مسار الطبيعة"
-          data-restaurants="🍽️ مطعم North Cape | 🍽️ مطعم Black Sand | 🌮 مطعم Dieppe"
-          data-cafes="☕ مقهى الساحل | ☕ مقهى البركاني | ☕ مقهى الشاطئ"
-          data-events="🖤 شاطئ الرمال البركانية | 🌊 رأس الشمال | 🌿 مسار الطبيعة"
-          onclick="openCityModal(this)">
-          <button class="save-btn"
-            onclick="event.stopPropagation(); saveItem('city', 'stkittsnevis_dieppebay', 'ديب باي', '/img/stkitts-dieppebay.jpg')">🏙️</button>
-          <img src="/img/stkitts-dieppebay.jpg" alt="ديب باي" class="cite-img">
-          <span class="name">ديب باي – Dieppe Bay Town</span>
-          <p class="info">أقصى شمال سانت كيتس بشاطئه البركاني الأسود الفريد.</p>
-          <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        <div class="cite" data-name="شبه جزيرة الجنوب – South Peninsula" data-img="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/stkitts-south.jpg"
+            data-desc="شبه جزيرة بكر بشواطئ مزدوجة تطل على المحيطين مع ملاعب غولف عالمية وفيلات فاخرة."
+            data-historic="🏖️ شاطئ ماجور باي | 🌊 شاطئ سلطبي | ⛳ ملعب الغولف Royal St Kitts | 🌅 غروب بانورامي"
+            data-restaurants="🍽️ مطعم Carambola Beach Club | 🌿 مطعم Spice Mill | 🥘 مطعم The Kitchen"
+            data-cafes="☕ مقهى ساوث بنينسولا | ☕ كافيه منتجع الجنوب | ☕ مقهى الشاطئ"
+            data-events="🏖️ الشواطئ المزدوجة | ⛳ الغولف الدولي | 🌊 رياضات مائية"
+            onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'stkitts_south', 'شبه جزيرة الجنوب', 'https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/stkitts-south.jpg')">🏙️</button>
+            <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/stkitts-south.jpg" alt="شبه جزيرة الجنوب" class="cite-img">
+            <span class="name">شبه جزيرة الجنوب – South Peninsula</span>
+            <p class="info">شبه جزيرة بكر بشواطئ مزدوجة تطل على المحيطين مع ملاعب غولف ع...</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
         </div>
-        
-        <div class="cite" data-name="نيوكاسل – Newcastle"
-          data-img="/img/stkitts-newcastle.jpg"
-          data-desc="مدينة نيوكاسل في شمال نيفيس بوابة الوصول الرئيسية للجزيرة بمطارها الدولي."
-          data-historic="✈️ مطار نيفيس | 🌴 شاطئ نيوكاسل | 🌺 حديقة السواحل | 🏘️ القرية التقليدية"
-          data-restaurants="🍽️ مطعم Newcastle | 🍽️ مطعم Nevis Gateway | 🌮 مطعم Airside"
-          data-cafes="☕ مقهى المطار | ☕ مقهى الوصول | ☕ مقهى نيوكاسل"
-          data-events="✈️ مطار نيفيس | 🌴 شاطئ نيوكاسل | 🌺 الحدائق الساحلية"
-          onclick="openCityModal(this)">
-          <button class="save-btn"
-            onclick="event.stopPropagation(); saveItem('city', 'stkittsnevis_newcastle', 'نيوكاسل', '/img/stkitts-newcastle.jpg')">🏙️</button>
-          <img src="/img/stkitts-newcastle.jpg" alt="نيوكاسل" class="cite-img">
-          <span class="name">نيوكاسل – Newcastle</span>
-          <p class="info">بوابة جزيرة نيفيس وأهم منافذ الوصول إليها.</p>
-          <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        <div class="cite" data-name="ساندي بوينت – Sandy Point" data-img="/img/stkitts-sandy-point.jpg"
+            data-desc="أقدم مدينة في سانت كيتس وأول مستوطنة أوروبية في جزر الكاريبي، غنية بالتاريخ الاستعماري وشواطئها الهادئة."
+            data-historic="🏛️ أول مستوطنة كاريبية أوروبية | 🏰 قلعة تشارلز – Charles Fort | ⛪ كنيسة القديس توماس | 🌊 شاطئ ساندي بوينت"
+            data-restaurants="🍽️ مطعم Sandy Point Heritage | 🌿 مطعم Lighthouse Restaurant | 🥘 مطعم Captain's Corner"
+            data-cafes="☕ مقهى Sandy Point Village | ☕ كافيه Heritage Square | ☕ مقهى North Shore"
+            data-events="🏛️ جولة تاريخية في المستوطنة | 🌊 السباحة على الشاطئ الهادئ | 🏰 زيارة قلعة تشارلز"
+            onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'stkitts_sandypoint', 'ساندي بوينت', '/img/stkitts-sandy-point.jpg')">🏙️</button>
+            <img src="/img/stkitts-sandy-point.jpg" alt="ساندي بوينت" class="cite-img">
+            <span class="name">ساندي بوينت – Sandy Point</span>
+            <p class="info">أقدم مدينة في سانت كيتس وأول مستوطنة أوروبية في الكاريبي.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
         </div>
-        </section>
+    </section>
 
     <div class="main-foods">
         <h1>الماكولات</h1>
@@ -352,9 +348,7 @@
             <a href="/events/events.html?event=StkittsRailwayTour" class="event-btn"
                 onclick="event.stopPropagation()">المزيد</a>
         </div>
-    
-        
-        </section>
+    </section>
 
     <div id="cityModal" class="modal" onclick="closeCityModal(event)">
         <div class="modal-content">

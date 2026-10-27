@@ -63,6 +63,7 @@
             <span class="user-name" id="userName"></span>
             <div class="user-dropdown">
                 <a href="/profile/profile.html">الملف الشخصي</a>
+                <a href="/admin/admin.html" class="admin-link" id="adminLink" style="display:none">⚙️ الإدارة</a>
                 <a href="#" id="logoutBtn">تسجيل خروج</a>
             </div>
         </div>
@@ -182,6 +183,22 @@
                 onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
         </div>
 
+        <div class="cite" data-name="بحيرة بوري – Boiling Lake" data-img="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/dominica-boiling-lake.jpg"
+            data-desc="ثاني أكبر بحيرة حارة في العالم تقع في قلب الغابة الاستوائية الدومينيكية، تغلي مياهها الرمادية الزرقاء بفعل النشاط البركاني تحتها في مشهد طبيعي مذهل."
+            data-historic="🌋 البحيرة البركانية الحارة | 🌿 وادي الجحيم – Valley of Desolation | 🏔️ قمة مورن ترويس بيتون | 🦜 غابات استوائية بكر"
+            data-restaurants="🍽️ مطعم Papillote Wilderness Retreat | 🥘 مطعم Roseau Valley Restaurant | 🌿 مطعم La Robe Créole"
+            data-cafes="☕ مقهى Papillote Garden Café | ☕ مقهى Jungle Bay Café | ☕ مقهى Rainforest Hideaway"
+            data-events="🌋 رحلة البحيرة الحارة | 🏔️ تسلق مورن ترويس بيتون | 🌿 جولة وادي الجحيم"
+            onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'dominica_boilinglake', 'بحيرة بوري', 'https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/dominica-boiling-lake.jpg')">🏙️</button>
+            <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/dominica-boiling-lake.jpg" alt="بحيرة بوري" class="cite-img">
+            <span class="name">بحيرة بوري – Boiling Lake</span>
+            <p class="info">البحيرة الحارة الثانية عالمياً في قلب الغابة الاستوائية البركانية.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
         <div class="cite" data-name="كاليبيشي – Calibishie" data-img="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/dominica-calibishie.jpg"
             data-desc="قرية ساحلية هادئة في شمال شرق دومينيكا تشتهر بشواطئها الرملية البيضاء النادرة في الجزيرة، ومياهها الفيروزية الصافية ومناخها المنعش."
             data-historic="🏖️ شاطئ كاليبيشي الأبيض | 🌊 صخور بيبل – Pointe Baptiste | 🦜 محمية الطيور الاستوائية | 🌿 مزارع الجوافة المحلية"
@@ -214,39 +231,23 @@
                 onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
         </div>
 
-    
-    <div class="cite" data-name="بورتسموث – Portsmouth"
-      data-img="/img/dominica-portsmouth.jpg"
-      data-desc="ثاني مدن دومينيكا تقع شمالاً على خليج برنس روبرت، اشتهرت بجامعتها الطبية ونهر الهنود ذي الأشجار البدائية."
-      data-historic="🌿 نهر الهنود الهندي | 🏫 جامعة روس الطبية | ⛪ كنيسة سانت جون | 🌴 شاطئ البر الجنوبي"
-      data-restaurants="🥘 مطعم Tomato | 🍖 مطعم Purple Turtle | 🌮 مطعم Waitukubuli"
-      data-cafes="☕ مقهى Indian River | ☕ مقهى Fort Shirley | ☕ مقهى Cabrits"
-      data-events="🌿 جولة نهر الهنود | 🏖️ شاطئ شيف | 🦜 مراقبة الطيور"
-      onclick="openCityModal(this)">
-      <button class="save-btn"
-        onclick="event.stopPropagation(); saveItem('city', 'dominica_portsmouth', 'بورتسموث', '/img/dominica-portsmouth.jpg')">🏙️</button>
-      <img src="/img/dominica-portsmouth.jpg" alt="بورتسموث" class="cite-img" />
-      <span class="name">بورتسموث – Portsmouth</span>
-      <p class="info">ثاني مدن دومينيكا ومدخل نهر الهنود الأدغالي الرائع.</p>
-      <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
-    </div>
-  
-    <div class="cite" data-name="لا بلاي – La Plaine"
-      data-img="/img/dominica-laplaine.jpg"
-      data-desc="مدينة لا بلاي الساحلية في جنوب شرق دومينيكا تنبع منها شلالات صوفريير وترتبط بطرق جبلية خلابة تمر بالغابات المطيرة."
-      data-historic="🌊 شلالات صوفريير | 🌺 حقول الموز | 🌿 الغابة المطيرة | 🐠 شعاب الشاطئ الجنوبي"
-      data-restaurants="🥘 مطعم La Plaine | 🍖 مطعم Savanna | 🌮 مطعم Boiling Lake Trail"
-      data-cafes="☕ مقهى Screw Bay | ☕ مقهى Rosalie | ☕ مقهى Rainforest"
-      data-events="🌊 شلالات صوفريير | 🥾 مسار بحيرة الغليان | 🌊 شاطئ لا بلاي"
-      onclick="openCityModal(this)">
-      <button class="save-btn"
-        onclick="event.stopPropagation(); saveItem('city', 'dominica_laplaine', 'لا بلاي', '/img/dominica-laplaine.jpg')">🏙️</button>
-      <img src="/img/dominica-laplaine.jpg" alt="لا بلاي" class="cite-img" />
-      <span class="name">لا بلاي – La Plaine</span>
-      <p class="info">بوابة شلالات صوفريير والمسارات الجبلية في جنوب دومينيكا.</p>
-      <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
-    </div>
-  </section>
+        <div class="cite" data-name="ترافالغار فولز – Trafalgar Falls" data-img="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/dominica-trafalgar.jpg"
+            data-desc="الشلالات التوأم الشهيرة على بُعد أميال قليلة من العاصمة روسو، تنهمر من ارتفاع شاهق وسط الغابة الاستوائية الكثيفة لتُشكّل أيقونة السياحة الطبيعية في دومينيكا."
+            data-historic="💦 شلال الأم وشلال الأب | 🌿 غابة ترافالغار الاستوائية | 🌋 ينابيع حارة طبيعية | 🦋 تنوع حيوي نادر"
+            data-restaurants="🍽️ مطعم Papillote Wilderness | 🥘 مطعم Trafalgar Garden | 🌿 مطعم Falls View Kitchen"
+            data-cafes="☕ مقهى Papillote Café | ☕ مقهى Nature's Paradise | ☕ مقهى Waterfall Breeze"
+            data-events="💦 مشاهدة الشلالات التوأم | 🌿 مشي في الغابة الاستوائية | 🌋 الاستحمام في الينابيع الحارة"
+            onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'dominica_trafalgarfalls', 'ترافالغار فولز', 'https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/dominica-trafalgar.jpg')">🏙️</button>
+            <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/dominica-trafalgar.jpg" alt="ترافالغار فولز" class="cite-img">
+            <span class="name">ترافالغار فولز – Trafalgar Falls</span>
+            <p class="info">الشلالات التوأم الشهيرة أيقونة الطبيعة في دومينيكا الخضراء.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
+    </section>
 
     <div class="main-foods">
         <h1>الماكولات</h1>
@@ -368,7 +369,7 @@
                 onclick="event.stopPropagation()">المزيد</a>
         </div>
 
-        </section>
+    </section>
 
     <div id="cityModal" class="modal" onclick="closeCityModal(event)">
         <div class="modal-content">

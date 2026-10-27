@@ -66,6 +66,7 @@
             <span class="user-name" id="userName"></span>
             <div class="user-dropdown">
                 <a href="/profile/profile.html">الملف الشخصي</a>
+                <a href="/admin/admin.html" class="admin-link" id="adminLink" style="display:none">⚙️ الإدارة</a>
                 <a href="#" id="logoutBtn">تسجيل خروج</a>
             </div>
         </div>
@@ -202,6 +203,22 @@
                 onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
         </div>
 
+        <div class="cite" data-name="بليتفيتشه – Plitvice Lakes" data-img="/img/Plitvice.jpg"
+            data-desc="أشهر حديقة وطنية في كرواتيا ومن أجمل عجائب الطبيعة في أوروبا، سلسلة من ست عشرة بحيرة متدرجة بألوان تركوازية ساحرة تربط بينها شلالات وممرات خشبية وسط غابات كثيفة."
+            data-historic="💦 شلالات بليتفيتشه الكبرى – Great Plitvice Waterfall | 🏞️ البحيرات العليا – Upper Lakes | 🏞️ البحيرات السفلى – Lower Lakes | 🚣 بحيرة كوزياك – Kozjak Lake | 🌲 غابة بليتفيتشه المحمية – Plitvice Forest Reserve"
+            data-restaurants="🍽️ مطعم Lička Kuća | 🥘 مطعم Poljana Restaurant | 🐟 مطعم Vila Velebita | 🥗 مطعم Panorama Plitvice | 🍢 مطعم Degenija"
+            data-cafes="☕ مقهى Plitvice Café | ☕ مقهى Corkova Uvala Café | ☕ مقهى Ulaz 2 Café | ☕ مقهى Borje Café | ☕ مقهى Waterfall View Café"
+            data-events="💦 جولة مشي عبر الممرات الخشبية – Wooden Boardwalk Walk | 🚣 ركوب القوارب في بحيرة كوزياك – Kozjak Lake Boat Ride | 🚌 جولة بانورامية بالحافلة الكهربائية – Panoramic Electric Bus Tour | 📸 مشاهدة الشلالات الكبرى – Great Waterfall Viewing | 🌲 مشي طبيعي بين الغابات – Nature Forest Hike"
+            onclick="openCityModal(this)">
+            <button class="save-btn"
+                onclick="event.stopPropagation(); saveItem('city', 'croatia_plitvice', 'بليتفيتشه - Plitvice Lakes', '/img/Plitvice.jpg')">🏙️</button>
+            <img src="/img/Plitvice.jpg" alt="بليتفيتشه" class="cite-img">
+            <span class="name">بليتفيتشه – Plitvice Lakes</span>
+            <p class="info">ست عشرة بحيرة تركوازية وشلالات وسط غابات كثيفة.</p>
+            <button class="cite-btn"
+                onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
+        </div>
+
         <div class="cite" data-name="هفار – Hvar" data-img="/img/Hvar.jpg"
             data-desc="جزيرة دالماسية مشمسة تُعرف بحقولها الأرجوانية من اللافندر وقلعتها المطلة على المرفأ، من أكثر الجزر الكرواتية أناقة وجمالاً بمينائها الصغير المحاط بالتلال الخضراء."
             data-historic="🏰 قلعة هفار الإسبانية – Fortica Spanjola | ⛪ كاتدرائية القديس ستيفن – St. Stephen's Cathedral | 🎭 المسرح الكرواتي القديم – Hvar Theatre | 🏛️ دير الفرنسيسكان – Franciscan Monastery | 🌾 حقول لافندر هفار – Hvar Lavender Fields"
@@ -234,23 +251,7 @@
                 onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
         </div>
 
-    
-    <div class="cite" data-name="ريكا – Rijeka"
-      data-img="/img/croatia-rijeka.jpg"
-      data-desc="ثالث أكبر مدن كرواتيا وميناؤها الرئيسي على خليج كرنير، تشتهر بكرنفالها الشهير وتراثها المتعدد الثقافات."
-      data-historic="🚢 ميناء ريكا | 🏰 برج ترساط | 🎭 دار الأوبرا | 🛖 ساحة ريغاك"
-      data-restaurants="🥘 مطعم Konoba Feral | 🍖 مطعم Morska Vrata | 🌮 مطعم Trsatska Gradina"
-      data-cafes="☕ مقهى Caffe Bar Rio | ☕ مقهى Manon | ☕ مقهى Filodrammatica"
-      data-events="🎭 كرنفال ريكا | 🚢 جولة الميناء | 🏰 قلعة ترساط"
-      onclick="openCityModal(this)">
-      <button class="save-btn"
-        onclick="event.stopPropagation(); saveItem('city', 'croatia_rijeka', 'ريكا', '/img/croatia-rijeka.jpg')">🏙️</button>
-      <img src="/img/croatia-rijeka.jpg" alt="ريكا" class="cite-img" />
-      <span class="name">ريكا – Rijeka</span>
-      <p class="info">ميناء كرواتيا الرئيسي وعاصمة ثقافية ساحلية نابضة.</p>
-      <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
-    </div>
-  </section>
+    </section>
 
     <div class="main-foods">
         <h1>الماكولات</h1>

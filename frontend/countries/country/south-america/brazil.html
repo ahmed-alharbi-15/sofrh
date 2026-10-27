@@ -36,7 +36,7 @@
   <link rel="stylesheet" href="/countries/countries.css" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@500;600&display=swap">
   <link rel="stylesheet" href="/dark-mode.css">
-    <meta property="og:image" content="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/logo-img.PNG">
+    <meta property="og:image" content="https://sofrh.vercel.apphttps://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/logo6.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:title" content="سفرة — سافر وتذوق">
@@ -45,7 +45,7 @@
     <meta property="og:type" content="website">
     <meta property="og:locale" content="ar_SA">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/logo-img.PNG">
+    <meta name="twitter:image" content="https://sofrh.vercel.apphttps://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/logo6.png">
     <meta name="twitter:title" content="سفرة — سافر وتذوق">
     <meta name="twitter:description" content="اكتشف وجهات وماكولات من مختلف أنحاء العالم">
     <script src="/auth/auth.js" defer></script>
@@ -66,6 +66,7 @@
             <span class="user-name" id="userName"></span>
             <div class="user-dropdown">
                 <a href="/profile/profile.html">الملف الشخصي</a>
+                <a href="/admin/admin.html" class="admin-link" id="adminLink" style="display:none">⚙️ الإدارة</a>
                 <a href="#" id="logoutBtn">تسجيل خروج</a>
             </div>
         </div>
@@ -80,7 +81,7 @@
         </ul>
 
         <div class="logo">
-            <a href="/index/index.html"><img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/logo-img.PNG" alt="سفرة"></a>
+            <a href="/index/index.html"><img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/logo7.png" alt="سفرة"></a>
         </div>
     </header>
 
@@ -154,15 +155,15 @@
   </div>
   <section class="cities-grid">
 
-    <div class="cite" data-name="ريو دي جانيرو – Rio de Janeiro" data-img="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/ريو_دي_جانيرو.jpg"
+    <div class="cite" data-name="ريو دي جانيرو – Rio de Janeiro" data-img="/img/ريو دي جانيرو .jpg"
       data-desc="مدينة الحياة والألوان، تجمع بين الشواطئ الذهبية والجبال الخضراء وأجواء احتفالية طول السنة."
       data-historic="🗿 تمثال المسيح الفادي | 🏰 قلعة ساو خوان | ⛪ كاتدرائية ريو | 🌿 حديقة نباتية ريو"
       data-restaurants="🍖 مطعم Fogo de Chão | 🍤 مطعم Aprazível | 🥩 مطعم Churrascaria Palace"
       data-cafes="☕ مقهى Confeitaria Colombo | ☕ مقهى Armazém do Café | ☕ مقهى Casa Cultura"
       data-events="🎪 كرنفال ريو | 🎵 مهرجان Rock in Rio | 🏖️ حفلات شاطئ إيبانيما" onclick="openCityModal(this)">
       <button class="save-btn"
-        onclick="event.stopPropagation(); saveItem('city', 'brazil_rio', 'ريو دي جانيرو - Rio de Janeiro', 'https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/ريو_دي_جانيرو.jpg')">🏙️</button>
-      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/ريو_دي_جانيرو.jpg" alt="ريو دي جانيرو" class="cite-img" />
+        onclick="event.stopPropagation(); saveItem('city', 'brazil_rio', 'ريو دي جانيرو - Rio de Janeiro', '/img/ريو دي جانيرو .jpg')">🏙️</button>
+      <img src="/img/ريو دي جانيرو .jpg" alt="ريو دي جانيرو" class="cite-img" />
       <span class="name">ريو دي جانيرو – Rio de Janeiro</span>
       <p class="info">مدينة الحياة – شواطئ وجبال وأجواء احتفالية طول السنة.</p>
       <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>
@@ -261,7 +262,7 @@
     </div>
     <div class="foods" style="cursor:pointer"
       onclick="window.location.href='/recipes/recipes.html?recipe=pao-de-queijo'">
-      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/باو_دي_كيجو.jpg" alt="باو دي كيجو" class="foods-img" />
+      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/باو دي كيجو.jpg" alt="باو دي كيجو" class="foods-img" />
       <span class="name-foods">باو دي كيجو – Pão de Queijo</span>
       <div class="food-info">كعكة من الجبن والنشا، بطعم لذيذ وناعم.</div>
       <a href="/recipes/recipes.html?recipe=pao-de-queijo" class="for-more-btn"
@@ -292,7 +293,7 @@
   </div>
   <section class="events-grid">
     <div class="event" style="cursor:pointer" onclick="window.location.href='/events/events.html?event=rioCarnival'">
-      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/كرنفال_ريو .jpg" alt="كرنفال ريو" class="event-img" />
+      <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/كرنفال ريو .jpg" alt="كرنفال ريو" class="event-img" />
       <span class="name-event">كرنفال ريو – Rio Carnival</span>
       <div class="event-info">أكبر كرنفال عالمي برقص سامبا.</div>
       <a href="/events/events.html?event=rioCarnival" class="event-btn" onclick="event.stopPropagation()">المزيد</a>
