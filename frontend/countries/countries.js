@@ -323,3 +323,46 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+
+// --- Auto coming-soon: يقرأ plan.js ويضيف coming-soon تلقائياً ---
+(async function applyComingSoon() {
+    // شغّل بس على صفحات فيها كروت دول
+    if (!document.querySelector('.country-card')) return;
+
+    try {
+        const res = await fetch('/plan/plan.js');
+        if (!res.ok) return;
+        const text = await res.text();
+
+        // استخرج IDs اللي عندها "ready": false
+        const notReadyIds = new Set();
+        const readyFalseRgx = /"ready":\s*false/g;
+        let m;
+        while ((m = readyFalseRgx.exec(text)) !== null) {
+            const before = text.slice(Math.max(0, m.index - 800), m.index);
+            const ids = [...before.matchAll(/"id":\s*"([^"]+)"/g)];
+            if (ids.length) notReadyIds.add(ids[ids.length - 1][1]);
+        }
+        if (notReadyIds.size === 0) return;
+
+        const SOON = 'https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/soon.png';
+
+        document.querySelectorAll('.country-card').forEach(card => {
+            // استخرج ID الدولة من رابط الـ onclick
+            const onclick = card.getAttribute('onclick') || '';
+            const idMatch = onclick.match(/\/([^/]+)\.html/);
+            if (!idMatch) return;
+            const countryId = idMatch[1];
+
+            if (!notReadyIds.has(countryId)) return;
+
+            // طبّق coming-soon
+            card.classList.add('coming-soon');
+
+            // غيّر الصورة
+            const img = card.querySelector('img');
+            if (img && img.src !== SOON) img.src = SOON;
+        });
+
+    } catch (_) { /* silent fail */ }
+})();
