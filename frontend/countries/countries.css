@@ -1600,3 +1600,7 @@ input {
         grid-template-columns: 1fr;
     }
 }
+
+/* Coming Soon */
+.country-card.coming-soon { pointer-events: none; opacity: 0.7; position: relative; }
+.country-card.coming-soon::after { content: "قريباً"; position: absolute; top: 12px; left: 12px; background: #F28500; color: #fff; padding: 4px 10px; border-radius: 999px; font-size: 12px; font-family: 'Noto Sans Arabic', sans-serif; z-index: 10; }
