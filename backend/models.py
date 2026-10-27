@@ -1,7 +1,20 @@
-from sqlalchemy import Column, Integer, String, Text, ForeignKey, DateTime, func
+from sqlalchemy import Column, Integer, String, Text, ForeignKey, DateTime, Boolean, func
 from sqlalchemy.orm import declarative_base, relationship
 
 Base = declarative_base()
+
+
+# 0. جدول المستخدمين
+class User(Base):
+    __tablename__ = "users"
+
+    id           = Column(Integer, primary_key=True, index=True)
+    username     = Column(String(150), nullable=False)
+    email        = Column(String(255), unique=True, nullable=False)
+    password     = Column(Text, nullable=False)
+    phone        = Column(String(50), nullable=True)
+    avatar_url   = Column(String(500), nullable=True)
+    is_admin     = Column(Boolean, default=False)   # صلاحية الأدمن
 
 # 1. جدول القارات
 class Continent(Base):

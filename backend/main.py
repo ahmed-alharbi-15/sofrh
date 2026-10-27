@@ -105,6 +105,17 @@ def create_tables():
     cur.execute("""
         ALTER TABLE users ADD COLUMN IF NOT EXISTS avatar_url TEXT;
     """)
+    cur.execute("""
+        ALTER TABLE users ADD COLUMN IF NOT EXISTS is_admin BOOLEAN DEFAULT FALSE;
+    """)
+    cur.execute("""
+        CREATE TABLE IF NOT EXISTS country_ready_overrides (
+            country_id  TEXT PRIMARY KEY,
+            is_ready    BOOLEAN NOT NULL DEFAULT TRUE,
+            updated_by  TEXT,
+            updated_at  TIMESTAMP DEFAULT NOW()
+        );
+    """)
     conn.commit()
     cur.close()
     conn.close()
@@ -447,3 +458,81 @@ def chat_with_chef(chat: ChatMessage):
         return {"status": "success", "reply": reply}
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Agent error: {str(e)}")
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Admin endpoints
+# ─────────────────────────────────────────────────────────────────────────────
+
+class AdminCheck(BaseModel):
+    email: str
+
+class ToggleCountry(BaseModel):
+    id: str           # مثل: "saudi"
+    ready: bool
+    email: str        # للتحقق من صلاحية الأدمن
+
+
+@app.post("/admin/check")
+def admin_check(data: AdminCheck):
+    """يتحقق هل المستخدم أدمن — يرجع {"admin": true} أو 403"""
+    conn = get_db_connection()
+    cur = conn.cursor()
+    try:
+        cur.execute(
+            "SELECT is_admin FROM users WHERE email = %s",
+            (data.email,)
+        )
+        row = cur.fetchone()
+        if not row or not row[0]:
+            raise HTTPException(status_code=403, detail="ليس لديك صلاحية الوصول")
+        return {"admin": True}
+    finally:
+        cur.close()
+        conn.close()
+
+
+@app.post("/admin/toggle-country")
+def toggle_country(data: ToggleCountry):
+    """يحدّث حالة ready لدولة في قاعدة البيانات"""
+    # تحقق من صلاحية الأدمن
+    conn = get_db_connection()
+    cur = conn.cursor()
+    try:
+        cur.execute("SELECT is_admin FROM users WHERE email = %s", (data.email,))
+        row = cur.fetchone()
+        if not row or not row[0]:
+            raise HTTPException(status_code=403, detail="ليس لديك صلاحية")
+
+        # حدّث أو أضف override
+        cur.execute("""
+            INSERT INTO country_ready_overrides (country_id, is_ready, updated_by)
+            VALUES (%s, %s, %s)
+            ON CONFLICT (country_id) DO UPDATE
+                SET is_ready   = EXCLUDED.is_ready,
+                    updated_by = EXCLUDED.updated_by,
+                    updated_at = NOW()
+        """, (data.id, data.ready, data.email))
+        conn.commit()
+        return {"status": "success", "id": data.id, "ready": data.ready}
+    except HTTPException as he:
+        raise he
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+    finally:
+        cur.close()
+        conn.close()
+
+
+@app.get("/country-states")
+def get_country_states():
+    """يرجع قائمة الدول اللي تم تعديل حالتها (overrides فقط)"""
+    conn = get_db_connection()
+    cur = conn.cursor()
+    try:
+        cur.execute("SELECT country_id, is_ready FROM country_ready_overrides")
+        rows = cur.fetchall()
+        return {row[0]: row[1] for row in rows}
+    finally:
+        cur.close()
+        conn.close()

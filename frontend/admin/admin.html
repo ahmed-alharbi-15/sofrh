@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>لوحة التحكم — سفرة</title>
+    <link rel="stylesheet" href="/admin/admin.css" />
+    <!-- no nav link points here — hidden page -->
+</head>
+<body>
+
+<!-- ── شاشة التحميل ── -->
+<div id="loading-screen">
+    <div class="spinner"></div>
+    <span>جارٍ التحقق من الصلاحيات…</span>
+</div>
+
+<!-- ── رفض الوصول ── -->
+<div id="denied-screen" style="display:none">
+    <span>⛔</span>
+    <span>ليس لديك صلاحية الوصول</span>
+    <small>سيتم تحويلك للرئيسية…</small>
+</div>
+
+<!-- ── لوحة التحكم ── -->
+<div id="admin-panel" style="display:none">
+
+    <!-- Header -->
+    <header class="admin-header">
+        <h1>🛠️ لوحة التحكم — سفرة</h1>
+        <span class="email-tag" id="admin-email"></span>
+        <span class="badge">أدمن</span>
+    </header>
+
+    <!-- Stats -->
+    <div class="stats-bar">
+        <span>الكل: <strong id="stat-total">—</strong></span>
+        <span>متاح: <strong id="stat-ready">—</strong></span>
+        <span>مخفي: <strong id="stat-hidden">—</strong></span>
+    </div>
+
+    <!-- Toolbar -->
+    <div class="toolbar">
+        <input id="search-input" type="search" placeholder="ابحث عن دولة بالعربي أو الإنجليزي…" />
+        <select id="filter-select">
+            <option value="all">الكل</option>
+            <option value="ready">متاح ✅</option>
+            <option value="not-ready">قريباً ⏳</option>
+        </select>
+    </div>
+
+    <!-- Table -->
+    <div class="table-wrap">
+        <table id="countries-table">
+            <thead>
+                <tr>
+                    <th>الدولة</th>
+                    <th>English</th>
+                    <th>القارة</th>
+                    <th>الحالة</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+</div><!-- /admin-panel -->
+
+<!-- Toast -->
+<div class="toast" id="toast"></div>
+
+<script src="/admin/admin.js"></script>
+</body>
+</html>
