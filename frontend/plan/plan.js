@@ -1364,6 +1364,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                 "id": "comoros",
                                 
                                 "nameAr": "جزر القمر",
+                                "ready": false,
                                 "nameEn": "Comoros",
                                 "continent": "africa",
                                 "img": "/img/comoros-logo.jpg",
