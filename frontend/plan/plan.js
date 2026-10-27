@@ -1362,7 +1362,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         },
                         {
                                 "id": "comoros",
-                                "ready": false,
+                                
                                 "nameAr": "جزر القمر",
                                 "nameEn": "Comoros",
                                 "continent": "africa",
