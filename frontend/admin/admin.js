@@ -164,5 +164,40 @@ function applyFilter() {
     renderTable(filtered);
 }
 
+// ── منح صلاحية الأدمن ─────────────────────────────────────────────────────────
+async function grantAdmin() {
+    const input = document.getElementById('admin-email-input');
+    const btn   = document.getElementById('set-admin-btn');
+    const email = input.value.trim();
+
+    if (!email) { showToast('⚠️ أدخل الإيميل أولاً'); return; }
+
+    btn.disabled = true;
+    btn.textContent = '…';
+
+    try {
+        const res = await fetch(`${API}/admin/set-admin`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email, admin_email: adminEmail })
+        });
+
+        const data = await res.json();
+
+        if (!res.ok) {
+            throw new Error(data.detail || 'خطأ');
+        }
+
+        showToast(`✅ تم منح صلاحية الأدمن لـ ${email}`);
+        input.value = '';
+
+    } catch (e) {
+        showToast('❌ ' + e.message);
+    } finally {
+        btn.disabled = false;
+        btn.textContent = 'اجعله Admin';
+    }
+}
+
 // ── Init ──────────────────────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', checkAdmin);

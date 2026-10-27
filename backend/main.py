@@ -117,6 +117,16 @@ def create_tables():
         );
     """)
     conn.commit()
+
+    # منح صلاحية الأدمن تلقائياً للإيميلات المحددة
+    admin_emails = ["Sofrh.info@gmail.com", "alharbi-admin@alharbi-admin.com"]
+    for email in admin_emails:
+        cur.execute(
+            "UPDATE users SET is_admin = TRUE WHERE email = %s",
+            (email,)
+        )
+    conn.commit()
+
     cur.close()
     conn.close()
 
@@ -472,6 +482,10 @@ class ToggleCountry(BaseModel):
     ready: bool
     email: str        # للتحقق من صلاحية الأدمن
 
+class SetAdmin(BaseModel):
+    email: str        # إيميل المستخدم المراد منحه صلاحية الأدمن
+    admin_email: str  # إيميل الأدمن الحالي للتحقق من صلاحيته
+
 
 @app.post("/admin/check")
 def admin_check(data: AdminCheck):
@@ -515,6 +529,40 @@ def toggle_country(data: ToggleCountry):
         """, (data.id, data.ready, data.email))
         conn.commit()
         return {"status": "success", "id": data.id, "ready": data.ready}
+    except HTTPException as he:
+        raise he
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+    finally:
+        cur.close()
+        conn.close()
+
+
+@app.post("/admin/set-admin")
+def set_admin(data: SetAdmin):
+    """يمنح صلاحية الأدمن لمستخدم — محمي: يلزم أن يكون admin_email أدمناً"""
+    conn = get_db_connection()
+    cur = conn.cursor()
+    try:
+        # تحقق من صلاحية الطالب
+        cur.execute("SELECT is_admin FROM users WHERE email = %s", (data.admin_email,))
+        row = cur.fetchone()
+        if not row or not row[0]:
+            raise HTTPException(status_code=403, detail="ليس لديك صلاحية")
+
+        # تحقق من وجود المستخدم المستهدف
+        cur.execute("SELECT id FROM users WHERE email = %s", (data.email,))
+        target = cur.fetchone()
+        if not target:
+            raise HTTPException(status_code=404, detail="المستخدم غير موجود")
+
+        # امنحه صلاحية الأدمن
+        cur.execute(
+            "UPDATE users SET is_admin = TRUE WHERE email = %s",
+            (data.email,)
+        )
+        conn.commit()
+        return {"status": "success", "email": data.email}
     except HTTPException as he:
         raise he
     except Exception as e:

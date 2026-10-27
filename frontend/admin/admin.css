@@ -191,7 +191,65 @@ tbody td {
 }
 .toast.show { transform: translateX(-50%) translateY(0); }
 
+/* ── User Management ── */
+.user-mgmt-section {
+    padding: 28px 32px 48px;
+}
+.section-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--purple);
+    margin-bottom: 16px;
+}
+.set-admin-card {
+    background: #fff;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 24px;
+    max-width: 520px;
+}
+.set-admin-card label {
+    display: block;
+    font-size: .88rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 8px;
+}
+.set-admin-row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+.set-admin-row input {
+    flex: 1;
+    min-width: 200px;
+    padding: 9px 14px;
+    border: 1.5px solid #d1c9f0;
+    border-radius: var(--radius);
+    font-family: inherit;
+    font-size: .9rem;
+    outline: none;
+    transition: border .2s;
+}
+.set-admin-row input:focus { border-color: var(--purple); }
+.set-admin-row button {
+    padding: 9px 20px;
+    background: var(--purple);
+    color: #fff;
+    border: none;
+    border-radius: var(--radius);
+    font-family: inherit;
+    font-size: .88rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: opacity .2s;
+    white-space: nowrap;
+}
+.set-admin-row button:hover { opacity: .85; }
+.set-admin-row button:disabled { opacity: .5; cursor: not-allowed; }
+
 @media (max-width: 600px) {
     .admin-header, .stats-bar, .toolbar, .table-wrap { padding-right: 16px; padding-left: 16px; }
     thead th, tbody td { padding: 10px 10px; font-size: .8rem; }
+    .user-mgmt-section { padding-right: 16px; padding-left: 16px; }
 }
