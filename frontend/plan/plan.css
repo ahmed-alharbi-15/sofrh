@@ -65,7 +65,6 @@ body {
     color: var(--text);
     font-family: 'Dubai', 'Dubai Regular', sans-serif;
     font-size: 1rem;
-    padding-top: 90px !important;
     direction: rtl;
     overflow-x: hidden;
 }
@@ -83,440 +82,106 @@ body {
 /*********************************
      LOGO
 *********************************/
-.logo img {
-    height: 60px;
-}
+
 
 /*********************************
      NAVBAR
 *********************************/
-.navbar {
-    background-color: var(--brown-dark);
-    padding: 0 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 100%;
-    z-index: 999;
-    height: 90px;
-    direction: rtl;
-}
+
 
 /*********************************
      NAV LINKS
 *********************************/
-.nav-list {
-    display: flex;
-    gap: 90px;
-    list-style: none;
-}
 
-.nav-list a {
-    text-decoration: none;
-    font-weight: 400;
-    font-size: 20px;
-    color: var(--cream-light);
-    position: relative;
-    transition: .3s ease;
-}
-
-.nav-list a::after {
-    content: "";
-    position: absolute;
-    bottom: -5px;
-    right: 0;
-    width: 0%;
-    height: 3px;
-    background-color: var(--caramel);
-    transition: width .3s ease;
-}
-
-.nav-list a:hover::after {
-    width: 100%;
-}
-
-.nav-list a:hover {
-    color: var(--caramel);
-}
 
 /*********************************
      AUTH BUTTONS
 *********************************/
 /* Prevent auth-state flash (FOUC) before auth.js runs */
-html.logged-in .auth-buttons {
-    display: none;
-}
 
-html.logged-in .user-menu {
-    display: flex;
-}
-
-.auth-buttons {
-    display: flex;
-    gap: 15px;
-    align-items: center;
-}
-
-.auth-buttons a {
-    text-decoration: none;
-    font-size: 20px;
-    padding: 8px 20px;
-    font-weight: 400;
-    border-radius: 20px;
-    white-space: nowrap;
-}
-
-.login {
-    background-color: var(--cream-soft);
-    color: var(--brown-dark);
-    transition: .3s;
-}
-
-.login:hover {
-    transform: translateY(-2px);
-}
-
-.signup {
-    background: transparent;
-    border: 2px solid var(--cream-soft);
-    color: var(--cream-soft);
-    transition: .3s;
-}
-
-.signup:hover {
-    background-color: var(--cream-soft);
-    color: var(--brown-dark);
-    transform: translateY(-2px);
-}
 
 /*********************************
      HAMBURGER
 *********************************/
-.hamburger {
-    display: none;
-    font-size: 32px;
-    color: var(--cream-light);
-    cursor: pointer;
-    user-select: none;
-}
+
 
 /*********************************
      SIDE MENU
 *********************************/
-.side-menu {
-    display: none;
-    position: fixed;
-    top: 0;
-    right: -260px;
-    width: 260px;
-    height: 100%;
-    background-color: var(--brown-dark);
-    padding-top: 100px;
-    transition: right 0.4s ease;
-    z-index: 9999;
-    overflow: hidden;
-}
 
-.side-menu::before {
-    content: "";
-    position: absolute;
-    width: 220px;
-    height: 220px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(242, 133, 0, .18) 0%, transparent 70%);
-    top: -60px;
-    left: -70px;
-    pointer-events: none;
-}
-
-.side-menu-kicker {
-    display: block;
-    color: var(--caramel);
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 3px;
-    margin: 0 24px 18px;
-    opacity: .8;
-}
-
-.side-menu ul {
-    list-style: none;
-    padding: 0 12px;
-}
-
-.side-menu li {
-    margin: 4px 0;
-    opacity: 0;
-    transform: translateX(18px);
-    transition: opacity .35s ease, transform .35s ease;
-}
-
-.side-menu.menu-open li {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-.side-menu.menu-open li:nth-child(1) { transition-delay: .05s; }
-.side-menu.menu-open li:nth-child(2) { transition-delay: .1s; }
-.side-menu.menu-open li:nth-child(3) { transition-delay: .15s; }
-.side-menu.menu-open li:nth-child(4) { transition-delay: .2s; }
-.side-menu.menu-open li:nth-child(5) { transition-delay: .25s; }
-
-.side-menu a {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    padding: 14px 16px;
-    border-radius: 14px;
-    color: var(--cream-light);
-    font-size: 19px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: background .25s, color .25s;
-}
-
-.side-menu a svg {
-    width: 22px;
-    height: 22px;
-    flex-shrink: 0;
-    opacity: .75;
-    transition: opacity .25s, transform .25s;
-}
-
-.side-menu a:hover {
-    background-color: rgba(242, 133, 0, .16);
-    color: var(--caramel);
-}
-
-.side-menu a:hover svg {
-    opacity: 1;
-    transform: scale(1.08);
-}
-
-.side-menu a.active {
-    background-color: var(--caramel);
-    color: var(--brown-dark);
-}
-
-.side-menu a.active svg {
-    opacity: 1;
-}
-
-@media (max-width: 480px) {
-    .side-menu {
-        width: 78vw;
-        max-width: 300px;
-    }
-}
 
 /*********************************
      CLOSE BUTTON
 *********************************/
-.close-btn {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    font-size: 30px;
-    color: #FAF5EB;
-    cursor: pointer;
-    padding: 5px 10px;
-    border-radius: 8px;
-    transition: background-color .2s, color .2s, transform .3s;
-    z-index: 1;
-}
 
-.close-btn:hover {
-    background-color: #F28500;
-    color: #FFFFFF;
-    transform: rotate(90deg);
-}
 
 /*********************************
      USER MENU
 *********************************/
-.user-menu {
-    display: none;
-    align-items: center;
-    gap: 10px;
-    cursor: pointer;
-    position: relative;
-}
 
-.user-name {
-    color: var(--cream-light);
-    font-size: 16px;
-    font-weight: 400;
-}
-
-#userAvatar {
-    width: 38px;
-    height: 38px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid var(--caramel);
-}
-
-.user-dropdown {
-    display: none;
-    position: absolute;
-    top: 100%;
-    right: 0;
-    left: auto;
-    background: #FAF5EB;
-    border-radius: 12px;
-    padding: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-    min-width: 160px;
-    z-index: 9999;
-}
-
-.user-menu:hover .user-dropdown {
-    display: block;
-}
-
-.user-dropdown a {
-    display: block;
-    padding: 8px 12px;
-    color: #32127A;
-    text-decoration: none;
-    font-size: 15px;
-    border-radius: 8px;
-    white-space: nowrap;
-}
-
-.user-dropdown a:hover {
-    background: #F0EBE0;
-}
 
 /*********************************
      RESPONSIVE NAVBAR — أقل من 900px
 *********************************/
-@media (max-width: 900px) {
-    .nav-list {
-        display: none;
-    }
 
-    .hamburger {
-        display: block;
-    }
-
-    .side-menu {
-        display: block;
-    }
-}
 
 /*********************************
      RESPONSIVE NAVBAR — الجوال (أقل من 480px)
 *********************************/
 @media (max-width: 480px) {
-    body {
-        padding-top: 70px !important;
-    }
+    
 
-    .navbar {
-        height: 70px;
-        padding: 0 12px;
-    }
+    
 
-    .logo img {
-        height: 50px;
-    }
+    
 
-    .hamburger {
-        font-size: 28px;
-    }
+    
 
-    .auth-buttons a {
-        font-size: 11px;
-        padding: 5px 8px;
-        border-radius: 12px;
-    }
+    
+
 }
 
 /*********************************
      RESPONSIVE NAVBAR — الجوال الكبير (480px – 767px)
 *********************************/
 @media (min-width: 480px) and (max-width: 767px) {
-    body {
-        padding-top: 75px !important;
-    }
+    
 
-    .navbar {
-        height: 75px;
-        padding: 0 15px;
-    }
+    
 
-    .logo img {
-        height: 55px;
-    }
+    
 
-    .auth-buttons a {
-        font-size: 11px;
-        padding: 5px 8px;
-        border-radius: 12px;
-    }
+    
+
 }
 
 /*********************************
      RESPONSIVE NAVBAR — الأيباد (768px – 1024px)
 *********************************/
 @media (min-width: 768px) and (max-width: 1024px) {
-    body {
-        padding-top: 85px !important;
-    }
+    
 
-    .navbar {
-        height: 85px;
-        padding: 0 15px;
-    }
+    
 
-    .logo img {
-        height: 75px;
-    }
+    
 
-    .nav-list {
-        display: none;
-    }
+    
 
-    .hamburger {
-        display: block;
-    }
+    
 
-    .side-menu {
-        display: block;
-    }
+    
+
 }
 
 /*********************************
      RESPONSIVE NAVBAR — اللابتوب الصغير (1025px – 1280px)
 *********************************/
-@media (min-width: 1025px) and (max-width: 1280px) {
-    .nav-list {
-        gap: 40px;
-    }
 
-    .nav-list a {
-        font-size: 17px;
-    }
-}
 
 /*********************************
      RESPONSIVE NAVBAR — اللابتوب الكبير (1281px – 1600px)
 *********************************/
-@media (min-width: 1281px) and (max-width: 1600px) {
-    .nav-list {
-        gap: 60px;
-    }
-}
 
-@media (max-width: 650px) {
-    .auth-buttons {
-        display: none;
-    }
-}
 
 /* =====================================================
    من هنا تصميم قسم "خطتي" — مفهوم بطاقة الصعود (Boarding Pass)
@@ -634,6 +299,7 @@ html.logged-in .user-menu {
         right: 50%;
         margin-right: -8px;
     }
+
 }
 
 .hero-open p {
@@ -713,6 +379,7 @@ html.logged-in .user-menu {
     .hero-stat-divider {
         height: 24px;
     }
+
 }
 
 /* ===== TICKET WIZARD SHELL ===== */
@@ -1101,6 +768,7 @@ html.logged-in .user-menu {
         flex-direction: column;
         gap: 14px;
     }
+
 }
 
 .counter-box {
@@ -1237,6 +905,7 @@ html.logged-in .user-menu {
     .trip-type-grid {
         grid-template-columns: 1fr;
     }
+
 }
 
 /* continent grid */
@@ -1256,6 +925,7 @@ html.logged-in .user-menu {
     .continent-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+
 }
 
 /* random button — wildcard ticket */
@@ -1325,6 +995,7 @@ html.logged-in .user-menu {
     .hotel-grid {
         grid-template-columns: 1fr;
     }
+
 }
 
 .random-btn {
@@ -1465,6 +1136,7 @@ html.logged-in .user-menu {
     .act-icon { font-size: 24px; }
     .act-name { font-size: 12.5px; }
     .act-sub  { font-size: 10px; }
+
 }
 
 /* ticket nav buttons */
@@ -1685,6 +1357,7 @@ html.logged-in .user-menu {
     .bp-card.featured {
         grid-column: span 1;
     }
+
 }
 
 .bp-main {
@@ -2048,6 +1721,7 @@ html.logged-in .user-menu {
     .footer-logo {
         font-size: 1.8rem;
     }
+
 }
 
 @media (max-width: 480px) {
@@ -2074,6 +1748,7 @@ html.logged-in .user-menu {
         font-size: clamp(0.75rem, 2.5vw, 0.85rem);
         margin-top: 30px;
     }
+
 }
 
 @media (max-width: 480px) {
@@ -2083,18 +1758,21 @@ html.logged-in .user-menu {
     }
     .footer-logo { font-size: 1.6rem; }
     .footer-brand p, .footer-links a, .footer-contact a { font-size: 0.85rem; }
+
 }
 
 @media (max-width: 380px) {
     .footer-container { padding: 0 12px; gap: 20px; }
     .footer-logo { font-size: 1.4rem; }
     .footer-brand p, .footer-links a, .footer-contact a { font-size: 0.8rem; }
+
 }
 
 @media (max-width: 320px) {
     .footer-container { padding: 0 10px; gap: 16px; }
     .footer-logo { font-size: 1.2rem; }
     .footer-brand p, .footer-links a, .footer-contact a { font-size: 0.75rem; }
+
 }
 
 /* ===== RESPONSIVE TICKET WIZARD ===== */
@@ -2155,6 +1833,7 @@ html.logged-in .user-menu {
         width: 100%;
         margin-top: 12px;
     }
+
 }
 
 @media (max-width: 600px) {
@@ -2171,27 +1850,10 @@ html.logged-in .user-menu {
     .ticket-btn {
         width: 100%;
     }
-}
-@media (max-width: 480px) {
-    .side-menu {
-        width: 80vw;
-        max-width: 280px;
-    }
+
 }
 
-@media (max-width: 480px) {
-    .side-menu {
-        width: 80vw;
-        max-width: 260px;
-    }
-}
 
-@media (max-width: 320px) {
-    .side-menu {
-        width: 90vw;
-        max-width: 240px;
-    }
-}
 .bp-ready {
     position: absolute;
     top: 12px;
@@ -2218,41 +1880,12 @@ html.logged-in .user-menu {
     backdrop-filter: blur(4px);
 }
 
-html.user-logged-out .user-menu { display: none !important; }
-html.user-logged-out .auth-buttons { display: flex !important; }
-html.user-logged-in .auth-buttons { display: none !important; }
-html.user-logged-in .user-menu { display: flex !important; }
 
 /* اللوغو */
-.logo img { height: 55px; width: auto; }
 
-/* الخطوط */
-:root {
-    --font-xs: 12px;
-    --font-sm: 14px;
-    --font-md: 16px;
-    --font-lg: 18px;
-    --font-xl: 22px;
-    --font-2xl: 28px;
-    --font-3xl: 36px;
-}
-
-/* الـ navbar */
-.nav-list a { font-size: var(--font-lg); }
-.auth-buttons a { font-size: var(--font-md); }
-.user-name { font-size: var(--font-md); }
 
 /* الجوال */
-@media (max-width: 480px) {
-    .logo img { height: 42px; }
-}
 
-.nav-list a.active {
-    color: #F28500;
-}
-.nav-list a.active::after {
-    width: 100%;
-}
 
 /* ملاحظة: .card/.fav-card/.auth-card وinput العام غير موجودين فعلياً في plan.html —
    نضيفهم هنا كما وردوا حرفياً لتطابق باقي ملفات CSS (.wizard الحقيقي تم تحديثه فوق) */

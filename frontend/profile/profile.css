@@ -203,12 +203,14 @@ body {
     .fav-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+
 }
 
 @media (max-width: 480px) {
     .fav-grid {
         grid-template-columns: 1fr;
     }
+
 }
 
 /* ملاحظة: .fav-card تُبقي خلفيتها الداكنة الثابتة #150A35 عمداً (شفافة الصورة خلفها بغض النظر عن الثيم) — لا تُستبدل بـ var(--card-bg) لتفادي كسر تصميم كروت المفضلة */
@@ -444,16 +446,19 @@ body {
         margin-right: 0;
         padding: 20px;
     }
+
 }
 
 /* ملاحظة: أعمدة .fav-grid تُدار الآن من الكتلة الـ responsive أعلى الملف
    (auto-fill ← 768px: عمودين ← 480px: عمود واحد) — أُزيلت من هنا لتفادي التعارض */
 @media (max-width: 600px) {
     .fav-card { height: 200px; }
+
 }
 
 @media (max-width: 480px) {
     .profile-content { padding: 14px; }
+
 }
 .site-footer {
   background-color: #32127A;
@@ -564,6 +569,7 @@ body {
   .footer-logo {
     font-size: 1.8rem;
   }
+
 }
 
 /* موبايل */
@@ -591,6 +597,7 @@ body {
     font-size: clamp(0.75rem, 2.5vw, 0.85rem);
     margin-top: 30px;
   }
+
 }
 
 @media (max-width: 480px) {
@@ -600,75 +607,29 @@ body {
     }
     .footer-logo { font-size: 1.6rem; }
     .footer-brand p, .footer-links a, .footer-contact a { font-size: 0.85rem; }
+
 }
 
 @media (max-width: 380px) {
     .footer-container { padding: 0 12px; gap: 20px; }
     .footer-logo { font-size: 1.4rem; }
     .footer-brand p, .footer-links a, .footer-contact a { font-size: 0.8rem; }
+
 }
 
 @media (max-width: 320px) {
     .footer-container { padding: 0 10px; gap: 16px; }
     .footer-logo { font-size: 1.2rem; }
     .footer-brand p, .footer-links a, .footer-contact a { font-size: 0.75rem; }
-}
-@media (max-width: 480px) {
-    .side-menu {
-        width: 80vw;
-        max-width: 280px;
-    }
+
 }
 
-@media (max-width: 480px) {
-    .side-menu {
-        width: 80vw;
-        max-width: 260px;
-    }
-}
-
-@media (max-width: 320px) {
-    .side-menu {
-        width: 90vw;
-        max-width: 240px;
-    }
-}
-
-html.user-logged-out .user-menu { display: none !important; }
-html.user-logged-out .auth-buttons { display: flex !important; }
-html.user-logged-in .auth-buttons { display: none !important; }
-html.user-logged-in .user-menu { display: flex !important; }
 
 /* اللوغو */
-.logo img { height: 55px; width: auto; }
 
-/* الخطوط */
-:root {
-    --font-xs: 12px;
-    --font-sm: 14px;
-    --font-md: 16px;
-    --font-lg: 18px;
-    --font-xl: 22px;
-    --font-2xl: 28px;
-    --font-3xl: 36px;
-}
-
-/* الـ navbar */
-.nav-list a { font-size: var(--font-lg); }
-.auth-buttons a { font-size: var(--font-md); }
-.user-name { font-size: var(--font-md); }
 
 /* الجوال */
-@media (max-width: 480px) {
-    .logo img { height: 42px; }
-}
 
-.nav-list a.active {
-    color: #F28500;
-}
-.nav-list a.active::after {
-    width: 100%;
-}
 
 /* ملاحظة: .card/.wizard/.auth-card وinput العام غير موجودين فعلياً في profile.html —
    نضيفهم هنا كما وردوا حرفياً لتطابق باقي ملفات CSS (.input-group input الحقيقي تم تحديثه فوق) */
