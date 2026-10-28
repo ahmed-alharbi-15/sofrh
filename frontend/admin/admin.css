@@ -287,7 +287,7 @@ tbody td {
     font-size: .75rem;
     font-weight: 700;
 }
-.status-active         { background: #dcfce7; color: #15803d; }
+.status-active         { background: #dcfce7; color: #1a6b1a; font-weight: 700; }
 .status-coming_soon    { background: #fef9c3; color: #a16207; }
 .status-in_development { background: #ede9fe; color: var(--purple); }
 /* ── Column widths ── */
@@ -802,19 +802,23 @@ html.user-logged-in  .user-menu   { display: flex !important; }
 
 /* ── Dark Mode: status-badge + status-text ── */
 html[data-theme="dark"] .status-badge,
-html[data-theme="dark"] .status-active,
 html[data-theme="dark"] .status-coming,
 html[data-theme="dark"] .status-dev {
     color: #ffffff !important;
     font-weight: 700 !important;
     text-shadow: 0 1px 3px rgba(0,0,0,0.5);
 }
+html[data-theme="dark"] .status-active,
+.status-active {
+    color: #1a6b1a !important;
+    font-weight: 700 !important;
+}
 
 /* ── Filter buttons (tab-btn alias) ── */
 .filter-btn {
     border: 2px solid #32127A !important;
     color: #32127A !important;
-    background: transparent;
+    background: #FAF5EB !important;
     border-radius: 999px;
     padding: 6px 16px;
     font-size: 14px;
@@ -830,8 +834,8 @@ html[data-theme="dark"] .status-dev {
 }
 html[data-theme="dark"] .filter-btn {
     border: 2px solid #F28500 !important;
-    color: #E0E0E0 !important;
-    background: transparent !important;
+    color: #ffffff !important;
+    background: #1a1040 !important;
 }
 html[data-theme="dark"] .filter-btn.active {
     background: #F28500 !important;
