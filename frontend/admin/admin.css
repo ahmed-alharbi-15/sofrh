@@ -801,30 +801,32 @@ html.user-logged-in  .user-menu   { display: flex !important; }
 [data-theme="dark"] .user-dropdown a:hover { background: #2a1860; }
 
 /* ── Dark Mode: status-badge + status-text ── */
-html[data-theme="dark"] .status-text,
-html[data-theme="dark"] .status-badge {
+html[data-theme="dark"] .status-badge,
+html[data-theme="dark"] .status-active,
+html[data-theme="dark"] .status-coming,
+html[data-theme="dark"] .status-dev {
     color: #ffffff !important;
     font-weight: 700 !important;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.5);
 }
 
 /* ── Filter buttons (tab-btn alias) ── */
 .filter-btn {
     border: 2px solid #32127A !important;
-    color: #32127A;
+    color: #32127A !important;
     background: transparent;
     border-radius: 999px;
     padding: 6px 16px;
-    font-family: inherit;
-    font-size: .85rem;
+    font-size: 14px;
     font-weight: 600;
     cursor: pointer;
+    font-family: inherit;
     transition: all .2s;
 }
 .filter-btn:hover { opacity: .8; }
 .filter-btn.active {
-    background: #32127A;
-    color: #ffffff;
-    border-color: #32127A !important;
+    background: #32127A !important;
+    color: #ffffff !important;
 }
 html[data-theme="dark"] .filter-btn {
     border: 2px solid #F28500 !important;
@@ -834,5 +836,4 @@ html[data-theme="dark"] .filter-btn {
 html[data-theme="dark"] .filter-btn.active {
     background: #F28500 !important;
     color: #ffffff !important;
-    border-color: #F28500 !important;
 }
