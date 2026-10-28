@@ -39,13 +39,25 @@
         <span>مخفي: <strong id="stat-hidden">—</strong></span>
     </div>
 
+    <!-- Continent Tabs -->
+    <div class="continent-tabs">
+        <button class="tab-btn active" data-continent="all">الكل</button>
+        <button class="tab-btn" data-continent="asia">آسيا</button>
+        <button class="tab-btn" data-continent="africa">أفريقيا</button>
+        <button class="tab-btn" data-continent="europe">أوروبا</button>
+        <button class="tab-btn" data-continent="north_america">أمريكا الشمالية</button>
+        <button class="tab-btn" data-continent="south_america">أمريكا الجنوبية</button>
+        <button class="tab-btn" data-continent="oceania">أوقيانوسيا</button>
+    </div>
+
     <!-- Toolbar -->
     <div class="toolbar">
         <input id="search-input" type="search" placeholder="ابحث عن دولة بالعربي أو الإنجليزي…" />
         <select id="filter-select">
             <option value="all">الكل</option>
-            <option value="ready">متاح ✅</option>
-            <option value="not-ready">قريباً ⏳</option>
+            <option value="active">متاح ✅</option>
+            <option value="coming_soon">قريباً 🕐</option>
+            <option value="in_development">قيد التطوير 🔧</option>
         </select>
     </div>
 
@@ -58,20 +70,29 @@
                     <th>English</th>
                     <th>القارة</th>
                     <th>الحالة</th>
+                    <th>تعيين</th>
                 </tr>
             </thead>
             <tbody></tbody>
         </table>
     </div>
 
-    <!-- User Management -->
+    <!-- Admin Management -->
     <div class="user-mgmt-section">
-        <h2 class="section-title">👤 إدارة المستخدمين</h2>
+        <h2 class="section-title">🛡️ إدارة الأدمنز</h2>
+
+        <!-- قائمة الأدمنز الحاليين -->
+        <div class="admins-list-card">
+            <h3 class="sub-title">الأدمنز الحاليون</h3>
+            <div id="admins-list"></div>
+        </div>
+
+        <!-- إضافة أدمن -->
         <div class="set-admin-card">
-            <label for="admin-email-input">إيميل المستخدم</label>
+            <label for="admin-email-input">إضافة أدمن جديد</label>
             <div class="set-admin-row">
                 <input id="admin-email-input" type="email" placeholder="example@email.com" dir="ltr" />
-                <button id="set-admin-btn" onclick="grantAdmin()">اجعله Admin</button>
+                <button id="set-admin-btn" onclick="grantAdmin()">إضافة أدمن</button>
             </div>
         </div>
     </div>

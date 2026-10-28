@@ -116,6 +116,25 @@ def create_tables():
             updated_at  TIMESTAMP DEFAULT NOW()
         );
     """)
+    # جدول الحالة الجديد — يدعم 3 حالات
+    cur.execute("""
+        CREATE TABLE IF NOT EXISTS country_status (
+            country_id  TEXT PRIMARY KEY,
+            status      TEXT NOT NULL DEFAULT 'active'
+                        CHECK (status IN ('active','coming_soon','in_development')),
+            updated_by  TEXT,
+            updated_at  TIMESTAMP DEFAULT NOW()
+        );
+    """)
+    # انقل البيانات القديمة تلقائياً
+    cur.execute("""
+        INSERT INTO country_status (country_id, status, updated_by, updated_at)
+        SELECT country_id,
+               CASE WHEN is_ready THEN 'active' ELSE 'coming_soon' END,
+               updated_by, updated_at
+        FROM country_ready_overrides
+        ON CONFLICT (country_id) DO NOTHING;
+    """)
     conn.commit()
 
     # منح صلاحية الأدمن تلقائياً للإيميلات المحددة
@@ -482,6 +501,11 @@ class ToggleCountry(BaseModel):
     ready: bool
     email: str        # للتحقق من صلاحية الأدمن
 
+class SetCountryStatus(BaseModel):
+    id: str
+    status: str       # active | coming_soon | in_development
+    email: str
+
 class SetAdmin(BaseModel):
     email: str        # إيميل المستخدم المراد منحه صلاحية الأدمن
     admin_email: str  # إيميل الأدمن الحالي للتحقق من صلاحيته
@@ -538,6 +562,40 @@ def toggle_country(data: ToggleCountry):
         conn.close()
 
 
+@app.post("/admin/set-country-status")
+def set_country_status(data: SetCountryStatus):
+    """يحدّث حالة الدولة — يدعم 3 حالات"""
+    valid_statuses = ('active', 'coming_soon', 'in_development')
+    if data.status not in valid_statuses:
+        raise HTTPException(status_code=400, detail=f"حالة غير صحيحة — المسموح: {valid_statuses}")
+
+    conn = get_db_connection()
+    cur = conn.cursor()
+    try:
+        cur.execute("SELECT is_admin FROM users WHERE email = %s", (data.email,))
+        row = cur.fetchone()
+        if not row or not row[0]:
+            raise HTTPException(status_code=403, detail="ليس لديك صلاحية")
+
+        cur.execute("""
+            INSERT INTO country_status (country_id, status, updated_by)
+            VALUES (%s, %s, %s)
+            ON CONFLICT (country_id) DO UPDATE
+                SET status     = EXCLUDED.status,
+                    updated_by = EXCLUDED.updated_by,
+                    updated_at = NOW()
+        """, (data.id, data.status, data.email))
+        conn.commit()
+        return {"status": "success", "id": data.id, "new_status": data.status}
+    except HTTPException as he:
+        raise he
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+    finally:
+        cur.close()
+        conn.close()
+
+
 @app.post("/admin/set-admin")
 def set_admin(data: SetAdmin):
     """يمنح صلاحية الأدمن لمستخدم — محمي: يلزم أن يكون admin_email أدمناً"""
@@ -572,15 +630,65 @@ def set_admin(data: SetAdmin):
         conn.close()
 
 
-@app.get("/country-states")
-def get_country_states():
-    """يرجع قائمة الدول اللي تم تعديل حالتها (overrides فقط)"""
+@app.post("/admin/remove-admin")
+def remove_admin(data: SetAdmin):
+    """يسحب صلاحية الأدمن من مستخدم"""
     conn = get_db_connection()
     cur = conn.cursor()
     try:
-        cur.execute("SELECT country_id, is_ready FROM country_ready_overrides")
+        cur.execute("SELECT is_admin FROM users WHERE email = %s", (data.admin_email,))
+        row = cur.fetchone()
+        if not row or not row[0]:
+            raise HTTPException(status_code=403, detail="ليس لديك صلاحية")
+        cur.execute("SELECT id FROM users WHERE email = %s", (data.email,))
+        if not cur.fetchone():
+            raise HTTPException(status_code=404, detail="المستخدم غير موجود")
+        cur.execute("UPDATE users SET is_admin = FALSE WHERE email = %s", (data.email,))
+        conn.commit()
+        return {"status": "success", "email": data.email}
+    except HTTPException as he:
+        raise he
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+    finally:
+        cur.close()
+        conn.close()
+
+
+@app.get("/admin/admins")
+def list_admins(admin_email: str):
+    """يرجع قائمة المستخدمين الأدمن"""
+    conn = get_db_connection()
+    cur = conn.cursor()
+    try:
+        cur.execute("SELECT is_admin FROM users WHERE email = %s", (admin_email,))
+        row = cur.fetchone()
+        if not row or not row[0]:
+            raise HTTPException(status_code=403, detail="ليس لديك صلاحية")
+        cur.execute("SELECT email, username FROM users WHERE is_admin = TRUE ORDER BY email")
         rows = cur.fetchall()
-        return {row[0]: row[1] for row in rows}
+        return {"admins": [{"email": r[0], "username": r[1]} for r in rows]}
+    finally:
+        cur.close()
+        conn.close()
+
+
+@app.get("/country-states")
+def get_country_states():
+    """يرجع حالة كل الدول — يقرأ من country_status أولاً ثم country_ready_overrides"""
+    conn = get_db_connection()
+    cur = conn.cursor()
+    try:
+        result = {}
+        # القديم للتوافق
+        cur.execute("SELECT country_id, is_ready FROM country_ready_overrides")
+        for row in cur.fetchall():
+            result[row[0]] = 'active' if row[1] else 'coming_soon'
+        # الجديد يغلب القديم
+        cur.execute("SELECT country_id, status FROM country_status")
+        for row in cur.fetchall():
+            result[row[0]] = row[1]
+        return result
     finally:
         cur.close()
         conn.close()

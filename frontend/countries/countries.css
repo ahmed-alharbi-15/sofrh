@@ -1605,3 +1605,8 @@ input {
 .country-card.coming-soon { pointer-events: none; cursor: default; position: relative; opacity: 0.7; }
 .country-card.coming-soon .Section-btn { display: none; }
 .country-card.coming-soon::after { content: "قريباً"; position: absolute; top: 12px; left: 12px; background: #F28500; color: #fff; padding: 4px 10px; border-radius: 999px; font-size: 12px; font-weight: 700; font-family: 'Noto Sans Arabic', sans-serif; z-index: 10; }
+
+/* In Development */
+.country-card.in-development { pointer-events: none; cursor: default; position: relative; opacity: 0.85; }
+.country-card.in-development .Section-btn { display: none; }
+.country-card.in-development::after { content: "قيد التطوير"; position: absolute; top: 12px; left: 12px; background: #6366f1; color: #fff; padding: 4px 10px; border-radius: 999px; font-size: 12px; font-weight: 700; font-family: 'Noto Sans Arabic', sans-serif; z-index: 10; }

@@ -324,37 +324,53 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-// ── Auto coming-soon: يقرأ plan.js ويطبّق coming-soon تلقائياً ───────────────
-(async function applyComingSoon() {
+// ── تطبيق حالة الدول (3 حالات) — يقرأ من /country-states ───────────────────
+(async function applyCountryStatuses() {
     if (!document.querySelector('.country-card')) return;
 
+    const SOON    = 'https://res.cloudinary.com/dqe6mmkzz/image/upload/v1792593486/soon.png';
+    const UPGRADE = 'https://res.cloudinary.com/dqe6mmkzz/image/upload/v1793163185/Upgrade.jpg';
+    const API     = 'https://sofrh-1.onrender.com';
+
     try {
-        const res = await fetch('/plan/plan.js');
-        if (!res.ok) return;
-        const text = await res.text();
+        const res = await fetch(`${API}/country-states`);
+        const statuses = res.ok ? await res.json() : {};
 
-        // استخرج الـ countries array
-        const arrMatch = text.match(/const\s+countries\s*=\s*(\[[\s\S]*?\]);/);
-        if (!arrMatch) return;
-        const countries = JSON.parse(arrMatch[1]);
-
-        // اجمع IDs اللي ready === false
-        const notReadyIds = new Set(
-            countries.filter(c => c.ready === false).map(c => c.id)
-        );
-        if (notReadyIds.size === 0) return;
-
-        const SOON = 'https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/soon.png';
+        const planRes  = await fetch('/plan/plan.js');
+        const planText = await planRes.text();
+        const arrMatch = planText.match(/const\s+countries\s*=\s*(\[[\s\S]*?\]);/);
+        const planCountries = arrMatch ? JSON.parse(arrMatch[1]) : [];
+        const CDN = 'https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/';
+        const origImg = {};
+        planCountries.forEach(c => {
+            if (c.img) origImg[c.id] = CDN + c.img.replace('/img/', '');
+        });
 
         document.querySelectorAll('.country-card').forEach(card => {
             const onclick = card.getAttribute('onclick') || '';
             const idMatch = onclick.match(/\/([^/]+)\.html/);
             if (!idMatch) return;
-            if (!notReadyIds.has(idMatch[1])) return;
+            const cid    = idMatch[1];
+            const status = statuses[cid] || (card.classList.contains('coming-soon') ? 'coming_soon' : 'active');
+            const img    = card.querySelector('img');
 
-            card.classList.add('coming-soon');
-            const img = card.querySelector('img');
-            if (img) img.src = SOON;
+            if (status === 'coming_soon') {
+                card.classList.add('coming-soon');
+                card.classList.remove('in-development');
+                card.style.pointerEvents = 'none';
+                if (img) img.src = SOON;
+
+            } else if (status === 'in_development') {
+                card.classList.add('in-development');
+                card.classList.remove('coming-soon');
+                card.style.pointerEvents = 'none';
+                if (img) img.src = UPGRADE;
+
+            } else {
+                card.classList.remove('coming-soon', 'in-development');
+                card.style.pointerEvents = '';
+                if (img && origImg[cid]) img.src = origImg[cid];
+            }
         });
 
     } catch (_) { /* silent fail */ }

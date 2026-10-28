@@ -376,31 +376,31 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-// ── إخفاء وصفات دول ready: false ─────────────────────────────────────────────
-(async function hideNotReadyRecipes() {
+// ── إخفاء وصفات coming_soon (in_development تبان طبيعي) ─────────────────────
+(async function hideComingSoonRecipes() {
     if (!document.querySelector('.foods-card')) return;
 
     try {
-        const res = await fetch('/plan/plan.js');
-        if (!res.ok) return;
-        const text = await res.text();
-
-        const arrMatch = text.match(/const\s+countries\s*=\s*(\[[\s\S]*?\]);/);
-        if (!arrMatch) return;
-        const countries = JSON.parse(arrMatch[1]);
-
-        // اجمع الأسماء العربية للدول غير الجاهزة
-        const notReadyNames = new Set(
-            countries.filter(c => c.ready === false).map(c => c.nameAr)
+        const res = await fetch('https://sofrh-1.onrender.com/country-states');
+        const statuses = res.ok ? await res.json() : {};
+        const comingSoonIds = new Set(
+            Object.entries(statuses)
+                  .filter(([, s]) => s === 'coming_soon')
+                  .map(([id]) => id)
         );
-        if (notReadyNames.size === 0) return;
+        if (comingSoonIds.size === 0) return;
+
+        const planRes  = await fetch('/plan/plan.js');
+        const planText = await planRes.text();
+        const arrMatch = planText.match(/const\s+countries\s*=\s*(\[[\s\S]*?\]);/);
+        const planCountries = arrMatch ? JSON.parse(arrMatch[1]) : [];
+        const comingSoonNames = new Set(
+            planCountries.filter(c => comingSoonIds.has(c.id)).map(c => c.nameAr)
+        );
 
         document.querySelectorAll('.foods-card').forEach(card => {
             const dataCountry = card.getAttribute('data-country') || '';
-            if (notReadyNames.has(dataCountry)) {
-                card.style.display = 'none';
-            }
+            if (comingSoonNames.has(dataCountry)) card.style.display = 'none';
         });
-
-    } catch (_) { /* silent fail */ }
+    } catch (_) {}
 })();
