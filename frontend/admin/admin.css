@@ -726,24 +726,33 @@ html.user-logged-in  .user-menu   { display: flex !important; }
 /* Push admin-panel below navbar */
 #admin-panel { padding-top: 110px; }
 
-/* ── back-btn override for admin page ── */
+/* ── back-btn — داخل الناف بار ── */
 .back-btn {
     position: static !important;
-    display: inline-block !important;
-    margin: 12px 20px !important;
-    background: #32127A !important;
-    color: #fff !important;
-    border: none !important;
+    display: inline-flex !important;
+    align-items: center;
+    background: transparent !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(255,255,255,0.3) !important;
     border-radius: 999px !important;
-    padding: 8px 16px !important;
-    font-size: 14px !important;
+    padding: 6px 14px !important;
+    font-size: 13px !important;
     cursor: pointer !important;
-    box-shadow: none !important;
+    margin-right: 12px !important;
+    white-space: nowrap;
+    font-family: inherit;
+    font-weight: 600;
+    transition: background .2s, border-color .2s;
     top: auto !important;
     right: auto !important;
-    transition: opacity .2s;
+    bottom: auto !important;
+    left: auto !important;
+    box-shadow: none !important;
 }
-.back-btn:hover { opacity: .85; }
+.back-btn:hover {
+    background: rgba(255,255,255,0.12) !important;
+    border-color: rgba(255,255,255,0.6) !important;
+}
 
 /* ════════════════════════════════════════════════
    DARK MODE — [data-theme="dark"]
@@ -801,3 +810,40 @@ html.user-logged-in  .user-menu   { display: flex !important; }
 [data-theme="dark"] .user-dropdown   { background: #1a1040; box-shadow: 0 4px 15px rgba(0,0,0,.5); }
 [data-theme="dark"] .user-dropdown a { color: #c4b5fd; }
 [data-theme="dark"] .user-dropdown a:hover { background: #2a1860; }
+
+/* ── Dark Mode: status-badge text ── */
+html[data-theme="dark"] .status-badge {
+    color: #ffffff !important;
+    font-weight: 700;
+}
+
+/* ── Filter buttons (tab-btn alias) ── */
+.filter-btn {
+    border: 2px solid #32127A;
+    border-radius: 999px;
+    padding: 7px 16px;
+    background: transparent;
+    color: var(--text);
+    font-family: inherit;
+    font-size: .85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all .2s;
+}
+.filter-btn.active {
+    background: #32127A;
+    color: #ffffff;
+    border-color: #32127A;
+}
+.filter-btn:hover { opacity: .85; }
+
+html[data-theme="dark"] .filter-btn {
+    border: 2px solid #F28500 !important;
+    color: #E0E0E0 !important;
+    background: transparent !important;
+}
+html[data-theme="dark"] .filter-btn.active {
+    background: #F28500 !important;
+    color: #ffffff !important;
+    border-color: #F28500 !important;
+}
