@@ -135,6 +135,18 @@ def create_tables():
         FROM country_ready_overrides
         ON CONFLICT (country_id) DO NOTHING;
     """)
+    # جدول card_overrides لحفظ تعديلات المحتوى
+    cur.execute("""
+        CREATE TABLE IF NOT EXISTS card_overrides (
+            id          SERIAL PRIMARY KEY,
+            card_type   TEXT NOT NULL,
+            card_id     TEXT NOT NULL,
+            fields      JSONB NOT NULL DEFAULT '{}',
+            updated_by  TEXT,
+            updated_at  TIMESTAMP DEFAULT NOW(),
+            UNIQUE(card_type, card_id)
+        );
+    """)
     conn.commit()
 
     # منح صلاحية الأدمن تلقائياً للإيميلات المحددة
@@ -688,6 +700,215 @@ def get_country_states():
         cur.execute("SELECT country_id, status FROM country_status")
         for row in cur.fetchall():
             result[row[0]] = row[1]
+        return result
+    finally:
+        cur.close()
+        conn.close()
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Content update endpoint
+# ─────────────────────────────────────────────────────────────────────────────
+
+import json as _json
+
+class UpdateCard(BaseModel):
+    type:        str          # country | event | recipe | city
+    id:          str          # card id
+    country_id:  Optional[str] = None
+    continent:   Optional[str] = None
+    fields:      dict         # الحقول المعدّلة
+    admin_email: str
+
+
+@app.patch("/admin/update-card")
+def update_card(data: UpdateCard):
+    """يحفظ تعديلات كرت في DB ويحاول تحديث الـ HTML file لو FRONTEND_PATH محدد"""
+    valid_types = ('country', 'event', 'recipe', 'city')
+    if data.type not in valid_types:
+        raise HTTPException(status_code=400, detail=f"نوع غير صحيح — المسموح: {valid_types}")
+
+    conn = get_db_connection()
+    cur  = conn.cursor()
+    try:
+        # تحقق من صلاحية الأدمن
+        cur.execute("SELECT is_admin FROM users WHERE email = %s", (data.admin_email,))
+        row = cur.fetchone()
+        if not row or not row[0]:
+            raise HTTPException(status_code=403, detail="ليس لديك صلاحية")
+
+        # احفظ في DB
+        cur.execute("""
+            INSERT INTO card_overrides (card_type, card_id, fields, updated_by)
+            VALUES (%s, %s, %s, %s)
+            ON CONFLICT (card_type, card_id) DO UPDATE
+                SET fields     = card_overrides.fields || EXCLUDED.fields,
+                    updated_by = EXCLUDED.updated_by,
+                    updated_at = NOW()
+        """, (data.type, data.id, _json.dumps(data.fields, ensure_ascii=False), data.admin_email))
+        conn.commit()
+
+        # حاول تحديث الـ HTML file لو FRONTEND_PATH متاح
+        html_updated = False
+        frontend_path = os.environ.get('FRONTEND_PATH', '')
+        if frontend_path:
+            html_updated = _update_html_file(frontend_path, data)
+
+        return {
+            "status": "success",
+            "db_saved": True,
+            "html_updated": html_updated,
+            "type": data.type,
+            "id": data.id
+        }
+    except HTTPException as he:
+        raise he
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+    finally:
+        cur.close()
+        conn.close()
+
+
+def _update_html_file(frontend_path: str, data: UpdateCard) -> bool:
+    """يحدث الـ data-* attributes في الملف HTML المناسب"""
+    import re as _re
+
+    try:
+        # حدد الملف المستهدف
+        if data.type == 'event':
+            file_path = os.path.join(frontend_path, 'events', 'events.html')
+        elif data.type == 'recipe':
+            file_path = os.path.join(frontend_path, 'recipes', 'recipes.html')
+        elif data.type == 'country':
+            file_path = os.path.join(frontend_path, 'countries', 'countries.html')
+        elif data.type == 'city':
+            # المدن موجودة في صفحات الدول
+            if not data.country_id or not data.continent:
+                return False
+            file_path = os.path.join(
+                frontend_path, 'countries', 'country',
+                data.continent, f'{data.country_id}.html'
+            )
+        else:
+            return False
+
+        if not os.path.exists(file_path):
+            return False
+
+        with open(file_path, encoding='utf-8') as f:
+            html = f.read()
+
+        fields = data.fields
+
+        if data.type == 'event':
+            # ابحث عن .event-item button بنفس id الـ card
+            # id الكرت هو id على .event-card div
+            card_id = data.id
+            # استبدل data-title, data-img, data-desc, إلخ داخل الكرت
+            def replace_event_attrs(m):
+                block = m.group(0)
+                attr_map = {
+                    'name': 'data-title', 'img': 'data-img', 'desc': 'data-desc',
+                    'date': 'data-date', 'location': 'data-location',
+                    'duration': 'data-duration', 'weather': 'data-weather',
+                    'airport': 'data-airport', 'activities': 'data-activities',
+                    'hotelPrice': 'data-hotel-price', 'total': 'data-total'
+                }
+                for field_key, attr in attr_map.items():
+                    if field_key in fields:
+                        val = fields[field_key].replace('"', '&quot;')
+                        block = _re.sub(
+                            rf'{attr}="[^"]*"',
+                            f'{attr}="{val}"',
+                            block
+                        )
+                return block
+
+            pattern = rf'<div class="event-card"[^>]*\bid="{_re.escape(card_id)}"[\s\S]*?</div>\s*</div>'
+            html_new = _re.sub(pattern, replace_event_attrs, html)
+
+        elif data.type == 'recipe':
+            card_id = data.id
+
+            def replace_recipe_attrs(m):
+                block = m.group(0)
+                attr_map = {
+                    'name': 'data-title', 'img': 'data-img',
+                    'ingredients': 'data-ingredients', 'spices': 'data-spices',
+                    'sauces': 'data-sauces', 'steps': 'data-steps'
+                }
+                for field_key, attr in attr_map.items():
+                    if field_key in fields:
+                        val = fields[field_key].replace('"', '&quot;')
+                        block = _re.sub(rf'{attr}="[^"]*"', f'{attr}="{val}"', block)
+                if 'country' in fields:
+                    val = fields['country'].replace('"', '&quot;')
+                    block = _re.sub(r'data-country="[^"]*"', f'data-country="{val}"', block)
+                return block
+
+            pattern = rf'<div class="foods-card"[^>]*\bid="{_re.escape(card_id)}"[\s\S]*?</div>\s*</div>'
+            html_new = _re.sub(pattern, replace_recipe_attrs, html)
+
+        elif data.type == 'country':
+            # countries.html — كرت الدولة
+            def replace_country_card(m):
+                block = m.group(0)
+                if 'img' in fields:
+                    block = _re.sub(r'<img src="[^"]+"', f'<img src="{fields["img"]}"', block, count=1)
+                if 'name' in fields:
+                    block = _re.sub(r'<h1>[^<]*</h1>', f'<h1>{fields["name"]}</h1>', block)
+                return block
+
+            pattern = rf'<div class="country-card[^"]*"[^>]*{_re.escape(data.id)}[^>]*>[\s\S]*?</div>\s*</div>'
+            html_new = _re.sub(pattern, replace_country_card, html)
+
+        elif data.type == 'city':
+            city_name = data.fields.get('name') or data.id.split('__')[-1].replace('_', ' ')
+
+            def replace_city_attrs(m):
+                block = m.group(0)
+                attr_map = {
+                    'name': 'data-name', 'img': 'data-img', 'desc': 'data-desc',
+                    'historic': 'data-historic', 'restaurants': 'data-restaurants',
+                    'cafes': 'data-cafes', 'events': 'data-events'
+                }
+                for field_key, attr in attr_map.items():
+                    if field_key in fields:
+                        val = fields[field_key].replace('"', '&quot;')
+                        block = _re.sub(rf'{attr}="[^"]*"', f'{attr}="{val}"', block)
+                return block
+
+            original_name = data.id.split('__')[-1].replace('_', ' ')
+            pattern = rf'<div class="cite"[^>]*data-name="{_re.escape(original_name)}"[\s\S]*?</div>\s*</div>'
+            html_new = _re.sub(pattern, replace_city_attrs, html)
+
+        else:
+            return False
+
+        if html_new != html:
+            with open(file_path, 'w', encoding='utf-8') as f:
+                f.write(html_new)
+            return True
+        return False
+
+    except Exception:
+        return False
+
+
+@app.get("/card-overrides")
+def get_card_overrides():
+    """يرجع كل تعديلات الكروت المحفوظة"""
+    conn = get_db_connection()
+    cur  = conn.cursor()
+    try:
+        cur.execute("SELECT card_type, card_id, fields FROM card_overrides")
+        rows = cur.fetchall()
+        result = {}
+        for row in rows:
+            card_type, card_id, fields = row
+            if card_type not in result:
+                result[card_type] = {}
+            result[card_type][card_id] = fields
         return result
     finally:
         cur.close()

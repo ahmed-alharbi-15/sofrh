@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>لوحة التحكم — سفرة</title>
     <link rel="stylesheet" href="/admin/admin.css" />
-    <!-- no nav link points here — hidden page -->
 </head>
 <body>
 
@@ -39,55 +38,101 @@
         <span>مخفي: <strong id="stat-hidden">—</strong></span>
     </div>
 
-    <!-- Continent Tabs -->
-    <div class="continent-tabs">
-        <button class="tab-btn active" data-continent="all">الكل</button>
-        <button class="tab-btn" data-continent="asia">آسيا</button>
-        <button class="tab-btn" data-continent="africa">أفريقيا</button>
-        <button class="tab-btn" data-continent="europe">أوروبا</button>
-        <button class="tab-btn" data-continent="north_america">أمريكا الشمالية</button>
-        <button class="tab-btn" data-continent="south_america">أمريكا الجنوبية</button>
-        <button class="tab-btn" data-continent="oceania">أوقيانوسيا</button>
-    </div>
+    <!-- ── قسم 1: حالة الدول ── -->
+    <section class="panel-section">
+        <h2 class="section-title">🌍 حالة الدول</h2>
 
-    <!-- Toolbar -->
-    <div class="toolbar">
-        <input id="search-input" type="search" placeholder="ابحث عن دولة بالعربي أو الإنجليزي…" />
-        <select id="filter-select">
-            <option value="all">الكل</option>
-            <option value="active">متاح ✅</option>
-            <option value="coming_soon">قريباً 🕐</option>
-            <option value="in_development">قيد التطوير 🔧</option>
-        </select>
-    </div>
+        <!-- Continent Tabs -->
+        <div class="continent-tabs">
+            <button class="tab-btn active" data-continent="all">الكل</button>
+            <button class="tab-btn" data-continent="asia">آسيا</button>
+            <button class="tab-btn" data-continent="africa">أفريقيا</button>
+            <button class="tab-btn" data-continent="europe">أوروبا</button>
+            <button class="tab-btn" data-continent="north_america">أمريكا الشمالية</button>
+            <button class="tab-btn" data-continent="south_america">أمريكا الجنوبية</button>
+            <button class="tab-btn" data-continent="oceania">أوقيانوسيا</button>
+        </div>
 
-    <!-- Table -->
-    <div class="table-wrap">
-        <table id="countries-table">
-            <thead>
-                <tr>
-                    <th>الدولة</th>
-                    <th>English</th>
-                    <th>القارة</th>
-                    <th>الحالة</th>
-                    <th>تعيين</th>
-                </tr>
-            </thead>
-            <tbody></tbody>
-        </table>
-    </div>
+        <!-- Toolbar -->
+        <div class="toolbar">
+            <input id="search-input" type="search" placeholder="ابحث عن دولة بالعربي أو الإنجليزي…" />
+            <select id="filter-select">
+                <option value="all">الكل</option>
+                <option value="active">متاح ✅</option>
+                <option value="coming_soon">قريباً 🕐</option>
+                <option value="in_development">قيد التطوير 🔧</option>
+            </select>
+        </div>
 
-    <!-- Admin Management -->
-    <div class="user-mgmt-section">
+        <!-- Table -->
+        <div class="table-wrap">
+            <table id="countries-table">
+                <thead>
+                    <tr>
+                        <th>الدولة</th>
+                        <th>English</th>
+                        <th>القارة</th>
+                        <th>الحالة</th>
+                        <th>تعيين</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- ── قسم 2: تعديل المحتوى ── -->
+    <section class="panel-section">
+        <h2 class="section-title">✏️ تعديل المحتوى</h2>
+
+        <!-- Editor Tabs -->
+        <div class="editor-tabs">
+            <button class="editor-tab-btn active" data-editor-tab="countries">🌍 الدول</button>
+            <button class="editor-tab-btn" data-editor-tab="events">🎪 الفعاليات</button>
+            <button class="editor-tab-btn" data-editor-tab="recipes">🍽️ الوصفات</button>
+            <button class="editor-tab-btn" data-editor-tab="cities">🏙️ المدن</button>
+        </div>
+
+        <!-- Countries Panel -->
+        <div class="editor-panel active" id="editor-countries">
+            <div class="editor-search">
+                <input type="search" id="search-editor-countries" placeholder="ابحث عن دولة…" oninput="filterEditorList('countries')" />
+            </div>
+            <div class="editor-list" id="list-countries"></div>
+        </div>
+
+        <!-- Events Panel -->
+        <div class="editor-panel" id="editor-events">
+            <div class="editor-search">
+                <input type="search" id="search-editor-events" placeholder="ابحث عن فعالية…" oninput="filterEditorList('events')" />
+            </div>
+            <div class="editor-list" id="list-events"><div class="editor-loading">جارٍ التحميل…</div></div>
+        </div>
+
+        <!-- Recipes Panel -->
+        <div class="editor-panel" id="editor-recipes">
+            <div class="editor-search">
+                <input type="search" id="search-editor-recipes" placeholder="ابحث عن وصفة…" oninput="filterEditorList('recipes')" />
+            </div>
+            <div class="editor-list" id="list-recipes"><div class="editor-loading">جارٍ التحميل…</div></div>
+        </div>
+
+        <!-- Cities Panel -->
+        <div class="editor-panel" id="editor-cities">
+            <div class="editor-search">
+                <input type="search" id="search-editor-cities" placeholder="ابحث عن مدينة…" oninput="filterEditorList('cities')" />
+            </div>
+            <div class="editor-list" id="list-cities"><div class="editor-loading">جارٍ التحميل…</div></div>
+        </div>
+    </section>
+
+    <!-- ── قسم 3: الأدمنز ── -->
+    <section class="panel-section user-mgmt-section">
         <h2 class="section-title">🛡️ إدارة الأدمنز</h2>
-
-        <!-- قائمة الأدمنز الحاليين -->
         <div class="admins-list-card">
             <h3 class="sub-title">الأدمنز الحاليون</h3>
             <div id="admins-list"></div>
         </div>
-
-        <!-- إضافة أدمن -->
         <div class="set-admin-card">
             <label for="admin-email-input">إضافة أدمن جديد</label>
             <div class="set-admin-row">
@@ -95,9 +140,24 @@
                 <button id="set-admin-btn" onclick="grantAdmin()">إضافة أدمن</button>
             </div>
         </div>
-    </div>
+    </section>
 
 </div><!-- /admin-panel -->
+
+<!-- ── Edit Modal ── -->
+<div id="edit-modal" class="edit-modal-overlay" style="display:none">
+    <div class="edit-modal-box">
+        <div class="edit-modal-header">
+            <h3 id="edit-modal-title">تعديل</h3>
+            <button class="edit-modal-close" onclick="closeEditModal()">✕</button>
+        </div>
+        <div class="edit-modal-body" id="edit-modal-fields"></div>
+        <div class="edit-modal-footer">
+            <button class="save-edit-btn" onclick="saveEdit()">💾 حفظ التعديل</button>
+            <button class="cancel-edit-btn" onclick="closeEditModal()">إلغاء</button>
+        </div>
+    </div>
+</div>
 
 <!-- Toast -->
 <div class="toast" id="toast"></div>
