@@ -288,8 +288,8 @@ tbody td {
     font-weight: 700;
 }
 .status-active         { background: #dcfce7; color: #1a6b1a; font-weight: 700; }
-.status-coming_soon    { background: #fef9c3; color: #a16207; }
-.status-in_development { background: #ede9fe; color: var(--purple); }
+.status-coming_soon    { background: #fef9c3; color: #a16207 !important; font-weight: 700 !important; }
+.status-in_development { background: #ede9fe; color: #32127A !important; font-weight: 700 !important; }
 /* ── Column widths ── */
 #countries-table { table-layout: fixed; width: 100%; }
 #countries-table th:nth-child(1),
@@ -802,12 +802,10 @@ html.user-logged-in  .user-menu   { display: flex !important; }
 
 /* ── حالة الدول — Light & Dark ── */
 .status-active { color: #1a6b1a !important; font-weight: 700 !important; }
-.status-coming { color: #b85c00 !important; font-weight: 700 !important; }
-.status-dev    { color: #32127A !important; font-weight: 700 !important; }
 
-html[data-theme="dark"] .status-active { color: #1a6b1a !important; font-weight: 700 !important; }
-html[data-theme="dark"] .status-coming { color: #b85c00 !important; font-weight: 700 !important; }
-html[data-theme="dark"] .status-dev    { color: #32127A !important; font-weight: 700 !important; }
+html[data-theme="dark"] .status-active         { color: #1a6b1a !important; font-weight: 700 !important; }
+html[data-theme="dark"] .status-coming_soon    { color: #a16207 !important; font-weight: 700 !important; }
+html[data-theme="dark"] .status-in_development { color: #32127A !important; font-weight: 700 !important; }
 
 /* ── Filter buttons ── */
 .filter-btn {
