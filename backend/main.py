@@ -74,6 +74,9 @@ class RemoveFavorite(BaseModel):
     type: str
     id: str
 
+class PingUser(BaseModel):
+    email: str
+
 
 # --- فحص قوة كلمة المرور ---
 def check_password_strength(password: str):
@@ -156,6 +159,10 @@ def create_tables():
             "UPDATE users SET is_admin = TRUE WHERE email = %s",
             (email,)
         )
+    # إضافة حقل last_seen إذا لم يكن موجوداً
+    cur.execute("""
+        ALTER TABLE users ADD COLUMN IF NOT EXISTS last_seen TIMESTAMP;
+    """)
     conn.commit()
 
     cur.close()
@@ -910,6 +917,80 @@ def get_card_overrides():
                 result[card_type] = {}
             result[card_type][card_id] = fields
         return result
+    finally:
+        cur.close()
+        conn.close()
+
+
+# --- نشاط المستخدم ---
+@app.post("/user/ping")
+def user_ping(data: PingUser):
+    """يحدّث last_seen للمستخدم — يُستدعى كل دقيقتين"""
+    conn = get_db_connection()
+    cur  = conn.cursor()
+    try:
+        cur.execute(
+            "UPDATE users SET last_seen = NOW() WHERE email = %s",
+            (data.email,)
+        )
+        conn.commit()
+        return {"ok": True}
+    finally:
+        cur.close()
+        conn.close()
+
+
+@app.get("/admin/users")
+def list_users(admin_email: str):
+    """يرجع كل المستخدمين مع last_seen وعدد المفضلة — للأدمن فقط"""
+    conn = get_db_connection()
+    cur  = conn.cursor()
+    try:
+        # التحقق من صلاحية الأدمن
+        cur.execute("SELECT is_admin FROM users WHERE email = %s", (admin_email,))
+        row = cur.fetchone()
+        if not row or not row[0]:
+            raise HTTPException(status_code=403, detail="ليس لديك صلاحية")
+
+        cur.execute("""
+            SELECT
+                u.username,
+                u.email,
+                u.created_at,
+                u.last_seen,
+                u.is_admin,
+                COUNT(f.id) AS fav_count
+            FROM users u
+            LEFT JOIN favorites f ON f.email = u.email
+            GROUP BY u.id, u.username, u.email, u.created_at, u.last_seen, u.is_admin
+            ORDER BY u.created_at DESC
+        """)
+        rows = cur.fetchall()
+        from datetime import datetime, timezone, timedelta
+        ONLINE_THRESHOLD = timedelta(minutes=5)
+        now = datetime.now(timezone.utc)
+
+        users = []
+        for r in rows:
+            username, email, created_at, last_seen, is_admin, fav_count = r
+            # نحسب is_online
+            online = False
+            if last_seen:
+                ls = last_seen
+                if ls.tzinfo is None:
+                    ls = ls.replace(tzinfo=timezone.utc)
+                online = (now - ls) < ONLINE_THRESHOLD
+            users.append({
+                "username": username,
+                "email": email,
+                "created_at": created_at.isoformat() if created_at else None,
+                "last_seen": last_seen.isoformat() if last_seen else None,
+                "is_admin": bool(is_admin),
+                "is_online": online,
+                "fav_count": fav_count or 0,
+            })
+        online_count = sum(1 for u in users if u["is_online"])
+        return {"users": users, "total": len(users), "online": online_count}
     finally:
         cur.close()
         conn.close()

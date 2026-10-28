@@ -385,3 +385,18 @@ if (menuBtn && sideMenu && closeBtn) {
         if (btn) btn.style.display = window.scrollY > 300 ? 'flex' : 'none';
     });
 })();
+
+// --- 12. نبضة النشاط (User Ping) ---
+(function() {
+    const user = JSON.parse(localStorage.getItem('safraUser') || 'null');
+    if (!user?.email) return;
+
+    const ping = () => fetch('https://sofrh-1.onrender.com/user/ping', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: user.email })
+    }).catch(() => {});
+
+    ping(); // فوراً عند التحميل
+    setInterval(ping, 120000); // كل دقيقتين
+})();

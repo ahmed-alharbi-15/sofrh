@@ -142,6 +142,45 @@
         </div>
     </section>
 
+
+    <!-- ── قسم 4: المستخدمون ── -->
+    <section class="panel-section">
+        <h2 class="section-title">👥 المستخدمون</h2>
+
+        <!-- Stats row -->
+        <div class="users-stats-bar">
+            <span>إجمالي المستخدمين: <strong id="users-total">—</strong></span>
+            <span>أونلاين الآن: <strong id="users-online">—</strong></span>
+        </div>
+
+        <!-- Filter -->
+        <div class="toolbar">
+            <input id="search-users" type="search" placeholder="ابحث بالاسم أو الإيميل…" oninput="filterUsers()" />
+            <select id="users-filter" onchange="filterUsers()">
+                <option value="all">الكل</option>
+                <option value="online">أونلاين فقط 🟢</option>
+                <option value="admin">أدمن فقط 🛡️</option>
+            </select>
+        </div>
+
+        <!-- Table -->
+        <div class="table-wrap">
+            <table id="users-table">
+                <thead>
+                    <tr>
+                        <th>الاسم</th>
+                        <th>الإيميل</th>
+                        <th>تاريخ التسجيل</th>
+                        <th>آخر نشاط</th>
+                        <th>المفضلة</th>
+                        <th>الحالة</th>
+                    </tr>
+                </thead>
+                <tbody id="users-tbody"></tbody>
+            </table>
+        </div>
+    </section>
+
 </div><!-- /admin-panel -->
 
 <!-- ── Edit Modal ── -->

@@ -564,3 +564,97 @@ function initEditor() {
     }));
     renderEditorList('countries');
 }
+
+// ── قسم المستخدمين ─────────────────────────────────────────────────────────
+let allUsers = [];          // البيانات الكاملة من السيرفر
+let usersLoaded = false;
+
+async function loadUsers() {
+    if (usersLoaded) return;
+    try {
+        const res = await fetch(`${API}/admin/users?admin_email=${encodeURIComponent(adminEmail)}`);
+        if (!res.ok) throw new Error('فشل تحميل المستخدمين');
+        const data = await res.json();
+
+        allUsers = data.users || [];
+        document.getElementById('users-total').textContent  = data.total  ?? '—';
+        document.getElementById('users-online').textContent = data.online ?? '—';
+        usersLoaded = true;
+        renderUsersTable(allUsers);
+    } catch (e) {
+        console.error(e);
+        showToast('❌ ' + e.message);
+    }
+}
+
+function formatDate(iso) {
+    if (!iso) return '—';
+    const d = new Date(iso);
+    return d.toLocaleDateString('ar-SA', { year:'numeric', month:'short', day:'numeric' });
+}
+
+function timeAgo(iso) {
+    if (!iso) return 'لم يتصل بعد';
+    const diff = (Date.now() - new Date(iso).getTime()) / 1000;
+    if (diff < 60)  return 'الآن';
+    if (diff < 3600) return `${Math.floor(diff/60)} د`;
+    if (diff < 86400) return `${Math.floor(diff/3600)} س`;
+    return `${Math.floor(diff/86400)} يوم`;
+}
+
+function renderUsersTable(users) {
+    const tbody = document.getElementById('users-tbody');
+    if (!tbody) return;
+    if (!users.length) {
+        tbody.innerHTML = '<tr><td colspan="6" style="text-align:center;padding:24px;opacity:.5">لا يوجد مستخدمون</td></tr>';
+        return;
+    }
+    tbody.innerHTML = users.map(u => `
+        <tr>
+            <td>
+                ${u.username || '—'}
+                ${u.is_admin ? '<span class="user-admin-badge">🛡️ أدمن</span>' : ''}
+            </td>
+            <td dir="ltr" style="font-size:.82rem">${u.email}</td>
+            <td>${formatDate(u.created_at)}</td>
+            <td>${timeAgo(u.last_seen)}</td>
+            <td style="text-align:center">${u.fav_count}</td>
+            <td>
+                <span class="online-badge ${u.is_online ? 'online' : 'offline'}">
+                    ${u.is_online ? '🟢 أونلاين' : '⚫ غير متصل'}
+                </span>
+            </td>
+        </tr>
+    `).join('');
+}
+
+function filterUsers() {
+    const q      = (document.getElementById('search-users')?.value || '').trim().toLowerCase();
+    const filter = document.getElementById('users-filter')?.value || 'all';
+
+    let list = allUsers;
+    if (filter === 'online') list = list.filter(u => u.is_online);
+    if (filter === 'admin')  list = list.filter(u => u.is_admin);
+    if (q) {
+        list = list.filter(u =>
+            (u.username || '').toLowerCase().includes(q) ||
+            (u.email    || '').toLowerCase().includes(q)
+        );
+    }
+    renderUsersTable(list);
+}
+
+// ── ربط تبويب المستخدمين بالتحميل ─────────────────────────────────────────
+// نستمع على القسم نفسه: عند أول ظهور نحمّل البيانات
+document.addEventListener('DOMContentLoaded', () => {
+    // نراقب section قسم المستخدمين عبر IntersectionObserver
+    const section = document.querySelector('#users-tbody')?.closest('section');
+    if (!section) return;
+    const obs = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+            loadUsers();
+            obs.disconnect();
+        }
+    }, { threshold: 0.1 });
+    obs.observe(section);
+});
