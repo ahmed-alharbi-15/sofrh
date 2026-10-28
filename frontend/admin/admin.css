@@ -15,7 +15,8 @@
     --card-bg:     #ffffff;
     --input-bg:    #ffffff;
     --row-hover:   rgba(50,18,122,0.04);
-    --cream-light: #ffffff;
+    --cream-light: #FAF5EB;
+    --cream-soft:  #F0EBE0;
     --caramel:     #F28500;
     --brown-dark:  #32127A;
 }
@@ -620,24 +621,11 @@ tbody td {
     position: fixed;
     top: 0; right: 0;
     width: 100%;
-    z-index: 1000;
+    z-index: 999;
     height: 90px;
     direction: rtl;
 }
 
-/* ── Navbar: force white text on #32127A bg ── */
-.navbar .nav-list a,
-.navbar .hamburger,
-.navbar .user-name,
-.navbar .auth-buttons a.login,
-.navbar .auth-buttons a.signup {
-    color: #ffffff !important;
-}
-.navbar .nav-list a::after { background: #F28500 !important; }
-.navbar .nav-list a:hover  { color: #F28500 !important; }
-.navbar .auth-buttons a.login  { background: rgba(255,255,255,.15) !important; color: #fff !important; }
-.navbar .auth-buttons a.signup { border-color: rgba(255,255,255,.5) !important; color: #fff !important; }
-.navbar .auth-buttons a.signup:hover { background: rgba(255,255,255,.15) !important; }
 
 .nav-list { display: flex; gap: 90px; list-style: none; }
 .nav-list a {
