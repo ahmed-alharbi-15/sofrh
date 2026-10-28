@@ -129,8 +129,12 @@
         <span>مخفي: <strong id="stat-hidden">—</strong></span>
     </div>
 
+    <div id="admin-layout">
+        <div id="admin-sidebar-wrap"></div>
+        <div id="admin-main">
+
     <!-- ── قسم 1: حالة الدول ── -->
-    <section class="panel-section">
+    <section class="panel-section" id="section-countries">
         <h2 class="section-title">🌍 حالة الدول</h2>
 
         <!-- Continent Tabs -->
@@ -173,7 +177,7 @@
     </section>
 
     <!-- ── قسم 2: تعديل المحتوى ── -->
-    <section class="panel-section">
+    <section class="panel-section" id="section-editor" style="display:none">
         <h2 class="section-title">✏️ تعديل المحتوى</h2>
 
         <!-- Editor Tabs -->
@@ -218,7 +222,7 @@
     </section>
 
     <!-- ── قسم 3: الأدمنز ── -->
-    <section class="panel-section user-mgmt-section">
+    <section class="panel-section user-mgmt-section" id="section-admins" style="display:none">
         <h2 class="section-title">🛡️ إدارة الأدمنز</h2>
         <div class="admins-list-card">
             <h3 class="sub-title">الأدمنز الحاليون</h3>
@@ -235,7 +239,7 @@
 
 
     <!-- ── قسم 4: المستخدمون ── -->
-    <section class="panel-section">
+    <section class="panel-section" id="section-users" style="display:none">
         <h2 class="section-title">👥 المستخدمون</h2>
 
         <!-- Stats row -->
@@ -272,6 +276,8 @@
         </div>
     </section>
 
+        </div>
+    </div>
 </div><!-- /admin-panel -->
 
 <!-- ── Edit Modal ── -->
@@ -293,6 +299,7 @@
 <div class="toast" id="toast"></div>
 
 <script src="/auth/auth.js" defer></script>
+<script src="/admin/sidebar.js"></script>
 <script src="/admin/admin.js"></script>
 
 <button id="scrollTopBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
