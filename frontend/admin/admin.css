@@ -266,9 +266,9 @@ tbody td {
 .tab-btn {
     padding: 9px 20px;
     border-radius: 999px;
-    border: 2px solid rgba(255,255,255,.18);
-    background: rgba(255,255,255,.07);
-    color: var(--cream-light);
+    border: 1.5px solid #2B1E6B;
+    background: #ffffff;
+    color: #2B1E6B;
     font-family: inherit;
     font-size: .85rem;
     font-weight: 600;
@@ -276,8 +276,8 @@ tbody td {
     transition: all .2s;
     white-space: nowrap;
 }
-.tab-btn:hover  { border-color: var(--caramel); color: var(--caramel); background: rgba(210,166,115,.1); }
-.tab-btn.active { background: var(--caramel); color: var(--brown-dark); border-color: var(--caramel); font-weight: 700; }
+.tab-btn:hover  { background: #f0ecff; }
+.tab-btn.active { background: var(--caramel); color: #ffffff; border-color: var(--caramel); font-weight: 700; }
 
 /* ── Status badge ── */
 .status-badge {
@@ -741,7 +741,7 @@ html.user-logged-in  .user-menu   { display: flex !important; }
 }
 
 /* Push admin-panel below navbar */
-#admin-panel { padding-top: 110px; }
+#admin-panel { padding-top: 90px; }
 
 /* ════════════════════════════════════════════════
    DARK MODE — [data-theme="dark"]
