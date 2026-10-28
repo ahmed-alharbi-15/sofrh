@@ -335,3 +335,53 @@ if (menuBtn && sideMenu && closeBtn) {
 
     document.body.appendChild(toggleBtn);
 })();
+
+// --- 11. زر العودة للأعلى ---
+(function() {
+    const style = document.createElement("style");
+    style.id = "safra-scroll-top-style";
+    style.textContent = `
+        #scrollTopBtn {
+            position: fixed;
+            bottom: 82px;
+            left: 20px;
+            background: #F28500;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            font-size: 20px;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            transition: opacity .25s ease;
+        }
+        #scrollTopBtn:hover { opacity: 0.85; }
+        .back-btn {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            background: #32127A;
+            color: #fff;
+            border: none;
+            border-radius: 999px;
+            padding: 8px 16px;
+            font-size: 14px;
+            cursor: pointer;
+            z-index: 9999;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            transition: opacity .25s ease;
+        }
+        .back-btn:hover { opacity: 0.85; }
+    `;
+    document.head.appendChild(style);
+
+    window.addEventListener('scroll', () => {
+        const btn = document.getElementById('scrollTopBtn');
+        if (btn) btn.style.display = window.scrollY > 300 ? 'flex' : 'none';
+    });
+})();
