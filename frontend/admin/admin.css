@@ -15,6 +15,9 @@
     --card-bg:     #ffffff;
     --input-bg:    #ffffff;
     --row-hover:   rgba(50,18,122,0.04);
+    --cream-light: #ffffff;
+    --caramel:     #F28500;
+    --brown-dark:  #32127A;
 }
 
 body {
@@ -622,6 +625,20 @@ tbody td {
     direction: rtl;
 }
 
+/* ── Navbar: force white text on #32127A bg ── */
+.navbar .nav-list a,
+.navbar .hamburger,
+.navbar .user-name,
+.navbar .auth-buttons a.login,
+.navbar .auth-buttons a.signup {
+    color: #ffffff !important;
+}
+.navbar .nav-list a::after { background: #F28500 !important; }
+.navbar .nav-list a:hover  { color: #F28500 !important; }
+.navbar .auth-buttons a.login  { background: rgba(255,255,255,.15) !important; color: #fff !important; }
+.navbar .auth-buttons a.signup { border-color: rgba(255,255,255,.5) !important; color: #fff !important; }
+.navbar .auth-buttons a.signup:hover { background: rgba(255,255,255,.15) !important; }
+
 .nav-list { display: flex; gap: 90px; list-style: none; }
 .nav-list a {
     text-decoration: none; font-weight: 400;
@@ -726,34 +743,6 @@ html.user-logged-in  .user-menu   { display: flex !important; }
 /* Push admin-panel below navbar */
 #admin-panel { padding-top: 110px; }
 
-/* ── back-btn — داخل الناف بار ── */
-.back-btn {
-    position: static !important;
-    display: inline-flex !important;
-    align-items: center;
-    background: transparent !important;
-    color: #ffffff !important;
-    border: 1px solid rgba(255,255,255,0.3) !important;
-    border-radius: 999px !important;
-    padding: 6px 14px !important;
-    font-size: 13px !important;
-    cursor: pointer !important;
-    margin-right: 12px !important;
-    white-space: nowrap;
-    font-family: inherit;
-    font-weight: 600;
-    transition: background .2s, border-color .2s;
-    top: auto !important;
-    right: auto !important;
-    bottom: auto !important;
-    left: auto !important;
-    box-shadow: none !important;
-}
-.back-btn:hover {
-    background: rgba(255,255,255,0.12) !important;
-    border-color: rgba(255,255,255,0.6) !important;
-}
-
 /* ════════════════════════════════════════════════
    DARK MODE — [data-theme="dark"]
 ════════════════════════════════════════════════ */
@@ -811,32 +800,32 @@ html.user-logged-in  .user-menu   { display: flex !important; }
 [data-theme="dark"] .user-dropdown a { color: #c4b5fd; }
 [data-theme="dark"] .user-dropdown a:hover { background: #2a1860; }
 
-/* ── Dark Mode: status-badge text ── */
+/* ── Dark Mode: status-badge + status-text ── */
+html[data-theme="dark"] .status-text,
 html[data-theme="dark"] .status-badge {
     color: #ffffff !important;
-    font-weight: 700;
+    font-weight: 700 !important;
 }
 
 /* ── Filter buttons (tab-btn alias) ── */
 .filter-btn {
-    border: 2px solid #32127A;
-    border-radius: 999px;
-    padding: 7px 16px;
+    border: 2px solid #32127A !important;
+    color: #32127A;
     background: transparent;
-    color: var(--text);
+    border-radius: 999px;
+    padding: 6px 16px;
     font-family: inherit;
     font-size: .85rem;
     font-weight: 600;
     cursor: pointer;
     transition: all .2s;
 }
+.filter-btn:hover { opacity: .8; }
 .filter-btn.active {
     background: #32127A;
     color: #ffffff;
-    border-color: #32127A;
+    border-color: #32127A !important;
 }
-.filter-btn:hover { opacity: .85; }
-
 html[data-theme="dark"] .filter-btn {
     border: 2px solid #F28500 !important;
     color: #E0E0E0 !important;
