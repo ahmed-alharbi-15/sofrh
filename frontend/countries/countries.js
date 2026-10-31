@@ -373,6 +373,14 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
+        const grid = document.querySelector('.countries-grid');
+        if (grid) {
+            const allCards = Array.from(grid.children).filter(el => el.classList.contains('country-card'));
+            const active = allCards.filter(c => !c.classList.contains('coming-soon') && !c.classList.contains('in-development'));
+            const inactive = allCards.filter(c => c.classList.contains('coming-soon') || c.classList.contains('in-development'));
+            [...active, ...inactive].forEach(c => grid.appendChild(c));
+        }
+
     } catch (_) { /* silent fail */ }
 })();
 

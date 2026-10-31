@@ -3875,6 +3875,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 isSkipAll: false,
                 activities: [],
         };
+        let liveStatuses = {};
+        fetch('https://sofrh-1.onrender.com/country-states').then(r => r.ok ? r.json() : {}).then(d => { liveStatuses = d; }).catch(() => {});
+        function isActive(c) { if (c.ready === false) return false; const s = liveStatuses[c.id]; return s ? s === 'active' : true; }
 
         const stepsMeta = [
                 { ar: "الميزانية", code: "BUDGET" },
@@ -4338,13 +4341,13 @@ document.addEventListener("DOMContentLoaded", () => {
         function pickRandomCountry() {
                 const lastId = localStorage.getItem("sofrhLastRandomCountry");
                 let pool = countries.filter((c) => Math.floor(state.budget / c.dailyCost) >= state.duration);
-                pool = pool.filter((c) => c.ready !== false);
+                pool = pool.filter((c) => isActive(c));
                 if (pool.length === 0) {
                         pool = countries.filter((c) => Math.floor(state.budget / c.dailyCost) >= 1);
-                        pool = pool.filter((c) => c.ready !== false);
+                        pool = pool.filter((c) => isActive(c));
                 }
                 if (pool.length === 0) {
-                        pool = countries.filter((c) => c.ready !== false);
+                        pool = countries.filter((c) => isActive(c));
                 }
                 // تصفية حسب القارة لو مختارة
                 if (state.continent) {
@@ -4379,7 +4382,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
 
                 if (filtered.length === 0) {
-                        resultsGrid.innerHTML = `<p class="no-results">ما لقينا دولة تطابق بحثك 🔍 — جرّب اسم ثاني.</p>`;
+                        resultsGrid.innerHTML = (!currentResultsSkipMode && !q)
+                                ? `<p class="no-results">ما فيه وجهات متاحة حالياً بهذي الخيارات</p>`
+                                : `<p class="no-results">ما لقينا دولة تطابق بحثك 🔍 — جرّب اسم ثاني.</p>`;
                         return;
                 }
                 const sorted = [...filtered].sort((a, b) => {
@@ -4462,6 +4467,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
 
                 currentResultsList = pool
+                        .filter((c) => isActive(c))
                         .map((c) => ({ ...c, score: calculateMatch(c) }))
                         .sort((a, b) => b.score - a.score);
                 currentResultsSkipMode = false;
