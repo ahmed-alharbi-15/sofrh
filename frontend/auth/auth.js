@@ -122,9 +122,11 @@ const logoutBtn = document.getElementById("logoutBtn");
 if (logoutBtn) {
     logoutBtn.addEventListener("click", (e) => {
         e.preventDefault();
-        localStorage.removeItem("safraUser");
-        localStorage.removeItem("safraAvatar");
-        window.location.href = "/index/index.html";
+        showConfirm("هل تريد تسجيل الخروج؟", () => {
+            localStorage.removeItem("safraUser");
+            localStorage.removeItem("safraAvatar");
+            window.location.href = "/index/index.html";
+        });
     });
 }
 
@@ -208,53 +210,62 @@ async function removeItem(type, id) {
 function showToast(message, type = "success") {
     const old = document.getElementById("safra-toast");
     if (old) old.remove();
-
-    const colors = {
-        success: { bg: "rgba(30,16,8,0.96)", border: "rgba(200,133,74,0.5)", icon: "✅" },
-        error:   { bg: "rgba(30,16,8,0.96)", border: "rgba(200,60,60,0.5)",  icon: "❌" },
-        info:    { bg: "rgba(30,16,8,0.96)", border: "rgba(150,150,150,0.4)", icon: "ℹ️" },
-    };
-    const c = colors[type] || colors.success;
-
+    const iconColors = { success: "#22c55e", error: "#ef4444", info: "#F28500" };
+    const icons      = { success: "✓",       error: "✕",       info: "!"      };
+    const col = iconColors[type] || iconColors.info;
+    const ico = icons[type]      || icons.info;
     const toast = document.createElement("div");
     toast.id = "safra-toast";
-    toast.innerHTML = `<span style="font-size:18px">${c.icon}</span><span>${message}</span>`;
-    toast.style.cssText = `
-        position: fixed;
-        bottom: 32px;
-        left: 50%;
-        transform: translateX(-50%) translateY(20px);
-        background: ${c.bg};
-        border: 1px solid ${c.border};
-        color: #f5ede0;
-        font-family: "Noto Sans Arabic", sans-serif;
-        font-size: 15px;
-        font-weight: 600;
-        padding: 14px 28px;
-        border-radius: 50px;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        z-index: 99999;
-        box-shadow: 0 8px 30px rgba(0,0,0,0.4);
-        backdrop-filter: blur(10px);
-        opacity: 0;
-        transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
-        white-space: nowrap;
+    toast.dir = "rtl";
+    toast.innerHTML = `
+        <span style="width:22px;height:22px;border-radius:50%;background:${col};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0">${ico}</span>
+        <span style="flex:1">${message}</span>
+        <button id="safra-toast-close" style="background:none;border:none;color:#FAF5EB;font-size:18px;cursor:pointer;padding:0 0 0 6px;line-height:1;opacity:.7;flex-shrink:0">✕</button>
     `;
-
+    toast.style.cssText = `
+        position:fixed;top:24px;left:50%;transform:translateX(-50%) translateY(-20px);
+        background:#32127A;border:1px solid ${col};color:#FAF5EB;
+        font-family:'Noto Sans Arabic',sans-serif;font-size:15px;font-weight:600;
+        padding:12px 18px;border-radius:14px;display:flex;align-items:center;gap:10px;
+        z-index:99999;box-shadow:0 8px 30px rgba(0,0,0,0.35);backdrop-filter:blur(10px);
+        opacity:0;transition:all 0.3s cubic-bezier(0.34,1.56,0.64,1);
+        min-width:260px;max-width:90vw;direction:rtl;
+    `;
     document.body.appendChild(toast);
-    requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-            toast.style.opacity = "1";
-            toast.style.transform = "translateX(-50%) translateY(0)";
-        });
-    });
-    setTimeout(() => {
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+        toast.style.opacity = "1";
+        toast.style.transform = "translateX(-50%) translateY(0)";
+    }));
+    const dismiss = () => {
         toast.style.opacity = "0";
-        toast.style.transform = "translateX(-50%) translateY(20px)";
-        setTimeout(() => toast.remove(), 400);
-    }, 2500);
+        toast.style.transform = "translateX(-50%) translateY(-20px)";
+        setTimeout(() => toast.remove(), 350);
+    };
+    const timer = setTimeout(dismiss, 3000);
+    document.getElementById("safra-toast-close")?.addEventListener("click", () => { clearTimeout(timer); dismiss(); });
+}
+
+function showConfirm(message, onConfirm, onCancel) {
+    const old = document.getElementById("safra-confirm");
+    if (old) old.remove();
+    const overlay = document.createElement("div");
+    overlay.id = "safra-confirm";
+    overlay.dir = "rtl";
+    overlay.innerHTML = `
+        <div style="background:#32127A;border:1px solid rgba(250,245,235,0.15);border-radius:16px;padding:28px 24px;max-width:360px;width:90%;text-align:center;direction:rtl;">
+            <p style="color:#FAF5EB;font-family:'Noto Sans Arabic',sans-serif;font-size:16px;font-weight:600;margin:0 0 24px">${message}</p>
+            <div style="display:flex;gap:12px;justify-content:center;">
+                <button id="sc-confirm" style="background:#F28500;color:#fff;border:none;border-radius:10px;padding:10px 28px;font-family:'Noto Sans Arabic',sans-serif;font-size:15px;font-weight:700;cursor:pointer">تأكيد</button>
+                <button id="sc-cancel" style="background:rgba(250,245,235,0.12);color:#FAF5EB;border:1px solid rgba(250,245,235,0.2);border-radius:10px;padding:10px 28px;font-family:'Noto Sans Arabic',sans-serif;font-size:15px;font-weight:600;cursor:pointer">إلغاء</button>
+            </div>
+        </div>
+    `;
+    overlay.style.cssText = "position:fixed;inset:0;background:rgba(0,0,0,0.5);backdrop-filter:blur(4px);z-index:99999;display:flex;align-items:center;justify-content:center;";
+    document.body.appendChild(overlay);
+    const close = (cb) => { overlay.remove(); if (cb) cb(); };
+    document.getElementById("sc-confirm").addEventListener("click", () => close(onConfirm));
+    document.getElementById("sc-cancel").addEventListener("click",  () => close(onCancel));
+    overlay.addEventListener("click", (e) => { if (e.target === overlay) close(onCancel); });
 }
 
 // --- 9. القائمة الجانبية ---

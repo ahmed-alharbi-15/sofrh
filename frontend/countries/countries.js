@@ -343,7 +343,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const CDN = 'https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/';
         const origImg = {};
         planCountries.forEach(c => {
-            if (c.img) origImg[c.id] = CDN + c.img.replace('/img/', '');
+            if (c.img) origImg[c.id] = c.img.startsWith('http') ? c.img : CDN + c.img.replace('/img/', '');
         });
 
         document.querySelectorAll('.country-card').forEach(card => {

@@ -5,12 +5,10 @@ let allCountries = [];
 let statuses     = {};   // { countryId: "active"|"coming_soon"|"in_development" }
 let activeContinent = 'all';
 
-// ── الـ Toast ────────────────────────────────────────────────────────────────
-function showToast(msg) {
-    const t = document.getElementById('toast');
-    t.textContent = msg;
-    t.classList.add('show');
-    setTimeout(() => t.classList.remove('show'), 2800);
+function resolveImg(src) {
+    if (!src) return '';
+    if (src.startsWith('http')) return src;
+    return '/img/' + src.replace(/^\/img\//, '');
 }
 
 // ── التحقق من الأدمن ─────────────────────────────────────────────────────────
@@ -57,7 +55,7 @@ async function loadPanel() {
         initEditor();
 
     } catch (e) {
-        showToast('خطأ في تحميل البيانات');
+        showToast('خطأ في تحميل البيانات', 'error');
     } finally {
         document.getElementById('loading-screen').style.display = 'none';
         document.getElementById('admin-panel').style.display   = 'block';
@@ -136,10 +134,10 @@ async function setStatus(countryId, newStatus, btn) {
         badge.textContent = STATUS_LABELS[newStatus];
 
         updateStats();
-        showToast(`${STATUS_LABELS[newStatus]} — ${countryId}`);
+        showToast(`${STATUS_LABELS[newStatus]} — ${countryId}`, 'success');
 
     } catch (e) {
-        showToast('❌ ' + e.message);
+        showToast(e.message, 'error');
     } finally {
         allBtns.forEach(b => b.disabled = false);
     }
@@ -213,7 +211,7 @@ async function grantAdmin() {
     const input = document.getElementById('admin-email-input');
     const btn   = document.getElementById('set-admin-btn');
     const email = input.value.trim();
-    if (!email) { showToast('⚠️ أدخل الإيميل أولاً'); return; }
+    if (!email) { showToast('أدخل الإيميل أولاً', 'error'); return; }
 
     btn.disabled = true;
     btn.textContent = '…';
@@ -226,11 +224,11 @@ async function grantAdmin() {
         });
         const data = await res.json();
         if (!res.ok) throw new Error(data.detail || 'خطأ');
-        showToast(`✅ تم منح الصلاحية لـ ${email}`);
+        showToast(`تم منح الصلاحية لـ ${email}`, 'success');
         input.value = '';
         await loadAdminList();
     } catch (e) {
-        showToast('❌ ' + e.message);
+        showToast(e.message, 'error');
     } finally {
         btn.disabled = false;
         btn.textContent = 'إضافة أدمن';
@@ -239,21 +237,23 @@ async function grantAdmin() {
 
 // ── إزالة صلاحية الأدمن ──────────────────────────────────────────────────────
 async function removeAdmin(email, btn) {
-    btn.disabled = true;
-    try {
-        const res = await fetch(`${API}/admin/remove-admin`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ email, admin_email: adminEmail })
-        });
-        const data = await res.json();
-        if (!res.ok) throw new Error(data.detail || 'خطأ');
-        showToast(`✅ تم إزالة صلاحية ${email}`);
-        await loadAdminList();
-    } catch (e) {
-        showToast('❌ ' + e.message);
-        btn.disabled = false;
-    }
+    showConfirm(`هل تريد إزالة صلاحية الأدمن عن ${email}؟`, async () => {
+        btn.disabled = true;
+        try {
+            const res = await fetch(`${API}/admin/remove-admin`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email, admin_email: adminEmail })
+            });
+            const data = await res.json();
+            if (!res.ok) throw new Error(data.detail || 'خطأ');
+            showToast(`تم إزالة صلاحية ${email}`, 'success');
+            await loadAdminList();
+        } catch (e) {
+            showToast(e.message, 'error');
+            btn.disabled = false;
+        }
+    });
 }
 
 // ── Init ──────────────────────────────────────────────────────────────────────
@@ -425,7 +425,7 @@ function renderEditorList(type) {
 
     container.innerHTML = list.map((item, idx) => `
         <div class="editor-item" data-type="${type}" data-idx="${editorData[type].indexOf(item)}">
-            ${item.img ? `<img src="${item.img}" class="editor-item-img" onerror="this.style.display='none'">` : '<div class="editor-item-img-placeholder">📷</div>'}
+            ${item.img ? `<img src="${resolveImg(item.img)}" class="editor-item-img" onerror="this.style.display='none'">` : '<div class="editor-item-img-placeholder">📷</div>'}
             <span class="editor-item-name">${EDITOR_DISPLAY[type](item)}</span>
             <button class="edit-item-btn" onclick="openEditModal('${type}', ${editorData[type].indexOf(item)})">تعديل ✏️</button>
         </div>
@@ -489,10 +489,29 @@ function openEditModal(type, idx) {
             <label class="modal-label">${f.label}</label>
             ${f.type === 'textarea'
                 ? `<textarea class="modal-input" id="field-${f.key}" rows="3">${escHtml(item[f.key] || '')}</textarea>`
-                : `<input class="modal-input" type="${f.type}" id="field-${f.key}" value="${escHtml(item[f.key] || '')}">`
+                : `<input class="modal-input" type="text" id="field-${f.key}" value="${escHtml(item[f.key] || '')}">`
             }
+            ${f.type === 'url' ? `<div id="prev-${f.key}" style="margin-top:6px"></div>` : ''}
         </div>
     `).join('');
+
+    fields.filter(f => f.type === 'url').forEach(f => {
+        const input = document.getElementById('field-' + f.key);
+        const prev  = document.getElementById('prev-'  + f.key);
+        if (!input || !prev) return;
+        function updatePrev() {
+            const val = input.value.trim();
+            if (!val) { prev.innerHTML = ''; return; }
+            const src = resolveImg(val);
+            prev.innerHTML = '<img src="' + src + '" style="max-height:80px;border-radius:8px;object-fit:cover"><span class="img-prev-err" style="display:none;color:#ef4444;font-size:13px;margin-top:4px;display:block">تعذّر تحميل الصورة</span>';
+            prev.querySelector('img').addEventListener('error', () => {
+                prev.querySelector('img').style.display = 'none';
+                prev.querySelector('.img-prev-err').style.display = 'block';
+            });
+        }
+        updatePrev();
+        input.addEventListener('input', updatePrev);
+    });
 
     document.getElementById('edit-modal').style.display = 'flex';
 }
@@ -543,10 +562,10 @@ async function saveEdit() {
         Object.assign(editorData[type][idx], updatedFields);
         renderEditorList(type);
         closeEditModal();
-        showToast(`✅ تم حفظ ${item.name || item.id}`);
+        showToast(`تم حفظ ${item.name || item.id}`, 'success');
 
     } catch (e) {
-        showToast('❌ ' + e.message);
+        showToast(e.message, 'error');
     } finally {
         saveBtn.disabled = false;
         saveBtn.textContent = '💾 حفظ التعديل';
@@ -583,7 +602,7 @@ async function loadUsers() {
         renderUsersTable(allUsers);
     } catch (e) {
         console.error(e);
-        showToast('❌ ' + e.message);
+        showToast(e.message, 'error');
     }
 }
 

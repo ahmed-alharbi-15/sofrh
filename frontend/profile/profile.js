@@ -174,7 +174,7 @@ async function renderFavorites() {
             });
             card.querySelector(".fav-remove").addEventListener("click", (e) => {
                 e.stopPropagation();
-                removeItem(key, item.id);
+                showConfirm(`هل تريد إزالة "${item.name}" من المفضلة؟`, () => removeItem(key, item.id));
             });
             grid.appendChild(card);
         });
@@ -248,43 +248,6 @@ if (changePasswordBtn) {
             } else showToast("خطأ: " + data.detail, "error");
         } catch (err) { showToast("السيرفر طافي!", "error"); }
     });
-}
-
-// Toast
-function showToast(message, type = "success") {
-    const old = document.getElementById("safra-toast");
-    if (old) old.remove();
-    const colors = {
-        success: { bg: "rgba(30,16,8,0.96)", border: "rgba(200,133,74,0.5)", icon: "✅" },
-        error: { bg: "rgba(30,16,8,0.96)", border: "rgba(200,60,60,0.5)", icon: "❌" },
-        info: { bg: "rgba(30,16,8,0.96)", border: "rgba(150,150,150,0.4)", icon: "ℹ️" },
-    };
-    const c = colors[type] || colors.success;
-    const toast = document.createElement("div");
-    toast.id = "safra-toast";
-    toast.innerHTML = `<span style="font-size:18px">${c.icon}</span><span>${message}</span>`;
-    toast.style.cssText = `
-        position: fixed; bottom: 32px; left: 50%;
-        transform: translateX(-50%) translateY(20px);
-        background: ${c.bg}; border: 1px solid ${c.border};
-        color: #f5ede0; font-family: "Noto Sans Arabic", sans-serif;
-        font-size: 15px; font-weight: 600; padding: 14px 28px;
-        border-radius: 50px; display: flex; align-items: center; gap: 10px;
-        z-index: 99999; box-shadow: 0 8px 30px rgba(0,0,0,0.4);
-        backdrop-filter: blur(10px); opacity: 0;
-        transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
-        white-space: nowrap;
-    `;
-    document.body.appendChild(toast);
-    requestAnimationFrame(() => requestAnimationFrame(() => {
-        toast.style.opacity = "1";
-        toast.style.transform = "translateX(-50%) translateY(0)";
-    }));
-    setTimeout(() => {
-        toast.style.opacity = "0";
-        toast.style.transform = "translateX(-50%) translateY(20px)";
-        setTimeout(() => toast.remove(), 400);
-    }, 2500);
 }
 
 renderFavorites();
