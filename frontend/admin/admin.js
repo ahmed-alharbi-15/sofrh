@@ -5,12 +5,6 @@ let allCountries = [];
 let statuses     = {};   // { countryId: "active"|"coming_soon"|"in_development" }
 let activeContinent = 'all';
 
-function resolveImg(src) {
-    if (!src) return '';
-    if (src.startsWith('http')) return src;
-    return '/img/' + src.replace(/^\/img\//, '');
-}
-
 // ── التحقق من الأدمن ─────────────────────────────────────────────────────────
 async function checkAdmin() {
     const user = JSON.parse(localStorage.getItem('safraUser') || 'null');

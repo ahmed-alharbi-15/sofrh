@@ -336,16 +336,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const res = await fetch(`${API}/country-states`);
         const statuses = res.ok ? await res.json() : {};
 
-        const planRes  = await fetch('/plan/plan.js');
-        const planText = await planRes.text();
-        const arrMatch = planText.match(/const\s+countries\s*=\s*(\[[\s\S]*?\]);/);
-        const planCountries = arrMatch ? JSON.parse(arrMatch[1]) : [];
-        const CDN = 'https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/';
-        const origImg = {};
-        planCountries.forEach(c => {
-            if (c.img) origImg[c.id] = c.img.startsWith('http') ? c.img : CDN + c.img.replace('/img/', '');
-        });
-
         document.querySelectorAll('.country-card').forEach(card => {
             const onclick = card.getAttribute('onclick') || '';
             const idMatch = onclick.match(/\/([^/]+)\.html/);
@@ -369,7 +359,6 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 card.classList.remove('coming-soon', 'in-development');
                 card.style.pointerEvents = '';
-                if (img && origImg[cid]) img.src = origImg[cid];
             }
         });
 

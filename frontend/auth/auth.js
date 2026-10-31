@@ -268,6 +268,12 @@ function showConfirm(message, onConfirm, onCancel) {
     overlay.addEventListener("click", (e) => { if (e.target === overlay) close(onCancel); });
 }
 
+function resolveImg(src) {
+    if (!src) return '';
+    if (src.startsWith('http')) return src;
+    return '/img/' + src.replace(/^\/img\//, '');
+}
+
 // --- 9. القائمة الجانبية ---
 if (typeof menuBtn === 'undefined') {
     var menuBtn = document.getElementById("menu-btn");
