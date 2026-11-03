@@ -210,7 +210,7 @@ async function removeItem(type, id) {
 function showToast(message, type = "success") {
     const old = document.getElementById("safra-toast");
     if (old) old.remove();
-    const iconColors = { success: "#22c55e", error: "#ef4444", info: "#F28500" };
+    const iconColors = { success: "#22c55e", error: "#efhttps://res.cloudinary.com/dqe6mmkzz/image/upload/v1792337725/wadi_hadramut.jpg", info: "#F28500" };
     const icons      = { success: "✓",       error: "✕",       info: "!"      };
     const col = iconColors[type] || iconColors.info;
     const ico = icons[type]      || icons.info;

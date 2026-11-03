@@ -497,7 +497,7 @@ function openEditModal(type, idx) {
             const val = input.value.trim();
             if (!val) { prev.innerHTML = ''; return; }
             const src = resolveImg(val);
-            prev.innerHTML = '<img src="' + src + '" style="max-height:80px;border-radius:8px;object-fit:cover"><span class="img-prev-err" style="display:none;color:#ef4444;font-size:13px;margin-top:4px;display:block">تعذّر تحميل الصورة</span>';
+            prev.innerHTML = '<img src="' + src + '" style="max-height:80px;border-radius:8px;object-fit:cover"><span class="img-prev-err" style="display:none;color:#efhttps://res.cloudinary.com/dqe6mmkzz/image/upload/v1792337725/wadi_hadramut.jpg;font-size:13px;margin-top:4px;display:block">تعذّر تحميل الصورة</span>';
             prev.querySelector('img').addEventListener('error', () => {
                 prev.querySelector('img').style.display = 'none';
                 prev.querySelector('.img-prev-err').style.display = 'block';
