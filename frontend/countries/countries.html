@@ -38,6 +38,7 @@
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>سفرة - الدول</title>
+    <link rel="stylesheet" href="/navbar.css" />
     <link rel="stylesheet" href="/countries/countries.css">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap">
@@ -54,6 +55,10 @@
     <meta name="twitter:image" content="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/logo-img.PNG">
     <meta name="twitter:title" content="سفرة — سافر وتذوق">
     <meta name="twitter:description" content="اكتشف وجهات وماكولات من مختلف أنحاء العالم">
+    <meta name="description" content="اكتشف أجمل الوجهات السياحية حول العالم، تصفّح دول آسيا وأوروبا وأفريقيا والأمريكتين واستعرض مدنها وأكلاتها وفعالياتها.">
+    <meta name="keywords" content="سفرة، دول، سياحة، سفر، وجهات، مدن، آسيا، أوروبا، أفريقيا، أمريكا، أكلات، فعاليات">
+    <meta name="author" content="سفرة">
+    <link rel="canonical" href="https://sofrh.vercel.app/countries/countries.html">
     <script src="/auth/auth.js" defer></script>
 </head>
 
@@ -73,6 +78,7 @@
             <span class="user-name" id="userName"></span>
             <div class="user-dropdown">
                 <a href="/profile/profile.html">الملف الشخصي</a>
+                <a href="/admin/admin.html" class="admin-link" id="adminLink" style="display:none">⚙️ الإدارة</a>
                 <a href="#" id="logoutBtn">تسجيل خروج</a>
             </div>
         </div>
@@ -87,7 +93,7 @@
         </ul>
 
         <div class="logo">
-            <a href="/index/index.html"><img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/logo-img.PNG" alt="سفرة"></a>
+            <a href="/index/index.html"><img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/logo-img.PNG" alt="سفرة – Sofrah"></a>
         </div>
     </header>
 
@@ -96,7 +102,7 @@
         <span class="close-btn" id="close-btn">×</span>
         <span class="side-menu-kicker">استكشف</span>
         <ul>
-            <li><a href="/index/index.html" class="active">
+            <li><a href="/index/index.html">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
                         stroke-linejoin="round">
                         <path d="M3 11.5 12 4l9 7.5" />
@@ -105,7 +111,7 @@
                     </svg>
                     <span>الرئيسية</span>
                 </a></li>
-            <li><a href="/countries/countries.html">
+            <li><a href="/countries/countries.html" class="active">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
                         stroke-linejoin="round">
                         <path d="M12 21s7-6.6 7-12a7 7 0 1 0-14 0c0 5.4 7 12 7 12Z" />
