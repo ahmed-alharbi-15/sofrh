@@ -1,0 +1,848 @@
+#scrollTopBtn {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+#scrollTopBtn.ix-visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.ix-hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+    background: linear-gradient(135deg, #2A1060 0%, #32127A 50%, #1a0a40 100%);
+    padding: 80px 60px;
+    min-height: 480px;
+    position: relative;
+    overflow: hidden;
+}
+
+.ix-hero::before {
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(242, 133, 0, 0.12) 0%, transparent 70%);
+    top: -100px;
+    left: 100px;
+    pointer-events: none;
+}
+
+.ix-hero-text {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.ix-hero-text h1 {
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.2;
+    margin: 0;
+}
+
+.ix-hero-text h1 span {
+    color: #F28500;
+}
+
+.ix-hero-text > p {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.65);
+    margin: 0;
+}
+
+.ix-hero-search {
+    display: flex;
+    gap: 10px;
+    max-width: 480px;
+}
+
+.ix-hero-search input {
+    flex: 1;
+    padding: 14px 18px;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-size: 0.95rem;
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.25s;
+}
+
+.ix-hero-search input::placeholder {
+    color: rgba(255, 255, 255, 0.45);
+}
+
+.ix-hero-search input:focus {
+    border-color: #F28500;
+}
+
+.ix-hero-search button {
+    padding: 14px 24px;
+    border-radius: 50px;
+    border: none;
+    background: #F28500;
+    color: #fff;
+    font-size: 0.95rem;
+    font-family: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.25s, transform 0.2s;
+    white-space: nowrap;
+}
+
+.ix-hero-search button:hover {
+    background: #d97200;
+}
+
+.ix-hero-search button:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+}
+
+.ix-hero-quick {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.ix-quick-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 18px;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
+    font-size: 0.85rem;
+    background: rgba(255, 255, 255, 0.06);
+    transition: background 0.25s, border-color 0.25s, color 0.25s;
+}
+
+.ix-quick-link:hover {
+    background: rgba(242, 133, 0, 0.2);
+    border-color: rgba(242, 133, 0, 0.5);
+    color: #F28500;
+}
+
+.ix-quick-link:focus-visible {
+    outline: 2px solid #F28500;
+    outline-offset: 2px;
+}
+
+.ix-featured-card {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+    text-decoration: none;
+    display: block;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    transition: transform 0.35s ease;
+}
+
+.ix-featured-card:hover {
+    transform: translateY(-6px);
+}
+
+.ix-featured-card:focus-visible {
+    outline: 3px solid #F28500;
+    outline-offset: 4px;
+}
+
+.ix-featured-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.ix-featured-card:hover img {
+    transform: scale(1.06);
+}
+
+.ix-featured-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.1) 55%, transparent 100%);
+    pointer-events: none;
+}
+
+.ix-featured-badge {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: rgba(242, 133, 0, 0.92);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 5px 14px;
+    border-radius: 50px;
+}
+
+.ix-featured-info {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    padding: 20px;
+}
+
+.ix-featured-info h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #fff;
+    margin: 0 0 6px;
+}
+
+.ix-featured-info p {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0 0 14px;
+    line-height: 1.4;
+}
+
+.ix-featured-btn {
+    display: inline-block;
+    padding: 8px 20px;
+    background: #F28500;
+    color: #fff;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.25s;
+}
+
+.ix-featured-card:hover .ix-featured-btn {
+    background: #d97200;
+}
+
+.ix-section-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 32px;
+}
+
+.ix-section-title {
+    font-size: clamp(1.4rem, 2.5vw, 2rem);
+    font-weight: 700;
+    color: var(--text);
+    margin: 0;
+}
+
+.ix-section-title span {
+    color: #F28500;
+}
+
+.ix-see-all {
+    font-size: 0.9rem;
+    color: #F28500;
+    text-decoration: none;
+    font-weight: 600;
+    transition: opacity 0.2s;
+    white-space: nowrap;
+}
+
+.ix-see-all:hover {
+    opacity: 0.7;
+}
+
+.ix-see-all:focus-visible {
+    outline: 2px solid #F28500;
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+.ix-destinations {
+    padding: 70px 60px;
+    background: var(--bg);
+}
+
+.ix-dest-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.ix-dest-card {
+    position: relative;
+    border-radius: 14px;
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+    text-decoration: none;
+    display: block;
+    background: #150A35;
+    transition: transform 0.35s ease, box-shadow 0.3s ease;
+}
+
+.ix-dest-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
+}
+
+.ix-dest-card:focus-visible {
+    outline: 3px solid #F28500;
+    outline-offset: 3px;
+}
+
+.ix-dest-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.ix-dest-card:hover img {
+    transform: scale(1.07);
+}
+
+.ix-dest-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.78) 0%, rgba(0, 0, 0, 0.1) 55%, transparent 100%);
+    pointer-events: none;
+}
+
+.ix-dest-info {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    padding: 16px;
+}
+
+.ix-dest-info h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #fff;
+    margin: 0 0 4px;
+    line-height: 1.2;
+}
+
+.ix-dest-info p {
+    font-size: 0.78rem;
+    color: rgba(255, 255, 255, 0.65);
+    margin: 0 0 10px;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.ix-dest-btn {
+    display: inline-block;
+    padding: 5px 16px;
+    background: rgba(242, 133, 0, 0.9);
+    color: #fff;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.25s;
+}
+
+.ix-dest-card:hover .ix-dest-btn {
+    background: #F28500;
+}
+
+.ix-recipes {
+    padding: 70px 60px;
+    background: var(--cream-soft, #F0EBE0);
+}
+
+[data-theme="dark"] .ix-recipes {
+    background: #140d33;
+}
+
+.ix-recipes-wrap {
+    position: relative;
+    padding: 0 50px;
+}
+
+.ix-recipes-scroll {
+    display: flex;
+    gap: 18px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    padding-bottom: 8px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.ix-recipes-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.ix-recipe-card {
+    flex-shrink: 0;
+    width: 220px;
+    background: var(--card-bg, #fff);
+    border-radius: 14px;
+    overflow: hidden;
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ix-recipe-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+}
+
+.ix-recipe-img-wrap {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    background: #e0d8f0;
+}
+
+.ix-recipe-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.ix-recipe-card:hover .ix-recipe-img-wrap img {
+    transform: scale(1.07);
+}
+
+.ix-recipe-save {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    background: rgba(0, 0, 0, 0.45);
+    border: none;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 15px;
+    transition: background 0.2s;
+}
+
+.ix-recipe-save:hover {
+    background: rgba(0, 0, 0, 0.65);
+}
+
+.ix-recipe-save:focus-visible {
+    outline: 2px solid #F28500;
+    outline-offset: 2px;
+}
+
+.ix-recipe-body {
+    padding: 12px 14px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+}
+
+.ix-recipe-name {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text);
+    margin: 0;
+}
+
+.ix-recipe-link {
+    display: inline-block;
+    padding: 6px 16px;
+    background: #32127A;
+    color: #fff;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    align-self: flex-start;
+    transition: background 0.25s;
+}
+
+.ix-recipe-link:hover {
+    background: #F28500;
+}
+
+.ix-recipe-link:focus-visible {
+    outline: 2px solid #32127A;
+    outline-offset: 2px;
+    border-radius: 50px;
+}
+
+[data-theme="dark"] .ix-recipe-link {
+    background: #F28500;
+}
+
+[data-theme="dark"] .ix-recipe-link:hover {
+    background: #d97200;
+}
+
+.ix-scroll-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #32127A;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 16px;
+    z-index: 2;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: background 0.25s;
+}
+
+.ix-scroll-arrow:hover {
+    background: #F28500;
+}
+
+.ix-scroll-arrow:focus-visible {
+    outline: 2px solid #F28500;
+    outline-offset: 2px;
+}
+
+.ix-arrow-prev {
+    right: 0;
+}
+
+.ix-arrow-next {
+    left: 0;
+}
+
+[data-theme="dark"] .ix-scroll-arrow {
+    background: #2a1a60;
+}
+
+[data-theme="dark"] .ix-scroll-arrow:hover {
+    background: #F28500;
+}
+
+.ix-events {
+    padding: 70px 60px;
+    background: var(--bg);
+}
+
+.ix-events-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.ix-event-card {
+    background: var(--card-bg, #fff);
+    border-radius: 14px;
+    overflow: hidden;
+    text-decoration: none;
+    display: block;
+    border: 1px solid var(--border, rgba(50, 18, 122, 0.08));
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ix-event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 14px 36px rgba(0, 0, 0, 0.15);
+}
+
+.ix-event-card:focus-visible {
+    outline: 3px solid #F28500;
+    outline-offset: 3px;
+}
+
+.ix-event-img {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: #e0d8f0;
+}
+
+.ix-event-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.ix-event-card:hover .ix-event-img img {
+    transform: scale(1.07);
+}
+
+.ix-event-date {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: rgba(50, 18, 122, 0.88);
+    color: #fff;
+    font-size: 11px;
+    font-family: inherit;
+    padding: 4px 12px;
+    border-radius: 50px;
+}
+
+.ix-event-body {
+    padding: 14px 16px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.ix-event-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text);
+    margin: 0;
+}
+
+.ix-event-location {
+    font-size: 0.82rem;
+    color: var(--text);
+    opacity: 0.6;
+    margin: 0;
+}
+
+.ix-event-btn {
+    display: inline-block;
+    padding: 6px 18px;
+    background: #F28500;
+    color: #fff;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    align-self: flex-start;
+    margin-top: 4px;
+    transition: background 0.25s;
+}
+
+.ix-event-btn:hover {
+    background: #d97200;
+}
+
+.ix-event-btn:focus-visible {
+    outline: 2px solid #F28500;
+    outline-offset: 2px;
+    border-radius: 50px;
+}
+
+.ix-cta {
+    background: linear-gradient(135deg, #2A1060 0%, #32127A 50%, #1a0a40 100%);
+    padding: 80px 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.ix-cta::before {
+    content: '';
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(242, 133, 0, 0.1) 0%, transparent 70%);
+    top: -50px;
+    right: 20%;
+    pointer-events: none;
+}
+
+.ix-cta-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 540px;
+    margin: 0 auto;
+}
+
+.ix-cta-inner h2 {
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    font-weight: 700;
+    color: #fff;
+    margin: 0 0 12px;
+}
+
+.ix-cta-inner p {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.65);
+    margin: 0 0 32px;
+}
+
+.ix-cta-actions {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.ix-cta-primary {
+    display: inline-block;
+    padding: 14px 32px;
+    background: #F28500;
+    color: #fff;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background 0.25s, transform 0.2s;
+}
+
+.ix-cta-primary:hover {
+    background: #d97200;
+    transform: scale(1.03);
+}
+
+.ix-cta-primary:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 3px;
+}
+
+.ix-cta-secondary {
+    display: inline-flex;
+    align-items: center;
+    padding: 14px 32px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: rgba(255, 255, 255, 0.85);
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: border-color 0.25s, color 0.25s, background 0.25s;
+}
+
+.ix-cta-secondary:hover {
+    border-color: #F28500;
+    color: #F28500;
+    background: rgba(242, 133, 0, 0.1);
+}
+
+.ix-cta-secondary:focus-visible {
+    outline: 2px solid #F28500;
+    outline-offset: 3px;
+}
+
+#ixCtaGuest {
+    display: block;
+}
+
+#ixCtaUser {
+    display: none;
+}
+
+.user-logged-in #ixCtaGuest {
+    display: none;
+}
+
+.user-logged-in #ixCtaUser {
+    display: block;
+}
+
+@media (max-width: 1024px) {
+    .ix-hero,
+    .ix-destinations,
+    .ix-recipes,
+    .ix-events,
+    .ix-cta {
+        padding-inline: 40px;
+    }
+}
+
+@media (max-width: 900px) {
+    .ix-hero {
+        grid-template-columns: 1fr;
+        padding: 60px 32px;
+    }
+
+    .ix-featured-card {
+        aspect-ratio: 16 / 9;
+    }
+
+    .ix-dest-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .ix-events-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .ix-destinations,
+    .ix-recipes,
+    .ix-events,
+    .ix-cta {
+        padding: 50px 32px;
+    }
+}
+
+@media (max-width: 600px) {
+    .ix-hero {
+        padding: 50px 20px;
+    }
+
+    .ix-hero-search {
+        max-width: 100%;
+    }
+
+    .ix-dest-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ix-events-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ix-destinations,
+    .ix-recipes,
+    .ix-events,
+    .ix-cta {
+        padding: 40px 20px;
+    }
+
+    .ix-scroll-arrow {
+        display: none;
+    }
+
+    .ix-recipes-wrap {
+        padding: 0;
+    }
+
+    .ix-recipe-card {
+        width: 180px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .ix-featured-card,
+    .ix-dest-card,
+    .ix-recipe-card,
+    .ix-event-card,
+    .ix-cta-primary,
+    .ix-hero-search button {
+        transition: none;
+    }
+
+    .ix-featured-card img,
+    .ix-dest-card img,
+    .ix-recipe-img-wrap img,
+    .ix-event-img img {
+        transition: none;
+    }
+}

@@ -35,6 +35,7 @@
     <title>سفره</title>
     <link rel="stylesheet" href="/navbar.css" />
     <link rel="stylesheet" href="/index/stayles.css">
+    <link rel="stylesheet" href="/index/home.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@500;600&display=swap">
     <link rel="stylesheet" href="/dark-mode.css">
     <title>سفرة | دليلك للسفر والطعام حول العالم</title>
@@ -111,7 +112,6 @@
         </div>
     </header>
 
-    <!-- SIDE MENU -->
     <div class="side-menu" id="side-menu">
         <span class="close-btn" id="close-btn">×</span>
         <span class="side-menu-kicker">استكشف</span>
@@ -167,76 +167,231 @@
                 </a></li>
         </ul>
     </div>
-    <section class="hero">
 
-        <div class="hero-text">
-            <h1>سافر<span class="hero-accent"> وتذوق</span></h1>
+    <section class="ix-hero">
+        <div class="ix-hero-text">
+            <h1>سافر<span> وتذوق</span></h1>
             <p>اكتشف وجهات وماكولات من مختلف أنحاء العالم</p>
+            <form class="ix-hero-search" id="ixHeroSearchForm">
+                <input type="search" id="ixHeroSearchInput" placeholder="ابحث عن دولة أو وجهة..." autocomplete="off">
+                <button type="submit">بحث</button>
+            </form>
+            <div class="ix-hero-quick">
+                <a href="/countries/countries.html" class="ix-quick-link">🌍 الدول</a>
+                <a href="/recipes/recipes.html" class="ix-quick-link">🍽️ الوصفات</a>
+                <a href="/events/events.html" class="ix-quick-link">📅 الفعاليات</a>
+                <a href="/plan/plan.html" class="ix-quick-link">🗺️ خطط رحلتك</a>
+            </div>
         </div>
-        <div class="hero-stats">
-            <div class="hero-stat">
-                <span class="stat-num">١٩٠+</span>
-                <span class="stat-label">دولة</span>
+        <a href="/countries/country/asia/saudi.html" class="ix-featured-card">
+            <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto:good,w_1200/Riyadh_Skyline.jpg" alt="السعودية" loading="eager">
+            <div class="ix-featured-overlay"></div>
+            <span class="ix-featured-badge">وجهة مميزة</span>
+            <div class="ix-featured-info">
+                <h3>السعودية – Saudi Arabia</h3>
+                <p>رحلة تجمع بين التراث والحداثة في قلب الجزيرة العربية</p>
+                <span class="ix-featured-btn">استكشف</span>
             </div>
-            <div class="hero-stat-divider"></div>
-            <div class="hero-stat">
-                <span class="stat-num">١١٥٠+</span>
-                <span class="stat-label">وصفة</span>
-            </div>
-            <div class="hero-stat-divider"></div>
-            <div class="hero-stat">
-                <span class="stat-num">١٢٠٠+</span>
-                <span class="stat-label">فعالية</span>
-            </div>
+        </a>
+    </section>
+
+    <section class="ix-destinations">
+        <div class="ix-section-header">
+            <h2 class="ix-section-title">وجهات <span>نحبها</span></h2>
+            <a href="/countries/countries.html" class="ix-see-all">عرض الكل ←</a>
+        </div>
+        <div class="ix-dest-grid">
+            <a href="/countries/country/asia/uae.html" class="ix-dest-card">
+                <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto,w_600,h_450,c_fill/UAE.jpg" alt="الإمارات" loading="lazy">
+                <div class="ix-dest-overlay"></div>
+                <div class="ix-dest-info">
+                    <h3>الإمارات – UAE</h3>
+                    <p>ناطحات سحاب ورفاهية لا حدود لها</p>
+                    <span class="ix-dest-btn">استكشف</span>
+                </div>
+            </a>
+            <a href="/countries/country/africa/egypt.html" class="ix-dest-card">
+                <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto,w_600,h_450,c_fill/egypt-logo.jpeg" alt="مصر" loading="lazy">
+                <div class="ix-dest-overlay"></div>
+                <div class="ix-dest-info">
+                    <h3>مصر – Egypt</h3>
+                    <p>أهرامات ونيل وتاريخ يجمع الحضارات</p>
+                    <span class="ix-dest-btn">استكشف</span>
+                </div>
+            </a>
+            <a href="/countries/country/asia/turkey.html" class="ix-dest-card">
+                <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto,w_600,h_450,c_fill/Turkey.jpg" alt="تركيا" loading="lazy">
+                <div class="ix-dest-overlay"></div>
+                <div class="ix-dest-info">
+                    <h3>تركيا – Turkey</h3>
+                    <p>جسر بين الشرق والغرب وتاريخ عثماني لا يُنسى</p>
+                    <span class="ix-dest-btn">استكشف</span>
+                </div>
+            </a>
+            <a href="/countries/country/europe/france.html" class="ix-dest-card">
+                <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto,w_600,h_450,c_fill/france-flag.jpg" alt="فرنسا" loading="lazy">
+                <div class="ix-dest-overlay"></div>
+                <div class="ix-dest-info">
+                    <h3>فرنسا – France</h3>
+                    <p>أناقة باريسية وقصور ملكية وسواحل ريفييرا الفاتنة</p>
+                    <span class="ix-dest-btn">استكشف</span>
+                </div>
+            </a>
+            <a href="/countries/country/asia/japan.html" class="ix-dest-card">
+                <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto,w_600,h_450,c_fill/japan-logo.jpg" alt="اليابان" loading="lazy">
+                <div class="ix-dest-overlay"></div>
+                <div class="ix-dest-info">
+                    <h3>اليابان – Japan</h3>
+                    <p>تنوع مذهل بين طبيعة هادئة ومدن تنبض بالحياة</p>
+                    <span class="ix-dest-btn">استكشف</span>
+                </div>
+            </a>
+            <a href="/countries/country/europe/spain.html" class="ix-dest-card">
+                <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto,w_600,h_450,c_fill/v1794006911/spain.jpg" alt="إسبانيا" loading="lazy">
+                <div class="ix-dest-overlay"></div>
+                <div class="ix-dest-info">
+                    <h3>إسبانيا – Spain</h3>
+                    <p>عمارة أندلسية ساحرة وشواطئ متوسطية وإيقاع فلامنكو نابض</p>
+                    <span class="ix-dest-btn">استكشف</span>
+                </div>
+            </a>
         </div>
     </section>
 
-    
-    <section class="sections-preview">
-
-        <a href="/recipes/recipes.html" class="card">
-            <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/food10.jpg" alt="وصفات">
-            <div class="card-overlay"></div>
-            <div class="card-content">
-                <h1 class="card-label">الوصفات</h1>
-                <h2 class="text">تذوق نكهات متنوعة من وصفات عالمية سهلة و لذيذة.</h2>
-                <span class="section-btn">استكشاف</span>
+    <section class="ix-recipes">
+        <div class="ix-section-header">
+            <h2 class="ix-section-title">نكهات من <span>المطبخ العربي</span></h2>
+            <a href="/recipes/recipes.html" class="ix-see-all">عرض الكل ←</a>
+        </div>
+        <div class="ix-recipes-wrap">
+            <button id="ixArrowPrev" class="ix-scroll-arrow ix-arrow-prev" aria-label="السابق">❯</button>
+            <div class="ix-recipes-scroll" id="ixRecipesScroll">
+                <div class="ix-recipe-card">
+                    <div class="ix-recipe-img-wrap">
+                        <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto,w_320,h_320,c_fill/كبسة.jpg" alt="الكبسة" loading="lazy">
+                        <button class="ix-recipe-save" onclick="saveItem('recipe','kabsa','الكبسة','/img/كبسة.jpg')">🍽️</button>
+                    </div>
+                    <div class="ix-recipe-body">
+                        <p class="ix-recipe-name">الكبسة – Kabsa</p>
+                        <a href="/recipes/recipes.html?recipe=kabsa" class="ix-recipe-link">الوصفة</a>
+                    </div>
+                </div>
+                <div class="ix-recipe-card">
+                    <div class="ix-recipe-img-wrap">
+                        <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto,w_320,h_320,c_fill/jordan-mansaf.jpg" alt="المنسف" loading="lazy">
+                        <button class="ix-recipe-save" onclick="saveItem('recipe','jordan-mansaf','المنسف','/img/jordan-mansaf.jpg')">🍽️</button>
+                    </div>
+                    <div class="ix-recipe-body">
+                        <p class="ix-recipe-name">المنسف – Mansaf</p>
+                        <a href="/recipes/recipes.html?recipe=jordan-mansaf" class="ix-recipe-link">الوصفة</a>
+                    </div>
+                </div>
+                <div class="ix-recipe-card">
+                    <div class="ix-recipe-img-wrap">
+                        <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto,w_320,h_320,c_fill/jordan-kunafa.jpg" alt="كنافة نابلسية" loading="lazy">
+                        <button class="ix-recipe-save" onclick="saveItem('recipe','jordan-kunafa','كنافة نابلسية','/img/jordan-kunafa.jpg')">🍽️</button>
+                    </div>
+                    <div class="ix-recipe-body">
+                        <p class="ix-recipe-name">كنافة نابلسية</p>
+                        <a href="/recipes/recipes.html?recipe=jordan-kunafa" class="ix-recipe-link">الوصفة</a>
+                    </div>
+                </div>
+                <div class="ix-recipe-card">
+                    <div class="ix-recipe-img-wrap">
+                        <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto,w_320,h_320,c_fill/lebanon-fattoush.jpg" alt="فتوش" loading="lazy">
+                        <button class="ix-recipe-save" onclick="saveItem('recipe','lebanon-fattoush','فتوش','/img/lebanon-fattoush.jpg')">🍽️</button>
+                    </div>
+                    <div class="ix-recipe-body">
+                        <p class="ix-recipe-name">فتوش – Fattoush</p>
+                        <a href="/recipes/recipes.html?recipe=lebanon-fattoush" class="ix-recipe-link">الوصفة</a>
+                    </div>
+                </div>
+                <div class="ix-recipe-card">
+                    <div class="ix-recipe-img-wrap">
+                        <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto,w_320,h_320,c_fill/v1793529536/Harees_bahrain.jpg" alt="الهريس البحريني" loading="lazy">
+                        <button class="ix-recipe-save" onclick="saveItem('recipe','bahrain-harees','الهريس البحريني','/img/Harees_bahrain.jpg')">🍽️</button>
+                    </div>
+                    <div class="ix-recipe-body">
+                        <p class="ix-recipe-name">الهريس البحريني – Harees</p>
+                        <a href="/recipes/recipes.html?recipe=bahrain-harees" class="ix-recipe-link">الوصفة</a>
+                    </div>
+                </div>
+                <div class="ix-recipe-card">
+                    <div class="ix-recipe-img-wrap">
+                        <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto,w_320,h_320,c_fill/v1792071915/Yemeni_Mandi.jpg" alt="مندي يمني" loading="lazy">
+                        <button class="ix-recipe-save" onclick="saveItem('recipe','yemen-mandi','مندي يمني','/img/Yemeni_Mandi.jpg')">🍽️</button>
+                    </div>
+                    <div class="ix-recipe-body">
+                        <p class="ix-recipe-name">مندي يمني – Yemeni Mandi</p>
+                        <a href="/recipes/recipes.html?recipe=yemen-mandi" class="ix-recipe-link">الوصفة</a>
+                    </div>
+                </div>
             </div>
-        </a>
-
-        <a href="/events/events.html" class="card">
-            <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/events1.jpg" alt="فعاليات">
-            <div class="card-overlay"></div>
-            <div class="card-content">
-                <h1 class="card-label">الفعاليات</h1>
-                <h2 class="text">عِش أجواء فعاليات عالمية ممتعة… وكلها بمواعيدها السنوية.</h2>
-                <span class="section-btn">استكشاف</span>
-            </div>
-        </a>
-
-        <a href="/countries/countries.html" class="card">
-            <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/Countries1.jpg" alt="دول">
-            <div class="card-overlay"></div>
-            <div class="card-content">
-                <h1 class="card-label">الدول</h1>
-                <h2 class="text">تعرف على نكهات وأجواء كل دولة بلمحة سريعة.</h2>
-                <span class="section-btn">استكشاف</span>
-            </div>
-        </a>
-
-        <a href="/plan/plan.html" class="card">
-            <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/plan.jpg" alt="خطتي">
-            <div class="card-overlay"></div>
-            <div class="card-content">
-                <h1 class="card-label">خطتي</h1>
-                <h2 class="text">خطط رحلتك المثالية واكتشف أفضل الوجهات حسب ميزانيتك.</h2>
-                <span class="section-btn">ابدأ خطتك</span>
-            </div>
-        </a>
-
+            <button id="ixArrowNext" class="ix-scroll-arrow ix-arrow-next" aria-label="التالي">❮</button>
+        </div>
     </section>
 
-    
+    <section class="ix-events">
+        <div class="ix-section-header">
+            <h2 class="ix-section-title">فعاليات <span>قادمة</span></h2>
+            <a href="/events/events.html" class="ix-see-all">عرض الكل ←</a>
+        </div>
+        <div class="ix-events-grid">
+            <a href="/events/events.html?event=sodh" class="ix-event-card">
+                <div class="ix-event-img">
+                    <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto,w_600,h_337,c_fill/السوده.webp" alt="موسم السودة" loading="lazy">
+                    <span class="ix-event-date">يونيو – سبتمبر</span>
+                </div>
+                <div class="ix-event-body">
+                    <h3 class="ix-event-title">موسم السودة – Al-Soudah Season</h3>
+                    <p class="ix-event-location">📍 منطقة عسير، السعودية</p>
+                    <span class="ix-event-btn">التفاصيل</span>
+                </div>
+            </a>
+            <a href="/events/events.html?event=hanami" class="ix-event-card">
+                <div class="ix-event-img">
+                    <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto,w_600,h_337,c_fill/Hanami.jpg" alt="مهرجان أزهار الكرز" loading="lazy">
+                    <span class="ix-event-date">مارس – أبريل</span>
+                </div>
+                <div class="ix-event-body">
+                    <h3 class="ix-event-title">مهرجان أزهار الكرز – Hanami</h3>
+                    <p class="ix-event-location">📍 طوكيو، كيوتو، أوساكا</p>
+                    <span class="ix-event-btn">التفاصيل</span>
+                </div>
+            </a>
+            <a href="/events/events.html?event=Waterfalls" class="ix-event-card">
+                <div class="ix-event-img">
+                    <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto,w_600,h_337,c_fill/v1793799671/Waterfalls.jpg" alt="الاسترخاء في الشلالات" loading="lazy">
+                    <span class="ix-event-date">طوال العام</span>
+                </div>
+                <div class="ix-event-body">
+                    <h3 class="ix-event-title">الاسترخاء في الشلالات – Waterfalls</h3>
+                    <p class="ix-event-location">📍 بالي، جاوا، سومطرة</p>
+                    <span class="ix-event-btn">التفاصيل</span>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <section class="ix-cta">
+        <div class="ix-cta-inner">
+            <div id="ixCtaGuest">
+                <h2>انضم إلى سفرة اليوم</h2>
+                <p>احفظ وجهاتك المفضلة, وخطط رحلتك المثالية</p>
+                <div class="ix-cta-actions">
+                    <a href="/auth/signup.html" class="ix-cta-primary">إنشاء حساب مجاني</a>
+                    <a href="/auth/login.html" class="ix-cta-secondary">لديك حساب؟ سجّل دخول</a>
+                </div>
+            </div>
+            <div id="ixCtaUser">
+                <h2 id="ixCtaUserGreet">مرحباً!</h2>
+                <p>خطط رحلتك القادمة مع سفرة</p>
+                <div class="ix-cta-actions">
+                    <a href="/plan/plan.html" class="ix-cta-primary">ابدأ خطتك</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <footer class="site-footer">
         <div class="footer-container">
