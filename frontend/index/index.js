@@ -1,21 +1,21 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    const menuBtn = document.getElementById("menu-btn");
-    const sideMenu = document.getElementById("side-menu");
-    const closeBtn = document.getElementById("close-btn");
-    const userMenu = document.getElementById("userMenu");
+    const menuBtn    = document.getElementById("menu-btn");
+    const sideMenu   = document.getElementById("side-menu");
+    const closeBtn   = document.getElementById("close-btn");
+    const userMenu   = document.getElementById("userMenu");
     const userAvatar = document.getElementById("userAvatar");
 
     if (!menuBtn || !sideMenu || !closeBtn || !userMenu || !userAvatar) return;
 
-    menuBtn.addEventListener("click", (e) => { e.stopPropagation(); sideMenu.style.right = "0px"; });
+    menuBtn.addEventListener("click",  (e) => { e.stopPropagation(); sideMenu.style.right = "0px"; });
     closeBtn.addEventListener("click", (e) => { e.stopPropagation(); sideMenu.style.right = "-260px"; });
     sideMenu.addEventListener("click", (e) => { e.stopPropagation(); });
     userAvatar.addEventListener("click", (e) => { e.stopPropagation(); userMenu.classList.toggle("active"); });
-    userMenu.addEventListener("click", (e) => { e.stopPropagation(); });
-    document.addEventListener("click", () => { sideMenu.style.right = "-260px"; userMenu.classList.remove("active"); });
+    userMenu.addEventListener("click",   (e) => { e.stopPropagation(); });
+    document.addEventListener("click",  () => { sideMenu.style.right = "-260px"; userMenu.classList.remove("active"); });
 
-    const heroForm = document.getElementById("ixHeroSearchForm");
+    const heroForm  = document.getElementById("ixHeroSearchForm");
     const heroInput = document.getElementById("ixHeroSearchInput");
     if (heroForm) {
         heroForm.addEventListener("submit", (e) => {
@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const ixCtaGreet = document.getElementById("ixCtaUserGreet");
     if (ixCtaGreet) {
         const u = JSON.parse(localStorage.getItem("safraUser") || "null");
-        if (u?.name) ixCtaGreet.textContent = "\u0645\u0631\u062D\u0628\u0627\u060C " + u.name;
+        if (u?.name) ixCtaGreet.textContent = "مرحبا، " + u.name;
     }
 
     const recipesScroll = document.getElementById("ixRecipesScroll");
@@ -50,37 +50,140 @@ document.addEventListener("DOMContentLoaded", () => {
     fetchHomeData();
 });
 
-const CONTINENT_CODE = {
-    "\u0622\u0633\u064A\u0627": "asia",
-    "\u0623\u0648\u0631\u0648\u0628\u0627": "europe",
-    "\u0623\u0641\u0631\u064A\u0642\u064A\u0627": "africa",
-    "\u0623\u0645\u0631\u064A\u0643\u0627 \u0627\u0644\u0634\u0645\u0627\u0644\u064A\u0629": "north-america",
-    "\u0623\u0645\u0631\u064A\u0643\u0627 \u0627\u0644\u062C\u0646\u0648\u0628\u064A\u0629": "south-america",
-    "\u0623\u0648\u0642\u064A\u0627\u0646\u0648\u0633\u064A\u0627": "oceania"
-};
+const API_BASE   = "https://sofrh-1.onrender.com";
+const CACHE_VER  = "v5";
 
-const API_BASE = "https://sofrh-1.onrender.com";
+function normalize(s) {
+    return String(s).toLowerCase().replace(/[\s\-_]/g, "");
+}
+
+function escH(s) {
+    return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+}
+
+function escJS(s) {
+    return String(s).replace(/\\/g,"\\\\").replace(/'/g,"\\'");
+}
+
+function withW(url, t) {
+    if (!url) return "";
+    if (url.includes("/upload/")) {
+        return url.replace(/\/upload\/[^/]+\//, "/upload/" + t + "/");
+    }
+    return url;
+}
+
+function heroSrc(url)   { return withW(url, "f_auto,q_auto:good,w_1200"); }
+function gridSrc(url)   { return withW(url, "f_auto,q_auto,w_600,h_450,c_fill"); }
+function recipeSrc(url) { return withW(url, "f_auto,q_auto,w_320,h_320,c_fill"); }
+function eventSrc(url)  { return withW(url, "f_auto,q_auto,w_600,h_337,c_fill"); }
+
+function resolveSrc(src, pageUrl) {
+    if (!src) return "";
+    try { return new URL(src, pageUrl).href; } catch(e) { return src; }
+}
+
+async function loadPage(key, path, parser) {
+    const K = "sfr_" + key + "_" + CACHE_VER;
+    try {
+        const c = sessionStorage.getItem(K);
+        if (c) return JSON.parse(c);
+    } catch(e) {}
+    const pageUrl = window.location.origin + path;
+    const html = await fetch(path).then(r => r.text());
+    const data = parser(html, pageUrl);
+    try { sessionStorage.setItem(K, JSON.stringify(data)); } catch(e) {}
+    return data;
+}
+
+function parseCountries(html, pageUrl) {
+    const doc = new DOMParser().parseFromString(html, "text/html");
+    const result = [];
+    doc.querySelectorAll(".country-card").forEach(card => {
+        const imgEl  = card.querySelector("img");
+        const h1     = card.querySelector("h1");
+        const h2     = card.querySelector("h2");
+        const onclick = card.getAttribute("onclick") || "";
+        const m = onclick.match(/\/countries\/country\/([^/]+)\/([^.'"]+)\.html/);
+        if (!m) return;
+        result.push({
+            id:        m[2],
+            continent: m[1],
+            name:      h1 ? h1.textContent.trim() : (imgEl ? imgEl.getAttribute("alt") || "" : ""),
+            desc:      h2 ? h2.textContent.trim() : "",
+            img:       resolveSrc(imgEl ? imgEl.getAttribute("src") : "", pageUrl),
+            href:      "/countries/country/" + m[1] + "/" + m[2] + ".html"
+        });
+    });
+    return result;
+}
+
+function parseEvents(html, pageUrl) {
+    const doc = new DOMParser().parseFromString(html, "text/html");
+    const evs = [];
+    doc.querySelectorAll(".event-card").forEach(card => {
+        const btn = card.querySelector(".event-item");
+        if (!btn) return;
+        evs.push({
+            id:       card.id,
+            title:    btn.dataset.title    || "",
+            img:      resolveSrc(btn.dataset.img || "", pageUrl),
+            date:     (btn.dataset.date    || "").replace(/^📅\s*/, ""),
+            location: btn.dataset.location || ""
+        });
+    });
+    return evs;
+}
+
+function parseRecipes(html, pageUrl) {
+    const doc = new DOMParser().parseFromString(html, "text/html");
+    const recs = [];
+    doc.querySelectorAll(".foods-card").forEach(card => {
+        const btn = card.querySelector(".recipes-item");
+        if (!btn) return;
+        recs.push({
+            id:      card.id,
+            title:   btn.dataset.title || "",
+            img:     resolveSrc(btn.dataset.img || "", pageUrl),
+            country: card.dataset.country || ""
+        });
+    });
+    return recs;
+}
 
 async function fetchHomeData() {
     try {
-        const [countriesRaw, statesRaw] = await Promise.all([
-            fetch(API_BASE + "/countries").then(r => r.json()),
-            fetch(API_BASE + "/country-states").then(r => r.json()),
-            window.SAFRA_EVENTS_READY  || Promise.resolve(),
-            window.SAFRA_RECIPES_READY || Promise.resolve()
+        const [rawCountries, statesRaw, events, recipes] = await Promise.all([
+            loadPage("ctr", "/countries/countries.html", parseCountries),
+            fetch(API_BASE + "/country-states").then(r => r.json()).catch(() => ({})),
+            loadPage("ev",  "/events/events.html",       parseEvents),
+            loadPage("rc",  "/recipes/recipes.html",     parseRecipes)
         ]);
-        const countries = countriesRaw
-            .filter(c => c.slug)
-            .filter(c => (statesRaw[c.slug] || "active") === "active")
-            .map(c => ({
-                id: c.slug,
-                continent: CONTINENT_CODE[c.continent] || "asia",
-                name: c.name,
-                desc: c.description,
-                img: c.image_url
-            }));
+
+        window.SAFRA_EVENTS  = events;
+        window.SAFRA_RECIPES = recipes;
+
+        const normStates = {};
+        for (const [k, v] of Object.entries(statesRaw)) normStates[normalize(k)] = v;
+
+        const countries = rawCountries.filter(c => {
+            const st = normStates[normalize(c.id)];
+            return !st || st === "active";
+        });
+
         if (countries.length) initHomePage(countries);
-    } catch (_) {}
+        else showError();
+    } catch(_) {
+        showError();
+    }
+}
+
+function showError() {
+    const msg = "<p style=\"text-align:center;padding:40px;color:var(--text);opacity:0.5\">تعذّر تحميل البيانات</p>";
+    ["ixDestGrid", "ixEventsGrid", "ixRecipesScroll"].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.innerHTML = msg;
+    });
 }
 
 function pickRandom(arr, n, excludeIds) {
@@ -94,35 +197,14 @@ function pickRandom(arr, n, excludeIds) {
     return result;
 }
 
-function escH(s) {
-    return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
-}
-
-function escJS(s) {
-    return String(s).replace(/\\/g,"\\\\").replace(/'/g,"\\'");
-}
-
-function withW(url, t) {
-    if (!url) return url;
-    if (url.includes("/upload/")) {
-        return url.replace(/\/upload\/[^/]+\//, "/upload/" + t + "/");
-    }
-    return url;
-}
-
-function heroSrc(url) { return withW(url, "f_auto,q_auto:good,w_1200"); }
-function gridSrc(url) { return withW(url, "f_auto,q_auto,w_600,h_450,c_fill"); }
-function recipeSrc(url) { return withW(url, "f_auto,q_auto,w_320,h_320,c_fill"); }
-function eventSrc(url) { return withW(url, "f_auto,q_auto,w_600,h_337,c_fill"); }
-
 function updateFeaturedCard(c) {
     const card = document.getElementById("ixFeaturedCard");
     const img  = document.getElementById("ixFeaturedImg");
     const name = document.getElementById("ixFeaturedName");
     const desc = document.getElementById("ixFeaturedDesc");
     if (!card) return;
-    card.href = "/countries/country/" + c.continent + "/" + c.id + ".html";
-    if (img)  { img.src = heroSrc(c.img); img.alt = c.name; }
+    card.href = c.href;
+    if (img && c.img) { img.src = heroSrc(c.img); img.alt = c.name; }
     if (name) name.textContent = c.name;
     if (desc) desc.textContent = c.desc;
 }
@@ -131,6 +213,7 @@ function setupHeroRotation(countries) {
     if (!countries.length) return;
 
     countries.forEach(c => {
+        if (!c.img) return;
         const lnk = document.createElement("link");
         lnk.rel = "preload"; lnk.as = "image"; lnk.href = heroSrc(c.img);
         document.head.appendChild(lnk);
@@ -139,18 +222,18 @@ function setupHeroRotation(countries) {
     const dotsEl = document.getElementById("ixHeroDots");
     if (dotsEl) {
         dotsEl.innerHTML = countries.map((_, i) =>
-            '<button class="ix-dot' + (i === 0 ? " ix-dot-active" : "") +
-            '" data-idx="' + i + '" aria-label="\u0648\u062C\u0647\u0629 ' + (i + 1) + '"></button>'
+            "<button class=\"ix-dot" + (i === 0 ? " ix-dot-active" : "") +
+            "\" data-idx=\"" + i + "\" aria-label=\"وجهة " + (i + 1) + "\"></button>"
         ).join("");
         dotsEl.querySelectorAll(".ix-dot").forEach(d => {
             d.addEventListener("click", () => goTo(+d.dataset.idx));
         });
     }
 
-    const card = document.getElementById("ixFeaturedCard");
+    const card    = document.getElementById("ixFeaturedCard");
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    let current = 0;
-    let timer = null;
+    let current   = 0;
+    let timer     = null;
 
     function goTo(idx) {
         if (idx === current) return;
@@ -171,10 +254,10 @@ function setupHeroRotation(countries) {
     }
     function stop() { clearInterval(timer); timer = null; }
 
-    card?.addEventListener("mouseenter", stop);
-    card?.addEventListener("mouseleave", start);
-    card?.addEventListener("focusin", stop);
-    card?.addEventListener("focusout", start);
+    card?.addEventListener("mouseenter",    stop);
+    card?.addEventListener("mouseleave",    start);
+    card?.addEventListener("focusin",       stop);
+    card?.addEventListener("focusout",      start);
     document.addEventListener("visibilitychange", () => { document.hidden ? stop() : start(); });
 
     updateFeaturedCard(countries[0]);
@@ -185,14 +268,14 @@ function updateDestGrid(countries) {
     const grid = document.getElementById("ixDestGrid");
     if (!grid) return;
     grid.innerHTML = countries.map(c =>
-        '<a href="/countries/country/' + c.continent + '/' + c.id + '.html" class="ix-dest-card">' +
-        (c.img ? '<img src="' + escH(gridSrc(c.img)) + '" alt="' + escH(c.name) + '" loading="lazy">' : '') +
-        '<div class="ix-dest-overlay"></div>' +
-        '<div class="ix-dest-info">' +
-        '<h3>' + escH(c.name) + '</h3>' +
-        '<p>' + escH(c.desc) + '</p>' +
-        '<span class="ix-dest-btn">\u0627\u0633\u062A\u0643\u0634\u0641</span>' +
-        '</div></a>'
+        "<a href=\"" + escH(c.href) + "\" class=\"ix-dest-card\">" +
+        (c.img ? "<img src=\"" + escH(gridSrc(c.img)) + "\" alt=\"" + escH(c.name) + "\" loading=\"lazy\">" : "") +
+        "<div class=\"ix-dest-overlay\"></div>" +
+        "<div class=\"ix-dest-info\">" +
+        "<h3>" + escH(c.name) + "</h3>" +
+        "<p>" + escH(c.desc) + "</p>" +
+        "<span class=\"ix-dest-btn\">استكشف</span>" +
+        "</div></a>"
     ).join("");
 }
 
@@ -219,31 +302,31 @@ function updateRecipes(recipes) {
     const scroll = document.getElementById("ixRecipesScroll");
     if (!scroll) return;
     scroll.innerHTML = recipes.map(r =>
-        '<div class="ix-recipe-card">' +
-        '<div class="ix-recipe-img-wrap">' +
-        (r.img ? '<img src="' + escH(recipeSrc(r.img)) + '" alt="' + escH(r.title) + '" loading="lazy">' : '') +
-        '<button class="ix-recipe-save" onclick="saveItem(\'recipe\',\'' + escJS(r.id) + '\',\'' + escJS(r.title) + '\',\'' + escJS(r.img) + '\')">\uD83C\uDF7D\uFE0F</button>' +
-        '</div>' +
-        '<div class="ix-recipe-body">' +
-        '<p class="ix-recipe-name">' + escH(r.title) + '</p>' +
-        '<a href="/recipes/recipes.html?recipe=' + encodeURIComponent(r.id) + '" class="ix-recipe-link">\u0627\u0644\u0648\u0635\u0641\u0629</a>' +
-        '</div></div>'
+        "<div class=\"ix-recipe-card\">" +
+        "<div class=\"ix-recipe-img-wrap\">" +
+        (r.img ? "<img src=\"" + escH(recipeSrc(r.img)) + "\" alt=\"" + escH(r.title) + "\" loading=\"lazy\">" : "") +
+        "<button class=\"ix-recipe-save\" onclick=\"saveItem('recipe','" + escJS(r.id) + "','" + escJS(r.title) + "','" + escJS(r.img) + "')\">&#127997;&#65039;</button>" +
+        "</div>" +
+        "<div class=\"ix-recipe-body\">" +
+        "<p class=\"ix-recipe-name\">" + escH(r.title) + "</p>" +
+        "<a href=\"/recipes/recipes.html?recipe=" + encodeURIComponent(r.id) + "\" class=\"ix-recipe-link\">الوصفة</a>" +
+        "</div></div>"
     ).join("");
 }
 
 const AR_MONTHS = {
-    "\u064A\u0646\u0627\u064A\u0631":1,"\u0641\u0628\u0631\u0627\u064A\u0631":2,
-    "\u0645\u0627\u0631\u0633":3,"\u0623\u0628\u0631\u064A\u0644":4,
-    "\u0645\u0627\u064A\u0648":5,"\u064A\u0648\u0646\u064A\u0648":6,
-    "\u064A\u0648\u0644\u064A\u0648":7,"\u0623\u063A\u0633\u0637\u0633":8,
-    "\u0633\u0628\u062A\u0645\u0628\u0631":9,"\u0623\u0643\u062A\u0648\u0628\u0631":10,
-    "\u0646\u0648\u0641\u0645\u0628\u0631":11,"\u062F\u064A\u0633\u0645\u0628\u0631":12
+    "يناير":1, "فبراير":2,
+    "مارس":3,       "أبريل":4,
+    "مايو":5,       "يونيو":6,
+    "يوليو":7, "أغسطس":8,
+    "سبتمبر":9, "أكتوبر":10,
+    "نوفمبر":11, "ديسمبر":12
 };
 
 function nextEventTs(dateStr) {
     const now = new Date();
-    const cm = now.getMonth() + 1;
-    const cy = now.getFullYear();
+    const cm  = now.getMonth() + 1;
+    const cy  = now.getFullYear();
     for (const [name, num] of Object.entries(AR_MONTHS)) {
         if (dateStr.includes(name)) {
             const yr = num >= cm ? cy : cy + 1;
@@ -275,23 +358,23 @@ function updateEvents(events) {
     const grid = document.getElementById("ixEventsGrid");
     if (!grid) return;
     grid.innerHTML = events.map(e =>
-        '<a href="/events/events.html?event=' + encodeURIComponent(e.id) + '" class="ix-event-card">' +
-        '<div class="ix-event-img">' +
-        (e.img ? '<img src="' + escH(eventSrc(e.img)) + '" alt="' + escH(e.title) + '" loading="lazy">' : '') +
-        '<span class="ix-event-date">' + escH(e.date) + '</span>' +
-        '</div>' +
-        '<div class="ix-event-body">' +
-        '<h3 class="ix-event-title">' + escH(e.title) + '</h3>' +
-        '<p class="ix-event-location">\uD83D\uDCCD ' + escH(e.location) + '</p>' +
-        '<span class="ix-event-btn">\u0627\u0644\u062A\u0641\u0627\u0635\u064A\u0644</span>' +
-        '</div></a>'
+        "<a href=\"/events/events.html?event=" + encodeURIComponent(e.id) + "\" class=\"ix-event-card\">" +
+        "<div class=\"ix-event-img\">" +
+        (e.img ? "<img src=\"" + escH(eventSrc(e.img)) + "\" alt=\"" + escH(e.title) + "\" loading=\"lazy\">" : "") +
+        "<span class=\"ix-event-date\">" + escH(e.date) + "</span>" +
+        "</div>" +
+        "<div class=\"ix-event-body\">" +
+        "<h3 class=\"ix-event-title\">" + escH(e.title) + "</h3>" +
+        "<p class=\"ix-event-location\">📍 " + escH(e.location) + "</p>" +
+        "<span class=\"ix-event-btn\">التفاصيل</span>" +
+        "</div></a>"
     ).join("");
 }
 
 function initHomePage(countries) {
-    const heroC = pickRandom(countries, 5);
+    const heroC   = pickRandom(countries, 5);
     const heroIds = heroC.map(c => c.id);
-    const destC = pickRandom(countries, 6, heroIds);
+    const destC   = pickRandom(countries, 6, heroIds);
 
     updateDestGrid(destC);
     updateRecipes(pickDiverseRecipes(6));
