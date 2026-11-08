@@ -34,7 +34,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>سفره</title>
     <link rel="stylesheet" href="/navbar.css" />
-    <link rel="stylesheet" href="/index/stayles.css">
     <link rel="stylesheet" href="/index/home.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@500;600&display=swap">
     <link rel="stylesheet" href="/dark-mode.css">
@@ -73,6 +72,8 @@
     <meta name="twitter:image" content="https://sofrh.vercel.apphttps://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/logo-img.PNG">
 
     <link rel="canonical" href="https://sofrh.vercel.app/index/index.html">
+    <script src="/index/data-events.js" defer></script>
+    <script src="/index/data-recipes.js" defer></script>
     <script src="/index/index.js" defer></script>
 
     <script src="/auth/auth.js" defer></script>
@@ -183,16 +184,19 @@
                 <a href="/plan/plan.html" class="ix-quick-link">🗺️ خطط رحلتك</a>
             </div>
         </div>
-        <a href="/countries/country/asia/saudi.html" class="ix-featured-card">
-            <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto:good,w_1200/Riyadh_Skyline.jpg" alt="السعودية" loading="eager">
-            <div class="ix-featured-overlay"></div>
-            <span class="ix-featured-badge">وجهة مميزة</span>
-            <div class="ix-featured-info">
-                <h3>السعودية – Saudi Arabia</h3>
-                <p>رحلة تجمع بين التراث والحداثة في قلب الجزيرة العربية</p>
-                <span class="ix-featured-btn">استكشف</span>
-            </div>
-        </a>
+        <div class="ix-featured-wrap">
+            <a href="/countries/country/asia/saudi.html" class="ix-featured-card" id="ixFeaturedCard">
+                <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto:good,w_1200/Riyadh_Skyline.jpg" alt="السعودية" loading="eager" id="ixFeaturedImg">
+                <div class="ix-featured-overlay"></div>
+                <span class="ix-featured-badge">وجهة مميزة</span>
+                <div class="ix-featured-info">
+                    <h3 id="ixFeaturedName">السعودية – Saudi Arabia</h3>
+                    <p id="ixFeaturedDesc">رحلة تجمع بين التراث والحداثة في قلب الجزيرة العربية</p>
+                    <span class="ix-featured-btn">استكشف</span>
+                </div>
+            </a>
+            <div class="ix-hero-dots" id="ixHeroDots"></div>
+        </div>
     </section>
 
     <section class="ix-destinations">
@@ -200,7 +204,7 @@
             <h2 class="ix-section-title">وجهات <span>نحبها</span></h2>
             <a href="/countries/countries.html" class="ix-see-all">عرض الكل ←</a>
         </div>
-        <div class="ix-dest-grid">
+        <div class="ix-dest-grid" id="ixDestGrid">
             <a href="/countries/country/asia/uae.html" class="ix-dest-card">
                 <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto,w_600,h_450,c_fill/UAE.jpg" alt="الإمارات" loading="lazy">
                 <div class="ix-dest-overlay"></div>
@@ -260,9 +264,10 @@
 
     <section class="ix-recipes">
         <div class="ix-section-header">
-            <h2 class="ix-section-title">نكهات من <span>المطبخ العربي</span></h2>
+            <h2 class="ix-section-title">نكهات من <span>مطابخ العالم</span></h2>
             <a href="/recipes/recipes.html" class="ix-see-all">عرض الكل ←</a>
         </div>
+        <p class="ix-section-desc">وصفات مجرّبة من كل دولة بخطوات واضحة تقدر تسويها بنفسك.</p>
         <div class="ix-recipes-wrap">
             <button id="ixArrowPrev" class="ix-scroll-arrow ix-arrow-prev" aria-label="السابق">❯</button>
             <div class="ix-recipes-scroll" id="ixRecipesScroll">
@@ -278,52 +283,52 @@
                 </div>
                 <div class="ix-recipe-card">
                     <div class="ix-recipe-img-wrap">
-                        <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto,w_320,h_320,c_fill/jordan-mansaf.jpg" alt="المنسف" loading="lazy">
-                        <button class="ix-recipe-save" onclick="saveItem('recipe','jordan-mansaf','المنسف','/img/jordan-mansaf.jpg')">🍽️</button>
+                        <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto,w_320,h_320,c_fill/soshe.jpg" alt="سوشي" loading="lazy">
+                        <button class="ix-recipe-save" onclick="saveItem('recipe','sushi','سوشي – Sushi','https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/سوشي.jpg')">🍽️</button>
                     </div>
                     <div class="ix-recipe-body">
-                        <p class="ix-recipe-name">المنسف – Mansaf</p>
-                        <a href="/recipes/recipes.html?recipe=jordan-mansaf" class="ix-recipe-link">الوصفة</a>
+                        <p class="ix-recipe-name">سوشي – Sushi</p>
+                        <a href="/recipes/recipes.html?recipe=sushi" class="ix-recipe-link">الوصفة</a>
                     </div>
                 </div>
                 <div class="ix-recipe-card">
                     <div class="ix-recipe-img-wrap">
-                        <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto,w_320,h_320,c_fill/jordan-kunafa.jpg" alt="كنافة نابلسية" loading="lazy">
-                        <button class="ix-recipe-save" onclick="saveItem('recipe','jordan-kunafa','كنافة نابلسية','/img/jordan-kunafa.jpg')">🍽️</button>
+                        <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto,w_320,h_320,c_fill/Neapolitan-Pizza.webp" alt="بيتزا نابوليتانا" loading="lazy">
+                        <button class="ix-recipe-save" onclick="saveItem('recipe','neapolitan-pizza','بيتزا نابوليتانا – Neapolitan Pizza','https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/Neapolitan-Pizza.webp')">🍽️</button>
                     </div>
                     <div class="ix-recipe-body">
-                        <p class="ix-recipe-name">كنافة نابلسية</p>
-                        <a href="/recipes/recipes.html?recipe=jordan-kunafa" class="ix-recipe-link">الوصفة</a>
+                        <p class="ix-recipe-name">بيتزا نابوليتانا</p>
+                        <a href="/recipes/recipes.html?recipe=neapolitan-pizza" class="ix-recipe-link">الوصفة</a>
                     </div>
                 </div>
                 <div class="ix-recipe-card">
                     <div class="ix-recipe-img-wrap">
-                        <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto,w_320,h_320,c_fill/lebanon-fattoush.jpg" alt="فتوش" loading="lazy">
-                        <button class="ix-recipe-save" onclick="saveItem('recipe','lebanon-fattoush','فتوش','/img/lebanon-fattoush.jpg')">🍽️</button>
+                        <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto,w_320,h_320,c_fill/Butter_Chicken.jpg" alt="زبدة الدجاج" loading="lazy">
+                        <button class="ix-recipe-save" onclick="saveItem('recipe','butter-chicken','زبدة الدجاج – Butter Chicken','https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/Butter_Chicken.jpg')">🍽️</button>
                     </div>
                     <div class="ix-recipe-body">
-                        <p class="ix-recipe-name">فتوش – Fattoush</p>
-                        <a href="/recipes/recipes.html?recipe=lebanon-fattoush" class="ix-recipe-link">الوصفة</a>
+                        <p class="ix-recipe-name">زبدة الدجاج – Butter Chicken</p>
+                        <a href="/recipes/recipes.html?recipe=butter-chicken" class="ix-recipe-link">الوصفة</a>
                     </div>
                 </div>
                 <div class="ix-recipe-card">
                     <div class="ix-recipe-img-wrap">
-                        <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto,w_320,h_320,c_fill/v1793529536/Harees_bahrain.jpg" alt="الهريس البحريني" loading="lazy">
-                        <button class="ix-recipe-save" onclick="saveItem('recipe','bahrain-harees','الهريس البحريني','/img/Harees_bahrain.jpg')">🍽️</button>
+                        <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto,w_320,h_320,c_fill/v1794008243/Paella.jpg" alt="باييا" loading="lazy">
+                        <button class="ix-recipe-save" onclick="saveItem('recipe','paella','باييا – Paella','https://res.cloudinary.com/dqe6mmkzz/image/upload/v1794008243/Paella.jpg')">🍽️</button>
                     </div>
                     <div class="ix-recipe-body">
-                        <p class="ix-recipe-name">الهريس البحريني – Harees</p>
-                        <a href="/recipes/recipes.html?recipe=bahrain-harees" class="ix-recipe-link">الوصفة</a>
+                        <p class="ix-recipe-name">باييا – Paella</p>
+                        <a href="/recipes/recipes.html?recipe=paella" class="ix-recipe-link">الوصفة</a>
                     </div>
                 </div>
                 <div class="ix-recipe-card">
                     <div class="ix-recipe-img-wrap">
-                        <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto,w_320,h_320,c_fill/v1792071915/Yemeni_Mandi.jpg" alt="مندي يمني" loading="lazy">
-                        <button class="ix-recipe-save" onclick="saveItem('recipe','yemen-mandi','مندي يمني','/img/Yemeni_Mandi.jpg')">🍽️</button>
+                        <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto,w_320,h_320,c_fill/Tacos.jpg" alt="تاكو" loading="lazy">
+                        <button class="ix-recipe-save" onclick="saveItem('recipe','tacos','تاكو – Tacos','https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/Tacos.jpg')">🍽️</button>
                     </div>
                     <div class="ix-recipe-body">
-                        <p class="ix-recipe-name">مندي يمني – Yemeni Mandi</p>
-                        <a href="/recipes/recipes.html?recipe=yemen-mandi" class="ix-recipe-link">الوصفة</a>
+                        <p class="ix-recipe-name">تاكو – Tacos</p>
+                        <a href="/recipes/recipes.html?recipe=tacos" class="ix-recipe-link">الوصفة</a>
                     </div>
                 </div>
             </div>
@@ -336,7 +341,7 @@
             <h2 class="ix-section-title">فعاليات <span>قادمة</span></h2>
             <a href="/events/events.html" class="ix-see-all">عرض الكل ←</a>
         </div>
-        <div class="ix-events-grid">
+        <div class="ix-events-grid" id="ixEventsGrid">
             <a href="/events/events.html?event=sodh" class="ix-event-card">
                 <div class="ix-event-img">
                     <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto,w_600,h_337,c_fill/السوده.webp" alt="موسم السودة" loading="lazy">
