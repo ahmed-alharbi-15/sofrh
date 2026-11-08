@@ -1615,3 +1615,43 @@ input {
         transition: none;
     }
 }
+
+/* ==================== وضع ليلي — الصفحة الرئيسية ==================== */
+
+[data-theme="dark"] .ix-hero-text h1 { color: #fff !important; }
+[data-theme="dark"] .ix-hero-text h1 span { color: #F28500 !important; }
+[data-theme="dark"] .ix-hero-text > p { color: rgba(255, 255, 255, 0.65) !important; }
+[data-theme="dark"] .ix-hero-search button { background: #F28500 !important; color: #fff !important; }
+[data-theme="dark"] .ix-hero-search button:hover { background: #d97200 !important; }
+[data-theme="dark"] .ix-hero-search input { background: rgba(255, 255, 255, 0.1) !important; border-color: rgba(255, 255, 255, 0.2) !important; color: #fff !important; }
+[data-theme="dark"] .ix-hero-search input:focus { border-color: #F28500 !important; }
+[data-theme="dark"] .ix-hero-search input::placeholder { color: rgba(255, 255, 255, 0.45) !important; }
+[data-theme="dark"] .ix-quick-link { color: rgba(255, 255, 255, 0.85) !important; border-color: rgba(255, 255, 255, 0.2) !important; background: rgba(255, 255, 255, 0.06) !important; }
+[data-theme="dark"] .ix-quick-link:hover { color: #F28500 !important; border-color: rgba(242, 133, 0, 0.5) !important; background: rgba(242, 133, 0, 0.2) !important; }
+
+[data-theme="dark"] .ix-see-all { color: #F28500 !important; }
+
+[data-theme="dark"] .ix-featured-info h3 { color: #fff !important; }
+[data-theme="dark"] .ix-featured-info p { color: rgba(255, 255, 255, 0.7) !important; }
+[data-theme="dark"] .ix-featured-btn { background: #F28500 !important; color: #fff !important; }
+[data-theme="dark"] .ix-featured-badge { background: rgba(242, 133, 0, 0.92) !important; color: #fff !important; }
+
+[data-theme="dark"] .ix-dot { background: rgba(255, 255, 255, 0.3) !important; }
+[data-theme="dark"] .ix-dot.ix-dot-active { background: #F28500 !important; }
+
+[data-theme="dark"] .ix-dest-info h3 { color: #fff !important; }
+[data-theme="dark"] .ix-dest-info p { color: rgba(255, 255, 255, 0.65) !important; }
+[data-theme="dark"] .ix-dest-btn { background: rgba(242, 133, 0, 0.9) !important; color: #fff !important; }
+
+[data-theme="dark"] .ix-recipe-name { color: #FAF5EB !important; }
+[data-theme="dark"] .ix-recipe-save { background: rgba(0, 0, 0, 0.6) !important; }
+
+[data-theme="dark"] .ix-event-title { color: #FAF5EB !important; }
+[data-theme="dark"] .ix-event-location { color: rgba(250, 245, 235, 0.65) !important; }
+[data-theme="dark"] .ix-event-btn { background: #F28500 !important; color: #fff !important; }
+[data-theme="dark"] .ix-event-date { background: rgba(50, 18, 122, 0.88) !important; color: #fff !important; }
+
+[data-theme="dark"] .ix-cta-inner h2 { color: #fff !important; }
+[data-theme="dark"] .ix-cta-inner p { color: rgba(255, 255, 255, 0.65) !important; }
+[data-theme="dark"] .ix-cta-primary { background: #F28500 !important; color: #fff !important; }
+[data-theme="dark"] .ix-cta-secondary { color: rgba(255, 255, 255, 0.85) !important; border-color: rgba(255, 255, 255, 0.3) !important; background: transparent !important; }
