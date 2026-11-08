@@ -66,6 +66,8 @@ async function fetchHomeData() {
         const [countriesRaw, statesRaw] = await Promise.all([
             fetch(API_BASE + "/countries").then(r => r.json()),
             fetch(API_BASE + "/country-states").then(r => r.json()),
+            window.SAFRA_EVENTS_READY  || Promise.resolve(),
+            window.SAFRA_RECIPES_READY || Promise.resolve()
         ]);
         const countries = countriesRaw
             .filter(c => c.slug)
@@ -184,7 +186,7 @@ function updateDestGrid(countries) {
     if (!grid) return;
     grid.innerHTML = countries.map(c =>
         '<a href="/countries/country/' + c.continent + '/' + c.id + '.html" class="ix-dest-card">' +
-        '<img src="' + escH(gridSrc(c.img)) + '" alt="' + escH(c.name) + '" loading="lazy">' +
+        (c.img ? '<img src="' + escH(gridSrc(c.img)) + '" alt="' + escH(c.name) + '" loading="lazy">' : '') +
         '<div class="ix-dest-overlay"></div>' +
         '<div class="ix-dest-info">' +
         '<h3>' + escH(c.name) + '</h3>' +
@@ -219,7 +221,7 @@ function updateRecipes(recipes) {
     scroll.innerHTML = recipes.map(r =>
         '<div class="ix-recipe-card">' +
         '<div class="ix-recipe-img-wrap">' +
-        '<img src="' + escH(recipeSrc(r.img)) + '" alt="' + escH(r.title) + '" loading="lazy">' +
+        (r.img ? '<img src="' + escH(recipeSrc(r.img)) + '" alt="' + escH(r.title) + '" loading="lazy">' : '') +
         '<button class="ix-recipe-save" onclick="saveItem(\'recipe\',\'' + escJS(r.id) + '\',\'' + escJS(r.title) + '\',\'' + escJS(r.img) + '\')">\uD83C\uDF7D\uFE0F</button>' +
         '</div>' +
         '<div class="ix-recipe-body">' +
@@ -275,7 +277,7 @@ function updateEvents(events) {
     grid.innerHTML = events.map(e =>
         '<a href="/events/events.html?event=' + encodeURIComponent(e.id) + '" class="ix-event-card">' +
         '<div class="ix-event-img">' +
-        '<img src="' + escH(eventSrc(e.img)) + '" alt="' + escH(e.title) + '" loading="lazy">' +
+        (e.img ? '<img src="' + escH(eventSrc(e.img)) + '" alt="' + escH(e.title) + '" loading="lazy">' : '') +
         '<span class="ix-event-date">' + escH(e.date) + '</span>' +
         '</div>' +
         '<div class="ix-event-body">' +
