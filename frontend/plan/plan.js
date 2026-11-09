@@ -5,27 +5,6 @@ if (!planUser) {
 
 document.addEventListener("DOMContentLoaded", () => {
 
-        // ===== القائمة الجانبية =====
-        const menuBtn = document.getElementById("menu-btn");
-        const sideMenu = document.getElementById("side-menu");
-        const closeBtn = document.getElementById("close-btn");
-        if (menuBtn && sideMenu && closeBtn) {
-                menuBtn.addEventListener("click", () => {
-                        sideMenu.style.right = "0px";
-                        requestAnimationFrame(() => sideMenu.classList.add("menu-open"));
-                });
-                closeBtn.addEventListener("click", () => {
-                        sideMenu.style.right = "-260px";
-                        sideMenu.classList.remove("menu-open");
-                });
-                document.addEventListener("click", (e) => {
-                        if (!sideMenu.contains(e.target) && !menuBtn.contains(e.target)) {
-                                sideMenu.style.right = "-260px";
-                                sideMenu.classList.remove("menu-open");
-                        }
-                });
-        }
-
         // ===== أسماء القارات بالعربي (للعرض) =====
         const continentNames = {
                 asia: "آسيا",

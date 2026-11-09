@@ -276,26 +276,34 @@ function resolveImg(src) {
 
 // --- 9. القائمة الجانبية ---
 if (typeof menuBtn === 'undefined') {
-    var menuBtn = document.getElementById("menu-btn");
+    var menuBtn  = document.getElementById("menu-btn");
     var sideMenu = document.getElementById("side-menu");
     var closeBtn = document.getElementById("close-btn");
 }
 
 if (menuBtn && sideMenu && closeBtn) {
-    menuBtn.addEventListener("click", () => {
-        sideMenu.style.right = "0px";
+    var menuOverlay = document.createElement('div');
+    menuOverlay.id = 'menuOverlay';
+    document.body.appendChild(menuOverlay);
+
+    function openMenu() {
         sideMenu.classList.add("menu-open");
-    });
-    closeBtn.addEventListener("click", () => {
-        sideMenu.style.right = "-260px";
+        menuOverlay.classList.add("active");
+        document.body.style.overflow = "hidden";
+    }
+    function closeMenu() {
         sideMenu.classList.remove("menu-open");
+        menuOverlay.classList.remove("active");
+        document.body.style.overflow = "";
+    }
+
+    menuBtn.addEventListener("click",  function(e) { e.stopPropagation(); openMenu(); });
+    closeBtn.addEventListener("click", function(e) { e.stopPropagation(); closeMenu(); });
+    menuOverlay.addEventListener("click", closeMenu);
+    document.addEventListener("click", function(e) {
+        if (!sideMenu.contains(e.target) && !menuBtn.contains(e.target)) closeMenu();
     });
-    document.addEventListener("click", (e) => {
-        if (!sideMenu.contains(e.target) && !menuBtn.contains(e.target)) {
-            sideMenu.style.right = "-260px";
-            sideMenu.classList.remove("menu-open");
-        }
-    });
+    document.addEventListener("keydown", function(e) { if (e.key === "Escape") closeMenu(); });
 }
 
 // --- 10. الوضع الليلي (Dark Mode) ---

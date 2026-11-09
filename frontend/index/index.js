@@ -1,19 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    const menuBtn    = document.getElementById("menu-btn");
-    const sideMenu   = document.getElementById("side-menu");
-    const closeBtn   = document.getElementById("close-btn");
     const userMenu   = document.getElementById("userMenu");
     const userAvatar = document.getElementById("userAvatar");
 
-    if (!menuBtn || !sideMenu || !closeBtn || !userMenu || !userAvatar) return;
+    if (!userMenu || !userAvatar) return;
 
-    menuBtn.addEventListener("click",  (e) => { e.stopPropagation(); sideMenu.style.right = "0px"; });
-    closeBtn.addEventListener("click", (e) => { e.stopPropagation(); sideMenu.style.right = "-260px"; });
-    sideMenu.addEventListener("click", (e) => { e.stopPropagation(); });
     userAvatar.addEventListener("click", (e) => { e.stopPropagation(); userMenu.classList.toggle("active"); });
     userMenu.addEventListener("click",   (e) => { e.stopPropagation(); });
-    document.addEventListener("click",  () => { sideMenu.style.right = "-260px"; userMenu.classList.remove("active"); });
+    document.addEventListener("click",  () => { userMenu.classList.remove("active"); });
 
     const heroForm  = document.getElementById("ixHeroSearchForm");
     const heroInput = document.getElementById("ixHeroSearchInput");

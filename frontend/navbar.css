@@ -2,6 +2,8 @@
 
 :root { --nb-h: 72px; }
 
+html, body { overflow-x: clip; }
+
 body { padding-top: var(--nb-h) !important; }
 
 .logo img { height: 40px; width: auto; }
@@ -131,13 +133,44 @@ html.logged-in .user-menu         { display: flex !important; }
 .side-menu {
     display: none;
     position: fixed;
-    top: 0; right: -260px;
-    width: 260px; height: 100%;
+    inset-block: 0;
+    inset-inline-end: 0;
+    width: 260px;
+    max-width: 85vw;
     background: #32127A;
     padding-top: calc(var(--nb-h) + 10px);
-    transition: right .4s ease;
+    transform: translateX(100%);
+    visibility: hidden;
+    pointer-events: none;
+    transition: transform .4s ease, visibility 0s .4s;
     z-index: 9999;
-    overflow: hidden;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.side-menu.menu-open {
+    transform: translateX(0);
+    visibility: visible;
+    pointer-events: auto;
+    transition: transform .4s ease, visibility 0s;
+}
+
+#menuOverlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 9998;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity .4s ease, visibility 0s .4s;
+}
+
+#menuOverlay.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transition: opacity .4s ease, visibility 0s;
 }
 
 .side-menu::before {
