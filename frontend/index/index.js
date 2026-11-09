@@ -48,10 +48,42 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     fetchHomeData();
+    fetchSiteImages();
 });
 
 const API_BASE   = "https://sofrh-1.onrender.com";
 const CACHE_VER  = "v5";
+const SI_CACHE_K = "sfr_siteimages_v1";
+
+// ── صور الكروت الأربعة على الرئيسية ──────────────────────────────────────
+function applySiteImages(images) {
+    // images = { home_countries, home_events, home_recipes, home_plan }
+    document.querySelectorAll('[data-key]').forEach(section => {
+        const key = section.dataset.key;
+        const url = images[key];
+        if (!url) return;
+        // ضع الصورة كخلفية للقسم (layered فوق اللون الموجود)
+        section.style.setProperty('--si-bg', `url('${url}')`);
+        section.classList.add('si-override');
+    });
+}
+
+async function fetchSiteImages() {
+    // no-flash: طبّق الكاش فوراً
+    try {
+        const cached = JSON.parse(localStorage.getItem(SI_CACHE_K) || 'null');
+        if (cached) applySiteImages(cached);
+    } catch (_) {}
+
+    // جيب من API وحدّث
+    try {
+        const res = await fetch(API_BASE + "/site-images");
+        if (!res.ok) return;
+        const images = await res.json();
+        try { localStorage.setItem(SI_CACHE_K, JSON.stringify(images)); } catch(_) {}
+        applySiteImages(images);
+    } catch (_) { /* لو فشل يبقى الأصلي */ }
+}
 
 function normalize(s) {
     return String(s).toLowerCase().replace(/[\s\-_]/g, "");

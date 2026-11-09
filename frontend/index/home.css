@@ -1655,3 +1655,21 @@ input {
 [data-theme="dark"] .ix-cta-inner p { color: rgba(255, 255, 255, 0.65) !important; }
 [data-theme="dark"] .ix-cta-primary { background: #F28500 !important; color: #fff !important; }
 [data-theme="dark"] .ix-cta-secondary { color: rgba(255, 255, 255, 0.85) !important; border-color: rgba(255, 255, 255, 0.3) !important; background: transparent !important; }
+
+/* ── صور الكروت المخصصة من الأدمن ───────────────────────────────────────── */
+.si-override {
+    position: relative;
+    overflow: hidden;
+}
+.si-override::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: var(--si-bg);
+    background-size: cover;
+    background-position: center;
+    opacity: 0.18;
+    pointer-events: none;
+    z-index: 0;
+}
+.si-override > * { position: relative; z-index: 1; }

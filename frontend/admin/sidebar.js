@@ -4,6 +4,7 @@
             group: 'المحتوى',
             items: [
                 { id: 'nav-countries-status', label: 'حالة الدول',  icon: '🌍', section: 'section-countries' },
+                { id: 'nav-site-images',       label: 'صور الرئيسية', icon: '🖼️', section: 'section-site-images' },
                 { id: 'nav-editor-events',    label: 'الفعاليات',   icon: '🎪', section: 'section-editor',    tab: 'events'    },
                 { id: 'nav-editor-recipes',   label: 'الوصفات',     icon: '🍽️', section: 'section-editor',    tab: 'recipes'   },
                 { id: 'nav-editor-cities',    label: 'المدن',       icon: '🏙️', section: 'section-editor',    tab: 'cities'    },
@@ -19,7 +20,7 @@
         }
     ];
 
-    const ALL_SECTIONS = ['section-countries', 'section-editor', 'section-admins', 'section-users'];
+    const ALL_SECTIONS = ['section-countries', 'section-site-images', 'section-editor', 'section-admins', 'section-users'];
 
     function buildSidebar() {
         const wrap = document.getElementById('admin-sidebar-wrap');

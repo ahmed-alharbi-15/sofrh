@@ -53,6 +53,7 @@ async function loadPanel() {
         updateStats();
         loadAdminList();
         initEditor();
+        loadSiteImages();
 
     } catch (e) {
         showToast('خطأ في تحميل البيانات', 'error');
@@ -738,3 +739,101 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { threshold: 0.1 });
     obs.observe(section);
 });
+
+
+// ═══════════════════════════════════════════════════════════════════════════
+// 🖼️  صور الرئيسية (site_images)
+// ═══════════════════════════════════════════════════════════════════════════
+
+const SITE_IMAGE_LABELS = {
+    home_countries: '🌍 قسم الدول',
+    home_events:    '🎪 قسم الفعاليات',
+    home_recipes:   '🍽️ قسم الوصفات',
+    home_plan:      '🗺️ قسم الخطة'
+};
+
+let siteImages = {};   // { key: image_url | null }
+let siteImagesLoaded = false;
+
+async function loadSiteImages() {
+    if (siteImagesLoaded) return;
+    siteImagesLoaded = true;
+    try {
+        const res = await fetch(`${API}/site-images`);
+        if (!res.ok) throw new Error('فشل تحميل صور الرئيسية');
+        siteImages = await res.json();
+        renderSiteImages();
+    } catch (e) {
+        const grid = document.getElementById('siteImagesGrid');
+        if (grid) grid.innerHTML = `<div class="editor-loading" style="color:red">${e.message}</div>`;
+    }
+}
+
+function renderSiteImages() {
+    const grid = document.getElementById('siteImagesGrid');
+    if (!grid) return;
+    grid.innerHTML = Object.entries(SITE_IMAGE_LABELS).map(([key, label]) => {
+        const url = siteImages[key] || '';
+        return `
+        <div class="si-card" data-key="${key}">
+            <div class="si-card-header">
+                <span class="si-label">${label}</span>
+                ${url ? `<img class="si-preview" src="${url}" alt="${label}" onerror="this.style.display='none'">` : '<div class="si-preview-placeholder">لا توجد صورة</div>'}
+            </div>
+            <div class="si-card-body">
+                <input class="si-url-input" type="url" placeholder="https://..." dir="ltr" value="${url}" data-key="${key}" />
+                <div class="si-card-btns">
+                    <button class="img-save-btn si-save-btn" onclick="saveSiteImage('${key}',this)">حفظ</button>
+                    <button class="img-restore-btn si-restore-btn" onclick="restoreSiteImage('${key}',this)">استرجاع الأصلية</button>
+                </div>
+            </div>
+        </div>`;
+    }).join('');
+}
+
+async function saveSiteImage(key, btn) {
+    const card  = btn.closest('.si-card');
+    const input = card.querySelector('.si-url-input');
+    const url   = input.value.trim();
+
+    if (url && !url.startsWith('https://')) {
+        showToast('الرابط يجب أن يبدأ بـ https://', 'error');
+        return;
+    }
+
+    const allBtns = card.querySelectorAll('.si-save-btn, .si-restore-btn');
+    allBtns.forEach(b => b.disabled = true);
+
+    try {
+        const res = await fetch(`${API}/admin/set-site-image`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ key, image_url: url || null, email: adminEmail })
+        });
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.detail || 'خطأ');
+
+        siteImages[key] = url || null;
+
+        // حدّث المعاينة فوراً
+        const prevEl = card.querySelector('.si-preview, .si-preview-placeholder');
+        if (url) {
+            if (prevEl) prevEl.outerHTML = `<img class="si-preview" src="${url}" alt="" onerror="this.style.display='none'">`;
+        } else {
+            if (prevEl) prevEl.outerHTML = '<div class="si-preview-placeholder">لا توجد صورة</div>';
+        }
+
+        showToast(url ? `تم حفظ صورة ${key}` : `تم استرجاع الأصلية — ${key}`, 'success');
+    } catch (e) {
+        showToast(e.message, 'error');
+    } finally {
+        allBtns.forEach(b => b.disabled = false);
+    }
+}
+
+async function restoreSiteImage(key, btn) {
+    const card  = btn.closest('.si-card');
+    const input = card.querySelector('.si-url-input');
+    input.value = '';
+    await saveSiteImage(key, btn);
+}

@@ -154,6 +154,15 @@ def create_tables():
             UNIQUE(card_type, card_id)
         );
     """)
+    # جدول صور الرئيسية — مفاتيح ثابتة يتحكم فيها الأدمن
+    cur.execute("""
+        CREATE TABLE IF NOT EXISTS site_images (
+            key         TEXT PRIMARY KEY,
+            image_url   TEXT,
+            updated_by  TEXT,
+            updated_at  TIMESTAMP DEFAULT NOW()
+        );
+    """)
     conn.commit()
 
     # منح صلاحية الأدمن تلقائياً للإيميلات المحددة
@@ -535,6 +544,12 @@ class SetCountryImage(BaseModel):
     email: str
 
 
+class SetSiteImage(BaseModel):
+    key:       str               # home_countries | home_events | home_recipes | home_plan
+    image_url: Optional[str] = None
+    email:     str
+
+
 class SetAdmin(BaseModel):
     email: str        # إيميل المستخدم المراد منحه صلاحية الأدمن
     admin_email: str  # إيميل الأدمن الحالي للتحقق من صلاحيته
@@ -778,6 +793,60 @@ def set_country_image(data: SetCountryImage):
         """, (data.id, img_val, data.email))
         conn.commit()
         return {"status": "success", "id": data.id, "image_url": img_val}
+    except HTTPException as he:
+        raise he
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+    finally:
+        cur.close()
+        conn.close()
+
+
+@app.get("/site-images")
+def get_site_images():
+    """يرجع صور الكروت الأربعة على الرئيسية — {key: image_url}"""
+    VALID_KEYS = ('home_countries', 'home_events', 'home_recipes', 'home_plan')
+    conn = get_db_connection()
+    cur  = conn.cursor()
+    try:
+        cur.execute("SELECT key, image_url FROM site_images WHERE key = ANY(%s)", (list(VALID_KEYS),))
+        result = {k: None for k in VALID_KEYS}
+        for row in cur.fetchall():
+            result[row[0]] = row[1]
+        return result
+    finally:
+        cur.close()
+        conn.close()
+
+
+@app.post("/admin/set-site-image")
+def set_site_image(data: SetSiteImage):
+    """يحدّث image_url لمفتاح صورة رئيسية — محمي بـ is_admin"""
+    VALID_KEYS = ('home_countries', 'home_events', 'home_recipes', 'home_plan')
+    if data.key not in VALID_KEYS:
+        raise HTTPException(status_code=400, detail=f"مفتاح غير صحيح — المسموح: {VALID_KEYS}")
+    if data.image_url and not data.image_url.startswith("https://"):
+        raise HTTPException(status_code=400, detail="image_url يجب أن يبدأ بـ https://")
+
+    conn = get_db_connection()
+    cur  = conn.cursor()
+    try:
+        cur.execute("SELECT is_admin FROM users WHERE email = %s", (data.email,))
+        row = cur.fetchone()
+        if not row or not row[0]:
+            raise HTTPException(status_code=403, detail="ليس لديك صلاحية")
+
+        img_val = data.image_url if data.image_url else None
+        cur.execute("""
+            INSERT INTO site_images (key, image_url, updated_by)
+            VALUES (%s, %s, %s)
+            ON CONFLICT (key) DO UPDATE
+                SET image_url  = EXCLUDED.image_url,
+                    updated_by = EXCLUDED.updated_by,
+                    updated_at = NOW()
+        """, (data.key, img_val, data.email))
+        conn.commit()
+        return {"status": "success", "key": data.key, "image_url": img_val}
     except HTTPException as he:
         raise he
     except Exception as e:
