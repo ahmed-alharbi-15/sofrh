@@ -4502,5 +4502,33 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         renderTicketStub();
+
+        // ── تطبيق صور الدول من /countries/status (مصدر موحد) ──────────────────
+        (async function applyPlanImages() {
+            const SOON    = 'https://res.cloudinary.com/dqe6mmkzz/image/upload/v1792593486/soon.png';
+            const UPGRADE = 'https://res.cloudinary.com/dqe6mmkzz/image/upload/v1793163185/Upgrade.jpg';
+            const API     = 'https://sofrh-1.onrender.com';
+            try {
+                const res = await fetch(`${API}/countries/status`);
+                if (!res.ok) return;
+                const list = await res.json();
+                const imgMap = {};
+                list.forEach(item => {
+                    // أولوية: coming_soon → soon.png، in_development → Upgrade.jpg، image_url → مخصصة
+                    if (item.status === 'coming_soon') {
+                        imgMap[item.id] = SOON;
+                    } else if (item.status === 'in_development') {
+                        imgMap[item.id] = UPGRADE;
+                    } else if (item.image_url) {
+                        imgMap[item.id] = item.image_url;
+                    }
+                });
+                // حدّث countries array في الذاكرة (بدون تغيير المصفوفة الأصلية)
+                countries.forEach(c => {
+                    if (imgMap[c.id]) c.img = imgMap[c.id];
+                });
+            } catch (_) { /* لو الـ API فشل، تستخدم img الموجودة */ }
+        })();
+
         showStep(1);
 });

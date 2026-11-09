@@ -324,7 +324,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-// ── تطبيق حالة الدول (3 حالات) — يقرأ من /country-states ───────────────────
+// ── تطبيق حالة الدول وصورها — يقرأ من /countries/status ──────────────────
 (async function applyCountryStatuses() {
     if (!document.querySelector('.country-card')) return;
 
@@ -332,44 +332,69 @@ document.addEventListener('DOMContentLoaded', () => {
     const UPGRADE = 'https://res.cloudinary.com/dqe6mmkzz/image/upload/v1793163185/Upgrade.jpg';
     const API     = 'https://sofrh-1.onrender.com';
 
+    // بناء map: { countryId → {status, image_url} }
+    let statusMap = {};
     try {
-        const res = await fetch(`${API}/country-states`);
-        const statuses = res.ok ? await res.json() : {};
-
-        document.querySelectorAll('.country-card').forEach(card => {
-            const onclick = card.getAttribute('onclick') || '';
-            const idMatch = onclick.match(/\/([^/]+)\.html/);
-            if (!idMatch) return;
-            const cid    = idMatch[1];
-            const status = statuses[cid] || (card.classList.contains('coming-soon') ? 'coming_soon' : 'active');
-            const img    = card.querySelector('img');
-
-            if (status === 'coming_soon') {
-                card.classList.add('coming-soon');
-                card.classList.remove('in-development');
-                card.style.pointerEvents = 'none';
-                if (img) img.src = SOON;
-
-            } else if (status === 'in_development') {
-                card.classList.add('in-development');
-                card.classList.remove('coming-soon');
-                card.style.pointerEvents = 'none';
-                if (img) img.src = UPGRADE;
-
-            } else {
-                card.classList.remove('coming-soon', 'in-development');
-                card.style.pointerEvents = '';
-            }
-        });
-
-        const grid = document.querySelector('.countries-grid');
-        if (grid) {
-            const allCards = Array.from(grid.children).filter(el => el.classList.contains('country-card'));
-            const active = allCards.filter(c => !c.classList.contains('coming-soon') && !c.classList.contains('in-development'));
-            const inactive = allCards.filter(c => c.classList.contains('coming-soon') || c.classList.contains('in-development'));
-            [...active, ...inactive].forEach(c => grid.appendChild(c));
+        const res = await fetch(`${API}/countries/status`);
+        if (res.ok) {
+            const list = await res.json();
+            list.forEach(item => { statusMap[item.id] = item; });
         }
+    } catch (_) { /* لو الـ API فشل، الصور تبقى كما هي */ }
 
-    } catch (_) { /* silent fail */ }
+    document.querySelectorAll('.country-card').forEach(card => {
+        const onclick = card.getAttribute('onclick') || '';
+        const idMatch = onclick.match(/\/([^/]+)\.html/);
+        if (!idMatch) return;
+        const cid  = idMatch[1];
+        const info = statusMap[cid];
+        const status = info?.status || (card.classList.contains('coming-soon') ? 'coming_soon' : 'active');
+        const img  = card.querySelector('img');
+
+        if (status === 'coming_soon') {
+            card.classList.add('coming-soon');
+            card.classList.remove('in-development');
+            card.style.pointerEvents = 'none';
+            if (img) img.src = SOON;
+
+        } else if (status === 'in_development') {
+            card.classList.add('in-development');
+            card.classList.remove('coming-soon');
+            card.style.pointerEvents = 'none';
+            if (img) img.src = UPGRADE;
+
+        } else {
+            // active — طبّق image_url المخصصة إن وُجدت
+            card.classList.remove('coming-soon', 'in-development');
+            card.style.pointerEvents = '';
+            if (info?.image_url && img) {
+                img.src = info.image_url;
+                // حدّث data-img حتى تستخدمها index.js وsaveItem بشكل صحيح
+                img.dataset.img = info.image_url;
+                // حدّث data-img على الكرت نفسه (لو استُخدمت)
+                card.dataset.img = info.image_url;
+                // حدّث onclick لـ save-btn إن وُجد
+                const saveBtn = card.querySelector('.save-btn');
+                if (saveBtn) {
+                    const onclick2 = saveBtn.getAttribute('onclick') || '';
+                    // استبدل الصورة في saveItem('country','id','name','/img/...')
+                    const fixed = onclick2.replace(
+                        /saveItem\(([^,]+,[^,]+,[^,]+,)[^)]+\)/,
+                        (_, prefix) => `saveItem(${prefix}'${info.image_url}')`
+                    );
+                    if (fixed !== onclick2) saveBtn.setAttribute('onclick', fixed);
+                }
+            }
+        }
+    });
+
+    // رتّب: النشطة أولاً ثم المخفية
+    const grid = document.querySelector('.countries-grid');
+    if (grid) {
+        const allCards = Array.from(grid.children).filter(el => el.classList.contains('country-card'));
+        const active   = allCards.filter(c => !c.classList.contains('coming-soon') && !c.classList.contains('in-development'));
+        const inactive = allCards.filter(c =>  c.classList.contains('coming-soon') ||  c.classList.contains('in-development'));
+        [...active, ...inactive].forEach(c => grid.appendChild(c));
+    }
 })();
 

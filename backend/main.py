@@ -129,6 +129,10 @@ def create_tables():
             updated_at  TIMESTAMP DEFAULT NOW()
         );
     """)
+    # migration آمن: image_url لصورة الدولة المخصصة من الأدمن
+    cur.execute("""
+        ALTER TABLE country_status ADD COLUMN IF NOT EXISTS image_url TEXT;
+    """)
     # انقل البيانات القديمة تلقائياً
     cur.execute("""
         INSERT INTO country_status (country_id, status, updated_by, updated_at)
@@ -525,6 +529,12 @@ class SetCountryStatus(BaseModel):
     status: str       # active | coming_soon | in_development
     email: str
 
+class SetCountryImage(BaseModel):
+    id: str
+    image_url: Optional[str] = None   # فاضي/null = استرجاع الأصلية
+    email: str
+
+
 class SetAdmin(BaseModel):
     email: str        # إيميل المستخدم المراد منحه صلاحية الأدمن
     admin_email: str  # إيميل الأدمن الحالي للتحقق من صلاحيته
@@ -711,6 +721,71 @@ def get_country_states():
     finally:
         cur.close()
         conn.close()
+
+@app.get("/countries/status")
+def get_countries_status():
+    """يرجع لكل دولة: id، status، image_url — المصدر الموحد للصور"""
+    conn = get_db_connection()
+    cur = conn.cursor()
+    try:
+        # اقرأ القديم للتوافق
+        result = {}
+        cur.execute("SELECT country_id, is_ready FROM country_ready_overrides")
+        for row in cur.fetchall():
+            cid = row[0]
+            result[cid] = {"id": cid, "status": "active" if row[1] else "coming_soon", "image_url": None}
+        # الجديد يغلب القديم
+        cur.execute("SELECT country_id, status, image_url FROM country_status")
+        for row in cur.fetchall():
+            cid = row[0]
+            if cid in result:
+                result[cid]["status"]    = row[1]
+                result[cid]["image_url"] = row[2]
+            else:
+                result[cid] = {"id": cid, "status": row[1], "image_url": row[2]}
+        return list(result.values())
+    finally:
+        cur.close()
+        conn.close()
+
+
+@app.post("/admin/set-country-image")
+def set_country_image(data: SetCountryImage):
+    """يحدّث image_url لدولة — محمي بـ is_admin"""
+    # تحقق من الرابط إن كان موجوداً
+    if data.image_url and not data.image_url.startswith("https://"):
+        raise HTTPException(status_code=400, detail="image_url يجب أن يبدأ بـ https://")
+
+    conn = get_db_connection()
+    cur = conn.cursor()
+    try:
+        # تحقق من صلاحية الأدمن
+        cur.execute("SELECT is_admin FROM users WHERE email = %s", (data.email,))
+        row = cur.fetchone()
+        if not row or not row[0]:
+            raise HTTPException(status_code=403, detail="ليس لديك صلاحية")
+
+        # image_url فاضي أو None = استرجاع الأصلية
+        img_val = data.image_url if data.image_url else None
+
+        cur.execute("""
+            INSERT INTO country_status (country_id, image_url, updated_by)
+            VALUES (%s, %s, %s)
+            ON CONFLICT (country_id) DO UPDATE
+                SET image_url  = EXCLUDED.image_url,
+                    updated_by = EXCLUDED.updated_by,
+                    updated_at = NOW()
+        """, (data.id, img_val, data.email))
+        conn.commit()
+        return {"status": "success", "id": data.id, "image_url": img_val}
+    except HTTPException as he:
+        raise he
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+    finally:
+        cur.close()
+        conn.close()
+
 
 # ─────────────────────────────────────────────────────────────────────────────
 # Content update endpoint
