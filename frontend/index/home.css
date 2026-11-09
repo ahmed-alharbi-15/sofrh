@@ -1594,6 +1594,7 @@ input {
     padding: 0;
     box-shadow: 0 2px 14px rgba(0, 0, 0, 0.35);
     transition: background 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
+    opacity: 0.9;
 }
 
 .ix-slider-arrow:hover {
