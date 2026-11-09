@@ -41,14 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }, { passive: true });
     }
 
-    const _homeDataP = fetchHomeData();
-    fetchSiteImages();
-    // ── no-flash: طبّق الكاش الفوري ثم حدّث بعد تحميل المحتوى
-    try {
-        const _sic = JSON.parse(sessionStorage.getItem("sfr_sect_imgs_v1") || "null");
-        if (_sic) _homeDataP.then(() => _applySectionImgs(_sic));
-    } catch(_) {}
-    fetchSectionImages(_homeDataP);
+    fetchHomeData();
 });
 
 const API_BASE   = "https://sofrh-1.onrender.com";
@@ -215,6 +208,7 @@ function eventSrc(url)  { return withW(url, "f_auto,q_auto,w_600,h_337,c_fill");
 
 function resolveSrc(src, pageUrl) {
     if (!src) return "";
+    if (/^https?:\/\//.test(src)) return src;
     try { return new URL(src, pageUrl).href; } catch(e) { return src; }
 }
 
@@ -492,7 +486,7 @@ function updateRecipes(recipes) {
     if (!scroll) return;
     scroll.innerHTML = recipes.map(r =>
         "<div class=\"ix-recipe-card\">" +
-        "<div class=\"ix-recipe-img-wrap\">" +
+        "<div class=\"ix-recipe-img-wrap" + (r.img ? "" : " ix-no-img") + "\">" +
         (r.img ? "<img src=\"" + escH(recipeSrc(r.img)) + "\" alt=\"" + escH(r.title) + "\" loading=\"lazy\">" : "") +
         "<button class=\"ix-recipe-save\" onclick=\"saveItem('recipe','" + escJS(r.id) + "','" + escJS(r.title) + "','" + escJS(r.img) + "')\">&#127997;&#65039;</button>" +
         "</div>" +
@@ -548,7 +542,7 @@ function updateEvents(events) {
     if (!grid) return;
     grid.innerHTML = events.map(e =>
         "<a href=\"/events/events.html?event=" + encodeURIComponent(e.id) + "\" class=\"ix-event-card\">" +
-        "<div class=\"ix-event-img\">" +
+        "<div class=\"ix-event-img" + (e.img ? "" : " ix-no-img") + "\">" +
         (e.img ? "<img src=\"" + escH(eventSrc(e.img)) + "\" alt=\"" + escH(e.title) + "\" loading=\"lazy\">" : "") +
         "<span class=\"ix-event-date\">" + escH(e.date) + "</span>" +
         "</div>" +
@@ -568,7 +562,7 @@ function initHomePage(countries) {
     const destC     = pickRandom(countries, 6, sliderIds);
 
     updateDestGrid(destC);
-    updateRecipes(pickDiverseRecipes(6));
-    updateEvents(pickEvents(3));
+    updateRecipes(pickDiverseRecipes(12));
+    updateEvents(pickEvents(6));
     setupHeroRotation(sliderC);
 }
