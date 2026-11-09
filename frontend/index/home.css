@@ -1570,6 +1570,57 @@ input {
     gap: 16px;
 }
 
+.ix-slider-stage {
+    position: relative;
+}
+
+.ix-slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #F28500;
+    border: none;
+    color: #fff;
+    font-size: 19px;
+    line-height: 1;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    box-shadow: 0 2px 14px rgba(0, 0, 0, 0.35);
+    transition: background 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
+}
+
+.ix-slider-arrow:hover {
+    background: #d97200;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.ix-slider-arrow:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+    border-radius: 50%;
+}
+
+/* RTL: right = السابق، left = التالي */
+.ix-arrow-prev { right: 14px; }
+.ix-arrow-next { left: 14px; }
+
+@media (max-width: 480px) {
+    .ix-slider-arrow {
+        width: 36px;
+        height: 36px;
+        font-size: 15px;
+    }
+    .ix-arrow-prev { right: 10px; }
+    .ix-arrow-next { left: 10px; }
+}
+
 .ix-featured-card {
     transition: transform 0.35s ease, opacity 0.4s ease;
 }

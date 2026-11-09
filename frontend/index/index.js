@@ -47,8 +47,14 @@ document.addEventListener("DOMContentLoaded", () => {
         }, { passive: true });
     }
 
-    fetchHomeData();
+    const _homeDataP = fetchHomeData();
     fetchSiteImages();
+    // ── no-flash: طبّق الكاش الفوري ثم حدّث بعد تحميل المحتوى
+    try {
+        const _sic = JSON.parse(sessionStorage.getItem("sfr_sect_imgs_v1") || "null");
+        if (_sic) _homeDataP.then(() => _applySectionImgs(_sic));
+    } catch(_) {}
+    fetchSectionImages(_homeDataP);
 });
 
 const API_BASE   = "https://sofrh-1.onrender.com";
@@ -83,6 +89,116 @@ async function fetchSiteImages() {
         try { localStorage.setItem(SI_CACHE_K, JSON.stringify(images)); } catch(_) {}
         applySiteImages(images);
     } catch (_) { /* لو فشل يبقى الأصلي */ }
+}
+
+// ── صور الكروت من صفحات الأقسام ──────────────────────────────────────────
+function _applySectionImgs(imgs) {
+    // imgs = { countries, events, recipes, plan }
+    Object.entries(imgs).forEach(([key, url]) => {
+        if (!url) return;
+        const sec = document.querySelector(`[data-section="${key}"]`);
+        if (!sec) return;
+        const img = sec.querySelector("img");
+        if (img) {
+            img.src = url;
+        } else {
+            // plan — لا يوجد img: طبّق خلفية شفافة
+            sec.style.setProperty("--si-bg", `url('${url}')`);
+            sec.classList.add("si-override");
+        }
+    });
+}
+
+function _extractCountriesArray(text) {
+    const idx = text.indexOf("const countries");
+    if (idx === -1) return null;
+    const start = text.indexOf("[", idx);
+    if (start === -1) return null;
+    let depth = 0, i = start;
+    while (i < text.length) {
+        const ch = text[i];
+        if (ch === "[" || ch === "{") depth++;
+        else if (ch === "]" || ch === "}") { depth--; if (depth === 0) break; }
+        i++;
+    }
+    try { return JSON.parse(text.slice(start, i + 1)); } catch(_) { return null; }
+}
+
+async function fetchSectionImages(homeDataPromise) {
+    const CACHE_K = "sfr_sect_imgs_v1";
+
+    const imgs = {};
+
+    // جلب الثلاث صفحات وplan.js بالتوازي
+    const [ctrHtml, evHtml, rcHtml, planText] = await Promise.allSettled([
+        fetch("/countries/countries.html").then(r => r.ok ? r.text() : null),
+        fetch("/events/events.html").then(r => r.ok ? r.text() : null),
+        fetch("/recipes/recipes.html").then(r => r.ok ? r.text() : null),
+        fetch("/plan/plan.js").then(r => r.ok ? r.text() : null),
+    ]).then(res => res.map(r => r.status === "fulfilled" ? r.value : null));
+
+    // ── countries: أول .country-card أو data-featured="true" ──────────────
+    if (ctrHtml) {
+        try {
+            const doc = new DOMParser().parseFromString(ctrHtml, "text/html");
+            const baseUrl = window.location.origin + "/countries/countries.html";
+            const featured = doc.querySelector('.country-card[data-featured="true"] img');
+            const first    = doc.querySelector(".country-card img");
+            const el = featured || first;
+            if (el) imgs.countries = new URL(el.getAttribute("src") || "", baseUrl).href;
+        } catch(_) {}
+    }
+
+    // ── events: data-img من أول .event-item أو data-featured="true" ────────
+    if (evHtml) {
+        try {
+            const doc = new DOMParser().parseFromString(evHtml, "text/html");
+            const featured = doc.querySelector('.event-card[data-featured="true"] .event-item')
+                          || doc.querySelector('.event-item[data-featured="true"]');
+            const first    = doc.querySelector(".event-card .event-item");
+            const btn = featured || first;
+            if (btn?.dataset.img) imgs.events = btn.dataset.img;
+        } catch(_) {}
+    }
+
+    // ── recipes: img من أول .foods-card أو data-featured="true" ────────────
+    if (rcHtml) {
+        try {
+            const doc = new DOMParser().parseFromString(rcHtml, "text/html");
+            const baseUrl = window.location.origin + "/recipes/recipes.html";
+            const featCard = doc.querySelector('.foods-card[data-featured="true"]')
+                          || doc.querySelector('.recipes-item[data-featured="true"]')?.closest(".foods-card");
+            const firstCard = doc.querySelector(".foods-card");
+            const card = featCard || firstCard;
+            const btn  = card?.querySelector(".recipes-item");
+            const imgEl = btn?.querySelector("img");
+            if (imgEl) imgs.recipes = new URL(imgEl.getAttribute("src") || "", baseUrl).href;
+            else if (btn?.dataset.img) imgs.recipes = btn.dataset.img;
+        } catch(_) {}
+    }
+
+    // ── plan: أول دولة ready في plan.js ────────────────────────────────────
+    if (planText) {
+        try {
+            const countries = _extractCountriesArray(planText);
+            const first = countries?.find(c => c.ready !== false);
+            if (first?.img) imgs.plan = first.img;
+        } catch(_) {}
+    }
+
+    // حفظ في sessionStorage
+    if (Object.keys(imgs).length) {
+        try { sessionStorage.setItem(CACHE_K, JSON.stringify(imgs)); } catch(_) {}
+    }
+
+    // طبّق بعد تحميل المحتوى الديناميكي
+    if (homeDataPromise) {
+        homeDataPromise.then(() => _applySectionImgs(imgs));
+    } else {
+        _applySectionImgs(imgs);
+    }
+
+    return imgs;
 }
 
 function normalize(s) {
@@ -144,7 +260,8 @@ function parseCountries(html, pageUrl) {
             name:      h1 ? h1.textContent.trim() : (imgEl ? imgEl.getAttribute("alt") || "" : ""),
             desc:      h2 ? h2.textContent.trim() : "",
             img:       resolveSrc(imgEl ? imgEl.getAttribute("src") : "", pageUrl),
-            href:      "/countries/country/" + m[1] + "/" + m[2] + ".html"
+            href:      "/countries/country/" + m[1] + "/" + m[2] + ".html",
+            featured:  card.getAttribute("data-featured") === "true"
         });
     });
     return result;
@@ -244,6 +361,7 @@ function updateFeaturedCard(c) {
 function setupHeroRotation(countries) {
     if (!countries.length) return;
 
+    // preload images
     countries.forEach(c => {
         if (!c.img) return;
         const lnk = document.createElement("link");
@@ -251,45 +369,92 @@ function setupHeroRotation(countries) {
         document.head.appendChild(lnk);
     });
 
-    const dotsEl = document.getElementById("ixHeroDots");
+    const dotsEl  = document.getElementById("ixHeroDots");
+    const card    = document.getElementById("ixFeaturedCard");
+    const wrap    = document.getElementById("ixFeaturedWrap");
+    const prevBtn = document.getElementById("ixSliderPrev");
+    const nextBtn = document.getElementById("ixSliderNext");
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    // dots
     if (dotsEl) {
         dotsEl.innerHTML = countries.map((_, i) =>
             "<button class=\"ix-dot" + (i === 0 ? " ix-dot-active" : "") +
             "\" data-idx=\"" + i + "\" aria-label=\"وجهة " + (i + 1) + "\"></button>"
         ).join("");
         dotsEl.querySelectorAll(".ix-dot").forEach(d => {
-            d.addEventListener("click", () => goTo(+d.dataset.idx));
+            d.addEventListener("click", () => { goTo(+d.dataset.idx); restart(); });
         });
     }
 
-    const card    = document.getElementById("ixFeaturedCard");
-    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    let current   = 0;
-    let timer     = null;
+    // show arrow buttons only when slider has >1 items
+    if (countries.length > 1) {
+        if (prevBtn) prevBtn.style.display = "";
+        if (nextBtn) nextBtn.style.display = "";
+    }
+
+    let current = 0;
+    let timer   = null;
 
     function goTo(idx) {
-        if (idx === current) return;
-        current = idx;
+        const n = countries.length;
+        const target = ((idx % n) + n) % n;
+        if (target === current) return;
+        current = target;
         dotsEl?.querySelectorAll(".ix-dot").forEach((d, i) =>
-            d.classList.toggle("ix-dot-active", i === idx));
+            d.classList.toggle("ix-dot-active", i === current));
         if (!reduced) {
             card?.classList.add("ix-fading");
-            setTimeout(() => { updateFeaturedCard(countries[idx]); card?.classList.remove("ix-fading"); }, 400);
+            setTimeout(() => {
+                updateFeaturedCard(countries[current]);
+                card?.classList.remove("ix-fading");
+            }, 380);
         } else {
-            updateFeaturedCard(countries[idx]);
+            updateFeaturedCard(countries[current]);
         }
     }
 
-    function start() {
-        if (reduced) return;
-        timer = setInterval(() => goTo((current + 1) % countries.length), 6000);
-    }
-    function stop() { clearInterval(timer); timer = null; }
+    function next() { goTo(current + 1); }
+    function prev() { goTo(current - 1); }
 
-    card?.addEventListener("mouseenter",    stop);
-    card?.addEventListener("mouseleave",    start);
-    card?.addEventListener("focusin",       stop);
-    card?.addEventListener("focusout",      start);
+    function start() {
+        if (reduced || countries.length <= 1) return;
+        timer = setInterval(next, 6000);
+    }
+    function stop()    { clearInterval(timer); timer = null; }
+    function restart() { stop(); start(); }
+
+    // arrow buttons — RTL: right = السابق، left = التالي
+    prevBtn?.addEventListener("click", (e) => { e.preventDefault(); prev(); restart(); });
+    nextBtn?.addEventListener("click", (e) => { e.preventDefault(); next(); restart(); });
+
+    // keyboard: السهم الأيمن = السابق، الأيسر = التالي
+    document.addEventListener("keydown", (e) => {
+        const rect = wrap?.getBoundingClientRect();
+        if (!rect || rect.bottom < 0 || rect.top > window.innerHeight) return;
+        if (e.key === "ArrowRight") { e.preventDefault(); prev(); restart(); }
+        else if (e.key === "ArrowLeft") { e.preventDefault(); next(); restart(); }
+    });
+
+    // touch swipe — RTL: سحب لليمين = السابق، سحب لليسار = التالي
+    let touchStartX = 0;
+    wrap?.addEventListener("touchstart", (e) => {
+        touchStartX = e.touches[0].clientX;
+        stop();
+    }, { passive: true });
+    wrap?.addEventListener("touchend", (e) => {
+        const dx = e.changedTouches[0].clientX - touchStartX;
+        if (Math.abs(dx) > 40) {
+            if (dx > 0) prev(); else next();
+        }
+        start();
+    }, { passive: true });
+
+    // mouse pause/resume
+    card?.addEventListener("mouseenter", stop);
+    card?.addEventListener("mouseleave", start);
+    card?.addEventListener("focusin",    stop);
+    card?.addEventListener("focusout",   start);
     document.addEventListener("visibilitychange", () => { document.hidden ? stop() : start(); });
 
     updateFeaturedCard(countries[0]);
@@ -404,12 +569,14 @@ function updateEvents(events) {
 }
 
 function initHomePage(countries) {
-    const heroC   = pickRandom(countries, 5);
-    const heroIds = heroC.map(c => c.id);
-    const destC   = pickRandom(countries, 6, heroIds);
+    // السلايدر: الدول المميزة (data-featured="true") وإلا أول 6 نشطة
+    const featuredC = countries.filter(c => c.featured);
+    const sliderC   = featuredC.length >= 1 ? featuredC : countries.slice(0, 6);
+    const sliderIds = sliderC.map(c => c.id);
+    const destC     = pickRandom(countries, 6, sliderIds);
 
     updateDestGrid(destC);
     updateRecipes(pickDiverseRecipes(6));
     updateEvents(pickEvents(3));
-    setupHeroRotation(heroC);
+    setupHeroRotation(sliderC);
 }

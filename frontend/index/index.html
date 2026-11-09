@@ -182,22 +182,26 @@
                 <a href="/plan/plan.html" class="ix-quick-link">🗺️ خطط رحلتك</a>
             </div>
         </div>
-        <div class="ix-featured-wrap">
-            <a href="/countries/country/asia/saudi.html" class="ix-featured-card" id="ixFeaturedCard">
-                <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto:good,w_1200/Riyadh_Skyline.jpg" alt="السعودية" loading="eager" id="ixFeaturedImg">
-                <div class="ix-featured-overlay"></div>
-                <span class="ix-featured-badge">وجهة مميزة</span>
-                <div class="ix-featured-info">
-                    <h3 id="ixFeaturedName">السعودية – Saudi Arabia</h3>
-                    <p id="ixFeaturedDesc">رحلة تجمع بين التراث والحداثة في قلب الجزيرة العربية</p>
-                    <span class="ix-featured-btn">استكشف</span>
-                </div>
-            </a>
+        <div class="ix-featured-wrap" id="ixFeaturedWrap">
+            <div class="ix-slider-stage">
+                <a href="/countries/country/asia/saudi.html" class="ix-featured-card" id="ixFeaturedCard">
+                    <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto:good,w_1200/Riyadh_Skyline.jpg" alt="السعودية" loading="eager" id="ixFeaturedImg">
+                    <div class="ix-featured-overlay"></div>
+                    <span class="ix-featured-badge">وجهة مميزة</span>
+                    <div class="ix-featured-info">
+                        <h3 id="ixFeaturedName">السعودية – Saudi Arabia</h3>
+                        <p id="ixFeaturedDesc">رحلة تجمع بين التراث والحداثة في قلب الجزيرة العربية</p>
+                        <span class="ix-featured-btn">استكشف</span>
+                    </div>
+                </a>
+                <button type="button" class="ix-slider-arrow ix-arrow-prev" id="ixSliderPrev" aria-label="السابق" style="display:none">❯</button>
+                <button type="button" class="ix-slider-arrow ix-arrow-next" id="ixSliderNext" aria-label="التالي" style="display:none">❮</button>
+            </div>
             <div class="ix-hero-dots" id="ixHeroDots"></div>
         </div>
     </section>
 
-    <section class="ix-destinations" data-key="home_countries">
+    <section class="ix-destinations" data-key="home_countries" data-section="countries">
         <div class="ix-section-header">
             <h2 class="ix-section-title">وين <span>السفرة</span> الجاية؟</h2>
             <a href="/countries/countries.html" class="ix-see-all">عرض الكل ←</a>
@@ -261,7 +265,7 @@
         </div>
     </section>
 
-    <section class="ix-recipes" data-key="home_recipes">
+    <section class="ix-recipes" data-key="home_recipes" data-section="recipes">
         <div class="ix-section-header">
             <h2 class="ix-section-title">نكهات من <span>مطابخ العالم</span></h2>
             <a href="/recipes/recipes.html" class="ix-see-all">عرض الكل ←</a>
@@ -335,7 +339,7 @@
         </div>
     </section>
 
-    <section class="ix-events" data-key="home_events">
+    <section class="ix-events" data-key="home_events" data-section="events">
         <div class="ix-section-header">
             <h2 class="ix-section-title">فعاليات <span>قادمة</span></h2>
             <a href="/events/events.html" class="ix-see-all">عرض الكل ←</a>
@@ -377,7 +381,7 @@
         </div>
     </section>
 
-    <section class="ix-cta" data-key="home_plan">
+    <section class="ix-cta" data-key="home_plan" data-section="plan">
         <div class="ix-cta-inner">
             <div id="ixCtaGuest">
                 <h2>انضم إلى سفرة اليوم</h2>
