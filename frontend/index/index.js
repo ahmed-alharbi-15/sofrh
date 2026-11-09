@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 const API_BASE   = "https://sofrh-1.onrender.com";
-const CACHE_VER  = "v5";
+const CACHE_VER  = "v6";
 const SI_CACHE_K = "sfr_siteimages_v1";
 
 // ── صور الكروت الأربعة على الرئيسية ──────────────────────────────────────
@@ -87,19 +87,12 @@ async function fetchSiteImages() {
 
 // ── صور الكروت من صفحات الأقسام ──────────────────────────────────────────
 function _applySectionImgs(imgs) {
-    // imgs = { countries, events, recipes, plan }
     Object.entries(imgs).forEach(([key, url]) => {
         if (!url) return;
         const sec = document.querySelector(`[data-section="${key}"]`);
         if (!sec) return;
-        const img = sec.querySelector("img");
-        if (img) {
-            img.src = url;
-        } else {
-            // plan — لا يوجد img: طبّق خلفية شفافة
-            sec.style.setProperty("--si-bg", `url('${url}')`);
-            sec.classList.add("si-override");
-        }
+        sec.style.setProperty("--si-bg", `url('${url}')`);
+        sec.classList.add("si-override");
     });
 }
 
@@ -248,12 +241,14 @@ function parseCountries(html, pageUrl) {
         const onclick = card.getAttribute("onclick") || "";
         const m = onclick.match(/\/countries\/country\/([^/]+)\/([^.'"]+)\.html/);
         if (!m) return;
+        const rawSrc = imgEl ? imgEl.getAttribute("src") : "";
+        const isPlaceholder = rawSrc.includes("soon.png") || rawSrc.includes("Upgrade.jpg");
         result.push({
             id:        m[2],
             continent: m[1],
             name:      h1 ? h1.textContent.trim() : (imgEl ? imgEl.getAttribute("alt") || "" : ""),
             desc:      h2 ? h2.textContent.trim() : "",
-            img:       resolveSrc(imgEl ? imgEl.getAttribute("src") : "", pageUrl),
+            img:       isPlaceholder ? "" : resolveSrc(rawSrc, pageUrl),
             href:      "/countries/country/" + m[1] + "/" + m[2] + ".html",
             featured:  card.getAttribute("data-featured") === "true"
         });
@@ -347,7 +342,10 @@ function updateFeaturedCard(c) {
     const desc = document.getElementById("ixFeaturedDesc");
     if (!card) return;
     card.href = c.href;
-    if (img && c.img) { img.src = heroSrc(c.img); img.alt = c.name; }
+    if (img) {
+        if (c.img) { img.src = heroSrc(c.img); img.alt = c.name; img.style.display = ""; }
+        else { img.style.display = "none"; }
+    }
     if (name) name.textContent = c.name;
     if (desc) desc.textContent = c.desc;
 }
@@ -459,7 +457,7 @@ function updateDestGrid(countries) {
     const grid = document.getElementById("ixDestGrid");
     if (!grid) return;
     grid.innerHTML = countries.map(c =>
-        "<a href=\"" + escH(c.href) + "\" class=\"ix-dest-card\">" +
+        "<a href=\"" + escH(c.href) + "\" class=\"ix-dest-card" + (c.img ? "" : " ix-dest-no-img") + "\">" +
         (c.img ? "<img src=\"" + escH(gridSrc(c.img)) + "\" alt=\"" + escH(c.name) + "\" loading=\"lazy\">" : "") +
         "<div class=\"ix-dest-overlay\"></div>" +
         "<div class=\"ix-dest-info\">" +
@@ -563,9 +561,9 @@ function updateEvents(events) {
 }
 
 function initHomePage(countries) {
-    // السلايدر: الدول المميزة (data-featured="true") وإلا أول 6 نشطة
-    const featuredC = countries.filter(c => c.featured);
-    const sliderC   = featuredC.length >= 1 ? featuredC : countries.slice(0, 6);
+    const withImg   = countries.filter(c => c.img);
+    const featuredC = withImg.filter(c => c.featured);
+    const sliderC   = featuredC.length >= 1 ? featuredC : pickRandom(withImg, 8);
     const sliderIds = sliderC.map(c => c.id);
     const destC     = pickRandom(countries, 6, sliderIds);
 
