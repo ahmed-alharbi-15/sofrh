@@ -111,7 +111,7 @@ function renderTable(list) {
             </td>
             <td class="img-cell">
                 <div class="img-cell-inner">
-                    ${curImg ? `<img class="img-preview" src="${curImg}" alt="" onerror="this.style.display='none'">` : '<div class="img-preview-placeholder">—</div>'}
+                    ${curImg ? `<img class="img-preview" src="${curImg}" alt="" onerror="this.style.display='none'">` : '<div class="img-preview-placeholder">لا صورة</div>'}
                     <input class="img-url-input" type="url" placeholder="https://..." dir="ltr" value="${curImg}" data-id="${c.id}" />
                     <div class="img-cell-btns">
                         <button class="img-save-btn"    onclick="saveCountryImage('${c.id}',this)">حفظ</button>
