@@ -928,8 +928,7 @@ async function submitAddContent() {
     const countryId = acVal('ac-country');
     if (!countryId) { showToast('اختر دولة أولاً', 'error'); return; }
 
-    const notice = document.getElementById('ac-backend-notice');
-    const btn    = document.querySelector('.ac-save-btn');
+    const btn = document.querySelector('.ac-save-btn');
     btn.disabled = true; btn.textContent = '…';
 
     let endpoint, payload;
@@ -995,15 +994,12 @@ async function submitAddContent() {
         });
 
         if (res.status === 404 || res.status === 405 || res.status === 422) {
-            notice.style.display = '';
-            notice.innerHTML = `<strong>⚠️ هذا الـ endpoint غير موجود في الباك إند بعد. يلزم إضافته:</strong><br><code>POST ${endpoint.replace(API, '')}</code><pre>${JSON.stringify(payload, null, 2)}</pre>`;
-            showToast('يحتاج endpoint جديد في الباك إند', 'error');
+            _acSetUnavailable();
         } else if (!res.ok) {
             const data = await res.json().catch(() => ({}));
             throw new Error(data.detail || 'خطأ في الحفظ');
         } else {
             const data = await res.json();
-            notice.style.display = 'none';
             showToast('تمت الإضافة بنجاح', 'success');
             _saveAcItem({ type: acType, id: data.id || Date.now(), country: countryId, name: payload.title || payload.name, timestamp: Date.now() });
             renderAcAdded();
@@ -1011,15 +1007,20 @@ async function submitAddContent() {
     } catch (e) {
         const isMissing = e.message.includes('fetch') || e.message.includes('Failed');
         if (isMissing) {
-            notice.style.display = '';
-            notice.innerHTML = `<strong>⚠️ هذا الـ endpoint غير موجود في الباك إند بعد. يلزم إضافته:</strong><br><code>POST ${endpoint.replace(API, '')}</code><pre>${JSON.stringify(payload, null, 2)}</pre>`;
-            showToast('يحتاج endpoint جديد في الباك إند', 'error');
+            _acSetUnavailable();
         } else {
             showToast(e.message, 'error');
         }
     } finally {
         btn.disabled = false; btn.textContent = '➕ حفظ وإضافة';
     }
+}
+
+function _acSetUnavailable() {
+    const n = document.getElementById('ac-unavailable-notice');
+    if (n) n.style.display = '';
+    const btn = document.querySelector('.ac-save-btn');
+    if (btn) btn.disabled = true;
 }
 
 function _saveAcItem(item) {
@@ -1054,7 +1055,7 @@ async function deleteAcItem(id, type) {
     try {
         const res = await fetch(`${API}/admin/delete-${type}?id=${id}&admin_email=${encodeURIComponent(adminEmail)}`, { method: 'DELETE' });
         if (res.status === 404 || res.status === 405) {
-            showToast(`يحتاج endpoint: DELETE /admin/delete-${type}`, 'error');
+            showToast('الحذف غير متاح حالياً، بانتظار تجهيز الخادم', 'error');
         } else if (!res.ok) {
             throw new Error('فشل الحذف');
         } else {
@@ -1062,7 +1063,7 @@ async function deleteAcItem(id, type) {
         }
     } catch (e) {
         const isMissing = e.message.includes('fetch') || e.message.includes('Failed');
-        showToast(isMissing ? `يحتاج endpoint: DELETE /admin/delete-${type}` : e.message, 'error');
+        showToast(isMissing ? 'الحذف غير متاح حالياً، بانتظار تجهيز الخادم' : e.message, 'error');
     }
     try {
         const list = JSON.parse(localStorage.getItem('sfr_added_content') || '[]').filter(i => String(i.id) !== String(id));

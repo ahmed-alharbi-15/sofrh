@@ -220,7 +220,6 @@ function showToast(message, type = "success") {
     toast.innerHTML = `
         <span style="width:22px;height:22px;border-radius:50%;background:${col};color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0">${ico}</span>
         <span style="flex:1">${message}</span>
-        <button id="safra-toast-close" style="background:none;border:none;color:#FAF5EB;font-size:18px;cursor:pointer;padding:0 0 0 6px;line-height:1;opacity:.7;flex-shrink:0">✕</button>
     `;
     toast.style.cssText = `
         position:fixed;top:24px;left:50%;transform:translateX(-50%) translateY(-20px);
@@ -242,7 +241,7 @@ function showToast(message, type = "success") {
         setTimeout(() => toast.remove(), 350);
     };
     const timer = setTimeout(dismiss, 3000);
-    document.getElementById("safra-toast-close")?.addEventListener("click", () => { clearTimeout(timer); dismiss(); });
+
 }
 
 function showConfirm(message, onConfirm, onCancel) {
