@@ -93,8 +93,9 @@ body {
 
 /* ── Table ── */
 .table-wrap {
-    padding: 20px 32px 48px;
+    padding: 0 32px 48px;
     overflow-x: auto;
+    overflow-y: clip;
 }
 table {
     width: 100%;
@@ -106,7 +107,7 @@ table {
 }
 thead { background: var(--purple); color: #fff; }
 thead th {
-    padding: 13px 16px;
+    padding: 10px 12px;
     text-align: right;
     font-size: .88rem;
     font-weight: 600;
@@ -118,7 +119,7 @@ tbody tr {
 tbody tr:last-child { border-bottom: none; }
 tbody tr:hover { background: var(--cream); }
 tbody td {
-    padding: 11px 16px;
+    padding: 8px 12px;
     font-size: .88rem;
     vertical-align: middle;
 }
@@ -304,72 +305,14 @@ tbody td {
 .status-btn.active-btn { background: var(--purple); color: #fff; border-color: var(--purple); }
 .status-btn:disabled { opacity: .5; cursor: not-allowed; }
 
-/* ── Image cell ── */
-.img-cell { min-width: 220px; }
-.img-cell-inner { display: flex; flex-direction: column; gap: 6px; }
-.img-preview {
-    width: 40px; height: 40px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid var(--cream2);
-    flex-shrink: 0;
-}
-.img-preview-placeholder {
-    width: 40px; height: 40px;
-    border-radius: 50%;
-    background: var(--cream2);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: .6rem;
-    font-weight: 600;
-    color: var(--muted);
-    flex-shrink: 0;
-    text-align: center;
-    line-height: 1.2;
-}
-.img-url-input {
-    width: 100%;
-    padding: 7px 12px;
-    border: 1.5px solid #d1c9f0;
-    border-radius: var(--radius);
-    font-family: inherit;
-    font-size: .82rem;
-    background: #fff;
-    outline: none;
-    transition: border .2s;
-    direction: ltr;
-}
-.img-url-input:focus { border-color: var(--orange); }
-.img-cell-btns { display: flex; gap: 6px; flex-wrap: wrap; }
-.img-save-btn {
-    padding: 5px 14px;
-    background: var(--orange);
-    color: #fff;
-    border: none;
-    border-radius: var(--radius);
-    font-family: inherit;
-    font-size: .8rem;
-    font-weight: 700;
-    cursor: pointer;
-    transition: opacity .2s;
-}
-.img-save-btn:hover:not(:disabled) { opacity: .85; }
-.img-save-btn:disabled { opacity: .5; cursor: not-allowed; }
-.img-restore-btn {
-    padding: 5px 14px;
-    background: transparent;
-    color: var(--purple);
-    border: 1.5px solid #d1c9f0;
-    border-radius: var(--radius);
-    font-family: inherit;
-    font-size: .8rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all .2s;
-}
-.img-restore-btn:hover:not(:disabled) { border-color: var(--purple); }
-.img-restore-btn:disabled { opacity: .5; cursor: not-allowed; }
+
+
+/* ── Column widths ── */
+#countries-table th:nth-child(1), #countries-table td:nth-child(1) { width: 20%; }
+#countries-table th:nth-child(2), #countries-table td:nth-child(2) { width: 16%; }
+#countries-table th:nth-child(3), #countries-table td:nth-child(3) { width: 20%; }
+#countries-table th:nth-child(4), #countries-table td:nth-child(4) { width: 13%; }
+#countries-table th:nth-child(5), #countries-table td:nth-child(5) { width: auto; }
 
 /* ── Sticky thead below fixed navbar ── */
 thead th {
@@ -723,12 +666,11 @@ thead th {
 [data-theme="dark"] .editor-item:hover { background: #2a2447; }
 [data-theme="dark"] .toolbar input,
 [data-theme="dark"] .toolbar select,
-[data-theme="dark"] .img-url-input,
 [data-theme="dark"] .si-url-input,
 [data-theme="dark"] .editor-search input,
 [data-theme="dark"] .modal-input,
 [data-theme="dark"] .set-admin-row input { background: #2a2240; color: var(--text); border-color: #483a7a; }
-[data-theme="dark"] .status-btn { background: #2a2240; border-color: #483a7a; color: var(--muted); }
+[data-theme="dark"] .status-btn { background: #2a2240; border-color: #483a7a; color: #d4c8f0; }
 [data-theme="dark"] .status-btn.active-btn { background: var(--purple); color: #fff; border-color: var(--purple); }
 [data-theme="dark"] .tab-btn { background: #2a2240; border-color: #483a7a; color: var(--muted); }
 [data-theme="dark"] .continent-select { background: #2a2240; color: var(--text); border-color: #483a7a; }
@@ -739,7 +681,6 @@ thead th {
 [data-theme="dark"] .admin-row { border-color: #2a2240; }
 [data-theme="dark"] .editor-tab-btn.active { background: #221d35; border-color: #2a2240; border-bottom-color: #221d35; }
 [data-theme="dark"] .editor-tabs { border-color: #2a2240; }
-[data-theme="dark"] .img-preview-placeholder,
 [data-theme="dark"] .editor-item-img-placeholder,
 [data-theme="dark"] .si-preview-placeholder { background: #2a2240; }
 [data-theme="dark"] .status-active         { background: #052e16; color: #4ade80; }

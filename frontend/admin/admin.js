@@ -3,7 +3,6 @@ const API = 'https://sofrh-1.onrender.com';
 let adminEmail   = '';
 let allCountries = [];
 let statuses     = {};   // { countryId: "active"|"coming_soon"|"in_development" }
-let imageUrls    = {};   // { countryId: "https://..." | null }
 let activeContinent = 'all';
 let continentOverrides = {};  // { countryId: "asia"|"europe"|... } — يُكتب من الأدمن
 
@@ -47,7 +46,6 @@ async function loadPanel() {
         const stList = stRes.ok ? await stRes.json() : [];
         stList.forEach(item => {
             statuses[item.id]   = item.status;
-            imageUrls[item.id]  = item.image_url || null;
             if (item.continent) continentOverrides[item.id] = item.continent.replace(/-/g,'_');
         });
 
@@ -96,7 +94,6 @@ function renderTable(list) {
 
     list.forEach(c => {
         const st      = getStatus(c);
-        const curImg  = imageUrls[c.id] || '';
         const tr = document.createElement('tr');
         tr.dataset.id = c.id;
         tr.innerHTML = `
@@ -108,16 +105,6 @@ function renderTable(list) {
                 <button class="status-btn ${st === 'active'         ? 'active-btn'  : ''}" onclick="setStatus('${c.id}','active',this)">✅ متاح</button>
                 <button class="status-btn ${st === 'coming_soon'    ? 'active-btn'  : ''}" onclick="setStatus('${c.id}','coming_soon',this)">🕐 قريباً</button>
                 <button class="status-btn ${st === 'in_development' ? 'active-btn'  : ''}" onclick="setStatus('${c.id}','in_development',this)">🔧 تطوير</button>
-            </td>
-            <td class="img-cell">
-                <div class="img-cell-inner">
-                    ${curImg ? `<img class="img-preview" src="${curImg}" alt="" onerror="this.style.display='none'">` : '<div class="img-preview-placeholder">لا صورة</div>'}
-                    <input class="img-url-input" type="url" placeholder="https://..." dir="ltr" value="${curImg}" data-id="${c.id}" />
-                    <div class="img-cell-btns">
-                        <button class="img-save-btn"    onclick="saveCountryImage('${c.id}',this)">حفظ</button>
-                        <button class="img-restore-btn" onclick="restoreCountryImage('${c.id}',this)">استرجاع</button>
-                    </div>
-                </div>
             </td>
         `;
         tbody.appendChild(tr);
@@ -214,55 +201,6 @@ async function setStatus(countryId, newStatus, btn) {
     }
 }
 
-// ── حفظ صورة الدولة ─────────────────────────────────────────────────────────
-async function saveCountryImage(countryId, btn) {
-    const row   = btn.closest('tr');
-    const input = row.querySelector('.img-url-input');
-    const url   = input.value.trim();
-
-    if (url && !url.startsWith('https://')) {
-        showToast('الرابط يجب أن يبدأ بـ https://', 'error');
-        return;
-    }
-
-    const allBtns = row.querySelectorAll('.img-save-btn, .img-restore-btn');
-    allBtns.forEach(b => b.disabled = true);
-
-    try {
-        const res = await fetch(`${API}/admin/set-country-image`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ id: countryId, image_url: url || null, email: adminEmail })
-        });
-        const data = await res.json();
-        if (!res.ok) throw new Error(data.detail || 'خطأ');
-
-        imageUrls[countryId] = url || null;
-
-        // حدّث المعاينة فوراً
-        const prevWrap = row.querySelector('.img-preview, .img-preview-placeholder');
-        if (url) {
-            if (prevWrap) {
-                prevWrap.outerHTML = `<img class="img-preview" src="${url}" alt="" onerror="this.style.display='none'">`;
-            }
-        } else {
-            if (prevWrap) prevWrap.outerHTML = '<div class="img-preview-placeholder">—</div>';
-        }
-
-        showToast(url ? `تم حفظ الصورة — ${countryId}` : `تم استرجاع الصورة الأصلية — ${countryId}`, 'success');
-    } catch (e) {
-        showToast(e.message, 'error');
-    } finally {
-        allBtns.forEach(b => b.disabled = false);
-    }
-}
-
-async function restoreCountryImage(countryId, btn) {
-    const row   = btn.closest('tr');
-    const input = row.querySelector('.img-url-input');
-    input.value = '';
-    await saveCountryImage(countryId, btn);
-}
 
 // ── Stats bar ─────────────────────────────────────────────────────────────────
 function updateStats() {
