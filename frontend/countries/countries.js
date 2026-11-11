@@ -438,13 +438,22 @@ document.addEventListener('DOMContentLoaded', () => {
             const res = await fetch(`${BASE}/countries/${slug}/cities`);
             if (!res.ok) return;
             const cities = await res.json();
-            const existing = new Set([...citiesGrid.querySelectorAll('.cite')].map(c => {
-                const n = c.dataset.name || '';
-                return (n.includes('–') ? n.split('–')[1].trim() : n).toLowerCase();
-            }));
+            const existing = new Set();
+            citiesGrid.querySelectorAll('.cite').forEach(c => {
+                const n = (c.dataset.name || '').trim();
+                const nl = n.toLowerCase().replace(/\s+/g, ' ');
+                existing.add(nl);
+                if (n.includes('–')) {
+                    existing.add(n.split('–')[0].trim().toLowerCase());
+                    existing.add(n.split('–')[1].trim().toLowerCase());
+                }
+            });
             cities.forEach(city => {
-                const enKey = (city.name.includes('–') ? city.name.split('–')[1].trim() : city.name).toLowerCase();
-                if (existing.has(enKey)) return;
+                const cn = (city.name || '').trim();
+                const cnl = cn.toLowerCase().replace(/\s+/g, ' ');
+                const isDup = existing.has(cnl) ||
+                    (cn.includes('–') && (existing.has(cn.split('–')[0].trim().toLowerCase()) || existing.has(cn.split('–')[1].trim().toLowerCase())));
+                if (isDup) return;
                 const citySlug = city.slug || `${slug}_${city.name.replace(/\s+/g, '_').toLowerCase()}`;
                 const safeName = city.name.replace(/'/g, '&#39;');
                 const imgUrl   = city.image_url || '';
