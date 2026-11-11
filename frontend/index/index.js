@@ -295,6 +295,9 @@ async function fetchHomeData() {
         window.SAFRA_EVENTS  = events;
         window.SAFRA_RECIPES = recipes;
 
+        const contOv = {};
+        try { Object.assign(contOv, JSON.parse(localStorage.getItem('sfr_cont_v1') || '{}')); } catch(_) {}
+
         const normStates = {};
         for (const [k, v] of Object.entries(statesRaw)) normStates[normalize(k)] = v;
 
@@ -302,6 +305,9 @@ async function fetchHomeData() {
             const st = normStates[normalize(c.id)];
             return !st || st === "active";
         });
+
+        if (Object.keys(contOv).length)
+            countries.forEach(c => { if (contOv[c.id]) c.continent = contOv[c.id].replace(/_/g,'-'); });
 
         if (countries.length) initHomePage(countries);
         else showError();

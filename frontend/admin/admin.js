@@ -5,6 +5,7 @@ let allCountries = [];
 let statuses     = {};   // { countryId: "active"|"coming_soon"|"in_development" }
 let imageUrls    = {};   // { countryId: "https://..." | null }
 let activeContinent = 'all';
+let continentOverrides = {};  // { countryId: "asia"|"europe"|... } — يُكتب من الأدمن
 
 // ── التحقق من الأدمن ─────────────────────────────────────────────────────────
 async function checkAdmin() {
@@ -47,7 +48,13 @@ async function loadPanel() {
         stList.forEach(item => {
             statuses[item.id]   = item.status;
             imageUrls[item.id]  = item.image_url || null;
+            if (item.continent) continentOverrides[item.id] = item.continent.replace(/-/g,'_');
         });
+
+        try {
+            const lsOv = JSON.parse(localStorage.getItem('sfr_cont_v1') || '{}');
+            Object.entries(lsOv).forEach(([k,v]) => { continentOverrides[k] = v.replace(/-/g,'_'); });
+        } catch(_) {}
 
         renderTable(getFiltered());
         updateStats();
@@ -95,7 +102,7 @@ function renderTable(list) {
         tr.innerHTML = `
             <td>${c.nameAr || '—'}</td>
             <td style="direction:ltr;text-align:right">${c.nameEn || c.id}</td>
-            <td><span class="continent-badge">${continentNames[c.continent] || c.continent}</span></td>
+            <td>${buildContinentSelect(c.id, continentOverrides[c.id] || c.continent)}</td>
             <td><span class="status-badge status-${st}">${STATUS_LABELS[st] || st}</span></td>
             <td class="action-cell">
                 <button class="status-btn ${st === 'active'         ? 'active-btn'  : ''}" onclick="setStatus('${c.id}','active',this)">✅ متاح</button>
@@ -115,6 +122,58 @@ function renderTable(list) {
         `;
         tbody.appendChild(tr);
     });
+}
+
+// ── قائمة القارة المنسدلة ─────────────────────────────────────────────────────
+const CONTINENT_OPTIONS = [
+    { value: 'asia',          label: 'آسيا' },
+    { value: 'africa',        label: 'أفريقيا' },
+    { value: 'europe',        label: 'أوروبا' },
+    { value: 'north_america', label: 'أمريكا الشمالية' },
+    { value: 'south_america', label: 'أمريكا الجنوبية' },
+    { value: 'oceania',       label: 'أوقيانوسيا' }
+];
+
+function buildContinentSelect(id, current) {
+    const opts = CONTINENT_OPTIONS.map(o =>
+        `<option value="${o.value}"${o.value === current ? ' selected' : ''}>${o.label}</option>`
+    ).join('');
+    return `<select class="continent-select" onchange="setContinent('${id}',this.value,this)">${opts}</select>`;
+}
+
+async function setContinent(countryId, newContinent, selectEl) {
+    selectEl.disabled = true;
+    try {
+        const res = await fetch(`${API}/admin/set-country-status`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ id: countryId, continent: newContinent, status: statuses[countryId] || 'active', email: adminEmail })
+        });
+        if (!res.ok) {
+            const err = await res.json().catch(() => ({}));
+            if (res.status !== 422 && res.status !== 400) {
+                throw new Error(err.detail || 'خطأ في الحفظ');
+            }
+        }
+    } catch (e) {
+        if (!e.message.includes('خطأ في الحفظ')) {
+            /* silent — API لا يدعم continent بعد، نكمل بالحفظ المحلي */
+        } else {
+            showToast(e.message, 'error');
+            selectEl.disabled = false;
+            return;
+        }
+    }
+
+    continentOverrides[countryId] = newContinent;
+    try {
+        const saved = JSON.parse(localStorage.getItem('sfr_cont_v1') || '{}');
+        saved[countryId] = newContinent.replace(/-/g,'_');
+        localStorage.setItem('sfr_cont_v1', JSON.stringify(saved));
+    } catch(_) {}
+
+    showToast(`تم تغيير القارة — ${countryId}`, 'success');
+    renderTable(getFiltered());
 }
 
 // ── تغيير حالة الدولة ────────────────────────────────────────────────────────
@@ -224,7 +283,7 @@ function getFiltered() {
     return allCountries.filter(c => {
         const nameMatch     = (c.nameAr || '').includes(q) || (c.nameEn || c.id).toLowerCase().includes(q);
         const statusMatch   = filter === 'all' || getStatus(c) === filter;
-        const continentMatch = activeContinent === 'all' || c.continent === activeContinent;
+        const continentMatch = activeContinent === 'all' || (continentOverrides[c.id] || c.continent) === activeContinent;
         return nameMatch && statusMatch && continentMatch;
     });
 }

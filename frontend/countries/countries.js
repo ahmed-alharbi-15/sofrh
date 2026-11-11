@@ -401,5 +401,22 @@ document.addEventListener('DOMContentLoaded', () => {
     } catch (_) { /* لو الـ API فشل، الصور تبقى كما هي */ }
 
     if (Object.keys(statusMap).length) applyMap(statusMap);
+
+    // ── تطبيق overrides القارة ────────────────────────────────────────────
+    const contOv = {};
+    Object.values(statusMap).forEach(item => { if (item.continent) contOv[item.id] = item.continent; });
+    if (!Object.keys(contOv).length) {
+        try { Object.assign(contOv, JSON.parse(localStorage.getItem('sfr_cont_v1') || '{}')); } catch(_) {}
+    }
+    if (Object.keys(contOv).length) {
+        document.querySelectorAll('.country-card').forEach(card => {
+            const onclick = card.getAttribute('onclick') || '';
+            const idMatch = onclick.match(/\/([^/]+)\.html/);
+            if (!idMatch) return;
+            const cid = idMatch[1];
+            if (contOv[cid]) card.setAttribute('data-region', contOv[cid].replace(/_/g,'-'));
+        });
+        applySearchAndFilter();
+    }
 })();
 

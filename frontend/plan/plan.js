@@ -3841,6 +3841,11 @@ document.addEventListener("DOMContentLoaded", () => {
                         }
                 ];
 
+        try {
+                const _co = JSON.parse(localStorage.getItem('sfr_cont_v1') || '{}');
+                if (Object.keys(_co).length) countries.forEach(c => { if (_co[c.id]) c._continent = _co[c.id]; });
+        } catch(_) {}
+
         // ===== حالة المعالج =====
         const state = {
                 step: 1,
@@ -4330,7 +4335,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
                 // تصفية حسب القارة لو مختارة
                 if (state.continent) {
-                        const continentPool = pool.filter((c) => c.continent === state.continent);
+                        const continentPool = pool.filter((c) => (c._continent || c.continent) === state.continent);
                         if (continentPool.length > 0) pool = continentPool;
                 }
                 if (pool.length > 1 && lastId) {
@@ -4351,7 +4356,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 const q = normalizeArabic((resultsSearch?.value || "").trim().toLowerCase());
 
                 let filtered = currentFilterContinent
-                        ? currentResultsList.filter((c) => c.continent === currentFilterContinent)
+                        ? currentResultsList.filter((c) => (c._continent || c.continent) === currentFilterContinent)
                         : currentResultsList;
 
                 if (q) {
@@ -4436,7 +4441,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 let pool = countries;
                 if (state.continent) {
-                        pool = countries.filter((c) => c.continent === state.continent);
+                        pool = countries.filter((c) => (c._continent || c.continent) === state.continent);
                         if (resultsTitle) resultsTitle.textContent = `أفضل وجهات ${continentNames[state.continent] || ""} لك`;
                 } else {
                         if (resultsTitle) resultsTitle.textContent = "أفضل وجهات العالم لك";
