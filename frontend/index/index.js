@@ -572,3 +572,69 @@ function initHomePage(countries) {
     updateEvents(pickEvents(6));
     setupHeroRotation(sliderC);
 }
+
+// ── محتوى API على الرئيسية ─────────────────────────────────────
+(async function appendApiHomeContent() {
+    await new Promise(r => {
+        if (document.readyState !== 'loading') r();
+        else document.addEventListener('DOMContentLoaded', r);
+    });
+    const BASE = 'https://sofrh-1.onrender.com';
+    try {
+        const [apiEvents, apiRecipes] = await Promise.all([
+            fetch(BASE + '/events').then(r => r.ok ? r.json() : []).catch(() => []),
+            fetch(BASE + '/recipes').then(r => r.ok ? r.json() : []).catch(() => [])
+        ]);
+
+        if (apiEvents.length) {
+            const evGrid = document.getElementById('ixEventsGrid');
+            if (evGrid) {
+                const existingTitles = new Set([...evGrid.querySelectorAll('.ix-event-title')].map(el => el.textContent.trim().toLowerCase()));
+                apiEvents.forEach(ev => {
+                    if (existingTitles.has((ev.title || '').toLowerCase())) return;
+                    const id = `api-ev-${ev.id}`;
+                    const a  = document.createElement('a');
+                    a.href      = `/events/events.html?event=${encodeURIComponent(id)}`;
+                    a.className = 'ix-event-card';
+                    a.innerHTML = `
+                        <div class="ix-event-img${ev.image_url ? '' : ' ix-no-img'}">
+                            ${ev.image_url ? `<img src="${ev.image_url}" alt="${(ev.title||'').replace(/"/g,'&quot;')}" loading="lazy">` : ''}
+                            <span class="ix-event-date">${ev.date_info || ''}</span>
+                        </div>
+                        <div class="ix-event-body">
+                            <h3 class="ix-event-title">${ev.title || ''}</h3>
+                            <p class="ix-event-location">📍 ${ev.country || ''}</p>
+                            <span class="ix-event-btn">التفاصيل</span>
+                        </div>`;
+                    evGrid.appendChild(a);
+                });
+            }
+        }
+
+        if (apiRecipes.length) {
+            const recScroll = document.getElementById('ixRecipesScroll');
+            if (recScroll) {
+                const existingIds = new Set([...recScroll.querySelectorAll('a[href*="recipe="]')].map(a => {
+                    const m = a.getAttribute('href')?.match(/recipe=([^&]+)/);
+                    return m ? decodeURIComponent(m[1]).toLowerCase() : '';
+                }));
+                apiRecipes.forEach(r => {
+                    if (existingIds.has(String(r.id).toLowerCase())) return;
+                    const safeN = (r.title || '').replace(/'/g, "\\'");
+                    const div = document.createElement('div');
+                    div.className = 'ix-recipe-card';
+                    div.innerHTML = `
+                        <div class="ix-recipe-img-wrap${r.image_url ? '' : ' ix-no-img'}">
+                            ${r.image_url ? `<img src="${r.image_url}" alt="${(r.title||'').replace(/"/g,'&quot;')}" loading="lazy">` : ''}
+                            <button class="ix-recipe-save" onclick="saveItem('recipe','${r.id}','${safeN}','${r.image_url||''}')">🍽️</button>
+                        </div>
+                        <div class="ix-recipe-body">
+                            <p class="ix-recipe-name">${r.title || ''}</p>
+                            <a href="/recipes/recipes.html?recipe=${encodeURIComponent(r.id)}" class="ix-recipe-link">الوصفة</a>
+                        </div>`;
+                    recScroll.appendChild(div);
+                });
+            }
+        }
+    } catch (_) {}
+})();

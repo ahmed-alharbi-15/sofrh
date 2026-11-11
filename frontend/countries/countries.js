@@ -420,3 +420,83 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 })();
 
+
+// ── محتوى API على صفحات الدول ───────────────────────────────────
+(async function appendApiContent() {
+    const citiesGrid = document.querySelector('.cities-grid');
+    const foodsGrid  = document.querySelector('.foods-grid');
+    if (!citiesGrid && !foodsGrid) return;
+
+    const pathParts = window.location.pathname.split('/');
+    const slug = pathParts[pathParts.length - 1].replace('.html', '');
+    if (!slug || slug === 'countries') return;
+
+    const BASE = 'https://sofrh-1.onrender.com';
+
+    if (citiesGrid) {
+        try {
+            const res = await fetch(`${BASE}/countries/${slug}/cities`);
+            if (!res.ok) return;
+            const cities = await res.json();
+            const existing = new Set([...citiesGrid.querySelectorAll('.cite')].map(c => {
+                const n = c.dataset.name || '';
+                return (n.includes('–') ? n.split('–')[1].trim() : n).toLowerCase();
+            }));
+            cities.forEach(city => {
+                const enKey = (city.name.includes('–') ? city.name.split('–')[1].trim() : city.name).toLowerCase();
+                if (existing.has(enKey)) return;
+                const citySlug = city.slug || `${slug}_${city.name.replace(/\s+/g, '_').toLowerCase()}`;
+                const safeName = city.name.replace(/'/g, '&#39;');
+                const imgUrl   = city.image_url || '';
+                const div = document.createElement('div');
+                div.className = 'cite';
+                div.dataset.name        = city.name;
+                div.dataset.img         = imgUrl;
+                div.dataset.desc        = city.description  || '';
+                div.dataset.historic    = city.historic     || '';
+                div.dataset.restaurants = city.restaurants  || '';
+                div.dataset.cafes       = city.cafes        || '';
+                div.dataset.events      = city.events_list  || '';
+                div.setAttribute('onclick', 'openCityModal(this)');
+                div.innerHTML = `
+                    <button class="save-btn" onclick="event.stopPropagation(); saveItem('city','${citySlug}','${safeName}','${imgUrl}')">🏙️</button>
+                    <img src="${imgUrl}" alt="${city.name}" class="cite-img" onerror="this.style.display='none'">
+                    <span class="name">${city.name}</span>
+                    <p class="info">${(city.description || '').slice(0, 60)}${(city.description || '').length > 60 ? '…' : ''}</p>
+                    <button class="cite-btn" onclick="event.stopPropagation(); openCityModal(this.closest('.cite'))">تفاصيل</button>`;
+                citiesGrid.appendChild(div);
+            });
+        } catch (_) {}
+    }
+
+    if (foodsGrid) {
+        try {
+            const res = await fetch(`${BASE}/recipes`);
+            if (!res.ok) return;
+            const recipes = await res.json();
+            const existingIds = new Set([...foodsGrid.querySelectorAll('a[href*="recipe="]')].map(a => {
+                const m = (a.getAttribute('href') || '').match(/recipe=([^&]+)/);
+                return m ? decodeURIComponent(m[1]).toLowerCase() : '';
+            }));
+            const countryH1 = document.querySelector('.country-name h1');
+            const countryName = countryH1 ? countryH1.textContent.trim().split('–')[0].trim() : '';
+            recipes
+                .filter(r => r.country_slug === slug || (countryName && r.country === countryName))
+                .forEach(r => {
+                    if (existingIds.has(String(r.id).toLowerCase())) return;
+                    const title  = (r.title || '').replace(/'/g, '&#39;');
+                    const imgUrl = r.image_url || '';
+                    const div = document.createElement('div');
+                    div.className = 'foods';
+                    div.style.cursor = 'pointer';
+                    div.setAttribute('onclick', `window.location.href='/recipes/recipes.html?recipe=${r.id}'`);
+                    div.innerHTML = `
+                        <img src="${imgUrl}" alt="${title}" class="foods-img" onerror="this.style.display='none'">
+                        <span class="name-foods">${r.title || ''}</span>
+                        <div class="food-info">${r.category || ''}</div>
+                        <a href="/recipes/recipes.html?recipe=${r.id}" class="for-more-btn" onclick="event.stopPropagation()">الوصفة</a>`;
+                    foodsGrid.appendChild(div);
+                });
+        } catch (_) {}
+    }
+})();

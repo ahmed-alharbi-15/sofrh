@@ -164,3 +164,51 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     } catch (_) {}
 })();
+// ── فعاليات API ──────────────────────────────────────────────────
+(async function appendApiEvents() {
+    const grid = document.querySelector('.events-grid');
+    if (!grid) return;
+    const existingTitles = new Set([...grid.querySelectorAll('.event-name')].map(el => el.textContent.trim().toLowerCase()));
+    try {
+        const res = await fetch('https://sofrh-1.onrender.com/events');
+        if (!res.ok) return;
+        const events = await res.json();
+        events.forEach(ev => {
+            if (existingTitles.has((ev.title || '').toLowerCase())) return;
+            const id      = `api-ev-${ev.id}`;
+            const name    = ev.title    || '';
+            const imgUrl  = ev.image_url || '';
+            const date    = ev.date_info || '';
+            const country = ev.country  || '';
+            const safeN   = name.replace(/'/g, "\\'");
+            const div = document.createElement('div');
+            div.className  = 'event-card';
+            div.id         = id;
+            div.dataset.region = ev.category || 'all';
+            div.innerHTML = `
+                <button class="event-item" onclick="openEventModal(this)"
+                    data-title="${name.replace(/"/g, '&quot;')}"
+                    data-img="${imgUrl}"
+                    data-country="${country}"
+                    data-date="📅 ${date}"
+                    data-desc="${(ev.description || '').replace(/"/g, '&quot;')}"
+                    data-location="" data-duration="" data-weather="" data-airport=""
+                    data-activities="" data-stay="" data-hotel-price="" data-event-fee="" data-total="">
+                    <div class="event-head">
+                        ${imgUrl ? `<img src="${imgUrl}" alt="${name.replace(/"/g, '&quot;')}">` : ''}
+                        <div class="event-info">
+                            <span class="event-name">${name}</span>
+                            <div class="event-meta">
+                                <span class="event-tag">${country}</span>
+                                <span class="event-tag">📅 ${date}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <span class="arrow">التفاصيل ⌄</span>
+                </button>
+                <button class="save-btn" onclick="saveItem('event','${id}','${safeN}','${imgUrl}')">🎫</button>`;
+            grid.appendChild(div);
+        });
+        applySearchAndFilter();
+    } catch (_) {}
+})();

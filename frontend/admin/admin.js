@@ -58,6 +58,7 @@ async function loadPanel() {
         updateStats();
         loadAdminList();
         initEditor();
+        initAddContent();
         loadSiteImages();
 
     } catch (e) {
@@ -833,4 +834,239 @@ async function restoreSiteImage(key, btn) {
     const input = card.querySelector('.si-url-input');
     input.value = '';
     await saveSiteImage(key, btn);
+}
+
+// ══════════════════════════════════════════════════════════════════
+// ➕  إضافة محتوى جديد
+// ══════════════════════════════════════════════════════════════════
+
+let acType = 'city';
+
+function initAddContent() {
+    const sel = document.getElementById('ac-country');
+    if (!sel || sel.options.length > 1) return;
+    sel.innerHTML = '<option value="">— اختر دولة —</option>' +
+        allCountries
+            .filter(c => c.ready !== false)
+            .sort((a, b) => (a.nameAr || '').localeCompare(b.nameAr || '', 'ar'))
+            .map(c => `<option value="${c.id}">${c.nameAr || c.id} – ${c.nameEn || ''}</option>`)
+            .join('');
+    renderAcAdded();
+}
+
+function switchAddType(type) {
+    acType = type;
+    document.querySelectorAll('.ac-type-btn').forEach(b => b.classList.toggle('active', b.dataset.type === type));
+    ['city', 'event', 'recipe'].forEach(t => {
+        const el = document.getElementById('ac-fields-' + t);
+        if (el) el.style.display = t === type ? '' : 'none';
+    });
+    updateAcPreview();
+}
+
+function acVal(id) {
+    const el = document.getElementById(id);
+    return el ? el.value.trim() : '';
+}
+
+function updateAcPreview() {
+    const prev = document.getElementById('ac-preview');
+    if (!prev) return;
+
+    const imgPrevMap = { city: 'ac-city-img-prev', event: 'ac-event-img-prev', recipe: 'ac-recipe-img-prev' };
+    const imgIdMap   = { city: 'ac-city-img',      event: 'ac-event-img',      recipe: 'ac-recipe-img'      };
+    const imgUrl  = acVal(imgIdMap[acType]);
+    const prevDiv = document.getElementById(imgPrevMap[acType]);
+    if (prevDiv) {
+        prevDiv.innerHTML = imgUrl
+            ? `<img src="${imgUrl}" style="max-height:70px;border-radius:8px;margin-top:6px;object-fit:cover" onerror="this.style.opacity=.3">`
+            : '';
+    }
+
+    if (acType === 'city') {
+        const name = acVal('ac-city-name') || 'اسم المدينة';
+        const desc = acVal('ac-city-desc') || 'وصف المدينة يظهر هنا';
+        prev.innerHTML = `
+            <div class="cite" style="pointer-events:none;max-width:200px">
+                ${imgUrl ? `<img src="${imgUrl}" alt="${name}" class="cite-img" onerror="this.style.opacity=.3">` : '<div class="cite-img" style="background:#e0d8f0;display:flex;align-items:center;justify-content:center;font-size:2rem">🏙️</div>'}
+                <span class="name">${name}</span>
+                <p class="info">${desc.slice(0, 60)}</p>
+                <button class="cite-btn" style="pointer-events:none">تفاصيل</button>
+            </div>`;
+    } else if (acType === 'event') {
+        const name = acVal('ac-event-name') || 'اسم الفعالية';
+        const date = acVal('ac-event-date') || '—';
+        prev.innerHTML = `
+            <div class="event-card" style="pointer-events:none;max-width:320px">
+                <button class="event-item" style="pointer-events:none">
+                    <div class="event-head">
+                        ${imgUrl ? `<img src="${imgUrl}" alt="${name}" onerror="this.style.opacity=.3">` : '<div style="width:72px;height:72px;background:#e0d8f0;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:2rem">🎪</div>'}
+                        <div class="event-info">
+                            <span class="event-name">${name}</span>
+                            <div class="event-meta"><span class="event-tag">📅 ${date}</span></div>
+                        </div>
+                    </div>
+                    <span class="arrow">التفاصيل ⌄</span>
+                </button>
+            </div>`;
+    } else {
+        const name = acVal('ac-recipe-name') || 'اسم الوصفة';
+        prev.innerHTML = `
+            <div class="foods-card" style="pointer-events:none;max-width:200px">
+                <button class="recipes-item" style="pointer-events:none">
+                    <div class="recipes-head">
+                        ${imgUrl ? `<img src="${imgUrl}" alt="${name}" onerror="this.style.opacity=.3">` : '<div style="width:72px;height:72px;background:#e0d8f0;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:2rem">🍽️</div>'}
+                        <span>${name}</span>
+                    </div>
+                    <span class="arrow">الوصفة ⌄</span>
+                </button>
+            </div>`;
+    }
+}
+
+async function submitAddContent() {
+    const countryId = acVal('ac-country');
+    if (!countryId) { showToast('اختر دولة أولاً', 'error'); return; }
+
+    const notice = document.getElementById('ac-backend-notice');
+    const btn    = document.querySelector('.ac-save-btn');
+    btn.disabled = true; btn.textContent = '…';
+
+    let endpoint, payload;
+
+    if (acType === 'city') {
+        const name = acVal('ac-city-name');
+        if (!name) { showToast('أدخل اسم المدينة', 'error'); btn.disabled = false; btn.textContent = '➕ حفظ وإضافة'; return; }
+        const enPart = name.includes('–') ? name.split('–')[1].trim().toLowerCase().replace(/\s+/g, '_') : name.toLowerCase().replace(/\s+/g, '_');
+        endpoint = `${API}/admin/add-city`;
+        payload = {
+            admin_email: adminEmail,
+            country_slug: countryId,
+            name,
+            slug: `${countryId}_${enPart}`,
+            image_url: acVal('ac-city-img'),
+            description: acVal('ac-city-desc'),
+            historic: acVal('ac-city-historic'),
+            restaurants: acVal('ac-city-restaurants'),
+            cafes: acVal('ac-city-cafes'),
+            events_list: acVal('ac-city-activities')
+        };
+    } else if (acType === 'event') {
+        const name = acVal('ac-event-name');
+        if (!name) { showToast('أدخل اسم الفعالية', 'error'); btn.disabled = false; btn.textContent = '➕ حفظ وإضافة'; return; }
+        endpoint = `${API}/admin/add-event`;
+        payload = {
+            admin_email: adminEmail,
+            country_slug: countryId,
+            title: name,
+            category: acVal('ac-event-category'),
+            description: acVal('ac-event-desc'),
+            date_info: acVal('ac-event-date'),
+            image_url: acVal('ac-event-img'),
+            duration: acVal('ac-event-duration'),
+            weather: acVal('ac-event-weather'),
+            airport: acVal('ac-event-airport'),
+            activities: acVal('ac-event-activities'),
+            hotel_price: acVal('ac-event-hotel'),
+            total_cost: acVal('ac-event-total')
+        };
+    } else {
+        const name = acVal('ac-recipe-name');
+        if (!name) { showToast('أدخل اسم الوصفة', 'error'); btn.disabled = false; btn.textContent = '➕ حفظ وإضافة'; return; }
+        endpoint = `${API}/admin/add-recipe`;
+        payload = {
+            admin_email: adminEmail,
+            country_slug: countryId,
+            title: name,
+            category: acVal('ac-recipe-category'),
+            image_url: acVal('ac-recipe-img'),
+            ingredients: acVal('ac-recipe-ingredients'),
+            spices: acVal('ac-recipe-spices'),
+            sauces: acVal('ac-recipe-sauces'),
+            steps: acVal('ac-recipe-steps')
+        };
+    }
+
+    try {
+        const res = await fetch(endpoint, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+        });
+
+        if (res.status === 404 || res.status === 405 || res.status === 422) {
+            notice.style.display = '';
+            notice.innerHTML = `<strong>⚠️ هذا الـ endpoint غير موجود في الباك إند بعد. يلزم إضافته:</strong><br><code>POST ${endpoint.replace(API, '')}</code><pre>${JSON.stringify(payload, null, 2)}</pre>`;
+            showToast('يحتاج endpoint جديد في الباك إند', 'error');
+        } else if (!res.ok) {
+            const data = await res.json().catch(() => ({}));
+            throw new Error(data.detail || 'خطأ في الحفظ');
+        } else {
+            const data = await res.json();
+            notice.style.display = 'none';
+            showToast('تمت الإضافة بنجاح', 'success');
+            _saveAcItem({ type: acType, id: data.id || Date.now(), country: countryId, name: payload.title || payload.name, timestamp: Date.now() });
+            renderAcAdded();
+        }
+    } catch (e) {
+        const isMissing = e.message.includes('fetch') || e.message.includes('Failed');
+        if (isMissing) {
+            notice.style.display = '';
+            notice.innerHTML = `<strong>⚠️ هذا الـ endpoint غير موجود في الباك إند بعد. يلزم إضافته:</strong><br><code>POST ${endpoint.replace(API, '')}</code><pre>${JSON.stringify(payload, null, 2)}</pre>`;
+            showToast('يحتاج endpoint جديد في الباك إند', 'error');
+        } else {
+            showToast(e.message, 'error');
+        }
+    } finally {
+        btn.disabled = false; btn.textContent = '➕ حفظ وإضافة';
+    }
+}
+
+function _saveAcItem(item) {
+    try {
+        const list = JSON.parse(localStorage.getItem('sfr_added_content') || '[]');
+        list.unshift(item);
+        localStorage.setItem('sfr_added_content', JSON.stringify(list.slice(0, 100)));
+    } catch (_) {}
+}
+
+function renderAcAdded() {
+    try {
+        const list = JSON.parse(localStorage.getItem('sfr_added_content') || '[]');
+        const wrap = document.getElementById('ac-added-wrap');
+        const cont = document.getElementById('ac-added-list');
+        if (!wrap || !cont) return;
+        if (!list.length) { wrap.style.display = 'none'; return; }
+        wrap.style.display = '';
+        const icons = { city: '🏙️', event: '🎪', recipe: '🍽️' };
+        cont.innerHTML = list.map(item => `
+            <div class="ac-added-item">
+                <span class="ac-added-type">${icons[item.type] || '📦'} ${item.type}</span>
+                <span class="ac-added-name">${item.name || '—'}</span>
+                <span class="ac-added-country">${item.country || ''}</span>
+                <button class="ac-delete-btn" onclick="deleteAcItem('${item.id}', '${item.type}')">🗑️</button>
+            </div>`).join('');
+    } catch (_) {}
+}
+
+async function deleteAcItem(id, type) {
+    if (!confirm('تأكيد الحذف من الموقع؟')) return;
+    try {
+        const res = await fetch(`${API}/admin/delete-${type}?id=${id}&admin_email=${encodeURIComponent(adminEmail)}`, { method: 'DELETE' });
+        if (res.status === 404 || res.status === 405) {
+            showToast(`يحتاج endpoint: DELETE /admin/delete-${type}`, 'error');
+        } else if (!res.ok) {
+            throw new Error('فشل الحذف');
+        } else {
+            showToast('تم الحذف', 'success');
+        }
+    } catch (e) {
+        const isMissing = e.message.includes('fetch') || e.message.includes('Failed');
+        showToast(isMissing ? `يحتاج endpoint: DELETE /admin/delete-${type}` : e.message, 'error');
+    }
+    try {
+        const list = JSON.parse(localStorage.getItem('sfr_added_content') || '[]').filter(i => String(i.id) !== String(id));
+        localStorage.setItem('sfr_added_content', JSON.stringify(list));
+        renderAcAdded();
+    } catch (_) {}
 }

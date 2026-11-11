@@ -9,6 +9,7 @@
                 { id: 'nav-editor-recipes',   label: 'الوصفات',     icon: '🍽️', section: 'section-editor',    tab: 'recipes'   },
                 { id: 'nav-editor-cities',    label: 'المدن',       icon: '🏙️', section: 'section-editor',    tab: 'cities'    },
                 { id: 'nav-editor-countries', label: 'تعديل الدول', icon: '✏️', section: 'section-editor',    tab: 'countries' },
+                { id: 'nav-add-content',     label: 'إضافة محتوى', icon: '➕', section: 'section-add-content' },
             ]
         },
         {
@@ -20,7 +21,7 @@
         }
     ];
 
-    const ALL_SECTIONS = ['section-countries', 'section-site-images', 'section-editor', 'section-admins', 'section-users'];
+    const ALL_SECTIONS = ['section-countries', 'section-site-images', 'section-editor', 'section-add-content', 'section-admins', 'section-users'];
 
     function buildSidebar() {
         const wrap = document.getElementById('admin-sidebar-wrap');

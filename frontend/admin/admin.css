@@ -807,3 +807,156 @@ tbody td {
 
 [data-theme="dark"] #admin-sidebar { background: #1a0a4a; box-shadow: -2px 0 12px rgba(0,0,0,.4); }
 [data-theme="dark"] #sb-search { background: rgba(255,255,255,0.07); border-color: rgba(242,133,0,0.25); }
+
+/* ══════════════════════════════════════════════════
+   ➕  إضافة محتوى
+══════════════════════════════════════════════════ */
+.ac-type-row { display:flex; gap:10px; flex-wrap:wrap; margin-bottom:24px; }
+
+.ac-type-btn {
+    padding:9px 20px;
+    border-radius:999px;
+    border:2px solid var(--purple);
+    background:transparent;
+    color:var(--purple);
+    font-family:inherit;
+    font-size:14px;
+    font-weight:600;
+    cursor:pointer;
+    transition:background .15s, color .15s;
+}
+.ac-type-btn.active,
+.ac-type-btn:hover { background:var(--purple); color:#fff; }
+
+.ac-layout {
+    display:grid;
+    grid-template-columns:1fr 280px;
+    gap:32px;
+    align-items:start;
+}
+@media (max-width:900px) { .ac-layout { grid-template-columns:1fr; } }
+
+.ac-form-wrap { display:flex; flex-direction:column; gap:0; }
+.ac-field { margin-bottom:14px; }
+
+.ac-label {
+    display:block;
+    font-size:13px;
+    font-weight:600;
+    color:var(--muted);
+    margin-bottom:5px;
+}
+
+.ac-input {
+    width:100%;
+    padding:9px 12px;
+    border:1.5px solid #d8d0ef;
+    border-radius:8px;
+    font-family:inherit;
+    font-size:14px;
+    background:#fff;
+    color:var(--text);
+    outline:none;
+    transition:border-color .2s;
+    resize:vertical;
+}
+.ac-input:focus { border-color:var(--purple); }
+
+.ac-actions { margin-top:20px; }
+
+.ac-save-btn {
+    padding:11px 28px;
+    background:var(--orange);
+    color:#fff;
+    border:none;
+    border-radius:10px;
+    font-family:inherit;
+    font-size:15px;
+    font-weight:700;
+    cursor:pointer;
+    transition:opacity .15s;
+}
+.ac-save-btn:hover { opacity:.88; }
+.ac-save-btn:disabled { opacity:.5; cursor:default; }
+
+.ac-preview-wrap {
+    background:#f7f3ff;
+    border-radius:14px;
+    padding:20px;
+    min-height:180px;
+    position:sticky;
+    top:90px;
+}
+.ac-preview-title {
+    font-size:11px;
+    font-weight:700;
+    color:var(--muted);
+    margin-bottom:14px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+}
+
+.ac-backend-notice {
+    margin-top:16px;
+    background:#fff8e1;
+    border:1.5px solid #f9a825;
+    border-radius:10px;
+    padding:14px 16px;
+    font-size:13px;
+    color:#7a4800;
+    line-height:1.6;
+}
+.ac-backend-notice code {
+    display:block;
+    background:#3a0a6e;
+    color:#faf5eb;
+    border-radius:6px;
+    padding:6px 10px;
+    font-family:monospace;
+    font-size:12px;
+    margin:8px 0;
+}
+.ac-backend-notice pre {
+    background:#1a0a3a;
+    color:#d4c8f0;
+    border-radius:6px;
+    padding:10px;
+    font-size:11px;
+    overflow-x:auto;
+    white-space:pre-wrap;
+    word-break:break-all;
+    max-height:260px;
+}
+
+.ac-added-item {
+    display:flex;
+    align-items:center;
+    gap:12px;
+    background:#fff;
+    border-radius:10px;
+    padding:12px 16px;
+    margin-bottom:8px;
+    box-shadow:0 1px 4px rgba(50,18,122,.08);
+}
+.ac-added-type { font-size:13px; color:var(--muted); min-width:80px; }
+.ac-added-name { flex:1; font-weight:600; }
+.ac-added-country { font-size:13px; color:var(--muted); }
+.ac-delete-btn {
+    background:none;
+    border:none;
+    cursor:pointer;
+    font-size:16px;
+    padding:4px;
+    border-radius:6px;
+    transition:background .15s;
+}
+.ac-delete-btn:hover { background:#fce; }
+
+[data-theme="dark"] .ac-type-btn { border-color:#9d8ec4; color:#d4c8f0; }
+[data-theme="dark"] .ac-type-btn.active,
+[data-theme="dark"] .ac-type-btn:hover { background:var(--purple); color:#fff; }
+[data-theme="dark"] .ac-input { background:#1a0a4a; border-color:#3a1a7a; color:#faf5eb; }
+[data-theme="dark"] .ac-input:focus { border-color:#9d8ec4; }
+[data-theme="dark"] .ac-preview-wrap { background:#1a0a4a; }
+[data-theme="dark"] .ac-added-item { background:#1a0a4a; }
+[data-theme="dark"] .ac-backend-notice { background:#2a1a0a; border-color:#c77400; color:#ffd080; }
