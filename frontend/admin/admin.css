@@ -314,13 +314,6 @@ tbody td {
 #countries-table th:nth-child(4), #countries-table td:nth-child(4) { width: 13%; }
 #countries-table th:nth-child(5), #countries-table td:nth-child(5) { width: auto; }
 
-/* ── Sticky thead below fixed navbar ── */
-thead th {
-    position: sticky;
-    top: var(--nb-h, 72px);
-    z-index: 2;
-    background: var(--purple);
-}
 
 /* ── Continent tabs ── */
 .continent-tabs {
