@@ -50,9 +50,11 @@
     <meta name="twitter:title" content="سفرة — سافر وتذوق">
     <meta name="twitter:description" content="اكتشف وجهات وماكولات من مختلف أنحاء العالم">
     <script src="/auth/auth.js" defer></script>
-<link rel="dns-prefetch" href="https://res.cloudinary.com">
-<link rel="preconnect" href="https://res.cloudinary.com" crossorigin>
-<script src="/countries/asia-hero.js" defer></script>
+
+<!-- HERO-IMG-START -->
+<link rel="preload" as="image" href="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto:good,w_1920,c_limit/India.jpg" imagesrcset="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto:good,w_800,c_limit/India.jpg 800w, https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto:good,w_1280,c_limit/India.jpg 1280w, https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto:good,w_1920,c_limit/India.jpg 1920w" imagesizes="100vw" fetchpriority="high">
+<!-- HERO-IMG-END -->
+<script src="/countries/hero.js" defer></script>
 </head>
 
 <body>
@@ -149,7 +151,7 @@
     <a href="/countries/countries.html" class="back-btn">رجوع</a>
   </header>
 
-  <div class="country-name">
+  <div class="country-name" data-hero-img="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/India.jpg">
     <h1>الهند</h1>
     <p>أرض الألوان والتوابل، وتاريخ غني بالتنوع.</p>
   </div>

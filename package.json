@@ -1,0 +1,5 @@
+{
+  "scripts": {
+    "sync-images": "node scripts/sync-hero-images.js"
+  }
+}
