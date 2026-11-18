@@ -261,7 +261,8 @@ function parseEvents(html, pageUrl) {
             title:    btn.dataset.title    || "",
             img:      resolveSrc(btn.dataset.img || "", pageUrl),
             date:     (btn.dataset.date    || "").replace(/^📅\s*/, ""),
-            location: btn.dataset.location || ""
+            location: btn.dataset.location || "",
+            country:  btn.dataset.country  || ""
         });
     });
     return evs;
@@ -285,15 +286,28 @@ function parseRecipes(html, pageUrl) {
 
 async function fetchHomeData() {
     try {
-        const [rawCountries, statesRaw, events, recipes] = await Promise.all([
+        const [rawCountries, statusList, events, recipes] = await Promise.all([
             loadPage("ctr", "/countries/countries.html", parseCountries),
-            fetch(API_BASE + "/country-states").then(r => r.json()).catch(() => ({})),
+            fetch(API_BASE + "/countries/status").then(r => r.json()).catch(() => []),
             loadPage("ev",  "/events/events.html",       parseEvents),
             loadPage("rc",  "/recipes/recipes.html",     parseRecipes)
         ]);
 
-        window.SAFRA_EVENTS  = events;
-        window.SAFRA_RECIPES = recipes;
+        const statesRaw = {};
+        (statusList || []).forEach(item => { statesRaw[item.id] = item.status; });
+
+        const hiddenCountryNames = new Set(
+            rawCountries
+                .filter(c => statesRaw[c.id] && statesRaw[c.id] !== 'active')
+                .map(c => c.name.split('\u2013')[0].split('\u2014')[0].trim())
+        );
+
+        window.SAFRA_EVENTS = hiddenCountryNames.size
+            ? events.filter(e => !e.country || ![...hiddenCountryNames].some(n => e.country.includes(n)))
+            : events;
+        window.SAFRA_RECIPES = hiddenCountryNames.size
+            ? recipes.filter(r => !r.country || !hiddenCountryNames.has(r.country))
+            : recipes;
 
         const contOv = {};
         try { Object.assign(contOv, JSON.parse(localStorage.getItem('sfr_cont_v1') || '{}')); } catch(_) {}

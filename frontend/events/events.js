@@ -17,6 +17,7 @@ function normalizeArabic(str) {
 function applySearchAndFilter() {
     const query = normalizeArabic((searchInput?.value || "").trim());
     cards.forEach((card) => {
+        if (card.dataset.countryHidden) { card.style.display = 'none'; return; }
         const name = normalizeArabic(card.querySelector(".event-name")?.textContent || "");
         const region = card.getAttribute("data-region") || "";
         const matchesSearch = name.includes(query);
@@ -39,6 +40,11 @@ filterBtns.forEach((btn) => {
 const eventModal = document.getElementById("eventModal");
 
 function openEventModal(btn) {
+    const eventCard = btn.closest(".event-card");
+    if (eventCard?.dataset.countryHidden) {
+        if (typeof showToast === 'function') showToast('هذا المحتوى غير متاح حالياً', 'info');
+        return;
+    }
     document.getElementById("modalEventImg").src = btn.dataset.img || "";
     document.getElementById("modalEventImg").alt = btn.dataset.title || "";
     document.getElementById("modalEventTitle").textContent = btn.dataset.title || "";
@@ -133,34 +139,38 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-// ── إخفاء فعاليات coming_soon (in_development تبان طبيعي) ────────────────────
-(async function hideComingSoonEvents() {
+(async function hideInactiveEvents() {
     if (!document.querySelector('.event-card')) return;
-
     try {
-        const res = await fetch('https://sofrh-1.onrender.com/country-states');
-        const statuses = res.ok ? await res.json() : {};
-        const comingSoonIds = new Set(
-            Object.entries(statuses)
-                  .filter(([, s]) => s === 'coming_soon')
-                  .map(([id]) => id)
-        );
-        if (comingSoonIds.size === 0) return;
-
-        // جيب الأسماء العربية من plan.js
-        const planRes  = await fetch('/plan/plan.js');
+        const res = await fetch('https://sofrh-1.onrender.com/countries/status');
+        if (!res.ok) return;
+        const list = await res.json();
+        const hiddenIds = new Set(list.filter(item => item.status !== 'active').map(item => item.id));
+        if (hiddenIds.size === 0) return;
+        const planRes = await fetch('/plan/plan.js');
         const planText = await planRes.text();
         const arrMatch = planText.match(/const\s+countries\s*=\s*(\[[\s\S]*?\]);/);
         const planCountries = arrMatch ? JSON.parse(arrMatch[1]) : [];
-        const comingSoonNames = new Set(
-            planCountries.filter(c => comingSoonIds.has(c.id)).map(c => c.nameAr)
-        );
-
+        const hiddenNames = new Set(planCountries.filter(c => hiddenIds.has(c.id)).map(c => c.nameAr));
         document.querySelectorAll('.event-card').forEach(card => {
             const dataCountry = card.querySelector('.event-item')?.getAttribute('data-country') || '';
-            for (const name of comingSoonNames) {
-                if (dataCountry.includes(name)) { card.style.display = 'none'; break; }
+            for (const name of hiddenNames) {
+                if (dataCountry.includes(name)) {
+                    card.dataset.countryHidden = '1';
+                    card.style.display = 'none';
+                    break;
+                }
             }
         });
+        const params = new URLSearchParams(window.location.search);
+        const eventId = params.get('event');
+        if (eventId) {
+            const card = document.getElementById(eventId);
+            if (card?.dataset.countryHidden) {
+                const modal = document.getElementById('eventModal');
+                if (modal) { modal.style.display = 'none'; document.body.style.overflow = 'auto'; }
+                if (typeof showToast === 'function') showToast('هذا المحتوى غير متاح حالياً', 'info');
+            }
+        }
     } catch (_) {}
 })();

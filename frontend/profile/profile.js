@@ -116,7 +116,59 @@ const typeLinks = {
     plan: (item) => getCountryLink(item.id.replace(/-\d{4}-\d{2}-\d{2}$/, '')),
 };
 
-// عرض المفضلة من السيرفر
+const _recipeCountry = {
+    saleeg:'السعودية',kabsa:'السعودية',jareesh:'السعودية',madfoon:'السعودية',areeka:'السعودية',kleeja:'السعودية',
+    majboos:'الكويت',harees:'الكويت',threed:'قطر',luqaimat:'الكويت',margoug:'الكويت',tashreeb:'الكويت','zubaidi-fish':'الكويت',
+    sushi:'اليابان',ramen:'اليابان',tempura:'اليابان',okonomiyaki:'اليابان',takoyaki:'اليابان',tonkatsu:'اليابان',
+    'nasi-goreng':'إندونيسيا','mie-goreng':'إندونيسيا',rendang:'إندونيسيا','gado-gado':'إندونيسيا','dadar-gulung':'إندونيسيا',satay:'إندونيسيا',
+    hoawshi:'مصر',kushari:'مصر',tameya:'مصر',mahshi:'مصر',molokhia:'مصر',kofta:'مصر',
+    bobotie:'جنوب أفريقيا',braai:'جنوب أفريقيا','pap-chakalaka':'جنوب أفريقيا','bunny-chow':'جنوب أفريقيا',sosatie:'جنوب أفريقيا','milk-tart':'جنوب أفريقيا',
+    shebakia:'المغرب',tajine:'المغرب',couscous:'المغرب',bastilla:'المغرب',harira:'المغرب',msemen:'المغرب','bissara':'المغرب',zaalouk:'المغرب',
+    'neapolitan-pizza':'إيطاليا',carbonara:'إيطاليا',lasagna:'إيطاليا',risotto:'إيطاليا','penne-arrabbiata':'إيطاليا','chicken-parmigiana':'إيطاليا',
+    fondue:'سويسرا',raclette:'سويسرا','swiss-chocolate':'سويسرا',rosti:'سويسرا','bircher-muesli':'سويسرا','zurcher-geschnetzeltes':'سويسرا',
+    hangikjot:'آيسلندا',vinarterta:'آيسلندا',plokkfiskur:'آيسلندا','seafood-soup':'آيسلندا',ponnukokur:'آيسلندا','skyr-cheesecake':'آيسلندا',
+    'bandeja-paisa':'كولومبيا',arepa:'كولومبيا',sancocho:'كولومبيا',empanadas:'كولومبيا',patacones:'كولومبيا',ajiaco:'كولومبيا',
+    feijoada:'البرازيل',churrasco:'البرازيل','pao-de-queijo':'البرازيل',moqueca:'البرازيل',acaraje:'البرازيل',pudim:'البرازيل',
+    ceviche:'بيرو','lomo-saltado':'بيرو','aji-de-gallina':'بيرو','papa-huancaina':'بيرو',anticuchos:'بيرو',picarones:'بيرو','causa-rellena':'بيرو','leche-de-tigre':'بيرو',
+    tacos:'المكسيك',burrito:'المكسيك',quesadilla:'المكسيك',enchilada:'المكسيك',guacamole:'المكسيك',churros:'المكسيك',pozole:'المكسيك',tamales:'المكسيك',mole:'المكسيك',
+    burger:'الولايات المتحدة','american-pizza':'الولايات المتحدة','hot-dog':'الولايات المتحدة','fried-chicken':'الولايات المتحدة',pancakes:'الولايات المتحدة',donuts:'الولايات المتحدة',
+    poutine:'كندا','maple-pancakes':'كندا','smoked-meat':'كندا',tourtiere:'كندا','lobster-canada':'كندا',beavertails:'كندا',
+    'peking-duck':'الصين',dumplings:'الصين','chinese-noodles':'الصين','fried-rice':'الصين','dim-sum':'الصين','kung-pao-chicken':'الصين',
+    biryani:'كينيا','butter-chicken':'الهند',samosa:'كينيا',naan:'الهند','masala-dosa':'الهند','gulab-jamun':'الهند',
+    'pad-thai':'تايلاند','tom-yum':'تايلاند','mango-sticky-rice':'تايلاند','green-curry':'تايلاند','thai-fried-rice':'تايلاند',
+    'nasi-lemak':'ماليزيا','malaysia-satay':'ماليزيا','roti-canai':'ماليزيا',laksa:'ماليزيا',
+    'chicken-rice':'سنغافورة','chilli-crab':'سنغافورة','singapore-laksa':'سنغافورة','singapore-satay':'سنغافورة','kaya-toast':'سنغافورة','ice-kachang':'سنغافورة',
+    adobo:'الفلبين',sinigang:'الفلبين',sisig:'الفلبين',pancit:'الفلبين','halo-halo':'الفلبين',lumpia:'الفلبين',
+    'pho-chicken':'فيتنام','banh-mi':'فيتنام','spring-rolls':'فيتنام','com-ga':'فيتنام','bun-tom':'فيتنام','che-chuoi':'فيتنام',
+    'grilled-fish-uae':'المالديف',khabees:'الإمارات',balaleet:'قطر',
+    'iskender-kebab':'تركيا',manti:'تركيا',doner:'تركيا',pide:'تركيا',borek:'تركيا','turkish-kunafa':'تركيا',
+    garudhiya:'المالديف','mas-huni':'المالديف',rihaakuru:'المالديف','seafood-rice':'المالديف','coconut-pudding':'المالديف',
+    'kottu-roti':'سريلانكا','sri-lankan-biryani':'سريلانكا',hoppers:'سريلانكا','fish-curry':'سريلانكا',watalappam:'سريلانكا',
+    brik:'تونس',lablabi:'تونس','tunisian-grills':'تونس','tunisian-tajine':'تونس',makroudh:'تونس',
+    pilau:'كينيا','nyama-choma':'كينيا',chapati:'كينيا',mandazi:'كينيا',
+    'pilau-rice':'تنزانيا',mishkaki:'تنزانيا',ugali:'تنزانيا','grilled-fish-tz':'تنزانيا','samosa-tz':'تنزانيا','mandazi-tz':'تنزانيا',
+    paella:'إسبانيا',gazpacho:'إسبانيا',tortilla:'إسبانيا',churros_esp:'إسبانيا',croquetas:'إسبانيا',
+    croissant:'فرنسا',ratatouille:'فرنسا','coq-au-vin':'فرنسا',crepes:'فرنسا','french-onion-soup':'فرنسا',
+    moussaka:'اليونان',souvlaki:'اليونان',tzatziki:'اليونان',spanakopita:'اليونان',baklava:'اليونان',
+    hummus:'لبنان',tabbouleh:'لبنان',kibbeh:'لبنان',fattoush:'لبنان',manakish:'لبنان',
+    'ghormeh-sabzi':'إيران','fesenjan':'إيران','ash-reshteh':'إيران','tahdig':'إيران','chelo-kabab':'إيران',
+    'nihari':'باكستان',haleem:'باكستان','chapli-kebab':'باكستان','karahi':'باكستان','biryani-pk':'باكستان',
+    bibimbap:'كوريا الجنوبية',kimchi:'كوريا الجنوبية',bulgogi:'كوريا الجنوبية',tteokbokki:'كوريا الجنوبية',ramyeon:'كوريا الجنوبية',jajangmyeon:'كوريا الجنوبية',
+    injera:'إثيوبيا',tibs:'إثيوبيا','doro-wat':'إثيوبيا',
+    'jollof-rice':'نيجيريا',egusi:'نيجيريا',suya:'نيجيريا',
+    'asado':'الأرجنتين','empanadas-arg':'الأرجنتين','dulce-de-leche':'الأرجنتين',
+    borscht:'روسيا',pelmeni:'روسيا',stroganoff:'روسيا',
+    schnitzel:'ألمانيا',bratwurst:'ألمانيا',pretzel:'ألمانيا',
+    'chakchouka':'الجزائر','rechta':'الجزائر',
+    asida:'ليبيا',sharba:'ليبيا',
+    'ful-sudani':'السودان',kisra:'السودان',
+    saltah:'اليمن',fahsa:'اليمن',mandi:'اليمن',
+    quzi:'العراق',dolma:'العراق',masgouf:'العراق',
+    'kibbeh-sy':'سوريا',muhamara:'سوريا','fattet-hummus':'سوريا',
+    mansaf:'الأردن',maqluba:'الأردن',
+    musakhan:'فلسطين','knafeh':'فلسطين',
+};
+
 async function renderFavorites() {
     const user = JSON.parse(localStorage.getItem("safraUser"));
     if (!user) return;
@@ -128,6 +180,44 @@ async function renderFavorites() {
         saved = data.favorites || {};
     } catch (err) {
         saved = JSON.parse(localStorage.getItem("safraFavorites") || "{}");
+    }
+
+    const hiddenNames = new Set();
+    const eventCountryMap = {};
+    try {
+        const [statusRes, planRes, evRes] = await Promise.all([
+            fetch('https://sofrh-1.onrender.com/countries/status'),
+            fetch('/plan/plan.js'),
+            fetch('/events/events.html')
+        ]);
+        const statusList = statusRes.ok ? await statusRes.json() : [];
+        const planText = planRes.ok ? await planRes.text() : '';
+        const arrMatch = planText.match(/const\s+countries\s*=\s*(\[[\s\S]*?\]);/);
+        const planCountries = arrMatch ? JSON.parse(arrMatch[1]) : [];
+        const hiddenIds = new Set(statusList.filter(s => s.status !== 'active').map(s => s.id));
+        planCountries.filter(pc => hiddenIds.has(pc.id)).forEach(pc => hiddenNames.add(pc.nameAr));
+        if (evRes.ok) {
+            const evHtml = await evRes.text();
+            const evDoc = new DOMParser().parseFromString(evHtml, 'text/html');
+            evDoc.querySelectorAll('.event-card').forEach(card => {
+                const btn = card.querySelector('.event-item');
+                const country = btn?.getAttribute('data-country') || '';
+                if (card.id && country) eventCountryMap[card.id] = country;
+            });
+        }
+    } catch (_) {}
+
+    function isHiddenItem(key, item) {
+        if (!hiddenNames.size) return false;
+        if (key === 'recipe') {
+            const country = _recipeCountry[item.id] || '';
+            return country ? hiddenNames.has(country) : false;
+        }
+        if (key === 'event') {
+            const country = eventCountryMap[item.id] || '';
+            return country ? [...hiddenNames].some(n => country.includes(n)) : false;
+        }
+        return false;
     }
 
     const types = [
@@ -147,11 +237,12 @@ async function renderFavorites() {
         if (items.length === 0) { empty.style.display = "block"; return; }
         empty.style.display = "none";
         items.forEach(item => {
+            const hidden = isHiddenItem(key, item);
             const card = document.createElement("div");
             card.className = key === "plan" ? "fav-card fav-card-plan" : "fav-card";
+            if (hidden) { card.style.opacity = '0.5'; card.style.cursor = 'default'; }
             const link = typeLinks[key] ? typeLinks[key](item) : '#';
 
-            // كرت الخطة: الاسم مخزّن كـ "اسم الدولة – الميزانية ريال – عدد الأيام"
             let infoHtml = `<span>${item.name}</span>`;
             if (key === "plan") {
                 const [countryName, budget, days] = item.name.split(" – ");
@@ -159,6 +250,8 @@ async function renderFavorites() {
                     <span class="plan-country">${countryName || item.name}</span>
                     ${budget ? `<span class="plan-meta">💰 ${budget}</span>` : ""}
                     ${days ? `<span class="plan-meta">📅 ${days}</span>` : ""}`;
+            } else if (hidden) {
+                infoHtml = `<span>${item.name}</span><span style="font-size:0.65rem;background:#d2a673;color:#fff;padding:2px 6px;border-radius:8px;margin-inline-start:6px">قريباً</span>`;
             }
 
             card.innerHTML = `
@@ -170,6 +263,10 @@ async function renderFavorites() {
             `;
             card.addEventListener("click", (e) => {
                 if (e.target.closest(".fav-remove")) return;
+                if (hidden) {
+                    if (typeof showToast === 'function') showToast('هذا المحتوى غير متاح حالياً', 'info');
+                    return;
+                }
                 window.location.href = link;
             });
             card.querySelector(".fav-remove").addEventListener("click", (e) => {

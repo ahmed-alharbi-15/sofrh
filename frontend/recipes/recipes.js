@@ -17,6 +17,7 @@ function normalizeArabic(str) {
 function applySearchAndFilter() {
     const query = normalizeArabic((searchInput?.value || "").trim());
     cards.forEach((card) => {
+        if (card.dataset.countryHidden) { card.style.display = 'none'; return; }
         const name = normalizeArabic(card.querySelector(".recipes-head span")?.textContent || "");
         const region = card.getAttribute("data-region") || "";
         const matchesSearch = name.includes(query);
@@ -262,6 +263,10 @@ const countryMap = {
 
 window.openRecipeFromData = function (btn) {
     const card = btn.closest(".foods-card");
+    if (card?.dataset.countryHidden) {
+        if (typeof showToast === 'function') showToast('هذا المحتوى غير متاح حالياً', 'info');
+        return;
+    }
     const region = card?.getAttribute("data-region") || "";
 
     // ✅ البحث داخل المودال فقط
@@ -376,31 +381,35 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-// ── إخفاء وصفات coming_soon (in_development تبان طبيعي) ─────────────────────
-(async function hideComingSoonRecipes() {
+(async function hideInactiveRecipes() {
     if (!document.querySelector('.foods-card')) return;
-
     try {
-        const res = await fetch('https://sofrh-1.onrender.com/country-states');
-        const statuses = res.ok ? await res.json() : {};
-        const comingSoonIds = new Set(
-            Object.entries(statuses)
-                  .filter(([, s]) => s === 'coming_soon')
-                  .map(([id]) => id)
-        );
-        if (comingSoonIds.size === 0) return;
-
-        const planRes  = await fetch('/plan/plan.js');
+        const res = await fetch('https://sofrh-1.onrender.com/countries/status');
+        if (!res.ok) return;
+        const list = await res.json();
+        const hiddenIds = new Set(list.filter(item => item.status !== 'active').map(item => item.id));
+        if (hiddenIds.size === 0) return;
+        const planRes = await fetch('/plan/plan.js');
         const planText = await planRes.text();
         const arrMatch = planText.match(/const\s+countries\s*=\s*(\[[\s\S]*?\]);/);
         const planCountries = arrMatch ? JSON.parse(arrMatch[1]) : [];
-        const comingSoonNames = new Set(
-            planCountries.filter(c => comingSoonIds.has(c.id)).map(c => c.nameAr)
-        );
-
+        const hiddenNames = new Set(planCountries.filter(c => hiddenIds.has(c.id)).map(c => c.nameAr));
         document.querySelectorAll('.foods-card').forEach(card => {
-            const dataCountry = card.getAttribute('data-country') || '';
-            if (comingSoonNames.has(dataCountry)) card.style.display = 'none';
+            const cn = countryMap[card.id] || card.getAttribute('data-country') || '';
+            if (cn && hiddenNames.has(cn)) {
+                card.dataset.countryHidden = '1';
+                card.style.display = 'none';
+            }
         });
+        const params = new URLSearchParams(window.location.search);
+        const recipeId = params.get('recipe');
+        if (recipeId) {
+            const card = document.getElementById(recipeId);
+            if (card?.dataset.countryHidden) {
+                const modal = document.getElementById('recipeModal');
+                if (modal) { modal.style.display = 'none'; document.body.style.overflow = 'auto'; }
+                if (typeof showToast === 'function') showToast('هذا المحتوى غير متاح حالياً', 'info');
+            }
+        }
     } catch (_) {}
 })();
