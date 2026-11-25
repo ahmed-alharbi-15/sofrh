@@ -5,7 +5,7 @@
 <script>
 (() => {
   const theme = localStorage.getItem("theme");
-  document.documentElement.setAttribute("data-theme", theme === "dark" ? "dark" : "light");
+  document.documentElement.setAttribute("data-theme", theme === "light" ? "light" : "dark");
 })();
 </script>
     <style>
@@ -74,6 +74,11 @@
     <link rel="canonical" href="https://sofrh.vercel.app/about/about.html">
 
     <script src="/auth/auth.js" defer></script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="/theme/sofrah-v2.css">
+<script src="/theme/sofrah-v2.js" defer></script>
 </head>
 
 <body>
@@ -186,6 +191,74 @@
         </p>
     </section>
 
+
+    <section class="sfr-logo-story">
+        <span class="sfr-logo-story-eyebrow">قصة الشعار</span>
+        <h2>شعار يجمع بين <span class="accent">السفر</span> والطعام</h2>
+        <div class="sfr-logo-story-grid">
+            <div class="sfr-logo-panel">
+                <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/logo-img.PNG" alt="شعار سفرة">
+                <p class="tagline1">عالم من النكهات</p>
+                <p class="tagline2">ورحلات لا تنتهي</p>
+            </div>
+            <div>
+                <div class="sfr-logo-cards">
+                    <div class="sfr-logo-card">
+                        <div class="sfr-logo-card-icon">
+                            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="10" y1="3" x2="10" y2="12"/><line x1="14" y1="3" x2="14" y2="12"/><line x1="18" y1="3" x2="18" y2="12"/><path d="M10 12 a4 4 0 0 0 8 0"/><line x1="14" y1="16" x2="14" y2="25"/></svg>
+                        </div>
+                        <span class="sfr-logo-card-num">01</span>
+                        <h4>السين</h4>
+                        <p>على شكل شوكة: رمز للطعام والمائدة والضيافة.</p>
+                    </div>
+                    <div class="sfr-logo-card">
+                        <div class="sfr-logo-card-icon">
+                            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><ellipse cx="14" cy="10" rx="6" ry="7.5"/><line x1="14" y1="17.5" x2="14" y2="25"/></svg>
+                        </div>
+                        <span class="sfr-logo-card-num">02</span>
+                        <h4>الفاء</h4>
+                        <p>على شكل ملعقة: رمز للأكل والمذاق والتجربة الشهية.</p>
+                    </div>
+                    <div class="sfr-logo-card">
+                        <div class="sfr-logo-card-icon">
+                            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><ellipse cx="14" cy="17" rx="7" ry="9"/><path d="M14 8 C14 5 17 3 20 4"/></svg>
+                        </div>
+                        <span class="sfr-logo-card-num">03</span>
+                        <h4>التاء المربوطة</h4>
+                        <p>زيتونة: رمز للصحة والنكهات العربية وتنوع المطابخ.</p>
+                    </div>
+                    <div class="sfr-logo-card">
+                        <div class="sfr-logo-card-icon">
+                            <span style="font-size:28px;font-weight:700;color:var(--brand)">ر</span>
+                        </div>
+                        <span class="sfr-logo-card-num">04</span>
+                        <h4>الراء</h4>
+                        <p>بقت على شكلها: حفاظاً على الهوية العربية والأصالة.</p>
+                    </div>
+                    <div class="sfr-logo-card">
+                        <div class="sfr-logo-card-icon">
+                            <span style="font-size:22px;font-weight:700;color:var(--brand);line-height:1">سُ&thinsp;سَ</span>
+                        </div>
+                        <span class="sfr-logo-card-num">05</span>
+                        <h4>الضمة والفتحة</h4>
+                        <p>نطقان لكلمة وحدة: سُفرة المائدة وسَفرة الرحلة.</p>
+                    </div>
+                    <div class="sfr-logo-card">
+                        <div class="sfr-logo-card-icon">
+                            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M24 8 L20 10 L16 7 L14 11" stroke-dasharray="3 2"/><path d="M14 11 L10 9 L4 14" stroke-dasharray="3 2"/><polygon points="13,10 15,10 15,13 13,13" fill="var(--accent)" stroke="none"/></svg>
+                        </div>
+                        <span class="sfr-logo-card-num">06</span>
+                        <h4>مسار الطائرة</h4>
+                        <p>يمر في الشوكة والملعقة. كل رحلة تبدأ بخطوة.</p>
+                    </div>
+                </div>
+                <div class="sfr-logo-strip">
+                    <span class="motto">طعام ومذاق · سفر وترحال · اكتشاف ثقافات العالم</span>
+                    <span class="heart-quote"><span class="heart">♥</span> سافر بالعين… وتذوق بالذوق</span>
+                </div>
+            </div>
+        </div>
+    </section>
     <section class="about-features">
         <h2 class="section-title">مميزات المنصة</h2>
         <div class="section-line"></div>
