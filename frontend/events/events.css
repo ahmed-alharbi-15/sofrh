@@ -834,3 +834,18 @@ input {
     color: var(--text);
     border-color: var(--border);
 }
+
+/* ==================== v2 design ==================== */
+body { font-family: 'IBM Plex Sans Arabic', 'Dubai', sans-serif; }
+.hero { background: radial-gradient(120% 140% at 85% 0%, #5A2BC4 0%, #32127A 45%, #1A0846 100%); min-height: 320px; }
+.hero-text h1 { font-size: clamp(28px, 5vw, 46px); font-weight: 600; }
+.hero-accent { color: var(--accent) !important; }
+.event-card { border-radius: 22px; overflow: hidden; }
+.event-head::after { background: linear-gradient(to top, rgba(16,6,40,.9) 0%, rgba(16,6,40,0) 62%); }
+.event-name { font-size: 17px; font-weight: 600; }
+.event-tag { font-size: 12px; background: var(--surface2); color: var(--ink2); border: none; padding: 4px 10px; border-radius: 8px; }
+.modal-content { background: var(--surface); border-color: var(--line); }
+.modal-body { background: var(--surface); color: var(--ink); }
+html[data-theme="dark"] .modal-content { background: var(--surface) !important; }
+html[data-theme="dark"] .modal-body { background: var(--surface) !important; color: var(--ink) !important; }
+html[data-theme="dark"] .event-tag { background: var(--surface2) !important; color: var(--ink2) !important; }

@@ -1738,3 +1738,29 @@ input {
     z-index: 0;
 }
 .si-override > * { position: relative; z-index: 1; }
+
+/* ==================== v2 design ==================== */
+body { font-family: 'IBM Plex Sans Arabic', 'Dubai', sans-serif; }
+.hero { background: radial-gradient(120% 140% at 85% 0%, #5A2BC4 0%, #32127A 45%, #1A0846 100%); min-height: 560px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.hero-text h1 { font-size: clamp(28px, 5vw, 46px); font-weight: 600; }
+.hero-accent { color: var(--accent) !important; }
+.hero-text p { font-size: 17px; color: rgba(255,255,255,.85); }
+.hero-stats { display: flex; gap: 0; border-top: 1px solid rgba(255,255,255,.18); border-bottom: 1px solid rgba(255,255,255,.18); margin-top: 32px; width: 100%; max-width: 640px; }
+.hero-stat { flex: 1; padding: 20px 8px; text-align: center; border-inline-start: 1px solid rgba(255,255,255,.18); }
+.hero-stat:first-child { border-inline-start: none; }
+.stat-num { font-family: 'IBM Plex Mono', 'IBM Plex Sans Arabic', monospace; font-size: 32px; font-weight: 500; color: var(--brand); line-height: 1.2; display: block; }
+.stat-label { font-size: 13px; color: var(--ink2); display: block; }
+.hero-stat-divider { display: none; }
+html[data-theme="dark"] .stat-num { color: var(--accent) !important; }
+html[data-theme="dark"] .stat-label { color: var(--ink2) !important; }
+.sections-preview { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; padding: 32px; max-width: 1400px; margin: 0 auto; }
+.sections-preview .card { position: relative; border-radius: 24px; overflow: hidden; min-height: 420px; border: none; background: var(--surface); }
+html[data-theme="dark"] .sections-preview .card { background: var(--surface) !important; }
+.sections-preview .card img { width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; }
+.card-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(16,6,40,.88) 0%, rgba(16,6,40,0) 62%); }
+.card-content { position: absolute; bottom: 0; right: 0; left: 0; padding: 20px; }
+.card-label { font-size: 22px; font-weight: 600; color: #fff !important; }
+.card-content .text { font-size: 14px; color: rgba(255,255,255,.8) !important; }
+.section-btn { display: inline-block; font-size: 14px; font-weight: 700; color: #FFB054 !important; margin-top: 8px; }
+@media (max-width: 900px) { .sections-preview { grid-template-columns: repeat(2, 1fr); padding: 18px; gap: 14px; } .sections-preview .card { min-height: 300px; } }
+@media (max-width: 480px) { .sections-preview { grid-template-columns: 1fr; gap: 12px; padding: 12px; } .hero { min-height: 400px; } .stat-num { font-size: 24px; } }

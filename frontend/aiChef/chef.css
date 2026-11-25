@@ -315,3 +315,5 @@
     height: calc(100vh - 110px);
   }
 }
+/* ==================== v2 design ==================== */
+body { font-family: 'IBM Plex Sans Arabic', 'Dubai', sans-serif; }

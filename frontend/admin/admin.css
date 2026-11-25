@@ -939,3 +939,6 @@ tbody td {
 [data-theme="dark"] .ac-preview-wrap { background:#1a0a4a; }
 [data-theme="dark"] .ac-added-item { background:#1a0a4a; }
 [data-theme="dark"] .ac-unavailable-notice { background:#1e1230; border-color:#a07ef0; color:#d4c8f0; }
+
+/* ==================== v2 design ==================== */
+body { font-family: 'IBM Plex Sans Arabic', 'Dubai', sans-serif; }

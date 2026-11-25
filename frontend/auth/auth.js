@@ -424,3 +424,125 @@ if (menuBtn && sideMenu && closeBtn) {
     ping(); // فوراً عند التحميل
     setInterval(ping, 120000); // كل دقيقتين
 })();
+
+
+// --- 13. navbar scroll effect ---
+(function() {
+    var nb = document.querySelector('.navbar');
+    if (!nb) return;
+    function onScroll() { nb.classList.toggle('scrolled', window.scrollY > 40); }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+})();
+
+// --- 14. rotating hero images ---
+(function() {
+    if (typeof document === 'undefined') return;
+    var hero = document.querySelector('.hero');
+    if (!hero) return;
+    var path = window.location.pathname;
+    if (path.indexOf('/country/') !== -1) return;
+    if (path.indexOf('/auth/') !== -1) return;
+    if (path.indexOf('/login') !== -1 || path.indexOf('/signup') !== -1) return;
+
+    function getLocalImgs(selector) {
+        var imgs = [];
+        document.querySelectorAll(selector).forEach(function(el) {
+            var img = el.querySelector('img');
+            if (img && img.getAttribute('src') && img.getAttribute('src').length > 4) {
+                if (!el.classList.contains('coming-soon') && !el.classList.contains('in-development')) {
+                    imgs.push(img.getAttribute('src'));
+                }
+            }
+        });
+        return imgs;
+    }
+
+    function pickImg(imgs) {
+        if (!imgs.length) return null;
+        var last = '';
+        try { last = sessionStorage.getItem('sfr_last_hero') || ''; } catch(e) {}
+        var pool = imgs.filter(function(u) { return u !== last; });
+        if (!pool.length) pool = imgs;
+        var chosen = pool[Math.floor(Math.random() * pool.length)];
+        try { sessionStorage.setItem('sfr_last_hero', chosen); } catch(e) {}
+        return chosen;
+    }
+
+    function cloudUrl(src, w) {
+        if (!src || src.indexOf('res.cloudinary.com') === -1) return src;
+        return src.replace(/\/upload\//, '/upload/f_auto,q_auto:good,c_limit,w_' + w + '/');
+    }
+
+    function applyHero(src) {
+        if (!src) return;
+        var existing = hero.querySelector('.sfr-hero-bg');
+        if (existing) return;
+
+        var bg = document.createElement('div');
+        bg.className = 'sfr-hero-bg';
+
+        var blur = document.createElement('img');
+        blur.className = 'sfr-hero-bg-blur';
+        blur.src = cloudUrl(src, 40);
+        blur.setAttribute('aria-hidden', 'true');
+
+        var full = document.createElement('img');
+        full.className = 'sfr-hero-bg-full';
+        full.setAttribute('aria-hidden', 'true');
+        full.onload = function() {
+            full.classList.add('sfr-loaded');
+            setTimeout(function() { blur.style.opacity = '0'; }, 100);
+        };
+        full.src = cloudUrl(src, 1920);
+
+        var overlay = document.createElement('div');
+        overlay.className = 'sfr-hero-overlay';
+
+        var fade = document.createElement('div');
+        fade.className = 'sfr-hero-fade';
+
+        bg.appendChild(blur);
+        bg.appendChild(full);
+        bg.appendChild(overlay);
+        bg.appendChild(fade);
+        hero.insertBefore(bg, hero.firstChild);
+    }
+
+    var CACHE_KEY = 'sfr_country_imgs_v2';
+    var imgs = [];
+
+    if (path.indexOf('/events/') !== -1) {
+        imgs = getLocalImgs('.event-card');
+    } else if (path.indexOf('/recipes/') !== -1) {
+        imgs = getLocalImgs('.foods-card');
+    } else {
+        imgs = getLocalImgs('.country-card');
+    }
+
+    if (imgs.length >= 3) {
+        var unique = [];
+        imgs.forEach(function(u) { if (unique.indexOf(u) === -1) unique.push(u); });
+        if (unique.length > 20) unique = unique.sort(function() { return Math.random() - .5; }).slice(0, 20);
+        applyHero(pickImg(unique));
+    } else {
+        var cached = '';
+        try { cached = sessionStorage.getItem(CACHE_KEY) || ''; } catch(e) {}
+        if (cached) {
+            applyHero(pickImg(cached.split('|')));
+        } else {
+            fetch('/countries/countries.html').then(function(r) { return r.text(); }).then(function(html) {
+                var tmp = document.createElement('div');
+                tmp.innerHTML = html;
+                var arr = [];
+                tmp.querySelectorAll('.country-card:not(.coming-soon):not(.in-development)').forEach(function(el) {
+                    var img = el.querySelector('img');
+                    if (img && img.getAttribute('src')) arr.push(img.getAttribute('src'));
+                });
+                if (arr.length > 20) arr = arr.sort(function() { return Math.random() - .5; }).slice(0, 20);
+                try { sessionStorage.setItem(CACHE_KEY, arr.join('|')); } catch(e) {}
+                applyHero(pickImg(arr));
+            }).catch(function() {});
+        }
+    }
+})();
