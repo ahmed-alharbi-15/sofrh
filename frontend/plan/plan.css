@@ -1898,3 +1898,14 @@ input {
     color: var(--text);
     border-color: var(--border);
 }
+
+/* ==================== v2 design ==================== */
+body { font-family: 'IBM Plex Sans Arabic', 'Dubai', sans-serif; }
+.hero, .hero-open { background: radial-gradient(120% 140% at 85% 0%, #5A2BC4 0%, #32127A 45%, #1A0846 100%); min-height: 560px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.hero-text h1 { font-size: clamp(28px, 5vw, 46px); font-weight: 600; }
+.hero-accent { color: var(--accent) !important; }
+.hero-stat-num { font-family: 'IBM Plex Mono', monospace; font-size: 32px; font-weight: 500; color: var(--brand); }
+.hero-stat-label { font-size: 13px; color: var(--ink2); }
+html[data-theme="dark"] .hero-stat-num { color: var(--accent) !important; }
+html[data-theme="dark"] .hero-stat-label { color: var(--ink2) !important; }
+@media (max-width: 768px) { .hero, .hero-open { min-height: 400px; } .hero-stat-num { font-size: 24px; } }

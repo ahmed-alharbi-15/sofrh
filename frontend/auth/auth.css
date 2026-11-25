@@ -425,3 +425,21 @@ input {
     0%, 100% { opacity: 1; }
     50% { opacity: 0.6; }
 }
+/* ==================== v2 design ==================== */
+body { font-family: 'IBM Plex Sans Arabic', 'Dubai', sans-serif; }
+.auth-page { background: var(--bg); }
+.auth-card { background: var(--surface); border: 1px solid var(--line); border-radius: 24px; }
+.auth-card h1 { color: var(--brand); font-size: 28px; font-weight: 600; }
+.auth-sub { color: var(--ink2); font-size: 15px; }
+.input-group label { color: var(--ink2); font-size: 14px; font-weight: 600; }
+.input-group input { background: var(--surface2); border: 1.5px solid var(--line); border-radius: 14px; height: 48px; padding: 0 16px; font-size: 15px; color: var(--ink); font-family: 'IBM Plex Sans Arabic', sans-serif; }
+.input-group input:focus { border-color: var(--accent); box-shadow: 0 0 0 4px rgba(242,133,0,.18); }
+.auth-btn { background: var(--brand); color: #fff; border-radius: 12px; height: 48px; font-size: 15px; font-weight: 700; border: none; cursor: pointer; font-family: 'IBM Plex Sans Arabic', sans-serif; }
+.auth-btn:hover { background: var(--accent); color: #1F1238; }
+.auth-switch a { color: var(--accent); }
+html[data-theme="dark"] .auth-page { background: var(--bg) !important; }
+html[data-theme="dark"] .auth-card { background: var(--surface) !important; border-color: var(--line) !important; }
+html[data-theme="dark"] .auth-card h1 { color: var(--brand) !important; }
+html[data-theme="dark"] .input-group input { background: var(--surface2) !important; color: var(--ink) !important; border-color: var(--line) !important; }
+html[data-theme="dark"] .auth-btn { background: var(--brand) !important; color: #fff !important; }
+html[data-theme="dark"] .auth-btn:hover { background: var(--accent) !important; color: #1F1238 !important; }
