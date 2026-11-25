@@ -1,18 +1,44 @@
 /* ==================== متغيرات الوضع الليلي / النهاري (CSS Variables) ==================== */
 :root {
     --bg: #FAF5EB;
-    --text: #32127A;
-    --card-bg: #ffffff;
-    --input-bg: #ffffff;
-    --border: rgba(50,18,122,0.1);
+    --surface: #FFFFFF;
+    --surface2: #F0EBE0;
+    --soft: #F3ECDD;
+    --line: #E6DDCB;
+    --ink: #1F1238;
+    --ink2: #4A3D63;
+    --ink3: #5A4E70;
+    --brand: #32127A;
+    --tint: #EFE7FA;
+    --accent: #F28500;
+    --accent-ink: #8A4B00;
+    --foot: #1A0846;
+    --shadow: rgba(50,18,122,.22);
+    --text: var(--ink);
+    --card-bg: var(--surface);
+    --input-bg: var(--surface2);
+    --border: var(--line);
 }
 
 html[data-theme="dark"] {
-    --bg: #0B0933;
-    --text: #E0E0E0;
-    --card-bg: #1a1040;
-    --input-bg: #2a1f5e;
-    --border: rgba(242,133,0,0.3);
+    --bg: #110A22;
+    --surface: #1A1233;
+    --surface2: #231945;
+    --soft: #160F2C;
+    --line: #33265A;
+    --ink: #F2EDFB;
+    --ink2: #C6BCDB;
+    --ink3: #A99DC4;
+    --brand: #C9B6FF;
+    --tint: #2B1D5E;
+    --accent: #F28500;
+    --accent-ink: #FFAE4A;
+    --foot: #0A0616;
+    --shadow: rgba(0,0,0,.55);
+    --text: var(--ink);
+    --card-bg: var(--surface);
+    --input-bg: var(--surface2);
+    --border: var(--line);
 }
 
 /* ==================== auth/auth.css ==================== */
@@ -1351,3 +1377,72 @@ html[data-theme="dark"] .auth-buttons .signup {
     border-color: #E0E0E0 !important;
 }
 
+
+/* ==================== النافبار والفوتر — tokens التصميم ==================== */
+
+.navbar, nav {
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
+    min-height: 76px;
+}
+
+.navbar.scrolled, nav.scrolled, header.scrolled {
+    background: rgba(50,18,122,.92) !important;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    box-shadow: 0 10px 30px -18px rgba(0,0,0,.6) !important;
+}
+
+html[data-theme="dark"] .navbar.scrolled,
+html[data-theme="dark"] nav.scrolled,
+html[data-theme="dark"] header.scrolled {
+    background: rgba(17,10,34,.9) !important;
+}
+
+.nav-links a, .nav-link {
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    padding: 6px 14px;
+    border-radius: 8px;
+    height: 36px;
+    display: inline-flex;
+    align-items: center;
+}
+
+.nav-links a.active, .nav-link.active {
+    background: rgba(255,255,255,.28);
+}
+
+.nav-btn-cta {
+    background: var(--accent) !important;
+    color: #1F1238 !important;
+    font-weight: 700 !important;
+    height: 44px;
+    padding: 8px 18px;
+    border-radius: 10px;
+    font-size: 14px;
+    min-width: unset;
+}
+
+.nav-btn-cta:hover {
+    background: #FF9A1F !important;
+}
+
+footer, .footer {
+    background: var(--foot) !important;
+    color: #F2EDFB;
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
+}
+
+html[data-theme="dark"] footer,
+html[data-theme="dark"] .footer {
+    background: var(--foot) !important;
+}
+
+footer a, .footer a {
+    color: rgba(242,237,251,.75) !important;
+}
+
+footer a:hover, .footer a:hover {
+    color: var(--accent) !important;
+}
