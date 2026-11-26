@@ -56,7 +56,7 @@ html[data-theme="dark"] .sf-hchip{color:#F2EDFB}
 .sf-dest .cp b{font-weight:600;font-size:22px}
 .sf-dest .cp small{font-size:14px;opacity:.85}
 .sf-strip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
-.sf-strip .sf-dest{height:440px}
+.sf-strip .sf-dest{aspect-ratio:1/1;height:auto;min-height:0}
 
 /* بطاقة الصعود */
 .sf-pass{position:relative;width:100%;max-width:460px;background:#FAF5EB;color:#1F1238;border-radius:22px;overflow:hidden;display:flex;box-shadow:0 40px 80px -30px rgba(0,0,0,.6)}
@@ -91,7 +91,7 @@ html[data-theme="dark"] .sf-hchip{color:#F2EDFB}
   .sf-mosaic{grid-template-rows:180px 180px}
   .sf-strip{display:flex;overflow-x:auto;gap:12px;margin:0 -18px;padding:0 18px;scrollbar-width:none}
   .sf-strip::-webkit-scrollbar{display:none}
-  .sf-strip .sf-dest{flex:0 0 220px;height:300px}
+  .sf-strip .sf-dest{flex:0 0 220px;height:auto;aspect-ratio:1/1}
   .sf-cta{padding:56px 20px;border-radius:24px}
   .sf-cta p{font-size:15px}
 }
