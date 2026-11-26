@@ -1,655 +1,75 @@
-@font-face {
-    font-family: 'Dubai';
-    src: local('Dubai'), local('Dubai-Regular');
-    font-weight: 400;
-    font-display: swap;
+/* =====================================================================
+   سفرة — الملف الشخصي (الأساس في /navbar.css)
+   ===================================================================== */
+.profile-mobile-nav{display:none}
+.profile-page{position:relative;z-index:3;max-width:1280px;margin:-80px auto 0;padding:0 32px 96px;display:grid;grid-template-columns:300px minmax(0,1fr);gap:28px;align-items:start}
+
+/* الشريط الجانبي */
+.profile-sidebar{position:sticky;top:calc(var(--nav-h) + 20px);display:flex;flex-direction:column;gap:22px;padding:26px;border-radius:24px;background:var(--surface);border:1px solid var(--line);box-shadow:0 30px 60px -30px var(--shadow)}
+.profile-avatar-section{display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center}
+.avatar-wrapper{position:relative;width:104px;height:104px;margin-bottom:6px}
+#profileAvatar{width:104px;height:104px;border-radius:28px;object-fit:cover;background:#F28500;border:4px solid var(--surface);box-shadow:0 0 0 2px #F28500}
+.avatar-edit{position:absolute;bottom:-6px;left:-6px;width:36px;height:36px;border-radius:50%;background:#F28500;color:#1F1238;display:flex;align-items:center;justify-content:center;font-size:15px;cursor:pointer;border:3px solid var(--surface)}
+#profileName{font-size:22px;font-weight:600;color:var(--brand);line-height:1.35}
+#profileEmail{font-family:var(--mono);font-size:13px;color:var(--ink3);word-break:break-all}
+.profile-nav{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:4px;border-top:1px solid var(--line);padding-top:16px}
+.profile-nav a{display:flex;align-items:center;gap:10px;min-height:46px;padding:10px 14px;border-radius:12px;color:var(--ink2);text-decoration:none;font-weight:600;font-size:15px;transition:background .2s,color .2s}
+.profile-nav a:hover{background:var(--surface2);color:var(--ink)}
+.profile-nav a.active{background:#32127A;color:#fff}
+html[data-theme="dark"] .profile-nav a.active{background:#F28500;color:#1F1238}
+
+/* المحتوى */
+.profile-content{min-width:0;padding-top:96px}
+.fav-section{display:none;flex-direction:column;gap:20px}
+.fav-section.active{display:flex}
+.fav-title{font-size:30px;font-weight:600;color:var(--brand);line-height:1.35}
+.fav-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:18px}
+.fav-grid:empty{display:none}
+.fav-card{position:relative;display:flex;flex-direction:column;gap:10px;padding:10px;border-radius:22px;background:var(--surface);border:1px solid var(--line);cursor:pointer;transition:border-color .2s}
+.fav-card:hover{border-color:#F28500}
+.fav-card img{width:100%;height:160px;object-fit:cover;border-radius:14px;background:#2B1D5E}
+.fav-card-info{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:0 6px 4px}
+.fav-card-text{display:flex;flex-direction:column;gap:4px;min-width:0;font-weight:600;font-size:15px;color:var(--brand);line-height:1.5}
+.plan-country{font-size:16px}
+.plan-meta{font-size:13px;font-weight:500;color:var(--ink3)}
+.fav-remove{flex:none;width:40px;height:40px;border-radius:12px;border:1.5px solid var(--line);background:transparent;font-size:16px;display:flex;align-items:center;justify-content:center;padding:0}
+.fav-remove:hover{border-color:#C2410C;background:rgba(194,65,12,.08)}
+.fav-empty{padding:40px;text-align:center;border:2px dashed var(--line);border-radius:22px;color:var(--ink3);font-size:15px}
+
+/* الإعدادات */
+.settings-form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;align-items:start}
+.settings-group{display:flex;flex-direction:column;gap:16px;padding:26px;border-radius:22px;background:var(--surface);border:1px solid var(--line)}
+.settings-group h3{font-size:18px;font-weight:600;color:var(--brand)}
+.input-group{display:flex;flex-direction:column;gap:8px}
+.input-group label{font-size:14px;font-weight:600;color:var(--ink2)}
+.input-group input{width:100%;height:48px;border:1.5px solid var(--line);background:var(--surface2);color:var(--ink);border-radius:14px;padding:0 16px;font-size:15px;outline:none;transition:border-color .2s,box-shadow .2s}
+.input-group input::placeholder{color:var(--ink3)}
+.input-group input:focus{border-color:#F28500;box-shadow:0 0 0 4px rgba(242,133,0,.18)}
+.password-wrapper{position:relative}
+.password-wrapper input{padding-left:52px}
+.toggle-password{position:absolute;left:6px;top:50%;transform:translateY(-50%);width:40px;height:40px;border:none;border-radius:10px;background:transparent;font-size:16px;padding:0}
+.settings-btn{align-self:flex-start;display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:12px 24px;border-radius:12px;border:none;background:#F28500;color:#1F1238;font-weight:700;font-size:15px;margin-top:4px}
+.settings-btn:hover{background:#FF9A1F}
+
+/* ---------- الجوال ---------- */
+@media (max-width:1100px){.settings-form{grid-template-columns:1fr}}
+@media (max-width:900px){
+  .profile-page{grid-template-columns:1fr;margin-top:-40px;padding:0 18px 56px;gap:18px}
+  .profile-sidebar{position:static;padding:20px;border-radius:20px}
+  .profile-avatar-section{flex-direction:row;text-align:right;gap:14px}
+  .avatar-wrapper,#profileAvatar{width:72px;height:72px;border-radius:20px}
+  .avatar-wrapper{margin:0;flex:none}
+  .profile-avatar-section>h2,.profile-avatar-section>p{align-self:center}
+  .profile-avatar-section{display:grid;grid-template-columns:72px 1fr;grid-template-rows:auto auto;column-gap:14px;row-gap:2px}
+  .avatar-wrapper{grid-row:span 2}
+  #profileName{font-size:18px;align-self:end}
+  #profileEmail{align-self:start}
+  .profile-nav{flex-direction:row;overflow-x:auto;scrollbar-width:none;margin:0 -20px;padding:14px 20px 0}
+  .profile-nav::-webkit-scrollbar{display:none}
+  .profile-nav a{white-space:nowrap;min-height:40px;padding:8px 14px;font-size:13px}
+  .profile-content{padding-top:0}
+  .fav-title{font-size:22px}
+  .fav-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  .fav-card img{height:110px}
+  .settings-group{padding:20px}
 }
-
-@font-face {
-    font-family: 'Dubai';
-    src: local('Dubai Medium'), local('Dubai-Medium');
-    font-weight: 500;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Dubai';
-    src: local('Dubai Bold'), local('Dubai-Bold');
-    font-weight: 700;
-    font-display: swap;
-}
-
-:root {
-    --brown-dark: #32127A;
-    --cream-light: #FAF5EB;
-    --cream-soft: #F0EBE0;
-    --caramel: #F28500;
-}
-
-h1 {
-    font-size: 2.5rem;
-}
-
-h2 {
-    font-size: 1.8rem;
-}
-
-small,
-.text-small {
-    font-size: 0.875rem;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-@view-transition {
-    navigation: auto;
-}
-
-::view-transition-old(root) {
-    animation: none;
-}
-
-::view-transition-new(root) {
-    animation: none;
-}
-
-body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: 'Dubai', 'Dubai Regular', sans-serif;
-    font-size: 1rem;
-    overflow-x: hidden;
-}
-
-/* ================================
-   PROFILE PAGE
-================================ */
-.profile-page {
-    display: flex;
-    min-height: 100vh;
-    background: #FAF5EB;
-}
-
-/* ================================
-   SIDEBAR
-================================ */
-.profile-sidebar {
-    width: 260px;
-    background: var(--brown-dark);
-    padding: 30px 0;
-    position: fixed;
-    top: 90px;
-    right: 0;
-    height: calc(100% - 90px);
-    z-index: 100;
-    border-left: 1px solid rgba(242,133,0,0.15);
-}
-
-.profile-avatar-section {
-    text-align: center;
-    padding: 24px 20px;
-    border-bottom: 1px solid rgba(242,133,0,0.2);
-    margin-bottom: 20px;
-}
-
-.avatar-wrapper {
-    position: relative;
-    width: 90px;
-    margin: 0 auto 14px;
-}
-
-.avatar-wrapper img {
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid rgba(242,133,0,0.6);
-}
-
-.avatar-edit {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    background: rgba(242,133,0,0.8);
-    border-radius: 50%;
-    width: 26px;
-    height: 26px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 13px;
-    cursor: pointer;
-    transition: .3s;
-}
-
-.avatar-edit:hover { background: #F28500; }
-
-.profile-avatar-section h2 {
-    font-size: 17px;
-    color: #FFFFFF;
-    margin-bottom: 4px;
-}
-
-.profile-avatar-section p {
-    font-size: 12px;
-    color: rgba(255,255,255,0.5);
-}
-
-.profile-nav {
-    list-style: none;
-    padding: 0 14px;
-}
-
-.profile-nav li { margin-bottom: 6px; }
-
-.profile-nav li a {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 11px 16px;
-    border-radius: 12px;
-    text-decoration: none;
-    font-size: 15px;
-    font-weight: 600;
-    color: rgba(255,255,255,0.65);
-    transition: .3s;
-    font-family: 'Dubai', 'Dubai Regular', sans-serif;
-}
-
-.profile-nav li a:hover {
-    background: rgba(255,255,255,0.07);
-    color: #FFFFFF;
-}
-
-.profile-nav li a.active {
-    background: rgba(242,133,0,0.25);
-    color: #FFFFFF;
-    border: 1px solid rgba(242,133,0,0.35);
-}
-
-/* ================================
-   CONTENT
-================================ */
-.profile-content {
-    margin-right: 260px;
-    padding: 40px;
-    width: 100%;
-    background: #FAF5EB;
-}
-
-.fav-section { display: none; }
-.fav-section.active { display: block; }
-
-.fav-title {
-    font-size: 24px;
-    color: #32127A;
-    margin-bottom: 24px;
-    padding-bottom: 12px;
-    border-bottom: 3px solid var(--caramel);
-}
-
-/* ================================
-   FAV GRID - تصميم المجلة
-================================ */
-.fav-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 16px;
-}
-
-@media (max-width: 768px) {
-    .fav-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-}
-
-@media (max-width: 480px) {
-    .fav-grid {
-        grid-template-columns: 1fr;
-    }
-
-}
-
-/* ملاحظة: .fav-card تُبقي خلفيتها الداكنة الثابتة #150A35 عمداً (شفافة الصورة خلفها بغض النظر عن الثيم) — لا تُستبدل بـ var(--card-bg) لتفادي كسر تصميم كروت المفضلة */
-.fav-card {
-    position: relative;
-    border-radius: 16px;
-    overflow: hidden;
-    background: #150A35;
-    height: 220px;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.fav-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 16px 40px rgba(0,0,0,0.25);
-}
-
-.fav-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.5s ease;
-}
-
-.fav-card:hover img { transform: scale(1.05); }
-
-.fav-card::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to top, rgba(18,8,42,0.88) 0%, rgba(18,8,42,0.15) 55%, transparent 100%);
-    pointer-events: none;
-}
-
-.fav-card-info {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    padding: 14px 16px;
-    z-index: 2;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-}
-
-.fav-card-info span {
-    font-size: 14px;
-    font-weight: 700;
-    color: #fff;
-    text-shadow: 0 1px 4px rgba(0,0,0,0.5);
-    line-height: 1.3;
-    flex: 1;
-    padding-left: 8px;
-}
-
-/* حاوية نص الكرت — تحمل flex/padding بدل الـ span عشان تدعم أكثر من سطر (كرت الخطة) */
-.fav-card-text {
-    flex: 1;
-    padding-left: 8px;
-    min-width: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 3px;
-}
-
-.fav-card-text span {
-    flex: none;
-    padding-left: 0;
-}
-
-/* كرت "خططي": اسم الدولة + الميزانية + عدد الأيام */
-.fav-card-plan .plan-country {
-    font-size: 15px;
-}
-
-.fav-card-plan .plan-meta {
-    font-size: 12px;
-    font-weight: 600;
-    opacity: 0.92;
-}
-
-.fav-remove {
-    border: none;
-    background: rgba(255,255,255,0.12);
-    backdrop-filter: blur(6px);
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
-    font-size: 14px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: .3s;
-    flex-shrink: 0;
-    z-index: 3;
-}
-
-.fav-remove:hover {
-    background: rgba(200,60,60,0.7);
-    transform: scale(1.1);
-}
-
-.fav-empty {
-    color: #9b7a5e;
-    font-size: 16px;
-    text-align: center;
-    padding: 50px 40px;
-    background: #fff7ec;
-    border-radius: 16px;
-    border: 1px solid rgba(0,0,0,0.06);
-}
-
-/* ================================
-   SETTINGS
-================================ */
-.settings-form {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-}
-
-.settings-group {
-    background: #fff7ec;
-    border-radius: 16px;
-    padding: 24px;
-    box-shadow: 0 4px 14px rgba(0,0,0,.06);
-    border: 1px solid rgba(0,0,0,0.05);
-}
-
-.settings-group h3 {
-    font-size: 17px;
-    color: #32127A;
-    margin-bottom: 20px;
-    padding-bottom: 10px;
-    border-bottom: 2px solid #F0EBE0;
-}
-
-.input-group {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    margin-bottom: 16px;
-    text-align: right;
-}
-
-.input-group label {
-    font-size: 14px;
-    font-weight: 600;
-    color: #32127A;
-}
-
-.input-group input {
-    padding: 11px 16px;
-    border-radius: 12px;
-    border: 2px solid var(--border);
-    font-size: 15px;
-    font-family: 'Dubai', 'Dubai Regular', sans-serif;
-    background: var(--input-bg);
-    color: var(--text);
-    transition: .3s;
-    outline: none;
-    text-align: right;
-}
-
-.input-group input:focus {
-    border-color: #F28500;
-    background: #fff;
-}
-
-.settings-btn {
-    padding: 11px 24px;
-    border-radius: 12px;
-    border: none;
-    background: #32127A;
-    color: #FFFFFF;
-    font-size: 15px;
-    font-weight: 700;
-    font-family: 'Dubai', 'Dubai Regular', sans-serif;
-    cursor: pointer;
-    transition: .3s;
-}
-
-.settings-btn:hover {
-    background: #F28500;
-    color: #FFFFFF;
-}
-
-/* ================================
-   MOBILE NAV
-================================ */
-.profile-mobile-nav { display: none; }
-
-/* ================================
-   RESPONSIVE
-================================ */
-@media (max-width: 900px) {
-    .profile-sidebar { display: none; }
-
-    .profile-mobile-nav {
-        display: flex;
-        overflow-x: auto;
-        gap: 8px;
-        padding: 12px 16px;
-        background: #2A1060;
-        border-bottom: 1px solid rgba(242,133,0,0.2);
-    }
-
-    .profile-mobile-nav a {
-        white-space: nowrap;
-        padding: 8px 16px;
-        border-radius: 20px;
-        text-decoration: none;
-        font-size: 13px;
-        font-weight: 600;
-        color: rgba(255,255,255,0.65);
-        background: rgba(255,255,255,0.07);
-        border: 1px solid rgba(255,255,255,0.1);
-        transition: .3s;
-        font-family: 'Dubai', 'Dubai Regular', sans-serif;
-    }
-
-    .profile-mobile-nav a.active {
-        background: rgba(242,133,0,0.3);
-        color: #FFFFFF;
-        border-color: rgba(242,133,0,0.4);
-    }
-
-    .profile-content {
-        margin-right: 0;
-        padding: 20px;
-    }
-
-}
-
-/* ملاحظة: أعمدة .fav-grid تُدار الآن من الكتلة الـ responsive أعلى الملف
-   (auto-fill ← 768px: عمودين ← 480px: عمود واحد) — أُزيلت من هنا لتفادي التعارض */
-@media (max-width: 600px) {
-    .fav-card { height: 200px; }
-
-}
-
-@media (max-width: 480px) {
-    .profile-content { padding: 14px; }
-
-}
-.site-footer {
-  background-color: #32127A;
-  color: #FFFFFF;
-  padding: 50px 20px 20px;
-  margin-top: 60px;
-  text-align: center;
-}
-
-/* الشاشات الكبيرة - نفس الشكل القديم */
-.footer-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 40px;
-  max-width: 1200px;
-  margin: 0 auto;
-  flex-wrap: wrap;
-  direction: rtl;
-  text-align: right;
-}
-
-.footer-logo {
-  font-size: 2rem;
-  color: #F28500;
-  margin-bottom: 10px;
-}
-
-/* لون كلمة سفرة */
-.footer-logo {
-  color: #F28500;
-}
-
-.footer-logo {
-  color: #F28500 !important;
-}
-
-.footer-brand,
-.footer-links,
-.footer-contact {
-  text-align: right;
-}
-
-.footer-brand p {
-  color: #FFFFFF;
-  font-size: 0.9rem;
-}
-
-.footer-links h4,
-.footer-contact h4 {
-  color: #F28500;
-  margin-bottom: 15px;
-  font-size: 1rem;
-}
-
-.footer-links ul,
-.footer-contact ul {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.footer-links a,
-.footer-contact a {
-  color: #FFFFFF;
-  text-decoration: none;
-  font-size: 0.9rem;
-  transition: color 0.3s;
-}
-
-.footer-links a:hover,
-.footer-contact a:hover {
-  color: #F28500;
-}
-
-.footer-bottom {
-  text-align: center;
-  margin-top: 40px;
-  padding-top: 20px;
-  border-top: 1px solid rgba(240, 235, 224, 0.2);
-  color: #FFFFFF;
-  font-size: 0.85rem;
-}
-
-/* الجوال والتابلت - في المنتصف */
-/* تابلت */
-@media (max-width: 768px) {
-  .footer-container {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 30px;
-  }
-
-  .footer-brand,
-  .footer-links,
-  .footer-contact {
-    text-align: center;
-  }
-
-  .footer-links ul,
-  .footer-contact ul {
-    align-items: center;
-  }
-
-  .footer-logo {
-    font-size: 1.8rem;
-  }
-
-}
-
-/* موبايل */
-@media (max-width: 480px) {
-  .site-footer {
-    padding: 40px 15px 15px;
-  }
-
-  .footer-logo {
-    font-size: clamp(1.4rem, 5vw, 1.8rem);
-  }
-
-  .footer-brand p,
-  .footer-links a,
-  .footer-contact a {
-    font-size: clamp(0.8rem, 3vw, 0.9rem);
-  }
-
-  .footer-links h4,
-  .footer-contact h4 {
-    font-size: clamp(0.9rem, 3.5vw, 1rem);
-  }
-
-  .footer-bottom {
-    font-size: clamp(0.75rem, 2.5vw, 0.85rem);
-    margin-top: 30px;
-  }
-
-}
-
-@media (max-width: 480px) {
-    .footer-container {
-        gap: 20px;
-        padding: 0 16px;
-    }
-    .footer-logo { font-size: 1.6rem; }
-    .footer-brand p, .footer-links a, .footer-contact a { font-size: 0.85rem; }
-
-}
-
-@media (max-width: 380px) {
-    .footer-container { padding: 0 12px; gap: 20px; }
-    .footer-logo { font-size: 1.4rem; }
-    .footer-brand p, .footer-links a, .footer-contact a { font-size: 0.8rem; }
-
-}
-
-@media (max-width: 320px) {
-    .footer-container { padding: 0 10px; gap: 16px; }
-    .footer-logo { font-size: 1.2rem; }
-    .footer-brand p, .footer-links a, .footer-contact a { font-size: 0.75rem; }
-
-}
-
-
-/* اللوغو */
-
-
-/* الجوال */
-
-
-/* ملاحظة: .card/.wizard/.auth-card وinput العام غير موجودين فعلياً في profile.html —
-   نضيفهم هنا كما وردوا حرفياً لتطابق باقي ملفات CSS (.input-group input الحقيقي تم تحديثه فوق) */
-.card, .wizard, .auth-card {
-    background: var(--card-bg);
-}
-
-input {
-    background: var(--input-bg);
-    color: var(--text);
-    border-color: var(--border);
-}
-
-/* ==================== v2 design ==================== */
-body { font-family: 'IBM Plex Sans Arabic', 'Dubai', sans-serif; }
-.hero { background: radial-gradient(120% 140% at 85% 0%, #5A2BC4 0%, #32127A 45%, #1A0846 100%); min-height: 320px; }
-.hero-text h1 { font-size: clamp(28px, 5vw, 46px); font-weight: 600; }
-.profile-sidebar { background: var(--surface); border-left: 1px solid var(--line); }
-.fav-card { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; }
-.settings-group { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; }
-html[data-theme="dark"] .profile-sidebar { background: var(--surface) !important; }
-html[data-theme="dark"] .fav-card { background: var(--surface) !important; border-color: var(--line) !important; }
-html[data-theme="dark"] .settings-group { background: var(--surface) !important; border-color: var(--line) !important; }

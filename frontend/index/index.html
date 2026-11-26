@@ -5,13 +5,9 @@
 <script>
 (() => {
   const theme = localStorage.getItem("theme");
-  document.documentElement.setAttribute("data-theme", theme === "dark" ? "dark" : "light");
+  document.documentElement.setAttribute("data-theme", theme === "light" ? "light" : "dark");
 })();
 </script>
-    <style>
-        .auth-buttons { display: none; }
-        .user-menu { display: none; }
-    </style>
     <meta charset="UTF-8">
 <script>
     (function(){
@@ -33,10 +29,11 @@
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>سفره</title>
-    <link rel="stylesheet" href="/navbar.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;700&display=swap">
+    <link rel="stylesheet" href="/navbar.css">
     <link rel="stylesheet" href="/index/home.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@500;600&display=swap">
-    <link rel="stylesheet" href="/dark-mode.css">
     <title>سفرة | دليلك للسفر والطعام حول العالم</title>
 
     <meta charset="UTF-8">
@@ -79,361 +76,157 @@
 
 <body>
 
-    <header class="navbar">
-        <div class="hamburger" id="menu-btn">☰</div>
-
-        <div class="auth-buttons" id="authButtons">
-            <a href="/auth/login.html" class="login">تسجيل دخول</a>
-            <a href="/auth/signup.html" class="signup">إنشاء حساب</a>
+    <header class="sf-nav" id="sfNav">
+  <div class="sf-nav-in">
+    <a class="sf-logo" href="/index/index.html" aria-label="سفرة — الرئيسية"><img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/logo-img.PNG" alt="سفرة"></a>
+    <nav class="sf-links" aria-label="التنقل الرئيسي"><a href="/index/index.html" class="active" aria-current="page">الرئيسية</a><a href="/countries/countries.html">الدول</a><a href="/events/events.html">الفعاليات</a><a href="/recipes/recipes.html">الوصفات</a><a href="/plan/plan.html">خطتي</a><a href="/about/about.html">عن سفرة</a></nav>
+    <div class="sf-actions">
+      <span class="sf-theme-slot" id="sfThemeSlot"></span>
+      <div class="auth-buttons" id="authButtons">
+        <a href="/auth/login.html" class="login">تسجيل دخول</a>
+        <a href="/auth/signup.html" class="signup">ابدأ سفرتك</a>
+      </div>
+      <div class="user-menu" id="userMenu" tabindex="0">
+        <img id="userAvatar" src="" alt="">
+        <span class="user-name" id="userName"></span>
+        <div class="user-dropdown">
+          <a href="/profile/profile.html">الملف الشخصي</a>
+          <a href="/admin/admin.html" class="admin-link" id="adminLink" style="display:none">لوحة التحكم</a>
+          <a href="#" id="logoutBtn">تسجيل خروج</a>
         </div>
-
-        <div class="user-menu" id="userMenu">
-            <img id="userAvatar" src="" alt="">
-            <span class="user-name" id="userName"></span>
-            <div class="user-dropdown">
-                <a href="/profile/profile.html">الملف الشخصي</a>
-                <a href="/admin/admin.html" class="admin-link" id="adminLink" style="display:none">⚙️ الإدارة</a>
-                <a href="#" id="logoutBtn">تسجيل خروج</a>
-            </div>
-        </div>
-
-        <ul class="nav-list">
-            <li><a href="/index/index.html" class="active">الرئيسية</a></li>
-            <li><a href="/countries/countries.html">الدول</a></li>
-            <li><a href="/events/events.html">الفعاليات</a></li>
-            <li><a href="/recipes/recipes.html">الوصفات</a></li>
-            <li><a href="/plan/plan.html">خطتي</a></li>
-            <li><a href="/about/about.html">عن سفرة</a></li>
-        </ul>
-
-        <div class="logo">
-            <a href="/index/index.html"><img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/logo-img.PNG" alt="سفرة – Sofrah"></a>
-        </div>
-    </header>
-
-    <div class="side-menu" id="side-menu">
-        <span class="close-btn" id="close-btn">×</span>
-        <span class="side-menu-kicker">استكشف</span>
-        <ul>
-            <li><a href="/index/index.html" class="active">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <path d="M3 11.5 12 4l9 7.5" />
-                        <path
-                            d="M5.5 10v9a1 1 0 0 0 1 1H9a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h2.5a1 1 0 0 0 1-1v-9" />
-                    </svg>
-                    <span>الرئيسية</span>
-                </a></li>
-            <li><a href="/countries/countries.html">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <path d="M12 21s7-6.6 7-12a7 7 0 1 0-14 0c0 5.4 7 12 7 12Z" />
-                        <circle cx="12" cy="9" r="2.3" />
-                    </svg>
-                    <span>الدول</span>
-                </a></li>
-            <li><a href="/events/events.html">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <rect x="3.5" y="5" width="17" height="16" rx="2.5" />
-                        <path d="M8 3v4M16 3v4M3.5 10h17" />
-                        <circle cx="12" cy="15" r="1.4" fill="currentColor" stroke="none" />
-                    </svg>
-                    <span>الفعاليات</span>
-                </a></li>
-            <li><a href="/recipes/recipes.html">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <path d="M7 2v8a2 2 0 0 0 2 2v10M5 2v6M9 2v6M14 2c-1.5 2-1.5 7 0 9 .6.6 1 1.3 1 2v9" />
-                    </svg>
-                    <span>الوصفات</span>
-                </a></li>
-            <li><a href="/plan/plan.html">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="9" />
-                        <path d="M14.8 9.2 13 13l-3.8 1.8L11 11l3.8-1.8Z" />
-                    </svg>
-                    <span>خطتي</span>
-                </a></li>
-            <li><a href="/about/about.html">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="9" />
-                        <path d="M12 8h.01M11 11.5h1v5.5h1" />
-                    </svg>
-                    <span>عن سفرة</span>
-                </a></li>
-        </ul>
+      </div>
+      <button type="button" class="hamburger" id="menu-btn" aria-label="القائمة"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
     </div>
+  </div>
+</header>
 
-    <section class="ix-hero">
-        <div class="ix-hero-text">
-            <h1>سافر<span> وتذوق</span></h1>
-            <p>اكتشف وجهات وماكولات من مختلف أنحاء العالم</p>
-            <form class="ix-hero-search" id="ixHeroSearchForm">
-                <input type="search" id="ixHeroSearchInput" placeholder="ابحث عن دولة أو وجهة..." autocomplete="off">
-                <button type="submit">بحث</button>
-            </form>
-            <div class="ix-hero-quick">
-                <a href="/countries/countries.html" class="ix-quick-link">🌍 الدول</a>
-                <a href="/recipes/recipes.html" class="ix-quick-link">🍽️ الوصفات</a>
-                <a href="/events/events.html" class="ix-quick-link">📅 الفعاليات</a>
-                <a href="/plan/plan.html" class="ix-quick-link">🗺️ خطط رحلتك</a>
-            </div>
-        </div>
-        <div class="ix-featured-wrap" id="ixFeaturedWrap">
-            <div class="ix-slider-stage">
-                <a href="/countries/country/asia/saudi.html" class="ix-featured-card" id="ixFeaturedCard">
-                    <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto:good,w_1200/Riyadh_Skyline.jpg" alt="السعودية" loading="eager" id="ixFeaturedImg">
-                    <div class="ix-featured-overlay"></div>
-                    <span class="ix-featured-badge">وجهة مميزة</span>
-                    <div class="ix-featured-info">
-                        <h3 id="ixFeaturedName">السعودية – Saudi Arabia</h3>
-                        <p id="ixFeaturedDesc">رحلة تجمع بين التراث والحداثة في قلب الجزيرة العربية</p>
-                        <span class="ix-featured-btn">استكشف</span>
-                    </div>
-                </a>
-                <button type="button" class="ix-slider-arrow ix-arrow-prev" id="ixSliderPrev" aria-label="السابق" style="display:none">❮</button>
-                <button type="button" class="ix-slider-arrow ix-arrow-next" id="ixSliderNext" aria-label="التالي" style="display:none">❯</button>
-            </div>
-            <div class="ix-hero-dots" id="ixHeroDots"></div>
-        </div>
-    </section>
+<div class="side-menu" id="side-menu" role="dialog" aria-label="القائمة">
+  <div class="sf-drawer-top">
+    <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/logo-img.PNG" alt="سفرة">
+    <button type="button" class="close-btn" id="close-btn" aria-label="إغلاق القائمة"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  </div>
+  <ul><li><a href="/index/index.html" class="active"><span>الرئيسية</span><span aria-hidden="true">←</span></a></li><li><a href="/countries/countries.html"><span>الدول</span><span aria-hidden="true">←</span></a></li><li><a href="/events/events.html"><span>الفعاليات</span><span aria-hidden="true">←</span></a></li><li><a href="/recipes/recipes.html"><span>الوصفات</span><span aria-hidden="true">←</span></a></li><li><a href="/plan/plan.html"><span>خطتي</span><span aria-hidden="true">←</span></a></li><li><a href="/about/about.html"><span>عن سفرة</span><span aria-hidden="true">←</span></a></li></ul>
+  <div class="sf-drawer-auth">
+    <a href="/auth/login.html" class="sf-d-login">تسجيل دخول</a>
+    <a href="/auth/signup.html" class="sf-d-signup">ابدأ سفرتك</a>
+  </div>
+</div>
+<main id="sfMain">
+<section class="sf-hero sf-hero-tall sf-hero-flip" data-anim="planes">
+  <img class="sf-hero-img" src="/img/Anse%20Royale%20Seychelles.jpg" alt="" style="object-position:50% 35%" fetchpriority="high">
+  <div class="sf-hero-tint" aria-hidden="true"></div>
+  <div class="sf-hero-fade" aria-hidden="true"></div>
+  <div class="sf-wrap sf-hero-c"><h1 class="sf-hero-title">سفرة تخطط لك رحلتك<br>من أول وجهة لآخر لقمة</h1><p class="sf-hero-sub">اختر وجهتك من 194 دولة، خذ وصفات من مطبخها، شوف فعالياتها، وخل «خطتي» تطلع لك بطاقة صعود تناسب ميزانيتك.</p><form class="sf-glass-search" id="sfHomeSearch" role="search"><label for="sfHomeQ" class="sr-only">ابحث</label><input id="sfHomeQ" type="search" placeholder="وين ودك تسافر؟ جرّب: اليابان، تركيا" autocomplete="off"><button type="submit">بحث</button></form><div class="sf-hero-btns"><a class="sf-btn sf-btn-o" href="/plan/plan.html">خطط رحلتك</a><a class="sf-btn sf-btn-g" href="/countries/countries.html">تصفح الدول</a></div></div>
+<div class="sf-home-chips" aria-hidden="true"><div class="sf-hchip" style="animation-delay:-0s"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#2F9E62" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><i>جاهزة:</i><b>بطاقة صعود — إسطنبول</b></div><div class="sf-hchip" style="animation-delay:-2s"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F28500" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9"/></svg><i>نجهّز:</i><b>مطاعم ومقاهي كابادوكيا</b></div><div class="sf-hchip" style="animation-delay:-4s"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#2F9E62" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><i>محفوظة:</i><b>وصفة الكبسة</b></div></div></section>
 
-    <section class="ix-destinations" data-key="home_countries" data-section="countries">
-        <div class="ix-section-header">
-            <h2 class="ix-section-title">وين <span>السفرة</span> الجاية؟</h2>
-            <a href="/countries/countries.html" class="ix-see-all">عرض الكل ←</a>
-        </div>
-        <p class="ix-section-desc">دول مختارة لك تستاهل الرحلة، وكل وحدة لها سفرتها الخاصة.</p>
-        <div class="ix-dest-grid" id="ixDestGrid">
-            <a href="/countries/country/asia/uae.html" class="ix-dest-card">
-                <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto,w_600,h_450,c_fill/UAE.jpg" alt="الإمارات" loading="lazy">
-                <div class="ix-dest-overlay"></div>
-                <div class="ix-dest-info">
-                    <h3>الإمارات – UAE</h3>
-                    <p>ناطحات سحاب ورفاهية لا حدود لها</p>
-                    <span class="ix-dest-btn">استكشف</span>
-                </div>
-            </a>
-            <a href="/countries/country/africa/egypt.html" class="ix-dest-card">
-                <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto,w_600,h_450,c_fill/egypt-logo.jpeg" alt="مصر" loading="lazy">
-                <div class="ix-dest-overlay"></div>
-                <div class="ix-dest-info">
-                    <h3>مصر – Egypt</h3>
-                    <p>أهرامات ونيل وتاريخ يجمع الحضارات</p>
-                    <span class="ix-dest-btn">استكشف</span>
-                </div>
-            </a>
-            <a href="/countries/country/asia/turkey.html" class="ix-dest-card">
-                <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto,w_600,h_450,c_fill/Turkey.jpg" alt="تركيا" loading="lazy">
-                <div class="ix-dest-overlay"></div>
-                <div class="ix-dest-info">
-                    <h3>تركيا – Turkey</h3>
-                    <p>جسر بين الشرق والغرب وتاريخ عثماني لا يُنسى</p>
-                    <span class="ix-dest-btn">استكشف</span>
-                </div>
-            </a>
-            <a href="/countries/country/europe/france.html" class="ix-dest-card">
-                <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto,w_600,h_450,c_fill/france-flag.jpg" alt="فرنسا" loading="lazy">
-                <div class="ix-dest-overlay"></div>
-                <div class="ix-dest-info">
-                    <h3>فرنسا – France</h3>
-                    <p>أناقة باريسية وقصور ملكية وسواحل ريفييرا الفاتنة</p>
-                    <span class="ix-dest-btn">استكشف</span>
-                </div>
-            </a>
-            <a href="/countries/country/asia/japan.html" class="ix-dest-card">
-                <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto,w_600,h_450,c_fill/japan-logo.jpg" alt="اليابان" loading="lazy">
-                <div class="ix-dest-overlay"></div>
-                <div class="ix-dest-info">
-                    <h3>اليابان – Japan</h3>
-                    <p>تنوع مذهل بين طبيعة هادئة ومدن تنبض بالحياة</p>
-                    <span class="ix-dest-btn">استكشف</span>
-                </div>
-            </a>
-            <a href="/countries/country/europe/spain.html" class="ix-dest-card">
-                <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto,w_600,h_450,c_fill/v1794006911/spain.jpg" alt="إسبانيا" loading="lazy">
-                <div class="ix-dest-overlay"></div>
-                <div class="ix-dest-info">
-                    <h3>إسبانيا – Spain</h3>
-                    <p>عمارة أندلسية ساحرة وشواطئ متوسطية وإيقاع فلامنكو نابض</p>
-                    <span class="ix-dest-btn">استكشف</span>
-                </div>
-            </a>
-        </div>
-    </section>
+<section style="padding:40px 0"><div class="sf-wrap">
+  <div class="sf-stats"><div><b>194</b><span>دولة</span></div><div><b>1,150+</b><span>وصفة</span></div><div><b>1,160+</b><span>فعالية</span></div><div><b>6</b><span>قارات</span></div></div>
+  <p class="sf-faint" style="font-size:13px;text-align:center;margin:14px 0 0">كل المحتوى حلال، وكل الأسعار بالريال السعودي.</p>
+</div></section>
 
-    <section class="ix-recipes" data-key="home_recipes" data-section="recipes">
-        <div class="ix-section-header">
-            <h2 class="ix-section-title">نكهات من <span>مطابخ العالم</span></h2>
-            <a href="/recipes/recipes.html" class="ix-see-all">عرض الكل ←</a>
-        </div>
-        <p class="ix-section-desc">وصفات مجرّبة من كل دولة بخطوات واضحة تقدر تسويها بنفسك.</p>
-        <div class="ix-recipes-wrap">
-            <button id="ixArrowPrev" class="ix-scroll-arrow ix-arrow-prev" aria-label="السابق">❯</button>
-            <div class="ix-recipes-scroll" id="ixRecipesScroll">
-                <div class="ix-recipe-card">
-                    <div class="ix-recipe-img-wrap">
-                        <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto,w_320,h_320,c_fill/كبسة.jpg" alt="الكبسة" loading="lazy">
-                        <button class="ix-recipe-save" onclick="saveItem('recipe','kabsa','الكبسة','/img/كبسة.jpg')">🍽️</button>
-                    </div>
-                    <div class="ix-recipe-body">
-                        <p class="ix-recipe-name">الكبسة – Kabsa</p>
-                        <a href="/recipes/recipes.html?recipe=kabsa" class="ix-recipe-link">الوصفة</a>
-                    </div>
-                </div>
-                <div class="ix-recipe-card">
-                    <div class="ix-recipe-img-wrap">
-                        <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto,w_320,h_320,c_fill/soshe.jpg" alt="سوشي" loading="lazy">
-                        <button class="ix-recipe-save" onclick="saveItem('recipe','sushi','سوشي – Sushi','https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/سوشي.jpg')">🍽️</button>
-                    </div>
-                    <div class="ix-recipe-body">
-                        <p class="ix-recipe-name">سوشي – Sushi</p>
-                        <a href="/recipes/recipes.html?recipe=sushi" class="ix-recipe-link">الوصفة</a>
-                    </div>
-                </div>
-                <div class="ix-recipe-card">
-                    <div class="ix-recipe-img-wrap">
-                        <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto,w_320,h_320,c_fill/Neapolitan-Pizza.webp" alt="بيتزا نابوليتانا" loading="lazy">
-                        <button class="ix-recipe-save" onclick="saveItem('recipe','neapolitan-pizza','بيتزا نابوليتانا – Neapolitan Pizza','https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/Neapolitan-Pizza.webp')">🍽️</button>
-                    </div>
-                    <div class="ix-recipe-body">
-                        <p class="ix-recipe-name">بيتزا نابوليتانا</p>
-                        <a href="/recipes/recipes.html?recipe=neapolitan-pizza" class="ix-recipe-link">الوصفة</a>
-                    </div>
-                </div>
-                <div class="ix-recipe-card">
-                    <div class="ix-recipe-img-wrap">
-                        <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto,w_320,h_320,c_fill/Butter_Chicken.jpg" alt="زبدة الدجاج" loading="lazy">
-                        <button class="ix-recipe-save" onclick="saveItem('recipe','butter-chicken','زبدة الدجاج – Butter Chicken','https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/Butter_Chicken.jpg')">🍽️</button>
-                    </div>
-                    <div class="ix-recipe-body">
-                        <p class="ix-recipe-name">زبدة الدجاج – Butter Chicken</p>
-                        <a href="/recipes/recipes.html?recipe=butter-chicken" class="ix-recipe-link">الوصفة</a>
-                    </div>
-                </div>
-                <div class="ix-recipe-card">
-                    <div class="ix-recipe-img-wrap">
-                        <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto,w_320,h_320,c_fill/v1794008243/Paella.jpg" alt="باييا" loading="lazy">
-                        <button class="ix-recipe-save" onclick="saveItem('recipe','paella','باييا – Paella','https://res.cloudinary.com/dqe6mmkzz/image/upload/v1794008243/Paella.jpg')">🍽️</button>
-                    </div>
-                    <div class="ix-recipe-body">
-                        <p class="ix-recipe-name">باييا – Paella</p>
-                        <a href="/recipes/recipes.html?recipe=paella" class="ix-recipe-link">الوصفة</a>
-                    </div>
-                </div>
-                <div class="ix-recipe-card">
-                    <div class="ix-recipe-img-wrap">
-                        <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto,w_320,h_320,c_fill/Tacos.jpg" alt="تاكو" loading="lazy">
-                        <button class="ix-recipe-save" onclick="saveItem('recipe','tacos','تاكو – Tacos','https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/Tacos.jpg')">🍽️</button>
-                    </div>
-                    <div class="ix-recipe-body">
-                        <p class="ix-recipe-name">تاكو – Tacos</p>
-                        <a href="/recipes/recipes.html?recipe=tacos" class="ix-recipe-link">الوصفة</a>
-                    </div>
-                </div>
-            </div>
-            <button id="ixArrowNext" class="ix-scroll-arrow ix-arrow-next" aria-label="التالي">❮</button>
-        </div>
-    </section>
+<section style="padding:72px 0 32px"><div class="sf-wrap sf-intro">
+  <span class="sf-eyebrow">وش تسوي سفرة</span>
+  <h2>انت اختر الوجهة،<br><span style="color:var(--ink3)">وسفرة تجهّز لك الدولة والأكل والفعاليات والخطة.</span></h2>
+</div></section>
 
-    <section class="ix-events" data-key="home_events" data-section="events">
-        <div class="ix-section-header">
-            <h2 class="ix-section-title">فعاليات <span>قادمة</span></h2>
-            <a href="/events/events.html" class="ix-see-all">عرض الكل ←</a>
-        </div>
-        <div class="ix-events-grid" id="ixEventsGrid">
-            <a href="/events/events.html?event=sodh" class="ix-event-card">
-                <div class="ix-event-img">
-                    <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto,w_600,h_337,c_fill/السوده.webp" alt="موسم السودة" loading="lazy">
-                    <span class="ix-event-date">يونيو – سبتمبر</span>
-                </div>
-                <div class="ix-event-body">
-                    <h3 class="ix-event-title">موسم السودة – Al-Soudah Season</h3>
-                    <p class="ix-event-location">📍 منطقة عسير، السعودية</p>
-                    <span class="ix-event-btn">التفاصيل</span>
-                </div>
-            </a>
-            <a href="/events/events.html?event=hanami" class="ix-event-card">
-                <div class="ix-event-img">
-                    <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto,w_600,h_337,c_fill/Hanami.jpg" alt="مهرجان أزهار الكرز" loading="lazy">
-                    <span class="ix-event-date">مارس – أبريل</span>
-                </div>
-                <div class="ix-event-body">
-                    <h3 class="ix-event-title">مهرجان أزهار الكرز – Hanami</h3>
-                    <p class="ix-event-location">📍 طوكيو، كيوتو، أوساكا</p>
-                    <span class="ix-event-btn">التفاصيل</span>
-                </div>
-            </a>
-            <a href="/events/events.html?event=Waterfalls" class="ix-event-card">
-                <div class="ix-event-img">
-                    <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto,w_600,h_337,c_fill/v1793799671/Waterfalls.jpg" alt="الاسترخاء في الشلالات" loading="lazy">
-                    <span class="ix-event-date">طوال العام</span>
-                </div>
-                <div class="ix-event-body">
-                    <h3 class="ix-event-title">الاسترخاء في الشلالات – Waterfalls</h3>
-                    <p class="ix-event-location">📍 بالي، جاوا، سومطرة</p>
-                    <span class="ix-event-btn">التفاصيل</span>
-                </div>
-            </a>
-        </div>
-    </section>
+<section class="sf-sec"><div class="sf-wrap sf-feat">
+  <div class="sf-feat-txt">
+    <span class="sf-eyebrow">01 — الدول</span>
+    <h2>اكتشف العالم<br><span>دولة دولة، ومدينة مدينة</span></h2>
+    <p>لكل دولة مدنها، ولكل مدينة معالمها ومطاعمها ومقاهيها وفعالياتها، مع صور ووصف مختصر.</p>
+    <div class="sf-acc"><div><button type="button" aria-expanded="true" aria-controls="acc1-0"><span class="n">1.1</span>6 قارات<span class="pl" aria-hidden="true">−</span></button><p class="body" id="acc1-0">آسيا، أوروبا، أفريقيا، أمريكا الشمالية، أمريكا الجنوبية، أوقيانوسيا.</p></div><div><button type="button" aria-expanded="false" aria-controls="acc1-1"><span class="n">1.2</span>مدن كل دولة<span class="pl" aria-hidden="true">+</span></button><p class="body" id="acc1-1" hidden>وصف لكل مدينة، مع معالمها التاريخية وصورها.</p></div><div><button type="button" aria-expanded="false" aria-controls="acc1-2"><span class="n">1.3</span>مطاعم ومقاهي<span class="pl" aria-hidden="true">+</span></button><p class="body" id="acc1-2" hidden>3 مطاعم و3 مقاهي على الأقل لكل مدينة، وكلها حلال.</p></div><div><button type="button" aria-expanded="false" aria-controls="acc1-3"><span class="n">1.4</span>احفظ وجهاتك<span class="pl" aria-hidden="true">+</span></button><p class="body" id="acc1-3" hidden>احفظ الدول والمدن في ملفك وارجع لها وقت ما تبي.</p></div></div>
+    <a class="sf-more" href="/countries/countries.html" style="align-self:flex-start">تصفح الدول</a>
+  </div>
+  <div class="sf-mosaic">
+  <a href="/countries/country/asia/turkey.html" class="sf-dest" style="grid-row:span 2"><img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto,w_900,c_limit/Istanbul.jpg" alt="إسطنبول" loading="lazy" data-key="home_countries"><div class="cp"><span class="sf-eyebrow" style="color:#FFD29A">تركيا</span><b style="font-size:28px">إسطنبول</b><small>آيا صوفيا · البوسفور · البازار الكبير</small></div></a>
+  <a href="/countries/country/asia/japan.html" class="sf-dest"><img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto,w_900,c_limit/japan-logo.jpg" alt="اليابان" loading="lazy"><div class="cp"><b>اليابان</b></div></a>
+  <a href="/countries/country/asia/maldives.html" class="sf-dest"><img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto,w_900,c_limit/Maldives.jpg" alt="المالديف" loading="lazy"><div class="cp"><b>المالديف</b></div></a>
+</div>
+</div></section>
+<section class="sf-sec"><div class="sf-wrap sf-feat rev">
+  <div class="sf-feat-txt">
+    <span class="sf-eyebrow">02 — الوصفات</span>
+    <h2>اطبخ أكل البلد<br><span>قبل لا تسافر له</span></h2>
+    <p>أكثر من 1,150 وصفة بمقادير شخص واحد: مكونات، بهارات، صوصات، وخطوات واضحة. ومعها شيف سفرة.</p>
+    <div class="sf-acc"><div><button type="button" aria-expanded="true" aria-controls="acc2-0"><span class="n">2.1</span>رئيسية · حلويات · سناكات<span class="pl" aria-hidden="true">−</span></button><p class="body" id="acc2-0">739 طبق رئيسي، 188 حلى، و223 سناك.</p></div><div><button type="button" aria-expanded="false" aria-controls="acc2-1"><span class="n">2.2</span>مقادير دقيقة<span class="pl" aria-hidden="true">+</span></button><p class="body" id="acc2-1" hidden>كل وصفة بمقادير شخص واحد، وتقدر تضاعفها بسهولة.</p></div><div><button type="button" aria-expanded="false" aria-controls="acc2-2"><span class="n">2.3</span>شيف سفرة<span class="pl" aria-hidden="true">+</span></button><p class="body" id="acc2-2" hidden>اكتب مكوناتك أو سؤالك، والشيف يقترح عليك.</p></div></div>
+    <a class="sf-more" href="/recipes/recipes.html" style="align-self:flex-start">كل الوصفات</a>
+  </div>
+  <div class="sf-shot"><img class="bg" src="/img/Yemeni%20Mandi.jpeg" alt="صحن مندي" loading="lazy" data-key="home_recipes">
+  <div class="sf-float" style="left:28px;bottom:28px;width:300px;padding:22px">
+    <div style="display:flex;justify-content:space-between;align-items:baseline"><b style="font-size:20px;color:var(--brand)">الكبسة</b><span class="sf-eyebrow">1 PAX</span></div>
+    <div style="margin-top:8px"><div class="sf-row"><span>أرز</span><span>100 غ</span></div><div class="sf-row"><span>دجاج</span><span>125 غ</span></div><div class="sf-row"><span>بصل</span><span>1 حبة صغيرة</span></div><div class="sf-row"><span>طماطم</span><span>1 حبة صغيرة</span></div><div class="sf-row"><span>ثوم</span><span>2 فص</span></div><div class="sf-row"><span>زيت</span><span>15 مل</span></div></div>
+    <a class="sf-more" href="/recipes/recipes.html?recipe=kabsa" style="display:inline-block;margin-top:14px;font-size:14px">الوصفة كاملة</a>
+  </div>
+  <div class="sf-float top" style="right:28px;top:28px;padding:12px 16px;display:flex;align-items:center;gap:10px;border-radius:14px"><span style="width:32px;height:32px;border-radius:10px;background:#F28500;display:flex;align-items:center;justify-content:center;color:#1F1238;font-weight:700">ش</span><span style="font-size:14px">«عندي دجاج ورز، وش أطبخ؟»</span></div>
+</div>
+</div></section>
 
-    <section class="ix-cta" data-key="home_plan" data-section="plan">
-        <div class="ix-cta-inner">
-            <div id="ixCtaGuest">
-                <h2>انضم إلى سفرة اليوم</h2>
-                <p>احفظ وجهاتك المفضلة, وخطط رحلتك المثالية</p>
-                <div class="ix-cta-actions">
-                    <a href="/auth/signup.html" class="ix-cta-primary">إنشاء حساب مجاني</a>
-                    <a href="/auth/login.html" class="ix-cta-secondary">لديك حساب؟ سجّل دخول</a>
-                </div>
-            </div>
-            <div id="ixCtaUser">
-                <h2 id="ixCtaUserGreet">مرحباً!</h2>
-                <p>خطط رحلتك القادمة مع سفرة</p>
-                <div class="ix-cta-actions">
-                    <a href="/plan/plan.html" class="ix-cta-primary">ابدأ خطتك</a>
-                </div>
-            </div>
-        </div>
-    </section>
+<section class="sf-sec"><div class="sf-wrap">
+  <div class="sf-sec-head"><div><span class="sf-eyebrow">وجهات مختارة</span><h2 class="sf-h2" style="margin-top:8px">وين السفرة الجاية؟</h2></div><a class="sf-more" href="/countries/countries.html">كل الدول</a></div>
+  <div class="sf-strip"><a href="/countries/country/asia/uae.html" class="sf-dest"><img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto,w_900,c_limit/UAE.jpg" alt="الإمارات" loading="lazy"><div class="cp"><b>الإمارات</b><small>ناطحات سحاب ورفاهية</small></div></a><a href="/countries/country/africa/egypt.html" class="sf-dest"><img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto,w_900,c_limit/egypt-logo.jpeg" alt="مصر" loading="lazy"><div class="cp"><b>مصر</b><small>أهرامات ونيل</small></div></a><a href="/countries/country/europe/france.html" class="sf-dest"><img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto,w_900,c_limit/france-flag.jpg" alt="فرنسا" loading="lazy"><div class="cp"><b>فرنسا</b><small>أناقة باريسية</small></div></a><a href="/countries/country/asia/maldives.html" class="sf-dest"><img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto,w_900,c_limit/Maldives.jpg" alt="المالديف" loading="lazy"><div class="cp"><b>المالديف</b><small>مياه كريستالية</small></div></a></div>
+</div></section>
 
-    <footer class="site-footer">
-        <div class="footer-container">
-            <div class="footer-brand">
-                <h2 class="footer-logo">سفرة</h2>
-                <p>وجهتك للسفر والطعام حول العالم</p>
-            </div>
+<section class="sf-sec"><div class="sf-wrap sf-feat">
+  <div class="sf-feat-txt">
+    <span class="sf-eyebrow">03 — الفعاليات</span>
+    <h2>اعرف وش يصير<br><span>ومتى، وكم يكلّف</span></h2>
+    <p>مواسم ومهرجانات وسفاري وشواطئ. لكل فعالية موقعها ومدتها وطقسها وأقرب مطار، وتكلفة تقديرية بالريال.</p>
+    <div class="sf-acc"><div><button type="button" aria-expanded="true" aria-controls="acc3-0"><span class="n">3.1</span>7 تصنيفات<span class="pl" aria-hidden="true">−</span></button><p class="body" id="acc3-0">مطاعم ومقاهي، شواطئ وبحار، سفاري وجبال، فعاليات ومنتجعات، متاحف ومعالم، مهرجانات ثقافية.</p></div><div><button type="button" aria-expanded="false" aria-controls="acc3-1"><span class="n">3.2</span>تكلفة بالريال<span class="pl" aria-hidden="true">+</span></button><p class="body" id="acc3-1" hidden>سعر الفندق لليلة، رسوم الفعالية، والتكلفة التقديرية كاملة.</p></div><div><button type="button" aria-expanded="false" aria-controls="acc3-2"><span class="n">3.3</span>مرشد سفرة<span class="pl" aria-hidden="true">+</span></button><p class="body" id="acc3-2" hidden>اسأل عن المواعيد والتذاكر وأفضل وقت للزيارة.</p></div></div>
+    <a class="sf-more" href="/events/events.html" style="align-self:flex-start">كل الفعاليات</a>
+  </div>
+  <div class="sf-shot"><img class="bg" src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto,w_1200,c_limit/v1795266992/Al-Soudah_Season.jpg" alt="موسم السودة" loading="lazy" data-key="home_events">
+  <div class="sf-float" style="right:28px;bottom:28px;width:330px;padding:22px">
+    <span class="sf-eyebrow">يونيو – سبتمبر</span>
+    <div style="font-size:20px;font-weight:600;color:var(--brand);margin:4px 0 10px">موسم السودة</div>
+    <div class="sf-row" style="font-size:13px;border-bottom-style:dashed"><span>التلفريك</span><span>65 ريال</span></div><div class="sf-row" style="font-size:13px;border-bottom-style:dashed"><span>جبل السودة</span><span>مجاني</span></div><div class="sf-row" style="font-size:13px;border-bottom-style:dashed"><span>سوق عسير الشعبي</span><span>مجاني</span></div><div class="sf-row" style="font-size:13px;border-bottom-style:dashed"><span>مهرجان العسل</span><span>مجاني – 25 ريال</span></div>
+    <div style="display:flex;justify-content:space-between;align-items:baseline;margin-top:14px"><span style="font-size:13px;color:var(--ink3)">التكلفة التقديرية</span><span style="font-size:18px;color:#F28500;font-weight:700">2000 – 5500 ريال</span></div>
+    <a class="sf-more" href="/events/events.html?event=sodh" style="display:inline-block;margin-top:12px;font-size:14px">التفاصيل</a>
+  </div>
+</div>
+</div></section>
+<section class="sf-sec"><div class="sf-wrap sf-feat rev">
+  <div class="sf-feat-txt">
+    <span class="sf-eyebrow">04 — خطتي</span>
+    <h2>5 أسئلة،<br><span>وتطلع لك بطاقة صعود</span></h2>
+    <p>حدد ميزانيتك ونوع رحلتك وعدد المسافرين والمدة، وخطتي تقترح لك أفضل الوجهات اللي تناسبك.</p>
+    <div class="sf-acc"><div><button type="button" aria-expanded="true" aria-controls="acc4-0"><span class="n">4.1</span>الميزانية ونوع الرحلة<span class="pl" aria-hidden="true">−</span></button><p class="body" id="acc4-0">من 3,000 لـ 30,000+ ريال للفرد. شبابية، عائلية، أو شهر عسل.</p></div><div><button type="button" aria-expanded="false" aria-controls="acc4-1"><span class="n">4.2</span>المسافرين والمدة والفندق<span class="pl" aria-hidden="true">+</span></button><p class="body" id="acc4-1" hidden>عدد المسافرين، عدد الليالي، ونجوم الفندق.</p></div><div><button type="button" aria-expanded="false" aria-controls="acc4-2"><span class="n">4.3</span>القارة والفعاليات<span class="pl" aria-hidden="true">+</span></button><p class="body" id="acc4-2" hidden>اختر قارة أو خلها تفاجئك، وحدد الفعاليات اللي تحبها.</p></div></div>
+    <a class="sf-more" href="/plan/plan.html" style="align-self:flex-start">ابدأ خطتك</a>
+  </div>
+  <div class="sf-shot" style="background:radial-gradient(120% 90% at 20% 10%,#5A2BC4 0%,#32127A 45%,#1A0846 100%);display:flex;align-items:center;justify-content:center;padding:40px">
+  <div aria-hidden="true" style="position:absolute;width:360px;height:360px;border-radius:50%;background:#F28500;filter:blur(120px);opacity:.35;left:-60px;bottom:-80px"></div>
+  <div class="sf-pass">
+    <div class="sf-pass-main">
+      <div style="display:flex;justify-content:space-between;align-items:center"><img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/logo-img.PNG" alt="سفرة" style="height:34px;width:auto;background:#32127A;border-radius:8px;padding:3px"><span class="mono" style="font-size:12px;letter-spacing:.12em;color:#32127A">TRAVEL PASS</span></div>
+      <div style="display:flex;align-items:center;gap:10px"><div><div class="mono" style="font-size:34px;line-height:1;color:#32127A">RUH</div><div style="font-size:12px;color:#6B5F86">الرياض</div></div><div style="flex:1;border-top:2px dashed #D9CFEA"></div><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" style="fill:#F28500;transform:rotate(-90deg)"><path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/></svg><div style="flex:1;border-top:2px dashed #D9CFEA"></div><div style="text-align:left"><div class="mono" style="font-size:34px;line-height:1;color:#32127A">IST</div><div style="font-size:12px;color:#6B5F86">إسطنبول</div></div></div>
+      <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;border-top:1px solid #E6DDCB;padding-top:14px"><div><div class="mono" style="font-size:10px;color:#6B5F86;letter-spacing:.1em">BUDGET</div><div style="font-weight:600;font-size:14px">3,000 ريال</div></div><div><div class="mono" style="font-size:10px;color:#6B5F86;letter-spacing:.1em">TYPE</div><div style="font-weight:600;font-size:14px">عائلية</div></div><div><div class="mono" style="font-size:10px;color:#6B5F86;letter-spacing:.1em">NIGHTS</div><div style="font-weight:600;font-size:14px">5 ليالي</div></div><div><div class="mono" style="font-size:10px;color:#6B5F86;letter-spacing:.1em">PAX</div><div style="font-weight:600;font-size:14px">4</div></div><div><div class="mono" style="font-size:10px;color:#6B5F86;letter-spacing:.1em">HOTEL</div><div style="font-weight:600;font-size:14px">4 نجوم</div></div><div><div class="mono" style="font-size:10px;color:#6B5F86;letter-spacing:.1em">GATE</div><div style="font-weight:600;font-size:14px">A7</div></div></div>
+    </div>
+    <div class="sf-pass-stub"><i aria-hidden="true"></i></div>
+  </div>
+</div>
+</div></section>
 
-            <div class="footer-links">
-                <h4>روابط سريعة</h4>
-                <ul>
-                    <li><a href="/index/index.html">الرئيسية</a></li>
-                    <li><a href="/countries/countries.html">الدول</a></li>
-                    <li><a href="/events/events.html">الفعاليات</a></li>
-                    <li><a href="/recipes/recipes.html">الوصفات</a></li>
-                    <li><a href="/plan/plan.html">خطتي</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-contact">
-                <h4>تواصل معنا</h4>
-                <ul>
-                    <li>📧 <a href="mailto:Sofrh.info@gmail.com" target="_blank">Sofrh.info@gmail.com</a></li>
-                    <li>📧 <a href="mailto:Sofrh.support@gmail.com" target="_blank">Sofrh.support@gmail.com</a></li>
-                    <li>🐦 <a href="https://twitter.com/sofrah_sa" target="_blank">X (Twitter)</a></li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="footer-bottom">
-            <p>© 2026 سفرة — جميع الحقوق محفوظة</p>
-            <p>صُنع بواسطة فريق سفرة</p>
-        </div>
-    </footer>
+<section style="padding:72px 0 110px"><div class="sf-wrap"><div class="sf-cta">
+  <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/logo-img.PNG" alt="" aria-hidden="true" style="position:absolute;width:420px;height:auto;left:-80px;bottom:-120px;opacity:.06">
+  <div aria-hidden="true" style="position:absolute;width:400px;height:400px;border-radius:50%;background:#F28500;filter:blur(140px);opacity:.28;right:-80px;bottom:-160px"></div>
+  <img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/logo-img.PNG" alt="سفرة" style="position:relative;height:80px;width:auto">
+  <h2>رحلتك الجاية تبدأ من سفرة</h2>
+  <p>سجّل واحفظ دولك ووصفاتك وفعالياتك، وخل خطتك جاهزة قبل التذكرة.</p>
+  <div style="position:relative;display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:8px"><a class="sf-btn sf-btn-o" href="/auth/signup.html">أنشئ حساب مجاني</a><a class="sf-btn sf-btn-g" href="/plan/plan.html">خطط رحلتك</a></div>
+</div></div></section>
+</main>
+<footer class="sf-foot">
+  <div class="sf-foot-in">
+    <div class="sf-foot-top">
+      <div class="sf-foot-brand"><img src="https://res.cloudinary.com/dqe6mmkzz/image/upload/f_auto,q_auto/logo-img.PNG" alt="سفرة"><p>وجهتك للسفر والطعام حول العالم.</p></div>
+      <nav class="sf-foot-cols" aria-label="روابط التذييل">
+        <div><span>استكشف</span><a href="/countries/countries.html">الدول</a><a href="/recipes/recipes.html">الوصفات</a><a href="/events/events.html">الفعاليات</a><a href="/plan/plan.html">خطتي</a></div>
+        <div><span>سفرة</span><a href="/about/about.html">عن سفرة</a><a href="/profile/profile.html">الملف الشخصي</a><a href="https://x.com/sofrah_sa" target="_blank" rel="noopener">X — @sofrah_sa</a></div>
+        <div><span>تواصل</span><a class="mono" href="mailto:Sofrh.info@gmail.com">Sofrh.info@gmail.com</a><a class="mono" href="mailto:Sofrh.support@gmail.com">Sofrh.support@gmail.com</a></div>
+      </nav>
+    </div>
+    <div class="sf-foot-bottom"><span>© 2026 سفرة — جميع الحقوق محفوظة</span><span>صُنع بواسطة فريق سفرة</span></div>
+  </div>
+</footer>
 
 
 <button id="scrollTopBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>

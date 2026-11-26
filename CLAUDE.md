@@ -32,7 +32,9 @@ Every top-level page lives in its own folder with a matching `.html` + `.js` (+ 
 <script src="/auth/auth.js"></script>
 ```
 
-`auth.js` is the single source of truth for: session state (`localStorage.safraUser` / `safraAvatar`), the login/signup/logout flow, the `saveItem`/`loadFavorites`/`removeItem` favorites API calls, toast notifications (`showToast`), and the side-menu (`#menu-btn`/`#side-menu`/`#close-btn`) open/close behavior. Other pages' JS files must not duplicate side-menu or auth logic — they only handle page-specific search/filter/modal behavior.
+Design: `navbar.css` is the shared stylesheet for every page (colors as CSS variables, IBM Plex Sans Arabic / Plex Mono, navbar, mobile drawer, photo hero, buttons, filter chips, modals, footer, hero animations). Dark mode is the default (`html[data-theme="dark"]`, light only when `localStorage.theme === "light"`). Each page's own `.css` file only holds that page's layout. Measurements are in the "سفرة — مقاسات التصميم الجديد" doc.
+
+`auth.js` is the single source of truth for: session state (`localStorage.safraUser` / `safraAvatar`), the login/signup/logout flow, the `saveItem`/`loadFavorites`/`removeItem` favorites API calls, toast notifications (`showToast`), the dark-mode toggle inside the navbar, the navbar scroll state, the hero animations (`data-anim` on `.sf-hero`), and the side-menu (`#menu-btn`/`#side-menu`/`#close-btn`) open/close behavior. Other pages' JS files must not duplicate side-menu or auth logic — they only handle page-specific search/filter/modal behavior.
 
 All backend calls from the frontend hit the hardcoded absolute URL `https://sofrh-1.onrender.com` (no env config, no relative paths) — see `auth.js` and any favorites-related code.
 
