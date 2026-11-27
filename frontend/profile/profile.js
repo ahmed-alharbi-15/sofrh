@@ -100,8 +100,10 @@ document.querySelectorAll(".profile-nav a, .profile-mobile-nav a").forEach(link 
 });
 
 function getCountryLink(id) {
-    const continent = countryContinent[id] || 'asia';
-    return `https://sofrh.vercel.app/countries/country/${continent}/${id}.html`;
+    const fileId = ({ 'sri-lanka': 'srilanka', 'south-africa': 'southafrica' })[id] || id;
+    const africa = ['ivorycoast','capeverde','burkinafaso','centralafricanrepublic','democraticrepubliccongo','eswatini','guineabissau','southsudan','equatorialguinea','saotomeprincipe','sierraleone','southafrica'];
+    const continent = countryContinent[id] || countryContinent[fileId] || (africa.includes(fileId) ? 'africa' : 'asia');
+    return `https://sofrh.vercel.app/countries/country/${continent}/${fileId}.html`;
 }
 
 const typeLinks = {

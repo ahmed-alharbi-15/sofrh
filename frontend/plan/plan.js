@@ -16,7 +16,9 @@ document.addEventListener("DOMContentLoaded", () => {
         };
 
         function getCountryLink(country) {
-                return `https://sofrh.vercel.app/countries/country/${country.continent}/${country.id}.html`;
+                const continent = String(country.continent).replace(/_/g, '-');
+                const fileId = ({ morocco: 'moroco' })[country.id] || country.id;
+                return `https://sofrh.vercel.app/countries/country/${continent}/${fileId}.html`;
         }
 
         // ===== بيانات الدول (١٦١ دولة تغطي كل قارات العالم) =====
